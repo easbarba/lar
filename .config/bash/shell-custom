@@ -819,7 +819,7 @@ e-rbenv()
 
     local rbenv_binary="$HOME/.rbenv/bin/rbenv"
 
-    PATH="$RUBY_SHIMS_DIR"${PATH:+:}$PATH
+    export PATH="$RUBY_SHIMS_DIR"${PATH:+:}$PATH
 
     [[ ! -x "$RBENV_DIR/bin" ]] && git clone https://github.com/rbenv/rbenv.git "$RBENV_DIR"
 
