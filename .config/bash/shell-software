@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# * FUNCTIONS
+
 s-rbenv()
 {
     local rbenv_dir="$HOME/.rbenv"

@@ -47,4 +47,4 @@ export INFOPATH="${LOCAL_INFO}${INFOPATH:+:}${INFOPATH}"
 export PATH="${HOME}/bin"${PATH:+:}${PATH}
 export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
-[[ -f $HOME/bin/shell-software ]] && source "$HOME/bin/shell-software"
+[[ -f $HOME/.config/bash/shell-software ]] && source "$HOME/.config/bash/shell-software"

@@ -77,10 +77,7 @@ fi
 
 e-inhouse-scripts()
 {
-    # local profile_bin="$HOME/.profile"
-    # [[ -f "$profile_bin" ]] && source "$profile_bin"
-
-    local shell_custom_bin="$HOME/bin/shell-custom";
+    local shell_custom_bin="$HOME/.config/bash/shell-custom";
     [ -f $shell_custom_bin ] && source "$shell_custom_bin"
 }
 
