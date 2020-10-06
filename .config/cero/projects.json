@@ -1,0 +1,56 @@
+{
+    "Dwm": {
+	"Name": "dwm",
+	"Url": "https://github.com/lxbarbosa/dwm",
+	"AdditionalUrls": "",
+	"Tag": "",
+	"Commands": [ "make clean", "make install PREFIX={0}" ]
+    },
+    "Ruby": {
+	"Name": "ruby",
+	"Url": "https://github.com/ruby/ruby",
+	"AdditionalUrls": "",
+	"Tag": "v2_7_1",
+	"Commands": ["autoconf", "sh configure --prefix={0}", "make -j2", "make install" ]
+    },
+    "Emacs": {
+	"Name": "emacs",
+	"Url": "https://git.savannah.gnu.org/git/emacs",
+	"AdditionalUrls": "",
+	"Tag": "emacs-27.1",
+	"Commands": ["make distclean", "sh autogen.sh", "sh configure --prefix={0} --with-modules --with-xwidgets --with-cairo --with-gif=ifavailable --with-jpeg=ifavailable --with-png --with-rsvg --with-tiff=ifavailable --with-xft --with-xpm=ifavailable --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls=ifavailable --with-x-toolkit=gtk3", "make -j2", "make install" ]
+    },
+    "OmnisharpRoslyn": {
+	"Name": "omnisharp-roslyn",
+	"Url": "https://github.com/OmniSharp/omnisharp-roslyn",
+	"AdditionalUrls": "",
+	"Tag": "",
+	"Commands": [ "sh ./build.sh --target Install --archive --all-publish"]
+    },
+    "Roslyn": {
+	"Name": "roslyn",
+	"Url": "https://github.com/dotnet/roslyn",
+	"AdditionalUrls": "",
+	"Tag": "version-3.2.0",
+	"Commands": [ "sh build.sh --restore" ]
+    },
+    "St": {
+	"Name": "st",
+	"Url": "https://github.com/lxbarbosa/st",
+	"AdditionalUrls": "",
+	"Tag": "",
+	"Commands": ["make clean", "rm config.h", "make install PREFIX={0}" ]
+    },
+    "Lua": {
+	"Name": "lua",
+	"Url": "https://github.com/lua/lua",
+	"Tag": "v5.4.0",
+	"Commands": ["make"]
+    },
+    "Luarocks": {
+	"Name": "luarocks",
+	"Url": "https://github.com/luarocks/luarocks/",
+	"Tag": "v3.3.1",
+	"Commands": ["sh configure --prefix={0}", "make -j2","make install" ]
+    }
+}
