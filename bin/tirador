@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Descricao: Tira momento da tela
+now=$(date +"%Y-%m-%d-%T")
+pic="$HOME/Fotografis/$now-tirtela.png"
+
+[[ $(command -v scrot) ]] && scrot $pic
+[[ $(command -v maim) ]] && maim $pic

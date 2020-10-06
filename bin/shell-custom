@@ -1,0 +1,958 @@
+#!/usr/bin/env sh
+
+# * PSEUDO
+
+# directories
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+alias mkdir='mkdir -pv'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# system
+alias _=sudo
+
+# * UTILS
+
+e-foreach()
+{
+    local command="$1"
+    shift 1
+
+    local arguments=("$@")
+
+    for pack in "${arguments[@]}"
+    do
+	echo -e "\n \e[42m $pack \e[0m \n"
+	${command} ${pack}
+    done
+}
+
+#!/usr/bin/env bash
+
+
+# * NIXOS
+# Descricao: Distro Pacotes
+
+e-nixos-packages ()
+{
+    echo "-- NixOS Packages"
+
+    languages=(ruby lua luarocks python3 postgresql sqlite3 zenity bash-completion)
+    languages_nixos=(nixos.shellcheck nixos.lua53Packages.luacheck)
+
+    wm_packages=(network-manager-applet aria2 dunst maim udiskie unclutter lxqt-openssh-askpass mpv libnotify
+		 dmenu imagemagick pandoc xdg-utils lm-sensors aspell mpd mpc ncmpc ncmpcpp wofi rofi ffmpeg
+		 vorbis-tools)
+    wm_packages_nixos=(nixos.xfce.xfce4-clipman-plugin nixos.perl530Packages.FileMimeInfo nixos.screenfetch nixos.aspellDicts.en nixos.aspellDicts.br)
+
+    user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese gimp obs-studio
+		    vlc kate syncthing steam)
+    user_packages_nixos=(nixos.deluge nixos.gnome3.gnome-keyring)
+
+    virtualization=(qemu aqemu qemu-utils virt-manager OVMF)
+    virtualization=(nixos.qemu_kvm)
+
+    wine=(wine winetricks)
+
+    gnu=(gnutls gnused gdb texinfo autoconf parallel findutils stow screen automake)
+    gnu_nixos=(nixos.xsel)
+
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xclip ctags fontconfig
+		  subversion bc htop strace ltrace openssh cpio lhasa lzop atool wmctrl
+		  perf-tools mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv
+		  neovim zsh unrar ripgrep socat fish)
+    system_tools=(nixos.poppler)
+
+    ruby_tools=(ruby)
+
+    laptop=(brightnessctl tlp iw libinput-gestures acpi acpid)
+    laptop_nixos=(nixos.wirelesstools)
+
+    local command='nix-env -i'
+    local command_nixos='nix-env --installi -A'
+
+    e-foreach "$command" "${essentials[@]}"
+    e-foreach "$command" "${wm[@]}"
+    e-foreach "$command" "${languages[@]}"
+    e-foreach "$command" "${devops[@]}"
+    e-foreach "$command" "${wm_packges[@]}"
+    e-foreach "$command" "${user_packages[@]}"
+    e-foreach "$command" "${media[@]}"
+    e-foreach "$command" "${virtualization[@]}"
+    e-foreach "$command" "${wine[@]}"
+    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e-foreach "$command" "${ruby_tools[@]}"
+    e-foreach "$command" "${emacs_deps[@]}"
+    # e-foreach "$command" "${misc_deps[@]}"
+    e-foreach "$command" "${laptop[@]}"
+
+    echo "-- Preparacoes finais: limpando e arrumando o sistema"
+    sudo apt -y autoremove
+
+    echo "Done"
+}
+
+e-nixos-services()
+{
+    echo "systemctl"
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+}
+
+e-nixos-foreign()
+{
+    if [ ! $(command -v google-chrome) ]; then
+	cd ${HOME}
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+	sudo apt install -y ${HOME}/google-chrome-stable_current_amd64.deb
+	sudo apt update
+    fi
+
+    if [ ! $(command -v code) ]; then
+	cd ${HOME}
+	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+	sudo apt-get install apt-transport-https
+	sudo apt-get update
+	sudo apt install -y code
+    fi
+
+    if [ -x "$(command -v pgadmin)" ]; then
+	# Install the public key for the repository (if not done previously):
+	curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+	# Create the repository configuration file:
+	sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+	# Install for both desktop and web modes:
+	sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
+
+	# Configure the webserver, if you installed pgadmin4-web:
+	python -m pip install --user flask
+	sudo /usr/pgadmin4/bin/setup-web.sh
+    fi
+}
+
+e-nixos-upgrade()
+{
+    echo "-- Atualizando Sistema"
+    nix-env --upgrade
+}
+
+e-nixos()
+{
+    e-nixos-packages
+    e-nixos-services
+    e-nixos-foreign
+    e-nixos-upgrade
+}
+
+#!/usr/bin/env bash
+
+# * ARCH LINUX
+
+# Descricao: Distro Pacotes
+# https://www.youtube.com/watch?v=rRmEClfwJ3E
+
+e-arch-upgrade()
+{
+    echo "-- Atualizando Sistema" sudo pacman -Syy && sudo pacman -Syu
+}
+
+e-arch-packages () { echo "-- Debian Packages"
+
+    essentials=(coreutils wget git p7zip zip unzip util-linux alsa-utils networkmanager bash tmux zile konsole)
+
+    wm=(xorg xorg-xinit xdotool xf86-input-synaptics libinput awesome) # dbus xserver-xorg-input-kbd
+
+    languages=(ruby lua luarocks python-pip postgresql sqlite3  postgresql-libs shellcheck zenity bash-completion) #lua-check ruby-dev libsqlite-devel
+
+    devops=(puppet)
+
+    wm_packages=(network-manager-applet aria2 dunst maim  udiskie unclutter openssh-askpass mpv libnotify perl-file-mimeinfo dmenu imagemagick
+		 pandoc xdg-utils screenfetch lm_sensors aspell aspell-en mpd mpc ncmpc ncmpcpp wofi rofi seahorse libx11 xorgproto
+		 brightnessctl tlp acpi)
+
+    user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio
+		   gnome-keyring vlc kate syncthing steam)
+
+    media=(ffmpeg pulseaudio vorbis-tools gst-libav  gst-plugins-bad gst-plugins-base gst-plugins-good  gst-plugins-ugly)
+
+
+    virtualization=(qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf) # qemu-system-x86
+
+    wine=(wine winetricks)
+
+    fonts=(ttf-fira-code gnu-free-fonts ttf-dejavu) # ttf-ancient-fonts fonts-nanum
+
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xsel xclip ctags fontconfig
+		  freetype2 subversion bc htop strace ltrace openssh cpio lhasa lzop atool wmctrl poppler
+		  perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv
+		  parallel findutils wget stow screen neovim zsh parted texinfo gcc gdb make autoconf
+		  automake gnutls gdb nftables firewalld unrar ripgrep socat fish)  # console-data
+
+    ruby_tools=(ruby)
+
+    emacs_deps=(libjansson-dev libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev
+		libpoppler-private-dev ghostscript mupdf-tools
+		poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev
+		texlive-latex-base texlive-fonts-recommended  texlive-latex-extra
+		uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev
+		libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
+		libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync)
+
+    misc_deps=(build-essential libreadline-dev libfixposix-dev gconf2) # luarocks lisp megasyn
+
+    laptop=(iw wireless_tools libinput-gestures acpi acpid) # apmd pbbuttonsd pmud libiw-dev laptop-mode-tools
+
+    local command='sudo pacman -S --noconfirm'
+
+    e-foreach "$command" "${essentials[@]}"
+    e-foreach "$command" "${wm[@]}"
+    e-foreach "$command" "${languages[@]}"
+    e-foreach "$command" "${devops[@]}"
+    e-foreach "$command" "${wm_packges[@]}"
+    e-foreach "$command" "${user_packages[@]}"
+    e-foreach "$command" "${media[@]}"
+    e-foreach "$command" "${virtualization[@]}"
+    e-foreach "$command" "${wine[@]}"
+    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e-foreach "$command" "${ruby_tools[@]}"
+    e-foreach "$command" "${emacs_deps[@]}"
+    # e-foreach "$command" "${misc_deps[@]}"
+    e-foreach "$command" "${laptop[@]}"
+
+    echo "-- Preparacoes finais: limpando e arrumando o sistema"
+    sudo apt -y autoremove
+
+    echo "Done"
+}
+
+e-arch-services()
+{
+    echo "systemctl"
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+}
+
+e-arch-foreign()
+{
+    if [ ! $(command -v google-chrome) ]; then
+	cd ${HOME}
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+	sudo apt install -y ${HOME}/google-chrome-stable_current_amd64.deb
+	sudo apt update
+    fi
+
+    if [ ! $(command -v code) ]; then
+	cd ${HOME}
+	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+	sudo apt-get install apt-transport-https
+	sudo apt-get update
+	sudo apt install -y code
+    fi
+
+    if [ -x "$(command -v pgadmin)" ]; then
+	# Install the public key for the repository (if not done previously):
+	curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+	# Create the repository configuration file:
+	sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+	# Install for both desktop and web modes:
+	sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
+
+	# Configure the webserver, if you installed pgadmin4-web:
+	python -m pip install --user flask
+	sudo /usr/pgadmin4/bin/setup-web.sh
+    fi
+}
+
+e-arch()
+{
+    e-arch-upgrade
+    e-arch-packages
+    e-arch-services
+    # e-arch-foreign
+}
+
+#!/usr/bin/env bash
+
+# * DEBIAN
+
+e-debian-upgrade()
+{
+    echo "-- Atualizando Sistema"
+    sudo apt -y update && sudo apt -y upgrade
+}
+
+e-debian-packages ()
+{
+    echo "-- Debian Packages"
+
+    essentials=(git p7zip p7zip-full zip unzip util-linux alsa-utils network-manager bash tmux konsole zile)
+
+    wm=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
+
+    languages=(shellcheck zenity libpq-dev bash-completion python3-pip postgresql sqlite3 libsqlite3-dev lua5.4 luarocks lua-check) # ruby ruby-dev
+
+    devops=(puppet fzf)
+
+    wm_packages=(network-manager-gnome aria2 dunst maim  udiskie unclutter ssh-askpass-gnome mpv libnotify-bin libfile-mimeinfo-perl dmenu imagemagick pandoc xdg-utils screenfetch lm-sensors aspell aspell-pt-br cmus wofi rofi seahorse x11proto-dev brightnessctl tlp acpi-call)
+
+    user_packages=(emacs firefox libreoffice kdeconnect mate-power-manager thunderbird calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing steam)
+
+    media=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+
+    virtualization=(qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf) # qemu-system-x86
+
+    wine=(wine winetricks wine32)
+
+    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
+
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish)
+
+    ruby_tools=(libssl-dev libgdbm-dev)
+
+    emacs_deps=(libjansson-dev libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev ibpoppler-private-dev ghostscript mupdf-tools poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev texlive-latex-base texlive-fonts-recommended  texlive-latex-extra uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync)
+
+    misc_deps=(build-essential libreadline-dev libfixposix-dev gconf2) # luarocks lisp megasyn
+
+    security=(gnutls-bin)
+
+    laptop=(iw wireless-tools libiw-dev laptop-mode-tools i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid) # apmd pbbuttonsd pmud
+
+    debian_internals=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
+
+    # * RUNNING
+
+    local command='sudo apt install -y'
+
+    echo "-- Habilita Multi-Arch"
+    sudo dpkg --add-architecture i386
+
+    sudo apt update
+
+    echo "Instalando pacotes."
+
+    e-foreach "$command" "${essentials[@]}"
+    e-foreach "$command" "${wm[@]}"
+    e-foreach "$command" "${languages[@]}"
+    e-foreach "$command" "${devops[@]}"
+    e-foreach "$command" "${system_tools[@]}"
+    e-foreach "$command" "${wm_packages[@]}"
+    e-foreach "$command" "${user_packages[@]}"
+    e-foreach "$command" "${media[@]}"
+    e-foreach "$command" "${virtualization[@]}"
+    e-foreach "$command" "${wine[@]}"
+    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e-foreach "$command" "${ruby_tools[@]}"
+    e-foreach "$command" "${emacs_deps[@]}"; sudo apt -y build-dep emacs
+    e-foreach "$command" "${misc_deps[@]}"
+    e-foreach "$command" "${security[@]}"
+    e-foreach "$command" "${laptop[@]}"
+    e-foreach "$command" "${debian_internals[@]}"; sudo apt-file update # update Debian database
+
+    echo "-- Preparacoes finais: limpando e arrumando o sistema"
+    sudo apt -y autoremove
+
+    echo "Done"
+}
+
+e-debian-services()
+{
+    echo "systemctl"
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+}
+
+e-debian-foreign()
+{
+    if [ ! $(command -v google-chrome) ]; then
+	cd ${HOME}
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+	sudo apt install -y ${HOME}/google-chrome-stable_current_amd64.deb
+	sudo apt update
+    fi
+
+    if [ ! $(command -v code) ]; then
+	cd ${HOME}
+	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+	sudo apt-get install apt-transport-https
+	sudo apt-get update
+	sudo apt install -y code
+    fi
+
+    if [ -x "$(command -v pgadmin)" ]; then
+	# Install the public key for the repository (if not done previously):
+	curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+	# Create the repository configuration file:
+	sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+	# Install for both desktop and web modes:
+	sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
+
+	# Configure the webserver, if you installed pgadmin4-web:
+	python -m pip install --user flask
+	sudo /usr/pgadmin4/bin/setup-web.sh
+    fi
+}
+
+e-debian()
+{
+    e-debian-upgrade
+    e-debian-packages
+    e-debian-services
+    e-debian-foreign
+}
+
+#!/usr/bin/env bash
+
+# * FEDORA
+
+e-fedora ()
+{
+    echo  "-- Fedora - Installing System Packages"
+
+    echo "-- Updating System"
+    sudo dnf upgrade
+
+    echo "-- Essential System packages"
+    sudo dnf install -y git p7zip p7zip-plugins zip unzip util-linux  \
+	 alsa-utils NetworkManager bash tmux zile konsole
+
+    echo  "-- Programming Languages"
+    sudo dnf install -y ruby ruby-devel npm nodejs python3-devel lua luarocks \
+	  ShellCheck zenity bash-completion clang clang-tools-extra lldb cmake automake m4 \
+	  libtool make # mysql automake python3-pip
+
+    echo  "-- Windows Managers Base"
+    sudo dnf install -y xorg-x11-server-Xorg xorg-x11-server-common \
+	 xorg-x11-xinit xorg-x11-drv-intel xorg-x11-drv-synaptics \
+	 xorg-x11-drv-synaptics-legacy dbus-x11 xorg-x11-drv-intel awesome
+
+    echo  "-- Windows Managers Software"
+    sudo dnf install -y dunst maim slock xdotool udiskie network-manager-applet \
+	 lxpolkit xdg-utils dmenu feh xbacklight xautolock openssh-askpass \
+	  xprop screenfetch
+    #  screenkey gconf
+
+    echo  "-- Desktop Environments Software"
+    sudo dnf install -y firefox aria2 cheese kde-connect ImageMagick \
+	 pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo \
+	 powerline-fonts thunderbird aspell aspell-en lm_sensors syncthing
+
+    echo  "-- Codecs"
+    sudo dnf install -y pulseaudio pulseaudio-utils vorbis-tools gstreamer1-devel \
+	 gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel \
+	 gstreamer1-plugins-good gstreamer1-plugins-good-extras \
+	 gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras \
+	 gstreamer1-plugins-bad-free # gstreamer1-devel-docs gstreamer1-plugins-base-devel-docs
+
+    echo  "-- Emulators & Virtualization"
+    sudo dnf install -y qemu qemu-system-x86 qemu-kvm virt-manager edk2-ovmf \
+	 virt-manager wine
+
+    echo  "-- System Toolings"
+    sudo dnf install -y lshw at usbutils lsof time net-tools iproute curl \
+	 entr ntfs-3g tree git xsel xclip ctags fontconfig freetype subversion \
+	 bc htop strace ltrace openssh cpio lzop atool wmctrl poppler-utils \
+	 perf mercurial sysstat jq dialog ncdu ripgrep nnn fzf rsync bat \
+	 rclone xonsh tmux zsh fish pv emacs zile info wget stow screen gimp \
+	 gcc gcc-c++ gdb make guile22 make autoconf texinfo firewall-config neovim
+    # console-data xdg-utils lhasa fzy guile-lib brz
+
+    echo "-- Fontes"
+    sudo dnf install -y google-noto-emoji-fonts google-noto-sans-fonts google-droid-sans-mono-fonts
+    # ttf-ancient-fonts dejavu-fonts-common
+
+    # STOPED HERE
+    echo  "-- Dependecies"
+    sudo dnf builddep emacs
+
+    echo 'Laptop tool & Wifi'
+    sudo dnf install -y iw wireless-tools libva-utils acpi brightnessctl
+
+    echo  "-- Final preparations: clean & tidy up system"
+    sudo dnf autoremove
+
+    # RPM FUSION
+    if [ ! -x "$(command -v mpv)" ]; then
+	sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+	sudo dnf install mpv mpd ffmpeg mpc ncmpc ncmpcpp steam
+    fi
+
+    if [ ! -x "$(command -v code)" ]; then
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+	sudo dnf check-update
+	sudo dnf install code
+    fi
+
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+
+    echo  "-- DONE"
+}
+
+e-ubuntu ()
+{
+    echo "-- Updating System"
+
+    sudo apt -y update && sudo apt -y upgrade
+
+    echo "-- Essential System packages"
+    sudo apt install -y git p7zip p7zip-full zip unzip util-linux alsa-utils \
+	 network-manager zile neovim bash tmux stterm
+
+    echo "-- Programming Languages"
+    sudo apt install -y ruby ruby-dev lua5.4 luarocks lua-check \
+	 nodejs npm python3-pip python3-venv shellcheck zenity bash-completion \
+    m4 libtool libtool-bin make default-jdk clang clangd lldb cmake
+
+    echo "-- Windows Manager Software"
+    sudo apt install -y xorg x11-apps xinit xdotool dbus-x11 \
+	 xserver-xorg-input-synaptics xserver-xorg-input-libinput \
+	 xserver-xorg-input-kbd awesome
+
+    echo "-- Desktop Software"
+    sudo apt install -y firefox syncthing libreoffice calibre inkscape kdenlive \
+	 cheese deluge thunderbird obs-studio gnome-keyring vlc kate
+
+    echo ' -- Codecs'
+    sudo apt install -y ffmpeg pulseaudio pulseaudio-utils vorbis-tools \
+	 gstreamer1.0-plugins-bad gstreamer1.0-plugins-base \
+	 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
+
+    echo "-- Windows Manager Software"
+    sudo apt install -y network-manager-gnome rofi aria2 socat dunst \
+	 ssh-askpass-gnome udiskie unclutter scrot libnotify-bin \
+	 seahorse gconf2 ranger w3m highlight odt2txt lynx mediainfo xautolock \
+	 caca-utils x11proto-dev libfile-mimeinfo-perl dmenu \
+	 imagemagick pandoc xdg-utils screenfetch lm-sensors aspell \
+	 mpd mpc ncmpc ncmpcpp mpv screenkey brightnessctl tlp acpi-call
+
+    echo "-- Emulators & Virtualization"
+    sudo apt install -y qemu qemu-system-x86 qemu-system-gui qemu-utils \
+	 qemu-efi qemu-kvm virt-manager ovmf libvirt-clients \
+	 libvirt-daemon-system libvirt-dev libvirt0 virt-manager wine winetricks
+    sudo apt install -y wine32
+
+   echo "-- System Tools"
+    sudo apt install -y lshw at usbutils lsof time net-tools iproute2 curl \
+	 console-data entr tree git xsel xclip exuberant-ctags fontconfig \
+	 libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa \
+	 lzop atool wmctrl poppler-utils linux-tools-common \
+	 linux-tools-generic brz mercurial sysstat jq dialog ncdu nnn \
+	 fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow \
+	 screen gimp bash parted fonts-freefont-ttf texinfo gcc gdb guile-2.2 \
+	 guile-g-wrap guile-library make build-essential autoconf automake \
+	 gnutls-bin bash-doc guile-2.2-doc gcc-doc gdb-doc gdbserver \
+	 wget2 parallel emacs nftables firewalld firewall-config firewall-applet
+    #  ripgrep
+
+    echo "-- Software"
+    sudo apt install -y fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum
+
+    echo "-- Software Dependencies"
+    #emacs
+    sudo apt build-dep -y emacs
+    sudo apt install -y libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev \
+	 libpoppler-private-dev ghostscript mupdf-tools \
+	 poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev \
+	 texlive-latex-base texlive-fonts-recommended  texlive-latex-extra \
+	 uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev \
+	 libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config \
+	 libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
+    # Lisp
+    sudo apt install -y libfixposix-dev
+
+    echo "-- Laptops Tools"
+    sudo apt install -y libiw-dev
+
+    echo "-- Disabling & Removing unnecessary defaults setttings/packages"
+    # no graphical display
+    sudo systemctl set-default multi-user.target
+
+    echo "-- Final preparations: clean & tidy up system"
+    sudo apt -y autoremove
+
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+
+    if [ ! -x "$(command -v code)" ]; then
+	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+	sudo apt install -y code
+    fi
+
+    echo "Done"
+}
+
+#!/usr/bin/env bash
+
+# * UBUNTU
+
+e-ubuntu ()
+{
+    echo "-- Updating System"
+
+    sudo apt -y update && sudo apt -y upgrade
+
+    echo "-- Essential System packages"
+    sudo apt install -y git p7zip p7zip-full zip unzip util-linux alsa-utils \
+	 network-manager zile neovim bash tmux konsole
+
+    echo "-- Programming Languages"
+    sudo apt install -y ruby ruby-dev lua5.4 luarocks lua-check \
+	 nodejs npm python3-pip python3-venv shellcheck zenity bash-completion \
+    m4 libtool libtool-bin make default-jdk clang clangd lldb cmake
+
+    echo "-- Windows Manager Software"
+    sudo apt install -y xorg x11-apps xinit xdotool dbus-x11 \
+	 xserver-xorg-input-synaptics xserver-xorg-input-libinput \
+	 xserver-xorg-input-kbd awesome
+
+    echo "-- Desktop Software"
+    sudo apt install -y firefox syncthing libreoffice calibre inkscape kdenlive \
+	 cheese deluge thunderbird obs-studio gnome-keyring vlc kate
+
+    echo ' -- Codecs'
+    sudo apt install -y ffmpeg pulseaudio pulseaudio-utils vorbis-tools \
+	 gstreamer1.0-plugins-bad gstreamer1.0-plugins-base \
+	 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
+
+    echo "-- Windows Manager Software"
+    sudo apt install -y network-manager-gnome rofi aria2 socat dunst \
+	 ssh-askpass-gnome udiskie unclutter scrot libnotify-bin \
+	 seahorse gconf2 ranger w3m highlight odt2txt lynx mediainfo xautolock \
+	 caca-utils x11proto-dev libfile-mimeinfo-perl dmenu \
+	 imagemagick pandoc xdg-utils screenfetch lm-sensors aspell \
+	 mpd mpc ncmpc ncmpcpp mpv screenkey brightnessctl tlp acpi-call
+
+    echo "-- Emulators & Virtualization"
+    sudo apt install -y qemu qemu-system-x86 qemu-system-gui qemu-utils \
+	 qemu-efi qemu-kvm virt-manager ovmf libvirt-clients \
+	 libvirt-daemon-system libvirt-dev libvirt0 virt-manager wine winetricks
+    sudo apt install -y wine32
+
+   echo "-- System Tools"
+    sudo apt install -y lshw at usbutils lsof time net-tools iproute2 curl \
+	 console-data entr tree git xsel xclip exuberant-ctags fontconfig \
+	 libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa \
+	 lzop atool wmctrl poppler-utils linux-tools-common \
+	 linux-tools-generic brz mercurial sysstat jq dialog ncdu nnn \
+	 fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow \
+	 screen gimp bash parted fonts-freefont-ttf texinfo gcc gdb guile-2.2 \
+	 guile-g-wrap guile-library make build-essential autoconf automake \
+	 gnutls-bin bash-doc guile-2.2-doc gcc-doc gdb-doc gdbserver \
+	 wget2 parallel emacs nftables firewalld firewall-config firewall-applet
+    #  ripgrep
+
+    echo "-- Software"
+    sudo apt install -y fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum
+
+    echo "-- Software Dependencies"
+    #emacs
+    sudo apt build-dep -y emacs
+    sudo apt install -y libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev \
+	 libpoppler-private-dev ghostscript mupdf-tools \
+	 poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev \
+	 texlive-latex-base texlive-fonts-recommended  texlive-latex-extra \
+	 uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev \
+	 libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config \
+	 libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
+    # Lisp
+    sudo apt install -y libfixposix-dev
+
+    echo "-- Laptops Tools"
+    sudo apt install -y libiw-dev
+
+    echo "-- Disabling & Removing unnecessary defaults setttings/packages"
+    # no graphical display
+    sudo systemctl set-default multi-user.target
+
+    echo "-- Final preparations: clean & tidy up system"
+    sudo apt -y autoremove
+
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+
+    if [ ! -x "$(command -v code)" ]; then
+	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+	sudo apt install -y code
+    fi
+
+    echo "Done"
+}
+
+#!/usr/bin/env bash
+
+# =============== FUNCOES
+
+PESSOAL=/dados/Pessoal
+
+e-binarios()
+{
+    cd $BIN
+
+    local binaries=("https://dystroy.org/broot/download/x86_64-linux/broot"
+		    "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
+		    "https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt")
+
+    for bin in "${binaries[@]}"; do
+
+	[[ ! $(command -v ${bin}) ]] && wget -c ${bin}
+    done
+}
+
+e-ssh()
+{
+    # Note: generate ssh key anew with: $ ssh-keygen -p
+
+    [ -e "$HOME/.ssh/id_rsa.pub" ] && exit 0 # ssh key exist!
+
+    echo " -- Generating a new SSH key"
+
+    ssh-keygen  -t rsa -b 4096 -C "${USER}@outlook.com"
+
+    echo " -- Press Enter"
+    eval "$(ssh-agent -s)"
+    ssh-add "$HOME/.ssh/id_rsa"
+
+    echo "DONE"
+}
+
+e-dotfile ()
+{
+    emacs --batch -l org "$PESSOAL/documentos/dotfiles.org" -f org-babel-tangle
+}
+
+e-iso()
+{
+    sudo dd bs=4M if="$1" of="$2" status=progress oflag=sync
+}
+
+#!/usr/bin/env bash
+
+# * COLECOES
+
+e-distro()
+{
+    [[ $(command -v apt) ]] && e-debian
+    [[ $(command -v dnf) ]] && e-fedora
+}
+
+e-prepara()
+{
+    [[ ! -x ${HOME}/.ssh/id_rsa.pub ]] && e-ssh
+
+    e-binarios
+
+    # Package version manager
+    e-rbenv
+    e-nvm
+}
+
+e-atualiza()
+{
+    e-gem
+    e-pip
+    e-vscode
+    e-npm
+
+    [[ $(command -v apt) ]] && (sudo apt update && sudo apt upgrade)
+}
+
+#!/usr/bin/env bash
+
+# * PACOTES
+
+# Descricao:  Pacotes de Linguagens
+# Depdencias: Git, coreutils,
+# Shells: Bash, Zsh
+
+e-asdf()
+{
+    local asdf_dir="$HOME/.config/asdf"
+
+    if [[ ! -d $asdf_dir ]]; then
+	git clone https://github.com/asdf-vm/asdf.git "$asdf_dir"
+
+	cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
+    fi
+
+    [[ -d $asdf_dir ]] && asdf update
+}
+
+e-rbenv()
+{
+    export RBENV_DIR="$HOME/.rbenv"
+    export RUBY_BUILD_DIR="$RBENV_DIR/plugins/ruby-build"
+    export RUBY_SHIMS_DIR="$RBENV_DIR/shims"
+
+    local rbenv_binary="$HOME/.rbenv/bin/rbenv"
+
+    PATH="$RUBY_SHIMS_DIR"${PATH:+:}$PATH
+
+    [[ ! -x "$RBENV_DIR/bin" ]] && git clone https://github.com/rbenv/rbenv.git "$RBENV_DIR"
+
+    # Set up rbenv in your shell.
+    $rbenv_binary init
+
+    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+    [[ ! -x "$RUBY_BUILD_DIR" ]] && git clone https://github.com/rbenv/ruby-build "$RUBY_BUILD_DIR"
+    [[ ! -x "$RUBY_BUILD_DIR" ]] && git -C "$RUBY_BUILD_DIR" pull
+
+    # compile dynamic bash extension
+    cd "$RBENV_DIR" && src/configure && make -C src
+
+    local version=2.7.2
+    $rbenv_binary install $version
+    $rbenv_binary global $version && rbenv rehash
+}
+
+e-rvm()
+{
+    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+    curl -sSL https://get.rvm.io | bash -s stable
+
+    source "$HOME/.rvm/scripts/rvm"
+
+    rvm get stable
+}
+
+e-nvm()
+{
+    local nvm_dir="$HOME/.config/nvm"
+
+    if [[ ! -d ${nvm_dir} ]]; then
+	git clone https://github.com/nvm-sh/nvm.git ${nvm_dir}
+    else
+	cd ${nvm_dir} && git pull
+    fi
+
+    source ${nvm_dir}/nvm.sh
+
+    nvm install node
+}
+
+e-gem()
+{
+    local packages=(bundler solargraph rubocop pry reek clipboard rspec)
+
+    for pack in "${packages[@]}"
+    do
+	[[ $(command -v nixos-version) ]] && nix-shell -p gcc zlib --run '"gem install ${pack}"'
+
+	gem install "${pack}"
+	gem update  "${pack}"
+    done
+}
+
+e-flatpak()
+{
+    local packages=(com.spotify.Client com.valvesoftware.Steam com.visualstudio.code com.skype.Client)
+
+    for pack in "${packages[@]}"
+    do
+	flatpak install flathub "${pack}"
+    done
+}
+
+e-npm()
+{
+    local packages=(npm eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic yarn babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+
+    # install
+    for pack in "${packages[@]}"
+    do
+	npm i -g "$pack"
+    done
+}
+
+e-pip()
+{
+    local packages=(pip wheel setuptools blackyoutube-dl python-language-server
+		    pyls-black pyls-isort pyls-mypy jedi==0.17.0 ipython pylama
+		    pyflakes flake8-import-order pydocstyle flake8 mccabe yapf
+		    pylint rope pytest pep8-naming mutagen)
+
+    # install
+    for pack in "${packages[@]}"
+    do
+	python3 -m pip install --upgrade "${pack}" --user
+    done
+}
+
+e-vscode()
+{
+    local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek alefragnani.Bookmarks alefragnani.project-manager
+		    CoenraadS.bracket-pair-colorizer-2 dbaeumer.vscode-eslint donjayamanne.githistory
+		    felipecaputo.git-project-manager HookyQR.beautify mads-hartmann.bash-ide-vscode
+		    MS-CEINTL.vscode-language-pack-pt-BR eamodio.gitlens njpwerner.autodocstring
+		    bmalehorn.vscode-fish davidanson.vscode-markdownlint josef.rouge-theme tuttieee.emacs-mcx
+		    esbenp.prettier-vscode visualstudioexptteam.vscodeintellicode msjsdiag.debugger-for-chrome
+		    formulahendry.dotnet-test-explorer jmrog.vscode-nuget-package-manager redhat.vscode-yaml
+		    firefox-devtools.vscode-firefox-debug ms-vscode-remote.remote-ssh ms-vscode-remote.remote-wsl
+		    ms-mssql.mssql ms-azuretools.vscode-docker ms-vscode.powershell ms-dotnettools.csharp)
+
+    # iunstall
+    for pack in "${packages[@]}"
+    do
+	code --install-extension "${pack}" --force
+    done
+}
+
+e-foreign-update()
+{
+    e-asdf
+
+    e-rbenv
+    e-npm
+    e-pip
+
+    e-vscode
+}
+
+#!/usr/bin/env bash
+
+# =============== UTILIDADES
+
+e-run() {
+    number=${1}
+
+    shift
+
+    for i in `seq $number`; do
+      ${@}
+    done
+}

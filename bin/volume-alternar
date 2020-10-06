@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+[[ -x $(command -v pactl) ]] && pactl set-sink-mute 0 toggle

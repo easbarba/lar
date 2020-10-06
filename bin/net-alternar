@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+STATUS=$(nmcli networking)
+
+[[ ${STATUS} == "disabled" ]] && nmcli networking on &
+[[ ${STATUS} == "enabled" ]] && nmcli networking off &

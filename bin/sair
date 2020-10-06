@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+[[ -x $(command -v loginctl) ]] && loginctl terminate-user ${USER}

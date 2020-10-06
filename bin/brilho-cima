@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+STEP=5
+brightnessctl set "$STEP"%+

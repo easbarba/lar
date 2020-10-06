@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+[[ -x $(command -v slock) ]] && slock
+[[ -x $(command -v i3lock) ]] && i3lock
+[[ -x $(command -v xlock) ]] && xlock

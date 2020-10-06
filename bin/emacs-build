@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+BUILDS="$HOME/Builds"
+PREFIX="$HOME/.local"
+TAG=emacs-27.1
+
+clone()
+{
+    [[ -x $(command -v git) ]] && git clone "https://git.savannah.gnu.org/git/emacs" "$BUILDS/emacs"
+}
+
+[[ ! -d "${BUILDS}/emacs" ]] && clone
+
+cd "${BUILDS}/emacs" || return
+
+[[ -d "${BUILDS}/emacs/.git" ]] && git pull
+
+# git checkout ${TAG}
+
+install()
+{
+    make distclean
+
+    sh autogen.sh
+
+    sh configure --prefix="$PREFIX" --with-modules --with-xwidgets --with-gif --with-jpeg --with-png --with-rsvg --with-tiff --with-xft --with-xpm --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls --with-x-toolkit=gtk3
+
+    make -j2
+
+    make install
+}
+
+install

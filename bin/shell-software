@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+s-rbenv()
+{
+    local rbenv_dir="$HOME/.rbenv"
+    [[ ! -d "$rbenv_dir/bin" ]] && return
+
+    local rbenv_shims="$rbenv_dir/shims"
+    local rbenv_bin="$rbenv_dir/bin"
+
+    PATH="$rbenv_bin"${PATH:+:}$PATH
+    PATH="$rbenv_shims"${PATH:+:}$PATH
+}
+
+s-gem()
+{
+    local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
+    [[ ! -d $gem_bin ]] && return
+
+    export PATH="$gem_bin"${PATH:+:}$PATH
+}
+
+s-nvm()
+{
+    local nvm_dir="$HOME/.config/nvm"
+    [[ -d $nvm_dir ]] && return
+
+    [ -s "$nvm_dir/nvm.sh" ] && source "$nvm_dir/nvm.sh"  # Loads NVM
+    [ -s "$nvm_dir/bash_completion" ] && source "$nvm_dir/bash_completion"  # Loads NVM Bash Completion
+
+    local nvm_bin="$(nvm_version_dir)/$(nvm_version)/bin"
+    export PATH="$nvm_bin"${PATH:+:}$PATH
+}
+
+s-luarocks()
+{
+    [[ -x $(command -v luarocks) ]] && return
+
+    export PATH="${HOME}/.luarocks/bin"${PATH}
+}
+
+s-cask()
+{
+    local caskdir="${HOME}/.cask/bin"
+    [[ -d ${caskdir} ]] && return
+
+    export PATH="$caskdir"${PATH}
+}
+
+s-startx()
+{
+    if [ -z "${DISPLAY}" ] && [ -n "${XDG_VTNR}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	exec startx
+    fi
+}
+
+# * RUN
+
+s-rbenv
+s-gem
+s-nvm
+s-luarocks
+s-cask
+s-startx

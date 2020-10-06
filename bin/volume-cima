@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+STEP=5
+[[ -x $(command -v pactl) ]] && pactl set-sink-volume 0 +"$STEP"%
