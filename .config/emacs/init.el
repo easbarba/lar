@@ -3,13 +3,6 @@
 ;;; Descricao: GNU Emacs configuracoes
 
 ;; * CONFIGURACOES INICIAS
-
-;; ** UI minimo
-(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(when (fboundp 'horizontal-scroll-bar-mode) (horizontal-scroll-bar-mode -1))
-
 ;; ** GC
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
@@ -35,8 +28,7 @@
 
 
 ;; Louvado seja o sol
-(when (< emacs-major-version 27)
-  (package-initialize))
+(package-initialize)
 
 ;; ** custom arquivo
 (setq custom-file (concat user-emacs-directory "custom.el"))
@@ -185,7 +177,7 @@
 
 ;; ====================
 ;; * MODELINE
-;; ====================
+
 (defun simple-mode-line-render (left right)
   "Modeline separator generator by LEFT and RIGHT wings."
   (let* ((available-width (- (window-width) (length left) 2)))
@@ -267,6 +259,7 @@
     outshine-mode
     Info-mode
     symbol-overlay
+    ivy-mode
     autodoc-mode
     company-box-mode
     persp-mode
@@ -284,7 +277,7 @@
 	(setcar h "")))))
 
 (add-hook 'after-change-major-mode-hook 'purge-minor-modes)
-
+;; * PACOTES INTERNOS
 ;; ** IDO
   (require 'ido)
   (setq ido-everywhere t)
@@ -1185,8 +1178,6 @@ Requires an installation of ImageMagick (\"convert\")."
 
 ;; ====================
 ;; * MODOS LINGUAGENS
-;; ====================
-
 ;; ** Ruby
 (add-hook 'ruby-mode-hook
 	  '(lambda ()
@@ -1228,7 +1219,6 @@ Requires an installation of ImageMagick (\"convert\")."
 
 ;; ============================
 ;; * VARIAVEIS GLOBAIS
-;; ============================
 
 (defconst *site-lisp* (concat user-emacs-directory "site-lisp")
   "Emacs site-lisp folder.")
@@ -1275,7 +1265,6 @@ Requires an installation of ImageMagick (\"convert\")."
 
 ;; ===============
 ;; * SYSTEM SOFTWARE
-;; ===============
 
 (defun e/return-exec (apps)
   "Return first executable in APPS found."
@@ -1308,7 +1297,6 @@ Requires an installation of ImageMagick (\"convert\")."
   :type 'boolean)
 
 ;; ** PACOTES DE SISTEMAS INTERFACE
-
 ;; *** YOUTUBE-DL
 (defun e/get-video (url)
   "Download Video w/ URL - GPL-3.0."
@@ -1658,7 +1646,7 @@ Saves to a temp file and puts the filename in the kill ring."
     t))
 
 ;;; ------------------------------------------------------------
-;;; * Pacotes externos
+;;; * PACOTES EXTERNOS
 
 (defcustom e/packages (quote
  (eglot jetbrains-darcula-theme nixpkgs-fmt nixos-options nix-mode counsel selectrum-prescient yari yard-mode bundler ruby-compilation company-inf-ruby shackle rspec-mode rubocopfmt ruby-tools rufo robe rubocop ruby-test-mode chruby rbenv rvm git-link buffer-expose org-make-toc lua-mode lsp-ui org-journal darkroom slime-company highlight-symbol bufler magit emms doom-themes 0blayout hgignore-mode basic-ide typescript-mode editorconfig yaml-mode company-box vterm ox-epub outline-toc helm deadgrep fish-completion org-present emmet-mode helpful highlight-indent-guides company-shell outshine json-mode fish-mode gnu-elpa-keyring-update indent-guide hl-todo rainbow-mode dap-mode flymake-json gitignore-mode gitattributes-mode wgrep writeroom-mode dired-sidebar dired-ranger peep-dired all-the-icons-dired ido-at-point ido-hacks flx-ido beacon which-key expand-region fill-column-indicator rainbow-delimiters erc-hl-nicks erc-image elfeed org-bullets gif-screencast goto-chg yasnippet-snippets htmlize markdown-toc company-statistics company-quickhelp aggressive-indent pdf-tools eshell-prompt-extras esh-autosuggest esh-help anzu google-translate bug-hunter dired-collapse dired-git-info langtool smartparens olivetti nov doom-modeline imgbb webpaste flymake-shellcheck flymake-diagnostic-at-point crux paradox eyebrowse ido-completing-read+ grip-mode iedit multiple-cursors diff-hl zoom define-word luarocks languagetool ansi package-build shut-up epl git commander f dash s cask dockerfile-mode frog-jump-buffer isolate litable eshell-toggle eshell-syntax-highlighting eshell-did-you-mean rake prettier-js binder csharp-mode rust-mode php-mode use-package))
@@ -1677,7 +1665,10 @@ Saves to a temp file and puts the filename in the kill ring."
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
-  (package-install 'use-package))
+  (e/install-external-packages '(use-package s f dash)))
+
+(unless (require 'magit nil :noerror)
+  (e/install-external-packages e/packages))
 
 (when (require 'use-package nil :noerror)
   (require 'use-package)
@@ -1695,7 +1686,8 @@ Saves to a temp file and puts the filename in the kill ring."
 ;;(defun choose-formatter
     ;;(let ((formatter (get major-mode (buffer-expose-mode))))))
 
-;; * REPOSITORIES PACKAGES - DIRED EXTRA
+;; * REPOSITORIES PACKAGES
+;; ** REPOSITORIES PACKAGES - DIRED EXTRA
 
 (use-package async
   :after dired
@@ -1729,7 +1721,7 @@ Saves to a temp file and puts the filename in the kill ring."
   :after dired
   :hook (dired-subtree . dired-mode))
 
-;; * REPOSITORIES PACKAGES - COMPLETION EXTRA
+;; ** REPOSITORIES PACKAGES - COMPLETION EXTRA
 
 (use-package ivy
   :defer 1
@@ -2065,9 +2057,7 @@ Saves to a temp file and puts the filename in the kill ring."
    (setq visual-fill-column-center-text t)
    (add-hook 'ereader-mode-hook 'visual-line-mode))
 
-;; * REPOSITORIES PACKAGES - LANGUAGES
-
-;; *** PROGRAMMING LANGUAGES
+;; ** REPOSITORIES PACKAGES - LANGUAGES
 
 (use-package robe
   :disabled
