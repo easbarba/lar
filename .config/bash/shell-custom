@@ -35,7 +35,7 @@ e-foreach()
     done
 }
 
-#!/usr/bin/env bash
+
 
 
 # * NIXOS
@@ -158,7 +158,7 @@ e-nixos()
     e-nixos-upgrade
 }
 
-#!/usr/bin/env bash
+
 
 # * ARCH LINUX
 
@@ -291,7 +291,7 @@ e-arch()
     # e-arch-foreign
 }
 
-#!/usr/bin/env bash
+
 
 # * DEBIAN
 
@@ -426,7 +426,7 @@ e-debian()
     e-debian-foreign
 }
 
-#!/usr/bin/env bash
+
 
 # * FEDORA
 
@@ -518,201 +518,81 @@ e-fedora ()
     echo  "-- DONE"
 }
 
-e-ubuntu ()
+e-ubuntu-foreign()
+{
+    echo "a"
+}
+
+e-ubuntu-packages()
+{
+    essentials=(git p7zip p7zip-full zip unzip util-linux alsa-utils network-manager zile neovim bash tmux stterm)
+
+    languages=(ruby-full lua5.4 luarocks lua-check python3-pip python3-venv shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake)
+
+    xorg=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
+
+    de_packages=(firefox syncthing libreoffice calibre inkscape kdenlive cheese deluge thunderbird obs-studio gnome-keyring vlc kate)
+
+    codecs=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+
+    wm_packages=(network-manager-gnome rofi aria2 socat dunst ssh-askpass-gnome udiskie unclutter scrot libnotify-bin seahorse gconf2 ranger w3m highlight odt2txt lynx mediainfo xautolock caca-utils x11proto-dev libfile-mimeinfo-perl dmenu imagemagick pandoc xdg-utils screenfetch lm-sensors aspell mpd mpc ncmpc ncmpcpp mpv screenkey brightnessctl tlp acpi-call)
+
+    virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager )
+
+    wine=(wine wine32 winetricks)
+
+    toolings=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-tools-common linux-tools-generic brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow screen gimp bash parted fonts-freefont-ttf texinfo gcc gdb guile-2.2 guile-g-wrap guile-library make build-essential autoconf automake gnutls-bin bash-doc guile-2.2-doc gcc-doc gdb-doc gdbserver wget2 parallel emacs nftables firewalld firewall-config firewall-applet) #  ripgrep
+
+    fonts=(fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum)
+
+    ruby=(autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev) # gcc
+
+    laptop=(libiw-dev)
+
+    sudo apt update
+
+    echo "Instalando pacotes."
+    local command='sudo apt install -y'
+
+    e-foreach "$command" "${essentials[@]}"
+    e-foreach "$command" "${languages[@]}"
+    e-foreach "$command" "${xorg[@]}"
+    e-foreach "$command" "${de_packages[@]}"
+    e-foreach "$command" "${wm_packages[@]}"
+    e-foreach "$command" "${codecs[@]}"
+    e-foreach "$command" "${virtualization[@]}"
+    e-foreach "$command" "${wine[@]}"
+    e-foreach "$command" "${toolings[@]}"
+    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e-foreach "$command" "${ruby[@]}"
+    e-foreach "$command" "${laptop[@]}"
+}
+
+e-ubuntu-upgrade()
 {
     echo "-- Updating System"
-
     sudo apt -y update && sudo apt -y upgrade
 
-    echo "-- Essential System packages"
-    sudo apt install -y git p7zip p7zip-full zip unzip util-linux alsa-utils \
-	 network-manager zile neovim bash tmux stterm
+    sudo apt -y autoremove
+}
 
-    echo "-- Programming Languages"
-    sudo apt install -y ruby ruby-dev lua5.4 luarocks lua-check \
-	 nodejs npm python3-pip python3-venv shellcheck zenity bash-completion \
-    m4 libtool libtool-bin make default-jdk clang clangd lldb cmake
-
-    echo "-- Windows Manager Software"
-    sudo apt install -y xorg x11-apps xinit xdotool dbus-x11 \
-	 xserver-xorg-input-synaptics xserver-xorg-input-libinput \
-	 xserver-xorg-input-kbd awesome
-
-    echo "-- Desktop Software"
-    sudo apt install -y firefox syncthing libreoffice calibre inkscape kdenlive \
-	 cheese deluge thunderbird obs-studio gnome-keyring vlc kate
-
-    echo ' -- Codecs'
-    sudo apt install -y ffmpeg pulseaudio pulseaudio-utils vorbis-tools \
-	 gstreamer1.0-plugins-bad gstreamer1.0-plugins-base \
-	 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
-
-    echo "-- Windows Manager Software"
-    sudo apt install -y network-manager-gnome rofi aria2 socat dunst \
-	 ssh-askpass-gnome udiskie unclutter scrot libnotify-bin \
-	 seahorse gconf2 ranger w3m highlight odt2txt lynx mediainfo xautolock \
-	 caca-utils x11proto-dev libfile-mimeinfo-perl dmenu \
-	 imagemagick pandoc xdg-utils screenfetch lm-sensors aspell \
-	 mpd mpc ncmpc ncmpcpp mpv screenkey brightnessctl tlp acpi-call
-
-    echo "-- Emulators & Virtualization"
-    sudo apt install -y qemu qemu-system-x86 qemu-system-gui qemu-utils \
-	 qemu-efi qemu-kvm virt-manager ovmf libvirt-clients \
-	 libvirt-daemon-system libvirt-dev libvirt0 virt-manager wine winetricks
-    sudo apt install -y wine32
-
-   echo "-- System Tools"
-    sudo apt install -y lshw at usbutils lsof time net-tools iproute2 curl \
-	 console-data entr tree git xsel xclip exuberant-ctags fontconfig \
-	 libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa \
-	 lzop atool wmctrl poppler-utils linux-tools-common \
-	 linux-tools-generic brz mercurial sysstat jq dialog ncdu nnn \
-	 fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow \
-	 screen gimp bash parted fonts-freefont-ttf texinfo gcc gdb guile-2.2 \
-	 guile-g-wrap guile-library make build-essential autoconf automake \
-	 gnutls-bin bash-doc guile-2.2-doc gcc-doc gdb-doc gdbserver \
-	 wget2 parallel emacs nftables firewalld firewall-config firewall-applet
-    #  ripgrep
-
-    echo "-- Software"
-    sudo apt install -y fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum
-
-    echo "-- Software Dependencies"
-    #emacs
-    sudo apt build-dep -y emacs
-    sudo apt install -y libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev \
-	 libpoppler-private-dev ghostscript mupdf-tools \
-	 poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev \
-	 texlive-latex-base texlive-fonts-recommended  texlive-latex-extra \
-	 uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev \
-	 libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config \
-	 libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
-    # Lisp
-    sudo apt install -y libfixposix-dev
-
-    echo "-- Laptops Tools"
-    sudo apt install -y libiw-dev
+e-ubuntu-services()
+{
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
 
     echo "-- Disabling & Removing unnecessary defaults setttings/packages"
     # no graphical display
     sudo systemctl set-default multi-user.target
-
-    echo "-- Final preparations: clean & tidy up system"
-    sudo apt -y autoremove
-
-    sudo systemctl disable mpd.service
-    sudo systemctl disable mpd.socket
-
-    if [ ! -x "$(command -v code)" ]; then
-	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-	sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-	sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-	sudo apt install -y code
-    fi
-
-    echo "Done"
 }
 
-#!/usr/bin/env bash
-
-# * UBUNTU
-
-e-ubuntu ()
+e-ubuntu()
 {
-    echo "-- Updating System"
-
-    sudo apt -y update && sudo apt -y upgrade
-
-    echo "-- Essential System packages"
-    sudo apt install -y git p7zip p7zip-full zip unzip util-linux alsa-utils \
-	 network-manager zile neovim bash tmux konsole
-
-    echo "-- Programming Languages"
-    sudo apt install -y ruby ruby-dev lua5.4 luarocks lua-check \
-	 nodejs npm python3-pip python3-venv shellcheck zenity bash-completion \
-    m4 libtool libtool-bin make default-jdk clang clangd lldb cmake
-
-    echo "-- Windows Manager Software"
-    sudo apt install -y xorg x11-apps xinit xdotool dbus-x11 \
-	 xserver-xorg-input-synaptics xserver-xorg-input-libinput \
-	 xserver-xorg-input-kbd awesome
-
-    echo "-- Desktop Software"
-    sudo apt install -y firefox syncthing libreoffice calibre inkscape kdenlive \
-	 cheese deluge thunderbird obs-studio gnome-keyring vlc kate
-
-    echo ' -- Codecs'
-    sudo apt install -y ffmpeg pulseaudio pulseaudio-utils vorbis-tools \
-	 gstreamer1.0-plugins-bad gstreamer1.0-plugins-base \
-	 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
-
-    echo "-- Windows Manager Software"
-    sudo apt install -y network-manager-gnome rofi aria2 socat dunst \
-	 ssh-askpass-gnome udiskie unclutter scrot libnotify-bin \
-	 seahorse gconf2 ranger w3m highlight odt2txt lynx mediainfo xautolock \
-	 caca-utils x11proto-dev libfile-mimeinfo-perl dmenu \
-	 imagemagick pandoc xdg-utils screenfetch lm-sensors aspell \
-	 mpd mpc ncmpc ncmpcpp mpv screenkey brightnessctl tlp acpi-call
-
-    echo "-- Emulators & Virtualization"
-    sudo apt install -y qemu qemu-system-x86 qemu-system-gui qemu-utils \
-	 qemu-efi qemu-kvm virt-manager ovmf libvirt-clients \
-	 libvirt-daemon-system libvirt-dev libvirt0 virt-manager wine winetricks
-    sudo apt install -y wine32
-
-   echo "-- System Tools"
-    sudo apt install -y lshw at usbutils lsof time net-tools iproute2 curl \
-	 console-data entr tree git xsel xclip exuberant-ctags fontconfig \
-	 libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa \
-	 lzop atool wmctrl poppler-utils linux-tools-common \
-	 linux-tools-generic brz mercurial sysstat jq dialog ncdu nnn \
-	 fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow \
-	 screen gimp bash parted fonts-freefont-ttf texinfo gcc gdb guile-2.2 \
-	 guile-g-wrap guile-library make build-essential autoconf automake \
-	 gnutls-bin bash-doc guile-2.2-doc gcc-doc gdb-doc gdbserver \
-	 wget2 parallel emacs nftables firewalld firewall-config firewall-applet
-    #  ripgrep
-
-    echo "-- Software"
-    sudo apt install -y fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum
-
-    echo "-- Software Dependencies"
-    #emacs
-    sudo apt build-dep -y emacs
-    sudo apt install -y libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev \
-	 libpoppler-private-dev ghostscript mupdf-tools \
-	 poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev \
-	 texlive-latex-base texlive-fonts-recommended  texlive-latex-extra \
-	 uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev \
-	 libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config \
-	 libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
-    # Lisp
-    sudo apt install -y libfixposix-dev
-
-    echo "-- Laptops Tools"
-    sudo apt install -y libiw-dev
-
-    echo "-- Disabling & Removing unnecessary defaults setttings/packages"
-    # no graphical display
-    sudo systemctl set-default multi-user.target
-
-    echo "-- Final preparations: clean & tidy up system"
-    sudo apt -y autoremove
-
-    sudo systemctl disable mpd.service
-    sudo systemctl disable mpd.socket
-
-    if [ ! -x "$(command -v code)" ]; then
-	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-	sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-	sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-	sudo apt install -y code
-    fi
-
-    echo "Done"
+    e-ubuntu-upgrade
+    e-ubuntu-packages
+    e-ubuntu-services
+    e-ubuntu-upgrade
 }
-
-#!/usr/bin/env bash
 
 # =============== FUNCOES
 
@@ -759,7 +639,7 @@ e-iso()
     sudo dd bs=4M if="$1" of="$2" status=progress oflag=sync
 }
 
-#!/usr/bin/env bash
+
 
 # * COLECOES
 
@@ -790,7 +670,7 @@ e-atualiza()
     [[ $(command -v apt) ]] && (sudo apt update && sudo apt upgrade)
 }
 
-#!/usr/bin/env bash
+
 
 # * PACOTES
 
@@ -873,7 +753,7 @@ e-gem()
     do
 	[[ $(command -v nixos-version) ]] && nix-shell -p gcc zlib --run '"gem install ${pack}"'
 
-	gem install "${pack}"
+	gem install "${pack}" --user-install
 	gem update  "${pack}"
     done
 }
@@ -943,7 +823,7 @@ e-foreign-update()
     e-vscode
 }
 
-#!/usr/bin/env bash
+
 
 # =============== UTILIDADES
 
