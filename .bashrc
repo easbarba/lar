@@ -139,3 +139,5 @@ e-prompt
 e-cli-tools
 e-packmanagers
 e-multiplexers
+
+cd "$HOME"
