@@ -298,13 +298,13 @@ e-arch()
 e-debian-upgrade()
 {
     echo "-- Atualizando Sistema"
-    sudo apt -y update && sudo apt -y upgrade
+    sudo apt update && sudo apt upgrade
+
+    sudo apt autoremove
 }
 
 e-debian-packages ()
 {
-    echo "-- Debian Packages"
-
     essentials=(git p7zip p7zip-full zip unzip util-linux alsa-utils network-manager bash tmux konsole zile)
 
     wm=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
@@ -315,7 +315,7 @@ e-debian-packages ()
 
     wm_packages=(network-manager-gnome aria2 dunst maim  udiskie unclutter ssh-askpass-gnome mpv libnotify-bin libfile-mimeinfo-perl dmenu imagemagick pandoc xdg-utils screenfetch lm-sensors aspell aspell-pt-br cmus wofi rofi seahorse x11proto-dev brightnessctl tlp acpi-call)
 
-    user_packages=(emacs firefox libreoffice kdeconnect mate-power-manager thunderbird calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing steam)
+    user_packages=(emacs firefox libreoffice kdeconnect mate-power-manager thunderbird calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing)
 
     media=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -325,7 +325,7 @@ e-debian-packages ()
 
     fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
 
-    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish)
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish vrms)
 
     ruby_tools=(libssl-dev libgdbm-dev)
 
@@ -339,16 +339,13 @@ e-debian-packages ()
 
     debian_internals=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    # * RUNNING
-
-    local command='sudo apt install -y'
+    echo "-- Debian Packages"
 
     echo "-- Habilita Multi-Arch"
     sudo dpkg --add-architecture i386
 
-    sudo apt update
-
     echo "Instalando pacotes."
+    local command='sudo apt install -y'
 
     e-foreach "$command" "${essentials[@]}"
     e-foreach "$command" "${wm[@]}"
@@ -367,9 +364,6 @@ e-debian-packages ()
     e-foreach "$command" "${security[@]}"
     e-foreach "$command" "${laptop[@]}"
     e-foreach "$command" "${debian_internals[@]}"; sudo apt-file update # update Debian database
-
-    echo "-- Preparacoes finais: limpando e arrumando o sistema"
-    sudo apt -y autoremove
 
     echo "Done"
 }
