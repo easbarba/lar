@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# * GNU Bash
-# Descricao: GNU Bash - Configuracoes
+# * Description: GNU Bash - CONFIGURATIONS, ALIASES...
 
-# ** CONFIGURACOES
+# * CONFIGURATION
 
 set -o noclobber # Prevent file overwrite on stdout redirection Use `>|` to force redirection to an existing file
 bind Space:magic-space # Enable history expansion with space # E.g. typing !!<space> will replace the !! with your last command
@@ -40,16 +39,30 @@ HISTTIMEFORMAT='%F %T ' # Use standard ISO 8601 timestamp
 CDPATH="." # This defines where cd looks for targets # Add the directories you want to have fast access to, separated by colon
 HISTCONTROL=ignoredups #SHORTER HISTORY
 
-# ** ALIAS
+# * ALIASES
 
+# directories
 alias ..='cd ..'
-alias ...='cd ../..'
+alias ...='cd ../../../'
+alias mkdir='mkdir -pv'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# system
+alias _=sudo
+
+# colorful
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# misc
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -57,7 +70,7 @@ alias j="jump"
 alias c="clear"
 alias lx-reload='source $HOME/.bashrc; echo "Shell Reloaded"'
 
-# ** SYSTEM SCRIPTS
+# * SYSTEM SCRIPTS
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # make less more friendly for non-text input files, see lesspipe(1)
 
@@ -73,7 +86,7 @@ if ! shopt -oq posix; then # BASH COMPLETION
     fi
 fi
 
-# ** CLI SOFTWARE
+# * CLI SOFTWARE
 
 e-inhouse-scripts()
 {
@@ -130,7 +143,7 @@ e-multiplexers()
 }
 
 
-# ** RUN
+# * RUN
 
 e-inhouse-scripts
 

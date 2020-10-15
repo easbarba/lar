@@ -70,7 +70,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 -- beautiful.init(gears.filesystem.get_configuration_dir() .. "myTheme.lua")
 
 -- Wallpaper
-local screenshot_folder = os.getenv("HOME") .. "/Fotografias/PapelParede/house.jpg"
+local screenshot_folder = os.getenv("HOME") .. "/Pictures/PapelParede/house.jpg"
 beautiful.wallpaper = screenshot_folder
 
 -- This is used later as the default terminal and editor to run.

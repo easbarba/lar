@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# * -- AMBIENTE
+# * -- ENVIRONMENT
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for f in /etc/X11/xinit/xinitrc.d/*; do
@@ -9,14 +9,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     unset f
 fi
 
-# * -- UTILITARIOS
+# * -- UTILITIES
 
 [[ -x $(command -v xhost) ]] && xhost +SI:localuser:"$USER"
 [[ -x $(command -v xset) ]] && xset r rate 200 50
 [[ -x $(command -v xsetroot) ]] && xsetroot -cursor_name left_ptr
 [[ -x $(command -v ssh-agent) ]] && eval "$(ssh-agent)"
 
-# * -- GERENCIADOR DE JANELA
+# * -- WINDOW MANAGERS
 
 run_window_manager(){
     [ -x "$(command -v dbus-launch)" ] && local bus="dbus-launch"
@@ -39,5 +39,5 @@ run_window_manager(){
     $bus $args_extra $window_manager 2> ~/.local/share/xinit_errors
 }
 
-# * -- Start Window Manager
+# * -- RUN
 run_window_manager

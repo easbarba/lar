@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # * Fish Shell
-# Descricao: Fish Shell - Configuracoes
+# Description: Fish Shell - Configuration
 
 # * SETTINGS
 

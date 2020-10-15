@@ -1,8 +1,8 @@
 ;;; -*- lexical-binding: t;
 
-;;; Descricao: GNU Emacs configuracoes
+;;; Description: GNU Emacs Configurations
 
-;; * CONFIGURACOES INICIAS
+;; * INITIAL CONFIGURATIONS
 ;; ** GC
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
@@ -10,7 +10,7 @@
 	  #'(lambda ()
 	      (setq gc-cons-threshold 20000000 gc-cons-percentage 0.1)))
 
-;; **  Minimas
+;; **  MINIMAL
 (setq inhibit-startup-screen t
       initial-scratch-message ""
       initial-major-mode 'emacs-lisp-mode
@@ -18,7 +18,7 @@
       ;; toggle-debug-on-error t
       vc-follow-symlinks t)
 
-;; ** PACOTES
+;; ** BOOTSTRAP PACKAGES
 
 (require 'package)
 
@@ -30,11 +30,11 @@
 ;; Louvado seja o sol
 (package-initialize)
 
-;; ** custom arquivo
+;; ** CUSTOM FILE
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file t)
 
-;; ** Pastas do Emacs
+;; ** EMACS DIRECTORIES
 (dolist (fld '("site-lisp" "etc" "erc"))
   (unless (file-exists-p (concat user-emacs-directory fld))
     (mkdir (concat user-emacs-directory fld))))
@@ -43,9 +43,9 @@
 
 (add-to-list 'load-path *lisp-folder*)
 
-;; ** TEMAS
+;; ** THEMES
 (defcustom *theme* 'adwaita
-  "Emacs tema padrao."
+  "Emacs default theme."
   :type 'string
   :group 'my)
 
@@ -1177,7 +1177,7 @@ Requires an installation of ImageMagick (\"convert\")."
 (show-paren-mode 1)
 
 ;; ====================
-;; * MODOS LINGUAGENS
+;; * LANGUAGE MODES
 ;; ** Ruby
 (add-hook 'ruby-mode-hook
 	  '(lambda ()
@@ -1218,7 +1218,7 @@ Requires an installation of ImageMagick (\"convert\")."
 	  '(lambda () (local-set-key (kbd "C-c i") 'json-pretty-print-buffer-ordered)))
 
 ;; ============================
-;; * VARIAVEIS GLOBAIS
+;; * GLOBAL VARIABLES
 
 (defconst *site-lisp* (concat user-emacs-directory "site-lisp")
   "Emacs site-lisp folder.")

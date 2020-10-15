@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Descricao: Auto inicia programas
+# DESCRIPTION: Auto start software
 
 APPS=(udiskie emacs unclutter mpd clipit nm-applet konsole)
 # [[ ! $WM == "awesomewm" ]] apps +=(dunst )
