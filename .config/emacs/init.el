@@ -53,9 +53,9 @@
 
 ;; ** FONTES
 (cond ((member "JetBrains Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-14")))
+       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-13")))
       ((member "DejaVu Sans Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))))
+       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-13"))))
 
 ;; =================================
   ;; * DEFALIAS / ADVICES-ADD / ADD-HOOK
