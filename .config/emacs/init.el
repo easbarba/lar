@@ -53,9 +53,9 @@
 
 ;; ** FONTES
 (cond ((member "JetBrains Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-12")))
+       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-14")))
       ((member "DejaVu Sans Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-13"))))
+       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))))
 
 ;; =================================
   ;; * DEFALIAS / ADVICES-ADD / ADD-HOOK
@@ -2138,15 +2138,12 @@ Saves to a temp file and puts the filename in the kill ring."
   :defer t
   :config (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
-(use-package flycheck
-  :after lsp-mode
-  :custom (flycheck-checker-error-threshold 1400))
-
 (use-package lsp-mode
   :defer 1
   :hook
   (ruby-mode . lsp)
   (lua-mode . lsp)
+  (cpp-mode . lsp)
   (js-mode . lsp)
   (html-mode . lsp)
   (css-mode . lsp)
@@ -2154,6 +2151,7 @@ Saves to a temp file and puts the filename in the kill ring."
   :custom
   (lsp-enable-indentation nil)
   (lsp-signature-auto-activate nil)
+  (flycheck-checker-error-threshold 1400)
   :bind
   ("C-c l w" . lsp-restart-workspace)
   ("C-c l r" . lsp-rename)
