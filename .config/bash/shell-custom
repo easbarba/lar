@@ -535,7 +535,7 @@ e-ubuntu-packages()
 
     de_packages=(firefox syncthing libreoffice calibre inkscape kdenlive cheese deluge thunderbird obs-studio gnome-keyring vlc kate steam inxi)
 
-    codecs=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+    codecs=(ffmpeg pulseaudio pulseaudio-utils pavucontrol vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
     wm_packages=(fish network-manager-gnome rofi aria2 socat dunst ssh-askpass-gnome udiskie unclutter scrot libnotify-bin seahorse gconf2 ranger w3m highlight odt2txt lynx mediainfo xautolock caca-utils x11proto-dev libfile-mimeinfo-perl dmenu imagemagick pandoc xdg-utils screenfetch lm-sensors aspell mpd mpc ncmpc ncmpcpp mpv screenkey brightnessctl tlp acpi-call)
 
