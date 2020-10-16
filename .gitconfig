@@ -16,3 +16,6 @@ ci = commit
 
 [credential]
 helper = cache --timeout=1600
+
+[pull]
+ff = only
