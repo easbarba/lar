@@ -41,6 +41,7 @@
   "Ruby": [
     "https://github.com/jeremyevans/sequel",
     "https://github.com/jeremyevans/roda",
+    "https://github.com/kyrylo/pry-theme",
     "https://github.com/pry/pry",
     "https://github.com/asciidoctor/asciidoctor",
     "https://github.com/davidgf/design-patterns-in-ruby",
