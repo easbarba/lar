@@ -49,13 +49,6 @@ s-cask()
     export PATH="$caskdir"${PATH:+:}$PATH
 }
 
-s-startx()
-{
-    if [ -z "${DISPLAY}" ] && [ -n "${XDG_VTNR}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	exec startx
-    fi
-}
-
 # * RUN
 
 s-rbenv
@@ -63,4 +56,3 @@ s-gem
 s-nvm
 s-luarocks
 # s-cask
-# s-startx

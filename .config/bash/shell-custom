@@ -30,15 +30,9 @@ e-debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip util-linux alsa-utils network-manager bash tmux konsole zile)
 
-    wm=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
+    languages=(shellcheck zenity libpq-dev bash-completion python3-pip postgresql sqlite3 libsqlite3-dev lua5.4 luarocks lua-check puppet)
 
-    languages=(shellcheck zenity libpq-dev bash-completion python3-pip postgresql sqlite3 libsqlite3-dev lua5.4 luarocks lua-check) # ruby ruby-dev
-
-    devops=(puppet fzf)
-
-    wm_packages=(network-manager-gnome aria2 dunst maim  udiskie unclutter ssh-askpass-gnome mpv libnotify-bin libfile-mimeinfo-perl dmenu imagemagick pandoc xdg-utils screenfetch lm-sensors aspell aspell-pt-br cmus wofi rofi seahorse x11proto-dev brightnessctl tlp acpi-call)
-
-    user_packages=(emacs firefox libreoffice kdeconnect mate-power-manager thunderbird calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing)
+    user_packages=(emacs firefox libreoffice kdeconnect mate-power-manager thunderbird calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br fzf)
 
     media=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -73,9 +67,7 @@ e-debian-packages ()
     e-foreach "$command" "${essentials[@]}"
     # e-foreach "$command" "${wm[@]}"
     e-foreach "$command" "${languages[@]}"
-    e-foreach "$command" "${devops[@]}"
     e-foreach "$command" "${system_tools[@]}"
-    e-foreach "$command" "${wm_packages[@]}"
     e-foreach "$command" "${user_packages[@]}"
     e-foreach "$command" "${media[@]}"
     e-foreach "$command" "${virtualization[@]}"

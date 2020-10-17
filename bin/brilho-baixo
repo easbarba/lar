@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-STEP=5
-
-[[ -x $(command -v brightnessctl) ]] && brightnessctl set "$STEP"%-
