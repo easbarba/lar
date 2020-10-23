@@ -1,0 +1,428 @@
+#+TILE: .NET - Study Annotations
+
+* Sumario
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+  - [[#livros][Livros]]
+  - [[#ldc][LDC]]
+  - [[#skills][Skills]]
+- [[#projetos][Projetos]]
+  - [[#cero][Cero]]
+- [[#net][.NET]]
+  - [[#net-resources][.NET Resources]]
+  - [[#net-snippets][.NET Snippets]]
+  - [[#net-best-practices][.NET Best Practices]]
+  - [[#net-toolings][.NET Toolings]]
+  - [[#net-projects][.NET Projects]]
+  - [[#net-csproj][.NET csproj]]
+  - [[#net-developer-skills][.NET Developer skills]]
+  - [[#aspnet][ASP.NET]]
+- [[#powershell][Powershell]]
+  - [[#more-information][More Information]]
+  - [[#projects][projects]]
+  - [[#find-all-powershell-profile-locations][Find All PowerShell Profile Locations]]
+- [[#databases][Databases]]
+  - [[#msql][MSql]]
+  - [[#sql-read-later][SQL read later]]
+:END:
+* Progresso
+** Livros
+   | Livros                                      | Capitulo                                                             | em                                                         | tarde | revisao          | AdHoc                                                           |
+   |---------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------+-------+------------------+-----------------------------------------------------------------|
+   | C# 8 in a Nutshell The Definitive Reference | Collections                                                          | Customizable Collections and Proxies                       |       | Order Comparison | Concurrency and Asynchrony/Foreground versus Background Threads |
+   | C# In Depth                                 | 2.4 Iterators                                                        |                                                            |       |                  |                                                                 |
+   | Essential C#                                | Chapter 13 Delegates and Lambda Expressions                          | Delegate Internals                                         |       |                  |                                                                 |
+   | The Art of Unit Testing                     | Chapter 3. Using stubs to break dependencies                         |                                                            |       |                  |                                                                 |
+   | Asp.Net Core in Action                      | 2.8 Generating responses with Razor Pages                            | Adding and configuring services                            |       |                  |                                                                 |
+   | Learn ASP.NET Core 3                        | Chapter 4: Basic Concepts of ASP.NET Core 3 via a Custom Application | Conceiving and implementing your first Tic-Tac-Toe feature |       |                  |                                                                 |
+** LDC
+   | Source Code                     | folder                                                         | file                    | @ |
+   |---------------------------------+----------------------------------------------------------------+-------------------------+---|
+   | roslyn                          | Analyzers/CSharp/Analyzers/InvokeDelegateWithConditionalAccess |                         |   |
+   | runtime                         | libraries/System.Linq/src/System/Linq                          | Aggregate               |   |
+   | csharp-language-server-protocol | src/Client                                                     | ArrayPoolEventSource.cs |   |
+   | omnisharp-roslyn                | OmniSharp.Abstractions/Models/v1                               |                         |   |
+** Skills
+    | X                       | Y         |
+    |-------------------------+-----------|
+    | Collections             |           |
+    | Generics                |           |
+    | Delegates/Lambda/Events |           |
+    | Test Unit               |           |
+    | REST                    |           |
+    | JSON                    |           |
+    | Refactoring             |           |
+    | ASP.NET                 | Razor/MVC |
+    | Design Patterns         |           |
+    | CI/CD                   |           |
+    | Docker                  |           |
+    | {No-}SQL                |           |
+    | Bootstrap               |           |
+    | Angular                 |           |
+    | Git                     |           |
+    | Scrum                   |           |
+    | Agile                   |           |
+* Projetos
+** Cero
+* [[https://dotnet.microsoft.com/][.NET]]
+** .NET Resources
+   Documentation: https://docs.microsoft.com/en-us/dotnet/
+
+** .NET Snippets
+*** Walk
+    #+begin_src csharp
+    public interface IDirectoryTree
+    {
+        [NotNull, ItemNotNull]
+        IEnumerable<IDirectoryTreeNode> Walk([NotNull] string path, [NotNull] Action<Exception> onException);
+    }
+
+    public class DirectoryTree : IDirectoryTree
+    {
+        public IEnumerable<IDirectoryTreeNode> Walk(string path, Action<Exception> onException)
+        {
+            if (path == null) throw new ArgumentNullException(nameof(path));
+            if (onException == null) throw new ArgumentNullException(nameof(onException));
+
+            var nodes = new Queue<DirectoryTreeNode>
+            {
+                new DirectoryTreeNode(path)
+            };
+
+            while (nodes.Any())
+            {
+                var current = nodes.Dequeue();
+                yield return current;
+
+                try
+                {
+                    foreach (var directory in current.DirectoryNames)
+                    {
+                        nodes.Enqueue(new DirectoryTreeNode(Path.Combine(current.DirectoryName, directory)));
+                    }
+                }
+                catch (Exception inner)
+                {
+                    onException(inner);
+                }
+            }
+        }
+    }
+
+    [PublicAPI]
+    public interface IDirectoryTreeNode
+    {
+        [NotNull]
+        string DirectoryName { get; }
+
+        [NotNull, ItemNotNull]
+        IEnumerable<string> DirectoryNames { get; }
+
+        [NotNull, ItemNotNull]
+        IEnumerable<string> FileNames { get; }
+    }
+
+    internal class DirectoryTreeNode : IDirectoryTreeNode
+    {
+        internal DirectoryTreeNode(string path)
+        {
+            DirectoryName = path;
+        }
+
+        public string DirectoryName { get; }
+
+        public IEnumerable<string> DirectoryNames => Directory.EnumerateDirectories(DirectoryName).Select(Path.GetFileName);
+
+        public IEnumerable<string> FileNames => Directory.EnumerateFiles(DirectoryName).Select(Path.GetFileName);
+    }
+
+
+    public static class DirectoryTreeNodeExtensions
+    {
+        public static void Deconstruct(
+            [CanBeNull] this IDirectoryTreeNode directoryTreeNode,
+            [CanBeNull] out string directoryName,
+            [CanBeNull] out IEnumerable<string> directoryNames,
+            [CanBeNull] out IEnumerable<string> fileNames)
+        {
+            directoryName = directoryTreeNode?.DirectoryName;
+            directoryNames = directoryTreeNode?.DirectoryNames;
+            fileNames = directoryTreeNode?.FileNames;
+        }
+
+        public static bool Exists(
+            [CanBeNull] this IDirectoryTreeNode directoryTreeNode)
+        {
+            // Empty string does not exist and it'll return false.
+            return Directory.Exists(directoryTreeNode?.DirectoryName ?? string.Empty);
+        }
+    }
+
+    public static class QueueExtensions
+    {
+        public static void Add<T>(this Queue<T> queue, T item)
+        {
+            queue.Enqueue(item);
+        }
+    }
+
+    public static class Main
+    {
+        var directoryTree = new DirectoryTree();
+        directoryTree
+        .WalkSilently(@"c:\temp")
+        .Where(n => !n.DirectoryName.Contains(".git"))
+        .Take(100)
+        .Select(node => node.DirectoryName)
+        .Dump();
+
+
+        foreach (var (dirpath, dirnames, filenames) in directoryTree.WalkSilently(@"c:\temp").Where(n => !n.DirectoryName.Contains(".git")).Take(10))
+        {
+            filenames.Dump();
+        }
+
+    }
+
+    #+end_src
+*** Links
+    https://stackoverflow.com/questions/294138/merging-dictionaries-in-c-sharp
+** .NET Best Practices
+*** .NET project layout
+    #+begin_src markdown
+    ```
+    $/
+      artifacts/
+      build/
+      docs/
+      lib/
+      packages/
+      samples/
+      src/
+      tests/
+      .editorconfig
+      .gitignore
+      .gitattributes
+      build.cmd
+      build.sh
+      LICENSE
+      NuGet.Config
+      README.md
+      {solution}.sln
+    ```
+
+
+    - `src` - Main projects (the product code)
+    - `tests` - Test projects
+    - `docs` - Documentation stuff, markdown files, help files etc.
+    - `samples` (optional) - Sample projects
+    - `lib` - Things that can **NEVER** exist in a nuget package
+    - `artifacts` - Build outputs go here. Doing a build.cmd/build.sh generates artifacts here (nupkgs, dlls, pdbs, etc.)
+    - `packages` - NuGet packages
+    - `build` - Build customizations (custom msbuild files/psake/fake/albacore/etc) scripts
+    - `build.cmd` - Bootstrap the build for windows
+    - `build.sh` - Bootstrap the build for *nix
+    - `global.json` - ASP.NET vNext only
+
+    ## .gitignore
+    ```
+    [Oo]bj/
+    [Bb]in/
+    .nuget/
+    _ReSharper.*
+    packages/
+    artifacts/
+    ,*.user
+    ,*.suo
+    ,*.userprefs
+    ,*DS_Store
+    ,*.sln.ide
+    ```
+
+    There's probably more things that go in the ignore file.
+
+
+    - Update: Added docs folder
+    - Added README.md and LICENSE - Critical if you're OSS, if not ignore it
+    - Renamed `test` to `tests`
+    - Added lib for things that *CANNOT* exist in nuget packages
+    - Removed NuGet.config for people using packet :)
+    - Added global.json for ASP.NET vnext
+    - Added .editorconfig file in the root (x-plat IDE settings)
+    - Added NuGet.config back because people were confused about it missing
+    #+end_src
+*** .NET elements order in classes
+    #+begin_src markdown
+    ## SA1201
+
+    <table>
+    <tr>
+      <td>TypeName</td>
+      <td>SA1201ElementsMustAppearInTheCorrectOrder</td>
+    </tr>
+    <tr>
+      <td>CheckId</td>
+      <td>SA1201</td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>Ordering Rules</td>
+    </tr>
+    </table>
+
+    ## Cause
+
+    An element within a C# code file is out of order in relation to the other elements in the code.
+
+    ## Rule description
+
+    A violation of this rule occurs when the code elements within a file do not follow a standard ordering scheme.
+
+    To comply with this rule, elements at the file root level or within a namespace should be positioned in the following order:
+
+    ,* Extern Alias Directives
+    ,* Using Directives
+    ,* Namespaces
+    ,* Delegates
+    ,* Enums
+    ,* Interfaces
+    ,* Structs
+    ,* Classes
+
+    Within a class, struct, or interface, elements should be positioned in the following order:
+
+    ,* Fields
+    ,* Constructors
+    ,* Finalizers (Destructors)
+    ,* Delegates
+    ,* Events
+    ,* Enums
+    ,* Interfaces
+    ,* Properties
+    ,* Indexers
+    ,* Methods
+    ,* Structs
+    ,* Classes*
+
+    Complying with a standard ordering scheme based on element type can increase the readability and maintainability of the file and encourage code reuse.
+
+    When implementing an interface, it is sometimes desirable to group all members of the interface next to one another. This will sometimes require violating this rule, if the interface contains elements of different types. This problem can be solved through the use of partial classes.
+
+    1. Add the partial attribute to the class, if the class is not already partial.
+
+    2. Add a second partial class with the same name. It is possible to place this in the same file, just below the original class, or within a second file.
+
+    3. Move the interface inheritance and all members of the interface implementation to the second part of the class.
+
+    For example:
+
+    ```csharp
+    /// <summary>
+    /// Represents a customer of the system.
+    /// </summary>
+    public partial class Customer
+    {
+        // Contains the main functionality of the class.
+    }
+
+    /// <content>
+    /// Implements the ICollection class.
+    /// </content>
+    public partial class Customer : ICollection
+    {
+        public int Count
+        {
+            get { return this.count; }
+        }
+
+        public bool IsSynchronized
+        {
+            get { return false; }
+        }
+
+        public object SyncRoot
+        {
+            get { return null; }
+        }
+
+        public void CopyTo(Array array, int index)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    ```
+
+    ## How to fix violations
+
+    To fix an instance of this violation, order the elements in the file in the order described above.
+
+    ## How to suppress violations
+
+    ```csharp
+    [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:ElementsMustAppearInTheCorrectOrder", Justification = "Reviewed.")]
+    ```
+
+    ```csharp
+    #pragma warning disable SA1201 // ElementsMustAppearInTheCorrectOrder
+    #pragma warning restore SA1201 // ElementsMustAppearInTheCorrectOrder
+    ```
+
+    #+end_src
+** .NET Toolings
+*** .NET GUI:
+    - https://avaloniaui.net/
+
+** .NET Projects
+*** Lisp.NET
+*** Unix Clipboard Manager
+*** CLI Code Formater
+** .NET csproj
+   #+begin_src xml
+   <TargetFramework>net5.0</TargetFramework>
+   <LangVersion>preview</LangVersion>
+   <PublishTrimmed>true</PublishTrimmed>
+   <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+   <PackAsTool>true</PackAsTool>
+   <NoWarn>CS4014</NoWarn>
+   <PackageOutputPath>./nupkg</PackageOutputPath>
+   #+end_src
+** .NET Developer skills
+   - Bachelor's degree in computer science
+   - Experience with C#
+   - Experience with ASP.NET [Core] and ASP.NET MVC frameworks
+   - Good understanding and hands on experience with AWS, .NET, and WebAPI
+   - Experience with data modeling, normalization, and SQL optimization
+   - Strong understanding of SDLC, including Agile methodologies
+   - Ability to collaborate and work with other developers and test effectively within SCRUM/Agile environment
+   - Strong understanding of object-oriented design patterns, including dependency injection and inversion of control
+   - Experience producing and consuming web APIs, including JSON and XML formats
+   - Experience with REST-based services and APIs
+   - Build and deployment knowledge to host .NET application on AWS using Visual Studio Team Services
+   - Strong documentation, writing and interpersonal skills.
+   - Front-End Toolings
+** [[https://docs.microsoft.com/en-us/aspnet/][ASP.NET]]
+**** new project scaffold
+
+     - dotnet new razor -o lxbarbosa
+
+     - dotnet watch run
+
+     - dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 3.1.2
+     - dotnet aspnet-codegenerator razorpage List Empty -udl -outDir Pages/Restaurants
+* [[https://docs.microsoft.com/en-us/powershell/][Powershell]]
+** More Information
+   powershell.org/
+** TODO projects
+   - PowerPlug: Zplug like that easy managament of PowerShell modules and settings
+** Find All PowerShell Profile Locations
+   $PROFILE | Format-List -Force
+* Databases
+** MSql
+
+** SQL read later
+   http://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/
+
+    https://github.com/edgedb/edgedb

@@ -1,0 +1,44 @@
+#+TILE: Database - Anotacoes, progresso e mais
+
+* Sumario
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+- [[#livros][Livros]]
+- [[#postgresql][PostgreSQL]]
+- [[#sqlite][SQLite]]
+- [[#json][JSON]]
+  - [[#json-online-resources][JSON Online resources]]
+- [[#mariadb][MariaDB]]
+- [[#mysql][MySQL]]
+  - [[#mysql-docs][MySql Docs]]
+- [[#sql-resources][SQL resources]]
+- [[#nosql][noSQL]]
+- [[#mais-tarde][Mais tarde]]
+:END:
+* Progresso
+* Livros
+  | Livro                                                     | capitulo | parte | tarde |
+  |-----------------------------------------------------------+----------+-------+-------|
+  | Practical SQL A Beginners Guide to Storytelling with Data |          |       |       |
+  | Mastering PostgreSQL 12                                   |          |       |       |
+
+* [[https://www.postgresql.org/][PostgreSQL]]
+* [[https://sqlite.org/][SQLite]]
+* JSON
+** JSON Online resources
+   [[https://jsonplaceholder.typicode.com/][jsonplaceholder]]
+* MariaDB
+* [[https://www.mysql.com/][MySQL]]
+** MySql Docs
+   https://dev.mysql.com/doc/refman/8.0/en/
+* SQL resources
+  https://modern-sql.com/
+
+* noSQL
+* Mais tarde
+  http://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/
+
+  https://github.com/edgedb/edgedb

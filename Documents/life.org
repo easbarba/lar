@@ -1,0 +1,412 @@
+#+TILE: Life Annotations
+
+* Table of Contents
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+  - [[#livros-videos][Livros, Videos]]
+- [[#sonhos][Sonhos]]
+- [[#filmes][Filmes]]
+  - [[#favoritos][Favoritos]]
+  - [[#lista-de-desejos][Lista de Desejos]]
+- [[#tv-shows][TV Shows]]
+  - [[#favoritos][Favoritos]]
+- [[#livros][Livros]]
+  - [[#favoritos][Favoritos]]
+  - [[#recomendacoes][Recomendacoes]]
+- [[#manga][Manga]]
+  - [[#favorites][Favorites]]
+- [[#jogos][Jogos]]
+  - [[#fallout-1][Fallout 1]]
+  - [[#wineproton][Wine/Proton]]
+- [[#musica][Musica]]
+  - [[#compositores-classico][Compositores Classico]]
+  - [[#misc][Misc]]
+  - [[#musician][Musician]]
+  - [[#bands][Bands]]
+- [[#presentes][Presentes]]
+  - [[#sobrinho][Sobrinho]]
+- [[#doacoes][Doacoes]]
+- [[#pinturas][Pinturas]]
+- [[#résumé][Résumé]]
+- [[#delivery][Delivery]]
+:END:
+* Progresso
+** Livros, Videos
+   | Livros                 | Capitulo                                                                 | em                              |
+   |------------------------+--------------------------------------------------------------------------+---------------------------------|
+   | Last Wish              | The Voice of Reason 2                                                    |                                 |
+   | The War of the Worlds  |                                                                          |                                 |
+   | Study in Scarlet       | 2 The Science of Deduction                                               | SHERLOCK HOLMES  -  his limits. |
+   | Plato: Five Dialogues  |                                                                          |                                 |
+* Sonhos
+   - Play Bach's Guitar BWV - 1006 - Prelude from lute suite 4
+   - Exciting Carrer
+   - CS PHD
+   - An unforgetful vacation
+   - Go out w/ cousin and have lots of fun
+   - A notorius project
+   - A House
+   - Cousin's College Tuition
+* Filmes
+** Favoritos
+   - 12 Angry Men
+   - 7 Samurai
+   - Casablanca
+   - Lawrence of Arabia
+   - Silence of Lambs
+   - Jurassic Park
+   - Lawman (Burt Lancaster)
+   - Alien
+   - The Maltese Falcon
+   - The Searchers
+   - Hearts in Atlantis
+   - Rashomon
+   - Stalker (Andrei Tarkovsky)
+   - La dolce Vita
+   - Judgement in Nuremberg
+   - To Kill A Mockingbird
+   - Anatomy of a Murder
+   - Inherit the Wind
+   - Witness for the Prosecution (1
+   - Spartacus
+   - Moby Dick (Gregory Pack)
+   - Planet of Apes
+   - Se7en
+   - Amistad
+   - The Shawshank Redemption
+   - The Third Man
+   - Let the Right One In
+   - 20,000 Leagues Under the Sea (Kirk Douglas)
+   - Rio Bravo
+   - High Noon
+   - True Git (John Wayne)
+   - For a Few Dollars More
+   - Escape from Alcatraz
+   - Shane
+   - The Wild Bunch
+   - No Country for Old Men
+   - Search Results
+   - Above the Law
+   - Shutter (Banjong Pisanthanakun)
+   - El espíritu de la colmena
+   - Rec
+   - El Bola
+   - The Seventh Seal
+   - Shin Godzilla
+   - GodZilla (Ishirō Honda)
+   - You Only Live Twice
+   - The Man with the Golden Gun
+   - Lake Mungo
+   - The Innocents (Jack Clayton)
+   - The Haunting 1963
+   - The Sixth Sense
+   - Signals
+   - Ghost
+   - Memories of Murder (Bong Joon-ho)
+   - The Last Man on Earth (Vincent Price)
+   - Independency Day
+   - The Fifth Element
+** Lista de Desejos
+* TV Shows
+** Favoritos
+   - Star Trek - The Next Generation
+   - Sherlock Holmes (Jeremy Brett)
+   - Chespirito
+   - Master's Sun
+   - Great Teacher Onizuka
+   - Full Metal Alchemist
+   - walking dead (season1 and 2)
+   - 1 Litre of Tears
+   - Trick
+   - Gokusen
+   - Kekkon Dekinai Otoko
+   - Dragon Zakura
+   - Grave of the Fireflies
+   - Spirited Away
+   - Chobits
+   - Bucky
+   - Dragon Ball Z
+* Livros
+** Favoritos
+   - Dr Jekyll and Hide
+   - The Lost World
+** Recomendacoes
+   Livros indicados por Leandro Karnal
+   1. As ilações de Narizinho, A gramática da Emília - Monteiro Lobato
+   2. A Ilha do Tesouro de Robert Louis Stevenson
+   3. Robison Crusoe – Daniel Defoe
+   4. As viagens de Gulliver
+   5. Zygmunt Bauman
+   6. Cidarta - Herman Hesse
+   7. Ter ou ser?, O dogma de Cristo - Erich Fromm
+   8. A relíquia - Eça de Queiroz
+   9. O Existencialismo é um Humanismo – Sartre
+   10. Fenomenologia do Espírito - Hegel
+   11. Kant
+   12. A paixão segundo G.H. – Clarice Lispector
+   13. A metamorfose – Kafka
+   14. Milan Kundera
+   15. Don CasmorroMachado de Assis
+   16. Don Quixote - Cervantes
+   17. Um Copo de Cólera, Lavoura Arcaica - Raduan Nassar
+   18. Dois Irmãos - Milton Hatoum
+   19. O Coração das Trevas -  Joseph Conrad – Inspirou Apocalipse Now
+   20. Marx – Teoria Socialista
+   21. Adam Smith – Capitalista Liberais
+   22. Romeu e Julieta – Shakespeare
+   23. A Tempestade (1623) William Shakespeare
+   24. Hamlet – Loucura do próprio H
+   25. Discurso da Servidão Voluntária - Etienne de La Boétie
+   26. O príncipe – Maquiavel
+   27. O primo Basílio
+   28. Madame Bovary (1857), romance de Gustave Flaubert
+   29. O Guarani – José de Alencar
+   30. Iracema – José de Alencar
+   31. Escrava Isaura - Bernardo Guimarães
+   32. O Moço Loiro - Joaquim Manuel de Macedo.
+   33. A normalista – Adolfo Caminha
+   34. A Carne, de Maria Luisa Sprovieri Ribeiro
+   35. Crime e Castigo - Fiódor Dostoiévski
+   36. Os Irmãos Karamazov
+   37. O Grande Inquisidor
+   38. O Tempo e o Vento, Incidente em Antares, As Aventuras de Tibicuera e Olhai os Lírios do Campo - Érico Veríssimo
+   39. Os cem anos de solidão – Gabriel Garcia Marques
+   40. A Colônia Penal, de Franz Kafka
+   41. Moby Dick, de Herman Melville.
+   42. Tabacaria de Álvaro de Campos (Fernando Pessoa)
+* Manga
+** Favorites
+   - Lone Wolf and Cub
+   - One Punch Man
+   - Elfen Lied
+   - Love Hina
+* Jogos
+  http://steamcommunity.com/id/elxbarbosa
+** Fallout 1
+   FALLOUT COMBAT: Treat combat like a turn-based tactical game. Because it is.
+
+   AP MANAGEMENT: Learn how to manage your AP because that's the cornerstone all
+   future victory will build upon. Combat in the earlier Fallout games is far
+   less forgiving than the later versions.
+
+   AGILITY USEFULNESS: Agility sets both your AP pool, and your Sequence in
+   combat. They are important.
+
+   INVENTORY ACCESS: If you do not have something equipped in one of your two
+   quick slots, you will need to access your inventory to use it. Accessing your
+   inventory in combat costs AP. Thankfully, once you're in your inventory
+   interface, you can do whatever you need without incurring any additional cost
+   (provided you don't exit the inventory by mistake). There is a perk that you
+   can take that lowers this AP cost. IT IS A VERY GOOD PERK AND YOU SHOULD TAKE
+   IT. So, for example, you can equip a stimpak in one of your quick slots; in
+   combat you can spend 2 AP to use it, get some health back and then it's spent
+   -OR- you can spend 4 AP, open your inventory, and use as many stimpaks as you
+   want and then get back into the fight.
+
+   SHOOT OUTSIDE THE SCREEN TO RELOAD: You do not need to access your inventory
+   to reload a weapon. If you right click on your equipped weapon, it will
+   change the mode it's in. Swing vs Thrust, normal shot vs called shot, etc.
+   With a firearm, one of the options you will cycle through is Reload.
+   Reloading costs 2 AP, no click-and-dragging required.
+
+   AP PERKS: Certain perks and traits will reduce the AP cost of certain
+   actions, or give you additional AP to spend. Shit's dope, look into it.
+
+   RUN FOR YOUR LIFE: Do not be afraid to run away. If you get caught in a fight
+   you can't manage, just haul anus to the edge of the encounter map. There'll
+   be some brown (or green, depending on where you are) exit grid texture on the
+   ground - make it to there and you're home free.
+
+   ALLIES ARE IMPORTANT: BRING FRIENDS. Every ally you have on your team means
+   less hurt coming your way and more hurt you can put toward your enemies. Do
+   be aware however that your NPC buddies may not be super cautious about having
+   a clear lane of fire before shooting at baddies. If you have not been shot in
+   the back by Ian at least once, then you are not really playing Fallout.
+
+   SHANK BITCHES: Keep a close combat option handy. Knives never run out of
+   ammo. Don't be afraid to stick and move - even if you have enough AP to stab
+   a dude twice, instead try stabbing him once and then using the rest of your
+   AP to fall back a few spaces. When his turn comes up, he'll have to spend
+   some of his AP closing the distance, and may not have enough left to attack
+   you.
+
+   COME AT ME, BRO: Sometimes it's a good idea to let your enemy be the one to
+   engage first. Especially if you have a good Sequence, your enemy will start
+   combat (getting the first turn automatically), then you'll get your turn.
+   THEN normal sequence order kicks in - and if you're fast that means you go
+   first. The net result being: your enemy goes first, spends his first round
+   closing the distance and then you get to take two rounds back to back. That
+   shit can end a fight before it really begins.
+
+   MEDICAL CARE: You can heal yourself with your First Aid and Doctor skills
+   independent of having to use a stimpak. As using medical skills to treat
+   injury takes time, it's not a great option in combat but is handy for
+   downtime healing. Also each successful use of those skills will give you exp.
+   Get up on that.
+
+   READING IS FUNDAMENTAL: Cover-to-cover the manual. It has some good info in
+   there and is worth the read. Fallout 1 is still part of that era where
+   important shit went into the book rather than being tutorialized in the game
+   itself.
+
+   YOUR SKILL POINTS AND YOU: Not all skills are created equal. Frankly there
+   are some skills that you shouldn't bother putting points into early in the
+   game, or at all. Don't bother putting points into Big Guns or Energy Weapons
+   early on - you aren't going to find a laser or a rocket launcher for a long
+   damn time. Don't really put points into Gambling or Throwing at all, ever.
+   They're tits on a fish. Useless. By comparison, skills like Small Guns, Melee
+   Weapons or Unarmed (but probably not both), Speech, and Doctor are amazing.
+
+   IT GOES TO 200: Skills in scale way differently in Fallout 1. For the first,
+   they go up to 200. For the Second, that percentage sign all skills are
+   measured by? That means how often you will succeed under IDEAL circumstances.
+   For ranged combat, it's worse. Your Base To Hit is = (Skill-30) +
+   ((PE - 2) * 16) - (HEX * 4) - (AC of Target) [- 10% at night if HEX >= 5].
+   So, yeah. While a 75 may be a good Small guns skill in FO3, here, it could
+   leave you with only a 47% chance to hit a Khan in leather 5 hexes away.
+** Wine/Proton
+*** Gothic 2
+    WINEPREFIX=...steam/steamapps/compatdata/39510/pfx/ winetricks directmusic
+
+    # Libraries tab -> existing overrides -> 'dsound' -> remove
+    WINEPREFIX=...steam/steam/steamapps/compatdata/39510/pfx/ winecfg
+
+    editor ...steam/steam/steamapps/common/Gothic II/system/Gothic.ini
+
+*** Gothic 1
+    WINEPREFIX=...steam/steam/steamapps/compatdata/65540/pfx/ winetricks directmusic
+
+    # Libraries tab -> existing overrides -> 'dsound' -> remove
+    WINEPREFIX=...steam/steam/steamapps/compatdata/65540/pfx/ winecfg
+
+    editor ...steam/steam/steamapps/common/Gothic/system/Gothic.ini
+
+    # Video BlackScreen CutScenes: graphics -> emulate a virtual desktop
+    WINEPREFIX=...steam/steam/steamapps/compatdata/65540/pfx/ winecfg
+
+*** Gothic Common
+
+    Enable more screen resolutions:
+    [INTERNAL] -> extendedMenu=1
+
+    Fix Cutscenes BlackScreen:
+    [GAME] -> scaleVideos=1
+
+    Game Settings -> audio -> "Miles Fast" Provider
+
+* Musica
+** Compositores Classico
+   - Berlioz
+   - Mahler
+   - Felix Mendelssohn
+   - Joseph Haydn
+   - Johann Sebastian Bach
+   - Wagner
+   - Camille Saint Saëns
+   - Vivaldi
+   - Tchaikovsky
+   - Rimsky-Korsakov
+   - Rachmaninoff
+   - Maurice Ravel
+   - Beethoven
+   - Dvořák
+   - Leoš Janáček
+   - Béla Bartók
+   - Edward Elgar
+   - Gabriel Fauré
+   - Arnold Schoenberg
+** Misc
+  - Perez Prado
+  - Compay Segundo
+  - Ibrahim Ferrer
+  - Ink Spot
+  - Marcus MIller
+  - Nat King Cole
+** Musician
+  - John Williams
+  - Julian Bream
+  - Garoto
+  - Baden Powell
+  - Marco Pereira
+** Bands
+  - Deepeche Mode
+  - a-ha
+  - hy
+  - Tatsuro Yamashita
+  - ROUND TABLE featuring Nino
+  - k - only human
+  - stratovarius
+  - meshuggah
+  - DC talk
+* Presentes
+** Sobrinho
+   - Train
+   - Pirates
+   - Kids Drum
+   - Superman
+   - IronMan
+   - Flash
+   - Toy House
+   - Rocket
+   - Pirate Ship
+   - Captain America Shield
+   - Tablet
+   - SmartPhone
+   - College Car
+* Doacoes
+  https://www.acnur.org
+* Pinturas
+   - J. M. W. Turner
+* Résumé
+  #+OPTIONS: toc:nil author:nil date:nil num:nil
+
+  *Informações Pessoais*
+
+  |--------------+----------------------------------|
+  | Nome         | Euber Alexandre De Sousa Barbosa |
+  | Whatsapp     | (61) 99839 - 3063                |
+  | E-mail       | elxbarbosa@gmail.com             |
+  | Escolaridade | Ciência da Computação, UCB       |
+  | Idade        | 34 anos                          |
+  | Endereço     | Guará 1,  Brasília – DF          |
+  | Projetos     | github.com/elxbarbosa            |
+
+  *Objetivo*
+
+  ....
+
+  *Resumo Profissional*
+
+  - Desenvolvimento de aplicações web Ruby, .NET e Common Lisp.
+  - Administrador de sistemas com foco em Debian, Gentoo e CentOS.
+
+  *Histórico Profissional*
+
+  - 2013 - 2020
+
+    Musicista em Igreja.
+
+  - 2010 - 2019
+
+    Rádio Táxi Maranata / Atendente & Assistente Administrativo:
+
+      Clientes: Cadastramento de corridas em sistema digital,
+      Motoristas: Registros de multas, cobranças de dividas atrasadas e
+      gerencimaneto de despesas administrativas.
+
+  - 2009
+    TCP  / Operador Logístico:
+
+      Transporte dos produtos, armazenagem do estoque, recebimento de pedidos,
+      embalagem e manuseio, consultoria, gestão e administração logística.
+
+  - 2007 – 2008
+
+    Escola em Movimento / Professor de Violão:
+
+       Aulas de violão para alunos em escolas particulares do ensino medio
+* Delivery
+  TNT0557071400082500858869700010001
