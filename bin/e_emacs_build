@@ -23,7 +23,7 @@ install()
 
     sh autogen.sh
 
-    sh configure --prefix="$PREFIX" --with-modules --with-xwidgets --with-gif --with-jpeg --with-png --with-rsvg --with-tiff --with-xft --with-xpm --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls --with-x-toolkit=gtk3
+    sh configure --prefix="$PREFIX" --with-modules --with-gif --with-jpeg --with-png --with-rsvg --with-tiff --with-xft --with-xpm --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls --with-x-toolkit=gtk3
 
     make -j2
 
