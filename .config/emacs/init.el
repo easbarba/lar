@@ -58,44 +58,44 @@
        (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-13"))))
 
 ;; =================================
-  ;; * DEFALIAS / ADVICES-ADD / ADD-HOOK
-  ;; =================================
+;; * DEFALIAS / ADVICES-ADD / ADD-HOOK
+;; =================================
 
-  ;; DEFALIAS
-  (defalias 'yes-or-no-p 'y-or-n-p)
+;; DEFALIAS
+(defalias 'yes-or-no-p 'y-or-n-p)
 
-  ;; ** HOOKS
-  (add-hook 'after-init-hook 'global-auto-revert-mode)
-  (add-hook 'after-init-hook 'transient-mark-mode)
-  (add-hook 'focus-out-hook 'garbage-collect)
-  (add-hook 'makefile-mode-hook 'indent-tabs-mode)
-  (add-hook 'prog-mode-hook 'hs-minor-mode)
-  ;; (add-hook 'after-save-hook 'backup-each-save)
+;; ** HOOKS
+(add-hook 'after-init-hook 'global-auto-revert-mode)
+(add-hook 'after-init-hook 'transient-mark-mode)
+(add-hook 'focus-out-hook 'garbage-collect)
+(add-hook 'makefile-mode-hook 'indent-tabs-mode)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+;; (add-hook 'after-save-hook 'backup-each-save)
 
-  ;; UTF-8 as the default coding system
-  (when (fboundp 'set-charset-priority)(set-charset-priority 'unicode))
-  (setq-default buffer-file-coding-system 'utf-8)
+;; UTF-8 as the default coding system
+(when (fboundp 'set-charset-priority)(set-charset-priority 'unicode))
+(setq-default buffer-file-coding-system 'utf-8)
 
-    ;; ** DISABLE ANNOYING
-  (let ((disable-those '(narrow-to-region
-                         narrow-to-page
-                         narrow-to-defun
-                         upcase-region
-                         downcase-region)))
-    (dolist (x disable-those)
-      (put 'disable-those 'disable nil)))
+;; ** DISABLE ANNOYING
+(let ((disable-those '(narrow-to-region
+                       narrow-to-page
+                       narrow-to-defun
+                       upcase-region
+                       downcase-region)))
+  (dolist (x disable-those)
+    (put 'disable-those 'disable nil)))
 
-  ;; ** ENABLE GLOBAL FEATURES
-  (global-auto-revert-mode t)
-  (size-indication-mode t)
-  (blink-cursor-mode 0)
-  (delete-selection-mode t)
-  (transient-mark-mode t)
-  (global-font-lock-mode t)
-  (electric-pair-mode)
-  (prefer-coding-system 'utf-8)
-  (which-function-mode)
-  (pixel-scroll-mode)
+;; ** ENABLE GLOBAL FEATURES
+(global-auto-revert-mode t)
+(size-indication-mode t)
+(blink-cursor-mode 0)
+(delete-selection-mode t)
+(transient-mark-mode t)
+(global-font-lock-mode t)
+(electric-pair-mode)
+(prefer-coding-system 'utf-8)
+(which-function-mode)
+(pixel-scroll-mode)
 
 (setq network-security-level 'high
       gnutls-verify-error t
@@ -279,53 +279,53 @@
 (add-hook 'after-change-major-mode-hook 'purge-minor-modes)
 ;; * PACOTES INTERNOS
 ;; ** IDO
-  (require 'ido)
-  (setq ido-everywhere t)
-  (ido-mode 1)
+(require 'ido)
+(setq ido-everywhere t)
+(ido-mode 1)
 
-  (setq ido-create-new-buffer 'always
-        ido-enable-prefix nil
-        ido-enable-regexp t
-        ido-decorations
-        (quote ("\n-> " "" "\n " "\n ..." "[" "]" " [No match]" " [Matched]" "
+(setq ido-create-new-buffer 'always
+      ido-enable-prefix nil
+      ido-enable-regexp t
+      ido-decorations
+      (quote ("\n-> " "" "\n " "\n ..." "[" "]" " [No match]" " [Matched]" "
              [Not readable]" " [Too big]" " [Confirm]"))
-        ido-file-extensions-order '(".lisp" ".py" ".org" ".el")
-        ido-max-directory-size 100000
-        ido-use-filename-at-point t
-        ido-enable-dot-prefix t
-        ido-use-url-at-point t
-        ido-use-filename-at-point 'guess
-        ido-use-virtual-buffers t)
+      ido-file-extensions-order '(".lisp" ".py" ".org" ".el")
+      ido-max-directory-size 100000
+      ido-use-filename-at-point t
+      ido-enable-dot-prefix t
+      ido-use-url-at-point t
+      ido-use-filename-at-point 'guess
+      ido-use-virtual-buffers t)
 
-  (define-key (cdr ido-minor-mode-map-entry) [remap write-file] nil)
+(define-key (cdr ido-minor-mode-map-entry) [remap write-file] nil)
 
-  (add-hook 'ido-setup-hook
-            (lambda ()
-              (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
-              (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
+(add-hook 'ido-setup-hook
+          (lambda ()
+            (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+            (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
-  (defun e/ido-bookmark-jump (bname)
-    "Switch to bookmark BNAME interactively using `ido'."
-    (interactive
-     (list (ido-completing-read "Bookmark: " (bookmark-all-names) nil t)))
-    (bookmark-jump bname))
+(defun e/ido-bookmark-jump (bname)
+  "Switch to bookmark BNAME interactively using `ido'."
+  (interactive
+   (list (ido-completing-read "Bookmark: " (bookmark-all-names) nil t)))
+  (bookmark-jump bname))
 
-  (defun e/recentf-ido-find-file ()
-    "Find a recent file using Ido."
-    (interactive)
-    (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
-      (when file
-        (find-file file))))
-  (global-set-key (kbd "C-c r") 'e/recentf-ido-find-file)
+(defun e/recentf-ido-find-file ()
+  "Find a recent file using Ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
+(global-set-key (kbd "C-c r") 'e/recentf-ido-find-file)
 
-  (defun e/mx-ido ()
-    "Open Mx in ido-fashioned way."
-    (interactive)
-    (call-interactively
-     (intern
-      (ido-completing-read
-       "M-x "
-       (all-completions "" obarray 'commandp)))))
+(defun e/mx-ido ()
+  "Open Mx in ido-fashioned way."
+  (interactive)
+  (call-interactively
+   (intern
+    (ido-completing-read
+     "M-x "
+     (all-completions "" obarray 'commandp)))))
 
 ;; ===== ORG-MODE
 (add-hook 'org-mode-hook
@@ -385,263 +385,263 @@
 		 "\C-x\C-s" #'org-edit-src-exit))))
 
 ;; ** DIRED
-  (add-hook 'dired-mode-hook
-            (lambda ()
-              (require 'dired)
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (require 'dired)
 
-              (when (eq system-type 'berkeley-unix)
-                (setq insert-directory-program "gls"))
+            (when (eq system-type 'berkeley-unix)
+              (setq insert-directory-program "gls"))
 
-              (setq global-auto-revert-non-file-buffers t
-                    dired-listing-switches "-laGh1v --group-directories-first"
-                    auto-revert-verbose nil
-                    dired-omit-mode t
-                    dired-dwim-target t
-                    dired-recursive-deletes (quote top)
-                    dired-recursive-deletes t
-                    dired-compress-files-alist
-                    '(("\\.zip\\'" . "zip %o -r --filesync %i")
-                      ("\\.tar\\.gz\\'" . "tar -c %i | gzip -c9 > %o"))
-                    dired-guess-shell-alist-user
-                    (list
-                     '("\\.odt\\'" "libreoffice")
-                     '("\\.\\(?:mp4\\|webm\\|mkv\\|ogv\\)\\(?:\\.part\\)?\\'"
-                       ,*player*)
-                     '("\\.html?\\'" *browser*))
-                    dired-create-destination-dirs t)
+            (setq global-auto-revert-non-file-buffers t
+                  dired-listing-switches "-laGh1v --group-directories-first"
+                  auto-revert-verbose nil
+                  dired-omit-mode t
+                  dired-dwim-target t
+                  dired-recursive-deletes (quote top)
+                  dired-recursive-deletes t
+                  dired-compress-files-alist
+                  '(("\\.zip\\'" . "zip %o -r --filesync %i")
+                    ("\\.tar\\.gz\\'" . "tar -c %i | gzip -c9 > %o"))
+                  dired-guess-shell-alist-user
+                  (list
+                   '("\\.odt\\'" "libreoffice")
+                   '("\\.\\(?:mp4\\|webm\\|mkv\\|ogv\\)\\(?:\\.part\\)?\\'"
+                     ,*player*)
+                   '("\\.html?\\'" *browser*))
+                  dired-create-destination-dirs t)
 
-              (defun e/dired-up-directory ()
-                "Ora - Up directory no spawn directories in Ibuffer."
-                (interactive)
-                (let ((this-directory default-directory)
-                      (buffer (current-buffer)))
-                  (dired-up-directory)
-                  (unless (cl-find-if
-                           (lambda (w)
-                             (with-selected-window w
-                               (and (eq major-mode 'dired-mode)
-                                    (equal default-directory this-directory))))
-                           (delete (selected-window) (window-list)))
-                    (kill-buffer buffer))))
+            (defun e/dired-up-directory ()
+              "Ora - Up directory no spawn directories in Ibuffer."
+              (interactive)
+              (let ((this-directory default-directory)
+                    (buffer (current-buffer)))
+                (dired-up-directory)
+                (unless (cl-find-if
+                         (lambda (w)
+                           (with-selected-window w
+                             (and (eq major-mode 'dired-mode)
+                                  (equal default-directory this-directory))))
+                         (delete (selected-window) (window-list)))
+                  (kill-buffer buffer))))
 
-              (defun e/dired-open-file ()
-                "In dired, open the file named on this line."
-                (interactive)
-                (let* ((file (dired-get-filename nil t)))
-                  (message "Opening %s..." file)
-                  (call-process "xdg-open" nil 0 nil file)
-                  (message "Opening %s done" file)))
+            (defun e/dired-open-file ()
+              "In dired, open the file named on this line."
+              (interactive)
+              (let* ((file (dired-get-filename nil t)))
+                (message "Opening %s..." file)
+                (call-process "xdg-open" nil 0 nil file)
+                (message "Opening %s done" file)))
 
-              (define-key dired-mode-map "z" 'dired-do-compress)
-              (define-key dired-mode-map "^"
-                (lambda () (interactive) (find-alternate-file "..")))
-              (define-key dired-mode-map "b" 'e/dired-up-directory)
-              (define-key dired-mode-map "r" 'e/dired-open-file)
-              (define-key dired-mode-map (kbd "C-c j") 'dired-two-panel)
-              (define-key dired-mode-map "I"
-                (lambda () (interactive) (info (dired-get-filename))))
+            (define-key dired-mode-map "z" 'dired-do-compress)
+            (define-key dired-mode-map "^"
+              (lambda () (interactive) (find-alternate-file "..")))
+            (define-key dired-mode-map "b" 'e/dired-up-directory)
+            (define-key dired-mode-map "r" 'e/dired-open-file)
+            (define-key dired-mode-map (kbd "C-c j") 'dired-two-panel)
+            (define-key dired-mode-map "I"
+              (lambda () (interactive) (info (dired-get-filename))))
 
-              (require 'wdired)
-              (setq wdired-allow-to-change-permissions t
-                    wdired-allow-to-redirect-links t)
+            (require 'wdired)
+            (setq wdired-allow-to-change-permissions t
+                  wdired-allow-to-redirect-links t)
 
-              (require 'dired-x)
-              (put 'dired-find-alternate-file 'disabled nil)
+            (require 'dired-x)
+            (put 'dired-find-alternate-file 'disabled nil)
 
-              (dired-hide-details-mode)))
+            (dired-hide-details-mode)))
 
 ;; ** ESHELL
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (require 'eshell)
-              (require 'em-smart)
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (require 'eshell)
+            (require 'em-smart)
 
-              (add-to-list 'eshell-visual-commands "ssh")
-              (add-to-list 'eshell-visual-commands "tail")
-              (add-to-list 'eshell-visual-commands "htop")
-              (add-to-list 'eshell-visual-commands "emacs")
-              (add-to-list 'eshell-visual-commands "vim")
+            (add-to-list 'eshell-visual-commands "ssh")
+            (add-to-list 'eshell-visual-commands "tail")
+            (add-to-list 'eshell-visual-commands "htop")
+            (add-to-list 'eshell-visual-commands "emacs")
+            (add-to-list 'eshell-visual-commands "vim")
 
-              (setq eshell-scroll-to-bottom-on-input 'all
-                    eshell-visual-subcommands
-                    '("git" "commit" "--amend" "log" "l" "diff" "show")
-                    eshell-error-if-no-glob t
-                    eshell-where-to-jump 'begin
-                    eshell-review-quick-commands nil
-                    eshell-smart-space-goes-to-end t
-                    eshell-hist-ignoredups t
-                    eshell-save-history-on-exit t
-                    eshell-prefer-lisp-functions nil
-                    eshell-destroy-buffer-when-process-dies t)
+            (setq eshell-scroll-to-bottom-on-input 'all
+                  eshell-visual-subcommands
+                  '("git" "commit" "--amend" "log" "l" "diff" "show")
+                  eshell-error-if-no-glob t
+                  eshell-where-to-jump 'begin
+                  eshell-review-quick-commands nil
+                  eshell-smart-space-goes-to-end t
+                  eshell-hist-ignoredups t
+                  eshell-save-history-on-exit t
+                  eshell-prefer-lisp-functions nil
+                  eshell-destroy-buffer-when-process-dies t)
 
-              (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:"
-                                     (getenv "PATH")))
-              (getenv "PATH")
-              (setenv "PAGER" "cat")
+            (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:"
+                                   (getenv "PATH")))
+            (getenv "PATH")
+            (setenv "PAGER" "cat")
 
-              (add-hook 'eshell-expand-input-functions
-                        #'eshell-expand-history-references)
+            (add-hook 'eshell-expand-input-functions
+                      #'eshell-expand-history-references)
 
-              (defun eshell/find-file (file)
-                "Find FILE using Eshell."
-                (find-file file))
+            (defun eshell/find-file (file)
+              "Find FILE using Eshell."
+              (find-file file))
 
-              (defun e/eshell-runit ()
-                "Open Eshell using directory associated with the current buffer's file.
-
-      The eshell is renamed to match that
-      directory to make multiple eshell windows easier."
-                (interactive)
-                (let* ((height (/ (window-total-height) 3)))
-                  (split-window-vertically (- height))
-                  (other-window 1)
-                  (eshell "new")
-                  (insert (concat "make -ks build && make -ks run"))
-                  (eshell-send-input)))
-              (global-set-key (kbd "C-c n") 'e/eshell-runit)
-
-              (defun eshell/clear ()
-                "Function to clear eshell buffer."
-                (let ((eshell-buffer-maximum-lines 0))
-                  (eshell-truncate-buffer)))
-
-              (defun eshell/gst (&rest args)
-                "Git status ARGS."
-                (magit-status (pop args) nil)
-                (eshell/echo))   ;; The echo command suppresses output
-
-              (defun eshell/find (&rest args)
-                "Wrapper around the ‘find’ executable using ARGS."
-                (let ((cmd (concat "find " (string-join args))))
-                  (shell-command-to-string cmd)))
-
-
-              (defun eshell/hp (&rest args)
-                "Emily run ARGS."
-                (let ((cmd (concat "cero" *space* (string-join args))))
-                  (shell-command-to-string cmd)))
-
-              (defun eshell/dp (&rest args)
-                "Emily - run distro ARGS."
-                (let ((cmd (concat "distro" *space* (string-join args))))
-                  (shell-command-to-string cmd)))
-
-              (defun e/eshell-here ()
-                "Open Eshell using directory associated with the current buffer's file.
+            (defun e/eshell-runit ()
+              "Open Eshell using directory associated with the current buffer's file.
 
       The eshell is renamed to match that
       directory to make multiple eshell windows easier."
-                (interactive)
-                (let* ((height (/ (window-total-height) 3)))
-                  (split-window-vertically (- height))
-                  (other-window 1)
-                  (eshell "new")
-                  (insert (concat "ls"))
-                  (eshell-send-input)))
-              (global-set-key (kbd "C-c E") 'e/eshell-here)
+              (interactive)
+              (let* ((height (/ (window-total-height) 3)))
+                (split-window-vertically (- height))
+                (other-window 1)
+                (eshell "new")
+                (insert (concat "make -ks build && make -ks run"))
+                (eshell-send-input)))
+            (global-set-key (kbd "C-c n") 'e/eshell-runit)
 
-              (defun e/eshell-quit-or-delete-char (arg)
-                "ARG."
-                (interactive "p")
-                (if (and (eolp) (looking-back eshell-prompt-regexp))
-                    (progn
-                      (eshell-life-is-too-much) ; Why not? (eshell/exit)
-                      (ignore-errors
-                        (delete-window)))
-                  (delete-forward-char arg)))
+            (defun eshell/clear ()
+              "Function to clear eshell buffer."
+              (let ((eshell-buffer-maximum-lines 0))
+                (eshell-truncate-buffer)))
 
-              (add-hook 'eshell-mode-hook
-                        (lambda ()
-                          (global-set-key (kbd "C-d") 'e/eshell-quit-or-delete-char)))
+            (defun eshell/gst (&rest args)
+              "Git status ARGS."
+              (magit-status (pop args) nil)
+              (eshell/echo))   ;; The echo command suppresses output
 
-              (defun e/eshell-there (host)
-                "Eshell with Tramp automatically connect to a remote system, HOST.
+            (defun eshell/find (&rest args)
+              "Wrapper around the ‘find’ executable using ARGS."
+              (let ((cmd (concat "find " (string-join args))))
+                (shell-command-to-string cmd)))
+
+
+            (defun eshell/hp (&rest args)
+              "Emily run ARGS."
+              (let ((cmd (concat "cero" *space* (string-join args))))
+                (shell-command-to-string cmd)))
+
+            (defun eshell/dp (&rest args)
+              "Emily - run distro ARGS."
+              (let ((cmd (concat "distro" *space* (string-join args))))
+                (shell-command-to-string cmd)))
+
+            (defun e/eshell-here ()
+              "Open Eshell using directory associated with the current buffer's file.
+
+      The eshell is renamed to match that
+      directory to make multiple eshell windows easier."
+              (interactive)
+              (let* ((height (/ (window-total-height) 3)))
+                (split-window-vertically (- height))
+                (other-window 1)
+                (eshell "new")
+                (insert (concat "ls"))
+                (eshell-send-input)))
+            (global-set-key (kbd "C-c E") 'e/eshell-here)
+
+            (defun e/eshell-quit-or-delete-char (arg)
+              "ARG."
+              (interactive "p")
+              (if (and (eolp) (looking-back eshell-prompt-regexp))
+                  (progn
+                    (eshell-life-is-too-much) ; Why not? (eshell/exit)
+                    (ignore-errors
+                      (delete-window)))
+                (delete-forward-char arg)))
+
+            (add-hook 'eshell-mode-hook
+                      (lambda ()
+                        (global-set-key (kbd "C-d") 'e/eshell-quit-or-delete-char)))
+
+            (defun e/eshell-there (host)
+              "Eshell with Tramp automatically connect to a remote system, HOST.
 
       The hostname can be either the IP address, or FQDN,
       and can specify the user account, as in
       root@blah.com. HOST can also be a complete Tramp reference."
-                (interactive "sHost: ")
+              (interactive "sHost: ")
 
-                (let* ((default-directory
-                         (cond
-                          ((string-match-p "^/" host) host)
+              (let* ((default-directory
+                       (cond
+                        ((string-match-p "^/" host) host)
 
-                          ((string-match-p (ha/eshell-host-regexp 'full) host)
-                           (string-match (ha/eshell-host-regexp 'full) host)
-                           (let* ((user1 (match-string 2 host))
-                                  (host1 (match-string 3 host))
-                                  (user2 (match-string 6 host))
-                                  (host2 (match-string 7 host)))
-                             (if host1
-                                 (ha/eshell-host->tramp user1 host1)
-                               (ha/eshell-host->tramp user2 host2))))
+                        ((string-match-p (ha/eshell-host-regexp 'full) host)
+                         (string-match (ha/eshell-host-regexp 'full) host)
+                         (let* ((user1 (match-string 2 host))
+                                (host1 (match-string 3 host))
+                                (user2 (match-string 6 host))
+                                (host2 (match-string 7 host)))
+                           (if host1
+                               (ha/eshell-host->tramp user1 host1)
+                             (ha/eshell-host->tramp user2 host2))))
 
-                          (t (format "/%s:" host)))))
-                  (eshell-here)))
+                        (t (format "/%s:" host)))))
+                (eshell-here)))
 
-              (defun e/eshell-close ()
-                "Close eshell."
-                (insert "exit")
-                (eshell-send-input)
-                (delete-window))
+            (defun e/eshell-close ()
+              "Close eshell."
+              (insert "exit")
+              (eshell-send-input)
+              (delete-window))
 
-              (defun eshell-next-prompt (n)
-                "Move to end of Nth next prompt in the buffer.
+            (defun eshell-next-prompt (n)
+              "Move to end of Nth next prompt in the buffer.
   See `eshell-prompt-regexp'."
-                (interactive "p")
-                (re-search-forward eshell-prompt-regexp nil t n)
-                (when eshell-highlight-prompt
-                  (while (not (get-text-property (line-beginning-position) 'read-only) )
-                    (re-search-forward eshell-prompt-regexp nil t n)))
-                (eshell-skip-prompt))
+              (interactive "p")
+              (re-search-forward eshell-prompt-regexp nil t n)
+              (when eshell-highlight-prompt
+                (while (not (get-text-property (line-beginning-position) 'read-only) )
+                  (re-search-forward eshell-prompt-regexp nil t n)))
+              (eshell-skip-prompt))
 
-              (defun eshell-previous-prompt (n)
-                "Move to end of Nth previous prompt in the buffer.
+            (defun eshell-previous-prompt (n)
+              "Move to end of Nth previous prompt in the buffer.
   See `eshell-prompt-regexp'."
-                (interactive "p")
-                (backward-char)
-                (eshell-next-prompt (- n)))
+              (interactive "p")
+              (backward-char)
+              (eshell-next-prompt (- n)))
 
-              (defun eshell-insert-history ()
-                "Displays the eshell history to select and insert back into your eshell."
-                (interactive)
-                (insert (ido-completing-read "Eshell history: "
-                                             (delete-dups
-                                              (ring-elements eshell-history-ring)))))
+            (defun eshell-insert-history ()
+              "Displays the eshell history to select and insert back into your eshell."
+              (interactive)
+              (insert (ido-completing-read "Eshell history: "
+                                           (delete-dups
+                                            (ring-elements eshell-history-ring)))))
 
-              (add-hook 'eshell-mode-hook
-                        (lambda ()
-                          (define-key eshell-mode-map (kbd "M-S-P") 'eshell-previous-prompt)
-                          (define-key eshell-mode-map (kbd "M-S-N") 'eshell-next-prompt)
-                          (define-key eshell-mode-map (kbd "M-r") 'eshell-insert-history)))
+            (add-hook 'eshell-mode-hook
+                      (lambda ()
+                        (define-key eshell-mode-map (kbd "M-S-P") 'eshell-previous-prompt)
+                        (define-key eshell-mode-map (kbd "M-S-N") 'eshell-next-prompt)
+                        (define-key eshell-mode-map (kbd "M-r") 'eshell-insert-history)))
 
 
-              (add-hook 'after-save-hook
-                        'executable-make-buffer-file-executable-if-script-p)))
+            (add-hook 'after-save-hook
+                      'executable-make-buffer-file-executable-if-script-p)))
 
 ;; ** SHELL
-  (defun e/shell-here ()
-    "Open `shell' using directory associated with the current buffer's file.
+(defun e/shell-here ()
+  "Open `shell' using directory associated with the current buffer's file.
 
          The `shell' is renamed to match that
          directory to make multiple eshell windows easier."
-    (interactive)
-    (let* ((height (/ (window-total-height) 3)))
-      (split-window-vertically (- height))
-      (other-window 1)
-      (shell)))
+  (interactive)
+  (let* ((height (/ (window-total-height) 3)))
+    (split-window-vertically (- height))
+    (other-window 1)
+    (shell)))
 
-  (defun e/ansi-term-here ()
-    "Open `ansi-term' using directory associated with the current buffer's file.
+(defun e/ansi-term-here ()
+  "Open `ansi-term' using directory associated with the current buffer's file.
 
       The `ansi-term' is renamed to match that
       directory to make multiple eshell windows easier."
-    (interactive)
-    (let* ((height (/ (window-total-height) 3)))
-      (split-window-vertically (- height))
-      (other-window 1)
-      (ansi-term "bash" "Mini-Shell")))
-  (global-set-key (kbd "C-c T") #'e/ansi-term-here)
+  (interactive)
+  (let* ((height (/ (window-total-height) 3)))
+    (split-window-vertically (- height))
+    (other-window 1)
+    (ansi-term "bash" "Mini-Shell")))
+(global-set-key (kbd "C-c T") #'e/ansi-term-here)
 
 ;; ** FLYMAKE
 (add-hook 'prog-mode-hook
@@ -713,46 +713,46 @@
 
 
 ;; ** RECENTF
-  (require 'recentf)
-  (recentf-mode 1)
-  (run-at-time nil (* 5 120) 'recentf-save-list)
-  (setq recentf-max-saved-items 1000
-        recentf-max-menu-items 60
-        ;; disable recentf-cleanup on Emacs start, because it can cause
-        recentf-auto-cleanup 'never ;; problems with remote files
-        recentf-auto-cleanup 600  ;; clean up the recent files
-        ;; exclude ** from recentfiles buffer
-        recentf-exclude '("^/var/folders\\.*"
-                          "COMMIT_MSG"
-                          "[0-9a-f]\\{32\\}-[0-9a-f]\\{32\\}\\.org"
-                          "github.*txt$"
-                          "COMMIT_EDITMSG\\'"
-                          ()			".*-autoloads\\.el\\'"
-                          "recentf"
-                          ".*pang$" ".*cache$"
-                          "[/\\]\\.elpa/"))
+(require 'recentf)
+(recentf-mode 1)
+(run-at-time nil (* 5 120) 'recentf-save-list)
+(setq recentf-max-saved-items 1000
+      recentf-max-menu-items 60
+      ;; disable recentf-cleanup on Emacs start, because it can cause
+      recentf-auto-cleanup 'never ;; problems with remote files
+      recentf-auto-cleanup 600  ;; clean up the recent files
+      ;; exclude ** from recentfiles buffer
+      recentf-exclude '("^/var/folders\\.*"
+                        "COMMIT_MSG"
+                        "[0-9a-f]\\{32\\}-[0-9a-f]\\{32\\}\\.org"
+                        "github.*txt$"
+                        "COMMIT_EDITMSG\\'"
+                        ()			".*-autoloads\\.el\\'"
+                        "recentf"
+                        ".*pang$" ".*cache$"
+                        "[/\\]\\.elpa/"))
 
-  ;; Add visited dired visited directories to recentf
-  (defun recentf-track-opened-file ()
-    "Insert dired/file name just opened or written into the recent list."
-    (let ((buff-name (or buffer-file-name
-                         (and (derived-mode-p 'dired-mode)
-                              default-directory))))
-      (and buff-name
-           (recentf-add-file buff-name)))
-    ;; Must return nil because it is run from `write-file-functions'.
-    nil)
+;; Add visited dired visited directories to recentf
+(defun recentf-track-opened-file ()
+  "Insert dired/file name just opened or written into the recent list."
+  (let ((buff-name (or buffer-file-name
+                       (and (derived-mode-p 'dired-mode)
+                            default-directory))))
+    (and buff-name
+         (recentf-add-file buff-name)))
+  ;; Must return nil because it is run from `write-file-functions'.
+  nil)
 
-  (defun recentf-track-closed-file ()
-    "Update the recent list when a file or dired buffer is killed.
+(defun recentf-track-closed-file ()
+  "Update the recent list when a file or dired buffer is killed.
   That is, remove a non kept file from the recent list."
-    (let ((buff-name (or buffer-file-name
-                         (and
-                          (derived-mode-p 'dired-mode)
-                          default-directory))))
-      (and buff-name
-           (recentf-remove-if-non-kept buff-name))))
-  (add-hook 'dired-after-readin-hook 'recentf-track-opened-file)
+  (let ((buff-name (or buffer-file-name
+                       (and
+                        (derived-mode-p 'dired-mode)
+                        default-directory))))
+    (and buff-name
+         (recentf-remove-if-non-kept buff-name))))
+(add-hook 'dired-after-readin-hook 'recentf-track-opened-file)
 
 ;; ** IBUFFER
 ;; (require 'ibuffer)
@@ -1248,7 +1248,7 @@ Requires an installation of ImageMagick (\"convert\")."
   :type 'string
   :group '*vars*)
 
-(defcustom *musica* (concat *lar* "/Musica")
+(defcustom *musica* (concat *lar* "/Music")
   "Folder to save songs."
   :type 'string
   :group '*vars*)
@@ -1302,19 +1302,19 @@ Requires an installation of ImageMagick (\"convert\")."
   "Download Video w/ URL - GPL-3.0."
   (interactive "p")
   (let ((default-directory *video*))
-	(start-process "VIDEO-DOWNLOADER" "VIDEO-DOWNLOADER" *media-downloader* (current-kill 0 t))
-	(message "Watch progress at VIDEO buffer!")))
+    (start-process "VIDEO-DOWNLOADER" "VIDEO-DOWNLOADER" *media-downloader* (current-kill 0 t))
+    (message "Watch progress at VIDEO buffer!")))
 (global-set-key (kbd "C-c f V") #'(lambda () (interactive) (e/get-video (current-kill 0 t))))
 
 (defun e/get-audio (url)
   "Download Audio w/ URL - GPL-3.0!"
   (interactive "p")
   (let ((default-directory *musica*)
-	      (format "--extract-audio")
-	      (audio-format "--audio-format")
-	      (audio-extension "vorbis"))
-	  (start-process "AUDIO-DOWNLOADER" "AUDIO-DOWNLOADER" *media-downloader* format audio-format audio-extension url)
-	  (message "Watch progress at AUDIO buffer!")))
+	(format "--extract-audio")
+	(audio-format "--audio-format")
+	(audio-extension "vorbis"))
+    (start-process "AUDIO-DOWNLOADER" "AUDIO-DOWNLOADER" *media-downloader* format audio-format audio-extension url)
+    (message "Watch progress at AUDIO buffer!")))
 (global-set-key (kbd "C-c f A") #'(lambda () (interactive) (e/get-audio (current-kill 0 t))))
 
 (defun e/play-video (&optional url)
@@ -1649,7 +1649,7 @@ Saves to a temp file and puts the filename in the kill ring."
 ;;; * PACOTES EXTERNOS
 
 (defcustom e/packages (quote
- (eglot jetbrains-darcula-theme nixpkgs-fmt nixos-options nix-mode counsel selectrum-prescient yari yard-mode bundler ruby-compilation company-inf-ruby shackle rspec-mode rubocopfmt ruby-tools rufo robe rubocop ruby-test-mode chruby rbenv rvm git-link buffer-expose org-make-toc lua-mode lsp-ui org-journal darkroom slime-company highlight-symbol bufler magit emms doom-themes 0blayout hgignore-mode basic-ide typescript-mode editorconfig yaml-mode company-box vterm ox-epub outline-toc helm deadgrep fish-completion org-present emmet-mode helpful highlight-indent-guides company-shell outshine json-mode fish-mode gnu-elpa-keyring-update indent-guide hl-todo rainbow-mode dap-mode flymake-json gitignore-mode gitattributes-mode wgrep writeroom-mode dired-sidebar dired-ranger peep-dired all-the-icons-dired ido-at-point ido-hacks flx-ido beacon which-key expand-region fill-column-indicator rainbow-delimiters erc-hl-nicks erc-image elfeed org-bullets gif-screencast goto-chg yasnippet-snippets htmlize markdown-toc company-statistics company-quickhelp aggressive-indent pdf-tools eshell-prompt-extras esh-autosuggest esh-help anzu google-translate bug-hunter dired-collapse dired-git-info langtool smartparens olivetti nov doom-modeline imgbb webpaste flymake-shellcheck flymake-diagnostic-at-point crux paradox eyebrowse ido-completing-read+ grip-mode iedit multiple-cursors diff-hl zoom define-word luarocks languagetool ansi package-build shut-up epl git commander f dash s cask dockerfile-mode frog-jump-buffer isolate litable eshell-toggle eshell-syntax-highlighting eshell-did-you-mean rake prettier-js binder csharp-mode rust-mode php-mode use-package))
+		       (eglot jetbrains-darcula-theme nixpkgs-fmt nixos-options nix-mode counsel selectrum-prescient yari yard-mode bundler ruby-compilation company-inf-ruby shackle rspec-mode rubocopfmt ruby-tools rufo robe rubocop ruby-test-mode chruby rbenv rvm git-link buffer-expose org-make-toc lua-mode lsp-ui org-journal darkroom slime-company highlight-symbol bufler magit emms doom-themes 0blayout hgignore-mode basic-ide typescript-mode editorconfig yaml-mode company-box vterm ox-epub outline-toc helm deadgrep fish-completion org-present emmet-mode helpful highlight-indent-guides company-shell outshine json-mode fish-mode gnu-elpa-keyring-update indent-guide hl-todo rainbow-mode dap-mode flymake-json gitignore-mode gitattributes-mode wgrep writeroom-mode dired-sidebar dired-ranger peep-dired all-the-icons-dired ido-at-point ido-hacks flx-ido beacon which-key expand-region fill-column-indicator rainbow-delimiters erc-hl-nicks erc-image elfeed org-bullets gif-screencast goto-chg yasnippet-snippets htmlize markdown-toc company-statistics company-quickhelp aggressive-indent pdf-tools eshell-prompt-extras esh-autosuggest esh-help anzu google-translate bug-hunter dired-collapse dired-git-info langtool smartparens olivetti nov doom-modeline imgbb webpaste flymake-shellcheck flymake-diagnostic-at-point crux paradox eyebrowse ido-completing-read+ grip-mode iedit multiple-cursors diff-hl zoom define-word luarocks languagetool ansi package-build shut-up epl git commander f dash s cask dockerfile-mode frog-jump-buffer isolate litable eshell-toggle eshell-syntax-highlighting eshell-did-you-mean rake prettier-js binder csharp-mode rust-mode php-mode use-package))
   "Ah, esses pacotes ma-ra-vi-lho-sos."
   :type 'list
   :group 'elx)
@@ -1672,9 +1672,9 @@ Saves to a temp file and puts the filename in the kill ring."
 
 (when (require 'use-package nil :noerror)
   (require 'use-package)
-	 (setq-default use-package-verbose nil
-		       use-package-expand-minimally t
-		       use-package-enable-imenu-support t))
+  (setq-default use-package-verbose nil
+		use-package-expand-minimally t
+		use-package-enable-imenu-support t))
 
 (use-package f)
 (use-package s)
@@ -1684,7 +1684,7 @@ Saves to a temp file and puts the filename in the kill ring."
 ;;"List of formmater per major-mode")
 
 ;;(defun choose-formatter
-    ;;(let ((formatter (get major-mode (buffer-expose-mode))))))
+;;(let ((formatter (get major-mode (buffer-expose-mode))))))
 
 ;; * REPOSITORIES PACKAGES
 ;; ** REPOSITORIES PACKAGES - DIRED EXTRA
@@ -2046,16 +2046,16 @@ Saves to a temp file and puts the filename in the kill ring."
    '(("pt" . "en") ("en" . "fr") ("en" . "de"))))
 
 
- (use-package ereader
-   :defer 1
-   :config
-   (add-hook 'ereader-mode-hook
-	     (lambda ()
-	       (face-remap-add-relative 'variable-pitch
-					:family "Hack"
-					:height 1.4)))
-   (setq visual-fill-column-center-text t)
-   (add-hook 'ereader-mode-hook 'visual-line-mode))
+(use-package ereader
+  :defer 1
+  :config
+  (add-hook 'ereader-mode-hook
+	    (lambda ()
+	      (face-remap-add-relative 'variable-pitch
+				       :family "Hack"
+				       :height 1.4)))
+  (setq visual-fill-column-center-text t)
+  (add-hook 'ereader-mode-hook 'visual-line-mode))
 
 ;; ** REPOSITORIES PACKAGES - LANGUAGES
 
@@ -2068,8 +2068,8 @@ Saves to a temp file and puts the filename in the kill ring."
     (with-eval-after-load 'company
       (add-to-list 'company-backends 'company-robe))))
 
-  ;; (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  ;;   (rvm-activate-corresponding-ruby))
+;; (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+;;   (rvm-activate-corresponding-ruby))
 
 (use-package inf-ruby
   :defer 1)

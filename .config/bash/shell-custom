@@ -32,7 +32,7 @@ e-debian-packages ()
 
     languages=(shellcheck zenity libpq-dev bash-completion python3-pip postgresql sqlite3 libsqlite3-dev lua5.4 luarocks lua-check puppet)
 
-    user_packages=(emacs firefox libreoffice kdeconnect mate-power-manager thunderbird calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br fzf)
+    user_packages=(emacs firefox libreoffice elisa kdeconnect calibre inkscape screenkey kdenlive ktorrent cheese gimp obs-studio kate syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br)
 
     media=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -42,7 +42,7 @@ e-debian-packages ()
 
     fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
 
-    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish vrms)
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish vrms fzf)
 
     ruby_tools=(libssl-dev libgdbm-dev)
 
@@ -579,7 +579,7 @@ e-prepara()
     e-nvm
 }
 
-e-atualiza()
+e-update()
 {
     e-gem
     e-pip
@@ -743,7 +743,7 @@ e-foreign-update()
 }
 
 
-# =============== FUNCOES
+# * FUNCS
 
 PESSOAL=/dados/Pessoal
 
@@ -788,7 +788,7 @@ e-iso()
     sudo dd bs=4M if="$1" of="$2" status=progress oflag=sync
 }
 
-# =============== UTILIDADES
+# * UTILITIES
 
 e-run() {
     number=${1}
