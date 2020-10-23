@@ -3,6 +3,11 @@
 ;;; Description: GNU Emacs Configurations
 
 ;; * INITIAL CONFIGURATIONS
+;; ** EARLY
+
+(when (version< emacs-version "27.1")
+  (load (concat user-emacs-directory "early-init.el")))
+
 ;; ** GC
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)
@@ -25,7 +30,6 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")
 			 ("melpa" . "http://melpa.org/packages/")))
-
 
 ;; Louvado seja o sol
 (package-initialize)
