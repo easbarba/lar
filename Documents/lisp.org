@@ -1,0 +1,30 @@
+#+TILE: Lisp - Study Annotations
+
+* Sumario
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+  - [[#livros][Livros]]
+  - [[#ldc][LDC]]
+- [[#emacs-lisp][Emacs Lisp]]
+- [[#common-lisp][Common Lisp]]
+- [[#guile][Guile]]
+:END:
+* Progresso
+** Livros
+   | Livros           | Capitulo | em | tarde | revisao |
+   |------------------+----------+----+-------+---------|
+   | ANSI Common Lisp |          |    |       |         |
+   |                  |          |    |       |         |
+
+** LDC
+   | Source Code | folder | file | @ |
+   |-------------+--------+------+---|
+   | sbcl        |        |      |   |
+   | asdf        |        |      |   |
+   | alexandria  |        |      |   |
+* Emacs Lisp
+* Common Lisp
+* Guile
