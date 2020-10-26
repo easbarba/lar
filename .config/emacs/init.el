@@ -57,9 +57,9 @@
 
 ;; ** FONTES
 (cond ((member "JetBrains Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-13")))
+       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-14")))
       ((member "DejaVu Sans Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-13"))))
+       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))))
 
 ;; =================================
 ;; * DEFALIAS / ADVICES-ADD / ADD-HOOK
@@ -1653,7 +1653,7 @@ Saves to a temp file and puts the filename in the kill ring."
 ;;; * PACOTES EXTERNOS
 
 (defcustom e/packages (quote
-		       (eglot jetbrains-darcula-theme nixpkgs-fmt nixos-options nix-mode counsel selectrum-prescient yari yard-mode bundler ruby-compilation company-inf-ruby shackle rspec-mode rubocopfmt ruby-tools rufo robe rubocop ruby-test-mode chruby rbenv rvm git-link buffer-expose org-make-toc lua-mode lsp-ui org-journal darkroom slime-company highlight-symbol bufler magit emms doom-themes 0blayout hgignore-mode basic-ide typescript-mode editorconfig yaml-mode company-box vterm ox-epub outline-toc helm deadgrep fish-completion org-present emmet-mode helpful highlight-indent-guides company-shell outshine json-mode fish-mode gnu-elpa-keyring-update indent-guide hl-todo rainbow-mode dap-mode flymake-json gitignore-mode gitattributes-mode wgrep writeroom-mode dired-sidebar dired-ranger peep-dired all-the-icons-dired ido-at-point ido-hacks flx-ido beacon which-key expand-region fill-column-indicator rainbow-delimiters erc-hl-nicks erc-image elfeed org-bullets gif-screencast goto-chg yasnippet-snippets htmlize markdown-toc company-statistics company-quickhelp aggressive-indent pdf-tools eshell-prompt-extras esh-autosuggest esh-help anzu google-translate bug-hunter dired-collapse dired-git-info langtool smartparens olivetti nov doom-modeline imgbb webpaste flymake-shellcheck flymake-diagnostic-at-point crux paradox eyebrowse ido-completing-read+ grip-mode iedit multiple-cursors diff-hl zoom define-word luarocks languagetool ansi package-build shut-up epl git commander f dash s cask dockerfile-mode frog-jump-buffer isolate litable eshell-toggle eshell-syntax-highlighting eshell-did-you-mean rake prettier-js binder csharp-mode rust-mode php-mode use-package))
+		       (eglot jetbrains-darcula-theme nixpkgs-fmt nixos-options nix-mode counsel selectrum-prescient yari yard-mode bundler ruby-compilation company-inf-ruby shackle rspec-mode rubocopfmt ruby-tools rufo robe rubocop ruby-test-mode chruby rbenv rvm git-link buffer-expose org-make-toc lua-mode lsp-ui org-journal darkroom slime-company highlight-symbol bufler magit emms doom-themes 0blayout hgignore-mode basic-ide typescript-mode editorconfig yaml-mode company-box vterm ox-epub outline-toc helm deadgrep fish-completion org-present emmet-mode helpful highlight-indent-guides company-shell outshine json-mode fish-mode gnu-elpa-keyring-update indent-guide hl-todo rainbow-mode dap-mode flymake-json gitignore-mode gitattributes-mode wgrep writeroom-mode dired-sidebar dired-ranger peep-dired all-the-icons-dired ido-at-point ido-hacks flx-ido beacon which-key expand-region fill-column-indicator rainbow-delimiters erc-hl-nicks erc-image elfeed org-bullets gif-screencast goto-chg yasnippet-snippets htmlize markdown-toc company-statistics company-quickhelp aggressive-indent eshell-prompt-extras esh-autosuggest esh-help anzu google-translate bug-hunter dired-collapse dired-git-info langtool smartparens olivetti nov doom-modeline imgbb webpaste flymake-shellcheck flymake-diagnostic-at-point crux paradox eyebrowse ido-completing-read+ grip-mode iedit multiple-cursors diff-hl zoom define-word luarocks languagetool ansi package-build shut-up epl git commander f dash s cask dockerfile-mode frog-jump-buffer isolate litable eshell-toggle eshell-syntax-highlighting eshell-did-you-mean rake prettier-js binder csharp-mode rust-mode php-mode use-package))
   "Ah, esses pacotes ma-ra-vi-lho-sos."
   :type 'list
   :group 'elx)
@@ -1760,20 +1760,6 @@ Saves to a temp file and puts the filename in the kill ring."
   (global-set-key (kbd "C-x l") 'counsel-locate)
   (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
-
-(use-package selectrum
-  :disabled
-  :defer 1
-  :config
-  (ido-mode 0)
-  (selectrum-mode +1))
-
-(use-package selectrum-prescient
-  :disabled
-  :defer 1
-  :config
-  (selectrum-prescient-mode +1)
-  (prescient-persist-mode +1))
 
 (use-package flx-ido
   :disabled
@@ -1982,66 +1968,6 @@ Saves to a temp file and puts the filename in the kill ring."
   ;; Dired
   (define-key dired-mode-map "E" 'emms-play-dired))
 
-(use-package pdf-tools
-  :defer 3
-  :config
-  (pdf-tools-install)
-  ;; (add-hook 'pdf-tools-enabled-hook 'auto-revert-mode)
-  ;; (add-hook 'pdf-view-mode-hook (lambda () (cua-mode 0)))
-  (setq pdf-annot-activate-created-annotations t
-	pdf-view-resize-factor 1.1)
-  ;; (define-key pdf-view-mode-map (kbd "C-n") 'pdf-view-next-page-command)
-  ;; (define-key pdf-view-mode-map (kbd "C-p") 'pdf-view-previous-page-command)
-  ;; (define-key pdf-view-mode-map (kbd "n") 'pdf-view-next-line-or-next-page)
-  ;; (define-key pdf-view-mode-map (kbd "p")'pdf-view-previous-line-or-previous-page)
-  (define-key pdf-view-mode-map (kbd "/") 'pdf-view-midnight-minor-mode)
-
-  ;; --------------- pdf page number on mode-line
-  (define-pdf-cache-function pagelabels)
-  (add-hook 'pdf-view-mode-hook
-	    (lambda ()
-	      (setq-local mode-line-position
-			  '(" ("
-			    ;; (:eval (nth (1- (pdf-view-current-page))
-			    ;; 		  (pdf-cache-pagelabels)))
-			    ;; "/"
-			    (:eval (number-to-string
-				    (pdf-view-current-page)))
-			    "/"
-			    (:eval (number-to-string
-				    (pdf-cache-number-of-pages)))")"))))
-
-  ;; --------------- pdf-tools reopen last page
-  ;; https://github.com/politza/pdf-tools/issues/18#issuecomment-269515117
-
-  (defun e/pdf-set-last-viewed-bookmark ()
-    (interactive)
-    (when (eq major-mode 'pdf-view-mode)
-      (bookmark-set (e/pdf-generate-bookmark-name))))
-
-  (defun e/pdf-jump-last-viewed-bookmark ()
-    (bookmark-set "fake") ; this is new
-    (when
-	(e/pdf-has-last-viewed-bookmark)
-      (bookmark-jump (e/pdf-generate-bookmark-name))))
-
-  (defun e/pdf-has-last-viewed-bookmark ()
-    (assoc
-     (e/pdf-generate-bookmark-name) bookmark-alist))
-
-  (defun e/pdf-generate-bookmark-name ()
-    (concat "PDF-LAST-VIEWED: " (buffer-file-name)))
-
-  (defun e/pdf-set-all-last-viewed-bookmarks ()
-    (dolist (buf (buffer-list))
-      (with-current-buffer buf
-	(e/pdf-set-last-viewed-bookmark))))
-
-  (add-hook 'kill-buffer-hook 'e/pdf-set-last-viewed-bookmark)
-  (add-hook 'pdf-view-mode-hook 'e/pdf-jump-last-viewed-bookmark)
-  (unless noninteractive
-    (add-hook 'kill-emacs-hook #'e/pdf-set-all-last-viewed-bookmarks)))
-
 (use-package google-translate
   :defer 1
   :config (require 'google-translate-smooth-ui)
@@ -2049,17 +1975,6 @@ Saves to a temp file and puts the filename in the kill ring."
   (google-translate-translation-directions-alist
    '(("pt" . "en") ("en" . "fr") ("en" . "de"))))
 
-
-(use-package ereader
-  :defer 1
-  :config
-  (add-hook 'ereader-mode-hook
-	    (lambda ()
-	      (face-remap-add-relative 'variable-pitch
-				       :family "Hack"
-				       :height 1.4)))
-  (setq visual-fill-column-center-text t)
-  (add-hook 'ereader-mode-hook 'visual-line-mode))
 
 ;; ** REPOSITORIES PACKAGES - LANGUAGES
 
@@ -2382,18 +2297,6 @@ Saves to a temp file and puts the filename in the kill ring."
 
 (use-package crux
   :defer t)
-
-(use-package feather
-  :disabled
-  :config (feather-mode))
-
-(use-package leaf
-  :disabled
-  :config (feather-mode))
-
-(use-package leaf-keywords
-  :disabled
-  :config (leaf-keywords-init))
 
 (use-package paradox
   :defer 1
