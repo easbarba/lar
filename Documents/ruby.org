@@ -22,6 +22,7 @@
 ** Livros
    | Livros                                                    | Capitulo                                           | em                                              | tarde                          | revisao |
    |-----------------------------------------------------------+----------------------------------------------------+-------------------------------------------------+--------------------------------+---------|
+   | Beginning Rails 6                                         | Getting Something Running                          | Creating the Blog Application                   |                                |         |
    | The Well Grounded Rubyist                                 | 10  Collections central: Enumerable and Enumerator | 10.8.1 Defining sort-order logic with a block   |                                |         |
    | Practical Object-Oriented Design                          | 4 Creating Flexible Interfaces                     | 4.1 Understanding Interfaces                    |                                |         |
    | Design Patterns in Ruby                                   | Observer                                           |                                                 |                                |         |
