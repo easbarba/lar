@@ -11,6 +11,7 @@
   - [[#shell-software][shell-software]]
   - [[#shell-custom][shell-custom]]
   - [[#emacs][Emacs]]
+  - [[#nixos][Nixos]]
   - [[#awesome][awesome]]
   - [[#bin-scripts][bin scripts]]
   - [[#autostart][autostart]]
@@ -20,10 +21,7 @@
   - [[#wmbar-info][wmbar-info]]
   - [[#guix-config][Guix Config]]
   - [[#nyxt][Nyxt]]
-  - [[#nyxt][Nyxt]]
   - [[#guix][Guix]]
-  - [[#nixos][Nixos]]
-  - [[#nix][Nix]]
   - [[#xserverrc][.xserverrc]]
   - [[#ncmpcpp][Ncmpcpp]]
   - [[#powershell][PowerShell]]
@@ -6541,6 +6539,45 @@
     #+END_SRC
 
     #+RESULTS:
+** Nixos
+*** Config
+    #+begin_src nix
+    #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+
+    #boot.loader.systemd-boot.enable = true;
+
+	  # services.xserver.xkbOptions = "eurosign:e";
+
+	  # Some programs need SUID wrappers, can be configured further or are
+	  # started in user sessions.
+	  # programs.mtr.enable = true;
+	  # programs.gnupg.agent = {
+	  #   enable = true;
+	  #   enableSSHSupport = true;
+	  #   pinentryFlavor = "gnome3";
+	  # };
+
+	  # * Firewall
+	  # networking.firewall.allowedTCPPorts = [ ... ];
+	  # networking.firewall.allowedUDPPorts = [ ... ];
+	  # Or disable the firewall altogether.
+	  # networking.firewall.enable = false;
+
+	  # Enable CUPS to print documents.
+	  # services.printing.enable = true;
+
+    # Configure network proxy if necessary
+    # networking.proxy.default = "http://user:password@proxy:port/";
+    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+    # Select internationalisation properties.
+    # i18n.defaultLocale = "en_US.UTF-8";
+    # console = {
+    #   font = "Lat2-Terminus16";
+    #   keyMap = "us";
+    # };
+
+    #+end_src
 ** awesome
    #+begin_src lua
    -- * Initial setup & Variables
@@ -7770,80 +7807,6 @@
 
    #+end_src
 ** Nyxt
-   #+begin_src lisp
-   (defvar *my-keymap* (make-keymap)  "My keymap.")
-
-   (define-command play-page-video (&optional (buffer (current-buffer)))
-     "Play video in the currently open buffer."
-     (uiop:run-program (list "mpv" (url buffer))))
-   (define-key :keymap *my-keymap*  "C-M-c v" #'play-page-video)
-
-   (define-command play-video-in-current-page (&optional (buffer (current-buffer)))
-     "Play video in the currently open buffer."
-     (uiop:run-program (list "mpv" (url buffer))))
-
-   (defvar *my-keymap* (make-keymap)
-     "My keymap.")
-
-   (define-mode my-mode ()
-     "Dummy mode for the custom key bindings in `*my-keymap*'."
-     ((keymap-schemes :initform (list :emacs *my-keymap*
-                                      :vi-normal *my-keymap*))))
-
-   Debugging
-   (setf *swank-port* 4006)
-
-
-   Use development platform port.
-   (setf +platform-port-command+
-         "~/.local/bin/next-gtk-webkit")
-
-   open-file
-   (defun my-open-videos (filename)
-     "Open videos with mpv."
-     (handler-case (let ((extension (pathname-type filename)))
-                     (match extension
-                            ((or "webm" "mkv" "mp4")
-                             (uiop:launch-program (list "mpv" filename)))
-                            (_
-                             (next/file-manager-mode:open-file-function filename))))
-       (error (c) (log:error "Error opening ~a: ~a" filename c))))
-
-   (setf next/file-manager-mode:*open-file-function* #'my-open-videos)
-
-
-   (define-key :keymap *my-keymap* "C-M-c v" #'play-video-in-current-page)
-
-
-   -- a-FUNCTIONS (m-x)
-   (defun a-play-video ()
-     "Play current page's video"
-     (with-result (url (buffer-get-url))
-       (uiop:launch-program (list "mpv" url))))
-
-   (define-command a-get-video ()
-     "Download current page's video"
-     (with-result (url (buffer-get-url))
-       (uiop:launch-program (list "youtube-dl" url "&"))))
-
-   (define-command a-bookmark-url ()
-     "Allow the user to bookmark a URL via minibuffer input."
-     (with-result (url (read-from-minibuffer (minibuffer *interface*)))
-       (%bookmark-url url)))
-
-   ;; Zoom
-   ;; (setf *zoom-ratio-default* 1.6)
-
-   HOME PAGE
-   (setf (get-default 'remote-interface 'start-page-url) "https://cnn.com")
-
-   ;; Minibuffer
-   (setf (get-default 'minibuffer 'minibuffer-style)
-         (cl-css:inline-css
-          '((body :border-top "14px solid red"))))
-
-   #+end_src
-** Nyxt
    #+begin_src conf ~/.config/nyxt/init.lisp :mkdirp yes
    (in-package :next-user)
 
@@ -7866,6 +7829,80 @@
 
    (setf *browser-class* 'my-browser)
    #+end_src
+*** Config
+    #+begin_src lisp
+    (defvar *my-keymap* (make-keymap)  "My keymap.")
+
+    (define-command play-page-video (&optional (buffer (current-buffer)))
+      "Play video in the currently open buffer."
+      (uiop:run-program (list "mpv" (url buffer))))
+    (define-key :keymap *my-keymap*  "C-M-c v" #'play-page-video)
+
+    (define-command play-video-in-current-page (&optional (buffer (current-buffer)))
+      "Play video in the currently open buffer."
+      (uiop:run-program (list "mpv" (url buffer))))
+
+    (defvar *my-keymap* (make-keymap)
+      "My keymap.")
+
+    (define-mode my-mode ()
+      "Dummy mode for the custom key bindings in `*my-keymap*'."
+      ((keymap-schemes :initform (list :emacs *my-keymap*
+                                       :vi-normal *my-keymap*))))
+
+    Debugging
+    (setf *swank-port* 4006)
+
+
+    Use development platform port.
+    (setf +platform-port-command+
+          "~/.local/bin/next-gtk-webkit")
+
+    open-file
+    (defun my-open-videos (filename)
+      "Open videos with mpv."
+      (handler-case (let ((extension (pathname-type filename)))
+                      (match extension
+                             ((or "webm" "mkv" "mp4")
+                              (uiop:launch-program (list "mpv" filename)))
+                             (_
+                              (next/file-manager-mode:open-file-function filename))))
+	(error (c) (log:error "Error opening ~a: ~a" filename c))))
+
+    (setf next/file-manager-mode:*open-file-function* #'my-open-videos)
+
+
+    (define-key :keymap *my-keymap* "C-M-c v" #'play-video-in-current-page)
+
+
+    -- a-FUNCTIONS (m-x)
+    (defun a-play-video ()
+      "Play current page's video"
+      (with-result (url (buffer-get-url))
+	(uiop:launch-program (list "mpv" url))))
+
+    (define-command a-get-video ()
+      "Download current page's video"
+      (with-result (url (buffer-get-url))
+	(uiop:launch-program (list "youtube-dl" url "&"))))
+
+    (define-command a-bookmark-url ()
+      "Allow the user to bookmark a URL via minibuffer input."
+      (with-result (url (read-from-minibuffer (minibuffer *interface*)))
+	(%bookmark-url url)))
+
+    ;; Zoom
+    ;; (setf *zoom-ratio-default* 1.6)
+
+    HOME PAGE
+    (setf (get-default 'remote-interface 'start-page-url) "https://cnn.com")
+
+    ;; Minibuffer
+    (setf (get-default 'minibuffer 'minibuffer-style)
+          (cl-css:inline-css
+           '((body :border-top "14px solid red"))))
+
+    #+end_src
 ** Guix
 *** Guix Config
    #+begin_src scheme  ~/.config/guix/config.scm :mkdirp yesp
@@ -8158,210 +8195,6 @@
        "zile"))
 
     #+END_SRC
-** Nixos
-*** Config
-    #+begin_src nix
-	  #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-
-	  #boot.loader.systemd-boot.enable = true;
-
-		# services.xserver.xkbOptions = "eurosign:e";
-
-		# Some programs need SUID wrappers, can be configured further or are
-		# started in user sessions.
-		# programs.mtr.enable = true;
-		# programs.gnupg.agent = {
-		#   enable = true;
-		#   enableSSHSupport = true;
-		#   pinentryFlavor = "gnome3";
-		# };
-
-		# * Firewall
-		# networking.firewall.allowedTCPPorts = [ ... ];
-		# networking.firewall.allowedUDPPorts = [ ... ];
-		# Or disable the firewall altogether.
-		# networking.firewall.enable = false;
-
-		# Enable CUPS to print documents.
-		# services.printing.enable = true;
-
-	  # Configure network proxy if necessary
-	  # networking.proxy.default = "http://user:password@proxy:port/";
-	  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-	  # Select internationalisation properties.
-	  # i18n.defaultLocale = "en_US.UTF-8";
-	  # console = {
-	  #   font = "Lat2-Terminus16";
-	  #   keyMap = "us";
-	  # };
-
-    #+end_src
-** Nix
-*** Nixpks
-    #+begin_src nix  ~/.config/nixpkgs/config.nix :mkdirp yesp
-    {
-      # * nix-env
-      allowUnfree = true;
-
-      # * Browsers
-      chromium = {
-	enablePepperFlash = true;
-      };
-
-      firefox = {
-	enableGoogleTalkPlugin = true;
-	enableAdobeFlash = true;
-      };
-    }
-    #+end_src
-*** Configuration
-    #+begin_src nix ~/.config/nixos/configuration.nix :mkdirp yesp
-    { config, pkgs, ... }:
-
-    {
-      imports =
-	[ # Include the results of the hardware scan.
-	  ./hardware-configuration.nix
-	];
-
-      # *  Boot Loader.
-      boot.loader = {
-	      efi = {
-		canTouchEfiVariables = true;
-		efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
-	      };
-	      grub = {
-		      efiSupport = true;
-		      device = "nodev";
-	      };
-      };
-
-      # * Misc
-      nixpkgs.config.allowUnfree = true;
-
-      # * Networking
-      networking.hostName = "nixos";
-      networking.wireless.enable = true;
-      networking.wireless.extraConfig = ''
-	ctrl_interface=/run/wpa_supplicant
-	ctrl_interface_group=wheel
-	'';
-      networking.useDHCP = false;
-      networking.interfaces.enp0s25.useDHCP = true;
-      networking.interfaces.wlp3s0.useDHCP = true;
-
-      # * Time
-      time.timeZone = "America/Sao_Paulo";
-
-      # * Environment
-      environment.variables.EDITOR = "konsole";
-
-      # * Global Packages
-      environment.systemPackages = with pkgs; [
-	      wget coreutils gcc gnumake gnufdisk gnutar parted zile bash bash-completion
-	p7zip zip unzip git
-	wpa_supplicant
-	tmux
-	    ];
-
-      # * Fonts
-      fonts.fonts = with pkgs; [
-	dejavu_fonts jetbrains-mono freefont_ttf
-	source-han-sans-japanese source-han-sans-korean
-      ];
-
-	    # * SSH
-	    services.openssh.enable = true;
-
-	    # * Sound
-	    sound.enable = true;
-	    hardware.pulseaudio.enable = true;
-
-	    # * Laptop
-	    services.xserver.libinput.enable = true;
-
-      # * X11 & Window Manager
-      services.xserver.enable = true;
-	    services.xserver.layout = "us";
-
-	    # * Window Manager
-	    services.xserver.autorun = true;
-	    services.xserver.displayManager.lightdm.enable = true;
-      # security.pam.services.lightdm.enable = true;
-	    services.xserver.windowManager.awesome.enable = true;
-      services.gnome3.gnome-keyring.enable = true;
-      programs.seahorse.enable = true;
-
-	    # * User
-	    users.users.elxbarbosa = {
-	      isNormalUser = true;
-	      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-	    };
-      users.extraUsers.elxbarbosa.extraGroups = [ "wheel" ];
-
-	    # This value determines the NixOS release from which the default
-	    # settings for stateful data, like file locations and database versions
-	    # on your system were taken. It‘s perfectly fine and recommended to leave
-	    # this value at the release version of the first install of this system.
-	    # Before changing this value read the documentation for this option
-	    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-	    system.stateVersion = "20.03"; # Did you read the comment?
-    }
-    #+end_src
-*** Hardware
-    #+begin_src nix  ~/.config/nixos/hardware-configuration.nix :mkdirp yesp
-    { config, lib, pkgs, ... }:
-
-    {
-      imports =
-	[
-	  <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-	];
-
-      boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
-      boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ "kvm-intel" ];
-      boot.extraModulePackages = [ ];
-
-      fileSystems."/" =
-	{ device = "/dev/disk/by-uuid/39f52450-03e5-4c0a-b600-5fae023ea96e";
-	  fsType = "ext4";
-	};
-
-      fileSystems."/home" =
-	{ device = "/dev/disk/by-uuid/1070764b-e608-41ef-b90c-1d8b6f2296c4";
-	  fsType = "ext4";
-	};
-
-      fileSystems."/dados" =
-	{ device = "/dev/disk/by-uuid/08ce9a85-67f2-4efe-810b-eb0238f77f2a";
-	  fsType = "ext4";
-	};
-
-      fileSystems."/varios" =
-	{ device = "/dev/disk/by-uuid/e680f38b-c1c0-45d9-bf79-681c826b29ba";
-	  fsType = "ext4";
-	};
-
-      fileSystems."/boot/efi" =
-	{ device = "/dev/disk/by-uuid/6ACD-5890";
-	  fsType = "vfat";
-	};
-
-      fileSystems."/boot" =
-	{ device = "/dev/disk/by-uuid/c7860c5e-1181-4ea5-8e8e-8e05fc3220a9";
-	  fsType = "ext2";
-	};
-
-      swapDevices =
-	[ { device = "/dev/disk/by-uuid/4c0c912e-847f-47ab-a0ed-491e0176a159"; }
-	];
-
-      nix.maxJobs = lib.mkDefault 4;
-      powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-    }
-    #+end_src
 ** .xserverrc
    #+begin_src shell-script ~/.xserverrc -mode (identity #o755)
    #!/usr/bin/env bash
