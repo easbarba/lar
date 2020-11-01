@@ -820,9 +820,9 @@
 		   erc-interpret-mirc-color t
 		   erc-spelling-dictionaries '(("#emacs" "american"))
 		   erc-autojoin-channels-alist '(("freenode.net"
+						  "#haskell"
 						  "#ruby"
-						  "#guix"
-						  "#bootstrappable"
+						  "#nixos"
 						  "#emacs"))
 		   erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 		   erc-track-exclude-types
