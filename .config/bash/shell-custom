@@ -148,17 +148,17 @@ e-ubuntu-packages()
 {
     essentials=(git p7zip p7zip-full zip unzip zile neovim bash tmux)
 
-    languages=(ruby-full python3-pip python3-venv shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake)
+    languages=(ruby-full python3-pip python3-venv shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake) #  guile-2.2 guile-g-wrap guile-library guile-2.2-doc
 
     de_packages=(syncthing libreoffice calibre inkscape kdenlive cheese deluge thunderbird obs-studio vlc steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell)
 
-    codecs=(ffmpeg pulseaudio pulseaudio-utils pavucontrol vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+    codecs=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
     virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager )
 
     wine=(wine wine32 winetricks)
 
-    toolings=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-tools-common linux-tools-generic brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow screen gimp bash parted fonts-freefont-ttf texinfo gcc gdb guile-2.2 guile-g-wrap guile-library make build-essential autoconf automake gnutls-bin bash-doc guile-2.2-doc gcc-doc gdb-doc gdbserver wget2 parallel emacs nftables) #  ripgrep
+    toolings=(lshw at usbutils lsof time curl entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow screen gimp bash parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver wget2 parallel nftables ripgrep emacs) #  console-data net-tools iproute2 linux-tools-common linux-tools-generic
 
     fonts=(fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
