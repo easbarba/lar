@@ -553,8 +553,6 @@ e-nixos()
     e-nixos-upgrade
 }
 
-
-
 # * COLECTIONS
 
 e-distro()
@@ -584,15 +582,13 @@ e-update()
     [[ $(command -v apt) ]] && (sudo apt update && sudo apt upgrade)
 }
 
-
-
 # * PACKAGES
 
 # Descriptions: Languages Package Manager Front-End
 # Dependencies: Git, coreutils,
 # Supported Shells: Bash, Zsh
 
-e-asdf()
+e-asdf-install()
 {
     local asdf_dir="$HOME/.config/asdf"
 
@@ -602,7 +598,34 @@ e-asdf()
 	cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
     fi
 
-    [[ -d $asdf_dir ]] && asdf update
+    asdf update
+}
+
+e-asdf-activate()
+{
+    local asdf_shims_dir="$HOME"/.asdf/shims
+
+    [[ -d $asdf_shims_dir ]] && return
+
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
+e-asdf()
+{
+    e-asdf-install
+    e-asdf-activate
+}
+
+e-asdf-elixir()
+{
+    asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+    asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+    asdf install erlang latest
+    asdf install elixir latest
+
+    asdf global "$(asdf latest erlang)"
+    asdf global "$(asdf latest elixir)"
 }
 
 e-rbenv()
