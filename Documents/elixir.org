@@ -1,0 +1,28 @@
+#+TILE: Elixir - Study Annotations
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+  - [[#books][Books]]
+  - [[#sloc][SLOC]]
+- [[#features][Features]]
+- [[#annotations][Annotations]]
+:END:
+* Progress
+** Books
+   | Livros | Capitulo | em | tarde | revisao |
+   |--------+----------+----+-------+---------|
+   |        |          |    |       |         |
+** SLOC
+   | Source Code | folder | file | @ |
+   |-------------+--------+------+---|
+   | elixir      |        |      |   |
+
+* Features
+  | features | options |
+  |----------+---------|
+  |          |         |
+* Annotations

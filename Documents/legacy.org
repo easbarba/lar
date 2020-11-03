@@ -62,7 +62,6 @@
   - [[#c][C]]
   - [[#rust][Rust]]
   - [[#lua][Lua]]
-  - [[#elixir][Elixir]]
   - [[#front-end][front end]]
   - [[#scheme][Scheme]]
   - [[#java][Java]]
@@ -152,18 +151,6 @@
        "https://github.com/flutter/plugins",
        "https://github.com/dart-lang/build",
        "https://github.com/dart-lang/sdk"
-   ],
-
-
-   "Elixir": [
-       "https://github.com/bitwalker/distillery",
-       "https://github.com/ueberauth/guardian",
-       "https://github.com/absinthe-graphql/absinthe",
-       "https://github.com/christopheradams/elixir_style_guide",
-       "https://github.com/rrrene/credo",
-       "https://github.com/phoenixframework/phoenix",
-       "https://github.com/elixir-lsp/elixir-ls",
-       "https://github.com/elixir-lang/elixir"
    ],
 
    "Lisp": [
@@ -14312,40 +14299,6 @@
      | lua         |        |      |   |
      | luarocks    |        |      |   |
      | awesome     |        |      |   |
-** Elixir
-*** Sumario
-    :PROPERTIES:
-    :TOC:      :include all :depth 2 :ignore this
-    :END:
-  :CONTENTS:
-  - [[#progresso][Progresso]]
-    - [[#livros][Livros]]
-    - [[#ldc][LDC]]
-  - [[#skills][Skills]]
-  - [[#features][Features]]
-  - [[#annotations][Annotations]]
-    - [[#rbenv][rbenv]]
-  :END:
-*** Progresso
-**** Livros
-     | Livros | Capitulo | em | tarde | revisao |
-     |--------+----------+----+-------+---------|
-     |        |          |    |       |         |
-**** LDC
-     | Source Code | folder | file | @ |
-     |-------------+--------+------+---|
-     | elixir      |        |      |   |
-
-*** Skills
-    - Elixir
-    -
-*** Features
-    | features | options |
-    |----------+---------|
-    |          |         |
-*** Annotations
-**** rbenv
-     rbenv global 2.3.0 && rbenv rehash
 ** front end
 *** Sumario
     :PROPERTIES:
