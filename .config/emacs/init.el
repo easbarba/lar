@@ -820,10 +820,7 @@
 		   erc-interpret-mirc-color t
 		   erc-spelling-dictionaries '(("#emacs" "american"))
 		   erc-autojoin-channels-alist '(("freenode.net"
-						  "#elixir"
-						  "#haskell"
 						  "#ruby"
-						  "#nixos"
 						  "#emacs"))
 		   erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 		   erc-track-exclude-types
@@ -2061,13 +2058,12 @@ Saves to a temp file and puts the filename in the kill ring."
 (use-package lsp-mode
   :defer 1
   :hook
-  (elixir-mode . lsp)
   (ruby-mode . lsp)
   (js-mode . lsp)
   (html-mode . lsp)
   (css-mode . lsp)
   :commands lsp
-  :init (add-to-list 'exec-path (concat user-emacs-directory ".cache/lsp/elixir-ls"))
+  :init
   :custom
   (lsp-enable-indentation nil)
   (lsp-signature-auto-activate nil)
