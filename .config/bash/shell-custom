@@ -612,12 +612,20 @@ e-asdf-activate()
 
 e-asdf()
 {
+    # https://asdf-vm.com/#/core-manage-asdf
+    # https://asdf-vm.com/#/core-manage-plugins
+    # https://asdf-vm.com/#/core-commands
+    # https://asdf-vm.com/#/plugins-all
+
     e-asdf-install
     e-asdf-activate
 }
 
 e-asdf-elixir()
 {
+    # https://github.com/asdf-vm/asdf-erlang
+    # https://github.com/asdf-vm/asdf-elixir
+
     asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
     asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 
@@ -626,6 +634,28 @@ e-asdf-elixir()
 
     asdf global "$(asdf latest erlang)"
     asdf global "$(asdf latest elixir)"
+}
+
+e-asdf-ruby()
+{
+    # https://github.com/asdf-vm/asdf-ruby
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+    asdf install ruby latest
+
+    asdf global "$(asdf latest ruby)"
+}
+
+e-asdf-npm()
+{
+    # https://github.com/asdf-vm/asdf-nodejs
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+    asdf install ruby latest
+
+    asdf global "$(asdf latest ruby)"
 }
 
 e-rbenv()
