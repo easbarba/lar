@@ -9,20 +9,27 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
+  - [[#mix][Mix]]
 - [[#annotations][Annotations]]
 :END:
 * Progress
 ** Books
-   | Livros | Capitulo | em | tarde | revisao |
-   |--------+----------+----+-------+---------|
-   |        |          |    |       |         |
+   | Livros                | Capitulo     | em | tarde | revisao |
+   |-----------------------+--------------+----+-------+---------|
+   | Programming in Elixir | Immutability |    |       |         |
 ** SLOC
    | Source Code | folder | file | @ |
    |-------------+--------+------+---|
    | elixir      |        |      |   |
 
 * Features
-  | features | options |
-  |----------+---------|
-  |          |         |
+  | features     | options | desc |
+  |--------------+---------+------|
+  | pin operator | ^       | forces  |
+  |              |         |      |
+** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][Mix]]
+   | features    | options                         | desc |
+   |-------------+---------------------------------+------|
+   | deps help   | mix help deps                   |      |
+   | New package | new <name> --module <Namespace> |      |
 * Annotations
