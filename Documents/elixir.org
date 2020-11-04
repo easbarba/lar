@@ -14,9 +14,9 @@
 :END:
 * Progress
 ** Books
-   | Livros                | Capitulo     | em | tarde | revisao |
-   |-----------------------+--------------+----+-------+---------|
-   | Programming in Elixir | Immutability |    |       |         |
+   | Livros                | Capitulo      | em | tarde | revisao |
+   |-----------------------+---------------+----+-------+---------|
+   | Programming in Elixir | Elixir Basics |    |       |         |
 ** SLOC
    | Source Code | folder | file | @ |
    |-------------+--------+------+---|
