@@ -47,15 +47,33 @@
     |        |   |             |
 
 *** cli
-    | what     | how                   | desc                                              |
-    |----------+-----------------------+---------------------------------------------------|
-    | database | –d or --database=     | use the database management system of your choice |
-    |          | db:create:all         |                                                   |
-    |          | db:create             |                                                   |
-    |          | dbconsole             |                                                   |
-    |          | db:migrate            |                                                   |
-    |          | new <name>            |                                                   |
-    | models   | generate model <Name> |                                                   |
+**** database
+     | what     | how                                                                    | desc                                              |
+     |----------+------------------------------------------------------------------------+---------------------------------------------------|
+     | database | –d or --database=                                                      | use the database management system of your choice |
+     |          | db:create:all                                                          |                                                   |
+     |          | db:create                                                              |                                                   |
+     |          | dbconsole                                                              |                                                   |
+     |          | db:migrate                                                             |                                                   |
+     |          | new <name>                                                             |                                                   |
+     | models   | generate model <Name>                                                  |                                                   |
+     |          | destroy controller articles                                            |                                                   |
+     |          | rails destroy model Artile                                             |                                                   |
+     |          | rails db:rollback                                                      |                                                   |
+     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+
+**** models
+     | what     | how                                                                    | desc                                              |
+     |----------+------------------------------------------------------------------------+---------------------------------------------------|
+     | models   | generate model <Name>                                                  |                                                   |
+     |          | destroy controller articles                                            |                                                   |
+     |          | rails destroy model Artile                                             |                                                   |
+     |          | rails db:rollback                                                      |                                                   |
+     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+**** env
+     |   |                      |   |
+     |---+----------------------+---|
+     |   | RAILS_ENV=production |   |
 
 ** ruby
    | features               | options                                                                                                                                                                                                                                                                                                                                                                                                                 | ...                                                                                                         |
