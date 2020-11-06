@@ -50,7 +50,6 @@ s-cask()
 }
 
 # * RUN
-
 s-rbenv
 s-gem
 s-nvm
