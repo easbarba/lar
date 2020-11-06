@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+PERSONAL=/dados/Pessoal
+
 # * UTILS
 
 e-foreach()
@@ -15,6 +17,82 @@ e-foreach()
 	${command} ${pack}
     done
 }
+
+# * UBUNTU
+
+e-ubuntu-foreign()
+{
+    echo "a"
+}
+
+e-ubuntu-packages()
+{
+    essentials=(git p7zip p7zip-full zip unzip zile neovim bash tmux)
+
+    languages=(ruby-full python3-pip python3-venv shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake) #  guile-2.2 guile-g-wrap guile-library guile-2.2-doc
+
+    de_packages=(syncthing libreoffice calibre inkscape kdenlive cheese deluge thunderbird obs-studio vlc steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell)
+
+    codecs=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+
+    virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager )
+
+    wine=(wine wine32 winetricks)
+
+    toolings=(lshw at usbutils lsof time curl entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow screen gimp bash parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver wget2 parallel nftables ripgrep emacs) #  console-data net-tools iproute2 linux-tools-common linux-tools-generic
+
+    fonts=(fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum)
+
+    ruby=(autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev) # gcc
+
+    laptop=(libiw-dev)
+    rails=(python2)
+
+    sudo apt update
+
+    echo "Instalando pacotes."
+    local command='sudo apt install -y'
+
+    e-foreach "$command" "${essentials[@]}"
+    e-foreach "$command" "${languages[@]}"
+    e-foreach "$command" "${de_packages[@]}"
+    e-foreach "$command" "${wm_packages[@]}"
+    e-foreach "$command" "${codecs[@]}"
+    e-foreach "$command" "${virtualization[@]}"
+    e-foreach "$command" "${wine[@]}"
+    e-foreach "$command" "${toolings[@]}"
+    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e-foreach "$command" "${ruby[@]}"
+    e-foreach "$command" "${laptop[@]}"
+    e-foreach "$command" "${rails[@]}"
+}
+
+e-ubuntu-upgrade()
+{
+    echo "-- Updating System"
+    sudo apt -y update && sudo apt -y upgrade
+
+    sudo apt -y autoremove
+}
+
+e-ubuntu-services()
+{
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+
+    echo "-- Disabling & Removing unnecessary defaults setttings/packages"
+    # no graphical display
+    sudo systemctl set-default multi-user.target
+}
+
+e-ubuntu()
+{
+    e-ubuntu-upgrade
+    e-ubuntu-packages
+    e-ubuntu-services
+    e-ubuntu-upgrade
+}
+
 
 # * DEBIAN
 
@@ -135,110 +213,22 @@ e-debian()
     e-debian-foreign
 }
 
-
-
-# * UBUNTU
-
-e-ubuntu-foreign()
-{
-    echo "a"
-}
-
-e-ubuntu-packages()
-{
-    essentials=(git p7zip p7zip-full zip unzip zile neovim bash tmux)
-
-    languages=(ruby-full python3-pip python3-venv shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake) #  guile-2.2 guile-g-wrap guile-library guile-2.2-doc
-
-    de_packages=(syncthing libreoffice calibre inkscape kdenlive cheese deluge thunderbird obs-studio vlc steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell)
-
-    codecs=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
-
-    virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager )
-
-    wine=(wine wine32 winetricks)
-
-    toolings=(lshw at usbutils lsof time curl entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow screen gimp bash parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver wget2 parallel nftables ripgrep emacs) #  console-data net-tools iproute2 linux-tools-common linux-tools-generic
-
-    fonts=(fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum)
-
-    ruby=(autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev) # gcc
-
-    laptop=(libiw-dev)
-
-    sudo apt update
-
-    echo "Instalando pacotes."
-    local command='sudo apt install -y'
-
-    e-foreach "$command" "${essentials[@]}"
-    e-foreach "$command" "${languages[@]}"
-    e-foreach "$command" "${de_packages[@]}"
-    e-foreach "$command" "${wm_packages[@]}"
-    e-foreach "$command" "${codecs[@]}"
-    e-foreach "$command" "${virtualization[@]}"
-    e-foreach "$command" "${wine[@]}"
-    e-foreach "$command" "${toolings[@]}"
-    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e-foreach "$command" "${ruby[@]}"
-    e-foreach "$command" "${laptop[@]}"
-}
-
-e-ubuntu-upgrade()
-{
-    echo "-- Updating System"
-    sudo apt -y update && sudo apt -y upgrade
-
-    sudo apt -y autoremove
-}
-
-e-ubuntu-services()
-{
-    sudo systemctl disable mpd.service
-    sudo systemctl disable mpd.socket
-
-    echo "-- Disabling & Removing unnecessary defaults setttings/packages"
-    # no graphical display
-    sudo systemctl set-default multi-user.target
-}
-
-e-ubuntu()
-{
-    e-ubuntu-upgrade
-    e-ubuntu-packages
-    e-ubuntu-services
-    e-ubuntu-upgrade
-}
-
 # * ARCH LINUX
 
-# Descricao: Distro Pacotes
-# https://www.youtube.com/watch?v=rRmEClfwJ3E
-
-e-arch-upgrade()
+e-manjaro-upgrade()
 {
     echo "-- Atualizando Sistema" sudo pacman -Syy && sudo pacman -Syu
 }
 
-e-arch-packages () { echo "-- Debian Packages"
+e-manjaro-packages () { echo "-- Debian Packages"
 
-    essentials=(coreutils wget git p7zip zip unzip util-linux alsa-utils networkmanager bash tmux zile konsole)
+    essentials=(base-devel coreutils wget git p7zip zip unzip util-linux bash tmux zile)
 
-    wm=(xorg xorg-xinit xdotool xf86-input-synaptics libinput awesome) # dbus xserver-xorg-input-kbd
+    languages=(gcc clang postgresql sqlite3 postgresql-libs shellcheck zenity bash-completion python-pip) 
 
-    languages=(ruby lua luarocks python-pip postgresql sqlite3  postgresql-libs shellcheck zenity bash-completion) #lua-check ruby-dev libsqlite-devel
+    user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing steam imagemagick pandoc xdg-utils screenfetch lm_sensors aspell aspell-en  mpv)
 
-    devops=(puppet)
-
-    wm_packages=(network-manager-applet aria2 dunst maim  udiskie unclutter openssh-askpass mpv libnotify perl-file-mimeinfo dmenu imagemagick
-		 pandoc xdg-utils screenfetch lm_sensors aspell aspell-en mpd mpc ncmpc ncmpcpp wofi rofi seahorse libx11 xorgproto
-		 brightnessctl tlp acpi)
-
-    user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio
-		   gnome-keyring vlc kate syncthing steam)
-
-    media=(ffmpeg pulseaudio vorbis-tools gst-libav  gst-plugins-bad gst-plugins-base gst-plugins-good  gst-plugins-ugly)
-
+    media=(ffmpeg vorbis-tools gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good  gst-plugins-ugly)
 
     virtualization=(qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf) # qemu-system-x86
 
@@ -252,8 +242,6 @@ e-arch-packages () { echo "-- Debian Packages"
 		  parallel findutils wget stow screen neovim zsh parted texinfo gcc gdb make autoconf
 		  automake gnutls gdb nftables firewalld unrar ripgrep socat fish)  # console-data
 
-    ruby_tools=(ruby)
-
     emacs_deps=(libjansson-dev libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev
 		libpoppler-private-dev ghostscript mupdf-tools
 		poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev
@@ -262,14 +250,11 @@ e-arch-packages () { echo "-- Debian Packages"
 		libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
 		libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync)
 
-    misc_deps=(build-essential libreadline-dev libfixposix-dev gconf2) # luarocks lisp megasyn
-
     laptop=(iw wireless_tools libinput-gestures acpi acpid) # apmd pbbuttonsd pmud libiw-dev laptop-mode-tools
 
     local command='sudo pacman -S --noconfirm'
 
     e-foreach "$command" "${essentials[@]}"
-    e-foreach "$command" "${wm[@]}"
     e-foreach "$command" "${languages[@]}"
     e-foreach "$command" "${devops[@]}"
     e-foreach "$command" "${wm_packges[@]}"
@@ -279,24 +264,19 @@ e-arch-packages () { echo "-- Debian Packages"
     e-foreach "$command" "${wine[@]}"
     e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e-foreach "$command" "${ruby_tools[@]}"
-    e-foreach "$command" "${emacs_deps[@]}"
+    # e-foreach "$command" "${emacs_deps[@]}"
     # e-foreach "$command" "${misc_deps[@]}"
     e-foreach "$command" "${laptop[@]}"
-
-    echo "-- Preparacoes finais: limpando e arrumando o sistema"
-    sudo apt -y autoremove
-
-    echo "Done"
 }
 
-e-arch-services()
+e-manjaro-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-arch-foreign()
+e-manjaro-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -333,14 +313,13 @@ e-arch-foreign()
     fi
 }
 
-e-arch()
+e-manjaro()
 {
-    e-arch-upgrade
-    e-arch-packages
-    e-arch-services
-    # e-arch-foreign
+    e-manjaro-upgrade
+    e-manjaro-packages
+    e-manjaro-services
+    # e-manjaro-foreign
 }
-
 
 # * FEDORA
 
@@ -565,7 +544,7 @@ e-prepara()
 {
     [[ ! -x ${HOME}/.ssh/id_rsa.pub ]] && e-ssh
 
-    e-binarios
+    e-binaries
 
     # Package version manager
     e-rbenv
@@ -590,7 +569,7 @@ e-update()
 
 e-asdf-install()
 {
-    local asdf_dir="$HOME/.config/asdf"
+    local asdf_dir="$HOME/.asdf"
 
     if [[ ! -d $asdf_dir ]]; then
 	git clone https://github.com/asdf-vm/asdf.git "$asdf_dir"
@@ -598,7 +577,9 @@ e-asdf-install()
 	cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
     fi
 
-    asdf update
+    source "$HOME"/.asdf/completions/asdf.bash
+    source "$HOME"/.asdf/asdf.sh
+
 }
 
 e-asdf-activate()
@@ -616,9 +597,11 @@ e-asdf()
     # https://asdf-vm.com/#/core-manage-plugins
     # https://asdf-vm.com/#/core-commands
     # https://asdf-vm.com/#/plugins-all
-
+!
     e-asdf-install
     e-asdf-activate
+
+    asdf update
 }
 
 e-asdf-elixir()
@@ -644,18 +627,20 @@ e-asdf-ruby()
 
     asdf install ruby latest
 
-    asdf global "$(asdf latest ruby)"
+    asdf global ruby "$(asdf latest ruby)"
 }
 
-e-asdf-npm()
+e-asdf-node()
 {
     # https://github.com/asdf-vm/asdf-nodejs
 
-    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-    asdf install ruby latest
+    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 
-    asdf global "$(asdf latest ruby)"
+    asdf install nodejs latest
+
+    asdf global nodejs "$(asdf latest nodejs)"
 }
 
 e-rbenv()
@@ -793,19 +778,19 @@ e-foreign-update()
 
 # * FUNCS
 
-PESSOAL=/dados/Pessoal
-
-e-binarios()
+e-binaries()
 {
-    cd $BIN
+    bin="$HOME/bin"
+    
+    mkdir -pv "$bin" 
+    cd "$bin"
 
     local binaries=("https://dystroy.org/broot/download/x86_64-linux/broot"
 		    "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
 		    "https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt")
 
-    for bin in "${binaries[@]}"; do
-
-	[[ ! $(command -v ${bin}) ]] && wget -c ${bin}
+    for binary in "${binaries[@]}"; do
+	[[ ! -e "$bin/$binary" ]] && wget -c "$binary"
     done
 }
 
@@ -824,11 +809,6 @@ e-ssh()
     ssh-add "$HOME/.ssh/id_rsa"
 
     echo "DONE"
-}
-
-e-dotfile ()
-{
-    emacs --batch -l org "$PESSOAL/documentos/dotfiles.org" -f org-babel-tangle
 }
 
 e-iso()

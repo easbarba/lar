@@ -40,9 +40,9 @@ export LOCAL_FONTS="${XDG_DATA_HOME}/fonts"
 
 export INFOPATH="${LOCAL_INFO}${INFOPATH:+:}${INFOPATH}"
 
-# * RUN
-
 export PATH="${HOME}/bin"${PATH:+:}${PATH}
 export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
-[[ -f $HOME/.config/bash/shell-software ]] && source "$HOME/.config/bash/shell-software"
+# * RUN
+
+# [[ -f $HOME/.config/bash/shell-software ]] && source "$HOME/.config/bash/shell-software"
