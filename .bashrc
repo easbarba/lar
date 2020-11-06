@@ -90,8 +90,14 @@ fi
 
 e-inhouse-scripts()
 {
-    local shell_custom_bin="$HOME/.config/bash/shell-custom";
-    [ -f $shell_custom_bin ] && source "$shell_custom_bin"
+    local shell_files="$HOME/.config/bash";
+    [ ! -d $shell_files ] return
+
+    source "$shell_files/shell-paths"
+    source "$shell_files/shell-utils"
+    source "$shell_files/shell-funcs"
+    source "$shell_files/shell-packages"
+    source "$shell_files/shell-distro"
 }
 
 e-basher()
@@ -113,22 +119,14 @@ e-prompt()
 {
     [[ $(command -v starship) ]] && eval "$(starship init bash)"
 
-    local liquid_dir="$HOME/Projects/Bash/liquidprompt"
-    [[ ! $(command -v starship) ]] && source "$liquidprompt_dir/liquidprompt"
+    local liquid="$HOME/bin/liquidprompt"
+    [[ -f $liquid ]] && [[ ! $(command -v starship) ]] && source "$liquidprompt"
 }
 
 e-cli-tools()
 {
     local enhancd_dir="$HOME/Projects/Bash/enhancd/"
     [[ -d $enhancd_dir ]] && cd $enhancd_dir && source ./init.sh
-}
-
-e-packmanagers()
-{
-    [[ -x "$(command -v rbenv)" ]] && eval "$(rbenv init -)"
-
-    local asdf_bin="$HOME/.config/asdf/completions/asdf.bash"
-    [[ -f $asdf_bin ]] && source "$asdf_bin"
 }
 
 e-multiplexers()
@@ -147,7 +145,7 @@ e-multiplexers()
 
 e-inhouse-scripts
 
-e-basher
+# e-basher
 e-prompt
 e-cli-tools
 e-packmanagers
