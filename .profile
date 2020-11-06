@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # * Description: System Global Variables
+
 # * DEFAULT SOFTWARE:
 
 export EDITOR="emacs -nw"
@@ -36,12 +37,11 @@ export LOCAL_INFO="${XDG_DATA_HOME}/info"
 export LOCAL_DOC="${XDG_DATA_HOME}/doc"
 export LOCAL_FONTS="${XDG_DATA_HOME}/fonts"
 
-# * INFO
+# * PATH
 
-export INFOPATH="${LOCAL_INFO}${INFOPATH:+:}${INFOPATH}"
-
-export PATH="${HOME}/bin"${PATH:+:}${PATH}
+export PATH="$HOME/bin"${PATH:+:}${PATH}
 export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
+export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
 # * RUN
 

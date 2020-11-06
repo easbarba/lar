@@ -3,29 +3,26 @@
 # * Description: Add foreign packagers bin directories to $PATH
 # * SOFTWARE
 
-e-gem-path()
+e_gem_path()
 {
     local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
-    [[ ! -d $gem_bin ]] && return
 
     export PATH="$gem_bin"${PATH:+:}$PATH
 }
 
-e-asdf-path()
+e_asdf_path()
 {
     source "$HOME"/.asdf/completions/asdf.bash
     source "$HOME"/.asdf/asdf.sh
 
     local asdf_shims_dir="$HOME"/.asdf/shims
-    [[ -d $asdf_shims_dir ]] && return
 
     export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 }
 
-e-rbenv-path()
+e_rbenv_path()
 {
     local rbenv_dir="$HOME/.rbenv"
-    [[ ! -d "$rbenv_dir/bin" ]] && return
 
     local rbenv_shims="$rbenv_dir/shims"
     local rbenv_bin="$rbenv_dir/bin"
@@ -34,10 +31,9 @@ e-rbenv-path()
     export PATH="$rbenv_shims"${PATH:+:}$PATH
 }
 
-e-nvm-path()
+e_nvm_path()
 {
     local nvm_dir="$HOME/.config/nvm"
-    [[ ! -d $nvm_dir ]] && return
 
     [ -s "$nvm_dir/nvm.sh" ] && source "$nvm_dir/nvm.sh"  # Loads NVM
     [ -s "$nvm_dir/bash_completion" ] && source "$nvm_dir/bash_completion"  # Loads NVM Bash Completion
@@ -46,26 +42,22 @@ e-nvm-path()
     export PATH="$nvm_bin"${PATH:+:}$PATH
 }
 
-e-luarocke-path()
+e_luarocks_path()
 {
-    [[ ! -x $(command -v luarocks) ]] && return
-
     export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 }
 
-e-cask-path()
+e_cask_path()
 {
     local caskdir="$HOME/.cask/bin"
-    [[ ! -d ${caskdir} ]] && return
-
     export PATH="$caskdir"${PATH:+:}$PATH
 }
 
 # * RUN
 
-e-gem-path
-e-asdf-path
-e-cask-path
-# e-rbenv-path
-# e-nvm-path
-# e-luarocke-path
+e_gem_path
+e_asdf_path
+e_cask_path
+# e_rbenv_path
+# e_nvm_path
+# e_luarocke_path

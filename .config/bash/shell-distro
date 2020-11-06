@@ -1,14 +1,6 @@
 #!/usr/bin/env sh
 
-# Deps
-source ./shell-utils
-
 # * UBUNTU
-
-e-ubuntu-foreign()
-{
-    echo "a"
-}
 
 e-ubuntu-packages()
 {
@@ -77,7 +69,6 @@ e-ubuntu()
     e-ubuntu-services
     e-ubuntu-upgrade
 }
-
 
 # * DEBIAN
 

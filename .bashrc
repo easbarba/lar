@@ -91,7 +91,7 @@ fi
 e-inhouse-scripts()
 {
     local shell_files="$HOME/.config/bash";
-    [ ! -d $shell_files ] return
+    [[ ! -d $shell_files ]] && return
 
     source "$shell_files/shell-paths"
     source "$shell_files/shell-utils"
@@ -100,27 +100,12 @@ e-inhouse-scripts()
     source "$shell_files/shell-distro"
 }
 
-e-basher()
-{
-    local basher_dir="$HOME/.basher"
-
-    [[ "$1" == 'upgrade' ]] && git -C "$HOME/.config/basher" pull
-
-    [[ ! -d "$basher_dir/.git" ]] && git clone https://github.com/basherpm/basher "$basher_dir"
-
-    # add Basher Bin folder to $PATH
-    export PATH="$basher_dir/bin"${PATH:+:}${PATH}
-
-    # load basher
-    eval "$(basher init - bash)"
-}
-
 e-prompt()
 {
     [[ $(command -v starship) ]] && eval "$(starship init bash)"
 
     local liquid="$HOME/bin/liquidprompt"
-    [[ -f $liquid ]] && [[ ! $(command -v starship) ]] && source "$liquidprompt"
+    [[ ! $(command -v starship) ]] && [[ -f $liquid ]] && source "$liquid"
 }
 
 e-cli-tools()
@@ -145,10 +130,21 @@ e-multiplexers()
 
 e-inhouse-scripts
 
-# e-basher
 e-prompt
 e-cli-tools
-e-packmanagers
 e-multiplexers
 
-cd "$HOME"
+# e-basher()
+# {
+#     local basher_dir="$HOME/.basher"
+
+#     [[ "$1" == 'upgrade' ]] && git -C "$HOME/.config/basher" pull
+
+#     [[ ! -d "$basher_dir/.git" ]] && git clone https://github.com/basherpm/basher "$basher_dir"
+
+#     # add Basher Bin folder to $PATH
+#     export PATH="$basher_dir/bin"${PATH:+:}${PATH}
+
+#     # load basher
+#     eval "$(basher init - bash)"
+# }
