@@ -45,4 +45,4 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
 # * RUN
 
-# [[ -f $HOME/.config/bash/shell-software ]] && source "$HOME/.config/bash/shell-software"
+[[ -f "$XDG_CONFIG_HOME/bash/shell-paths" ]] && source "$XDG_CONFIG_HOME/bash/shell-paths"
