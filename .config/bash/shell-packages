@@ -30,7 +30,7 @@ e-asdf()
     # https://asdf-vm.com/#/core-manage-plugins
     # https://asdf-vm.com/#/core-commands
     # https://asdf-vm.com/#/plugins-all
-!
+
     e-asdf-install
     e-asdf-activate
 
