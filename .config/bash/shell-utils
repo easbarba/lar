@@ -1,0 +1,25 @@
+#!/usb/bin/env bash
+
+e-foreach()
+{
+    local command="$1"
+    shift 1
+
+    local arguments=("$@")
+
+    for pack in "${arguments[@]}"
+    do
+	echo -e "\n \e[42m $pack \e[0m \n"
+	${command} ${pack}
+    done
+}
+
+e-run() {
+    number=${1}
+
+    shift
+
+    for i in `seq $number`; do
+      ${@}
+    done
+}

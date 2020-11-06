@@ -1,0 +1,209 @@
+#!/usr/bin/env sh
+
+PERSONAL=/dados/Pessoal
+
+e-asdf-install()
+{
+    local asdf_dir="$HOME/.asdf"
+
+    if [[ ! -d $asdf_dir ]]; then
+	git clone https://github.com/asdf-vm/asdf.git "$asdf_dir"
+
+	cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
+    fi
+}
+
+e-asdf-activate()
+{
+    source "$HOME"/.asdf/completions/asdf.bash
+    source "$HOME"/.asdf/asdf.sh
+
+    local asdf_shims_dir="$HOME"/.asdf/shims
+    [[ -d $asdf_shims_dir ]] && return
+
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
+e-asdf()
+{
+    # https://asdf-vm.com/#/core-manage-asdf
+    # https://asdf-vm.com/#/core-manage-plugins
+    # https://asdf-vm.com/#/core-commands
+    # https://asdf-vm.com/#/plugins-all
+!
+    e-asdf-install
+    e-asdf-activate
+
+    asdf update
+}
+
+e-asdf-elixir()
+{
+    # https://github.com/asdf-vm/asdf-erlang
+    # https://github.com/asdf-vm/asdf-elixir
+
+    asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+    asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+    asdf install erlang latest
+    asdf install elixir latest
+
+    asdf global "$(asdf latest erlang)"
+    asdf global "$(asdf latest elixir)"
+}
+
+e-asdf-ruby()
+{
+    # https://github.com/asdf-vm/asdf-ruby
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+    asdf install ruby latest
+
+    asdf global ruby "$(asdf latest ruby)"
+}
+
+e-asdf-node()
+{
+    # https://github.com/asdf-vm/asdf-nodejs
+
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+
+    asdf install nodejs latest
+
+    asdf global nodejs "$(asdf latest nodejs)"
+}
+
+e-rbenv()
+{
+    export RBENV_DIR="$HOME/.rbenv"
+    export RUBY_BUILD_DIR="$RBENV_DIR/plugins/ruby-build"
+    export RUBY_SHIMS_DIR="$RBENV_DIR/shims"
+
+    local rbenv_binary="$HOME/.rbenv/bin/rbenv"
+
+    export PATH="$RUBY_SHIMS_DIR"${PATH:+:}$PATH
+
+    [[ ! -x "$RBENV_DIR/bin" ]] && git clone https://github.com/rbenv/rbenv.git "$RBENV_DIR"
+
+    # Set up rbenv in your shell.
+    $rbenv_binary init
+
+    curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+    [[ ! -x "$RUBY_BUILD_DIR" ]] && git clone https://github.com/rbenv/ruby-build "$RUBY_BUILD_DIR"
+    [[ ! -x "$RUBY_BUILD_DIR" ]] && git -C "$RUBY_BUILD_DIR" pull
+
+    # compile dynamic bash extension
+    cd "$RBENV_DIR" && src/configure && make -C src
+
+    local version=2.7.2
+    $rbenv_binary install $version
+    $rbenv_binary global $version && rbenv rehash
+}
+
+e-rvm()
+{
+    gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+    curl -sSL https://get.rvm.io | bash -s stable
+
+    source "$HOME/.rvm/scripts/rvm"
+
+    rvm get stable
+}
+
+e-nvm()
+{
+    local nvm_dir="$HOME/.config/nvm"
+
+    if [[ ! -d ${nvm_dir} ]]; then
+	git clone https://github.com/nvm-sh/nvm.git ${nvm_dir}
+    else
+	cd ${nvm_dir} && git pull
+    fi
+
+    source ${nvm_dir}/nvm.sh
+
+    nvm install node
+}
+
+e-gem()
+{
+    local packages=(bundler solargraph rubocop pry reek clipboard rspec)
+
+    for pack in "${packages[@]}"
+    do
+	[[ $(command -v nixos-version) ]] && nix-shell -p gcc zlib --run '"gem install ${pack}"'
+
+	gem install "${pack}" --user-install
+	gem update  "${pack}"
+    done
+}
+
+e-flatpak()
+{
+    local packages=(com.spotify.Client com.valvesoftware.Steam com.visualstudio.code com.skype.Client)
+
+    for pack in "${packages[@]}"
+    do
+	flatpak install flathub "${pack}"
+    done
+}
+
+e-npm()
+{
+    local packages=(npm eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic yarn babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+
+    # install
+    for pack in "${packages[@]}"
+    do
+	npm i -g "$pack"
+    done
+}
+
+e-pip()
+{
+    local packages=(pip wheel setuptools blackyoutube-dl python-language-server
+		    pyls-black pyls-isort pyls-mypy jedi==0.17.0 ipython pylama
+		    pyflakes flake8-import-order pydocstyle flake8 mccabe yapf
+		    pylint rope pytest pep8-naming mutagen)
+
+    # install
+    for pack in "${packages[@]}"
+    do
+	python3 -m pip install --upgrade "${pack}" --user
+    done
+}
+
+e-vscode()
+{
+    local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek alefragnani.Bookmarks alefragnani.project-manager
+		    CoenraadS.bracket-pair-colorizer-2 dbaeumer.vscode-eslint donjayamanne.githistory
+		    felipecaputo.git-project-manager HookyQR.beautify mads-hartmann.bash-ide-vscode
+		    MS-CEINTL.vscode-language-pack-pt-BR eamodio.gitlens njpwerner.autodocstring
+		    bmalehorn.vscode-fish davidanson.vscode-markdownlint josef.rouge-theme tuttieee.emacs-mcx
+		    esbenp.prettier-vscode visualstudioexptteam.vscodeintellicode msjsdiag.debugger-for-chrome
+		    formulahendry.dotnet-test-explorer jmrog.vscode-nuget-package-manager redhat.vscode-yaml
+		    firefox-devtools.vscode-firefox-debug ms-vscode-remote.remote-ssh ms-vscode-remote.remote-wsl
+		    ms-mssql.mssql ms-azuretools.vscode-docker ms-vscode.powershell ms-dotnettools.csharp)
+
+    # iunstall
+    for pack in "${packages[@]}"
+    do
+	code --install-extension "${pack}" --force
+    done
+}
+
+e-foreign-update()
+{
+    e-asdf
+
+    e-rbenv
+    e-npm
+    e-pip
+
+    e-vscode
+}

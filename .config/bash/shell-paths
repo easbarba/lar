@@ -1,8 +1,28 @@
 #!/usr/bin/env bash
 
-# * FUNCTIONS
+# * Description: Add foreign packagers bin directories to $PATH
+# * SOFTWARE
 
-s-rbenv()
+e-gem-path()
+{
+    local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
+    [[ ! -d $gem_bin ]] && return
+
+    export PATH="$gem_bin"${PATH:+:}$PATH
+}
+
+e-asdf-path()
+{
+    source "$HOME"/.asdf/completions/asdf.bash
+    source "$HOME"/.asdf/asdf.sh
+
+    local asdf_shims_dir="$HOME"/.asdf/shims
+    [[ -d $asdf_shims_dir ]] && return
+
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
+e-rbenv-path()
 {
     local rbenv_dir="$HOME/.rbenv"
     [[ ! -d "$rbenv_dir/bin" ]] && return
@@ -14,15 +34,7 @@ s-rbenv()
     export PATH="$rbenv_shims"${PATH:+:}$PATH
 }
 
-s-gem()
-{
-    local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
-    [[ ! -d $gem_bin ]] && return
-
-    export PATH="$gem_bin"${PATH:+:}$PATH
-}
-
-s-nvm()
+e-nvm-path()
 {
     local nvm_dir="$HOME/.config/nvm"
     [[ ! -d $nvm_dir ]] && return
@@ -34,14 +46,14 @@ s-nvm()
     export PATH="$nvm_bin"${PATH:+:}$PATH
 }
 
-s-luarocks()
+e-luarocke-path()
 {
     [[ ! -x $(command -v luarocks) ]] && return
 
     export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 }
 
-s-cask()
+e-cask-path()
 {
     local caskdir="$HOME/.cask/bin"
     [[ ! -d ${caskdir} ]] && return
@@ -50,8 +62,10 @@ s-cask()
 }
 
 # * RUN
-s-rbenv
-s-gem
-s-nvm
-s-luarocks
-# s-cask
+
+e-gem-path
+e-asdf-path
+e-cask-path
+# e-rbenv-path
+# e-nvm-path
+# e-luarocke-path
