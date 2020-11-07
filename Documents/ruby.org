@@ -5,7 +5,6 @@
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#quotes][Quotes]]
 - [[#progress][Progress]]
   - [[#books][Books]]
   - [[#sloc][SLOC]]
@@ -13,15 +12,12 @@
   - [[#rails][rails]]
   - [[#ruby][ruby]]
 - [[#concepts][Concepts]]
+  - [[#iterator][Iterator]]
   - [[#enumerator][Enumerator]]
+- [[#instructions][Instructions]]
+  - [[#rbenv][Rbenv]]
 - [[#skills][Skills]]
-- [[#annotations][Annotations]]
 :END:
-* Quotes
-  I do what you dont want to do that you know you've got to do to be where you want to be - Dan Pena
-
-  A receita do fracasso é ficar tentando 1001 coisas diferentes e nunca investir energia real em algo por muito tempo - Jabur
-
 * Progress
 ** Books
    | Books                                                     | Capitulo                                           | em                                              | tarde                          | revisao |
@@ -131,12 +127,21 @@
    | dup                    |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
 
 * Concepts
+** Iterator
+   - is a method
+   - it start and finish in the same call
 ** Enumerator
-   - enumerators chaining
-   - enumerator block based
-   - enumerator method attachment (enum_for)
-   - enumerator un-overriding of methods in Enumerable
-   - Enumerators maintain state
+   - is an object
+   - chaining
+   - block based
+   - method attachment (enum_for)
+   - un-overriding of methods in Enumerable
+   - maintain state
+   - is an enumerable object
+   - can add enumerability to objects
+* Instructions
+** Rbenv
+   rbenv global 2.3.0 && rbenv rehash
 * Skills
   - Ruby
   - Ruby on Rails
@@ -152,5 +157,3 @@
   - RabbitMQ/ Kafka
   - Firebase
   - Postfix, Nginx
-* Annotations
-  rbenv global 2.3.0 && rbenv rehash
