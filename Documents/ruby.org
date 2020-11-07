@@ -33,9 +33,7 @@
 ** SLOC
    | Source Code | folder          | file       | @ |
    |-------------+-----------------+------------+---|
-   | ruby        | lib/bundler/cli | install.rb | ] |
-   | robe        |                 |            |   |
-   | rubocop     |                 |            |   |
+   | ruby        | lib/bundler/cli | install.rb |   |
    | rails       |                 |            |   |
 * Features
 ** rails
