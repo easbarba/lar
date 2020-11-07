@@ -137,6 +137,7 @@
    - maintain state
    - is an enumerable object
    - can add enumerability to objects
+   - can stop and resume collection cycling
 * Instructions
 ** Rbenv
    rbenv global 2.3.0 && rbenv rehash
