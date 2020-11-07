@@ -1,47 +1,52 @@
 #+TILE: Life Annotations
 
-* Table of Contents
+* TOC
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#progresso][Progresso]]
-  - [[#livros-videos][Livros, Videos]]
-- [[#sonhos][Sonhos]]
-- [[#filmes][Filmes]]
-  - [[#favoritos][Favoritos]]
-  - [[#lista-de-desejos][Lista de Desejos]]
+- [[#progress][Progress]]
+  - [[#books-videos][Books, Videos]]
+- [[#quotes][Quotes]]
+- [[#dreams][Dreams]]
+- [[#movies][Movies]]
+  - [[#favorites][Favorites]]
+  - [[#wishlist][WishList]]
 - [[#tv-shows][TV Shows]]
-  - [[#favoritos][Favoritos]]
-- [[#livros][Livros]]
-  - [[#favoritos][Favoritos]]
-  - [[#recomendacoes][Recomendacoes]]
+  - [[#favorites][Favorites]]
+- [[#books][Books]]
+  - [[#favs][Favs]]
+  - [[#recomendations][Recomendations]]
 - [[#manga][Manga]]
   - [[#favorites][Favorites]]
-- [[#jogos][Jogos]]
+- [[#games][Games]]
   - [[#fallout-1][Fallout 1]]
   - [[#wineproton][Wine/Proton]]
-- [[#musica][Musica]]
-  - [[#compositores-classico][Compositores Classico]]
+- [[#music][Music]]
+  - [[#classic-composers][Classic Composers]]
   - [[#misc][Misc]]
   - [[#musician][Musician]]
   - [[#bands][Bands]]
-- [[#presentes][Presentes]]
-  - [[#sobrinho][Sobrinho]]
-- [[#doacoes][Doacoes]]
-- [[#pinturas][Pinturas]]
+- [[#gifts][Gifts]]
+  - [[#nephew][Nephew]]
+- [[#donations][Donations]]
+- [[#paintings][Paintings]]
 - [[#résumé][Résumé]]
 - [[#delivery][Delivery]]
 :END:
-* Progresso
-** Livros, Videos
-   | Livros                 | Capitulo                                                                 | em                              |
-   |------------------------+--------------------------------------------------------------------------+---------------------------------|
-   | Last Wish              | The Voice of Reason 2                                                    |                                 |
-   | The War of the Worlds  |                                                                          |                                 |
-   | Study in Scarlet       | 2 The Science of Deduction                                               | SHERLOCK HOLMES  -  his limits. |
-   | Plato: Five Dialogues  |                                                                          |                                 |
-* Sonhos
+* Progress
+** Books, Videos
+   | Books                 | Capts                      | @                               |
+   |-----------------------+----------------------------+---------------------------------|
+   | Last Wish             | The Voice of Reason 2      |                                 |
+   | The War of the Worlds |                            |                                 |
+   | Study in Scarlet      | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
+   | Plato: Five Dialogues |                            |                                 |
+* Quotes
+  I do what you dont want to do that you know you've got to do to be where you want to be - Dan Pena
+
+  A receita do fracasso é ficar tentando 1001 coisas diferentes e nunca investir energia real em algo por muito tempo - Jabur
+* Dreams
    - Play Bach's Guitar BWV - 1006 - Prelude from lute suite 4
    - Exciting Carrer
    - CS PHD
@@ -50,8 +55,8 @@
    - A notorius project
    - A House
    - Cousin's College Tuition
-* Filmes
-** Favoritos
+* Movies
+** Favorites
    - 12 Angry Men
    - 7 Samurai
    - Casablanca
@@ -109,9 +114,9 @@
    - The Last Man on Earth (Vincent Price)
    - Independency Day
    - The Fifth Element
-** Lista de Desejos
+** WishList
 * TV Shows
-** Favoritos
+** Favorites
    - Star Trek - The Next Generation
    - Sherlock Holmes (Jeremy Brett)
    - Chespirito
@@ -129,11 +134,11 @@
    - Chobits
    - Bucky
    - Dragon Ball Z
-* Livros
-** Favoritos
+* Books
+** Favs
    - Dr Jekyll and Hide
    - The Lost World
-** Recomendacoes
+** Recomendations
    Livros indicados por Leandro Karnal
    1. As ilações de Narizinho, A gramática da Emília - Monteiro Lobato
    2. A Ilha do Tesouro de Robert Louis Stevenson
@@ -183,7 +188,7 @@
    - One Punch Man
    - Elfen Lied
    - Love Hina
-* Jogos
+* Games
   http://steamcommunity.com/id/elxbarbosa
 ** Fallout 1
    FALLOUT COMBAT: Treat combat like a turn-based tactical game. Because it is.
@@ -297,8 +302,8 @@
 
     Game Settings -> audio -> "Miles Fast" Provider
 
-* Musica
-** Compositores Classico
+* Music
+** Classic Composers
    - Berlioz
    - Mahler
    - Felix Mendelssohn
@@ -341,24 +346,13 @@
   - stratovarius
   - meshuggah
   - DC talk
-* Presentes
-** Sobrinho
-   - Train
-   - Pirates
-   - Kids Drum
-   - Superman
-   - IronMan
-   - Flash
-   - Toy House
-   - Rocket
-   - Pirate Ship
-   - Captain America Shield
-   - Tablet
-   - SmartPhone
+* Gifts
+** Nephew
+   - Nintendo Switch
    - College Car
-* Doacoes
+* Donations
   https://www.acnur.org
-* Pinturas
+* Paintings
    - J. M. W. Turner
 * Résumé
   #+OPTIONS: toc:nil author:nil date:nil num:nil
@@ -409,4 +403,3 @@
 
        Aulas de violão para alunos em escolas particulares do ensino medio
 * Delivery
-  TNT0557071400082500858869700010001
