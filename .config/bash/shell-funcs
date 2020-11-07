@@ -37,13 +37,3 @@ e-iso()
 {
     sudo dd bs=4M if="$1" of="$2" status=progress oflag=sync
 }
-
-e-dired()
-{
-    emacs -q -nw \
-      --eval "(dired default-directory)" \
-      --eval "(defun kill-window-or-emacs () (interactive) (if (one-window-p) (kill-emacs) (delete-window)))" \
-      --eval "(setq dired-dwim-target t delete-by-moving-to-trash t )" \
-      --eval "(dired-hide-details-mode)" \
-      --eval "(define-key dired-mode-map (kbd \"q\") #'kill-window-or-emacs)"
-}
