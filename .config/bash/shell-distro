@@ -2,17 +2,17 @@
 
 # * UBUNTU
 
-e-ubuntu-packages()
+e-distro-ubuntu-packages()
 {
     essentials=(git p7zip p7zip-full zip unzip zile neovim bash tmux)
 
-    languages=(ruby-full python3-pip python3-venv shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake) #  guile-2.2 guile-g-wrap guile-library guile-2.2-doc
+    languages=(shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake) # ruby-full python3-pip python3-venv
 
-    de_packages=(syncthing libreoffice calibre inkscape kdenlive cheese deluge thunderbird obs-studio vlc steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell)
+    de_packages=(firefox syncthing libreoffice calibre inkscape kdenlive deluge obs-studio vlc mpv steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell)
 
     codecs=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
-    virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager )
+    virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager)
 
     wine=(wine wine32 winetricks)
 
@@ -23,6 +23,7 @@ e-ubuntu-packages()
     ruby=(autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev) # gcc
 
     laptop=(libiw-dev)
+
     rails=(python2)
 
     sudo apt update
@@ -44,7 +45,7 @@ e-ubuntu-packages()
     e-foreach "$command" "${rails[@]}"
 }
 
-e-ubuntu-upgrade()
+e-distroubuntu-upgrade()
 {
     echo "-- Updating System"
     sudo apt -y update && sudo apt -y upgrade
@@ -52,7 +53,7 @@ e-ubuntu-upgrade()
     sudo apt -y autoremove
 }
 
-e-ubuntu-services()
+e-distro-ubuntu-services()
 {
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
@@ -62,7 +63,7 @@ e-ubuntu-services()
     sudo systemctl set-default multi-user.target
 }
 
-e-ubuntu()
+e-distro-ubuntu()
 {
     e-ubuntu-upgrade
     e-ubuntu-packages
@@ -72,7 +73,7 @@ e-ubuntu()
 
 # * DEBIAN
 
-e-debian-upgrade()
+e-distro--debian-upgrade()
 {
     echo "-- Atualizando Sistema"
     sudo apt update && sudo apt upgrade
@@ -80,7 +81,7 @@ e-debian-upgrade()
     sudo apt autoremove
 }
 
-e-debian-packages ()
+e-distro-debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip util-linux alsa-utils network-manager bash tmux konsole zile)
 
@@ -137,14 +138,14 @@ e-debian-packages ()
     echo "Done"
 }
 
-e-debian-services()
+e-distro-debian-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-debian-foreign()
+e-distro-debian-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -181,7 +182,7 @@ e-debian-foreign()
     fi
 }
 
-e-debian()
+e-distro-debian()
 {
     e-debian-upgrade
     e-debian-packages
@@ -191,12 +192,12 @@ e-debian()
 
 # * ARCH LINUX
 
-e-manjaro-upgrade()
+e-distro-manjaro-upgrade()
 {
     echo "-- Atualizando Sistema" sudo pacman -Syy && sudo pacman -Syu
 }
 
-e-manjaro-packages () { echo "-- Debian Packages"
+e-distro-manjaro-packages () { echo "-- Debian Packages"
 
     essentials=(base-devel coreutils wget git p7zip zip unzip util-linux bash tmux zile)
 
@@ -245,14 +246,14 @@ e-manjaro-packages () { echo "-- Debian Packages"
     e-foreach "$command" "${laptop[@]}"
 }
 
-e-manjaro-services()
+e-distro-manjaro-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-manjaro-foreign()
+e-distro-manjaro-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -289,7 +290,7 @@ e-manjaro-foreign()
     fi
 }
 
-e-manjaro()
+e-distro-manjaro()
 {
     e-manjaro-upgrade
     e-manjaro-packages
@@ -299,7 +300,7 @@ e-manjaro()
 
 # * FEDORA
 
-e-fedora ()
+e-distro-fedora ()
 {
     echo  "-- Fedora - Installing System Packages"
 
@@ -391,7 +392,7 @@ e-fedora ()
 # * NIXOS
 # Descricao: Distro Pacotes
 
-e-nixos-packages ()
+e-distro-nixos-packages ()
 {
     echo "-- NixOS Packages"
 
@@ -450,14 +451,14 @@ e-nixos-packages ()
     echo "Done"
 }
 
-e-nixos-services()
+e-distro-nixos-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-nixos-foreign()
+e-distro-nixos-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -494,13 +495,13 @@ e-nixos-foreign()
     fi
 }
 
-e-nixos-upgrade()
+e-distro-nixos-upgrade()
 {
     echo "-- Atualizando Sistema"
     nix-env --upgrade
 }
 
-e-nixos()
+e-distro-nixos()
 {
     e-nixos-packages
     e-nixos-services
@@ -509,13 +510,13 @@ e-nixos()
 }
 
 
-e-distro()
+e-distro-distro()
 {
     [[ $(command -v apt) ]] && e-debian
     [[ $(command -v dnf) ]] && e-fedora
 }
 
-e-prepara()
+e-distro-prepara()
 {
     [[ ! -x ${HOME}/.ssh/id_rsa.pub ]] && e-ssh
 
@@ -526,7 +527,7 @@ e-prepara()
     e-nvm
 }
 
-e-update()
+e-distro-update()
 {
     e-gem
     e-pip
