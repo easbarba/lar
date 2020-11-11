@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-emacs -q -l "$HOME/.config/emacs/apps/pdf-tools.el"

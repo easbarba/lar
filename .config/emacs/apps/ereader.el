@@ -69,4 +69,11 @@
   (unless noninteractive
     (add-hook 'kill-emacs-hook #'e/pdf-set-all-last-viewed-bookmarks)))
 
+(use-package nov
+  :defer t
+  :init (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+  :config
+  (add-hook 'nov-mode-hook 'olivetti-mode)
+  (define-key nov-mode-map (kbd "w") 'define-word-at-point))
+
 (find-file "~/Books")
