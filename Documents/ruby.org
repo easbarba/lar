@@ -17,7 +17,7 @@
   - [[#enumerator][Enumerator]]
 - [[#instructions][Instructions]]
   - [[#rbenv][Rbenv]]
-- [[#skills][Skills]]
+- [[#skills-priorities][Skills (*=priorities)]]
 :END:
 * Progress
 ** Books
@@ -300,15 +300,19 @@
 * Instructions
 ** Rbenv
    rbenv global 2.3.0 && rbenv rehash
-* Skills
-  - Ruby
-  - Ruby on Rails
-  - Ágil, TDD, CI, CD e gestão visual;
+* Skills (*=priorities)
+  - Ruby *
+  - Ruby on Rails *
+  - TDD *
+  - Clean Code *
+  - SOLID *
+  - Design Patterns ***
+  - Ágil
+  - CI, CD e gestão visual
   - Sistemas Distribuídos WEB;
-  - Clean Code, SOLID e Design Patterns;
   - JavaScript e Front End;
   - PostgreSQL
-  - Redis, Memcached ou ElasticSearch;
+  - Redis, Memcached ou ElasticSearch
   - Docker,AWS
   - Familiaridade com infraestrutura, deployment e servidores;
   - Inglês
