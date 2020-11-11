@@ -98,6 +98,7 @@ e-inhouse-scripts()
     source "$shell_files/shell-funcs"
     source "$shell_files/shell-packages"
     source "$shell_files/shell-distro"
+    source "$shell_files/shell-builds"
 }
 
 e-prompt()
