@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-e-emacs-build() {
+e-build-emacs() {
     local BUILDS="$HOME/Builds"
     local EMACS_DIR="$BUILDS/emacs"
     local PREFIX="$HOME/.local"
