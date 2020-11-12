@@ -23,10 +23,11 @@
 ** Books
    | Books                                                     | Capitulo                          | em                                              | tarde                          | revisao |   |   |   |   |
    |-----------------------------------------------------------+-----------------------------------+-------------------------------------------------+--------------------------------+---------+---+---+---+---|
+   | Design Patterns in Ruby                                   | Strategy                          |                                                 |                                |         |   |   |   |   |
+   | Closure in Ruby                                           |                                   |                                                 |                                |         |   |   |   |   |
    | Beginning Rails 6                                         | Getting Something Running         | Creating the Article Model                      |                                |         |   |   |   |   |
    | The Well Grounded Rubyist                                 | 12  File and I/O operations       |                                                 |                                |         |   |   |   |   |
    | Practical Object-Oriented Design                          | 4 Creating Flexible Interfaces    | 4.1 Understanding Interfaces                    |                                |         |   |   |   |   |
-   | Design Patterns in Ruby                                   | Observer                          |                                                 |                                |         |   |   |   |   |
    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                   |                                                 |                                |         |   |   |   |   |
    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing | Shorter Programs, But Not the Way You Think     | Spec: A Plethora of Assertions |         |   |   |   |   |
    | Ruby On Rails Tutorial                                    | A Toy App                         | Box 2.2: REpresentational State Transfer (REST) |                                |         |   |   |   |   |
