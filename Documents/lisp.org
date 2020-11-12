@@ -27,4 +27,37 @@
    | alexandria  |        |      |   |
 * Emacs Lisp
 * Common Lisp
+** Features
+*** conditionals
+**** let
+**** cond
+**** when
+**** unless
+*** comparable
+**** equal
+**** nth
+**** sort
+     - destructive
+*** Misc
+**** every
+**** some
+**** equal
+*** Short Notations
+**** #'
+**** '
+**** '()
+*** Predicates
+**** evenp
+**** oddp
+**** atom
+*** Sets
+**** union
+**** intersection
+**** set-difference
+**** adjoin
+**** member
+*** Sequences
+**** length
+**** subseq
+**** reverse
 * Guile
