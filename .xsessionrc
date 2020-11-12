@@ -1,14 +1,13 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # * Description: System Global Variables
 
 # * DEFAULT SOFTWARE:
 
 export EDITOR="emacs -nw"
-export TERMINAL="st"
-export BROWSER="google-chrome"
+export TERMINAL="mate-terminal"
+export BROWSER="firefox"
 export EXPLORER="emacs -Q -f dired"
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # * FOLDERS
 # ** XDG FOLDERS:
@@ -45,4 +44,4 @@ export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
 # * RUN
 
-[[ -f "$XDG_CONFIG_HOME/bash/shell-paths" ]] && source "$XDG_CONFIG_HOME/bash/shell-paths"
+[ -f "$XDG_CONFIG_HOME/bash/shell-paths" ] && source "$XDG_CONFIG_HOME/bash/shell-paths"
