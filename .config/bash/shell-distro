@@ -67,7 +67,7 @@ e-distro-ubuntu()
 {
     e-ubuntu-upgrade
     e-ubuntu-packages
-    e-ubuntu-services
+    #e-ubuntu-services
     e-ubuntu-upgrade
 }
 
@@ -83,13 +83,13 @@ e-distro--debian-upgrade()
 
 e-distro-debian-packages ()
 {
-    essentials=(git p7zip p7zip-full zip unzip util-linux alsa-utils network-manager bash tmux konsole zile)
+    essentials=(git p7zip p7zip-full zip unzip bash tmux zile)
 
-    languages=(shellcheck zenity libpq-dev bash-completion python3-pip postgresql sqlite3 libsqlite3-dev lua5.4 luarocks lua-check puppet)
+    languages=(shellcheck zenity libpq-dev bash-completion postgresql sqlite3 libsqlite3-dev)
 
-    user_packages=(emacs firefox libreoffice elisa kdeconnect calibre inkscape screenkey kdenlive ktorrent cheese gimp obs-studio kate syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br)
+    user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br)
 
-    media=(ffmpeg pulseaudio pulseaudio-utils vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+    media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
     virtualization=(qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf) # qemu-system-x86
 
@@ -97,11 +97,9 @@ e-distro-debian-packages ()
 
     fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
 
-    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl console-data entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish vrms fzf)
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish vrms fzf)
 
-    ruby_tools=(libssl-dev libgdbm-dev)
-
-    emacs_deps=(libjansson-dev libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev ibpoppler-private-dev ghostscript mupdf-tools poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev texlive-latex-base texlive-fonts-recommended  texlive-latex-extra uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync)
+    ruby=(libssl-dev libgdbm-dev python2)
 
     misc_deps=(build-essential libreadline-dev libfixposix-dev gconf2) # luarocks lisp megasyn
 
@@ -125,11 +123,11 @@ e-distro-debian-packages ()
     e-foreach "$command" "${system_tools[@]}"
     e-foreach "$command" "${user_packages[@]}"
     e-foreach "$command" "${media[@]}"
-    e-foreach "$command" "${virtualization[@]}"
+    #e-foreach "$command" "${virtualization[@]}"
     e-foreach "$command" "${wine[@]}"
     e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e-foreach "$command" "${ruby_tools[@]}"
-    e-foreach "$command" "${emacs_deps[@]}"; sudo apt -y build-dep emacs
+    e-foreach "$command" "${ruby[@]}"
+    sudo apt -y build-dep emacs
     e-foreach "$command" "${misc_deps[@]}"
     e-foreach "$command" "${security[@]}"
     e-foreach "$command" "${laptop[@]}"
