@@ -63,7 +63,7 @@ e-asdf-ruby()
     asdf global ruby "$(asdf latest ruby)"
 }
 
-e-asdf-node()
+e-asdf-nodejs()
 {
     # https://github.com/asdf-vm/asdf-nodejs
 
