@@ -21,15 +21,15 @@
 :END:
 * Progress
 ** Books
-   | Books                                                     | Capitulo                                           | em                                              | tarde                          | revisao |
-   |-----------------------------------------------------------+----------------------------------------------------+-------------------------------------------------+--------------------------------+---------|
-   | Beginning Rails 6                                         | Getting Something Running                          | Creating the Article Model                      |                                |         |
-   | The Well Grounded Rubyist                                 | 10  Collections central: Enumerable and Enumerator | 10.11 Enumerator method chaining                |    | Mastering Ruby Closures                                   |                                                    |                                                 |                                |         |
-   | Practical Object-Oriented Design                          | 4 Creating Flexible Interfaces                     | 4.1 Understanding Interfaces                    |                                |         |
-   | Design Patterns in Ruby                                   | Observer                                           |                                                 |                                |         |
-   | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                    |                                                 |                                |         |
-   | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing                  | Shorter Programs, But Not the Way You Think     | Spec: A Plethora of Assertions |         |
-   | Ruby On Rails Tutorial                                    | A Toy App                                          | Box 2.2: REpresentational State Transfer (REST) |                                |         |
+   | Books                                                     | Capitulo                          | em                                              | tarde                          | revisao |   |   |   |   |
+   |-----------------------------------------------------------+-----------------------------------+-------------------------------------------------+--------------------------------+---------+---+---+---+---|
+   | Beginning Rails 6                                         | Getting Something Running         | Creating the Article Model                      |                                |         |   |   |   |   |
+   | The Well Grounded Rubyist                                 | 12  File and I/O operations       |                                                 |                                |         |   |   |   |   |
+   | Practical Object-Oriented Design                          | 4 Creating Flexible Interfaces    | 4.1 Understanding Interfaces                    |                                |         |   |   |   |   |
+   | Design Patterns in Ruby                                   | Observer                          |                                                 |                                |         |   |   |   |   |
+   | Pragmatic Build Awesome Command-Line Applications in Ruby |                                   |                                                 |                                |         |   |   |   |   |
+   | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing | Shorter Programs, But Not the Way You Think     | Spec: A Plethora of Assertions |         |   |   |   |   |
+   | Ruby On Rails Tutorial                                    | A Toy App                         | Box 2.2: REpresentational State Transfer (REST) |                                |         |   |   |   |   |
 ** SLOC
    | Source Code | folder          | file       | @ |
    |-------------+-----------------+------------+---|
@@ -240,6 +240,23 @@
      a.map { |x| x.uppercase}
      a.map! { |x| x.uppercase}
      #+end_src
+**** each_slice
+     #+begin_src ruby
+     animals.each_slice(2).map do |predator, prey|
+     #+end_src
+**** lazy
+     #+begin_src ruby
+     (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
+     #+end_src
+**** with_index
+     #+begin_src ruby
+     ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
+     my_enum.take(5).force // actual result rather than lazy enumerator
+     #+end_src
+**** enum_for
+     #+begin_src ruby
+     e = names.enum_for(:inject, "Names: ")
+     #+end_src
 **** more
 
      | drop_while             | a.drop_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
@@ -284,6 +301,7 @@
    - it start and finish in the same call
 ** Methods
 *** Methods chaining
+    creates a new object at it chains
     #+begin_src ruby
     puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
     #+end_src
