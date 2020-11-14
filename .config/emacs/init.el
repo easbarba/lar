@@ -19,5 +19,7 @@
 (require 'init-repository-packages)
 (require 'init-builtin-extras)
 
+(e/install-external-packages package-selected-packages)
+
 (provide 'init)
  ;;; init.el ends here
