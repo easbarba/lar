@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+emacs -q -l "$HOME/.config/emacs/profiles/emacs-reader.el"
