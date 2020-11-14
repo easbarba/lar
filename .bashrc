@@ -95,7 +95,7 @@ e-inhouse-scripts()
 
     source "$shell_files/shell-paths"
     source "$shell_files/shell-utils"
-    source "$shell_files/shell-funcs"
+    source "$shell_files/shell-apps"
     source "$shell_files/shell-packages"
     source "$shell_files/shell-distro"
     source "$shell_files/shell-builds"
