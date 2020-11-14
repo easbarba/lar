@@ -8,6 +8,7 @@
 - [[#progresso][Progresso]]
 - [[#termos][Termos]]
 - [[#oop][OOP]]
+  - [[#definition][Definition]]
 - [[#data-structures][Data Structures]]
 - [[#algorithms][Algorithms]]
 - [[#design-patterns][Design Patterns]]
@@ -15,6 +16,7 @@
   - [[#strategy][Strategy]]
 - [[#algorithms][Algorithms]]
 - [[#articles][Articles]]
+- [[#skills][Skills]]
 :END:
 * Progresso
    | Livros                                                 | chapter                                | @                                                 | @later | revision       |
@@ -36,10 +38,9 @@
   | WHNF        | Weak Head Normal Form                         |
   | Noise/      |                                               |
 * OOP
-  |      |   |
-  |------+---|
-  | TRUE |   |
-
+** Definition
+   Object-oriented applications are made up of objects and the
+   messages that pass between them.
 * Data Structures
 * Algorithms
 * Design Patterns
@@ -110,3 +111,24 @@
   http://languagelog.ldc.upenn.edu/nll/?p=2483
 
   https://learnxinyminutes.com/
+* Skills
+  - OOP
+  - MVC *
+  - TDD *
+  - Clean Code *
+  - SOLID *
+  - Design Patterns ***
+  - PostgreSQL
+  - Ágil
+  - Cloud (AWS, Azure)
+  - CI, CD (Jenkins, )
+  - Sistemas Distribuídos WEB;
+  - JavaScript
+  - SPA
+  - Redis, Memcached ou ElasticSearch
+  - Docker,AWS
+  - Familiaridade com infraestrutura, deployment e servidores;
+  - Inglês
+  - RabbitMQ/ Kafka
+  - Firebase
+  - Postfix, Nginx
