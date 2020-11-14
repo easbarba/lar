@@ -9,15 +9,15 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
-  - [[#rails][Rails]]
   - [[#ruby][Ruby]]
+  - [[#rails][Rails]]
 - [[#concepts][Concepts]]
   - [[#iterator][Iterator]]
   - [[#methods][Methods]]
   - [[#enumerator][Enumerator]]
 - [[#instructions][Instructions]]
   - [[#rbenv][Rbenv]]
-- [[#skills-priorities][Skills (*=priorities)]]
+- [[#skills][Skills]]
 :END:
 * Progress
 ** Books
@@ -25,9 +25,9 @@
    |-----------------------------------------------------------+-----------------------------------+-------------------------------------------------+--------------------------------+---------+---+---+---+---|
    | Design Patterns in Ruby                                   | Strategy                          |                                                 |                                |         |   |   |   |   |
    | Closure in Ruby                                           |                                   |                                                 |                                |         |   |   |   |   |
-   | Beginning Rails 6                                         | Getting Something Running         | Creating the Article Model                      |                                |         |   |   |   |   |
-   | The Well Grounded Rubyist                                 | 12  File and I/O operations       |                                                 |                                |         |   |   |   |   |
    | Practical Object-Oriented Design                          | 4 Creating Flexible Interfaces    | 4.1 Understanding Interfaces                    |                                |         |   |   |   |   |
+   | The Well Grounded Rubyist                                 | 12  File and I/O operations       |                                                 |                                |         |   |   |   |   |
+   | Beginning Rails 6                                         | Getting Something Running         | Creating the Article Model                      |                                |         |   |   |   |   |
    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                   |                                                 |                                |         |   |   |   |   |
    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing | Shorter Programs, But Not the Way You Think     | Spec: A Plethora of Assertions |         |   |   |   |   |
    | Ruby On Rails Tutorial                                    | A Toy App                         | Box 2.2: REpresentational State Transfer (REST) |                                |         |   |   |   |   |
@@ -37,44 +37,11 @@
    | ruby        | lib/bundler/cli | install.rb |   |
    | rails       |                 |            |   |
 * Features
-** Rails
-*** Models
-    | what   | $ | ...         |
-    |--------+---+-------------|
-    | Models |   | Camel-Cased |
-    |        |   |             |
-
-*** Cli
-**** Database
-     | what     | how                                                                    | desc                                              |
-     |----------+------------------------------------------------------------------------+---------------------------------------------------|
-     | database | –d or --database=                                                      | use the database management system of your choice |
-     |          | db:create:all                                                          |                                                   |
-     |          | db:create                                                              |                                                   |
-     |          | dbconsole                                                              |                                                   |
-     |          | db:migrate                                                             |                                                   |
-     |          | new <name>                                                             |                                                   |
-     | models   | generate model <Name>                                                  |                                                   |
-     |          | destroy controller articles                                            |                                                   |
-     |          | rails destroy model Artile                                             |                                                   |
-     |          | rails db:rollback                                                      |                                                   |
-     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-
-**** Models
-     | what     | how                                                                    | desc                                              |
-     |----------+------------------------------------------------------------------------+---------------------------------------------------|
-     | models   | generate model <Name>                                                  |                                                   |
-     |          | destroy controller articles                                            |                                                   |
-     |          | rails destroy model Artile                                             |                                                   |
-     |          | rails db:rollback                                                      |                                                   |
-     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-**** ENV
-     |   |                      |   |
-     |---+----------------------+---|
-     |   | RAILS_ENV=production |   |
-
 ** Ruby
 *** Features
+**** dig
+**** fetch
+**** tap
 **** Quoting
      %char{text}
      #+begin_src ruby
@@ -295,6 +262,41 @@
      |                        | to_enum                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
      | dup                    |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
      |------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+** Rails
+*** Models
+    | what   | $ | ...         |
+    |--------+---+-------------|
+    | Models |   | Camel-Cased |
+    |        |   |             |
+
+*** Cli
+**** Database
+     | what     | how                                                                    | desc                                              |
+     |----------+------------------------------------------------------------------------+---------------------------------------------------|
+     | database | –d or --database=                                                      | use the database management system of your choice |
+     |          | db:create:all                                                          |                                                   |
+     |          | db:create                                                              |                                                   |
+     |          | dbconsole                                                              |                                                   |
+     |          | db:migrate                                                             |                                                   |
+     |          | new <name>                                                             |                                                   |
+     | models   | generate model <Name>                                                  |                                                   |
+     |          | destroy controller articles                                            |                                                   |
+     |          | rails destroy model Artile                                             |                                                   |
+     |          | rails db:rollback                                                      |                                                   |
+     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+
+**** Models
+     | what     | how                                                                    | desc                                              |
+     |----------+------------------------------------------------------------------------+---------------------------------------------------|
+     | models   | generate model <Name>                                                  |                                                   |
+     |          | destroy controller articles                                            |                                                   |
+     |          | rails destroy model Artile                                             |                                                   |
+     |          | rails db:rollback                                                      |                                                   |
+     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+**** ENV
+     |   |                      |   |
+     |---+----------------------+---|
+     |   | RAILS_ENV=production |   |
 
 * Concepts
 ** Iterator
@@ -319,9 +321,9 @@
 * Instructions
 ** Rbenv
    rbenv global 2.3.0 && rbenv rehash
-* Skills (*=priorities)
+* Skills
   - Ruby *
-  - Ruby on Rails *
+  - Ruby on Rails
   - TDD *
   - Clean Code *
   - SOLID *
