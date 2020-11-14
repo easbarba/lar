@@ -1,14 +1,11 @@
 ;;; -*- lexical-binding: t;
 
-;;; Description: GNU Emacs Configurations
+;;; Description: Emacs Readers Applications
 
-;; Loads base
+;; * BASE
+(load (concat user-emacs-directory "lisp/init-base.el"))
 
-(load (concat user-emacs-directory "lisp/base.el"))
-
-(unless (package-installed-p 'pdf-tools)
-  (package-refresh-contents)
-  (package-install 'pdf-tools))
+;; * Applications
 
 (use-package pdf-tools
   :config
@@ -76,4 +73,5 @@
   (add-hook 'nov-mode-hook 'olivetti-mode)
   (define-key nov-mode-map (kbd "w") 'define-word-at-point))
 
+;; * BOOKS
 (find-file "~/Books")
