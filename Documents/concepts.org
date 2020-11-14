@@ -11,6 +11,8 @@
 - [[#data-structures][Data Structures]]
 - [[#algorithms][Algorithms]]
 - [[#design-patterns][Design Patterns]]
+  - [[#template-method][Template Method]]
+  - [[#strategy][Strategy]]
 - [[#algorithms][Algorithms]]
 - [[#articles][Articles]]
 :END:
@@ -41,6 +43,28 @@
 * Data Structures
 * Algorithms
 * Design Patterns
+** Template Method
+*** Features
+**** Base class
+**** inheritance
+**** Multiple actions
+*** Issues
+**** changes require a whole new object
+**** limit runtime flexibility
+**** tangled by upper classes
+*** Advantages
+** Strategy
+*** Feature
+**** context & strategy
+**** easy to switch strategies at runtime
+**** delegation
+**** composition
+**** separation of concerns
+**** caller class relieve of any responsibility for or knowledge of the callee ones
+**** 'context' treat the strategies like interchangeable parts.
+**** all objects(strategies) do the same job
+**** all objects support same interface
+**** pull the algorithm out into a separate object
 * Algorithms
 * Articles
   https://daedtech.com/5-things-ive-learned-in-20-years-of-programming
