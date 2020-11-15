@@ -149,3 +149,5 @@ e-multiplexers
 #     # load basher
 #     eval "$(basher init - bash)"
 # }
+
+cd $HOME
