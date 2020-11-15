@@ -277,8 +277,7 @@
   :config (require 'google-translate-smooth-ui)
   :custom
   (google-translate-translation-directions-alist
-   '(("pt" . "en") ("en" . "fr") ("en" . "de"))))
-
+   '(("en" . "de") ("pt" . "de") ("pt" . "en"))))
 
 ;; ** REPOSITORIES PACKAGES - LANGUAGES
 
