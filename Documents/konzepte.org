@@ -1,11 +1,11 @@
-#+TILE: Conceitos de Programacao - Anotacoes de aprenzado, progresso e outros.
+#+TILE: Programmierung Konzepte
 
-* Sumario
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#progresso][Progresso]]
+- [[#fortschritt][Fortschritt]]
 - [[#termos][Termos]]
 - [[#oop][OOP]]
   - [[#definition][Definition]]
@@ -18,8 +18,8 @@
 - [[#articles][Articles]]
 - [[#skills][Skills]]
 :END:
-* Progresso
-   | Livros                                                 | chapter                                | @                                                 | @later | revision       |
+* Fortschritt
+   | Buch                                                   | kapitel                         | @                                                 | @later | revision       |
    |--------------------------------------------------------+----------------------------------------+---------------------------------------------------+--------+----------------|
    | The Art of Unix programming                            |                                        | The Lessons of Unix History                       |        |                |
    | A Common-Sense Guide to Data Structures and Algorithms | Arrays                                 | Searching                                         |        |                |
@@ -119,16 +119,15 @@
   - SOLID *
   - Design Patterns ***
   - PostgreSQL
+  - Rest/Soap/GraphQL
   - Ágil
   - Cloud (AWS, Azure)
   - CI, CD (Jenkins, )
   - Sistemas Distribuídos WEB;
-  - JavaScript
+  - JavaScript/Typescript
   - SPA
   - Redis, Memcached ou ElasticSearch
-  - Docker,AWS
-  - Familiaridade com infraestrutura, deployment e servidores;
-  - Inglês
+  - Docker
   - RabbitMQ/ Kafka
   - Firebase
   - Postfix, Nginx

@@ -1,6 +1,6 @@
 #+TILE: Life Annotations
 
-* TOC
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:

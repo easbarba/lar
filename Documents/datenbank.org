@@ -1,6 +1,6 @@
 #+TILE: Database - Anotacoes, progresso e mais
 
-* Sumario
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
