@@ -1,6 +1,6 @@
 #+TILE: Lisp - Study Annotations
 
-* Sumario
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
@@ -10,6 +10,7 @@
   - [[#ldc][LDC]]
 - [[#emacs-lisp][Emacs Lisp]]
 - [[#common-lisp][Common Lisp]]
+  - [[#features][Features]]
 - [[#guile][Guile]]
 :END:
 * Progresso
@@ -28,6 +29,19 @@
 * Emacs Lisp
 * Common Lisp
 ** Features
+*** array
+*** lists
+**** list
+**** dotted (proper) list
+     - is either nil, or a cons whose cdr is a proper list
+     - dot notation
+     - separated by a period
+**** assoc lists (alist)
+     - mapping
+     - are slow
+     - good for prototyping
+     - assoc retrieves the pair associated with a given key else nil
+     - assoc-if
 *** conditionals
 **** let
 **** cond
@@ -35,20 +49,25 @@
 **** unless
 *** comparable
 **** equal
+**** eql
 **** nth
 **** sort
      - destructive
 *** Misc
+**** member
+**** member-if
 **** every
 **** some
-**** equal
+**** keywords (:test)
 *** Short Notations
 **** #'
 **** '
+**** `(,)
 **** '()
 *** Predicates
 **** evenp
 **** oddp
+**** consp
 **** atom
 *** Sets
 **** union
