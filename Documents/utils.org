@@ -1,5 +1,48 @@
 #+TILE: Utilities - Anotacoes de aprendizado, progresso e outros.
 
+* Inhaltsverzeichnis
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#lvm][LVM]]
+- [[#swap][Swap]]
+- [[#systemd][SystemD]]
+  - [[#systemd-random-commands][SystemD random commands]]
+  - [[#systemd-services][SystemD services]]
+  - [[#systemd-read-later][SystemD Read Later]]
+- [[#disk-space-and-partition][Disk Space and Partition]]
+- [[#sync][Sync]]
+- [[#laptop][Laptop]]
+  - [[#httpswikiarchlinuxorgindexphptouchpad_synaptics][https://wiki.archlinux.org/index.php/Touchpad_Synaptics]]
+  - [[#httpswwwthinkwikiorgwikicategoryt430][https://www.thinkwiki.org/wiki/Category:T430]]
+  - [[#httpswwwthinkpenguincom][https://www.thinkpenguin.com/]]
+- [[#steam][Steam]]
+- [[#boot][Boot]]
+  - [[#coreboot--libreboot][Coreboot / Libreboot]]
+- [[#xorg][X.org]]
+  - [[#x11-xorgconfd][X11 (xorg.conf.d)]]
+  - [[#xwrapperconf][Xwrapper.conf]]
+  - [[#setxkbmap][setxkbmap]]
+- [[#network][Network]]
+  - [[#rcconf][rc.conf]]
+  - [[#networks-toolings][Networks Toolings]]
+  - [[#firewall][Firewall]]
+  - [[#kdeconnect][KdeConnect]]
+  - [[#networkmanager][NetworkManager]]
+- [[#containers-virtualization][Containers, Virtualization]]
+  - [[#qemu--kvm][Qemu & KVM]]
+  - [[#wine][Wine]]
+  - [[#virtualbox][Virtualbox]]
+- [[#terminal][Terminal]]
+  - [[#coreutils][Coreutils:]]
+- [[#home][$HOME]]
+  - [[#xdg][XDG]]
+- [[#commands][Commands]]
+- [[#packages][Packages]]
+- [[#udev-rules-udevrulesd][Udev rules (udev/rules.d)]]
+  - [[#brightnessctl][brightnessctl]]
+:END:
 * LVM
   # remount lvm volumes
   # vgscan --mknodes

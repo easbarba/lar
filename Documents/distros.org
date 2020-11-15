@@ -1,6 +1,6 @@
 #+TILE: Distros - Anotacoes de aprendizado, progresso e outros.
 
-* Sumario
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:

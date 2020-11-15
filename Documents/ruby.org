@@ -1,12 +1,12 @@
-#+TILE: Ruby - Study Annotations
+#+TILE: Ruby - Studie Anmerkungen
 
-* TOC
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#progress][Progress]]
-  - [[#books][Books]]
+- [[#fortschritt][Fortschritt]]
+  - [[#buch][Buch]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
   - [[#ruby][Ruby]]
@@ -18,13 +18,13 @@
 - [[#instructions][Instructions]]
   - [[#rbenv][Rbenv]]
 :END:
-* Progress
-** Books
+* Fortschritt
+** Buch
    | Books                                                     | Capitulo                          | em                                              | tarde                          | revisao |   |   |   |   |
    |-----------------------------------------------------------+-----------------------------------+-------------------------------------------------+--------------------------------+---------+---+---+---+---|
-   | Design Patterns in Ruby                                   | Strategy                          |                                                 |                                |         |   |   |   |   |
    | Closure in Ruby                                           |                                   |                                                 |                                |         |   |   |   |   |
-   | Practical Object-Oriented Design                          | 4 Creating Flexible Interfaces    | 4.1 Understanding Interfaces                    |                                |         |   |   |   |   |
+   | Practical Object-Oriented Design                          |                                   | 1.4.2 Object-Oriented Languages                 |                                |         |   |   |   |   |
+   | Design Patterns in Ruby                                   | Strategy                          |                                                 |                                |         |   |   |   |   |
    | The Well Grounded Rubyist                                 | 12  File and I/O operations       |                                                 |                                |         |   |   |   |   |
    | Beginning Rails 6                                         | Getting Something Running         | Creating the Article Model                      |                                |         |   |   |   |   |
    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                   |                                                 |                                |         |   |   |   |   |

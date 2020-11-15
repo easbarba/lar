@@ -1,12 +1,12 @@
 #+TILE: C - Annotations
 
-* Sumario
+* Inhaltsverzeichnis
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#progresso][Progresso]]
-  - [[#livros][Livros]]
+- [[#fortschritt][Fortschritt]]
+  - [[#buch][Buch]]
   - [[#ldc][LDC]]
 - [[#projetos][Projetos]]
 - [[#books][Books]]
@@ -20,9 +20,9 @@
 - [[#tips][Tips]]
 - [[#system-software-skills][System Software Skills]]
 :END:
-* Progresso
-** Livros
-   | Livros                  | Capitulo                           | em | tarde | revisao |
+* Fortschritt
+** Buch
+   | Buch              | Capitulo                           | em | tarde | revisao |
    |-------------------------+------------------------------------+----+-------+---------|
    | C Modern Approach       |                                    |    |       |         |
 
