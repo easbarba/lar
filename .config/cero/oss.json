@@ -42,6 +42,7 @@
     "https://git.savannah.gnu.org/git/guix",
     "https://github.com/stumpwm/stumpwm",
     "https://github.com/stumpwm/stumpwm-contrib",
+    "https://gitlab.common-lisp.net/clpm/clpm",
     "https://github.com/LispCookbook/cl-cookbook",
     "https://github.com/franzinc/clx",
     "https://github.com/CodyReichert/awesome-cl",
