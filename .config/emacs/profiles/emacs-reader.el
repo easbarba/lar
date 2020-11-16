@@ -3,7 +3,9 @@
 ;;; Description: Emacs Readers Applications
 
 ;; * BASE
+(load (concat user-emacs-directory "early-init.el"))
 (load (concat user-emacs-directory "lisp/init-base.el"))
+(load (concat user-emacs-directory "lisp/init-settings.el"))
 
 ;; * Applications
 
