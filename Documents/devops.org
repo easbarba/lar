@@ -1,3 +1,4 @@
+
 #+TILE: DevOps - Annotations
 
 * Inhaltsverzeichnis
@@ -11,12 +12,13 @@
 - [[#computer-network][computer network]]
   - [[#terms][terms]]
 - [[#concepts][Concepts]]
+- [[#tools][tools]]
 - [[#skills][Skills]]
 :END:
 
 * Fortschritt
 ** Buch
-   | Buch                                   | Capitulo       | em                        | tarde                                              | revisao |
+   | Buch                                         | Capitulo       | em                        | tarde                                              | revisao |
    |----------------------------------------------+----------------+---------------------------+----------------------------------------------------+---------|
    | CompTIA Networkplus Certification All-in-One | Network Models |                           |                                                    |         |
    | Computer Networks                            | INTRODUCTION   | USES OF COMPUTER NETWORKS | Text messaging or texting is tremendously popular. |         |
@@ -25,7 +27,7 @@
    | Chef                                         |                |                           |                                                    |         |
    | Puppet                                       |                |                           |                                                    |         |
    | CI/CD                                        |                |                           |                                                    |         |
-   | Docker/Kubernetes
+   | Docker/Kubernetes                            |                |                           |                                                    |         |
 * Skills
   | Skill                           | eg                                 |
   |---------------------------------+------------------------------------|
@@ -49,19 +51,22 @@
     |--------------------+--------------------------------------------------------------------------------------+----------|
     | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
     | Computer Network   |                                                                                      |          |
+* tools
+  hcl
+  Firewall
 * Skills
-    Ansible, Puppet;
-    Infrastructure as code;
-    Linux, Ubuntu;
-    Docker;
-    Kubernetes, Helm, Rancher;
-    Nginx;
-    GIT para versionamento de código;
-    Metodologia Ágil (scrum);
-    Flexibilidade;
-    Comunicação.
-    Alguma linguagem de programação (Python, Shell, Javascript ou Go);
-    Terraform;
-    CI/CD;
-    Micro serviços;
-    Nginx, Apache.
+  Ansible, Puppet, Chef
+  Infrastructure as code;
+  Linux, Ubuntu;
+  Docker;
+  Kubernetes, Helm, Rancher;
+  Nginx;
+  GIT para versionamento de código;
+  Metodologia Ágil (scrum);
+  Flexibilidade;
+  Comunicação.
+  Alguma linguagem de programação (Python, Shell, Javascript ou Go);
+  Terraform;
+  CI/CD;
+  Micro serviços;
+  Nginx, Apache.
