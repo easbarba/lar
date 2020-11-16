@@ -29,7 +29,7 @@
 			 ("melpa" . "http://melpa.org/packages/")))
 
 ;; Praise the sun
-(package-initialize)
+;; (package-initialize)
 
 ;; ** CUSTOM FILE
 (setq custom-file (concat user-emacs-directory "custom.el"))
@@ -55,5 +55,3 @@
     (mkdir (concat user-emacs-directory fld))))
 
 (provide 'init-base)
-
-
