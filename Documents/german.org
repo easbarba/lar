@@ -1,0 +1,13 @@
+#+TILE: German Annotations
+
+* Inhaltsverzeichnis
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#fortschritt][Fortschritt]]
+:END:
+* Fortschritt
+   | Buch                        | kapitel | @                           | @later | revision |
+   |-----------------------------+---------+-----------------------------+--------+----------|
+   | The Art of Unix programming |         | The Lessons of Unix History |        |          |

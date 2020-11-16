@@ -30,6 +30,21 @@
 * Common Lisp
 ** Features
 *** array
+**** eg
+     #+begin_src lisp
+     (setf *print-array* t) ;; display form
+
+     (setf arr (make-array '(2 3) : initial-element nil)) ;; make
+     (aref arr 0 0) ;; retrieve
+     (setf (aref arr 0 0) 'b) ;; replace
+     #2a((b nil nil) (nil nil nil))
+     (vector "a" 'b 3)
+     #+end_src
+**** annnotaion
+     - multiple dimensions
+     - zero indexed
+     - one-dimensional array is also called a vector
+
 *** lists
 **** list
 **** dotted (proper) list

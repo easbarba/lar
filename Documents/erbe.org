@@ -59,7 +59,6 @@
   - [[#elixir][Elixir]]
   - [[#haskell][Haskell]]
   - [[#net][.NET]]
-  - [[#devops][DevOps]]
   - [[#swift][Swift]]
   - [[#rust][Rust]]
   - [[#lua][Lua]]
@@ -13723,55 +13722,6 @@
      http://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/
 
       https://github.com/edgedb/edgedb
-** DevOps
-*** Sumario
-    :PROPERTIES:
-    :TOC:      :include all :depth 2 :ignore this
-    :END:
-  :CONTENTS:
-  - [[#progresso][Progresso]]
-    - [[#livros][Livros]]
-  - [[#skills][Skills]]
-  - [[#computer-network][computer network]]
-    - [[#terms][terms]]
-  - [[#concepts][Concepts]]
-  :END:
-
-*** Progresso
-**** Livros
-     | Livros                                       | Capitulo       | em                        | tarde                                              | revisao |
-     |----------------------------------------------+----------------+---------------------------+----------------------------------------------------+---------|
-     | CompTIA Networkplus Certification All-in-One | Network Models |                           |                                                    |         |
-     | Computer Networks                            | INTRODUCTION   | USES OF COMPUTER NETWORKS | Text messaging or texting is tremendously popular. |         |
-     | Distributed Systems                          |                |                           |                                                    |         |
-     | LPIC-1 101-400                               |                |                           |                                                    |         |
-     | Chef                                         |                |                           |                                                    |         |
-     | Puppet                                       |                |                           |                                                    |         |
-     | CI/CD                                        |                |                           |                                                    |         |
-     | Docker/Kubernetes
-*** Skills
-    | Skill                           | eg                                 |
-    |---------------------------------+------------------------------------|
-    | Cloud                           | AWS - Google Cloud - Azure         |
-    | Virtualization                  |                                    |
-    | Config Management               | Chef Puppet Ansible Salt Terraform |
-    | Container                       | Docker Kubernetes OpenShift        |
-    | Continuous Integration/Delivery | jenkins                            |
-    | monitoring                      | nagios                             |
-    |                                 |                                    |
-*** computer network
-**** terms
-     - hotspot
-     - VOIP
-     - IPTV
-     - RFID
-     - 2 family (p2p)
-     - desktop sharing
-*** Concepts
-    | Term               | ...                                                                                  | eg       |
-    |--------------------+--------------------------------------------------------------------------------------+----------|
-    | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
-    | Computer Network   |                                                                                      |          |
 ** Swift
 *** Sumario
     :PROPERTIES:

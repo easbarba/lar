@@ -7,8 +7,15 @@
 :CONTENTS:
 - [[#fortschritt][Fortschritt]]
 - [[#termos][Termos]]
+  - [[#dry][DRY]]
+- [[#solid][SOLID]]
+  - [[#single-responsability][Single Responsability]]
 - [[#oop][OOP]]
   - [[#definition][Definition]]
+  - [[#objects][Objects]]
+  - [[#data][Data]]
+  - [[#behavior][Behavior]]
+  - [[#terms][Terms]]
 - [[#data-structures][Data Structures]]
 - [[#algorithms][Algorithms]]
 - [[#design-patterns][Design Patterns]]
@@ -37,10 +44,31 @@
   | Duck Typing |                                               |
   | WHNF        | Weak Head Normal Form                         |
   | Noise/      |                                               |
+** DRY
+   - Every tiny bit of behavior lives in one and only one place.
+* SOLID
+** Single Responsability
+   - Can be defined in one sentence. “and,” may mean the class likely has more than one responsibility.
+     “or,” means the class has more than one responsibility and they aren’t even very related.
+   - highly cohesive or to have a single responsibility.
+   - Responsibility-Driven Design
+   - everything the class does be highly related to its purpose.
 * OOP
 ** Definition
    Object-oriented applications are made up of objects and the
    messages that pass between them.
+** Objects
+*** Instance
+**** Hide instance
+     - Always wrap instance variables in accessor methods instead of directly referring to  variables.
+     - Hide the variables, even from the class that defines them, by wrapping them in methods.
+** Data
+   - refer directly to the instance variable
+   - wrap the instance variable in an accessor
+method.
+** Behavior
+** Terms
+*** TRUE: Transparent, Reasonable, Usable, Exemplary
 * Data Structures
 * Algorithms
 * Design Patterns

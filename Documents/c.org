@@ -22,9 +22,9 @@
 :END:
 * Fortschritt
 ** Buch
-   | Buch              | Capitulo                           | em | tarde | revisao |
-   |-------------------------+------------------------------------+----+-------+---------|
-   | C Modern Approach       |                                    |    |       |         |
+   | Buch              | Capitulo | em | tarde | revisao |
+   |-------------------+----------+----+-------+---------|
+   | C Modern Approach |          |    |       |         |
 
 ** LDC
    | Source Code | folder | file | @ |
