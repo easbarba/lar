@@ -12,14 +12,14 @@
 (require 'init-modeline)
 
 (require 'init-builtin)
+(require 'init-dired)
 (require 'init-languages)
 
 (require 'init-my)
 
+(require 'init-repository-get)
 (require 'init-repository-packages)
 (require 'init-builtin-extras)
-
-(e/install-external-packages package-selected-packages)
 
 (provide 'init)
  ;;; init.el ends here
