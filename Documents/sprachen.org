@@ -22,6 +22,8 @@
   - [[#read-later][Read later]]
 - [[#guile][Guile]]
   - [[#progresso][Progresso]]
+- [[#german][German]]
+  - [[#fortschritt][Fortschritt]]
 :END:
 
 * Ruby
@@ -448,3 +450,8 @@
     | sbcl        |        |      |   |
     | asdf        |        |      |   |
     | alexandria  |        |      |   |
+* German
+** Fortschritt
+    | Buch                        | kapitel | @                           | @later | revision |
+    |-----------------------------+---------+-----------------------------+--------+----------|
+    | The Art of Unix programming |         | The Lessons of Unix History |        |          |
