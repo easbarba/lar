@@ -26,7 +26,7 @@ e-distro-debian-packages ()
 
     wine=(wine winetricks wine32)
 
-    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
+    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu numix-icon-theme numix-gtk-theme)
 
     system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow screen neovim zsh parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config unrar rar ripgrep socat flatpak fish vrms fzf)
 
