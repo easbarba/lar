@@ -1,0 +1,19 @@
+#!/usb/bin/env bash
+
+# * Set System Utilities
+
+e-apps-ssh
+e-apps-binaries
+
+# * Install packagers
+
+e-packages-asdf
+e-packages-ruby
+e-packages-nodejs
+
+# * Install packages
+
+e-packages-gem
+e-packages-npm
+e-packages-pip
+e-packages-vscode

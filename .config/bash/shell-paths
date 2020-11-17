@@ -3,14 +3,14 @@
 # * Description: Add foreign packagers bin directories to $PATH
 # * SOFTWARE
 
-e_gem_path()
+e_path_gem()
 {
     local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
 
     export PATH="$gem_bin"${PATH:+:}$PATH
 }
 
-e_asdf_path()
+e_path_asdf()
 {
     source "$HOME"/.asdf/completions/asdf.bash
     source "$HOME"/.asdf/asdf.sh
@@ -20,7 +20,7 @@ e_asdf_path()
     export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 }
 
-e_rbenv_path()
+e_path_rbenv()
 {
     local rbenv_dir="$HOME/.rbenv"
 
@@ -31,7 +31,7 @@ e_rbenv_path()
     export PATH="$rbenv_shims"${PATH:+:}$PATH
 }
 
-e_nvm_path()
+e_path_nvm()
 {
     local nvm_dir="$HOME/.config/nvm"
 
@@ -42,12 +42,12 @@ e_nvm_path()
     export PATH="$nvm_bin"${PATH:+:}$PATH
 }
 
-e_luarocks_path()
+e_path_luarocks()
 {
     export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 }
 
-e_cask_path()
+e_path_cask()
 {
     local caskdir="$HOME/.cask/bin"
     export PATH="$caskdir"${PATH:+:}$PATH
@@ -55,9 +55,9 @@ e_cask_path()
 
 # * RUN
 
-e_gem_path
-e_asdf_path
-e_cask_path
-# e_rbenv_path
-# e_nvm_path
-# e_luarocke_path
+e_path_gem
+e_path_asdf
+e_path_cask
+# e_path_rbenv
+# e_nvm
+# e_luarocke

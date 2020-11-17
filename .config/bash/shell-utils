@@ -1,6 +1,6 @@
 #!/usb/bin/env bash
 
-e-foreach()
+e_foreach()
 {
     local command="$1"
     shift 1
@@ -14,7 +14,7 @@ e-foreach()
     done
 }
 
-e-run() {
+e_run() {
     number=${1}
 
     shift

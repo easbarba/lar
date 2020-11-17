@@ -48,21 +48,21 @@ e-distro-debian-packages ()
     echo "Instalando pacotes."
     local command='sudo apt install -y'
 
-    e-foreach "$command" "${essentials[@]}"
-    # e-foreach "$command" "${wm[@]}"
-    e-foreach "$command" "${languages[@]}"
-    e-foreach "$command" "${system_tools[@]}"
-    e-foreach "$command" "${user_packages[@]}"
-    e-foreach "$command" "${media[@]}"
-    #e-foreach "$command" "${virtualization[@]}"
-    e-foreach "$command" "${wine[@]}"
-    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e-foreach "$command" "${ruby[@]}"
+    e_foreach "$command" "${essentials[@]}"
+    # e_foreach "$command" "${wm[@]}"
+    e_foreach "$command" "${languages[@]}"
+    e_foreach "$command" "${system_tools[@]}"
+    e_foreach "$command" "${user_packages[@]}"
+    e_foreach "$command" "${media[@]}"
+    #e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${wine[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_foreach "$command" "${ruby[@]}"
     sudo apt -y build-dep emacs
-    e-foreach "$command" "${misc_deps[@]}"
-    e-foreach "$command" "${security[@]}"
-    e-foreach "$command" "${laptop[@]}"
-    e-foreach "$command" "${debian_internals[@]}"; sudo apt-file update # update Debian database
+    e_foreach "$command" "${misc_deps[@]}"
+    e_foreach "$command" "${security[@]}"
+    e_foreach "$command" "${laptop[@]}"
+    e_foreach "$command" "${debian_internals[@]}"; sudo apt-file update # update Debian database
 
     echo "Done"
 }
@@ -150,18 +150,18 @@ e-distro-ubuntu-packages()
     echo "Instalando pacotes."
     local command='sudo apt install -y'
 
-    e-foreach "$command" "${essentials[@]}"
-    e-foreach "$command" "${languages[@]}"
-    e-foreach "$command" "${de_packages[@]}"
-    e-foreach "$command" "${wm_packages[@]}"
-    e-foreach "$command" "${codecs[@]}"
-    e-foreach "$command" "${virtualization[@]}"
-    e-foreach "$command" "${wine[@]}"
-    e-foreach "$command" "${toolings[@]}"
-    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e-foreach "$command" "${ruby[@]}"
-    e-foreach "$command" "${laptop[@]}"
-    e-foreach "$command" "${rails[@]}"
+    e_foreach "$command" "${essentials[@]}"
+    e_foreach "$command" "${languages[@]}"
+    e_foreach "$command" "${de_packages[@]}"
+    e_foreach "$command" "${wm_packages[@]}"
+    e_foreach "$command" "${codecs[@]}"
+    e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${wine[@]}"
+    e_foreach "$command" "${toolings[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_foreach "$command" "${ruby[@]}"
+    e_foreach "$command" "${laptop[@]}"
+    e_foreach "$command" "${rails[@]}"
 }
 
 e-distroubuntu-upgrade()
@@ -234,19 +234,19 @@ e-distro-manjaro-packages ()
 
     local command='sudo pacman -S --noconfirm'
 
-    e-foreach "$command" "${essentials[@]}"
-    e-foreach "$command" "${languages[@]}"
-    e-foreach "$command" "${devops[@]}"
-    e-foreach "$command" "${wm_packges[@]}"
-    e-foreach "$command" "${user_packages[@]}"
-    e-foreach "$command" "${media[@]}"
-    e-foreach "$command" "${virtualization[@]}"
-    e-foreach "$command" "${wine[@]}"
-    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e-foreach "$command" "${ruby_tools[@]}"
-    # e-foreach "$command" "${emacs_deps[@]}"
-    # e-foreach "$command" "${misc_deps[@]}"
-    e-foreach "$command" "${laptop[@]}"
+    e_foreach "$command" "${essentials[@]}"
+    e_foreach "$command" "${languages[@]}"
+    e_foreach "$command" "${devops[@]}"
+    e_foreach "$command" "${wm_packges[@]}"
+    e_foreach "$command" "${user_packages[@]}"
+    e_foreach "$command" "${media[@]}"
+    e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${wine[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_foreach "$command" "${ruby_tools[@]}"
+    # e_foreach "$command" "${emacs_deps[@]}"
+    # e_foreach "$command" "${misc_deps[@]}"
+    e_foreach "$command" "${laptop[@]}"
 }
 
 e-distro-manjaro-services()
@@ -432,20 +432,20 @@ e-distro-nixos-packages ()
     local command='nix-env -i'
     local command_nixos='nix-env --installi -A'
 
-    e-foreach "$command" "${essentials[@]}"
-    e-foreach "$command" "${wm[@]}"
-    e-foreach "$command" "${languages[@]}"
-    e-foreach "$command" "${devops[@]}"
-    e-foreach "$command" "${wm_packges[@]}"
-    e-foreach "$command" "${user_packages[@]}"
-    e-foreach "$command" "${media[@]}"
-    e-foreach "$command" "${virtualization[@]}"
-    e-foreach "$command" "${wine[@]}"
-    e-foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e-foreach "$command" "${ruby_tools[@]}"
-    e-foreach "$command" "${emacs_deps[@]}"
-    # e-foreach "$command" "${misc_deps[@]}"
-    e-foreach "$command" "${laptop[@]}"
+    e_foreach "$command" "${essentials[@]}"
+    e_foreach "$command" "${wm[@]}"
+    e_foreach "$command" "${languages[@]}"
+    e_foreach "$command" "${devops[@]}"
+    e_foreach "$command" "${wm_packges[@]}"
+    e_foreach "$command" "${user_packages[@]}"
+    e_foreach "$command" "${media[@]}"
+    e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${wine[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_foreach "$command" "${ruby_tools[@]}"
+    e_foreach "$command" "${emacs_deps[@]}"
+    # e_foreach "$command" "${misc_deps[@]}"
+    e_foreach "$command" "${laptop[@]}"
 
     echo "-- Preparacoes finais: limpando e arrumando o sistema"
     sudo apt -y autoremove

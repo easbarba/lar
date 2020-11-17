@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 
-PERSONAL=/dados/Pessoal
-
-e-asdf-install()
+e-packs-asdf-install()
 {
     local asdf_dir="$HOME/.asdf"
 
@@ -13,7 +11,7 @@ e-asdf-install()
     fi
 }
 
-e-asdf-activate()
+e-packs-asdf-activate()
 {
     source "$HOME"/.asdf/completions/asdf.bash
     source "$HOME"/.asdf/asdf.sh
@@ -24,7 +22,7 @@ e-asdf-activate()
     export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 }
 
-e-asdf()
+e-packs-asdf()
 {
     # https://asdf-vm.com/#/core-manage-asdf
     # https://asdf-vm.com/#/core-manage-plugins
@@ -37,7 +35,7 @@ e-asdf()
     asdf update
 }
 
-e-asdf-elixir()
+e-packs-asdf-elixir()
 {
     # https://github.com/asdf-vm/asdf-erlang
     # https://github.com/asdf-vm/asdf-elixir
@@ -52,7 +50,7 @@ e-asdf-elixir()
     asdf global "$(asdf latest elixir)"
 }
 
-e-asdf-ruby()
+e-packs-asdf-ruby()
 {
     # https://github.com/asdf-vm/asdf-ruby
 
@@ -63,7 +61,7 @@ e-asdf-ruby()
     asdf global ruby "$(asdf latest ruby)"
 }
 
-e-asdf-nodejs()
+e-packs-asdf-nodejs()
 {
     # https://github.com/asdf-vm/asdf-nodejs
 
@@ -76,7 +74,7 @@ e-asdf-nodejs()
     asdf global nodejs "$(asdf latest nodejs)"
 }
 
-e-rbenv()
+e-packs-rbenv()
 {
     export RBENV_DIR="$HOME/.rbenv"
     export RUBY_BUILD_DIR="$RBENV_DIR/plugins/ruby-build"
@@ -104,7 +102,7 @@ e-rbenv()
     $rbenv_binary global $version && rbenv rehash
 }
 
-e-rvm()
+e-packs-rvm()
 {
     gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
@@ -115,7 +113,7 @@ e-rvm()
     rvm get stable
 }
 
-e-nvm()
+e-packs-nvm()
 {
     local nvm_dir="$HOME/.config/nvm"
 
@@ -130,7 +128,7 @@ e-nvm()
     nvm install node
 }
 
-e-gem()
+e-packs-gem()
 {
     local packages=(bundler solargraph rubocop pry reek clipboard rspec)
 
@@ -143,7 +141,7 @@ e-gem()
     done
 }
 
-e-flatpak()
+e-packs-flatpak()
 {
     local packages=(com.spotify.Client com.valvesoftware.Steam com.visualstudio.code com.skype.Client)
 
@@ -153,7 +151,7 @@ e-flatpak()
     done
 }
 
-e-npm()
+e-packs-npm()
 {
     local packages=(npm eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic yarn babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
 
@@ -164,7 +162,7 @@ e-npm()
     done
 }
 
-e-pip()
+e-packs-pip()
 {
     local packages=(pip wheel setuptools blackyoutube-dl python-language-server
 		    pyls-black pyls-isort pyls-mypy jedi==0.17.0 ipython pylama
@@ -178,7 +176,7 @@ e-pip()
     done
 }
 
-e-vscode()
+e-packs-vscode()
 {
     local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek alefragnani.Bookmarks alefragnani.project-manager
 		    CoenraadS.bracket-pair-colorizer-2 dbaeumer.vscode-eslint donjayamanne.githistory
@@ -197,7 +195,7 @@ e-vscode()
     done
 }
 
-e-foreign-update()
+e-packs-foreign-update()
 {
     e-asdf
 

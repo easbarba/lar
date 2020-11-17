@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # * Description: GNU Bash - CONFIGURATIONS, ALIASES...
+# Namespace: e-* means public, e_* private.
 
 # * CONFIGURATION
 
@@ -88,20 +89,20 @@ fi
 
 # * CLI SOFTWARE
 
-e-inhouse-scripts()
+e_inhouse_scripts()
 {
     local shell_files="$HOME/.config/bash";
     [[ ! -d $shell_files ]] && return
 
-    source "$shell_files/shell-paths"
-    source "$shell_files/shell-utils"
-    source "$shell_files/shell-apps"
-    source "$shell_files/shell-packages"
-    source "$shell_files/shell-distro"
-    source "$shell_files/shell-builds"
+    local scripts=(shell-paths shell-aliases shell-utils shell-apps shell-packs shell-distro shell-builds) # TODO: Get all files in folder instead.
+
+    for script in ${scripts[@]}; do
+	echo "Sourcing: $shell_files/$script"
+	source "$shell_files/$script"
+    done
 }
 
-e-prompt()
+e_prompt()
 {
     [[ $(command -v starship) ]] && eval "$(starship init bash)"
 
@@ -109,13 +110,13 @@ e-prompt()
     [[ ! $(command -v starship) ]] && [[ -f $liquid ]] && source "$liquid"
 }
 
-e-cli-tools()
+e_cli_tools()
 {
     local enhancd_dir="$HOME/Projects/Bash/enhancd/"
     [[ -d $enhancd_dir ]] && cd $enhancd_dir && source ./init.sh
 }
 
-e-multiplexers()
+e_multiplexers()
 {
     if [[ "$DISPLAY" ]]; then
 	if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
@@ -126,28 +127,13 @@ e-multiplexers()
     fi
 }
 
-
 # * RUN
 
-e-inhouse-scripts
+e_inhouse_scripts
 
-e-prompt
-e-cli-tools
-e-multiplexers
+e_prompt
+e_cli_tools
+e_multiplexers
 
-# e-basher()
-# {
-#     local basher_dir="$HOME/.basher"
-
-#     [[ "$1" == 'upgrade' ]] && git -C "$HOME/.config/basher" pull
-
-#     [[ ! -d "$basher_dir/.git" ]] && git clone https://github.com/basherpm/basher "$basher_dir"
-
-#     # add Basher Bin folder to $PATH
-#     export PATH="$basher_dir/bin"${PATH:+:}${PATH}
-
-#     # load basher
-#     eval "$(basher init - bash)"
-# }
 
 cd $HOME
