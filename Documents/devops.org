@@ -24,6 +24,12 @@
   - [[#azure][Azure]]
   - [[#aws][AWS]]
 - [[#linux][Linux]]
+  - [[#text-manipulation][Text Manipulation]]
+  - [[#process-monitoring][Process Monitoring]]
+  - [[#df][Df]]
+  - [[#strace][strace]]
+  - [[#dstrace][dstrace]]
+  - [[#multiplexers][Multiplexers]]
   - [[#firewall][Firewall]]
   - [[#lvm][LVM]]
   - [[#swap][Swap]]
@@ -59,7 +65,11 @@
   - [[#tcsh][TCSH]]
   - [[#gnu-bash][GNU Bash]]
   - [[#posix][Posix]]
+- [[#compilers][Compilers]]
+  - [[#gnu-gcc][GNU GCC]]
+  - [[#clang][Clang]]
 - [[#editors][Editors]]
+  - [[#nano][Nano]]
   - [[#vimneovim][Vim/NeoVim]]
   - [[#emacs][Emacs]]
 - [[#network][Network]]
@@ -118,6 +128,23 @@
    - ec2
 
 * Linux
+** Text Manipulation
+*** grep
+*** seq
+*** awk
+*** soft
+*** uniq
+*** cat
+** Process Monitoring
+*** Ps
+*** Htop
+*** Top
+** Df
+** strace
+** dstrace
+** Multiplexers
+*** Tmux
+*** GNU Screen
 ** Firewall
 
 ** LVM
@@ -1444,7 +1471,11 @@
     | sudo !! | run last command as sudo                                        |
     | xargs   |                                                                 |
     | set -e  | -e  Exit immediately if a command exits with a non-zero status. |
+* Compilers
+** GNU GCC
+** Clang
 * Editors
+** Nano
 ** Vim/NeoVim
 ** [[https://www.gnu.org/software/emacs/][Emacs]]
 *** Emacs Resources
