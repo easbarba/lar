@@ -5,6 +5,11 @@
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
+- [[#golang][Golang]]
+  - [[#fortschritt][Fortschritt]]
+  - [[#projekts][Projekts]]
+  - [[#buchs][Buchs]]
+  - [[#read-later][Read later]]
 - [[#ruby][Ruby]]
   - [[#fortschritt][Fortschritt]]
   - [[#features][Features]]
@@ -15,17 +20,26 @@
 - [[#common-lisp][Common Lisp]]
   - [[#progresso][Progresso]]
   - [[#features][Features]]
-- [[#golang][Golang]]
-  - [[#fortschritt][Fortschritt]]
-  - [[#projekts][Projekts]]
-  - [[#buchs][Buchs]]
-  - [[#read-later][Read later]]
 - [[#guile][Guile]]
   - [[#progresso][Progresso]]
 - [[#german][German]]
   - [[#fortschritt][Fortschritt]]
 :END:
 
+* Golang
+** Fortschritt
+*** Buch
+    | Buch | Capitulo | em | tarde | revisao |
+    |------+----------+----+-------+---------|
+    | a    |          |    |       |         |
+
+*** LDC
+    | Source Code | folder | file | @ |
+    |-------------+--------+------+---|
+    | golang      |        |      |   |
+** Projekts
+** Buchs
+** Read later
 * Ruby
 ** Fortschritt
 *** Buch
@@ -422,20 +436,6 @@
 **** length
 **** subseq
 **** reverse
-* Golang
-** Fortschritt
-*** Buch
-    | Buch | Capitulo | em | tarde | revisao |
-    |------+----------+----+-------+---------|
-    | a    |          |    |       |         |
-
-*** LDC
-    | Source Code | folder | file | @ |
-    |-------------+--------+------+---|
-    | golang      |        |      |   |
-** Projekts
-** Buchs
-** Read later
 * Guile
 ** Progresso
 *** Livros
