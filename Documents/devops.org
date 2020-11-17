@@ -24,6 +24,7 @@
   - [[#azure][Azure]]
   - [[#aws][AWS]]
 - [[#linux][Linux]]
+  - [[#progresso][Progresso]]
   - [[#text-manipulation][Text Manipulation]]
   - [[#process-monitoring][Process Monitoring]]
   - [[#df][Df]]
@@ -52,6 +53,7 @@
   - [[#github-actions][Github Actions]]
   - [[#circle-ci][Circle CI]]
   - [[#jenkins][Jenkins]]
+- [[#virtual-machine][Virtual Machine]]
 - [[#web-server][Web Server]]
   - [[#apache][Apache]]
   - [[#nginx][Nginx]]
@@ -80,8 +82,9 @@
 - [[#concepts][Concepts]]
 - [[#sites][Sites]]
 - [[#distros][Distros]]
-  - [[#progresso][Progresso]]
-  - [[#tradionals][Tradionals]]
+  - [[#apt][APT]]
+  - [[#rpm][RPM]]
+  - [[#gentoo][Gentoo]]
   - [[#functional][Functional]]
 - [[#software][Software]]
   - [[#onlines][Onlines]]
@@ -115,6 +118,14 @@
 ** Images
 *** Podman
 *** Docker
+    |              |   |   |
+    |--------------+---+---|
+    | container ls |   |   |
+    | images       |   |   |
+    | pull <pkg>   |   |   |
+    | ps           |   |   |
+    | run <pkg>    |   |   |
+
 ** Orchestration
 *** Kubernetes
 **** Kind
@@ -128,6 +139,12 @@
    - ec2
 
 * Linux
+** Progresso
+*** Livros
+   | Livros                      | capitulo                                   | em                           | @later | revisao |
+   |-----------------------------+--------------------------------------------+------------------------------+--------+---------|
+   | LPIC                        | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
+   | The Art of Unix programming | 2 History                                  |                              |        |         |
 ** Text Manipulation
 *** grep
 *** seq
@@ -942,6 +959,7 @@
 ** Github Actions
 ** Circle CI
 ** Jenkins
+* Virtual Machine
 * Web Server
 ** Apache
 ** Nginx
@@ -1697,13 +1715,7 @@
 * Sites
   - visual subnet calculator
 * Distros
-** Progresso
-*** Livros
-   | Livros                      | capitulo                                   | em                           | @later | revisao |
-   |-----------------------------+--------------------------------------------+------------------------------+--------+---------|
-   | LPIC                        | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
-   | The Art of Unix programming | 2 History                                  |                              |        |         |
-** Tradionals
+** APT
 *** Debian
 **** Apt commands
      | comando               | ... |
@@ -1758,13 +1770,16 @@
      deb-src http://security.debian.org/ testing/updates main contrib non-free
 
      #+end_src
+**** Warning
+     Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
 *** Ubuntu
+** RPM
 *** CentOs
-*** Gentoo
-**** Emerge errors
-***** Not enough ram
-      when you see "Killed (program cc1plus)" that means some external process killed cc1plus, it didnt die of its own error.  95% of the time, that's oom-killer. it could in theory be grsec, or even
-      just some joker running "killall cc1plus" from another terminal, etc.
+** Gentoo
+*** Emerge errors
+**** Not enough ram
+     when you see "Killed (program cc1plus)" that means some external process killed cc1plus, it didnt die of its own error.  95% of the time, that's oom-killer. it could in theory be grsec, or even
+     just some joker running "killall cc1plus" from another terminal, etc.
 ** Functional
 *** NixOS
 **** progress
