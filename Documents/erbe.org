@@ -81,6 +81,18 @@
 ** Cero
 *** oss.json
    #+begin_src json
+   "Javascript": [
+       "https://github.com/SBoudrias/Inquirer.js",
+       "https://github.com/mrdoob/three.js",
+       "https://github.com/parcel-bundler/parcel",
+       "https://github.com/prettier/prettier",
+       "https://github.com/yarnpkg/yarn",
+       "https://github.com/meteor/meteor",
+       "https://github.com/expressjs/express",
+       "https://github.com/axios/axios",
+       "https://github.com/nodejs/node"
+   ],
+
    "Elixir": [
        "https://github.com/bitwalker/distillery",
        "https://github.com/ueberauth/guardian",

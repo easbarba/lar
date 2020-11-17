@@ -20,23 +20,13 @@
     "git://git.sv.gnu.org/emacs"
   ],
   "Golang": [
+    "https://github.com/gorilla/mux",
     "https://github.com/cli/cli",
     "https://github.com/rclone/rclone",
     "https://github.com/avelino/awesome-go",
     "https://github.com/kubernetes-sigs/kind/",
     "https://github.com/kubernetes/kubernetes",
     "https://github.com/golang/go"
-  ],
-  "Javascript": [
-    "https://github.com/SBoudrias/Inquirer.js",
-    "https://github.com/mrdoob/three.js",
-    "https://github.com/parcel-bundler/parcel",
-    "https://github.com/prettier/prettier",
-    "https://github.com/yarnpkg/yarn",
-    "https://github.com/meteor/meteor",
-    "https://github.com/expressjs/express",
-    "https://github.com/axios/axios",
-    "https://github.com/nodejs/node"
   ],
   "Lisp": [
     "https://gitlab.common-lisp.net/alexandria/alexandria",
