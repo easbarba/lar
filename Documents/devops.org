@@ -118,13 +118,18 @@
 ** Images
 *** Podman
 *** Docker
-    |              |   |   |
-    |--------------+---+---|
-    | container ls |   |   |
-    | images       |   |   |
-    | pull <pkg>   |   |   |
-    | ps           |   |   |
-    | run <pkg>    |   |   |
+    |                     |                           |   |
+    |---------------------+---------------------------+---|
+    | container ls        |                           |   |
+    | images              |                           |   |
+    | pull <img>          |                           |   |
+    | ps                  |                           |   |
+    | run <img>           |                           |   |
+    | run -d <img>        |                           |   |
+    | run -dp 80:80 <img> |                           |   |
+    | stop <id>           |                           |   |
+    | rm $(docker ps -aq) | remove all images running |   |
+    | run --name <name>   |                           |   |
 
 ** Orchestration
 *** Kubernetes
