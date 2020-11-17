@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+e-apps-docker(){
+    user(){
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
+	newgrp docker
+    }
+
+    services(){
+	sudo systemctl enable docker
+    }
+
+
+    user
+    services
+}
+
 e-apps-binaries()
 {
     bin="$HOME/bin"
