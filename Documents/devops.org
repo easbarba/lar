@@ -12,6 +12,8 @@
 - [[#computer-network][computer network]]
   - [[#terms][terms]]
 - [[#concepts][Concepts]]
+- [[#aws][aws]]
+- [[#sites][sites]]
 - [[#tools][tools]]
 - [[#skills][Skills]]
 :END:
@@ -51,9 +53,16 @@
     |--------------------+--------------------------------------------------------------------------------------+----------|
     | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
     | Computer Network   |                                                                                      |          |
+* aws
+  - vcp
+  - subnet
+  - ec2
+* sites
+  - visual subnet calculator
 * tools
-  hcl
-  Firewall
+  - hcl
+  - Firewall
+  - nginx
 * Skills
   Ansible, Puppet, Chef
   Infrastructure as code;
