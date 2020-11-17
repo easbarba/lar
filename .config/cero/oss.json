@@ -19,6 +19,14 @@
     "https://github.com/purcell/reformatter.el",
     "git://git.sv.gnu.org/emacs"
   ],
+  "Golang": [
+    "https://github.com/cli/cli",
+    "https://github.com/rclone/rclone",
+    "https://github.com/avelino/awesome-go",
+    "https://github.com/kubernetes-sigs/kind/",
+    "https://github.com/kubernetes/kubernetes",
+    "https://github.com/golang/go"
+  ],
   "Javascript": [
     "https://github.com/SBoudrias/Inquirer.js",
     "https://github.com/mrdoob/three.js",
