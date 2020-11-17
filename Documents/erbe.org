@@ -57,6 +57,7 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#linguages][Linguages]]
+  - [[#javascript][Javascript]]
   - [[#c][C]]
   - [[#elixir][Elixir]]
   - [[#haskell][Haskell]]
@@ -13248,6 +13249,27 @@
 
      #+END_SRC
 * Linguages
+** Javascript
+*** Inhaltsverzeichnis
+    :PROPERTIES:
+    :TOC:      :include all :depth 2 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progresso][Progresso]]
+    - [[#livros][Livros]]
+    - [[#ldc][LDC]]
+  :END:
+*** Progresso
+**** Livros
+     | Livros                          | Capitulo                     | em          | tarde | revisao |
+     |---------------------------------+------------------------------+-------------+-------+---------|
+     | JavaScript The Definitive Guide | Types, Values, and Variables | 3.2 Numbers |       |         |
+
+***** LDC
+      | Source Code | folder | file | @ |
+      |-------------+--------+------+---|
+      | node        |        |      |   |
+      |             |        |      |   |
 ** C
 *** Inhaltsverzeichnis
     :PROPERTIES:
