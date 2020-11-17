@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
 # * Description: Add foreign packagers bin directories to $PATH
-# * SOFTWARE
+# * SOFTWARE $PATH
 
+e_path_go()
+{
+    # Golang
+    [[ -x "$(command -v go)" ]] && export GOPATH="$HOME/.local/"
+}
 e_path_gem()
 {
     local gem_bin="$HOME/.gem/ruby/2.7.0/bin"

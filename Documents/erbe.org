@@ -56,7 +56,7 @@
   - [[#screen][Screen]]
   - [[#make][Make]]
   - [[#suckless][Suckless]]
-- [[#linguages][Linguages]]
+- [[#sprachen][Sprachen]]
   - [[#javascript][Javascript]]
   - [[#c][C]]
   - [[#elixir][Elixir]]
@@ -7446,9 +7446,6 @@
        # export INFOPATH="$HOME/lisp/emacs/info${INFOPATH:+:}$INFOPATH" # local build info
    fi
 
-   # Golang
-   [[ -x "$(command -v go)" ]] && export GOPATH="$HOME/.local/"
-
    # Compilers
    # [[ -x "$(command -v gcc)" ]] && export CC=gcc
 
@@ -13248,7 +13245,7 @@
      fi
 
      #+END_SRC
-* Linguages
+* Sprachen
 ** Javascript
 *** Inhaltsverzeichnis
     :PROPERTIES:
