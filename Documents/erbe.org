@@ -9,6 +9,7 @@
   - [[#cero][Cero]]
   - [[#blog][Blog]]
   - [[#shell-software][shell-software]]
+  - [[#shell-misc][shell-misc]]
   - [[#shell-custom][shell-custom]]
   - [[#emacs][Emacs]]
   - [[#nixos][Nixos]]
@@ -1235,6 +1236,23 @@
        fi
    }
 
+   #+end_src
+** shell-misc
+   #+begin_src shell-script
+   e_basher()
+   {
+       local basher_dir="$HOME/.basher"
+
+       [[ "$1" == 'upgrade' ]] && git -C "$HOME/.config/basher" pull
+
+       [[ ! -d "$basher_dir/.git" ]] && git clone https://github.com/basherpm/basher "$basher_dir"
+
+       # add Basher Bin folder to $PATH
+       export PATH="$basher_dir/bin"${PATH:+:}${PATH}
+
+       # load basher
+       eval "$(basher init - bash)"
+   }
    #+end_src
 ** shell-custom
    #+begin_src shell-script
