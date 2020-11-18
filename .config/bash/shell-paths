@@ -6,7 +6,9 @@
 e_path_go()
 {
     # Golang
-    [[ -x "$(command -v go)" ]] && export GOPATH="$HOME/.local/"
+    export GOPATH="$HOME/.local/"
+
+    export GO111MODULE=on
 }
 e_path_gem()
 {
