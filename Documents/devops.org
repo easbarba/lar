@@ -4,93 +4,94 @@
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
-:CONTENTS:
-- [[#fortschritt][Fortschritt]]
-  - [[#buch][Buch]]
-- [[#infra-provisioning][Infra Provisioning]]
-  - [[#cloudformation][CloudFormation]]
-  - [[#pulumi][Pulumi]]
-  - [[#terraform][Terraform]]
-- [[#configuration-management][Configuration Management]]
-  - [[#ansible][Ansible]]
-  - [[#puppet][Puppet]]
-  - [[#salt][Salt]]
-  - [[#chef][Chef]]
-- [[#containers][Containers]]
-  - [[#images][Images]]
+  :CONTENTS:
+  - [[#fortschritt][Fortschritt]]
+    - [[#buch][Buch]]
+  - [[#infra-provisioning][Infra Provisioning]]
+    - [[#cloudformation][CloudFormation]]
+    - [[#pulumi][Pulumi]]
+    - [[#terraform][Terraform]]
+  - [[#configuration-management][Configuration Management]]
+    - [[#terms][terms]]
+    - [[#alternatives][alternatives]]
+  - [[#containers][Containers]]
+    - [[#images][Images]]
   - [[#orchestration][Orchestration]]
-- [[#cloud-providers][Cloud Providers]]
-  - [[#heroku][Heroku]]
-  - [[#azure][Azure]]
-  - [[#aws][AWS]]
-- [[#linux][Linux]]
-  - [[#progresso][Progresso]]
-  - [[#text-manipulation][Text Manipulation]]
-  - [[#process-monitoring][Process Monitoring]]
-  - [[#df][Df]]
-  - [[#strace][strace]]
-  - [[#dstrace][dstrace]]
-  - [[#multiplexers][Multiplexers]]
-  - [[#firewall][Firewall]]
-  - [[#lvm][LVM]]
-  - [[#swap][Swap]]
-  - [[#systemd][SystemD]]
-  - [[#disk-space-and-partition][Disk Space and Partition]]
-  - [[#sync][Sync]]
-  - [[#laptop][Laptop]]
-  - [[#steam][Steam]]
-  - [[#boot][Boot]]
-  - [[#xorg][X.org]]
+    - [[#kubernetes-k8s][Kubernetes (k8s)]]
+  - [[#cloud-providers][Cloud Providers]]
+    - [[#heroku][Heroku]]
+    - [[#azure][Azure]]
+    - [[#aws][AWS]]
+  - [[#linux][Linux]]
+    - [[#progresso][Progresso]]
+    - [[#text-manipulation][Text Manipulation]]
+    - [[#process-monitoring][Process Monitoring]]
+    - [[#df][Df]]
+    - [[#strace][strace]]
+    - [[#dstrace][dstrace]]
+    - [[#multiplexers][Multiplexers]]
+    - [[#firewall][Firewall]]
+    - [[#lvm][LVM]]
+    - [[#swap][Swap]]
+    - [[#systemd][SystemD]]
+    - [[#disk-space-and-partition][Disk Space and Partition]]
+    - [[#sync][Sync]]
+    - [[#laptop][Laptop]]
+    - [[#steam][Steam]]
+    - [[#boot][Boot]]
+    - [[#xorg][X.org]]
+    - [[#network][Network]]
+    - [[#containers-virtualization][Containers, Virtualization]]
+    - [[#terminal][Terminal]]
+    - [[#home][$HOME]]
+    - [[#commands][Commands]]
+    - [[#packages][Packages]]
+    - [[#udev-rules-udevrulesd][Udev rules (udev/rules.d)]]
+  - [[#cicd][CI/CD]]
+    - [[#gitlab][Gitlab]]
+    - [[#github-actions][Github Actions]]
+    - [[#circle-ci][Circle CI]]
+    - [[#jenkins][Jenkins]]
+  - [[#virtual-machine][Virtual Machine]]
+  - [[#web-server][Web Server]]
+    - [[#apache][Apache]]
+    - [[#nginx][Nginx]]
+  - [[#toolings][Toolings]]
+    - [[#hcl][Hcl]]
+  - [[#version-control][Version Control]]
+    - [[#git][Git]]
+  - [[#shell][Shell]]
+    - [[#gnu-bash][GNU Bash]]
+    - [[#bash-resources][Bash resources]]
+    - [[#fish][Fish]]
+    - [[#zsh][Zsh]]
+    - [[#tcsh][TCSH]]
+    - [[#posix][Posix]]
+  - [[#compilers][Compilers]]
+    - [[#gnu-gcc][GNU GCC]]
+    - [[#clang][Clang]]
+  - [[#editors][Editors]]
+    - [[#nano][Nano]]
+    - [[#vimneovim][Vim/NeoVim]]
+    - [[#emacs][Emacs]]
   - [[#network][Network]]
-  - [[#containers-virtualization][Containers, Virtualization]]
-  - [[#terminal][Terminal]]
-  - [[#home][$HOME]]
-  - [[#commands][Commands]]
-  - [[#packages][Packages]]
-  - [[#udev-rules-udevrulesd][Udev rules (udev/rules.d)]]
-- [[#cicd][CI/CD]]
-  - [[#gitlab][Gitlab]]
-  - [[#github-actions][Github Actions]]
-  - [[#circle-ci][Circle CI]]
-  - [[#jenkins][Jenkins]]
-- [[#virtual-machine][Virtual Machine]]
-- [[#web-server][Web Server]]
-  - [[#apache][Apache]]
-  - [[#nginx][Nginx]]
-- [[#toolings][Toolings]]
-  - [[#hcl][Hcl]]
-- [[#version-control][Version Control]]
-  - [[#git][Git]]
-- [[#shell][Shell]]
-  - [[#fish][Fish]]
-  - [[#zsh][Zsh]]
-  - [[#tcsh][TCSH]]
-  - [[#gnu-bash][GNU Bash]]
-  - [[#posix][Posix]]
-- [[#compilers][Compilers]]
-  - [[#gnu-gcc][GNU GCC]]
-  - [[#clang][Clang]]
-- [[#editors][Editors]]
-  - [[#nano][Nano]]
-  - [[#vimneovim][Vim/NeoVim]]
-  - [[#emacs][Emacs]]
-- [[#network][Network]]
-  - [[#protocols][Protocols]]
-  - [[#terms][Terms]]
-- [[#concepts][Concepts]]
-- [[#skills][Skills]]
-- [[#concepts][Concepts]]
-- [[#sites][Sites]]
-- [[#distros][Distros]]
-  - [[#apt][APT]]
-  - [[#rpm][RPM]]
-  - [[#gentoo][Gentoo]]
-  - [[#functional][Functional]]
-- [[#software][Software]]
-  - [[#onlines][Onlines]]
-  - [[#media][Media]]
-  - [[#browser][Browser]]
-:END:
+    - [[#protocols][Protocols]]
+    - [[#terms][Terms]]
+  - [[#concepts][Concepts]]
+  - [[#skills][Skills]]
+  - [[#concepts][Concepts]]
+  - [[#sites][Sites]]
+  - [[#distros][Distros]]
+    - [[#apt][APT]]
+    - [[#rpm][RPM]]
+    - [[#gentoo][Gentoo]]
+    - [[#functional][Functional]]
+  - [[#yet-to-learn][Yet to learn]]
+  - [[#software][Software]]
+    - [[#onlines][Onlines]]
+    - [[#media][Media]]
+    - [[#browser][Browser]]
+  :END:
 
 * Fortschritt
 ** Buch
@@ -108,33 +109,127 @@
 ** CloudFormation
 ** Pulumi
 ** Terraform
-* Configuration Management
-** Ansible
+*** features
+    - IaC
+    - declarative
+    - mainly provisioning
+    - can deploy apps
+    - no meant for management
+    - more advanced in orchestration
+    - better for infrastructure
 
-** Puppet
-** Salt
-** Chef
+*** commands
+**** destroy
+     - destroy resources/infrastructure
+     - remove one by one
+     - clean up resources
+**** apply
+     - execute plan
+**** plan
+     - create an execution plan
+**** refresh
+     - get from provider current state
+*** Core
+**** providers
+     - IaaS: aws, azure
+     - PaaS: Kubernetes
+     - SaaS: Fastly
+**** configuration
+     - user
+     - state
+     - providers
+
+* Configuration Management
+** traits
+   - declarative vs procedural
+   - mutable vs immutable
+   - agent vs agentless
+** alternatives
+*** Ansible
+**** defition
+     Tool to automate IT tasks
+**** traits
+     - agentless
+     - support os, cloud
+     - reusable file configuration for different env
+     - yaml
+     - configuration
+     - mainly configuration
+     - deployment
+     - install/update software
+     - better in configuring
+**** invetory lists
+     - Ip addres or hostname
+     - webservers: groups multiple ip addresses or hosts names
+     - databases
+**** tower
+     - ui dashboard from redhat
+     - centrally automate tools
+     - across teams
+     - configure permissions
+     - manage inventory
+**** playbooks
+***** usage
+      - docker container
+      - vagrant container
+      - cloud instance
+      - bare metal
+***** good practices
+      - naming plays
+***** traits
+      - hosts: execute tasks
+      - execute multiple modules in sequence
+      - organized in tasks
+      - arguments
+      - modules name
+**** modules
+***** Trais
+      - lots of modules avaiable: https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html
+      - grouped together
+      - one action may require multiple module
+      - applied in sequences
+***** Small specific taks
+      - create file
+      - install nginx
+      - start docker container
+      - create cloud instance
+***** Perform one action
+      -
+*** Puppet
+**** traits
+     - ruby config
+     - installation needed to manage servers
+*** Salt
+*** Chef
 * Containers
-** Images
+** alternatives
 *** Podman
 *** Docker
-    |                     |                           |   |
-    |---------------------+---------------------------+---|
-    | container ls        |                           |   |
-    | images              |                           |   |
-    | pull <img>          |                           |   |
-    | ps                  |                           |   |
-    | run <img>           |                           |   |
-    | run -d <img>        |                           |   |
-    | run -dp 80:80 <img> |                           |   |
-    | stop <id>           |                           |   |
-    | rm $(docker ps -aq) | remove all images running |   |
-    | run --name <name>   |                           |   |
+**** dockerfile
+**** commands
+     | command             | description               |
+     |---------------------+---------------------------|
+     | login               |                           |
+     | container ls        |                           |
+     | images              |                           |
+     | pull <img>          |                           |
+     | ps                  |                           |
+     | run <img>           |                           |
+     | run -d <img>        |                           |
+     | run -dp 80:80 <img> |                           |
+     | stop <id>           |                           |
+     | rm $(docker ps -aq) | remove all images running |
+     | run --name <name>   |                           |
 
-** Orchestration
-*** Kubernetes
+* Orchestration
+** Kubernetes (k8s)
+*** terms
+
+*** alternatives
 **** Kind
-***** MiniKube
+**** MiniKube
+* Monitoring
+** Prometheus
 * Cloud Providers
 ** Heroku
 ** Azure
@@ -146,10 +241,10 @@
 * Linux
 ** Progresso
 *** Livros
-   | Livros                      | capitulo                                   | em                           | @later | revisao |
-   |-----------------------------+--------------------------------------------+------------------------------+--------+---------|
-   | LPIC                        | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
-   | The Art of Unix programming | 2 History                                  |                              |        |         |
+    | Livros                      | capitulo                                   | em                           | @later | revisao |
+    |-----------------------------+--------------------------------------------+------------------------------+--------+---------|
+    | LPIC                        | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
+    | The Art of Unix programming | 2 History                                  |                              |        |         |
 ** Text Manipulation
 *** grep
 *** seq
@@ -176,34 +271,34 @@
    # lvchange -a y /dev/VolGroup00/swap
 
 ** Swap
-  { Swap File }
+   { Swap File }
 
-  #2 Create Storage File (2GB)
-  sudo dd if=/dev/zero of=/mnt/swapfile bs=1MB count=2000
+   #2 Create Storage File (2GB)
+   sudo dd if=/dev/zero of=/mnt/swapfile bs=1MB count=2000
 
-  Step #3: Secure swap file
-  sudo chmod 600 /mnt/swapfile
+   Step #3: Secure swap file
+   sudo chmod 600 /mnt/swapfile
 
-  Step #4: Set up a Linux swap area
-  sudo mkswap /mnt/swapfile
+   Step #4: Set up a Linux swap area
+   sudo mkswap /mnt/swapfile
 
-  Step #5: Enabling the swap file
-  sudo swapon /mnt/swapfile
+   Step #5: Enabling the swap file
+   sudo swapon /mnt/swapfile
 
-  Step #6: Update /etc/fstab file
-  /mnt/swapfile swap swap defaults 0 0
-  UUID=2176ee83-1c3e-4a48-8dd0-4a12a3e7fe7b
-  How do I verify swap is activated or not?
-  swapon  -s
-  or
-  free -m
-  or
-  cat  /proc/swaps
+   Step #6: Update /etc/fstab file
+   /mnt/swapfile swap swap defaults 0 0
+   UUID=2176ee83-1c3e-4a48-8dd0-4a12a3e7fe7b
+   How do I verify swap is activated or not?
+   swapon  -s
+   or
+   free -m
+   or
+   cat  /proc/swaps
 
 ** SystemD
 *** SystemD random commands
-   #  To prevent the laptop from suspending when the lid is closed:
-   set in /etc/systemd/logind.conf: HandleLidSwitch=lock
+    #  To prevent the laptop from suspending when the lid is closed:
+    set in /etc/systemd/logind.conf: HandleLidSwitch=lock
 
     # Timezone
     sudo timedatectl list-timezones
@@ -254,30 +349,30 @@
     https://www.maketecheasier.com/make-linux-boot-faster/
 
 ** Disk Space and Partition
-  # df - report file system disk space usage
-  # du - estimate file space usage
-  # dd - convert and copy a file
+   # df - report file system disk space usage
+   # du - estimate file space usage
+   # dd - convert and copy a file
 
-  # Writing iso to usb with DD
-  sudo dd bs=4M if=/path/to/distro.iso of=/dev/sdx status=progress oflag=sync
+   # Writing iso to usb with DD
+   sudo dd bs=4M if=/path/to/distro.iso of=/dev/sdx status=progress oflag=sync
 
-  # How to Change UUID of Partition in Linux Filesystem
-  umount /dev/sdb1
-  tune2fs /dev/sdb1 -U random /dev/sdb1 # blkid | grep sdb1
-  mount /dev/sdb1
+   # How to Change UUID of Partition in Linux Filesystem
+   umount /dev/sdb1
+   tune2fs /dev/sdb1 -U random /dev/sdb1 # blkid | grep sdb1
+   mount /dev/sdb1
 
-  # Erase UsbStick contents
-  sudo umount -f /dev/sdb
-  sudo parted /dev/sdb mklabel msdos
-  sudo parted -a none /dev/sdb mkpart  primary fat32 0 20484
-  sudo mkfs.vfat -n "MACHO" /dev/sdb1
+   # Erase UsbStick contents
+   sudo umount -f /dev/sdb
+   sudo parted /dev/sdb mklabel msdos
+   sudo parted -a none /dev/sdb mkpart  primary fat32 0 20484
+   sudo mkfs.vfat -n "MACHO" /dev/sdb1
 
-  # List devices
-  $ lsblk - list block devices
-  $ fdisk - manipulate disk partition table
+   # List devices
+   $ lsblk - list block devices
+   $ fdisk - manipulate disk partition table
 
-  # Reboot and Poweroff without sudo add to /etc/sudoers:
-  # user hostname =NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
+   # Reboot and Poweroff without sudo add to /etc/sudoers:
+   # user hostname =NOPASSWD: /usr/bin/systemctl poweroff,/usr/bin/systemctl halt,/usr/bin/systemctl reboot
 
 ** Sync
    https://syncthing.net/
@@ -290,13 +385,13 @@
 *** https://www.thinkpenguin.com/
 ** Steam
    cd ~/.steam/bin32
-    LD_LIBRARY_PATH=. ldd vgui2_s.so
+   LD_LIBRARY_PATH=. ldd vgui2_s.so
 
-    look for missing libraries and install those
+   look for missing libraries and install those
 
-    then
+   then
 
-    https://askubuntu.com/questions/1226371/steam-error-with-vgui2-s-so-unsure-how-to-repair
+   https://askubuntu.com/questions/1226371/steam-error-with-vgui2-s-so-unsure-how-to-repair
 ** Boot
 *** Coreboot / Libreboot
     https://www.chucknemeth.com/flash-lenovo-x230-coreboot/
@@ -305,24 +400,24 @@
 **** 70-synaptics.conf
      #+begin_src conf
      Section "InputClass"
-	 Identifier "touchpad"
-	 Driver "synaptics"
-	 MatchIsTouchpad "on"
-	     Option "TapButton1" "1"
-	     Option "TapButton2" "3"
-	     Option "TapButton3" "2"
-	     Option "VertEdgeScroll" "on"
-	     Option "VertTwoFingerScroll" "on"
-	     Option "HorizEdgeScroll" "on"
-	     Option "HorizTwoFingerScroll" "on"
-	     Option "CircularScrolling" "on"
-	     Option "CircScrollTrigger" "2"
-	     Option "EmulateTwoFingerMinZ" "40"
-	     Option "EmulateTwoFingerMinW" "8"
-	     Option "CoastingSpeed" "0"
-	     Option "FingerLow" "30"
-	     Option "FingerHigh" "50"
-	     Option "MaxTapTime" "125"
+     Identifier "touchpad"
+     Driver "synaptics"
+     MatchIsTouchpad "on"
+     Option "TapButton1" "1"
+     Option "TapButton2" "3"
+     Option "TapButton3" "2"
+     Option "VertEdgeScroll" "on"
+     Option "VertTwoFingerScroll" "on"
+     Option "HorizEdgeScroll" "on"
+     Option "HorizTwoFingerScroll" "on"
+     Option "CircularScrolling" "on"
+     Option "CircScrollTrigger" "2"
+     Option "EmulateTwoFingerMinZ" "40"
+     Option "EmulateTwoFingerMinW" "8"
+     Option "CoastingSpeed" "0"
+     Option "FingerLow" "30"
+     Option "FingerHigh" "50"
+     Option "MaxTapTime" "125"
      EndSection
 
      #+end_src
@@ -417,13 +512,13 @@
 
 **** Setting up
      # sudo groupadd libvirt
-    # sudo groupadd libvirt-qemu
-    # sudo groupadd kvm
-    # sudo adduser "$USER" libvirt
-    # sudo adduser "$USER" libvirt-qemu
-    # sudo adduser "$USER" kvm
-    # add (kvm) and (kvm-intel) to /etc/modules or temporarily active both kernel modules: # sudo modprobe kvm & # sudo modprobe kvm-intel (https://wiki.ubuntu.com/kvm)
-    # Uncomment (user) and (group) and set them to (root) (etc/libvirt/qemu.conf)
+     # sudo groupadd libvirt-qemu
+     # sudo groupadd kvm
+     # sudo adduser "$USER" libvirt
+     # sudo adduser "$USER" libvirt-qemu
+     # sudo adduser "$USER" kvm
+     # add (kvm) and (kvm-intel) to /etc/modules or temporarily active both kernel modules: # sudo modprobe kvm & # sudo modprobe kvm-intel (https://wiki.ubuntu.com/kvm)
+     # Uncomment (user) and (group) and set them to (root) (etc/libvirt/qemu.conf)
 
 **** Windows
      <OriansJ> USER: the big problem we had was with fully encrypted /boot partitions is qemu with hardware acceleration tended to have a hashing
@@ -720,46 +815,46 @@
       #+BEGIN_SRC shell-script
       #! /usr/bin/env bash
       ,**
-            # Dependecies: wine, winetricks, GNU Coreutils, GNU Bash
+      # Dependecies: wine, winetricks, GNU Coreutils, GNU Bash
 
-            # Description: Create wineprefix with given name and get dxvk lastest dll and dependencies
+      # Description: Create wineprefix with given name and get dxvk lastest dll and dependencies
 
-            # What this script does:
+      # What this script does:
 
-            # - Create wineprefix with given name
-            # - Install vulkanskd and steam (winetricks)
-            # - Download latest Dxvk dll from Haag site!
-            # - Uses setup_dxvk.sh to symlink both 64/32 dll
-            # - add Wine-Vulkan regedit keys
-            # - creates winevulkan.json file on C:\windows
+      # - Create wineprefix with given name
+      # - Install vulkanskd and steam (winetricks)
+      # - Download latest Dxvk dll from Haag site!
+      # - Uses setup_dxvk.sh to symlink both 64/32 dll
+      # - add Wine-Vulkan regedit keys
+      # - creates winevulkan.json file on C:\windows
 
-            # kill wineserver before installation to make sure correct wine version is used
-            wineserver -k
+      # kill wineserver before installation to make sure correct wine version is used
+      wineserver -k
 
-            # Check if ~/wine/prefixes/ folder exist
-            if [ ! -d "$HOME/wine/prefixes/" ]; then
-		mkdir -p "$HOME"/wine/prefixes/
-            fi
+      # Check if ~/wine/prefixes/ folder exist
+      if [ ! -d "$HOME/wine/prefixes/" ]; then
+	  mkdir -p "$HOME"/wine/prefixes/
+      fi
 
-            # Where Wine prefixes using DXVK are to be set up
-            wine_prefix_folder="$HOME/wine/prefixes"
+      # Where Wine prefixes using DXVK are to be set up
+      wine_prefix_folder="$HOME/wine/prefixes"
 
-            # Where scripts are located
-            SCRIPTS="$HOME/.config/scripts"
+      # Where scripts are located
+      SCRIPTS="$HOME/.config/scripts"
 
-            echo "Please name your Wine prefix:"
+      echo "Please name your Wine prefix:"
 
-            # keyboard input to string
-            read -r input_variable
+      # keyboard input to string
+      read -r input_variable
 
-            echo "Disable Wine debugging"
-            # export WINEDEBUG=-all
+      echo "Disable Wine debugging"
+      # export WINEDEBUG=-all
 
-            echo "Create Wine prefix, press Ok"
-            WINEARCH=win32 WINEPREFIX="$wine_prefix_folder"/"$input_variable"/ winecfg
+      echo "Create Wine prefix, press Ok"
+      WINEARCH=win32 WINEPREFIX="$wine_prefix_folder"/"$input_variable"/ winecfg
 
-            echo "Install Winetricks packages"
-            WINEARCH=win32 WINEPREFIX="$wine_prefix_folder"/"$input_variable"/ winetricks steam
+      echo "Install Winetricks packages"
+      WINEARCH=win32 WINEPREFIX="$wine_prefix_folder"/"$input_variable"/ winetricks steam
 
       #+END_SRC
 ***** wine_cfg.sh
@@ -927,10 +1022,10 @@
 ** Terminal
    http://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html
 *** Coreutils:
-     https://git.savannah.gnu.org/cgit/coreutils.git
+    https://git.savannah.gnu.org/cgit/coreutils.git
 **** MAKE
-      after populating /usr/loca cal for ldconfig: ldconfig - configure dynamic linker run-time bindings
-      ldconfig /usr/local/lib
+     after populating /usr/loca cal for ldconfig: ldconfig - configure dynamic linker run-time bindings
+     ldconfig /usr/local/lib
 **** Grep
 ***** Grep read later
       https://www.cyberciti.biz/faq/grep-regular-expressions/
@@ -939,8 +1034,8 @@
 *** XDG
 **** https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 **** Applications Desktop Files
-	/usr/share/applications/
-	xdg-settings set default-web-browser google-chrome.desktop
+     /usr/share/applications/
+     xdg-settings set default-web-browser google-chrome.desktop
 ** Commands
    | command        |                                  |
    |----------------+----------------------------------|
@@ -952,12 +1047,12 @@
 ** Udev rules (udev/rules.d)
 *** brightnessctl
 **** backlight.rules
-      get backlight device: brightnessctl -l
-      add user to VIDEO: usermod -aG video $USER
-      #+begin_src conf
- ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
- ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
-      #+end_src
+     get backlight device: brightnessctl -l
+     add user to VIDEO: usermod -aG video $USER
+     #+begin_src conf
+     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+     #+end_src
 
 * CI/CD
 ** Gitlab
@@ -979,70 +1074,70 @@
 
     http://gitready.com/intermediate/2009/02/13/list-remote-branches.html
 *** Git Commands
-     | git command                              | description                                                           |
-     |------------------------------------------+-----------------------------------------------------------------------|
-     | log --pretty=oneline                     |                                                                       |
-     | push                                     | Update remote refs along with associated objects                      |
-     | commit                                   | Record changes to the repository, call editor                         |
-     | add                                      | Add file contents to the index                                        |
-     | remote                                   | Manage set of tracked repositories                                    |
-     | revert                                   | Revert some existing commits                                          |
-     | reset                                    | Reset current HEAD to the specified state                             |
-     | commit -m "detailed commit"              |                                                                       |
-     | push origin master                       |                                                                       |
-     | log --statgit log --stat                 | abbreviated stats for each commit                                     |
-     | diff --git $FILE                         |                                                                       |
-     | log -p -2                                | difference (the patch output) introduced in each commit               |
-     | log                                      | log in this project                                                   |
-     | mv                                       | rename                                                                |
-     | commit -a -m "commit message"            | commit all files and commit message                                   |
-     | log --pretty=format:"%h - %an, %ar : %s" |                                                                       |
-     | log --pretty=format:"%h %s" --graph      | adds a nice little ASCII graph                                        |
-     | log --since=2.weeks                      | time-limiting                                                         |
-     | log --author=user                        | filter on a specific author                                           |
-     | log --grep                               | search for keywords in the commit messages                            |
-     | git log -S function_name                 | last commit that added or removed a reference to a  specific function |
-     | --since, --after                         | Limit the commits to those made after the specified date.             |
-     | --until, --before                        | Limit the commits to those made before the specified date.            |
-     | --no-merges                              | prevent the display of merge commits cluttering up your log history   |
-     | --force-with-lease                       |                                                                       |
+    | git command                              | description                                                           |
+    |------------------------------------------+-----------------------------------------------------------------------|
+    | log --pretty=oneline                     |                                                                       |
+    | push                                     | Update remote refs along with associated objects                      |
+    | commit                                   | Record changes to the repository, call editor                         |
+    | add                                      | Add file contents to the index                                        |
+    | remote                                   | Manage set of tracked repositories                                    |
+    | revert                                   | Revert some existing commits                                          |
+    | reset                                    | Reset current HEAD to the specified state                             |
+    | commit -m "detailed commit"              |                                                                       |
+    | push origin master                       |                                                                       |
+    | log --statgit log --stat                 | abbreviated stats for each commit                                     |
+    | diff --git $FILE                         |                                                                       |
+    | log -p -2                                | difference (the patch output) introduced in each commit               |
+    | log                                      | log in this project                                                   |
+    | mv                                       | rename                                                                |
+    | commit -a -m "commit message"            | commit all files and commit message                                   |
+    | log --pretty=format:"%h - %an, %ar : %s" |                                                                       |
+    | log --pretty=format:"%h %s" --graph      | adds a nice little ASCII graph                                        |
+    | log --since=2.weeks                      | time-limiting                                                         |
+    | log --author=user                        | filter on a specific author                                           |
+    | log --grep                               | search for keywords in the commit messages                            |
+    | git log -S function_name                 | last commit that added or removed a reference to a  specific function |
+    | --since, --after                         | Limit the commits to those made after the specified date.             |
+    | --until, --before                        | Limit the commits to those made before the specified date.            |
+    | --no-merges                              | prevent the display of merge commits cluttering up your log history   |
+    | --force-with-lease                       |                                                                       |
 
-     | GIT eg                                                                                                              |
-     |-----------------------------------------------------------------------------------------------------------------------|
-     | git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \   --before="2008-11-01" --no-merges -- t/ |
-     |                                                                                                                       |
+    | GIT eg                                                                                                              |
+    |-----------------------------------------------------------------------------------------------------------------------|
+    | git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \   --before="2008-11-01" --no-merges -- t/ |
+    |                                                                                                                       |
 
-     | add    | Add file contents to the index.                         |
-     | bisect | Find by binary search the change that introduced a bug. |
-     | branch | List, create, or delete branches.                       |
-     | checkout | Switch branches or restore working tree files. |
+    | add    | Add file contents to the index.                         |
+    | bisect | Find by binary search the change that introduced a bug. |
+    | branch | List, create, or delete branches.                       |
+    | checkout | Switch branches or restore working tree files. |
 
-     |          |                                                |
-     cherry  Find commits yet to be applied to upstream (branch on the remote).
-     cherry-pick  Apply the changes introduced by some existing commits.
-     clone  Clone a repository into a new directory.
-     commit  Record changes to the repository.
-     config  Get and set repository or global options.
-     diff  Show changes between commits, commits and working tree, and so on.
-     fetch  Download objects and refs from another repository.
-     grep  Print lines matching a pattern.
-     help  Display help information.
-     log  Show commit logs.
-     merge  Join two or more development histories together.
-     mv  Move or rename a file, directory, or symlink.
-     pull  Fetch from, or integrate with, another repository or a local branch.
-     push  Update remote refs along with associated objects.
-     rebase  Forward-port local commits to the updated upstream head.
-     rerere  Reuse recorded resolution for merged conflicts.
-     reset  Reset current HEAD to the specified state.
-     revert  Revert some existing commits.
-     rm  Remove files from the working tree and from the index.
-     show  Show various types of objects.
-     status  Show the working tree status.
-     submodule  Initialize, update, or inspect submodules.
-     subtree  Merge subtrees and split repositories into subtrees.
-     tag  Create, list, delete, or verify a tagged object.
-     worktree  Manage multiple working trees.
+    |          |                                                |
+    cherry  Find commits yet to be applied to upstream (branch on the remote).
+    cherry-pick  Apply the changes introduced by some existing commits.
+    clone  Clone a repository into a new directory.
+    commit  Record changes to the repository.
+    config  Get and set repository or global options.
+    diff  Show changes between commits, commits and working tree, and so on.
+    fetch  Download objects and refs from another repository.
+    grep  Print lines matching a pattern.
+    help  Display help information.
+    log  Show commit logs.
+    merge  Join two or more development histories together.
+    mv  Move or rename a file, directory, or symlink.
+    pull  Fetch from, or integrate with, another repository or a local branch.
+    push  Update remote refs along with associated objects.
+    rebase  Forward-port local commits to the updated upstream head.
+    rerere  Reuse recorded resolution for merged conflicts.
+    reset  Reset current HEAD to the specified state.
+    revert  Revert some existing commits.
+    rm  Remove files from the working tree and from the index.
+    show  Show various types of objects.
+    status  Show the working tree status.
+    submodule  Initialize, update, or inspect submodules.
+    subtree  Merge subtrees and split repositories into subtrees.
+    tag  Create, list, delete, or verify a tagged object.
+    worktree  Manage multiple working trees.
 *** Git Tips
 **** Pull Request a specific commit
      #+BEGIN_SRC shell-script
@@ -1076,30 +1171,40 @@
     https://chris.beams.io/posts/git-commit/
     [[https://www.learnenough.com/git-tutorial][Learn enough to be dangerous]]
 * Shell
-** Fish
-** Zsh
-** TCSH
 ** GNU Bash
 *** Features
-    |                                           |                                       |
-    |-------------------------------------------+---------------------------------------|
-    | man bash-builtins                         | describe bash built in features       |
-    | ${var##*char}                             | get word after $char in string $var   |
-    | ${var%sub}                                | return s                              |
-    | var=$(test && echo "A" ¦¦ echo "B")       | variable inline assignment            |
-    | (( a = b==5 ? c : d )) or let a=b==5?c:d; | variable inline assignment numeric    |
-    | $@                                        | return arguments of function as array |
+    |                     |                                 |
+    |---------------------+---------------------------------|
+    | man bash-builtins   | describe bash built in features |
 
-    Note: ¦¦ means ||
+*** Tips
+    #+begin_src shell-script
+    #  get word after $char in string $var
+    ${var##*char}
 
-*** Bash resources
-    - http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc6
+    # return s
+    ${var%sub}
 
-    - https://bash.cyberciti.biz/guide/Main_Page
+    # variable inline assignment
+    var=$(test && echo "A" || echo "B")
 
-    - https://wiki.bash-hackers.org
+    # variable inline assignment numeric    |
+    (( a = b==5 ? c : d )) or let a=b==5?c:d;
 
-    - https://explainshell.com/
+    # return arguments of function as array |
+    $@
+						 |                                       |
+
+    #+end_src
+
+** Bash resources
+   - http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc6
+
+   - https://bash.cyberciti.biz/guide/Main_Page
+
+   - https://wiki.bash-hackers.org
+
+   - https://explainshell.com/
 *** Bash Articles
     https://wiki.bash-hackers.org/syntax/arrays
 
@@ -1299,194 +1404,197 @@
     for((;i++<10;)){ echo "$i";}
 
        # Undocumented method.
-    for i in {1..10};{ echo "$i";}
+       for i in {1..10};{ echo "$i";}
 
-             # Expansion.
-             for i in {1..10}; do echo "$i"; done
+		# Expansion.
+		for i in {1..10}; do echo "$i"; done
 
-             # C Style.
-             for((i=0;i<=10;i++)); do echo "$i"; done
+		# C Style.
+		for((i=0;i<=10;i++)); do echo "$i"; done
 
-             # Shorter infinite loops.
+		# Shorter infinite loops.
 
-             # Normal method
-             while :; do echo hi; done
+		# Normal method
+		while :; do echo hi; done
 
-             # Shorter
-             for((;;)){ echo hi;}
+		# Shorter
+		for((;;)){ echo hi;}
 
-		 # Shorter function declaration.
+		    # Shorter function declaration.
 
-		 # Normal method
-		 f(){ echo hi;}
+		    # Normal method
+		    f(){ echo hi;}
 
-		 # Using a subshell
-		 f()(echo hi)
+		    # Using a subshell
+		    f()(echo hi)
 
-		 # Using arithmetic
-		 # You can use this to assign integer values.
-		 # Example: f a=1
-		 #          f a++
-		 f()(($1))
+		    # Using arithmetic
+		    # You can use this to assign integer values.
+		    # Example: f a=1
+		    #          f a++
+		    f()(($1))
 
-		 # Using tests, loops etc.
-		 # NOTE: You can also use ‘while’, ‘until’, ‘case’, ‘(())’, ‘[[]]’.
-		 f()if true; then echo "$1"; fi
-		 f()for i in "$@"; do echo "$i"; done
+		    # Using tests, loops etc.
+		    # NOTE: You can also use ‘while’, ‘until’, ‘case’, ‘(())’, ‘[[]]’.
+		    f()if true; then echo "$1"; fi
+		    f()for i in "$@"; do echo "$i"; done
 
-		 Shorter if syntax.
+		    Shorter if syntax.
 
-		 # One line
-		 # Note: The 3rd statement may run when the 1st is true
-		 [[ "$var" == hello ]] && echo hi || echo bye
-		 [[ "$var" == hello ]] && { echo hi; echo there; } || echo bye
+		    # One line
+		    # Note: The 3rd statement may run when the 1st is true
+		    [[ "$var" == hello ]] && echo hi || echo bye
+		    [[ "$var" == hello ]] && { echo hi; echo there; } || echo bye
 
-		 # Multi line (no else, single statement)
-		 # Note: The exit status may not be the same as with an if statement
-		 [[ "$var" == hello ]] && \
-                     echo hi
+		    # Multi line (no else, single statement)
+		    # Note: The exit status may not be the same as with an if statement
+		    [[ "$var" == hello ]] && \
+			echo hi
 
-		 # Multi line (no else)
-		 [[ "$var" == hello ]] && {
-                     echo hi
-                     # ...
-		 }
+		    # Multi line (no else)
+		    [[ "$var" == hello ]] && {
+			echo hi
+			# ...
+		    }
 
-		 # Simpler case statement to set variable.
+		    # Simpler case statement to set variable.
 
-		 # We can use the : builtin to avoid repeating variable= in a case statement. The $_ variable stores the last argument of the last successful command. : always succeeds so we can abuse it to store the variable value.
+		    # We can use the : builtin to avoid repeating variable= in a case statement. The $_ variable stores the last argument of the last successful command. : always succeeds so we can abuse it to store the variable value.
 
-		 # Example snippet from Neofetch.
-		 case "$(uname)" in
-                     "Linux" | "GNU"*)
-			 : "Linux"
-			 ;;
+		    # Example snippet from Neofetch.
+		    case "$(uname)" in
+			"Linux" | "GNU"*)
+			    : "Linux"
+			    ;;
 
-                     ,*"BSD" | "DragonFly" | "Bitrig")
-			 : "BSD"
-			 ;;
+			,*"BSD" | "DragonFly" | "Bitrig")
+			    : "BSD"
+			    ;;
 
-                     "CYGWIN"* | "MSYS"* | "MINGW"*)
-			 : "Windows"
-			 ;;
+			"CYGWIN"* | "MSYS"* | "MINGW"*)
+			    : "Windows"
+			    ;;
 
-                     ,*)
-			 printf '%s\n' "Unknown OS detected, aborting..." >&2
-			 exit 1
-			 ;;
-		 esac
+			,*)
+			    printf '%s\n' "Unknown OS detected, aborting..." >&2
+			    exit 1
+			    ;;
+		    esac
 
-		 # Finally, set the variable.
-		 os="$_"
+		    # Finally, set the variable.
+		    os="$_"
 
-		 #     Internal Variables
+		    #     Internal Variables
 
-		 #     NOTE: This list does not include every internal variable (You can help by adding a missing entry!).
+		    #     NOTE: This list does not include every internal variable (You can help by adding a missing entry!).
 
-		 #     For a complete list, see: http://tldp.org/LDP/abs/html/internalvariables.html
-		 # Get the location to the bash binary.
+		    #     For a complete list, see: http://tldp.org/LDP/abs/html/internalvariables.html
+		    # Get the location to the bash binary.
 
-		 "$BASH"
+		    "$BASH"
 
-		 # Get the version of the current running bash process.
+		    # Get the version of the current running bash process.
 
-		 # As a string.
-		 "$BASH_VERSION"
+		    # As a string.
+		    "$BASH_VERSION"
 
-		 # As an array.
-		 "${BASH_VERSINFO[@]}"
+		    # As an array.
+		    "${BASH_VERSINFO[@]}"
 
-		 # Open the user's preferred text editor.
+		    # Open the user's preferred text editor.
 
-		 "$EDITOR" "$file"
+		    "$EDITOR" "$file"
 
-		 # NOTE: This variable may be empty, set a fallback value.
-		 "${EDITOR:-vi}" "$file"
+		    # NOTE: This variable may be empty, set a fallback value.
+		    "${EDITOR:-vi}" "$file"
 
-		 Get the name of the current function.
+		    Get the name of the current function.
 
-		 # Current function.
-		 "${FUNCNAME[0]}"
+		    # Current function.
+		    "${FUNCNAME[0]}"
 
-		 # Parent function.
-		 "${FUNCNAME[1]}"
+		    # Parent function.
+		    "${FUNCNAME[1]}"
 
-		 # So on and so forth.
-		 "${FUNCNAME[2]}"
-		 "${FUNCNAME[3]}"
+		    # So on and so forth.
+		    "${FUNCNAME[2]}"
+		    "${FUNCNAME[3]}"
 
-		 # All functions including parents.
-		 "${FUNCNAME[@]}"
+		    # All functions including parents.
+		    "${FUNCNAME[@]}"
 
-		 Get the host-name of the system.
+		    Get the host-name of the system.
 
-		 "$HOSTNAME"
+		    "$HOSTNAME"
 
-		 # NOTE: This variable may be empty.
-		 # Optionally set a fallback to the hostname command.
-		 "${HOSTNAME:-$(hostname)}"
+		    # NOTE: This variable may be empty.
+		    # Optionally set a fallback to the hostname command.
+		    "${HOSTNAME:-$(hostname)}"
 
-		 # Get the architecture of the Operating System.
+		    # Get the architecture of the Operating System.
 
-		 "$HOSTTYPE"
+		    "$HOSTTYPE"
 
-		 # Get the name of the Operating System / Kernel.
+		    # Get the name of the Operating System / Kernel.
 
-		 # This can be used to add conditional support for different Operating Systems without needing to call uname.
+		    # This can be used to add conditional support for different Operating Systems without needing to call uname.
 
-		 "$OSTYPE"
+		    "$OSTYPE"
 
-		 # Get the current working directory.
+		    # Get the current working directory.
 
-		 # This is an alternative to the pwd built-in.
+		    # This is an alternative to the pwd built-in.
 
-		 "$PWD"
+		    "$PWD"
 
-		 # Get the number of seconds the script has been running.
+		    # Get the number of seconds the script has been running.
 
-		 # Check if a program is in the user's PATH.
+		    # Check if a program is in the user's PATH.
 
-		 # There are 3 ways to do this and you can use either of
-		 # these in the same way.
-		 type -p executable_name &>/dev/null
-		 hash executable_name &>/dev/null
-		 command -v executable_name &>/dev/null
+		    # There are 3 ways to do this and you can use either of
+		    # these in the same way.
+		    type -p executable_name &>/dev/null
+		    hash executable_name &>/dev/null
+		    command -v executable_name &>/dev/null
 
-		 # As a test.
-		 if type -p executable_name &>/dev/null; then
-                     # Program is in PATH.
-		 fi
+		    # As a test.
+		    if type -p executable_name &>/dev/null; then
+			# Program is in PATH.
+		    fi
 
-		 # Inverse.
-		 if ! type -p executable_name &>/dev/null; then
-                     # Program is not in PATH.
-		 fi
+		    # Inverse.
+		    if ! type -p executable_name &>/dev/null; then
+			# Program is not in PATH.
+		    fi
 
-		 # Example (Exit early if program isn't installed).
-		 if ! type -p convert &>/dev/null; then
-                     printf '%s\n' "error: convert isn't installed, exiting..."
-                     exit 1
-		 fi
+		    # Example (Exit early if program isn't installed).
+		    if ! type -p convert &>/dev/null; then
+			printf '%s\n' "error: convert isn't installed, exiting..."
+			exit 1
+		    fi
 
-		 "$SECONDS"
+		    "$SECONDS"
 
-		 # Bypass shell aliases.
+		    # Bypass shell aliases.
 
-		 # alias
-		 ls
+		    # alias
+		    ls
 
-		 # command
-		 # shellcheck disable=SC1001
-		 \ls
+		    # command
+		    # shellcheck disable=SC1001
+		    \ls
 
-		 # Bypass shell functions.
+		    # Bypass shell functions.
 
-		 # function
-		 ls
+		    # function
+		    ls
 
-		 # command
-		 command ls
+		    # command
+		    command ls
     #+END_SRC
+** Fish
+** Zsh
+** TCSH
 ** Posix
 *** Shell Commands
     |         |                                                                 |
@@ -1547,28 +1655,28 @@
      (defun my-setup-header-line-format ()
        "Hide header line if required."
        (set-window-parameter (next-window) 'header-line-format
-                             (unless (window-at-side-p (next-window) 'top)
-                               'none)))
+			     (unless (window-at-side-p (next-window) 'top)
+			       'none)))
 
      (add-hook 'exwm-update-class-hook #'my-setup-header-line-format)
 
      (set-face-attribute 'header-line nil
-                         :background "#000000"
-                         :foreground "#cccccc"
-                         :height 100)
+			 :background "#000000"
+			 :foreground "#cccccc"
+			 :height 100)
 
      ;; See https://github.com/TatriX/good-line
      (defun good-line-format (left right)
        "Return a string of `window-width' length containing LEFT and RIGHT, aligned respectively."
        (let ((reserve (length right)))
-         (when (and (display-graphic-p) (eq 'right (get-scroll-bar-mode)))
-           (setq reserve (- reserve 3)))
-         (concat
-          left
-          " "
-          (propertize  " "
-                       'display `((space :align-to (- (+ right right-fringe right-margin) ,(+ reserve 0)))))
-          right)))
+	 (when (and (display-graphic-p) (eq 'right (get-scroll-bar-mode)))
+	   (setq reserve (- reserve 3)))
+	 (concat
+	  left
+	  " "
+	  (propertize  " "
+		       'display `((space :align-to (- (+ right right-fringe right-margin) ,(+ reserve 0)))))
+	  right)))
 
      (setq display-time-default-load-average nil)
      (setq display-time-interval 1)
@@ -1576,28 +1684,28 @@
      (display-time-mode 1)
 
      (setq-default header-line-format
-                   '(:eval (good-line-format
-                            ;; Left
-                            (when
+		   '(:eval (good-line-format
+			    ;; Left
+			    (when
 				(and (window-at-side-p nil 'top)
-                                     (window-at-side-p nil 'left))
-                              (format " [%s]" exwm-workspace-current-index))
-                            ;; Right
-                            (when (and (window-at-side-p nil 'top)
-                                       (window-at-side-p nil 'right))
-                              (format "CPU %s | MEM %s |%s| %s"
-                                      (let ((cpu (format "%02d%%%%" my-cpu-usage)))
+				     (window-at-side-p nil 'left))
+			      (format " [%s]" exwm-workspace-current-index))
+			    ;; Right
+			    (when (and (window-at-side-p nil 'top)
+				       (window-at-side-p nil 'right))
+			      (format "CPU %s | MEM %s |%s| %s"
+				      (let ((cpu (format "%02d%%%%" my-cpu-usage)))
 					(if (> my-cpu-usage 75)
-                                            (propertize cpu 'font-lock-face '(:foreground "#ff2222"))
-                                          cpu))
-                                      (let* ((used (car my-mem-usage))
-                                             (total (cdr my-mem-usage))
-                                             (mem (format "%.2f/%.2f"  used total)))
+					    (propertize cpu 'font-lock-face '(:foreground "#ff2222"))
+					  cpu))
+				      (let* ((used (car my-mem-usage))
+					     (total (cdr my-mem-usage))
+					     (mem (format "%.2f/%.2f"  used total)))
 					(if (> (/ used total) 0.75)
-                                            (propertize mem 'font-lock-face '(:foreground "#ff2222"))
-                                          mem))
-                                      telega-mode-line-string
-                                      display-time-string)))))
+					    (propertize mem 'font-lock-face '(:foreground "#ff2222"))
+					  mem))
+				      telega-mode-line-string
+				      display-time-string)))))
 
      ;; Install "systat" package via yor distro package manager
      (defvar my-cpu-usage 0
@@ -1606,15 +1714,15 @@
      (defun my-start-cpu-usage-process ()
        "Start `mstat' process updating `my-cpu-usage' variable."
        (when-let ((old-process (get-process "mpstat")))
-         (kill-process old-process))
+	 (kill-process old-process))
        (make-process :name "mpstat"
-                     :command '("mpstat" "2")
-                     :connection-type 'pipe
-                     :filter (lambda (process output)
-                               (let* ((last-column (car (last (split-string output))))
-                                      (idle (cl-parse-integer last-column :junk-allowed t)))
-                                 (when idle
-                                   (setq my-cpu-usage (- 100 idle)))))))
+		     :command '("mpstat" "2")
+		     :connection-type 'pipe
+		     :filter (lambda (process output)
+			       (let* ((last-column (car (last (split-string output))))
+				      (idle (cl-parse-integer last-column :junk-allowed t)))
+				 (when idle
+				   (setq my-cpu-usage (- 100 idle)))))))
 
 
      (my-start-cpu-usage-process)
@@ -1625,17 +1733,17 @@
      (defun my-start-mem-usage-process ()
        "Start `free' process updating `my-cpu-usage' variable."
        (when-let ((old-process (get-process "free")))
-         (kill-process old-process))
+	 (kill-process old-process))
        (make-process :name "free"
-                     :command '("free" "--mebi" "-s" "2")
-                     :connection-type 'pipe
-                     :filter (lambda (process output)
-                               (let ((columns (split-string output)))
-                                 (let ((total (string-to-number (nth 7 columns)))
-                                       (used (string-to-number (nth 8 columns)))
-                                       (shared (string-to-number (nth 10 columns))))
-                                   (setq my-mem-usage (cons (/ (+ used shared) 1024.0)
-                                                            (/ total 1024.0))))))))
+		     :command '("free" "--mebi" "-s" "2")
+		     :connection-type 'pipe
+		     :filter (lambda (process output)
+			       (let ((columns (split-string output)))
+				 (let ((total (string-to-number (nth 7 columns)))
+				       (used (string-to-number (nth 8 columns)))
+				       (shared (string-to-number (nth 10 columns))))
+				   (setq my-mem-usage (cons (/ (+ used shared) 1024.0)
+							    (/ total 1024.0))))))))
 
      (my-start-mem-usage-process)
 
@@ -1682,10 +1790,10 @@
    - 2 family (p2p)
    - desktop sharing
 * Concepts
-    | Term               | ...                                                                                  | eg       |
-    |--------------------+--------------------------------------------------------------------------------------+----------|
-    | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
-    | Computer Network   |                                                                                      |          |
+  | Term               | ...                                                                                  | eg       |
+  |--------------------+--------------------------------------------------------------------------------------+----------|
+  | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
+  | Computer Network   |                                                                                      |          |
 * Skills
   | Skill                           | eg                                 |
   |---------------------------------+------------------------------------|
@@ -1713,10 +1821,10 @@
   Micro serviços;
   Nginx, Apache.
 * Concepts
-    | Term               | ...                                                                                  | eg       |
-    |--------------------+--------------------------------------------------------------------------------------+----------|
-    | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
-    | Computer Network   |                                                                                      |          |
+  | Term               | ...                                                                                  | eg       |
+  |--------------------+--------------------------------------------------------------------------------------+----------|
+  | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
+  | Computer Network   |                                                                                      |          |
 * Sites
   - visual subnet calculator
 * Distros
@@ -1809,100 +1917,100 @@
      :PROPERTIES:
      :TOC:      :include all :depth 2 :ignore this
      :END:
-   :CONTENTS:
-   - [[#progress][Progress]]
-   - [[#guix-system][Guix system]]
-   - [[#guix-commands][Guix Commands]]
-   - [[#guix-read-later][Guix Read Later]]
-   - [[#guix-articles][Guix Articles]]
-   - [[#guix-tools][Guix tools]]
-   - [[#guix-translations][Guix translations]]
-   - [[#guix-config-templates][Guix config templates]]
-     - [[#bare-bonestmpl][bare-bones.tmpl]]
-     - [[#beaglebone-blacktmpl][beaglebone-black.tmpl]]
-     - [[#desktoptmpl][desktop.tmpl]]
-     - [[#docker-imagetmpl][docker-image.tmpl]]
-     - [[#lightweight-desktoptmpl][lightweight-desktop.tmpl]]
-     - [[#vm-imagetmpl][vm-image.tmpl]]
-   - [[#guix-bug-report][Guix Bug report]]
-     - [[#singularity-link][singularity link]]
-     - [[#guix-find-funcionlibrary][guix find-funcion/library]]
-   - [[#guix-configscm-examples][Guix config.scm examples]]
-     - [[#orianj][Orianj]]
-     - [[#nikolaev][nikolaev]]
-     - [[#mes][Mes]]
-     - [[#fusion809][fusion809]]
-     - [[#mbakke][mbakke]]
-     - [[#wingo][wingo]]
-     - [[#yenda][yenda]]
-     - [[#alex-kost][Alex Kost]]
-     - [[#package-generic][PACKAGE GENERIC]]
-   :END:
+     :CONTENTS:
+     - [[#progress][Progress]]
+     - [[#guix-system][Guix system]]
+     - [[#guix-commands][Guix Commands]]
+     - [[#guix-read-later][Guix Read Later]]
+     - [[#guix-articles][Guix Articles]]
+     - [[#guix-tools][Guix tools]]
+     - [[#guix-translations][Guix translations]]
+     - [[#guix-config-templates][Guix config templates]]
+       - [[#bare-bonestmpl][bare-bones.tmpl]]
+       - [[#beaglebone-blacktmpl][beaglebone-black.tmpl]]
+       - [[#desktoptmpl][desktop.tmpl]]
+       - [[#docker-imagetmpl][docker-image.tmpl]]
+       - [[#lightweight-desktoptmpl][lightweight-desktop.tmpl]]
+       - [[#vm-imagetmpl][vm-image.tmpl]]
+     - [[#guix-bug-report][Guix Bug report]]
+       - [[#singularity-link][singularity link]]
+       - [[#guix-find-funcionlibrary][guix find-funcion/library]]
+     - [[#guix-configscm-examples][Guix config.scm examples]]
+       - [[#orianj][Orianj]]
+       - [[#nikolaev][nikolaev]]
+       - [[#mes][Mes]]
+       - [[#fusion809][fusion809]]
+       - [[#mbakke][mbakke]]
+       - [[#wingo][wingo]]
+       - [[#yenda][yenda]]
+       - [[#alex-kost][Alex Kost]]
+       - [[#package-generic][PACKAGE GENERIC]]
+     :END:
 **** Progress
      | livro       | em           |
      |-------------+--------------|
      | Guix Manual | 5.1 Features |
 **** Guix system
-      guix system build (dry-run)
-      export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"  [14:06]
+     guix system build (dry-run)
+     export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"  [14:06]
 **** Guix Commands
-       guix package --search-paths  # env variables needed to export
-       eval `guix package --search-paths=prefix` # eval env variables needed
+     guix package --search-paths  # env variables needed to export
+     eval `guix package --search-paths=prefix` # eval env variables needed
 **** Guix Read Later
-       https://lists.gnu.org/archive/html/guix-devel/2018-10/msg00652.html
+     https://lists.gnu.org/archive/html/guix-devel/2018-10/msg00652.html
 
-       http://guix.info/manual/en/Bootloader-Configuration.html#Bootloader-Configuration
+     http://guix.info/manual/en/Bootloader-Configuration.html#Bootloader-Configuration
 
-       https://ambrevar.xyz/guix-advance/index.html
+     https://ambrevar.xyz/guix-advance/index.html
 
-       https://guix-hpc.bordeaux.inria.fr/browse
+     https://guix-hpc.bordeaux.inria.fr/browse
 
-       https://www.gnu.org/software/guix/blog/2018/customize-guixsd-use-stock-ssh-agent-everywhere/
+     https://www.gnu.org/software/guix/blog/2018/customize-guixsd-use-stock-ssh-agent-everywhere/
 
-       https://www.gnu.org/software/guix/manual/html_node/Base-Services.html
+     https://www.gnu.org/software/guix/manual/html_node/Base-Services.html
 
-       https://www.gnu.org/software/guix/manual/html_node/index.html#SEC_Contents
+     https://www.gnu.org/software/guix/manual/html_node/index.html#SEC_Contents
 
-       https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html#Invoking-guix-challenge
+     https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html#Invoking-guix-challenge
 
-       https://gitlab.com/nckx/guix/tree/master
+     https://gitlab.com/nckx/guix/tree/master
 **** Guix Articles
-       https://www.gnu.org/software/guile/manual/html_node/Keywords.html
-       https://www.gnu.org/software/guix/manual/en/html_node/Build-Systems.html
-       https://www.gnu.org/software/guix/blog/2018/a-packaging-tutorial-for-guix/
-       https://www.gnu.org/software/guix/manual/html_node/Services.html#Services
-       https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#Using-the-Configuration-System
-       https://www.gnu.org/software/guix/download/
-       https://www.gnu.org/software/guix/manual/html_node/System-Installation.html
-       https://hal.inria.fr/hal-00824004/en
-       https://www.gnu.org/software/guix/packages/
-       https://www.gnu.org/software/guix/
-       https://www.gnu.org/software/guix/manual/html_node/Package-Management.html
-       ftp://alpha.gnu.org/gnu/guix/
-       https://gist.github.com/mbakke/c91e0eb3d906efd54c88a70c0e25c390
-       https://www.gnu.org/software/guix/manual/html_node/Proceeding-with-the-Installation.html#Proceeding-with-the-Installation
-       https://github.com/yenda/guix-config
-       https://github.com/alezost/guix-config
-       https://notabug.org/thomassgn/guixsd-configuration
-       https://gitlab.com/pjotrp/guix-notes
-       https://www.gnu.org/software/guix/manual/html_node/GNU-Distribution.html
-       https://www.gnu.org/software/guix/manual/html_node/System-Configuration.html#System-Configuration
-       https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html#G_002dExpressions
-       http://bootstrappable.org/
-       https://github.com/oriansj/M2-Planet
-       https://github.com/oriansj/mescc-tools
-       https://github.com/oriansj/stage0
-       https://www.gnu.org/software/guix/security/
-       https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5
-       https://translationproject.org/html/translators.html
+     https://www.gnu.org/software/guile/manual/html_node/Keywords.html
+     https://www.gnu.org/software/guix/manual/en/html_node/Build-Systems.html
+     https://www.gnu.org/software/guix/blog/2018/a-packaging-tutorial-for-guix/
+     https://www.gnu.org/software/guix/manual/html_node/Services.html#Services
+     https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#Using-the-Configuration-System
+     https://www.gnu.org/software/guix/download/
+     https://www.gnu.org/software/guix/manual/html_node/System-Installation.html
+     https://hal.inria.fr/hal-00824004/en
+     https://www.gnu.org/software/guix/packages/
+     https://www.gnu.org/software/guix/
+     https://www.gnu.org/software/guix/manual/html_node/Package-Management.html
+     ftp://alpha.gnu.org/gnu/guix/
+     https://gist.github.com/mbakke/c91e0eb3d906efd54c88a70c0e25c390
+     https://www.gnu.org/software/guix/manual/html_node/Proceeding-with-the-Installation.html#Proceeding-with-the-Installation
+     https://github.com/yenda/guix-config
+     https://github.com/alezost/guix-config
+     https://notabug.org/thomassgn/guixsd-configuration
+     https://gitlab.com/pjotrp/guix-notes
+     https://www.gnu.org/software/guix/manual/html_node/GNU-Distribution.html
+     https://www.gnu.org/software/guix/manual/html_node/System-Configuration.html#System-Configuration
+     https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html#G_002dExpressions
+     http://bootstrappable.org/
+     https://github.com/oriansj/M2-Planet
+     https://github.com/oriansj/mescc-tools
+     https://github.com/oriansj/stage0
+     https://www.gnu.org/software/guix/security/
+     https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5
+     https://translationproject.org/html/translators.html
 **** Guix tools
-       https://guix-hpc.bordeaux.inria.fr/
+     https://guix-hpc.bordeaux.inria.fr/
 
-       https://guix-hpc.bordeaux.inria.fr/browse
+     https://guix-hpc.bordeaux.inria.fr/browse
 
-       (termbin.com:curl,netcat),wget
+     (termbin.com:curl,netcat),wget
 **** Guix translations
-       https://translationproject.org/domain/guix-manual.html
+     https://translationproject.org/domain/guix-manual.html
 **** Guix config templates
 ******* bare-bones.tmpl
 	#+BEGIN_SRC scheme
@@ -2263,230 +2371,230 @@
 
 **** Guix config.scm examples
 ***** Orianj
-	 #+BEGIN_SRC scheme
-	 ;; This is an operating system configuration template
-	 ;; for a "desktop" setup without full-blown desktop
-	 ;; environments.
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "desktop" setup without full-blown desktop
+      ;; environments.
 
-	 (use-modules
-	  (gnu)
-	  (gnu system nss)
-	  (gnu services xorg)
-	  )
-	 (use-service-modules desktop networking)
-	 (use-package-modules
-	  admin
-	  bash
-	  certs
-	  compression
-	  curl
-	  emacs
-	  fonts
-	  gawk
-	  guile
-	  gnome
-	  gnupg
-	  gnuzilla
-	  less
-	  linux
-	  lxde
-	  man
-	  password-utils
-	  pciutils
-	  screen
-	  ssh
-	  suckless
-	  texinfo
-	  tmux
-	  tor
-	  version-control
-	  video
-	  wget
-	  wm
-	  xdisorg
-	  xfce
-	  xorg
-	  zile
-	  )
+      (use-modules
+       (gnu)
+       (gnu system nss)
+       (gnu services xorg)
+       )
+      (use-service-modules desktop networking)
+      (use-package-modules
+       admin
+       bash
+       certs
+       compression
+       curl
+       emacs
+       fonts
+       gawk
+       guile
+       gnome
+       gnupg
+       gnuzilla
+       less
+       linux
+       lxde
+       man
+       password-utils
+       pciutils
+       screen
+       ssh
+       suckless
+       texinfo
+       tmux
+       tor
+       version-control
+       video
+       wget
+       wm
+       xdisorg
+       xfce
+       xorg
+       zile
+       )
 
-	 (operating-system
-	  (host-name "encom")
-	  (timezone "America/New_York")
-	  (locale "en_US.UTF-8")
+      (operating-system
+       (host-name "encom")
+       (timezone "America/New_York")
+       (locale "en_US.UTF-8")
 
-	  ;; Assuming /dev/sdX is the target hard disk, and "my-root"
-	  ;; is the label of the target root file system.
-	  (bootloader (bootloader-configuration
-                       (bootloader grub-bootloader)
-                       (target "/dev/sda")))
+       ;; Assuming /dev/sdX is the target hard disk, and "my-root"
+       ;; is the label of the target root file system.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-bootloader)
+		    (target "/dev/sda")))
 
-	  (file-systems
-           (list
-            (file-system
-             (device "/dev/sda1")
-             ;;(title 'label)
-             (mount-point "/")
-             (type "ext4"))
+       (file-systems
+	(list
+	 (file-system
+	  (device "/dev/sda1")
+	  ;;(title 'label)
+	  (mount-point "/")
+	  (type "ext4"))
 
-            ;; List of basic file systems to be mounted.  Note that /proc and /sys are
-            ;; currently mounted by the initrd.
+	 ;; List of basic file systems to be mounted.  Note that /proc and /sys are
+	 ;; currently mounted by the initrd.
 
-            ;; The pseudo-terminal file system.  It needs to be mounted so that
-            ;; statfs(2) returns DEVPTS_SUPER_MAGIC like libc's getpt(3) expects (and
-            ;; thus openpty(3) and its users, such as xterm.)
-            (file-system
-             (device "none")
-             (mount-point "/dev/pts")
-             (type "devpts")
-             (check? #f)
-             (needed-for-boot? #f)
-             (create-mount-point? #t)
-             ;; ID of the 'tty' group.
-             (options "gid=996,mode=620"))
+	 ;; The pseudo-terminal file system.  It needs to be mounted so that
+	 ;; statfs(2) returns DEVPTS_SUPER_MAGIC like libc's getpt(3) expects (and
+	 ;; thus openpty(3) and its users, such as xterm.)
+	 (file-system
+	  (device "none")
+	  (mount-point "/dev/pts")
+	  (type "devpts")
+	  (check? #f)
+	  (needed-for-boot? #f)
+	  (create-mount-point? #t)
+	  ;; ID of the 'tty' group.
+	  (options "gid=996,mode=620"))
 
-            ;; Shared memory.
-            (file-system
-             (device "tmpfs")
-             (mount-point "/dev/shm")
-             (type "tmpfs")
-             (check? #f)
-             (flags '(no-suid no-dev))
-             (options "size=50%")                         ;TODO: make size configurable
-             (create-mount-point? #t))
+	 ;; Shared memory.
+	 (file-system
+	  (device "tmpfs")
+	  (mount-point "/dev/shm")
+	  (type "tmpfs")
+	  (check? #f)
+	  (flags '(no-suid no-dev))
+	  (options "size=50%")                         ;TODO: make size configurable
+	  (create-mount-point? #t))
 
-            ;; Read-only store to avoid users or daemons accidentally modifying it.
-            ;; 'guix-daemon' has provisions to remount it read-write in its own name
-            ;; space.
-            (file-system
-             (device "/gnu/store")
-             (mount-point "/gnu/store")
-             (type "none")
-             (check? #f)
-             (flags '(read-only bind-mount)))
-            )
-           )
+	 ;; Read-only store to avoid users or daemons accidentally modifying it.
+	 ;; 'guix-daemon' has provisions to remount it read-write in its own name
+	 ;; space.
+	 (file-system
+	  (device "/gnu/store")
+	  (mount-point "/gnu/store")
+	  (type "none")
+	  (check? #f)
+	  (flags '(read-only bind-mount)))
+	 )
+	)
 
-	  (users
-           (list
-            ;; Desired user accounts
-            (user-account
-             (name "oriansj")
-             (comment "Sysadmin")
-             (group "users")
-             (supplementary-groups '("wheel" "netdev" "audio" "video"))
-             (home-directory "/home/oriansj"))
+       (users
+	(list
+	 ;; Desired user accounts
+	 (user-account
+	  (name "oriansj")
+	  (comment "Sysadmin")
+	  (group "users")
+	  (supplementary-groups '("wheel" "netdev" "audio" "video"))
+	  (home-directory "/home/oriansj"))
 
-            ;; Service accounts required
-            (user-account
-             (name "nobody")
-             (uid 65534)
-             (group "nogroup")
-             (shell (file-append shadow "/sbin/nologin"))
-             (home-directory "/nonexistent")
-             (create-home-directory? #f)
-             (system? #t))))
+	 ;; Service accounts required
+	 (user-account
+	  (name "nobody")
+	  (uid 65534)
+	  (group "nogroup")
+	  (shell (file-append shadow "/sbin/nologin"))
+	  (home-directory "/nonexistent")
+	  (create-home-directory? #f)
+	  (system? #t))))
 
-	  ;; The barebones programs needed to get work done
-	  (packages
-           (list
-            bash               ; Get a standard shell
-            bash-completion    ; Get proper tab completion
-            bzip2              ; Support bz2
-            coreutils          ; Make bash useful
-            curl               ; Web scripting
-            diffutils          ; For diffing files
-            dmenu              ; Application spawner
-            e2fsprogs          ; EXT filesystem manipulation tools
-            emacs              ; gui text editor
-            eudev              ; Userspace hotplug daemon
-            findutils          ; Be able to leverage find
-            font-dejavu        ; Baseline font
-            gawk               ; Awk is rather handy
-            git                ; Primary version control
-            gnupg              ; Encryption
-            grep               ; For searching for strings
-            guile-2.2          ; XXX: We don't use (canonical-package guile-2.2) here because that would create a collision in the global profile.
-            gzip               ; Support gz
-            htop               ; System performance
-            i3-wm              ; window manager
-            icecat             ; Web Browser
-            inetutils          ; For hostname
-            info-reader        ;the standalone Info reader (no Perl)
-            iproute            ; Core network routing tools
-            isc-dhcp           ; For DHCP
-            iw                 ; New standard tool for configuring wireless devices
-            kbd                ; Keyboard and key map utilities
-            kmod               ; Get 'insmod' & co. from kmod, not module-init-tools, since udev  already depends on it anyway.
-            less               ; No explaination required
-            lzip               ; Support lz
-            man-db             ; Enable manpages
-            net-tools          ; XXX: remove when Inetutils suffices
-            nss-certs          ; for HTTPS access
-            openssh            ; ssh client
-            patch              ; Patch files are useful
-            pciutils           ; For manipulating PCI devices (lspci and setpci)
-            pcmanfm            ; File browser
-            pinentry-gtk2      ; gnupg agent
-            procps             ; /proc process tools (vmstat, ps, w, etc)
-            psmisc             ; More /proc process tools
-            rfkill             ; Even more wireless tools
-            rxvt-unicode       ; Terminal
-            sed                ; Search and replace
-            shadow             ; User management tools (and passwd)
-            sudo               ; The 'sudo' command is already in %SETUID-PROGRAMS, but we also want the other commands and the man pages.
-            tar                ; Packing of files
-            tig                ; git diff viewing
-            tor                ; Anonymity
-            torsocks           ; Wrapping alternate apps with tor
-            tree               ; Handy file directory map generator
-            usbutils           ; For manipulating USB devices (lsusb)
-            util-linux         ; For dmesg
-            vlc                ; Media player
-            wget               ; Downloader
-            which              ; Find full path
-            wireless-tools     ; wireless-tools is deprecated in favor of iw, but it's still what  many people are familiar with, so keep it around.
-            xfce4-terminal     ; Gui Console
-            xz                 ; Support xz
-            zile               ; In the event emacs breaks
-            )
-           )
+       ;; The barebones programs needed to get work done
+       (packages
+	(list
+	 bash               ; Get a standard shell
+	 bash-completion    ; Get proper tab completion
+	 bzip2              ; Support bz2
+	 coreutils          ; Make bash useful
+	 curl               ; Web scripting
+	 diffutils          ; For diffing files
+	 dmenu              ; Application spawner
+	 e2fsprogs          ; EXT filesystem manipulation tools
+	 emacs              ; gui text editor
+	 eudev              ; Userspace hotplug daemon
+	 findutils          ; Be able to leverage find
+	 font-dejavu        ; Baseline font
+	 gawk               ; Awk is rather handy
+	 git                ; Primary version control
+	 gnupg              ; Encryption
+	 grep               ; For searching for strings
+	 guile-2.2          ; XXX: We don't use (canonical-package guile-2.2) here because that would create a collision in the global profile.
+	 gzip               ; Support gz
+	 htop               ; System performance
+	 i3-wm              ; window manager
+	 icecat             ; Web Browser
+	 inetutils          ; For hostname
+	 info-reader        ;the standalone Info reader (no Perl)
+	 iproute            ; Core network routing tools
+	 isc-dhcp           ; For DHCP
+	 iw                 ; New standard tool for configuring wireless devices
+	 kbd                ; Keyboard and key map utilities
+	 kmod               ; Get 'insmod' & co. from kmod, not module-init-tools, since udev  already depends on it anyway.
+	 less               ; No explaination required
+	 lzip               ; Support lz
+	 man-db             ; Enable manpages
+	 net-tools          ; XXX: remove when Inetutils suffices
+	 nss-certs          ; for HTTPS access
+	 openssh            ; ssh client
+	 patch              ; Patch files are useful
+	 pciutils           ; For manipulating PCI devices (lspci and setpci)
+	 pcmanfm            ; File browser
+	 pinentry-gtk2      ; gnupg agent
+	 procps             ; /proc process tools (vmstat, ps, w, etc)
+	 psmisc             ; More /proc process tools
+	 rfkill             ; Even more wireless tools
+	 rxvt-unicode       ; Terminal
+	 sed                ; Search and replace
+	 shadow             ; User management tools (and passwd)
+	 sudo               ; The 'sudo' command is already in %SETUID-PROGRAMS, but we also want the other commands and the man pages.
+	 tar                ; Packing of files
+	 tig                ; git diff viewing
+	 tor                ; Anonymity
+	 torsocks           ; Wrapping alternate apps with tor
+	 tree               ; Handy file directory map generator
+	 usbutils           ; For manipulating USB devices (lsusb)
+	 util-linux         ; For dmesg
+	 vlc                ; Media player
+	 wget               ; Downloader
+	 which              ; Find full path
+	 wireless-tools     ; wireless-tools is deprecated in favor of iw, but it's still what  many people are familiar with, so keep it around.
+	 xfce4-terminal     ; Gui Console
+	 xz                 ; Support xz
+	 zile               ; In the event emacs breaks
+	 )
+	)
 
-	  ;; Essential Minimal services
-	  (services
-           (list
-            (service slim-service-type)
-            (dhcp-client-service)
-            (login-service)
+       ;; Essential Minimal services
+       (services
+	(list
+	 (service slim-service-type)
+	 (dhcp-client-service)
+	 (login-service)
 
-            (service console-font-service-type
-                     (map (lambda (tty) (cons tty %default-console-font)) '("tty1" "tty2")))
+	 (service console-font-service-type
+		  (map (lambda (tty) (cons tty %default-console-font)) '("tty1" "tty2")))
 
-            (mingetty-service (mingetty-configuration (tty "tty1")))
-            (mingetty-service (mingetty-configuration (tty "tty2")))
+	 (mingetty-service (mingetty-configuration (tty "tty1")))
+	 (mingetty-service (mingetty-configuration (tty "tty2")))
 
-            (service static-networking-service-type
-                     (list (static-networking
-                            (interface "lo")
-                            (ip "127.0.0.1")
-                            (provision '(loopback)))))
+	 (service static-networking-service-type
+		  (list (static-networking
+			 (interface "lo")
+			 (ip "127.0.0.1")
+			 (provision '(loopback)))))
 
-            (syslog-service)
-            ;; (service urandom-seed-service-type)
-            (guix-service)
-            ;; (nscd-service)
+	 (syslog-service)
+	 ;; (service urandom-seed-service-type)
+	 (guix-service)
+	 ;; (nscd-service)
 
-            ;; The LVM2 rules are needed as soon as LVM2 or the device-mapper is
-            ;; used, so enable them by default.  The FUSE and ALSA rules are
-            ;; less critical, but handy.
-            (udev-service #:rules (list lvm2 fuse alsa-utils crda))
+	 ;; The LVM2 rules are needed as soon as LVM2 or the device-mapper is
+	 ;; used, so enable them by default.  The FUSE and ALSA rules are
+	 ;; less critical, but handy.
+	 (udev-service #:rules (list lvm2 fuse alsa-utils crda))
 
-            (service special-files-service-type `(("/bin/sh" ,(file-append (canonical-package bash) "/bin/sh"))))
-            (service special-files-service-type `(("/usr/bin/env" ,(file-append (canonical-package coreutils) "/bin/env"))))
-            )
-           )
-	  )
+	 (service special-files-service-type `(("/bin/sh" ,(file-append (canonical-package bash) "/bin/sh"))))
+	 (service special-files-service-type `(("/usr/bin/env" ,(file-append (canonical-package coreutils) "/bin/env"))))
+	 )
+	)
+       )
 
-	 #+END_SRC
+      #+END_SRC
 ***** nikolaev
       #+BEGIN_SRC scheme
       (use-modules (gnu)
@@ -2644,1096 +2752,1115 @@
 
       #+END_SRC
 ***** Mes
-       #+BEGIN_SRC scheme
-       ;;; guix.scm -- Guix package definition
+      #+BEGIN_SRC scheme
+      ;;; guix.scm -- Guix package definition
 
-       ;;; Mes --- Maxwell Equations of Software
-       ;;; Copyright © 2016,2017,2018 Jan (janneke) Nieuwenhuizen <janneke@gnu.org>
+      ;;; Mes --- Maxwell Equations of Software
+      ;;; Copyright © 2016,2017,2018 Jan (janneke) Nieuwenhuizen <janneke@gnu.org>
 
-       ;;; Also borrowing code from:
-       ;;; guile-sdl2 --- FFI bindings for SDL2
-       ;;; Copyright © 2015 David Thompson <davet@gnu.org>
+      ;;; Also borrowing code from:
+      ;;; guile-sdl2 --- FFI bindings for SDL2
+      ;;; Copyright © 2015 David Thompson <davet@gnu.org>
 
-       ;;;
-       ;;; guix.scm: This file is part of Mes.
-       ;;;
-       ;;; Mes is free software; you can redistribute it and/or modify it
-       ;;; under the terms of the GNU General Public License as published by
-       ;;; the Free Software Foundation; either version 3 of the License, or (at
-       ;;; your option) any later version.
-       ;;;
-       ;;; Mes is distributed in the hope that it will be useful, but
-       ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
-       ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-       ;;; GNU General Public License for more details.
-       ;;;
-       ;;; You should have received a copy of the GNU General Public License
-       ;;; along with Mes.  If not, see <http://www.gnu.org/licenses/>.
+      ;;;
+      ;;; guix.scm: This file is part of Mes.
+      ;;;
+      ;;; Mes is free software; you can redistribute it and/or modify it
+      ;;; under the terms of the GNU General Public License as published by
+      ;;; the Free Software Foundation; either version 3 of the License, or (at
+      ;;; your option) any later version.
+      ;;;
+      ;;; Mes is distributed in the hope that it will be useful, but
+      ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+      ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      ;;; GNU General Public License for more details.
+      ;;;
+      ;;; You should have received a copy of the GNU General Public License
+      ;;; along with Mes.  If not, see <http://www.gnu.org/licenses/>.
 
-       ;;; Commentary:
-       ;;
-       ;; GNU Guix development package.  To build and install, run:
-       ;;
-       ;;   guix package -f guix.scm
-       ;;
-       ;; To build it, but not install it, run:
-       ;;
-       ;;   guix build -f guix.scm
-       ;;
-       ;; To use as the basis for a development environment, run:
-       ;;
-       ;;   guix environment -l guix.scm
-       ;;
-       ;;; Code:
+      ;;; Commentary:
+      ;;
+      ;; GNU Guix development package.  To build and install, run:
+      ;;
+      ;;   guix package -f guix.scm
+      ;;
+      ;; To build it, but not install it, run:
+      ;;
+      ;;   guix build -f guix.scm
+      ;;
+      ;; To use as the basis for a development environment, run:
+      ;;
+      ;;   guix environment -l guix.scm
+      ;;
+      ;;; Code:
 
-       (use-modules (srfi srfi-1)
-		    (srfi srfi-26)
-		    (ice-9 match)
-		    (ice-9 popen)
-		    (ice-9 rdelim)
-		    (gnu packages)
-		    (gnu packages base)
-		    (gnu packages commencement)
-		    (gnu packages cross-base)
-		    (gnu packages gcc)
-		    (gnu packages guile)
-		    (gnu packages mes)
-		    (gnu packages package-management)
-		    (gnu packages perl)
-		    ((guix build utils) #:select (with-directory-excursion))
-		    (guix build-system gnu)
-		    (guix build-system trivial)
-		    (guix gexp)
-		    (guix download)
-		    (guix git-download)
-		    (guix licenses)
-		    (guix packages))
+      (use-modules (srfi srfi-1)
+		   (srfi srfi-26)
+		   (ice-9 match)
+		   (ice-9 popen)
+		   (ice-9 rdelim)
+		   (gnu packages)
+		   (gnu packages base)
+		   (gnu packages commencement)
+		   (gnu packages cross-base)
+		   (gnu packages gcc)
+		   (gnu packages guile)
+		   (gnu packages mes)
+		   (gnu packages package-management)
+		   (gnu packages perl)
+		   ((guix build utils) #:select (with-directory-excursion))
+		   (guix build-system gnu)
+		   (guix build-system trivial)
+		   (guix gexp)
+		   (guix download)
+		   (guix git-download)
+		   (guix licenses)
+		   (guix packages))
 
-       (define %source-dir (dirname (current-filename)))
+      (define %source-dir (dirname (current-filename)))
 
-       (define git-file?
-	 (let* ((pipe (with-directory-excursion %source-dir
-						(open-pipe* OPEN_READ "git" "ls-files")))
-		(files (let loop ((lines '()))
-			 (match (read-line pipe)
-			   ((? eof-object?)
-			    (reverse lines))
-			   (line
-			    (loop (cons line lines))))))
-		(status (close-pipe pipe)))
-	   (lambda (file stat)
-	     (match (stat:type stat)
-	       ('directory #t)
-	       ((or 'regular 'symlink)
-		(any (cut string-suffix? <> file) files))
-	       (_ #f)))))
+      (define git-file?
+	(let* ((pipe (with-directory-excursion %source-dir
+					       (open-pipe* OPEN_READ "git" "ls-files")))
+	       (files (let loop ((lines '()))
+			(match (read-line pipe)
+			       ((? eof-object?)
+				(reverse lines))
+			       (line
+				(loop (cons line lines))))))
+	       (status (close-pipe pipe)))
+	  (lambda (file stat)
+	    (match (stat:type stat)
+		   ('directory #t)
+		   ((or 'regular 'symlink)
+		    (any (cut string-suffix? <> file) files))
+		   (_ #f)))))
 
-       (define-public nyacc-for-mes
-	 (package
-	  (inherit nyacc)
-	  (version "0.80.42")
-	  (source (origin
-		   (method url-fetch)
-		   (uri (string-append "https://gitlab.com/janneke/nyacc"
-				       "/-/archive/v" version
-				       "/nyacc-" version ".tar.gz"))
-		   (sha256
-		    (base32
-		     "101k3hy4jk5p109k6w4dpx3bjm0g53zwb1yxvvad8khfq00wb8hd"))))))
+      (define-public nyacc-for-mes
+	(package
+	 (inherit nyacc)
+	 (version "0.80.42")
+	 (source (origin
+		  (method url-fetch)
+		  (uri (string-append "https://gitlab.com/janneke/nyacc"
+				      "/-/archive/v" version
+				      "/nyacc-" version ".tar.gz"))
+		  (sha256
+		   (base32
+		    "101k3hy4jk5p109k6w4dpx3bjm0g53zwb1yxvvad8khfq00wb8hd"))))))
 
-       (define-public mescc-tools
-	 (package
-	  (name "mescc-tools")
-	  (version "0.4")
-	  (source (origin
-		   (method url-fetch)
-		   (uri (string-append
-			 "https://github.com/oriansj/mescc-tools/archive/Release_"
-			 version
-			 ".tar.gz"))
-		   (file-name (string-append name "-" version ".tar.gz"))
-		   (sha256
-		    (base32
-		     "1iwc8xqwzdaqckb4jkkisljrgn8ii4bl7dzk1l2kpv98hsyq9vi1"))))
-	  (build-system gnu-build-system)
-	  (supported-systems '("i686-linux" "x86_64-linux"))
-	  (arguments
-	   `(#:make-flags (list (string-append "PREFIX=" (assoc-ref %outputs "out")))
-	     #:test-target "test"
-	     #:phases (modify-phases %standard-phases
-				     (delete 'configure)
-				     (add-after 'install 'install-2
-						(lambda _
-						  (let ((out (assoc-ref %outputs "out")))
-						    (copy-file "bin/blood-elf" (string-append out "/bin/blood-elf"))))))))
-	  (synopsis "Tools for the full source bootstrapping process")
-	  (description
-	   "Mescc-tools is a collection of tools for use in a full source
-       bootstrapping process.  Currently consists of the M1 macro assembler and the
-       hex2 linker.")
-	  (home-page "https://github.com/oriansj/mescc-tools")
-	  (license gpl3+)))
+      (define-public mescc-tools
+	(package
+	 (name "mescc-tools")
+	 (version "0.4")
+	 (source (origin
+		  (method url-fetch)
+		  (uri (string-append
+			"https://github.com/oriansj/mescc-tools/archive/Release_"
+			version
+			".tar.gz"))
+		  (file-name (string-append name "-" version ".tar.gz"))
+		  (sha256
+		   (base32
+		    "1iwc8xqwzdaqckb4jkkisljrgn8ii4bl7dzk1l2kpv98hsyq9vi1"))))
+	 (build-system gnu-build-system)
+	 (supported-systems '("i686-linux" "x86_64-linux"))
+	 (arguments
+	  `(#:make-flags (list (string-append "PREFIX=" (assoc-ref %outputs "out")))
+			 #:test-target "test"
+			 #:phases (modify-phases %standard-phases
+						 (delete 'configure)
+						 (add-after 'install 'install-2
+							    (lambda _
+							      (let ((out (assoc-ref %outputs "out")))
+								(copy-file "bin/blood-elf" (string-append out "/bin/blood-elf"))))))))
+	 (synopsis "Tools for the full source bootstrapping process")
+	 (description
+	  "Mescc-tools is a collection of tools for use in a full source
+      bootstrapping process.  Currently consists of the M1 macro assembler and the
+      hex2 linker.")
+	 (home-page "https://github.com/oriansj/mescc-tools")
+	 (license gpl3+)))
 
-       (define-public mes
-	 (let ((commit "3e5215b4853fe0b3bfa012d343ce62a79017c04c")
-	       (revision "0")
-	       (triplet "i686-unknown-linux-gnu")
-	       (version "0.15"))
-	   (package
-	    (name "mes")
-	    (version (string-append version "-" revision "." (string-take commit 7)))
-	    (source (origin
-		     (method git-fetch)
-		     (uri (git-reference
-			   (url "https://gitlab.com/janneke/mes")
-			   (commit commit)))
-		     (file-name (string-append name "-" version))
-		     (sha256
-		      (base32 "1r82lpwmzqp9ih83s79zicvcza89walydn0yhjlkzvvwfiiqqg08"))))
-	    (build-system gnu-build-system)
-	    (supported-systems '("i686-linux" "x86_64-linux"))
-	    (propagated-inputs
-	     `(("mescc-tools" ,mescc-tools)
-	       ("nyacc" ,nyacc-for-mes)))
-	    (native-inputs
-	     `(("guile" ,guile-2.2)
-	       ,@(if (string-prefix? "x86_64-linux" (or (%current-target-system)
-							(%current-system)))
-		     ;; Use cross-compiler rather than #:system "i686-linux" to get
-		     ;; MesCC 64 bit .go files installed ready for use with Guile.
-		     `(("i686-linux-binutils" ,(cross-binutils triplet))
-		       ("i686-linux-gcc" ,(cross-gcc triplet)))
-		     '())
-	       ("perl" ,perl)))               ;build-aux/gitlog-to-changelog
-	    (arguments
-	     `(#:phases
-	       (modify-phases %standard-phases
-			      (add-before 'build 'make-git-source-writable
-					  (lambda* (#:key outputs #:allow-other-keys)
-					    (for-each make-file-writable
-						      (find-files "." ".*\\.M1"))))
-			      (add-before 'install 'generate-changelog
-					  (lambda _
-					    (with-output-to-file "ChangeLog"
-					      (lambda ()
-						(display "Please run
-	   build-aux/gitlog-to-changelog --srcdir=<git-checkout> > ChangeLog\n")))
-					    #t))
-			      (delete 'strip)))) ; binutil's strip b0rkes Mescc/M1/hex2 binaries
-	    (synopsis "Scheme interpreter and C compiler for full source bootstrapping")
-	    (description
-	     "Mes [Maxwell Equations of Software] aims to create full source
-       bootstrapping for GuixSD.  It consists of a mutual self-hosting [close to
-       Guile-] Scheme interpreter prototype in C and a Nyacc-based C compiler in
-       [Guile] Scheme.")
-	    (home-page "https://gitlab.com/janneke/mes")
-	    (license gpl3+))))
+      (define-public mes
+	(let ((commit "3e5215b4853fe0b3bfa012d343ce62a79017c04c")
+	      (revision "0")
+	      (triplet "i686-unknown-linux-gnu")
+	      (version "0.15"))
+	  (package
+	   (name "mes")
+	   (version (string-append version "-" revision "." (string-take commit 7)))
+	   (source (origin
+		    (method git-fetch)
+		    (uri (git-reference
+			  (url "https://gitlab.com/janneke/mes")
+			  (commit commit)))
+		    (file-name (string-append name "-" version))
+		    (sha256
+		     (base32 "1r82lpwmzqp9ih83s79zicvcza89walydn0yhjlkzvvwfiiqqg08"))))
+	   (build-system gnu-build-system)
+	   (supported-systems '("i686-linux" "x86_64-linux"))
+	   (propagated-inputs
+	    `(("mescc-tools" ,mescc-tools)
+	      ("nyacc" ,nyacc-for-mes)))
+	   (native-inputs
+	    `(("guile" ,guile-2.2)
+	      ,@(if (string-prefix? "x86_64-linux" (or (%current-target-system)
+						       (%current-system)))
+		    ;; Use cross-compiler rather than #:system "i686-linux" to get
+		    ;; MesCC 64 bit .go files installed ready for use with Guile.
+		    `(("i686-linux-binutils" ,(cross-binutils triplet))
+		      ("i686-linux-gcc" ,(cross-gcc triplet)))
+		    '())
+	      ("perl" ,perl)))               ;build-aux/gitlog-to-changelog
+	   (arguments
+	    `(#:phases
+	      (modify-phases %standard-phases
+			     (add-before 'build 'make-git-source-writable
+					 (lambda* (#:key outputs #:allow-other-keys)
+						  (for-each make-file-writable
+							    (find-files "." ".*\\.M1"))))
+			     (add-before 'install 'generate-changelog
+					 (lambda _
+					   (with-output-to-file "ChangeLog"
+					     (lambda ()
+					       (display "Please run
+	  build-aux/gitlog-to-changelog --srcdir=<git-checkout> > ChangeLog\n")))
+					   #t))
+			     (delete 'strip)))) ; binutil's strip b0rkes Mescc/M1/hex2 binaries
+	   (synopsis "Scheme interpreter and C compiler for full source bootstrapping")
+	   (description
+	    "Mes [Maxwell Equations of Software] aims to create full source
+      bootstrapping for GuixSD.  It consists of a mutual self-hosting [close to
+      Guile-] Scheme interpreter prototype in C and a Nyacc-based C compiler in
+      [Guile] Scheme.")
+	   (home-page "https://gitlab.com/janneke/mes")
+	   (license gpl3+))))
 
-       (define-public mes.git
-	 (let ((version "0.15")
-	       (revision "0")
-	       (commit (read-string (open-pipe "git show HEAD | head -1 | cut -d ' ' -f 2" OPEN_READ))))
-	   (package
-	    (inherit mes)
-	    (name "mes.git")
-	    (version (string-append version "-" revision "." (string-take commit 7)))
-	    (source (local-file %source-dir #:recursive? #t #:select? git-file?)))))
+      (define-public mes.git
+	(let ((version "0.15")
+	      (revision "0")
+	      (commit (read-string (open-pipe "git show HEAD | head -1 | cut -d ' ' -f 2" OPEN_READ))))
+	  (package
+	   (inherit mes)
+	   (name "mes.git")
+	   (version (string-append version "-" revision "." (string-take commit 7)))
+	   (source (local-file %source-dir #:recursive? #t #:select? git-file?)))))
 
-       ;; Return it here so `guix build/environment/package' can consume it directly.
-       mes.git
+      ;; Return it here so `guix build/environment/package' can consume it directly.
+      mes.git
 
-       #+END_SRC
+      #+END_SRC
 ***** fusion809
-       #+BEGIN_SRC scheme
-       ;; This is an operating system configuration template
-       ;; for a "desktop" setup with GNOME and Xfce where the
-       ;; root partition is encrypted with LUKS.
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "desktop" setup with GNOME and Xfce where the
+      ;; root partition is encrypted with LUKS.
 
-       (use-modules
-	(gnu)
-	(gnu system nss)
-	(gnu packages base)
-	(gnu packages shells)
-	)
-       (use-service-modules desktop)
-       (use-package-modules certs gnome)
-       (use-package-modules shells)
+      (use-modules
+       (gnu)
+       (gnu system nss)
+       (gnu packages base)
+       (gnu packages shells)
+       )
+      (use-service-modules desktop)
+      (use-package-modules certs gnome)
+      (use-package-modules shells)
 
-       (operating-system
-	(host-name "fusion809-vbox")
-	(timezone "Australia/Brisbane")
-	(locale "en_AU.utf8")
-	;;  (shell "/run/current-system/profile/bin/zsh")
+      (operating-system
+       (host-name "fusion809-vbox")
+       (timezone "Australia/Brisbane")
+       (locale "en_AU.utf8")
+       ;;  (shell "/run/current-system/profile/bin/zsh")
 
-	;; Assuming /dev/sdX is the target hard disk, and "my-root"
-	;; is the label of the target root file system.
-	(bootloader (bootloader-configuration
-		     (bootloader grub-bootloader)
-		     (target "/dev/sda")))
+       ;; Assuming /dev/sdX is the target hard disk, and "my-root"
+       ;; is the label of the target root file system.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-bootloader)
+		    (target "/dev/sda")))
 
-	;; Specify a mapped device for the encrypted root partition.
-	;; The UUID is that returned by 'cryptsetup luksUUID'.
-	(file-systems (cons (file-system
-			     (device "guixsd")
+       ;; Specify a mapped device for the encrypted root partition.
+       ;; The UUID is that returned by 'cryptsetup luksUUID'.
+       (file-systems (cons (file-system
+			    (device "guixsd")
+			    (mount-point "/")
+			    (type "btrfs"))
+			   %base-file-systems))
+
+       (users (cons (user-account
+		     (name "fusion809")
+		     (comment "Brenton Horne")
+		     (group "users")
+		     (supplementary-groups '("wheel" "netdev"
+					     "audio" "video"))
+		     (home-directory "/home/fusion809")
+		     (shell "/run/current-system/profile/bin/zsh"))
+		    %base-user-accounts))
+
+       ;; This is where we specify system-wide packages.
+       (packages (cons* nss-certs         ;for HTTPS access
+			zsh               ; for Z shell
+			gvfs              ;for user mounts
+			%base-packages))
+
+       ;; Add GNOME and/or Xfce---we can choose at the log-in
+       ;; screen with F1.  Use the "desktop" services, which
+       ;; include the X11 log-in service, networking with Wicd,
+       ;; and more.
+       (services (cons* (gnome-desktop-service)
+			%desktop-services))
+
+       (sudoers-file (local-file "/etc/guix/sudoers"))
+       ;; Allow resolution of '.local' host names with mDNS.
+       (name-service-switch %mdns-host-lookup-nss))
+
+      #+END_SRC
+***** mbakke
+      #+BEGIN_SRC scheme
+      (define-module (my packages)
+	#:use-module ((guix licenses) #:prefix license:)
+	#:use-module (gnu packages linux)
+	#:use-module (guix build-system trivial)
+	#:use-module (gnu)
+	#:use-module (guix download)
+	#:use-module (guix git-download)
+	#:use-module (guix packages))
+
+      (define (linux-nonfree-urls version)
+	"Return a list of URLs for Linux-Nonfree VERSION."
+	(list (string-append
+	       "https://www.kernel.org/pub/linux/kernel/v4.x/"
+	       "linux-" version ".tar.xz")))
+
+      ;; Remove this and native-inputs below to use the default config from Guix.
+      ;; Make sure the kernel minor version matches, though.
+      (define kernel-config
+	(string-append (dirname (current-filename)) "/kernel.config"))
+
+      (define-public linux-nonfree
+	(package
+	 (inherit linux-libre)
+	 (name "linux-nonfree")
+	 (version "4.13.11")
+	 (source (origin
+		  (method url-fetch)
+		  (uri (linux-nonfree-urls version))
+		  (sha256
+		   (base32
+		    "1vzl2i72c8iidhdc8a490npsbk7q7iphjqil4i9609disqw75gx4"))))
+	 (native-inputs
+	  `(("kconfig" ,kernel-config)
+	    ,@(alist-delete "kconfig"
+			    (package-native-inputs linux-libre))))
+	 (synopsis "Mainline Linux kernel, nonfree binary blobs included")
+	 (description "Linux is a kernel.")
+	 (license license:gpl2)              ;XXX with proprietary firmware
+	 (home-page "https://kernel.org")))
+
+      (define (linux-firmware-version) "9d40a17beaf271e6ad47a5e714a296100eef4692")
+      (define (linux-firmware-source version)
+	(origin
+	 (method git-fetch)
+	 (uri (git-reference
+	       (url (string-append "https://git.kernel.org/pub/scm/linux/kernel"
+				   "/git/firmware/linux-firmware.git"))
+	       (commit version)))
+	 (file-name (string-append "linux-firmware-" version "-checkout"))
+	 (sha256
+	  (base32
+	   "099kll2n1zvps5qawnbm6c75khgn81j8ns0widiw0lnwm8s9q6ch"))))
+
+      (define-public iwlwifi-firmware-nonfree
+	(package
+	 (name "iwlwifi-firmware-nonfree")
+	 (version (linux-firmware-version))
+	 (source (linux-firmware-source version))
+	 (build-system trivial-build-system)
+	 (arguments
+	  `(#:modules ((guix build utils))
+		      #:builder (begin
+				  (use-modules (guix build utils))
+				  (let ((source (assoc-ref %build-inputs "source"))
+					(fw-dir (string-append %output "/lib/firmware/")))
+				    (mkdir-p fw-dir)
+				    (for-each (lambda (file)
+						(copy-file file
+							   (string-append fw-dir (basename file))))
+					      (find-files source
+							  "iwlwifi-.*\\.ucode$|LICENSE\\.iwlwifi_firmware$"))
+				    #t))))
+	 (home-page "https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi")
+	 (synopsis "Non-free firmware for Intel wifi chips")
+	 (description "Non-free iwlwifi firmware")
+	 (license (license:non-copyleft
+		   "https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.iwlwifi_firmware?id=HEAD"))))
+
+
+
+      (define %sysctl-activation-service
+	(simple-service 'sysctl activation-service-type
+			#~(let ((sysctl
+				 (lambda (str)
+				   (zero? (apply system*
+						 #$(file-append procps
+								"/sbin/sysctl")
+						 "-w" (string-tokenize str))))))
+			    (and
+			     ;; Enable IPv6 privacy extensions.
+			     (sysctl "net.ipv6.conf.eth0.use_tempaddr=2")
+			     ;; Enable SYN cookie protection.
+			     (sysctl "net.ipv4.tcp_syncookies=1")
+			     ;; Log Martian packets.
+			     (sysctl "net.ipv4.conf.default.log_martians=1")))))
+
+      (define %powertop-service
+	(simple-service 'powertop activation-service-type
+			#~(zero? (system* #$(file-append powertop "/sbin/powertop")
+					  "--auto-tune"))))
+
+
+
+      (use-modules (gnu)
+		   (guix store)               ;for %default-substitute-urls
+		   (gnu system nss)
+		   (my packages)
+		   (srfi srfi-1))
+      (use-service-modules admin base dbus desktop mcron networking ssh xorg sddm)
+      (use-package-modules admin bootloaders certs disk fonts file emacs
+			   libusb linux version-control
+			   ssh tls tmux wm xdisorg xorg)
+
+      (operating-system
+       (host-name "kirby")
+       (timezone "Europe/Oslo")
+       (kernel linux-nonfree)
+       (kernel-arguments '("modprobe.blacklist=pcspkr,snd_pcsp"))
+       ;; (locale "en_GB.utf8")
+       ;; (locale-libcs (list glibc-2.24 (canonical-package glibc)))
+       (firmware (append (list
+			  iwlwifi-firmware-nonfree)
+			 %base-firmware))
+
+       (mapped-devices (list (mapped-device
+			      (source "/dev/sda4")
+			      (type luks-device-mapping)
+			      (target "guixhome"))))
+
+       (bootloader (bootloader-configuration
+		    (bootloader grub-efi-bootloader)
+		    (target "/boot/efi")))
+
+       (file-systems (cons* (file-system
+			     (device "guixroot")
+			     (title 'label)
 			     (mount-point "/")
-			     (type "btrfs"))
+			     (needed-for-boot? #t)
+			     (type "ext4"))
+			    (file-system
+			     (device "/dev/mapper/guixhome")
+			     (mount-point "/home")
+			     (type "ext4"))
+			    (file-system
+			     (device "/dev/sda2")
+			     (mount-point "/boot")
+			     (type "vfat"))
 			    %base-file-systems))
 
-	(users (cons (user-account
-		      (name "fusion809")
-		      (comment "Brenton Horne")
-		      (group "users")
-		      (supplementary-groups '("wheel" "netdev"
-					      "audio" "video"))
-		      (home-directory "/home/fusion809")
-		      (shell "/run/current-system/profile/bin/zsh"))
-		     %base-user-accounts))
+       (groups (cons (user-group
+		      (name "marius"))
+		     %base-groups))
+       (users (cons (user-account
+		     (name "marius")
+		     (comment "Meh")
+		     (group "marius")
+		     (supplementary-groups '("wheel" "netdev" "audio" "video" "kvm" "disk"))
+		     (home-directory "/home/marius"))
+		    %base-user-accounts))
 
-	;; This is where we specify system-wide packages.
-	(packages (cons* nss-certs         ;for HTTPS access
-			 zsh               ; for Z shell
-			 gvfs              ;for user mounts
-			 %base-packages))
+       (packages (cons*
+		  dosfstools
+		  nss-certs
+		  htop
+		  wpa-supplicant
+		  acpid
+		  i3-wm
+		  i3status
+		  xscreensaver
+		  %base-packages))
+       (services (cons*
+		  (sddm-service)
+		  (screen-locker-service xscreensaver)
+		  (service wpa-supplicant-service-type)
+		  (service network-manager-service-type)
+		  (upower-service)
+		  (colord-service)
+		  ;;(geoclue-service)
+		  (polkit-service)
+		  (elogind-service)
+		  (dbus-service)
+		  (service rottlog-service-type (rottlog-configuration))
+		  (service mcron-service-type)
+		  %sysctl-activation-service
+		  %powertop-service
 
-	;; Add GNOME and/or Xfce---we can choose at the log-in
-	;; screen with F1.  Use the "desktop" services, which
-	;; include the X11 log-in service, networking with Wicd,
-	;; and more.
-	(services (cons* (gnome-desktop-service)
-			 %desktop-services))
+		  ;; Add udev rules for MTP devices so that non-root users can access
+		  ;; them.
+		  (simple-service 'mtp udev-service-type (list libmtp))
 
-	(sudoers-file (local-file "/etc/guix/sudoers"))
-	;; Allow resolution of '.local' host names with mDNS.
-	(name-service-switch %mdns-host-lookup-nss))
-
-       #+END_SRC
-***** mbakke
-       #+BEGIN_SRC scheme
-       (define-module (my packages)
-	 #:use-module ((guix licenses) #:prefix license:)
-	 #:use-module (gnu packages linux)
-	 #:use-module (guix build-system trivial)
-	 #:use-module (gnu)
-	 #:use-module (guix download)
-	 #:use-module (guix git-download)
-	 #:use-module (guix packages))
-
-       (define (linux-nonfree-urls version)
-	 "Return a list of URLs for Linux-Nonfree VERSION."
-	 (list (string-append
-		"https://www.kernel.org/pub/linux/kernel/v4.x/"
-		"linux-" version ".tar.xz")))
-
-       ;; Remove this and native-inputs below to use the default config from Guix.
-       ;; Make sure the kernel minor version matches, though.
-       (define kernel-config
-	 (string-append (dirname (current-filename)) "/kernel.config"))
-
-       (define-public linux-nonfree
-	 (package
-	  (inherit linux-libre)
-	  (name "linux-nonfree")
-	  (version "4.13.11")
-	  (source (origin
-		   (method url-fetch)
-		   (uri (linux-nonfree-urls version))
-		   (sha256
-		    (base32
-		     "1vzl2i72c8iidhdc8a490npsbk7q7iphjqil4i9609disqw75gx4"))))
-	  (native-inputs
-	   `(("kconfig" ,kernel-config)
-	     ,@(alist-delete "kconfig"
-			     (package-native-inputs linux-libre))))
-	  (synopsis "Mainline Linux kernel, nonfree binary blobs included")
-	  (description "Linux is a kernel.")
-	  (license license:gpl2)              ;XXX with proprietary firmware
-	  (home-page "https://kernel.org")))
-
-       (define (linux-firmware-version) "9d40a17beaf271e6ad47a5e714a296100eef4692")
-       (define (linux-firmware-source version)
-	 (origin
-	  (method git-fetch)
-	  (uri (git-reference
-		(url (string-append "https://git.kernel.org/pub/scm/linux/kernel"
-				    "/git/firmware/linux-firmware.git"))
-		(commit version)))
-	  (file-name (string-append "linux-firmware-" version "-checkout"))
-	  (sha256
-	   (base32
-	    "099kll2n1zvps5qawnbm6c75khgn81j8ns0widiw0lnwm8s9q6ch"))))
-
-       (define-public iwlwifi-firmware-nonfree
-	 (package
-	  (name "iwlwifi-firmware-nonfree")
-	  (version (linux-firmware-version))
-	  (source (linux-firmware-source version))
-	  (build-system trivial-build-system)
-	  (arguments
-	   `(#:modules ((guix build utils))
-	     #:builder (begin
-			 (use-modules (guix build utils))
-			 (let ((source (assoc-ref %build-inputs "source"))
-			       (fw-dir (string-append %output "/lib/firmware/")))
-			   (mkdir-p fw-dir)
-			   (for-each (lambda (file)
-				       (copy-file file
-						  (string-append fw-dir (basename file))))
-				     (find-files source
-						 "iwlwifi-.*\\.ucode$|LICENSE\\.iwlwifi_firmware$"))
-			   #t))))
-	  (home-page "https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi")
-	  (synopsis "Non-free firmware for Intel wifi chips")
-	  (description "Non-free iwlwifi firmware")
-	  (license (license:non-copyleft
-		    "https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.iwlwifi_firmware?id=HEAD"))))
-
-
-
-       (define %sysctl-activation-service
-	 (simple-service 'sysctl activation-service-type
-			 #~(let ((sysctl
-				  (lambda (str)
-				    (zero? (apply system*
-						  #$(file-append procps
-								 "/sbin/sysctl")
-						  "-w" (string-tokenize str))))))
-			     (and
-			      ;; Enable IPv6 privacy extensions.
-			      (sysctl "net.ipv6.conf.eth0.use_tempaddr=2")
-			      ;; Enable SYN cookie protection.
-			      (sysctl "net.ipv4.tcp_syncookies=1")
-			      ;; Log Martian packets.
-			      (sysctl "net.ipv4.conf.default.log_martians=1")))))
-
-       (define %powertop-service
-	 (simple-service 'powertop activation-service-type
-			 #~(zero? (system* #$(file-append powertop "/sbin/powertop")
-					   "--auto-tune"))))
-
-
-
-       (use-modules (gnu)
-		    (guix store)               ;for %default-substitute-urls
-		    (gnu system nss)
-		    (my packages)
-		    (srfi srfi-1))
-       (use-service-modules admin base dbus desktop mcron networking ssh xorg sddm)
-       (use-package-modules admin bootloaders certs disk fonts file emacs
-			    libusb linux version-control
-			    ssh tls tmux wm xdisorg xorg)
-
-       (operating-system
-	(host-name "kirby")
-	(timezone "Europe/Oslo")
-	(kernel linux-nonfree)
-	(kernel-arguments '("modprobe.blacklist=pcspkr,snd_pcsp"))
-	;; (locale "en_GB.utf8")
-	;; (locale-libcs (list glibc-2.24 (canonical-package glibc)))
-	(firmware (append (list
-			   iwlwifi-firmware-nonfree)
-			  %base-firmware))
-
-	(mapped-devices (list (mapped-device
-			       (source "/dev/sda4")
-			       (type luks-device-mapping)
-			       (target "guixhome"))))
-
-	(bootloader (bootloader-configuration
-		     (bootloader grub-efi-bootloader)
-		     (target "/boot/efi")))
-
-	(file-systems (cons* (file-system
-			      (device "guixroot")
-			      (title 'label)
-			      (mount-point "/")
-			      (needed-for-boot? #t)
-			      (type "ext4"))
-			     (file-system
-			      (device "/dev/mapper/guixhome")
-			      (mount-point "/home")
-			      (type "ext4"))
-			     (file-system
-			      (device "/dev/sda2")
-			      (mount-point "/boot")
-			      (type "vfat"))
-			     %base-file-systems))
-
-	(groups (cons (user-group
-		       (name "marius"))
-		      %base-groups))
-	(users (cons (user-account
-		      (name "marius")
-		      (comment "Meh")
-		      (group "marius")
-		      (supplementary-groups '("wheel" "netdev" "audio" "video" "kvm" "disk"))
-		      (home-directory "/home/marius"))
-		     %base-user-accounts))
-
-	(packages (cons*
-		   dosfstools
-		   nss-certs
-		   htop
-		   wpa-supplicant
-		   acpid
-		   i3-wm
-		   i3status
-		   xscreensaver
-		   %base-packages))
-	(services (cons*
-		   (sddm-service)
-		   (screen-locker-service xscreensaver)
-		   (service wpa-supplicant-service-type)
-		   (service network-manager-service-type)
-		   (upower-service)
-		   (colord-service)
-		   ;;(geoclue-service)
-		   (polkit-service)
-		   (elogind-service)
-		   (dbus-service)
-		   (service rottlog-service-type (rottlog-configuration))
-		   (service mcron-service-type)
-		   %sysctl-activation-service
-		   %powertop-service
-
-		   ;; Add udev rules for MTP devices so that non-root users can access
-		   ;; them.
-		   (simple-service 'mtp udev-service-type (list libmtp))
-
-		   ;; Store the current configuration with the generation.
-		   (simple-service 'store-my-config
-				   etc-service-type
-				   `(("current-config.scm"
-				      ,(local-file (assoc-ref
-						    (current-source-location)
-						    'filename)))))
-		   (ntp-service #:servers '("nissen.uio.no"
-					    "2.no.pool.ntp.org"
-					    "1.no.pool.ntp.org"
-					    "0.sv.pool.ntp.org"))
-		   (modify-services %base-services
-				    (guix-service-type
-				     config =>
-				     (guix-configuration
-				      (inherit config)
-				      (substitute-urls
-				       (cons* "http://192.168.2.11:8181"
-					      "http://192.168.2.5:3000"
-					      "http://137.205.52.16"
-					      %default-substitute-urls))))))))
-       #+END_SRC
+		  ;; Store the current configuration with the generation.
+		  (simple-service 'store-my-config
+				  etc-service-type
+				  `(("current-config.scm"
+				     ,(local-file (assoc-ref
+						   (current-source-location)
+						   'filename)))))
+		  (ntp-service #:servers '("nissen.uio.no"
+					   "2.no.pool.ntp.org"
+					   "1.no.pool.ntp.org"
+					   "0.sv.pool.ntp.org"))
+		  (modify-services %base-services
+				   (guix-service-type
+				    config =>
+				    (guix-configuration
+				     (inherit config)
+				     (substitute-urls
+				      (cons* "http://192.168.2.11:8181"
+					     "http://192.168.2.5:3000"
+					     "http://137.205.52.16"
+					     %default-substitute-urls))))))))
+      #+END_SRC
 ***** wingo
-       #+BEGIN_SRC scheme
-       ;;; GNU Guix --- Functional package management for GNU
-       ;;; Copyright © 2012, 2013, 2014, 2015, 2017 Ludovic Courtès <ludo@gnu.org>
-       ;;; Copyright © 2013, 2014 Andreas Enge <andreas@enge.fr>
-       ;;; Copyright © 2012 Nikita Karetnikov <nikita@karetnikov.org>
-       ;;; Copyright © 2014, 2015 Mark H Weaver <mhw@netris.org>
-       ;;; Copyright © 2015 Federico Beffa <beffa@fbengineering.ch>
-       ;;; Copyright © 2015 Taylan Ulrich Bayırlı/Kammer <taylanbayirli@gmail.com>
-       ;;; Copyright © 2015, 2017 Andy Wingo <wingo@igalia.com>
-       ;;;
-       ;;; This file is part of GNU Guix.
-       ;;;
-       ;;; GNU Guix is free software; you can redistribute it and/or modify it
-       ;;; under the terms of the GNU General Public License as published by
-       ;;; the Free Software Foundation; either version 3 of the License, or (at
-       ;;; your option) any later version.
-       ;;;
-       ;;; GNU Guix is distributed in the hope that it will be useful, but
-       ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
-       ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-       ;;; GNU General Public License for more details.
-       ;;;
-       ;;; You should have received a copy of the GNU General Public License
-       ;;; along with GNU Guix.  If not, see <http://www.gnu.org/licenses/>.
+      #+BEGIN_SRC scheme
+      ;;; GNU Guix --- Functional package management for GNU
+      ;;; Copyright © 2012, 2013, 2014, 2015, 2017 Ludovic Courtès <ludo@gnu.org>
+      ;;; Copyright © 2013, 2014 Andreas Enge <andreas@enge.fr>
+      ;;; Copyright © 2012 Nikita Karetnikov <nikita@karetnikov.org>
+      ;;; Copyright © 2014, 2015 Mark H Weaver <mhw@netris.org>
+      ;;; Copyright © 2015 Federico Beffa <beffa@fbengineering.ch>
+      ;;; Copyright © 2015 Taylan Ulrich Bayırlı/Kammer <taylanbayirli@gmail.com>
+      ;;; Copyright © 2015, 2017 Andy Wingo <wingo@igalia.com>
+      ;;;
+      ;;; This file is part of GNU Guix.
+      ;;;
+      ;;; GNU Guix is free software; you can redistribute it and/or modify it
+      ;;; under the terms of the GNU General Public License as published by
+      ;;; the Free Software Foundation; either version 3 of the License, or (at
+      ;;; your option) any later version.
+      ;;;
+      ;;; GNU Guix is distributed in the hope that it will be useful, but
+      ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+      ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      ;;; GNU General Public License for more details.
+      ;;;
+      ;;; You should have received a copy of the GNU General Public License
+      ;;; along with GNU Guix.  If not, see <http://www.gnu.org/licenses/>.
 
-       (define-module (gnu packages linux-nonfree)
-	 #:use-module ((guix licenses) #:prefix license:)
-	 #:use-module (gnu packages linux)
-	 #:use-module (gnu packages tls)
-	 #:use-module (guix build-system trivial)
-	 #:use-module (guix git-download)
-	 #:use-module (guix packages)
-	 #:use-module (guix download))
+      (define-module (gnu packages linux-nonfree)
+	#:use-module ((guix licenses) #:prefix license:)
+	#:use-module (gnu packages linux)
+	#:use-module (gnu packages tls)
+	#:use-module (guix build-system trivial)
+	#:use-module (guix git-download)
+	#:use-module (guix packages)
+	#:use-module (guix download))
 
-       (define (linux-nonfree-urls version)
-	 "Return a list of URLs for Linux-Nonfree VERSION."
-	 (list (string-append
-		"https://www.kernel.org/pub/linux/kernel/v4.x/"
-		"linux-" version ".tar.xz")))
+      (define (linux-nonfree-urls version)
+	"Return a list of URLs for Linux-Nonfree VERSION."
+	(list (string-append
+	       "https://www.kernel.org/pub/linux/kernel/v4.x/"
+	       "linux-" version ".tar.xz")))
 
-       (define-public linux-nonfree
-	 (let* ((version "4.14.12"))
-	   (package
-	    (inherit linux-libre)
-	    (name "linux-nonfree")
-	    (version version)
-	    (source (origin
-		     (method url-fetch)
-		     (uri (linux-nonfree-urls version))
-		     (sha256
-		      (base32
-		       "1bsn73h3ilf7msyiqm5ny2zdj30b9r7k9sc8i03w3iggh3agf236"))))
-	    (synopsis "Mainline Linux kernel, nonfree binary blobs included.")
-	    (description "Linux is a kernel.")
-	    (license license:gpl2)
-	    (home-page "http://kernel.org/"))))
+      (define-public linux-nonfree
+	(let* ((version "4.14.12"))
+	  (package
+	   (inherit linux-libre)
+	   (name "linux-nonfree")
+	   (version version)
+	   (source (origin
+		    (method url-fetch)
+		    (uri (linux-nonfree-urls version))
+		    (sha256
+		     (base32
+		      "1bsn73h3ilf7msyiqm5ny2zdj30b9r7k9sc8i03w3iggh3agf236"))))
+	   (synopsis "Mainline Linux kernel, nonfree binary blobs included.")
+	   (description "Linux is a kernel.")
+	   (license license:gpl2)
+	   (home-page "http://kernel.org/"))))
 
-       ;;; Forgive me Stallman for I have sinned.
+      ;;; Forgive me Stallman for I have sinned.
 
-       (define-public radeon-firmware-non-free
-	 (package
-	  (name "radeon-firmware-non-free")
-	  (version "65b1c68c63f974d72610db38dfae49861117cae2")
-	  (source (origin
-		   (method git-fetch)
-		   (uri (git-reference
-			 (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
-			 (commit version)))
-		   (sha256
-		    (base32
-		     "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
-	  (build-system trivial-build-system)
-	  (arguments
-	   `(#:modules ((guix build utils))
-	     #:builder (begin
-			 (use-modules (guix build utils))
-			 (let ((source (assoc-ref %build-inputs "source"))
-			       (fw-dir (string-append %output "/lib/firmware/radeon/")))
-			   (mkdir-p fw-dir)
-			   (for-each (lambda (file)
-				       (copy-file file
-						  (string-append fw-dir "/"
-								 (basename file))))
-				     (find-files source
-						 (lambda (file stat)
-						   (string-contains file "radeon"))))
-			   #t))))
+      (define-public radeon-firmware-non-free
+	(package
+	 (name "radeon-firmware-non-free")
+	 (version "65b1c68c63f974d72610db38dfae49861117cae2")
+	 (source (origin
+		  (method git-fetch)
+		  (uri (git-reference
+			(url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+			(commit version)))
+		  (sha256
+		   (base32
+		    "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+	 (build-system trivial-build-system)
+	 (arguments
+	  `(#:modules ((guix build utils))
+		      #:builder (begin
+				  (use-modules (guix build utils))
+				  (let ((source (assoc-ref %build-inputs "source"))
+					(fw-dir (string-append %output "/lib/firmware/radeon/")))
+				    (mkdir-p fw-dir)
+				    (for-each (lambda (file)
+						(copy-file file
+							   (string-append fw-dir "/"
+									  (basename file))))
+					      (find-files source
+							  (lambda (file stat)
+							    (string-contains file "radeon"))))
+				    #t))))
 
-	  (home-page "")
-	  (synopsis "Non-free firmware for Radeon integrated chips")
-	  (description "Non-free firmware for Radeon integrated chips")
-	  ;; FIXME: What license?
-	  (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
+	 (home-page "")
+	 (synopsis "Non-free firmware for Radeon integrated chips")
+	 (description "Non-free firmware for Radeon integrated chips")
+	 ;; FIXME: What license?
+	 (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
 
-       (define-public ath10k-firmware-non-free
-	 (package
-	  (name "ath10k-firmware-non-free")
-	  (version "65b1c68c63f974d72610db38dfae49861117cae2")
-	  (source (origin
-		   (method git-fetch)
-		   (uri (git-reference
-			 (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
-			 (commit version)))
-		   (sha256
-		    (base32
-		     "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
-	  (build-system trivial-build-system)
-	  (arguments
-	   `(#:modules ((guix build utils))
-	     #:builder (begin
-			 (use-modules (guix build utils))
-			 (let ((source (assoc-ref %build-inputs "source"))
-			       (fw-dir (string-append %output "/lib/firmware/")))
-			   (mkdir-p fw-dir)
-			   (copy-recursively (string-append source "/ath10k")
-					     (string-append fw-dir "/ath10k"))
-			   #t))))
+      (define-public ath10k-firmware-non-free
+	(package
+	 (name "ath10k-firmware-non-free")
+	 (version "65b1c68c63f974d72610db38dfae49861117cae2")
+	 (source (origin
+		  (method git-fetch)
+		  (uri (git-reference
+			(url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+			(commit version)))
+		  (sha256
+		   (base32
+		    "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+	 (build-system trivial-build-system)
+	 (arguments
+	  `(#:modules ((guix build utils))
+		      #:builder (begin
+				  (use-modules (guix build utils))
+				  (let ((source (assoc-ref %build-inputs "source"))
+					(fw-dir (string-append %output "/lib/firmware/")))
+				    (mkdir-p fw-dir)
+				    (copy-recursively (string-append source "/ath10k")
+						      (string-append fw-dir "/ath10k"))
+				    #t))))
 
-	  (home-page "")
-	  (synopsis "Non-free firmware for ath10k wireless chips")
-	  (description "Non-free firmware for ath10k integrated chips")
-	  ;; FIXME: What license?
-	  (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
+	 (home-page "")
+	 (synopsis "Non-free firmware for ath10k wireless chips")
+	 (description "Non-free firmware for ath10k integrated chips")
+	 ;; FIXME: What license?
+	 (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
 
-       (define-public linux-firmware-non-free
-	 (package
-	  (name "linux-firmware-non-free")
-	  (version "65b1c68c63f974d72610db38dfae49861117cae2")
-	  (source (origin
-		   (method git-fetch)
-		   (uri (git-reference
-			 (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
-			 (commit version)))
-		   (sha256
-		    (base32
-		     "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
-	  (build-system trivial-build-system)
-	  (arguments
-	   `(#:modules ((guix build utils))
-	     #:builder (begin
-			 (use-modules (guix build utils))
-			 (let ((source (assoc-ref %build-inputs "source"))
-			       (fw-dir (string-append %output "/lib/firmware/")))
-			   (mkdir-p fw-dir)
-			   (copy-recursively source fw-dir)
-			   #t))))
+      (define-public linux-firmware-non-free
+	(package
+	 (name "linux-firmware-non-free")
+	 (version "65b1c68c63f974d72610db38dfae49861117cae2")
+	 (source (origin
+		  (method git-fetch)
+		  (uri (git-reference
+			(url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+			(commit version)))
+		  (sha256
+		   (base32
+		    "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+	 (build-system trivial-build-system)
+	 (arguments
+	  `(#:modules ((guix build utils))
+		      #:builder (begin
+				  (use-modules (guix build utils))
+				  (let ((source (assoc-ref %build-inputs "source"))
+					(fw-dir (string-append %output "/lib/firmware/")))
+				    (mkdir-p fw-dir)
+				    (copy-recursively source fw-dir)
+				    #t))))
 
-	  (home-page "")
-	  (synopsis "Non-free firmware for Linux")
-	  (description "Non-free firmware for Linux")
-	  ;; FIXME: What license?
-	  (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
+	 (home-page "")
+	 (synopsis "Non-free firmware for Linux")
+	 (description "Non-free firmware for Linux")
+	 ;; FIXME: What license?
+	 (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
 
-       (define-public perf-nonfree
-	 (package
-	  (inherit perf)
-	  (name "perf-nonfree")
-	  (version (package-version linux-nonfree))
-	  (source (package-source linux-nonfree))
-	  (license (package-license linux-nonfree))))
+      (define-public perf-nonfree
+	(package
+	 (inherit perf)
+	 (name "perf-nonfree")
+	 (version (package-version linux-nonfree))
+	 (source (package-source linux-nonfree))
+	 (license (package-license linux-nonfree))))
 
-       (define-public iwlwifi-firmware-nonfree
-	 (package
-	  (name "iwlwifi-firmware-nonfree")
-	  (version "65b1c68c63f974d72610db38dfae49861117cae2")
-	  (source (origin
-		   (method git-fetch)
-		   (uri (git-reference
-			 (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
-			 (commit version)))
-		   (sha256
-		    (base32
-		     "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
-	  (build-system trivial-build-system)
-	  (arguments
-	   `(#:modules ((guix build utils))
-	     #:builder (begin
-			 (use-modules (guix build utils))
-			 (let ((source (assoc-ref %build-inputs "source"))
-			       (fw-dir (string-append %output "/lib/firmware")))
-			   (mkdir-p fw-dir)
-			   (for-each (lambda (file)
-				       (copy-file file
-						  (string-append fw-dir "/"
-								 (basename file))))
-				     (find-files source "iwlwifi-.*\\.ucode$|LICENCE\\.iwlwifi_firmware$"))
-			   #t))))
+      (define-public iwlwifi-firmware-nonfree
+	(package
+	 (name "iwlwifi-firmware-nonfree")
+	 (version "65b1c68c63f974d72610db38dfae49861117cae2")
+	 (source (origin
+		  (method git-fetch)
+		  (uri (git-reference
+			(url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+			(commit version)))
+		  (sha256
+		   (base32
+		    "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+	 (build-system trivial-build-system)
+	 (arguments
+	  `(#:modules ((guix build utils))
+		      #:builder (begin
+				  (use-modules (guix build utils))
+				  (let ((source (assoc-ref %build-inputs "source"))
+					(fw-dir (string-append %output "/lib/firmware")))
+				    (mkdir-p fw-dir)
+				    (for-each (lambda (file)
+						(copy-file file
+							   (string-append fw-dir "/"
+									  (basename file))))
+					      (find-files source "iwlwifi-.*\\.ucode$|LICENCE\\.iwlwifi_firmware$"))
+				    #t))))
 
-	  (home-page "https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi")
-	  (synopsis "Non-free firmware for Intel wifi chips")
-	  (description "Non-free firmware for Intel wifi chips")
-	  ;; FIXME: What license?
-	  (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.iwlwifi_firmware;hb=HEAD"))))
+	 (home-page "https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi")
+	 (synopsis "Non-free firmware for Intel wifi chips")
+	 (description "Non-free firmware for Intel wifi chips")
+	 ;; FIXME: What license?
+	 (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.iwlwifi_firmware;hb=HEAD"))))
 
-       (define-public ibt-hw-firmware-nonfree
-	 (package
-	  (name "ibt-hw-firmware-nonfree")
-	  (version "65b1c68c63f974d72610db38dfae49861117cae2")
-	  (source (origin
-		   (method git-fetch)
-		   (uri (git-reference
-			 (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
-			 (commit version)))
-		   (sha256
-		    (base32
-		     "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
-	  (build-system trivial-build-system)
-	  (arguments
-	   `(#:modules ((guix build utils))
-	     #:builder (begin
-			 (use-modules (guix build utils))
-			 (let ((source (assoc-ref %build-inputs "source"))
-			       (fw-dir (string-append %output "/lib/firmware/intel")))
-			   (mkdir-p fw-dir)
-			   (for-each (lambda (file)
-				       (copy-file file
-						  (string-append fw-dir "/"
-								 (basename file))))
-				     (find-files source "ibt-hw-.*\\.bseq$|LICENCE\\.ibt_firmware$"))
-			   #t))))
+      (define-public ibt-hw-firmware-nonfree
+	(package
+	 (name "ibt-hw-firmware-nonfree")
+	 (version "65b1c68c63f974d72610db38dfae49861117cae2")
+	 (source (origin
+		  (method git-fetch)
+		  (uri (git-reference
+			(url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+			(commit version)))
+		  (sha256
+		   (base32
+		    "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+	 (build-system trivial-build-system)
+	 (arguments
+	  `(#:modules ((guix build utils))
+		      #:builder (begin
+				  (use-modules (guix build utils))
+				  (let ((source (assoc-ref %build-inputs "source"))
+					(fw-dir (string-append %output "/lib/firmware/intel")))
+				    (mkdir-p fw-dir)
+				    (for-each (lambda (file)
+						(copy-file file
+							   (string-append fw-dir "/"
+									  (basename file))))
+					      (find-files source "ibt-hw-.*\\.bseq$|LICENCE\\.ibt_firmware$"))
+				    #t))))
 
-	  (home-page "http://www.intel.com/support/wireless/wlan/sb/CS-016675.htm")
-	  (synopsis "Non-free firmware for Intel bluetooth chips")
-	  (description "Non-free firmware for Intel bluetooth chips")
-	  ;; FIXME: What license?
-	  (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.ibt_firmware;hb=HEAD"))))
+	 (home-page "http://www.intel.com/support/wireless/wlan/sb/CS-016675.htm")
+	 (synopsis "Non-free firmware for Intel bluetooth chips")
+	 (description "Non-free firmware for Intel bluetooth chips")
+	 ;; FIXME: What license?
+	 (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.ibt_firmware;hb=HEAD"))))
 
-       #+END_SRC
+      #+END_SRC
 ***** yenda
-       #+BEGIN_SRC scheme
-       ;; This is an operating system configuration template
-       ;; for a "desktop" setup with X11.
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "desktop" setup with X11.
 
-       (use-modules (gnu) (gnu system nss) (linux-nonfree))
-       (use-service-modules desktop)
-       (use-package-modules wicd avahi xorg certs suckless i3)
+      (use-modules (gnu) (gnu system nss) (linux-nonfree))
+      (use-service-modules desktop)
+      (use-package-modules wicd avahi xorg certs suckless i3)
 
-       (operating-system
-	(host-name "project2501")
-	(timezone "Europe/Paris")
-	(locale "en_US.UTF-8")
+      (operating-system
+       (host-name "project2501")
+       (timezone "Europe/Paris")
+       (locale "en_US.UTF-8")
 
-	(kernel linux-nonfree)
-	(firmware (cons* radeon-RS780-firmware-non-free %base-firmware))
+       (kernel linux-nonfree)
+       (firmware (cons* radeon-RS780-firmware-non-free %base-firmware))
 
-	;; Assuming /dev/sdX is the target hard disk, and "root" is
-	;; the label of the target root file system.
-	(bootloader (grub-configuration (device "/dev/sda")))
-	(file-systems (cons* (file-system
-			      (device "root")
-			      (title 'label)
-			      (mount-point "/")
-			      (type "ext4"))
-			     (file-system
-			      (device "home")
-			      (title 'label)
-			      (mount-point "/home")
-			      (type "ext4"))
-			     (file-system
-			      (device "/dev/sdb1")
-			      (mount-point "/mnt/Monster1")
-			      (type "ext4"))
-			     %base-file-systems))
+       ;; Assuming /dev/sdX is the target hard disk, and "root" is
+       ;; the label of the target root file system.
+       (bootloader (grub-configuration (device "/dev/sda")))
+       (file-systems (cons* (file-system
+			     (device "root")
+			     (title 'label)
+			     (mount-point "/")
+			     (type "ext4"))
+			    (file-system
+			     (device "home")
+			     (title 'label)
+			     (mount-point "/home")
+			     (type "ext4"))
+			    (file-system
+			     (device "/dev/sdb1")
+			     (mount-point "/mnt/Monster1")
+			     (type "ext4"))
+			    %base-file-systems))
 
-	(swap-devices '("/dev/sda2"))
-	(groups (cons (user-group (name "nixbld")) %base-groups))
-	(users (list (user-account
-		      (name "yenda")
-		      (comment "Lisp rocks")
-		      (group "users")
-		      (supplementary-groups '("wheel" "netdev"
-					      "audio" "video"
-					      "nixbld"))
-		      (home-directory "/home/yenda"))))
+       (swap-devices '("/dev/sda2"))
+       (groups (cons (user-group (name "nixbld")) %base-groups))
+       (users (list (user-account
+		     (name "yenda")
+		     (comment "Lisp rocks")
+		     (group "users")
+		     (supplementary-groups '("wheel" "netdev"
+					     "audio" "video"
+					     "nixbld"))
+		     (home-directory "/home/yenda"))))
 
-	;; Add Xfce and Ratpoison; that allows us to choose
-	;; sessions using either of these at the log-in screen.
-	(packages (cons* i3-wm i3status dmenu		     ;desktop environments
-			 xterm wicd avahi  ;useful tools
-			 nss-certs         ;for HTTPS access
-			 xorg-server xf86-input-evdev
-			 xf86-video-fbdev
-			 xf86-video-modesetting
-			 xf86-video-ati
-			 %base-packages))
+       ;; Add Xfce and Ratpoison; that allows us to choose
+       ;; sessions using either of these at the log-in screen.
+       (packages (cons* i3-wm i3status dmenu		     ;desktop environments
+			xterm wicd avahi  ;useful tools
+			nss-certs         ;for HTTPS access
+			xorg-server xf86-input-evdev
+			xf86-video-fbdev
+			xf86-video-modesetting
+			xf86-video-ati
+			%base-packages))
 
-	;; Use the "desktop" services, which include the X11
-	;; log-in service, networking with Wicd, and more.
-	(services (cons* (console-keymap-service "fr")
-			 %desktop-services))
-	;;(services %desktop-services)
-	;; Allow resolution of '.local' host names with mDNS.
-	(name-service-switch %mdns-host-lookup-nss))
+       ;; Use the "desktop" services, which include the X11
+       ;; log-in service, networking with Wicd, and more.
+       (services (cons* (console-keymap-service "fr")
+			%desktop-services))
+       ;;(services %desktop-services)
+       ;; Allow resolution of '.local' host names with mDNS.
+       (name-service-switch %mdns-host-lookup-nss))
 
-       #+END_SRC
+      #+END_SRC
 ***** Alex Kost
-       #+BEGIN_SRC scheme
-       (use-modules
-	(srfi srfi-1)
-	(gnu)
-	(gnu system locale)
-	(gnu services networking)
-	(gnu services dbus)
-	(gnu services desktop)
-	(gnu services ssh)
-	(gnu services lirc)
-	(gnu packages base)            ; for 'canonical-package'
-	(al places)
-	(al files)
-	(al utils)
-	(al guix packages)
-	(al guix services linux)
-	(al guix utils))
+      #+BEGIN_SRC scheme
+      (use-modules
+       (srfi srfi-1)
+       (gnu)
+       (gnu system locale)
+       (gnu services networking)
+       (gnu services dbus)
+       (gnu services desktop)
+       (gnu services ssh)
+       (gnu services lirc)
+       (gnu packages base)            ; for 'canonical-package'
+       (al places)
+       (al files)
+       (al utils)
+       (al guix packages)
+       (al guix services linux)
+       (al guix utils))
 
-       (define %user-name "al")
-       (define %group-name "users")
-       (define %host-name "leviafan")
+      (define %user-name "al")
+      (define %group-name "users")
+      (define %host-name "leviafan")
 
-       (define %extra-linux-modules
-	 '("fuse"                      ; for sshfs
-	   "nbd"                       ; to mount qcow2 images
-	   "sata_nv"                   ; for my HDD to be recognized
-	   "snd-seq"                   ; for MIDI-keyboard
-	   ))
+      (define %extra-linux-modules
+	'("fuse"                      ; for sshfs
+	  "nbd"                       ; to mount qcow2 images
+	  "sata_nv"                   ; for my HDD to be recognized
+	  "snd-seq"                   ; for MIDI-keyboard
+	  ))
 
-       (define %redundant-linux-modules
-	 '("pcspkr" "snd_pcsp"))
+      (define %redundant-linux-modules
+	'("pcspkr" "snd_pcsp"))
 
-       (define %redundant-packages
-	 '("info-reader"
-	   "iw"
-	   "nano"
-	   "net-tools"
-	   "wireless-tools"
-	   "zile"))
+      (define %redundant-packages
+	'("info-reader"
+	  "iw"
+	  "nano"
+	  "net-tools"
+	  "wireless-tools"
+	  "zile"))
 
-       (define os
-	 (operating-system
-	  ;; (locale-libcs
-	  ;;  (cons (guix-package base glibc-2.23)
-	  ;;        %default-locale-libcs))
+      (define os
+	(operating-system
+	 ;; (locale-libcs
+	 ;;  (cons (guix-package base glibc-2.23)
+	 ;;        %default-locale-libcs))
 
-	  (host-name %host-name)
-	  (timezone "Europe/Moscow")
+	 (host-name %host-name)
+	 (timezone "Europe/Moscow")
 
-	  (locale "en_US.utf8")
-	  (locale-definitions
-	   (list (locale-definition (source "en_US")
-				    (name   "en_US.utf8"))
-		 (locale-definition (source "ru_RU")
-				    (name   "ru_RU.utf8"))))
+	 (locale "en_US.utf8")
+	 (locale-definitions
+	  (list (locale-definition (source "en_US")
+				   (name   "en_US.utf8"))
+		(locale-definition (source "ru_RU")
+				   (name   "ru_RU.utf8"))))
 
-	  (bootloader
-	   ;; Since I always use "guix system build --no-bootloader", I don't want
-	   ;; to build grub, but guix wants to build it anyway (it is done by
-	   ;; 'perform-action' procedure in (guix scripts system) module).  So
-	   ;; I simply replace the default 'grub' with my 'empty-package'.
-	   (bootloader-configuration
-	    (bootloader (bootloader
-			 (inherit grub-bootloader)
-			 (name 'fake-grub)
-			 (package (my-package misc empty-package))))
-	    (device "/dev/sda")
-	    (theme (grub-theme))))
+	 (bootloader
+	  ;; Since I always use "guix system build --no-bootloader", I don't want
+	  ;; to build grub, but guix wants to build it anyway (it is done by
+	  ;; 'perform-action' procedure in (guix scripts system) module).  So
+	  ;; I simply replace the default 'grub' with my 'empty-package'.
+	  (bootloader-configuration
+	   (bootloader (bootloader
+			(inherit grub-bootloader)
+			(name 'fake-grub)
+			(package (my-package misc empty-package))))
+	   (device "/dev/sda")
+	   (theme (grub-theme))))
 
-	  (kernel-arguments
-	   (list (string-append "modprobe.blacklist="
-				(apply comma-separated
-				       %redundant-linux-modules))))
+	 (kernel-arguments
+	  (list (string-append "modprobe.blacklist="
+			       (apply comma-separated
+				      %redundant-linux-modules))))
 
-	  (initrd-modules (append %extra-linux-modules %base-initrd-modules))
+	 (initrd-modules (append %extra-linux-modules %base-initrd-modules))
 
-	  (file-systems
-	   (cons* (file-system
-		   (device "guix")
-		   (title 'label)
-		   (type "ext4")
-		   (mount-point "/"))
-		  (file-system
-		   (device "storage")
-		   (title 'label)
-		   (type "ext4")
-		   (mount-point "/mnt/storage")
-		   (create-mount-point? #t)
-		   (check? #f))
-		  (file-system
-		   (device "arch")
-		   (title 'label)
-		   (type "ext4")
-		   (mount-point "/mnt/arch")
-		   (create-mount-point? #t)
-		   (check? #f))
-		  (file-system
-		   (device "boot")
-		   (title 'label)
-		   (type "ext4")
-		   (mount-point "/mnt/boot")
-		   (create-mount-point? #t)
-		   (check? #f))
-		  (file-system
-		   (device "/dev/sr0")
-		   (title 'device)
-		   (type "iso9660")
-		   (mount-point "/mnt/cdrom")
-		   (mount? #f)
-		   (create-mount-point? #t)
-		   (check? #f)
-		   (options (comma-separated "ro" "user" "noauto")))
-		  (file-system
-		   (device "teXet")
-		   (title 'label)
-		   (type "vfat")
-		   (mount-point "/mnt/texet")
-		   (mount? #f)
-		   (create-mount-point? #t)
-		   (check? #f)
-		   (options (comma-separated
-			     "rw" "user" "noauto" "utf8" "umask=0002"
-			     (string-append "gid=" %group-name))))
-		  %base-file-systems))
+	 (file-systems
+	  (cons* (file-system
+		  (device "guix")
+		  (title 'label)
+		  (type "ext4")
+		  (mount-point "/"))
+		 (file-system
+		  (device "storage")
+		  (title 'label)
+		  (type "ext4")
+		  (mount-point "/mnt/storage")
+		  (create-mount-point? #t)
+		  (check? #f))
+		 (file-system
+		  (device "arch")
+		  (title 'label)
+		  (type "ext4")
+		  (mount-point "/mnt/arch")
+		  (create-mount-point? #t)
+		  (check? #f))
+		 (file-system
+		  (device "boot")
+		  (title 'label)
+		  (type "ext4")
+		  (mount-point "/mnt/boot")
+		  (create-mount-point? #t)
+		  (check? #f))
+		 (file-system
+		  (device "/dev/sr0")
+		  (title 'device)
+		  (type "iso9660")
+		  (mount-point "/mnt/cdrom")
+		  (mount? #f)
+		  (create-mount-point? #t)
+		  (check? #f)
+		  (options (comma-separated "ro" "user" "noauto")))
+		 (file-system
+		  (device "teXet")
+		  (title 'label)
+		  (type "vfat")
+		  (mount-point "/mnt/texet")
+		  (mount? #f)
+		  (create-mount-point? #t)
+		  (check? #f)
+		  (options (comma-separated
+			    "rw" "user" "noauto" "utf8" "umask=0002"
+			    (string-append "gid=" %group-name))))
+		 %base-file-systems))
 
-	  (users
-	   (cons* (user-account
-		   (name %user-name)
-		   (uid 1000)
-		   (comment "Alex Kost")
-		   (home-directory (string-append "/home/" %user-name))
-		   (group %group-name)
-		   (supplementary-groups
-		    '("wheel" "kvm" "audio" "video" "lp" "cdrom")))
-		  %base-user-accounts))
+	 (users
+	  (cons* (user-account
+		  (name %user-name)
+		  (uid 1000)
+		  (comment "Alex Kost")
+		  (home-directory (string-append "/home/" %user-name))
+		  (group %group-name)
+		  (supplementary-groups
+		   '("wheel" "kvm" "audio" "video" "lp" "cdrom")))
+		 %base-user-accounts))
 
-	  (groups
-	   ;; Use ID 100 for "users" group.  Actually, this wouldn't change ID
-	   ;; of an existing group, because the following command (called by
-	   ;; 'add-group' in (gnu build activation) module):
-	   ;;
-	   ;;   groupadd -g 100 --system users
-	   ;;
-	   ;; fails telling: "group 'users' already exists".
-	   (replace (lambda (group)
-		      (string=? "users" (user-group-name group)))
-		    (user-group (name "users")
-				(id 100)
-				(system? #t))
-		    %base-groups))
+	 (groups
+	  ;; Use ID 100 for "users" group.  Actually, this wouldn't change ID
+	  ;; of an existing group, because the following command (called by
+	  ;; 'add-group' in (gnu build activation) module):
+	  ;;
+	  ;;   groupadd -g 100 --system users
+	  ;;
+	  ;; fails telling: "group 'users' already exists".
+	  (replace (lambda (group)
+		     (string=? "users" (user-group-name group)))
+		   (user-group (name "users")
+			       (id 100)
+			       (system? #t))
+		   %base-groups))
 
 
-	  (sudoers-file (local-file (config-file "etc/sudoers")))
-	  (hosts-file (local-file (config-file "etc/hosts")))
+	 (sudoers-file (local-file (config-file "etc/sudoers")))
+	 (hosts-file (local-file (config-file "etc/hosts")))
 
-	  (issue "Guix is Great!  Ave Guix!!  Ave!!!\n\n")
+	 (issue "Guix is Great!  Ave Guix!!  Ave!!!\n\n")
 
-	  (packages
-	   (append (specifications->packages
-		    "nss-certs" "iptables")
-		   (my-packages
-		    (misc suspend))
-		   xorg-packages
-		   (remove-packages %redundant-packages
-				    %base-packages)))
+	 (packages
+	  (append (specifications->packages
+		   "nss-certs" "iptables")
+		  (my-packages
+		   (misc suspend))
+		  xorg-packages
+		  (remove-packages %redundant-packages
+				   %base-packages)))
 
-	  (services
-	   (list
-	    (service virtual-terminal-service-type)
-	    (service console-font-service-type
-		     (map (lambda (tty)
-			    (cons tty %default-console-font))
-			  '("tty1" "tty2" "tty3" "tty4" "tty5" "tty6")))
+	 (services
+	  (list
+	   (service virtual-terminal-service-type)
+	   (service console-font-service-type
+		    (map (lambda (tty)
+			   (cons tty %default-console-font))
+			 '("tty1" "tty2" "tty3" "tty4" "tty5" "tty6")))
 
-	    (agetty-service (agetty-configuration
-			     (extra-options '("-L")) ; no carrier detect
-			     (term "vt100")
-			     (tty #f)))
+	   (agetty-service (agetty-configuration
+			    (extra-options '("-L")) ; no carrier detect
+			    (term "vt100")
+			    (tty #f)))
 
-	    (mingetty-service (mingetty-configuration
-			       (tty "tty1")
-			       (auto-login %user-name)))
-	    (mingetty-service (mingetty-configuration
-			       (tty "tty2")))
-	    (mingetty-service (mingetty-configuration
-			       (tty "tty3")))
-	    (mingetty-service (mingetty-configuration
-			       (tty "tty4")))
-	    (mingetty-service (mingetty-configuration
-			       (tty "tty5")))
-	    (mingetty-service (mingetty-configuration
-			       (tty "tty6")))
+	   (mingetty-service (mingetty-configuration
+			      (tty "tty1")
+			      (auto-login %user-name)))
+	   (mingetty-service (mingetty-configuration
+			      (tty "tty2")))
+	   (mingetty-service (mingetty-configuration
+			      (tty "tty3")))
+	   (mingetty-service (mingetty-configuration
+			      (tty "tty4")))
+	   (mingetty-service (mingetty-configuration
+			      (tty "tty5")))
+	   (mingetty-service (mingetty-configuration
+			      (tty "tty6")))
 
-	    (login-service (login-configuration
-			    (motd (plain-file "motd" "\
-       Welcome to Hyksos!  I mean GuixOS!  I mean GuixSD!\n\n"))))
+	   (login-service (login-configuration
+			   (motd (plain-file "motd" "\
+      Welcome to Hyksos!  I mean GuixOS!  I mean GuixSD!\n\n"))))
 
-	    (console-keymap-service (local-file
-				     (config-file "kbd/dvorak-alt.map")))
-	    (keycodes-from-file-service (local-file
-					 (config-file "kbd/scancodes-msmult")))
-	    (lirc-service #:device "name=i2c*" #:driver "devinput"
-			  #:config-file (local-file
-					 (config-file "lirc/devinput.conf")))
+	   (console-keymap-service (local-file
+				    (config-file "kbd/dvorak-alt.map")))
+	   (keycodes-from-file-service (local-file
+					(config-file "kbd/scancodes-msmult")))
+	   (lirc-service #:device "name=i2c*" #:driver "devinput"
+			 #:config-file (local-file
+					(config-file "lirc/devinput.conf")))
 
-	    (tor-service)
-	    (dhcp-client-service)
-	    (service static-networking-service-type
-		     (list ;; (static-networking (interface "enp0s7")
-		      ;;                    (ip "192.168.1.32")
-		      ;;                    (gateway "192.168.1.1")
-		      ;;                    (name-servers '("77.88.8.8")))
-		      (static-networking (interface "lo")
-					 (ip "127.0.0.1")
-					 (provision '(loopback)))))
+	   (tor-service)
+	   (dhcp-client-service)
+	   (service static-networking-service-type
+		    (list ;; (static-networking (interface "enp0s7")
+		     ;;                    (ip "192.168.1.32")
+		     ;;                    (gateway "192.168.1.1")
+		     ;;                    (name-servers '("77.88.8.8")))
+		     (static-networking (interface "lo")
+					(ip "127.0.0.1")
+					(provision '(loopback)))))
 
-	    (udisks-service)
-	    (polkit-service)
-	    (elogind-service)
-	    (dbus-service)
-	    (lsh-service)
-	    (syslog-service (syslog-configuration
-			     (config-file (local-file
-					   (config-file "syslog/syslog.conf")))))
-	    (service urandom-seed-service-type)
-	    (guix-service)
-	    (nscd-service)
-	    (udev-service #:rules (specifications->packages
-				   "alsa-utils" "fuse" "lvm2"))
-	    (service special-files-service-type
-		     ;; Using 'canonical-package' as bash and coreutils
-		     ;; canonical packages are already a part of
-		     ;; '%base-packages'.
-		     `(("/bin/sh"
-			,(file-append (canonical-package
-				       (guix-package bash bash))
-				      "/bin/bash"))
-		       ("/bin/bash"
-			,(file-append (canonical-package
-				       (guix-package bash bash))
-				      "/bin/bash"))
-		       ("/usr/bin/env"
-			,(file-append (canonical-package
-				       (guix-package base coreutils))
-				      "/bin/env"))))))))
-       os
+	   (udisks-service)
+	   (polkit-service)
+	   (elogind-service)
+	   (dbus-service)
+	   (lsh-service)
+	   (syslog-service (syslog-configuration
+			    (config-file (local-file
+					  (config-file "syslog/syslog.conf")))))
+	   (service urandom-seed-service-type)
+	   (guix-service)
+	   (nscd-service)
+	   (udev-service #:rules (specifications->packages
+				  "alsa-utils" "fuse" "lvm2"))
+	   (service special-files-service-type
+		    ;; Using 'canonical-package' as bash and coreutils
+		    ;; canonical packages are already a part of
+		    ;; '%base-packages'.
+		    `(("/bin/sh"
+		       ,(file-append (canonical-package
+				      (guix-package bash bash))
+				     "/bin/bash"))
+		      ("/bin/bash"
+		       ,(file-append (canonical-package
+				      (guix-package bash bash))
+				     "/bin/bash"))
+		      ("/usr/bin/env"
+		       ,(file-append (canonical-package
+				      (guix-package base coreutils))
+				     "/bin/env"))))))))
+      os
 
-       #+END_SRC
+      #+END_SRC
 ***** PACKAGE GENERIC
-       #+BEGIN_SRC scheme
-       ;;; mescc-tools.scm -- Guix package definition
-       ;;; Copyright © 2017 Jan Nieuwenhuizen <janneke@gnu.org>
-       ;;; Copyright 2016 Jeremiah Orians
-       ;;; guix.scm: This file is part of mescc-tools.
-       ;;;
-       ;;; mescc-tools is free software; you can redistribute it and/or modify it
-       ;;; under the terms of the GNU General Public License as published by
-       ;;; the Free Software Foundation; either version 3 of the License, or (at
-       ;;; your option) any later version.
-       ;;;
-       ;;; mescc-tools is distributed in the hope that it will be useful, but
-       ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
-       ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-       ;;; GNU General Public License for more details.
-       ;;;
-       ;;; You should have received a copy of the GNU General Public License
-       ;;; along with mescc-tools.  If not, see <http://www.gnu.org/licenses/>.
+      #+BEGIN_SRC scheme
+      ;;; mescc-tools.scm -- Guix package definition
+      ;;; Copyright © 2017 Jan Nieuwenhuizen <janneke@gnu.org>
+      ;;; Copyright 2016 Jeremiah Orians
+      ;;; guix.scm: This file is part of mescc-tools.
+      ;;;
+      ;;; mescc-tools is free software; you can redistribute it and/or modify it
+      ;;; under the terms of the GNU General Public License as published by
+      ;;; the Free Software Foundation; either version 3 of the License, or (at
+      ;;; your option) any later version.
+      ;;;
+      ;;; mescc-tools is distributed in the hope that it will be useful, but
+      ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+      ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      ;;; GNU General Public License for more details.
+      ;;;
+      ;;; You should have received a copy of the GNU General Public License
+      ;;; along with mescc-tools.  If not, see <http://www.gnu.org/licenses/>.
 
-       ;;; Commentary:
-       ;; GNU Guix development package.  To build and install, run:
-       ;;   guix package -f guix.scm
-       ;;
-       ;; To build it, but not install it, run:
-       ;;   guix build -f guix.scm
-       ;;
-       ;; To use as the basis for a development environment, run:
-       ;;   guix environment -l guix.scm
-       ;;
-       ;;; Code:
+      ;;; Commentary:
+      ;; GNU Guix development package.  To build and install, run:
+      ;;   guix package -f guix.scm
+      ;;
+      ;; To build it, but not install it, run:
+      ;;   guix build -f guix.scm
+      ;;
+      ;; To use as the basis for a development environment, run:
+      ;;   guix environment -l guix.scm
+      ;;
+      ;;; Code:
 
-       (use-modules (ice-9 match)
-		    (gnu packages)
-		    (gnu packages gcc)
-		    (guix build-system gnu)
-		    (guix download)
-		    (guix licenses)
-		    (guix packages))
+      (use-modules (ice-9 match)
+		   (gnu packages)
+		   (gnu packages gcc)
+		   (guix build-system gnu)
+		   (guix download)
+		   (guix licenses)
+		   (guix packages))
 
-       (define-public mescc-tools
-	 (package
-	  (name "mescc-tools")
-	  (version "0.5.2")
-	  (source (origin
-		   (method url-fetch)
-		   (uri (string-append "http://git.savannah.nongnu.org/cgit/mescc-tools.git/snapshot/mescc-tools-Release_" version ".tar.gz"))
-		   (sha256
-		    (base32 "01x7bhmgwyf6mc2g1hcvibhps98nllacqm4f0j5l51b1mbi18pc2"))))
-	  (build-system gnu-build-system)
-	  (arguments
-	   `(#:make-flags (list (string-append "PREFIX=" (assoc-ref %outputs "out")))
-	     #:test-target "test"
-	     #:phases
-	     (modify-phases %standard-phases
-			    (delete 'configure))))
-	  (synopsis "tools for the full source bootstrapping process")
-	  (description
-	   "Mescc-tools is a collection of tools for use in full source bootstrapping process.
-       Currently consists of the M0 macro assembler and the hex2 linker.")
-	  (home-page "https://github.com/oriansj/mescc-tools")
-	  (license gpl3+)))
+      (define-public mescc-tools
+	(package
+	 (name "mescc-tools")
+	 (version "0.5.2")
+	 (source (origin
+		  (method url-fetch)
+		  (uri (string-append "http://git.savannah.nongnu.org/cgit/mescc-tools.git/snapshot/mescc-tools-Release_" version ".tar.gz"))
+		  (sha256
+		   (base32 "01x7bhmgwyf6mc2g1hcvibhps98nllacqm4f0j5l51b1mbi18pc2"))))
+	 (build-system gnu-build-system)
+	 (arguments
+	  `(#:make-flags (list (string-append "PREFIX=" (assoc-ref %outputs "out")))
+			 #:test-target "test"
+			 #:phases
+			 (modify-phases %standard-phases
+					(delete 'configure))))
+	 (synopsis "tools for the full source bootstrapping process")
+	 (description
+	  "Mescc-tools is a collection of tools for use in full source bootstrapping process.
+      Currently consists of the M0 macro assembler and the hex2 linker.")
+	 (home-page "https://github.com/oriansj/mescc-tools")
+	 (license gpl3+)))
 
-       ;; Return it here so `guix build/environment/package' can consume it directly.
-       mescc-tools
+      ;; Return it here so `guix build/environment/package' can consume it directly.
+      mescc-tools
 
 
-       #+END_SRC
+      #+END_SRC
+* Yet to learn
+  |                    |                                                 |   |
+  |--------------------+-------------------------------------------------+---|
+  | df -i              | inodes                                          |   |
+  | netstat -atunp     | listening network ports                         |   |
+  | pid                |                                                 |   |
+  | ps -ef             |                                                 |   |
+  | ps aux             |                                                 |   |
+  | Hashicorp Vault    |                                                 |   |
+  | Hashicorp boundary |                                                 |   |
+  | !*                 | reuse shell args of command                     |   |
+  | kubectl get pods   |                                                 |   |
+  | alt+t              | alterna a posicao de ultimas 2 palavras no bash |   |
+  | gpg                |                                                 |   |
+  | rsync              |                                                 |   |
+  | cacat              |                                                 |   |
+  | goto               |                                                 |   |
+  | journalctl -b      | grep -i bluetooth                               |   |
+
 * Software
 ** Onlines
    https://www.urionlinejudge.com.br/judge/en/login
@@ -3770,9 +3897,9 @@
 **** ffmpeg sound booster
      https://trac.ffmpeg.org/wiki
 
-      # Audio Increase/Decrease
-      ffmpeg -i input.flac -filter:a "volume=1.5" output.flac
-      ffmpeg -i input.flac -af 'volume=1.5' output.flac
+     # Audio Increase/Decrease
+     ffmpeg -i input.flac -filter:a "volume=1.5" output.flac
+     ffmpeg -i input.flac -af 'volume=1.5' output.flac
 
 **** ffmpeg cut/trim audio/video
      - You can use the time offset parameter (-ss) to specify the start time stamp in HH:MM:SS.ms format
@@ -3782,9 +3909,9 @@
 **** ffmpeg video to audio
      ffmpeg -i input.mp4 output.flac
 **** ffmpeg mic recording
-      ffmpeg -f pulse -i default output.wav
+     ffmpeg -f pulse -i default output.wav
 **** ffmpeg read later
-      https://www.labnol.org/internet/useful-ffmpeg-commands/28490/
+     https://www.labnol.org/internet/useful-ffmpeg-commands/28490/
 **** ffmpeg -dvd ripper
      cat *.VOB > moviename.vob; ffmpeg -i moviename.vob -acodec libfaac -ac 2 -ab 128k -vcodec libx264 -vpre fast -crf 20 -threads 0 moviename.mp4
 **** ffmpeg concat files
