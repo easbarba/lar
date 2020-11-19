@@ -940,7 +940,7 @@
 **** https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 **** Applications Desktop Files
 	/usr/share/applications/
-	xdg-settings set default-web-browser firefox.desktop
+	xdg-settings set default-web-browser google-chrome.desktop
 ** Commands
    | command        |                                  |
    |----------------+----------------------------------|
