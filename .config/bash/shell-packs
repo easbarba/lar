@@ -50,6 +50,17 @@ e-packs-asdf-elixir()
     asdf global "$(asdf latest elixir)"
 }
 
+e-packs-asdf-python()
+{
+    # https://github.com/danhper/asdf-python
+
+    asdf plugin-add python
+
+    asdf install python latest
+
+    asdf global python "$(asdf latest python)"
+}
+
 e-packs-asdf-go()
 {
     # https://github.com/kennyp/asdf-golang
@@ -175,7 +186,7 @@ e-packs-npm()
 
 e-packs-pip()
 {
-    local packages=(pip wheel setuptools blackyoutube-dl python-language-server
+    local packages=(pip ansible wheel setuptools blackyoutube-dl python-language-server
 		    pyls-black pyls-isort pyls-mypy jedi==0.17.0 ipython pylama
 		    pyflakes flake8-import-order pydocstyle flake8 mccabe yapf
 		    pylint rope pytest pep8-naming mutagen)
