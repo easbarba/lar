@@ -256,6 +256,14 @@
 *** Ps
 *** Htop
 *** Top
+** gpg
+*** set up
+    gpg --full-generate-key
+    RSA
+    4096 bits
+*** list keys
+    gpg --list-secret-keys --keyid-format LONG
+***
 ** Df
 ** strace
 ** dstrace
