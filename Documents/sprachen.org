@@ -15,6 +15,9 @@
   - [[#features][Features]]
   - [[#concepts][Concepts]]
   - [[#instructions][Instructions]]
+- [[#yaml][Yaml]]
+  - [[#trais][trais]]
+  - [[#resources][resources]]
 - [[#emacs-lisp][Emacs Lisp]]
   - [[#progresso][Progresso]]
 - [[#common-lisp][Common Lisp]]
@@ -342,6 +345,21 @@
 ** Instructions
 *** Rbenv
     rbenv global 2.3.0 && rbenv rehash
+* Yaml
+** trais
+*** pair = key: value
+*** | =  pipe
+*** > = pipe
+*** indentaion = new objects
+*** - = list
+*** # = commentary
+*** --- = multi archive
+*** {{ var }} = use variables
+*** quotes
+     "barri go ta" or
+     barri go ta
+** resources
+   https://yamllint.com
 * Emacs Lisp
 ** Progresso
 *** Livros
