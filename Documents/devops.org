@@ -140,15 +140,16 @@
      - providers
 
 * Configuration Management
-** traits
+** Traits
    - declarative vs procedural
    - mutable vs immutable
    - agent vs agentless
-** alternatives
+** Alternatives
 *** Ansible
 **** defition
      Tool to automate IT tasks
 **** traits
+     - requires python
      - agentless
      - support os, cloud
      - reusable file configuration for different env
@@ -158,10 +159,26 @@
      - deployment
      - install/update software
      - better in configuring
+**** cli
+     |                           |                           |
+     |---------------------------+---------------------------|
+     | -m <MODULE> -a <OPT_ARGS> | use module with arguments |
+     |                           |                           |
+
+**** misc
+     |                   |                     |
+     |-------------------+---------------------|
+     | --ask-become-pass | run command as sudo |
+     | --ask-pass        | still require pass  |
+     |                   |                     |
+
 **** invetory lists
+     - list of the hosts that you wish to run the automation commands against
      - Ip addres or hostname
      - webservers: groups multiple ip addresses or hosts names
      - databases
+     - can dynamic inventories
+     - invetory location: /etc/ansible/hosts
 **** tower
      - ui dashboard from redhat
      - centrally automate tools
@@ -214,9 +231,17 @@
 * Containers
 ** alternatives
 *** Podman
+**** fixes
+***** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
+      sudo sysctl -w kernel.unprivileged_userns_clone=1
 *** Docker
-**** dockerfile
-**** commands
+**** Dockerfile
+**** Traits
+     - cgroups
+     - use linux security primitives
+     - prevent MITM attack
+     - images are immutable
+**** Commands
      | command             | description               |
      |---------------------+---------------------------|
      | login               |                           |
@@ -249,6 +274,7 @@
    - ec2
 
 * Linux
+** sysctl
 ** Progresso
 *** Livros
     | Livros                      | capitulo                                   | em                           | @later | revisao |
@@ -266,6 +292,7 @@
 *** Ps
 *** Htop
 *** Top
+** lsof
 ** gpg
 *** set up
     gpg --full-generate-key
@@ -1800,6 +1827,9 @@
 *** FTP
 *** SSL/TLS
 *** SSH
+**** OpenSSH
+     - ControlPersist
+     - ssh-copy-id
 ** Terms
    - hotspot
    - VOIP
@@ -3861,23 +3891,25 @@
 
       #+END_SRC
 * Yet to learn
-  |                    |                                                 |   |
-  |--------------------+-------------------------------------------------+---|
-  | df -i              | inodes                                          |   |
-  | netstat -atunp     | listening network ports                         |   |
-  | pid                |                                                 |   |
-  | ps -ef             |                                                 |   |
-  | ps aux             |                                                 |   |
-  | Hashicorp Vault    |                                                 |   |
-  | Hashicorp boundary |                                                 |   |
-  | !*                 | reuse shell args of command                     |   |
-  | kubectl get pods   |                                                 |   |
-  | alt+t              | alterna a posicao de ultimas 2 palavras no bash |   |
-  | gpg                |                                                 |   |
-  | rsync              |                                                 |   |
-  | cacat              |                                                 |   |
-  | goto               |                                                 |   |
-  | journalctl -b      | grep -i bluetooth                               |   |
+  |                         |                                                 |   |
+  |-------------------------+-------------------------------------------------+---|
+  | df -i                   | inodes                                          |   |
+  | netstat -atunp          | listening network ports                         |   |
+  | pid                     |                                                 |   |
+  | ps -ef                  |                                                 |   |
+  | ps aux                  |                                                 |   |
+  | Hashicorp Vault         |                                                 |   |
+  | Hashicorp boundary      |                                                 |   |
+  | !*                      | reuse shell args of command                     |   |
+  | kubectl get pods        |                                                 |   |
+  | alt+t                   | alterna a posicao de ultimas 2 palavras no bash |   |
+  | gpg                     |                                                 |   |
+  | rsync                   |                                                 |   |
+  | cacat                   |                                                 |   |
+  | goto                    |                                                 |   |
+  | journalctl -b           | grep -i bluetooth                               |   |
+  | kerberos                |                                                 |   |
+  | OpenShift and OpenStack |                                                 |   |
 
 * Software
 ** Onlines
