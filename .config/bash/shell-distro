@@ -29,6 +29,7 @@ e-distro-fedora-packages ()
 
     e_foreach "$command" "${essentials[@]}"
     e_foreach "$command" "${programming[@]}"
+    e_foreach "$command" "${devops[@]}"
     e_foreach "$command" "${de[@]}"
     e_foreach "$command" "${media[@]}"
     # e_foreach "$command" "${virtualization[@]}"
