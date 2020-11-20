@@ -20,6 +20,6 @@
 		use-package-expand-minimally t
 		use-package-enable-imenu-support t))
 
-;; (e/install-external-packages package-selected-packages)
+(e/install-external-packages package-selected-packages)
 
 (provide 'init-repository-get)
