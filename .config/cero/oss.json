@@ -20,6 +20,8 @@
 	"git://git.sv.gnu.org/emacs"
     ],
     "Golang": [
+	"https://github.com/containers/buildah",
+	"https://github.com/containers/podman",
 	"https://github.com/sourcegraph/go-langserver",
 	"https://github.com/gorilla/mux",
 	"https://github.com/cli/cli",
