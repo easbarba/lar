@@ -54,9 +54,9 @@
 	"https://github.com/asdf-vm/asdf"
     ],
     "Own": [
-	"https://github.com/elxbarbosa/lar",
-	"https://github.com/elxbarbosa/cero.rb",
-	"https://github.com/elxbarbosa/cero"
+	"https://gitlab.com/elxbarbosa/lar",
+	"https://gitlab.com/elxbarbosa/gota",
+	"https://gitlab.com/elxbarbosa/cero"
     ],
     "Ruby": [
 	"https://github.com/jeremyevans/sequel",
