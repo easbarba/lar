@@ -119,6 +119,82 @@ e-distro-debian()
     e-debian-foreign
 }
 
+# * FEDORA
+
+e-distro-fedora-packages ()
+{
+    essentials=(git p7zip p7zip-plugins zip unzip bash tmux zile konsole)
+
+    programming=(ShellCheck zenity bash-completion clang clang-tools-extra lldb cmake automake m4 libtool)
+
+    de=(firefox kde-connect ImageMagick pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo  aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch)
+
+    media=(vorbis-tools gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras)
+
+    virtualization=(qemu qemu-system-x86 qemu-kvm virt-manager edk2-ovmf virt-manager)
+
+    wine=(wine)
+
+    system=(lshw at usbutils lsof time net-tools iproute curl entr ntfs-3g tree git xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace openssh cpio lzop atool wmctrl poppler-utils perf mercurial sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh tmux zsh fish pv emacs zile info wget stow screen gimp gcc gcc-c++ gdb make guile22 make autoconf texinfo firewall-config neovim acpi)
+
+    fonts=(powerline-fonts google-noto-emoji-fonts google-noto-sans-fonts google-droid-sans-mono-fonts)
+
+    echo "Instalando pacotes."
+    local command='sudo dnf install -y'
+
+    e_foreach "$command" "${essentials[@]}"
+    e_foreach "$command" "${programming[@]}"
+    e_foreach "$command" "${de[@]}"
+    e_foreach "$command" "${media[@]}"
+    # e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${wine[@]}"
+    e_foreach "$command" "${system[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    # sudo apt -y build-dep emacs
+
+    echo  "-- DONE"
+}
+
+e-distro-fedora-upgrade()
+{
+    sudo dnf upgrade
+    sudo dnf autoremove
+}
+
+e-distro-fedora-services()
+{
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+}
+
+e-distro-fedora-foreign()
+{
+        # RPM FUSION
+    if [ ! -x "$(command -v mpv)" ]; then
+	sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+	sudo dnf install mpv mpd ffmpeg mpc ncmpc ncmpcpp steam
+    fi
+
+    if [ ! -x "$(command -v code)" ]; then
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+	sudo dnf check-update
+	sudo dnf install code
+    fi
+}
+
+e-distro-fedora ()
+{
+    e-distro-fedora-upgrade
+    e-distro-fedora-packages
+    e-distro-fedora-services
+    e-distro-fedora-foreign
+}
+
+
 # * Ubuntu
 
 e-distro-ubuntu-packages()
@@ -299,96 +375,6 @@ e-distro-manjaro()
     e-manjaro-packages
     e-manjaro-services
     # e-manjaro-foreign
-}
-
-# * FEDORA
-
-e-distro-fedora ()
-{
-    echo  "-- Fedora - Installing System Packages"
-
-    echo "-- Updating System"
-    sudo dnf upgrade
-
-    echo "-- Essential System packages"
-    sudo dnf install -y git p7zip p7zip-plugins zip unzip util-linux  \
-	 alsa-utils NetworkManager bash tmux zile konsole
-
-    echo  "-- Programming Languages"
-    sudo dnf install -y ruby ruby-devel npm nodejs python3-devel lua luarocks \
-	  ShellCheck zenity bash-completion clang clang-tools-extra lldb cmake automake m4 \
-	  libtool make # mysql automake python3-pip
-
-    echo  "-- Windows Managers Base"
-    sudo dnf install -y xorg-x11-server-Xorg xorg-x11-server-common \
-	 xorg-x11-xinit xorg-x11-drv-intel xorg-x11-drv-synaptics \
-	 xorg-x11-drv-synaptics-legacy dbus-x11 xorg-x11-drv-intel awesome
-
-    echo  "-- Windows Managers Software"
-    sudo dnf install -y dunst maim slock xdotool udiskie network-manager-applet \
-	 lxpolkit xdg-utils dmenu feh xbacklight xautolock openssh-askpass \
-	  xprop screenfetch
-    #  screenkey gconf
-
-    echo  "-- Desktop Environments Software"
-    sudo dnf install -y firefox aria2 cheese kde-connect ImageMagick \
-	 pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo \
-	 powerline-fonts thunderbird aspell aspell-en lm_sensors syncthing
-
-    echo  "-- Codecs"
-    sudo dnf install -y pulseaudio pulseaudio-utils vorbis-tools gstreamer1-devel \
-	 gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel \
-	 gstreamer1-plugins-good gstreamer1-plugins-good-extras \
-	 gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras \
-	 gstreamer1-plugins-bad-free # gstreamer1-devel-docs gstreamer1-plugins-base-devel-docs
-
-    echo  "-- Emulators & Virtualization"
-    sudo dnf install -y qemu qemu-system-x86 qemu-kvm virt-manager edk2-ovmf \
-	 virt-manager wine
-
-    echo  "-- System Toolings"
-    sudo dnf install -y lshw at usbutils lsof time net-tools iproute curl \
-	 entr ntfs-3g tree git xsel xclip ctags fontconfig freetype subversion \
-	 bc htop strace ltrace openssh cpio lzop atool wmctrl poppler-utils \
-	 perf mercurial sysstat jq dialog ncdu ripgrep nnn fzf rsync bat \
-	 rclone xonsh tmux zsh fish pv emacs zile info wget stow screen gimp \
-	 gcc gcc-c++ gdb make guile22 make autoconf texinfo firewall-config neovim
-    # console-data xdg-utils lhasa fzy guile-lib brz
-
-    echo "-- Fontes"
-    sudo dnf install -y google-noto-emoji-fonts google-noto-sans-fonts google-droid-sans-mono-fonts
-    # ttf-ancient-fonts dejavu-fonts-common
-
-    # STOPED HERE
-    echo  "-- Dependecies"
-    sudo dnf builddep emacs
-
-    echo 'Laptop tool & Wifi'
-    sudo dnf install -y iw wireless-tools libva-utils acpi brightnessctl
-
-    echo  "-- Final preparations: clean & tidy up system"
-    sudo dnf autoremove
-
-    # RPM FUSION
-    if [ ! -x "$(command -v mpv)" ]; then
-	sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-	sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-	sudo dnf install mpv mpd ffmpeg mpc ncmpc ncmpcpp steam
-    fi
-
-    if [ ! -x "$(command -v code)" ]; then
-	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-
-	sudo dnf check-update
-	sudo dnf install code
-    fi
-
-    sudo systemctl disable mpd.service
-    sudo systemctl disable mpd.socket
-
-    echo  "-- DONE"
 }
 
 # * NIXOS
