@@ -239,6 +239,22 @@ e-packs-vscode()
     done
 }
 
+e-packs-golang()
+{
+    echo 'Installing golang packages'
+
+    GO111MODULE=on
+
+    local packages=("golang.org/x/tools/gopls@latest")
+
+    # installing
+    for pack in "${packages[@]}"
+    do
+	go get -u "${pack}"
+    done
+
+}
+
 e-packs-run()
 {
     echo 'Installing asdf backends'
