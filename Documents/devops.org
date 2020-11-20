@@ -3891,25 +3891,28 @@
 
       #+END_SRC
 * Yet to learn
-  |                         |                                                 |   |
-  |-------------------------+-------------------------------------------------+---|
-  | df -i                   | inodes                                          |   |
-  | netstat -atunp          | listening network ports                         |   |
-  | pid                     |                                                 |   |
-  | ps -ef                  |                                                 |   |
-  | ps aux                  |                                                 |   |
-  | Hashicorp Vault         |                                                 |   |
-  | Hashicorp boundary      |                                                 |   |
-  | !*                      | reuse shell args of command                     |   |
-  | kubectl get pods        |                                                 |   |
-  | alt+t                   | alterna a posicao de ultimas 2 palavras no bash |   |
-  | gpg                     |                                                 |   |
-  | rsync                   |                                                 |   |
-  | cacat                   |                                                 |   |
-  | goto                    |                                                 |   |
-  | journalctl -b           | grep -i bluetooth                               |   |
-  | kerberos                |                                                 |   |
-  | OpenShift and OpenStack |                                                 |   |
+  |                                                                                                      |                                                 |
+  |------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+  | df -i                                                                                                | inodes                                          |
+  | netstat -atunp                                                                                       | listening network ports                         |
+  | pid                                                                                                  |                                                 |
+  | ps -ef                                                                                               |                                                 |
+  | ps aux                                                                                               |                                                 |
+  | Hashicorp Vault                                                                                      |                                                 |
+  | Hashicorp boundary                                                                                   |                                                 |
+  | !*                                                                                                   | reuse shell args of command                     |
+  | kubectl get pods                                                                                     |                                                 |
+  | alt+t                                                                                                | alterna a posicao de ultimas 2 palavras no bash |
+  | gpg                                                                                                  |                                                 |
+  | rsync                                                                                                |                                                 |
+  | cacat                                                                                                |                                                 |
+  | goto                                                                                                 |                                                 |
+  | journalctl -b                                                                                        | grep -i bluetooth                               |
+  | kerberos                                                                                             |                                                 |
+  | OpenShift and OpenStack                                                                              |                                                 |
+  | ss -ln / grep 22                                                                                     |                                                 |
+  | ssh -vvv user@address -p port-id # verbose connecting steps                                          |                                                 |
+  | ssh-copy-id user@address -p port-id # copy client pub ssh keys to client ~/.ssh/authorized_keys file |                                                 |
 
 * Software
 ** Onlines
