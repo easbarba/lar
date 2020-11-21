@@ -44,8 +44,8 @@
 (when (display-graphic-p) (load-theme *theme* t))
 
 ;; ** FONTS
-(cond ((member "JetBrains Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "JetBrains Mono-14")))
+(cond ((member "Fira Mono" (font-family-list))
+       (add-to-list 'default-frame-alist '(font . "Fira Mono-16")))
       ((member "DejaVu Sans Mono" (font-family-list))
        (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))))
 
