@@ -229,6 +229,11 @@
 *** Salt
 *** Chef
 * Containers
+** Fortschritt
+   |                     |   |
+   |---------------------+---|
+   | Docker Fundamentals |   |
+
 ** alternatives
 *** Podman
 **** fixes
@@ -274,41 +279,55 @@
    - ec2
 
 * Linux
-** sysctl
 ** Progresso
-*** Livros
-    | Livros                      | capitulo                                   | em                           | @later | revisao |
-    |-----------------------------+--------------------------------------------+------------------------------+--------+---------|
-    | LPIC                        | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
-    | The Art of Unix programming | 2 History                                  |                              |        |         |
-** Text Manipulation
-*** grep
-*** seq
-*** awk
-*** soft
-*** uniq
-*** cat
-** Process Monitoring
-*** Ps
-*** Htop
-*** Top
-** lsof
-** gpg
-*** set up
-    gpg --full-generate-key
-    RSA
-    4096 bits
-*** list keys
-    gpg --list-secret-keys --keyid-format LONG
-***
-** Df
-** strace
-** dstrace
-** Multiplexers
-*** Tmux
-*** GNU Screen
+*** Buch
+    | Buch                             | capitulo                                   | em                           | @later | revisao |
+    |----------------------------------+--------------------------------------------+------------------------------+--------+---------|
+    | RHCSA Red Hat Enterprise Linux 8 | Basic File Management                      |                              |        |         |
+    | LPIC                             | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
+    | The Art of Unix programming      | 2 History                                  |                              |        |         |
+** Cli Apps
+*** Text Manipulation
+**** grep
+**** seq
+**** awk
+**** soft
+**** uniq
+**** cat
+*** Process Monitoring
+**** Ps
+**** Htop
+**** Top
+*** Misc
+**** man
+     - mandb: perform a keyword search on manual: man -k <TERM>
+**** uname
+     |          |                        |
+     |----------+------------------------|
+     | uname -a | all system information |
+     |          |                        |
+**** tty
+**** uptime
+**** lscpu
+**** pwd
+     returns working directory
+**** lsof
+**** sysctl
+**** gpg
+***** set up
+      gpg --full-generate-key
+      RSA
+      4096 bits
+***** list keys
+      gpg --list-secret-keys --keyid-format LONG
+  ***
+**** Df
+**** strace
+**** dstrace
+*** Multiplexers
+**** Tmux
+**** GNU Screen
 ** Firewall
-
 ** LVM
    # remount lvm volumes
    # vgscan --mknodes
@@ -428,15 +447,6 @@
 *** https://www.thinkwiki.org/wiki/Category:T430
 
 *** https://www.thinkpenguin.com/
-** Steam
-   cd ~/.steam/bin32
-   LD_LIBRARY_PATH=. ldd vgui2_s.so
-
-   look for missing libraries and install those
-
-   then
-
-   https://askubuntu.com/questions/1226371/steam-error-with-vgui2-s-so-unsure-how-to-repair
 ** Boot
 *** Coreboot / Libreboot
     https://www.chucknemeth.com/flash-lenovo-x230-coreboot/
@@ -1075,21 +1085,21 @@
 ***** Grep read later
       https://www.cyberciti.biz/faq/grep-regular-expressions/
 
-** $HOME
-*** XDG
-**** https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-**** Applications Desktop Files
-     /usr/share/applications/
-     xdg-settings set default-web-browser google-chrome.desktop
+** XDG
+*** https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+*** Applications Desktop Files
+    /usr/share/applications/
+    xdg-settings set default-web-browser google-chrome.desktop
 ** Commands
    | command        |                                  |
    |----------------+----------------------------------|
    | lsb_release -a | distro info                      |
    | ldd            | print shared object dependencies |
-   | ldconfig               |                                  |
-** Packages
+   | ldconfig       |                                  |
+** Online
    https://pkgs.org/
-** Udev rules (udev/rules.d)
+** Udev rules
+*** udev/rules.d
 *** brightnessctl
 **** backlight.rules
      get backlight device: brightnessctl -l
