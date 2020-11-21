@@ -20,6 +20,7 @@
 - [[#manga][Manga]]
   - [[#favorites][Favorites]]
 - [[#games][Games]]
+  - [[#steam][Steam]]
   - [[#fallout-1][Fallout 1]]
   - [[#wineproton][Wine/Proton]]
 - [[#music][Music]]
@@ -203,6 +204,15 @@
    - Love Hina
 * Games
   http://steamcommunity.com/id/elxbarbosa
+** Steam
+   cd ~/.steam/bin32
+   LD_LIBRARY_PATH=. ldd vgui2_s.so
+
+   look for missing libraries and install those
+
+   then
+
+   https://askubuntu.com/questions/1226371/steam-error-with-vgui2-s-so-unsure-how-to-repair
 ** Fallout 1
    FALLOUT COMBAT: Treat combat like a turn-based tactical game. Because it is.
 
