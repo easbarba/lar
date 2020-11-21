@@ -255,7 +255,7 @@ e-packs-golang()
 
     GO111MODULE=on
 
-    local packages=("golang.org/x/tools/gopls@latest")
+    local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
 
     for pack in "${packages[@]}"
     do
