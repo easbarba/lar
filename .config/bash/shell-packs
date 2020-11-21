@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 e-packs-asdf()
 {
@@ -207,14 +207,13 @@ e-packs-pip()
     echo 'Installing pip packages'
 
     local packages=(pip ansible wheel setuptools blackyoutube-dl python-language-server
-		    pyls-black pyls-isort pyls-mypy jedi==0.17.0 ipython pylama
+		    pyls-black pyls-isort pyls-mypy jedi ipython pylama
 		    pyflakes flake8-import-order pydocstyle flake8 mccabe yapf
 		    pylint rope pytest pep8-naming mutagen)
 
-    # install
     for pack in "${packages[@]}"
     do
-	python3 -m pip install --upgrade "${pack}" --user
+	python3 -m pip install --upgrade --user "${pack}"
     done
 }
 
@@ -222,17 +221,28 @@ e-packs-vscode()
 {
     echo 'Installing vscode packages'
 
-    local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek alefragnani.Bookmarks alefragnani.project-manager
-		    CoenraadS.bracket-pair-colorizer-2 dbaeumer.vscode-eslint donjayamanne.githistory
-		    felipecaputo.git-project-manager HookyQR.beautify mads-hartmann.bash-ide-vscode
-		    MS-CEINTL.vscode-language-pack-pt-BR eamodio.gitlens njpwerner.autodocstring
-		    bmalehorn.vscode-fish davidanson.vscode-markdownlint josef.rouge-theme tuttieee.emacs-mcx
-		    esbenp.prettier-vscode visualstudioexptteam.vscodeintellicode msjsdiag.debugger-for-chrome
-		    formulahendry.dotnet-test-explorer jmrog.vscode-nuget-package-manager redhat.vscode-yaml
-		    firefox-devtools.vscode-firefox-debug ms-vscode-remote.remote-ssh ms-vscode-remote.remote-wsl
-		    ms-mssql.mssql ms-azuretools.vscode-docker ms-vscode.powershell ms-dotnettools.csharp)
+    local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek
+		    alefragnani.Bookmarks alefragnani.project-manager
+		    CoenraadS.bracket-pair-colorizer-2
+		    dbaeumer.vscode-eslint donjayamanne.githistory
+		    felipecaputo.git-project-manager HookyQR.beautify
+		    mads-hartmann.bash-ide-vscode
+		    MS-CEINTL.vscode-language-pack-pt-BR
+		    eamodio.gitlens njpwerner.autodocstring
+		    bmalehorn.vscode-fish
+		    davidanson.vscode-markdownlint josef.rouge-theme
+		    tuttieee.emacs-mcx esbenp.prettier-vscode
+		    visualstudioexptteam.vscodeintellicode
+		    msjsdiag.debugger-for-chrome
+		    formulahendry.dotnet-test-explorer
+		    jmrog.vscode-nuget-package-manager
+		    redhat.vscode-yaml
+		    firefox-devtools.vscode-firefox-debug
+		    ms-vscode-remote.remote-ssh
+		    ms-vscode-remote.remote-wsl ms-mssql.mssql
+		    ms-azuretools.vscode-docker ms-vscode.powershell
+		    ms-dotnettools.csharp)
 
-    # iunstall
     for pack in "${packages[@]}"
     do
 	code --install-extension "${pack}" --force
@@ -247,7 +257,6 @@ e-packs-golang()
 
     local packages=("golang.org/x/tools/gopls@latest")
 
-    # installing
     for pack in "${packages[@]}"
     do
 	go get -u "${pack}"
@@ -255,7 +264,18 @@ e-packs-golang()
 
 }
 
-e-packs-run()
+e-packs-all()
+{
+    echo 'Installing language package manager packages'
+
+    e-packs-gem
+    e-packs-pip
+    e-packs-golang
+    e-packs-npm
+    e-packs-vscode
+}
+
+e-packs-asdf-all()
 {
     echo 'Installing asdf backends'
 
@@ -264,12 +284,10 @@ e-packs-run()
     e-packs-asdf-golang
     e-packs-asdf-python
     e-packs-asdf-nodejs
+}
 
-    echo 'Installing language package manager packages'
-
-    e-packs-gem
-    e-packs-pip
-    e-packs-golang
-    e-packs-npm
-    e-packs-vscode
+e-packs-run()
+{
+    e-packs-asdf-all
+    e-packs-all
 }

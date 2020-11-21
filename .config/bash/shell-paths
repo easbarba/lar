@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # * Description: Add foreign packagers bin directories to $PATH
 # * SOFTWARE $PATH
