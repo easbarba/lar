@@ -10,13 +10,13 @@ e-distro-fedora-packages ()
 
     ruby=(python2 gcc make bzip2 openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel)
 
-    devops=(podman vagrant vagrant-libvirt)
+    devops=(podman )
 
     de=(firefox kde-connect ImageMagick pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo  aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch numix-gtk-theme numix-icon-theme)
 
     media=(vorbis-tools gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras)
 
-    virtualization=(virtualbox qemu qemu-system-x86 qemu-kvm virt-manager) # edk2-ovmf
+    virtualization=(vagrant vagrant-libvirt virtualbox qemu qemu-system-x86 qemu-kvm virt-manager) # edk2-ovmf
 
     wine=(wine)
 
@@ -32,7 +32,7 @@ e-distro-fedora-packages ()
     e_foreach "$command" "${devops[@]}"
     e_foreach "$command" "${de[@]}"
     e_foreach "$command" "${media[@]}"
-    # e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${virtualization[@]}"
     e_foreach "$command" "${wine[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
@@ -48,32 +48,33 @@ e-distro-fedora-upgrade()
 
 e-distro-fedora-services()
 {
-    sudo systemctl disable mpd.service
-    sudo systemctl disable mpd.socket
+    echo ''
+    # sudo systemctl disable mpd.service
+    # sudo systemctl disable mpd.socket
 }
 
 e-distro-fedora-foreign()
 {
- 	rpmfusion()
- 	{
-		# RPM FUSION
-		if [ ! -x "$(command -v mpv)" ]; then
-			sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-			sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    rpmfusion()
+    {
+	# RPM FUSION
+	if [ ! -x "$(command -v mpv)" ]; then
+	    sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	    sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-			sudo dnf install -y mpv mpd ffmpeg mpc ncmpc ncmpcpp steam
-		fi
-	}
+	    sudo dnf install -y mpv ffmpeg steam unrar
+	fi
+    }
 
-	vscode()
-	{
-		if [ ! -x "$(command -v code)" ]; then
-			sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-			sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+    vscode()
+    {
+	if [ ! -x "$(command -v code)" ]; then
+	    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
-			sudo dnf check-update -y
-			sudo dnf install -y code
-		fi
+	    sudo dnf check-update -y
+	    sudo dnf install -y code
+	fi
     }
 
     docker()
@@ -410,7 +411,7 @@ e-distro-nixos-packages ()
     wm_packages_nixos=(nixos.xfce.xfce4-clipman-plugin nixos.perl530Packages.FileMimeInfo nixos.screenfetch nixos.aspellDicts.en nixos.aspellDicts.br)
 
     user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese gimp obs-studio
-		    vlc kate syncthing steam)
+		   vlc kate syncthing steam)
     user_packages_nixos=(nixos.deluge nixos.gnome3.gnome-keyring)
 
     virtualization=(qemu aqemu qemu-utils virt-manager OVMF)
