@@ -1,0 +1,131 @@
+#!/usr/bin/env sh
+
+# * FEDORA
+
+# * NIXOS
+# Descricao: Distro Pacotes
+
+e-distro-nixos-packages ()
+{
+    echo "-- NixOS Packages"
+
+    languages=(ruby lua luarocks python3 postgresql sqlite3 zenity bash-completion)
+    languages_nixos=(nixos.shellcheck nixos.lua53Packages.luacheck)
+
+    wm_packages=(network-manager-applet aria2 dunst maim udiskie unclutter lxqt-openssh-askpass mpv libnotify
+		 dmenu imagemagick pandoc xdg-utils lm-sensors aspell mpd mpc ncmpc ncmpcpp wofi rofi ffmpeg
+		 vorbis-tools)
+    wm_packages_nixos=(nixos.xfce.xfce4-clipman-plugin nixos.perl530Packages.FileMimeInfo nixos.screenfetch nixos.aspellDicts.en nixos.aspellDicts.br)
+
+    user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese gimp obs-studio
+		   vlc kate syncthing steam)
+    user_packages_nixos=(nixos.deluge nixos.gnome3.gnome-keyring)
+
+    virtualization=(qemu aqemu qemu-utils virt-manager OVMF)
+    virtualization=(nixos.qemu_kvm)
+
+    wine=(wine winetricks)
+
+    gnu=(gnutls gnused gdb texinfo autoconf parallel findutils stow screen automake)
+    gnu_nixos=(nixos.xsel)
+
+    system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xclip ctags fontconfig
+		  subversion bc htop strace ltrace openssh cpio lhasa lzop atool wmctrl
+		  perf-tools mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv
+		  neovim zsh unrar ripgrep socat fish)
+    system_tools=(nixos.poppler)
+
+    ruby_tools=(ruby)
+
+    laptop=(brightnessctl tlp iw libinput-gestures acpi acpid)
+    laptop_nixos=(nixos.wirelesstools)
+
+    local command='nix-env -i'
+    local command_nixos='nix-env --installi -A'
+
+    e_foreach "$command" "${essentials[@]}"
+    e_foreach "$command" "${wm[@]}"
+    e_foreach "$command" "${languages[@]}"
+    e_foreach "$command" "${devops[@]}"
+    e_foreach "$command" "${wm_packges[@]}"
+    e_foreach "$command" "${user_packages[@]}"
+    e_foreach "$command" "${media[@]}"
+    e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${wine[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_foreach "$command" "${ruby_tools[@]}"
+    e_foreach "$command" "${emacs_deps[@]}"
+    # e_foreach "$command" "${misc_deps[@]}"
+    e_foreach "$command" "${laptop[@]}"
+
+    echo "-- Preparacoes finais: limpando e arrumando o sistema"
+    sudo apt -y autoremove
+
+    echo "Done"
+}
+
+e-distro-nixos-services()
+{
+    echo "systemctl"
+    sudo systemctl disable mpd.service
+    sudo systemctl disable mpd.socket
+}
+
+e-distro-nixos-foreign()
+{
+    if [ ! $(command -v google-chrome) ]; then
+	cd ${HOME}
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+	sudo apt install -y ${HOME}/google-chrome-stable_current_amd64.deb
+	sudo apt update
+    fi
+
+    if [ ! $(command -v code) ]; then
+	cd ${HOME}
+	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+	sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+	sudo apt-get install apt-transport-https
+	sudo apt-get update
+	sudo apt install -y code
+    fi
+
+    if [ -x "$(command -v pgadmin)" ]; then
+	# Install the public key for the repository (if not done previously):
+	curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+	# Create the repository configuration file:
+	sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+	# Install for both desktop and web modes:
+	sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
+
+	# Configure the webserver, if you installed pgadmin4-web:
+	python -m pip install --user flask
+	sudo /usr/pgadmin4/bin/setup-web.sh
+    fi
+}
+
+e-distro-nixos-upgrade()
+{
+    echo "-- Atualizando Sistema"
+    nix-env --upgrade
+}
+
+e-distro-nixos()
+{
+    e-nixos-packages
+    e-nixos-services
+    e-nixos-foreign
+    e-nixos-upgrade
+}
+
+e-distro-run()
+{
+    [[ $(command -v apt) ]] && e-distro-debian
+    [[ $(command -v dnf) ]] && e-distro-fedora
+    [[ $(command -v pacman) ]] && e-distro-arch
+    [[ $(command -v nix) ]] && e-distro-nixos
+}

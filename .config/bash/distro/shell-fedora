@@ -1,0 +1,87 @@
+#!/usr/bin/env sh
+
+e-distro-fedora-packages ()
+{
+    essentials=(git p7zip p7zip-plugins zip unzip bash tmux zile)
+
+    programming=(ShellCheck zenity bash-completion clang clang-tools-extra lldb cmake automake m4 libtool)
+
+    ruby=(python2 gcc make bzip2 openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel)
+
+    de=(firefox kde-connect ImageMagick pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch numix-gtk-theme numix-icon-theme)
+
+    media=(vorbis-tools gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras)
+    devops=(podman vagrant vagrant-libvirt VirtualBox qemu qemu-system-x86 qemu-kvm virt-manager wine) # edk2-ovmf
+    system=(lshw at usbutils lsof time net-tools iproute curl entr ntfs-3g tree git xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace openssh cpio lzop atool wmctrl poppler-utils perf mercurial sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh tmux zsh fish pv emacs zile info wget stow screen gimp gcc gcc-c++ gdb autoconf texinfo firewall-config neovim acpi)
+
+    fonts=(mozilla-fira-mono-fonts powerline-fonts google-noto-emoji-fonts google-noto-sans-fonts google-droid-sans-mono-fonts)
+
+    echo "Instalando pacotes."
+    local command='sudo dnf install -y'
+
+    e_foreach "$command ${essentials[@]}"
+    e_foreach "$command ${programming[@]}"
+    e_foreach "$command ${devops[@]}"
+    e_foreach "$command ${de[@]}"
+    e_foreach "$command ${media[@]}"
+    e_foreach "$command ${system[@]}"
+    e_foreach "$command ${fonts[@]}"; sudo fc-cache -fv
+
+    echo  "-- DONE"
+}
+
+e-distro-fedora-upgrade()
+{
+    sudo dnf upgrade -y
+    sudo dnf autoremove -y
+}
+
+e-distro-fedora-services()
+{
+    echo ''
+    # sudo systemctl disable mpd.service
+    # sudo systemctl disable mpd.socket
+}
+
+e-distro-fedora-foreign()
+{
+    rpmfusion()
+    {
+	# RPM FUSION
+	if [ ! -x "$(command -v mpv)" ]; then
+	    sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	    sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+	    sudo dnf install -y mpv ffmpeg steam unrar
+	fi
+    }
+
+    vscode()
+    {
+	if [ ! -x "$(command -v code)" ]; then
+	    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+	    sudo dnf check-update -y
+	    sudo dnf install -y code
+	fi
+    }
+
+    docker()
+    {
+	echo 'asd'
+    }
+
+
+    rpmfusion
+    vscode
+    docker
+}
+
+e-distro-fedora ()
+{
+    e-distro-fedora-upgrade
+    e-distro-fedora-packages
+    # e-distro-fedora-services
+    # e-distro-fedora-foreign
+}
