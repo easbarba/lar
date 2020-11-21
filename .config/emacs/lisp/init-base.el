@@ -45,7 +45,7 @@
 
 ;; ** FONTS
 (cond ((member "Fira Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "Fira Mono-16")))
+       (add-to-list 'default-frame-alist '(font . "Fira Mono-15")))
       ((member "DejaVu Sans Mono" (font-family-list))
        (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))))
 
