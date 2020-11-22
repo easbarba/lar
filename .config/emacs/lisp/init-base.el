@@ -28,9 +28,6 @@
 			 ("org" . "http://orgmode.org/elpa/")
 			 ("melpa" . "http://melpa.org/packages/")))
 
-;; Praise the sun
-;; (package-initialize)
-
 ;; ** CUSTOM FILE
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file t)
