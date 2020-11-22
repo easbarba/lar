@@ -4,32 +4,34 @@
 
 e-fedora-packages ()
 {
-    essentials=(git p7zip p7zip-plugins zip unzip bash tmux zile)
+    essentials=(zip unzip git tmux wget bash zile emacs)
 
-    programming=(ShellCheck zenity bash-completion clang clang-tools-extra lldb cmake automake m4 libtool)
+    system=(p7zip p7zip-plugins openssh acpi lshw at usbutils lsof time net-tools iproute entr ntfs-3g tree xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace cpio lzop atool wmctrl poppler-utils perf sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh pv info stow screen autoconf texinfo firewall-config automake m4 libtool bzip2)  
 
-    ruby=(python2 gcc make bzip2 openssl-devel libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel)
+    programming=(ShellCheck zenity bash-completion cmake zsh fish gcc neovim gcc-c++ gdb clang clang-tools-extra lldb mercurial ncurses-devel)
 
-    de=(firefox kde-connect ImageMagick pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch numix-gtk-theme numix-icon-theme)
+    ruby=(openssl-devel python2 libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel)
 
-    media=(vorbis-tools gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras)
-    devops=(podman vagrant vagrant-libvirt VirtualBox qemu qemu-system-x86 qemu-kvm virt-manager wine) # edk2-ovmf
-    system=(lshw at usbutils lsof time net-tools iproute curl entr ntfs-3g tree git xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace openssh cpio lzop atool wmctrl poppler-utils perf mercurial sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh tmux zsh fish pv emacs zile info wget stow screen gimp gcc gcc-c++ gdb autoconf texinfo firewall-config neovim acpi)
+    infra=(podman vagrant vagrant-libvirt VirtualBox qemu qemu-system-x86 qemu-kvm virt-manager wine) # edk2-ovmf
+
+    user=(firefox kde-connect ImageMagick gimp pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch numix-gtk-theme numix-icon-theme)
 
     fonts=(mozilla-fira-mono-fonts powerline-fonts google-noto-emoji-fonts google-noto-sans-fonts google-droid-sans-mono-fonts)
 
+    media=(vorbis-tools gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras)
+
     echo "Instalando pacotes."
+
     local command='sudo dnf install -y'
 
     e_foreach "$command ${essentials[@]}"
+    e_foreach "$command ${ruby[@]}"
     e_foreach "$command ${programming[@]}"
-    e_foreach "$command ${devops[@]}"
-    e_foreach "$command ${de[@]}"
-    e_foreach "$command ${media[@]}"
     e_foreach "$command ${system[@]}"
+    e_foreach "$command ${infra[@]}"
+    e_foreach "$command ${user[@]}"
     e_foreach "$command ${fonts[@]}"; sudo fc-cache -fv
-
-    echo  "-- DONE"
+    e_foreach "$command ${media[@]}"
 }
 
 e-fedora-upgrade()
@@ -40,9 +42,7 @@ e-fedora-upgrade()
 
 e-fedora-services()
 {
-    echo ''
-    # sudo systemctl disable mpd.service
-    # sudo systemctl disable mpd.socket
+    sudo hostnamectl set-hostname 'e-fedora'
 }
 
 e-fedora-foreign()
@@ -71,11 +71,16 @@ e-fedora-foreign()
 
     docker()
     {
-	echo 'asd'
+	echo 'docker'
     }
 
+    podman()
+    {
+	echo 'podman'
+    }
 
-    rpmfusion
+    # rpmfusion
+    podman
     vscode
     docker
 }
