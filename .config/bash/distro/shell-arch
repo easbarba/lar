@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# set -e
+
 # * ARCH LINUX
 
 e-distro-manjaro-upgrade()

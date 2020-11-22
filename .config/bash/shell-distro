@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+# set -e
 
 [[ $(command -v dnf) ]] && source "$XDG_CONFIG_HOME/bash/distro/shell-fedora"
 [[ $(command -v apt) ]] && source "$XDG_CONFIG_HOME/bash/distro/shell-debian"

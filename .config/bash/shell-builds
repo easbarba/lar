@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# set -e
+
 e-build-emacs() {
     local BUILDS="$HOME/Builds"
     local EMACS_DIR="$BUILDS/emacs"

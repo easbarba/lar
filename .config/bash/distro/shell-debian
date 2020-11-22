@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# set -e
+
 # * DEBIAN
 
 e-distro-debian-upgrade()

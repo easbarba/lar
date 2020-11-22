@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# set -e
+
 e-distro-fedora-packages ()
 {
     essentials=(git p7zip p7zip-plugins zip unzip bash tmux zile)

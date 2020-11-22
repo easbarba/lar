@@ -1,5 +1,7 @@
 #!/usb/bin/env sh
 
+# set -e
+
 e_foreach()
 {
     local command="$1"

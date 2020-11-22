@@ -1,5 +1,7 @@
 #!/usb/bin/env sh
 
+# set -e
+
 # * Set System Utilities
 e-apps-ssh
 e-apps-binaries
