@@ -2,7 +2,7 @@
 
 # set -e
 
-e-distro-fedora-packages ()
+e-fedora-packages ()
 {
     essentials=(git p7zip p7zip-plugins zip unzip bash tmux zile)
 
@@ -32,20 +32,20 @@ e-distro-fedora-packages ()
     echo  "-- DONE"
 }
 
-e-distro-fedora-upgrade()
+e-fedora-upgrade()
 {
     sudo dnf upgrade -y
     sudo dnf autoremove -y
 }
 
-e-distro-fedora-services()
+e-fedora-services()
 {
     echo ''
     # sudo systemctl disable mpd.service
     # sudo systemctl disable mpd.socket
 }
 
-e-distro-fedora-foreign()
+e-fedora-foreign()
 {
     rpmfusion()
     {
@@ -80,10 +80,10 @@ e-distro-fedora-foreign()
     docker
 }
 
-e-distro-fedora ()
+e-fedora ()
 {
-    e-distro-fedora-upgrade
-    e-distro-fedora-packages
-    # e-distro-fedora-services
-    # e-distro-fedora-foreign
+    e-fedora-upgrade
+    e-fedora-packages
+    # e-fedora-services
+    # e-fedora-foreign
 }

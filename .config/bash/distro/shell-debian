@@ -4,7 +4,7 @@
 
 # * DEBIAN
 
-e-distro-debian-upgrade()
+e-debian-upgrade()
 {
     echo "-- Atualizando Sistema"
     sudo apt update && sudo apt upgrade
@@ -12,7 +12,7 @@ e-distro-debian-upgrade()
     sudo apt autoremove
 }
 
-e-distro-debian-packages ()
+e-debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile)
 
@@ -67,14 +67,14 @@ e-distro-debian-packages ()
     echo "Done"
 }
 
-e-distro-debian-services()
+e-debian-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-distro-debian-foreign()
+e-debian-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -111,7 +111,7 @@ e-distro-debian-foreign()
     fi
 }
 
-e-distro-debian()
+e-debian()
 {
     e-debian-upgrade
     e-debian-packages

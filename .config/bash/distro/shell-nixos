@@ -7,7 +7,7 @@
 # * NIXOS
 # Descricao: Distro Pacotes
 
-e-distro-nixos-packages ()
+e-nixos-packages ()
 {
     echo "-- NixOS Packages"
 
@@ -66,14 +66,14 @@ e-distro-nixos-packages ()
     echo "Done"
 }
 
-e-distro-nixos-services()
+e-nixos-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-distro-nixos-foreign()
+e-nixos-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -110,13 +110,13 @@ e-distro-nixos-foreign()
     fi
 }
 
-e-distro-nixos-upgrade()
+e-nixos-upgrade()
 {
     echo "-- Atualizando Sistema"
     nix-env --upgrade
 }
 
-e-distro-nixos()
+e-nixos()
 {
     e-nixos-packages
     e-nixos-services
@@ -124,10 +124,10 @@ e-distro-nixos()
     e-nixos-upgrade
 }
 
-e-distro-run()
+e-run()
 {
-    [[ $(command -v apt) ]] && e-distro-debian
-    [[ $(command -v dnf) ]] && e-distro-fedora
-    [[ $(command -v pacman) ]] && e-distro-arch
-    [[ $(command -v nix) ]] && e-distro-nixos
+    [[ $(command -v apt) ]] && e-debian
+    [[ $(command -v dnf) ]] && e-fedora
+    [[ $(command -v pacman) ]] && e-arch
+    [[ $(command -v nix) ]] && e-nixos
 }

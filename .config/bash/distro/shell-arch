@@ -4,12 +4,12 @@
 
 # * ARCH LINUX
 
-e-distro-manjaro-upgrade()
+e-manjaro-upgrade()
 {
     echo "-- Atualizando Sistema" sudo pacman -Syy && sudo pacman -Syu
 }
 
-e-distro-manjaro-packages ()
+e-manjaro-packages ()
 {
     echo "-- Debian Packages"
 
@@ -60,14 +60,14 @@ e-distro-manjaro-packages ()
     e_foreach "$command" "${laptop[@]}"
 }
 
-e-distro-manjaro-services()
+e-manjaro-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-distro-manjaro-foreign()
+e-manjaro-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -104,7 +104,7 @@ e-distro-manjaro-foreign()
     fi
 }
 
-e-distro-manjaro()
+e-manjaro()
 {
     e-manjaro-upgrade
     e-manjaro-packages

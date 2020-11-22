@@ -4,7 +4,7 @@
 
 # * UBUNTU
 
-e-distro-ubuntu-packages()
+e-ubuntu-packages()
 {
     essentials=(git p7zip p7zip-full zip unzip zile neovim bash tmux)
 
@@ -47,7 +47,7 @@ e-distro-ubuntu-packages()
     e_foreach "$command" "${rails[@]}"
 }
 
-e-distro-ubuntu-upgrade()
+e-ubuntu-upgrade()
 {
     echo "-- Updating System"
     sudo apt -y update && sudo apt -y upgrade
@@ -55,7 +55,7 @@ e-distro-ubuntu-upgrade()
     sudo apt -y autoremove
 }
 
-e-distro-ubuntu-services()
+e-ubuntu-services()
 {
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
@@ -65,7 +65,7 @@ e-distro-ubuntu-services()
     sudo systemctl set-default multi-user.target
 }
 
-e-distro-ubuntu()
+e-ubuntu()
 {
     e-ubuntu-upgrade
     e-ubuntu-packages
