@@ -44,4 +44,9 @@ export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
 # * RUN
 
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi
+
 [ -f "$XDG_CONFIG_HOME/bash/shell-paths" ] && source "$XDG_CONFIG_HOME/bash/shell-paths"
