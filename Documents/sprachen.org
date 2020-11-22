@@ -355,10 +355,18 @@
 * Shell Scripts
 ** GNU Bash
 *** Features
+**** read
 **** shift
      shift: shift cli args to next right
 **** <<<
      here-string, give a pre-made string of text to a program
+**** >&2
+**** shopt
+**** options
+***** --init-file
+      use alternative init file
+***** -c
+      run command and arguments
 **** man
      - bash-builtins: describe bash built in features
 **** >
