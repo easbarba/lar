@@ -58,9 +58,8 @@ e-apps-ssh()
 
 e-apps-gpg()
 {
-    echo "RSA -> 4096 bits"
-
     gpg --full-generate-key
+    # "TIP: RSA Default -> 4096 bits"
 }
 
 e-apps-iso()
