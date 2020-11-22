@@ -9,6 +9,7 @@
   - [[#fortschritt][Fortschritt]]
   - [[#projekts][Projekts]]
   - [[#buchs][Buchs]]
+  - [[#terms][terms]]
   - [[#read-later][Read later]]
 - [[#ruby][Ruby]]
   - [[#fortschritt][Fortschritt]]
@@ -42,6 +43,8 @@
     | golang      |        |      |   |
 ** Projekts
 ** Buchs
+** terms
+   - runes: single characthers
 ** Read later
 * Ruby
 ** Fortschritt
