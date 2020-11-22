@@ -135,5 +135,4 @@ e_prompt
 e_cli_tools
 e_multiplexers
 
-
 cd $HOME
