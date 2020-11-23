@@ -5,7 +5,7 @@
 # * DEFAULT SOFTWARE:
 
 export EDITOR="emacs -nw"
-export TERMINAL="mate-terminal"
+export TERMINAL="konsole"
 export BROWSER="firefox"
 export EXPLORER="emacs -Q -f dired"
 
