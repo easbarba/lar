@@ -236,7 +236,11 @@
 
 ** alternatives
 *** Podman
+**** commands
+     - podman info | grep rootless
 **** fixes
+***** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
+      Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
 ***** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
       sudo sysctl -w kernel.unprivileged_userns_clone=1
 *** Docker
@@ -268,7 +272,16 @@
 *** alternatives
 **** Kind
 **** MiniKube
+     |                       |                             |
+     |-----------------------+-----------------------------|
+     | start --driver=<NAME> | select what driver to start |
+     |                       |                             |
+
 * Monitoring
+** Nagios
+** Grafana
+** Icinga
+** ELK
 ** Prometheus
 * Cloud Providers
 ** Heroku
@@ -327,6 +340,9 @@
 *** Multiplexers
 **** Tmux
 **** GNU Screen
+*** getters
+**** wget
+**** curl
 ** Firewall
 ** LVM
    # remount lvm volumes
@@ -1109,7 +1125,7 @@
      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
      #+end_src
 
-* CI/CD
+* Pipeline CI/CD
 ** Gitlab
 ** Github Actions
 ** Circle CI
