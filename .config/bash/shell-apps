@@ -59,17 +59,19 @@ e-apps-binaries()
 
 e-apps-ssh()
 {
-    # Note: generate ssh key anew with: $ ssh-keygen -p
+    # Note: generate ssh key anew with: $ ssh-keygen -p -f /path/to/ssh_key
 
     [ -e "$HOME/.ssh/id_rsa.pub" ] && exit 0 # ssh key exist!
 
     echo " -- Generating a new SSH key"
 
-    ssh-keygen  -t rsa -b 4096 -C "${USER}@outlook.com"
+    ssh-keygen -t ed25519 -C "$USER@gmail.com"
 
-    echo " -- Press Enter"
+    # ssh-add -K ~/.ssh/id_ed25519
+
+    # verify w/ ssh -T git@gitlab.com
+
     eval "$(ssh-agent -s)"
-    ssh-add "$HOME/.ssh/id_rsa"
 
     echo "DONE"
 }
