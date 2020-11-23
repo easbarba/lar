@@ -1272,7 +1272,7 @@
    #+begin_src shell-script
    e-ubuntu()
    {
-
+    sudo systemctl set-default multi-user.target
        xorg=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
 
        util-linux alsa-utils network-manager stterm
