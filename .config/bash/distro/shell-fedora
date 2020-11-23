@@ -12,7 +12,7 @@ e-fedora-packages ()
 
     ruby=(openssl-devel python2 libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel)
 
-    infra=(podman vagrant vagrant-libvirt VirtualBox qemu qemu-system-x86 qemu-kvm virt-manager wine) # edk2-ovmf
+    infra=(vagrant vagrant-libvirt VirtualBox qemu qemu-system-x86 qemu-kvm virt-manager wine) # podman edk2-ovmf
 
     user=(firefox kde-connect ImageMagick gimp pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch numix-gtk-theme numix-icon-theme)
 

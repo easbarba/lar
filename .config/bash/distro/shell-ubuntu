@@ -6,63 +6,46 @@
 
 e-ubuntu-packages()
 {
-    essentials=(git p7zip p7zip-full zip unzip zile neovim bash tmux)
+    essentials=(ssh make build-essential git p7zip p7zip-full zip unzip zile neovim tmux curl wget bash emacs gcc)
 
-    languages=(shellcheck zenity bash-completion m4 libtool libtool-bin make default-jdk clang clangd lldb cmake) # ruby-full python3-pip python3-venv
+    ruby=(python2 autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev)
 
-    de_packages=(firefox syncthing libreoffice calibre inkscape kdenlive deluge obs-studio vlc mpv steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell)
+    programming=(shellcheck zenity bash-completion m4 libtool libtool-bin default-jdk clang clangd lldb cmake)
 
-    codecs=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+    virtualization=(wine wine32 winetricks qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf virt-manager) # libvirt-clients libvirt-daemon-system libvirt-dev libvirt0
 
-    virtualization=(qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf libvirt-clients libvirt-daemon-system libvirt-dev libvirt0 virt-manager)
-
-    wine=(wine wine32 winetricks)
-
-    toolings=(lshw at usbutils lsof time curl entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh tmux zsh pv zile vrms info wget stow screen gimp bash parted texinfo gcc gdb make build-essential autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver wget2 parallel nftables ripgrep emacs) #  console-data net-tools iproute2 linux-tools-common linux-tools-generic
+    toolings=(htop zsh screen gdb ripgrep lshw at usbutils lsof time entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi strace ltrace cpio lhasa lzop atool wmctrl poppler-utils brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv vrms info stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver wget2 parallel nftables libiw-dev)
 
     fonts=(fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
-    ruby=(autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev) # gcc
+    de=(firefox syncthing libreoffice calibre inkscape kdenlive deluge obs-studio vlc mpv steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell gimp numix-icon-theme numix-gtk-theme)
 
-    laptop=(libiw-dev)
-
-    rails=(python2)
-
-    sudo apt update
+    media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
     echo "Instalando pacotes."
-    local command='sudo apt install -y'
 
+    local command='sudo apt install -y'
     e_foreach "$command" "${essentials[@]}"
-    e_foreach "$command" "${languages[@]}"
-    e_foreach "$command" "${de_packages[@]}"
-    e_foreach "$command" "${wm_packages[@]}"
-    e_foreach "$command" "${codecs[@]}"
-    e_foreach "$command" "${virtualization[@]}"
-    e_foreach "$command" "${wine[@]}"
-    e_foreach "$command" "${toolings[@]}"
-    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${ruby[@]}"
-    e_foreach "$command" "${laptop[@]}"
-    e_foreach "$command" "${rails[@]}"
+    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_foreach "$command" "${programming[@]}"
+    e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${toolings[@]}"
+    e_foreach "$command" "${de[@]}"
+    e_foreach "$command" "${media[@]}"
 }
 
 e-ubuntu-upgrade()
 {
     echo "-- Updating System"
-    sudo apt -y update && sudo apt -y upgrade
 
+    sudo apt -y update && sudo apt -y upgrade
     sudo apt -y autoremove
 }
 
 e-ubuntu-services()
 {
-    sudo systemctl disable mpd.service
-    sudo systemctl disable mpd.socket
-
-    echo "-- Disabling & Removing unnecessary defaults setttings/packages"
-    # no graphical display
-    sudo systemctl set-default multi-user.target
+    echo ""
 }
 
 e-ubuntu()
@@ -70,5 +53,4 @@ e-ubuntu()
     e-ubuntu-upgrade
     e-ubuntu-packages
     #e-ubuntu-services
-    e-ubuntu-upgrade
 }
