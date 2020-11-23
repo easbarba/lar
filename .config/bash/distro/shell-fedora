@@ -6,7 +6,7 @@ e-fedora-packages ()
 {
     essentials=(zip unzip git tmux wget bash zile emacs)
 
-    system=(p7zip p7zip-plugins openssh acpi lshw at usbutils lsof time net-tools iproute entr ntfs-3g tree xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace cpio lzop atool wmctrl poppler-utils perf sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh pv info stow screen autoconf texinfo firewall-config automake m4 libtool bzip2)  
+    system=(p7zip p7zip-plugins openssh acpi lshw at usbutils lsof time net-tools iproute entr ntfs-3g tree xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace cpio lzop atool wmctrl poppler-utils perf sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh pv info stow screen autoconf texinfo firewall-config automake m4 libtool bzip2)
 
     programming=(ShellCheck zenity bash-completion cmake zsh fish gcc neovim gcc-c++ gdb clang clang-tools-extra lldb mercurial ncurses-devel)
 
@@ -51,10 +51,10 @@ e-fedora-foreign()
     {
 	# RPM FUSION
 	if [ ! -x "$(command -v mpv)" ]; then
-	    sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-	    sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+	    sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	    sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-	    sudo dnf install -y mpv ffmpeg steam unrar
+	    sudo dnf install -y ffmpeg mpv steam unrar
 	fi
     }
 
@@ -79,7 +79,7 @@ e-fedora-foreign()
 	echo 'podman'
     }
 
-    # rpmfusion
+    rpmfusion
     podman
     vscode
     docker
