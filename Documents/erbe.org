@@ -7333,13 +7333,6 @@
        PATH="$GEM_BIN"${PATH:+:}$PATH
    fi
 
-   # ** RUST
-   [ -d "${HOME}/.cargo/bin" ] && export PATH="${HOME}/.cargo/bin":${PATH}
-   if [ -x "$(command -v rustup)" ]; then
-       . "${XDG_DATA_HOME}/bash-completion/completions/rustup"
-       # export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
-   fi
-
    ## ** RVM
    if [[ -d "$HOME/.rvm/scripts" ]]; then
        export RVM_DIR="$HOME/.rvm"
