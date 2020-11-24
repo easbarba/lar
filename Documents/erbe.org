@@ -1,4 +1,4 @@
-#+TILE: Arquivos legados
+#+TILE: Arquivos erben
 
 * Inhaltsverzeichnis
   :PROPERTIES:
@@ -82,7 +82,7 @@
 
 * Arquivos ponto
 ** Cero
-*** oss.json
+*** Oss.json
    #+begin_src json
    "Golang": [
        "https://github.com/hashicorp/terraform",
