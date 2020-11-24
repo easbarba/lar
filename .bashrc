@@ -114,6 +114,11 @@ e_cli_tools()
 {
     local enhancd_dir="$HOME/Projects/Bash/enhancd/"
     [[ -d $enhancd_dir ]] && cd $enhancd_dir && source ./init.sh
+
+   if [ -x "$(command -v rustup)" ]; then
+       source "${XDG_DATA_HOME}/bash-completion/completions/rustup"
+       # export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+   fi
 }
 
 e_multiplexers()
