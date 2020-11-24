@@ -261,6 +261,9 @@ e-packs-cargo()
     do
 	cargo install "${pack}"
     done
+
+    # rls needs toolchain to work
+    rustup component add rls --toolchain stable-x86_64-unknown-linux-gnu
 }
 
 e-packs-golang()
