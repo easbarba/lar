@@ -70,6 +70,7 @@ e_path_cask()
 
 # * RUN
 
+e_path_rust
 e_path_asdf
 e_path_gem
 e_path_golang
