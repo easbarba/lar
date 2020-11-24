@@ -45,7 +45,12 @@ e-ubuntu-upgrade()
 
 e-ubuntu-services()
 {
-    echo ""
+    enable-all-repos()
+    {        
+        echo ""
+    }
+    
+    enable-all-repos   
 }
 
 e-ubuntu()
