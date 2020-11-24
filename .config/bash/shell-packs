@@ -255,7 +255,7 @@ e-packs-cargo()
 {
     echo 'Installing cargo packages'
 
-    local packages=(starship)
+    local packages=(starship alacritty)
 
     for pack in "${packrges[@]}"
     do
