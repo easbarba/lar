@@ -32,6 +32,14 @@
     |-------------+--------+------+---|
     | Rust        |        |      |   |
 ** Features
+*** cli
+    |                 |                       |
+    |-----------------+-----------------------|
+    | checks          | make sure it compiles |
+    | run             | compile and run       |
+    | build           | compile               |
+    | build --release | praise the sun        |
+
 * Shell Scripts
 ** GNU Bash
 *** Features
