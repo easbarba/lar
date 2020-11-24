@@ -10,6 +10,9 @@
     "https://github.com/awesome-lists/awesome-bash",
     "https://github.com/alebcay/awesome-shell"
   ],
+  "DevOps": [
+    "https://github.com/devops-br/awesome-devops-br"
+  ],
   "Elisp": [
     "https://github.com/abo-abo/oremacs",
     "https://github.com/purcell/emacs.d",
@@ -23,6 +26,7 @@
     "git://git.sv.gnu.org/emacs"
   ],
   "Golang": [
+    "https://github.com/hashicorp/terraform",
     "https://github.com/containers/buildah",
     "https://github.com/containers/podman",
     "https://github.com/sourcegraph/go-langserver",
@@ -35,24 +39,6 @@
     "https://github.com/golang/tools",
     "https://github.com/golang/go"
   ],
-  "Lisp": [
-    "https://gitlab.common-lisp.net/alexandria/alexandria",
-    "https://gitlab.common-lisp.net/asdf/asdf",
-    "https://github.com/quicklisp/quicklisp-client",
-    "https://github.com/quicklisp/quicklisp-bootstrap",
-    "https://github.com/quicklisp/quicklisp-controller",
-    "https://github.com/froggey/Mezzano",
-    "https://github.com/atlas-engineer/nyxt",
-    "https://git.sv.gnu.org/git/guile",
-    "https://git.savannah.gnu.org/git/guix",
-    "https://github.com/stumpwm/stumpwm",
-    "https://github.com/stumpwm/stumpwm-contrib",
-    "https://gitlab.common-lisp.net/clpm/clpm",
-    "https://github.com/LispCookbook/cl-cookbook",
-    "https://github.com/franzinc/clx",
-    "https://github.com/CodyReichert/awesome-cl",
-    "git://git.code.sf.net/p/sbcl/sbcl"
-  ],
   "Misc": [
     "https://github.com/asdf-vm/asdf"
   ],
@@ -61,34 +47,37 @@
     "https://gitlab.com/elxbarbosa/gota",
     "https://gitlab.com/elxbarbosa/cero"
   ],
-  "Ruby": [
-    "https://github.com/jeremyevans/sequel",
-    "https://github.com/jeremyevans/roda",
-    "https://github.com/kyrylo/pry-theme",
-    "https://github.com/pry/pry",
-    "https://github.com/asciidoctor/asciidoctor",
-    "https://github.com/davidgf/design-patterns-in-ruby",
-    "https://github.com/rubocop-hq/rails-style-guide",
-    "https://github.com/rubocop-hq/rspec-style-guide",
-    "https://github.com/rubocop-hq/ruby-style-guide",
-    "https://github.com/rubocop-hq/rubocop",
-    "https://github.com/castwide/solargraph",
-    "https://github.com/fastlane/fastlane",
-    "https://github.com/sorbet/sorbet",
-    "https://github.com/discourse/discourse",
-    "https://github.com/jekyll/jekyll",
-    "https://github.com/lsegal/yard",
-    "https://github.com/markets/awesome-ruby",
-    "https://github.com/rails/rails",
-    "https://github.com/puppetlabs/bolt",
-    "https://github.com/chef/chef",
-    "https://github.com/puppetlabs/puppet",
-    "https://github.com/rubygems/rubygems",
-    "https://github.com/ruby/spec",
-    "https://github.com/ruby/rake",
-    "https://github.com/ruby/rdoc",
-    "https://github.com/rspec/rspec",
-    "https://github.com/ruby/TryRuby",
-    "https://github.com/ruby/ruby"
+  "c": [
+    "https://github.com/openssh/openssh-portable",
+    "https://github.com/libressl-portable/portable",
+    "https://git.suckless.org/st",
+    "https://git.suckless.org/dwm",
+    "https://github.com/mpv-player/mpv",
+    "https://github.com/ggreer/the_silver_searcher",
+    "https://github.com/zsh-users/zsh",
+    "https://github.com/FFmpeg/FFmpeg",
+    "https://github.com/git/git",
+    "https://github.com/tmux/tmux",
+    "https://github.com/antirez/redis",
+    "https://github.com/curl/curl"
+  ],
+  "rust": [
+    "https://github.com/rust-lang/rust",
+    "https://github.com/rust-lang/cargo",
+    "https://github.com/rust-lang/rustup",
+    "https://github.com/rust-lang/rustfmt",
+    "https://github.com/rust-lang/crates.io",
+    "https://github.com/rust-lang/libc",
+    "https://github.com/rust-lang/rustlings/",
+    "https://github.com/rust-lang/rls",
+    "https://github.com/rust-analyzer/rust-analyzer",
+    "https://github.com/sharkdp/bat",
+    "https://github.com/SergioBenitez/Rocket",
+    "https://github.com/BurntSushi/ripgrep",
+    "https://github.com/sharkdp/fd",
+    "https://github.com/rust-random/rand",
+    "https://github.com/yewstack/yew",
+    "https://github.com/SergioBenitez/Rocket",
+    "https://github.com/jwilm/alacritty"
   ]
 }
