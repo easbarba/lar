@@ -251,6 +251,18 @@ e-packs-vscode()
     done
 }
 
+e-packs-cargo()
+{
+    echo 'Installing cargo packages'
+
+    local packages=(starship)
+
+    for pack in "${packrges[@]}"
+    do
+	cargo install "${pack}"
+    done
+}
+
 e-packs-golang()
 {
     echo 'Installing golang packages'
