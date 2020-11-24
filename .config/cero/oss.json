@@ -35,14 +35,7 @@
     "https://gitlab.com/elxbarbosa/cero"
   ],
   "rust": [
-    "https://github.com/rust-lang/rust",
-    "https://github.com/rust-lang/cargo",
-    "https://github.com/rust-lang/rustup",
-    "https://github.com/rust-lang/rustfmt",
-    "https://github.com/rust-lang/crates.io",
-    "https://github.com/rust-lang/libc",
-    "https://github.com/rust-lang/rustlings/",
-    "https://github.com/rust-lang/rls",
+    "https://github.com/starship/starship",
     "https://github.com/rust-analyzer/rust-analyzer",
     "https://github.com/sharkdp/bat",
     "https://github.com/SergioBenitez/Rocket",
@@ -51,6 +44,14 @@
     "https://github.com/rust-random/rand",
     "https://github.com/yewstack/yew",
     "https://github.com/SergioBenitez/Rocket",
-    "https://github.com/jwilm/alacritty"
+    "https://github.com/jwilm/alacritty",
+    "https://github.com/rust-lang/rustfmt",
+    "https://github.com/rust-lang/crates.io",
+    "https://github.com/rust-lang/libc",
+    "https://github.com/rust-lang/rustlings/",
+    "https://github.com/rust-lang/rls",
+    "https://github.com/rust-lang/rustup",
+    "https://github.com/rust-lang/cargo",
+    "https://github.com/rust-lang/rust"
   ]
 }
