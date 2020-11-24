@@ -5,6 +5,11 @@
 # * Description: Add foreign packagers bin directories to $PATH
 # * SOFTWARE $PATH
 
+e_path_rust()
+{
+    export PATH="${HOME}/.cargo/bin":${PATH}
+}
+
 e_path_golang()
 {
     # Golang
