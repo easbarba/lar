@@ -24,9 +24,9 @@
 * Rust
 ** Fortschritt
 *** Buch
-    | Buch | Capitulo | em | tarde | revisao |
-    |------+----------+----+-------+---------|
-    | Rust |          |    |       |         |
+    | Buch      | Capitulo           | em | tarde | revisao |
+    |-----------+--------------------+----+-------+---------|
+    | Rust Book | Processing a Guess |    |       |         |
 *** LDC
     | Source Code | folder | file | @ |
     |-------------+--------+------+---|
