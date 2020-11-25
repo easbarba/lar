@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=alacritty
+Icon=system-run
+Name=alacritty
+Path=
+Terminal=True
+Type=Application
