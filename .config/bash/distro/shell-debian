@@ -17,8 +17,9 @@ e-debian-packages ()
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
     ruby=(libssl-dev libgdbm-dev python2 zlib1g-dev)
+    rust=(pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3)
 
-    programming=(shellcheck zenity libpq-dev bash-completion postgresql sqlite3 libsqlite3-dev mercurial gdb)
+    programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb)
 
     user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br numix-icon-theme numix-gtk-theme)
 
@@ -46,6 +47,7 @@ e-debian-packages ()
 
     e_foreach "$command" "${essentials[@]}"
     e_foreach "$command" "${ruby[@]}"
+    e_foreach "$command" "${rust[@]}"
     e_foreach "$command" "${languages[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${user[@]}"
