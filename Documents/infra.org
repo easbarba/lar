@@ -312,6 +312,12 @@
 **** Htop
 **** Top
 *** Misc
+**** fc-cache
+     |                        |                  |
+     |------------------------+------------------|
+     | fc-list : family style | get font family  |
+     | fc-cache -fv           | reload all fonts |
+     |                        |                  |
 **** man
      - mandb: perform a keyword search on manual: man -k <TERM>
 **** uname
@@ -340,7 +346,7 @@
 *** Multiplexers
 **** Tmux
 **** GNU Screen
-*** getters
+*** Getters
 **** wget
 **** curl
 ** Firewall
