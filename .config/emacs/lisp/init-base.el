@@ -24,6 +24,9 @@
 
 (require 'package)
 
+(when (< emacs-major-version 27)
+  (package-initialize))
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")
 			 ("melpa" . "http://melpa.org/packages/")))
