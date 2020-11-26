@@ -39,6 +39,8 @@ e-debian-packages ()
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
+    latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
+
     echo "-- Debian Packages"
 
     echo "-- Habilita Multi-Arch"
@@ -60,6 +62,7 @@ e-debian-packages ()
     sudo apt -y build-dep emacs
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
+    e_foreach "$command" "${latex[@]}"
     e_foreach "$command" "${debian[@]}"; sudo apt-file update # update Debian database
 
     echo "Done"
