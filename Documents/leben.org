@@ -394,7 +394,7 @@
     Usuário de Distribuições Linux por mais de 10 anos qual experimentei
     suas versões de servidores e suas ferramentas internas como compilamento de Kernel,
     gerenciadores de empacotamento, compilacao de software C e C++ com uso do make, cmake, ninja,
-    como também uso extenso de aplicacoes CLI como Grep, Find, Gerenciamento de Processos,
+    como também uso extenso de aplicacoes CLI como Grep, Find, Gerenciamento de Processos, ssh,
     Windows Managers e automação de tasks com scripts.
 
 
