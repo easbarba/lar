@@ -34,7 +34,6 @@
 - [[#paintings][Paintings]]
 - [[#résumé][Résumé]]
 - [[#delivery][Delivery]]
-- [[#songs][Songs]]
 :END:
 * Progress
 ** Books, Videos
@@ -381,51 +380,40 @@
 * Résumé
   #+OPTIONS: toc:nil author:nil date:nil num:nil
 
-  *Informações Pessoais*
+  *Euber Alexandre De Sousa Barbosa*
 
-  |--------------+----------------------------------|
-  | Nome         | Euber Alexandre De Sousa Barbosa |
-  | Whatsapp     | (61) 99839 - 3063                |
-  | E-mail       | elxbarbosa@gmail.com             |
-  | Escolaridade | Ciência da Computação, UCB       |
-  | Idade        | 34 anos                          |
-  | Endereço     | Guará 1,  Brasília – DF          |
-  | Projetos     | github.com/elxbarbosa            |
+  Brasília, DF -  (61) 99839 - 3063
 
-  *Objetivo*
+  elxbarbosa@gmail.com
 
-  ....
+  @elxbarbosa: Gitlab, Github, Twitter
 
-  *Resumo Profissional*
 
-  - Desenvolvimento de aplicações web Ruby, .NET e Common Lisp.
-  - Administrador de sistemas com foco em Debian, Gentoo e CentOS.
+  *OBJETIVO*
+  -----
+    Usuário de Distribuições Linux por mais de 10 anos qual experimentei
+    suas versões de servidores e suas ferramentas internas como compilamento de Kernel,
+    gerenciadores de empacotamento, compilacao de software C e C++ com uso do make, cmake, ninja,
+    como também uso extenso de aplicacoes CLI como Grep, Find, Gerenciamento de Processos,
+    Windows Managers e automação de tasks com scripts.
 
-  *Histórico Profissional*
 
-  - 2013 - 2020
+  *EDUCAÇÃO*
+  -----
+    - Direito - IESB (Trancado)
+    - Ciência da Computação, UCB (Cursando)
 
-    Musicista em Igreja.
 
-  - 2010 - 2019
+  *SKILLS*
+  -----
+    - Inglês intermediário em conversação, avancado em Leitura/Escrita/Ouvir.
+    - Desenvolvimento de Aplicações CLI para automação de tasks em Ruby, .NET e Common Lisp.
+    - Conhecimento de Servidores, Configurações e Ferramentas internas no Debian, FreeBSD, Gentoo e GuixSD.
+    - Experiência em Scripting em GNU Bash, Fish Shell e POSIX.
+    - Controle de Versão com Git e varias commits aceito em repositorios do Github.
+    - Soft Skills sendo Secretário de advocacia por anos.
+    - Conhecimento básico em Front-End (HTML,CSS).
+    - Editores CLI como emacs, neovim, zile, nano.
 
-    Rádio Táxi Maranata / Atendente & Assistente Administrativo:
-
-      Clientes: Cadastramento de corridas em sistema digital,
-      Motoristas: Registros de multas, cobranças de dividas atrasadas e
-      gerencimaneto de despesas administrativas.
-
-  - 2009
-    TCP  / Operador Logístico:
-
-      Transporte dos produtos, armazenagem do estoque, recebimento de pedidos,
-      embalagem e manuseio, consultoria, gestão e administração logística.
-
-  - 2007 – 2008
-
-    Escola em Movimento / Professor de Violão:
-
-       Aulas de violão para alunos em escolas particulares do ensino medio
 * Delivery
-* Songs
-  - Sou Feliz - Cantor Cristão
+  981103178
