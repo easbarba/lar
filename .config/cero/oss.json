@@ -41,6 +41,9 @@
     "https://github.com/alebcay/awesome-shell"
   ],
   "c": [
+    "https://github.com/mate-desktop/marco",
+    "https://github.com/mate-desktop/mate-desktop",
+    "https://github.com/mate-desktop/atril",
     "https://github.com/openssh/openssh-portable",
     "https://github.com/libressl-portable/portable",
     "https://git.suckless.org/st",
