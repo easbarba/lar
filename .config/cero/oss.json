@@ -10,8 +10,19 @@
     "https://github.com/awesome-lists/awesome-bash",
     "https://github.com/alebcay/awesome-shell"
   ],
-  "devops": [
-    "https://github.com/devops-br/awesome-devops-br"
+  "c": [
+    "https://github.com/openssh/openssh-portable",
+    "https://github.com/libressl-portable/portable",
+    "https://git.suckless.org/st",
+    "https://git.suckless.org/dwm",
+    "https://github.com/mpv-player/mpv",
+    "https://github.com/ggreer/the_silver_searcher",
+    "https://github.com/zsh-users/zsh",
+    "https://github.com/FFmpeg/FFmpeg",
+    "https://github.com/git/git",
+    "https://github.com/tmux/tmux",
+    "https://github.com/antirez/redis",
+    "https://github.com/curl/curl"
   ],
   "elisp": [
     "https://github.com/abo-abo/oremacs",
@@ -33,25 +44,5 @@
     "https://gitlab.com/elxbarbosa/gota",
     "https://gitlab.com/elxbarbosa/cero.rb",
     "https://gitlab.com/elxbarbosa/cero"
-  ],
-  "rust": [
-    "https://github.com/starship/starship",
-    "https://github.com/rust-analyzer/rust-analyzer",
-    "https://github.com/sharkdp/bat",
-    "https://github.com/SergioBenitez/Rocket",
-    "https://github.com/BurntSushi/ripgrep",
-    "https://github.com/sharkdp/fd",
-    "https://github.com/rust-random/rand",
-    "https://github.com/yewstack/yew",
-    "https://github.com/SergioBenitez/Rocket",
-    "https://github.com/jwilm/alacritty",
-    "https://github.com/rust-lang/rustfmt",
-    "https://github.com/rust-lang/crates.io",
-    "https://github.com/rust-lang/libc",
-    "https://github.com/rust-lang/rustlings/",
-    "https://github.com/rust-lang/rls",
-    "https://github.com/rust-lang/rustup",
-    "https://github.com/rust-lang/cargo",
-    "https://github.com/rust-lang/rust"
   ]
 }
