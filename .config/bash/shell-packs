@@ -257,9 +257,9 @@ e-packs-cargo()
 
     local packages=(starship alacritty)
 
-    for pack in "${packrges[@]}"
+    for pack in "${packages[@]}"
     do
-	cargo install "${pack}"
+	cargo install "$pack"
     done
 }
 

@@ -58,7 +58,6 @@
   - [[#suckless][Suckless]]
 - [[#sprachen][Sprachen]]
   - [[#rust][Rust]]
-  - [[#ruby][Ruby]]
   - [[#javascript][Javascript]]
   - [[#golang][Golang]]
   - [[#common-lisp][Common Lisp]]
@@ -119,37 +118,6 @@
      "https://github.com/rust-lang/cargo",
      "https://github.com/rust-lang/rust"
    ]
-
-    "Ruby": [
-	"https://github.com/jeremyevans/sequel",
-	"https://github.com/jeremyevans/roda",
-	"https://github.com/kyrylo/pry-theme",
-	"https://github.com/pry/pry",
-	"https://github.com/asciidoctor/asciidoctor",
-	"https://github.com/davidgf/design-patterns-in-ruby",
-	"https://github.com/rubocop-hq/rails-style-guide",
-	"https://github.com/rubocop-hq/rspec-style-guide",
-	"https://github.com/rubocop-hq/ruby-style-guide",
-	"https://github.com/rubocop-hq/rubocop",
-	"https://github.com/castwide/solargraph",
-	"https://github.com/fastlane/fastlane",
-	"https://github.com/sorbet/sorbet",
-	"https://github.com/discourse/discourse",
-	"https://github.com/jekyll/jekyll",
-	"https://github.com/lsegal/yard",
-	"https://github.com/markets/awesome-ruby",
-	"https://github.com/rails/rails",
-	"https://github.com/puppetlabs/bolt",
-	"https://github.com/chef/chef",
-	"https://github.com/puppetlabs/puppet",
-	"https://github.com/rubygems/rubygems",
-	"https://github.com/ruby/spec",
-	"https://github.com/ruby/rake",
-	"https://github.com/ruby/rdoc",
-	"https://github.com/rspec/rspec",
-	"https://github.com/ruby/TryRuby",
-	"https://github.com/ruby/ruby"
-    ],
 
     "Javascript": [
 	"https://github.com/SBoudrias/Inquirer.js",
@@ -1319,9 +1287,246 @@
    #+end_src
 ** shell-custom
    #+begin_src shell-script
+
+   e_path_rust()
+   {
+       export PATH="${HOME}/.cargo/bin":${PATH}
+   }
+
+   e_path_golang()
+   {
+       # Golang
+       export GOPATH="$HOME/.local/"
+
+       export GO111MODULE=on
+   }
+
+   e_path_rbenv()
+   {
+       local rbenv_dir="$HOME/.rbenv"
+
+       local rbenv_shims="$rbenv_dir/shims"
+       local rbenv_bin="$rbenv_dir/bin"
+
+       export PATH="$rbenv_bin"${PATH:+:}$PATH
+       export PATH="$rbenv_shims"${PATH:+:}$PATH
+   }
+
+   e-packs-cargo()
+   {
+       echo 'Installing cargo packages'
+
+       local packages=(starship alacritty)
+
+       for pack in "${packages[@]}"
+       do
+	   cargo install "$pack"
+       done
+   }
+
+   e-packs-rustup()
+   {
+       # rls needs toolchain to work
+       rustup component add rls --toolchain stable-x86_64-unknown-linux-gnu
+   }
+
+   e-packs-golang()
+   {
+       echo 'Installing golang packages'
+
+       GO111MODULE=on
+
+       local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
+
+       for pack in "${packages[@]}"
+       do
+	   go get -u "${pack}"
+       done
+
+   }
+
+   e-packs-asdf-golang()
+   {
+       echo 'Installing golang binaries'
+
+       # https://github.com/kennyp/asdf-golang
+
+       asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+
+       asdf install golang latest
+
+       asdf global golang "$(asdf latest golang)"
+   }
+
+   e-packs-rbenv()
+   {
+       export RBENV_DIR="$HOME/.rbenv"
+       export RUBY_BUILD_DIR="$RBENV_DIR/plugins/ruby-build"
+       export RUBY_SHIMS_DIR="$RBENV_DIR/shims"
+
+       local rbenv_binary="$HOME/.rbenv/bin/rbenv"
+
+       export PATH="$RUBY_SHIMS_DIR"${PATH:+:}$PATH
+
+       [[ ! -x "$RBENV_DIR/bin" ]] && git clone https://github.com/rbenv/rbenv.git "$RBENV_DIR"
+
+       # Set up rbenv in your shell.
+       $rbenv_binary init
+
+       curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+       [[ ! -x "$RUBY_BUILD_DIR" ]] && git clone https://github.com/rbenv/ruby-build "$RUBY_BUILD_DIR"
+       [[ ! -x "$RUBY_BUILD_DIR" ]] && git -C "$RUBY_BUILD_DIR" pull
+
+       # compile dynamic bash extension
+       cd "$RBENV_DIR" && src/configure && make -C src
+
+       local version=2.7.2
+       $rbenv_binary install $version
+       $rbenv_binary global $version && rbenv rehash
+   }
+
+   e-packs-asdf-elixir()
+   {
+       echo 'Installing elixir binaries'
+
+       # https://github.com/asdf-vm/asdf-erlang
+       # https://github.com/asdf-vm/asdf-elixir
+
+       asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+       asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+       asdf install erlang latest
+       asdf install elixir latest
+
+       asdf global "$(asdf latest erlang)"
+       asdf global "$(asdf latest elixir)"
+   }
+
+   e-packs-rvm()
+   {
+       gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+       curl -sSL https://get.rvm.io | bash -s stable
+
+       source "$HOME/.rvm/scripts/rvm"
+
+       rvm get stable
+   }
+
+   e-packs-vscode()
+   {
+       echo 'Installing vscode packages'
+
+       local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek
+		       alefragnani.Bookmarks alefragnani.project-manager
+		       CoenraadS.bracket-pair-colorizer-2
+		       dbaeumer.vscode-eslint donjayamanne.githistory
+		       felipecaputo.git-project-manager HookyQR.beautify
+		       mads-hartmann.bash-ide-vscode
+		       MS-CEINTL.vscode-language-pack-pt-BR
+		       eamodio.gitlens njpwerner.autodocstring
+		       bmalehorn.vscode-fish
+		       davidanson.vscode-markdownlint josef.rouge-theme
+		       tuttieee.emacs-mcx esbenp.prettier-vscode
+		       visualstudioexptteam.vscodeintellicode
+		       msjsdiag.debugger-for-chrome
+		       formulahendry.dotnet-test-explorer
+		       jmrog.vscode-nuget-package-manager
+		       redhat.vscode-yaml
+		       firefox-devtools.vscode-firefox-debug
+		       ms-vscode-remote.remote-ssh
+		       ms-vscode-remote.remote-wsl ms-mssql.mssql
+		       ms-azuretools.vscode-docker ms-vscode.powershell
+		       ms-dotnettools.csharp)
+
+       for pack in "${packages[@]}"
+       do
+	   code --install-extension "${pack}" --force
+       done
+   }
+
+
+
+   e-packs-npm()
+   {
+       echo 'Installing npm packages'
+
+       local packages=(npm eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic yarn babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+
+       # install
+       for pack in "${packages[@]}"
+       do
+	   npm i -g "$pack"
+       done
+   }
+
+
+   e_path_nvm()
+   {
+       local nvm_dir="$HOME/.config/nvm"
+
+       [ -s "$nvm_dir/nvm.sh" ] && source "$nvm_dir/nvm.sh"  # Loads NVM
+       [ -s "$nvm_dir/bash_completion" ] && source "$nvm_dir/bash_completion"  # Loads NVM Bash Completion
+
+       local nvm_bin="$(nvm_version_dir)/$(nvm_version)/bin"
+       export PATH="$nvm_bin"${PATH:+:}$PATH
+   }
+
+   rust=(pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3)
+
+   e-packs-nvm()
+   {
+       local nvm_dir="$HOME/.config/nvm"
+
+       if [[ ! -d ${nvm_dir} ]]; then
+	   git clone https://github.com/nvm-sh/nvm.git ${nvm_dir}
+       else
+	   cd ${nvm_dir} && git pull
+       fi
+
+       source ${nvm_dir}/nvm.sh
+
+       nvm install node
+   }
+   e-packs-asdf-nodejs()
+   {
+       echo 'Installing nodejs binaries'
+
+       # https://github.com/asdf-vm/asdf-nodejs
+
+       asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+       bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+
+       asdf install nodejs latest
+
+       asdf global nodejs "$(asdf latest nodejs)"
+   }
+
+   e-packs-flatpak()
+   {
+       echo 'Installing flatpak packages'
+
+       local packages=(com.spotify.Client com.valvesoftware.Steam com.visualstudio.code com.skype.Client)
+
+       for pack in "${packages[@]}"
+       do
+	   flatpak install flathub "${pack}"
+       done
+   }
+
+
+   e_path_luarocks()
+   {
+       export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
+   }
+
+
+
    e-ubuntu()
    {
-    sudo systemctl set-default multi-user.target
+       sudo systemctl set-default multi-user.target
        xorg=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
 
        util-linux alsa-utils network-manager stterm
@@ -13952,308 +14157,6 @@
      | run             | compile and run       |
      | build           | compile               |
      | build --release | praise the sun        |
-** Ruby
-*** Fortschritt
-**** Buch
-     | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
-     |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-     | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
-     | Closure in Ruby                                           |                                                |                                                          |                                |         |
-     | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
-     | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |         |
-     | Beginning Rails 6                                         | Getting Something Running                      | Creating the Article Model                               |                                |         |
-     | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |         |
-     | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
-**** SLOC
-     | Source Code | folder          | file       | @ |
-     |-------------+-----------------+------------+---|
-     | ruby        | lib/bundler/cli | install.rb |   |
-     | rails       |                 |            |   |
-*** Features
-**** Ruby
-***** Features
-****** dig
-****** fetch
-****** tap
-****** Quoting
-       %char{text}
-       #+begin_src ruby
-       a = %q(a b c d)
-
-       b = %Q(a b c)
-       #+end_src
-****** heredocs
-       #+begin_src ruby
-       <<EOL
-
-       EOL
-
-       <<EOL.to_i * 10
-       EOL
-
-       <<'EOL'
-       EOL
-
-       <<-EOL
-       EOL
-
-       <<~EOL
-       EOL
-
-       [1,2, <<EO asdasd EO]
-
-       a(false, <<EO asd... EO)
-       #+end_src
-****** proc
-       #+begin_src ruby
-
-       #+end_src
-****** do end as param
-       #+begin_src ruby
-       x = (do  1 + 2 end)
-       x = (do 'a' + 'b' end).join(',')
-       #+end_src
-****** array
-       #+begin_src ruby
-       a = [1, ["a", "b"], 4]
-       arr[1][0]
-       [1,2][0]
-       arr.dig(3,0) value_at, a[2,3] = ..
-       a[2..3]
-       a.slice()
-       a.[]=(0, "first")
-       a.[](2)
-       a = %w(a b c)
-       a= %W({a} b c)
-       x.to_ary
-       x.to_arr
-       Array()
-       def string.to_arr
-       end
-       a.unshift(0)
-       a.push(1,2,3)
-       a << 5
-       a.pop
-       a.shift
-       a.concat
-       a.replace([1,2,3])
-       a.flatten
-       a.reverse
-       a.join(" , ")
-       a = *
-       a.uniq
-       a.compact
-       a.size
-       a.empty
-       a.include?
-       a.first
-       a.last
-       a.sample
-       a.count(1)
-       #+end_src
-       [[file:path]]
-****** date/time
-       #+begin_src ruby
-       require 'date'
-       d = date.today
-
-       require 'time'
-       t = time.zxcz
-       #+end_src
-****** lambda
-       #+begin_src ruby
-       l = -> { xx; aa }
-       l = lambda do
-	 yield xx
-       end
-       #+end_src
-****** rescue
-       #+begin_src ruby
-       begin
-	 puts 'I am before the raise.'
-	 raise 'An error has occured.'
-	 puts 'I am after the raise.'
-       rescue
-	 puts 'I am rescued.'
-       end
-       #+end_src
-****** hash
-       #+begin_src ruby
-       h = Hash.new
-       h = { one: 1, :two => 2 }
-       h = Hash[1, "one", 2, "two"]
-       h["1"] = 1
-       h.[]=("New York", "NY")
-       h.store("New York", "NY")
-       a.update(b)
-       a.merge(b)
-       h.select {k,vk > 1 } !
-       h.reject {  k,v  k > 1 } !
-       h.reject! {  k,v  k > 1 }
-       h = { street: "127th Street", apt: nil }.compact !
-       h = { street: "127th Street", apt: nil }.compact!
-       h.invert
-       h.clear
-       h = {...}.replace({...})
-       h.key?
-       h.empty?
-       #+end_src
-****** range
-       #+begin_src ruby
-       r = Range.new(1,100)
-       r = Range.new(1,100, true)
-       r =  1..99(inclusive) r = 1...199(exclusive)
-       r.cover? 2
-       r.include? 3
-       #+end_src
-****** sets
-       #+begin_src ruby
-       s = Set.new(array)
-       s = Set.new(names) {name name.upcase }
-       s << 5
-       s.add 5
-       s.delete(1)
-       s.intersection|&| x
-       s.union x
-       s + x
-       s.difference x
-       s - x
-       s ^ x
-       s.merge [2]
-       s.subset? b
-       s.superset? b
-       s.proper_subset? x
-       s.proper_superset? x
-       #+end_src
-****** gsub
-       Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
-****** find
-       #+begin_src ruby
-       a.find { ¦n¦ n > 5 }
-       a.find { ¦n¦ n > 5 }
-       a.find_all
-       a.select
-       a.reject
-       a.map
-       #+end_src
-****** map
-       #+begin_src ruby
-       a.map { |x| x.uppercase}
-       a.map! { |x| x.uppercase}
-       #+end_src
-****** each_slice
-       #+begin_src ruby
-       animals.each_slice(2).map do |predator, prey|
-       #+end_src
-****** lazy
-       #+begin_src ruby
-       (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
-       #+end_src
-****** with_index
-       #+begin_src ruby
-       ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
-       my_enum.take(5).force // actual result rather than lazy enumerator
-       #+end_src
-****** enum_for
-       #+begin_src ruby
-       e = names.enum_for(:inject, "Names: ")
-       #+end_src
-****** more
-
-       | drop_while             | a.drop_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
-       | take_while             | a.take_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
-       | find_all               | a.find_all ¦ a.select                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
-       | reject                 | a.reject { ¦i¦ i > 4 } ¦ a.reject! { ¦i¦ i > 4 }                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
-       | select                 |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | grep                   | a.grep(//o//) ¦ a.grep(String) ¦ a.grep(50..100) ¦                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
-       | group_by               | a.group_by { ¦s¦ s.size }                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
-       | match                  | //n//.match(s)                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                                             |
-       | String                 | 'C'.size ¦ each_byte ¦ each_line ¦ each_codepoint ¦ each_char ¦ s.bytes ¦                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
-       | min/min_by             | a.min { ¦a,b¦ a.size <=> b.size } ¦  a.min { ¦lang¦ lang.size } ¦ state_hash.min_by { ¦name, abbr¦ name }                                                                                                                                                                                                                                                                                                               |                                                                                                             |
-       | max/max_by             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | minmax/minmax_by       | a.minmax ¦ a.minmax_by { ¦lang¦ lang.size }                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                             |
-       | reverse_each           | [1,2,3].reverse_each { ¦e¦ puts e * 10 }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
-       | with_index             | letters.each.with_index {¦(key,value),i¦ puts i }                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
-       | each_index             | names.each.with_index(1) { ¦pres, i¦ p i }                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                             |
-       | each_slice             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | each_cons              |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | slice_before           | a.slice_before(\/=/).to_a ¦ (1..10).slice_before { ¦num¦ num % 2 == 0 }.to_a ¦                                                                                                                                                                                                                                                                                                                                          |                                                                                                             |
-       | slice_after            |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | slice_when             | a.slice_when { ¦i,j¦ i == j }.to_a                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                             |
-       | inject/reduce          | [1,2,3,4].inject(:+)                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                             |
-       | cycle                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | map                    | names.map { ¦name¦ name.upcase } ¦  x = 5.times.map { Apple.new(rand(100..900)) }                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
-       | map!                   |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | symbol-argument blocks | names.map(&:upcase)                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                             |
-       | <=>                    | Apple#<=> ¦ Apple.sort { ¦a,b¦ a.brand <=> b.brand } ¦                                                                                                                                                                                                                                                                                                                                                                  | implementing a spaceship test method is enough to sort a class, or use a block to sort, or even override it |
-       | comparable             | Apple#<=> ¦                                                                                                                                                                                                                                                                                                                                                                                                             | include comparable                                                                                          |
-       | clamp                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | between                |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       | functions              | -> (args) {} ¦ Sum = -> (a, b) { a + b }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
-       | <<                     | yielder                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
-       |                        | enum_for                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
-       |                        | to_enum                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
-       | dup                    |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-       |------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
-**** Rails
-***** Models
-      | what   | $ | ...         |
-      |--------+---+-------------|
-      | Models |   | Camel-Cased |
-      |        |   |             |
-
-***** Cli
-****** Database
-       | what     | how                                                                    | desc                                              |
-       |----------+------------------------------------------------------------------------+---------------------------------------------------|
-       | database | –d or --database=                                                      | use the database management system of your choice |
-       |          | db:create:all                                                          |                                                   |
-       |          | db:create                                                              |                                                   |
-       |          | dbconsole                                                              |                                                   |
-       |          | db:migrate                                                             |                                                   |
-       |          | new <name>                                                             |                                                   |
-       | models   | generate model <Name>                                                  |                                                   |
-       |          | destroy controller articles                                            |                                                   |
-       |          | rails destroy model Artile                                             |                                                   |
-       |          | rails db:rollback                                                      |                                                   |
-       |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-
-****** Models
-       | what     | how                                                                    | desc                                              |
-       |----------+------------------------------------------------------------------------+---------------------------------------------------|
-       | models   | generate model <Name>                                                  |                                                   |
-       |          | destroy controller articles                                            |                                                   |
-       |          | rails destroy model Artile                                             |                                                   |
-       |          | rails db:rollback                                                      |                                                   |
-       |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-****** ENV
-       |   |                      |   |
-       |---+----------------------+---|
-       |   | RAILS_ENV=production |   |
-
-*** Concepts
-**** Iterator
-     - is a method
-     - it start and finish in the same call
-**** Methods
-***** Methods chaining
-      creates a new object at it chains
-      #+begin_src ruby
-      puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
-      #+end_src
-**** Enumerator
-     - is an object
-     - chaining
-     - block based
-     - method attachment (enum_for)
-     - un-overriding of methods in Enumerable
-     - maintain state
-     - is an enumerable object
-     - can add enumerability to objects
-     - can stop and resume collection cycling
-*** Instructions
-**** Rbenv
-     rbenv global 2.3.0 && rbenv rehash
 ** Javascript
 *** Inhaltsverzeichnis
     :PROPERTIES:
