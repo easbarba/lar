@@ -5,18 +5,6 @@
 # * Description: Add foreign packagers bin directories to $PATH
 # * SOFTWARE $PATH
 
-e_path_rust()
-{
-    export PATH="${HOME}/.cargo/bin":${PATH}
-}
-
-e_path_golang()
-{
-    # Golang
-    export GOPATH="$HOME/.local/"
-
-    export GO111MODULE=on
-}
 
 e_path_gem()
 {
@@ -35,33 +23,6 @@ e_path_asdf()
     export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 }
 
-e_path_rbenv()
-{
-    local rbenv_dir="$HOME/.rbenv"
-
-    local rbenv_shims="$rbenv_dir/shims"
-    local rbenv_bin="$rbenv_dir/bin"
-
-    export PATH="$rbenv_bin"${PATH:+:}$PATH
-    export PATH="$rbenv_shims"${PATH:+:}$PATH
-}
-
-e_path_nvm()
-{
-    local nvm_dir="$HOME/.config/nvm"
-
-    [ -s "$nvm_dir/nvm.sh" ] && source "$nvm_dir/nvm.sh"  # Loads NVM
-    [ -s "$nvm_dir/bash_completion" ] && source "$nvm_dir/bash_completion"  # Loads NVM Bash Completion
-
-    local nvm_bin="$(nvm_version_dir)/$(nvm_version)/bin"
-    export PATH="$nvm_bin"${PATH:+:}$PATH
-}
-
-e_path_luarocks()
-{
-    export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
-}
-
 e_path_cask()
 {
     local caskdir="$HOME/.cask/bin"
@@ -70,8 +31,6 @@ e_path_cask()
 
 # * RUN
 
-e_path_rust
 e_path_asdf
 e_path_gem
-e_path_golang
 e_path_cask
