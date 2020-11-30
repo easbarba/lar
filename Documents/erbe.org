@@ -59,6 +59,7 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#sprachen][Sprachen]]
+  - [[#ruby][Ruby]]
   - [[#rust][Rust]]
   - [[#javascript][Javascript]]
   - [[#golang][Golang]]
@@ -85,366 +86,397 @@
 ** Cero
 *** Oss.json
    #+begin_src json
-    "Golang": [
-	"https://github.com/hashicorp/terraform",
-	"https://github.com/containers/buildah",
-	"https://github.com/containers/podman",
-	"https://github.com/sourcegraph/go-langserver",
-	"https://github.com/gorilla/mux",
-	"https://github.com/cli/cli",
-	"https://github.com/rclone/rclone",
-	"https://github.com/avelino/awesome-go",
-	"https://github.com/kubernetes-sigs/kind/",
-	"https://github.com/kubernetes/kubernetes",
-	"https://github.com/golang/tools",
-	"https://github.com/golang/go"
-    ],
+   "Ruby": [
+       "https://github.com/jeremyevans/sequel",
+       "https://github.com/jeremyevans/roda",
+       "https://github.com/kyrylo/pry-theme",
+       "https://github.com/pry/pry",
+       "https://github.com/asciidoctor/asciidoctor",
+       "https://github.com/davidgf/design-patterns-in-ruby",
+       "https://github.com/rubocop-hq/rails-style-guide",
+       "https://github.com/rubocop-hq/rspec-style-guide",
+       "https://github.com/rubocop-hq/ruby-style-guide",
+       "https://github.com/rubocop-hq/rubocop",
+       "https://github.com/castwide/solargraph",
+       "https://github.com/fastlane/fastlane",
+       "https://github.com/sorbet/sorbet",
+       "https://github.com/discourse/discourse",
+       "https://github.com/jekyll/jekyll",
+       "https://github.com/lsegal/yard",
+       "https://github.com/markets/awesome-ruby",
+       "https://github.com/rails/rails",
+       "https://github.com/puppetlabs/bolt",
+       "https://github.com/chef/chef",
+       "https://github.com/puppetlabs/puppet",
+       "https://github.com/rubygems/rubygems",
+       "https://github.com/ruby/spec",
+       "https://github.com/ruby/rake",
+       "https://github.com/ruby/rdoc",
+       "https://github.com/rspec/rspec",
+       "https://github.com/ruby/TryRuby",
+       "https://github.com/ruby/ruby"
+   ],
+
+   "Golang": [
+       "https://github.com/hashicorp/terraform",
+       "https://github.com/containers/buildah",
+       "https://github.com/containers/podman",
+       "https://github.com/sourcegraph/go-langserver",
+       "https://github.com/gorilla/mux",
+       "https://github.com/cli/cli",
+       "https://github.com/rclone/rclone",
+       "https://github.com/avelino/awesome-go",
+       "https://github.com/kubernetes-sigs/kind/",
+       "https://github.com/kubernetes/kubernetes",
+       "https://github.com/golang/tools",
+       "https://github.com/golang/go"
+   ],
 
    "rust": [
-     "https://github.com/starship/starship",
-     "https://github.com/rust-analyzer/rust-analyzer",
-     "https://github.com/sharkdp/bat",
-     "https://github.com/SergioBenitez/Rocket",
-     "https://github.com/BurntSushi/ripgrep",
-     "https://github.com/sharkdp/fd",
-     "https://github.com/rust-random/rand",
-     "https://github.com/yewstack/yew",
-     "https://github.com/SergioBenitez/Rocket",
-     "https://github.com/jwilm/alacritty",
-     "https://github.com/rust-lang/rustfmt",
-     "https://github.com/rust-lang/crates.io",
-     "https://github.com/rust-lang/libc",
-     "https://github.com/rust-lang/rustlings/",
-     "https://github.com/rust-lang/rls",
-     "https://github.com/rust-lang/rustup",
-     "https://github.com/rust-lang/cargo",
-     "https://github.com/rust-lang/rust"
+       "https://github.com/starship/starship",
+       "https://github.com/rust-analyzer/rust-analyzer",
+       "https://github.com/sharkdp/bat",
+       "https://github.com/SergioBenitez/Rocket",
+       "https://github.com/BurntSushi/ripgrep",
+       "https://github.com/sharkdp/fd",
+       "https://github.com/rust-random/rand",
+       "https://github.com/yewstack/yew",
+       "https://github.com/SergioBenitez/Rocket",
+       "https://github.com/jwilm/alacritty",
+       "https://github.com/rust-lang/rustfmt",
+       "https://github.com/rust-lang/crates.io",
+       "https://github.com/rust-lang/libc",
+       "https://github.com/rust-lang/rustlings/",
+       "https://github.com/rust-lang/rls",
+       "https://github.com/rust-lang/rustup",
+       "https://github.com/rust-lang/cargo",
+       "https://github.com/rust-lang/rust"
    ]
 
-    "Javascript": [
-	"https://github.com/SBoudrias/Inquirer.js",
-	"https://github.com/mrdoob/three.js",
-	"https://github.com/parcel-bundler/parcel",
-	"https://github.com/prettier/prettier",
-	"https://github.com/yarnpkg/yarn",
-	"https://github.com/meteor/meteor",
-	"https://github.com/expressjs/express",
-	"https://github.com/axios/axios",
-	"https://github.com/nodejs/node"
-    ],
+   "Javascript": [
+       "https://github.com/SBoudrias/Inquirer.js",
+       "https://github.com/mrdoob/three.js",
+       "https://github.com/parcel-bundler/parcel",
+       "https://github.com/prettier/prettier",
+       "https://github.com/yarnpkg/yarn",
+       "https://github.com/meteor/meteor",
+       "https://github.com/expressjs/express",
+       "https://github.com/axios/axios",
+       "https://github.com/nodejs/node"
+   ],
 
-    "Elixir": [
-	"https://github.com/bitwalker/distillery",
-	"https://github.com/ueberauth/guardian",
-	"https://github.com/absinthe-graphql/absinthe",
-	"https://github.com/christopheradams/elixir_style_guide",
-	"https://github.com/rrrene/credo",
-	"https://github.com/taylor/kiex",
-	"https://github.com/kerl/kerl",
-	"https://github.com/jeremyjh/dialyxir",
-	"https://github.com/asdf-vm/asdf-elixir",
-	"https://github.com/elixir-lsp/elixir-ls",
-	"https://github.com/elixir-ecto/ecto",
-	"https://github.com/hexpm/hex",
-	"https://github.com/phoenixframework/phoenix",
-	"https://github.com/erlang/otp",
-	"https://github.com/elixir-lang/ex_doc",
-	"https://github.com/elixir-lang/elixir"
-    ],
+   "Elixir": [
+       "https://github.com/bitwalker/distillery",
+       "https://github.com/ueberauth/guardian",
+       "https://github.com/absinthe-graphql/absinthe",
+       "https://github.com/christopheradams/elixir_style_guide",
+       "https://github.com/rrrene/credo",
+       "https://github.com/taylor/kiex",
+       "https://github.com/kerl/kerl",
+       "https://github.com/jeremyjh/dialyxir",
+       "https://github.com/asdf-vm/asdf-elixir",
+       "https://github.com/elixir-lsp/elixir-ls",
+       "https://github.com/elixir-ecto/ecto",
+       "https://github.com/hexpm/hex",
+       "https://github.com/phoenixframework/phoenix",
+       "https://github.com/erlang/otp",
+       "https://github.com/elixir-lang/ex_doc",
+       "https://github.com/elixir-lang/elixir"
+   ],
 
-    "Haskell": [
-	"https://gitlab.haskell.org/ghc/ghc",
-	"https://gitlab.haskell.org/haskell/ghcup",
-	"https://github.com/haskell/cabal",
-	"https://github.com/commercialhaskell/stack",
-	"https://github.com/haskell/haskell-language-server",
-	"https://github.com/koalaman/shellcheck",
-	"https://github.com/jgm/pandoc",
-	"https://github.com/elm/compiler"
-    ],
+   "Haskell": [
+       "https://gitlab.haskell.org/ghc/ghc",
+       "https://gitlab.haskell.org/haskell/ghcup",
+       "https://github.com/haskell/cabal",
+       "https://github.com/commercialhaskell/stack",
+       "https://github.com/haskell/haskell-language-server",
+       "https://github.com/koalaman/shellcheck",
+       "https://github.com/jgm/pandoc",
+       "https://github.com/elm/compiler"
+   ],
 
-    "Swift": [
-	"https://github.com/matteocrippa/awesome-swift",
-	"https://github.com/SwiftyJSON/SwiftyJSON",
-	"https://github.com/iina/iina",
-	"https://github.com/shadowsocks/ShadowsocksX-NG",
-	"https://github.com/Alamofire/Alamofire",
-	"https://github.com/apple/swift-crypto",
-	"https://github.com/apple/swift-numerics",
-	"https://github.com/apple/swift-package-manager",
-	"https://github.com/apple/swift-nio",
-	"https://github.com/apple/swift-driver",
-	"https://github.com/apple/sourcekit-lsp",
-	"https://github.com/apple/swift"
-    ]
+   "Swift": [
+       "https://github.com/matteocrippa/awesome-swift",
+       "https://github.com/SwiftyJSON/SwiftyJSON",
+       "https://github.com/iina/iina",
+       "https://github.com/shadowsocks/ShadowsocksX-NG",
+       "https://github.com/Alamofire/Alamofire",
+       "https://github.com/apple/swift-crypto",
+       "https://github.com/apple/swift-numerics",
+       "https://github.com/apple/swift-package-manager",
+       "https://github.com/apple/swift-nio",
+       "https://github.com/apple/swift-driver",
+       "https://github.com/apple/sourcekit-lsp",
+       "https://github.com/apple/swift"
+   ]
 
-    "Distros": [
-	"https://github.com/purcell/nix-emacs-ci",
-	"https://github.com/jwiegley/nix-config",
-	"https://github.com/NixOS/nixos-hardware",
-	"https://github.com/NixOS/nixos-org-configurations",
-	"https://github.com/NixOS/nixpkgs",
-	"https://github.com/NixOS/nix",
-	"https://gitlab.com/guix-gaming-channels/games",
-	"https://gitlab.com/nonguix",
-	"https://git.savannah.gnu.org/git/guix.git"
-    ],
+   "Distros": [
+       "https://github.com/purcell/nix-emacs-ci",
+       "https://github.com/jwiegley/nix-config",
+       "https://github.com/NixOS/nixos-hardware",
+       "https://github.com/NixOS/nixos-org-configurations",
+       "https://github.com/NixOS/nixpkgs",
+       "https://github.com/NixOS/nix",
+       "https://gitlab.com/guix-gaming-channels/games",
+       "https://gitlab.com/nonguix",
+       "https://git.savannah.gnu.org/git/guix.git"
+   ],
 
-    "Lisp": [
-	"https://gitlab.common-lisp.net/alexandria/alexandria",
-	"https://gitlab.common-lisp.net/asdf/asdf",
-	"https://github.com/quicklisp/quicklisp-client",
-	"https://github.com/quicklisp/quicklisp-bootstrap",
-	"https://github.com/quicklisp/quicklisp-controller",
-	"https://github.com/froggey/Mezzano",
-	"https://github.com/atlas-engineer/nyxt",
-	"https://git.sv.gnu.org/git/guile",
-	"https://git.savannah.gnu.org/git/guix",
-	"https://github.com/stumpwm/stumpwm",
-	"https://github.com/stumpwm/stumpwm-contrib",
-	"https://gitlab.common-lisp.net/clpm/clpm",
-	"https://github.com/LispCookbook/cl-cookbook",
-	"https://github.com/franzinc/clx",
-	"https://github.com/CodyReichert/awesome-cl",
-	"git://git.code.sf.net/p/sbcl/sbcl"
-    ],
+   "Lisp": [
+       "https://gitlab.common-lisp.net/alexandria/alexandria",
+       "https://gitlab.common-lisp.net/asdf/asdf",
+       "https://github.com/quicklisp/quicklisp-client",
+       "https://github.com/quicklisp/quicklisp-bootstrap",
+       "https://github.com/quicklisp/quicklisp-controller",
+       "https://github.com/froggey/Mezzano",
+       "https://github.com/atlas-engineer/nyxt",
+       "https://git.sv.gnu.org/git/guile",
+       "https://git.savannah.gnu.org/git/guix",
+       "https://github.com/stumpwm/stumpwm",
+       "https://github.com/stumpwm/stumpwm-contrib",
+       "https://gitlab.common-lisp.net/clpm/clpm",
+       "https://github.com/LispCookbook/cl-cookbook",
+       "https://github.com/franzinc/clx",
+       "https://github.com/CodyReichert/awesome-cl",
+       "git://git.code.sf.net/p/sbcl/sbcl"
+   ],
 
-    "Dart": [
-	"https://github.com/roughike/inKino",
-	"https://github.com/flame-engine/flame",
-	"https://github.com/felangel/bloc",
-	"https://github.com/flutter/plugins",
-	"https://github.com/dart-lang/build",
-	"https://github.com/dart-lang/sdk"
-    ],
+   "Dart": [
+       "https://github.com/roughike/inKino",
+       "https://github.com/flame-engine/flame",
+       "https://github.com/felangel/bloc",
+       "https://github.com/flutter/plugins",
+       "https://github.com/dart-lang/build",
+       "https://github.com/dart-lang/sdk"
+   ],
 
-    "Lua": [
-	"https://github.com/vicious-widgets/vicious",
-	"https://github.com/streetturtle/awesome-wm-widgets",
-	"https://github.com/actboy168/luamake.git",
-	"https://github.com/sumneko/lua-language-server",
-	"https://github.com/EmmyLua/EmmyLua-LanguageServer",
-	"https://github.com/arthurealike/turtle.lua",
-	"https://github.com/luvit/luvit",
-	"https://github.com/rxi/lite",
-	"https://github.com/lcpz/awesome-copycats",
-	"https://github.com/awesomeWM/awesome",
-	"https://github.com/luarocks/luarocks",
-	"https://github.com/lua/lua"
-    ],
+   "Lua": [
+       "https://github.com/vicious-widgets/vicious",
+       "https://github.com/streetturtle/awesome-wm-widgets",
+       "https://github.com/actboy168/luamake.git",
+       "https://github.com/sumneko/lua-language-server",
+       "https://github.com/EmmyLua/EmmyLua-LanguageServer",
+       "https://github.com/arthurealike/turtle.lua",
+       "https://github.com/luvit/luvit",
+       "https://github.com/rxi/lite",
+       "https://github.com/lcpz/awesome-copycats",
+       "https://github.com/awesomeWM/awesome",
+       "https://github.com/luarocks/luarocks",
+       "https://github.com/lua/lua"
+   ],
 
-    "Dotnet": [
-	"https://github.com/dotnet/csharplang",
-	"https://github.com/dotnet/roslyn",
-	"https://github.com/dotnet/sdk",
-	"https://github.com/dotnet/runtime",
-	"https://github.com/dotnet/standard",
-	"https://github.com/dotnet/core",
-	"https://github.com/dotnet/orleans",
-	"https://github.com/dotnet/aspnetcore",
-	"https://github.com/dotnet/AspNetCore.Docs",
-	"https://github.com/dotnet/aspnetcore-tooling",
-	"https://github.com/IntelliTect/EssentialCSharp",
-	"https://github.com/andrewlock/asp-dot-net-core-in-action-2e",
-	"https://github.com/royosherove/aout2",
-	"https://github.com/dotnet/efcore",
-	"https://github.com/dotnet/extensions",
-	"https://github.com/dotnet/Scaffolding",
-	"https://github.com/dotnet/docs",
-	"https://github.com/dotnet/try-samples",
-	"https://github.com/dotnet/command-line-api",
-	"https://github.com/NuGet/NuGet.Client",
-	"https://github.com/commandlineparser/commandline",
-	"https://github.com/spectresystems/spectre.cli",
-	"https://github.com/cake-build/cake",
-	"https://github.com/OmniSharp/csharp-language-server-protocol",
-	"https://github.com/OmniSharp/omnisharp-roslyn",
-	"https://github.com/jellyfin/jellyfin",
-	"https://github.com/xunit/xunit",
-	"https://github.com/libgit2/libgit2sharp",
-	"https://github.com/nunit/nunit",
-	"https://github.com/moq/moq4",
-	"https://github.com/thangchung/awesome-dotnet-core",
-	"https://github.com/quozd/awesome-dotnet",
-	"https://github.com/dotnet-architecture/eShopOnWeb",
-	"https://github.com/mono/monodevelop",
-	"https://github.com/mono/mono"
-    ],
+   "Dotnet": [
+       "https://github.com/dotnet/csharplang",
+       "https://github.com/dotnet/roslyn",
+       "https://github.com/dotnet/sdk",
+       "https://github.com/dotnet/runtime",
+       "https://github.com/dotnet/standard",
+       "https://github.com/dotnet/core",
+       "https://github.com/dotnet/orleans",
+       "https://github.com/dotnet/aspnetcore",
+       "https://github.com/dotnet/AspNetCore.Docs",
+       "https://github.com/dotnet/aspnetcore-tooling",
+       "https://github.com/IntelliTect/EssentialCSharp",
+       "https://github.com/andrewlock/asp-dot-net-core-in-action-2e",
+       "https://github.com/royosherove/aout2",
+       "https://github.com/dotnet/efcore",
+       "https://github.com/dotnet/extensions",
+       "https://github.com/dotnet/Scaffolding",
+       "https://github.com/dotnet/docs",
+       "https://github.com/dotnet/try-samples",
+       "https://github.com/dotnet/command-line-api",
+       "https://github.com/NuGet/NuGet.Client",
+       "https://github.com/commandlineparser/commandline",
+       "https://github.com/spectresystems/spectre.cli",
+       "https://github.com/cake-build/cake",
+       "https://github.com/OmniSharp/csharp-language-server-protocol",
+       "https://github.com/OmniSharp/omnisharp-roslyn",
+       "https://github.com/jellyfin/jellyfin",
+       "https://github.com/xunit/xunit",
+       "https://github.com/libgit2/libgit2sharp",
+       "https://github.com/nunit/nunit",
+       "https://github.com/moq/moq4",
+       "https://github.com/thangchung/awesome-dotnet-core",
+       "https://github.com/quozd/awesome-dotnet",
+       "https://github.com/dotnet-architecture/eShopOnWeb",
+       "https://github.com/mono/monodevelop",
+       "https://github.com/mono/mono"
+   ],
 
-    "Powershell": [
-	"https://github.com/dahlbyk/posh-git",
-	"https://github.com/JanDeDobbeleer/oh-my-posh",
-	"https://github.com/PowerShell/PowerShell-RFC",
-	"https://github.com/Microsoft/SpeculationControl",
-	"https://github.com/dotnet/blazor"
-    ]
+   "Powershell": [
+       "https://github.com/dahlbyk/posh-git",
+       "https://github.com/JanDeDobbeleer/oh-my-posh",
+       "https://github.com/PowerShell/PowerShell-RFC",
+       "https://github.com/Microsoft/SpeculationControl",
+       "https://github.com/dotnet/blazor"
+   ]
 
-    "css": [
-	"https://github.com/IanLunn/Hover",
-	"https://github.com/jgthms/bulma",
-	"https://github.com/daneden/animate.css",
-	"https://github.com/oddbird/susy",
-	"https://github.com/necolas/normalize.css",
-	"https://github.com/mozdevs/cssremedy"
-    ],
+   "css": [
+       "https://github.com/IanLunn/Hover",
+       "https://github.com/jgthms/bulma",
+       "https://github.com/daneden/animate.css",
+       "https://github.com/oddbird/susy",
+       "https://github.com/necolas/normalize.css",
+       "https://github.com/mozdevs/cssremedy"
+   ],
 
-    "Perl": [
-	"https://github.com/moose/Moose",
-	"https://github.com/richterger/Perl-LanguageServer",
-	"https://github.com/imapsync/imapsync",
-	"https://github.com/ddclient/ddclient",
-	"https://github.com/apache/avro",
-	"https://github.com/mojolicious/mojo",
-	"https://github.com/i3/i3",
-	"https://github.com/bugzilla/bugzilla",
-	"https://github.com/hachiojipm/awesome-perl",
-	"https://github.com/Perl/perl5"
-    ]
+   "Perl": [
+       "https://github.com/moose/Moose",
+       "https://github.com/richterger/Perl-LanguageServer",
+       "https://github.com/imapsync/imapsync",
+       "https://github.com/ddclient/ddclient",
+       "https://github.com/apache/avro",
+       "https://github.com/mojolicious/mojo",
+       "https://github.com/i3/i3",
+       "https://github.com/bugzilla/bugzilla",
+       "https://github.com/hachiojipm/awesome-perl",
+       "https://github.com/Perl/perl5"
+   ]
 
-    "typescript": [
-    ]
+   "typescript": [
+   ]
 
-    "cpp": [
-	"https://git.llvm.org/git/clang",
-	"https://github.com/boostorg/beast",
-	"https://github.com/aria2/aria2",
-	"https://github.com/nlohmann/json",
-	"https://github.com/grpc/grpc",
-	"https://github.com/boostorg/core",
-	"https://github.com/NixOS/nix",
-	"https://github.com/isocpp/CppCoreGuidelines",
-	"https://github.com/fish-shell/fish-shell"
-    ],
+   "cpp": [
+       "https://git.llvm.org/git/clang",
+       "https://github.com/boostorg/beast",
+       "https://github.com/aria2/aria2",
+       "https://github.com/nlohmann/json",
+       "https://github.com/grpc/grpc",
+       "https://github.com/boostorg/core",
+       "https://github.com/NixOS/nix",
+       "https://github.com/isocpp/CppCoreGuidelines",
+       "https://github.com/fish-shell/fish-shell"
+   ],
 
-    "python": [
-	"https://github.com/python/cpython",
-	"https://github.com/python/mypy",
-	"https://github.com/python/peps",
-	"https://github.com/pypa/pip",
-	"https://github.com/pypa/wheel",
-	"https://github.com/pytest-dev/pytest",
-	"https://github.com/pypa/setuptools",
-	"https://github.com/PyCQA/pylint",
-	"https://github.com/nedbat/coveragepy",
-	"https://github.com/psf/black"
-    ]
+   "python": [
+       "https://github.com/python/cpython",
+       "https://github.com/python/mypy",
+       "https://github.com/python/peps",
+       "https://github.com/pypa/pip",
+       "https://github.com/pypa/wheel",
+       "https://github.com/pytest-dev/pytest",
+       "https://github.com/pypa/setuptools",
+       "https://github.com/PyCQA/pylint",
+       "https://github.com/nedbat/coveragepy",
+       "https://github.com/psf/black"
+   ]
 
-    "java": [
-	"https://github.com/openjdk/jdk",
-	"https://github.com/openjdk/mobile",
-	"https://github.com/openjdk/skara",
-	"https://github.com/openjdk/loom",
-	"https://github.com/openjdk/jmc",
-	"https://github.com/openjdk/valhalla",
-	"https://github.com/openjdk/amber",
-	"https://github.com/spring-projects/spring-boot",
-	"https://github.com/eclipse/eclipse.jdt.ls",
-	"https://github.com/oracle/helidon",
-	"https://github.com/oracle/fastr",
-	"https://github.com/oracle/graal"
-    ],
+   "java": [
+       "https://github.com/openjdk/jdk",
+       "https://github.com/openjdk/mobile",
+       "https://github.com/openjdk/skara",
+       "https://github.com/openjdk/loom",
+       "https://github.com/openjdk/jmc",
+       "https://github.com/openjdk/valhalla",
+       "https://github.com/openjdk/amber",
+       "https://github.com/spring-projects/spring-boot",
+       "https://github.com/eclipse/eclipse.jdt.ls",
+       "https://github.com/oracle/helidon",
+       "https://github.com/oracle/fastr",
+       "https://github.com/oracle/graal"
+   ],
 
-    "misc": [
-	"https://github.com/ytdl-org/youtube-dl",
-	"https://github.com/BurntSushi/ripgrep",
-	"https://github.com/jgm/pandoc",
-	"https://github.com/tmux/tmux",
-	"https://github.com/ziglang/zig",
-	"https://code.videolan.org/videolan/vlc-android",
-	"https://github.com/laravel/laravel",
-	"https://github.com/jekyll/jekyll",
-	"https://github.com/go-gitea/gitea",
-	"https://github.com/OmniSharp/omnisharp-roslyn",
-	"https://github.com/eclipse/eclipse.jdt.ls",
-	"https://github.com/amberframework/amber",
-	"https://github.com/dom96/choosenim",
-	"https://github.com/aria2/aria2",
-	"https://github.com/vapor/vapor",
-	"https://github.com/mojolicious/mojo",
-	"https://github.com/racket/racket",
-	"https://git.savannah.gnu.org/git/guix",
-	"https://github.com/b4b4r07/enhancd"
-    ],
+   "misc": [
+       "https://github.com/ytdl-org/youtube-dl",
+       "https://github.com/BurntSushi/ripgrep",
+       "https://github.com/jgm/pandoc",
+       "https://github.com/tmux/tmux",
+       "https://github.com/ziglang/zig",
+       "https://code.videolan.org/videolan/vlc-android",
+       "https://github.com/laravel/laravel",
+       "https://github.com/jekyll/jekyll",
+       "https://github.com/go-gitea/gitea",
+       "https://github.com/OmniSharp/omnisharp-roslyn",
+       "https://github.com/eclipse/eclipse.jdt.ls",
+       "https://github.com/amberframework/amber",
+       "https://github.com/dom96/choosenim",
+       "https://github.com/aria2/aria2",
+       "https://github.com/vapor/vapor",
+       "https://github.com/mojolicious/mojo",
+       "https://github.com/racket/racket",
+       "https://git.savannah.gnu.org/git/guix",
+       "https://github.com/b4b4r07/enhancd"
+   ],
 
-    "nim": [
-	"https://github.com/dom96/choosenim",
-	"https://github.com/nim-lang/opengl",
-	"https://github.com/nim-lang/iup",
-	"https://github.com/nim-lang/irc",
-	"https://github.com/nim-lang/irc",
-	"https://github.com/nim-lang/graveyard",
-	"https://github.com/nim-lang/sdl2",
-	"https://github.com/nim-lang/packages",
-	"https://github.com/nim-lang/Aporia",
-	"https://github.com/Araq/ormin",
-	"https://github.com/PMunch/nimlsp",
-	"https://github.com/liquid600pgm/rapid",
-	"https://github.com/mratsim/weave",
-	"https://github.com/mratsim/Arraymancer",
-	"https://github.com/treeform/typography",
-	"https://github.com/Araq/nimedit",
-	"https://github.com/dom96/jester",
-	"https://github.com/nim-lang/nimble",
-	"https://github.com/nim-lang/Nim"
-    ],
+   "nim": [
+       "https://github.com/dom96/choosenim",
+       "https://github.com/nim-lang/opengl",
+       "https://github.com/nim-lang/iup",
+       "https://github.com/nim-lang/irc",
+       "https://github.com/nim-lang/irc",
+       "https://github.com/nim-lang/graveyard",
+       "https://github.com/nim-lang/sdl2",
+       "https://github.com/nim-lang/packages",
+       "https://github.com/nim-lang/Aporia",
+       "https://github.com/Araq/ormin",
+       "https://github.com/PMunch/nimlsp",
+       "https://github.com/liquid600pgm/rapid",
+       "https://github.com/mratsim/weave",
+       "https://github.com/mratsim/Arraymancer",
+       "https://github.com/treeform/typography",
+       "https://github.com/Araq/nimedit",
+       "https://github.com/dom96/jester",
+       "https://github.com/nim-lang/nimble",
+       "https://github.com/nim-lang/Nim"
+   ],
 
-    "php": [
-	"https://github.com/PacktPublishing/Mastering-PHP-7",
-	"https://github.com/bcit-ci/CodeIgniter",
-	"https://github.com/felixfbecker/php-language-server",
-	"https://github.com/vimeo/psalm",
-	"https://github.com/laravel/lumen",
-	"https://github.com/nikic/php-parser",
-	"https://github.com/phpstan/phpstan",
-	"https://github.com/composer/composer",
-	"https://github.com/symfony/symfony",
-	"https://github.com/laravel/laravel",
-	"https://github.com/php/php-src"
-    ],
+   "php": [
+       "https://github.com/PacktPublishing/Mastering-PHP-7",
+       "https://github.com/bcit-ci/CodeIgniter",
+       "https://github.com/felixfbecker/php-language-server",
+       "https://github.com/vimeo/psalm",
+       "https://github.com/laravel/lumen",
+       "https://github.com/nikic/php-parser",
+       "https://github.com/phpstan/phpstan",
+       "https://github.com/composer/composer",
+       "https://github.com/symfony/symfony",
+       "https://github.com/laravel/laravel",
+       "https://github.com/php/php-src"
+   ],
 
-    "golang": [
-	"https://github.com/golang/go",
-	"https://github.com/golang/tools",
-	"https://github.com/golang/build",
-	"https://github.com/golang/term",
-	"https://github.com/golang/dl",
-	"https://github.com/golang/protobuf",
-	"https://github.com/golang/sys",
-	"https://github.com/golang/image",
-	"https://github.com/golang/mock",
-	"https://github.com/golang/arch",
-	"https://github.com/golang/text",
-	"https://github.com/golang/lint",
-	"https://github.com/golang/arch",
-	"https://github.com/golang/time",
-	"https://github.com/golang/mod",
-	"https://github.com/golang/crypto",
-	"https://github.com/golang/playground"
-    ],
+   "golang": [
+       "https://github.com/golang/go",
+       "https://github.com/golang/tools",
+       "https://github.com/golang/build",
+       "https://github.com/golang/term",
+       "https://github.com/golang/dl",
+       "https://github.com/golang/protobuf",
+       "https://github.com/golang/sys",
+       "https://github.com/golang/image",
+       "https://github.com/golang/mock",
+       "https://github.com/golang/arch",
+       "https://github.com/golang/text",
+       "https://github.com/golang/lint",
+       "https://github.com/golang/arch",
+       "https://github.com/golang/time",
+       "https://github.com/golang/mod",
+       "https://github.com/golang/crypto",
+       "https://github.com/golang/playground"
+   ],
 
-    "julia": [
-	"https://github.com/JuliaLang/Compat.jl",
-	"https://github.com/JuliaLang/Tokenize.jl",
-	"https://github.com/JuliaLang/Tar.jl",
-	"https://github.com/JuliaLang/MbedTLS.jl",
-	"https://github.com/JuliaLang/PkgDev.jl",
-	"https://github.com/JuliaLang/Pkg.jl",
-	"https://github.com/JuliaLang/Statistics.jl",
-	"https://github.com/JuliaLang/docs.julialang.org",
-	"https://github.com/JuliaLang/IJulia.jl",
-	"https://github.com/JuliaLang/julia"
-    ],
+   "julia": [
+       "https://github.com/JuliaLang/Compat.jl",
+       "https://github.com/JuliaLang/Tokenize.jl",
+       "https://github.com/JuliaLang/Tar.jl",
+       "https://github.com/JuliaLang/MbedTLS.jl",
+       "https://github.com/JuliaLang/PkgDev.jl",
+       "https://github.com/JuliaLang/Pkg.jl",
+       "https://github.com/JuliaLang/Statistics.jl",
+       "https://github.com/JuliaLang/docs.julialang.org",
+       "https://github.com/JuliaLang/IJulia.jl",
+       "https://github.com/JuliaLang/julia"
+   ],
 
-    "crystal": [
-	"https://github.com/crystal-lang/crystal",
-	"https://github.com/crystal-lang/shards",
-	"https://github.com/crystal-lang/crystal-book",
-	"https://github.com/crystal-lang/crystal-db",
-	"https://github.com/crystal-lang/crystal-readline",
-	"https://github.com/crystal-lang/crystal-sqlite3",
-	"https://github.com/crystal-lang/crystal-mysql",
-	"https://github.com/amberframework/amber"
-    ],
+   "crystal": [
+       "https://github.com/crystal-lang/crystal",
+       "https://github.com/crystal-lang/shards",
+       "https://github.com/crystal-lang/crystal-book",
+       "https://github.com/crystal-lang/crystal-db",
+       "https://github.com/crystal-lang/crystal-readline",
+       "https://github.com/crystal-lang/crystal-sqlite3",
+       "https://github.com/crystal-lang/crystal-mysql",
+       "https://github.com/amberframework/amber"
+   ],
    #+end_src
 *** Cero Linguagens
 **** Ruby
@@ -14991,6 +15023,308 @@
 
      #+END_SRC
 * Sprachen
+** Ruby
+*** Fortschritt
+**** Buch
+     | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
+     |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
+     | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
+     | Closure in Ruby                                           |                                                |                                                          |                                |         |
+     | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
+     | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |         |
+     | Beginning Rails 6                                         | Getting Something Running                      | Creating the Article Model                               |                                |         |
+     | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |         |
+     | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
+**** SLOC
+     | Source Code | folder          | file       | @ |
+     |-------------+-----------------+------------+---|
+     | ruby        | lib/bundler/cli | install.rb |   |
+     | rails       |                 |            |   |
+*** Features
+**** Ruby
+***** Features
+****** dig
+****** fetch
+****** tap
+****** Quoting
+       %char{text}
+       #+begin_src ruby
+       a = %q(a b c d)
+
+       b = %Q(a b c)
+       #+end_src
+****** heredocs
+       #+begin_src ruby
+       <<EOL
+
+       EOL
+
+       <<EOL.to_i * 10
+       EOL
+
+       <<'EOL'
+       EOL
+
+       <<-EOL
+       EOL
+
+       <<~EOL
+       EOL
+
+       [1,2, <<EO asdasd EO]
+
+       a(false, <<EO asd... EO)
+       #+end_src
+****** proc
+       #+begin_src ruby
+
+       #+end_src
+****** do end as param
+       #+begin_src ruby
+       x = (do  1 + 2 end)
+       x = (do 'a' + 'b' end).join(',')
+       #+end_src
+****** array
+       #+begin_src ruby
+       a = [1, ["a", "b"], 4]
+       arr[1][0]
+       [1,2][0]
+       arr.dig(3,0) value_at, a[2,3] = ..
+       a[2..3]
+       a.slice()
+       a.[]=(0, "first")
+       a.[](2)
+       a = %w(a b c)
+       a= %W({a} b c)
+       x.to_ary
+       x.to_arr
+       Array()
+       def string.to_arr
+       end
+       a.unshift(0)
+       a.push(1,2,3)
+       a << 5
+       a.pop
+       a.shift
+       a.concat
+       a.replace([1,2,3])
+       a.flatten
+       a.reverse
+       a.join(" , ")
+       a = *
+       a.uniq
+       a.compact
+       a.size
+       a.empty
+       a.include?
+       a.first
+       a.last
+       a.sample
+       a.count(1)
+       #+end_src
+       [[file:path]]
+****** date/time
+       #+begin_src ruby
+       require 'date'
+       d = date.today
+
+       require 'time'
+       t = time.zxcz
+       #+end_src
+****** lambda
+       #+begin_src ruby
+       l = -> { xx; aa }
+       l = lambda do
+	 yield xx
+       end
+       #+end_src
+****** rescue
+       #+begin_src ruby
+       begin
+	 puts 'I am before the raise.'
+	 raise 'An error has occured.'
+	 puts 'I am after the raise.'
+       rescue
+	 puts 'I am rescued.'
+       end
+       #+end_src
+****** hash
+       #+begin_src ruby
+       h = Hash.new
+       h = { one: 1, :two => 2 }
+       h = Hash[1, "one", 2, "two"]
+       h["1"] = 1
+       h.[]=("New York", "NY")
+       h.store("New York", "NY")
+       a.update(b)
+       a.merge(b)
+       h.select {k,vk > 1 } !
+       h.reject {  k,v  k > 1 } !
+       h.reject! {  k,v  k > 1 }
+       h = { street: "127th Street", apt: nil }.compact !
+       h = { street: "127th Street", apt: nil }.compact!
+       h.invert
+       h.clear
+       h = {...}.replace({...})
+       h.key?
+       h.empty?
+       #+end_src
+****** range
+       #+begin_src ruby
+       r = Range.new(1,100)
+       r = Range.new(1,100, true)
+       r =  1..99(inclusive) r = 1...199(exclusive)
+       r.cover? 2
+       r.include? 3
+       #+end_src
+****** sets
+       #+begin_src ruby
+       s = Set.new(array)
+       s = Set.new(names) {name name.upcase }
+       s << 5
+       s.add 5
+       s.delete(1)
+       s.intersection|&| x
+       s.union x
+       s + x
+       s.difference x
+       s - x
+       s ^ x
+       s.merge [2]
+       s.subset? b
+       s.superset? b
+       s.proper_subset? x
+       s.proper_superset? x
+       #+end_src
+****** gsub
+       Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
+****** find
+       #+begin_src ruby
+       a.find { ¦n¦ n > 5 }
+       a.find { ¦n¦ n > 5 }
+       a.find_all
+       a.select
+       a.reject
+       a.map
+       #+end_src
+****** map
+       #+begin_src ruby
+       a.map { |x| x.uppercase}
+       a.map! { |x| x.uppercase}
+       #+end_src
+****** each_slice
+       #+begin_src ruby
+       animals.each_slice(2).map do |predator, prey|
+       #+end_src
+****** lazy
+       #+begin_src ruby
+       (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
+       #+end_src
+****** with_index
+       #+begin_src ruby
+       ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
+       my_enum.take(5).force // actual result rather than lazy enumerator
+       #+end_src
+****** enum_for
+       #+begin_src ruby
+       e = names.enum_for(:inject, "Names: ")
+       #+end_src
+****** more
+
+       | drop_while             | a.drop_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
+       | take_while             | a.take_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
+       | find_all               | a.find_all ¦ a.select                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
+       | reject                 | a.reject { ¦i¦ i > 4 } ¦ a.reject! { ¦i¦ i > 4 }                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
+       | select                 |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | grep                   | a.grep(//o//) ¦ a.grep(String) ¦ a.grep(50..100) ¦                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
+       | group_by               | a.group_by { ¦s¦ s.size }                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
+       | match                  | //n//.match(s)                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                                             |
+       | String                 | 'C'.size ¦ each_byte ¦ each_line ¦ each_codepoint ¦ each_char ¦ s.bytes ¦                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
+       | min/min_by             | a.min { ¦a,b¦ a.size <=> b.size } ¦  a.min { ¦lang¦ lang.size } ¦ state_hash.min_by { ¦name, abbr¦ name }                                                                                                                                                                                                                                                                                                               |                                                                                                             |
+       | max/max_by             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | minmax/minmax_by       | a.minmax ¦ a.minmax_by { ¦lang¦ lang.size }                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                             |
+       | reverse_each           | [1,2,3].reverse_each { ¦e¦ puts e * 10 }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
+       | with_index             | letters.each.with_index {¦(key,value),i¦ puts i }                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
+       | each_index             | names.each.with_index(1) { ¦pres, i¦ p i }                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                             |
+       | each_slice             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | each_cons              |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | slice_before           | a.slice_before(\/=/).to_a ¦ (1..10).slice_before { ¦num¦ num % 2 == 0 }.to_a ¦                                                                                                                                                                                                                                                                                                                                          |                                                                                                             |
+       | slice_after            |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | slice_when             | a.slice_when { ¦i,j¦ i == j }.to_a                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                             |
+       | inject/reduce          | [1,2,3,4].inject(:+)                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                             |
+       | cycle                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | map                    | names.map { ¦name¦ name.upcase } ¦  x = 5.times.map { Apple.new(rand(100..900)) }                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
+       | map!                   |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | symbol-argument blocks | names.map(&:upcase)                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                             |
+       | <=>                    | Apple#<=> ¦ Apple.sort { ¦a,b¦ a.brand <=> b.brand } ¦                                                                                                                                                                                                                                                                                                                                                                  | implementing a spaceship test method is enough to sort a class, or use a block to sort, or even override it |
+       | comparable             | Apple#<=> ¦                                                                                                                                                                                                                                                                                                                                                                                                             | include comparable                                                                                          |
+       | clamp                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | between                |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       | functions              | -> (args) {} ¦ Sum = -> (a, b) { a + b }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
+       | <<                     | yielder                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
+       |                        | enum_for                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
+       |                        | to_enum                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
+       | dup                    |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+       |------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+**** Rails
+***** Models
+      | what   | $ | ...         |
+      |--------+---+-------------|
+      | Models |   | Camel-Cased |
+      |        |   |             |
+
+***** Cli
+****** Database
+       | what     | how                                                                    | desc                                              |
+       |----------+------------------------------------------------------------------------+---------------------------------------------------|
+       | database | –d or --database=                                                      | use the database management system of your choice |
+       |          | db:create:all                                                          |                                                   |
+       |          | db:create                                                              |                                                   |
+       |          | dbconsole                                                              |                                                   |
+       |          | db:migrate                                                             |                                                   |
+       |          | new <name>                                                             |                                                   |
+       | models   | generate model <Name>                                                  |                                                   |
+       |          | destroy controller articles                                            |                                                   |
+       |          | rails destroy model Artile                                             |                                                   |
+       |          | rails db:rollback                                                      |                                                   |
+       |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+
+****** Models
+       | what     | how                                                                    | desc                                              |
+       |----------+------------------------------------------------------------------------+---------------------------------------------------|
+       | models   | generate model <Name>                                                  |                                                   |
+       |          | destroy controller articles                                            |                                                   |
+       |          | rails destroy model Artile                                             |                                                   |
+       |          | rails db:rollback                                                      |                                                   |
+       |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+****** ENV
+       |   |                      |   |
+       |---+----------------------+---|
+       |   | RAILS_ENV=production |   |
+
+*** Concepts
+**** Iterator
+     - is a method
+     - it start and finish in the same call
+**** Methods
+***** Methods chaining
+      creates a new object at it chains
+      #+begin_src ruby
+      puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
+      #+end_src
+**** Enumerator
+     - is an object
+     - chaining
+     - block based
+     - method attachment (enum_for)
+     - un-overriding of methods in Enumerable
+     - maintain state
+     - is an enumerable object
+     - can add enumerability to objects
+     - can stop and resume collection cycling
+*** Instructions
+**** Rbenv
+     rbenv global 2.3.0 && rbenv rehash
 ** Rust
 *** Fortschritt
 **** Buch
