@@ -1,34 +1,4 @@
 {
-  "Ruby": [
-    "https://github.com/jeremyevans/sequel",
-    "https://github.com/jeremyevans/roda",
-    "https://github.com/kyrylo/pry-theme",
-    "https://github.com/pry/pry",
-    "https://github.com/asciidoctor/asciidoctor",
-    "https://github.com/davidgf/design-patterns-in-ruby",
-    "https://github.com/rubocop-hq/rails-style-guide",
-    "https://github.com/rubocop-hq/rspec-style-guide",
-    "https://github.com/rubocop-hq/ruby-style-guide",
-    "https://github.com/rubocop-hq/rubocop",
-    "https://github.com/castwide/solargraph",
-    "https://github.com/fastlane/fastlane",
-    "https://github.com/sorbet/sorbet",
-    "https://github.com/discourse/discourse",
-    "https://github.com/jekyll/jekyll",
-    "https://github.com/lsegal/yard",
-    "https://github.com/markets/awesome-ruby",
-    "https://github.com/rails/rails",
-    "https://github.com/puppetlabs/bolt",
-    "https://github.com/chef/chef",
-    "https://github.com/puppetlabs/puppet",
-    "https://github.com/rubygems/rubygems",
-    "https://github.com/ruby/spec",
-    "https://github.com/ruby/rake",
-    "https://github.com/ruby/rdoc",
-    "https://github.com/rspec/rspec",
-    "https://github.com/ruby/TryRuby",
-    "https://github.com/ruby/ruby"
-  ],
   "bash": [
     "https://github.com/rvm/rvm",
     "https://github.com/nvm-sh/nvm",
@@ -41,6 +11,7 @@
     "https://github.com/alebcay/awesome-shell"
   ],
   "c": [
+    "https://github.com/systemd/systemd",
     "https://github.com/mate-desktop/mate-terminal",
     "https://github.com/mate-desktop/marco",
     "https://github.com/mate-desktop/mate-desktop",
@@ -53,6 +24,7 @@
     "https://github.com/ggreer/the_silver_searcher",
     "https://github.com/zsh-users/zsh",
     "https://github.com/FFmpeg/FFmpeg",
+    "git://source.winehq.org/git/wine",
     "https://github.com/git/git",
     "https://github.com/tmux/tmux",
     "https://github.com/antirez/redis",
@@ -76,7 +48,6 @@
   "own": [
     "https://gitlab.com/elxbarbosa/lar",
     "https://gitlab.com/elxbarbosa/gota",
-    "https://gitlab.com/elxbarbosa/cero.rb",
     "https://gitlab.com/elxbarbosa/cero"
   ]
 }
