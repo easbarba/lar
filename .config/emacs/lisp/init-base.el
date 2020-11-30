@@ -36,7 +36,7 @@
 (load custom-file t)
 
 ;; ** THEMES
-(defcustom *theme* 'adwaita
+(defcustom *theme* 'misterioso
   "Emacs default theme."
   :type 'string
   :group 'my)
@@ -44,10 +44,8 @@
 (when (display-graphic-p) (load-theme *theme* t))
 
 ;; ** FONTS
-(cond ((member "Fira Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "Fira Mono-15")))
-      ((member "DejaVu Sans Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-14"))))
+(when (member "DejaVu Sans Mono" (font-family-list))
+       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-17")))
 
 ;; ** EMACS DIRECTORIES
 (dolist (fld '("site-lisp" "etc" "erc"))
