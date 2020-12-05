@@ -1,53 +1,55 @@
 {
-  "bash": [
-    "https://github.com/rvm/rvm",
-    "https://github.com/nvm-sh/nvm",
-    "https://github.com/asdf-vm/asdf",
-    "https://github.com/sstephenson/bats",
-    "https://github.com/basherpm/basher",
-    "https://github.com/nojhan/liquidprompt",
-    "https://github.com/b4b4r07/enhancd",
-    "https://github.com/awesome-lists/awesome-bash",
-    "https://github.com/alebcay/awesome-shell"
-  ],
-  "c": [
-    "https://github.com/systemd/systemd",
-    "https://github.com/mate-desktop/mate-terminal",
-    "https://github.com/mate-desktop/marco",
-    "https://github.com/mate-desktop/mate-desktop",
-    "https://github.com/mate-desktop/atril",
-    "https://github.com/openssh/openssh-portable",
-    "https://github.com/libressl-portable/portable",
-    "https://git.suckless.org/st",
-    "https://git.suckless.org/dwm",
-    "https://github.com/mpv-player/mpv",
-    "https://github.com/ggreer/the_silver_searcher",
-    "https://github.com/zsh-users/zsh",
-    "https://github.com/FFmpeg/FFmpeg",
-    "git://source.winehq.org/git/wine",
-    "https://github.com/git/git",
-    "https://github.com/tmux/tmux",
-    "https://github.com/antirez/redis",
-    "https://github.com/curl/curl"
-  ],
-  "elisp": [
-    "https://github.com/abo-abo/oremacs",
-    "https://github.com/purcell/emacs.d",
-    "https://github.com/bbatsov/prelude",
-    "https://github.com/alphapapa/bufler.el",
-    "https://github.com/jwiegley/emacs-async",
-    "https://github.com/jwiegley/use-package",
-    "https://github.com/emacs-lsp/lsp-mode",
-    "https://github.com/emacs-tw/awesome-emacs",
-    "https://github.com/purcell/reformatter.el",
-    "git://git.sv.gnu.org/emacs"
-  ],
-  "misc": [
-    "https://github.com/asdf-vm/asdf"
-  ],
-  "own": [
-    "https://gitlab.com/elxbarbosa/lar",
-    "https://gitlab.com/elxbarbosa/gota",
-    "https://gitlab.com/elxbarbosa/cero"
-  ]
+    "bash": [
+	"https://github.com/rvm/rvm",
+	"https://github.com/nvm-sh/nvm",
+	"https://github.com/asdf-vm/asdf",
+	"https://github.com/sstephenson/bats",
+	"https://github.com/basherpm/basher",
+	"https://github.com/nojhan/liquidprompt",
+	"https://github.com/b4b4r07/enhancd",
+	"https://github.com/awesome-lists/awesome-bash",
+	"https://github.com/alebcay/awesome-shell"
+    ],
+    "c": [
+	"https://gitlab.freedesktop.org/mesa/mesa",
+	"https://github.com/teslamotors/coreboot",
+	"https://github.com/systemd/systemd",
+	"https://github.com/mate-desktop/mate-terminal",
+	"https://github.com/mate-desktop/marco",
+	"https://github.com/mate-desktop/mate-desktop",
+	"https://github.com/mate-desktop/atril",
+	"https://github.com/openssh/openssh-portable",
+	"https://github.com/libressl-portable/portable",
+	"https://git.suckless.org/st",
+	"https://git.suckless.org/dwm",
+	"https://github.com/mpv-player/mpv",
+	"https://github.com/ggreer/the_silver_searcher",
+	"https://github.com/zsh-users/zsh",
+	"https://github.com/FFmpeg/FFmpeg",
+	"git://source.winehq.org/git/wine",
+	"https://github.com/git/git",
+	"https://github.com/tmux/tmux",
+	"https://github.com/antirez/redis",
+	"https://github.com/curl/curl"
+    ],
+    "elisp": [
+	"https://github.com/abo-abo/oremacs",
+	"https://github.com/purcell/emacs.d",
+	"https://github.com/bbatsov/prelude",
+	"https://github.com/alphapapa/bufler.el",
+	"https://github.com/jwiegley/emacs-async",
+	"https://github.com/jwiegley/use-package",
+	"https://github.com/emacs-lsp/lsp-mode",
+	"https://github.com/emacs-tw/awesome-emacs",
+	"https://github.com/purcell/reformatter.el",
+	"git://git.sv.gnu.org/emacs"
+    ],
+    "misc": [
+	"https://github.com/asdf-vm/asdf"
+    ],
+    "own": [
+	"https://github.com/elxbarbosa/lar",
+	"https://github.com/elxbarbosa/gota",
+	"https://github.com/elxbarbosa/cero"
+    ]
 }
