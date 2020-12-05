@@ -7,8 +7,9 @@
 :CONTENTS:
 - [[#c][C]]
   - [[#fortschritt][Fortschritt]]
-  - [[#projetos][Projetos]]
+  - [[#features][Features]]
   - [[#books][Books]]
+  - [[#snippets][Snippets]]
   - [[#tools][Tools]]
   - [[#read-later][Read later]]
   - [[#articles][Articles]]
@@ -31,26 +32,6 @@
 :END:
 
 * C
-** Inhaltsverzeichnis
-   :PROPERTIES:
-   :TOC:      :include all :depth 2 :ignore this
-   :END:
- :CONTENTS:
- - [[#fortschritt][Fortschritt]]
-   - [[#buch][Buch]]
-   - [[#ldc][LDC]]
- - [[#projetos][Projetos]]
- - [[#books][Books]]
-   - [[#cpama][CPAMA]]
- - [[#tools][Tools]]
- - [[#read-later][Read later]]
- - [[#articles][Articles]]
- - [[#libraries][Libraries]]
- - [[#documentation][Documentation]]
- - [[#bootstraping][Bootstraping]]
- - [[#tips][Tips]]
- - [[#system-software-skills][System Software Skills]]
- :END:
 ** Fortschritt
 *** Buch
     | Buch              | Capitulo | em | tarde | revisao |
@@ -58,12 +39,30 @@
     | C Modern Approach |          |    |       |         |
 
 *** LDC
-    | Source Code | folder | file | @ |
-    |-------------+--------+------+---|
-    | curl        |        |      |   |
-    | tmux        |        |      |   |
+    | Source Code | folder    | file        | @ |
+    |-------------+-----------+-------------+---|
+    | curl        | lib/vauth | cleartext.c |   |
+    | tmux        |           |             |   |
 
-** Projetos
+** Features
+
+*** pointers
+    #+begin_src c
+
+
+    int main(){
+	int i, *p, *b;
+	int i = 4;
+
+	,*p = i; // p = 4
+	,*p = &i; // get address of i, p is alias of i var.
+	,*b = &p; // b get address of p, that is, i address.
+	,*b = *p; // b gets value of p
+	,*b = *&p; // get address first then back to its value
+    }
+
+
+    #+end_src
 ** Books
 *** CPAMA
 **** Chapter 8
@@ -248,6 +247,48 @@
           selection_sort(a, n-1);
 	}
 	#+END_SRC
+
+** Snippets
+
+*** find exec in path
+    #+begin_src c
+
+
+    #include <stdlib.h>
+    #include <sys/stat.h>
+    #include <sys/types.h>
+    #include <unistd.h>
+
+    #include <string>
+    #include <iostream>
+
+    using namespace std;
+
+    int main ()
+    {
+      struct stat sb;
+      string delimiter = ":";
+      string path = string(getenv("PATH"));
+      size_t start_pos = 0, end_pos = 0;
+
+      while ((end_pos = path.find(':', start_pos)) != string::npos)
+	{
+	  string current_path =
+	    path.substr(start_pos, end_pos - start_pos) + "/mathsat";
+
+	  if ((stat(mathsat_path.c_str(), &sb) == 0) && (sb.st_mode & S_IXOTH))
+	    {
+	      cout << "Okay" << endl;
+	      return EXIT_SUCCESS;
+	     }
+
+	  start_pos = end_pos + 1;
+	 }
+
+      return EXIT_SUCCESS;
+    }
+
+    #+end_src
 
 ** Tools
    https://cdecl.org/  - C gibberish ↔ English

@@ -1,4 +1,4 @@
-#+TILE: DevOps - Annotations
+#+TILE: Infra - Annotations
 
 * Inhaltsverzeichnis
   :PROPERTIES:
@@ -312,6 +312,14 @@
 **** Htop
 **** Top
 *** Misc
+**** who
+**** w
+**** ps
+     ps auxwww | grep sshd: | grep -v grep
+**** ss
+     ss | grep -i ssh
+**** last
+     last -a | grep -i still
 **** fc-cache
      |                        |                  |
      |------------------------+------------------|
@@ -1131,6 +1139,12 @@
      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
      #+end_src
 
+* System
+** Progresso
+*** Buch
+    | Buch                    | capitulo | em | @later | revisao |
+    |-------------------------+----------+----+--------+---------|
+    | Modern Operating System | Intro    |    |        |         |
 * Pipeline CI/CD
 ** Gitlab
 ** Github Actions
@@ -1453,6 +1467,7 @@
   | monitoring                      | nagios                             |
   |                                 |                                    |
 
+  Servidores Linux
   Ansible, Puppet, Chef
   Infrastructure as code;
   Linux, Ubuntu;
@@ -1468,6 +1483,9 @@
   CI/CD;
   Micro serviços;
   Nginx, Apache.
+  Experiência com AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda
+  Observability e Monitoring
+
 * Concepts
   | Term               | ...                                                                                  | eg       |
   |--------------------+--------------------------------------------------------------------------------------+----------|
