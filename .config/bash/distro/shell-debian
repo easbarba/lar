@@ -16,6 +16,7 @@ e-debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
+    c=(clang clangd libjson-c-dev)
     ruby=(libssl-dev libgdbm-dev python2 zlib1g-dev)
 
     programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb)
