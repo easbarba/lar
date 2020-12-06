@@ -39,6 +39,34 @@ e-packs-asdf()
     asdf update
 }
 
+e-packs-asdf-golang()
+{
+    echo 'Installing golang binaries'
+
+    # https://github.com/kennyp/asdf-golang
+
+    asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+
+    asdf install golang latest
+
+    asdf global golang "$(asdf latest golang)"
+}
+
+e-packs-golang()
+{
+    echo 'Installing golang packages'
+
+    GO111MODULE=on
+
+    local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
+
+    for pack in "${packages[@]}"
+    do
+	go get -u "${pack}"
+    done
+
+}
+
 e-packs-asdf-python()
 {
     echo 'Installing python binaries'
