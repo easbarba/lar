@@ -5,8 +5,15 @@
 # * Description: Add foreign packagers bin directories to $PATH
 # * SOFTWARE $PATH
 
+e_path_golang()
+{
+    # Golang
+    export GOPATH="$HOME/.local/"
 
-e_path_gem()
+    export GO111MODULE=on
+}
+
+e_path_ruby()
 {
     local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
 
@@ -32,5 +39,6 @@ e_path_cask()
 # * RUN
 
 e_path_asdf
-e_path_gem
+e_path_golang
+e_path_ruby
 e_path_cask
