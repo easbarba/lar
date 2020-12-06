@@ -1,4 +1,18 @@
 {
+  "Golang": [
+    "https://github.com/hashicorp/terraform",
+    "https://github.com/containers/buildah",
+    "https://github.com/containers/podman",
+    "https://github.com/sourcegraph/go-langserver",
+    "https://github.com/gorilla/mux",
+    "https://github.com/cli/cli",
+    "https://github.com/rclone/rclone",
+    "https://github.com/avelino/awesome-go",
+    "https://github.com/kubernetes-sigs/kind/",
+    "https://github.com/kubernetes/kubernetes",
+    "https://github.com/golang/tools",
+    "https://github.com/golang/go"
+  ],
   "bash": [
     "https://github.com/rvm/rvm",
     "https://github.com/nvm-sh/nvm",
@@ -9,29 +23,6 @@
     "https://github.com/b4b4r07/enhancd",
     "https://github.com/awesome-lists/awesome-bash",
     "https://github.com/alebcay/awesome-shell"
-  ],
-  "c": [
-    "https://github.com/json-c/json-c.git",
-    "https://gitlab.freedesktop.org/mesa/mesa",
-    "https://github.com/teslamotors/coreboot",
-    "https://github.com/systemd/systemd",
-    "https://github.com/mate-desktop/mate-terminal",
-    "https://github.com/mate-desktop/marco",
-    "https://github.com/mate-desktop/mate-desktop",
-    "https://github.com/mate-desktop/atril",
-    "https://github.com/openssh/openssh-portable",
-    "https://github.com/libressl-portable/portable",
-    "https://git.suckless.org/st",
-    "https://git.suckless.org/dwm",
-    "https://github.com/mpv-player/mpv",
-    "https://github.com/ggreer/the_silver_searcher",
-    "https://github.com/zsh-users/zsh",
-    "https://github.com/FFmpeg/FFmpeg",
-    "git://source.winehq.org/git/wine",
-    "https://github.com/git/git",
-    "https://github.com/tmux/tmux",
-    "https://github.com/antirez/redis",
-    "https://github.com/curl/curl"
   ],
   "elisp": [
     "https://github.com/abo-abo/oremacs",
