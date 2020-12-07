@@ -9,6 +9,7 @@
   - [[#fortschritt][Fortschritt]]
   - [[#projekts][Projekts]]
   - [[#buchs][Buchs]]
+  - [[#features][features]]
   - [[#terms][terms]]
   - [[#read-later][Read later]]
 - [[#shell-scripts][Shell Scripts]]
@@ -27,16 +28,27 @@
 * Golang
 ** Fortschritt
 *** Buch
-    | Buch | Capitulo | em | tarde | revisao |
-    |------+----------+----+-------+---------|
-    | a    |          |    |       |         |
+    | Buch                    | Capitulo | em                      | tarde | revisao |
+    |-------------------------+----------+-------------------------+-------+---------|
+    | Go Programming Language |          | 2.3.3. The new Function |       |         |
+    |                         |          |                         |       |         |
 
 *** LDC
     | Source Code | folder | file | @ |
     |-------------+--------+------+---|
-    | golang      |        |      |   |
+    | consul      |        |      |   |
 ** Projekts
 ** Buchs
+** features
+*** pointers
+    #+Begin_Src go
+
+    func main() {
+	    x = 1
+	    ,*p = x
+	    Printf(&p) // address of x
+    }
+    #+end_src
 ** terms
    - runes: single characthers
 ** Read later
