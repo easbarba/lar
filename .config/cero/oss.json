@@ -1,47 +1,49 @@
 {
-  "Golang": [
-    "https://github.com/hashicorp/terraform",
-    "https://github.com/containers/buildah",
-    "https://github.com/containers/podman",
-    "https://github.com/sourcegraph/go-langserver",
-    "https://github.com/gorilla/mux",
-    "https://github.com/cli/cli",
-    "https://github.com/rclone/rclone",
-    "https://github.com/avelino/awesome-go",
-    "https://github.com/kubernetes-sigs/kind/",
-    "https://github.com/kubernetes/kubernetes",
-    "https://github.com/golang/tools",
-    "https://github.com/golang/go"
-  ],
-  "bash": [
-    "https://github.com/rvm/rvm",
-    "https://github.com/nvm-sh/nvm",
-    "https://github.com/asdf-vm/asdf",
-    "https://github.com/sstephenson/bats",
-    "https://github.com/basherpm/basher",
-    "https://github.com/nojhan/liquidprompt",
-    "https://github.com/b4b4r07/enhancd",
-    "https://github.com/awesome-lists/awesome-bash",
-    "https://github.com/alebcay/awesome-shell"
-  ],
-  "elisp": [
-    "https://github.com/abo-abo/oremacs",
-    "https://github.com/purcell/emacs.d",
-    "https://github.com/bbatsov/prelude",
-    "https://github.com/alphapapa/bufler.el",
-    "https://github.com/jwiegley/emacs-async",
-    "https://github.com/jwiegley/use-package",
-    "https://github.com/emacs-lsp/lsp-mode",
-    "https://github.com/emacs-tw/awesome-emacs",
-    "https://github.com/purcell/reformatter.el",
-    "git://git.sv.gnu.org/emacs"
-  ],
-  "misc": [
-    "https://github.com/asdf-vm/asdf"
-  ],
-  "own": [
-    "https://github.com/elxbarbosa/lar",
-    "https://github.com/elxbarbosa/gota",
-    "https://github.com/elxbarbosa/cero"
-  ]
+    "golang": [
+	"https://github.com/hashicorp/nomad",
+	"https://github.com/hashicorp/consul",
+	"https://github.com/hashicorp/terraform",
+	"https://github.com/containers/buildah",
+	"https://github.com/containers/podman",
+	"https://github.com/sourcegraph/go-langserver",
+	"https://github.com/gorilla/mux",
+	"https://github.com/cli/cli",
+	"https://github.com/rclone/rclone",
+	"https://github.com/avelino/awesome-go",
+	"https://github.com/kubernetes-sigs/kind/",
+	"https://github.com/kubernetes/kubernetes",
+	"https://github.com/golang/tools",
+	"https://github.com/golang/go"
+    ],
+    "bash": [
+	"https://github.com/rvm/rvm",
+	"https://github.com/nvm-sh/nvm",
+	"https://github.com/asdf-vm/asdf",
+	"https://github.com/sstephenson/bats",
+	"https://github.com/basherpm/basher",
+	"https://github.com/nojhan/liquidprompt",
+	"https://github.com/b4b4r07/enhancd",
+	"https://github.com/awesome-lists/awesome-bash",
+	"https://github.com/alebcay/awesome-shell"
+    ],
+    "elisp": [
+	"https://github.com/abo-abo/oremacs",
+	"https://github.com/purcell/emacs.d",
+	"https://github.com/bbatsov/prelude",
+	"https://github.com/alphapapa/bufler.el",
+	"https://github.com/jwiegley/emacs-async",
+	"https://github.com/jwiegley/use-package",
+	"https://github.com/emacs-lsp/lsp-mode",
+	"https://github.com/emacs-tw/awesome-emacs",
+	"https://github.com/purcell/reformatter.el",
+	"git://git.sv.gnu.org/emacs"
+    ],
+    "misc": [
+	"https://github.com/asdf-vm/asdf"
+    ],
+    "own": [
+	"https://github.com/elxbarbosa/lar",
+	"https://github.com/elxbarbosa/gota",
+	"https://github.com/elxbarbosa/cero"
+    ]
 }
