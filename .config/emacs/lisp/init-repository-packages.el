@@ -353,11 +353,8 @@
 (use-package lsp-mode
   :defer 1
   :hook
-  (rust-mode . lsp)
+  (go-mode . lsp)
   (ruby-mode . lsp)
-  (js-mode . lsp)
-  (html-mode . lsp)
-  (css-mode . lsp)
   :commands lsp
   :init
   :custom
