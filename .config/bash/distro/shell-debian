@@ -16,12 +16,13 @@ e-debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
-    c=(clang clangd libjson-c-dev)
     ruby=(libssl-dev libgdbm-dev python2 zlib1g-dev)
 
-    programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb)
+    programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb clang clangd)
 
-    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br numix-icon-theme numix-gtk-theme steam)
+    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br steam)
+
+    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme arc-gtk-theme adapta-gtk-theme)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -50,7 +51,7 @@ e-debian-packages ()
 
     e_foreach "$command" "${essentials[@]}"
     e_foreach "$command" "${ruby[@]}"
-    e_foreach "$command" "${rust[@]}"
+    e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${languages[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${user[@]}"
