@@ -52,21 +52,6 @@ e-packs-asdf-golang()
     asdf global golang "$(asdf latest golang)"
 }
 
-e-packs-golang()
-{
-    echo 'Installing golang packages'
-
-    GO111MODULE=on
-
-    local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
-
-    for pack in "${packages[@]}"
-    do
-	go get -u "${pack}"
-    done
-
-}
-
 e-packs-asdf-python()
 {
     echo 'Installing python binaries'
@@ -93,7 +78,22 @@ e-packs-asdf-ruby()
     asdf global ruby "$(asdf latest ruby)"
 }
 
-e-packs-gem()
+e-packs-golang()
+{
+    echo 'Installing golang packages'
+
+    GO111MODULE=on
+
+    local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
+
+    for pack in "${packages[@]}"
+    do
+	go get -u "${pack}"
+    done
+
+}
+
+e-packs-ruby()
 {
     echo 'Installing gem packages'
 
@@ -108,7 +108,7 @@ e-packs-gem()
     done
 }
 
-e-packs-pip()
+e-packs-python()
 {
     echo 'Installing pip packages'
 
@@ -127,8 +127,9 @@ e-packs-all()
 {
     echo 'Installing language package manager packages'
 
-    e-packs-gem
-    e-packs-pip
+    e-packs-golang
+    e-packs-ruby
+    e-packs-python
 }
 
 e-packs-asdf-all()
