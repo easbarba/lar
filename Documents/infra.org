@@ -230,9 +230,10 @@
 *** Chef
 * Containers
 ** Fortschritt
-   |                                           |   |                 |
-   |-------------------------------------------+---+-----------------|
-   | Docker Certified Associate DCA Exam Guide | 1 | Infrastructures |
+   |                                           |   |                                                |
+   |-------------------------------------------+---+------------------------------------------------|
+   | Docker Certified Associate DCA Exam Guide | 1 | Learning about the main concepts of containers |
+   |                                           |   |                                                |
 
 ** Engines
 *** Podman
@@ -291,7 +292,11 @@
    - subnet
    - ec2
 
-* Linux
+* Linux/Unix
+** Internals
+*** Process
+    kernel space
+    user space
 ** Progresso
 *** Buch
     | Buch                                          | capitulo                                   | em                           | @later | revisao |
@@ -3589,26 +3594,17 @@
 
     #+END_SRC
 * Skills
-  | Skill                           | eg                                       |
-  |---------------------------------+------------------------------------------|
-  | Unix                            | CentOs, Ubuntu                           |
-  | Languages                       | shell, go, ruby, python, perl            |
-  | Cloud                           | AWS - Google Cloud - Azure               |
-  | Container                       | Docker Kubernetes OpenShift Helm Rancher |
-  | Config Management               | Ansible Chef Puppet Salt                 |
-  | controle de versionamento       | git                                      |
-  | Infra provisioning              | Terraform                                |
-  | Continuous Integration/Delivery | jenkins                                  |
-  | Virtualization                  |                                          |
-  | monitoring                      | nagios                                   |
-
-  Servidores Linux
-  Infrastructure as code;
-  Nginx;
-  Metodologia Ágil (scrum);
-  Flexibilidade;
-  Comunicação.
-  Micro serviços;
-  Nginx, Apache.
-  Experiência com AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda
-  Observability e Monitoring
+  | Skill                           | eg                                                                                          |
+  |---------------------------------+---------------------------------------------------------------------------------------------|
+  | Unix                            | CentOs, Ubuntu                                                                              |
+  | Languages                       | shell, go, ruby, python, perl                                                               |
+  | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda |
+  | Container                       | Docker Kubernetes OpenShift Helm Rancher                                                    |
+  | Config Management               | Ansible Chef Puppet Salt                                                                    |
+  | controle de versionamento       | git                                                                                         |
+  | Infra provisioning              | Terraform                                                                                   |
+  | Continuous Integration/Delivery | jenkins                                                                                     |
+  | Virtualization                  |                                                                                             |
+  | Observability e Monitoring      | nagios Nginx, Apache                                                                        |
+  | agile                           | scrum                                                                                       |
+  | micro services                  |                                                                                             |
