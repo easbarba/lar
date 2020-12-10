@@ -7,8 +7,9 @@
 e-debian-upgrade()
 {
     echo "-- Atualizando Sistema"
-    sudo apt update && sudo apt upgrade
 
+    sudo apt update
+    sudo apt upgrade
     sudo apt autoremove
 }
 
