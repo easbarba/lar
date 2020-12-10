@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # set -e
 
@@ -7,7 +7,7 @@
 # * NIXOS
 # Descricao: Distro Pacotes
 
-e-nixos-packages ()
+nixos-packages ()
 {
     echo "-- NixOS Packages"
 
@@ -66,14 +66,14 @@ e-nixos-packages ()
     echo "Done"
 }
 
-e-nixos-services()
+nixos-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-nixos-foreign()
+nixos-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -110,24 +110,21 @@ e-nixos-foreign()
     fi
 }
 
-e-nixos-upgrade()
+nixos-upgrade()
 {
     echo "-- Atualizando Sistema"
     nix-env --upgrade
 }
 
-e-nixos()
+run()
 {
-    e-nixos-packages
-    e-nixos-services
-    e-nixos-foreign
-    e-nixos-upgrade
+
 }
 
-e-run()
-{
-    [[ $(command -v apt) ]] && e-debian
-    [[ $(command -v dnf) ]] && e-fedora
-    [[ $(command -v pacman) ]] && e-arch
-    [[ $(command -v nix) ]] && e-nixos
-}
+
+# * RUN
+
+nixos-packages
+nixos-services
+nixos-foreign
+nixos-upgrade

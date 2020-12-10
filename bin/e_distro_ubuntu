@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # set -e
 
 # * UBUNTU
 
-e-ubuntu-packages()
+ubuntu-packages()
 {
     essentials=(ssh make build-essential git p7zip p7zip-full zip unzip zile neovim tmux curl wget bash emacs gcc)
 
@@ -35,7 +35,7 @@ e-ubuntu-packages()
     e_foreach "$command" "${media[@]}"
 }
 
-e-ubuntu-upgrade()
+ubuntu-upgrade()
 {
     echo "-- Updating System"
 
@@ -43,19 +43,18 @@ e-ubuntu-upgrade()
     sudo apt -y autoremove
 }
 
-e-ubuntu-services()
+ubuntu-services()
 {
     enable-all-repos()
-    {        
+    {
         echo ""
     }
-    
-    enable-all-repos   
+
+    enable-all-repos
 }
 
-e-ubuntu()
-{
-    e-ubuntu-upgrade
-    e-ubuntu-packages
-    #e-ubuntu-services
-}
+# * RUN
+
+ubuntu-upgrade
+ubuntu-packages
+#ubuntu-services

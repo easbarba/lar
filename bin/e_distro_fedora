@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # set -e
 
-e-fedora-packages ()
+fedora-packages ()
 {
     essentials=(zip unzip git tmux wget bash zile emacs)
 
@@ -34,18 +34,18 @@ e-fedora-packages ()
     e_foreach "$command ${media[@]}"
 }
 
-e-fedora-upgrade()
+fedora-upgrade()
 {
     sudo dnf upgrade -y
     sudo dnf autoremove -y
 }
 
-e-fedora-services()
+fedora-services()
 {
-    sudo hostnamectl set-hostname 'e-fedora'
+    sudo hostnamectl set-hostname 'fedora'
 }
 
-e-fedora-foreign()
+fedora-foreign()
 {
     rpmfusion()
     {
@@ -85,10 +85,9 @@ e-fedora-foreign()
     docker
 }
 
-e-fedora ()
-{
-    e-fedora-upgrade
-    e-fedora-packages
-    # e-fedora-services
-    # e-fedora-foreign
-}
+# * RUN
+
+fedora-upgrade
+fedora-packages
+# fedora-services
+# fedora-foreign

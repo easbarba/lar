@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # set -e
 
 # * DEBIAN
 
-e-debian-upgrade()
+debian-upgrade()
 {
     echo "-- Atualizando Sistema"
 
@@ -13,7 +13,7 @@ e-debian-upgrade()
     sudo apt autoremove
 }
 
-e-debian-packages ()
+debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
@@ -70,12 +70,12 @@ e-debian-packages ()
     echo "Done"
 }
 
-e-debian-services()
+debian-services()
 {
     sudo timedatectl set-timezone America/Sao_Paulo
 }
 
-e-debian-foreign()
+debian-foreign()
 {
     chrome()
     {
@@ -117,10 +117,9 @@ e-debian-foreign()
     code
 }
 
-e-debian()
-{
-    e-debian-upgrade
-    e-debian-packages
-    e-debian-services
-    e-debian-foreign
-}
+# * RUN
+
+debian-upgrade
+debian-packages
+debian-services
+debian-foreign

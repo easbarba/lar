@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# set -e
+
+COMMAND="$1"
+shift 1
+
+ARGUMENTS=("$@")
+
+for pack in "${ARGUMENTS[@]}"
+do
+    echo -e "\n \e[42m $pack \e[0m \n"
+    ${COMMAND} ${pack}
+done

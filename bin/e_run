@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# set -e
+
+NUMBER=${1}
+
+shift
+
+for i in `seq $NUMBER`; do
+    ${@}
+done

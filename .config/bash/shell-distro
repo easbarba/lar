@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-# set -e
-XDG_CONFIG_HOME="$HOME/.config"
-[[ $(command -v dnf) ]] && source "$XDG_CONFIG_HOME/bash/distro/shell-fedora"
-[[ $(command -v apt) ]] && source "$XDG_CONFIG_HOME/bash/distro/shell-debian"
-[[ $(command -v snap) ]] && source "$XDG_CONFIG_HOME/bash/distro/shell-ubuntu"
-[[ $(command -v nix-shell) ]] && source "$XDG_CONFIG_HOME/bash/distro/shell-nixos"

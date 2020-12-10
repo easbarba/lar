@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# set -e
+
+# * "TIP: RSA Default -> 4096 bits"
+gpg --full-generate-key

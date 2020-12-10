@@ -1,15 +1,15 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # set -e
 
 # * ARCH LINUX
 
-e-manjaro-upgrade()
+manjaro-upgrade()
 {
     echo "-- Atualizando Sistema" sudo pacman -Syy && sudo pacman -Syu
 }
 
-e-manjaro-packages ()
+manjaro-packages ()
 {
     echo "-- Debian Packages"
 
@@ -60,14 +60,14 @@ e-manjaro-packages ()
     e_foreach "$command" "${laptop[@]}"
 }
 
-e-manjaro-services()
+manjaro-services()
 {
     echo "systemctl"
     sudo systemctl disable mpd.service
     sudo systemctl disable mpd.socket
 }
 
-e-manjaro-foreign()
+manjaro-foreign()
 {
     if [ ! $(command -v google-chrome) ]; then
 	cd ${HOME}
@@ -104,10 +104,9 @@ e-manjaro-foreign()
     fi
 }
 
-e-manjaro()
-{
-    e-manjaro-upgrade
-    e-manjaro-packages
-    e-manjaro-services
-    # e-manjaro-foreign
-}
+# * RUN
+
+manjaro-upgrade
+manjaro-packages
+manjaro-services
+# manjaro-foreign
