@@ -23,7 +23,7 @@ debian-packages ()
 
     user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br steam)
 
-    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme arc-gtk-theme adapta-gtk-theme)
+    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -122,4 +122,4 @@ debian-foreign()
 debian-upgrade
 debian-packages
 debian-services
-debian-foreign
+# debian-foreign
