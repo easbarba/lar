@@ -42,6 +42,39 @@ export PATH="$HOME/bin"${PATH:+:}${PATH}
 export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
+# * PACKAGES
+
+golang()
+{
+    # Golang
+    export GOPATH="$HOME/.local/"
+    export GO111MODULE=on
+}
+
+ruby()
+{
+    local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
+    export PATH="$gem_bin"${PATH:+:}$PATH
+}
+
+asdf()
+{
+    source "$HOME"/.asdf/completions/asdf.bash
+    source "$HOME"/.asdf/asdf.sh
+
+    local asdf_shims_dir="$HOME"/.asdf/shims
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
+cask()
+{
+    local caskdir="$HOME/.cask/bin"
+    export PATH="$caskdir"${PATH:+:}$PATH
+}
+
 # * RUN
 
-[ -f "$XDG_CONFIG_HOME/bash/shell-paths" ] && source "$XDG_CONFIG_HOME/bash/shell-paths"
+asdf
+golang
+ruby
+cask
