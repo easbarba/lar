@@ -12296,27 +12296,27 @@
 
    # resize window (you can also use the mouse for that)
    mode "resize" {
-           # These bindings trigger as soon as you enter the resize mode
+	   # These bindings trigger as soon as you enter the resize mode
 
-           # Pressing left will shrink the window’s width.
-           # Pressing right will grow the window’s width.
-           # Pressing up will shrink the window’s height.
-           # Pressing down will grow the window’s height.
-           bindsym j resize shrink width 10 px or 10 ppt
-           bindsym k resize grow height 10 px or 10 ppt
-           bindsym l resize shrink height 10 px or 10 ppt
-           bindsym semicolon resize grow width 10 px or 10 ppt
+	   # Pressing left will shrink the window’s width.
+	   # Pressing right will grow the window’s width.
+	   # Pressing up will shrink the window’s height.
+	   # Pressing down will grow the window’s height.
+	   bindsym j resize shrink width 10 px or 10 ppt
+	   bindsym k resize grow height 10 px or 10 ppt
+	   bindsym l resize shrink height 10 px or 10 ppt
+	   bindsym semicolon resize grow width 10 px or 10 ppt
 
-           # same bindings, but for the arrow keys
-           bindsym Left resize shrink width 10 px or 10 ppt
-           bindsym Down resize grow height 10 px or 10 ppt
-           bindsym Up resize shrink height 10 px or 10 ppt
-           bindsym Right resize grow width 10 px or 10 ppt
+	   # same bindings, but for the arrow keys
+	   bindsym Left resize shrink width 10 px or 10 ppt
+	   bindsym Down resize grow height 10 px or 10 ppt
+	   bindsym Up resize shrink height 10 px or 10 ppt
+	   bindsym Right resize grow width 10 px or 10 ppt
 
-           # back to normal: Enter or Escape or $mod+r
-           bindsym Return mode "default"
-           bindsym Escape mode "default"
-           bindsym $mod+r mode "default"
+	   # back to normal: Enter or Escape or $mod+r
+	   bindsym Return mode "default"
+	   bindsym Escape mode "default"
+	   bindsym $mod+r mode "default"
    }
 
    # bindsym $mod+Shift+ mode "resize"
@@ -12348,7 +12348,7 @@
    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
    # Binds
-   bindsym Print exec scrot ~/Fotografias/%Y-%m-%d-%H-%M-%S.png # screenshot
+   bindsym Print exec scrot ~/Fotografias/%Y-%m-%d-%H-%M-%S.png
    bindsym $mod+c exec slock
 
    # AutoStart
@@ -12382,20 +12382,20 @@
    client.urgent $urgent-bg-color $urgent-bg-color $text-color $gray
 
    bar {
-           status_command i3blocks
-           position bottom
+	   status_command i3blocks
+	   position bottom
 
-           mode hide
-           modifier $mod
+	   mode hide
+	   modifier $mod
 
-           colors {
-                   background $elegant
+	   colors {
+		   background $elegant
 
-                   #                  border            background         text
-                   focused_workspace  $elegant          $gray              $text-color
-                   inactive_workspace $elegant          $elegant           $inactive-text-color
-                   urgent_workspace   $acqua            $acqua             $text-color
-           }
+		   #                  border            background         text
+		   focused_workspace  $elegant          $gray              $text-color
+		   inactive_workspace $elegant          $elegant           $inactive-text-color
+		   urgent_workspace   $acqua            $acqua             $text-color
+	   }
    }
    #+end_src
 ** Qtile
