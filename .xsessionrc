@@ -10,8 +10,6 @@ export BROWSER="firefox"
 
 # * FOLDERS
 
-xdg()
-{
     export XDG_CONFIG_HOME="$HOME/.config"
     export XDG_DATA_HOME="$HOME/.local/share"
     export XDG_CACHE_HOME="$HOME/.cache"
@@ -25,10 +23,8 @@ xdg()
     export XDG_TEMPLATES_DIR="$HOME/Templates"
     export XDG_VIDEOS_DIR="$HOME/Videos"
     [ ! -w "${XDG_RUNTIME_DIR=/run/user/${UID}}" ] && export XDG_RUNTIME_DIR=/tmp
-}
 
-local()
-{
+
     export LOCAL="$HOME/.local"
     export LOCAL_BIN="$LOCAL/bin"
     export LOCAL_LIB="$LOCAL/lib"
@@ -41,7 +37,7 @@ local()
     export PATH="$HOME/bin"${PATH:+:}${PATH}
     export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
     export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
-}
+
 
 # * PACKAGES
 
@@ -73,9 +69,6 @@ cask()
 }
 
 # * RUN
-
-xdg
-local
 
 asdf
 golang
