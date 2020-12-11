@@ -15,7 +15,8 @@
 ;; ** REPOSITORIES PACKAGES - COMPLETION EXTRA
 (use-package exec-path-from-shell
   :defer 1
-  :config (exec-path-from-shell-initialize))
+  :config (when (memq window-system '(mac ns x))
+	    (exec-path-from-shell-initialize)))
 
 (use-package ivy
   :defer 1
