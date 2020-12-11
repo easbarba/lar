@@ -230,10 +230,10 @@
 *** Chef
 * Containers
 ** Fortschritt
-   |                                           |   |                                                |
-   |-------------------------------------------+---+------------------------------------------------|
-   | Docker Certified Associate DCA Exam Guide | 1 | Learning about the main concepts of containers |
-   |                                           |   |                                                |
+   |                                           |   |                   |
+   |-------------------------------------------+---+-------------------|
+   | Docker Certified Associate DCA Exam Guide | 1 | Docker components |
+   |                                           |   |                   |
 
 ** Engines
 *** Podman
