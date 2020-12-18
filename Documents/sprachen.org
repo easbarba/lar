@@ -26,6 +26,7 @@
   - [[#features][Features]]
 - [[#german][German]]
   - [[#fortschritt][Fortschritt]]
+- [[#books][books]]
 :END:
 
 * Golang
@@ -555,10 +556,10 @@
 * Common Lisp
 ** Progresso
 *** Livros
-    | Livros           | Capitulo | em | tarde | revisao |
-    |------------------+----------+----+-------+---------|
-    | ANSI Common Lisp |          |    |       |         |
-    |                  |          |    |       |         |
+    | Livros           | Capitulo      | em | tarde | revisao |
+    |------------------+---------------+----+-------+---------|
+    | ANSI Common Lisp | 4.4 Sequences |    |       |         |
+    |                  |               |    |       |         |
 
 *** LDC
     | Source Code | folder | file | @ |
@@ -637,3 +638,5 @@
     | Buch                        | kapitel | @                           | @later | revision |
     |-----------------------------+---------+-----------------------------+--------+----------|
     | The Art of Unix programming |         | The Lessons of Unix History |        |          |
+* books
+  Designing Data Intensive Apps

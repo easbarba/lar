@@ -2123,6 +2123,61 @@
    #+end_src
 ** shell-misc
    #+begin_src shell-script
+   asdf_python()
+   {
+       echo 'Installing python binaries'
+
+       # https://github.com/danhper/asdf_python
+
+       asdf plugin-add python
+
+       asdf install python latest
+
+       asdf global python "$(asdf latest python)"
+   }
+
+   asdf_ruby()
+   {
+       echo 'Installing ruby binaries'
+
+       # https://github.com/asdf_vm/asdf_ruby
+
+       asdf plugin-add ruby https://github.com/asdf_vm/asdf_ruby.git
+
+       asdf install ruby latest
+
+       asdf global ruby "$(asdf latest ruby)"
+   }
+
+   ruby()
+   {
+       echo 'Installing gem packages'
+
+       local packages=(bundler solargraph rubocop pry reek clipboard rspec)
+
+       for pack in "${packages[@]}"
+       do
+	   gem install "${pack}" --user-install
+	   gem update  "${pack}"
+       done
+   }
+
+   python()
+   {
+       echo 'Installing pip packages'
+
+       local packages=(pip ansible wheel setuptools blackyoutube-dl python-language-server
+		       pyls-black pyls-isort pyls-mypy jedi ipython pylama
+		       pyflakes flake8-import-order pydocstyle flake8 mccabe yapf
+		       pylint rope pytest pep8-naming mutagen)
+
+       for pack in "${packages[@]}"
+       do
+	   python3 -m pip install --upgrade --user "${pack}"
+       done
+   }
+
+
    e_basher()
    {
        local basher_dir="$HOME/.basher"

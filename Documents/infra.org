@@ -3608,3 +3608,4 @@
   | Observability e Monitoring      | nagios Nginx, Apache                                                                        |
   | agile                           | scrum                                                                                       |
   | micro services                  |                                                                                             |
+  | cloud native                    |                                                                                             |
