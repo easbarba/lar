@@ -474,7 +474,7 @@
 		   erc-spelling-dictionaries '(("#emacs" "american"))
 		   erc-autojoin-channels-alist '(("freenode.net"
 						  "#bootstrappable"
-						  "##c"
+						  "#golang"
 						  "#emacs"))
 		   erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 		   erc-track-exclude-types
