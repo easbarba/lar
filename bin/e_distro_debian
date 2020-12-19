@@ -17,11 +17,9 @@ debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
-    ruby=(libssl-dev libgdbm-dev python2 zlib1g-dev)
-
     programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb clang clangd)
 
-    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br steam plank)
+    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br steam plank rhythmbox)
 
     gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme)
 
@@ -51,14 +49,12 @@ debian-packages ()
     local command='sudo apt install -y'
 
     e_foreach "$command" "${essentials[@]}"
-    e_foreach "$command" "${ruby[@]}"
-    e_foreach "$command" "${gtk[@]}"
-    e_foreach "$command" "${languages[@]}"
+    e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${user[@]}"
+    e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${virtualization[@]}"
-    e_foreach "$command" "${wine[@]}"
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     sudo apt -y build-dep emacs
     e_foreach "$command" "${security[@]}"
