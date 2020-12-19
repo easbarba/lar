@@ -19,7 +19,7 @@ debian-packages ()
 
     programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb clang clangd)
 
-    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br steam plank rhythmbox)
+    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch lm-sensors aspell aspell-pt-br steam plank pragha)
 
     gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme)
 
