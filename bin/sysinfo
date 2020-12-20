@@ -18,7 +18,7 @@ Volume()
     [[ $onoff == *\[on\]* ]] && printf "%s" "VOL: ${result}"
 }
 
-Cpu-frequency()
+Cpu-f()
 {
     read -r cpu a b c previdle rest < /proc/stat
     local prevtotal=$((a+b+c+previdle))
@@ -32,7 +32,7 @@ Cpu-frequency()
     printf "%s" "CPU-F: ${result}%"
 }
 
-Cpu-temperature()
+Cpu-t()
 {
     local result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
     printf "CPU-T: ${result}"
@@ -56,15 +56,7 @@ Battery()
     printf "%s" "BAT: ${result}"
 }
 
-Gpu-util()
-{
-    gputil="$( nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader )"
-    echo -ne "GPU-F: ${gputil}"
-    # utilization.memory
-    # utilization.gpu
-}
-
-Gpu-temp()
+Gpu-t()
 {
     local result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
     echo -ne "GPU-T: $result"
@@ -96,6 +88,6 @@ Host()
 # apt list --upgradable | wc -l
 
 sep=" | "
-echo -ne "$(Host)${sep}$(Volume)${sep}$(Memory)${sep}$(Cpu-frequency)${sep}$(Cpu-temperature)${sep}$(Battery)${sep}$(Gpu-temp)${sep}$(Connection)${sep}$(Date)"
+echo -ne "$(Host)${sep}$(Volume)${sep}$(Memory)${sep}$(Cpu-f)${sep}$(Cpu-t)${sep}$(Battery)${sep}$(Gpu-t)${sep}$(Connection)${sep}$(Date)"
 
 exit 0
