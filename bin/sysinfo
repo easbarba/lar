@@ -88,6 +88,6 @@ Host()
 # apt list --upgradable | wc -l
 
 IT=" | "
-echo -ne "$(Host)$IT$(Volume)$IT$(Battery)$IT$(Memory)$IT$(Cpuf)$IT$(Cput)$IT$(Gput)$IT$(Connection)$IT$(Date)"
+printf "%s" "$(Host)$IT$(Volume)$IT$(Battery)$IT$(Memory)$IT$(Cpuf)$IT$(Cput)$IT$(Gput)$IT$(Connection)$IT$(Date)"
 
 exit 0
