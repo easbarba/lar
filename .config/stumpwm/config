@@ -1,0 +1,349 @@
+;; -*- lisp -*-
+
+(in-package :stumpwm)
+
+;; ----------------
+;; STUMPWM VARIABLES
+;; ----------------
+
+(setf *default-package* :stumpwm
+      *startup-message* "O sol seja louvado!"
+      *suppress-abort-messages* t
+      *shell-program* (getenv "SHELL")
+      *window-number-map* "1234567890"
+      *window-format* " %c " ;; (%m%n%s)
+      *window-border-style* :thin
+      *mouse-focus-policy*  :ignore
+      *message-window-gravity* :top-right
+      *input-window-gravity* :top-right
+      *window-name-source* :title
+      *timeout-wait* 5
+      *normal-border-width* 0
+      *maxsize-border-width* 0
+      *transient-border-width* 0)
+
+;; -------------
+;; MISC SETTINGS
+;; -------------
+
+(clear-window-placement-rules)
+
+;; ----------------
+;; DEFAULT MODELINE
+;; ----------------
+
+(setf *screen-mode-line-format* "^B%n^b:  %W ^> / %C / %B / %M / %d  "
+      *mode-line-timeout* 2
+      *mode-line-foreground-color* "#c6797e"
+      *mode-line-background-color* "#172030"
+      *mode-line-position* :bottom)
+
+(enable-mode-line (current-screen) (current-head) t)
+
+;; ------
+;; GROUPS
+;; ------
+
+(defparameter *group-names* '("mx" "ide" "sistema" "midia" "www" "misc")
+  "List of group names to be created.")
+
+(when (consp *group-names*)
+  (grename (first *group-names*))
+  (loop for name in (rest *group-names*)
+	do (add-group (current-screen) name))
+  (gnext))
+
+;; -----------
+;; KEYBINDINGS
+;; -----------
+
+;; PREFIX KEY
+(set-prefix-key (kbd "M-s-z"))
+
+;; MISC
+(define-key *top-map* (kbd "M-s-q") "quit")
+(define-key *top-map* (kbd "s-:") "eval")
+(define-key *top-map* (kbd "s-;") "colon")
+(define-key *top-map* (kbd "M-s-r") "reload")
+(define-key *top-map* (kbd "s-x") "exec")
+(define-key *top-map* (kbd "M-s-b") "mode-line")
+
+(define-key *top-map* (kbd "s-w") "next-in-frame")
+(define-key *top-map* (kbd "s-s") "prev-in-frame")
+(define-key *top-map* (kbd "M-s-f") "fullscreen")
+(define-key *top-map* (kbd "M-s-c") "delete")
+(define-key *top-map* (kbd "s-r") "remove")
+(define-key *top-map* (kbd "s-i") "iresize")
+
+;; GROUPS
+(define-key *top-map* (kbd "s-d") "gnext")
+(define-key *top-map* (kbd "s-a") "gprev")
+(define-key *top-map* (kbd "s-TAB") "gother")
+(define-key *top-map* (kbd "s-m") "gmove")
+
+;; SELECT GROUP
+(define-key *top-map* (kbd "s-L") "grouplist")
+(define-key *top-map* (kbd "s-0") "gselect 0")
+(define-key *top-map* (kbd "s-1") "gselect 1")
+(define-key *top-map* (kbd "s-2") "gselect 2")
+(define-key *top-map* (kbd "s-3") "gselect 3")
+(define-key *top-map* (kbd "s-4") "gselect 4")
+(define-key *top-map* (kbd "s-5") "gselect 5")
+
+;; MOVE
+(define-key *top-map* (kbd "s-)") "pull 0")
+(define-key *top-map* (kbd "s-!") "pull 1")
+(define-key *top-map* (kbd "s-@") "pull 2")
+(define-key *top-map* (kbd "s-#") "pull 3")
+(define-key *top-map* (kbd "s-$") "pull 4")
+(define-key *top-map* (kbd "s-%") "pull 5")
+
+;; -----------------
+;; FOLDERS LOCATIONS
+;; -----------------
+
+(defparameter *lar*
+  (uiop:getenv "HOME")
+  "Home Folder.")
+(defparameter *musica*
+  (concatenate 'string *lar* "/Musica")
+  "Musica Folder.")
+(defparameter *books*
+  (concatenate 'string *lar* "/Livros")
+  "Books Folder.")
+(defparameter *pictures*
+  (concatenate 'string *lar* "/Fotografias")
+  "Fotografias Folder.")
+(defparameter *download*
+  (concatenate 'string *lar* "/Downloads")
+  "Downloads Folder.")
+
+;; -----------------
+;; EXTERNAL SOFTWARE
+;; -----------------
+
+;; GLOBAL MACROS
+(defmacro search-on-web (name url-prefix)
+  `(defcommand ,name (search)
+     ((:rest ,(concatenate 'string (symbol-name name) ": ")))
+     (run-shell-command (format nil "~A ~A"
+				*browser*
+				(concat ,url-prefix (substitute #\+ #\Space search))))))
+
+(search-on-web google "http://www.google.com/search?q=")
+(search-on-web wikipedia "http://en.wikipedia.org/wiki/Special:Search?fulltext=Search&search=")
+(search-on-web youtube "http://youtube.com/results?search_query=")
+
+;; -----------------
+;; UTILIDADES
+;; -----------------
+
+(ql:quickload :uiop)
+(ql:quickload :trivial-clipboard)
+
+(defun runner (program &optional args)
+  ".NET like Runnner."
+  (uiop:run-program (concatenate 'string program " " args)))
+
+;; ------------------
+;; Sistema Interface
+;; ------------------
+
+(defun lx/run-app (cmd prop &optional args) ;; FIX: fix
+  "Run an instance of `cmd' with property `prop' (and any optional arguments `args')"
+  (if (null args)
+      (run-or-raise cmd prop)
+      (run-or-raise (cat cmd " " args) prop)))
+
+(defun lx/which? (name)
+  "Return t, if NAME executable exists in PATH."
+  (zerop
+   (nth-value 2 (uiop:run-program
+		 (concatenate 'string "command -v " name)
+		 :force-shell t :ignore-error-status t))))
+
+(defun lx/anyexec (lst)
+  "Return first executable that exist in lst"
+  (dolist (current lst)
+    (when (lx/which? current)
+      current)))
+
+;; (setf a (lx/anyexec '("emacs" "code")))
+
+
+(defparameter *editor* (cond ((lx/which? "emacs") "emacs"))
+  "Default Editor.")
+
+(defparameter *ide* (cond ((lx/which? "rider") "rider")
+			  ((lx/which? "monodevelop") "monodevelop")
+			  ((lx/which? "code") "code"))
+  "Default Editor.")
+
+(defparameter *browser* (cond ((lx/which? "firefox") "firefox")
+			      ((lx/which? "nyxt") "nyxt")
+			      ((lx/which? "google-chrome") "google-chrome"))
+  "Default Browser.")
+
+(defparameter *terminal* (cond ((lx/which? "Gnome-terminal") "Gnome-terminal")
+			       ((lx/which? "st") "st"))
+  "Default terminal.")
+
+(defparameter *locker* (cond ((lx/which? "slock") "slock")
+			     ((lx/which? "i3lock") "i3lock"))
+  "Default System Locker.")
+
+;; -----------------
+;; CUSTOM COMMANDS
+;; -----------------
+
+(defcommand run-editor () ()
+  "Run an instance of `*editor*' with property`:instance'."
+  (lx/run-app *editor* (list :instance *editor*)))
+
+(defcommand run-ide () ()
+  "Run an instance of `*ide*' with property`:instance'."
+  (lx/run-app *ide* (list :instance *ide*)))
+
+(defcommand run-browser () ()
+  "Run an instance of `*browser*' with property`:instance'."
+  (lx/run-app *browser* (list :instance *browser*)))
+
+(defcommand run-terminal () ()
+  "Run an instance of `*terminal*' with property`:instance'."
+  (lx/run-app *terminal* (list :instance *terminal*)))
+
+(defcommand run-locker () ()
+  "Run an instance of `*locker*' with property`:instance'."
+  (lx/run-app *locker* (list :instance *locker*)))
+
+(define-key *top-map* (kbd "s-RET") "run-terminal")
+(define-key *top-map* (kbd "s-l") "run-locker")
+(define-key *top-map* (kbd "s-b") "run-browser")
+(define-key *top-map* (kbd "s-e") "run-editor")
+
+(defcommand safe-quit () ()
+  "Checks if any windows are open before quitting."
+  (let ((win-count 0)) ;; count the windows in each group
+    (dolist (group (screen-groups (current-screen)))
+      (setq win-count (+ (length (group-windows group)) win-count)))
+    (if (= win-count 0) ;; display the number of open windows or quit
+	(run-commands "quit")
+	(message (format nil "You have ~d ~a open" win-count
+			 (if (= win-count 1) "window" "windows"))))))
+
+;; -------------------
+;; SOFTWARE PER GROUPS
+;; -------------------
+
+(defparameter *frame-preferences*
+  '(("mx"
+     (0 t t :class "Emacs"))
+    ("ide"
+     (0 t t :class "rider")
+     (1 t t :class "monodevelop")
+     (2 t t :class "Code"))
+    ("sistema"
+     (0 t t :class "st")
+     (1 t t :class "Gnome-terminal"))
+    ("midia"
+     (0 t t :title "mpv")
+     (1 t t :title "vlc")
+     (2 t t :title "libreoffice")
+     (3 t t :title "Steam")
+     (4 t t :title "Thunderbird")
+     (5 t t :title "wine.exe")
+     (6 t t :title "wineboot.exe")
+     (7 t t :title "winecfg.exe")
+     (9 t t :title "deluge-gtk"))
+    ("www"
+     (0 t t :class "Firefox")
+     (1 t t :class "Google-chrome")
+     (2 t t :class "nyxt")
+     (3 t t :class "Evince")))
+  "List of preferences to pass to define-frame-preference.")
+
+(when (consp *frame-preferences*)
+  (loop for (name . prefs) in *frame-preferences*
+	do (eval `(define-frame-preference ,name ,@prefs))))
+
+(defcommand tocador () ()
+  (let ((link (trivial-clipboard:text))
+	(player "mpv")
+	(args "--no-config --no-audio-display"))
+    (runner "mpv" (concatenate 'string args
+			       " "
+			       link))))
+
+(define-key *top-map* (kbd "s-P") "tocador")
+
+;; WALLPAPER
+(defun waller()
+  (let ((setter "feh")
+	(setter-args "--randomize --bg-fill")
+	(wallpapers (concatenate 'string *pictures* "/papelparede")))
+    (run-shell-command (concatenate 'string  setter " " setter-args " " wallpapers))))
+
+(when (lx/which? "feh")
+  (waller))
+
+;; -----------------------------
+;; TECLAS - APLICATIVOS EXTERNOS
+;; -----------------------------
+
+(dolist (current
+	 '(("s-A"                    "cero media getmedia 'vorbis'")
+	   ("s-V"                    "cero media getmedia")
+	   ("s-SPC"                  "tocador-alternar")
+	   ("s-n"                    "tocador-proxima")
+	   ("s-z"                    "mpv ~/Musica/oosh.ogg")
+	   ("Print"                  "screenshotter")
+	   ("M-s-w"                  "brilho-cima")
+	   ("M-s-s"                  "brilho-baixo")
+	   ("s-W"                    "volume-cima")
+	   ("s-S"                    "volume-baixo")
+	   ("s-E"                    "volume-alternar")
+	   ("XF86AudioRaiseVolume"   "volume-cima")
+	   ("XF86AudioLowerVolume"   "volume-baixo")
+	   ("XF86AudioMute"          "volume-mute")))
+  (define-key *top-map*
+      (kbd (first current))
+    (concatenate 'string "exec " (second current))))
+
+;; -----------------
+;; CONTRIB MODULOS
+;; -----------------
+
+;; CONTRIB MODULOS LOCALIZACAO
+(set-module-dir (pathname-as-directory (concat *lar* "/Builds/stumpwm-contrib")))
+
+;; LOAD MODULES
+(load-module "battery-portable")
+(load-module "cpu")
+(load-module "mem")
+(load-module "wifi")
+
+(load-module "end-session")
+(define-key *top-map* (kbd "s-Q") "logout")
+
+(load-module "stumptray")
+(stumptray::stumptray)
+
+(load-module "notify")
+(notify:notify-server-toggle)
+
+;; CONTRIB MODELINE
+(setf *screen-mode-line-format* "^B%n^b:  %W ^> / %C / %B / %M / %d    ")
+
+   ;; -----------------
+   ;; AUTO INICIA
+   ;; -----------------
+   (let ((autostart "autoinicia-aps"))
+     (when (lx/which? autostart)
+       (run-shell-command autostart)))
+
+;; -----------------
+;; AUTO INICIA
+;; -----------------
+(let ((autostart "autoinicia-aps"))
+  (when (lx/which? autostart)
+    (run-shell-command autostart)))
