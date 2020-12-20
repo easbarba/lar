@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+# * Dependencies: Sensors, ping, awk, grep, sed, amd ryzen, vega 10
+
+Volume()
+{
+    local onoff="$(amixer get Master | tail -1)"
+
+    local result
+    if pgrep -x "pulseaudio" > /dev/null; then
+	result=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( "$SINK" + 1 )) \
+		    | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')%
+    else
+	result="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+    fi
+
+    [[ $onoff == *\[off\]* ]] && printf "VOL: MUTE"
+    [[ $onoff == *\[on\]* ]] && printf "%s" "VOL: ${result}"
+}
+
+Cpu-frequency()
+{
+    read -r cpu a b c previdle rest < /proc/stat
+    local prevtotal=$((a+b+c+previdle))
+
+    sleep 0.5
+
+    read -r cpu a b c idle rest < /proc/stat
+    local total=$((a+b+c+idle))
+
+    local result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
+    printf "%s" "CPU-F: ${result}%"
+}
+
+Cpu-temperature()
+{
+    local result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
+    printf "CPU-T: ${result}"
+}
+
+Memory()
+{
+    local result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
+    printf "MEM: ${result}"
+}
+
+Date()
+{
+    local result="$(date "+%H:%M - %a, %b %d")"
+    printf "DATE: ${result}"
+}
+
+Battery()
+{
+    local result="$(acpi -b | awk '{print substr($3, 1, length($3)-1)"-"substr($4, 1, length($4)-1)}')"
+    printf "%s" "BAT: ${result}"
+}
+
+Gpu-util()
+{
+    gputil="$( nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader )"
+    echo -ne "GPU-F: ${gputil}"
+    # utilization.memory
+    # utilization.gpu
+}
+
+Gpu-temp()
+{
+    local result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
+    echo -ne "GPU-T: $result"
+}
+
+Update()
+{
+    pac=$(checkupdates | wc -l)
+    aur=$(cower -u | wc -l)
+
+    check=$((pac + aur))
+    if [[ "$check" != "0" ]]
+    then
+	echo -e " $pac  $aur / "
+    fi
+}
+
+Connection()
+{
+    local result=$(nmcli connection show | awk 'NR==2 {print $4}')
+    [[ "$(nmcli connection show | awk 'NR==2 {print $4}')" != '--' ]] && printf 'CON: ON' || 'CON: OFF'
+}
+
+Host()
+{
+    echo -e "${HOSTNAME^}"
+}
+
+# apt list --upgradable | wc -l
+
+sep=" | "
+echo -ne "$(Host)${sep}$(Volume)${sep}$(Memory)${sep}$(Cpu-frequency)${sep}$(Cpu-temperature)${sep}$(Battery)${sep}$(Gpu-temp)${sep}$(Connection)${sep}$(Date)"
+
+exit 0
