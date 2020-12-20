@@ -18,7 +18,7 @@ Volume()
     [[ $onoff == *\[on\]* ]] && printf "%s" "VOL: ${result}"
 }
 
-Cpu-f()
+Cpuf()
 {
     read -r cpu a b c previdle rest < /proc/stat
     local prevtotal=$((a+b+c+previdle))
@@ -29,13 +29,13 @@ Cpu-f()
     local total=$((a+b+c+idle))
 
     local result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
-    printf "%s" "CPU-F: ${result}%"
+    printf "%s" "CPUF: ${result}%"
 }
 
-Cpu-t()
+Cput()
 {
     local result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
-    printf "CPU-T: ${result}"
+    printf "CPUT: ${result}"
 }
 
 Memory()
@@ -47,19 +47,19 @@ Memory()
 Date()
 {
     local result="$(date "+%H:%M - %a, %b %d")"
-    printf "DATE: ${result}"
+    printf "${result}"
 }
 
 Battery()
 {
-    local result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)" ("substr($3, 1, length($3)-1)")"}')"
+    local result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
     printf "%s" "BAT: ${result}"
 }
 
-Gpu-t()
+Gput()
 {
     local result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
-    echo -ne "GPU-T: $result"
+    echo -ne "GPUT: $result"
 }
 
 Update()
@@ -87,7 +87,7 @@ Host()
 
 # apt list --upgradable | wc -l
 
-sep=" | "
-echo -ne "$(Host)${sep}$(Volume)${sep}$(Memory)${sep}$(Cpu-f)${sep}$(Cpu-t)${sep}$(Battery)${sep}$(Gpu-t)${sep}$(Connection)${sep}$(Date)"
+IT=" | "
+echo -ne "$(Host)$IT$(Volume)$IT$(Battery)$IT$(Memory)$IT$(Cpuf)$IT$(Cput)$IT$(Gput)$IT$(Connection)$IT$(Date)"
 
 exit 0
