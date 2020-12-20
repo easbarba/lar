@@ -74,7 +74,7 @@ golang()
 
     for pack in "${packages[@]}"
     do
-	go get -u "${pack}"
+	go get "${pack}"
     done
 }
 
