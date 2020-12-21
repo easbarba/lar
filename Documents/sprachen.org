@@ -32,10 +32,10 @@
 * Golang
 ** Fortschritt
 *** Buch
-    | Buch                    | Capitulo          | em             | tarde | revisao |
-    |-------------------------+-------------------+----------------+-------+---------|
-    | Go Programming Language | Program Structure | 2.6.1. Imports |       |         |
-    |                         |                   |                |       |         |
+    | Buch                    | Capitulo        | em | tarde | revisao |
+    |-------------------------+-----------------+----+-------+---------|
+    | Go Programming Language | Composite Types |    |       |         |
+    |                         |                 |    |       |         |
 
 *** LDC
     | Source Code | folder          | file      | @ |
