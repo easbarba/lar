@@ -101,6 +101,4 @@ e-zplug()
 e-zplug || e-default
 
 # * SOURCING
-export SHELL_ADDS="$HOME/bin/shell-additionals"; [ -f "$SHELL_ADDS" ] && source "$SHELL_ADDS"
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
-export ASDF_BIN="$HOME/.config/asdf/completions/asdf.zsh"; [[ -f $ASDF_BIN ]] && source "$ASDF_BIN"
