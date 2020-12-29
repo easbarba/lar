@@ -45,12 +45,8 @@ golang()
 {
     export GOPATH="$HOME/.local/"
     export GO111MODULE=on
-}
 
-ruby()
-{
-    local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
-    export PATH="$gem_bin"${PATH:+:}$PATH
+    export PATH="$GOPATH"${PATH:+:}${PATH}
 }
 
 asdf()
@@ -70,7 +66,6 @@ cask()
 
 # * RUN
 
-asdf
 golang
-ruby
+asdf
 cask
