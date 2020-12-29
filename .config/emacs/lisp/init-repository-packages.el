@@ -353,11 +353,10 @@
 
 (use-package lsp-mode
   :defer 1
+  :commands lsp
   :hook
   (go-mode . lsp)
   (ruby-mode . lsp)
-  :commands lsp
-  :init
   :custom
   (lsp-enable-indentation nil)
   (lsp-signature-auto-activate nil)
@@ -454,6 +453,7 @@
 (use-package reformatter
   :defer 1
   :config
+  (reformatter-define go-format :program "go" :args '("fmt"))
   (reformatter-define lua-format :program "lua-format" :args '("-i")))
 
 (use-package eshell-toggle
