@@ -32,10 +32,10 @@
 * Golang
 ** Fortschritt
 *** Buch
-    | Buch                    | Capitulo        | em | tarde | revisao |
-    |-------------------------+-----------------+----+-------+---------|
-    | Go Programming Language | Composite Types |    |       |         |
-    |                         |                 |    |       |         |
+    | Buch                    | Capitulo        | em           | tarde | revisao |
+    |-------------------------+-----------------+--------------+-------+---------|
+    | Go Programming Language | Composite Types | 4.4. Structs |       |         |
+    |                         |                 |              |       |         |
 
 *** LDC
     | Source Code | folder          | file      | @ |
@@ -45,6 +45,11 @@
 ** Projekts
 ** Buchs
 ** features
+*** make
+    #+begin_src go
+    make([]T, len)
+    make([]T, len, cap) // same as make([]T, cap)[:len]
+    #+end_src
 *** type
     #+begin_src go
     func (c Clear) String() string { // associates Clear to String
@@ -72,6 +77,7 @@
     #+end_src
 ** terms
    - runes: single characthers
+
 ** Read later
 * Shell Scripts
 ** GNU Bash

@@ -6936,186 +6936,193 @@
    #+end_src
 ** .profile
    #+begin_src shell-script
+ruby()
+{
+    local gem_bin="$HOME/.gem/ruby/2.7.0/bin"
+    export PATH="$gem_bin"${PATH:+:}$PATH
+}
+
+
    # ** GEM
-   if [ -x "$(command -v gem)" ]; then
-       export GEM_HOME="${XDG_CONFIG_HOME}/gem/"
-       export GEM_PATH="${XDG_CONFIG_HOME}/gem/"
-       export GEM_BIN="${XDG_CONFIG_HOME}/gem/bin"
-       PATH="$GEM_BIN"${PATH:+:}$PATH
-   fi
+      if [ -x "$(command -v gem)" ]; then
+	  export GEM_HOME="${XDG_CONFIG_HOME}/gem/"
+	  export GEM_PATH="${XDG_CONFIG_HOME}/gem/"
+	  export GEM_BIN="${XDG_CONFIG_HOME}/gem/bin"
+	  PATH="$GEM_BIN"${PATH:+:}$PATH
+      fi
 
-   ## ** RVM
-   if [[ -d "$HOME/.rvm/scripts" ]]; then
-       export RVM_DIR="$HOME/.rvm"
-       [ -s "$RVM_DIR/scripts/rvm" ] && source "$RVM_DIR/scripts/rvm"  # This loads nvm
+      ## ** RVM
+      if [[ -d "$HOME/.rvm/scripts" ]]; then
+	  export RVM_DIR="$HOME/.rvm"
+	  [ -s "$RVM_DIR/scripts/rvm" ] && source "$RVM_DIR/scripts/rvm"  # This loads nvm
 
-       export RVM_CURRENT_BIN="$RVM_DIR/rubies/ruby-2.7.0/bin/ruby"
-       PATH="$RVM_CURRENT_BIN"${PATH:+:}$PATH
-   fi
+	  export RVM_CURRENT_BIN="$RVM_DIR/rubies/ruby-2.7.0/bin/ruby"
+	  PATH="$RVM_CURRENT_BIN"${PATH:+:}$PATH
+      fi
 
-   # * NPM
-   if [ -x "$(command -v npm)" ]; then
-       export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
-       export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-       export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-       export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
-       export NPM_HOME="$XDG_CONFIG_HOME/npm"
-       export NPM_BIN="$NPM_HOME/bin"
-       PATH="$NPM_BIN":$PATH
-   fi
+      # * NPM
+      if [ -x "$(command -v npm)" ]; then
+	  export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
+	  export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+	  export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+	  export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
+	  export NPM_HOME="$XDG_CONFIG_HOME/npm"
+	  export NPM_BIN="$NPM_HOME/bin"
+	  PATH="$NPM_BIN":$PATH
+      fi
 
-   # ** DOTNET
-   [ -x "$(command -v dotnet)" ] && export PATH="${HOME}/.dotnet/tools":${PATH}
+      # ** DOTNET
+      [ -x "$(command -v dotnet)" ] && export PATH="${HOME}/.dotnet/tools":${PATH}
 
-   # ** SBCL
-   [ -e "$HOME_LOCAL_BIN/sbcl" ] &&  export SBCL_HOME="$HOME_LOCAL/lib/sbcl"
+      # ** SBCL
+      [ -e "$HOME_LOCAL_BIN/sbcl" ] &&  export SBCL_HOME="$HOME_LOCAL/lib/sbcl"
 
-   # ** NIM
-   export PATH="${HOME}/.nimble/bin":${PATH}
+      # ** NIM
+      export PATH="${HOME}/.nimble/bin":${PATH}
 
-   # ** Keyboard Layout
-   export XMODIFIERS="@im=ibus"
-   export QT_IM_MODULE=ibus
-   export GTK_IM_MODULE=ibus
+      # ** Keyboard Layout
+      export XMODIFIERS="@im=ibus"
+      export QT_IM_MODULE=ibus
+      export GTK_IM_MODULE=ibus
 
-   # * PYTHON
-   if [ -x "$(command -v pip3)" ]; then
-       export PIP=pip3
-       export PIP_REQUIRE_VIRTUALVENV=true
-       export PIP_DOWNLOAD_CACHE=$HOME/.cache/pip/cache
-   fi
+      # * PYTHON
+      if [ -x "$(command -v pip3)" ]; then
+	  export PIP=pip3
+	  export PIP_REQUIRE_VIRTUALVENV=true
+	  export PIP_DOWNLOAD_CACHE=$HOME/.cache/pip/cache
+      fi
 
-   # * JAVA
-   if [ -x "$(command -v javac)" ]; then
-       # export CLASSPATH="$XDG_CONFIG_HOME/emacs/eclipse.jdt.ls/server/plugins/org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar${CLASSPATH:+:}$CLASSPATH"
-       # export JAVA_HOME=
-   fi
+      # * JAVA
+      if [ -x "$(command -v javac)" ]; then
+	  # export CLASSPATH="$XDG_CONFIG_HOME/emacs/eclipse.jdt.ls/server/plugins/org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar${CLASSPATH:+:}$CLASSPATH"
+	  # export JAVA_HOME=
+      fi
 
-   # ** Python
-   VIRTUALENVWRAPPER_PYTHON=$HOME_LOCAL_BIN/python3
-   export WORKON_HOME=$HOME/.virtualenvs   # Optional
-   export PROJECT_HOME=$HOME/projects      # Optional
-
-
-   # ** GUIX
-   if [ -x "$(command -v guix)" ]; then
-       export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"
-       export PATH="/home/lxbarbosa/.config/guix/current/bin"
-       export GUIX_PROFILE="/home/lxbarbosa/.config/guix/current"
-   fi
-
-   [ '/usr/bin/tty' = '/dev/ttyv0' ] && startx & # FreeBSD
-
-   # =============== APPLICATIONS
-   # WGET/CURL
-   if [ -x "$(command -v wget)" ]; then
-       export DOWNLOADER="wget"
-   else
-       export DOWNLOADER="curl"
-   fi
-
-   # GOLANG
-   if [ -x "$(command -v go)" ]; then
-       export GOPATH="$HOME/.local/"
-       export GO_BIN="$HOME/go/bin/"
-       export PATH="$GO_BIN"${PATH:+:}$PATH
-   fi
-
-   # FLATPAK
-   XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
-
-   # ----------------------- # NIX
-   if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-       . $HOME/.nix-profile/etc/profile.d/nix.sh;
-   fi # added by Nix installer
-
-   # source .bashrc
-   if [ -n "$BASH_VERSION" ]; then
-       if [ -f "$HOME/.bashrc" ]; then
-	   . "$HOME/.bashrc"
-       fi
-   fi
-
-   if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then exec startx; fi
-
-   if [-z "${DISPLAY}"] && ["${XDG_VTNR}" -eq 1]; then
-       exec startx
-   fi
+      # ** Python
+      VIRTUALENVWRAPPER_PYTHON=$HOME_LOCAL_BIN/python3
+      export WORKON_HOME=$HOME/.virtualenvs   # Optional
+      export PROJECT_HOME=$HOME/projects      # Optional
 
 
-   if [ -x "$(command -v guix)" ]; then
-       # GUIX VARS
-       export GUILE_WARN_DEPRECATED="detailed"
+      # ** GUIX
+      if [ -x "$(command -v guix)" ]; then
+	  export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"
+	  export PATH="/home/lxbarbosa/.config/guix/current/bin"
+	  export GUIX_PROFILE="/home/lxbarbosa/.config/guix/current"
+      fi
 
-       # GUIX BIN FOLDERS
-       export GUIX_PROFILE="$HOME/.guix-profile"
-       export PATH="$GUIX_PROFILE/bin:$GUIX_PROFILE/sbin"
-       export PATH="$XDG_CONFIG_HOME/guix/current/bin${PATH:+:}$PATH"
-       # export PATH="$GUIX_PROFILE/bin${PATH:+:}$PATH"
-       # export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"
-       # export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
-       # export INFOPATH="$GUIX_PROFILE/share/info${INFOPATH:+:}$INFOPATH"
-       # export GIT_EXEC_PATH="$GUIX_PROFILE/libexec/git-core${GIT_EXEC_PATH}$GIT_EXEC_PATH"
-   fi
+      [ '/usr/bin/tty' = '/dev/ttyv0' ] && startx & # FreeBSD
 
-   # ---------------- # Emacs - INFOPATH
-   if [ -x "$(command -v emacs)" ]; then
-       # export INFOPATH="/usr/share/info${INFOPATH:+:}$INFOPATH"
-       # export INFOPATH="/usr/share/info/emacs${INFOPATH:+:}$INFOPATH"
-       # export INFOPATH="/usr/local/share/info${INFOPATH:+:}$INFOPATH"
-       # export INFOPATH="$HOME/lisp/emacs/info${INFOPATH:+:}$INFOPATH" # local build info
-   fi
+      # =============== APPLICATIONS
+      # WGET/CURL
+      if [ -x "$(command -v wget)" ]; then
+	  export DOWNLOADER="wget"
+      else
+	  export DOWNLOADER="curl"
+      fi
 
-   # Compilers
-   # [[ -x "$(command -v gcc)" ]] && export CC=gcc
+      # GOLANG
+      if [ -x "$(command -v go)" ]; then
+	  export GOPATH="$HOME/.local/"
+	  export GO_BIN="$HOME/go/bin/"
+	  export PATH="$GO_BIN"${PATH:+:}$PATH
+      fi
 
-   # ---------------- # GUIXSD
-   if [ -x "$(command -v guix)" ]; then
-       export GUILE_WARN_DEPRECATED="detailed"
+      # FLATPAK
+      XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
 
-       export GUIX_PROFILE="$HOME/.guix-profile"
-       export PATH="${PATH:+:}$PATH$GUIX_PROFILE/bin:$GUIX_PROFILE/sbin"
-       # export GUIX_GTK3_PATH="$GUIX_PROFILE/lib/gtk-3.0"
-       # export XDG_DATA_DIRS="$GUIX_PROFILE/share"
-       # export GIO_EXTRA_MODULES="$GUIX_PROFILE/lib/gio/modules"
-       # export TERMINFO_DIRS="$GUIX_PROFILE/share/terminfo"
-       # export INFOPATH="$GUIX_PROFILE/share/info${INFOPATH:+:}$INFOPATH"
-       # export GST_PLUGIN_SYSTEM_PATH="$GUIX_PROFILE/lib/gstreamer-1.0"
-       # export CPATH="$GUIX_PROFILE/include"
-       # export ASPELL_DICT_DIR="$GUIX_PROFILE/lib/aspell"
-       # export GIT_EXEC_PATH="$GUIX_PROFILE/libexec/git-core"
-       # # export GIT_EXEC_PATH="$GUIX_PROFILE/libexec/git-core${GIT_EXEC_PATH}$GIT_EXEC_PATH"
-       # export PKG_CONFIG_PATH="$GUIX_PROFILE/lib/pkgconfig:$GUIX_PROFILE/share/pkgconfig"
-       # export CMAKE_PREFIX_PATH="$GUIX_PROFILE/"
-       # export LIBRARY_PATH="$GUIX_PROFILE/lib:$GUIX_PROFILE/lib64${LIBRARY_PATH:+:}$LIBRARY_PATH"
-       # export LD_LIBRARY_PATH="$GUIX_PROFILE/lib:$GUIX_PROFILE/lib64${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
-       # export PYTHONPATH="$GUIX_PROFILE/lib/python3.7/site-packages"
-       # export ACLOCAL_PATH="$GUIX_PROFILE/share/aclocal"
-       # export BASH_LOADABLES_PATH="$GUIX_PROFILE/lib/bash"
-   fi
+      # ----------------------- # NIX
+      if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+	  . $HOME/.nix-profile/etc/profile.d/nix.sh;
+      fi # added by Nix installer
+
+      # source .bashrc
+      if [ -n "$BASH_VERSION" ]; then
+	  if [ -f "$HOME/.bashrc" ]; then
+	      . "$HOME/.bashrc"
+	  fi
+      fi
+
+      if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then exec startx; fi
+
+      if [-z "${DISPLAY}"] && ["${XDG_VTNR}" -eq 1]; then
+	  exec startx
+      fi
 
 
+      if [ -x "$(command -v guix)" ]; then
+	  # GUIX VARS
+	  export GUILE_WARN_DEPRECATED="detailed"
 
-   # # ANACONDA
-   # if [ -d "$HOME/anaconda3/" ]; then
-   #     ANACONDA="$HOME/anaconda3/bin/"
-   #     export PATH="$ANACONDA":"$PATH"
-   # fi
+	  # GUIX BIN FOLDERS
+	  export GUIX_PROFILE="$HOME/.guix-profile"
+	  export PATH="$GUIX_PROFILE/bin:$GUIX_PROFILE/sbin"
+	  export PATH="$XDG_CONFIG_HOME/guix/current/bin${PATH:+:}$PATH"
+	  # export PATH="$GUIX_PROFILE/bin${PATH:+:}$PATH"
+	  # export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"
+	  # export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+	  # export INFOPATH="$GUIX_PROFILE/share/info${INFOPATH:+:}$INFOPATH"
+	  # export GIT_EXEC_PATH="$GUIX_PROFILE/libexec/git-core${GIT_EXEC_PATH}$GIT_EXEC_PATH"
+      fi
 
-   # # >>> conda initialize >>>
-   # # !! Contents within this block are managed by 'conda init' !!
-   # __conda_setup="$('/home/lxbarbosa/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-   # if [ $? -eq 0 ]; then
-   #     eval "$__conda_setup"
-   # else
-   #     if [ -f "/home/lxbarbosa/anaconda3/etc/profile.d/conda.sh" ]; then
-   #         . "/home/lxbarbosa/anaconda3/etc/profile.d/conda.sh"
-   #     else
-   #         export PATH="/home/lxbarbosa/anaconda3/bin:$PATH"
-   #     fi
-   # fi
-   # unset __conda_setup
-   # # <<< conda initialize <<<
+      # ---------------- # Emacs - INFOPATH
+      if [ -x "$(command -v emacs)" ]; then
+	  # export INFOPATH="/usr/share/info${INFOPATH:+:}$INFOPATH"
+	  # export INFOPATH="/usr/share/info/emacs${INFOPATH:+:}$INFOPATH"
+	  # export INFOPATH="/usr/local/share/info${INFOPATH:+:}$INFOPATH"
+	  # export INFOPATH="$HOME/lisp/emacs/info${INFOPATH:+:}$INFOPATH" # local build info
+      fi
+
+      # Compilers
+      # [[ -x "$(command -v gcc)" ]] && export CC=gcc
+
+      # ---------------- # GUIXSD
+      if [ -x "$(command -v guix)" ]; then
+	  export GUILE_WARN_DEPRECATED="detailed"
+
+	  export GUIX_PROFILE="$HOME/.guix-profile"
+	  export PATH="${PATH:+:}$PATH$GUIX_PROFILE/bin:$GUIX_PROFILE/sbin"
+	  # export GUIX_GTK3_PATH="$GUIX_PROFILE/lib/gtk-3.0"
+	  # export XDG_DATA_DIRS="$GUIX_PROFILE/share"
+	  # export GIO_EXTRA_MODULES="$GUIX_PROFILE/lib/gio/modules"
+	  # export TERMINFO_DIRS="$GUIX_PROFILE/share/terminfo"
+	  # export INFOPATH="$GUIX_PROFILE/share/info${INFOPATH:+:}$INFOPATH"
+	  # export GST_PLUGIN_SYSTEM_PATH="$GUIX_PROFILE/lib/gstreamer-1.0"
+	  # export CPATH="$GUIX_PROFILE/include"
+	  # export ASPELL_DICT_DIR="$GUIX_PROFILE/lib/aspell"
+	  # export GIT_EXEC_PATH="$GUIX_PROFILE/libexec/git-core"
+	  # # export GIT_EXEC_PATH="$GUIX_PROFILE/libexec/git-core${GIT_EXEC_PATH}$GIT_EXEC_PATH"
+	  # export PKG_CONFIG_PATH="$GUIX_PROFILE/lib/pkgconfig:$GUIX_PROFILE/share/pkgconfig"
+	  # export CMAKE_PREFIX_PATH="$GUIX_PROFILE/"
+	  # export LIBRARY_PATH="$GUIX_PROFILE/lib:$GUIX_PROFILE/lib64${LIBRARY_PATH:+:}$LIBRARY_PATH"
+	  # export LD_LIBRARY_PATH="$GUIX_PROFILE/lib:$GUIX_PROFILE/lib64${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
+	  # export PYTHONPATH="$GUIX_PROFILE/lib/python3.7/site-packages"
+	  # export ACLOCAL_PATH="$GUIX_PROFILE/share/aclocal"
+	  # export BASH_LOADABLES_PATH="$GUIX_PROFILE/lib/bash"
+      fi
+
+
+
+      # # ANACONDA
+      # if [ -d "$HOME/anaconda3/" ]; then
+      #     ANACONDA="$HOME/anaconda3/bin/"
+      #     export PATH="$ANACONDA":"$PATH"
+      # fi
+
+      # # >>> conda initialize >>>
+      # # !! Contents within this block are managed by 'conda init' !!
+      # __conda_setup="$('/home/lxbarbosa/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+      # if [ $? -eq 0 ]; then
+      #     eval "$__conda_setup"
+      # else
+      #     if [ -f "/home/lxbarbosa/anaconda3/etc/profile.d/conda.sh" ]; then
+      #         . "/home/lxbarbosa/anaconda3/etc/profile.d/conda.sh"
+      #     else
+      #         export PATH="/home/lxbarbosa/anaconda3/bin:$PATH"
+      #     fi
+      # fi
+      # unset __conda_setup
+      # # <<< conda initialize <<<
    #+end_src
 ** .xinitrc
    #+begin_src shell-script
