@@ -32,10 +32,10 @@
 * Golang
 ** Fortschritt
 *** Buch
-    | Buch                    | Capitulo        | em           | tarde | revisao |
-    |-------------------------+-----------------+--------------+-------+---------|
-    | Go Programming Language | Composite Types | 4.4. Structs |       |         |
-    |                         |                 |              |       |         |
+    | Buch                    | Capitulo  | em             | tarde | revisao |
+    |-------------------------+-----------+----------------+-------+---------|
+    | Go Programming Language | Functions | 5.2. Recursion |       |         |
+    |                         |           |                |       |         |
 
 *** LDC
     | Source Code | folder          | file      | @ |
@@ -45,6 +45,10 @@
 ** Projekts
 ** Buchs
 ** features
+*** print
+    #+begin_src go
+    Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
+    #+end_src
 *** make
     #+begin_src go
     make([]T, len)
