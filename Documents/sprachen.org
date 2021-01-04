@@ -9,8 +9,8 @@
   - [[#fortschritt][Fortschritt]]
   - [[#projekts][Projekts]]
   - [[#buchs][Buchs]]
-  - [[#features][features]]
-  - [[#terms][terms]]
+  - [[#features][Features]]
+  - [[#terms][Terms]]
   - [[#read-later][Read later]]
 - [[#shell-scripts][Shell Scripts]]
   - [[#gnu-bash][GNU Bash]]
@@ -24,6 +24,8 @@
 - [[#common-lisp][Common Lisp]]
   - [[#progresso][Progresso]]
   - [[#features][Features]]
+- [[#terms][Terms]]
+  - [[#search-traversal][Search Traversal]]
 - [[#german][German]]
   - [[#fortschritt][Fortschritt]]
 - [[#books][books]]
@@ -32,10 +34,10 @@
 * Golang
 ** Fortschritt
 *** Buch
-    | Buch                    | Capitulo  | em             | tarde | revisao |
-    |-------------------------+-----------+----------------+-------+---------|
-    | Go Programming Language | Functions | 5.2. Recursion |       |         |
-    |                         |           |                |       |         |
+    | Buch                    | Capitulo | em | tarde | revisao |
+    |-------------------------+----------+----+-------+---------|
+    | Go Programming Language | Methods  |    |       |         |
+    |                         |          |    |       |         |
 
 *** LDC
     | Source Code | folder          | file      | @ |
@@ -44,7 +46,69 @@
     | go          | src/archive/tar | common.go |   |
 ** Projekts
 ** Buchs
-** features
+** Features
+*** mutex
+    #+begin_src go emacs-lisp :tangle yes
+    sync.Mutex
+    #+end_src
+*** collective
+    #+begin_src go
+    strings.Map
+    #+end_src
+*** standary library
+    #+begin_src go
+    // end of line
+    io.EOF
+
+    #+end_src
+*** functions
+    - reference type
+    - function values are not comparable.
+
+    #+begin_src go
+    // assign f to nil function
+    var f func(int) int
+
+    // assign var to a function
+    func square(n int) int { return n * n }
+    f =  square
+    fmt.Println(f(3)) // "9"
+
+    // can compare function to nil but not another function
+    if f != nil { ... }
+
+    // recursion in go is fast
+
+    // lambda/anonymous function
+    strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")
+
+
+    // function that returns a lambda
+    func squares() func() int {
+	    var x int
+	    return func() int {
+		    x++
+		    return x * x
+	    }
+    }
+    func main() {
+	    f := squares()
+	    fmt.Println(f()) // "1"
+	    fmt.Println(f()) // "4"
+	    fmt.Println(f())
+	    fmt.Println(f())
+    }
+
+    // Defer
+    var mu sync.Mutex
+    var m = make(map[string]int)
+
+    func lookup(key string) int {
+	    mu.Lock()
+	    defer mu.Unlock()
+	    return m[key]
+    }
+    #+end_src
 *** print
     #+begin_src go
     Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
@@ -79,7 +143,7 @@
 	    Printf(&p) // address of x
     }
     #+end_src
-** terms
+** Terms
    - runes: single characthers
 
 ** Read later
@@ -643,6 +707,10 @@
 **** length
 **** subseq
 **** reverse
+* Terms
+** Search Traversal
+   - depth-first traversal
+   - breadth-first traversal
 * German
 ** Fortschritt
     | Buch                        | kapitel | @                           | @later | revision |

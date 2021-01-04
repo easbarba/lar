@@ -3598,13 +3598,13 @@
   |---------------------------------+---------------------------------------------------------------------------------------------|
   | Unix                            | CentOs, Ubuntu                                                                              |
   | Languages                       | shell, go, ruby, python, perl                                                               |
+  | controle de versionamento       | git                                                                                         |
   | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda |
   | Container                       | Docker Kubernetes OpenShift Helm Rancher                                                    |
   | Config Management               | Ansible Chef Puppet Salt                                                                    |
-  | controle de versionamento       | git                                                                                         |
-  | Infra provisioning              | Terraform                                                                                   |
   | Continuous Integration/Delivery | jenkins                                                                                     |
   | Virtualization                  |                                                                                             |
+  | Infra provisioning              | Terraform                                                                                   |
   | Observability e Monitoring      | nagios Nginx, Apache                                                                        |
   | agile                           | scrum                                                                                       |
   | micro services                  |                                                                                             |

@@ -383,18 +383,18 @@
 
   *Euber Alexandre De Sousa Barbosa*
 
-  Brasília, DF -  (61) 98110 - 3178
+  Brasília, DF - (61) 98110 - 3178
 
   elxbarbosa@gmail.com
 
-  @elxbarbosa: Github, Twitter
+  @elxbarbosa: Github, Gitlab, Twitter
 
 
   *OBJETIVO*
   -----
     Usuário de Distribuições Linux por mais de 10 anos qual experimentei
     suas versões de servidores e suas ferramentas internas como compilamento de Kernel,
-    gerenciadores de empacotamento, compilacao de software C e C++ com uso do make, cmake, ninja,
+    gerenciadores de empacotamento, compilacao de software C com uso do make, cmake, ninja,
     como também uso extenso de aplicacoes CLI como Grep, Find, Gerenciamento de Processos, ssh,
     Windows Managers e automação de tasks com scripts.
 
@@ -403,18 +403,19 @@
   -----
     - Direito - IESB (Trancado)
     - Ciência da Computação, UCB (Cursando)
-
+    - Inglês Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
 
   *SKILLS*
   -----
-    - Inglês intermediário em conversação, avancado em Leitura/Escrita/Ouvir.
-    - Desenvolvimento de Aplicações CLI para automação de tasks em Ruby, .NET e Common Lisp.
-    - Conhecimento de Servidores, Configurações e Ferramentas internas no Debian, FreeBSD, Gentoo e GuixSD.
-    - Experiência em Scripting em GNU Bash, Fish Shell e POSIX.
-    - Controle de Versão com Git e varias commits aceito em repositorios do Github.
-    - Soft Skills sendo Secretário de advocacia por anos.
-    - Conhecimento básico em Front-End (HTML,CSS).
-    - Editores CLI como emacs, neovim, zile, nano.
+    - Desenvolvimento de Aplicações CLI em Golang, Ruby, .NET e Common Lisp.
+    - Ferramentas e Configurações em Sistemas UNIX em especial Debian, FreeBSD.
+    - Experiência em Shell Script em GNU Bash, Fish Shell e POSIX.
+    - Controle de Versão com Git: Squash, Merge.
+    - AWS Cloud:
+    - Criacao e Gerencia de imagens Docker.
+    - Básico em Front-End: HTML,CSS.
+    - Uso de editores CLI como GNU Emacs, NeoVIM, Nano.
+    - Soft Skills sendo Secretário de Advocacia e Radio Taxi.
 
 * Delivery
   981103178
