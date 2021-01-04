@@ -34,10 +34,10 @@
 * Golang
 ** Fortschritt
 *** Buch
-    | Buch                    | Capitulo | em | tarde | revisao |
-    |-------------------------+----------+----+-------+---------|
-    | Go Programming Language | Methods  |    |       |         |
-    |                         |          |    |       |         |
+    | Buch                    | Capt    | @                                    | late | revision |
+    |-------------------------+---------+--------------------------------------+------+----------|
+    | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
+    |                         |         |                                      |      |          |
 
 *** LDC
     | Source Code | folder          | file      | @ |
