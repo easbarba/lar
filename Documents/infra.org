@@ -245,6 +245,11 @@
 ***** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
       sudo sysctl -w kernel.unprivileged_userns_clone=1
 *** Docker
+**** Fortschritt
+     |                       |                        |
+     |-----------------------+------------------------|
+     | Docker For Developers | Introduction to Docker |
+
 **** Dockerfile
 **** Traits
      - cgroups
@@ -285,14 +290,49 @@
 ** ELK
 ** Prometheus
 * Cloud Providers
+** AWS
+*** debugging
+    single-user and emergency modes are unavailable
+*** Compute
+**** Services
+***** EC2
+****** defition
+       -
+****** obs
+       - EC2 filesystems can be attached to other virtual servers if they’re backed by Elastic Block Storage (EBS) devices.
+***** Auto Scaling
+***** Elastic Load Balancing
+***** Lambda
+***** Elastic Beanstalk
+**** Networking
+***** Virtual Private Cloud - VCP
+***** Direct Connect
+***** Route 53
+***** CloudFront
+**** Storage
+***** Simple Storage Service (S3)
+***** Glacier
+***** Elastic Block Store (EBS)
+**** Database
+***** Relational Database Service (RDS)
+***** DynamoDB
+**** Application management
+***** CloudWatch
+***** CloudFormation
+***** CloudTrail
+***** Config
+**** Security and identity
+***** Identity and Access Management (IAM)
+***** Key Management Service (KMS)
+**** Application integration
+***** Simple Notification Service (SNS)
+***** Simple WorkFlow (SWF)
+***** Simple Queue Service (SQS)
+***** API Gateway
+*** Subnet
 ** Heroku
 ** Azure
-** AWS
-   - vcp
-   - subnet
-   - ec2
-
-* Linux/Unix
+* Linux
 ** Internals
 *** Process
     kernel space
@@ -2333,6 +2373,7 @@
 **** Htop
 **** Top
 *** Misc
+**** fsck
 **** who
 **** w
 **** ps
@@ -2442,6 +2483,9 @@
     $ sudo systemctl enable NetworkManager
     $ sudo systemctl start NetworkManager
 
+*** rescue.target (single-user)
+    - systemd.unit=emergency.target in boot loader to avoid local filesystems to be mounted (Redhat)
+    - systemd.unit=rescue.target ... to boot into rescue mode
 *** SystemD services
 **** fstrim.service
      [Unit]
@@ -3159,7 +3203,9 @@
      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="<intel_backlight>", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
      #+end_src
-
+* BSD
+** terms
+   - run camcontrol devlist to identify disk devices and then run fdisk -s device for each disk.
 * System
 ** Progresso
 *** Buch
@@ -3609,3 +3655,7 @@
   | agile                           | scrum                                                                                       |
   | micro services                  |                                                                                             |
   | cloud native                    |                                                                                             |
+* DevOps
+  |                 |                                                |
+  |-----------------+------------------------------------------------|
+  | DevOps HandBook | Agile, Continuous Delivery, and the Three Ways |
