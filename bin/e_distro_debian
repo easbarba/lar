@@ -17,9 +17,9 @@ debian-packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
-    programming=(shellcheck zenity libpq-dev bash-completion cmake postgresql sqlite3 libsqlite3-dev mercurial gdb clang clangd)
+    programming=(shellcheck zenity libpq-dev bash-completion cmake mercurial clang)
 
-    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam plank pragha)
+    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam plank clementine cheese)
 
     gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme)
 
@@ -40,7 +40,6 @@ debian-packages ()
     latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
     amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
-    echo "-- Debian Packages"
 
     echo "-- Habilita Multi-Arch"
     sudo dpkg --add-architecture i386
