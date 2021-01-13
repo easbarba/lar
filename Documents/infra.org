@@ -105,243 +105,14 @@
    | Puppet                                       |                |                           |                                                    |         |
    | CI/CD                                        |                |                           |                                                    |         |
    | Docker/Kubernetes                            |                |                           |                                                    |         |
-* Infra Provisioning
-** CloudFormation
-** Pulumi
-** Terraform
-*** features
-    - IaC
-    - declarative
-    - mainly provisioning
-    - can deploy apps
-    - no meant for management
-    - more advanced in orchestration
-    - better for infrastructure
-
-*** commands
-**** destroy
-     - destroy resources/infrastructure
-     - remove one by one
-     - clean up resources
-**** apply
-     - execute plan
-**** plan
-     - create an execution plan
-**** refresh
-     - get from provider current state
-*** Core
-**** providers
-     - IaaS: aws, azure
-     - PaaS: Kubernetes
-     - SaaS: Fastly
-**** configuration
-     - user
-     - state
-     - providers
-
-* Configuration Management
-** Traits
-   - declarative vs procedural
-   - mutable vs immutable
-   - agent vs agentless
-** Alternatives
-*** Ansible
-**** defition
-     Tool to automate IT tasks
-**** traits
-     - requires python
-     - agentless
-     - support os, cloud
-     - reusable file configuration for different env
-     - yaml
-     - configuration
-     - mainly configuration
-     - deployment
-     - install/update software
-     - better in configuring
-**** cli
-     |                           |                           |
-     |---------------------------+---------------------------|
-     | -m <MODULE> -a <OPT_ARGS> | use module with arguments |
-     |                           |                           |
-
-**** misc
-     |                   |                     |
-     |-------------------+---------------------|
-     | --ask-become-pass | run command as sudo |
-     | --ask-pass        | still require pass  |
-     |                   |                     |
-
-**** invetory lists
-     - list of the hosts that you wish to run the automation commands against
-     - Ip addres or hostname
-     - webservers: groups multiple ip addresses or hosts names
-     - databases
-     - can dynamic inventories
-     - invetory location: /etc/ansible/hosts
-**** tower
-     - ui dashboard from redhat
-     - centrally automate tools
-     - across teams
-     - configure permissions
-     - manage inventory
-**** playbooks
-***** usage
-      - docker container
-      - vagrant container
-      - cloud instance
-      - bare metal
-***** tips
-****** running ansible command locally
-       ansible-playbook --connection=local --inventory 127.0.0.1, playbook.yml
-***** good practices
-      - naming plays
-***** traits
-      - hosts: execute tasks
-      - execute multiple modules in sequence
-      - organized in tasks
-      - arguments
-      - modules name
-
-**** vars
-***** ansible_env.HOME
-      get remote home
-
-**** modules
-***** Trais
-      - lots of modules avaiable: https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html
-      - grouped together
-      - one action may require multiple module
-      - applied in sequences
-***** packages
-      https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
-***** Small specific taks
-      - create file
-      - install nginx
-      - start docker container
-      - create cloud instance
-***** Perform one action
-      -
-*** Puppet
-**** traits
-     - ruby config
-     - installation needed to manage servers
-*** Salt
-*** Chef
-* Containers
-** Fortschritt
-   |                                           |   |                   |
-   |-------------------------------------------+---+-------------------|
-   | Docker Certified Associate DCA Exam Guide | 1 | Docker components |
-   |                                           |   |                   |
-
-** Podman
-*** commands
-    - podman info | grep rootless
-*** fixes
-**** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
-     Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
-**** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
-     sudo sysctl -w kernel.unprivileged_userns_clone=1
-** Docker
-*** Fortschritt
-    |                       |                        |
-    |-----------------------+------------------------|
-    | Docker For Developers | Introduction to Docker |
-
-*** Dockerfile
-*** Traits
-    - cgroups
-    - use linux security primitives
-    - prevent MITM attack
-    - images are immutable
-*** Commands
-    | command             | description                       |
-    |---------------------+-----------------------------------|
-    | login               |                                   |
-    | container ls        |                                   |
-    | images              |                                   |
-    | pull <img>          |                                   |
-    | ps                  |                                   |
-    | run <img>           |                                   |
-    | run -d <img>        |                                   |
-    | run -dp 80:80 <img> |                                   |
-    | stop <id>           |                                   |
-    | rm $(docker ps -aq) | remove all images running         |
-    | run --name <name>   |                                   |
-    | run -rm             | clean up when the container exits |
-    | run -p              | port                              |
-    |                     |                                   |
-
-* Orchestration
-** Kubernetes (k8s)
-*** terms
-
-*** alternatives
-**** Kind
-**** MiniKube
-     |                       |                             |
-     |-----------------------+-----------------------------|
-     | start --driver=<NAME> | select what driver to start |
-     |                       |                             |
-
-* Monitoring
-** Nagios
-** Grafana
-** Icinga
-** ELK
-** Prometheus
-* Cloud Providers
-** AWS
-*** debugging
-    single-user and emergency modes are unavailable
-*** Compute
-**** Services
-***** EC2
-****** defition
-       -
-****** obs
-       - EC2 filesystems can be attached to other virtual servers if they’re backed by Elastic Block Storage (EBS) devices.
-***** Auto Scaling
-***** Elastic Load Balancing
-***** Lambda
-***** Elastic Beanstalk
-**** Networking
-***** Virtual Private Cloud - VCP
-***** Direct Connect
-***** Route 53
-***** CloudFront
-**** Storage
-***** Simple Storage Service (S3)
-***** Glacier
-***** Elastic Block Store (EBS)
-**** Database
-***** Relational Database Service (RDS)
-***** DynamoDB
-**** Application management
-***** CloudWatch
-***** CloudFormation
-***** CloudTrail
-***** Config
-**** Security and identity
-***** Identity and Access Management (IAM)
-***** Key Management Service (KMS)
-**** Application integration
-***** Simple Notification Service (SNS)
-***** Simple WorkFlow (SWF)
-***** Simple Queue Service (SQS)
-***** API Gateway
-*** Subnet
-** Heroku
-** Azure
 * Linux
 ** Internals
 *** Process
     kernel space
     user space
-** Progresso
-*** Buch
-    | Buch                                          | capitulo                                   | em                           | @later | revisao |
+** Progress
+*** Books
+    | Books                                         | capitulo                                   | em                           | @later | revisao |
     |-----------------------------------------------+--------------------------------------------+------------------------------+--------+---------|
     | UNIX and Linux System Administration Handbook |                                            |                              |        |         |
     | LPIC                                          | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
@@ -3208,6 +2979,257 @@
 * BSD
 ** terms
    - run camcontrol devlist to identify disk devices and then run fdisk -s device for each disk.
+* Containers
+** Fortschritt
+   |               |                                     |                                                 |
+   |---------------+-------------------------------------+-------------------------------------------------|
+   | Docker 4 Devs | Sharing Containers Using Docker Hub | Implementing a sample microservices application |
+   |               |                                     |                                                 |
+
+** Podman
+*** commands
+    - podman info | grep rootless
+*** fixes
+**** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
+     Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
+**** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
+     sudo sysctl -w kernel.unprivileged_userns_clone=1
+** Docker
+*** Fortschritt
+    |                       |                        |
+    |-----------------------+------------------------|
+    | Docker For Developers | Introduction to Docker |
+
+*** Dockerfile
+*** Traits
+    - cgroups
+    - use linux security primitives
+    - prevent MITM attack
+    - images are immutable
+*** Commands
+    | command             | description                            |
+    |---------------------+----------------------------------------|
+    | login               |                                        |
+    | container ls        |                                        |
+    | images              |                                        |
+    | pull <img>          |                                        |
+    | ps                  |                                        |
+    | run <img>           |                                        |
+    | run -d <img>        |                                        |
+    | run -dp 80:80 <img> |                                        |
+    | stop <id>           |                                        |
+    | rm $(docker ps -aq) | remove all images running              |
+    | run --name <name>   |                                        |
+    | run -rm             | clean up when the container exits      |
+    | run -p              | port                                   |
+    | exec -it            | run command in container interactively |
+    |                     |                                        |
+* Networking
+** Progress
+*** Books
+    | Books | capitulo | em | @later | revisao |
+    |-------+----------+----+--------+---------|
+    |       |          |    |        |         |
+
+** Protocols
+*** HTTP
+*** HTTPS
+*** FTP
+*** SSL/TLS
+*** SSH
+**** OpenSSH
+     - ControlPersist
+     - ssh-copy-id
+** Terms
+   - hotspot
+   - VOIP
+   - IPTV
+   - RFID
+   - 2 family (p2p)
+   - desktop sharing
+* Infra Provisioning
+** CloudFormation
+** Pulumi
+** Terraform
+*** features
+    - IaC
+    - declarative
+    - mainly provisioning
+    - can deploy apps
+    - no meant for management
+    - more advanced in orchestration
+    - better for infrastructure
+
+*** commands
+**** destroy
+     - destroy resources/infrastructure
+     - remove one by one
+     - clean up resources
+**** apply
+     - execute plan
+**** plan
+     - create an execution plan
+**** refresh
+     - get from provider current state
+*** Core
+**** providers
+     - IaaS: aws, azure
+     - PaaS: Kubernetes
+     - SaaS: Fastly
+**** configuration
+     - user
+     - state
+     - providers
+
+* Orchestration
+** Kubernetes (k8s)
+*** terms
+
+*** alternatives
+**** Kind
+**** MiniKube
+     |                       |                             |
+     |-----------------------+-----------------------------|
+     | start --driver=<NAME> | select what driver to start |
+     |                       |                             |
+* Configuration Management
+** Traits
+   - declarative vs procedural
+   - mutable vs immutable
+   - agent vs agentless
+** Alternatives
+*** Ansible
+**** defition
+     Tool to automate IT tasks
+**** traits
+     - requires python
+     - agentless
+     - support os, cloud
+     - reusable file configuration for different env
+     - yaml
+     - configuration
+     - mainly configuration
+     - deployment
+     - install/update software
+     - better in configuring
+**** cli
+     |                           |                           |
+     |---------------------------+---------------------------|
+     | -m <MODULE> -a <OPT_ARGS> | use module with arguments |
+     |                           |                           |
+
+**** misc
+     |                   |                     |
+     |-------------------+---------------------|
+     | --ask-become-pass | run command as sudo |
+     | --ask-pass        | still require pass  |
+     |                   |                     |
+
+**** invetory lists
+     - list of the hosts that you wish to run the automation commands against
+     - Ip addres or hostname
+     - webservers: groups multiple ip addresses or hosts names
+     - databases
+     - can dynamic inventories
+     - invetory location: /etc/ansible/hosts
+**** tower
+     - ui dashboard from redhat
+     - centrally automate tools
+     - across teams
+     - configure permissions
+     - manage inventory
+**** playbooks
+***** usage
+      - docker container
+      - vagrant container
+      - cloud instance
+      - bare metal
+***** tips
+****** running ansible command locally
+       ansible-playbook --connection=local --inventory 127.0.0.1, playbook.yml
+***** good practices
+      - naming plays
+***** traits
+      - hosts: execute tasks
+      - execute multiple modules in sequence
+      - organized in tasks
+      - arguments
+      - modules name
+
+**** vars
+***** ansible_env.HOME
+      get remote home
+
+**** modules
+***** Trais
+      - lots of modules avaiable: https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html
+      - grouped together
+      - one action may require multiple module
+      - applied in sequences
+***** packages
+      https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
+***** Small specific taks
+      - create file
+      - install nginx
+      - start docker container
+      - create cloud instance
+***** Perform one action
+      -
+*** Puppet
+**** traits
+     - ruby config
+     - installation needed to manage servers
+*** Salt
+*** Chef
+* Monitoring
+** Nagios
+** Grafana
+** Icinga
+** ELK
+** Prometheus
+* Cloud Providers
+** AWS
+*** debugging
+    single-user and emergency modes are unavailable
+*** Compute
+**** Services
+***** EC2
+****** defition
+       -
+****** obs
+       - EC2 filesystems can be attached to other virtual servers if they’re backed by Elastic Block Storage (EBS) devices.
+***** Auto Scaling
+***** Elastic Load Balancing
+***** Lambda
+***** Elastic Beanstalk
+**** Networking
+***** Virtual Private Cloud - VCP
+***** Direct Connect
+***** Route 53
+***** CloudFront
+**** Storage
+***** Simple Storage Service (S3)
+***** Glacier
+***** Elastic Block Store (EBS)
+**** Database
+***** Relational Database Service (RDS)
+***** DynamoDB
+**** Application management
+***** CloudWatch
+***** CloudFormation
+***** CloudTrail
+***** Config
+**** Security and identity
+***** Identity and Access Management (IAM)
+***** Key Management Service (KMS)
+**** Application integration
+***** Simple Notification Service (SNS)
+***** Simple WorkFlow (SWF)
+***** Simple Queue Service (SQS)
+***** API Gateway
+*** Subnet
+** Heroku
+** Azure
 * System
 ** Progresso
 *** Buch
@@ -3503,28 +3525,6 @@
 ***** TODO epub-to-org: converting epubs to org package and more: reading progress, comments, TODO, thumbnails, agenda integration
 ***** TODO #+BEGIN_SRC: prettify it for better readibility
 ***** TODO org-mode: #+BEGIN_SRC: heading property that state every code under this parent heading are elisp code, should be tangled...
-* Network
-** Protocols
-*** HTTP
-*** HTTPS
-*** FTP
-*** SSL/TLS
-*** SSH
-**** OpenSSH
-     - ControlPersist
-     - ssh-copy-id
-** Terms
-   - hotspot
-   - VOIP
-   - IPTV
-   - RFID
-   - 2 family (p2p)
-   - desktop sharing
-* Concepts
-  | Term               | ...                                                                                  | eg       |
-  |--------------------+--------------------------------------------------------------------------------------+----------|
-  | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
-  | Computer Network   |                                                                                      |          |
 * Concepts
   | Term               | ...                                                                                  | eg       |
   |--------------------+--------------------------------------------------------------------------------------+----------|
@@ -3555,6 +3555,14 @@
   | ss -ln / grep 22                                                                                     |                                                 |
   | ssh -vvv user@address -p port-id # verbose connecting steps                                          |                                                 |
   | ssh-copy-id user@address -p port-id # copy client pub ssh keys to client ~/.ssh/authorized_keys file |                                                 |
+
+* Microservices
+* communication
+  - MQTT
+  - HTTP
+  - Sockets
+  - Database records
+  - fylesystem
 
 * Software
 ** Onlines
