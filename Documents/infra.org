@@ -3092,6 +3092,15 @@
      |-----------------------+-----------------------------|
      | start --driver=<NAME> | select what driver to start |
      |                       |                             |
+* Microservices
+** Publisher
+** Subscriber
+** Communication
+   - MQTT
+   - HTTP
+   - Sockets
+   - Database records
+   - fylesystem
 * Configuration Management
 ** Traits
    - declarative vs procedural
@@ -3555,14 +3564,6 @@
   | ss -ln / grep 22                                                                                     |                                                 |
   | ssh -vvv user@address -p port-id # verbose connecting steps                                          |                                                 |
   | ssh-copy-id user@address -p port-id # copy client pub ssh keys to client ~/.ssh/authorized_keys file |                                                 |
-
-* Microservices
-* communication
-  - MQTT
-  - HTTP
-  - Sockets
-  - Database records
-  - fylesystem
 
 * Software
 ** Onlines
