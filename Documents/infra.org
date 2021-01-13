@@ -235,41 +235,43 @@
    | Docker Certified Associate DCA Exam Guide | 1 | Docker components |
    |                                           |   |                   |
 
-** Engines
-*** Podman
-**** commands
-     - podman info | grep rootless
-**** fixes
-***** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
-      Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
-***** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
-      sudo sysctl -w kernel.unprivileged_userns_clone=1
-*** Docker
-**** Fortschritt
-     |                       |                        |
-     |-----------------------+------------------------|
-     | Docker For Developers | Introduction to Docker |
+** Podman
+*** commands
+    - podman info | grep rootless
+*** fixes
+**** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
+     Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
+**** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
+     sudo sysctl -w kernel.unprivileged_userns_clone=1
+** Docker
+*** Fortschritt
+    |                       |                        |
+    |-----------------------+------------------------|
+    | Docker For Developers | Introduction to Docker |
 
-**** Dockerfile
-**** Traits
-     - cgroups
-     - use linux security primitives
-     - prevent MITM attack
-     - images are immutable
-**** Commands
-     | command             | description               |
-     |---------------------+---------------------------|
-     | login               |                           |
-     | container ls        |                           |
-     | images              |                           |
-     | pull <img>          |                           |
-     | ps                  |                           |
-     | run <img>           |                           |
-     | run -d <img>        |                           |
-     | run -dp 80:80 <img> |                           |
-     | stop <id>           |                           |
-     | rm $(docker ps -aq) | remove all images running |
-     | run --name <name>   |                           |
+*** Dockerfile
+*** Traits
+    - cgroups
+    - use linux security primitives
+    - prevent MITM attack
+    - images are immutable
+*** Commands
+    | command             | description                       |
+    |---------------------+-----------------------------------|
+    | login               |                                   |
+    | container ls        |                                   |
+    | images              |                                   |
+    | pull <img>          |                                   |
+    | ps                  |                                   |
+    | run <img>           |                                   |
+    | run -d <img>        |                                   |
+    | run -dp 80:80 <img> |                                   |
+    | stop <id>           |                                   |
+    | rm $(docker ps -aq) | remove all images running         |
+    | run --name <name>   |                                   |
+    | run -rm             | clean up when the container exits |
+    | run -p              | port                              |
+    |                     |                                   |
 
 * Orchestration
 ** Kubernetes (k8s)
@@ -3644,10 +3646,10 @@
   |---------------------------------+---------------------------------------------------------------------------------------------|
   | Unix                            | CentOs, Ubuntu                                                                              |
   | Languages                       | shell, go, ruby, python, perl                                                               |
-  | controle de versionamento       | git                                                                                         |
-  | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda |
+  | Controle De Versionamento       | git                                                                                         |
   | Container                       | Docker Kubernetes OpenShift Helm Rancher                                                    |
   | Config Management               | Ansible Chef Puppet Salt                                                                    |
+  | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda |
   | Continuous Integration/Delivery | jenkins                                                                                     |
   | Virtualization                  |                                                                                             |
   | Infra provisioning              | Terraform                                                                                   |
