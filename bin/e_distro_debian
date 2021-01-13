@@ -25,7 +25,7 @@ debian-packages ()
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
-    virtualization=(wine winetricks wine32 qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
+    infra=(podman wine winetricks wine32 qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
 
     fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
 
@@ -53,7 +53,7 @@ debian-packages ()
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${media[@]}"
-    e_foreach "$command" "${virtualization[@]}"
+    e_foreach "$command" "${infra[@]}"
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     sudo apt -y build-dep emacs
     e_foreach "$command" "${security[@]}"
