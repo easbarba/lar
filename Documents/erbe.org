@@ -9112,7 +9112,7 @@ ruby()
 *** Buchs
 *** Features
 **** mutex
-     #+begin_src go emacs-lisp :tangle yes
+     #+begin_src go emacs-lisp
      sync.Mutex
      #+end_src
 **** collective
