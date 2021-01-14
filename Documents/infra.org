@@ -3096,11 +3096,12 @@
 ** Publisher
 ** Subscriber
 ** Communication
-   - MQTT
+   - MQTT broker
    - HTTP
    - Sockets
    - Database records
    - fylesystem
+
 * Configuration Management
 ** Traits
    - declarative vs procedural
