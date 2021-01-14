@@ -1,10 +1,10 @@
 [Desktop Entry]
-Type=Application
+Categories=Utility;
+Comment=Stupidly simple.
 Exec=plank
-Hidden=false
-X-MATE-Autostart-enabled=true
-Name[en_US]=dock
-Name=dock
-Comment[en_US]=
-Comment=
-X-MATE-Autostart-Delay=0
+GenericName=Dock
+Icon=plank
+Name=Plank
+NoDisplay=false
+Terminal=false
+Type=Application
