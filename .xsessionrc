@@ -41,14 +41,6 @@ export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
 # * PACKAGES
 
-golang()
-{
-    export GOPATH="$HOME/.local/"
-    export GO111MODULE=on
-
-    export PATH="$GOPATH"${PATH:+:}${PATH}
-}
-
 asdf()
 {
     source "$HOME"/.asdf/completions/asdf.bash
@@ -56,6 +48,12 @@ asdf()
 
     local asdf_shims_dir="$HOME"/.asdf/shims
     export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
+ruby()
+{
+    local rubydir="$HOME/.local/share/gem/ruby/3.0.0/bin"
+    export PATH="$rubydir"${PATH:+:}$PATH
 }
 
 cask()
@@ -66,6 +64,6 @@ cask()
 
 # * RUN
 
-golang
 asdf
+ruby
 cask
