@@ -24,8 +24,6 @@
   - [[#features][Features]]
 - [[#terms][Terms]]
   - [[#search-traversal][Search Traversal]]
-- [[#german][German]]
-  - [[#fortschritt][Fortschritt]]
 - [[#books][books]]
 :END:
 
@@ -895,10 +893,5 @@
 ** Search Traversal
    - depth-first traversal
    - breadth-first traversal
-* German
-** Fortschritt
-    | Buch                        | kapitel | @                           | @later | revision |
-    |-----------------------------+---------+-----------------------------+--------+----------|
-    | The Art of Unix programming |         | The Lessons of Unix History |        |          |
 * books
   Designing Data Intensive Apps
