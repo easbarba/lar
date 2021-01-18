@@ -32,11 +32,11 @@
 *** Books
     | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
     |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
+    | Beginning Rails 6                                         | Getting Something Running                      |                                                          |                                |         |
     | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
     | Closure in Ruby                                           |                                                |                                                          |                                |         |
     | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
     | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |         |
-    | Beginning Rails 6                                         | Getting Something Running                      | Creating the Article Model                               |                                |         |
     | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |         |
     | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
 *** SLOC
