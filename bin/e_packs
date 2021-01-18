@@ -79,7 +79,7 @@ ruby()
 
     for pack in "${packages[@]}"
     do
-	gem install "${pack}" --user-install
+	gem install "${pack}" # --user-install
 	gem update  "${pack}"
     done
 }
