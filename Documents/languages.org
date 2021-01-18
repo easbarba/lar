@@ -25,6 +25,7 @@
 - [[#terms][Terms]]
   - [[#search-traversal][Search Traversal]]
 - [[#books][books]]
+- [[#skills][Skills]]
 :END:
 
 * Ruby
@@ -32,7 +33,7 @@
 *** Books
     | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
     |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-    | Beginning Rails 6                                         | Getting Something Running                      |                                                          |                                |         |
+    | Beginning Rails 6                                         | Getting Something Running                      | Adding Validations                                       |                                |         |
     | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
     | Closure in Ruby                                           |                                                |                                                          |                                |         |
     | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -895,3 +896,10 @@
    - breadth-first traversal
 * books
   Designing Data Intensive Apps
+* Skills
+ - Language
+ - Unit Test
+ - Framework
+ - Database
+ - Git
+ - Docker
