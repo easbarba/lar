@@ -473,8 +473,7 @@
 		   erc-interpret-mirc-color t
 		   erc-spelling-dictionaries '(("#emacs" "american"))
 		   erc-autojoin-channels-alist '(("freenode.net"
-						  "#bootstrappable"
-						  "#go-nuts"
+						  "#ruby"
 						  "#emacs"))
 		   erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 		   erc-track-exclude-types
