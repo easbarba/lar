@@ -34,7 +34,7 @@
     | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
     |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
     | Beginning Rails 6                                         | Working with a Database: Active Record         |                                                          |                                |         |
-    | Pragmatic Ruby (Pickaxe)                                  | 3.3 Access Control                             |                                                          |                                |         |
+    | Pragmatic Ruby (Pickaxe)                                  | Containers, Blocks, and Iterators              |                                                          |                                |         |
     | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
     | Closure in Ruby                                           |                                                |                                                          |                                |         |
     | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -50,6 +50,15 @@
 ** Features
 *** Ruby
 **** Features
+***** freeze
+      #+begin_src ruby
+      person1.freeze # prevent modifications to the object
+      #+end_src
+***** dup
+      #+begin_src ruby
+      person1 = "Tim"
+      person2 = person1.dup # not aliasing person1
+      #+end_src
 ***** dig
 ***** fetch
 ***** tap

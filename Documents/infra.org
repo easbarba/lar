@@ -3259,6 +3259,12 @@
 ** Hcl
 * Version Control
 ** [[https://git-scm.com/][Git]]
+*** Progress
+**** Books
+     | Books            | Capitulo | em | tarde | revisao |
+     |------------------+----------+----+-------+---------|
+     | Professional Git |          |    |       |         |
+
 *** Git Resources
     https://git-scm.com/docs
 
