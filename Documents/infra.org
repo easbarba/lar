@@ -3261,9 +3261,9 @@
 ** [[https://git-scm.com/][Git]]
 *** Progress
 **** Books
-     | Books            | Capitulo | em | tarde | revisao |
-     |------------------+----------+----+-------+---------|
-     | Professional Git |          |    |       |         |
+     | Books            | Capitulo | em              | tarde | revisao |
+     |------------------+----------+-----------------+-------+---------|
+     | Professional Git |          | CONFIGURING GIT |       |         |
 
 *** Commands
 **** Porcelain
