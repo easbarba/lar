@@ -3265,13 +3265,72 @@
      |------------------+----------+----+-------+---------|
      | Professional Git |          |    |       |         |
 
-*** Git Resources
+*** Features
+**** add
+     Add file contents to the index.
+**** bisect
+     Find by binary search the change that introduced a bug.
+**** branch
+     List, create, or delete branches.
+**** checkout
+     Switch branches or restore working tree files.
+**** cherry
+     Find commits yet to be applied to upstream (branch on the remote).
+**** cherry-pick
+     Apply the changes introduced by some existing commits.
+**** clone
+     Clone a repository into a new directory.
+**** commit
+     Record changes to the repository.
+**** config
+     Get and set repository or global options.
+**** diff
+     Show changes between commits, commits and working tree, and so on.
+**** fetch
+     Download objects and refs from another repository.
+**** grep
+     Print lines matching a pattern.
+**** help
+     Display help information.
+**** log
+     Show commit logs.
+**** merge
+     Join two or more development histories together.
+**** mv
+     Move or rename a file, directory, or symlink.
+**** pull
+     Fetch from, or integrate with, another repository or a local branch.
+**** push
+     Update remote refs along with associated objects.
+**** rebase
+     Forward-port local commits to the updated upstream head.
+**** rerere
+     Reuse recorded resolution for merged conflicts.
+**** reset
+     Reset current HEAD to the specified state.
+**** revert
+     Revert some existing commits.
+**** rm
+     Remove files from the working tree and from the index.
+**** show
+     Show various types of objects.
+**** status
+     Show the working tree status.
+**** submodule
+     Initialize, update, or inspect submodules.
+**** subtree
+     Merge subtrees and split repositories into subtrees.
+**** tag
+     Create, list, delete, or verify a tagged object.
+**** worktree
+     Manage multiple working trees.
+*** Official
     https://git-scm.com/docs
 
     https://medium.com/sweetmeat/how-to-keep-a-downstream-git-repository-current-with-upstream-repository-changes-10b76fad6d97
 
     http://gitready.com/intermediate/2009/02/13/list-remote-branches.html
-*** Git Commands
+*** Observations
     | git command                              | description                                                           |
     |------------------------------------------+-----------------------------------------------------------------------|
     | log --pretty=oneline                     |                                                                       |
@@ -3336,7 +3395,7 @@
     subtree  Merge subtrees and split repositories into subtrees.
     tag  Create, list, delete, or verify a tagged object.
     worktree  Manage multiple working trees.
-*** Git Tips
+*** Tips
 **** Pull Request a specific commit
      #+BEGIN_SRC shell-script
 
@@ -3360,12 +3419,12 @@
      # remote
      git push origin master --force
      #+END_SRC
-*** Git - Fixing Common Errors
+*** Common Errors
 **** Git Push Error: insufficient permission for adding an object to repository
      cd .git/objects
      ls -al
      sudo chown -R yourname:yourgroup *
-*** Git read later
+*** Read later
     https://chris.beams.io/posts/git-commit/
     [[https://www.learnenough.com/git-tutorial][Learn enough to be dangerous]]
 * Compilers
