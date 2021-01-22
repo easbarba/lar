@@ -10,9 +10,11 @@
   - [[#features][Features]]
   - [[#concepts][Concepts]]
   - [[#instructions][Instructions]]
-- [[#shell-scripts][Shell Scripts]]
+- [[#shell-script][Shell Script]]
   - [[#gnu-bash][GNU Bash]]
-  - [[#others][Others]]
+  - [[#zsh][Zsh]]
+  - [[#fish][Fish]]
+  - [[#tcsh][TCSH]]
   - [[#posix][Posix]]
 - [[#yaml][Yaml]]
   - [[#trais][trais]]
@@ -31,16 +33,16 @@
 * Ruby
 ** Progress
 *** Books
-    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
-    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-    | Beginning Rails 6                                         | Working with a Database: Active Record         |                                                          |                                |         |
-    | Pragmatic Ruby (Pickaxe)                                  | Containers, Blocks, and Iterators              | Blocks Can Be Objects                                    |                                |         |
-    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
-    | Closure in Ruby                                           |                                                |                                                          |                                |         |
-    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
-    | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |         |
-    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |         |
-    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
+    | Books                                                     | Capitulo                                                | em                                                       | tarde                          | revisao |
+    |-----------------------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
+    | Beginning Rails 6                                         | Working with a Database: Active Record                  |                                                          |                                |         |
+    | Pragmatic Ruby (Pickaxe)                                  | Sharing Functionality: Inheritance, Modules, and Mixins | Instance Variables in Mixins                             |                                |         |
+    | Closure in Ruby                                           |                                                         |                                                          |                                |         |
+    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility          | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
+    | Design Patterns in Ruby                                   | Strategy                                                |                                                          |                                |         |
+    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                         |                                                          |                                |         |
+    | The Well Grounded Rubyist                                 | 12  File and I/O operations                             |                                                          |                                |         |
+    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing                       | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
 
 *** SLOC
     | Source Code | folder          | file       | @ |
@@ -49,21 +51,92 @@
     | rails       |                 |            |   |
 ** Features
 *** Ruby
+**** class
+     #+begin_src ruby
+     # frozen_string_literal: true
+
+     require 'pathname'
+
+     # Class Description
+     class Meh # Class name in Camel Case
+       attr_reader :lo, :fi #
+
+       OUCH = 'asdasd' #
+
+       def initialize(lo, fi)
+	 @lo = lo #
+	 @fi = fi #
+       end
+
+       def alfa # instance method
+	  @localVar = 1
+       end
+
+       def use_local_var # instance method
+	 @localVar
+       end
+
+       def self.zeta #
+       end
+     end
+
+     Eija = Class.new #
+
+     def Eija.beta # singleton
+     end
+
+
+     # superclass
+
+     class Parent
+     end
+     class Child < Parent
+     end
+
+     Child.superclass # => Parent
+
+     #
+     #+end_src
 **** blocks
      #+begin_src ruby
 
      #+end_src
+**** lambda
+***** How
+      #+begin_src ruby
+      lambda { |params| ... } # form 1
+
+      -> params { ... }  # form 2
+      #+end_src
+***** Usage
+      #+begin_src ruby
+      proc1 = -> arg { puts "In proc1 with #{arg}" }
+      proc1.call "ant"
+
+      def n_times(thing)
+	lambda {|n| thing * n }
+      end
+
+      p1 = n_times(23)
+      p1.call(3) # => 69
+      #+end_src
+**** methods
+     default values, splat args (described later on page 120), keyword args, and a block parameter
 **** procs
      #+begin_src ruby
+     def pass_in_block(asdf, &block)
+     end
+
      multiple_of_three = -> n { (n % 3).zero? }
      palindrome = -> n { n = n.to_s; n == n.reverse }
-
 
      p Integer
 	 .all
 	 .select(&multiple_of_three)
 	 .select(&palindrome)
 	 .first(10)
+
+     a = Proc.new
      #+end_src
 **** operators
      #+begin_src ruby
@@ -405,7 +478,7 @@
 ** Instructions
 *** Rbenv
     rbenv global 2.3.0 && rbenv rehash
-* Shell Scripts
+* Shell Script
 ** GNU Bash
 *** Features
 **** read
@@ -845,10 +918,9 @@
 		     # command
 		     command ls
      #+END_SRC
-** Others
-*** Fish
-*** Zsh
-*** TCSH
+** Zsh
+** Fish
+** TCSH
 ** Posix
 *** Shell Commands
     |         |                                                                 |
