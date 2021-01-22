@@ -710,8 +710,7 @@
 		       doom-one-light
 		       doom-rouge
 		       doom-spacegrey
-		       doom-solarized-light
-		       doom-zenburn)))
+		       doom-solarized-light)))
     (load-theme (nth (random (length cool-themes))
 		     cool-themes)
 		t)))
