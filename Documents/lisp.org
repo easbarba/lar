@@ -1,0 +1,501 @@
+#+TILE: Lisp Programming Languages - Study Annotations
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#emacs-lisp][Emacs Lisp]]
+  - [[#progress][Progress]]
+- [[#common-lisp][Common Lisp]]
+  - [[#progress][Progress]]
+  - [[#features][Features]]
+- [[#scheme][Scheme]]
+  - [[#scheme-books][Scheme Books]]
+  - [[#scheme-terms-table][Scheme Terms (table)]]
+  - [[#scheme-libraries][Scheme Libraries]]
+  - [[#scheme][Scheme]]
+  - [[#scheme-videos][Scheme Videos]]
+  - [[#scheme-articles][Scheme Articles]]
+  - [[#scheme---blogs][Scheme - Blogs]]
+:END:
+* Emacs Lisp
+** Progress
+*** Books
+    | Books      | Cap | @ | late | revision |
+    |------------+-----+---+------+----------|
+    | Emacs Lisp |     |   |      |          |
+
+*** SLOC
+    | Source Code | folder      | file        | @ |
+    |-------------+-------------+-------------+---|
+    | emacs       | lisp/eshell | esh-util.el |   |
+    |             |             |             |   |
+* Common Lisp
+** Progress
+*** Books
+    | Books            | Capitulo      | em | tarde | revisao |
+    |------------------+---------------+----+-------+---------|
+    | ANSI Common Lisp | 4.4 Sequences |    |       |         |
+    |                  |               |    |       |         |
+
+*** LDC
+    | Source Code | folder | file | @ |
+    |-------------+--------+------+---|
+    | sbcl        |        |      |   |
+    | asdf        |        |      |   |
+    | alexandria  |        |      |   |
+** Features
+*** array
+**** eg
+     #+begin_src lisp
+     (setf *print-array* t) ;; display form
+
+     (setf arr (make-array '(2 3) : initial-element nil)) ;; make
+     (aref arr 0 0) ;; retrieve
+     (setf (aref arr 0 0) 'b) ;; replace
+     #2a((b nil nil) (nil nil nil))
+     (vector "a" 'b 3)
+     #+end_src
+**** annnotaion
+     - multiple dimensions
+     - zero indexed
+     - one-dimensional array is also called a vector
+
+*** lists
+**** list
+**** dotted (proper) list
+     - is either nil, or a cons whose cdr is a proper list
+     - dot notation
+     - separated by a period
+**** assoc lists (alist)
+     - mapping
+     - are slow
+     - good for prototyping
+     - assoc retrieves the pair associated with a given key else nil
+     - assoc-if
+*** conditionals
+**** let
+**** cond
+**** when
+**** unless
+*** comparable
+**** equal
+**** eql
+**** nth
+**** sort
+     - destructive
+*** Misc
+**** member
+**** member-if
+**** every
+**** some
+**** keywords (:test)
+*** Short Notations
+**** #'
+**** '
+**** `(,)
+**** '()
+*** Predicates
+**** evenp
+**** oddp
+**** consp
+**** atom
+*** Sets
+**** union
+**** intersection
+**** set-difference
+**** adjoin
+**** member
+*** Sequences
+**** length
+**** subseq
+**** reverse
+* [[https://schemers.org/][Scheme]]
+** Scheme Books
+*** SICP
+**** Chapter 1
+***** Examples
+****** sqrt
+       #+BEGIN_SRC scheme
+
+       (define (average x y)
+         (/ (+ x y) 2))
+
+       (define (improve guess x)
+         (average guess (/ x guess)))
+
+       (define (square y)
+         (* y y))
+
+       (define (good-enough? guess x)
+         (< (abs (- (square guess) x)) 0.001))
+
+       (define (sqrt-iter guess x)
+         (if (good-enough? guess x)
+             guess
+             (sqrt-iter (improve guess x) x)))
+
+
+       (sqrt 9)
+       (sqrt (+ 100 37))
+       (sqrt (+ (sqrt 2) (sqrt 3)))
+       (square (sqrt 1000))
+
+       #+END_SRC
+****** sqrt (nested)
+       #+BEGIN_SRC scheme
+
+       (define (sqrt x)
+         (define (good-enough? guess x)
+           (< (abs (- (square guess) x)) 0.001))
+
+         (define (improve guess x) (average guess (/ x guess)))
+
+         (define (sqrt-iter guess x)
+           (if (good-enough? guess x)
+	       guess
+	       (sqrt-iter (improve guess x) x)))
+         (sqrt-iter 1.0 x))
+       #+END_SRC
+
+****** sqrt (nested/improved)
+       #+BEGIN_SRC scheme
+
+       (define (sqrt x)
+         (define (good-enough? guess)
+           (< (abs (- (square guess) x)) 0.001))
+
+         (define (improve guess)
+           (average guess (/ x guess)))
+
+         (define (sqrt-iter guess)
+           (if (good-enough? guess)
+	       guess
+	       (sqrt-iter (improve guess))))
+         (sqrt-iter 1.0))
+       #+END_SRC
+
+****** factorial
+       #+BEGIN_SRC scheme
+
+       (define (factorial n)
+         (if (= n 1)
+             1
+             (* n (factorial (- n 1)))))
+
+
+       (define (fact-iter product counter max-count)
+         (if (> counter max-count)
+             product
+             (fact-iter (* counter product)
+                        (* counter 1)
+                        max-count)))
+
+       (define (factorial n)
+         (fact-iter 1 1 n))
+
+       (define (factorial n)
+         (define (iter product counter)
+           (if (> counter n)
+	       product
+	       (iter (* counter product)
+                     (+ counter 1))))
+         (iter 1 1))
+
+       (factorial 3)
+
+       #+END_SRC
+
+***** Exercises
+****** Exercise 1.1:
+       Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression?
+       Assume that the sequence is to be evaluated in the order in which it is presented.
+
+       #+BEGIN_SRC scheme
+
+       10 ;; 10
+       (+ 5 3 4) ;; 12
+       (- 9 1) ;; 8
+       (/ 6 2) ;; 3
+       (+ (* 2 4) (- 4 6)) ;; 6
+       (define a 3) ;; a
+       (define b (+ a 1)) ;; b
+       (+ a b (* a b)) ;; 19
+       (= a b) ;; #f
+       (if (and (> b a) (< b (* a b)))
+           b
+           a) ;; 4 (#t)
+       (cond ((= a 4) 6)
+             ((= b 4) (+ 6 7 a))
+             (else 25)) ;; 16 (2)
+       (+ 2 (if (> b a) b a)) ;; 6
+       (* (cond ((> a b) a)
+                ((< a b) b)
+                (else -1))
+          (+ a 1)) ;; 16
+
+       #+END_SRC
+****** Exercise 1.2:
+       Translate the following expression into prefix form: 5+4+(2−(3−(6+45)))3(6−2)(2−7).
+
+       #+BEGIN_SRC scheme
+
+       (/ (+ 5 4
+             (- 2
+                (- 3 (+ 6 (/ 4 5)))))
+          (* 3 (- 6 2) (- 2 7)))
+
+       #+END_SRC
+****** Exercise 1.3:
+       Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
+       *QUESTION* *ERROR?*: If 2 number are equal but both are the smalest ones
+
+       #+BEGIN_SRC scheme
+
+       (define (square y)
+         (* y y))
+
+       (define (sum-square-two-numbers x y)
+         (+ (square x) (square y)))
+
+       (define (sum-square-the-two-largest-three-numbers x y n)
+         (if (and (>= x y) (>= y n))
+             (sum-square-two-numbers x y)
+
+             (if (<= y n)
+                 (if (<= x y)
+                     (sum-square-two-numbers n y)
+                     (sum-square-two-numbers x n))
+                 (sum-square-two-numbers y n))))
+
+       (two-largest-of-three 4 4 4)
+       (two-largest-of-three 4 3 2)
+       (two-largest-of-three 4 1 2)
+       (two-largest-of-three 1 4 3)
+
+       (define (sum-square-two-largest-of-three-numbers x y n)
+         (if (and (>= x y) (>= y n))
+             (display "x & y are the larger ones")
+
+             (if (<= y n)
+                 (if (<= x y)
+                     (display "n & y are the larger ones")
+                     (display "x & n are the larger ones"))
+                 (display "y & n are the larger ones"))))
+
+       #+END_SRC
+****** Exercise 1.4:
+       Observe that our model of evaluation allows for combinations whose operators are compound expressions.
+       Use this observation to describe the behavior of the following procedure:
+
+       #+BEGIN_SRC scheme
+
+       (define (a-plus-abs-b a b)
+         ((if (> b 0)
+              + -)
+          a b))
+
+       (a-plus-abs-b 3 2)
+       (a-plus-abs-b -3 2)
+       (a-plus-abs-b 3 -2)
+
+       ANSWER: If B is bigger than 0, (+ a b), else (- a b)
+
+       #+END_SRC
+****** Exercise 1.5:
+       Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using
+       applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
+
+       #+BEGIN_SRC scheme
+
+       (define (p) (p))
+
+       (define (test x y)
+         (if (= x 0)
+             0
+             y))
+
+       #+END_SRC
+
+       Then he evaluates the expression
+
+       #+BEGIN_SRC scheme
+
+       (test 0 (p))
+
+       #+END_SRC
+
+       What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What behavior will he
+       observe with an interpreter that uses normal-order evaluation? Explain your answer. (Assume that the evaluation rule
+       for the special form if is the same whether the interpreter is using normal or applicative order: The predicate
+       expression is evaluated first, and the result determines whether to evaluate the consequent or the alternative
+       expression.)
+****** Exercise 1.6
+       the new-if evaluate all of its parameters resulting in an
+       endless loop under sqrt-iter
+
+       sqrt-iter
+       new-if
+       sqrt-iter
+       new-if
+       #+BEGIN_SRC scheme
+
+
+       (define (average x y)
+         (/ (+ x y) 2))
+
+       (define (improve guess x)
+         (average guess (/ x guess)))
+
+       (define (square y) (* y y))
+
+       (define (good-enough? guess x)
+         (< (abs (- (square guess) x)) 0.001))
+
+       (define (new-if predicate then-clause else-clause)
+         (cond (predicate then-clause)
+	       (else else-clause)))
+
+       (if (= 2 3) 0 5)
+       (if (= 1 1) 0 5)
+       (new-if (= 2 3) 0 5)
+       (new-if (= 1 1) 0 5)
+
+
+       (define (sqrt-iter guess x)
+         (new-if (good-enough? guess x)
+                 guess
+                 (sqrt-iter (improve guess x) x)))
+
+       (sqrt 9)
+       (sqrt (+ 100 37))
+       (sqrt (+ (sqrt 2) (sqrt 3)))
+       (square (sqrt 1000))
+
+       #+END_SRC
+
+*** Little Schemer
+**** Chapter 3 - Cons the Magnificent
+***** rember
+***** insertR
+      #+BEGIN_SRC scheme
+
+      (define insertR
+        (lambda (new old lat)
+          (cond
+           ((null? lat) (quote ()))
+           (else (cond
+                  ((eq? (car lat) old)
+                   (cons old
+                         (cons new (cdr lat))))
+                  (else (cons (car lat)
+                              (insertR new old (cdr lat)))))))))
+
+      (insertR 'topping 'fudge
+	       (quote (ice cream with fudge for dessert)))
+      #+END_SRC
+***** insertL
+      #+BEGIN_SRC scheme
+
+      (define insertL
+        (lambda (new old lat)
+          (cond
+           ((null? lat) (quote ()))
+           (else (cond
+                  ((eq? (car lat) old)
+                   (cons new
+                         (cons old (dr lat)
+			       (insertL)))))))))
+
+      (subst 'topping 'fudge
+             (quote (ice cream with fudge for dessert)))
+      #+END_SRC
+
+***** subst
+      #+BEGIN_SRC scheme
+
+      (define subst
+        (lambda (new old lat)
+          (cond
+           ((null? lat) (quote ()))
+           (else (cond
+                  ((eq? (car lat) old)
+                   (cons new (cdr lat)))
+                  (else (cons (car lat)
+                              (subst new old (cdr lat)))))))))
+
+      (subst 'topping 'fudge
+             (quote (ice cream with fudge for dessert)))
+
+
+
+
+      #+END_SRC
+
+***** subst2
+      #+BEGIN_SRC scheme
+
+      (define subst2
+        (lambda (new o1 o2 lat)
+          (cond
+           ((null? lat) (quote ()))
+           (else (cond
+                  ((eq? (car lat) o1)
+                   (cons new (cdr lat)))
+                  ((eq? (car lat) o2)
+                   (cons new (cdr lat)))
+                  (else (cons (car lat)
+                              (subst2 new o1 o2
+                                      (cdr lat)))))))))
+
+      (define lat )
+
+      (subst2 'vanilla 'chocolate 'banana '(banana ice cream
+                                                   with chocolate topping))
+      #+END_SRC
+
+*** Online books
+    https://htdp.org/2018-01-06/Book/
+
+** Scheme Terms (table)
+   | Term                                         | Meaning |
+   |----------------------------------------------+---------|
+   | data directed programming (complex numbers)  |         |
+   | messaging passing                            |         |
+   | term list                                    |         |
+   | big case analisys                            |         |
+   | decentralized control                        |         |
+   | stream processing                            |         |
+   | state variables                              |         |
+   | backtracking search                          |         |
+   | memoization                                  |         |
+   | Normal Order Evaluation vs Applicative Order |         |
+
+** Scheme Libraries
+   http://synthcode.com/scheme/fmt/
+** TODO Scheme
+*** TODO wayland guile scheme window manager -- with an emacs feels
+** Scheme Videos
+   [[https:https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures][SICP Videos]]
+
+   https://vimeo.com/lispnyc
+
+** Scheme Articles
+   http://www.troubleshooters.com/codecorn/scheme_guile/hello.htm
+
+   https://schemers.org/Documents/
+
+   https://schemers.org/
+
+   https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/
+
+   https://www.wikiwand.com/en/Homoiconicity#/Implementation_methods
+** Scheme - Blogs
+   https://catonmat.net/
+
+   http://www.lambdanative.org
+
+   http://www.schemespheres.org
+
+   https://schemers.org
