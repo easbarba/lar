@@ -1,11 +1,11 @@
-#+TILE: Arquivos erben
+#+TILE: Archives Legacy
 
-* Inhaltsverzeichnis
+* Summary
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#arquivos-ponto][Arquivos ponto]]
+- [[#dotfiles][Dotfiles]]
   - [[#cero][Cero]]
   - [[#blog][Blog]]
   - [[#shell-software][shell-software]]
@@ -39,18 +39,17 @@
   - [[#autostart][autostart]]
   - [[#make][Make]]
   - [[#suckless][Suckless]]
-- [[#sprachen][Sprachen]]
+- [[#languages][Languages]]
   - [[#golang][Golang]]
   - [[#c][C]]
   - [[#rust][Rust]]
-  - [[#javascript][Javascript]]
   - [[#guile][Guile]]
   - [[#elixir][Elixir]]
   - [[#haskell][Haskell]]
   - [[#net][.NET]]
   - [[#swift][Swift]]
   - [[#lua][Lua]]
-  - [[#front-end][front end]]
+  - [[#common-lisp][Common Lisp]]
   - [[#scheme][Scheme]]
   - [[#java][Java]]
   - [[#python][Python]]
@@ -58,11 +57,11 @@
   - [[#cpp][CPP]]
   - [[#read-later][Read later]]
   - [[#more][More]]
-- [[#ferramentas][Ferramentas]]
+- [[#tools][Tools]]
   - [[#devops][DevOps]]
 :END:
 
-* Arquivos ponto
+* Dotfiles
 ** Cero
 *** Oss.json
    #+begin_src json
@@ -9074,7 +9073,7 @@
      fi
 
      #+END_SRC
-* Sprachen
+* Languages
 ** Golang
 *** Fortschritt
 **** Buch
@@ -9724,27 +9723,6 @@
      | run             | compile and run       |
      | build           | compile               |
      | build --release | praise the sun        |
-** Javascript
-*** Inhaltsverzeichnis
-    :PROPERTIES:
-    :TOC:      :include all :depth 2 :ignore this
-    :END:
-  :CONTENTS:
-  - [[#progresso][Progresso]]
-    - [[#livros][Livros]]
-    - [[#ldc][LDC]]
-  :END:
-*** Progresso
-**** Livros
-     | Livros                          | Capitulo                     | em          | tarde | revisao |
-     |---------------------------------+------------------------------+-------------+-------+---------|
-     | JavaScript The Definitive Guide | Types, Values, and Variables | 3.2 Numbers |       |         |
-
-***** LDC
-      | Source Code | folder | file | @ |
-      |-------------+--------+------+---|
-      | node        |        |      |   |
-      |             |        |      |   |
 ** Guile
 *** Progresso
 **** Livros
@@ -10292,613 +10270,86 @@
      | lua         |        |      |   |
      | luarocks    |        |      |   |
      | awesome     |        |      |   |
-** front end
-*** Sumario
-    :PROPERTIES:
-    :TOC:      :include all :depth 2 :ignore this
-    :END:
-  :CONTENTS:
-  - [[#progresso][Progresso]]
-    - [[#livros][Livros]]
-    - [[#ldc][LDC]]
-  - [[#projetos][Projetos]]
-    - [[#blog][blog]]
-  - [[#linguagens][Linguagens]]
-    - [[#javascript][JavaScript]]
-    - [[#html][HTML]]
-    - [[#css][CSS]]
-    - [[#web][Web]]
-  :END:
-*** Progresso
-**** Livros
-     | Livros                                    | Capitulo                                | em                                    | tarde | revisao |
-     |-------------------------------------------+-----------------------------------------+---------------------------------------+-------+---------|
-     | JavaScript The Definitive Guide           | Chapter 3. Types, Values, and Variables | 3.9.3 Object to Primitive Conversions |       |         |
-     | Essential TypeScript From Beginner to Pro |                                         | Marking Tasks Complete                |       |         |
-
-****** LDC
-       | Source Code | folder | file | @ |
-       |-------------+--------+------+---|
-       | node        |        |      |   |
-       | angular     |        |      |   |
-       | inquirer    |        |      |   |
-*** Projetos
-**** blog
-*** Linguagens
-**** JavaScript
-***** JS Books
-****** Eloquent JavaScript
-******* 2. Program Structure
-******** Exercises
-********* Looping a triangle
-          #+BEGIN_SRC javascript
-
-          let Hash = "#";
-          let numberLoop = 1;
-
-          do {
-              console.log(Hash);
-              Hash = Hash + "#";
-              numberLoop++;
-          } while (numberLoop <= 7)
-
-          #+END_SRC
-********* FizzBuzz
-          #+BEGIN_SRC javascript
-
-          let numberIncreasing = 1;
-
-          while (numberIncreasing <= 100) {
-
-              if ((numberIncreasing % 3) == 0 && (numberIncreasing % 5)  == 0)
-                  console.log("FizzBuzz");
-              else
-                  if ((numberIncreasing % 3) == 0)
-                      console.log("Fizz");
-              else
-                  if ((numberIncreasing % 5)  == 0)
-                      console.log("Buzz");
-              else
-                  console.log(numberIncreasing);
-
-              numberIncreasing++;
-          }
-
-          #+END_SRC
-********* ChessBoard
-          #+BEGIN_SRC javascript
-
-          let columns = 1;
-
-          while (columns <= 8) {
-              let symbol = "# # # #";
-
-              if ((columns % 2) === 0)
-                  console.log(" " + symbol);
-              else
-                  console.log(symbol);
-
-              columns++;
-          }
-
-          #+END_SRC
-******* 3. Functions
-******** examples
-	 #+BEGIN_SRC javascript
-
-	 // -----
-	 const makeNoise = function() {
-             console.log(square("Pling!"));
-	 };
-
-	 makeNoise();
-
-
-	 // -----
-	 const power = function(base, exponent) {
-             let result = 1;
-             for (let count = 0; count < exponent; count++) {
-		 result *= base;
-             }
-             return result;
-	 };
-
-	 console.log(power(2, 10));
-
-	 // -----
-	 const power = (base, exponent) => {
-             let result = 1;
-             for (let count = 0; count < exponent; count++) {
-		 result *= base;
-             }
-             return result;
-	 };
-
-
-	 // -----
-	 const square1 = (x) => { return x * x; };
-	 const square1 = x => x * x;
-
-
-	 // -----
-	 const hummus = function(factor) {
-             const ingredient = function(amount, unit, name){
-		 let ingredientAmount = amount * factor;
-		 if (ingredientAmount > 1) {
-                     unit += "s";
-		 }
-		 console.log(`${ingredientAmount} ${unit} ${name}`);
-             };
-
-             ingredient(1, "can", "chickpeas");
-             ingredient(0.25, "cup", "tahini");
-             ingredient(0.25, "cup", "lemon juice");
-             ingredient(1, "tablespoon", "olive oil");
-             ingredient(0.5, "teaspoon", "cumin");
-	 };
-	 #+END_SRC
-******** exercises
-********* Minimum
-          #+BEGIN_SRC javascript
-
-
-          function min(a, b){
-              return (a < b) ? a : b
-          }
-
-          console.log(min(20,2))
-
-          #+END_SRC
-********* Recursion - isEven
-          #+BEGIN_SRC javascript
-
-          function isEven(number){
-
-              let numberIsEven = false;
-
-              if (number == 0)
-                  return numberIsEven = true;
-              else if (number == 1)
-                  return numberIsEven = false;
-              else if (number <= 0)
-                  return console.log("Please, enter a natural(positive) number.")
-              else
-                  return isEven(number - 2);
-          }
-
-          isEven(50); // true
-          isEven(75); // false
-          isEven(-1); // RangeError: Maximum call stack size exceeded
-          isEven(-1); // Please, enter a positive number.
-
-          #+END_SRC
-********* Bean Counting
-          #+BEGIN_SRC javascript
-
-          // -----
-          function countBs(string){
-
-              let BinString = 0;
-
-              for (let i = 0; i < string.length; i++) {
-                  if (string[i] == "B")
-                      BinString++;
-              }
-
-              return BinString;
-          }
-
-          console.log(countBs("bbC"))
-
-
-          // -----
-          function countChar(string, charToMatch){
-
-              let BinString = 0;
-
-              for (let i = 0; i < string.length; i++) {
-                  if (string[i] == charToMatch)
-                      BinString++;
-              }
-
-              return BinString;
-          }
-
-          console.log(countChar("bbC", "B"))
-
-          #+END_SRC
-
-***** JS Sites
-****** Web JS - Misc
-       https://bestofjs.org/
-
-       https://leanpub.com/understandinges6/read/#leanpub-auto-block-bindings
-****** Web JS - Online Tools
-       https://jsperf.com/
-***** JS Frameworks
-      https://polyfill.io/v3/
-
-      https://github.com/vuejs/vue
-
-      https://api.jquery.com/
-***** JS Refactoring
-      https://medium.com/@jochasinga/how-i-refactor-my-code-561aa9132045
-***** JS Articles
-      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
-
-      https://medium.com/womakerscode/10-dicas-para-se-tornar-ninja-em-javascript-31a963ad17a1
-
-      https://medium.com/@oliver.grack/using-eslint-with-typescript-and-react-hooks-and-vscode-c583a18f0c75
-***** JS Interview
-      https://www.pixelstech.net/article/1552133174-JavaScript-interview-questions
-**** HTML
-***** HTML Workaround
-******* IE8 - HTML5
-	#+BEGIN_SRC html
-	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/ html5shiv.min.js"></script ><![endif]-->
-	#+END_SRC
-**** CSS
-***** CSS Pre-Processors
-      [[https://sass-lang.com/][SASS]]
-      less
-      flexbox
-***** CSS Resources
-      https://jensimmons.github.io/
-
-      https://labs.jensimmons.com
-
-      https://daneden.github.io/animate.css/
-
-      https://css-tricks.com
-
-      https://flexboxfroggy.com/
-
-      https://leaverou.github.io/css3patterns/#lined-paper
-***** CSS Tools/Frameworks
-      https://cssicon.space/#/
-
-      greensock
-      velocity,js
-      anime.js
-
-      https://animejs.com/
-
-      https://postcss.org/
-
-      https://autoprefixer.github.io/
-
-      http://screensiz.es/
-
-      http://mqtest.io/
-
-      https://www.axis-praxis.org/
-***** CSS Properties
-      | Properties                         |                                                              |
-      |------------------------------------+--------------------------------------------------------------|
-      | font-variant-numeric: tabular-nums | aplied in time interval, ensure its number to use even space |
-      |                                    |                                                              |
-***** CSS Articles
-****** CSS Grid
-       https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
-
-       https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid/
-
-       https://medium.com/@elad/supporting-css-grid-in-internet-explorer-b38669e75d66
-
-       https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
-
-       https://css-tricks.com/css-grid-in-ie-duplicate-area-names-now-supported/
-
-****** CSS Flexbox
-       https://philipwalton.github.io/solved-by-flexbox/demos/grids/
-
-       https://codepen.io/chriscoyier/pen/vWEMWw?editors=1100
-****** CSS Misc
-
-       https://clubmate.fi/oocss-acss-bem-smacss-what-are-they-what-should-i-use/
-
-       https://philipwalton.github.io/solved-by-flexbox/demos/grids/
-
-       http://bradfrost.com/blog/post/responsive-nav-patterns/
-
-       https://css-irl.info/how-to-convince-your-team-to-adopt-grid/
-
-       https://love2dev.com/blog/html-css-underline/
-
-       https://flaviocopes.com/css-centering/
-
-       https://meyerweb.com/eric/tools/css/reset/index.html
-
-       https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
-
-       https://css-tricks.com/dont-overthink-it-grids/
-
-       https://www.sitepoint.com/understanding-css-grid-systems/
-
-       https://www.sitepoint.com/css-architectures-refactor-your-css/
-
-       https://www.smashingmagazine.com/2013/06/workflow-design-develop-modern-portfolio-website/
-
-       https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-
-       https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/
-
-       https://medium.freecodecamp.org/how-to-get-better-at-writing-css-a1732c32a72f
-
-       https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-
-       https://css-tricks.com/snippets/css/complete-guide-grid/
-
-       https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index
-
-       https://www.learnenough.com/css-and-layout-tutorial/css/introduction
-***** CSS Blogs/Site
-      csstriggers.com
-      https://thecssworkshop.com/
-
-      https://gridbyexample.com/
-
-      http://www.csszengarden.com/
-
-      http://learnlayout.com/
-
-***** CSS Frameworks
-      Compass
-***** CSS Backward Compatibility
-      https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks
-**** Web
-***** Web Studies
-****** Web Books
-******* Learning Web Design
-******** Exercises
-******** Books/Articles recommended
-	 | Books/Articles                                                                                                             |   |
-	 |----------------------------------------------------------------------------------------------------------------------------+---|
-	 | Adaptive Web Design: Crafting Rich Experiences with Progressive Enhancement, 2nd Edition, by Aaron Gustafson (New Riders). |   |
-	 | The Uncertain Web: Web Development in a Changing Landscape by Rob Larson                                                   |   |
-	 | Designing with Progressive Enhancement by Todd Parker                                                                      |   |
-	 | https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html                                                       |   |
-	 |                                                                                                                            |   |
-****** Web Courses
-       https://courses.wesbos.com/account
-******* Web Courses Tips
-	https://freefrontend.com/html-css-books/
-	https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-1-7d4f7f0bff02
-	https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-2-adfa4824da9b
-
-***** Web Node
-****** Node frameworks
-       https://adonisjs.com/
-***** Web Tools
-******* Web Tools - Task Runners
-******** Gulp
-	 https://css-tricks.com/gulp-for-beginners/
-******** Grunt
-******* Web Tools - Debug
-******** Unitary Test:
-******** UI Test
-******** TDD:
-	 Selenium
-	 Test Complete
-	 Cuit
-******* Web Tools - Dep Manger
-	Bower
-	Yarn
-******* Web Tools - Misc
-	https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=db
-
-	http://gs.statcounter.com/
-
-	https://caniuse.com/
-
-	https://egghead.io/
-
-	http://overapi.com
-
-	https://web.dev/
-******* Web Tools - Test Automation
-	Selenium, Jest, or Enzyme
-***** Web Design
-      http://paletton.com/
-
-      https://webgradients.com/
-****** Web Design - Articles
-       https://www.smashingmagazine.com/2019/05/svg-design-tools-practical-guide/
-
-       https://www.yeseniaperezcruz.com/blog-1/2018/4/28/scenario-driven-design-systems
-
-       https://jakearchibald.com/2015/anatomy-of-responsive-images/
-****** Web Desing - People
-       Aaron Draplin
-
-****** Web Desing - Sites
-       https://tympanus.net/codrops/
-***** Web Frameworks
-      bootstrap
-      materalize
-      foundation
-***** Web Images
-      http://responsiveimages.org/
-***** Web Performance
-      https://larahogan.me/design/
-
-      High Performance Mobile Web: Best Practices for Optimizing Mobile Web Apps by Maximiliano Firtman
-
-      https://developers.google.com/speed/?csw=1
-
-      http://webpagetest.org/
-
-      https://developers.google.com/speed/pagespeed/insights/
-
-      http://yslow.org/
-
-***** Web CrossBrowsers
-****** <IE10 - Excuses:
-       - E10 and below don't have support for the latest TLS encryption (out of the
-       box), and thus if you handle any credit card payments, IE10 is no longer
-       considered secure.
-       - Entering passwords becomes risky too. Logging in no longer becomes
-	 secure. That will affect a much greater number of sites and is another
-	 good point to raise.
-
-***** Web Backend
-****** Web Backend - Node.js
-       [[https://nodejs.org/en/][Node.js]]
-******** NPM commands
-	 List all npm packages (no verbose): npm list -g --depth=0
-******** NPM Tips
-	 https://www.sitepoint.com/beginners-guide-node-package-manager/
-****** Web Backend - Ruby
-****** Web Backend - PHP
-****** Web Backend - Python
-       https://welcometothedjango.com.br
-***** Web Native Apps
-      https://www.nativescript.org/
-***** Web Security
-      Strong understanding of web application security (e.g. XSS, CSRF, CORS)
-***** Web More
-      https://www.schoolofnet.com/plano-de-estudo-frontend-developer/
-
-      https://www.htmldog.com/
-
-      https://web.archive.org/web/20151110193658/https://www.drupal.org/node/1245650
-
-      https://www.happybearsoftware.com/how-to-get-a-programmer-job
-
-      https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work#Summary
-
-
-      li <strong>Semantics:</strong> Semantic, SEO, HTTP Requests, Viewport.
-      li <strong>CSS:</strong> Grid, Flexbox, Sizing, Queries.
-      li <strong>JavaScript:</strong> Dynamic transitions, Complex/Immersive UI animations.
-      li <strong>Design:</strong> Unified, Reusable & Flexible Design, Animated Illustrations, Infographics, Morphing Shapes.
-
-****** Web Beginners - Books/Videos/Tips
-       Books and w3.org Standards:
-       Learning Web Design by Jennifer Niederst Robbins
-       CSS Definitive Guide by Eric Meyer
-       Eloquent Javascript by Marijn Haverbeke
-
-       Youtube:
-       Jen Simmons,
-       Rachel Andrew,
-       Brad Traversy Media,
-       Kevin Powell,
-       Dev Ed,
-       Wes Bros
-       whatsdev
-       Joshua Fluke
-       Logos by Nick
-       Design Matters
-
-       Blogs:
-       aneventapart.com
-       smashingmagazine.com
-       css-tricks.com
-       syntax.fm
-       javascript weekly
-
-****** Web More - Sites Eg
-       https://projecteuler.net/archives
-
-       https://html5up.net/
-
-       https://codesandbox.io/
-
-       https://www.awwwards.com/
-
-       https://www.hackerrank.com/
-
-       https://eusoudev.com.br/
-
-       https://tableless.com.br/todos-os-posts/
-
-****** Web More - Terms
-       | Terms                     |   |
-       |---------------------------+---|
-       | standards-compliant sites |   |
-
-****** Web More - PodCasts
-       https://soundcloud.com/lambdatres
-****** Web More - Articles
-       https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-1-7d4f7f0bff02
-
-       https://hackernoon.com/how-i-used-my-programming-skills-to-save-over-8-hours-of-writing-work-7aba154d4232
-
-       https://soundcloud.com/lambdatres/100-aprendendo-javascript
-
-       https://dev.to/gypsydave5/why-you-shouldnt-use-a-web-framework-3g24
-
-       https://www.slideshare.net/bryanrieger/rethinking-the-mobile-web-by-yiibu/140-thank_youhelloyiibucom
-****** Web More - Jobs
-       https://vulpi.com.br/
-
-       upwork
-****** Web More - Learning resources
-       https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
-
-       https://abookapart.com/
-
-       https://www.learnenough.com/
-
-       https://www.theodinproject.com/home
-****** Web More - Standards
-       https://www.w3.org/standards/
-******* Web Standards - Best Pratices
-	https://www.w3.org/standards/techs/htmlbp#w3c_all
-
-****** Web More - Skill and Projects
-       | Skill                 | ....                                                                                                                             |
-       |-----------------------+----------------------------------------------------------------------------------------------------------------------------------|
-       | Editors               | '(Emacs VSCode)                                                                                                                  |
-       | Design/Mockup         | '(Gimp Krita Photoshop)                                                                                                          |
-       | HTML                  | semantics HTML5                                                                                                                  |
-       | CSS                   | (Positionint Box Model  Flexbox  CSS Grid  CSS Variables)                                                                        |
-       | Browser               | Dev Tools                                                                                                                        |
-       | Layout                | Responsive - Set viewport - Fluid width - Media Queries - rem over px - Mobile First/Stacked Columns                             |
-       | Hosting/Domain        | FTP/SFTP(Filezilla...) - Sharing Hostesd (hostgator) - (Static hosting (Netlify Github Pages))                                   |
-       | JS                    | DOM manipulation / Events - JSON - FetchAPI - ES8+                                                                               |
-       | Frameworks            | ((HTML '(Bootstrap Materalize Bulma))  (CSS '(Sass)) (JS '(Vue React Angular)))                                                  |
-       | Git & Tooling         | ((Packages Manager (NPM Yarn)) (Module Bundling (WebPack Parcel)) (TaskRunners (Gulp Grunt NPMscripts)))                         |
-       | Server Side Languages | (Languages '(NodeJS ((Pack Managn) (HTTP Routing)) (Framework (Express Koa Adonis))))                                            |
-       | Server Side Database  | ((Relational '(MySQL PosteSQL)) (NoSQL '(MongoDB CouchBase)) (Cloud '(Firebase AWS Azure)) (Lighweight '(SQLite NeDB Redis)))    |
-       | State Management      | '(Redux ContextAPI (Apollo '(GraphQL Client)) (VueX NgRx))                                                                       |
-       | Server Rendered Pages | '(Next.js Nuxt.js )                                                                                                              |
-       | CMS                   | ((PHP '(WordPress Drupal)) (JS '(Ghost KeyStone)))                                                                               |
-       | DevOPS Deploying      | ((Virtual '(Docker Vagrant)) (Testing '(Unit Integration Functional System) (Jest Mocha)) (Platform '(DigitalOcean AWS Heroku))) |
-       | Mobile Apps           | (ReactNative Flutter)                                                                                                            |
-       | Desktop               | (Electron)                                                                                                                       |
-
-
-       | Projects              |                  |
-       |-----------------------+------------------|
-       | Static Website        | small, informal  |
-       | UI Layouts            | create           |
-       | Dynamic Functionality | modal, slideshow |
-       | Deploy/Maintain       | ...              |
-
-******* Interview Tips
-******* Questions/Answers
-	| Questions                                                  | Answers                                                                           |
-	|------------------------------------------------------------+-----------------------------------------------------------------------------------|
-	| 1. Why you are interested in this job?                     | What drivers and motivates to this choose this job?                               |
-	| 2. Why/How do you want to sell this product (pen)?         | Why you are worthy their time ? Be thoughtful why you want to sell this product   |
-	| 3. What do you know about our costumers? Why they chose us |                                                                                   |
-	| 4. Tell me about our competitors,                          | Who we are, what they know about our clients, and why you can win their proposals |
-	| 5. How you deal with work burnout                          | What you do solve it and keep up selling well...                                  |
-	| 6. Last time you took risk and it did not pay out!         | Be honest. You should have take more risks and why it did not work out, SMILE!    |
-	| 7.                                                         |                                                                                   |
-	| 8.                                                         |                                                                                   |
-	| 9. What last time you did what you learned and succed.     | Sources may vary from books, random ads...what you have learn from people         |
-	| 10. What do you would take you sell yourself to them       | what on you makes you special...                                                  |
-	| 11. Do you like this person and why would by its product?  | No one buys if they dont like who is selling                                      |
-	| 12. How fast you sell this product                         | Taking long means less chance to sell                                             |
-	| 13. Connections and network                                |                                                                                   |
-	| 14. What are your prospect/strategy                        |                                                                                   |
-
-	https://medium.freecodecamp.org/9-books-for-junior-developers-in-2019-e41fc7ecc586
-****** Web More - Organizations
-       https://www.w3.org
+** Common Lisp
+*** Progress
+**** Books
+     | Books            | Capitulo      | em | tarde | revisao |
+     |------------------+---------------+----+-------+---------|
+     | ANSI Common Lisp | 4.4 Sequences |    |       |         |
+     |                  |               |    |       |         |
+
+**** LDC
+     | Source Code | folder | file | @ |
+     |-------------+--------+------+---|
+     | sbcl        |        |      |   |
+     | asdf        |        |      |   |
+     | alexandria  |        |      |   |
+*** Features
+**** array
+***** eg
+      #+begin_src lisp
+      (setf *print-array* t) ;; display form
+
+      (setf arr (make-array '(2 3) : initial-element nil)) ;; make
+      (aref arr 0 0) ;; retrieve
+      (setf (aref arr 0 0) 'b) ;; replace
+      #2a((b nil nil) (nil nil nil))
+      (vector "a" 'b 3)
+      #+end_src
+***** annnotaion
+      - multiple dimensions
+      - zero indexed
+      - one-dimensional array is also called a vector
+
+**** lists
+***** list
+***** dotted (proper) list
+      - is either nil, or a cons whose cdr is a proper list
+      - dot notation
+      - separated by a period
+***** assoc lists (alist)
+      - mapping
+      - are slow
+      - good for prototyping
+      - assoc retrieves the pair associated with a given key else nil
+      - assoc-if
+**** conditionals
+***** let
+***** cond
+***** when
+***** unless
+**** comparable
+***** equal
+***** eql
+***** nth
+***** sort
+      - destructive
+**** Misc
+***** member
+***** member-if
+***** every
+***** some
+***** keywords (:test)
+**** Short Notations
+***** #'
+***** '
+***** `(,)
+***** '()
+**** Predicates
+***** evenp
+***** oddp
+***** consp
+***** atom
+**** Sets
+***** union
+***** intersection
+***** set-difference
+***** adjoin
+***** member
+**** Sequences
+***** length
+***** subseq
+***** reverse
 ** [[https://schemers.org/][Scheme]]
 *** Scheme Books
 **** SICP
@@ -16126,7 +15577,7 @@
    - Pascal
    - Fortran
    - ASM
-* Ferramentas
+* Tools
 ** DevOps
 *** Cloud
     AWS
