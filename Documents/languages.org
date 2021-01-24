@@ -33,16 +33,16 @@
 * Ruby
 ** Progress
 *** Books
-    | Books                                                     | Capitulo                                                | em                                                       | tarde                          | revisao |
-    |-----------------------------------------------------------+---------------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-    | Beginning Rails 6                                         | Working with a Database: Active Record                  |                                                          |                                |         |
-    | Pragmatic Ruby (Pickaxe)                                  | Sharing Functionality: Inheritance, Modules, and Mixins | Instance Variables in Mixins                             |                                |         |
-    | Closure in Ruby                                           |                                                         |                                                          |                                |         |
-    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility          | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
-    | Design Patterns in Ruby                                   | Strategy                                                |                                                          |                                |         |
-    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                         |                                                          |                                |         |
-    | The Well Grounded Rubyist                                 | 12  File and I/O operations                             |                                                          |                                |         |
-    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing                       | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
+    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
+    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
+    | Beginning Rails 6                                         | Working with a Database: Active Record         |                                                          |                                |         |
+    | Pragmatic Ruby (Pickaxe)                                  | Standard Types                                 |                                                          |                                |         |
+    | Closure in Ruby                                           |                                                |                                                          |                                |         |
+    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
+    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
+    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |         |
+    | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |         |
+    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
 
 *** SLOC
     | Source Code | folder          | file       | @ |
