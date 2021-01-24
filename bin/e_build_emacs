@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # set -e
 
@@ -7,23 +7,24 @@ EMACS_DIR="$BUILDS/emacs"
 PREFIX="$HOME/.local"
 TAG=emacs-27.1
 
-check-deps(){
+check_deps()
+{
     [[ ! -x $(command -v git) ]] && exit
 }
 
-repo-get()
+repo_get()
 {
     [[ -d $EMACS_DIR ]] && return
 
     git clone "https://git.savannah.gnu.org/git/emacs" "$BUILDS/emacs"
 }
 
-repo-update()
+repo_update()
 {
     [[ -d "$EMACS_DIR/.git" ]] && git pull
 }
 
-repo-checkout()
+repo_checkout()
 {
     git checkout ${TAG}
 }
@@ -47,10 +48,10 @@ install()
 
 echo "Emacs - Installing local build"
 
-check-deps
+check_deps
 
-repo-get
-repo-update
-repo-checkout
+repo_get
+repo_update
+repo_checkout
 
 install
