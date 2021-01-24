@@ -24,6 +24,10 @@
 - [[#algorithms][Algorithms]]
 - [[#articles][Articles]]
 - [[#skills][Skills]]
+- [[#misc][Misc]]
+  - [[#terms][Terms]]
+  - [[#books][Books]]
+  - [[#skills][Skills]]
 :END:
 * Fortschritt
    | Buch                                                   | kapitel                         | @                                                 | @later | revision       |
@@ -159,3 +163,17 @@ method.
   - RabbitMQ/ Kafka
   - Firebase
   - Postfix, Nginx
+* Misc
+** Terms
+*** Search Traversal
+    - depth-first traversal
+    - breadth-first traversal
+** Books
+   Designing Data Intensive Apps
+** Skills
+  - Language
+  - Unit Test
+  - Framework
+  - Database
+  - Git
+  - Docker
