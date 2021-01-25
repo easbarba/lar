@@ -19,9 +19,11 @@ debian-packages ()
 
     programming=(shellcheck zenity libpq-dev bash-completion cmake mercurial clang libsqlite3-dev)
 
-    user=(firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam plank clementine cheese gnome-terminal)
+    user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam)
 
-    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme)
+    qt=(clementine kdeconnect kdenlive ktorrent webcamoid)
+
+    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme plank gnome-terminal cheese)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -51,6 +53,7 @@ debian-packages ()
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${user[@]}"
+    e_foreach "$command" "${qt[@]}"
     e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${infra[@]}"
