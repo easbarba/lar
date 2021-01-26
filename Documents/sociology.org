@@ -1,0 +1,20 @@
+#+TILE: Sociology - Study Annotations
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#karl-marx][Karl Marx]]
+- [[#max-weber][Max Weber]]
+- [[#david-émile-durkheim][David Émile Durkheim]]
+  - [[#progress][Progress]]
+- [[#others][Others]]
+:END:
+
+* Karl Marx
+* Max Weber
+* David Émile Durkheim
+** Progress
+* Others
+  - Adam Smith
