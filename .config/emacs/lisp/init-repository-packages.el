@@ -348,7 +348,8 @@
     :config (yasnippet-snippets-initialize)))
 
 (use-package flymake-shellcheck
-  :defer t
+  :defer 1
+  :commands flymake-shellcheck-load
   :config (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
 (use-package lsp-mode
