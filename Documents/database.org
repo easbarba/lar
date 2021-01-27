@@ -5,8 +5,8 @@
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#progresso][Progresso]]
-- [[#livros][Livros]]
+- [[#progress][Progress]]
+- [[#books][Books]]
 - [[#postgresql][PostgreSQL]]
 - [[#sqlite][SQLite]]
 - [[#json][JSON]]
@@ -18,12 +18,12 @@
 - [[#nosql][noSQL]]
 - [[#mais-tarde][Mais tarde]]
 :END:
-* Progresso
-* Livros
-  | Livro                                                     | capitulo | parte | tarde |
-  |-----------------------------------------------------------+----------+-------+-------|
-  | Practical SQL A Beginners Guide to Storytelling with Data |          |       |       |
-  | Mastering PostgreSQL 12                                   |          |       |       |
+* Progress
+* Books
+  | Book                                                      | cap | @ | late |
+  |-----------------------------------------------------------+-----+---+------|
+  | Practical SQL A Beginners Guide to Storytelling with Data |     |   |      |
+  | Mastering PostgreSQL 12                                   |     |   |      |
 
 * [[https://www.postgresql.org/][PostgreSQL]]
 * [[https://sqlite.org/][SQLite]]
