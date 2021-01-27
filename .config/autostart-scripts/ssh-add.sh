@@ -1,3 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-SSH_ASKPASS=/usr/bin/ksshaskpass ssh-add $HOME/.ssh/id_ed25519  < /dev/null
+if [ "$DESKTOP_SESSION" == "plasma" ]; then
+    export SSH_ASKPASS=/usr/bin/ksshaskpass
+    ssh-add "$HOME/.ssh/id_ed25519"  < /dev/null
+fi
