@@ -8,12 +8,46 @@
 - [[#progress][Progress]]
   - [[#books][Books]]
   - [[#sloc][SLOC]]
-- [[#features][Features]]
-  - [[#ruby][Ruby]]
+- [[#ruby][Ruby]]
+  - [[#class][class]]
+  - [[#blocks][blocks]]
+  - [[#lambda][lambda]]
+  - [[#methods][methods]]
+  - [[#procs][procs]]
+  - [[#operators][operators]]
+  - [[#loop][loop]]
+  - [[#enumerator][enumerator]]
+  - [[#inject][inject]]
+  - [[#succ][succ]]
+  - [[#collect][collect]]
+  - [[#freeze][freeze]]
+  - [[#dup][dup]]
+  - [[#dig][dig]]
+  - [[#fetch][fetch]]
+  - [[#tap][tap]]
+  - [[#quoting][Quoting]]
+  - [[#heredocs][heredocs]]
+  - [[#proc][proc]]
+  - [[#do-end-as-param][do end as param]]
+  - [[#array][array]]
+  - [[#datetime][date/time]]
+  - [[#lambda][lambda]]
+  - [[#begin-rescue][begin rescue]]
+  - [[#hash][hash]]
+  - [[#range][range]]
+  - [[#sets][sets]]
+  - [[#gsub][gsub]]
+  - [[#find][find]]
+  - [[#map][map]]
+  - [[#each_slice][each_slice]]
+  - [[#lazy][lazy]]
+  - [[#with_index][with_index]]
+  - [[#enum_for][enum_for]]
+  - [[#more][more]]
 - [[#rails][Rails]]
-  - [[#concepts][concepts]]
-  - [[#models][Models]]
   - [[#cli][Cli]]
+  - [[#traits][Traits]]
+  - [[#models][Models]]
 - [[#concepts][Concepts]]
   - [[#iterator][Iterator]]
   - [[#methods][Methods]]
@@ -23,401 +57,392 @@
 :END:
 * Progress
 ** Books
-   | Books                                                     | Capitulo                                       | em                                                            | tarde                          | revisao |
-   |-----------------------------------------------------------+------------------------------------------------+---------------------------------------------------------------+--------------------------------+---------|
-   | Beginning Rails 6                                         | Working with a Database: Active Record         | Introducing Active Record: Object-Relational Mapping on Rails |                                |         |
-   | Pragmatic Ruby (Pickaxe)                                  | Standard Types                                 |                                                               |                                |         |
-   | Closure in Ruby                                           |                                                |                                                               |                                |         |
-   | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility      |                                |         |
-   | Design Patterns in Ruby                                   | Strategy                                       |                                                               |                                |         |
-   | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                               |                                |         |
-   | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                               |                                |         |
-   | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think                   | Spec: A Plethora of Assertions |         |
+   | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
+   |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
+   | Beginning Rails 6                                         | Working with a Database: Active Record         | Finding All Records
+   | Pragmatic Ruby (Pickaxe)                                  | Standard Types                                 |                                                          |                                |         |
+   | Closure in Ruby                                           |                                                |                                                          |                                |         |
+   | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
+   | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
+   | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |         |
+   | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |         |
+   | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |         |
 
 ** SLOC
    | Project | folder          | file       | @ |
    |---------+-----------------+------------+---|
    | ruby    | lib/bundler/cli | install.rb |   |
    | rails   |                 |            |   |
-* Features
-** Ruby
-*** class
-    #+begin_src ruby
-    # frozen_string_literal: true
+* Ruby
+** class
+   #+begin_src ruby
+   # frozen_string_literal: true
 
-    require 'pathname'
+   require 'pathname'
 
-    # Class Description
-    class Meh # Class name in Camel Case
-      attr_reader :lo, :fi #
+   # Class Description
+   class Meh # Class name in Camel Case
+     attr_reader :lo, :fi #
 
-      OUCH = 'asdasd' #
+     OUCH = 'asdasd' #
 
-      def initialize(lo, fi)
-	@lo = lo #
-	@fi = fi #
-      end
-
-      def alfa # instance method
-	 @localVar = 1
-      end
-
-      def use_local_var # instance method
-	@localVar
-      end
-
-      def self.zeta #
-      end
-    end
-
-    Eija = Class.new #
-
-    def Eija.beta # singleton
-    end
-
-
-    # superclass
-
-    class Parent
-    end
-    class Child < Parent
-    end
-
-    Child.superclass # => Parent
-
-    #
-    #+end_src
-*** blocks
-    #+begin_src ruby
-
-    #+end_src
-*** lambda
-**** How
-     #+begin_src ruby
-     lambda { |params| ... } # form 1
-
-     -> params { ... }  # form 2
-     #+end_src
-**** Usage
-     #+begin_src ruby
-     proc1 = -> arg { puts "In proc1 with #{arg}" }
-     proc1.call "ant"
-
-     def n_times(thing)
-       lambda {|n| thing * n }
+     def initialize(lo, fi)
+       @lo = lo #
+       @fi = fi #
      end
 
-     p1 = n_times(23)
-     p1.call(3) # => 69
-     #+end_src
-*** methods
-    default values, splat args (described later on page 120), keyword args, and a block parameter
-*** procs
-    #+begin_src ruby
-    def pass_in_block(asdf, &block)
-    end
-
-    multiple_of_three = -> n { (n % 3).zero? }
-    palindrome = -> n { n = n.to_s; n == n.reverse }
-
-    p Integer
-	.all
-	.select(&multiple_of_three)
-	.select(&palindrome)
-	.first(10)
-
-    a = Proc.new
-    #+end_src
-*** operators
-    #+begin_src ruby
-    val.to_s =~ /3/
-    #+end_src
-*** loop
-    - when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
-    #+begin_src ruby
-    loop do
-      puts "#{short_enum.next} - #{long_enum.next}"
-    end
-    #+end_src
-*** enumerator
-**** lazy
-     #+begin_src ruby
-     def Integer.all
-       Enumerator.new do |yielder, n: 0|
-	 loop { yielder.yield(n += 1) }
-       end.lazy
+     def alfa # instance method
+	@localVar = 1
      end
-     #+end_src
-**** each_car
-**** each
-**** to_enum/enum_for
-     #+begin_src ruby
-     a = [ 1, 3, "cat" ]
-     h = { dog: "canine", fox: "vulpine" }
 
-     # Create Enumerators
-     enum_a = a.to_enum
-     enum_h = h.to_enum
+     def use_local_var # instance method
+       @localVar
+     end
 
-     enum_a.next # 1
-     enum_h.next # [:dog, "canine"]
-     enum_a.next # 3
-     enum_h.next # [:fox, "vulpine"]
+     def self.zeta #
+     end
+   end
 
-     enum_a = a.each # create an Enumerator using an internal iterator
-     #+end_src
-*** inject
-    accumulate a value across the members of a collection
-*** succ
-    increments a string value
+   Eija = Class.new #
+
+   def Eija.beta # singleton
+   end
+
+
+   # superclass
+
+   class Parent
+   end
+   class Child < Parent
+   end
+
+   Child.superclass # => Parent
+
+   #
+   #+end_src
+** blocks
+   #+begin_src ruby
+
+   #+end_src
+** lambda
+*** How
     #+begin_src ruby
-    'e'.succ # f
+    lambda { |params| ... } # form 1
+
+    -> params { ... }  # form 2
     #+end_src
-*** collect
+*** Usage
     #+begin_src ruby
-    ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
-    #+end_src
-*** freeze
-    #+begin_src ruby
-    person1.freeze # prevent modifications to the object
-    #+end_src
-*** dup
-    #+begin_src ruby
-    person1 = "Tim"
-    person2 = person1.dup # not aliasing person1
-    #+end_src
-*** dig
-*** fetch
-*** tap
-*** Quoting
-    %char{text}
-    #+begin_src ruby
-    a = %q(a b c d)
+    proc1 = -> arg { puts "In proc1 with #{arg}" }
+    proc1.call "ant"
 
-    b = %Q(a b c)
-    #+end_src
-*** heredocs
-    #+begin_src ruby
-    <<EOL
-
-    EOL
-
-    <<EOL.to_i * 10
-    EOL
-
-    <<'EOL'
-    EOL
-
-    <<-EOL
-    EOL
-
-    <<~EOL
-    EOL
-
-    [1,2, <<EO asdasd EO]
-
-    a(false, <<EO asd... EO)
-    #+end_src
-*** proc
-    #+begin_src ruby
-
-    #+end_src
-*** do end as param
-    #+begin_src ruby
-    x = (do  1 + 2 end)
-    x = (do 'a' + 'b' end).join(',')
-    #+end_src
-*** array
-    #+begin_src ruby
-    a = [1, ["a", "b"], 4]
-    arr[1][0]
-    [1,2][0]
-    arr.dig(3,0) value_at, a[2,3] = ..
-    a[2..3]
-    a.slice()
-    a.[]=(0, "first")
-    a.[](2)
-    a = %w(a b c)
-    a= %W({a} b c)
-    x.to_ary
-    x.to_arr
-    Array()
-    def string.to_arr
+    def n_times(thing)
+      lambda {|n| thing * n }
     end
-    a.unshift(0)
-    a.push(1,2,3)
-    a << 5
-    a.pop
-    a.shift
-    a.concat
-    a.replace([1,2,3])
-    a.flatten
-    a.reverse
-    a.join(" , ")
-    a = *
-    a.uniq
-    a.compact
-    a.size
-    a.empty
-    a.include?
-    a.first
-    a.last
-    a.sample
-    a.count(1)
-    #+end_src
-    [[file:path]]
-*** date/time
-    #+begin_src ruby
-    require 'date'
-    d = date.today
 
-    require 'time'
-    t = time.zxcz
+    p1 = n_times(23)
+    p1.call(3) # => 69
     #+end_src
-*** lambda
-    #+begin_src ruby
-    l = -> { xx; aa }
-    l = lambda do
-      yield xx
-    end
-    #+end_src
-*** rescue
-    #+begin_src ruby
-    begin
-      puts 'I am before the raise.'
-      raise 'An error has occured.'
-      puts 'I am after the raise.'
-    rescue
-      puts 'I am rescued.'
-    end
-    #+end_src
-*** hash
-    #+begin_src ruby
-    h = Hash.new
-    h = { one: 1, :two => 2 }
-    h = Hash[1, "one", 2, "two"]
-    h["1"] = 1
-    h.[]=("New York", "NY")
-    h.store("New York", "NY")
-    a.update(b)
-    a.merge(b)
-    h.select {k,vk > 1 } !
-    h.reject {  k,v  k > 1 } !
-    h.reject! {  k,v  k > 1 }
-    h = { street: "127th Street", apt: nil }.compact !
-    h = { street: "127th Street", apt: nil }.compact!
-    h.invert
-    h.clear
-    h = {...}.replace({...})
-    h.key?
-    h.empty?
-    #+end_src
-*** range
-    #+begin_src ruby
-    r = Range.new(1,100)
-    r = Range.new(1,100, true)
-    r =  1..99(inclusive) r = 1...199(exclusive)
-    r.cover? 2
-    r.include? 3
-    #+end_src
-*** sets
-    #+begin_src ruby
-    s = Set.new(array)
-    s = Set.new(names) {name name.upcase }
-    s << 5
-    s.add 5
-    s.delete(1)
-    s.intersection|&| x
-    s.union x
-    s + x
-    s.difference x
-    s - x
-    s ^ x
-    s.merge [2]
-    s.subset? b
-    s.superset? b
-    s.proper_subset? x
-    s.proper_superset? x
-    #+end_src
-*** gsub
-    Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
-*** find
-    #+begin_src ruby
-    a.find { ¦n¦ n > 5 }
-    a.find { ¦n¦ n > 5 }
-    a.find_all
-    a.select
-    a.reject
-    a.map
-    #+end_src
-*** map
-    #+begin_src ruby
-    a.map { |x| x.uppercase}
-    a.map! { |x| x.uppercase}
-    #+end_src
-*** each_slice
-    #+begin_src ruby
-    animals.each_slice(2).map do |predator, prey|
-    #+end_src
+** methods
+   default values, splat args (described later on page 120), keyword args, and a block parameter
+** procs
+   #+begin_src ruby
+   def pass_in_block(asdf, &block)
+   end
+
+   multiple_of_three = -> n { (n % 3).zero? }
+   palindrome = -> n { n = n.to_s; n == n.reverse }
+
+   p Integer
+       .all
+       .select(&multiple_of_three)
+       .select(&palindrome)
+       .first(10)
+
+   a = Proc.new
+   #+end_src
+** operators
+   #+begin_src ruby
+   val.to_s =~ /3/
+   #+end_src
+** loop
+   - when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
+   #+begin_src ruby
+   loop do
+     puts "#{short_enum.next} - #{long_enum.next}"
+   end
+   #+end_src
+** enumerator
 *** lazy
     #+begin_src ruby
-    (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
+    def Integer.all
+      Enumerator.new do |yielder, n: 0|
+	loop { yielder.yield(n += 1) }
+      end.lazy
+    end
     #+end_src
-*** with_index
+*** each_car
+*** each
+*** to_enum/enum_for
     #+begin_src ruby
-    ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
-    my_enum.take(5).force // actual result rather than lazy enumerator
-    #+end_src
-*** enum_for
-    #+begin_src ruby
-    e = names.enum_for(:inject, "Names: ")
-    #+end_src
-*** more
+    a = [ 1, 3, "cat" ]
+    h = { dog: "canine", fox: "vulpine" }
 
-    | drop_while             | a.drop_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
-    | take_while             | a.take_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
-    | find_all               | a.find_all ¦ a.select                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
-    | reject                 | a.reject { ¦i¦ i > 4 } ¦ a.reject! { ¦i¦ i > 4 }                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
-    | select                 |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | grep                   | a.grep(//o//) ¦ a.grep(String) ¦ a.grep(50..100) ¦                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
-    | group_by               | a.group_by { ¦s¦ s.size }                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
-    | match                  | //n//.match(s)                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                                             |
-    | String                 | 'C'.size ¦ each_byte ¦ each_line ¦ each_codepoint ¦ each_char ¦ s.bytes ¦                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
-    | min/min_by             | a.min { ¦a,b¦ a.size <=> b.size } ¦  a.min { ¦lang¦ lang.size } ¦ state_hash.min_by { ¦name, abbr¦ name }                                                                                                                                                                                                                                                                                                               |                                                                                                             |
-    | max/max_by             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | minmax/minmax_by       | a.minmax ¦ a.minmax_by { ¦lang¦ lang.size }                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                             |
-    | reverse_each           | [1,2,3].reverse_each { ¦e¦ puts e * 10 }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
-    | with_index             | letters.each.with_index {¦(key,value),i¦ puts i }                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
-    | each_index             | names.each.with_index(1) { ¦pres, i¦ p i }                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                             |
-    | each_slice             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | each_cons              |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | slice_before           | a.slice_before(\/=/).to_a ¦ (1..10).slice_before { ¦num¦ num % 2 == 0 }.to_a ¦                                                                                                                                                                                                                                                                                                                                          |                                                                                                             |
-    | slice_after            |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | slice_when             | a.slice_when { ¦i,j¦ i == j }.to_a                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                             |
-    | inject/reduce          | [1,2,3,4].inject(:+)                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                             |
-    | cycle                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | map                    | names.map { ¦name¦ name.upcase } ¦  x = 5.times.map { Apple.new(rand(100..900)) }                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
-    | map!                   |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | symbol-argument blocks | names.map(&:upcase)                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                             |
-    | <=>                    | Apple#<=> ¦ Apple.sort { ¦a,b¦ a.brand <=> b.brand } ¦                                                                                                                                                                                                                                                                                                                                                                  | implementing a spaceship test method is enough to sort a class, or use a block to sort, or even override it |
-    | comparable             | Apple#<=> ¦                                                                                                                                                                                                                                                                                                                                                                                                             | include comparable                                                                                          |
-    | clamp                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | between                |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    | functions              | -> (args) {} ¦ Sum = -> (a, b) { a + b }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
-    | <<                     | yielder                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
-    |                        | enum_for                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
-    |                        | to_enum                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
-    | dup                    |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
-    |------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+    # Create Enumerators
+    enum_a = a.to_enum
+    enum_h = h.to_enum
+
+    enum_a.next # 1
+    enum_h.next # [:dog, "canine"]
+    enum_a.next # 3
+    enum_h.next # [:fox, "vulpine"]
+
+    enum_a = a.each # create an Enumerator using an internal iterator
+    #+end_src
+** inject
+   accumulate a value across the members of a collection
+** succ
+   increments a string value
+   #+begin_src ruby
+   'e'.succ # f
+   #+end_src
+** collect
+   #+begin_src ruby
+   ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
+   #+end_src
+** freeze
+   #+begin_src ruby
+   person1.freeze # prevent modifications to the object
+   #+end_src
+** dup
+   #+begin_src ruby
+   person1 = "Tim"
+   person2 = person1.dup # not aliasing person1
+   #+end_src
+** dig
+** fetch
+** tap
+** Quoting
+   %char{text}
+   #+begin_src ruby
+   a = %q(a b c d)
+
+   b = %Q(a b c)
+   #+end_src
+** heredocs
+   #+begin_src ruby
+   <<EOL
+
+   EOL
+
+   <<EOL.to_i * 10
+   EOL
+
+   <<'EOL'
+   EOL
+
+   <<-EOL
+   EOL
+
+   <<~EOL
+   EOL
+
+   [1,2, <<EO asdasd EO]
+
+   a(false, <<EO asd... EO)
+   #+end_src
+** proc
+   #+begin_src ruby
+
+   #+end_src
+** do end as param
+   #+begin_src ruby
+   x = (do  1 + 2 end)
+   x = (do 'a' + 'b' end).join(',')
+   #+end_src
+** array
+   #+begin_src ruby
+   a = [1, ["a", "b"], 4]
+   arr[1][0]
+   [1,2][0]
+   arr.dig(3,0) value_at, a[2,3] = ..
+   a[2..3]
+   a.slice()
+   a.[]=(0, "first")
+   a.[](2)
+   a = %w(a b c)
+   a= %W({a} b c)
+   x.to_ary
+   x.to_arr
+   Array()
+   def string.to_arr
+   end
+   a.unshift(0)
+   a.push(1,2,3)
+   a << 5
+   a.pop
+   a.shift
+   a.concat
+   a.replace([1,2,3])
+   a.flatten
+   a.reverse
+   a.join(" , ")
+   a = *
+   a.uniq
+   a.compact
+   a.size
+   a.empty
+   a.include?
+   a.first
+   a.last
+   a.sample
+   a.count(1)
+   #+end_src
+   [[file:path]]
+** date/time
+   #+begin_src ruby
+   require 'date'
+   d = date.today
+
+   require 'time'
+   t = time.zxcz
+   #+end_src
+** lambda
+   #+begin_src ruby
+   l = -> { xx; aa }
+   l = lambda do
+     yield xx
+   end
+   #+end_src
+** begin rescue
+   #+begin_src ruby
+   begin
+     puts 'I am before the raise.'
+     raise 'An error has occured.'
+     puts 'I am after the raise.'
+   rescue
+     puts 'I am rescued.'
+   end
+   #+end_src
+** hash
+   #+begin_src ruby
+   h = Hash.new
+   h = { one: 1, :two => 2 }
+   h = Hash[1, "one", 2, "two"]
+   h["1"] = 1
+   h.[]=("New York", "NY")
+   h.store("New York", "NY")
+   a.update(b)
+   a.merge(b)
+   h.select {k,vk > 1 } !
+   h.reject {  k,v  k > 1 } !
+   h.reject! {  k,v  k > 1 }
+   h = { street: "127th Street", apt: nil }.compact !
+   h = { street: "127th Street", apt: nil }.compact!
+   h.invert
+   h.clear
+   h = {...}.replace({...})
+   h.key?
+   h.empty?
+   #+end_src
+** range
+   #+begin_src ruby
+   r = Range.new(1,100)
+   r = Range.new(1,100, true)
+   r =  1..99(inclusive) r = 1...199(exclusive)
+   r.cover? 2
+   r.include? 3
+   #+end_src
+** sets
+   #+begin_src ruby
+   s = Set.new(array)
+   s = Set.new(names) {name name.upcase }
+   s << 5
+   s.add 5
+   s.delete(1)
+   s.intersection|&| x
+   s.union x
+   s + x
+   s.difference x
+   s - x
+   s ^ x
+   s.merge [2]
+   s.subset? b
+   s.superset? b
+   s.proper_subset? x
+   s.proper_superset? x
+   #+end_src
+** gsub
+   Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
+** find
+   #+begin_src ruby
+   a.find { ¦n¦ n > 5 }
+   a.find { ¦n¦ n > 5 }
+   a.find_all
+   a.select
+   a.reject
+   a.map
+   #+end_src
+** map
+   #+begin_src ruby
+   a.map { |x| x.uppercase}
+   a.map! { |x| x.uppercase}
+   #+end_src
+** each_slice
+   #+begin_src ruby
+   animals.each_slice(2).map do |predator, prey|
+   #+end_src
+** lazy
+   #+begin_src ruby
+   (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
+   #+end_src
+** with_index
+   #+begin_src ruby
+   ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
+   my_enum.take(5).force // actual result rather than lazy enumerator
+   #+end_src
+** enum_for
+   #+begin_src ruby
+   e = names.enum_for(:inject, "Names: ")
+   #+end_src
+** more
+
+   | drop_while             | a.drop_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
+   | take_while             | a.take_while { true }                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
+   | find_all               | a.find_all ¦ a.select                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                             |
+   | reject                 | a.reject { ¦i¦ i > 4 } ¦ a.reject! { ¦i¦ i > 4 }                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
+   | select                 |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | grep                   | a.grep(//o//) ¦ a.grep(String) ¦ a.grep(50..100) ¦                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                             |
+   | group_by               | a.group_by { ¦s¦ s.size }                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
+   | match                  | //n//.match(s)                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                                             |
+   | String                 | 'C'.size ¦ each_byte ¦ each_line ¦ each_codepoint ¦ each_char ¦ s.bytes ¦                                                                                                                                                                                                                                                                                                                                               |                                                                                                             |
+   | min/min_by             | a.min { ¦a,b¦ a.size <=> b.size } ¦  a.min { ¦lang¦ lang.size } ¦ state_hash.min_by { ¦name, abbr¦ name }                                                                                                                                                                                                                                                                                                               |                                                                                                             |
+   | max/max_by             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | minmax/minmax_by       | a.minmax ¦ a.minmax_by { ¦lang¦ lang.size }                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                             |
+   | reverse_each           | [1,2,3].reverse_each { ¦e¦ puts e * 10 }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
+   | with_index             | letters.each.with_index {¦(key,value),i¦ puts i }                                                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
+   | each_index             | names.each.with_index(1) { ¦pres, i¦ p i }                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                             |
+   | each_slice             |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | each_cons              |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | slice_before           | a.slice_before(\/=/).to_a ¦ (1..10).slice_before { ¦num¦ num % 2 == 0 }.to_a ¦                                                                                                                                                                                                                                                                                                                                          |                                                                                                             |
+   | slice_after            |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | slice_when             | a.slice_when { ¦i,j¦ i == j }.to_a                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                             |
+   | inject/reduce          | [1,2,3,4].inject(:+)                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                             |
+   | cycle                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | map                    | names.map { ¦name¦ name.upcase } ¦  x = 5.times.map { Apple.new(rand(100..900)) }                                                                                                                                                                                                                                                                                                                                       |                                                                                                             |
+   | map!                   |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | symbol-argument blocks | names.map(&:upcase)                                                                                                                                                                                                                                                                                                                                                                                                     |                                                                                                             |
+   | <=>                    | Apple#<=> ¦ Apple.sort { ¦a,b¦ a.brand <=> b.brand } ¦                                                                                                                                                                                                                                                                                                                                                                  | implementing a spaceship test method is enough to sort a class, or use a block to sort, or even override it |
+   | comparable             | Apple#<=> ¦                                                                                                                                                                                                                                                                                                                                                                                                             | include comparable                                                                                          |
+   | clamp                  |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | between                |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   | functions              | -> (args) {} ¦ Sum = -> (a, b) { a + b }                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
+   | <<                     | yielder                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
+   |                        | enum_for                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                             |
+   |                        | to_enum                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                             |
+   | dup                    |                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                             |
+   |------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
 * Rails
-** concepts
-   - Active Records: Ruby object-relational mapping (ORM) library
-** Models
-   | what   | $ | ...         |
-   |--------+---+-------------|
-   | Models |   | Camel-Cased |
-   |        |   |             |
-
 ** Cli
 *** Database
     | what     | how                                                                    | desc                                              |
@@ -433,20 +458,43 @@
     |          | destroy model Artile                                                   |                                                   |
     |          | db:rollback                                                            |                                                   |
     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-    |          | db:system:change                                                       | switch databases                                                  |
+    |          | db:system:change                                                       | switch databases                                  |
+    |          | db:rollback                                                            |                                                   |
 
 *** Models
-    | what     | how                                                                    | desc                                              |
-    |----------+------------------------------------------------------------------------+---------------------------------------------------|
-    | models   | generate model <Name>                                                  |                                                   |
-    |          | destroy controller articles                                            |                                                   |
-    |          | rails destroy model Artile                                             |                                                   |
-    |          | rails db:rollback                                                      |                                                   |
-    |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+    | what   | how                                                                    | desc |
+    |--------+------------------------------------------------------------------------+------|
+    | models | generate model <Name>                                                  |      |
+    |        | destroy controller articles                                            |      |
+    |        | destroy model Artile                                                   |      |
+    | a      |                                                                        |      |
+    |        | generate scaffold Article title:string body:text published_at:datetime |      |
+    |        |                                                                        |      |
+
+*** rails.console
+    | what   | how                                                           | desc                      |
+    |--------+---------------------------------------------------------------+---------------------------|
+    | create | create(title: "foo", body: "bar", published_at: '2020-01-31') | create new and save to db |
+    | save   | a.save                                                        | save object to db         |
+    | new    | a.new                                                         | create an empty object    |
+    | count  | A.count                                                       |                           |
+    | find   | A.find(3) / A.find([4,5])                                     |                           |
+    | first  | A.first   / A.first.title                                     |                           |
+    | last   | A.last                                                        |                           |
+    | all    | A.all / A.all.size / A.all.each { \a\ puts a.title }          | relational / as array     |
+    | order  | A.order(:order)                                               | order per title           |
+
 *** ENV
     |   |                      |   |
     |---+----------------------+---|
     |   | RAILS_ENV=production |   |
+** Traits
+   - Active Records: Ruby object-relational mapping (ORM) library
+** Models
+   | what   | $ | ...         |
+   |--------+---+-------------|
+   | Models |   | Camel-Cased |
+   |        |   |             |
 
 * Concepts
 ** Iterator
