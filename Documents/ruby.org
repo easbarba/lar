@@ -2,7 +2,7 @@
 
 * Summary
   :PROPERTIES:
-  :TOC:      :include all :depth 2 :ignore this
+  :TOC:      :include all :depth 3 :ignore this
   :END:
 :CONTENTS:
 - [[#progress][Progress]]
@@ -12,11 +12,17 @@
   - [[#class][class]]
   - [[#blocks][blocks]]
   - [[#lambda][lambda]]
+    - [[#how][How]]
+    - [[#usage][Usage]]
   - [[#methods][methods]]
   - [[#procs][procs]]
   - [[#operators][operators]]
   - [[#loop][loop]]
   - [[#enumerator][enumerator]]
+    - [[#lazy][lazy]]
+    - [[#each_car][each_car]]
+    - [[#each][each]]
+    - [[#to_enumenum_for][to_enum/enum_for]]
   - [[#inject][inject]]
   - [[#succ][succ]]
   - [[#collect][collect]]
@@ -46,11 +52,16 @@
   - [[#more][more]]
 - [[#rails][Rails]]
   - [[#cli][Cli]]
+    - [[#database][Database]]
+    - [[#models][Models]]
+    - [[#console-railsconsole][Console (rails.console)]]
+    - [[#env][ENV]]
   - [[#traits][Traits]]
   - [[#models][Models]]
 - [[#concepts][Concepts]]
   - [[#iterator][Iterator]]
   - [[#methods][Methods]]
+    - [[#methods-chaining][Methods chaining]]
   - [[#enumerator][Enumerator]]
 - [[#instructions][Instructions]]
   - [[#rbenv][Rbenv]]
