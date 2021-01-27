@@ -471,7 +471,7 @@
     |        | generate scaffold Article title:string body:text published_at:datetime |      |
     |        |                                                                        |      |
 
-*** rails.console
+*** Console (rails.console)
     | what   | how                                                           | desc                      |
     |--------+---------------------------------------------------------------+---------------------------|
     | create | create(title: "foo", body: "bar", published_at: '2020-01-31') | create new and save to db |
