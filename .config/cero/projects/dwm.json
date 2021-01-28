@@ -1,0 +1,7 @@
+"Dwm": {
+    "Name": "dwm",
+    "Url": "https://github.com/lxbarbosa/dwm",
+    "AdditionalUrls": "",
+    "Tag": "",
+    "Commands": [ "make clean", "make install PREFIX={0}" ]
+}

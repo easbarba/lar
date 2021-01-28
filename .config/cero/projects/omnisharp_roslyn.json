@@ -1,0 +1,7 @@
+"OmnisharpRoslyn": {
+    "Name": "omnisharp-roslyn",
+    "Url": "https://github.com/OmniSharp/omnisharp-roslyn",
+    "AdditionalUrls": "",
+    "Tag": "",
+    "Commands": [ "sh ./build.sh --target Install --archive --all-publish"]
+}
