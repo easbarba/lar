@@ -21,9 +21,9 @@
 :END:
 * Progress
 ** Books
-   | Books             | Capitulo                                      | em | tarde | revisao |
-   |-------------------+-----------------------------------------------+----+-------+---------|
-   | Beginning Rails 6 | Advanced Active Record: Enhancing Your Models |    |       |         |
+   | Books             | Chapter                                       | @ | late | revision |
+   |-------------------+-----------------------------------------------+---+------+---------|
+   | Beginning Rails 6 | Advanced Active Record: Enhancing Your Models |   |      |         |
 
 ** SLOC
    | Project | folder          | file       | @ |
