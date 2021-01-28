@@ -19,11 +19,13 @@ debian-packages ()
 
     programming=(shellcheck zenity libpq-dev bash-completion cmake mercurial clang libsqlite3-dev)
 
+    ruby=(libssl-dev)
+
     user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam)
 
-    qt=(clementine kdeconnect kdenlive ktorrent webcamoid)
+    qt=(kdeconnect kdenlive)
 
-    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme plank gnome-terminal cheese)
+    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme cheese)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -51,6 +53,7 @@ debian-packages ()
 
     e_foreach "$command" "${essentials[@]}"
     e_foreach "$command" "${programming[@]}"
+    e_foreach "$command" "${ruby[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${qt[@]}"
@@ -70,7 +73,13 @@ debian-packages ()
 
 debian-services()
 {
-    sudo timedatectl set-timezone America/Sao_Paulo
+    # Timezone
+    local desired_zone='America/Sao_Paulo'
+    local current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+    [[ $current_zone != 'America/Sao_Paulo' ]] && sudo timedatectl set-timezone America/Sao_Paulo
+
+    # set python to python3
+    sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 }
 
 debian-foreign()
