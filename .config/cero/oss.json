@@ -56,7 +56,7 @@
     "https://github.com/asdf-vm/asdf"
   ],
   "own": [
-    "https://github.com/easbarbosa/lar",
-    "https://github.com/easbarbosa/cero"
+    "https://gitlab.com/easbarbosa/lar",
+    "https://gitlab.com/easbarbosa/cero"
   ]
 }
