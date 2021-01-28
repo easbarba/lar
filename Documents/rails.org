@@ -21,9 +21,9 @@
 :END:
 * Progress
 ** Books
-   | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
-   |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Beginning Rails 6                                         | Working with a Database: Active Record         | Finding All Records
+   | Books             | Capitulo                                      | em | tarde | revisao |
+   |-------------------+-----------------------------------------------+----+-------+---------|
+   | Beginning Rails 6 | Advanced Active Record: Enhancing Your Models |    |       |         |
 
 ** SLOC
    | Project | folder          | file       | @ |
