@@ -21,7 +21,7 @@ debian-packages ()
 
     ruby=(libssl-dev)
 
-    user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam)
+    user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam telegram-desktop)
 
     qt=(kdeconnect kdenlive)
 
