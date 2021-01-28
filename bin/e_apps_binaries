@@ -7,9 +7,8 @@ bin="$HOME/bin"
 mkdir -pv "$bin"
 cd "$bin"
 
-binaries=("https://dystroy.org/broot/download/x86_64-linux/broot"
-"https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
-"https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt")
+binaries=("https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
+	  "https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt")
 
 for binary in "${binaries[@]}"; do
     [[ ! -e "$bin/$binary" ]] && wget -c "$binary"
