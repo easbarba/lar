@@ -31,12 +31,31 @@ e-default() {
 
 # * ZPLUG
 
+e-zplug-home()
+{
+    export ZPLUG_HOME="$HOME/.zplug"
+    export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
+    export KEYTIMEOUT=1
+}
+
+e-zplug-get()
+{
+    [ -d $ZPLUG_HOME ] && return
+
+    git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
+}
+
+e-zplug-activate()
+{
+    source "$ZPLUG_HOME/init.zsh"
+}
+
 e-zplug-install-plugins() {
     zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
     # prezto
     zplug "modules/tmux",       from:prezto
-    zplug "modules/history",    from:prezto
+    # zplug "modules/history",    from:prezto
     zplug "modules/utility",    from:prezto
     zplug "modules/terminal",   from:prezto
     zplug "modules/editor",     from:prezto
@@ -60,41 +79,32 @@ e-zplug-install-plugins() {
     zplug "felixr/docker-zsh-completion" # Docker completion
     zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
-    export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
-    export KEYTIMEOUT=1
-
     if ! zplug check; then # install plugins
 	zplug install
     fi
 }
 
-e-zplug-bootstrap() {
-    local zplug_dir="${HOME}/.config/zplug"
-
-    git clone https://github.com/zplug/zplug "$zplug_dir"
-
-    source "$zplug_dir/init.zsh"
-
-    e-zplug-install-plugins
-}
-
-
-e-zplug-activate()
+e-zplug-check()
 {
-    local zplug_dir="${HOME}/.config/zplug"
-
-    source "$zplug_dir/init.zsh"
-
-    zplug update
-    zplug load
+    if [ -f "$ZPLUG_HOME/init.zsh" ]; then
+	return true
+    else
+	return false
+    fi
 }
-
 
 e-zplug()
 {
-    [[ ! -f $HOME/.config/zplug/init.zsh ]] && e-zplug-bootstrap
-
+    e-zplug-home
+    e-zplug-get
     e-zplug-activate
+    e-zplug-install-plugins
+
+    # foobar
+    zplug update
+    zplug load
+
+    e-zplug-check
 }
 
 # * BEGIN
