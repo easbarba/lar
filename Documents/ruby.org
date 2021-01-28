@@ -54,6 +54,12 @@
   - [[#with_index][with_index]]
   - [[#enum_for][enum_for]]
   - [[#more][more]]
+  - [[#concepts][Concepts]]
+    - [[#iterator][Iterator]]
+    - [[#methods][Methods]]
+    - [[#enumerator][Enumerator]]
+  - [[#instructions][Instructions]]
+    - [[#rbenv][Rbenv]]
 - [[#rails][Rails]]
   - [[#cli][Cli]]
     - [[#database][Database]]
@@ -63,14 +69,8 @@
     - [[#console-rails-console][Console (rails console)]]
     - [[#env][ENV]]
   - [[#traits][Traits]]
+  - [[#i18n][i18n]]
   - [[#models][Models]]
-- [[#concepts][Concepts]]
-  - [[#iterator][Iterator]]
-  - [[#methods][Methods]]
-    - [[#methods-chaining][Methods chaining]]
-  - [[#enumerator][Enumerator]]
-- [[#instructions][Instructions]]
-  - [[#rbenv][Rbenv]]
 :END:
 * Progress
 ** Books
@@ -472,6 +472,29 @@
    |                        | to_enum                                                                                                   |                                                                                                             |
    | dup                    |                                                                                                           |                                                                                                             |
    |------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+** Concepts
+*** Iterator
+    - is a method
+    - it start and finish in the same call
+*** Methods
+**** Methods chaining
+     creates a new object at it chains
+     #+begin_src ruby
+     puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
+     #+end_src
+*** Enumerator
+    - is an object
+    - chaining
+    - block based
+    - method attachment (enum_for)
+    - un-overriding of methods in Enumerable
+    - maintain state
+    - is an enumerable object
+    - can add enumerability to objects
+    - can stop and resume collection cycling
+** Instructions
+*** Rbenv
+    rbenv global 2.3.0 && rbenv rehash
 * Rails
 ** Cli
 *** Database
@@ -514,21 +537,24 @@
     |        |                                                                        |      |
 
 *** Console (rails console)
-    | what              | how                                                           | desc                                      |
-    |-------------------+---------------------------------------------------------------+-------------------------------------------|
-    | create            | create(title: "foo", body: "bar", published_at: '2020-01-31') | create new and save to db                 |
-    | save              | a.save  / a.save!                                             | save object to db / save and show errors  |
-    | new               | a.new                                                         | create an empty object                    |
-    | count             | A.count                                                       |                                           |
-    | find              | A.find(3) / A.find([4,5])                                     |                                           |
-    | first             | A.first   / A.first.title                                     |                                           |
-    | last              | A.last                                                        |                                           |
-    | all               | A.all / A.all.size / A.all.each { \a\ puts a.title }          | relational collection                     |
-    | order             | A.order(:order) / A.order(:order :desc)                       | order per title / order descedent         |
-    | where             | A.where(title: 'foo')                                         |                                           |
-    | update_attributes | update_attributes(title: "foo", published_at: 1.day.ago)      |                                           |
-    | find_or_create_by |                                                               | find or if none is found create a db anew |
-    | <<                | a.x << x                                                      |                                           |
+    | what              | how                                                           | desc                                                                                                                      |
+    |-------------------+---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------|
+    | create            | create(title: "foo", body: "bar", published_at: '2020-01-31') | create new and save to db                                                                                                 |
+    | save              | a.save  / a.save!                                             | save object to db / save and show errors                                                                                  |
+    | new               | a.new                                                         | create an empty object                                                                                                    |
+    | count             | A.count                                                       |                                                                                                                           |
+    | find              | A.find(3) / A.find([4,5])                                     |                                                                                                                           |
+    | first             | A.first   / A.first.title                                     |                                                                                                                           |
+    | last              | A.last                                                        |                                                                                                                           |
+    | all               | A.all / A.all.size / A.all.each { \a\ puts a.title }          | relational collection                                                                                                     |
+    | order             | A.order(:order) / A.order(:order :desc)                       | order per title / order descedent                                                                                         |
+    | where             | A.where(title: 'foo')                                         |                                                                                                                           |
+    | update_attributes | update_attributes(title: "foo", published_at: 1.day.ago)      |                                                                                                                           |
+    | find_or_create_by |                                                               | find or if none is found create a db anew                                                                                 |
+    | <<                | a.x << x                                                      |                                                                                                                           |
+    | delete            |                                                               | don’t instantiate or perform callbacks on the object they’re deleting. They remove the row immediately from the database. |
+    | destroy           | A.destroy(1) / .destroy([3,4])                                | finds a single row first and then deletes the row /works on the instance                                                  |
+    | delete_by         |                                                               |                                                                                                                           |
 
 *** ENV
     |   |                      |   |
@@ -536,32 +562,11 @@
     |   | RAILS_ENV=production |   |
 ** Traits
    - Active Records: Ruby object-relational mapping (ORM) library
+** i18n
+   - i18n.t()
+   - i18n.l()
 ** Models
    | what   | $ | ...         |
    |--------+---+-------------|
    | Models |   | Camel-Cased |
    |        |   |             |
-
-* Concepts
-** Iterator
-   - is a method
-   - it start and finish in the same call
-** Methods
-*** Methods chaining
-    creates a new object at it chains
-    #+begin_src ruby
-    puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
-    #+end_src
-** Enumerator
-   - is an object
-   - chaining
-   - block based
-   - method attachment (enum_for)
-   - un-overriding of methods in Enumerable
-   - maintain state
-   - is an enumerable object
-   - can add enumerability to objects
-   - can stop and resume collection cycling
-* Instructions
-** Rbenv
-   rbenv global 2.3.0 && rbenv rehash
