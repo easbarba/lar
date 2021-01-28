@@ -1,4 +1,4 @@
-#+TILE: Ruby Language - Study Annotations
+#+TILE: Rails Framework - Study Annotations
 
 * Summary
   :PROPERTIES:
