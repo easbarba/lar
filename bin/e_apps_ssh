@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # set -e
-EMAIL='elxbarbosa@gmail.com'
+EMAIL="$USER@pm.me"
 
 # Generating a new SSH key
 ssh-keygen -t ed25519 -C $EMAIL
