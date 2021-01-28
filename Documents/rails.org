@@ -1,0 +1,107 @@
+#+TILE: Ruby Language - Study Annotations
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 3 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+  - [[#books][Books]]
+  - [[#sloc][SLOC]]
+- [[#cli][Cli]]
+  - [[#database][Database]]
+  - [[#misc][Misc]]
+  - [[#tasks-rake][Tasks (rake)]]
+  - [[#models][Models]]
+  - [[#console-rails-console][Console (rails console)]]
+  - [[#env][ENV]]
+- [[#traits][Traits]]
+- [[#i18n][i18n]]
+- [[#models][Models]]
+:END:
+* Progress
+** Books
+   | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
+   |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
+   | Beginning Rails 6                                         | Working with a Database: Active Record         | Finding All Records
+
+** SLOC
+   | Project | folder          | file       | @ |
+   |---------+-----------------+------------+---|
+   | rails   |                 |            |   |
+* Cli
+** Database
+   | what     | how                                                                    | desc                                              |
+   |----------+------------------------------------------------------------------------+---------------------------------------------------|
+   | database | –d or --database=                                                      | use the database management system of your choice |
+   |          | db:create:all                                                          |                                                   |
+   |          | db:create                                                              |                                                   |
+   |          | dbconsole                                                              |                                                   |
+   |          | db:migrate                                                             |                                                   |
+   |          | new <name>                                                             |                                                   |
+   | models   | generate model <Name>                                                  |                                                   |
+   |          | destroy controller articles                                            |                                                   |
+   |          | destroy model Artile                                                   |                                                   |
+   |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+   |          | db:system:change                                                       | switch databases                                  |
+   |          | db:rollback                                                            |                                                   |
+   |          | db:seed                                                                |                                                   |
+   |          |                                                                        |                                                   |
+
+** Misc
+   | what       | how         | desc |
+   |------------+-------------+------|
+   | destroy    | destroy / d |      |
+   | belongs_to |             |      |
+
+** Tasks (rake)
+   | what | how | desc |
+   |------+-----+------|
+   |      |     |      |
+
+** Models
+   | what   | how                                                                    | desc |
+   |--------+------------------------------------------------------------------------+------|
+   | models | generate model <Name>                                                  |      |
+   |        | destroy controller articles                                            |      |
+   |        | destroy model Artile                                                   |      |
+   | a      |                                                                        |      |
+   |        | generate scaffold Article title:string body:text published_at:datetime |      |
+   |        |                                                                        |      |
+
+** Console (rails console)
+   | what              | how                                                                | desc                                                                                                                      |
+   |-------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------|
+   | create            | create(title: "foo", body: "bar", published_at: '2020-01-31')      | create new and save to db                                                                                                 |
+   | save              | a.save  / a.save!                                                  | save object to db / save and show errors                                                                                  |
+   | new               | a.new                                                              | create an empty object                                                                                                    |
+   | count             | A.count                                                            |                                                                                                                           |
+   | find              | A.find(3) / A.find([4,5])                                          |                                                                                                                           |
+   | first             | A.first   / A.first.title                                          |                                                                                                                           |
+   | last              | A.last                                                             |                                                                                                                           |
+   | all               | A.all / A.all.size / A.all.each { \a\ puts a.title }               | relational collection                                                                                                     |
+   | order             | A.order(:order) / A.order(:order :desc)                            | order per title / order descedent                                                                                         |
+   | where             | A.where(title: 'foo')                                              |                                                                                                                           |
+   | update_attributes | update_attributes(title: "foo", published_at: 1.day.ago)           |                                                                                                                           |
+   | find_or_create_by |                                                                    | find or if none is found create a db anew                                                                                 |
+   | <<                | a.x << x                                                           |                                                                                                                           |
+   | delete            |                                                                    | don’t instantiate or perform callbacks on the object they’re deleting. They remove the row immediately from the database. |
+   | destroy           | A.destroy(1) / .destroy([3,4])                                     | finds a single row first and then deletes the row /works on the instance                                                  |
+   | delete_by         |                                                                    |                                                                                                                           |
+   | errors            | a.errors.any? / a.errors.full_messages / a.errors.messages[:title] |                                                                                                                           |
+   |                   | a.valid?                                                     |                                                                                                                           |
+
+** ENV
+   |   |                      |   |
+   |---+----------------------+---|
+   |   | RAILS_ENV=production |   |
+* Traits
+  - Active Records: Ruby object-relational mapping (ORM) library
+* i18n
+  - i18n.t()
+  - i18n.l()
+* Models
+  | what   | $ | ...         |
+  |--------+---+-------------|
+  | Models |   | Camel-Cased |
+  |        |   |             |
