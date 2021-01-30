@@ -1,0 +1,123 @@
+#!/usr/bin/env bash
+
+# set -e
+
+# * ASDF
+
+asdf_install()
+{
+    local asdf_dir="$HOME/.asdf"
+
+    if [[ ! -d $asdf_dir ]]; then
+	git clone https://github.com/asdf-vm/asdf.git "$asdf_dir"
+
+	cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
+    fi
+}
+
+asdf_activate()
+{
+    source "$HOME"/.asdf/completions/asdf.bash
+    source "$HOME"/.asdf/asdf.sh
+
+    local asdf_shims_dir="$HOME"/.asdf/shims
+    [[ -d $asdf_shims_dir ]] && return
+
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
+asdf()
+{
+    echo 'Installing asdf'
+
+    # https://asdf-vm.com/#/core-manage-asdf
+    # https://asdf-vm.com/#/core-manage-plugins
+    # https://asdf-vm.com/#/core-commands
+    # https://asdf-vm.com/#/plugins-all
+
+    asdf_install
+    asdf_activate
+
+    asdf update
+}
+
+asdf_ruby()
+{
+    echo 'Installing ruby binaries'
+
+    # https://github.com/asdf_vm/asdf_ruby
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+
+    asdf install ruby latest
+
+    asdf global ruby "$(asdf latest ruby)"
+}
+
+asdf-nodejs()
+{
+    echo 'Installing nodejs binaries'
+
+    # https://github.com/asdf-vm/asdf-nodejs
+
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+
+    asdf install nodejs latest
+
+    asdf global nodejs "$(asdf latest nodejs)"
+}
+
+# * PACKAGES
+
+ruby()
+{
+    echo 'Installing gem packages'
+
+    local packages=(bundler solargraph rubocop pry reek clipboard rspec)
+
+    for pack in "${packages[@]}"
+    do
+	gem install "${pack}" # --user-install
+	gem update  "${pack}"
+    done
+}
+
+nodejs()
+{
+    echo 'Installing npm packages'
+
+    local packages=(npm yarn)
+    # eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic  babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+
+    # install
+    for pack in "${packages[@]}"
+    do
+	npm i -g "$pack"
+    done
+}
+
+# * RUN
+
+asdf_all()
+{
+    echo 'Installing asdf backends'
+
+    asdf_ruby
+    asdf-nodejs
+}
+
+all()
+{
+    echo 'Installing language package manager packages'
+
+    ruby
+    nodejs
+}
+
+# * RUN
+
+asdf
+asdf_all
+all
