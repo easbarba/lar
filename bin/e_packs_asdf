@@ -4,7 +4,6 @@
 
 # * ASDF
 
-
 asdf_dir="$HOME/.asdf"
 
 if [[ ! -d $asdf_dir ]]; then
@@ -13,12 +12,11 @@ if [[ ! -d $asdf_dir ]]; then
     cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
 fi
 
-
 source "$HOME"/.asdf/completions/asdf.bash
 source "$HOME"/.asdf/asdf.sh
 
 asdf_shims_dir="$HOME"/.asdf/shims
-[[ -d $asdf_shims_dir ]] && return
+# [[ -d $asdf_shims_dir ]] && exit
 
 export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 
