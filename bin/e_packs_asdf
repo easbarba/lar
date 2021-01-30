@@ -40,3 +40,7 @@ asdf()
 
     asdf update
 }
+
+# * RUN
+
+asdf
