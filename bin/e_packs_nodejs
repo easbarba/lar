@@ -4,7 +4,7 @@
 
 # * ASDF
 
-asdf-nodejs()
+asdf_nodejs()
 {
     echo 'Installing nodejs binaries'
 
