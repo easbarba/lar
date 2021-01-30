@@ -41,19 +41,6 @@ asdf()
     asdf update
 }
 
-asdf_ruby()
-{
-    echo 'Installing ruby binaries'
-
-    # https://github.com/asdf_vm/asdf_ruby
-
-    asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-
-    asdf install ruby latest
-
-    asdf global ruby "$(asdf latest ruby)"
-}
-
 asdf-nodejs()
 {
     echo 'Installing nodejs binaries'
@@ -62,7 +49,7 @@ asdf-nodejs()
 
     asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-    # bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+    bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 
     asdf install nodejs latest
 
@@ -70,19 +57,6 @@ asdf-nodejs()
 }
 
 # * PACKAGES
-
-ruby()
-{
-    echo 'Installing gem packages'
-
-    local packages=(bundler solargraph rubocop pry reek clipboard rspec)
-
-    for pack in "${packages[@]}"
-    do
-	gem install "${pack}" # --user-install
-	gem update  "${pack}"
-    done
-}
 
 nodejs()
 {
@@ -100,24 +74,6 @@ nodejs()
 
 # * RUN
 
-asdf_all()
-{
-    echo 'Installing asdf backends'
-
-    asdf_ruby
-    asdf-nodejs
-}
-
-all()
-{
-    echo 'Installing language package manager packages'
-
-    ruby
-    nodejs
-}
-
-# * RUN
-
 asdf
-asdf_all
-all
+asdf_nodejs
+nodejs
