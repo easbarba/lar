@@ -1,8 +1,9 @@
 #+TILE: Week Schedule
 
-| mon   | tue   | wed   | thru  | fri        | sat | sun  |
-|-------+-------+-------+-------+------------+-----+------|
-| rails | rails | rails | rails | postgresql |     | unix |
-| ruby  | ruby  | ruby  | ruby  |            |     | lisp |
-| clean | clean | solid | solid | pattern    |     |      |
-| git   | git   | git   | tdd   | tdd        |     |      |
+| mon   | tue   | wed   | thru  | fri     | sat | sun        |
+|-------+-------+-------+-------+---------+-----+------------|
+| rails | rails | rails | rails | unix    |     | js         |
+| ruby  | ruby  | ruby  | ruby  |         |     | postgresql |
+| clean | clean | solid | solid | pattern |     |            |
+| git   | git   | git   | tdd   | tdd     |     |            |
+|       |       |       |       |         |     |            |
