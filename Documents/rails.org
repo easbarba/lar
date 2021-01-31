@@ -15,6 +15,12 @@
   - [[#models][Models]]
   - [[#console-rails-console][Console (rails console)]]
   - [[#env][ENV]]
+- [[#active-record][Active Record]]
+- [[#tests][Tests]]
+  - [[#rspec][RSpec]]
+  - [[#unit][Unit]]
+- [[#rest][REST]]
+- [[#json][JSON]]
 - [[#traits][Traits]]
 - [[#i18n][i18n]]
 - [[#models][Models]]
@@ -95,8 +101,16 @@
    |   |                      |   |
    |---+----------------------+---|
    |   | RAILS_ENV=production |   |
+* Active Record
+  - Single-Table Inheritance
+* Tests
+** RSpec
+** Unit
+* REST
+* JSON
 * Traits
   - Active Records: Ruby object-relational mapping (ORM) library
+  - root_path
 * i18n
   - i18n.t()
   - i18n.l()
