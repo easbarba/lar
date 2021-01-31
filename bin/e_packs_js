@@ -6,9 +6,12 @@
 
 asdf_nodejs()
 {
-    echo 'Installing nodejs binaries'
-
     # https://github.com/asdf-vm/asdf-nodejs
+
+    [[ -f "$HOME/.asdf/shims/node" ]] && return
+
+
+    echo 'Installing nodejs binaries'
 
     asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
@@ -19,9 +22,22 @@ asdf_nodejs()
     asdf global nodejs "$(asdf latest nodejs)"
 }
 
-# * PACKAGES
+asdf_yarn()
+{
+    # https://github.com/asdf-vm/asdf-yarn
 
-nodejs()
+    [[ -f "$HOME/.asdf/shims/yarn" ]] && return
+
+    echo 'Installing Yarn binaries'
+
+    asdf plugin-add yarn
+
+    asdf install yarn latest
+
+    asdf global yarn "$(asdf latest yarn)"
+}
+
+packages()
 {
     echo 'Installing npm packages'
 
@@ -38,4 +54,5 @@ nodejs()
 # * RUN
 
 asdf_nodejs
-nodejs
+asdf_yarn
+packages

@@ -4,9 +4,11 @@
 
 asdf_ruby()
 {
-    echo 'Installing ruby binaries'
-
     # https://github.com/asdf_vm/asdf_ruby
+
+    [[ -f "$HOME/.asdf/shims/node" ]] && return
+
+    echo 'Installing ruby binaries'
 
     asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
@@ -15,9 +17,7 @@ asdf_ruby()
     asdf global ruby "$(asdf latest ruby)"
 }
 
-# * PACKAGES
-
-ruby()
+packages()
 {
     echo 'Installing gem packages'
 
@@ -33,4 +33,4 @@ ruby()
 # * RUN
 
 asdf_ruby
-ruby
+packages
