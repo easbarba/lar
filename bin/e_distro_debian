@@ -59,7 +59,7 @@ debian-packages ()
     e_foreach "$command" "${qt[@]}"
     e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${media[@]}"
-    e_foreach "$command" "${infra[@]}"
+    e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt $USER # libvirt
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     sudo apt -y build-dep emacs
     e_foreach "$command" "${security[@]}"
