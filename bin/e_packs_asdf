@@ -4,27 +4,17 @@
 
 # * ASDF
 
-asdf_dir="$HOME/.asdf"
+if [[ ! -d "$HOME/.asdf" ]]; then
+    git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf"
 
-if [[ ! -d $asdf_dir ]]; then
-    git clone https://github.com/asdf-vm/asdf.git "$asdf_dir"
-
-    cd "$asdf_dir" && git checkout "$(git describe --abbrev=0 --tags)"
+    cd "$HOME/.asdf" && git checkout "$(git describe --abbrev=0 --tags)"
 fi
 
-source "$HOME"/.asdf/completions/asdf.bash
-source "$HOME"/.asdf/asdf.sh
+# * LOAD ASDF
+source "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.asdf/asdf.sh"
 
-asdf_shims_dir="$HOME"/.asdf/shims
-# [[ -d $asdf_shims_dir ]] && exit
+export PATH="$HOME/.asdf/shims"${PATH:+:}$PATH
 
-export PATH="$asdf_shims_dir"${PATH:+:}$PATH
-
-echo 'Installing asdf'
-
-# https://asdf-vm.com/#/core-manage-asdf
-# https://asdf-vm.com/#/core-manage-plugins
-# https://asdf-vm.com/#/core-commands
-# https://asdf-vm.com/#/plugins-all
-
+# * UPDATING ASDF
 asdf update
