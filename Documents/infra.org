@@ -119,6 +119,8 @@
     | The Art of Unix programming                   | 2 History                                  |                              |        |         |
     | RHCSA Red Hat Enterprise Linux 8              | Basic File Management                      |                              |        |         |
 ** Distros
+*** Misc
+    Get Distro Release: cat /etc/issue
 *** APT
 **** Debian
 ***** Apt commands
@@ -3252,6 +3254,20 @@
 ** Circle CI
 ** Jenkins
 * Virtual Machine
+** Vagrant
+   |        |               |   |
+   |--------+---------------+---|
+   | status | global-status |   |
+   | init   | init [DISTRO] |   |
+   | up     | up            |   |
+   |        | halt          |   |
+   |        | package       |   |
+
+** libvirt
+** qemu
+** kvm
+** virtualbox
+
 * Web Server
 ** Apache
 ** Nginx
