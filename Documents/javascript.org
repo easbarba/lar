@@ -10,6 +10,8 @@
   - [[#sloc][SLOC]]
 - [[#books][Books]]
   - [[#eloquent-javascript][Eloquent JavaScript]]
+- [[#concepts][Concepts]]
+- [[#features][Features]]
 - [[#sites][Sites]]
   - [[#web-js---misc][Web JS - Misc]]
   - [[#web-js---online-tools][Web JS - Online Tools]]
@@ -213,6 +215,11 @@
 
       #+END_SRC
 
+* Concepts
+  - Types: numbers, strings, boolean, null, undefined, symbols
+  - Primitives: numbers, strings, boolean, null, undefined
+
+* Features
 * Sites
 ** Web JS - Misc
    https://bestofjs.org/
