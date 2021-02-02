@@ -42,7 +42,7 @@ packages()
 {
     echo 'Installing npm packages'
 
-    local packages=(npm yarn)
+    local packages=(npm)
     # eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic  babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
 
     # install
