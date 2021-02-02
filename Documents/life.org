@@ -38,12 +38,13 @@
 :END:
 * Progress
 ** Books, Videos
-   | Books                 | Capts                      | @                               |
-   |-----------------------+----------------------------+---------------------------------|
-   | Last Wish             | The Voice of Reason 2      |                                 |
-   | The War of the Worlds |                            |                                 |
-   | Study in Scarlet      | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
-   | Plato: Five Dialogues |                            |                                 |
+   | Books                  | Capts                      | @                               |
+   |------------------------+----------------------------+---------------------------------|
+   | Attack of Titan(manga) | Chapter 93                 |                                 |
+   | Last Wish              | The Voice of Reason 2      |                                 |
+   | The War of the Worlds  |                            |                                 |
+   | Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
+   | Plato: Five Dialogues  |                            |                                 |
 * Quotes
   Write programs that do one thing and do it well. Write programs to
   work together. Write programs to handle text streams, because that
