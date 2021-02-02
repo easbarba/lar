@@ -24,7 +24,7 @@ packages()
 {
     echo 'Installing gem packages'
 
-    local packages=(bundler solargraph rubocop pry reek clipboard rspec)
+    local packages=(bundler rspec cucumber solargraph rubocop pry reek clipboard)
 
     for pack in "${packages[@]}"
     do
