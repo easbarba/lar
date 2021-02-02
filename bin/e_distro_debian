@@ -4,7 +4,7 @@
 
 # * DEBIAN
 
-debian-upgrade()
+upgrade()
 {
     echo "-- Atualizando Sistema"
 
@@ -13,7 +13,7 @@ debian-upgrade()
     sudo apt autoremove
 }
 
-debian-packages ()
+packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
 
@@ -21,7 +21,9 @@ debian-packages ()
 
     ruby=(libssl-dev)
 
-    user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br steam telegram-desktop)
+    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config socat vrms fzf)
+
+    user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br telegram-desktop)
 
     qt=(kdeconnect kdenlive)
 
@@ -32,8 +34,6 @@ debian-packages ()
     infra=(podman wine winetricks wine32 qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
 
     fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
-
-    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config socat vrms fzf)
 
     security=(gnutls-bin)
 
@@ -51,7 +51,7 @@ debian-packages ()
     echo "Instalando pacotes."
     local command='sudo apt install -y'
 
-    e_foreach "$command" "${essentials[@]}"
+    e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
     e_foreach "$command" "${system[@]}"
@@ -61,7 +61,6 @@ debian-packages ()
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt $USER # libvirt
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    sudo apt -y build-dep emacs
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
@@ -71,7 +70,7 @@ debian-packages ()
     echo "Done"
 }
 
-debian-services()
+services()
 {
     # Timezone
     local desired_zone='America/Sao_Paulo'
@@ -82,7 +81,7 @@ debian-services()
     sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 }
 
-debian-foreign()
+foreign()
 {
     chrome()
     {
@@ -126,7 +125,7 @@ debian-foreign()
 
 # * RUN
 
-debian-upgrade
-debian-packages
-debian-services
-# debian-foreign
+upgrade
+packages
+services
+# foreign
