@@ -161,6 +161,13 @@
     #+end_src
 ** methods
    default values, splat args (described later on page 120), keyword args, and a block parameter
+   #+begin_src ruby
+   def splating(*rest)
+     puts rest.each { |x| puts }
+   end
+
+   def split_apart(first, *, last) # get first and last args, ignore middle ones
+   #+end_src
 ** procs
    #+begin_src ruby
    def pass_in_block(asdf, &block)
@@ -176,7 +183,13 @@
        .first(10)
 
    a = Proc.new
+
+   def initialize(name, &block) # initialize can receive proc object
+   
+   tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
+   tc.get_tax(100) # => "Sales tax on 100 = 7.5"
    #+end_src
+   - if the last parameter in a method definition is prefixed with an ampersand, any associated block is converted to a Proc object, and that object is assigned to the parameter. This allows you to store the block for use later.
 ** operators
    #+begin_src ruby
    val.to_s =~ /3/
