@@ -89,6 +89,12 @@ fi
 
 # * CLI SOFTWARE
 
+e_cask()
+{
+    local caskdir="$HOME/.cask/bin"
+    export PATH="$caskdir"${PATH:+:}$PATH
+}
+
 e_prompt()
 {
     [[ $(command -v starship) ]] && eval "$(starship init bash)"
@@ -97,15 +103,13 @@ e_prompt()
     [[ ! $(command -v starship) ]] && [[ -f $liquid ]] && source "$liquid"
 }
 
-e_cli_tools()
+e_asdf()
 {
-    local enhancd_dir="$HOME/Projects/Bash/enhancd/"
-    [[ -d $enhancd_dir ]] && cd $enhancd_dir && source ./init.sh
+    source "$HOME"/.asdf/completions/asdf.bash
+    source "$HOME"/.asdf/asdf.sh
 
-   if [ -x "$(command -v rustup)" ]; then
-       source "${XDG_DATA_HOME}/bash-completion/completions/rustup"
-       # export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
-   fi
+    local asdf_shims_dir="$HOME"/.asdf/shims
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 }
 
 e_multiplexers()
@@ -121,8 +125,9 @@ e_multiplexers()
 
 # * RUN
 
+e_cask
+e_asdf
 e_prompt
-e_cli_tools
 e_multiplexers
 
-cd $HOME
+cd "$HOME"

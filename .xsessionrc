@@ -41,29 +41,12 @@ export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
 # * PACKAGES
 
-asdf()
-{
-    source "$HOME"/.asdf/completions/asdf.bash
-    source "$HOME"/.asdf/asdf.sh
-
-    local asdf_shims_dir="$HOME"/.asdf/shims
-    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
-}
-
 ruby()
 {
     local rubydir="$HOME/.local/share/gem/ruby/3.0.0/bin"
     export PATH="$rubydir"${PATH:+:}$PATH
 }
 
-cask()
-{
-    local caskdir="$HOME/.cask/bin"
-    export PATH="$caskdir"${PATH:+:}$PATH
-}
-
 # * RUN
 
-asdf
 ruby
-cask
