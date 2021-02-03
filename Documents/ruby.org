@@ -9,8 +9,11 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
+  - [[#global-variables][global variables]]
+  - [[#self][self]]
   - [[#commentary][commentary]]
   - [[#class][class]]
+  - [[#append-][append <<]]
   - [[#blocks][blocks]]
   - [[#lambda][lambda]]
     - [[#how][How]]
@@ -81,6 +84,12 @@
    |---------+-----------------+------------+---|
    | ruby    | lib/bundler/cli | install.rb |   |
 * Features
+** global variables
+   #+begin_src ruby
+   $? # return global status of last command
+   #+end_src
+** self
+   - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
 ** commentary
    #+begin_src ruby
    # one line commentary
@@ -136,6 +145,7 @@
 
    #
    #+end_src
+** append <<
 ** blocks
    #+begin_src ruby
 
