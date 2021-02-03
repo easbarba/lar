@@ -1,11 +1,9 @@
 #!/usr/bin/env zsh
 
 # * Zsh
-# Descricao: Zsh - Configuracoes
+# Descricao: Zsh - Configuration
 
 # * ALIASES
-
-alias e-reload="source $HOME/.zshrc"
 
 # * DEFAULT
 

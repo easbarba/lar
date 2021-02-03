@@ -52,9 +52,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# system
-alias _=sudo
-
 # colorful
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
@@ -69,7 +66,6 @@ alias la='ls -A'
 alias l='ls -CF'
 alias j="jump"
 alias c="clear"
-alias lx-reload='source $HOME/.bashrc; echo "Shell Reloaded"'
 
 # * SYSTEM SCRIPTS
 
@@ -97,16 +93,16 @@ e_cask()
 
 e_prompt()
 {
-    [[ $(command -v starship) ]] && eval "$(starship init bash)"
-
     local liquid="$HOME/bin/liquidprompt"
-    [[ ! $(command -v starship) ]] && [[ -f $liquid ]] && source "$liquid"
+    [[ -f "$liquid" ]] && source "$liquid"
+
+    [[ $(command -v starship) ]] && eval "$(starship init bash)"
 }
 
 e_asdf()
 {
-    source "$HOME"/.asdf/completions/asdf.bash
-    source "$HOME"/.asdf/asdf.sh
+    source "$HOME/.asdf/completions/asdf.bash"
+    source "$HOME/.asdf/asdf.sh"
 
     local asdf_shims_dir="$HOME"/.asdf/shims
     export PATH="$asdf_shims_dir"${PATH:+:}$PATH
@@ -129,5 +125,3 @@ e_cask
 e_asdf
 e_prompt
 e_multiplexers
-
-cd "$HOME"
