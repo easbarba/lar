@@ -1,6 +1,6 @@
-#+TILE: Database - Anotacoes, progresso e mais
+#+TILE: Database - Annotation, Engines and more
 
-* Inhaltsverzeichnis
+* TOC
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
@@ -16,7 +16,8 @@
   - [[#mysql-docs][MySql Docs]]
 - [[#sql-resources][SQL resources]]
 - [[#nosql][noSQL]]
-- [[#mais-tarde][Mais tarde]]
+- [[#terms][Terms]]
+- [[#later][Later]]
 :END:
 * Progress
 * Books
@@ -38,7 +39,9 @@
   https://modern-sql.com/
 
 * noSQL
-* Mais tarde
+* Terms
+  foreign key reference
+* Later
   http://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/
 
   https://github.com/edgedb/edgedb
