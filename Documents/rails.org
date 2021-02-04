@@ -16,6 +16,11 @@
   - [[#console-rails-console][Console (rails console)]]
   - [[#env][ENV]]
 - [[#active-record][Active Record]]
+  - [[#associations][Associations]]
+- [[#views][Views]]
+- [[#controller][Controller]]
+- [[#models][Models]]
+  - [[#fat-models][Fat models]]
 - [[#tests][Tests]]
   - [[#rspec][RSpec]]
   - [[#unit][Unit]]
@@ -27,9 +32,9 @@
 :END:
 * Progress
 ** Books
-   | Books             | Chapter                                       | @ | late | revision |
-   |-------------------+-----------------------------------------------+---+------+---------|
-   | Beginning Rails 6 | Advanced Active Record: Enhancing Your Models |   |      |         |
+   | Books             | Chapter                                       | @                      | late | revision |
+   |-------------------+-----------------------------------------------+------------------------+------+----------|
+   | Beginning Rails 6 | Advanced Active Record: Enhancing Your Models | Declaring Associations |      |          |
 
 ** SLOC
    | Project | folder          | file       | @ |
@@ -103,6 +108,15 @@
    |   | RAILS_ENV=production |   |
 * Active Record
   - Single-Table Inheritance
+** Associations
+
+* Views
+* Controller
+* Models
+** Fat models
+   An intelligent model like this is often called fat. Instead of performing model-related logic in
+   other places (i.e., in controllers or views), you keep it in the model, thus making it fat. This
+   makes your models easier to work with and helps your code stay DRY.
 * Tests
 ** RSpec
 ** Unit
