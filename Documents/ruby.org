@@ -9,9 +9,15 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
+  - [[#writable-object-attribute][writable object attribute]]
   - [[#global-variables][global variables]]
   - [[#self][self]]
   - [[#commentary][commentary]]
+  - [[#defined][defined?]]
+  - [[#loops][loops]]
+  - [[#statement-modifiers][statement modifiers]]
+  - [[#comparison][comparison]]
+  - [[#conditional][conditional]]
   - [[#class][class]]
   - [[#append-][append <<]]
   - [[#blocks][blocks]]
@@ -71,7 +77,7 @@
 ** Books
    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Pragmatic Ruby (Pickaxe)                                  | Expressions                                    | Assignment                                                            |                                |         |
+   | Pragmatic Ruby (Pickaxe)                                  | Expressions                                    | 9.6 Loops                                                |                                |         |
    | Closure in Ruby                                           |                                                |                                                          |                                |         |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -84,6 +90,28 @@
    |---------+-----------------+------------+---|
    | ruby    | lib/bundler/cli | install.rb |   |
 * Features
+** writable object attribute
+   #+begin_src ruby
+   class ProjectList
+     def initialize
+       @projects = []
+     end
+     def projects=(list)
+       @projects = list.map(&:upcase)
+     end
+     def [](offset)
+       @projects[offset]
+     end
+   end
+
+   # store list of names in uppercase
+   list = ProjectList.new
+   list.projects = %w{ strip sand prime sand paint sand paint rub paint }
+   list[3]   # => "SAND"
+   list[4]   # => "PAINT"
+   #+end_src
+
+   - attribute-setting methods
 ** global variables
    #+begin_src ruby
    $? # return global status of last command
@@ -98,6 +126,49 @@
    multiline
    commentary
    =end
+   #+end_src
+** defined?
+** loops
+   #+begin_src ruby
+   while line = gets
+   # ...
+   end
+
+   until play_list.duration > 60
+   play_list.add(song_list.pop)
+   end
+   #+end_src
+** statement modifiers
+   if and unless Modifiers
+   #+begin_src ruby
+   puts "a = #{a}" if $DEBUG
+   print total unless total.zero?
+   a *= 2 while a < 100
+   a -= 10 until a < 10
+   #+end_src
+** comparison
+   #+begin_src ruby
+   # ==
+   # ===
+   # <=>
+   # =~
+   # eql?
+   # equal?
+   # !=
+   # !~
+   #+end_src
+** conditional
+   #+begin_src ruby
+   '11' || 11
+   '11' or 11 # same precedence
+   var ||= "default value" # assign a value to a variable only if that variable isn’t already set
+
+
+   '11' && 11 # higher precedence
+   '11' and 11
+
+   !true
+   not true
    #+end_src
 ** class
    #+begin_src ruby
