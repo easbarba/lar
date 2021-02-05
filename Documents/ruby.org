@@ -14,6 +14,8 @@
   - [[#self][self]]
   - [[#commentary][commentary]]
   - [[#defined][defined?]]
+  - [[#iterators][iterators]]
+  - [[#block-local-variables][block-local variables]]
   - [[#loops][loops]]
   - [[#statement-modifiers][statement modifiers]]
   - [[#comparison][comparison]]
@@ -27,7 +29,7 @@
   - [[#methods][methods]]
   - [[#procs][procs]]
   - [[#operators][operators]]
-  - [[#loop][loop]]
+  - [[#enumerable][enumerable]]
   - [[#enumerator][enumerator]]
     - [[#lazy][lazy]]
     - [[#each_car][each_car]]
@@ -77,7 +79,7 @@
 ** Books
    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Pragmatic Ruby (Pickaxe)                                  | Expressions                                    | 9.6 Loops                                                |                                |         |
+   | Pragmatic Ruby (Pickaxe)                                  | Exceptions, catch, and throw                   |                                                          |                                |         |
    | Closure in Ruby                                           |                                                |                                                          |                                |         |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -128,15 +130,81 @@
    =end
    #+end_src
 ** defined?
+** iterators
+   #+begin_src ruby
+   3.times { p 'meh' } # easy to avoid fence-post and off-by-one errors
+
+   9.downto(5) { p 'meh' }
+
+   0.upto(9) { p 'meh' }
+
+   0.step(12, 3) {|x| print x, " " }
+
+   [ 1, 1, 2, 3, 5 ].each {|val| print val, " " }
+
+
+   #+end_src
+** block-local variables
+   #+begin_src ruby
+   square = "yes"
+   total = 0
+   [ 1, 2, 3 ].each do |val; square|
+     square = val * val
+     total += square
+   end
+   puts "Total = #{total}, square = #{square}"
+   produces:
+     Total = 14, square = yes
+   #+end_src
 ** loops
    #+begin_src ruby
+   # WHILE , UNTIL , and FOR loops are built into the language and do not introduce new scope;
+
    while line = gets
-   # ...
+     # ...
    end
 
    until play_list.duration > 60
-   play_list.add(song_list.pop)
+     play_list.add(song_list.pop)
    end
+
+   # when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
+   # newly local variables created in LOOP are not accessible outside the block
+   loop do
+     puts "#{short_enum.next} - #{long_enum.next}"
+   end
+
+   # not a ruby way, translated by ruby to x.each
+   for song in playlist
+     song.play
+   end
+
+
+   # NEXT skips to the end of the loop, effectively starting the next iteration
+   # BREAKn
+
+   i=0
+   loop do
+     i += 1
+     next if i < 3
+     print i
+     break if i > 4 # If a conventional loop doesn’t execute a break , its value is nil .
+   end
+
+   # REDO repeats the current iteration of the loop from the start but without reevaluating
+   # the condition or fetching the next element (in an iterator)
+   while line = gets
+     next if line =~ /^\s*#/   # skip comments
+     break if line =~ /^END/   # stop at end
+
+     # substitute stuff in backticks and try again
+     redo if line.gsub!(/`(.*?)`/) { eval($1) }
+
+     # process line ...
+   end
+
+
+
    #+end_src
 ** statement modifiers
    if and unless Modifiers
@@ -275,12 +343,17 @@
    #+begin_src ruby
    val.to_s =~ /3/
    #+end_src
-** loop
-   - when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
+** enumerable
    #+begin_src ruby
-   loop do
-     puts "#{short_enum.next} - #{long_enum.next}"
+
+   # iterate over only those lines that end with a d
+   File.open("ordinal").grep(/d$/) do |line|
+     puts line
    end
+
+
+
+
    #+end_src
 ** enumerator
 *** lazy
