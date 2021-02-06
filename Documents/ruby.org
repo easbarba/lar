@@ -9,6 +9,8 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
+  - [[#system-errors][System Errors]]
+    - [[#usage][usage]]
   - [[#exceptions][exceptions]]
     - [[#usage][usage]]
   - [[#writable-object-attribute][writable object attribute]]
@@ -81,7 +83,7 @@
 ** Books
    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Pragmatic Ruby (Pickaxe)                                  | Exceptions, catch, and throw                   | System Errors                                                         |                                |         |
+   | Pragmatic Ruby (Pickaxe)                                  | Exceptions, catch, and throw                   | catch and throw                                          |                                |         |
    | Closure in Ruby                                           |                                                |                                                          |                                |         |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -94,6 +96,19 @@
    |---------+-----------------+------------+---|
    | ruby    | lib/bundler/cli | install.rb |   |
 * Features
+** System Errors
+   - SystemCallError
+   - subclasses are defined in a module called Errno
+*** usage
+    #+begin_src ruby
+    Errno::EAGAIN
+    Errno::EIO
+    Errno::EPERM
+
+    Errno::EAGAIN::Errno # => 35, same error number as EWOULDBLOCK, can be interchangeable
+    Errno::EPERM::Errno # => 1
+    Errno::EWOULDBLOCK::Errno # => 35
+    #+end_src
 ** exceptions
    - class *Exception*
    - Custom exceptions subclasses of StandardError or its children.
@@ -106,11 +121,21 @@
     #+begin_src ruby
 
     # Exception skeleton
+
+    f = File.open("/a/file")
     begin
-      # .....
+    # .....
     rescue Exception
-      # .....
-      raise # reraise the exception
+      if @esmtp then
+	@esmtp = false
+	retry # repeat the entire begin / end block
+      else
+	raise # reraise the exception. FAIL is similar
+      end
+    else # after RESCUE and before any ENSURE, is executed only if no exceptions are raised by the main body of code.
+      puts "Congratulations-- no errors!"
+    ensure
+      f.close
     end
 
     # At the end of each rescue clause, you can give Ruby the name
@@ -122,6 +147,31 @@
     rescue StandardError => bang
       print "Error running script: " + bang
     end
+
+    # reraises the current exception (or a RuntimeError if there is no current exception).
+    # This is used in exception handlers that intercept an exception before passing it on.
+    raise
+
+    # Creates a new RuntimeError exception, setting its message to the given string.
+    raise "bad mp3 encoding" #
+
+    # first argument to create an exception and then sets the associated
+    # message to the second argument and the stack trace to the third argument.
+    raise InterfaceException, "Keyboard failure", caller
+
+    raise
+
+    raise "Missing name" if name.nil?
+
+    if i >= names.size
+      raise IndexError, "#{i} >= size (#{names.size})"
+    end
+
+    raise ArgumentError, "Name too big", caller
+
+    # removes two routines from the backtrace
+    # by passing only a subset of the call stack to the new exception:
+    raise ArgumentError, "Name too big", caller[1..-1]
     #+end_src
 ** writable object attribute
    #+begin_src ruby
