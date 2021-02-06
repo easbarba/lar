@@ -9,6 +9,7 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
+  - [[#project-structure][project structure]]
   - [[#system-errors][System Errors]]
     - [[#usage][usage]]
   - [[#exceptions][exceptions]]
@@ -25,6 +26,7 @@
   - [[#comparison][comparison]]
   - [[#conditional][conditional]]
   - [[#class][class]]
+    - [[#class][class]]
   - [[#append-][append <<]]
   - [[#blocks][blocks]]
   - [[#lambda][lambda]]
@@ -96,6 +98,13 @@
    |---------+-----------------+------------+---|
    | ruby    | lib/bundler/cli | install.rb |   |
 * Features
+** project structure
+   #+begin_src ruby
+   anagram/    <- top-level
+     bin/      <- command-line interface goes here
+     lib/      <- three library files go here
+     test/     <- test files go here
+   #+end_src
 ** System Errors
    - SystemCallError
    - subclasses are defined in a module called Errno
@@ -320,51 +329,67 @@
    not true
    #+end_src
 ** class
-   #+begin_src ruby
-   # frozen_string_literal: true
+   - :: is Ruby’s namespace resolution operator.
+   - Math::PI - access Math PI variable
+   - Math.sin(Math::PI/6.0) - access Math sin method
+   - Names of classes and modules are just constants.
+   - can nest classes and modules inside other classes and modules to any depth
 
-   require 'pathname'
+*** class
+    #+begin_src ruby
+    # frozen_string_literal: true
 
-   # Class Description
-   class Meh # Class name in Camel Case
-     attr_reader :lo, :fi #
+    require 'pathname'
 
-     OUCH = 'asdasd' #
+    # Class Description
+    class Meh # Class name in Camel Case
+      OUCH = 'asdasd' # 1
+      attr_reader :lo, :fi # 2
 
-     def initialize(lo, fi)
-       @lo = lo #
-       @fi = fi #
-     end
+      # static method
+      def self.from_file(file_name) # 3
+	new(File.readlines(file_name))
+      end
 
-     def alfa # instance method
+      def initialize(lo, fi) # 4
+	@alpha = OUCH
+	@lo = lo #
+	@fi = fi #
+      end
+
+      private
+
+      def alfa # instance method
 	@localVar = 1
-     end
+      end
 
-     def use_local_var # instance method
-       @localVar
-     end
+      def use_local_var # instance method
+	@localVar
+      end
 
-     def self.zeta #
-     end
-   end
+      def self.zeta #
+      end
+    end
 
-   Eija = Class.new #
+    Eija = Class.new #
 
-   def Eija.beta # singleton
-   end
+    def Eija.beta # singleton
+    end
 
 
-   # superclass
+    # superclass
 
-   class Parent
-   end
-   class Child < Parent
-   end
+    class Parent
+    end
+    class Child < Parent
+    end
 
-   Child.superclass # => Parent
+    Child.superclass # => Parent
 
-   #
-   #+end_src
+    #
+
+    #
+    #+end_src
 ** append <<
 ** blocks
    #+begin_src ruby
