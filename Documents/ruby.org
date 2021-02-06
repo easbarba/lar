@@ -15,6 +15,7 @@
   - [[#exceptions][exceptions]]
     - [[#usage][usage]]
   - [[#writable-object-attribute][writable object attribute]]
+  - [[#delimited-input][delimited input]]
   - [[#rake][rake]]
     - [[#usage][usage]]
   - [[#gem][gem]]
@@ -56,7 +57,7 @@
   - [[#map][map]]
   - [[#pluck][pluck]]
   - [[#quoting][Quoting]]
-  - [[#heredocs][heredocs]]
+  - [[#here-documents][here documents]]
   - [[#proc][proc]]
   - [[#do-end-as-param][do end as param]]
   - [[#array][array]]
@@ -88,7 +89,7 @@
 ** Books
    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Names                                                    |                                |         |
+   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Basic Types/Arrays                                       |                                |         |
    | Closure in Ruby                                           |                                                |                                                          |                                |         |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -207,6 +208,30 @@
    #+end_src
 
    - attribute-setting methods
+** delimited input
+   #+begin_src ruby
+   # %q - Single-quoted string
+   %q{\a and #{1+2} are literal}
+
+   # %Q, % - Double-quoted string
+   %Q{\a and #{1+2} are expanded}
+
+   # %w, %W - Array of strings
+   %w[ one two three ]
+
+   # %i, %I -  Array of symbols
+   %i[ one two three ]
+
+   # %r - Regular expression pattern
+   %r{cat|dog}
+
+   # %s - A symbol
+   %s!a symbol!
+
+   # %x, `` - Shell command
+   %x(df -h)
+
+   #+end_src
 ** rake
    - -T: list avaiable tasks
    - spec: run spec tests
@@ -544,16 +569,19 @@
 
    b = %Q(a b c)
    #+end_src
-** heredocs
+** here documents
    #+begin_src ruby
-   <<EOL
-
+   <<EOL # double quote document
+      \n
+   #{Time.now}
    EOL
 
    <<EOL.to_i * 10
    EOL
 
-   <<'EOL'
+   <<'EOL' # single quote document
+      \n
+   #{Time.now}
    EOL
 
    <<-EOL
@@ -662,11 +690,41 @@
    #+end_src
 ** range
    #+begin_src ruby
+   # create a new range object
+   r = 1..2
+
+   # include all elements
+   r =  1..99
+
+   # exclude last element
+   r = 1...199
+
+   # verbose object creation
    r = Range.new(1,100)
    r = Range.new(1,100, true)
-   r =  1..99(inclusive) r = 1...199(exclusive)
+
+   # methods
    r.cover? 2
    r.include? 3
+   r.max
+   r.reject {}
+   r.inject {}
+
+   # range of object need to return the next object `succ` and be comparable <=>
+
+   # ranges as conditions
+   while line = gets
+     puts line if line =~ /start/ .. line =~ /end/
+   end
+
+   # ranges as intervals
+   (1..10) === 5   # => true
+   (1..10) === 15  # => false
+
+
+
+
+
    #+end_src
 ** sets
    #+begin_src ruby
