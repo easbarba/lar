@@ -103,9 +103,6 @@ e_asdf()
 {
     source "$HOME/.asdf/completions/asdf.bash"
     source "$HOME/.asdf/asdf.sh"
-
-    local asdf_shims_dir="$HOME"/.asdf/shims
-    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
 }
 
 e_multiplexers()

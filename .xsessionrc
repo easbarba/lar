@@ -47,6 +47,13 @@ ruby()
     export PATH="$rubydir"${PATH:+:}$PATH
 }
 
+asdf()
+{
+    local asdf_shims_dir="$HOME"/.asdf/shims
+    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+}
+
 # * RUN
 
 ruby
+asdf
