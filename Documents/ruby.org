@@ -15,6 +15,9 @@
   - [[#exceptions][exceptions]]
     - [[#usage][usage]]
   - [[#writable-object-attribute][writable object attribute]]
+  - [[#rake][rake]]
+    - [[#usage][usage]]
+  - [[#gem][gem]]
   - [[#global-variables][global variables]]
   - [[#self][self]]
   - [[#commentary][commentary]]
@@ -85,7 +88,7 @@
 ** Books
    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Pragmatic Ruby (Pickaxe)                                  | Exceptions, catch, and throw                   | catch and throw                                          |                                |         |
+   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Names                                                    |                                |         |
    | Closure in Ruby                                           |                                                |                                                          |                                |         |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -204,6 +207,26 @@
    #+end_src
 
    - attribute-setting methods
+** rake
+   - -T: list avaiable tasks
+   - spec: run spec tests
+
+*** usage
+    #+begin_src ruby
+    # desc:
+    # task:
+
+    desc "Remove Unix and Windows backup files"
+    task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do # depends on two other tasks
+      puts "All backups deleted"
+    end
+    #+end_src
+
+** gem
+   gem build GEM.gemspec
+   gem install --user-install pkg/GEM
+   gem list GEM -d
+
 ** global variables
    #+begin_src ruby
    $? # return global status of last command
