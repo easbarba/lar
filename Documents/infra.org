@@ -2968,6 +2968,8 @@
    | ldconfig       |                                  |
 ** Online
    https://pkgs.org/
+** misc
+   $ cat /usr/share/dict/words
 ** man
    - errno: number of last error
 ** Udev rules
