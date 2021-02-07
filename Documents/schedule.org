@@ -3,6 +3,6 @@
 | mon   | tue   | wed   | thru       | fri        | sat | sun |
 |-------+-------+-------+------------+------------+-----+-----|
 | rails | rails | rails | rails      | rails      |     |     |
-| ruby  | ruby  | ruby  | tdd        | tdd        |     |     |
-| git   | git   | git   | postgresql | postgresql |     |     |
+| ruby  | ruby  | ruby  | postgresql | postgresql |     |     |
+| git   | git   | git   | tdd        | tdd        |     |     |
 | elisp | elisp | elisp | elisp      | unix       |     |     |
