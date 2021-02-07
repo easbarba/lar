@@ -5,41 +5,37 @@
 
 # * SETTINGS
 
-set -U fish_greeting
+set -U fish_greeting # disable greeting
 
-# * GLOBAL VARIABLES
+# * GLOBAL ENV VARIABLES
 
 set -Ux PAGER less
 set -Ux EDITOR nvim
 set -Ux VISUAL emacs
 
 # * ALIAS
-
-alias lxReload="source ~/.config/fish/config.fish"
-
+# * SOURCING
 # * FUNCTIONS
 
-# Cero
-function ceroit -d "Cero Package"
-    cd /dados/Pessoal/cero/
-    bundle install
-    rake install
-end
+# * PACKAGES CONFIGURATION
 
-# * SOURCING
-
+# ** STARSHIP
 if type -q starship
     starship init fish | source
 end
 
-if type -q rbenv
-    status --is-interactive; and rbenv init - | source
+# ** RBENV
+# if type -q rbenv
+#     status --is-interactive; and rbenv init - | source
+# end
+
+# ** ASDF
+
+if test -e ~/.asdf/completions/asdf.fish
+    cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 end
 
-if test -e ~/.config/asdf/completions/asdf.fish
-    cp ~/.config/asdf/completions/asdf.fish ~/.config/fish/completions
-end
-
+# ** PYTHON
 if type -q python
     # PIP COMPLETION
     function __fish_complete_pip
@@ -53,12 +49,12 @@ if type -q python
     complete -fa "(__fish_complete_pip)" -c pip
 end
 
-
-# * FISHER
+# ** FISHER
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
 
-cd "$HOME"
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+
+    fish -c fisher
+    fisher update
+end
