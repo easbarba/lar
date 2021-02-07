@@ -5,4 +5,4 @@
 | rails | rails | rails | rails      | rails      |     |     |
 | ruby  | ruby  | ruby  | postgresql | postgresql |     |     |
 | git   | git   | git   | tdd        | tdd        |     |     |
-| elisp | elisp | elisp | elisp      | unix       |     |     |
+| elisp | elisp | elisp | unix       | unix       |     |     |
