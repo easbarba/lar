@@ -89,7 +89,7 @@
 ** Books
    | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+---------|
-   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Basic Types/Arrays                                       |                                |         |
+   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Names/                                                   |                                |         |
    | Closure in Ruby                                           |                                                |                                                          |                                |         |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |         |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |         |
@@ -605,7 +605,13 @@
    #+end_src
 ** array
    #+begin_src ruby
+   # creation
    a = [1, ["a", "b"], 4]
+   a = Array.new(1,2)
+   a = arr = %w( Hey!\tIt is now -#{Time.now}- )
+
+
+   # indexing
    arr[1][0]
    [1,2][0]
    arr.dig(3,0) value_at, a[2,3] = ..
@@ -672,6 +678,10 @@
    h = Hash.new
    h = { one: 1, :two => 2 }
    h = Hash[1, "one", 2, "two"]
+
+   h.rehash # force the hash to be reindexed
+
+
    h["1"] = 1
    h.[]=("New York", "NY")
    h.store("New York", "NY")
