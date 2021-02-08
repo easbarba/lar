@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=atril
+Exec=emacs-reader
 Hidden=false
 X-MATE-Autostart-enabled=true
 Name[en_US]=reader
