@@ -41,7 +41,7 @@ if awesome.startup_errors then
 end
 
 -- Autorun programs
-local autostart = gears.filesystem.get_xdg_config_home() .. "autostart"
+local autostart = gears.filesystem.get_xdg_config_home() .. "autostart-scripts" .. "apps.sh"
 if gears.filesystem.file_executable(autostart) then
    awful.util.spawn(autostart)
 else
