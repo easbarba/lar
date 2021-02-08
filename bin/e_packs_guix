@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+bootstrap()
+{
+    wget -P /tmp https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+
+    sudo bash /tmp/guix-install.sh
+}
+
+packages()
+{
+    echo 'Installing gem packages'
+
+    local packages=(glibc-utf8-locales)
+
+    for pack in "${packages[@]}"
+    do
+	guix install "${pack}"
+    done
+}
+
+# * PATH
+
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+# * RUN
+
+bootstrap
+packages
