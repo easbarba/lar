@@ -41,7 +41,7 @@ if awesome.startup_errors then
 end
 
 -- Autorun programs
-local autostart = gears.filesystem.get_xdg_config_home() .. "autostart-scripts" .. "apps.sh"
+local autostart = gears.filesystem.get_xdg_config_home() .. "autostart-scripts/apps.sh"
 if gears.filesystem.file_executable(autostart) then
    awful.util.spawn(autostart)
 else
@@ -203,7 +203,7 @@ awful.screen.connect_for_each_screen(function(s)
       set_wallpaper(s)
 
       -- Each screen has its own tag table.
-      awful.tag({ "mx", "eija", "term", "midias", "www" }, s, awful.layout.layouts[1])
+      awful.tag({ "mx", "reader", "term", "media", "www" }, s, awful.layout.layouts[1])
 
       -- Create a promptbox for each screen
       s.mypromptbox = awful.widget.prompt()
@@ -554,16 +554,16 @@ awful.rules.rules = {
    { rule_any = { class = { "Emacs" }},
      properties = { tag = "mx" } },
    { rule_any = { class = { "Code", "Sublime", "libreoffice-writer" }},
-     properties = { tag = "eija" } },
-   { rule_any = { class = { "st", "st-256color", "konsole" }},
+     properties = { tag = "reader" } },
+   { rule_any = { class = { "st", "st-256color", "Mate-terminal" }},
      properties = { tag = "term" } },
    { rule_any = { class = { "mpv", "vlc", "feh", "Steam", "TelegramDesktop" }},
-     properties = { tag = "midias" } },
+     properties = { tag = "media" } },
    { rule_any = { class = { "IceCat", "Firefox", "Chromium", "Google-chrome", "Google-chrome-stable" }},
      properties = { tag = "www" } },
 
    -- Fullscreen Windows:
-   { rule_any = { class = { "Emacs", "Code", "mpv", "st", "konsole" }},
+   { rule_any = { class = { "Emacs", "Code", "mpv", "st", "Mate-terminal" }},
      properties = { fullscreen = true }},
    { rule_any = { class = { "mpv", "vlc" }},
      properties = { switchtotag = true }},
