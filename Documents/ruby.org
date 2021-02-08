@@ -93,9 +93,9 @@
 :END:
 * Progress
 ** Books
-   | Books                                                     | Capitulo                                       | em                                                       | tarde                          | revisao                                       |
+   | Books                                                     | Chapter                                        | @                                                        | late                           | revision                                      |
    |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+-----------------------------------------------|
-   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Duck Typing                                              | Names                          | Fibers, Threads, and Processes/Multithreading |
+   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Duck Typing/Numeric Coercion                             | Names                          | Fibers, Threads, and Processes/Multithreading |
    | Closure in Ruby                                           |                                                |                                                          |                                |                                               |
    | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |                                               |
    | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |                                               |
@@ -104,9 +104,10 @@
    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |                                               |
 
 ** SLOC
-   | Project | folder          | file       | @ |
-   |---------+-----------------+------------+---|
-   | ruby    | lib/bundler/cli | install.rb |   |
+   | Project | folder          | file           | @                     |
+   |---------+-----------------+----------------+-----------------------|
+   | ruby    | lib/bundler/cli | install.rb     |                       |
+   | rake    | lib/rake        | application.rb | display_cause_details |
 * Features
 ** project structure
    #+begin_src ruby
