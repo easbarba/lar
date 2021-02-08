@@ -8,7 +8,7 @@ export EDITOR="emacs -nw"
 export TERMINAL="mate-terminal"
 export BROWSER="firefox"
 
-# * FOLDERS
+# * DIRECTORIES ENV VARS
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -24,7 +24,6 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 [ ! -w "${XDG_RUNTIME_DIR=/run/user/${UID}}" ] && export XDG_RUNTIME_DIR=/tmp
 
-
 export LOCAL="$HOME/.local"
 export LOCAL_BIN="$LOCAL/bin"
 export LOCAL_LIB="$LOCAL/lib"
@@ -33,11 +32,14 @@ export LOCAL_INFO="$XDG_DATA_HOME/info"
 export LOCAL_DOC="$XDG_DATA_HOME/doc"
 export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 
-# ADD TO PATH
-export PATH="$HOME/bin"${PATH:+:}${PATH}
-export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
-export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
+# $PATH DIRECTORIES
 
+binaries()
+{
+    export PATH="$HOME/bin"${PATH:+:}${PATH}
+    export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
+    export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
+}
 
 # * PACKAGES
 
@@ -55,5 +57,6 @@ asdf()
 
 # * RUN
 
+binaries
 ruby
 asdf
