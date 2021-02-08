@@ -691,27 +691,20 @@
   :defer 1
   :config
   (disable-theme *theme*)
-  (let ((cool-themes '(doom-city-lights
-		       doom-challenger-deep
-		       doom-dark+
+  (let ((cool-themes '(doom-ayu-light
+		       doom-acario-light
 		       doom-flatwhite
-		       doom-gruvbox
-		       doom-gruvbox-light
-		       doom-henna
-		       doom-horizon
-		       doom-palenight
-		       doom-miramare
-		       doom-moonlight
-		       doom-nord
-		       doom-nord-light
-		       doom-oceanic-next
-		       doom-outrun-electric
-		       doom-old-hope
-		       doom-one
 		       doom-one-light
-		       doom-rouge
-		       doom-spacegrey
-		       doom-solarized-light)))
+		       doom-homage-white
+		       doom-opera-light
+		       doom-plain-dark
+		       doom-tomorrow-day
+		       adwaita
+		       dichromacy
+		       wombat
+		       tango
+		       wheatgrass
+		       tsdh-light)))
     (load-theme (nth (random (length cool-themes))
 		     cool-themes)
 		t)))
