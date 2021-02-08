@@ -6852,7 +6852,6 @@
    [[ -x $(command -v mpc) ]] && mpc toggle
 
 
-
    #!/usr/bin/env bash
 
    [[ -x $(command -v mpc) ]] && mpc next
