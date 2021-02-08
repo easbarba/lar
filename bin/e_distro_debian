@@ -25,7 +25,7 @@ packages ()
 
     qt=(kdeconnect kdenlive clementine)
 
-    gtk=(numix-icon-theme numix-gtk-theme materia-gtk-theme adapta-gtk-theme cheese)
+    gtk=(cheese)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
 
