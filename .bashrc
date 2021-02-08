@@ -85,12 +85,6 @@ fi
 
 # * CLI SOFTWARE
 
-e_cask()
-{
-    local caskdir="$HOME/.cask/bin"
-    export PATH="$caskdir"${PATH:+:}$PATH
-}
-
 e_prompt()
 {
     local liquid="$HOME/bin/liquidprompt"
@@ -116,9 +110,22 @@ e_multiplexers()
     fi
 }
 
+e_guix()
+{
+    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+}
+
+e_nix()
+{
+    if [ -e /home/easbarbosa/.nix-profile/etc/profile.d/nix.sh ]; then
+	. /home/easbarbosa/.nix-profile/etc/profile.d/nix.sh;
+    fi
+}
+
 # * RUN
 
-e_cask
+e_guix
+e_nix
 e_asdf
 e_prompt
 e_multiplexers

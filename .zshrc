@@ -108,5 +108,23 @@ e-zplug()
 # * BEGIN
 e-zplug || e-default
 
+
 # * SOURCING
-[ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
+
+e_prompt()
+{
+    local liquid="$HOME/bin/liquidprompt"
+    [[ -f "$liquid" ]] && source "$liquid"
+
+    [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
+}
+
+e_nix()
+{
+    if [ -e /home/easbarbosa/.nix-profile/etc/profile.d/nix.sh ]; then
+	. /home/easbarbosa/.nix-profile/etc/profile.d/nix.sh;
+    fi
+}
+
+e_prompt
+e_nix
