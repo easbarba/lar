@@ -38,7 +38,7 @@ packages ()
 
     qt=(kdeconnect kdenlive clementine)
 
-    gtk=(cheese transmission-gtk)
+    gtk=(cheese transmission-gtk atril)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
     qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
