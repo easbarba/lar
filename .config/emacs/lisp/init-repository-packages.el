@@ -698,13 +698,7 @@
 		       doom-homage-white
 		       doom-opera-light
 		       doom-plain-dark
-		       doom-tomorrow-day
-		       adwaita
-		       dichromacy
-		       wombat
-		       tango
-		       wheatgrass
-		       tsdh-light)))
+		       doom-tomorrow-day)))
     (load-theme (nth (random (length cool-themes))
 		     cool-themes)
 		t)))
