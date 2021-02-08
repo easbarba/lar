@@ -20,6 +20,7 @@
   - [[#sysinfo][sysinfo]]
   - [[#guix-config][Guix Config]]
   - [[#nyxt][Nyxt]]
+  - [[#bashrc][bashrc]]
   - [[#xserverrc][.xserverrc]]
   - [[#sbcl][Sbcl]]
   - [[#xmobar][Xmobar]]
@@ -1969,14 +1970,6 @@
 	a-welcome " -- GuixSD - Reconfiguring System!"
 	sudo guix pull
 	sudo guix system reconfigure "$1"
-    }
-
-
-    e-debian ()
-    {
-	wm=(xorg x11-apps xinit xdotool dbus-x11 xserver-xorg-input-synaptics xserver-xorg-input-libinput xserver-xorg-input-kbd awesome)
-
-	wm_packages=(network-manager-gnome aria2 dunst maim udiskie unclutter ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi seahorse x11proto-dev brightnessctl tlp acpi-call)
     }
 
     elx-sbcl ()
@@ -6791,9 +6784,6 @@
 
    [[ -x $(command -v brightnessctl) ]] && brightnessctl set "$STEP"%-
 
-
-
-
    #!/usr/bin/env bash
 
    STEP=5
@@ -7113,7 +7103,6 @@
    #+begin_src shell-script
    # [ -x "$(command -v ibus-daemon)" ] && ibus-daemon &
 
-
    function dwm {
        if [ $1 == "dwm" ]; then
 	   local autostart=autoinicia-aps
@@ -7412,6 +7401,16 @@
            '((body :border-top "14px solid red"))))
 
     #+end_src
+** bashrc
+   #+begin_src shell-script
+   e-startx()
+   {
+       if [ -z "${DISPLAY}" ] && [ -n "${XDG_VTNR}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	   exec startx
+       fi
+   }
+
+   #+end_src
 ** .xserverrc
    #+begin_src shell-script ~/.xserverrc -mode (identity #o755)
    #!/usr/bin/env bash
