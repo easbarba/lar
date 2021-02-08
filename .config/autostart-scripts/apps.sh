@@ -2,7 +2,7 @@
 
 # DESCRIPTION: AutoStart software
 
-APPS=(udiskie nm-applet blueman-applet emacs emacs_reader unclutter clipit st)
+APPS=(udiskie nm-applet blueman-applet emacs unclutter clipit mate-terminal atril pasystray)
 
 not-found() { [[ ! -x $(command -v "$1") ]]; }
 
