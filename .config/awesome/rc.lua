@@ -274,13 +274,13 @@ globalkeys = gears.table.join(
    -- USER CUSTOM CONFIG - BEGIN
 
    awful.key({ modkey,         }, "c",                                                      lockscreen),
-   awful.key({ modkey, "Shift" }, "w",     function() os.execute("cero operation volume up")       end),
-   awful.key({ modkey, "Shift" }, "s",     function() os.execute("cero operation volume down")     end),
-   awful.key({ modkey, "Shift" }, "e",     function() os.execute("cero operation volume toggle")   end),
-   awful.key({ modkey, "Shift" }, "a",     function() os.execute("cero operation brightness up")   end),
-   awful.key({ modkey, "Shift" }, "d",     function() os.execute("cero operation brightness down") end),
-   awful.key({                 }, "Print", function() os.execute("cero operation screenshot x")    end),
-   awful.key({ modkey, "Shift" }, "p",     function() os.execute("cero media play x")              end),
+   awful.key({ modkey, "Shift" }, "w",     function() os.execute("cejo operation volume up")       end),
+   awful.key({ modkey, "Shift" }, "s",     function() os.execute("cejo operation volume down")     end),
+   awful.key({ modkey, "Shift" }, "e",     function() os.execute("cejo operation volume toggle")   end),
+   awful.key({ modkey, "Shift" }, "a",     function() os.execute("cejo operation brightness up")   end),
+   awful.key({ modkey, "Shift" }, "d",     function() os.execute("cejo operation brightness down") end),
+   awful.key({                 }, "Print", function() os.execute("cejo operation screenshot x")    end),
+   awful.key({ modkey, "Shift" }, "p",     function() os.execute("cejo media play x")              end),
    awful.key({ modkey          }, "z",     function() os.execute("tocador-alternar")               end),
    awful.key({ modkey, "Shift" }, "z",     function() os.execute("net-alternar")                   end),
 
