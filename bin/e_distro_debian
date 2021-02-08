@@ -9,41 +9,69 @@ upgrade()
     echo "-- Atualizando Sistema"
 
     sudo apt update
-    sudo apt upgrade
-    sudo apt autoremove
+    sudo apt upgrade -y
+    sudo apt autoremove -y
 }
 
 packages ()
 {
-    essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make build-essential curl emacs)
+    essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
+    build-essential curl emacs)
 
-    programming=(shellcheck zenity libpq-dev bash-completion cmake mercurial clang libsqlite3-dev)
+    wm=(xorg x11-apps xdotool dbus-x11 xserver-xorg-input-synaptics
+    xserver-xorg-input-libinput xserver-xorg-input-kbd awesome lightdm
+    blueman)
+
+    programming=(shellcheck zenity libpq-dev bash-completion cmake
+    mercurial clang libsqlite3-dev)
 
     ruby=(libssl-dev)
 
-    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config socat vrms fzf aria2)
+    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
+    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
+    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
+    cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq
+    dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
+    locate info wget stow parted texinfo autoconf automake gnutls-bin
+    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
+    firewall-config socat vrms fzf aria2)
 
     qt=(kdeconnect kdenlive clementine)
 
     gtk=(cheese transmission-gtk)
 
-    infra=(podman wine winetricks wine32 qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
+    infra=(podman wine winetricks wine32 qemu qemu-system-gui
+    qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
 
-    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-freefont-ttf fonts-dejavu)
+    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum
+    fonts-freefont-ttf fonts-dejavu)
 
     security=(gnutls-bin)
 
-    laptop=(iw wireless-tools libiw-dev laptop-mode-tools i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid lm-sensors hddtemp)
+    laptop=(iw wireless-tools libiw-dev laptop-mode-tools
+    i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
+    lm-sensors hddtemp)
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    user=(firefox libreoffice calibre inkscape screenkey gimp obs-studio syncthing mpv libnotify-bin imagemagick pandoc screenfetch aspell aspell-pt-br telegram-desktop)
+    wmpacks=(network-manager-gnome aria2 dunst maim udiskie unclutter
+    ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi
+    seahorse x11proto-dev brightnessctl tlp acpi-call)
 
-    media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+    user=(firefox libreoffice calibre inkscape screenkey gimp
+    obs-studio syncthing mpv libnotify-bin imagemagick pandoc
+    screenfetch aspell aspell-pt-br telegram-desktop)
 
-    latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
+    media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
+    gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+    gstreamer1.0-plugins-ugly)
 
-    amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
+    latex=(texlive-latex-recommended texlive-latex-extra
+    texlive-latex-base)
+
+    amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0
+    mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
+    mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
 
     echo "-- Habilita Multi-Arch"
     sudo dpkg --add-architecture i386
@@ -52,17 +80,19 @@ packages ()
     local command='sudo apt install -y'
 
     e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
+    e_foreach "$command" "${wm[@]}"
     e_foreach "$command" "${debian[@]}"; sudo apt-file update -y # update Debian database
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${qt[@]}"
     e_foreach "$command" "${gtk[@]}"
-    e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt $USER # libvirt
+    e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt "$USER" # libvirt
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
+    e_foreach "$command" "${wmpacks[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${media[@]}"
     # e_foreach "$command" "${amd[@]}"
