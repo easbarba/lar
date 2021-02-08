@@ -20,7 +20,7 @@ packages ()
 
     wm=(xorg x11-apps xdotool dbus-x11 xserver-xorg-input-synaptics
     xserver-xorg-input-libinput xserver-xorg-input-kbd awesome lightdm
-    blueman)
+    blueman pasystray)
 
     programming=(shellcheck zenity libpq-dev bash-completion cmake
     mercurial clang libsqlite3-dev)
