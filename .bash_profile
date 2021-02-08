@@ -1,1 +1,1 @@
-source ~/.xsessionrc
+source "$HOME/.xsessionrc"
