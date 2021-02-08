@@ -21,11 +21,11 @@ packages ()
 
     ruby=(libssl-dev)
 
-    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config socat vrms fzf)
+    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel locate info wget stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver nftables firewalld firewall-config socat vrms fzf aria2)
 
     qt=(kdeconnect kdenlive clementine)
 
-    gtk=(cheese)
+    gtk=(cheese transmission-gtk)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
 
