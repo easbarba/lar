@@ -18,10 +18,6 @@ packages ()
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
     build-essential curl emacs)
 
-    wm=(xorg x11-apps xdotool dbus-x11 xserver-xorg-input-synaptics
-    xserver-xorg-input-libinput xserver-xorg-input-kbd awesome lightdm
-    blueman pasystray)
-
     programming=(shellcheck zenity libpq-dev bash-completion cmake
     mercurial clang libsqlite3-dev)
 
@@ -36,7 +32,7 @@ packages ()
     bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
     firewall-config socat vrms fzf aria2)
 
-    qt=(kdeconnect kdenlive clementine)
+    qt=(kdeconnect kdenlive clementine ktorrent)
 
     gtk=(cheese transmission-gtk atril)
 
@@ -80,19 +76,19 @@ packages ()
     local command='sudo apt install -y'
 
     e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
-    e_foreach "$command" "${wm[@]}"
+    # e_foreach "$command" "${wm[@]}"
     e_foreach "$command" "${debian[@]}"; sudo apt-file update -y # update Debian database
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${qt[@]}"
-    e_foreach "$command" "${gtk[@]}"
+    # e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt "$USER" # libvirt
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
-    e_foreach "$command" "${wmpacks[@]}"
+    # e_foreach "$command" "${wmpacks[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${media[@]}"
     # e_foreach "$command" "${amd[@]}"
