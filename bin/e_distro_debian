@@ -91,7 +91,7 @@ packages ()
     # e_foreach "$command" "${wmpacks[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${media[@]}"
-    # e_foreach "$command" "${amd[@]}"
+    e_foreach "$command" "${amd[@]}"
 
     echo "Done"
 }
