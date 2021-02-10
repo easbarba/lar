@@ -356,8 +356,13 @@
   :defer 1
   :commands lsp
   :hook
-  (go-mode . lsp)
   (ruby-mode . lsp)
+  (css-mode . lsp)
+  (js-mode . lsp)
+  (html-mode . lsp)
+  (shell-mode . lsp)
+  (json-mode . lsp)
+  (yaml-mode . lsp)
   :custom
   (lsp-enable-indentation nil)
   (lsp-signature-auto-activate nil)
@@ -386,7 +391,6 @@
 
 (use-package lsp-dart
   :hook (dart-mode . lsp))
-
 
 (use-package helm-lsp
   :disabled
@@ -699,7 +703,6 @@
 		       doom-opera-light
 		       doom-gruvbox
 		       doom-gruvbox-light
-		       doom-henna
 		       doom-horizon
 		       doom-palenight
 		       doom-miramare
