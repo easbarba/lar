@@ -25,7 +25,9 @@
   - [[#rake][rake]]
     - [[#usage][usage]]
   - [[#gem][gem]]
-  - [[#global-variables][global variables]]
+  - [[#variables][Variables]]
+    - [[#class-variables][class variables]]
+    - [[#global-variables][global variables]]
   - [[#self][self]]
   - [[#commentary][commentary]]
   - [[#defined][defined?]]
@@ -286,10 +288,22 @@
    gem install --user-install pkg/GEM
    gem list GEM -d
 
-** global variables
-   #+begin_src ruby
-   $? # return global status of last command
-   #+end_src
+** Variables
+
+*** class variables
+    - available throughout a class or module body
+    - must be initialized before use
+    - is shared among all instances of a class and is available within the class itself.
+
+
+*** global variables
+    - available throughout a program.
+    - references to it returns the same object.
+    - referencing an uninitialized global variable returns nil.
+
+    #+begin_src ruby
+    $? # return global status of last command
+    #+end_src
 ** self
    - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
 ** commentary
