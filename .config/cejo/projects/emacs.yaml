@@ -1,0 +1,14 @@
+---
+Name: emacs
+Url: https://git.savannah.gnu.org/git/emacs
+AdditionalUrls: ''
+Tag: emacs-27.1
+Commands:
+- make distclean
+- sh autogen.sh
+- sh configure --prefix={0} --with-modules --with-cairo --with-gif=ifavailable --with-jpeg=ifavailable
+  --with-png --with-rsvg --with-tiff=ifavailable --with-xft --with-xpm=ifavailable
+  --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls=ifavailable
+  --with-x-toolkit=gtk3
+- make -j2
+- make install

@@ -1,0 +1,10 @@
+---
+Name: ruby
+Url: https://github.com/ruby/ruby
+AdditionalUrls: ''
+Tag: v2_7_1
+Commands:
+- autoconf
+- sh configure --prefix={0}
+- make -j2
+- make install
