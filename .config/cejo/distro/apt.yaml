@@ -1,0 +1,15 @@
+---
+builddep: build-dep
+clean: autoremove
+depends: depends
+download: download
+fix: install -f
+help: help
+info: show
+install: install
+installed: list --installed
+remove: remove
+search: search
+sysupgrade: dist-upgrade
+update: update
+upgrade: upgrade
