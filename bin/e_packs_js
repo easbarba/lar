@@ -42,13 +42,13 @@ packages()
 {
     echo 'Installing npm packages'
 
-    local packages=(npm)
-    # eslint-config-airbnb-base parcel-bundler bash-language-server webpack-dev-server typescript-language-server prettier gulp js-beautify typescript tern eslint eslint_d ionic  babel  vscode-html-languageserver-bin pug webpack-cli dockerfile-language-server-nodejs generator-code vscode-css-languageserver-bin indium gulp-pug vscode-json-languageserver browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+    local packages=(npm bash-language-server yaml-language-server vscode-json-languageserver)
+    # eslint-config-airbnb-base parcel-bundler webpack-dev-server prettier gulp js-beautify typescript tern eslint eslint_d ionic babel pug webpack-cli dockerfile-language-server-nodejs generator-code indium gulp-pug browser-sync typescript-formatter vue-language-server eslint-plugin-import sass jshint pug-cli babel-preset-airbnb yo webpack is-website-vulnerable tldr vscode-html-languageserver-bin vscode-css-languageserver-bin typescript-language-server
 
     # install
     for pack in "${packages[@]}"
     do
-	npm i -g "$pack"
+	npm i "$pack"
     done
 }
 
