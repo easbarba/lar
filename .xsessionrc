@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # * Description: System Global Variables
 
@@ -45,18 +45,26 @@ binaries()
 
 ruby()
 {
-    local rubydir="$HOME/.local/share/gem/ruby/3.0.0/bin"
-    export PATH="$rubydir"${PATH:+:}$PATH
+    local dir="$HOME/.local/share/gem/ruby/3.0.0/bin"
+    export PATH="$dir"${PATH:+:}$PATH
 }
+
+js()
+{
+    local dir="$HOME/.asdf/shims/node_modules/.bin"
+    export PATH="$dir"${PATH:+:}$PATH
+}
+
 
 asdf()
 {
-    local asdf_shims_dir="$HOME"/.asdf/shims
-    export PATH="$asdf_shims_dir"${PATH:+:}$PATH
+    local dir="$HOME"/.asdf/shims
+    export PATH="$dir"${PATH:+:}$PATH
 }
 
 # * RUN
 
 binaries
 ruby
+js
 asdf
