@@ -146,6 +146,7 @@
      "https://www.reddit.com/r/rails/.rss"
      "https://www.reddit.com/r/ruby/.rss"
      "https://www.redhat.com/sysadmin/rss.xml"
+     "https://drewdevault.com/blog/index.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
