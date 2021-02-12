@@ -4,83 +4,113 @@
 
 Volume()
 {
-    local result="???"
+    local result
+    result="???"
+
     [[ $(pgrep -x "pulseaudio") ]] && result="$(pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}')"
     [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
 
-    local check="$(amixer get Master | tail -1)"
+    local check
+    check="$(amixer get Master | tail -1)"
     [[ $check == *\[off\]* ]] && printf "VOL: MUTE"
     [[ $check == *\[on\]* ]] && printf "%s" "VOL: ${result}"
 }
 
 Cpuf()
 {
+    local prevtotal
+    local total
+    local result
+
     read -r cpu a b c previdle rest < /proc/stat
-    local prevtotal=$((a+b+c+previdle))
+
+    prevtotal=$((a+b+c+previdle))
 
     sleep 0.5
 
     read -r cpu a b c idle rest < /proc/stat
-    local total=$((a+b+c+idle))
 
-    local result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
+    total=$((a+b+c+idle))
+    result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
+
     printf "%s" "CPUF: ${result}%"
 }
 
 Cput()
 {
-    local result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
-    printf "CPUT: ${result}"
+    local result
+    result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
+
+    printf "%s" "CPUT: ${result}"
 }
 
 Memory()
 {
-    local result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
-    printf "MEM: ${result}"
+    local result
+    result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
+
+    printf "%s" "MEM: ${result}"
 }
 
 Date()
 {
-    local result="$(date "+%H:%M - %a, %b %d")"
-    printf "${result}"
+    local result
+    result="$(date "+%H:%M - %a, %b %d")"
+
+    printf "%s" "${result}"
 }
 
 Battery()
 {
-    local result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
+    local result
+    result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
+
     printf "%s" "BAT: ${result}"
 }
 
 Gput()
 {
-    local result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
-    echo -ne "GPUT: $result"
+    local result
+    result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
+
+    printf "%s" "GPUT: $result"
 }
 
 Update()
 {
+    local sys
+    local aur
+    local check
+
     # Arch/Manjaro
     sys=$(checkupdates | wc -l)
     aur=$(cower -u | wc -l)
     check=$((pac + aur))
 
-    [[ "$check" != "0" ]] && printf "%s" " $pac  $aur / "
+    [[ "$check" != "0" ]] && printf "%s" " $pac  $aur $sys "
 }
 
 Connection()
 {
-    local result=$(nmcli connection show | awk 'NR==2 {print $4}')
-    [[ "$result" != '--' ]] && printf 'CON: ON' || 'CON: OFF'
+    local result
+    result=$(nmcli connection show | awk 'NR==2 {print $4}')
+
+
+    if [[ "$result" != '--' ]]; then
+	printf 'CON: ON'
+    else
+	printf 'CON: OFF'
+    fi
 }
 
 Host()
 {
-    echo -e "${HOSTNAME^}"
+    printf "%s" "${HOSTNAME^}"
 }
 
 # apt list --upgradable | wc -l
 
-X=" | "
-printf "%s" "$(Host)$X$(Volume)$X$(Battery)$X$(Memory)$X$(Cpuf)$X$(Cput)$X$(Gput)$X$(Date)"
+sep=" | "
+printf "%s" "$(Host)$sep$(Volume)$sep$(Battery)$sep$(Memory)$sep$(Cpuf)$sep$(Cput)$sep$(Gput)$sep$(Date)"
 
 exit 0
