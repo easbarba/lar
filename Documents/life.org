@@ -35,6 +35,7 @@
 - [[#résumé][Résumé]]
 - [[#delivery][Delivery]]
 - [[#misc][Misc]]
+- [[#yearly-aspiration][Yearly Aspiration]]
 :END:
 * Progress
 ** Books, Videos
@@ -422,3 +423,7 @@
   981103178
 * Misc
   VIVO Protocolo: 181220208858338
+* Yearly Aspiration
+ - 5 non-work related books
+ - CSGO MM Gold Rank
+ - 1 Classic guitar song
