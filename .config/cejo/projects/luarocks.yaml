@@ -1,8 +1,0 @@
----
-Name: luarocks
-Url: https://github.com/luarocks/luarocks/
-Tag: v3.3.1
-Commands:
-- sh configure --prefix={0}
-- make -j2
-- make install
