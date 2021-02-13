@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# * Dependencies: sensors, ping, awk, grep, sed, amd ryzen, vega 10
+# * Dependencies: sensors, ping, awk, grep, sed, amd ryzen, vega 10, debian
+
+deps=(sensors ping awk grep sed) # TODO: Check deps
 
 Volume()
 {
