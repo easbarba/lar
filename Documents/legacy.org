@@ -6,7 +6,7 @@
   :END:
 :CONTENTS:
 - [[#dotfiles][Dotfiles]]
-  - [[#cero][Cero]]
+  - [[#cejo][Cejo]]
   - [[#blog][Blog]]
   - [[#shell-software][shell-software]]
   - [[#shell-misc][shell-misc]]
@@ -19,6 +19,8 @@
   - [[#xinitrc][.xinitrc]]
   - [[#sysinfo][sysinfo]]
   - [[#guix-config][Guix Config]]
+  - [[#e_packs][e_packs]]
+  - [[#e_distro][e_distro]]
   - [[#nyxt][Nyxt]]
   - [[#bashrc][bashrc]]
   - [[#xserverrc][.xserverrc]]
@@ -41,6 +43,8 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#languages][Languages]]
+  - [[#common-lisp][Common Lisp]]
+  - [[#scheme][Scheme]]
   - [[#haskell][Haskell]]
   - [[#elixir][Elixir]]
   - [[#golang][Golang]]
@@ -59,7 +63,108 @@
 :END:
 
 * Dotfiles
-** Cero
+** Cejo
+*** distro
+    #+begin_src yaml
+		---
+		builddep: builddep
+		clean: autoremove
+		depends: repoquery --requires --resolve
+		download: ''
+		fix: fix
+		help: help
+		info: info
+		install: install
+		installed: list installed
+		remove: remove
+		search: search
+		sysupgrade: sysupgrade
+		update: update
+		upgrade: upgrade
+
+	    ---
+	    builddep: ''
+	    clean: autoremove
+	    depends: ''
+	    download: fetch
+	    fix: fix
+	    help: help
+	    info: query
+	    install: install
+	    installed: version
+	    remove: remove
+	    search: search
+	    sysupgrade: ''
+	    update: update
+	    upgrade: upgrade
+	    ---
+	    builddep: ''
+	    clean: autoremove
+	    depends: ''
+	    download: fetch
+	    fix: fix
+	    help: help
+	    info: query
+	    install: install
+	    installed: version
+	    remove: remove
+	    search: search
+	    sysupgrade: ''
+	    update: update
+	    upgrade: upgrade
+
+	---
+	builddep: build-dep
+	clean: nix-store --gc
+	depends: depends
+	download: download
+	fix: install -f
+	help: help
+	info: show
+	install: nix-env --install
+	install+: nix-env --install -A
+	installed: nix-env -qa
+	remove: nix-env --uninstall
+	search: nix-env -qa
+	sysupgrade: ''
+	update: nix-env --update
+	upgrade: nix-env --upgrade
+
+
+    ---
+    builddep: ''
+    clean: ''
+    depends: ''
+    download: ''
+    fix: ''
+    help: help
+    info: ''
+    install: "-S"
+    installed: ''
+    remove: "-R"
+    search: "-Ss"
+    sysupgrade: ''
+    update: "-Syy"
+    upgrade: "-Syu"
+
+
+---
+builddep: ''
+clean: autoremove
+depends: ''
+download: fetch
+fix: fix
+help: help
+info: query
+install: install
+installed: version
+remove: remove
+search: search
+sysupgrade: ''
+update: update
+upgrade: upgrade
+
+    #+end_src
 *** Oss.json
    #+begin_src json
    "lisp": [
@@ -2979,6 +3084,15 @@
     alias Jpg='for f in *.jpg; do mv "$f" "$f/%.jpg/.jp"; done'
     #+end_src
 ** Emacs
+*** scripts
+    #+begin_src shell-script
+#!/usr/bin/env bash
+
+MX="$HOME/.config/emacs"
+
+emacs -q -l "$MX/profiles/emacs-reader.el"
+
+    #+end_src
 *** EXWM - Emacs como Sistem Operacional
     #+begin_src emacs-lisp ~/.config/emacs/init.el :mkdirp yes
 
@@ -7283,6 +7397,447 @@
    ("/bin/startx" ,(xorg-start-command))
 
    #+end_src
+** e_packs
+   #+begin_src shell-script
+#!/usr/bin/env bash
+
+bootstrap()
+{
+    wget -P /tmp https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+
+    sudo bash /tmp/guix-install.sh
+}
+
+packages()
+{
+    echo 'Installing gem packages'
+
+    local packages=(glibc-utf8-locales)
+
+    for pack in "${packages[@]}"
+    do
+	guix install "${pack}"
+    done
+}
+
+# * PATH
+
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+# * RUN
+
+bootstrap
+packages
+
+   #+end_src
+** e_distro
+   #+begin_src shell-script
+
+
+
+
+	    #!/usr/bin/env bash
+
+	    # set -e
+
+	    # * NIXOS
+	    # Descricao: Distro Pacotes
+
+	    nixos-packages ()
+	    {
+		echo "-- NixOS Packages"
+
+		languages=(ruby lua luarocks python3 postgresql sqlite3 zenity bash-completion)
+		languages_nixos=(nixos.shellcheck nixos.lua53Packages.luacheck)
+
+		wm_packages=(network-manager-applet aria2 dunst maim udiskie unclutter lxqt-openssh-askpass mpv libnotify
+			     dmenu imagemagick pandoc xdg-utils lm-sensors aspell mpd mpc ncmpc ncmpcpp wofi rofi ffmpeg
+			     vorbis-tools)
+		wm_packages_nixos=(nixos.xfce.xfce4-clipman-plugin nixos.perl530Packages.FileMimeInfo nixos.screenfetch nixos.aspellDicts.en nixos.aspellDicts.br)
+
+		user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese gimp obs-studio
+			       vlc kate syncthing steam)
+		user_packages_nixos=(nixos.deluge nixos.gnome3.gnome-keyring)
+
+		virtualization=(qemu aqemu qemu-utils virt-manager OVMF)
+		virtualization=(nixos.qemu_kvm)
+
+		wine=(wine winetricks)
+
+		gnu=(gnutls gnused gdb texinfo autoconf parallel findutils stow screen automake)
+		gnu_nixos=(nixos.xsel)
+
+		system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xclip ctags fontconfig
+			      subversion bc htop strace ltrace openssh cpio lhasa lzop atool wmctrl
+			      perf-tools mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv
+			      neovim zsh unrar ripgrep socat fish)
+		system_tools=(nixos.poppler)
+
+		ruby_tools=(ruby)
+
+		laptop=(brightnessctl tlp iw libinput-gestures acpi acpid)
+		laptop_nixos=(nixos.wirelesstools)
+
+		local command='nix-env -i'
+		local command_nixos='nix-env --installi -A'
+
+		e_foreach "$command" "${essentials[@]}"
+		e_foreach "$command" "${wm[@]}"
+		e_foreach "$command" "${languages[@]}"
+		e_foreach "$command" "${devops[@]}"
+		e_foreach "$command" "${wm_packges[@]}"
+		e_foreach "$command" "${user_packages[@]}"
+		e_foreach "$command" "${media[@]}"
+		e_foreach "$command" "${virtualization[@]}"
+		e_foreach "$command" "${wine[@]}"
+		e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+		e_foreach "$command" "${ruby_tools[@]}"
+		e_foreach "$command" "${emacs_deps[@]}"
+		# e_foreach "$command" "${misc_deps[@]}"
+		e_foreach "$command" "${laptop[@]}"
+
+		echo "-- Preparacoes finais: limpando e arrumando o sistema"
+		sudo apt -y autoremove
+
+		echo "Done"
+	    }
+
+	    nixos-services()
+	    {
+		echo "systemctl"
+		sudo systemctl disable mpd.service
+		sudo systemctl disable mpd.socket
+	    }
+
+	    nixos-foreign()
+	    {
+		if [ ! $(command -v google-chrome) ]; then
+		    cd ${HOME}
+		    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+		    sudo apt install -y ${HOME}/google-chrome-stable_current_amd64.deb
+		    sudo apt update
+		fi
+
+		if [ ! $(command -v code) ]; then
+		    cd ${HOME}
+		    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+		    sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+		    sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+		    sudo apt-get install apt-transport-https
+		    sudo apt-get update
+		    sudo apt install -y code
+		fi
+
+		if [ -x "$(command -v pgadmin)" ]; then
+		    # Install the public key for the repository (if not done previously):
+		    curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+		    # Create the repository configuration file:
+		    sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+		    # Install for both desktop and web modes:
+		    sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
+
+		    # Configure the webserver, if you installed pgadmin4-web:
+		    python -m pip install --user flask
+		    sudo /usr/pgadmin4/bin/setup-web.sh
+		fi
+	    }
+
+	    nixos-upgrade()
+	    {
+		echo "-- Atualizando Sistema"
+		nix-env --upgrade
+	    }
+
+	    run()
+	    {
+
+	    }
+
+
+	    # * RUN
+
+	    nixos-packages
+	    nixos-services
+	    nixos-foreign
+	    nixos-upgrade
+
+
+
+	 #!/usr/bin/env bash
+
+	 # set -e
+
+	 # * ARCH LINUX
+
+	 arch-upgrade()
+	 {
+	     echo "-- Atualizando Sistema" sudo pacman -Syy && sudo pacman -Syu
+	 }
+
+	 arch-packages ()
+	 {
+	     echo "-- Debian Packages"
+
+	     essentials=(base-devel coreutils wget git p7zip zip unzip util-linux bash tmux zile)
+
+	     languages=(gcc clang postgresql sqlite3 postgresql-libs shellcheck zenity bash-completion python-pip)
+
+	     user_packages=(emacs firefox libreoffice kdeconnect calibre inkscape screenkey kdenlive cheese deluge gimp obs-studio gnome-keyring vlc kate syncthing steam imagemagick pandoc xdg-utils screenfetch lm_sensors aspell aspell-en  mpv)
+
+	     media=(ffmpeg vorbis-tools gst-libav gst-plugins-bad gst-plugins-base gst-plugins-good  gst-plugins-ugly)
+
+	     virtualization=(qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf) # qemu-system-x86
+
+	     wine=(wine winetricks)
+
+	     fonts=(ttf-fira-code gnu-free-fonts ttf-dejavu) # ttf-ancient-fonts fonts-nanum
+
+	     system_tools=(lshw at usbutils lsof time net-tools iproute2 curl entr tree git xsel xclip ctags fontconfig
+			   freetype2 subversion bc htop strace ltrace openssh cpio lhasa lzop atool wmctrl poppler
+			   perf mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv
+			   parallel findutils wget stow screen neovim zsh parted texinfo gcc gdb make autoconf
+			   automake gnutls gdb nftables firewalld unrar ripgrep socat fish)  # console-data
+
+	     emacs_deps=(libjansson-dev libbrotli-dev libwebkit2gtk-4.0-dev libpng-dev zlib1g-dev libpoppler-glib-dev
+			 libpoppler-private-dev ghostscript mupdf-tools
+			 poppler-utils texlive-binaries unoconv djvulibre-bin ncurses-dev
+			 texlive-latex-base texlive-fonts-recommended  texlive-latex-extra
+			 uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev
+			 libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
+			 libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync)
+
+	     laptop=(iw wireless_tools libinput-gestures acpi acpid) # apmd pbbuttonsd pmud libiw-dev laptop-mode-tools
+
+	     local command='sudo pacman -S --noconfirm'
+
+	     e_foreach "$command" "${essentials[@]}"
+	     e_foreach "$command" "${languages[@]}"
+	     e_foreach "$command" "${devops[@]}"
+	     e_foreach "$command" "${wm_packges[@]}"
+	     e_foreach "$command" "${user_packages[@]}"
+	     e_foreach "$command" "${media[@]}"
+	     e_foreach "$command" "${virtualization[@]}"
+	     e_foreach "$command" "${wine[@]}"
+	     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+	     e_foreach "$command" "${ruby_tools[@]}"
+	     # e_foreach "$command" "${emacs_deps[@]}"
+	     # e_foreach "$command" "${misc_deps[@]}"
+	     e_foreach "$command" "${laptop[@]}"
+	 }
+
+	 arch-services()
+	 {
+	     echo "systemctl"
+	     sudo systemctl disable mpd.service
+	     sudo systemctl disable mpd.socket
+	 }
+
+	 arch-foreign()
+	 {
+	     if [ ! $(command -v google-chrome) ]; then
+		 cd ${HOME}
+		 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+		 sudo apt install -y ${HOME}/google-chrome-stable_current_amd64.deb
+		 sudo apt update
+	     fi
+
+	     if [ ! $(command -v code) ]; then
+		 cd ${HOME}
+		 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+		 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+		 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+		 sudo apt-get install apt-transport-https
+		 sudo apt-get update
+		 sudo apt install -y code
+	     fi
+
+	     if [ -x "$(command -v pgadmin)" ]; then
+		 # Install the public key for the repository (if not done previously):
+		 curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+		 # Create the repository configuration file:
+		 sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+		 # Install for both desktop and web modes:
+		 sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
+
+		 # Configure the webserver, if you installed pgadmin4-web:
+		 python -m pip install --user flask
+		 sudo /usr/pgadmin4/bin/setup-web.sh
+	     fi
+	 }
+
+	 # * RUN
+
+	 arch-upgrade
+	 arch-packages
+	 arch-services
+	 # arch-foreign
+
+
+      #!/usr/bin/env bash
+
+      # set -e
+
+      fedora-packages ()
+      {
+	  essentials=(zip unzip git tmux wget bash zile emacs)
+
+	  system=(p7zip p7zip-plugins openssh acpi lshw at usbutils lsof time net-tools iproute entr ntfs-3g tree xsel xclip ctags fontconfig freetype subversion bc htop strace ltrace cpio lzop atool wmctrl poppler-utils perf sysstat jq dialog ncdu ripgrep nnn fzf rsync bat rclone xonsh pv info stow screen autoconf texinfo firewall-config automake m4 libtool bzip2)
+
+	  programming=(ShellCheck zenity bash-completion cmake zsh fish gcc neovim gcc-c++ gdb clang clang-tools-extra lldb mercurial ncurses-devel)
+
+	  ruby=(openssl-devel python2 libyaml-devel libffi-devel readline-devel zlib-devel gdbm-devel)
+
+	  infra=(vagrant vagrant-libvirt VirtualBox qemu qemu-system-x86 qemu-kvm virt-manager wine) # podman edk2-ovmf
+
+	  user=(firefox kde-connect ImageMagick gimp pandoc libreoffice calibre inkscape krita atril liveusb-creator perl-File-MimeInfo aspell aspell-en syncthing lm_sensors xdg-utils dmenu xprop screenfetch numix-gtk-theme numix-icon-theme)
+
+	  fonts=(mozilla-fira-mono-fonts powerline-fonts google-noto-emoji-fonts google-noto-sans-fonts google-droid-sans-mono-fonts)
+
+	  media=(vorbis-tools gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-plugins-base-devel gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras)
+
+	  echo "Instalando pacotes."
+
+	  local command='sudo dnf install -y'
+
+	  e_foreach "$command ${essentials[@]}"
+	  e_foreach "$command ${ruby[@]}"
+	  e_foreach "$command ${programming[@]}"
+	  e_foreach "$command ${system[@]}"
+	  e_foreach "$command ${infra[@]}"
+	  e_foreach "$command ${user[@]}"
+	  e_foreach "$command ${fonts[@]}"; sudo fc-cache -fv
+	  e_foreach "$command ${media[@]}"
+      }
+
+      fedora-upgrade()
+      {
+	  sudo dnf upgrade -y
+	  sudo dnf autoremove -y
+      }
+
+      fedora-services()
+      {
+	  sudo hostnamectl set-hostname 'fedora'
+      }
+
+      fedora-foreign()
+      {
+	  rpmfusion()
+	  {
+	      # RPM FUSION
+	      if [ ! -x "$(command -v mpv)" ]; then
+		  sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+		  sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+		  sudo dnf install -y ffmpeg mpv steam unrar
+	      fi
+	  }
+
+	  vscode()
+	  {
+	      if [ ! -x "$(command -v code)" ]; then
+		  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+		  sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+		  sudo dnf check-update -y
+		  sudo dnf install -y code
+	      fi
+	  }
+
+	  docker()
+	  {
+	      echo 'docker'
+	  }
+
+	  podman()
+	  {
+	      echo 'podman'
+	  }
+
+	  rpmfusion
+	  podman
+	  vscode
+	  docker
+      }
+
+      # * RUN
+
+      fedora-upgrade
+      fedora-packages
+      # fedora-services
+      # fedora-foreign
+
+
+   #!/usr/bin/env bash
+
+   # set -e
+
+   # * UBUNTU
+
+   ubuntu-packages()
+   {
+       essentials=(ssh make build-essential git p7zip p7zip-full zip unzip zile neovim tmux curl wget bash emacs gcc)
+
+       ruby=(python2 autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev)
+
+       programming=(shellcheck zenity bash-completion m4 libtool libtool-bin default-jdk clang clangd lldb cmake)
+
+       virtualization=(wine wine32 winetricks qemu qemu-system-x86 qemu-system-gui qemu-utils qemu-efi qemu-kvm virt-manager ovmf virt-manager) # libvirt-clients libvirt-daemon-system libvirt-dev libvirt0
+
+       toolings=(htop zsh screen gdb ripgrep lshw at usbutils lsof time entr tree git xsel xclip exuberant-ctags fontconfig libfreetype6 subversion bc gdebi strace ltrace cpio lhasa lzop atool wmctrl poppler-utils brz mercurial sysstat jq dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv vrms info stow parted texinfo autoconf automake gnutls-bin bash-doc gcc-doc gdb-doc gdbserver wget2 parallel nftables libiw-dev)
+
+       fonts=(fonts-firacode fonts-dejavu ttf-ancient-fonts fonts-nanum)
+
+       de=(firefox syncthing libreoffice calibre inkscape kdenlive deluge obs-studio vlc mpv steam inxi fish imagemagick pandoc screenfetch lm-sensors aspell gimp numix-icon-theme numix-gtk-theme)
+
+       media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+
+       echo "Instalando pacotes."
+
+       local command='sudo apt install -y'
+       e_foreach "$command" "${essentials[@]}"
+       e_foreach "$command" "${ruby[@]}"
+       e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
+       e_foreach "$command" "${programming[@]}"
+       e_foreach "$command" "${virtualization[@]}"
+       e_foreach "$command" "${toolings[@]}"
+       e_foreach "$command" "${de[@]}"
+       e_foreach "$command" "${media[@]}"
+   }
+
+   ubuntu-upgrade()
+   {
+       echo "-- Updating System"
+
+       sudo apt -y update && sudo apt -y upgrade
+       sudo apt -y autoremove
+   }
+
+   ubuntu-services()
+   {
+       enable-all-repos()
+       {
+	   echo ""
+       }
+
+       enable-all-repos
+   }
+
+   # * RUN
+
+   ubuntu-upgrade
+   ubuntu-packages
+   #ubuntu-services
+
+   #+end_src
 ** Nyxt
    #+begin_src conf ~/.config/nyxt/init.lisp :mkdirp yes
    (in-package :next-user)
@@ -9058,6 +9613,474 @@
 
      #+END_SRC
 * Languages
+** Common Lisp
+*** Progress
+**** Books
+     | Books            | Capitulo      | em | tarde | revisao |
+     |------------------+---------------+----+-------+---------|
+     | ANSI Common Lisp | 4.4 Sequences |    |       |         |
+     |                  |               |    |       |         |
+
+**** LDC
+     | Source Code | folder | file | @ |
+     |-------------+--------+------+---|
+     | sbcl        |        |      |   |
+     | asdf        |        |      |   |
+     | alexandria  |        |      |   |
+*** Features
+**** array
+***** eg
+      #+begin_src lisp
+      (setf *print-array* t) ;; display form
+
+      (setf arr (make-array '(2 3) : initial-element nil)) ;; make
+      (aref arr 0 0) ;; retrieve
+      (setf (aref arr 0 0) 'b) ;; replace
+      #2a((b nil nil) (nil nil nil))
+      (vector "a" 'b 3)
+      #+end_src
+***** annnotaion
+      - multiple dimensions
+      - zero indexed
+      - one-dimensional array is also called a vector
+
+**** lists
+***** list
+***** dotted (proper) list
+      - is either nil, or a cons whose cdr is a proper list
+      - dot notation
+      - separated by a period
+***** assoc lists (alist)
+      - mapping
+      - are slow
+      - good for prototyping
+      - assoc retrieves the pair associated with a given key else nil
+      - assoc-if
+**** conditionals
+***** let
+***** cond
+***** when
+***** unless
+**** comparable
+***** equal
+***** eql
+***** nth
+***** sort
+      - destructive
+**** Misc
+***** member
+***** member-if
+***** every
+***** some
+***** keywords (:test)
+**** Short Notations
+***** #'
+***** '
+***** `(,)
+***** '()
+**** Predicates
+***** evenp
+***** oddp
+***** consp
+***** atom
+**** Sets
+***** union
+***** intersection
+***** set-difference
+***** adjoin
+***** member
+**** Sequences
+***** length
+***** subseq
+***** reverse
+** [[https://schemers.org/][Scheme]]
+*** Scheme Books
+**** SICP
+***** Chapter 1
+****** Examples
+******* sqrt
+	#+BEGIN_SRC scheme
+
+	(define (average x y)
+          (/ (+ x y) 2))
+
+	(define (improve guess x)
+          (average guess (/ x guess)))
+
+	(define (square y)
+          (* y y))
+
+	(define (good-enough? guess x)
+          (< (abs (- (square guess) x)) 0.001))
+
+	(define (sqrt-iter guess x)
+          (if (good-enough? guess x)
+              guess
+              (sqrt-iter (improve guess x) x)))
+
+
+	(sqrt 9)
+	(sqrt (+ 100 37))
+	(sqrt (+ (sqrt 2) (sqrt 3)))
+	(square (sqrt 1000))
+
+	#+END_SRC
+******* sqrt (nested)
+	#+BEGIN_SRC scheme
+
+	(define (sqrt x)
+          (define (good-enough? guess x)
+            (< (abs (- (square guess) x)) 0.001))
+
+          (define (improve guess x) (average guess (/ x guess)))
+
+          (define (sqrt-iter guess x)
+            (if (good-enough? guess x)
+		guess
+		(sqrt-iter (improve guess x) x)))
+          (sqrt-iter 1.0 x))
+	#+END_SRC
+
+******* sqrt (nested/improved)
+	#+BEGIN_SRC scheme
+
+	(define (sqrt x)
+          (define (good-enough? guess)
+            (< (abs (- (square guess) x)) 0.001))
+
+          (define (improve guess)
+            (average guess (/ x guess)))
+
+          (define (sqrt-iter guess)
+            (if (good-enough? guess)
+		guess
+		(sqrt-iter (improve guess))))
+          (sqrt-iter 1.0))
+	#+END_SRC
+
+******* factorial
+	#+BEGIN_SRC scheme
+
+	(define (factorial n)
+          (if (= n 1)
+              1
+              (* n (factorial (- n 1)))))
+
+
+	(define (fact-iter product counter max-count)
+          (if (> counter max-count)
+              product
+              (fact-iter (* counter product)
+                         (* counter 1)
+                         max-count)))
+
+	(define (factorial n)
+          (fact-iter 1 1 n))
+
+	(define (factorial n)
+          (define (iter product counter)
+            (if (> counter n)
+		product
+		(iter (* counter product)
+                      (+ counter 1))))
+          (iter 1 1))
+
+	(factorial 3)
+
+	#+END_SRC
+
+****** Exercises
+******* Exercise 1.1:
+	Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression?
+	Assume that the sequence is to be evaluated in the order in which it is presented.
+
+	#+BEGIN_SRC scheme
+
+	10 ;; 10
+	(+ 5 3 4) ;; 12
+	(- 9 1) ;; 8
+	(/ 6 2) ;; 3
+	(+ (* 2 4) (- 4 6)) ;; 6
+	(define a 3) ;; a
+	(define b (+ a 1)) ;; b
+	(+ a b (* a b)) ;; 19
+	(= a b) ;; #f
+	(if (and (> b a) (< b (* a b)))
+            b
+            a) ;; 4 (#t)
+	(cond ((= a 4) 6)
+              ((= b 4) (+ 6 7 a))
+              (else 25)) ;; 16 (2)
+	(+ 2 (if (> b a) b a)) ;; 6
+	(* (cond ((> a b) a)
+                 ((< a b) b)
+                 (else -1))
+           (+ a 1)) ;; 16
+
+	#+END_SRC
+******* Exercise 1.2:
+	Translate the following expression into prefix form: 5+4+(2−(3−(6+45)))3(6−2)(2−7).
+
+	#+BEGIN_SRC scheme
+
+	(/ (+ 5 4
+              (- 2
+                 (- 3 (+ 6 (/ 4 5)))))
+           (* 3 (- 6 2) (- 2 7)))
+
+	#+END_SRC
+******* Exercise 1.3:
+	Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
+	*QUESTION* *ERROR?*: If 2 number are equal but both are the smalest ones
+
+	#+BEGIN_SRC scheme
+
+	(define (square y)
+          (* y y))
+
+	(define (sum-square-two-numbers x y)
+          (+ (square x) (square y)))
+
+	(define (sum-square-the-two-largest-three-numbers x y n)
+          (if (and (>= x y) (>= y n))
+              (sum-square-two-numbers x y)
+
+              (if (<= y n)
+                  (if (<= x y)
+                      (sum-square-two-numbers n y)
+                      (sum-square-two-numbers x n))
+                  (sum-square-two-numbers y n))))
+
+	(two-largest-of-three 4 4 4)
+	(two-largest-of-three 4 3 2)
+	(two-largest-of-three 4 1 2)
+	(two-largest-of-three 1 4 3)
+
+	(define (sum-square-two-largest-of-three-numbers x y n)
+          (if (and (>= x y) (>= y n))
+              (display "x & y are the larger ones")
+
+              (if (<= y n)
+                  (if (<= x y)
+                      (display "n & y are the larger ones")
+                      (display "x & n are the larger ones"))
+                  (display "y & n are the larger ones"))))
+
+	#+END_SRC
+******* Exercise 1.4:
+	Observe that our model of evaluation allows for combinations whose operators are compound expressions.
+	Use this observation to describe the behavior of the following procedure:
+
+	#+BEGIN_SRC scheme
+
+	(define (a-plus-abs-b a b)
+          ((if (> b 0)
+               + -)
+           a b))
+
+	(a-plus-abs-b 3 2)
+	(a-plus-abs-b -3 2)
+	(a-plus-abs-b 3 -2)
+
+	ANSWER: If B is bigger than 0, (+ a b), else (- a b)
+
+	#+END_SRC
+******* Exercise 1.5:
+	Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using
+	applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
+
+	#+BEGIN_SRC scheme
+
+	(define (p) (p))
+
+	(define (test x y)
+          (if (= x 0)
+              0
+              y))
+
+	#+END_SRC
+
+	Then he evaluates the expression
+
+	#+BEGIN_SRC scheme
+
+	(test 0 (p))
+
+	#+END_SRC
+
+	What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What behavior will he
+	observe with an interpreter that uses normal-order evaluation? Explain your answer. (Assume that the evaluation rule
+	for the special form if is the same whether the interpreter is using normal or applicative order: The predicate
+	expression is evaluated first, and the result determines whether to evaluate the consequent or the alternative
+	expression.)
+******* Exercise 1.6
+	the new-if evaluate all of its parameters resulting in an
+	endless loop under sqrt-iter
+
+	sqrt-iter
+	new-if
+	sqrt-iter
+	new-if
+	#+BEGIN_SRC scheme
+
+
+	(define (average x y)
+          (/ (+ x y) 2))
+
+	(define (improve guess x)
+          (average guess (/ x guess)))
+
+	(define (square y) (* y y))
+
+	(define (good-enough? guess x)
+          (< (abs (- (square guess) x)) 0.001))
+
+	(define (new-if predicate then-clause else-clause)
+          (cond (predicate then-clause)
+		(else else-clause)))
+
+	(if (= 2 3) 0 5)
+	(if (= 1 1) 0 5)
+	(new-if (= 2 3) 0 5)
+	(new-if (= 1 1) 0 5)
+
+
+	(define (sqrt-iter guess x)
+          (new-if (good-enough? guess x)
+                  guess
+                  (sqrt-iter (improve guess x) x)))
+
+	(sqrt 9)
+	(sqrt (+ 100 37))
+	(sqrt (+ (sqrt 2) (sqrt 3)))
+	(square (sqrt 1000))
+
+	#+END_SRC
+
+**** Little Schemer
+***** Chapter 3 - Cons the Magnificent
+****** rember
+****** insertR
+       #+BEGIN_SRC scheme
+
+       (define insertR
+         (lambda (new old lat)
+           (cond
+            ((null? lat) (quote ()))
+            (else (cond
+                   ((eq? (car lat) old)
+                    (cons old
+                          (cons new (cdr lat))))
+                   (else (cons (car lat)
+                               (insertR new old (cdr lat)))))))))
+
+       (insertR 'topping 'fudge
+		(quote (ice cream with fudge for dessert)))
+       #+END_SRC
+****** insertL
+       #+BEGIN_SRC scheme
+
+       (define insertL
+         (lambda (new old lat)
+           (cond
+            ((null? lat) (quote ()))
+            (else (cond
+                   ((eq? (car lat) old)
+                    (cons new
+                          (cons old (dr lat)
+				(insertL)))))))))
+
+       (subst 'topping 'fudge
+              (quote (ice cream with fudge for dessert)))
+       #+END_SRC
+
+****** subst
+       #+BEGIN_SRC scheme
+
+       (define subst
+         (lambda (new old lat)
+           (cond
+            ((null? lat) (quote ()))
+            (else (cond
+                   ((eq? (car lat) old)
+                    (cons new (cdr lat)))
+                   (else (cons (car lat)
+                               (subst new old (cdr lat)))))))))
+
+       (subst 'topping 'fudge
+              (quote (ice cream with fudge for dessert)))
+
+
+
+
+       #+END_SRC
+
+****** subst2
+       #+BEGIN_SRC scheme
+
+       (define subst2
+         (lambda (new o1 o2 lat)
+           (cond
+            ((null? lat) (quote ()))
+            (else (cond
+                   ((eq? (car lat) o1)
+                    (cons new (cdr lat)))
+                   ((eq? (car lat) o2)
+                    (cons new (cdr lat)))
+                   (else (cons (car lat)
+                               (subst2 new o1 o2
+                                       (cdr lat)))))))))
+
+       (define lat )
+
+       (subst2 'vanilla 'chocolate 'banana '(banana ice cream
+                                                    with chocolate topping))
+       #+END_SRC
+
+**** Online books
+     https://htdp.org/2018-01-06/Book/
+
+*** Scheme Terms (table)
+    | Term                                         | Meaning |
+    |----------------------------------------------+---------|
+    | data directed programming (complex numbers)  |         |
+    | messaging passing                            |         |
+    | term list                                    |         |
+    | big case analisys                            |         |
+    | decentralized control                        |         |
+    | stream processing                            |         |
+    | state variables                              |         |
+    | backtracking search                          |         |
+    | memoization                                  |         |
+    | Normal Order Evaluation vs Applicative Order |         |
+
+*** Scheme Libraries
+    http://synthcode.com/scheme/fmt/
+*** TODO Scheme
+**** TODO wayland guile scheme window manager -- with an emacs feels
+*** Scheme Videos
+    [[https:https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures][SICP Videos]]
+
+    https://vimeo.com/lispnyc
+
+*** Scheme Articles
+    http://www.troubleshooters.com/codecorn/scheme_guile/hello.htm
+
+    https://schemers.org/Documents/
+
+    https://schemers.org/
+
+    https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/
+
+    https://www.wikiwand.com/en/Homoiconicity#/Implementation_methods
+*** Scheme - Blogs
+    https://catonmat.net/
+
+    http://www.lambdanative.org
+
+    http://www.schemespheres.org
+
+    https://schemers.org
 ** Haskell
 *** TOC
     :PROPERTIES:

@@ -1,0 +1,23 @@
+#+TILE: Lisp Programming Languages - Study Annotations
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+  - [[#books][Books]]
+  - [[#sloc][SLOC]]
+:END:
+* Progress
+** Books
+   | Books      | Cap | @ | late | revision |
+   |------------+-----+---+------+----------|
+   | Emacs Lisp |     |   |      |          |
+
+** SLOC
+   | Source Code | folder      | file        | @ |
+   |-------------+-------------+-------------+---|
+   | emacs       | lisp/eshell | esh-util.el |   |
+   | use-package |             |             |   |
+   |             |             |             |   |
