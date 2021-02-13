@@ -133,11 +133,10 @@
   (elfeed-db-directory "~/.config/elfeed")
 
   (elfeed-feeds
-   '("https://planet.gnu.org/rss20.xml"
-     "https://www.fsf.org/static/fsforg/rss/news.xml"
-     "https://www.fsf.org/static/fsforg/rss/blogs.xml"
+   '("https://bits.debian.org/feeds/atom.xml"
+     "https://micronews.debian.org/feeds/atom.xml"
      "https://nullprogram.com/feed"
-     "https://tonarinoyj.jp/rss/series/13932016480028984490"
+     "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://www.linuxtoday.com/biglt.rss"
      "https://www.omgubuntu.co.uk/feed"
      "https://www.reddit.com/r/emacs/.rss"
@@ -147,6 +146,7 @@
      "https://www.reddit.com/r/ruby/.rss"
      "https://www.redhat.com/sysadmin/rss.xml"
      "https://drewdevault.com/blog/index.xml"
+     "https://eregon.me/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
@@ -678,9 +678,6 @@
   (setq-default beacon-lighter "")
   (setq-default beacon-size 20))
 
-(use-package guix
-  :defer t)
-
 (use-package doom-modeline
   :defer 1
   :custom
@@ -715,6 +712,7 @@
 		       doom-palenight
 		       doom-miramare
 		       doom-moonlight
+		       doom-laserwave
 		       doom-nord
 		       doom-nord-light
 		       doom-oceanic-next
