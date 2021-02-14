@@ -1,8 +1,8 @@
 ;;; -*- lexical-binding: t;
 
-(defun e/install-external-packages (lst)
+(defun --e-install-packages (lst)
   "Install LST list."
-  (interactive)
+  ;; (interactive)
 
   (package-refresh-contents)
   (dolist (package lst)
@@ -20,6 +20,9 @@
 		use-package-expand-minimally t
 		use-package-enable-imenu-support t))
 
-(e/install-external-packages package-selected-packages)
+(defun e/install-packages ()
+  "Install all packagesin package-selected-packages."
+  (interactive)
+    (--e-install-packages package-selected-packages))
 
 (provide 'init-repository-get)
