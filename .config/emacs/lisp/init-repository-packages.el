@@ -135,8 +135,8 @@
   (elfeed-feeds
    '("https://bits.debian.org/feeds/atom.xml"
      "https://micronews.debian.org/feeds/atom.xml"
-     "https://nullprogram.com/feed"
      "https://www.ruby-lang.org/en/feeds/news.rss"
+     "https://edelpero.svbtle.com/feed"
      "https://www.linuxtoday.com/biglt.rss"
      "https://www.omgubuntu.co.uk/feed"
      "https://www.reddit.com/r/emacs/.rss"
@@ -663,7 +663,7 @@
   (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
 
 (use-package quelpa
-  :defer 1
+  :defer t
   :config
   (quelpa
    '(quelpa-use-package
