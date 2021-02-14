@@ -21,7 +21,7 @@ packages()
 {
     echo 'Installing guix packages'
 
-    local packages=(glibc-utf8-locales icecat)
+    local packages=(glibc-utf8-locales font-gnu-freefont-ttf icecat)
 
     for pack in "${packages[@]}"
     do
