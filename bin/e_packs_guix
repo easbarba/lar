@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+bootstrap()
+{
+    [[ -x $(command -v guix) ]] && return
+
+    wget -P /tmp https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+
+    wget 'https://sv.gnu.org/people/viewgpg.php?user_id=15145' -qO - | sudo -i gpg --import -
+
+    sudo bash /tmp/guix-install.sh
+}
+
+update()
+{
+    guix pull
+    guix package -u
+}
+
+packages()
+{
+    echo 'Installing guix packages'
+
+    local packages=(glibc-utf8-locales icecat)
+
+    for pack in "${packages[@]}"
+    do
+	guix install "${pack}"
+    done
+}
+
+# * PATH
+
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+# * RUN
+
+bootstrap
+update
+packages
