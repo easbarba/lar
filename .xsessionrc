@@ -55,6 +55,11 @@ js()
     export PATH="$dir"${PATH:+:}$PATH
 }
 
+guix()
+{
+    local dir="/home/easbarbosa/.guix-profile"
+    export PATH="$dir"${PATH:+:}$PATH
+}
 
 asdf()
 {
