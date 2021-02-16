@@ -23,6 +23,7 @@
   - [[#steam][Steam]]
   - [[#fallout-1][Fallout 1]]
   - [[#wineproton][Wine/Proton]]
+  - [[#alien-isolation][alien isolation]]
 - [[#music][Music]]
   - [[#classic-composers][Classic Composers]]
   - [[#misc][Misc]]
@@ -328,6 +329,8 @@
 
     Game Settings -> audio -> "Miles Fast" Provider
 
+** alien isolation
+   0340
 * Music
 ** Classic Composers
    - Berlioz
