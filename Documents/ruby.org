@@ -8,6 +8,17 @@
 - [[#progress][Progress]]
   - [[#books][Books]]
   - [[#sloc][SLOC]]
+- [[#packages][Packages]]
+  - [[#gem][gem]]
+  - [[#bundle][bundle]]
+    - [[#outdated][outdated]]
+    - [[#gem][gem]]
+    - [[#install][install]]
+    - [[#update][update]]
+  - [[#irb][irb]]
+  - [[#rspec][rspec]]
+  - [[#unit-test][unit test]]
+  - [[#pry][pry]]
 - [[#features][Features]]
   - [[#project-structure][project structure]]
   - [[#system-errors][System Errors]]
@@ -112,6 +123,42 @@
    |---------+-----------------+----------------+-----------------------|
    | ruby    | lib/bundler/cli | install.rb     |                       |
    | rake    | lib/rake        | application.rb | display_cause_details |
+* Packages
+** gem
+   |                             |   |
+   |-----------------------------+---|
+   | install <name> -v <version> |   |
+   | which                       |   |
+   | list                        |   |
+   | search                      |   |
+   | env                         |   |
+   | info <name>                 |   |
+
+** bundle
+*** outdated
+*** gem
+    |                   |   |
+    |-------------------+---|
+    | list              |   |
+    | which <name>      |   |
+    | gem search <name> |   |
+
+*** install
+*** update
+    | subcommand                  | desc                                                       |
+    |-----------------------------+------------------------------------------------------------|
+    | all                         | update all gems                                            |
+    | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
+    | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
+    | --quiet                     |                                                            |
+    | --redownload                |                                                            |
+    | --minor                     | Prefer updating only to next minor version.                |
+    | --major                     | Prefer updating to next major version (default).           |
+    |                             |                                                            |
+** irb
+** rspec
+** unit test
+** pry
 * Features
 ** project structure
    #+begin_src ruby
@@ -306,7 +353,26 @@
     $? # return global status of last command
     #+end_src
 ** self
+   - is a keyword
    - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
+
+     #+begin_src ruby
+
+     class tea
+       def self.drink () # Class-Level method (static)
+	 puts 'drinking'
+       end
+
+       def meh
+	 puts self # refers to tea class
+       end
+
+       def builder
+
+	 self # return class
+       end
+     end
+     #+end_src
 ** commentary
    #+begin_src ruby
    # one line commentary

@@ -385,11 +385,11 @@
 
   *Euber Alexandre De Sousa Barbosa*
 
-  Brasília, DF - (61) 98110 - 3178
+  Brasília, DF - (61) 981103178
 
   easbarbosa@pm.me
 
-  @easbarbosa: Github, Gitlab, Twitter
+  @easbarbosa: git.sr.ht, github, gitlab, twitter
 
 
   *OBJETIVO*
@@ -409,12 +409,11 @@
 
   *SKILLS*
   -----
-    - Desenvolvimento de Aplicações CLI em Golang, Ruby, .NET e Common Lisp.
+    - Desenvolvimento de Aplicações CLI em Ruby e Common Lisp.
     - Ferramentas e Configurações em Sistemas UNIX em especial Debian, FreeBSD.
     - Experiência em Shell Script em GNU Bash, Fish Shell e POSIX.
-    - Controle de Versão com Git: Squash, Merge.
-    - AWS Cloud:
-    - Criacao e Gerencia de imagens Docker.
+    - Controle de Versão com Git: Rebase, Squash, Merge.
+    - Criacao e Gerencia de imagens containers.
     - Básico em Front-End: HTML,CSS.
     - Uso de editores CLI como GNU Emacs, NeoVIM, Nano.
     - Soft Skills sendo Secretário de Advocacia e Radio Taxi.
