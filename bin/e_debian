@@ -16,79 +16,78 @@ upgrade()
 packages ()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
-    build-essential curl emacs)
+		build-essential curl emacs)
 
     programming=(shellcheck zenity libpq-dev bash-completion cmake
-    mercurial clang libsqlite3-dev)
+		 mercurial clang libsqlite3-dev)
 
     ruby=(libssl-dev)
 
     system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
-    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
-    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
-    cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq
-    dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
-    locate info wget stow parted texinfo autoconf automake gnutls-bin
-    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
-    firewall-config socat vrms fzf aria2)
+	    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
+	    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
+	    cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq
+	    dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
+	    locate info wget stow parted texinfo autoconf automake gnutls-bin
+	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
+	    firewall-config socat vrms fzf aria2)
 
     qt=(kdeconnect kdenlive clementine ktorrent)
 
     gtk=(cheese transmission-gtk atril)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
-    qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
+	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf)
 
     fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum
-    fonts-freefont-ttf fonts-dejavu)
+	   fonts-freefont-ttf fonts-dejavu)
 
     security=(gnutls-bin)
 
     laptop=(iw wireless-tools libiw-dev laptop-mode-tools
-    i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
-    lm-sensors hddtemp)
+	    i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
+	    lm-sensors hddtemp)
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
     wmpacks=(network-manager-gnome aria2 dunst maim udiskie unclutter
-    ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi
-    seahorse x11proto-dev brightnessctl tlp acpi-call)
+	     ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi
+	     seahorse x11proto-dev brightnessctl tlp acpi-call)
 
     user=(firefox libreoffice calibre inkscape screenkey gimp
-    obs-studio syncthing mpv libnotify-bin imagemagick pandoc
-    screenfetch aspell aspell-pt-br telegram-desktop)
+	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
+	  screenfetch aspell aspell-pt-br telegram-desktop)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
-    gstreamer1.0-plugins-base gstreamer1.0-plugins-good
-    gstreamer1.0-plugins-ugly)
+	   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+	   gstreamer1.0-plugins-ugly)
 
     latex=(texlive-latex-recommended texlive-latex-extra
-    texlive-latex-base)
+	   texlive-latex-base)
 
     amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0
-    mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
-    mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
+	 mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
+	 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
 
     echo "-- Habilita Multi-Arch"
     sudo dpkg --add-architecture i386
 
     echo "Instalando pacotes."
-    local command='sudo apt install -y'
+
+    local command
+    command='sudo apt install -y'
 
     e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
-    # e_foreach "$command" "${wm[@]}"
     e_foreach "$command" "${debian[@]}"; sudo apt-file update -y # update Debian database
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${qt[@]}"
-    # e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt "$USER" # libvirt
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
-    # e_foreach "$command" "${wmpacks[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${amd[@]}"
@@ -98,28 +97,48 @@ packages ()
 
 services()
 {
-    # Timezone
-    local desired_zone='America/Sao_Paulo'
-    local current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
-    [[ $current_zone != 'America/Sao_Paulo' ]] && sudo timedatectl set-timezone America/Sao_Paulo
+    kdeconnect()
+    {
+	sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+	sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+	sudo systemctl restart firewalld.service
+    }
 
-    # set python to python3
-    sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+    timezone()
+    {
+	local current_zone
+	local desired_zone
+
+	desired_zone='America/Sao_Paulo'
+	current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+
+	[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
+    }
+
+    alternatives()
+    {
+	# set python to python3
+	sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+    }
+
+    alternatives
+    timezone
+    kdeconnect
 }
 
 foreign()
 {
+    # Non-Debian packages
+
     chrome()
     {
-        wget -P "$HOME/Downloads" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-        sudo apt install -y "$HOME/Downloads/google-chrome-stable_current_amd64.deb"
-        sudo apt update
+        sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
     }
 
     code()
     {
-        cd ${HOME}
         wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
         sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
         sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -127,22 +146,6 @@ foreign()
         sudo apt-get install -y apt-transport-https
         sudo apt-get update
         sudo apt install -y code
-    }
-
-    pgadmin()
-    {
-        # Install the public key for the repository (if not done previously):
-        curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
-
-        # Create the repository configuration file:
-        sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/buster pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
-
-        # Install for both desktop and web modes:
-        sudo apt install pgadmin4 pgadmin4-desktop pgadmin4-web
-
-        # Configure the webserver, if you installed pgadmin4-web:
-        python -m pip install --user flask
-        sudo /usr/pgadmin4/bin/setup-web.sh
     }
 
     chrome
