@@ -137,6 +137,7 @@
      "https://micronews.debian.org/feeds/atom.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://edelpero.svbtle.com/feed"
+     "https://debxp.org/feed/"
      "https://www.linuxtoday.com/biglt.rss"
      "https://www.omgubuntu.co.uk/feed"
      "https://www.reddit.com/r/emacs/.rss"
