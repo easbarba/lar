@@ -1,12 +1,12 @@
 ---
-- https://github.com/abo-abo/oremacs
-- https://github.com/jwiegley/dot-emacs
-- https://github.com/purcell/emacs.d
-- https://github.com/bbatsov/prelude
-- https://github.com/alphapapa/bufler.el
-- https://github.com/jwiegley/emacs-async
-- https://github.com/jwiegley/use-package
-- https://github.com/emacs-lsp/lsp-mode
-- https://github.com/emacs-tw/awesome-emacs
-- https://github.com/purcell/reformatter.el
-- git://git.sv.gnu.org/emacs
+- https://github.com/abo-abo/oremacs.git
+- https://github.com/jwiegley/dot-emacs.git
+- https://github.com/purcell/emacs.d.git
+- https://github.com/bbatsov/prelude.git
+- https://github.com/alphapapa/bufler.el.git
+- https://github.com/jwiegley/emacs-async.git
+- https://github.com/jwiegley/use-package.git
+- https://github.com/emacs-lsp/lsp-mode.git
+- https://github.com/emacs-tw/awesome-emacs.git
+- https://github.com/purcell/reformatter.el.git
+- git://git.sv.gnu.org/emacs.git
