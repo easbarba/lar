@@ -392,7 +392,7 @@
 
   easbarbosa@pm.me
 
-  @easbarbosa: git.sr.ht, github, gitlab, twitter
+  @easbarbosa: git.sr.ht, github, gitlab, telegram
 
 
   *OBJETIVO*
@@ -400,8 +400,8 @@
     Usuário de Distribuições Linux por mais de 10 anos qual experimentei
     suas versões de servidores e suas ferramentas internas como compilamento de Kernel,
     gerenciadores de empacotamento, compilacao de software C com uso do make, cmake, ninja,
-    como também uso extenso de aplicacoes CLI como Grep, Find, Gerenciamento de Processos, ssh,
-    Windows Managers e automação de tasks com scripts.
+    como também uso extenso de aplicacoes cli como Grep, Find, Gerenciamento de Processos, ssh,
+    Windows Managers e automação de tarefas com Shell Scripts.
 
 
   *EDUCAÇÃO*
@@ -409,17 +409,18 @@
     - Direito - IESB (Trancado)
     - Ciência da Computação, UCB (Cursando)
     - Inglês Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
+    - Soft Skills sendo Secretário de Advocacia e Radio Taxi.
 
   *SKILLS*
   -----
-    - Desenvolvimento de Aplicações CLI em Ruby e Common Lisp.
-    - Ferramentas e Configurações em Sistemas UNIX em especial Debian, FreeBSD.
+    - Desenvolvimento de Aplicações CLI em Ruby e .
+    - Ferramentas e Configurações do Debian, CentOS.
     - Experiência em Shell Script em GNU Bash, Fish Shell e POSIX.
     - Controle de Versão com Git: Rebase, Squash, Merge.
+    - Databases
     - Criacao e Gerencia de imagens containers.
     - Básico em Front-End: HTML,CSS.
-    - Uso de editores CLI como GNU Emacs, NeoVIM, Nano.
-    - Soft Skills sendo Secretário de Advocacia e Radio Taxi.
+    - Uso de editores GNU Emacs, NeoVIM, Nano, VSCode.
 
 * Delivery
   981103178
