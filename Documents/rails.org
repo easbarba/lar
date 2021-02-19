@@ -102,6 +102,8 @@
    | errors            | a.errors.any? / a.errors.full_messages / a.errors.messages[:title] |                                                                                                                                    |
    |                   | a.valid?                                                           |                                                                                                                                    |
    | reload            |                                                                    | reloads the Rails application environment within your console session. You need to call it when you make changes to existing code. |
+   | routes --expanded |                                                                    |                                                                                                                                    |
+   | byebug            |                                                                    |                                                                                                                                    |
 
 ** ENV
    |   |                      |   |
