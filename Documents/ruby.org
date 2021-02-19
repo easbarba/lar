@@ -117,6 +117,7 @@
    | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |                                               |
    | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |                                               |
    | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |                                               |
+   | Clean Ruby                                                | Creating Methods Quality                       |                                                          |                                |                                               |
 
 ** SLOC
    | Project | folder          | file           | @                     |
