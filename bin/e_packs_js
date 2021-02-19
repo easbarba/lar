@@ -54,6 +54,8 @@ packages()
 
 # * RUN
 
+echo 'Nodejs - ASDF'
+
 asdf_nodejs
 asdf_yarn
 packages

@@ -35,6 +35,8 @@ export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 # * RUN
 
+echo 'Guix Packs'
+
 bootstrap
 update
 packages

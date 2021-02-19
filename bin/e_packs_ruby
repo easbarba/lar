@@ -36,5 +36,7 @@ packages()
 
 # * RUN
 
+echo 'Ruby - ASDF'
+
 asdf_ruby
 packages
