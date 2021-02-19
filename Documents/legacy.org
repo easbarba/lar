@@ -165,7 +165,7 @@ update: update
 upgrade: upgrade
 
     #+end_src
-*** Oss.json
+*** floss
    #+begin_src json
    "lisp": [
        "https://github.com/CodyReichert/awesome-cl",
@@ -182,29 +182,6 @@ upgrade: upgrade
        "git://git.code.sf.net/p/sbcl/sbcl"
    ],
 
-   "c": [
-       "https://github.com/json-c/json-c.git",
-       "https://gitlab.freedesktop.org/mesa/mesa",
-       "https://github.com/teslamotors/coreboot",
-       "https://github.com/systemd/systemd",
-       "https://github.com/mate-desktop/mate-terminal",
-       "https://github.com/mate-desktop/marco",
-       "https://github.com/mate-desktop/mate-desktop",
-       "https://github.com/mate-desktop/atril",
-       "https://github.com/openssh/openssh-portable",
-       "https://github.com/libressl-portable/portable",
-       "https://git.suckless.org/st",
-       "https://git.suckless.org/dwm",
-       "https://github.com/mpv-player/mpv",
-       "https://github.com/ggreer/the_silver_searcher",
-       "https://github.com/zsh-users/zsh",
-       "https://github.com/FFmpeg/FFmpeg",
-       "git://source.winehq.org/git/wine",
-       "https://github.com/git/git",
-       "https://github.com/tmux/tmux",
-       "https://github.com/antirez/redis",
-       "https://github.com/curl/curl"
-   ],
    "golang": [
        "https://github.com/hashicorp/nomad",
        "https://github.com/hashicorp/consul",
