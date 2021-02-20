@@ -1,50 +1,8 @@
 ;;; -*- lexical-binding: t;
 
 ;; ============================
-;; * GLOBAL VARIABLES
-
-(defconst *site-lisp* (concat user-emacs-directory "site-lisp")
-  "Emacs site-lisp folder.")
-
-(defconst *lar* (getenv "HOME")
-  "$HOME folder location.")
-
-(defconst *xdg-config* (concat *lar* "/.config")
-  "XDG Config folder.")
-
-(defconst *local* (concat *lar* "/.local")
-  "$HOME/.local folder.")
-
-(defconst *share* (concat *local* "/share")
-  "XDG local share folder.")
-
-(defconst *download* (concat *lar* "/Downloads")
-  "$HOME/Download folder.")
-
-(defgroup *vars* nil
-  "CUSTOM variables set by user"
-  :group 'extensions
-  :group 'convenience)
-
-(defcustom *video* (concat *lar* "/Videos")
-  "Folder to save videos."
-  :type 'string
-  :group '*vars*)
-
-(defcustom *musica* (concat *lar* "/Music")
-  "Folder to save songs."
-  :type 'string
-  :group '*vars*)
-
-(defcustom *space* "\s"
-  "Folder to save songs."
-  :type 'string
-  :group '*vars*)
-
-(defcustom *and* "\s&&\s"
-  "Folder to save songs."
-  :type 'string
-  :group '*vars*)
+;; * CUSTOM FUNCTIONS
+;; ============================
 
 ;; ===============
 ;; * SYSTEM SOFTWARE
@@ -92,7 +50,7 @@
 (defun e/get-audio (url)
   "Download Audio w/ URL - GPL-3.0!"
   (interactive "p")
-  (let ((default-directory *musica*)
+  (let ((default-directory *music*)
 	(format "--extract-audio")
 	(audio-format "--audio-format")
 	(audio-extension "vorbis"))
@@ -428,4 +386,4 @@ Saves to a temp file and puts the filename in the kill ring."
   (when (executable-find package)
     t))
 
-(provide 'init-my)
+(provide 'init-functions)

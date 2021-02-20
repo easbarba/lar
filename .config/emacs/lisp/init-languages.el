@@ -2,29 +2,11 @@
 
 ;; ====================
 ;; * LANGUAGE MODES
+;; ====================
 
-;; ** C
-(add-hook 'c-mode-hook
-	  '(lambda ()
-	     ;; (local-set-key (kbd "<tab>") 'indent-for-tab-command)
-	     (setq c-default-style "linux"
-		   c-basic-offset 4
-		   truncate-lines t)))
-
-
-;; ** COMMON LISP
-(add-hook 'lisp-mode-hook
-	  '(lambda ()
-	     ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
-	     (require 'cl-lib)
-	     (setq inferior-lisp-program "sbcl")))
-
-
-;; ** JSON
-(add-hook 'json-mode-hook
-	  '(lambda () (local-set-key (kbd "C-c i") 'json-pretty-print-buffer-ordered)))
-
+;; ====================
 ;; ** Ruby
+
 (add-hook 'ruby-mode-hook
 	  '(lambda ()
 	     (setq ruby-align-chained-calls t)
@@ -38,7 +20,34 @@
 	     ;; (add-auto-mode 'conf-mode "Gemfile\\.lock\\'")
 	     ))
 
+;; ====================
+;; ** C
+
+(add-hook 'c-mode-hook
+	  '(lambda ()
+	     ;; (local-set-key (kbd "<tab>") 'indent-for-tab-command)
+	     (setq c-default-style "linux"
+		   c-basic-offset 4
+		   truncate-lines t)))
+
+;; ====================
+;; ** COMMON LISP
+
+(add-hook 'lisp-mode-hook
+	  '(lambda ()
+	     ;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
+	     (require 'cl-lib)
+	     (setq inferior-lisp-program "sbcl")))
+
+;; ====================
+;; ** JSON
+
+(add-hook 'json-mode-hook
+	  '(lambda () (local-set-key (kbd "C-c i") 'json-pretty-print-buffer-ordered)))
+
+;; ====================
 ;; ** PYTHON
+
 (add-hook 'python-mode-hook
 	  '(lambda ()
 	     (setq-default python-shell-interpreter "python3"

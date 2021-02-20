@@ -1,6 +1,9 @@
 ;;; -*- lexical-binding: t;
 
-;; ** DIRED
+;; =========================
+;; * DIRED
+;; =========================
+
 (add-hook
  'dired-mode-hook
  (lambda ()

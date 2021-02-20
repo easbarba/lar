@@ -1,7 +1,12 @@
 ;;; -*- lexical-binding: t;
 
-;; * PACOTES BUILTIN
+;; =========================
+;; * BUILTIN PACKAGES
+;; =========================
+
+;; =========================
 ;; ** IDO
+
 (require 'ido)
 (setq ido-everywhere t)
 (ido-mode 1)
@@ -50,7 +55,10 @@
      "M-x "
      (all-completions "" obarray 'commandp)))))
 
-;; ===== ORG-MODE
+;; =========================
+;; ** ORG-MODE
+
+
 (add-hook 'org-mode-hook
 	  (lambda ()
 	    (require 'org)
@@ -107,7 +115,9 @@
 	      '(define-key org-src-mode-map
 		 "\C-x\C-s" #'org-edit-src-exit))))
 
+;; =========================
 ;; ** ESHELL
+
 (add-hook 'eshell-mode-hook
           (lambda ()
             (require 'eshell)
@@ -276,7 +286,9 @@
             (add-hook 'after-save-hook
                       'executable-make-buffer-file-executable-if-script-p)))
 
+;; =========================
 ;; ** SHELL
+
 (defun e/shell-here ()
   "Open `shell' using directory associated with the current buffer's file.
 
@@ -300,7 +312,9 @@
     (ansi-term "bash" "Mini-Shell")))
 (global-set-key (kbd "C-c T") #'e/ansi-term-here)
 
+;; =========================
 ;; ** FLYMAKE
+
 (add-hook 'prog-mode-hook
           (lambda ()
             ;; (require 'flymake)
@@ -311,8 +325,9 @@
             (local-set-key (kbd "M-p") 'flymake-goto-prev-error)))
 
 
-
+;; =========================
 ;; ** INFO
+
 (add-hook 'Info-mode-hook
           (lambda ()
             (require 'info)
@@ -324,7 +339,9 @@
 
             (define-key Info-mode-map (kbd "W") 'define-word-at-point)))
 
+;; =========================
 ;; ** VC
+
 (add-hook 'prog-mode-hook
           (lambda ()
             (require 'vc)
@@ -334,7 +351,10 @@
 
             (define-key vc-prefix-map "=" 'vc-ediff)))
 
+
+;; =========================
 ;; ** DIFF
+
 (add-hook 'diff-mode-hook
           '(lambda ()
              ;; (require 'diff)
@@ -351,7 +371,9 @@
                            newline-mark))
              (whitespace-mode 1)))
 
+;; =========================
 ;; ** EDIFF
+
 (add-hook 'diff-mode-hook
           '(lambda ()
              (require 'ediff)
@@ -361,15 +383,18 @@
                            ediff-window-setup-function 'ediff-setup-windows-plain)
              (add-hook 'ediff-after-quit-hook-internal 'winner-undo)))
 
+;; =========================
 ;; ** OUTLINE
+
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (outline-minor-mode)
             (setq outline-regexp ";;\\ \\*")))
 
 
-
+;; =========================
 ;; ** RECENTF
+
 (require 'recentf)
 (recentf-mode 1)
 (run-at-time nil (* 5 120) 'recentf-save-list)
@@ -411,7 +436,9 @@
          (recentf-remove-if-non-kept buff-name))))
 (add-hook 'dired-after-readin-hook 'recentf-track-opened-file)
 
+;; =========================
 ;; ** IBUFFER
+
 ;; (require 'ibuffer)
 (global-set-key (kbd "C-c b i") 'ibuffer)
 (defalias 'list-buffers 'ibuffer) ;; make ibuffer the default buffer manager.
@@ -444,7 +471,9 @@
 
 ;; (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
 
+;; =========================
 ;; ** ERC
+
 (add-hook 'erc-mode-hook
 	  '(lambda ()
 	     (require 'erc)
@@ -489,7 +518,10 @@
 	     (erc-services-mode 1)
 	     (erc-update-modules)))
 
+
+;; =========================
 ;; ** DOC-VIEW
+
 (require 'doc-view)
 (setq doc-view-continuous t
       doc-view-resolution 400)
@@ -645,7 +677,9 @@ Requires an installation of ImageMagick (\"convert\")."
      :help "View"]
     ["Exit DocView Mode" doc-view-minor-mode]))
 
+;; =========================
 ;; ** FLYSPELL
+
 (require 'flyspell)
 (if (executable-find "aspell")
     (progn
@@ -657,13 +691,16 @@ Requires an installation of ImageMagick (\"convert\")."
 ;;                  text-mode-hook))
 ;;   (add-hook hooks 'flyspell-mode))
 
+;; =========================
 ;; ** ICOMPLETE
+
 (require 'icomplete)
 (icomplete-mode 1)   ;; Enable icomplete as much as possible
 
 
-
+;; =========================
 ;; ** ABBREV
+
 ;; (require 'abbrev)
 ;; (add-hook 'text-mode-hook 'abbrev-mode) ;; abbrev config
 ;; (setq-default abbrev-mode t)  ;; turn on abbrev mode globally
@@ -685,21 +722,24 @@ Requires an installation of ImageMagick (\"convert\")."
 (defadvice expand-abbrev (after move-to-point activate)
   (xah-global-abbrev-position-cursor))
 
-
+;; =========================
 ;; ** SAVEPLACE
+
 (require 'saveplace)
 (save-place-mode 1)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name "etc/places" user-emacs-directory)
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "etc/backups"))))
-
+;; =========================
 ;; ** GO-TO-ADDRESS
+
 (add-hook 'prog-mode-hook 'goto-address-mode)
 (add-hook 'text-mode-hook 'goto-address-mode)
 
-
+;; =========================
 ;; ** HIPPIE-EXPAND
+
 (require 'hippie-exp)
 
 (global-set-key (kbd "<C-tab>") 'hippie-expand)
@@ -726,8 +766,9 @@ Requires an installation of ImageMagick (\"convert\")."
         ;; Try to complete the current line to an entire line in the buffer.
         try-expand-line))
 
-
+;; =========================
 ;; ** IMAGE MODE
+
 (add-hook 'image-mode-hook
           (lambda () ;; open next/previous image fitted
             (local-set-key (kbd "<right>") (defun next-image-fitted ()
@@ -738,8 +779,9 @@ Requires an installation of ImageMagick (\"convert\")."
                                             (interactive)
                                             (image-previous-file 1)
                                             (image-transform-fit-to-width)))))
-
+;; =========================
 ;; ** WHITESPACE
+
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook
@@ -752,8 +794,9 @@ Requires an installation of ImageMagick (\"convert\")."
 (setq show-trailing-whitespace t
       whitespace-style '(face lines-tail))
 
-
+;; =========================
 ;; ** SAVEHIST
+
 (require 'savehist)
 (savehist-mode t)
 (setq savehist-save-minibuffer-history t
@@ -763,16 +806,21 @@ Requires an installation of ImageMagick (\"convert\")."
       savehist-additional-variables '(Info-history-list)
       savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
-
+;; =========================
 ;; ** EWW
+
 (with-eval-after-load "eww"
   (define-key eww-mode-map (kbd "W") 'define-word-at-point))
 
+;; =========================
 ;; ** WINDMOVE
+
 (require 'windmove)
 (setq windmove-wrap-around t )
 
+;; =========================
 ;; ** PRETTIFY-SYMBOLS
+
 (global-prettify-symbols-mode 1)
 (setq prettify-symbols-alist '(("lambda" . 955)))
 (defun e/add-pretty-lambda ()
@@ -786,25 +834,31 @@ Requires an installation of ImageMagick (\"convert\")."
 (add-hook 'clojure-mode-hook 'e/add-pretty-lambda)
 (add-hook 'haskell-mode-hook 'e/add-pretty-lambda)
 
+;; =========================
 ;; ** WINNER
+
 (winner-mode 1)
 ;; (remove-hook 'minibuffer-setup-hook 'winner-save-unconditionally)
 
-
+;; =========================
 ;; ** MIDNIGHT
+
 (require 'midnight)
 (midnight-delay-set 'midnight-delay "4:30am")
 (setq midnight-period 5000)
 
-
+;; =========================
 ;; ** UNIQUIFY
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward
       uniquify-after-kill-buffer-p t
       uniquify-separator "/"
       uniquify-ignore-buffers-re "^\\*")
 
+;; =========================
 ;; ** ISEARCH
+
 (defun e/isearch-exit-other-end ()
   "Exit isearch, at the opposite end of the string."
   (interactive)
@@ -817,7 +871,9 @@ Requires an installation of ImageMagick (\"convert\")."
 ;; (global-set-key (kbd "C-M-s") 'isearch-forward)
 ;; (global-set-key (kbd "C-M-r") 'isearch-backward)
 
+;; =========================
 ;; ** ELDOC
+
 (add-hook 'eldoc-mode-hook
           (lambda ()
             (require 'eldoc)
@@ -826,11 +882,10 @@ Requires an installation of ImageMagick (\"convert\")."
 
             (setq eldoc-idle-delay 0.1)))
 
-
+;; =========================
 ;; ** PAREN
-;; (require 'paren)
 
-;; Visually indicate matching pairs of parentheses.
-(show-paren-mode 1)
+;; (require 'paren)
+(show-paren-mode 1) ;; Visually indicate matching pairs of parentheses.
 
 (provide 'init-builtin)

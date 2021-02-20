@@ -17,15 +17,13 @@
 
 ;;; Information
 
-;; Author: Alexander Barbosa - elxbarbosa@outlook.com
+;; Author: Alexander Barbosa - easbarbosa@pm.me
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: download, git, elisp, library, minor-mode
-;; URL: https://github.com/eabarbosa/grab
+;; URL: https://.com/eabarbosa/grab
 
 ;;; Commentary:
-;; Still alpha, but I use it as daily driver.
-;; Additional features/update will respect and wont break its core.
 
 ;;; Usage:
 

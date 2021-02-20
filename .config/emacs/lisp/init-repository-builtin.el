@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t;
 
+;; =========================
+
 (use-package async
   :after dired
   :config
@@ -32,5 +34,24 @@
   :after dired
   :hook (dired-subtree . dired-mode))
 
+(use-package flx-ido
+  :disabled
+  :defer 1
+  :after ido
+  :config
+  (flx-ido-mode 1)
+  (setq ido-enable-flex-matching t))
 
-(provide 'init-builtin-extras)
+(use-package ido-completing-read+
+  :disabled
+  :defer 1
+  :after ido
+  :config (ido-ubiquitous-mode 1))
+
+(use-package ido-hacks
+  :disabled
+  :defer 1
+  :config (ido-hacks-mode))
+
+
+(provide 'init-repository-builtin)

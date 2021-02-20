@@ -2,6 +2,7 @@
 
 ;; ====================
 ;; * MODELINE
+;; ====================
 
 (defun simple-mode-line-render (left right)
   "Modeline separator generator by LEFT and RIGHT wings."

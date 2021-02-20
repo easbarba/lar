@@ -1,8 +1,11 @@
 ;;; -*- lexical-binding: t;
 
+;; ===================================
+;; * BOOTSTRAP REPOSITORY PACKAGES
+;; ===================================
+
 (defun --e-install-packages (lst)
   "Install LST list."
-  ;; (interactive)
 
   (package-refresh-contents)
   (dolist (package lst)
@@ -25,4 +28,4 @@
   (interactive)
     (--e-install-packages package-selected-packages))
 
-(provide 'init-repository-get)
+(provide 'init-repository-bootstrap)
