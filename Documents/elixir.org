@@ -17,9 +17,9 @@
 :END:
 * Progress
 ** Books
-   | Books                  | Chapter | @ | late | revision |
-   |------------------------+---------+---+------+----------|
-   | Programming Elixir 1.6 |         |   |      |          |
+   | Books                  | Chapter                  | @                                    | late | revision |
+   |------------------------+--------------------------+--------------------------------------+------+----------|
+   | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
 
 ** SLOC
    | Project | folder | file | @ |
@@ -28,11 +28,11 @@
 
 * Packages
 ** iex
-   |               |           |             |
-   |---------------+-----------+-------------|
-   | h [<feature>] | h IO.puts | help        |
-   | i             |           | interactive |
-   |               |           |             |
+   |               |               |                     |
+   |---------------+---------------+---------------------|
+   | h [<feature>] | h IO.puts     | help                |
+   | i             |               | interactive         |
+   | c <filepath>  | c 'hello.exs' | compile and execute |
 
 * Features
 * Tests
