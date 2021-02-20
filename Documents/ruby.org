@@ -107,17 +107,17 @@
 :END:
 * Progress
 ** Books
-   | Books                                                     | Chapter                                        | @                                                        | late                           | revision                                      |
-   |-----------------------------------------------------------+------------------------------------------------+----------------------------------------------------------+--------------------------------+-----------------------------------------------|
-   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language                          | Duck Typing/Numeric Coercion                             | Names                          | Fibers, Threads, and Processes/Multithreading |
-   | Closure in Ruby                                           |                                                |                                                          |                                |                                               |
-   | Build Awesome Cli apps                                    | Easy to use                                    | Documenting a Command Suite                              |                                |                                               |
-   | Practical Object-Oriented Design                          | Designing Classes with a Single Responsibility | 2.2.3 Determining If a Class Has a Single Responsibility |                                |                                               |
-   | Design Patterns in Ruby                                   | Strategy                                       |                                                          |                                |                                               |
-   | Pragmatic Build Awesome Command-Line Applications in Ruby |                                                |                                                          |                                |                                               |
-   | The Well Grounded Rubyist                                 | 12  File and I/O operations                    |                                                          |                                |                                               |
-   | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing              | Shorter Programs, But Not the Way You Think              | Spec: A Plethora of Assertions |                                               |
-   | Clean Ruby                                                | Creating Methods Quality                       |                                                          |                                |                                               |
+   | Books                                                     | Chapter                           | @                                           | late                           | revision                                      |
+   |-----------------------------------------------------------+-----------------------------------+---------------------------------------------+--------------------------------+-----------------------------------------------|
+   | Pragmatic Ruby (Pickaxe)                                  | 22. The Ruby language             | Duck Typing/Numeric Coercion                | Names                          | Fibers, Threads, and Processes/Multithreading |
+   | Closure in Ruby                                           |                                   |                                             |                                |                                               |
+   | Build Awesome Cli apps                                    | Easy to use                       | Documenting a Command Suite                 |                                |                                               |
+   | Practical Object-Oriented Design                          | Managing Dependencies             |                                             |                                |                                               |
+   | Design Patterns in Ruby                                   | Strategy                          |                                             |                                |                                               |
+   | Pragmatic Build Awesome Command-Line Applications in Ruby |                                   |                                             |                                |                                               |
+   | The Well Grounded Rubyist                                 | 12  File and I/O operations       |                                             |                                |                                               |
+   | Eloquent Ruby                                             | Chapter 8. Embrace Dynamic Typing | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions |                                               |
+   | Clean Ruby                                                | Using Boolean Logic               |                                             |                                |                                               |
 
 ** SLOC
    | Project | folder          | file           | @                     |
