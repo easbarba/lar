@@ -1,7 +1,6 @@
 ---
 - https://github.com/rvm/rvm.git
 - https://github.com/nvm-sh/nvm.git
-- https://github.com/asdf-vm/asdf.git
 - https://github.com/sstephenson/bats.git
 - https://github.com/basherpm/basher.git
 - https://github.com/nojhan/liquidprompt.git
@@ -9,4 +8,7 @@
 - https://github.com/awesome-lists/awesome-bash.git
 - https://github.com/alebcay/awesome-shell.git
 - https://github.com/jorgebucaran/cookbook.fish.git
+- https://github.com/smashedtoatoms/asdf-sbcl.git
+- https://github.com/indiebrain/asdf-guile.git
+- https://github.com/asdf-vm/asdf.git
 - https://github.com/fish-shell/fish-shell.git
