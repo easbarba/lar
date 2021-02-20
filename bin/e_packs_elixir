@@ -9,7 +9,7 @@ asdf_elixir()
 {
     # https://github.com/asdf_vm/asdf_elixir
 
-    [[ -f "$HOME/.asdf/shims/node" ]] && return
+    [[ -f "$HOME/.asdf/shims/elixir" ]] && return
 
     echo 'Installing Elixir binaries'
 
@@ -24,7 +24,7 @@ asdf_erlang()
 {
     # https://github.com/asdf-vm/asdf-erlang
 
-    [[ -f "$HOME/.asdf/shims/" ]] && return
+    [[ -f "$HOME/.asdf/shims/erl" ]] && return
 
     echo 'Installing Erlang binaries'
 
@@ -37,20 +37,19 @@ asdf_erlang()
 
 packages()
 {
-    echo 'Installing gem packages'
+    echo 'Installing packages'
 
-    local packages=(bundler solargraph pry)
+    local packages=()
 
     for pack in "${packages[@]}"
     do
-	gem install "${pack}" # --user-install
-	gem update  "${pack}"
     done
 }
 
 # * RUN
 
-echo 'Ruby - ASDF'
+echo 'Elixir - ASDF'
 
-asdf_ruby
+asdf_erlang
+asdf_elixir
 packages
