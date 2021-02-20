@@ -39,11 +39,11 @@ packages()
 {
     echo 'Installing packages'
 
-    local packages=()
+    # local packages=()
 
-    for pack in "${packages[@]}"
-    do
-    done
+    # for pack in "${packages[@]}"
+    # do
+    # done
 }
 
 # * RUN
