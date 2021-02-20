@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# set -e
+
+source "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.asdf/asdf.sh"
+
+asdf_elixir()
+{
+    # https://github.com/asdf_vm/asdf_elixir
+
+    [[ -f "$HOME/.asdf/shims/node" ]] && return
+
+    echo 'Installing Elixir binaries'
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-elixir.git
+
+    asdf install elixir latest
+
+    asdf global elixir "$(asdf latest elixir)"
+}
+
+asdf_erlang()
+{
+    # https://github.com/asdf-vm/asdf-erlang
+
+    [[ -f "$HOME/.asdf/shims/" ]] && return
+
+    echo 'Installing Erlang binaries'
+
+    asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+    asdf install erlang latest
+
+    asdf global erlang "$(asdf latest erlang)"
+}
+
+packages()
+{
+    echo 'Installing gem packages'
+
+    local packages=(bundler solargraph pry)
+
+    for pack in "${packages[@]}"
+    do
+	gem install "${pack}" # --user-install
+	gem update  "${pack}"
+    done
+}
+
+# * RUN
+
+echo 'Ruby - ASDF'
+
+asdf_ruby
+packages
