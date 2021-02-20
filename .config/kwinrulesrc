@@ -15,6 +15,20 @@ wmclass=navigator icecat
 wmclasscomplete=true
 wmclassmatch=1
 
+[10]
+Description=Steam
+desktop=4
+desktoprule=2
+wmclass="steam"
+wmclassmatch=1
+
+[11]
+Description=csgo
+desktop=4
+desktoprule=2
+wmclass="csgo_linux64"
+wmclassmatch=1
+
 [2]
 Description=discover
 desktop=5
@@ -86,4 +100,4 @@ wmclass=telegramdesktop
 wmclassmatch=1
 
 [General]
-count=9
+count=11
