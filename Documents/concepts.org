@@ -53,8 +53,7 @@
 * DRY
 * SOLID
 ** Single Responsability
-   - Can be defined in one sentence. “and,” may mean the class likely has more than one responsibility.
-     “or,” means the class has more than one responsibility and they aren’t even very related.
+   - Can be defined in one sentence. “and,” may mean the class likely has more than one responsibility. “or,” means the class has more than one responsibility and they aren’t even very related.
    - highly cohesive or to have a single responsibility.
    - Responsibility-Driven Design
    - everything the class does be highly related to its purpose.
@@ -69,8 +68,7 @@
      - Hide the variables, even from the class that defines them, by wrapping them in methods.
 ** Data
    - refer directly to the instance variable
-   - wrap the instance variable in an accessor
-method.
+   - wrap the instance variable in an accessor method.
 ** Behavior
 ** Terms
 *** TRUE: Transparent, Reasonable, Usable, Exemplary
