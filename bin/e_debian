@@ -23,6 +23,8 @@ packages ()
 
     ruby=(libssl-dev)
 
+    elixir=(build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk)
+
     system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
 	    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
 	    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
@@ -81,6 +83,7 @@ packages ()
     e_foreach "$command" "${debian[@]}"; sudo apt-file update -y # update Debian database
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
+    e_foreach "$command" "${elixir[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${qt[@]}"
     e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt "$USER" # libvirt
