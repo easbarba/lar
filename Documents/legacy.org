@@ -43,6 +43,7 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#languages][Languages]]
+  - [[#elixir][Elixir]]
   - [[#scheme][Scheme]]
   - [[#common-lisp][Common Lisp]]
   - [[#haskell][Haskell]]
@@ -166,344 +167,362 @@ upgrade: upgrade
 
     #+end_src
 *** floss
-   #+begin_src json
+   #+begin_src yaml
+   --- elixir
+   - https://github.com/bitwalker/distillery
+   - https://github.com/ueberauth/guardian
+   - https://github.com/absinthe-graphql/absinthe
+   - https://github.com/christopheradams/elixir_style_guide
+   - https://github.com/rrrene/credo
+   - https://github.com/taylor/kiex
+   - https://github.com/kerl/kerl
+   - https://github.com/jeremyjh/dialyxir
+   - https://github.com/elixir-lsp/elixir-ls
+   - https://github.com/elixir-ecto/ecto
+   - https://github.com/hexpm/hex
+   - https://github.com/phoenixframework/phoenix
+   - https://github.com/erlang/otp
+   - https://github.com/elixir-lang/ex_doc
+   - https://github.com/elixir-lang/elixir
+
+
    --- scheme
-       - https://git.sv.gnu.org/git/guile.git
-       - https://git.savannah.gnu.org/git/guix.git
+   - https://git.sv.gnu.org/git/guile.git
+   - https://git.savannah.gnu.org/git/guix.git
 
 
    --- lisp
-       - https://github.com/CodyReichert/awesome-cl.git
-       - https://github.com/atlas-engineer/nyxt.git
-       - https://github.com/LispCookbook/cl-cookbook.git
-       - https://github.com/quicklisp/quicklisp-client.git
-       - https://github.com/quicklisp/quicklisp-bootstrap.git
-       - https://github.com/quicklisp/quicklisp-controller.git
-       - https://github.com/franzinc/clx.git
-       - https://gitlab.common-lisp.net/alexandria/alexandria.git
-       - https://gitlab.common-lisp.net/asdf/asdf.git
-       - https://gitlab.common-lisp.net/clpm/clpm.git
-       - git://git.code.sf.net/p/sbcl/sbcl.git
+   - https://github.com/CodyReichert/awesome-cl.git
+   - https://github.com/atlas-engineer/nyxt.git
+   - https://github.com/LispCookbook/cl-cookbook.git
+   - https://github.com/quicklisp/quicklisp-client.git
+   - https://github.com/quicklisp/quicklisp-bootstrap.git
+   - https://github.com/quicklisp/quicklisp-controller.git
+   - https://github.com/franzinc/clx.git
+   - https://gitlab.common-lisp.net/alexandria/alexandria.git
+   - https://gitlab.common-lisp.net/asdf/asdf.git
+   - https://gitlab.common-lisp.net/clpm/clpm.git
+   - git://git.code.sf.net/p/sbcl/sbcl.git
 
 
    --- C
-       - https://gitlab.freedesktop.org/mesa/mesa.git
-       - git://source.winehq.org/git/wine.git
-       - https://github.com/openssh/openssh-portable.git
-       - https://github.com/libressl-portable/portable.git
-       - https://git.suckless.org/dwm
-       - https://github.com/zsh-users/zsh.git
-       - https://github.com/git/git.git
-       - https://github.com/tmux/tmux.git
-       - https://github.com/antirez/redis.git
-       - https://github.com/curl/curl.git
-       - git://c9x.me/qbe.git
+   - https://gitlab.freedesktop.org/mesa/mesa.git
+   - git://source.winehq.org/git/wine.git
+   - https://github.com/openssh/openssh-portable.git
+   - https://github.com/libressl-portable/portable.git
+   - https://git.suckless.org/dwm
+   - https://github.com/zsh-users/zsh.git
+   - https://github.com/git/git.git
+   - https://github.com/tmux/tmux.git
+   - https://github.com/antirez/redis.git
+   - https://github.com/curl/curl.git
+   - git://c9x.me/qbe.git
 
    "golang": [
-       "https://github.com/hashicorp/nomad",
-       "https://github.com/hashicorp/consul",
-       "https://github.com/hashicorp/terraform",
-       "https://github.com/containers/buildah",
-       "https://github.com/containers/podman",
-       "https://github.com/sourcegraph/go-langserver",
-       "https://github.com/gorilla/mux",
-       "https://github.com/cli/cli",
-       "https://github.com/rclone/rclone",
-       "https://github.com/avelino/awesome-go",
-       "https://github.com/kubernetes-sigs/kind/",
-       "https://github.com/kubernetes/kubernetes",
-       "https://github.com/adonovan/gopl.io",
-       "https://github.com/golang/net",
-       "https://github.com/golang/tools",
-       "https://github.com/golang/go"
+   "https://github.com/hashicorp/nomad",
+   "https://github.com/hashicorp/consul",
+   "https://github.com/hashicorp/terraform",
+   "https://github.com/containers/buildah",
+   "https://github.com/containers/podman",
+   "https://github.com/sourcegraph/go-langserver",
+   "https://github.com/gorilla/mux",
+   "https://github.com/cli/cli",
+   "https://github.com/rclone/rclone",
+   "https://github.com/avelino/awesome-go",
+   "https://github.com/kubernetes-sigs/kind/",
+   "https://github.com/kubernetes/kubernetes",
+   "https://github.com/adonovan/gopl.io",
+   "https://github.com/golang/net",
+   "https://github.com/golang/tools",
+   "https://github.com/golang/go"
    ],
 
    "rust": [
-       "https://github.com/starship/starship",
-       "https://github.com/rust-analyzer/rust-analyzer",
-       "https://github.com/sharkdp/bat",
-       "https://github.com/SergioBenitez/Rocket",
-       "https://github.com/BurntSushi/ripgrep",
-       "https://github.com/sharkdp/fd",
-       "https://github.com/rust-random/rand",
-       "https://github.com/yewstack/yew",
-       "https://github.com/SergioBenitez/Rocket",
-       "https://github.com/jwilm/alacritty",
-       "https://github.com/rust-lang/rustfmt",
-       "https://github.com/rust-lang/crates.io",
-       "https://github.com/rust-lang/libc",
-       "https://github.com/rust-lang/rustlings/",
-       "https://github.com/rust-lang/rls",
-       "https://github.com/rust-lang/rustup",
-       "https://github.com/rust-lang/cargo",
-       "https://github.com/rust-lang/rust"
+   "https://github.com/starship/starship",
+   "https://github.com/rust-analyzer/rust-analyzer",
+   "https://github.com/sharkdp/bat",
+   "https://github.com/SergioBenitez/Rocket",
+   "https://github.com/BurntSushi/ripgrep",
+   "https://github.com/sharkdp/fd",
+   "https://github.com/rust-random/rand",
+   "https://github.com/yewstack/yew",
+   "https://github.com/SergioBenitez/Rocket",
+   "https://github.com/jwilm/alacritty",
+   "https://github.com/rust-lang/rustfmt",
+   "https://github.com/rust-lang/crates.io",
+   "https://github.com/rust-lang/libc",
+   "https://github.com/rust-lang/rustlings/",
+   "https://github.com/rust-lang/rls",
+   "https://github.com/rust-lang/rustup",
+   "https://github.com/rust-lang/cargo",
+   "https://github.com/rust-lang/rust"
    ]
 
    "Javascript": [
-       "https://github.com/SBoudrias/Inquirer.js",
-       "https://github.com/mrdoob/three.js",
-       "https://github.com/parcel-bundler/parcel",
-       "https://github.com/prettier/prettier",
-       "https://github.com/yarnpkg/yarn",
-       "https://github.com/meteor/meteor",
-       "https://github.com/expressjs/express",
-       "https://github.com/axios/axios",
-       "https://github.com/nodejs/node"
+   "https://github.com/SBoudrias/Inquirer.js",
+   "https://github.com/mrdoob/three.js",
+   "https://github.com/parcel-bundler/parcel",
+   "https://github.com/prettier/prettier",
+   "https://github.com/yarnpkg/yarn",
+   "https://github.com/meteor/meteor",
+   "https://github.com/expressjs/express",
+   "https://github.com/axios/axios",
+   "https://github.com/nodejs/node"
    ],
 
    "Haskell": [
-       "https://gitlab.haskell.org/ghc/ghc",
-       "https://gitlab.haskell.org/haskell/ghcup",
-       "https://github.com/haskell/cabal",
-       "https://github.com/commercialhaskell/stack",
-       "https://github.com/haskell/haskell-language-server",
-       "https://github.com/koalaman/shellcheck",
-       "https://github.com/jgm/pandoc",
-       "https://github.com/elm/compiler"
+   "https://gitlab.haskell.org/ghc/ghc",
+   "https://gitlab.haskell.org/haskell/ghcup",
+   "https://github.com/haskell/cabal",
+   "https://github.com/commercialhaskell/stack",
+   "https://github.com/haskell/haskell-language-server",
+   "https://github.com/koalaman/shellcheck",
+   "https://github.com/jgm/pandoc",
+   "https://github.com/elm/compiler"
    ],
 
    "Swift": [
-       "https://github.com/matteocrippa/awesome-swift",
-       "https://github.com/SwiftyJSON/SwiftyJSON",
-       "https://github.com/iina/iina",
-       "https://github.com/shadowsocks/ShadowsocksX-NG",
-       "https://github.com/Alamofire/Alamofire",
-       "https://github.com/apple/swift-crypto",
-       "https://github.com/apple/swift-numerics",
-       "https://github.com/apple/swift-package-manager",
-       "https://github.com/apple/swift-nio",
-       "https://github.com/apple/swift-driver",
-       "https://github.com/apple/sourcekit-lsp",
-       "https://github.com/apple/swift"
+   "https://github.com/matteocrippa/awesome-swift",
+   "https://github.com/SwiftyJSON/SwiftyJSON",
+   "https://github.com/iina/iina",
+   "https://github.com/shadowsocks/ShadowsocksX-NG",
+   "https://github.com/Alamofire/Alamofire",
+   "https://github.com/apple/swift-crypto",
+   "https://github.com/apple/swift-numerics",
+   "https://github.com/apple/swift-package-manager",
+   "https://github.com/apple/swift-nio",
+   "https://github.com/apple/swift-driver",
+   "https://github.com/apple/sourcekit-lsp",
+   "https://github.com/apple/swift"
    ]
 
    "Distros": [
-       "https://github.com/purcell/nix-emacs-ci",
-       "https://github.com/jwiegley/nix-config",
-       "https://github.com/NixOS/nixos-hardware",
-       "https://github.com/NixOS/nixos-org-configurations",
-       "https://github.com/NixOS/nixpkgs",
-       "https://github.com/NixOS/nix",
-       "https://gitlab.com/guix-gaming-channels/games",
-       "https://gitlab.com/nonguix",
-       "https://git.savannah.gnu.org/git/guix.git"
+   "https://github.com/purcell/nix-emacs-ci",
+   "https://github.com/jwiegley/nix-config",
+   "https://github.com/NixOS/nixos-hardware",
+   "https://github.com/NixOS/nixos-org-configurations",
+   "https://github.com/NixOS/nixpkgs",
+   "https://github.com/NixOS/nix",
+   "https://gitlab.com/guix-gaming-channels/games",
+   "https://gitlab.com/nonguix",
+   "https://git.savannah.gnu.org/git/guix.git"
    ],
 
    "Dart": [
-       "https://github.com/roughike/inKino",
-       "https://github.com/flame-engine/flame",
-       "https://github.com/felangel/bloc",
-       "https://github.com/flutter/plugins",
-       "https://github.com/dart-lang/build",
-       "https://github.com/dart-lang/sdk"
+   "https://github.com/roughike/inKino",
+   "https://github.com/flame-engine/flame",
+   "https://github.com/felangel/bloc",
+   "https://github.com/flutter/plugins",
+   "https://github.com/dart-lang/build",
+   "https://github.com/dart-lang/sdk"
    ],
 
    "Lua": [
-       "https://github.com/vicious-widgets/vicious",
-       "https://github.com/streetturtle/awesome-wm-widgets",
-       "https://github.com/actboy168/luamake.git",
-       "https://github.com/sumneko/lua-language-server",
-       "https://github.com/EmmyLua/EmmyLua-LanguageServer",
-       "https://github.com/arthurealike/turtle.lua",
-       "https://github.com/luvit/luvit",
-       "https://github.com/rxi/lite",
-       "https://github.com/lcpz/awesome-copycats",
-       "https://github.com/awesomeWM/awesome",
-       "https://github.com/luarocks/luarocks",
-       "https://github.com/lua/lua"
+   "https://github.com/vicious-widgets/vicious",
+   "https://github.com/streetturtle/awesome-wm-widgets",
+   "https://github.com/actboy168/luamake.git",
+   "https://github.com/sumneko/lua-language-server",
+   "https://github.com/EmmyLua/EmmyLua-LanguageServer",
+   "https://github.com/arthurealike/turtle.lua",
+   "https://github.com/luvit/luvit",
+   "https://github.com/rxi/lite",
+   "https://github.com/lcpz/awesome-copycats",
+   "https://github.com/awesomeWM/awesome",
+   "https://github.com/luarocks/luarocks",
+   "https://github.com/lua/lua"
    ],
 
    "Dotnet": [
-       "https://github.com/dotnet/csharplang",
-       "https://github.com/dotnet/roslyn",
-       "https://github.com/dotnet/sdk",
-       "https://github.com/dotnet/runtime",
-       "https://github.com/dotnet/standard",
-       "https://github.com/dotnet/core",
-       "https://github.com/dotnet/orleans",
-       "https://github.com/dotnet/aspnetcore",
-       "https://github.com/dotnet/AspNetCore.Docs",
-       "https://github.com/dotnet/aspnetcore-tooling",
-       "https://github.com/IntelliTect/EssentialCSharp",
-       "https://github.com/andrewlock/asp-dot-net-core-in-action-2e",
-       "https://github.com/royosherove/aout2",
-       "https://github.com/dotnet/efcore",
-       "https://github.com/dotnet/extensions",
-       "https://github.com/dotnet/Scaffolding",
-       "https://github.com/dotnet/docs",
-       "https://github.com/dotnet/try-samples",
-       "https://github.com/dotnet/command-line-api",
-       "https://github.com/NuGet/NuGet.Client",
-       "https://github.com/commandlineparser/commandline",
-       "https://github.com/spectresystems/spectre.cli",
-       "https://github.com/cake-build/cake",
-       "https://github.com/OmniSharp/csharp-language-server-protocol",
-       "https://github.com/OmniSharp/omnisharp-roslyn",
-       "https://github.com/jellyfin/jellyfin",
-       "https://github.com/xunit/xunit",
-       "https://github.com/libgit2/libgit2sharp",
-       "https://github.com/nunit/nunit",
-       "https://github.com/moq/moq4",
-       "https://github.com/thangchung/awesome-dotnet-core",
-       "https://github.com/quozd/awesome-dotnet",
-       "https://github.com/dotnet-architecture/eShopOnWeb",
-       "https://github.com/mono/monodevelop",
-       "https://github.com/mono/mono"
+   "https://github.com/dotnet/csharplang",
+   "https://github.com/dotnet/roslyn",
+   "https://github.com/dotnet/sdk",
+   "https://github.com/dotnet/runtime",
+   "https://github.com/dotnet/standard",
+   "https://github.com/dotnet/core",
+   "https://github.com/dotnet/orleans",
+   "https://github.com/dotnet/aspnetcore",
+   "https://github.com/dotnet/AspNetCore.Docs",
+   "https://github.com/dotnet/aspnetcore-tooling",
+   "https://github.com/IntelliTect/EssentialCSharp",
+   "https://github.com/andrewlock/asp-dot-net-core-in-action-2e",
+   "https://github.com/royosherove/aout2",
+   "https://github.com/dotnet/efcore",
+   "https://github.com/dotnet/extensions",
+   "https://github.com/dotnet/Scaffolding",
+   "https://github.com/dotnet/docs",
+   "https://github.com/dotnet/try-samples",
+   "https://github.com/dotnet/command-line-api",
+   "https://github.com/NuGet/NuGet.Client",
+   "https://github.com/commandlineparser/commandline",
+   "https://github.com/spectresystems/spectre.cli",
+   "https://github.com/cake-build/cake",
+   "https://github.com/OmniSharp/csharp-language-server-protocol",
+   "https://github.com/OmniSharp/omnisharp-roslyn",
+   "https://github.com/jellyfin/jellyfin",
+   "https://github.com/xunit/xunit",
+   "https://github.com/libgit2/libgit2sharp",
+   "https://github.com/nunit/nunit",
+   "https://github.com/moq/moq4",
+   "https://github.com/thangchung/awesome-dotnet-core",
+   "https://github.com/quozd/awesome-dotnet",
+   "https://github.com/dotnet-architecture/eShopOnWeb",
+   "https://github.com/mono/monodevelop",
+   "https://github.com/mono/mono"
    ],
 
    "Powershell": [
-       "https://github.com/dahlbyk/posh-git",
-       "https://github.com/JanDeDobbeleer/oh-my-posh",
-       "https://github.com/PowerShell/PowerShell-RFC",
-       "https://github.com/Microsoft/SpeculationControl",
-       "https://github.com/dotnet/blazor"
+   "https://github.com/dahlbyk/posh-git",
+   "https://github.com/JanDeDobbeleer/oh-my-posh",
+   "https://github.com/PowerShell/PowerShell-RFC",
+   "https://github.com/Microsoft/SpeculationControl",
+   "https://github.com/dotnet/blazor"
    ]
 
    "css": [
-       "https://github.com/IanLunn/Hover",
-       "https://github.com/jgthms/bulma",
-       "https://github.com/daneden/animate.css",
-       "https://github.com/oddbird/susy",
-       "https://github.com/necolas/normalize.css",
-       "https://github.com/mozdevs/cssremedy"
+   "https://github.com/IanLunn/Hover",
+   "https://github.com/jgthms/bulma",
+   "https://github.com/daneden/animate.css",
+   "https://github.com/oddbird/susy",
+   "https://github.com/necolas/normalize.css",
+   "https://github.com/mozdevs/cssremedy"
    ],
 
    "Perl": [
-       "https://github.com/moose/Moose",
-       "https://github.com/richterger/Perl-LanguageServer",
-       "https://github.com/imapsync/imapsync",
-       "https://github.com/ddclient/ddclient",
-       "https://github.com/apache/avro",
-       "https://github.com/mojolicious/mojo",
-       "https://github.com/i3/i3",
-       "https://github.com/bugzilla/bugzilla",
-       "https://github.com/hachiojipm/awesome-perl",
-       "https://github.com/Perl/perl5"
+   "https://github.com/moose/Moose",
+   "https://github.com/richterger/Perl-LanguageServer",
+   "https://github.com/imapsync/imapsync",
+   "https://github.com/ddclient/ddclient",
+   "https://github.com/apache/avro",
+   "https://github.com/mojolicious/mojo",
+   "https://github.com/i3/i3",
+   "https://github.com/bugzilla/bugzilla",
+   "https://github.com/hachiojipm/awesome-perl",
+   "https://github.com/Perl/perl5"
    ]
 
    "typescript": [
    ]
 
    "cpp": [
-       "https://git.llvm.org/git/clang",
-       "https://github.com/boostorg/beast",
-       "https://github.com/aria2/aria2",
-       "https://github.com/nlohmann/json",
-       "https://github.com/grpc/grpc",
-       "https://github.com/boostorg/core",
-       "https://github.com/NixOS/nix",
-       "https://github.com/isocpp/CppCoreGuidelines",
-       "https://github.com/fish-shell/fish-shell"
+   "https://git.llvm.org/git/clang",
+   "https://github.com/boostorg/beast",
+   "https://github.com/aria2/aria2",
+   "https://github.com/nlohmann/json",
+   "https://github.com/grpc/grpc",
+   "https://github.com/boostorg/core",
+   "https://github.com/NixOS/nix",
+   "https://github.com/isocpp/CppCoreGuidelines",
+   "https://github.com/fish-shell/fish-shell"
    ],
 
    "python": [
-       "https://github.com/python/cpython",
-       "https://github.com/python/mypy",
-       "https://github.com/python/peps",
-       "https://github.com/pypa/pip",
-       "https://github.com/pypa/wheel",
-       "https://github.com/pytest-dev/pytest",
-       "https://github.com/pypa/setuptools",
-       "https://github.com/PyCQA/pylint",
-       "https://github.com/nedbat/coveragepy",
-       "https://github.com/psf/black"
+   "https://github.com/python/cpython",
+   "https://github.com/python/mypy",
+   "https://github.com/python/peps",
+   "https://github.com/pypa/pip",
+   "https://github.com/pypa/wheel",
+   "https://github.com/pytest-dev/pytest",
+   "https://github.com/pypa/setuptools",
+   "https://github.com/PyCQA/pylint",
+   "https://github.com/nedbat/coveragepy",
+   "https://github.com/psf/black"
    ]
 
    "java": [
-       "https://github.com/openjdk/jdk",
-       "https://github.com/openjdk/mobile",
-       "https://github.com/openjdk/skara",
-       "https://github.com/openjdk/loom",
-       "https://github.com/openjdk/jmc",
-       "https://github.com/openjdk/valhalla",
-       "https://github.com/openjdk/amber",
-       "https://github.com/spring-projects/spring-boot",
-       "https://github.com/eclipse/eclipse.jdt.ls",
-       "https://github.com/oracle/helidon",
-       "https://github.com/oracle/fastr",
-       "https://github.com/oracle/graal"
+   "https://github.com/openjdk/jdk",
+   "https://github.com/openjdk/mobile",
+   "https://github.com/openjdk/skara",
+   "https://github.com/openjdk/loom",
+   "https://github.com/openjdk/jmc",
+   "https://github.com/openjdk/valhalla",
+   "https://github.com/openjdk/amber",
+   "https://github.com/spring-projects/spring-boot",
+   "https://github.com/eclipse/eclipse.jdt.ls",
+   "https://github.com/oracle/helidon",
+   "https://github.com/oracle/fastr",
+   "https://github.com/oracle/graal"
    ],
 
    "misc": [
-       "https://github.com/ytdl-org/youtube-dl",
-       "https://github.com/BurntSushi/ripgrep",
-       "https://github.com/jgm/pandoc",
-       "https://github.com/tmux/tmux",
-       "https://github.com/ziglang/zig",
-       "https://code.videolan.org/videolan/vlc-android",
-       "https://github.com/laravel/laravel",
-       "https://github.com/jekyll/jekyll",
-       "https://github.com/go-gitea/gitea",
-       "https://github.com/OmniSharp/omnisharp-roslyn",
-       "https://github.com/eclipse/eclipse.jdt.ls",
-       "https://github.com/amberframework/amber",
-       "https://github.com/dom96/choosenim",
-       "https://github.com/aria2/aria2",
-       "https://github.com/vapor/vapor",
-       "https://github.com/mojolicious/mojo",
-       "https://github.com/racket/racket",
-       "https://git.savannah.gnu.org/git/guix",
-       "https://github.com/b4b4r07/enhancd"
+   "https://github.com/ytdl-org/youtube-dl",
+   "https://github.com/BurntSushi/ripgrep",
+   "https://github.com/jgm/pandoc",
+   "https://github.com/tmux/tmux",
+   "https://github.com/ziglang/zig",
+   "https://code.videolan.org/videolan/vlc-android",
+   "https://github.com/laravel/laravel",
+   "https://github.com/jekyll/jekyll",
+   "https://github.com/go-gitea/gitea",
+   "https://github.com/OmniSharp/omnisharp-roslyn",
+   "https://github.com/eclipse/eclipse.jdt.ls",
+   "https://github.com/amberframework/amber",
+   "https://github.com/dom96/choosenim",
+   "https://github.com/aria2/aria2",
+   "https://github.com/vapor/vapor",
+   "https://github.com/mojolicious/mojo",
+   "https://github.com/racket/racket",
+   "https://git.savannah.gnu.org/git/guix",
+   "https://github.com/b4b4r07/enhancd"
    ],
 
    "nim": [
-       "https://github.com/dom96/choosenim",
-       "https://github.com/nim-lang/opengl",
-       "https://github.com/nim-lang/iup",
-       "https://github.com/nim-lang/irc",
-       "https://github.com/nim-lang/irc",
-       "https://github.com/nim-lang/graveyard",
-       "https://github.com/nim-lang/sdl2",
-       "https://github.com/nim-lang/packages",
-       "https://github.com/nim-lang/Aporia",
-       "https://github.com/Araq/ormin",
-       "https://github.com/PMunch/nimlsp",
-       "https://github.com/liquid600pgm/rapid",
-       "https://github.com/mratsim/weave",
-       "https://github.com/mratsim/Arraymancer",
-       "https://github.com/treeform/typography",
-       "https://github.com/Araq/nimedit",
-       "https://github.com/dom96/jester",
-       "https://github.com/nim-lang/nimble",
-       "https://github.com/nim-lang/Nim"
+   "https://github.com/dom96/choosenim",
+   "https://github.com/nim-lang/opengl",
+   "https://github.com/nim-lang/iup",
+   "https://github.com/nim-lang/irc",
+   "https://github.com/nim-lang/irc",
+   "https://github.com/nim-lang/graveyard",
+   "https://github.com/nim-lang/sdl2",
+   "https://github.com/nim-lang/packages",
+   "https://github.com/nim-lang/Aporia",
+   "https://github.com/Araq/ormin",
+   "https://github.com/PMunch/nimlsp",
+   "https://github.com/liquid600pgm/rapid",
+   "https://github.com/mratsim/weave",
+   "https://github.com/mratsim/Arraymancer",
+   "https://github.com/treeform/typography",
+   "https://github.com/Araq/nimedit",
+   "https://github.com/dom96/jester",
+   "https://github.com/nim-lang/nimble",
+   "https://github.com/nim-lang/Nim"
    ],
 
    "php": [
-       "https://github.com/PacktPublishing/Mastering-PHP-7",
-       "https://github.com/bcit-ci/CodeIgniter",
-       "https://github.com/felixfbecker/php-language-server",
-       "https://github.com/vimeo/psalm",
-       "https://github.com/laravel/lumen",
-       "https://github.com/nikic/php-parser",
-       "https://github.com/phpstan/phpstan",
-       "https://github.com/composer/composer",
-       "https://github.com/symfony/symfony",
-       "https://github.com/laravel/laravel",
-       "https://github.com/php/php-src"
+   "https://github.com/PacktPublishing/Mastering-PHP-7",
+   "https://github.com/bcit-ci/CodeIgniter",
+   "https://github.com/felixfbecker/php-language-server",
+   "https://github.com/vimeo/psalm",
+   "https://github.com/laravel/lumen",
+   "https://github.com/nikic/php-parser",
+   "https://github.com/phpstan/phpstan",
+   "https://github.com/composer/composer",
+   "https://github.com/symfony/symfony",
+   "https://github.com/laravel/laravel",
+   "https://github.com/php/php-src"
    ],
 
    "julia": [
-       "https://github.com/JuliaLang/Compat.jl",
-       "https://github.com/JuliaLang/Tokenize.jl",
-       "https://github.com/JuliaLang/Tar.jl",
-       "https://github.com/JuliaLang/MbedTLS.jl",
-       "https://github.com/JuliaLang/PkgDev.jl",
-       "https://github.com/JuliaLang/Pkg.jl",
-       "https://github.com/JuliaLang/Statistics.jl",
-       "https://github.com/JuliaLang/docs.julialang.org",
-       "https://github.com/JuliaLang/IJulia.jl",
-       "https://github.com/JuliaLang/julia"
+   "https://github.com/JuliaLang/Compat.jl",
+   "https://github.com/JuliaLang/Tokenize.jl",
+   "https://github.com/JuliaLang/Tar.jl",
+   "https://github.com/JuliaLang/MbedTLS.jl",
+   "https://github.com/JuliaLang/PkgDev.jl",
+   "https://github.com/JuliaLang/Pkg.jl",
+   "https://github.com/JuliaLang/Statistics.jl",
+   "https://github.com/JuliaLang/docs.julialang.org",
+   "https://github.com/JuliaLang/IJulia.jl",
+   "https://github.com/JuliaLang/julia"
    ],
 
    "crystal": [
-       "https://github.com/crystal-lang/crystal",
-       "https://github.com/crystal-lang/shards",
-       "https://github.com/crystal-lang/crystal-book",
-       "https://github.com/crystal-lang/crystal-db",
-       "https://github.com/crystal-lang/crystal-readline",
-       "https://github.com/crystal-lang/crystal-sqlite3",
-       "https://github.com/crystal-lang/crystal-mysql",
-       "https://github.com/amberframework/amber"
+   "https://github.com/crystal-lang/crystal",
+   "https://github.com/crystal-lang/shards",
+   "https://github.com/crystal-lang/crystal-book",
+   "https://github.com/crystal-lang/crystal-db",
+   "https://github.com/crystal-lang/crystal-readline",
+   "https://github.com/crystal-lang/crystal-sqlite3",
+   "https://github.com/crystal-lang/crystal-mysql",
+   "https://github.com/amberframework/amber"
    ],
    #+end_src
 *** Cero Linguagens
@@ -1417,6 +1436,63 @@ upgrade: upgrade
 ** shell-custom
    #+begin_src shell-script
    #!/usr/bin/env bash
+#!/usr/bin/env bash
+
+# set -e
+
+source "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.asdf/asdf.sh"
+
+asdf_elixir()
+{
+    # https://github.com/asdf_vm/asdf_elixir
+
+    [[ -f "$HOME/.asdf/shims/elixir" ]] && return
+
+    echo 'Installing Elixir binaries'
+
+    asdf plugin-add ruby https://github.com/asdf-vm/asdf-elixir.git
+
+    asdf install elixir latest
+
+    asdf global elixir "$(asdf latest elixir)"
+}
+
+asdf_erlang()
+{
+    # https://github.com/asdf-vm/asdf-erlang
+
+    [[ -f "$HOME/.asdf/shims/erl" ]] && return
+
+    echo 'Installing Erlang binaries'
+
+    asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+    asdf install erlang latest
+
+    asdf global erlang "$(asdf latest erlang)"
+}
+
+packages()
+{
+    echo 'Installing packages'
+
+    # local packages=()
+
+    # for pack in "${packages[@]}"
+    # do
+    # done
+}
+
+# * RUN
+
+echo 'Elixir - ASDF'
+
+asdf_erlang
+asdf_elixir
+packages
+
+
 
    # set -e
 
@@ -9605,6 +9681,45 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 
      #+END_SRC
 * Languages
+** Elixir
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#packages][Packages]]
+    - [[#iex][iex]]
+  - [[#features][Features]]
+  - [[#tests][Tests]]
+    - [[#rspec][RSpec]]
+    - [[#unit][Unit]]
+  :END:
+*** Progress
+**** Books
+     | Books                  | Chapter                  | @                                    | late | revision |
+     |------------------------+--------------------------+--------------------------------------+------+----------|
+     | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
+
+**** SLOC
+     | Project | folder | file | @ |
+     |---------+--------+------+---|
+     | elixir  |        |      |   |
+
+*** Packages
+**** iex
+     |               |               |                     |
+     |---------------+---------------+---------------------|
+     | h [<feature>] | h IO.puts     | help                |
+     | i             |               | interactive         |
+     | c <filepath>  | c 'hello.exs' | compile and execute |
+
+*** Features
+*** Tests
+**** RSpec
+**** Unit
 ** [[https://schemers.org/][Scheme]]
 *** Progress
 **** Books
