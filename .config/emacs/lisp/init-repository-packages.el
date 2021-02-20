@@ -145,6 +145,7 @@
      "https://www.reddit.com/r/debian/.rss"
      "https://www.reddit.com/r/rails/.rss"
      "https://www.reddit.com/r/ruby/.rss"
+     "https://www.reddit.com/r/elixir/.rss"
      "https://www.redhat.com/sysadmin/rss.xml"
      "https://drewdevault.com/blog/index.xml"
      "https://eregon.me/blog/feed.xml"
@@ -365,6 +366,7 @@
   :defer 1
   :commands lsp
   :hook
+  (elixir-mode . lsp)
   (ruby-mode . lsp)
   (css-mode . lsp)
   (js-mode . lsp)
@@ -376,6 +378,9 @@
   (lsp-enable-indentation nil)
   (lsp-signature-auto-activate nil)
   (flycheck-checker-error-threshold 1400)
+  (lsp-clients-elixir-server-executable (f-join user-emacs-directory
+						 ".cache" "lsp" "elixir-ls"
+						 "language_server.sh"))
   :bind
   ("C-c l w" . lsp-restart-workspace)
   ("C-c l r" . lsp-rename)
