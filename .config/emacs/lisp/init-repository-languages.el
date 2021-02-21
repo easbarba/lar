@@ -126,6 +126,9 @@
   (json-mode . lsp)
   (yaml-mode . lsp)
   :custom
+  (lsp-log-io nil) ; if set to true can cause a performance hit
+  (lsp-idle-delay 0.500)
+  (lsp-completion-provider :capf)
   (lsp-enable-indentation nil)
   (lsp-signature-auto-activate nil)
   (flycheck-checker-error-threshold 1400)

@@ -43,6 +43,7 @@
 (setq network-security-level 'high
       gnutls-verify-error t
       nsm-save-host-names t
+      read-process-output-max (* 1024 1024)
       gnutls-min-prime-bits 4096
       global-auto-revert-non-file-buffers t
       global-so-long-mode t
