@@ -131,7 +131,6 @@
      "https://edelpero.svbtle.com/feed"
      "https://debxp.org/feed/"
      "https://www.linuxtoday.com/biglt.rss"
-     "https://www.omgubuntu.co.uk/feed"
      "https://www.reddit.com/r/emacs/.rss"
      "https://www.reddit.com/r/linux/.rss"
      "https://www.reddit.com/r/rails/.rss"
