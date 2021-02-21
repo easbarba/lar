@@ -86,7 +86,7 @@ packages ()
     e_foreach "$command" "${elixir[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${qt[@]}"
-    e_foreach "$command" "${infra[@]}"; sudo usermod --append --groups libvirt "$USER" # libvirt
+    e_foreach "$command" "${infra[@]}";
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
@@ -124,9 +124,17 @@ services()
 	sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
     }
 
+    virtualization()
+    {
+	sudo usermod -aG libvirt "$USER"
+	sudo usermod -aG kvm "$USER"
+    }
+
+
     alternatives
     timezone
     kdeconnect
+    virtualization
 }
 
 foreign()
