@@ -32,7 +32,7 @@ packages ()
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
 	    firewall-config socat vrms fzf aria2)
 
-    qt=(kdeconnect kdenlive clementine ktorrent)
+    qt=(kdeconnect kdenlive clementine ktorrent latte-dock)
 
     gtk=(cheese transmission-gtk atril)
 
