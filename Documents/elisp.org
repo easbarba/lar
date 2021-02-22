@@ -12,13 +12,14 @@
   - [[#integer][Integer]]
   - [[#float][Float]]
   - [[#characters][Characters]]
+  - [[#association-list][Association List]]
 :END:
 * Progress
 ** Books
-   | Books        | Cap             | @                              | late | revision |
-   |--------------+-----------------+--------------------------------+------+----------|
-   | Emacs Lisp   | Lisp Data Types | 2.4.6 Cons Cell and List Types |      |          |
-   | Emacs Manual |                 |                                |      |          |
+   | Books        | Cap             | @                      | late | revision |
+   |--------------+-----------------+------------------------+------+----------|
+   | Emacs Lisp   | Lisp Data Types | 2.4.12 Hash Table Type | m    |          |
+   | Emacs Manual |                 |                        |      |          |
 
 ** SLOC
    | Source Code | folder      | file        | @ |
@@ -69,3 +70,6 @@
    ;; Meta-Character
    ?\M-\C-b
    #+end_src
+** Association List
+   - Can be used as stack, cause it easy to add items in the front
+   -
