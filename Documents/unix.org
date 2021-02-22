@@ -1,4 +1,4 @@
-#+TILE: Unix - Annotations
+#+TILE: Unix - Annotations (mostly Debian)
 
 * TOC
   :PROPERTIES:
@@ -2134,6 +2134,12 @@
 *** Htop
 *** Top
 ** Misc
+*** cat
+    |    |                 |
+    |----+-----------------|
+    | -n | display numbers |
+    | -e | shows endline   |
+
 *** fsck
 *** who
 *** w
