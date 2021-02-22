@@ -13,7 +13,8 @@
 - [[#css][CSS]]
   - [[#css-pre-processors][CSS Pre-Processors]]
   - [[#css-resources][CSS Resources]]
-  - [[#css-toolsframeworks][CSS Tools/Frameworks]]
+  - [[#frameworks][Frameworks]]
+  - [[#tools][Tools]]
   - [[#css-properties][CSS Properties]]
   - [[#css-articles][CSS Articles]]
   - [[#css-blogssite][CSS Blogs/Site]]
@@ -69,7 +70,11 @@
    https://flexboxfroggy.com/
 
    https://leaverou.github.io/css3patterns/#lined-paper
-** CSS Tools/Frameworks
+** Frameworks
+   - semantic-ui
+   - materialize
+
+** Tools
    https://cssicon.space/#/
 
    greensock
