@@ -24,10 +24,12 @@
   - [[#system-errors][System Errors]]
     - [[#usage][usage]]
   - [[#exceptions][exceptions]]
+    - [[#errors][Errors]]
     - [[#usage][usage]]
   - [[#writable-object-attribute][writable object attribute]]
   - [[#multithreading][Multithreading]]
     - [[#usage][usage]]
+  - [[#modules][modules]]
   - [[#continuation][continuation]]
   - [[#fibers][Fibers]]
     - [[#errors][errors]]
@@ -56,6 +58,7 @@
     - [[#how][How]]
     - [[#usage][Usage]]
   - [[#methods][methods]]
+  - [[#yield][yield]]
   - [[#procs][procs]]
   - [[#operators][operators]]
   - [[#enumerable][enumerable]]
@@ -201,6 +204,9 @@
    - rescue matches thrown Exception and use it. Similar to case statement
    - rescue clause with no parameter list, the parameter defaults to StandardError .
    - rescue clause can be arbitrary expressions (including method calls) that return an Exception class.
+*** Errors
+    - StandardError
+    -
 *** usage
     #+begin_src ruby
 
@@ -282,6 +288,27 @@
 ** Multithreading
    -
 *** usage
+** modules
+   #+begin_src ruby
+
+   module A
+     module_function
+
+     def foo
+     end
+   end
+
+   module A
+     module SubA
+       def bar
+       end
+     end
+   end
+
+
+   A::foo
+   A::SubA:bar
+   #+end_src
 ** continuation
    - require 'continuation'
 
@@ -533,6 +560,8 @@
 	@fi = fi #
       end
 
+      private_class_method :new
+
       private
 
       def alfa # instance method
@@ -598,6 +627,24 @@
    end
 
    def split_apart(first, *, last) # get first and last args, ignore middle ones
+   #+end_src
+** yield
+   #+begin_src ruby
+
+   def foo
+     yield
+   end
+
+   def bar
+     if block_given?
+       yield
+     else
+       'lol'
+   end
+
+   foo { p 'meh' }
+   bar # => lol
+   bar { p 'yahoo' } # => yahoo
    #+end_src
 ** procs
    #+begin_src ruby
