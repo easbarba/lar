@@ -370,6 +370,11 @@ Saves to a temp file and puts the filename in the kill ring."
   (delete-pair)
   (backward-char 1))
 
+(defun e/filepath-to-clipboard ()
+  (interactive)
+  (kill-new (buffer-file-name)))
+(global-set-key (kbd "C-c b q") 'e/filepath-to-clipboard)
+
 ;; ** e/MACROS
 ;; ---------------
 (defmacro assoc-val (var vars)
