@@ -1,4 +1,4 @@
-#+TILE: Rails Framework - Study Annotations
+#+TILE: Ruby on Rails - Study Annotations
 
 * Summary
   :PROPERTIES:
@@ -33,6 +33,7 @@
 - [[#traits][Traits]]
 - [[#i18n][i18n]]
 - [[#models][Models]]
+- [[#priorities][Priorities]]
 :END:
 * Progress
 ** Books
@@ -150,3 +151,13 @@
   |--------+---+-------------|
   | Models |   | Camel-Cased |
   |        |   |             |
+* Priorities
+  - TDD BDD
+  - Rails / MVC
+  - PostgreSQL
+  - Docker/Kubernetes
+  - Redis/SideKick/
+  - MicroServices
+  - AWS
+  - Circle CI
+  - REST
