@@ -13,6 +13,7 @@
   - [[#float][Float]]
   - [[#characters][Characters]]
   - [[#association-list][Association List]]
+- [[#to-read][To read]]
 :END:
 * Progress
 ** Books
@@ -73,3 +74,5 @@
 ** Association List
    - Can be used as stack, cause it easy to add items in the front
    -
+* To read
+  https://youtu.be/9i_9hse_Y08 - How to Cut Emacs Start Up Time in Half! - Emacs From Scratch #12
