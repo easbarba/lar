@@ -13,6 +13,8 @@
 - https://github.com/rspec/rspec.git
 - https://github.com/rails/rails.git
 - https://github.com/ruby/spec.git
+- https://github.com/rspec/rspec-rails
+- https://github.com/rspec/rspec-core
 - https://github.com/ruby/rake.git
 - https://github.com/ruby/rdoc.git
 - https://github.com/ruby/ruby.git
