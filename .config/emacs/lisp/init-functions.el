@@ -4,6 +4,23 @@
 ;; * CUSTOM FUNCTIONS
 ;; ============================
 
+;; ** e/MACROS
+;; ---------------
+(defmacro assoc-val (var vars)
+  "Get value(cdr) of alist."
+  `(cdr (assoc ',var ,vars)))
+
+(defmacro assoc-key (var vars)
+  "Get key(car) of alist."
+  `(car (assoc ',var ,vars)))
+
+;; ** e/PREDICATES
+(defun pack-installed-p (package)
+  "Predicate: Confirm if PACKAGE is installed."
+  (when (executable-find package)
+    t))
+
+
 ;; ===============
 ;; * SYSTEM SOFTWARE
 
@@ -375,20 +392,15 @@ Saves to a temp file and puts the filename in the kill ring."
   (kill-new (buffer-file-name)))
 (global-set-key (kbd "C-c b q") 'e/filepath-to-clipboard)
 
-;; ** e/MACROS
-;; ---------------
-(defmacro assoc-val (var vars)
-  "Get value(cdr) of alist."
-  `(cdr (assoc ',var ,vars)))
+(defun e/yt-feed()
+  (interactive)
+  (let* ((base "https://www.youtube.com/feeds/videos.xml?channel_id=")
+	(url (current-kill 0 t))
+	(id (car (last (split-string url "/"))))
+	(name (read-from-minibuffer "Channel name: ")))
+    (newline-and-indent)
+    (previous-line 1)
+    (insert (concat "\"" base id "\" ;; ") name)))
 
-(defmacro assoc-key (var vars)
-  "Get key(car) of alist."
-  `(car (assoc ',var ,vars)))
-
-;; ** e/PREDICATES
-(defun pack-installed-p (package)
-  "Predicate: Confirm if PACKAGE is installed."
-  (when (executable-find package)
-    t))
 
 (provide 'init-functions)
