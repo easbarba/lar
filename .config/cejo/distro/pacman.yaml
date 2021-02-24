@@ -1,0 +1,15 @@
+---
+builddep: ''
+clean: ''
+depends: ''
+download: ''
+fix: ''
+help: help
+info: ''
+install: "-S"
+installed: ''
+remove: "-R"
+search: "-Ss"
+sysupgrade: ''
+update: "-Syy"
+upgrade: "-Syu"

@@ -1,0 +1,15 @@
+---
+builddep: builddep
+clean: autoremove
+depends: repoquery --requires --resolve
+download: ''
+fix: fix
+help: help
+info: info
+install: install
+installed: list installed
+remove: remove
+search: search
+sysupgrade: sysupgrade
+update: update
+upgrade: upgrade

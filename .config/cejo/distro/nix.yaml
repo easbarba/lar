@@ -1,0 +1,16 @@
+---
+builddep: build-dep
+clean: nix-store --gc
+depends: depends
+download: download
+fix: install -f
+help: help
+info: show
+install: nix-env --install
+install+: nix-env --install -A
+installed: nix-env -qa
+remove: nix-env --uninstall
+search: nix-env -qa
+sysupgrade: ''
+update: nix-env --update
+upgrade: nix-env --upgrade

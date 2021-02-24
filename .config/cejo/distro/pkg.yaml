@@ -1,0 +1,15 @@
+---
+builddep: ''
+clean: autoremove
+depends: ''
+download: fetch
+fix: fix
+help: help
+info: query
+install: install
+installed: version
+remove: remove
+search: search
+sysupgrade: ''
+update: update
+upgrade: upgrade
