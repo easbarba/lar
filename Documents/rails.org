@@ -37,10 +37,10 @@
 :END:
 * Progress
 ** Books
-   | Books                | Chapter                                       | @            | late | revision |
-   |----------------------+-----------------------------------------------+--------------+------+----------|
-   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Seeding Data |      |          |
-   | Active Record Basics |                                               |              |      |          |
+   | Books                | Chapter                                       | @                                  | late | revision |
+   |----------------------+-----------------------------------------------+------------------------------------+------+----------|
+   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Creating One-to-One Associations   |      |          |
+   | Active Record Basics |                                               |                                    |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
@@ -118,12 +118,13 @@
 * Active Record
   - Single-Table Inheritance
 ** Associations
-   |              |                                        |
-   |--------------+----------------------------------------|
-   | has_many     |                                        |
-   | has_one      |                                        |
-   | belongs_to   | goes in the class with the foreign key |
-   | many_to_many | has_and_belongs_to_many                |
+   |                         |                                        |
+   |-------------------------+----------------------------------------|
+   | has_many                |                                        |
+   | has_one                 |                                        |
+   | belongs_to              | goes in the class with the foreign key |
+   | many_to_many            |                                        |
+   | has_and_belongs_to_many |                                        |
 ** Validations
 ** Migrations
 ** Callbacks
