@@ -124,9 +124,9 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations       |                                             |                                |                                               |
 
 ** SLOC
-   | Project | folder   | file           | @                     |
-   |---------+----------+----------------+-----------------------|
-   | rake    | lib/rake | application.rb | display_cause_details |
+   | Project | folder         | file         | @                     |
+   |---------+----------------+--------------+-----------------------|
+   | rake    | rake/lib/rake/ | file_list.rb | display_cause_details |
 
 * Packages
 ** gem
