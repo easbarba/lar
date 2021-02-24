@@ -13,6 +13,9 @@
   - [[#single-responsability][Single Responsability]]
 - [[#oop][OOP]]
   - [[#definition][Definition]]
+  - [[#interface][Interface]]
+  - [[#public][Public]]
+  - [[#private][Private]]
   - [[#objects][Objects]]
   - [[#data][Data]]
   - [[#behavior][Behavior]]
@@ -61,6 +64,14 @@
 ** Definition
    Object-oriented applications are made up of objects and the
    messages that pass between them.
+** Interface
+   - Abstract
+   - Duck Type
+   - good ones may reduce the cost of unanticipated change
+** Public
+   - stable, changes are unlikely
+** Private
+   - class/methods change a lot, should by hidden from users
 ** Objects
 *** Instance
 **** Hide instance
