@@ -48,7 +48,7 @@ packages()
     # install
     for pack in "${packages[@]}"
     do
-	npm i "$pack"
+	npm i -g "$pack"
     done
 }
 
