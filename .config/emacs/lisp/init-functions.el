@@ -59,7 +59,7 @@
 (defun e/get-video (url)
   "Download Video w/ URL - GPL-3.0."
   (interactive "p")
-  (let ((default-directory *video*))
+  (let ((default-directory *videos*))
     (start-process "VIDEO-DOWNLOADER" "VIDEO-DOWNLOADER" *media-downloader* (current-kill 0 t))
     (message "Watch progress at VIDEO buffer!")))
 (global-set-key (kbd "C-c f V") #'(lambda () (interactive) (e/get-video (current-kill 0 t))))
