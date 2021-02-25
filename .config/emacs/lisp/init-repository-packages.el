@@ -19,18 +19,16 @@
   :defer 1
   :config
 
-  (use-package counsel
-    :defer 1)
+  (use-package counsel :defer 1)
 
-  (use-package swiper
-    :defer 1)
+  (use-package swiper :defer 1)
 
   (ivy-mode 1)
 
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t)
-  ;; enable this if you want `swiper' to use it
-  ;; (setq search-default-mode #'char-fold-to-regexp)
+  (setq ivy-use-virtual-buffers t
+	search-default-mode #'char-fold-to-regexp ;; enable this if you want `swiper' to use it
+	enable-recursive-minibuffers t)
+
   (global-set-key "\C-s" 'swiper)
   (global-set-key (kbd "C-c C-r") 'ivy-resume)
   (global-set-key (kbd "<f6>") 'ivy-resume)
@@ -42,11 +40,11 @@
   (global-set-key (kbd "<f1> l") 'counsel-find-library)
   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+  (global-set-key (kbd "C-c r") 'counsel-recentf)
   (global-set-key (kbd "C-c g") 'counsel-git)
   (global-set-key (kbd "C-c j") 'counsel-git-grep)
-  ;; (global-set-key (kbd "C-c k") 'counsel-ag)
+  ;; (global-set-key (kbd "C-c k") 'counsel-ag)n
   (global-set-key (kbd "C-x l") 'counsel-locate)
-  (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
 ;; ========================================
@@ -69,12 +67,12 @@
 
 (use-package treemacs
   :defer t
-  :bind (("C-c z" . treemacs)))
+  :bind ("C-c z" . treemacs))
 
 (use-package outshine
   :defer t
   :hook (prog-mode . outshine-mode)
-  :bind ("C-c b c". outshine-cycle))
+  :bind ("C-c b c" . outshine-cycle))
 
 (use-package bug-hunter
   :defer t)
