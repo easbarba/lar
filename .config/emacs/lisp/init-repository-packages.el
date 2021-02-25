@@ -126,16 +126,8 @@
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://weblog.rubyonrails.org/feed/atom.xml"
      "https://rubyweekly.com/rss/"
-     "http://lxer.com/module/newswire/headlines.rss"
-     "https://lwn.net/headlines/newrss"
      "https://edelpero.svbtle.com/feed"
      "https://debxp.org/feed/"
-     "https://www.linuxtoday.com/biglt.rss"
-     "https://www.reddit.com/r/emacs/.rss"
-     "https://www.reddit.com/r/linux/.rss"
-     "https://www.reddit.com/r/rails/.rss"
-     "https://www.reddit.com/r/ruby/.rss"
-     "https://www.reddit.com/r/linuxadmin/.rss"
      "https://drewdevault.com/blog/index.xml"
      "https://eregon.me/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
@@ -143,8 +135,6 @@
      "https://metaredux.com/feed.xml"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Central
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCyUBW72KU30dfAYWLVNZO8Q" ;;  Stefan Mischook
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCib793mnUOhWymCh2VJKplQ" ;; AkitaOnRails
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; BoiTempo
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese Onze
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
