@@ -37,10 +37,10 @@
 :END:
 * Progress
 ** Books
-   | Books                | Chapter                                       | @            | late | revision |
-   |----------------------+-----------------------------------------------+--------------+------+----------|
-   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Seeding Data |      |          |
-   | Active Record Basics |                                               |              |      |          |
+   | Books                | Chapter                                       | @                                       | late | revision |
+   |----------------------+-----------------------------------------------+-----------------------------------------+------+----------|
+   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Creating Rich Many-to-Many Associations |      |          |
+   | Active Record Basics |                                               |                                         |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
