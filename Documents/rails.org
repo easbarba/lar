@@ -37,15 +37,16 @@
 :END:
 * Progress
 ** Books
-   | Books                | Chapter                                       | @                                  | late | revision |
-   |----------------------+-----------------------------------------------+------------------------------------+------+----------|
-   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Creating One-to-One Associations   |      |          |
-   | Active Record Basics |                                               |                                    |      |          |
+   | Books                | Chapter                                       | @            | late | revision |
+   |----------------------+-----------------------------------------------+--------------+------+----------|
+   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Seeding Data |      |          |
+   | Active Record Basics |                                               |              |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
    |---------+-----------------------------------------------------------+----------------+---|
    | rails   | rails/activerecord/lib/active_record/associations/builder | association.rb |   |
+
 * Cli
 ** Database
    | what     | how                                                                    | desc                                              |
