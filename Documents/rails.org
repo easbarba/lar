@@ -21,6 +21,7 @@
   - [[#migrations][Migrations]]
   - [[#callbacks][Callbacks]]
   - [[#query-interface][Query Interface]]
+- [[#database][Database]]
 - [[#views][Views]]
 - [[#controller][Controller]]
 - [[#models][Models]]
@@ -37,10 +38,11 @@
 :END:
 * Progress
 ** Books
-   | Books                | Chapter                                       | @                                       | late | revision |
-   |----------------------+-----------------------------------------------+-----------------------------------------+------+----------|
-   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Creating Rich Many-to-Many Associations |      |          |
-   | Active Record Basics |                                               |                                         |      |          |
+   | Books                | Chapter                                       | @                | late | revision |
+   |----------------------+-----------------------------------------------+------------------+------+----------|
+   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Advanced Finding |      |          |
+   |                      |                                               |                  |      |          |
+   | Active Record Basics |                                               |                  |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
@@ -130,6 +132,12 @@
 ** Migrations
 ** Callbacks
 ** Query Interface
+* Database
+  | it    | desc                                                     |
+  |-------+----------------------------------------------------------|
+  | seeds | which defines some data you always need in your database |
+  |       |                                                          |
+
 * Views
 * Controller
 * Models
