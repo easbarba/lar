@@ -303,12 +303,6 @@
 
   (add-hook 'activate-mark-hook #'activate-mark-hook@set-transient-map))
 
-(use-package reformatter
-  :defer 1
-  :config
-  (reformatter-define go-format :program "go" :args '("fmt"))
-  (reformatter-define lua-format :program "lua-format" :args '("-i")))
-
 (use-package eshell-toggle
   :bind (("C-c x" . eshell-toggle)))
 

@@ -16,6 +16,13 @@
 ;; ====================
 ;; ** LANGUAGES MISC
 
+(use-package reformatter
+  :defer 1
+  :config
+  (reformatter-define ruby-format :program "rufo")
+  (reformatter-define go-format :program "go" :args '("fmt"))
+  (reformatter-define lua-format :program "lua-format" :args '("-i")))
+
 (use-package robe
   :disabled
   :hook ruby-mode
