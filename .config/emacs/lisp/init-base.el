@@ -22,16 +22,13 @@
       initial-scratch-message ""
       initial-major-mode 'emacs-lisp-mode
       debug-ignored-errors nil
-      ;; toggle-debug-on-error t
+      toggle-debug-on-error t
       vc-follow-symlinks t)
 
 ;; =========================
 ;; ** BOOTSTRAP PACKAGES
 
 (require 'package)
-
-(when (< emacs-major-version 27)
-  (package-initialize))
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("org" . "http://orgmode.org/elpa/")
