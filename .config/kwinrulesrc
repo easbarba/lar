@@ -44,6 +44,8 @@ wmclassmatch=1
 Description=Application settings for chromium
 desktop=5
 desktoprule=2
+noborder=true
+noborderrule=2
 wmclass=chromium
 wmclassmatch=1
 
