@@ -6,16 +6,15 @@
 
 (defun --e-install-packages (lst)
   "Install LST list."
-
   (package-refresh-contents)
   (dolist (package lst)
     (when (not (package-installed-p package))
       (package-install package))))
 
-(let ((deps '(use-package s f dash)))
- (unless (package-installed-p 'use-package) ;; TODO check all deps
-  (package-refresh-contents)
-  (e/install-external-packages deps)))
+(defconst minimal-deps '(use-package magit async s f dash))
+
+(unless (package-installed-p 'use-package)
+  (--e-install-packages minimal-deps))
 
 (when (require 'use-package nil :noerror)
   (require 'use-package)

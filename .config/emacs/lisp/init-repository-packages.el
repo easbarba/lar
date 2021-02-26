@@ -11,7 +11,6 @@
 (use-package s)
 (use-package dash)
 
-
 ;; ========================================
 ;; ** EXPLORE COMPLETION EXTRA
 
@@ -55,9 +54,10 @@
   :config (when (memq window-system '(mac ns x))
 	    (exec-path-from-shell-initialize)))
 
+
 (use-package duplicate-thing
   :defer 1
-  :bind ("C-c q" . duplicate-thing))
+  :bind (("C-c q" . duplicate-thing)))
 
 (use-package webpaste
   :defer t)
@@ -576,3 +576,4 @@
   :custom  (ediff-window-setup-function 'ediff-setup-windows-plain))
 
 (provide 'init-repository-packages)
+;;; init-repository-packages.el ends here
