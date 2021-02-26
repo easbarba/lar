@@ -55,7 +55,7 @@ packages ()
 	     ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi
 	     seahorse x11proto-dev brightnessctl tlp acpi-call)
 
-    user=(firefox libreoffice calibre inkscape screenkey gimp
+    user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
 	  screenfetch aspell aspell-pt-br telegram-desktop)
 

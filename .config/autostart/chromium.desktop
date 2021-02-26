@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=Network;WebBrowser;
+Comment=Access the Internet
+Exec=/usr/bin/chromium %U
+GenericName=Web Browser
+Icon=chromium
+Keywords=browser
+MimeType=text/html;text/xml;application/xhtml_xml;application/x-mimearchive;x-scheme-handler/http;x-scheme-handler/https;
+Name=Chromium Web Browser
+StartupNotify=true
+StartupWMClass=chromium
+Terminal=false
+Type=Application
+Version=1.0
+X-MultipleArgs=false

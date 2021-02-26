@@ -5,8 +5,8 @@
 # * DEFAULT SOFTWARE:
 
 export EDITOR="emacs -nw"
-export TERMINAL="mate-terminal"
-export BROWSER="firefox"
+export TERMINAL="konsole"
+export BROWSER="chromium"
 
 # * DIRECTORIES ENV VARS
 
