@@ -6,11 +6,6 @@
   :END:
 :CONTENTS:
 - [[#progress][Progress]]
-- [[#terms][Terms]]
-  - [[#dry][DRY]]
-- [[#dry][DRY]]
-- [[#solid][SOLID]]
-  - [[#single-responsability][Single Responsability]]
 - [[#oop][OOP]]
   - [[#definition][Definition]]
   - [[#interface][Interface]]
@@ -20,6 +15,14 @@
   - [[#data][Data]]
   - [[#behavior][Behavior]]
   - [[#terms][Terms]]
+- [[#testing][Testing]]
+  - [[#rspec][RSpec]]
+  - [[#notes][Notes]]
+- [[#terms][Terms]]
+  - [[#dry][DRY]]
+- [[#dry][DRY]]
+- [[#solid][SOLID]]
+  - [[#single-responsability][Single Responsability]]
 - [[#data-structures][Data Structures]]
 - [[#algorithms][Algorithms]]
 - [[#design-patterns][Design Patterns]]
@@ -43,23 +46,6 @@
    | Algorithms                                             | 1 Fundamentals                         |                                                   |        |                |
    | Clean Code                                             | Chapter 1: Clean Code                  |                                                   |        |                |
 
-* Terms
-  | Term        | Description                                   |
-  |-------------+-----------------------------------------------|
-  | EAFP        | Easier to Ask for Forgiveness than Permission |
-  | LBYL        | Look Before You Leap                          |
-  | Duck Typing |                                               |
-  | WHNF        | Weak Head Normal Form                         |
-  | Noise/      |                                               |
-** DRY
-   - Every tiny bit of behavior lives in one and only one place.
-* DRY
-* SOLID
-** Single Responsability
-   - Can be defined in one sentence. “and,” may mean the class likely has more than one responsibility. “or,” means the class has more than one responsibility and they aren’t even very related.
-   - highly cohesive or to have a single responsibility.
-   - Responsibility-Driven Design
-   - everything the class does be highly related to its purpose.
 * OOP
 ** Definition
    Object-oriented applications are made up of objects and the
@@ -83,6 +69,39 @@
 ** Behavior
 ** Terms
 *** TRUE: Transparent, Reasonable, Usable, Exemplary
+* Testing
+** RSpec
+   |          |                                                  |
+   |----------+--------------------------------------------------|
+   | describe | creates an example group (set of related tests). |
+   | expect   | verifies an expected outcome (assertion)         |
+   | example  | individual test                                  |
+   |          |                                                  |
+*** Terms
+    - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
+    -
+    - Arrange/Act/Assert pattern
+
+** Notes
+   - does this test pay for the cost of writing and running it?
+
+* Terms
+  | Term        | Description                                   |
+  |-------------+-----------------------------------------------|
+  | EAFP        | Easier to Ask for Forgiveness than Permission |
+  | LBYL        | Look Before You Leap                          |
+  | Duck Typing |                                               |
+  | WHNF        | Weak Head Normal Form                         |
+  | Noise/      |                                               |
+** DRY
+   - Every tiny bit of behavior lives in one and only one place.
+* DRY
+* SOLID
+** Single Responsability
+   - Can be defined in one sentence. “and,” may mean the class likely has more than one responsibility. “or,” means the class has more than one responsibility and they aren’t even very related.
+   - highly cohesive or to have a single responsibility.
+   - Responsibility-Driven Design
+   - everything the class does be highly related to its purpose.
 * Data Structures
 * Algorithms
 * Design Patterns
