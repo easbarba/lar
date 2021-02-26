@@ -4,112 +4,114 @@
   :PROPERTIES:
   :TOC:      :include all :depth 3 :ignore this
   :END:
-:CONTENTS:
-- [[#progress][Progress]]
-  - [[#books][Books]]
-  - [[#sloc][SLOC]]
-- [[#packages][Packages]]
-  - [[#gem][gem]]
-  - [[#bundle][bundle]]
-    - [[#outdated][outdated]]
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#packages][Packages]]
     - [[#gem][gem]]
-    - [[#install][install]]
-    - [[#update][update]]
-  - [[#irb][irb]]
-  - [[#rspec][rspec]]
-  - [[#unit-test][unit test]]
-  - [[#pry][pry]]
-- [[#features][Features]]
-  - [[#project-structure][project structure]]
-  - [[#system-errors][System Errors]]
-    - [[#usage][usage]]
-  - [[#exceptions][exceptions]]
-    - [[#errors][Errors]]
-    - [[#usage][usage]]
-  - [[#writable-object-attribute][writable object attribute]]
-  - [[#multithreading][Multithreading]]
-    - [[#usage][usage]]
-  - [[#modules][modules]]
-  - [[#continuation][continuation]]
-  - [[#fibers][Fibers]]
-    - [[#errors][errors]]
-    - [[#usage][usage]]
-  - [[#delimited-input][delimited input]]
-  - [[#rake][rake]]
-    - [[#usage][usage]]
-  - [[#gem][gem]]
-  - [[#variables][Variables]]
-    - [[#class-variables][class variables]]
-    - [[#global-variables][global variables]]
-  - [[#self][self]]
-  - [[#commentary][commentary]]
-  - [[#defined][defined?]]
-  - [[#iterators][iterators]]
-  - [[#block-local-variables][block-local variables]]
-  - [[#loops][loops]]
-  - [[#statement-modifiers][statement modifiers]]
-  - [[#comparison][comparison]]
-  - [[#conditional][conditional]]
-  - [[#class][class]]
+    - [[#bundle][bundle]]
+      - [[#outdated][outdated]]
+      - [[#gem][gem]]
+      - [[#install][install]]
+      - [[#update][update]]
+    - [[#irb][irb]]
+      - [[#cli][cli]]
+      - [[#inside][inside]]
+    - [[#rspec][rspec]]
+    - [[#unit-test][unit test]]
+    - [[#pry][pry]]
+  - [[#features][Features]]
+    - [[#project-structure][project structure]]
+    - [[#system-errors][System Errors]]
+      - [[#usage][usage]]
+    - [[#exceptions][exceptions]]
+      - [[#errors][Errors]]
+      - [[#usage][usage]]
+    - [[#writable-object-attribute][writable object attribute]]
+    - [[#multithreading][Multithreading]]
+      - [[#usage][usage]]
+    - [[#modules][modules]]
+    - [[#continuation][continuation]]
+    - [[#fibers][Fibers]]
+      - [[#errors][errors]]
+      - [[#usage][usage]]
+    - [[#delimited-input][delimited input]]
+    - [[#rake][rake]]
+      - [[#usage][usage]]
+    - [[#gem][gem]]
+    - [[#variables][Variables]]
+      - [[#class-variables][class variables]]
+      - [[#global-variables][global variables]]
+    - [[#self][self]]
+    - [[#commentary][commentary]]
+    - [[#defined][defined?]]
+    - [[#iterators][iterators]]
+    - [[#block-local-variables][block-local variables]]
+    - [[#loops][loops]]
+    - [[#statement-modifiers][statement modifiers]]
+    - [[#comparison][comparison]]
+    - [[#conditional][conditional]]
     - [[#class][class]]
-  - [[#append-][append <<]]
-  - [[#blocks][blocks]]
-  - [[#lambda][lambda]]
-    - [[#how][How]]
-    - [[#usage][Usage]]
-  - [[#methods][methods]]
-  - [[#yield][yield]]
-  - [[#procs][procs]]
-  - [[#operators][operators]]
-  - [[#enumerable][enumerable]]
-  - [[#enumerator][enumerator]]
+      - [[#class][class]]
+    - [[#append-][append <<]]
+    - [[#blocks][blocks]]
+    - [[#lambda][lambda]]
+      - [[#how][How]]
+      - [[#usage][Usage]]
+    - [[#methods][methods]]
+    - [[#yield][yield]]
+    - [[#procs][procs]]
+    - [[#operators][operators]]
+    - [[#enumerable][enumerable]]
+    - [[#enumerator][enumerator]]
+      - [[#lazy][lazy]]
+      - [[#each_car][each_car]]
+      - [[#each][each]]
+      - [[#to_enumenum_for][to_enum/enum_for]]
+    - [[#inject][inject]]
+    - [[#select][select]]
+    - [[#succ][succ]]
+    - [[#collect][collect]]
+    - [[#freeze][freeze]]
+    - [[#dup][dup]]
+    - [[#dig][dig]]
+    - [[#fetch][fetch]]
+    - [[#tap][tap]]
+    - [[#map][map]]
+    - [[#pluck][pluck]]
+    - [[#quoting][Quoting]]
+    - [[#here-documents][here documents]]
+    - [[#proc][proc]]
+    - [[#do-end-as-param][do end as param]]
+    - [[#array][array]]
+    - [[#datetime][date/time]]
+    - [[#lambda][lambda]]
+    - [[#begin-rescue][begin rescue]]
+    - [[#hash][hash]]
+    - [[#range][range]]
+    - [[#sets][sets]]
+    - [[#gsub][gsub]]
+    - [[#find][find]]
+    - [[#map][map]]
+    - [[#each_slice][each_slice]]
     - [[#lazy][lazy]]
-    - [[#each_car][each_car]]
-    - [[#each][each]]
-    - [[#to_enumenum_for][to_enum/enum_for]]
-  - [[#inject][inject]]
-  - [[#select][select]]
-  - [[#succ][succ]]
-  - [[#collect][collect]]
-  - [[#freeze][freeze]]
-  - [[#dup][dup]]
-  - [[#dig][dig]]
-  - [[#fetch][fetch]]
-  - [[#tap][tap]]
-  - [[#map][map]]
-  - [[#pluck][pluck]]
-  - [[#quoting][Quoting]]
-  - [[#here-documents][here documents]]
-  - [[#proc][proc]]
-  - [[#do-end-as-param][do end as param]]
-  - [[#array][array]]
-  - [[#datetime][date/time]]
-  - [[#lambda][lambda]]
-  - [[#begin-rescue][begin rescue]]
-  - [[#hash][hash]]
-  - [[#range][range]]
-  - [[#sets][sets]]
-  - [[#gsub][gsub]]
-  - [[#find][find]]
-  - [[#map][map]]
-  - [[#each_slice][each_slice]]
-  - [[#lazy][lazy]]
-  - [[#with_index][with_index]]
-  - [[#enum_for][enum_for]]
-  - [[#more][more]]
-  - [[#concepts][Concepts]]
-    - [[#iterator][Iterator]]
-    - [[#methods][Methods]]
-    - [[#enumerator][Enumerator]]
-  - [[#instructions][Instructions]]
-    - [[#rbenv][Rbenv]]
-    - [[#misc][misc]]
-- [[#toolings][Toolings]]
-- [[#videos][Videos]]
-- [[#tests][Tests]]
-  - [[#rspec][RSpec]]
-  - [[#unit][Unit]]
-:END:
+    - [[#with_index][with_index]]
+    - [[#enum_for][enum_for]]
+    - [[#more][more]]
+    - [[#concepts][Concepts]]
+      - [[#iterator][Iterator]]
+      - [[#methods][Methods]]
+      - [[#enumerator][Enumerator]]
+    - [[#instructions][Instructions]]
+      - [[#rbenv][Rbenv]]
+      - [[#misc][misc]]
+  - [[#toolings][Toolings]]
+  - [[#videos][Videos]]
+  - [[#tests][Tests]]
+    - [[#rspec][RSpec]]
+    - [[#unit][Unit]]
+  :END:
 * Progress
 ** Books
    | Books                            | Chapter                           | @                                           | late                           | revision                                      |
@@ -161,6 +163,19 @@
     | --major                     | Prefer updating to next major version (default).           |
     |                             |                                                            |
 ** irb
+*** cli
+    |                          |   |
+    |--------------------------+---|
+    | -r ./<file>              |   |
+    | irb_load                 |   |
+    | irb_source               |   |
+    | irb --prompt <my-prompt> |   |
+*** inside
+    |                           |         |
+    |---------------------------+---------|
+    | context.use_tracer = true | tracker |
+    |                           |         |
+
 ** rspec
    - RSpec.describe
    - describe
@@ -178,9 +193,9 @@
 ** project structure
    #+begin_src ruby
    anagram/    <- top-level
-     bin/      <- command-line interface goes here
-     lib/      <- three library files go here
-     test/     <- test files go here
+   bin/      <- command-line interface goes here
+   lib/      <- three library files go here
+   test/     <- test files go here
    #+end_src
 ** System Errors
    - SystemCallError
@@ -639,11 +654,11 @@
        yield
      else
        'lol'
-   end
+     end
 
-   foo { p 'meh' }
-   bar # => lol
-   bar { p 'yahoo' } # => yahoo
+     foo { p 'meh' }
+     bar # => lol
+     bar { p 'yahoo' } # => yahoo
    #+end_src
 ** procs
    #+begin_src ruby
@@ -663,8 +678,8 @@
 
    def initialize(name, &block) # initialize can receive proc object
 
-   tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
-   tc.get_tax(100) # => "Sales tax on 100 = 7.5"
+     tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
+     tc.get_tax(100) # => "Sales tax on 100 = 7.5"
    #+end_src
    - if the last parameter in a method definition is prefixed with an ampersand, any associated block is converted to a Proc object, and that object is assigned to the parameter. This allows you to store the block for use later.
 ** operators
@@ -789,7 +804,7 @@
    arr[1][0]
    [1,2][0]
    arr.dig(3,0) value_at, a[2,3] = ..
-   a[2..3]
+				   a[2..3]
    a.slice()
    a.[]=(0, "first")
    a.[](2)
@@ -811,7 +826,7 @@
    a.reverse
    a.join(" , ")
    a = *
-   a.uniq
+       a.uniq
    a.compact
    a.size
    a.empty
