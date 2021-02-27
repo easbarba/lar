@@ -57,7 +57,7 @@ packages ()
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
-	  screenfetch aspell aspell-pt-br telegram-desktop)
+	  screenfetch aspell aspell-pt-br)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
 	   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
