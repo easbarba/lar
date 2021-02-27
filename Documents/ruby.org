@@ -177,16 +177,44 @@
     |                           |         |
 
 ** rspec
-   - RSpec.describe
-   - describe
-   - context
-   - it ''
-   - expect().to
-   - before(:xx)
-   - after(:xxx)
-   - before(:context)
-   - after(:context)
-   - let(:aaa) { asdasd }
+*** parts
+    |                                   |                                      |
+    |-----------------------------------+--------------------------------------|
+    | RSpec.describe                    |                                      |
+    | describe                          |                                      |
+    | context                           |                                      |
+    | it 'foo bar'                      |                                      |
+    | expect(foo).to eq(bar)            |                                      |
+    | expect(foo).to be > :bar          |                                      |
+    | before(:xx)                       |                                      |
+    | after(:xxx)                       |                                      |
+    | before(:context)                  |                                      |
+    | after(:context)                   |                                      |
+    | let(:foo) { Bar.new }             |                                      |
+    | pending 'foo not yet implemented' |                                      |
+    | skip or xit 'foo bar'             | x prepended to it '' to skip example |
+    |                                   |                                      |
+
+*** metadata
+    |                               |   |
+    |-------------------------------+---|
+    | context 'foobar', focus: true |   |
+    |                               |   |
+
+*** cli
+    | cmd                          | desc                          |
+    |------------------------------+-------------------------------|
+    | --profile                    | test time                     |
+    | --format <type>              |                               |
+    | folder                       | run allfolders specs          |
+    | spec                         | run just one spec             |
+    | -e <name>                    | run spec(s) begins w/ name    |
+    | <file>:N                     | run examples in lineN of file |
+    | --only-failures              |                               |
+    | --next-failure               |                               |
+    | --tag last_run_status:failed |                               |
+    | --tag focus                  |                               |
+
 ** unit test
 ** pry
 * Features
