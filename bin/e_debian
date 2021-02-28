@@ -40,7 +40,7 @@ packages ()
 	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
 	   bridge-utils)
 
-    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum
+    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack
 	   fonts-freefont-ttf fonts-dejavu)
 
     security=(gnutls-bin)
