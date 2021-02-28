@@ -127,10 +127,11 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations       |                                             |                                |                                               |
 
 ** SLOC
-   | Project    | folder | file                   | @                     |
-   |------------+--------+------------------------+-----------------------|
-   | rake       | rake   | file_list.rb           | display_cause_details |
-   | rspec-core | core   | backtrace_formatter.rb |                       |
+   | Project    | folder | file          | @                     |
+   |------------+--------+---------------+-----------------------|
+   | rake       | rake   | file_list.rb  | display_cause_details |
+   | rspec-core | core   | configuration | deprecation_stream=   |
+   | rubocop    |        |               |                       |
 
 * Packages
 ** gem
@@ -352,6 +353,17 @@
 
    A::foo
    A::SubA:bar
+
+   a = Module.new
+
+   a.class_eval do
+     remove_method
+     method_defined?
+
+     attr_reader name
+     alias_method x,e
+   end
+
    #+end_src
 ** continuation
    - require 'continuation'
