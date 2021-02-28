@@ -37,14 +37,14 @@
   - [[#skills][Skills]]
 :END:
 * Progress
-   | Book                                                   | chapter                                | @                                                 | later  | revision       |
-   |--------------------------------------------------------+----------------------------------------+---------------------------------------------------+--------+----------------|
-   | A Common-Sense Guide to Data Structures and Algorithms | Arrays                                 | Searching                                         |        |                |
-   | Refactoring Improving the Design of Existing Code      | Chapter 1 Refactoring: A First Example | Now I have a spot for the play, I need to add it. |        |                |
-   | Design Patterns Elements of Reusable OO Software       | 3 Creational Patterns                  | Facade                                            |        | Factory Method |
-   | Object Thinking                                        | Chapter 1                              |                                                   |        |                |
-   | Algorithms                                             | 1 Fundamentals                         |                                                   |        |                |
-   | Clean Code                                             | Chapter 1: Clean Code                  |                                                   |        |                |
+   | Book                                                   | chapter                                | @                                                 | later | revision       |
+   |--------------------------------------------------------+----------------------------------------+---------------------------------------------------+-------+----------------|
+   | A Common-Sense Guide to Data Structures and Algorithms | Arrays                                 | Searching                                         |       |                |
+   | Refactoring Improving the Design of Existing Code      | Chapter 1 Refactoring: A First Example | Now I have a spot for the play, I need to add it. |       |                |
+   | Design Patterns Elements of Reusable OO Software       | 3 Creational Patterns                  | Facade                                            |       | Factory Method |
+   | Object Thinking                                        | Chapter 1                              |                                                   |       |                |
+   | Algorithms                                             | 1 Fundamentals                         |                                                   |       |                |
+   | Clean Code                                             | Chapter 1: Clean Code                  |                                                   |       |                |
 
 * OOP
 ** Definition
