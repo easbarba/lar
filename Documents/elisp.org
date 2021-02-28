@@ -9,18 +9,18 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
 - [[#features][Features]]
-  - [[#integer][Integer]]
-  - [[#float][Float]]
-  - [[#characters][Characters]]
-  - [[#association-list][Association List]]
+  - [[#types][Types]]
+  - [[#cons-cell][Cons Cell]]
+  - [[#lists][Lists]]
+  - [[#terms][Terms]]
 - [[#to-read][To read]]
 :END:
 * Progress
 ** Books
-   | Books        | Cap             | @                      | late | revision |
-   |--------------+-----------------+------------------------+------+----------|
-   | Emacs Lisp   | Lisp Data Types | 2.4.12 Hash Table Type | m    |          |
-   | Emacs Manual |                 |                        |      |          |
+   | Books        | Cap     | @                        | late                            | revision |
+   |--------------+---------+--------------------------+---------------------------------+----------|
+   | Emacs Lisp   | 5 Lists | 5.1 Lists and Cons Cells | 2.5.6 Window Configuration Type |          |
+   | Emacs Manual |         |                          |                                 |          |
 
 ** SLOC
    | Source Code | folder      | file        | @ |
@@ -30,49 +30,120 @@
    |             |             |             |   |
 
 * Features
-** Integer
-   - fixnums
-   - bignums
+** Types
+*** Integer
+    - fixnums
+    - bignums
 
-*** predicate: bignums / fixnums
+**** predicate: bignums / fixnums
+     #+begin_src elisp
+     (prin1 most-negative-fixnum)
+     (prin1 most-positive-fixnum)
+
+     (fixnump 0)
+     (bignump 0)
+     #+end_src
+
+**** compare: eql or =
+     #+begin_src elisp
+     (eql 0 0)
+     (= 0 0)
+     #+end_src
+
+*** Float
+*** Characters
+    - characters is a question mark followed by the character
     #+begin_src elisp
-    (prin1 most-negative-fixnum)
-    (prin1 most-positive-fixnum)
+    ?B
+    ?A
+    ?r
+    ?R
 
-    (fixnump 0)
-    (bignump 0)
+    ;; escape sequences,
+    ?\#
+    ?\\
+
+    ;; control-g, backspace, tab, newline, vertical tab, formfeed, space, return, del, and escape as
+    ?\a   ?\b   ?\t   ?\n   ?\v   ?\f   ?\s   ?\r   ?\d ?\e
+
+    ;; Control-Character Syntax
+    ?\C-i   ?\C-?
+
+    ;; Meta-Character
+    ?\M-\C-b
+    #+end_src
+*** Buffer
+    - local keymap
+    - local variables
+    - syntax table
+    - overlays
+    - text proprierties
+
+    #+begin_src elisp
+    (current-buffer)
+
+    #+end_src
+*** Window
+    - describes the portion of the terminal screen that Emacs uses to display a buffer
+    - has one associated buffer
+    - selected window
+    - belongs to one and only one frame.
+    -
+
+      #+begin_src elisp
+      (selected-window)
+
+      #+end_src
+
+*** Frame
+    - screen area that contains one or more Emacs windows
+    -
+
+    #+begin_src elisp
+
+    #+end_src
+*** Terminal
+    -  device capable of displaying one or more Emacs frames
+
+    #+begin_src elisp
+    (get-device-terminal nil)
+
+    #+end_src
+*** Marker
+    - denotes a position in a specific buffer.
+*** Association List
+    - Can be used as stack, cause it easy to add items in the front
+    -
+*** Primitive
+    #+begin_src elisp
+    (symbol-function 'car) ;; ⇒ #<subr car>
+    (subrp (symbol-function 'car)) ;; ⇒ t
+
     #+end_src
 
-*** compare: eql or =
-    #+begin_src elisp
-    (eql 0 0)
-    (= 0 0)
-    #+end_src
+    #+RESULTS:
+    : t
 
-** Float
-** Characters
-   - characters is a question mark followed by the character
-   #+begin_src elisp
-   ?B
-   ?A
-   ?r
-   ?R
+** Cons Cell
+   - represents an ordered pair
+   - car slot:
+   - cdr slot: refers to the following cons cell
+   - the cdr of the last cons cell in a list is *nil*
+   - proper list
 
-   ;; escape sequences,
-   ?\#
-   ?\\
-
-   ;; control-g, backspace, tab, newline, vertical tab, formfeed, space, return, del, and escape as
-   ?\a   ?\b   ?\t   ?\n   ?\v   ?\f   ?\s   ?\r   ?\d ?\e
-
-   ;; Control-Character Syntax
-   ?\C-i   ?\C-?
-
-   ;; Meta-Character
-   ?\M-\C-b
-   #+end_src
-** Association List
-   - Can be used as stack, cause it easy to add items in the front
+** Lists
+   - sequence of zero or more elements
+   - can insert or delete elements in a list without copying the whole list.
+   - built up from cons cells
+   - series of cons cells chained together
    -
+
+
+** Terms
+   |       |                 |
+   |-------+-----------------|
+   | point | cursor position |
+   |       |                 |
+
 * To read
   https://youtu.be/9i_9hse_Y08 - How to Cut Emacs Start Up Time in Half! - Emacs From Scratch #12
