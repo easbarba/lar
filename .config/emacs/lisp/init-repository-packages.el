@@ -1,4 +1,6 @@
-;;; -*- lexical-binding: t;
+;;; package --- Summary -*- lexical-binding: t;
+
+;;; Commentary:
 
 ;; ========================================
 ;;; * REPOSITORY PACKAGES & LIBRARIES
@@ -485,10 +487,10 @@
 (use-package company-box
   :hook (company-mode . company-box-mode))
 
-(use-package olivetti
-  :defer 1
-  :custom (olivetti-body-width 122)
-  :config (add-hook 'olivetti-mode 'eww-mode))
+;; (use-package olivetti
+;;   :defer 1
+;;   :custom (olivetti-body-width 122)
+;;   :config (add-hook 'olivetti-mode 'eww-mode))
 
 (use-package zoom
   :defer 1

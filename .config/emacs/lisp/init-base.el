@@ -1,4 +1,8 @@
-;;; -*- lexical-binding: t;
+;;; package --- base -*- lexical-binding: t;
+
+;;; Commentary:
+;;; Code:
+
 
 ;;; Description:
 
@@ -22,7 +26,7 @@
       initial-scratch-message ""
       initial-major-mode 'emacs-lisp-mode
       debug-ignored-errors nil
-      toggle-debug-on-error t
+      ;; toggle-debug-on-error t
       vc-follow-symlinks t)
 
 ;; =========================
@@ -41,17 +45,6 @@
 (load custom-file t)
 
 ;; =========================
-;; ** THEMES
-
-(when (display-graphic-p) (load-theme *theme* t))
-
-;; =========================
-;; ** FONTS
-
-(when (member "DejaVu Sans Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-17")))
-
-;; =========================
 ;; ** EMACS DIRECTORIES
 
 (dolist (fld '("site-lisp" "etc" "erc"))
@@ -59,3 +52,4 @@
     (mkdir (concat user-emacs-directory fld))))
 
 (provide 'init-base)
+;;; init-base.el ends here

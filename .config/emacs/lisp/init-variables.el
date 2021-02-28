@@ -1,4 +1,7 @@
-;;; -*- lexical-binding: t;
+;;; package --- global variables -*- lexical-binding: t;
+
+;;; Commentary:
+;;; Code:
 
 ;; =======================
 ;; CUSTOM GLOBAL VARIABLES
@@ -49,3 +52,4 @@
 
 
 (provide 'init-variables)
+;;; init-variables.el ends here

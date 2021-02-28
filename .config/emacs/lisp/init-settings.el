@@ -4,6 +4,19 @@
 ;; * MISCELLANEOUS DEFAULT SETTINGS
 ;; =================================
 
+;; =========================
+;; ** THEMES
+
+(when (display-graphic-p) (load-theme *theme* t))
+
+;; =========================
+;; ** FONTS
+
+(cond ((member "Hack" (font-family-list))
+       (add-to-list 'default-frame-alist '(font . "Hack-17")))
+      ((member "DejaVu Sans Mono" (font-family-list))
+       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-17"))))
+
 ;; DEFALIAS
 (defalias 'yes-or-no-p 'y-or-n-p)
 

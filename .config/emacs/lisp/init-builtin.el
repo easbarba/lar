@@ -1,4 +1,7 @@
-;;; -*- lexical-binding: t;
+;;; package --- Builtin Packages Configurations -*- lexical-binding: t;
+
+;;; Commentary:
+;;; Code:
 
 ;; =========================
 ;; * BUILTIN PACKAGES
@@ -427,7 +430,7 @@
 
 (defun recentf-track-closed-file ()
   "Update the recent list when a file or dired buffer is killed.
-  That is, remove a non kept file from the recent list."
+That is, remove a non kept file from the recent list."
   (let ((buff-name (or buffer-file-name
                        (and
                         (derived-mode-p 'dired-mode)
@@ -502,7 +505,6 @@
 		   erc-interpret-mirc-color t
 		   erc-spelling-dictionaries '(("#emacs" "american"))
 		   erc-autojoin-channels-alist '(("freenode.net"
-						  "#debxp"
 						  "#debian"
 						  "#ruby"
 						  "#emacs"))
@@ -531,13 +533,13 @@
 (define-key doc-view-mode-map (kbd "/") #'doc-view-reverse-colors)
 
 (defun define-doc-view-current-cache-dir ()
-  ;; doc-view-current-cache-dir was renamed to doc-view--current-cache-dir in Emacs 24.5
+  "`doc-view-current-cache-dir' was renamed to function `doc-view--current-cache-dir' in Emacs 24.5."
   (or (fboundp 'doc-view-current-cache-dir)
       (defalias 'doc-view-current-cache-dir 'doc-view--current-cache-dir)))
 (eval-after-load "doc-view" '(define-doc-view-current-cache-dir))
 
 (defun doc-view-reverse-colors ()
-  "Inverts document colors.\n
+  "Inverts document colors.
 Requires an installation of ImageMagick (\"convert\")."
   (interactive)
   ;; error out when ImageMagick is not installed
@@ -549,12 +551,12 @@ Requires an installation of ImageMagick (\"convert\")."
 						 (doc-view-current-page))
 					 (doc-view-current-cache-dir))))
 	(call-process-shell-command
-	 "convert" nil nil nil "-negate" file-name file-name)
+	 "convert" "-negate" file-name file-name)
 	(clear-image-cache)
 	(doc-view-goto-page (doc-view-current-page))))))
 
 (defun doc-view-reverse-colors-all-pages ()
-  "Inverts document colors on all pages.\n
+  "Inverts document colors on all pages.
 Requires an installation of ImageMagick (\"convert\")."
   (interactive)
   ;; error out when ImageMagick is not installed
@@ -569,7 +571,7 @@ Requires an installation of ImageMagick (\"convert\")."
 	  (setq page (expand-file-name (format "page-%d.png" (1+ pnum))
 				       (doc-view-current-cache-dir)))
 	  (call-process-shell-command
-	   "convert" nil nil nil "-negate" page page))
+	   "convert" "-negate" page page))
 	(clear-image-cache)
 	(doc-view-goto-page orig)
 	(message "Done reversing video!")))))
@@ -708,7 +710,7 @@ Requires an installation of ImageMagick (\"convert\")."
 
 (defun xah-global-abbrev-position-cursor (&optional @pos)
   "Move cursor back to ^ if exist, else put at end.
-        Return true if found, else false. Version 2016-10-24"
+Return true if found, else false. Version 2016-10-24"
   (interactive)
   (let (($found-p (search-backward "^" (if @pos
                                            @pos
@@ -889,3 +891,4 @@ Requires an installation of ImageMagick (\"convert\")."
 (show-paren-mode 1) ;; Visually indicate matching pairs of parentheses.
 
 (provide 'init-builtin)
+;;; init-builtin.el ends here
