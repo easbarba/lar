@@ -127,9 +127,10 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations       |                                             |                                |                                               |
 
 ** SLOC
-   | Project | folder         | file         | @                     |
-   |---------+----------------+--------------+-----------------------|
-   | rake    | rake/lib/rake/ | file_list.rb | display_cause_details |
+   | Project    | folder | file                   | @                     |
+   |------------+--------+------------------------+-----------------------|
+   | rake       | rake   | file_list.rb           | display_cause_details |
+   | rspec-core | core   | backtrace_formatter.rb |                       |
 
 * Packages
 ** gem
@@ -456,6 +457,10 @@
        end
      end
      #+end_src
+** autoload
+   #+begin_src ruby
+   autoload :SharedContext, 'rspec/core/shared_context'
+   #+end_src
 ** commentary
    #+begin_src ruby
    # one line commentary
