@@ -275,12 +275,10 @@
   (eshell-highlight-prompt nil)
   (eshell-prompt-function 'epe-theme-lambda))
 
-(defvar eshell-syntax-highlighting-path (f-join *site-lisp* "eshell-syntax-highlighting.el"))
 (use-package eshell-syntax-highlighting
   :defer 1
-  :load-path eshell-syntax-highlighting-path
   :after esh-mode
-  :config (eshell-syntax-highlighting-enable))
+  :config (eshell-syntax-highlighting-global-mode +1))
 
 (use-package bash-completion
   :defer 1
@@ -349,12 +347,14 @@
   :hook (org-mode . org-make-toc-mode))
 
 (use-package erc-hl-nicks
+  :disabled
   :after erc
   :config
   (require 'erc-hl-nicks)
   (erc-update-modules))
 
 (use-package erc-image
+  :disabled
   :after erc)
 
 (use-package ibuffer-vc
@@ -485,12 +485,13 @@
   :config (company-quickhelp-mode))
 
 (use-package company-box
+  :disabled
   :hook (company-mode . company-box-mode))
 
-;; (use-package olivetti
-;;   :defer 1
-;;   :custom (olivetti-body-width 122)
-;;   :config (add-hook 'olivetti-mode 'eww-mode))
+(use-package olivetti
+  :defer 1
+  :custom (olivetti-body-width 122)
+  :config (add-hook 'olivetti-mode 'eww-mode))
 
 (use-package zoom
   :defer 1
@@ -519,12 +520,14 @@
   :custom
   (doom-modeline-env-version t)
   (doom-modeline-buffer-encoding nil)
-  (doom-modeline-vcs-max-length 1)
+  (doom-modeline-env-enable-ruby t)
+  (doom-modeline-env-ruby-executable "ruby")
+  ;; (doom-modeline-vcs-max-length 1)
+  ;; (doom-modeline-segment--vcs nil)
   (doom-modeline-segment--buffer-position t)
   (doom-modeline-segment--pdf-pages t)
-  ;; (doom-modeline-segment--vcs nil)
   (doom-modeline-workspace-name t)
-  (doom-modeline-lsp nil)
+  (doom-modeline-lsp t)
   (doom-modeline-irc nil)
   :config
   (setq-default doom-modeline-buffer-file-name-style 'file-name)

@@ -50,6 +50,5 @@
   :type 'string
   :group 'my)
 
-
 (provide 'init-variables)
 ;;; init-variables.el ends here

@@ -359,7 +359,7 @@
 ;; ** DIFF
 
 (add-hook 'diff-mode-hook
-          '(lambda ()
+          #'(lambda ()
              ;; (require 'diff)
              (setq-local whitespace-style
                          '(face
@@ -378,7 +378,7 @@
 ;; ** EDIFF
 
 (add-hook 'diff-mode-hook
-          '(lambda ()
+          #'(lambda ()
              (require 'ediff)
 
              (setq-default ediff-diff-options "-w"
@@ -478,14 +478,14 @@ That is, remove a non kept file from the recent list."
 ;; ** ERC
 
 (add-hook 'erc-mode-hook
-	  '(lambda ()
+	  #'(lambda ()
 	     (require 'erc)
 	     (require 'erc-log)
 	     (require 'erc-notify)
 	     (require 'erc-spelling)
 	     (require 'erc-autoaway)
 	     (add-hook 'window-configuration-change-hook
-		       '(lambda ()
+		       #'(lambda ()
 			  (setq erc-fill-column (- (window-width) 2))))
 	     (erc-track-remove-from-mode-line)
 	     (setq-local scroll-margin 1)

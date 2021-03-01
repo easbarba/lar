@@ -15,22 +15,18 @@
   (global-set-key [remap dired-do-hardlink] 'dired-async-do-hardlink))
 
 (use-package dired-ranger
-  :disabled
   :defer 1
   :after dired)
 
 (use-package dired-git-info
-  :disabled
   :after dired
   :config (define-key dired-mode-map ")" 'dired-git-info-mode))
 
 (use-package dired-collapse
-  :disabled
   :after dired
   :hook (dired-collapse-mode . dired-mode))
 
 (use-package dired-subtree
-  :disabled
   :after dired
   :hook (dired-subtree . dired-mode))
 
@@ -52,6 +48,5 @@
   :disabled
   :defer 1
   :config (ido-hacks-mode))
-
 
 (provide 'init-repository-builtin)

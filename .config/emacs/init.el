@@ -7,19 +7,19 @@
 
 ;; SETTINGS
 
-(require 'init-variables)
 (require 'init-base)
+(require 'init-variables)
 (require 'init-settings)
+
+;; CUSTOM
+(require 'init-bindings)
+(require 'init-functions)
 
 ;; BUILTINS
 (require 'init-modeline)
 (require 'init-dired)
 (require 'init-builtin)
 (require 'init-languages)
-
-;; CUSTOM
-(require 'init-bindings)
-(require 'init-functions)
 
 ;; * LOAD EXTERNAL
 

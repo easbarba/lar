@@ -1,11 +1,11 @@
 ;;; -*- lexical-binding: t;
 
 ;; ================================
-;; * ADDITIONAL LANGUAGES TOOLINGS
+;; ADDITIONAL LANGUAGES TOOLINGS
 ;; ================================
 
 ;; ====================
-;; ** LANGUAGES FORMATERS
+;; * LANGUAGES FORMATERS
 
 ;;(defvar formatters '((ruby-mode . 'rubocopfmt))
 ;;"List of formmater per major-mode")
@@ -14,7 +14,7 @@
 ;;(let ((formatter (get major-mode (buffer-expose-mode))))))
 
 ;; ====================
-;; ** LANGUAGES MISC
+;; * LANGUAGES MISC
 
 (use-package reformatter
   :defer 1
@@ -22,6 +22,9 @@
   (reformatter-define ruby-format :program "rufo")
   (reformatter-define go-format :program "go" :args '("fmt"))
   (reformatter-define lua-format :program "lua-format" :args '("-i")))
+
+;; ====================
+;; ** RUBY
 
 (use-package robe
   :disabled
@@ -41,6 +44,29 @@
 (use-package rspec-mode
   :defer 1)
 
+(use-package ruby-test-mode
+  :defer 1)
+
+(use-package ruby-hash-syntax
+  :defer 1)
+
+(use-package ruby-end
+  :defer 1)
+
+(use-package ruby-refactor
+  :defer 1)
+
+(use-package seeing-is-believing
+  :defer 1)
+
+(use-package enh-ruby-mode
+  :disabled
+  :defer 1
+  :config
+  (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+  (add-to-list 'auto-mode-alist '("\\.rb\\'" . enh-ruby-mode))
+  (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode)))
+
 (use-package ruby-compilation
   :defer 1
   :config
@@ -51,6 +77,12 @@
   (with-eval-after-load 'ruby-compilation
     (defalias 'rake 'ruby-compilation-rake)))
 
+(use-package ruby-tools
+  :defer 1)
+
+;; ====================
+;; ** SCHEME
+
 (use-package geiser
   :defer 1
   :commands (geiser-mode)
@@ -58,6 +90,9 @@
   (geiser-active-implementations '(guile))
   (geiser-repl-history-filename (concat user-emacs-directory
 					"geiser-history")))
+
+;; ====================
+;; ** JAVASCRIPT
 
 (use-package nodejs-repl
   :defer t
@@ -71,6 +106,9 @@
 	      (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
 	      (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl))))
 
+;; ====================
+;; ** ..
+
 (use-package markdown-mode
   :defer t
   :commands (markdown-mode gfm-mode)
@@ -78,6 +116,9 @@
 	 ("\\.md\\'" . markdown-mode)
 	 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
+
+;; ========================================
+;; * TOOLS
 
 (use-package yasnippet
   :defer 1
@@ -124,8 +165,8 @@
   :defer 1
   :commands lsp
   :hook
-  (elixir-mode . lsp)
   (ruby-mode . lsp)
+  (elixir-mode . lsp)
   (css-mode . lsp)
   (js-mode . lsp)
   (html-mode . lsp)
@@ -133,11 +174,14 @@
   (json-mode . lsp)
   (yaml-mode . lsp)
   :custom
-  (lsp-log-io nil) ; if set to true can cause a performance hit
   (lsp-idle-delay 0.500)
   (lsp-completion-provider :capf)
-  (lsp-enable-indentation nil)
-  (lsp-signature-auto-activate nil)
+  (lsp-modeline-diagnostics-scope :workspace)
+  (lsp-enable-indentation t)
+  ;; (lsp-log-io nil) ; if set to true can cause a performance hit
+  ;; (lsp-print-performance t)
+  ;; (lsp-enable-file-watchers nil)
+  (lsp-signature-auto-activate t)
   (flycheck-checker-error-threshold 1400)
   (lsp-clients-elixir-server-executable (f-join user-emacs-directory
 						 ".cache" "lsp" "elixir-ls"
@@ -152,13 +196,6 @@
   :commands lsp-ui-mode
   :config (setq lsp-ui-sideline-enable nil))
 
-(use-package lsp-dart
-  :hook (dart-mode . lsp))
-
-(use-package helm-lsp
-  :disabled
-  :defer 1
-  :commands helm-lsp-workspace-symbol)
 
 (use-package lsp-treemacs
   :defer t
@@ -170,6 +207,5 @@
   :config
   (dap-mode t)
   (dap-ui-mode t))
-
 
 (provide 'init-repository-languages)
