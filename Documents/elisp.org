@@ -19,7 +19,7 @@
 ** Books
    | Books        | Cap     | @                        | late                            | revision |
    |--------------+---------+--------------------------+---------------------------------+----------|
-   | Emacs Lisp   | 5 Lists | 5.1 Lists and Cons Cells | 2.5.6 Window Configuration Type |          |
+   | Emacs Lisp   | 5 Lists | 5.1 Lists and Cons Cells | s2.5.6 Window Configuration Type |          |
    | Emacs Manual |         |                          |                                 |          |
 
 ** SLOC
@@ -136,8 +136,16 @@
    - can insert or delete elements in a list without copying the whole list.
    - built up from cons cells
    - series of cons cells chained together
-   -
-
+*** Circular List
+    - cons cell’s cdr point to one of the previous cons cells in the list
+*** Dotted List
+    - last cons cell is some value other than nil
+    -
+    #+begin_src elisp
+    (consp)
+    (atom)
+    (listp)
+    #+end_src
 
 ** Terms
    |       |                 |
