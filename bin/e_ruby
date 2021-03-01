@@ -25,7 +25,7 @@ packages()
 {
     echo 'Installing gem packages'
 
-    local packages=(bundler solargraph pry)
+    local packages=(bundler)
 
     for pack in "${packages[@]}"
     do
