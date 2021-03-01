@@ -2,15 +2,24 @@
 update_info=kwinrules.upd:replace-placement-string-to-enum
 
 [1]
-Description=Application settings for emacs-gtk
+Description=Application settings for emacs-28.0.50
+desktop=1
+desktoprule=2
+fullscreenrule=4
+wmclass=emacs-28-0-50 emacs-28.0.50
+wmclasscomplete=true
+wmclassmatch=1
+
+[10]
+Description=emacs
 desktop=1
 desktoprule=2
 fullscreen=true
 fullscreenrule=2
-wmclass=emacs-gtk
+wmclass=emacs
 wmclassmatch=1
 
-[10]
+[11]
 Description=konsole
 desktop=3
 desktoprule=2
@@ -19,21 +28,21 @@ fullscreenrule=2
 wmclass=konsole
 wmclassmatch=1
 
-[11]
+[12]
 Description=telegram
 desktop=4
 desktoprule=2
 wmclass=telegramdesktop
 wmclassmatch=1
 
-[12]
+[13]
 Description=Steam
 desktop=4
 desktoprule=2
 wmclass="steam"
 wmclassmatch=1
 
-[13]
+[14]
 Description=csgo
 desktop=4
 desktoprule=2
@@ -41,6 +50,15 @@ wmclass="csgo_linux64"
 wmclassmatch=1
 
 [2]
+Description=Application settings for emacs-gtk
+desktop=1
+desktoprule=2
+fullscreen=true
+fullscreenrule=2
+wmclass=emacs-gtk
+wmclassmatch=1
+
+[3]
 Description=Application settings for chromium
 desktop=5
 desktoprule=2
@@ -49,7 +67,7 @@ noborderrule=2
 wmclass=chromium
 wmclassmatch=1
 
-[3]
+[4]
 Description=icecat
 desktop=1
 desktoprule=1
@@ -63,7 +81,7 @@ wmclass=navigator icecat
 wmclasscomplete=true
 wmclassmatch=1
 
-[4]
+[5]
 Description=discover
 desktop=5
 desktoprule=2
@@ -71,14 +89,14 @@ wmclass=plasma-discover discover
 wmclasscomplete=true
 wmclassmatch=1
 
-[5]
+[6]
 Description=clementine
 desktop=4
 desktoprule=2
 wmclass=clementine
 wmclassmatch=1
 
-[6]
+[7]
 Description=firefox
 desktop=5
 desktoprule=2
@@ -89,7 +107,7 @@ wmclass=navigator firefox
 wmclasscomplete=true
 wmclassmatch=1
 
-[7]
+[8]
 Description=mpv
 desktop=4
 desktoprule=2
@@ -99,7 +117,7 @@ wmclass=gl mpv
 wmclasscomplete=true
 wmclassmatch=1
 
-[8]
+[9]
 Description=okular
 desktop=2
 desktoprule=2
@@ -108,14 +126,5 @@ fullscreenrule=2
 wmclass=okular
 wmclassmatch=1
 
-[9]
-Description=emacs
-desktop=1
-desktoprule=2
-fullscreen=true
-fullscreenrule=2
-wmclass=emacs
-wmclassmatch=1
-
 [General]
-count=13
+count=14
