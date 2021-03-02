@@ -52,7 +52,7 @@ packages ()
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
     wmpacks=(network-manager-gnome aria2 dunst maim udiskie unclutter diodon gnome-keyring
-	     ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi
+	     ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
 	     seahorse x11proto-dev brightnessctl tlp acpi-call blueman clipit)
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
