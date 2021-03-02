@@ -538,34 +538,37 @@
 (use-package doom-themes
   :defer 1
   :config
-  (disable-theme *theme*)
-  (let ((cool-themes '(doom-ayu-light
-		       doom-acario-light
-		       doom-flatwhite
-		       doom-one-light
-		       doom-homage-white
-		       doom-opera-light
-		       doom-gruvbox
-		       doom-gruvbox-light
-		       doom-horizon
-		       doom-palenight
-		       doom-miramare
-		       doom-moonlight
-		       doom-laserwave
-		       doom-nord
-		       doom-nord-light
-		       doom-oceanic-next
-		       doom-outrun-electric
-		       doom-old-hope
-		       doom-one
-		       doom-one-light
-		       doom-rouge
-		       doom-spacegrey
-		       doom-plain-dark
-		       doom-tomorrow-day)))
-    (load-theme (nth (random (length cool-themes))
-		     cool-themes)
-		t)))
+  (defun e/cool-themes()
+    (interactive)
+    (disable-theme *theme*)
+    (let ((cool-themes '(doom-ayu-light
+			 doom-acario-light
+			 doom-flatwhite
+			 doom-one-light
+			 doom-homage-white
+			 doom-opera-light
+			 doom-gruvbox
+			 doom-gruvbox-light
+			 doom-horizon
+			 doom-palenight
+			 doom-miramare
+			 doom-moonlight
+			 doom-laserwave
+			 doom-nord
+			 doom-nord-light
+			 doom-oceanic-next
+			 doom-outrun-electric
+			 doom-old-hope
+			 doom-one
+			 doom-one-light
+			 doom-rouge
+			 doom-spacegrey
+			 doom-plain-dark
+			 doom-tomorrow-day)))
+      (load-theme (nth (random (length cool-themes))
+		       cool-themes)
+		  t)))
+  (e/cool-themes))
 
 (use-package magit
   :defer 1
