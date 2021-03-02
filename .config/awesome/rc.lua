@@ -559,11 +559,11 @@ awful.rules.rules = {
      properties = { tag = "term" } },
    { rule_any = { class = { "mpv", "vlc", "feh", "Steam" }},
      properties = { tag = "media" } },
-   { rule_any = { class = { "IceCat", "Firefox", "Chromium", "Google-chrome", "Google-chrome-stable" }},
+   { rule_any = { class = { "IceCat", "Firefox", "Chromium" }},
      properties = { tag = "www" } },
 
    -- Fullscreen Windows:
-   { rule_any = { class = { "Emacs", "Code", "mpv", "st", "Mate-terminal", "Atril" }},
+   { rule_any = { class = { "Emacs", "emacs", "mpv", "st", "Mate-terminal", "Atril" }},
      properties = { fullscreen = true }},
    { rule_any = { class = { "mpv", "vlc" }},
      properties = { switchtotag = true }},
