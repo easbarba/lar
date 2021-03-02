@@ -41,7 +41,7 @@ if awesome.startup_errors then
 end
 
 -- Autorun programs
-local autostart = gears.filesystem.get_xdg_config_home() .. "autostart-scripts/apps.sh"
+local autostart = gears.filesystem.get_xdg_config_home() .. "wm-scripts/apps.sh"
 if gears.filesystem.file_executable(autostart) then
    awful.util.spawn(autostart)
 else
@@ -70,7 +70,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 -- beautiful.init(gears.filesystem.get_configuration_dir() .. "myTheme.lua")
 
 -- Wallpaper
-local screenshot_folder = os.getenv("HOME") .. "/Pictures/PapelParede/house.jpg"
+local screenshot_folder = os.getenv("HOME") .. "/Pictures/communist-flag.jpg"
 beautiful.wallpaper = screenshot_folder
 
 -- This is used later as the default terminal and editor to run.
@@ -230,7 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
       }
 
       -- Create the wibox
-      s.mywibox = awful.wibar({ position = "bottom", screen = s })
+      s.mywibox = awful.wibar({ position = "top", screen = s })
 
       -- Add widgets to the wibox
       s.mywibox:setup {
@@ -273,16 +273,16 @@ globalkeys = gears.table.join(
 
    -- USER CUSTOM CONFIG - BEGIN
 
-   awful.key({ modkey,         }, "c",                                                      lockscreen),
-   awful.key({ modkey, "Shift" }, "w",     function() os.execute("cejo operation volume up")       end),
-   awful.key({ modkey, "Shift" }, "s",     function() os.execute("cejo operation volume down")     end),
-   awful.key({ modkey, "Shift" }, "e",     function() os.execute("cejo operation volume toggle")   end),
-   awful.key({ modkey, "Shift" }, "a",     function() os.execute("cejo operation brightness up")   end),
-   awful.key({ modkey, "Shift" }, "d",     function() os.execute("cejo operation brightness down") end),
-   awful.key({                 }, "Print", function() os.execute("cejo operation screenshot x")    end),
-   awful.key({ modkey, "Shift" }, "p",     function() os.execute("cejo media play x")              end),
-   awful.key({ modkey          }, "z",     function() os.execute("tocador-alternar")               end),
-   awful.key({ modkey, "Shift" }, "z",     function() os.execute("net-alternar")                   end),
+   awful.key({ modkey,         },     "c",                                                   lockscreen),
+   awful.key({ modkey, "Shift" },     "w",  function() os.execute("cejo ops volume up")             end),
+   awful.key({ modkey, "Shift" },     "s",  function() os.execute("cejo ops volume down")           end),
+   awful.key({ modkey, "Shift" },     "e",  function() os.execute("cejo ops volume toggle")         end),
+   awful.key({ modkey, "Shift" },     "a",  function() os.execute("cejo ops brightness up")         end),
+   awful.key({ modkey, "Shift" },     "d",  function() os.execute("cejo ops brightness down")       end),
+   awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot")            end),
+   awful.key({ modkey, "Shift" },     "p",  function() os.execute("cejo media play")                end),
+   awful.key({ modkey          },     "z",  function() os.execute("tocador-alternar")               end),
+
 
    -- USER CUSTOM CONFIG - END
 
@@ -557,13 +557,13 @@ awful.rules.rules = {
      properties = { tag = "reader" } },
    { rule_any = { class = { "st", "st-256color", "Mate-terminal" }},
      properties = { tag = "term" } },
-   { rule_any = { class = { "mpv", "vlc", "feh", "Steam", "TelegramDesktop" }},
+   { rule_any = { class = { "mpv", "vlc", "feh", "Steam" }},
      properties = { tag = "media" } },
    { rule_any = { class = { "IceCat", "Firefox", "Chromium", "Google-chrome", "Google-chrome-stable" }},
      properties = { tag = "www" } },
 
    -- Fullscreen Windows:
-   { rule_any = { class = { "Emacs", "Code", "mpv", "st", "Mate-terminal" }},
+   { rule_any = { class = { "Emacs", "Code", "mpv", "st", "Mate-terminal", "Atril" }},
      properties = { fullscreen = true }},
    { rule_any = { class = { "mpv", "vlc" }},
      properties = { switchtotag = true }},
