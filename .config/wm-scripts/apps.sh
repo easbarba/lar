@@ -2,7 +2,10 @@
 
 # DESCRIPTION: AutoStart software
 
-APPS=(udiskie nm-applet blueman-applet emacs unclutter clipit mate-terminal atril pasystray)
+APPS=(udiskie nm-applet blueman-applet emacs unclutter diodon mate-terminal atril)
+
+eval "$(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)"
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
 not-found() { [[ ! -x $(command -v "$1") ]]; }
 
