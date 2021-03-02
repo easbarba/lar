@@ -67,9 +67,16 @@ asdf()
     export PATH="$dir"${PATH:+:}$PATH
 }
 
+luarocks()
+{
+    local dir="$HOME/.asdf/installs/lua/5.*/luarocks/bin"
+    export PATH="$dir"${PATH:+:}$PATH
+}
+
 # * RUN
 
 asdf
 binaries
 ruby
 js
+luarocks
