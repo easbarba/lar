@@ -8,6 +8,9 @@
 - https://github.com/rubocop-hq/ruby-style-guide.git
 - https://github.com/rubocop-hq/rubocop.git
 - https://github.com/castwide/solargraph.git
+- https://github.com/dry-rb/dry-core.git
+- https://github.com/dry-rb/dry-auto_inject.git
+- https://github.com/dry-rb/dry-container.git
 - https://github.com/markets/awesome-ruby.git
 - https://github.com/rubygems/rubygems.git
 - https://github.com/rspec/rspec.git
