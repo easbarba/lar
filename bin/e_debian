@@ -32,9 +32,9 @@ packages ()
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
 	    firewall-config socat vrms fzf aria2)
 
-    qt=(kdeconnect kdenlive clementine ktorrent latte-dock)
+    qt=(kdeconnect kdenlive clementine)
 
-    gtk=(cheese transmission-gtk atril)
+    gtk=(cheese transmission-gtk atril numix-icon-theme numix-gtk-theme tranmission-gtk)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
 	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
@@ -85,6 +85,7 @@ packages ()
     e_foreach "$command" "${lisp[@]}"
     e_foreach "$command" "${elixir[@]}"
     e_foreach "$command" "${system[@]}"
+    e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${qt[@]}"
     e_foreach "$command" "${infra[@]}";
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
@@ -92,6 +93,7 @@ packages ()
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
     e_foreach "$command" "${user[@]}"
+    e_foreach "$command" "${wmpacks[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${amd[@]}"
 
