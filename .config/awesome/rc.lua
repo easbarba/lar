@@ -7,7 +7,7 @@ local awful = require("awful")
 require("awful.autofocus")
 
 -- Non-Standard additional libraries
--- ...
+local battery_warning = require("modules.battery-warning")
 
 -- Widget and layout library
 local wibox = require("wibox")
@@ -281,8 +281,8 @@ globalkeys = gears.table.join(
    awful.key({ modkey, "Shift" },     "d",  function() os.execute("cejo ops brightness down")       end),
    awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot")            end),
    awful.key({ modkey, "Shift" },     "p",  function() os.execute("cejo media play")                end),
-   awful.key({ modkey          },     "z",  function() os.execute("tocador-alternar")               end),
-
+   awful.key({ modkey          },     "z",  function() os.execute("playerctl toggle")               end),
+   awful.key({ modkey          },     "v",  function() os.execute("sysinfo")                        end),
 
    -- USER CUSTOM CONFIG - END
 
@@ -557,7 +557,7 @@ awful.rules.rules = {
      properties = { tag = "reader" } },
    { rule_any = { class = { "st", "st-256color", "Mate-terminal" }},
      properties = { tag = "term" } },
-   { rule_any = { class = { "mpv", "vlc", "feh", "Steam" }},
+   { rule_any = { class = { "mpv", "vlc", "Clementine", "feh", "Steam" }},
      properties = { tag = "media" } },
    { rule_any = { class = { "IceCat", "Firefox", "Chromium" }},
      properties = { tag = "www" } },
@@ -634,36 +634,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- battery warning
--- created by bpdp
-
-local function trim(s)
-  return s:find'^%s*$' and '' or s:match'^%s*(.*%S)'
-end
-
-local function bat_notification()
-
-  local f_capacity = assert(io.open("/sys/class/power_supply/BAT0/capacity", "r"))
-  local f_status = assert(io.open("/sys/class/power_supply/BAT0/status", "r"))
-
-  local bat_capacity = tonumber(f_capacity:read("*all"))
-  local bat_status = trim(f_status:read("*all"))
-
-  if (bat_capacity <= 10 and bat_status == "Discharging") then
-    naughty.notify({ title      = "Battery Warning"
-      , text       = "Battery low! " .. bat_capacity .."%" .. " left!"
-      , fg="#ff0000"
-      , bg="#deb887"
-      , timeout    = 15
-      , position   = "bottom_left"
-    })
-  end
-end
-
-battimer = timer({timeout = 120})
-battimer:connect_signal("timeout", bat_notification)
-battimer:start()
-
---
-
--- end here for battery warning
+--- GTK Themes/Icons
+naughty.config.icon_dirs = { "/usr/share/pixmaps/", "/usr/share/icons/Numix/48/status/", "/usr/share/icons/Numix/48/devices/" }
+naughty.config.icon_formats = { "png", "gif", "svg" }
