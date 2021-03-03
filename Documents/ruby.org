@@ -117,7 +117,7 @@
    | Books                            | Chapter                           | @                                           | late                           | revision                                      |
    |----------------------------------+-----------------------------------+---------------------------------------------+--------------------------------+-----------------------------------------------|
    | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language             | Duck Typing/Numeric Coercion                | Names                          | Fibers, Threads, and Processes/Multithreading |
-   | Practical Object-Oriented Design | Creating Flexible Interfaces      | 4.3.3 Using Sequence Diagrams               |                                |                                               |
+   | Practical Object-Oriented Design | Reducing Costs with Duck Typing   |                                             |                                |                                               |
    | Effective Testing - RSpec3       | The RSpec Way                     |                                             |                                |                                               |
    | Design Patterns in Ruby          | Template Method                   |                                             |                                |                                               |
    | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions |                                               |
