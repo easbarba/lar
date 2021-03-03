@@ -69,6 +69,18 @@
 ** Behavior
 ** Terms
 *** TRUE: Transparent, Reasonable, Usable, Exemplary
+*** Law of Demeter
+    - Train wrecker
+    - it isn’t “use more delegation.”
+    - paying attention to your point of view
+*** Indenpendency
+*** Responsabilities
+*** Trusting the other object can do it all
+*** Ask for what the sender wants instead of telling the receiver how to behave
+*** Public interfaces are stable and denpendable
+*** Avoid depending non-public interfaces or at least isolate those deps.
+    ***
+
 * Testing
 ** RSpec
    |          |                                                  |
