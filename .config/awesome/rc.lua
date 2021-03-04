@@ -283,6 +283,7 @@ globalkeys = gears.table.join(
    awful.key({ modkey, "Shift" },     "p",  function() os.execute("cejo media play")                end),
    awful.key({ modkey          },     "z",  function() os.execute("playerctl toggle")               end),
    awful.key({ modkey          },     "v",  function() os.execute("sysinfo")                        end),
+   awful.key({ modkey, "Shift" },     "r",  function() os.execute("systemctl reboot")               end),
 
    -- USER CUSTOM CONFIG - END
 
