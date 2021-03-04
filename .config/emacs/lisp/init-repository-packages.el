@@ -140,6 +140,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas feios
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "http://sachachua.com/blog/category/emacs/feed"))
   :config
   (setq url-queue-timeout 30)
