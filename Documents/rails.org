@@ -15,12 +15,19 @@
   - [[#models][Models]]
   - [[#console-rails-console][Console (rails console)]]
   - [[#env][ENV]]
+- [[#logger][Logger]]
 - [[#active-record][Active Record]]
   - [[#associations][Associations]]
   - [[#validations][Validations]]
   - [[#migrations][Migrations]]
   - [[#callbacks][Callbacks]]
   - [[#query-interface][Query Interface]]
+  - [[#find][Find]]
+    - [[#sql-syntax][SQL Syntax]]
+    - [[#array-condition][Array Condition]]
+    - [[#association-proxies][Association Proxies]]
+    - [[#more][more]]
+  - [[#named-scope][Named Scope]]
 - [[#database][Database]]
 - [[#views][Views]]
 - [[#controller][Controller]]
@@ -38,11 +45,10 @@
 :END:
 * Progress
 ** Books
-   | Books                | Chapter                                       | @                | late | revision |
-   |----------------------+-----------------------------------------------+------------------+------+----------|
-   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Advanced Finding |      |          |
-   |                      |                                               |                  |      |          |
-   | Active Record Basics |                                               |                  |      |          |
+   | Books                | Chapter                                       | @                               | late | revision |
+   |----------------------+-----------------------------------------------+---------------------------------+------+----------|
+   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Using an Array Condition Syntax |      |          |
+   | Active Record Basics |                                               |                                 |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
@@ -118,6 +124,14 @@
    |   |                      |   |
    |---+----------------------+---|
    |   | RAILS_ENV=production |   |
+* Logger
+  - live log feed: tail -f log/development.log
+
+  #+begin_src ruby
+  Rails.logger.debug "This will only show in development"
+  Rails.logger.warn "This will show in all environments"
+  #+end_src
+
 * Active Record
   - Single-Table Inheritance
 ** Associations
@@ -132,6 +146,38 @@
 ** Migrations
 ** Callbacks
 ** Query Interface
+** Find
+*** SQL Syntax
+    #+begin_src ruby
+    Obj.where(title: 'AwesomeWM is really awesome')
+    #+end_src
+
+*** Array Condition
+    #+begin_src ruby
+    Article.where("published_at < ?", Time.now)
+    Article.where("published_at < ?", Time.now).to_sql # inspect the issued SQL statement
+
+    Article.where("title LIKE :search OR body LIKE :search", {search: '%association%'})
+    #+end_src
+
+*** Association Proxies
+    - Chain together multiple calls to Active Record
+    #+begin_src ruby
+
+    #+end_src
+*** more
+    #+begin_src ruby
+    Article.order("published_at DESC")
+    Article.limit(1)
+    Article.joins(:comments)
+    Article.includes(:comments)
+    Article.order("title DESC").limit(2)
+    #+end_src
+** Named Scope
+   #+begin_src ruby
+   scope :published, -> { where.not(published_at: nil) }
+   scope :draft, -> { where(published_at: nil) }
+   #+end_src
 * Database
   | it    | desc                                                     |
   |-------+----------------------------------------------------------|
