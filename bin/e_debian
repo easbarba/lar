@@ -6,11 +6,11 @@
 
 upgrade()
 {
-    echo "-- Atualizando Sistema"
+    echo "-- Updating Debian"
 
     sudo apt update
     sudo apt upgrade -y
-    sudo apt autoremove -y
+    sudo apt autoremove
 }
 
 packages ()
@@ -32,7 +32,7 @@ packages ()
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
 	    firewall-config socat vrms fzf aria2)
 
-    qt=(kdeconnect kdenlive clementine)
+    qt=(kdeconnect kdenlive clementine dolphin)
 
     gtk=(cheese transmission-gtk atril numix-icon-theme numix-gtk-theme tranmission-gtk)
 
@@ -51,9 +51,9 @@ packages ()
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    wmpacks=(network-manager-gnome aria2 dunst maim udiskie unclutter diodon gnome-keyring
-	     ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
-	     seahorse x11proto-dev brightnessctl tlp acpi-call blueman clipit)
+    wm=(awesome network-manager-gnome aria2 dunst maim udiskie unclutter diodon gnome-keyring
+	ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl lxappearance
+	seahorse x11proto-dev brightnessctl tlp acpi-call blueman)
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
@@ -79,11 +79,9 @@ packages ()
     command='sudo apt install -y'
 
     e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
-    e_foreach "$command" "${debian[@]}"; sudo apt-file update -y # update Debian database
+    e_foreach "$command" "${debian[@]}"; sudo apt-file update # update Debian database
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
-    e_foreach "$command" "${lisp[@]}"
-    e_foreach "$command" "${elixir[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${qt[@]}"
@@ -93,7 +91,7 @@ packages ()
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
     e_foreach "$command" "${user[@]}"
-    e_foreach "$command" "${wmpacks[@]}"
+    e_foreach "$command" "${wm[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${amd[@]}"
 
@@ -150,19 +148,7 @@ foreign()
         sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
     }
 
-    code()
-    {
-        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-        sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-        sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-
-        sudo apt-get install -y apt-transport-https
-        sudo apt-get update
-        sudo apt install -y code
-    }
-
     chrome
-    code
 }
 
 # * RUN
@@ -170,4 +156,4 @@ foreign()
 upgrade
 packages
 services
-# foreign
+foreign
