@@ -45,7 +45,7 @@
   :type 'string
   :group '*vars*)
 
-(defcustom *theme* 'misterioso
+(defcustom *theme* 'tango
   "Emacs default theme."
   :type 'string
   :group 'my)
