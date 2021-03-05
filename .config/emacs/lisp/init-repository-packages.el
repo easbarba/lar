@@ -548,22 +548,14 @@
 			 doom-one-light
 			 doom-homage-white
 			 doom-opera-light
-			 doom-gruvbox
 			 doom-gruvbox-light
-			 doom-horizon
-			 doom-palenight
 			 doom-miramare
+			 doom-rouge
 			 doom-moonlight
 			 doom-laserwave
-			 doom-nord
+			 doom-solarized-light
 			 doom-nord-light
-			 doom-oceanic-next
-			 doom-outrun-electric
-			 doom-old-hope
-			 doom-one
-			 doom-one-light
-			 doom-rouge
-			 doom-spacegrey
+			 doom-homage-white
 			 doom-plain-dark
 			 doom-tomorrow-day)))
       (load-theme (nth (random (length cool-themes))
