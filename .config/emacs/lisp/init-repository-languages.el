@@ -16,11 +16,14 @@
 ;; ====================
 ;; * LANGUAGES MISC
 
+(use-package page-break-lines
+  :defer 1
+  :config (global-page-break-lines-mode))
+
 (use-package reformatter
   :defer 1
   :config
   (reformatter-define ruby-format :program "rufo")
-  (reformatter-define go-format :program "go" :args '("fmt"))
   (reformatter-define lua-format :program "lua-format" :args '("-i")))
 
 ;; ====================
@@ -57,6 +60,9 @@
   :defer 1)
 
 (use-package seeing-is-believing
+  :defer 1)
+
+(use-package ruby-compilation
   :defer 1)
 
 (use-package enh-ruby-mode

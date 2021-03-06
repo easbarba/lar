@@ -13,6 +13,8 @@
 	     (setq-default ruby-use-encoding-map nil
 			   ruby-insert-encoding-magic-comment nil)))
 
+(add-hook 'ruby-mode-hook 'subword-mode)
+
 ;; (add-auto-mode 'ruby-mode
 ;; 		    "\\.rxml\\'"
 ;; 		    "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
