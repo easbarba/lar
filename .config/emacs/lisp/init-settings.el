@@ -13,9 +13,9 @@
 ;; ** FONTS
 
 (cond ((member "Hack" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "Hack-18")))
+       (add-to-list 'default-frame-alist '(font . "Hack-20")))
       ((member "DejaVu Sans Mono" (font-family-list))
-       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-18"))))
+       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-20"))))
 
 ;; DEFALIAS
 (defalias 'yes-or-no-p 'y-or-n-p)
