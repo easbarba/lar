@@ -1,0 +1,25 @@
+#+TILE: Sociology - Study Annotations
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+- [[#sociology][Sociology]]
+  - [[#karl-marx][Karl Marx]]
+  - [[#max-weber][Max Weber]]
+  - [[#david-émile-durkheim][David Émile Durkheim]]
+- [[#more][more]]
+:END:
+* Progress
+   | Book          | chapter | @ | later | revision |
+   |---------------+---------+---+-------+----------|
+   | Paradise Lost |         |   |       |          |
+* Sociology
+** Karl Marx
+** Max Weber
+** David Émile Durkheim
+*** Progress
+* more
+  - Adam Smith
