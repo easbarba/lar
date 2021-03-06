@@ -41,7 +41,7 @@ if awesome.startup_errors then
 end
 
 -- Autorun programs
-local autostart = gears.filesystem.get_xdg_config_home() .. "wm-scripts/autostart_apps"
+local autostart = gears.filesystem.get_xdg_config_home() .. "autostart-scripts/apps"
 if gears.filesystem.file_executable(autostart) then
    awful.util.spawn(autostart)
 else
@@ -281,7 +281,7 @@ globalkeys = gears.table.join(
    awful.key({ modkey, "Shift" },     "d",  function() os.execute("cejo ops brightness down")       end),
    awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot")            end),
    awful.key({ modkey, "Shift" },     "p",  function() os.execute("cejo media play")                end),
-   awful.key({ modkey          },     "z",  function() os.execute("playerctl toggle")               end),
+   awful.key({ modkey          },     "z",  function() os.execute("playerctl play-pause")           end),
    awful.key({ modkey          },     "v",  function() os.execute("sysinfo")                        end),
    awful.key({ modkey, "Shift" },     "r",  function() os.execute("systemctl reboot")               end),
 
