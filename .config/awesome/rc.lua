@@ -41,7 +41,7 @@ if awesome.startup_errors then
 end
 
 -- Autorun programs
-local autostart = gears.filesystem.get_xdg_config_home() .. "wm-scripts/autostart_apps.sh"
+local autostart = gears.filesystem.get_xdg_config_home() .. "wm-scripts/autostart_apps"
 if gears.filesystem.file_executable(autostart) then
    awful.util.spawn(autostart)
 else
@@ -247,7 +247,7 @@ awful.screen.connect_for_each_screen(function(s)
 	    layout = wibox.layout.fixed.horizontal,
 	    awful.widget.watch([[bash -c "wmbar-info"]], 2),
 	    -- mykeyboardlayout,
-	    -- mytextclock,
+	    mytextclock,
 	    wibox.widget.systray(),
 	 },
       }
