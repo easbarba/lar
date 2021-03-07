@@ -16,13 +16,17 @@
   - [[#behavior][Behavior]]
   - [[#terms][Terms]]
 - [[#testing][Testing]]
-  - [[#rspec][RSpec]]
+  - [[#acceptance-testing][Acceptance Testing]]
+  - [[#unit-testing][Unit Testing]]
+  - [[#integration-testing][Integration Testing]]
   - [[#notes][Notes]]
 - [[#terms][Terms]]
   - [[#dry][DRY]]
 - [[#dry][DRY]]
 - [[#solid][SOLID]]
   - [[#single-responsability][Single Responsability]]
+- [[#rest][REST]]
+  - [[#tutorials][Tutorials]]
 - [[#data-structures][Data Structures]]
 - [[#algorithms][Algorithms]]
 - [[#design-patterns][Design Patterns]]
@@ -45,7 +49,6 @@
    | Object Thinking                                        | Chapter 1                              |                                                   |       |                |
    | Algorithms                                             | 1 Fundamentals                         |                                                   |       |                |
    | Clean Code                                             | Chapter 1: Clean Code                  |                                                   |       |                |
-
 * OOP
 ** Definition
    Object-oriented applications are made up of objects and the
@@ -82,18 +85,12 @@
     ***
 
 * Testing
-** RSpec
-   |          |                                                  |
-   |----------+--------------------------------------------------|
-   | describe | creates an example group (set of related tests). |
-   | expect   | verifies an expected outcome (assertion)         |
-   | example  | individual test                                  |
-   |          |                                                  |
-*** Terms
-    - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
-    -
-    - Arrange/Act/Assert pattern
-
+** Acceptance Testing
+   - Test code based only in public interfaces, their ultimate behavior.
+** Unit Testing
+   - Modular test based on methods or one object
+** Integration Testing
+   - Test code that you cant modify
 ** Notes
    - does this test pay for the cost of writing and running it?
 
@@ -114,6 +111,9 @@
    - highly cohesive or to have a single responsibility.
    - Responsibility-Driven Design
    - everything the class does be highly related to its purpose.
+* REST
+** Tutorials
+   https://code.tutsplus.com/tutorials/a-beginners-guide-to-http-and-rest--net-16340
 * Data Structures
 * Algorithms
 * Design Patterns

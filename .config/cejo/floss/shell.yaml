@@ -1,14 +1,14 @@
 ---
-- https://github.com/rvm/rvm.git
-- https://github.com/nvm-sh/nvm.git
-- https://github.com/sstephenson/bats.git
-- https://github.com/basherpm/basher.git
+- https://github.com/rvm/rvm
+- https://github.com/nvm-sh/nvm
+- https://github.com/sstephenson/bats
+- https://github.com/basherpm/basher
 - https://github.com/pystardust/ytfzf
-- https://github.com/nojhan/liquidprompt.git
-- https://github.com/b4b4r07/enhancd.git
-- https://github.com/awesome-lists/awesome-bash.git
-- https://github.com/alebcay/awesome-shell.git
-- https://github.com/jorgebucaran/cookbook.fish.git
-- https://github.com/indiebrain/asdf-guile.git
-- https://github.com/asdf-vm/asdf.git
-- https://github.com/fish-shell/fish-shell.git
+- https://github.com/nojhan/liquidprompt
+- https://github.com/b4b4r07/enhancd
+- https://github.com/awesome-lists/awesome-bash
+- https://github.com/alebcay/awesome-shell
+- https://github.com/jorgebucaran/cookbook.fish
+- https://github.com/indiebrain/asdf-guile
+- https://github.com/asdf-vm/asdf
+- https://github.com/fish-shell/fish-shell
