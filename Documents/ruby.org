@@ -114,112 +114,156 @@
   :END:
 * Progress
 ** Books
-   | Books                            | Chapter                           | @                                           | late                                          | revision |
-   |----------------------------------+-----------------------------------+---------------------------------------------+-----------------------------------------------+----------|
-   | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language             | Proc Objects                                | Fibers, Threads, and Processes/Multithreading |          |
-   | Practical Object-Oriented Design | Reducing Costs with Duck Typing   |                                             |                                               |          |
-   | Effective Testing - RSpec3       | The RSpec Way                     |                                             |                                               |          |
-   | Design Patterns in Ruby          | Template Method                   |                                             |                                               |          |
-   | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
-   | Clean Ruby                       | Using Boolean Logic               |                                             |                                               |          |
-   | Closure in Ruby                  |                                   |                                             |                                               |          |
-   | Build Awesome Cli apps           | Easy to use                       | Documenting a Command Suite                 |                                               |          |
-   | The Well Grounded Rubyist        | 12  File and I/O operations       |                                             |                                               |          |
+   | Books                            | Chapter                                | @                                           | late                                          | revision |
+   |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
+   | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Proc Objects                                | Fibers, Threads, and Processes/Multithreading |          |
+   | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
+   | Effective Testing - RSpec3       | Building an App With RSpec 3           |                                             |                                               |          |
+   | Design Patterns in Ruby          | Template Method                        |                                             |                                               |          |
+   | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing      | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
+   | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
+   | Closure in Ruby                  |                                        |                                             |                                               |          |
+   | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
+   | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
 
 ** SLOC
-   | Project    | folder | file          | @                     |
-   |------------+--------+---------------+-----------------------|
-   | rake       | rake   | file_list.rb  | display_cause_details |
-   | rspec-core | core   | configuration | deprecation_stream=   |
-   | rubocop    |        |               |                       |
+   | Project    | folder                            | file          | @                     |
+   |------------+-----------------------------------+---------------+-----------------------|
+   | ruby       | lib/bundler/compact_index_client/ | cache.rb      |                       |
+   | rake       | rake                              | file_list.rb  | display_cause_details |
+   | rspec-core | core                              | configuration | deprecation_stream=   |
+   | rubocop    |                                   |               |                       |
 
 * Packages
-** gem
-   |                             |   |
-   |-----------------------------+---|
-   | install <name> -v <version> |   |
-   | which                       |   |
-   | list                        |   |
-   | search                      |   |
-   | env                         |   |
-   | info <name>                 |   |
-
-** bundle
-*** outdated
+** Packagement
 *** gem
-    |                   |   |
-    |-------------------+---|
-    | list              |   |
-    | which <name>      |   |
-    | gem search <name> |   |
+    |                             |   |
+    |-----------------------------+---|
+    | install <name> -v <version> |   |
+    | which                       |   |
+    | list                        |   |
+    | search                      |   |
+    | env                         |   |
+    | info <name>                 |   |
+*** bundle
+**** outdated
+**** gem
+     |                   |   |
+     |-------------------+---|
+     | list              |   |
+     | which <name>      |   |
+     | gem search <name> |   |
 
-*** install
-*** update
-    | subcommand                  | desc                                                       |
-    |-----------------------------+------------------------------------------------------------|
-    | all                         | update all gems                                            |
-    | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
-    | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
-    | --quiet                     |                                                            |
-    | --redownload                |                                                            |
-    | --minor                     | Prefer updating only to next minor version.                |
-    | --major                     | Prefer updating to next major version (default).           |
-    |                             |                                                            |
-** irb
-*** cli
-    |                          |   |
-    |--------------------------+---|
-    | -r ./<file>              |   |
-    | irb_load                 |   |
-    | irb_source               |   |
-    | irb --prompt <my-prompt> |   |
-*** inside
-    |                           |         |
-    |---------------------------+---------|
-    | context.use_tracer = true | tracker |
-    |                           |         |
+**** install
+**** update
+     | subcommand                  | desc                                                       |
+     |-----------------------------+------------------------------------------------------------|
+     | all                         | update all gems                                            |
+     | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
+     | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
+     | --quiet                     |                                                            |
+     | --redownload                |                                                            |
+     | --minor                     | Prefer updating only to next minor version.                |
+     | --major                     | Prefer updating to next major version (default).           |
+     |                             |                                                            |
 
-** rspec
-*** parts
-    |                                   |                                      |
-    |-----------------------------------+--------------------------------------|
-    | RSpec.describe                    |                                      |
-    | describe                          |                                      |
-    | context                           |                                      |
-    | it 'foo bar'                      |                                      |
-    | expect(foo).to eq(bar)            |                                      |
-    | expect(foo).to be > :bar          |                                      |
-    | before(:xx)                       |                                      |
-    | after(:xxx)                       |                                      |
-    | before(:context)                  |                                      |
-    | after(:context)                   |                                      |
-    | let(:foo) { Bar.new }             |                                      |
-    | pending 'foo not yet implemented' |                                      |
-    | skip or xit 'foo bar'             | x prepended to it '' to skip example |
-    |                                   |                                      |
+** Console
+*** irb
+**** cli
+     |                          |   |
+     |--------------------------+---|
+     | -r ./<file>              |   |
+     | irb_load                 |   |
+     | irb_source               |   |
+     | irb --prompt <my-prompt> |   |
+**** inside
+     |                           |         |
+     |---------------------------+---------|
+     | context.use_tracer = true | tracker |
+     |                           |         |
+*** pry
+** Serialization
+*** JSON
+**** Commands
+     |                 |   |
+     |-----------------+---|
+     | generate <this> |   |
 
-*** metadata
-    |                               |   |
-    |-------------------------------+---|
-    | context 'foobar', focus: true |   |
-    |                               |   |
+*** YAML
+**** Commands
+     |                 |               |
+     |-----------------+---------------|
+     | YAML.dump <obj> |               |
+     | <obj>.to_yaml   | same as above |
+     |                 |               |
 
-*** cli
-    | cmd                          | desc                          |
-    |------------------------------+-------------------------------|
-    | --profile                    | test time                     |
-    | --format <type>              |                               |
-    | folder                       | run allfolders specs          |
-    | spec                         | run just one spec             |
-    | -e <name>                    | run spec(s) begins w/ name    |
-    | <file>:N                     | run examples in lineN of file |
-    | --only-failures              |                               |
-    | --next-failure               |                               |
-    | --tag last_run_status:failed |                               |
-    | --tag focus                  |                               |
+** Web Applications
+   - Sinatra: Sinatra is a DSL for quickly creating web applications
+   - Rails: A web-application framework that includes everything needed to create database-backed web applications
+** Formatter
+*** Rufo
+**** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
+** Testing
+*** RSpec
+    Behaviour Driven Development for Ruby
+**** Cli
+    |          |                                                  |
+    |----------+--------------------------------------------------|
+    | describe | creates an example group (set of related tests). |
+    | expect   | verifies an expected outcome (assertion)         |
+    | example  | individual test                                  |
+    |          |                                                  |
+**** Terms
+     - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
+     -
+     - Arrange/Act/Assert pattern
+**** Commands
+     |                                   |                                      |
+     |-----------------------------------+--------------------------------------|
+     | RSpec.describe                    |                                      |
+     | describe                          |                                      |
+     | context                           |                                      |
+     | it 'foo bar'                      |                                      |
+     | expect(foo).to eq(bar)            |                                      |
+     | expect(foo).to be > :bar          |                                      |
+     | before(:xx)                       |                                      |
+     | after(:xxx)                       |                                      |
+     | before(:context)                  |                                      |
+     | after(:context)                   |                                      |
+     | let(:foo) { Bar.new }             |                                      |
+     | pending 'foo not yet implemented' |                                      |
+     | skip or xit 'foo bar'             | x prepended to it '' to skip example |
+**** Expect
+     |                                   |   |
+     |-----------------------------------+---|
+     | to                                |   |
+     | include(<obj>: a_kind_of(<Class>) |   |
 
-** unit test
-** pry
+**** metadata
+     |                               |   |
+     |-------------------------------+---|
+     | context 'foobar', focus: true |   |
+     |                               |   |
+**** cli
+     | cmd                          | desc                          |
+     |------------------------------+-------------------------------|
+     | --profile                    | test time                     |
+     | --format <type>              |                               |
+     | folder                       | run allfolders specs          |
+     | spec                         | run just one spec             |
+     | -e <name>                    | run spec(s) begins w/ name    |
+     | <file>:N                     | run examples in lineN of file |
+     | --only-failures              |                               |
+     | --next-failure               |                               |
+     | --tag last_run_status:failed |                               |
+     | --tag focus                  |                               |
+
+*** Unit Test
+** Currency
+   - Money: A Ruby Library for dealing with money and currency conversion.
+** Web-server
+  - rack: A modular Ruby web server interface.
+
 * Features
 ** project structure
    #+begin_src ruby
@@ -1089,7 +1133,8 @@
     - $@ → Array: The stack backtrace generated by the last exception.
     - $& → String : The string matched (following a successful pattern match). This variable is local to the current scope.
 * Toolings
-  https://rubular.com
+** Online
+   https://rubular.com
 * Videos
   https://www.youtube.com/watch?v=hnGVFzZ0DuI - "300x faster ruby" - Dana Sherson
 * Tests
