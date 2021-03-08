@@ -1,6 +1,5 @@
 ---
 - https://github.com/ruby-git/ruby-git
-- https://github.com/ruby/psych
 - https://github.com/pry/pry
 - https://github.com/davidgf/design-patterns-in-ruby
 - https://github.com/rubocop-hq/rails-style-guide
@@ -13,11 +12,12 @@
 - https://github.com/dry-rb/dry-container
 - https://github.com/markets/awesome-ruby
 - https://github.com/rubygems/rubygems
-- https://github.com/rspec/rspec
+- https://gitlab.com/gitlab-org/gitlab
 - https://github.com/rails/rails
-- https://github.com/ruby/spec
+- https://github.com/rspec/rspec
 - https://github.com/rspec/rspec-rails
 - https://github.com/rspec/rspec-core
+- https://github.com/ruby/spec
 - https://github.com/ruby/rake
 - https://github.com/ruby/rdoc
 - https://github.com/ruby/ruby
