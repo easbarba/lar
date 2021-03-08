@@ -2,9 +2,9 @@
 
 # DESCRIPTION: AutoStart software
 
-APPS=(udiskie nm-applet blueman-applet emacs unclutter diodon
-      mate-terminal atril mate-power-manager firefox
-      telegram-desktop)
+APPS=(udiskie unclutter
+      nm-applet blueman-applet mate-power-manager diodon
+      mate-terminal atril emacs)
 
 not-found() { [[ ! -x $(command -v "$1") ]]; }
 
@@ -18,7 +18,6 @@ autostart()
     do
 	not-found "$app" && continue
 	running "$app" && continue
-
 	run "$app"
     done
 }
