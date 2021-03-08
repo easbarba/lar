@@ -58,37 +58,21 @@
 ;; *** YOUTUBE-DL
 (defun e/get-video (url)
   "Download Video w/ URL - GPL-3.0."
-  (interactive "p")
-  (let ((default-directory *videos*))
-    (start-process "VIDEO-DOWNLOADER" "VIDEO-DOWNLOADER" *media-downloader* (current-kill 0 t))
-    (message "Watch progress at VIDEO buffer!")))
+  (interactive)
+  (start-process "GET-VIDEO" "GET-VIDEO" "cejo" "media" "get" url))
 (global-set-key (kbd "C-c f V") #'(lambda () (interactive) (e/get-video (current-kill 0 t))))
 
 (defun e/get-audio (url)
   "Download Audio w/ URL - GPL-3.0!"
-  (interactive "p")
-  (let ((default-directory *music*)
-	(format "--extract-audio")
-	(audio-format "--audio-format")
-	(audio-extension "vorbis"))
-    (start-process "AUDIO-DOWNLOADER" "AUDIO-DOWNLOADER" *media-downloader* format audio-format audio-extension url)
-    (message "Watch progress at AUDIO buffer!")))
+  (interactive)
+  (start-process "GET-AUDIO" "GET-AUDIO" "cejo" "media" "get" url "vorbis"))
 (global-set-key (kbd "C-c f A") #'(lambda () (interactive) (e/get-audio (current-kill 0 t))))
 
-(defun e/play-video (&optional url)
-  "Call Video Player with online video's URL on clipboard!
-  Default to `mpv' | GPLv3."
+(defun e/play-video (url)
+  "Call Video Player with online video's URL on clipboard!"
   (interactive)
-
-  (let ((url (if url
-		 url
-	       ;; "use current clipboard string"
-	       (setq url (current-kill 0 t)))))
-
-    (start-process "VIDEO-TO-PLAYER" nil *player* url)
-    (message "Url: %s" url)
-    (message "Playing video with %s in an instant!" *player*)))
-(global-set-key (kbd "C-c f p") 'e/play-video)
+  (start-process "PLAY-VIDEO" "PLAY-VIDEO" "cejo" "media" "play" url))
+(global-set-key (kbd "C-c f P") #'(lambda () (interactive) (e/play-video (current-kill 0 t))))
 
 ;; *** FFMPEG - ffmpeg features using Dired
 (defun e/dired-ffmpeg-convert-to-format ()
