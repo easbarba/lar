@@ -6,9 +6,6 @@ local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 
--- Non-Standard additional libraries
-local battery_warning = require("modules.battery-warning")
-
 -- Widget and layout library
 local wibox = require("wibox")
 
@@ -560,7 +557,7 @@ awful.rules.rules = {
      properties = { tag = "term" } },
    { rule_any = { class = { "mpv", "vlc", "Clementine", "feh", "Steam" }},
      properties = { tag = "media" } },
-   { rule_any = { class = { "IceCat", "Firefox", "Chromium" }},
+   { rule_any = { class = { "IceCat", "Firefox", "Chromium", "TelegramDesktop" }},
      properties = { tag = "www" } },
 
    -- Fullscreen Windows:
@@ -635,6 +632,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
---- GTK Themes/Icons
-naughty.config.icon_dirs = { "/usr/share/pixmaps/", "/usr/share/icons/Numix/48/status/", "/usr/share/icons/Numix/48/devices/" }
-naughty.config.icon_formats = { "png", "gif", "svg" }
+-- Non-Standard additional libraries
+require("modules.gtk-themes")
+require("modules.battery-warning")
