@@ -264,18 +264,8 @@ Saves to a temp file and puts the filename in the kill ring."
 	   (read-from-minibuffer
 	    "Search in Google, .NetDocs, GitHub, SoV, DDG? ")))
       (cond
-       ((string-equal search-type "")
-	(browse-url (concat "https://www.google.com/search?ion=1&q=" term)))
-       ((string-equal search-type "g")
-	(browse-url (concat "https://github.com/search?q=" term)))
-       ((string-equal search-type "r")
-	(browse-url (concat "https://www.reddit.com/search/?q=" term)))
        ((string-equal search-type "s")
 	(browse-url (concat "https://stackoverflow.com/search?q=" term)))
-       ((string-equal search-type "n")
-	(browse-url (concat "https://docs.microsoft.com/en-us/search/?search="
-			    term
-			    "&category=All&scope=.NET&category=All")))
        ((string-equal search-type "d")
 	(browse-url (concat "https://duckduckgo.com/?q=" term)))))))
 (global-set-key (kbd "C-c f s") 'e/search-engine)
