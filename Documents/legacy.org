@@ -168,6 +168,23 @@ upgrade: upgrade
     #+end_src
 *** floss
    #+begin_src yaml
+   --- # Lua
+   - https://github.com/vicious-widgets/vicious
+   - https://github.com/streetturtle/awesome-wm-widgets
+   - https://github.com/actboy168/luamake
+   - https://github.com/sumneko/lua-language-server
+   - https://github.com/EmmyLua/EmmyLua-LanguageServer
+   - https://github.com/arthurealike/turtle.lua
+   - https://github.com/luvit/luvit
+   - https://github.com/rxi/lite
+   - https://github.com/lcpz/awesome-copycats
+   - https://salsa.debian.org/lua-team/lua5.4
+   - https://salsa.debian.org/reiner/awesome
+   - https://github.com/awesomeWM/awesome
+   - https://github.com/luarocks/luarocks
+   - https://github.com/lua/lua
+
+
    --- # lisp
    - https://github.com/CodyReichert/awesome-cl.git
    - https://github.com/atlas-engineer/nyxt.git
@@ -330,7 +347,6 @@ upgrade: upgrade
    - https://github.com/symfony/symfony
    - https://github.com/laravel/laravel
    - https://github.com/php/php-src
-
    #+end_src
 *** Cero Linguagens
 **** Ruby

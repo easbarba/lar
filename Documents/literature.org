@@ -13,9 +13,10 @@
 - [[#more][more]]
 :END:
 * Progress
-   | Book          | chapter | @ | later | revision |
-   |---------------+---------+---+-------+----------|
-   | Paradise Lost |         |   |       |          |
+   | Book          | chapter                     | @ | later | revision |
+   |---------------+-----------------------------+---+-------+----------|
+   | Manifesto     | Proletarians and Communists |   |       |          |
+   | Paradise Lost |                             |   |       |          |
 * Sociology
 ** Karl Marx
 ** Max Weber
