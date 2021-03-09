@@ -19,9 +19,9 @@
 
 ;; * BUILTINS
 (require 'init-repository-bootstrap)
-;; (require 'init-modeline)
+(require 'init-modeline)
 (require 'init-dired)
-;; (require 'init-builtin)
+(require 'init-builtin)
 (require 'init-languages)
 
 ;; * LOAD EXTERNAL
