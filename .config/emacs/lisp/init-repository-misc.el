@@ -82,6 +82,7 @@
 ;; ** TOOLS
 
 (use-package openwith
+  :disabled
   :config
   (setq openwith-associations
         (list
@@ -123,6 +124,11 @@
 (use-package alert
   :commands alert
   :custom (alert-default-style 'notifications))
+
+(use-package beginend
+  :defer 1
+  :config (beginend-global-mode))
+
 
 (use-package exec-path-from-shell
   :defer 1
@@ -657,11 +663,10 @@
 			 doom-homage-white
 			 doom-opera-light
 			 doom-gruvbox-light
-			 doom-moonlight
 			 doom-solarized-light
 			 doom-nord-light
 			 doom-homage-white
-			 doom-plai
+			 doom-plain
 			 doom-tomorrow-day)))
       (e/change-theme (nth (random (length cool-themes))
 		       cool-themes)
