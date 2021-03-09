@@ -1,4 +1,4 @@
-;;; package --- Summary -*- lexical-binding: t;
+;;; init-repository-misc --- Summary -*- lexical-binding: t;
 
 ;;; Commentary:
 
@@ -675,5 +675,5 @@
   ("C-c M" . 'magit-dispatch)
   :custom  (ediff-window-setup-function 'ediff-setup-windows-plain))
 
-(provide 'init-repository-packages)
-;;; init-repository-packages.el ends here
+(provide 'init-repository-misc)
+;;; init-repository-misc.el ends here
