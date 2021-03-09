@@ -3059,64 +3059,116 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
     #+end_src
 *** Built-in definitions
     #+BEGIN_SRC emacs-lisp
-    (when (fboundp 'fringe-mode) (set-fringe-mode '(2 . 6)))
-    (display-time)
+
+	      ;; (add-hook 'text-mode-hook 'abbrev-mode) ;; abbrev config
+	      ;; (setq-default abbrev-mode t)  ;; turn on abbrev mode globally
+	      ;; (setq save-abbrevs 'silently)
+
+      ;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+      ;; (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+      ;; (global-set-key (kbd "C-M-s") 'isearch-forward)
+      ;; (global-set-key (kbd "C-M-r") 'isearch-backward)
+
+  ;; (global-eldoc-mode)
+	    ;; (remove-hook 'minibuffer-setup-hook 'winner-save-unconditionally)
+
+		  ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+		  ;; (dolist (hooks '(org-mode-hook
+		  ;;                  text-mode-hook))
+		  ;;   (add-hook hooks 'flyspell-mode))
 
 
-    (when (> emacs-major-version 25) (pixel-scroll-mode))
-
-    (stq text-scale-mode-step 0.8
-	 display-time-day-and-date t
-	 display-time-24hr-format t
-	 display-time-string-forms
-	 '(" "
-	   dayname " "
-	   month " / "
-	   day " "
-	   24-hours ":"
-	   minutes " "  (if mail " Mail " " "))
-	 display-battery-mode t
-	 battery-mode-line-format " %p "
-	 )
-    ;; =============== TIME / BATTERY
-    (display-battery-mode)
-
-    (cond ((member "Noto Sans Mono" (font-family-list))
-	   (set-face-attribute 'mode-line nil :font "Noto Sans Mono-10"))
-	  ((member "DejaVu Sans Mono" (font-family-list))
-	   (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")))
+			;; (define-ibuffer-column size-h
+			;;   (:name "Size" :inline t)
+			;;   (file-size-human-readable (buffer-size))) ;
 
 
-    (global-set-key [remap forward-word] 'forward-same-syntax)
+			;; ;; Modify the default ibuffer-formats (toggle with `)
+			;; (setq ibuffer-formats
+			;;       '((mark modified read-only vc-status-mini " "
+			;;               (name 22 22 :left :elide)
+			;;               " "
+			;;               (size-h 9 -1 :right)
+			;;               " "
+			;;               (mode 12 12 :left :elide)
+			;;               " "
+			;;               vc-relative-file)
+			;;         (mark modified read-only vc-status-mini " "
+			;;               (name 22 22 :left :elide)
+			;;               " "
+			;;               (size-h 9 -1 :right)
+			;;               " "
+			;;               (mode 14 14 :left :elide)
+			;;               " "
+			;;               (vc-status 12 12 :left)
+			;;               " "
+			;;               vc-relative-file)))
 
-    ;; ** ADVICES
-    (defun elisp-index-search-with-text-at-point ()
-      "Provide the symbol at point as the default when reading TOPIC interactively."
-      (interactive
-       (let ((symbol-at-point (thing-at-point 'symbol)))
-	 (list (read-string (if symbol-at-point
-				(format "Topic (%s): " symbol-at-point)
-			      (format "Topic: "))
-			    nil nil symbol-at-point)))))
+			;; (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
 
-    (advice-add 'elisp-index-search :before #'elisp-index-search-with-text-at-point)
-
-    (defun previous-line--next-line-at-end (&optional arg try-vscroll)
-      "Insert an empty line when moving up from the top line."
-      (if (and next-line-add-newlines (= arg 1)
-	       (save-excursion (beginning-of-line) (bobp)))
-	  (progn
-	    (beginning-of-line)
-	    (newline))))
-
-    (advice-add 'previous-line :before #'previous-line--next-line-at-end)
+			    (concat (getenv "GUIX_PROFILE") "/share/info")
+				(add-to-list 'Info-directory-list "/usr/local/share/info/")
 
 
-    (put 'narrow-to-region 'disabled nil)
-    (put 'narrow-to-page 'disabled nil)
-    (put 'narrow-to-defun 'disabled nil)
-    (put 'upcase-region 'disabled nil)
-    (put 'downcase-region 'disabled nil)
+
+				  (when (fboundp 'fringe-mode) (set-fringe-mode '(2 . 6)))
+				      (display-time)
+
+
+				      (when (> emacs-major-version 25) (pixel-scroll-mode))
+
+				      (stq text-scale-mode-step 0.8
+					   display-time-day-and-date t
+					   display-time-24hr-format t
+					   display-time-string-forms
+					   '(" "
+					     dayname " "
+					     month " / "
+					     day " "
+					     24-hours ":"
+					     minutes " "  (if mail " Mail " " "))
+					   display-battery-mode t
+					   battery-mode-line-format " %p "
+					   )
+				      ;; =============== TIME / BATTERY
+				      (display-battery-mode)
+
+				      (cond ((member "Noto Sans Mono" (font-family-list))
+					     (set-face-attribute 'mode-line nil :font "Noto Sans Mono-10"))
+					    ((member "DejaVu Sans Mono" (font-family-list))
+					     (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")))
+
+
+				      (global-set-key [remap forward-word] 'forward-same-syntax)
+
+				      ;; ** ADVICES
+				      (defun elisp-index-search-with-text-at-point ()
+					"Provide the symbol at point as the default when reading TOPIC interactively."
+					(interactive
+					 (let ((symbol-at-point (thing-at-point 'symbol)))
+					   (list (read-string (if symbol-at-point
+								  (format "Topic (%s): " symbol-at-point)
+								(format "Topic: "))
+							      nil nil symbol-at-point)))))
+
+				      (advice-add 'elisp-index-search :before #'elisp-index-search-with-text-at-point)
+
+				      (defun previous-line--next-line-at-end (&optional arg try-vscroll)
+					"Insert an empty line when moving up from the top line."
+					(if (and next-line-add-newlines (= arg 1)
+						 (save-excursion (beginning-of-line) (bobp)))
+					    (progn
+					      (beginning-of-line)
+					      (newline))))
+
+				      (advice-add 'previous-line :before #'previous-line--next-line-at-end)
+
+
+				      (put 'narrow-to-region 'disabled nil)
+				      (put 'narrow-to-page 'disabled nil)
+				      (put 'narrow-to-defun 'disabled nil)
+				      (put 'upcase-region 'disabled nil)
+				      (put 'downcase-region 'disabled nil)
 
     #+END_SRC
 
