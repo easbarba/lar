@@ -1,32 +1,35 @@
-;;; -*- lexical-binding: t;
+;;; init.el --- -*- lexical-binding: t;
 
+;;; Commentary:
 ;;; Description: GNU Emacs Configurations
+;;; Code:
 
-(add-to-list 'load-path
-	     (expand-file-name "lisp" user-emacs-directory))
+;; * PATH
+(push (expand-file-name "lisp" user-emacs-directory)
+      load-path)
 
-;; SETTINGS
-
+;; * SETTINGS
 (require 'init-base)
 (require 'init-variables)
 (require 'init-settings)
 
-;; CUSTOM
+;; * CUSTOM
 (require 'init-bindings)
 (require 'init-functions)
 
-;; BUILTINS
+;; * BUILTINS
 (require 'init-modeline)
 (require 'init-dired)
 (require 'init-builtin)
 (require 'init-languages)
 
 ;; * LOAD EXTERNAL
-
 (require 'init-repository-bootstrap)
 (require 'init-repository-builtin)
 (require 'init-repository-languages)
 (require 'init-repository-packages)
+(require 'init-repository-readers)
+(require 'init-repository-exwm)
 
 (provide 'init)
- ;;; init.el ends here
+;;; init.el ends here

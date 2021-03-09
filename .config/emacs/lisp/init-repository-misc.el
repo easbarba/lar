@@ -2,9 +2,11 @@
 
 ;;; Commentary:
 
-;; ========================================
-;;; * REPOSITORY PACKAGES & LIBRARIES
-;; ========================================
+;; ================================================
+;;; * REPOSITORY MISCELLANEOUS PACKAGES & LIBRARIES
+;; ================================================
+
+;;; Code:
 
 ;; ========================================
 ;; * LIBRARIES
@@ -48,14 +50,87 @@
   (global-set-key (kbd "C-x l") 'counsel-locate)
   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 
+(use-package ivy-yasnippet
+  :defer 1)
+
+(use-package ivy-rich
+  :defer 1
+  :config
+  (ivy-rich-mode 1)
+  (setcdr (assq t ivy-format-functions-alist)
+	  #'ivy-format-function-line))
+
+(use-package ivy-posframe
+  :defer 1
+  :custom
+  (ivy-posframe-width      115)
+  (ivy-posframe-min-width  115)
+  (ivy-posframe-height     10)
+  (ivy-posframe-min-height 10)
+  :config
+  (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+  (setq ivy-posframe-parameters '((parent-frame . nil)
+                                  (left-fringe . 8)
+                                  (right-fringe . 8)))
+  (ivy-posframe-mode 1))
+
+(use-package ivy-avy
+  :defer 1)
+
+
 ;; ========================================
 ;; ** TOOLS
+
+(use-package openwith
+  :config
+  (setq openwith-associations
+        (list
+          (list (openwith-make-extension-regexp
+                '("mpg" "mpeg" "mp3" "mp4"
+                  "avi" "wmv" "wav" "mov" "flv"
+                  "ogm" "ogg" "mkv"))
+                "mpv"
+                '(file))
+          (list (openwith-make-extension-regexp
+                '("xbm" "pbm" "pgm" "ppm" "pnm"
+                  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
+                  ;; causing feh to be opened...
+                  "feh"
+                  '(file))
+          (list (openwith-make-extension-regexp
+                '("pdf"))
+                "zathura"
+                '(file))))
+  (openwith-mode 1))
+
+(use-package deft
+  :commands (deft)
+  :config (setq deft-directory (f-join *home* "Documents")
+                deft-recursive t
+                deft-extensions '("md" "org")))
+
+(use-package org-appear
+  :disabled
+  :hook (org-mode . org-appear-mode))
+
+(use-package magit-todos
+  :defer t)
+
+(use-package alert
+  :commands alert
+  :custom (alert-default-style 'notifications))
 
 (use-package exec-path-from-shell
   :defer 1
   :config (when (memq window-system '(mac ns x))
 	    (exec-path-from-shell-initialize)))
 
+(use-package vimish-fold
+  :defer 1)
+
+(use-package origami
+  :defer t
+  :hook (yaml-mode . origami-mode))
 
 (use-package duplicate-thing
   :defer 1
@@ -111,6 +186,17 @@
   :defer t
   :bind ("C-c T" . 'vterm))
 
+(use-package telega
+  :commands telega
+  :config
+  (setq telega-user-use-avatars nil
+        telega-use-tracking-for '(any pin unread)
+        telega-chat-use-markdown-formatting t
+        telega-emoji-use-images t
+        telega-completing-read-function #'ivy-completing-read
+        telega-msg-rainbow-title nil
+        telega-chat-fill-column 75))
+
 (use-package deadgrep
   :defer t
   :bind ("C-c b g" . 'deadgrep))
@@ -155,6 +241,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCC6f63SXY0CDpsPGDBtTWVg" ;; Henry Bugalho
      "http://sachachua.com/blog/category/emacs/feed"))
   :config
@@ -185,7 +272,11 @@
 		     elfeed-show-entry
 		   (elfeed-search-selected :single))))
       (e/play-video (elfeed-entry-link entry))))
-  (define-key elfeed-search-mode-map "m" 'e/elfeed-play-with-video-player)
+  (define-key elfeed-search-mode-map "m" #'(lambda ()
+					    (interactive)
+					    (e/elfeed-play-with-video-player)
+					    (when (frame-parameter (selected-frame) 'exwm-active)
+					      (e/exwm-switch-to-worskpace 4))))
 
   (defun e/elfeed-open-with-eww ()
     "Open in eww with `eww-readable' - Ambrevar."
@@ -501,7 +592,6 @@
   :config (company-quickhelp-mode))
 
 (use-package company-box
-  :disabled
   :hook (company-mode . company-box-mode))
 
 (use-package olivetti

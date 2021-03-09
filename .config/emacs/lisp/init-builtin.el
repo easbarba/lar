@@ -489,7 +489,9 @@ That is, remove a non kept file from the recent list."
 			  (setq erc-fill-column (- (window-width) 2))))
 	     (erc-track-remove-from-mode-line)
 	     (setq-local scroll-margin 1)
-	     (setq erc-rename-buffers t
+	     (setq erc-nick "easbarbosa"
+		   erc-user-full-name "EAS Barbosa"
+		   erc-rename-buffers t
 		   erc-kill-buffer-on-part t
 		   erc-mode-line-format "%a"
 		   erc-kill-queries-on-quit t

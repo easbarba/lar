@@ -25,7 +25,8 @@
 ;; * SYSTEM SOFTWARE
 
 (defun e/return-exec (apps)
-  "Return first executable in APPS found."
+  "Return first executable in APPS found.
+TODO: return if running"
   (require 'cl-lib)
   (cl-dolist (app apps)
     (when (executable-find app)
@@ -110,11 +111,10 @@
     (start-process "SENDING" "SENDING" "cero" "operations" "send" file)))
 (global-set-key (kbd "C-c S") 'e/send-file)
 
-
-(defun e/barinfo ()
+(defun e/sysinfo ()
   "Apresenta informacoes do sistema."
   (interactive)
-  (let ((info (string-trim (shell-command-to-string "wmbar-info"))))
+  (let ((info (string-trim (shell-command-to-string "sysinfo"))))
     (progn
       (start-process "A" "A" "notify-send" info)
       (message "%s" info))))
@@ -127,7 +127,6 @@
   (dolist (file (dired-get-marked-files))
     (start-process "EPUB-ORG" "EPUB-ORG" "pandoc" file "--columns=120" "-f" "epub" "-t" "org" "-s" "-o"
 		   (concat (substring file 0 -4) "org"))))
-
 
 (defun my-dired-find-and-clean-novels ()
   "In dired, convert Epub file to Org using pandoc."
