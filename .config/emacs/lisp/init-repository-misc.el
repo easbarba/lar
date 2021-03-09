@@ -103,6 +103,10 @@
                 '(file))))
   (openwith-mode 1))
 
+(use-package all-the-icons-ivy-rich
+  :defer 1
+  :config (all-the-icons-ivy-rich-mode 1))
+
 (use-package deft
   :commands (deft)
   :config (setq deft-directory (f-join *home* "Documents")
