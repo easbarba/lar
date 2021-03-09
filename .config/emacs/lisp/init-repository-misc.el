@@ -646,7 +646,6 @@
   :config
   (defun e/cool-themes()
     (interactive)
-    (disable-theme *theme*)
     (let ((cool-themes '(doom-ayu-light
 			 doom-acario-light
 			 doom-flatwhite
@@ -654,16 +653,13 @@
 			 doom-homage-white
 			 doom-opera-light
 			 doom-gruvbox-light
-			 doom-miramare
-			 doom-rouge
 			 doom-moonlight
-			 doom-laserwave
 			 doom-solarized-light
 			 doom-nord-light
 			 doom-homage-white
-			 doom-plain-dark
+			 doom-plai
 			 doom-tomorrow-day)))
-      (load-theme (nth (random (length cool-themes))
+      (e/change-theme (nth (random (length cool-themes))
 		       cool-themes)
 		  t)))
   (e/cool-themes))
