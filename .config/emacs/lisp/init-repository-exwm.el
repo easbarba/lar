@@ -208,6 +208,27 @@
   ;; SYSTEM SOFTWARE
   ;; ==============================
 
+  ;; AUTOSTART APPLICATIONS
+  (defun e/autostart-scripts ()
+    "Autostart Scripts in XDG-CONFIG-HOME/autostart-scripts"
+    (interactive)
+    (let* ((scripts-dir (f-join *xdg-config* "autostart-scripts"))
+	   (scripts (directory-files-recursively scripts-dir "")))
+      (dolist (script scripts)
+	(message "Starting: %s" script)
+	(start-process "AUTOSTART" "AUTOSTART" (f-join scripts-dir script)))))
+
+  (defconst e/autostart-apps '(udiskie unclutter ibus-daemon nm-applet
+   			       blueman-applet mate-power-manager diodon)
+    "List of Apps to auto start in EXWM")
+
+  (defun e/autostart ()
+    "Autostart Desktop Applications in XDG-CONFIG-HOME/autostart/*.desktop"
+    (interactive)
+    (dolist (app e/autostart-apps)
+	(message "Starting: %s" app)
+	(start-process "AUTOSTART" "AUTOSTART" (format "%s" app))))
+
   (defun e/sistema-brilho-cima ()
     "Aumenta brilho do sistema."
     (interactive)
@@ -411,9 +432,6 @@
 					      (list :command (cons program program-args))))))
 			 program program-args)))
 
-  ;; (when (executable-find "essential-apps")
-  ;;   (start-process "ESSENTIALAPPS" nil "bash" "essential-apps"))
-
   ;; Emms
   ;; (exwm-input-set-key (kbd "s-A") 'emms-previous)
   (exwm-input-set-key (kbd "s-D") 'emms-next)
@@ -440,7 +458,6 @@
   (exwm-input-set-key (kbd "s-Q") 'e/sistema-sair)
   (exwm-input-set-key (kbd "s-l") 'e/sistema-fechar)
 
-  (exwm-input-set-key (kbd "s-z") 'e/payback)
   (exwm-input-set-key (kbd "s-B") 'e/sistema-browser)
   (exwm-input-set-key (kbd "s-T") 'e/sistema-terminal)
 
@@ -451,6 +468,9 @@
   (exwm-input-set-key (kbd "s-v") 'e/sysinfo)
 
   (exwm-input-set-key (kbd "s-I") 'e/exwm-input-toggle-mode)
-  (exwm-input-set-key (kbd "s-g") 'e/narrow-or-widen-dwim))
+  (exwm-input-set-key (kbd "s-g") 'e/narrow-or-widen-dwim)
+
+  (e/autostart-scripts)
+  (e/autostart))
 
 (provide 'init-repository-exwm)
