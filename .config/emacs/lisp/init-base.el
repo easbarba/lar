@@ -26,7 +26,7 @@
       initial-scratch-message ""
       initial-major-mode 'emacs-lisp-mode
       debug-ignored-errors nil
-      ;; toggle-debug-on-error t
+      toggle-debug-on-error t
       vc-follow-symlinks t)
 
 ;; =========================

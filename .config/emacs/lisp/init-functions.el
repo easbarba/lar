@@ -115,9 +115,7 @@ TODO: return if running"
   "Apresenta informacoes do sistema."
   (interactive)
   (let ((info (string-trim (shell-command-to-string "sysinfo"))))
-    (progn
-      (start-process "A" "A" "notify-send" info)
-      (message "%s" info))))
+    (alert info)))
 
 ;; ** e/FUNCTIONS
 ;; *** MISC

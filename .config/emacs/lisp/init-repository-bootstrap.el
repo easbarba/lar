@@ -4,6 +4,8 @@
 ;; * BOOTSTRAP REPOSITORY PACKAGES
 ;; ===================================
 
+(defconst e/minimal-deps '(use-package magit async s f dash))
+
 (defun --e-install-packages (lst)
   "Install LST list."
   (package-refresh-contents)
@@ -11,10 +13,8 @@
     (when (not (package-installed-p package))
       (package-install package))))
 
-(defconst minimal-deps '(use-package magit async s f dash))
-
 (unless (package-installed-p 'use-package)
-  (--e-install-packages minimal-deps))
+  (--e-install-packages e/minimal-deps))
 
 (when (require 'use-package nil :noerror)
   (require 'use-package)
