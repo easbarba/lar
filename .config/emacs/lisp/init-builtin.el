@@ -111,9 +111,6 @@
     '(define-key org-src-mode-map
        "\C-x\C-s" #'org-edit-src-exit)))
 
-;; =========================
-;; ** ESHELL
-
 (use-package eshell
   :config
   (require 'eshell)
@@ -292,8 +289,8 @@
     (shell))))
 
 
-
 (use-package ansi-term
+  :disabled
   :config
   (defun e/ansi-term-here ()
     "Open `ansi-term' using directory associated with the current buffer's file.
@@ -397,7 +394,8 @@ That is, remove a non kept file from the recent list."
   (defalias 'list-buffers 'ibuffer)) ;; make ibuffer the default buffer manager.
 
 (use-package erc
-  :init
+  :disabled
+  :config
   (require 'erc-log)
   (require 'erc-notify)
   (require 'erc-spelling)
@@ -605,6 +603,7 @@ Requires an installation of ImageMagick (\"convert\")."
     (setq ispell-program-name "ispell")))
 
 (use-package icomplete
+  :init
   (icomplete-mode 1))
 
 (use-package abbrev
@@ -634,8 +633,8 @@ Return true if found, else false. Version 2016-10-24"
   (backup-directory-alist `(("." . ,(concat user-emacs-directory
 						 "etc/backups")))))
 
-(use-package goto-address
-  :init
+(use-package goto-addr
+  :config
   (add-hook 'prog-mode-hook 'goto-address-mode)
   (add-hook 'text-mode-hook 'goto-address-mode))
 
@@ -666,10 +665,7 @@ Return true if found, else false. Version 2016-10-24"
      ;; Try to complete the current line to an entire line in the buffer.
      try-expand-line)))
 
-;; =========================
-;; ** IMAGE MODE
-
-(use-package image-mode
+(use-package image
   :init
   ;; open next/previous image fitted
   (local-set-key (kbd "<right>") (defun next-image-fitted ()
@@ -680,8 +676,6 @@ Return true if found, else false. Version 2016-10-24"
                                   (interactive)
                                   (image-previous-file 1)
                                   (image-transform-fit-to-width))))
-;; =========================
-;; ** WHITESPACE
 
 (use-package whitespace
   :init
@@ -709,7 +703,7 @@ Return true if found, else false. Version 2016-10-24"
 
 
 (use-package eww
-  :init
+  :config
   (define-key eww-mode-map (kbd "W") 'define-word-at-point))
 
 (use-package windmove

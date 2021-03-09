@@ -18,13 +18,13 @@
 (require 'init-functions)
 
 ;; * BUILTINS
-(require 'init-modeline)
+(require 'init-repository-bootstrap)
+;; (require 'init-modeline)
 (require 'init-dired)
-(require 'init-builtin)
+;; (require 'init-builtin)
 (require 'init-languages)
 
 ;; * LOAD EXTERNAL
-(require 'init-repository-bootstrap)
 (require 'init-repository-builtin)
 (require 'init-repository-languages)
 (require 'init-repository-misc)
