@@ -88,8 +88,8 @@
       split-height-threshold nil
       enable-recursive-minibuffers t
       default-directory "~/"
-      backup-directory-alist `(("." . (expand-file-name "etc/backups" user-emacs-directory)))
-      auto-save-file-name-transforms `((".*" ,(expand-file-name "etc/auto-save-list" user-emacs-directory) t))
+      backup-directory-alist `(("." . ,temporary-file-directory))
+      auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
       find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld")
       text-quoting-style 'grave
       ring-bell-function 'ignore
