@@ -51,9 +51,11 @@ packages ()
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    wm=(awesome network-manager-gnome aria2 dunst maim udiskie unclutter diodon gnome-keyring
-	ssh-askpass-gnome libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl lxappearance
-	seahorse x11proto-dev brightnessctl tlp acpi-call blueman)
+    wm=(awesome network-manager-gnome aria2 dunst maim udiskie
+	unclutter diodon gnome-keyring ssh-askpass-gnome pasystray
+	libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
+	lxappearance seahorse x11proto-dev brightnessctl tlp acpi-call
+	blueman volumeicon-alsa)
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
