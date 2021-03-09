@@ -27,7 +27,7 @@
 (require 'init-repository-bootstrap)
 (require 'init-repository-builtin)
 (require 'init-repository-languages)
-(require 'init-repository-packages)
+(require 'init-repository-misc)
 (require 'init-repository-readers)
 (require 'init-repository-exwm)
 
