@@ -4,23 +4,6 @@
 ;; * CUSTOM FUNCTIONS
 ;; ============================
 
-;; ** e/MACROS
-;; ---------------
-(defmacro assoc-val (var vars)
-  "Get value(cdr) of alist."
-  `(cdr (assoc ',var ,vars)))
-
-(defmacro assoc-key (var vars)
-  "Get key(car) of alist."
-  `(car (assoc ',var ,vars)))
-
-;; ** e/PREDICATES
-(defun pack-installed-p (package)
-  "Predicate: Confirm if PACKAGE is installed."
-  (when (executable-find package)
-    t))
-
-
 ;; ===============
 ;; * SYSTEM SOFTWARE
 
@@ -32,50 +15,35 @@ TODO: return if running"
     (when (executable-find app)
       (cl-return app))))
 
-(defcustom *player* "mpv"
-  "Default video/audio player."
-  :type 'string
-  :group '*vars*)
-
-(defcustom *browser* (e/return-exec '("firefox" "google-chrome"))
-  "Default Internet Browser."
-  :type 'string
-  :group '*vars*)
-
-(defcustom *downloader* (e/return-exec '("wget" "curl"))
-  "Check if listed Downloaders exist, pick in order, else ask for one."
-  :group '*vars*
-  :type 'string)
-
-(defcustom *media-downloader* (e/return-exec '("youtube-dl"))
-  "Youtube-dl - Media downloader."
-  :type 'string)
-
 (defcustom *ffmpeg-p* (when (e/return-exec '("ffmpeg")) t)
   "FFMPEG - confirm if it installed."
   :type 'boolean)
 
-;; ** PACOTES DE SISTEMAS INTERFACE
-;; *** YOUTUBE-DL
+;; *** MEDIA
+
 (defun e/get-video (url)
   "Download Video w/ URL - GPL-3.0."
   (interactive)
+  (alert "Getting Video.")
   (start-process "GET-VIDEO" "GET-VIDEO" "cejo" "media" "get" url))
 (global-set-key (kbd "C-c f V") #'(lambda () (interactive) (e/get-video (current-kill 0 t))))
 
 (defun e/get-audio (url)
   "Download Audio w/ URL - GPL-3.0!"
   (interactive)
+  (alert "Getting Audio.")
   (start-process "GET-AUDIO" "GET-AUDIO" "cejo" "media" "get" url "vorbis"))
 (global-set-key (kbd "C-c f A") #'(lambda () (interactive) (e/get-audio (current-kill 0 t))))
 
 (defun e/play-video (url)
   "Call Video Player with online video's URL on clipboard!"
   (interactive)
+  (alert "Playing Video.")
   (start-process "PLAY-VIDEO" "PLAY-VIDEO" "cejo" "media" "play" url))
 (global-set-key (kbd "C-c f P") #'(lambda () (interactive) (e/play-video (current-kill 0 t))))
 
-;; *** FFMPEG - ffmpeg features using Dired
+;; * FFMPEG - ffmpeg features using Dired
+
 (defun e/dired-ffmpeg-convert-to-format ()
   "Ffmpeg convert file format."
   (interactive)
@@ -86,7 +54,7 @@ TODO: return if running"
 		       "FFMPEG-FORMAT"
 		       "ffmpeg" "-i"
 		       file (concat (file-name-base file) "." output-format))
-      (message "FFMPEG IS NOT INSTALLED"))))
+      (alert "FFMPEG IS NOT INSTALLED"))))
 (global-set-key (kbd "C-c C-f f") 'e/dired-ffmpeg-convert-to-format)
 
 (defun e/dired-ffmpeg-boost-volume ()
@@ -101,14 +69,14 @@ TODO: return if running"
 		       "ffmpeg" "-i" file "-filter:a"
 		       (concat "volume=" volume)
 		       (concat (file-name-base file) "-louder." extension))
-      (message "FFMPEG IS NOT INSTALLED"))))
+      (alert "FFMPEG IS NOT INSTALLED"))))
 (global-set-key (kbd "C-c C-f f") 'e/dired-ffmpeg-boost-volume)
 
 (defun e/send-file ()
   "Send file to mobile phone."
   (interactive)
   (let ((file (dired-get-filename nil t)))
-    (start-process "SENDING" "SENDING" "cero" "operations" "send" file)))
+    (start-process "SENDING" "SENDING" "cero" "ops" "send" file)))
 (global-set-key (kbd "C-c S") 'e/send-file)
 
 (defun e/sysinfo ()
@@ -117,8 +85,9 @@ TODO: return if running"
   (let ((info (string-trim (shell-command-to-string "sysinfo"))))
     (alert info)))
 
-;; ** e/FUNCTIONS
-;; *** MISC
+;; ========================================
+;; * MISC
+
 (defun my-dired-convert-epub-to-org ()
   "In dired, convert Epub file to Org using pandoc."
   (interactive)
@@ -132,18 +101,6 @@ TODO: return if running"
   (dolist (file (dired-get-marked-files))
     (find-file file)
     (my-novels-clean)))
-
-
-(defun screenshot-svg ()
-  "Save a screenshot of the current frame as an SVG image.
-Saves to a temp file and puts the filename in the kill ring."
-  (interactive)
-  (let* ((filename (make-temp-file "Emacs" nil ".svg"))
-	 (data (x-export-frames nil 'svg)))
-    (with-temp-file filename
-      (insert data))
-    (kill-new filename)
-    (message filename)))
 
 (defun my-novels-clean ()
   "Cleaning Org Novels."
@@ -235,7 +192,6 @@ Saves to a temp file and puts the filename in the kill ring."
     (save-buffer)
     (kill-current-buffer)))
 
-
 (defun e/search-engine ()
   "Search term on internet search engines/repositories.
 
@@ -282,82 +238,6 @@ Saves to a temp file and puts the filename in the kill ring."
   (delete-window))
 (global-set-key (kbd "C-c k") 'e/kill-this-buffer-for-real)
 
-(defun e/change-theme (&rest args)
-  "Like `load-theme', but disable all themes before loading the new one, ARGS."
-  ;; The `interactive' magic is for creating a future-proof passthrough.
-  (interactive (advice-eval-interactive-spec
-		(cadr (interactive-form #'load-theme))))
-  (mapc #'disable-theme custom-enabled-themes)
-  (apply (if (called-interactively-p 'any) #'funcall-interactively #'funcall)
-	 #'load-theme args))
-
-(defun e/create-scratch-buffer ()
-  "Create a new scratch buffer."
-  (interactive)
-  (switch-to-buffer (get-buffer-create "*scratch*"))
-  (emacs-lisp-mode))
-
-(defun e/sudo-edit (&optional arg)
-  "Edit currently visited file as root.
-
-     With a prefix ARG prompt for a file to visit.
-     Will also prompt for a file to visit if current
-     buffer is not visiting a file."
-  (interactive "P")
-  (if (or arg (not buffer-file-name))
-      (find-file (concat "/sudo:root@localhost:"
-			 (ido-read-file-name "Find file(as root): ")))
-    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-
-(defun e/copy-line ()
-  "Copy entire line - aboabo."
-  (interactive)
-  (save-excursion
-    (back-to-indentation)
-    (kill-ring-save
-     (point)
-     (line-end-position)))
-  (message "1 line copied"))
-(global-set-key (kbd "C-c w") 'e/copy-line)
-
-(defun e/surround (open)
-  "Replace pair at point by OPEN and its corresponding closing character.
-     The closing character is lookup in the syntax table or asked to
-     the user if not found."
-  (interactive
-   (list
-    (read-char
-     (format "Replacing pair %c%c by (or hit RET to delete pair):"
-	     (char-after)
-	     (save-excursion
-	       (forward-sexp 1)
-	       (char-before))))))
-  (if (memq open '(?\n ?\r))
-      (delete-pair)
-    (let ((close (cdr (aref (syntax-table) open))))
-      (when (not close)
-	(setq close
-	      (read-char
-	       (format "Don't know how to close character %s (#%d) ; please provide a closing character: "
-		       (single-key-description open 'no-angles)
-		       open))))
-      (e/surround-replace-pair open close))))
-(global-set-key (kbd "C-c s") 'e/surround)
-
-(defun e/surround-replace-pair (open close)
-  "Replace pair at point by respective chars OPEN and CLOSE.
-     If CLOSE is nil, lookup the syntax table. If that fails, signal
-     an error."
-  (let ((close (or close
-		   (cdr-safe (aref (syntax-table) open))
-		   (error "No matching closing char for character %s (#%d)"
-			  (single-key-description open t)
-			  open)))
-	(parens-require-spaces))
-    (insert-pair 1 open close))
-  (delete-pair)
-  (backward-char 1))
-
 (defun e/filepath-to-clipboard ()
   (interactive)
   (kill-new (buffer-file-name)))
@@ -372,6 +252,5 @@ Saves to a temp file and puts the filename in the kill ring."
     (newline-and-indent)
     (previous-line 1)
     (insert (concat "\"" base id "\" ;; ") name)))
-
 
 (provide 'init-functions)

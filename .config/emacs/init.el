@@ -8,14 +8,16 @@
 (push (expand-file-name "lisp" user-emacs-directory)
       load-path)
 
-;; * SETTINGS
+;; * UNIVERSAL
 (require 'init-base)
 (require 'init-variables)
 (require 'init-settings)
 
 ;; * CUSTOM
 (require 'init-bindings)
+(require 'init-utils)
 (require 'init-functions)
+(require 'init-misc)
 
 ;; * BUILTINS
 (require 'init-repository-bootstrap)
@@ -24,7 +26,7 @@
 (require 'init-builtin)
 (require 'init-languages)
 
-;; * LOAD EXTERNAL
+;; * EXTERNAL PACKAGES
 (require 'init-repository-builtin)
 (require 'init-repository-languages)
 (require 'init-repository-misc)
