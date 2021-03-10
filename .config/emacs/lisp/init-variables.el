@@ -45,6 +45,25 @@
   :type 'string
   :group '*vars*)
 
+(defcustom *player* "mpv"
+  "Default video/audio player."
+  :type 'string
+  :group '*vars*)
+
+(defcustom *browser* (e/return-exec '("firefox" "google-chrome"))
+  "Default Internet Browser."
+  :type 'string
+  :group '*vars*)
+
+(defcustom *downloader* (e/return-exec '("wget" "curl"))
+  "Check if listed Downloaders exist, pick in order, else ask for one."
+  :group '*vars*
+  :type 'string)
+
+(defcustom *media-downloader* (e/return-exec '("youtube-dl"))
+  "Youtube-dl - Media downloader."
+  :type 'string)
+
 (defcustom *theme* 'tango
   "Emacs default theme."
   :type 'string
