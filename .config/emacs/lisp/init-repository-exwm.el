@@ -12,24 +12,26 @@
 ;; ===================================
 
 (when (display-graphic-p)
-  (require 'cl-generic)
-  (require 'cl-lib)
-  (require 'xelb)
-  (require 'exwm)
+  (use-package exwm
+    :config
+    (require 'cl-generic)
+    (require 'cl-lib)
+    (require 'xelb)
+    (require 'exwm)
 
-  (require 'exwm-config)
-  (exwm-config-ido)
-  (exwm-config-misc)
+    (require 'exwm-config)
+    (exwm-config-ido)
+    (exwm-config-misc)
 
-  (require 'exwm-systemtray)
-  (exwm-systemtray-enable)
-  (exwm-enable)
+    (require 'exwm-systemtray)
+    (exwm-systemtray-enable)
 
-  ;; :config
-  (setq exwm-workspace-number 6
-	exwm-workspace-display-echo-area-timeout 2
-	exwm-workspace-show-all-buffers t
-	use-dialog-box nil)
+    (exwm-enable)
+    :custom
+    (exwm-workspace-number 6)
+    (exwm-workspace-display-echo-area-timeout 2)
+    (exwm-workspace-show-all-buffers t)
+    (use-dialog-box nil))
 
   (defvar are-workspaces-loaded 0
     "are workspaces loaded? start out with value of 0.")
@@ -218,8 +220,9 @@
 	(message "Starting: %s" script)
 	(start-process "AUTOSTART" "AUTOSTART" (f-join scripts-dir script)))))
 
-  (defconst e/autostart-apps '(udiskie unclutter ibus-daemon nm-applet
-   			       blueman-applet mate-power-manager diodon)
+  (defconst e/autostart-apps '(udiskie unclutter ibus-daemon dunst
+			       nm-applet blueman-applet mate-power-manager
+			       diodon pasystray)
     "List of Apps to auto start in EXWM")
 
   (defun e/autostart ()
@@ -233,13 +236,13 @@
     "Aumenta brilho do sistema."
     (interactive)
     (message "brilho +")
-    (start-process "BRILHO-CIMA" nil "brilho-cima"))
+    (start-process "BRILHO-CIMA" nil "cejo" "ops" "brightness" "up"))
 
   (defun e/sistema-brilho-baixo ()
     "Aumenta brilho do sistema."
     (interactive)
     (message "brilho -")
-    (start-process "BRILHO-BAIXO" nil "brilho-baixo"))
+    (start-process "BRILHO-BAIXO" nil "cejo" "ops" "brightness" "up"))
 
   (defun e/sistema-volume-cima ()
     "Aumenta volume do sistema."
@@ -277,13 +280,13 @@
     "Get Video"
     (interactive)
     (message "Getting video")
-    (start-process "PEGAVIDEO" nil "cero" "media" "get"))
+    (start-process "PEGAVIDEO" nil "cejo" "media" "get"))
 
   (defun e/sistema-pegaaudio ()
     "Pegando Auido"
     (interactive)
     (message "Pegando audio")
-    (start-process "PEGAAUDIO" nil "cero" "media" "get" "vorbis"))
+    (start-process "PEGAAUDIO" nil "cejo" "media" "get" "vorbis"))
 
   (defun e/sistema-reiniciar ()
     "Reiniciando Sistema."
