@@ -51,7 +51,7 @@ packages ()
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    wm=(awesome network-manager-gnome aria2 dunst maim udiskie
+    wm=(network-manager-gnome aria2 dunst maim udiskie
 	unclutter diodon gnome-keyring ssh-askpass-gnome pasystray
 	libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
 	lxappearance seahorse x11proto-dev brightnessctl tlp acpi-call
@@ -145,9 +145,9 @@ foreign()
 
     chrome()
     {
-        wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-        sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+	sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
     }
 
     chrome
