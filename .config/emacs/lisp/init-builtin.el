@@ -17,7 +17,7 @@
 	ido-enable-regexp t
 	ido-decorations
 	(quote ("\n-> " "" "\n " "\n ..." "[" "]" " [No match]" " [Matched]" "
-             [Not readable]" " [Too big]" " [Confirm]"))
+	     [Not readable]" " [Too big]" " [Confirm]"))
 	ido-file-extensions-order '(".lisp" ".py" ".org" ".el")
 	ido-max-directory-size 100000
 	ido-use-filename-at-point t
@@ -29,9 +29,9 @@
   (define-key (cdr ido-minor-mode-map-entry) [remap write-file] nil)
 
   (add-hook 'ido-setup-hook
-            (lambda ()
-              (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
-              (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
+	    (lambda ()
+	      (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+	      (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
   (defun e/ido-bookmark-jump (bname)
     "Switch to bookmark BNAME interactively using `ido'."
@@ -112,181 +112,177 @@
        "\C-x\C-s" #'org-edit-src-exit)))
 
 (use-package eshell
-  :config
-  (require 'eshell)
+  :init
   (require 'em-smart)
+  (require 'em-term)
+  :custom
+  (eshell-scroll-to-bottom-on-input 'all)
+  (eshell-visual-subcommands '("git" "commit" "--amend" "log" "l" "diff" "show"))
+  (eshell-error-if-no-glob t)
+  (eshell-where-to-jump 'begin)
+  (eshell-review-quick-commands nil)
+  (eshell-smart-space-goes-to-end t)
+  (eshell-hist-ignoredups t)
+  (eshell-save-history-on-exit t)
+  (eshell-prefer-lisp-functions nil)
+  (eshell-destroy-buffer-when-process-dies t)
+  :config
+  (let ((apps '(ssh tail htop emacs vim)))
+    (dolist (app apps)
+      (add-to-list 'eshell-visual-commands (format "%s" app))))
 
-  ;; (add-to-list 'eshell-visual-commands "ssh")
-  ;; (add-to-list 'eshell-visual-commands "tail")
-  ;; (add-to-list 'eshell-visual-commands "htop")
-  ;; (add-to-list 'eshell-visual-commands "emacs")
-  ;; (add-to-list 'eshell-visual-commands "vim")
-
-  (setq eshell-scroll-to-bottom-on-input 'all
-        ;; eshell-visual-subcommands '("git" "commit" "--amend" "log" "l" "diff" "show")
-        eshell-error-if-no-glob t
-        eshell-where-to-jump 'begin
-        eshell-review-quick-commands nil
-        eshell-smart-space-goes-to-end t
-        eshell-hist-ignoredups t
-        eshell-save-history-on-exit t
-        eshell-prefer-lisp-functions nil
-        eshell-destroy-buffer-when-process-dies t)
-
-  (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:"
-                         (getenv "PATH")))
+  (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:" (getenv "PATH")))
   (getenv "PATH")
   (setenv "PAGER" "cat")
 
-  (add-hook 'eshell-expand-input-functions
-            #'eshell-expand-history-references)
+  (add-hook 'eshell-expand-input-functions #'eshell-expand-history-references)
 
-(defun eshell/find-file (file)
-  "Find FILE using Eshell."
-  (find-file file))
+  (defun eshell/find-file (file)
+    "Find FILE using Eshell."
+    (find-file file))
 
-(defun e/eshell-runit ()
-  "Open Eshell using directory associated with the current buffer's file.
-
-      The eshell is renamed to match that
-      directory to make multiple eshell windows easier."
-  (interactive)
-  (let* ((height (/ (window-total-height) 3)))
-    (split-window-vertically (- height))
-    (other-window 1)
-    (eshell "new")
-    (insert (concat "make -ks build && make -ks run"))
-    (eshell-send-input)))
-(global-set-key (kbd "C-c n") 'e/eshell-runit)
-
-(defun eshell/clear ()
-  "Function to clear eshell buffer."
-  (let ((eshell-buffer-maximum-lines 0))
-    (eshell-truncate-buffer)))
-
-(defun eshell/gst (&rest args)
-  "Git status ARGS."
-  (magit-status (pop args) nil)
-  (eshell/echo))   ;; The echo command suppresses output
-
-(defun eshell/find (&rest args)
-  "Wrapper around the ‘find’ executable using ARGS."
-  (let ((cmd (concat "find " (string-join args))))
-    (shell-command-to-string cmd)))
-
-
-(defun eshell/hp (&rest args)
-  "Emily run ARGS."
-  (let ((cmd (concat "cero" *space* (string-join args))))
-    (shell-command-to-string cmd)))
-
-(defun eshell/dp (&rest args)
-  "Emily - run distro ARGS."
-  (let ((cmd (concat "distro" *space* (string-join args))))
-    (shell-command-to-string cmd)))
-
-(defun e/eshell-here ()
-  "Open Eshell using directory associated with the current buffer's file.
+  (defun e/eshell-runit ()
+    "Open Eshell using directory associated with the current buffer's file.
 
       The eshell is renamed to match that
       directory to make multiple eshell windows easier."
-  (interactive)
-  (let* ((height (/ (window-total-height) 3)))
-    (split-window-vertically (- height))
-    (other-window 1)
-    (eshell "new")
-    (insert (concat "ls"))
-    (eshell-send-input)))
-(global-set-key (kbd "C-c E") 'e/eshell-here)
+    (interactive)
+    (let* ((height (/ (window-total-height) 3)))
+      (split-window-vertically (- height))
+      (other-window 1)
+      (eshell "new")
+      (insert (concat "make -ks build && make -ks run"))
+      (eshell-send-input)))
+  (global-set-key (kbd "C-c n") 'e/eshell-runit)
 
-(defun e/eshell-quit-or-delete-char (arg)
-  "ARG."
-  (interactive "p")
-  (if (and (eolp) (looking-back eshell-prompt-regexp))
-      (progn
-        (eshell-life-is-too-much) ; Why not? (eshell/exit)
-        (ignore-errors
-          (delete-window)))
-    (delete-forward-char arg)))
+  (defun eshell/clear ()
+    "Function to clear eshell buffer."
+    (let ((eshell-buffer-maximum-lines 0))
+      (eshell-truncate-buffer)))
 
-(add-hook 'eshell-mode-hook
-          (lambda ()
-            (global-set-key (kbd "C-d") 'e/eshell-quit-or-delete-char)))
+  (defun eshell/gst (&rest args)
+    "Git status ARGS."
+    (magit-status (pop args) nil)
+    (eshell/echo))   ;; The echo command suppresses output
 
-(defun e/eshell-there (host)
-  "Eshell with Tramp automatically connect to a remote system, HOST.
+  (defun eshell/find (&rest args)
+    "Wrapper around the ‘find’ executable using ARGS."
+    (let ((cmd (concat "find " (string-join args))))
+      (shell-command-to-string cmd)))
+
+
+  (defun eshell/hp (&rest args)
+    "Emily run ARGS."
+    (let ((cmd (concat "cero" *space* (string-join args))))
+      (shell-command-to-string cmd)))
+
+  (defun eshell/dp (&rest args)
+    "Emily - run distro ARGS."
+    (let ((cmd (concat "distro" *space* (string-join args))))
+      (shell-command-to-string cmd)))
+
+  (defun e/eshell-here ()
+    "Open Eshell using directory associated with the current buffer's file.
+
+      The eshell is renamed to match that
+      directory to make multiple eshell windows easier."
+    (interactive)
+    (let* ((height (/ (window-total-height) 3)))
+      (split-window-vertically (- height))
+      (other-window 1)
+      (eshell "new")
+      (insert (concat "ls"))
+      (eshell-send-input)))
+  (global-set-key (kbd "C-c E") 'e/eshell-here)
+
+  (defun e/eshell-quit-or-delete-char (arg)
+    "ARG."
+    (interactive "p")
+    (if (and (eolp) (looking-back eshell-prompt-regexp))
+	(progn
+	  (eshell-life-is-too-much) ; Why not? (eshell/exit)
+	  (ignore-errors
+	    (delete-window)))
+      (delete-forward-char arg)))
+
+  (add-hook 'eshell-mode-hook
+	    (lambda ()
+	      (global-set-key (kbd "C-d") 'e/eshell-quit-or-delete-char)))
+
+  (defun e/eshell-there (host)
+    "Eshell with Tramp automatically connect to a remote system, HOST.
 
       The hostname can be either the IP address, or FQDN,
       and can specify the user account, as in
       root@blah.com. HOST can also be a complete Tramp reference."
-  (interactive "sHost: ")
+    (interactive "sHost: ")
 
-  (let* ((default-directory
-           (cond
-            ((string-match-p "^/" host) host)
+    (let* ((default-directory
+	     (cond
+	      ((string-match-p "^/" host) host)
 
-            ((string-match-p (ha/eshell-host-regexp 'full) host)
-             (string-match (ha/eshell-host-regexp 'full) host)
-             (let* ((user1 (match-string 2 host))
-                    (host1 (match-string 3 host))
-                    (user2 (match-string 6 host))
-                    (host2 (match-string 7 host)))
-               (if host1
-                   (ha/eshell-host->tramp user1 host1)
-                 (ha/eshell-host->tramp user2 host2))))
+	      ((string-match-p (ha/eshell-host-regexp 'full) host)
+	       (string-match (ha/eshell-host-regexp 'full) host)
+	       (let* ((user1 (match-string 2 host))
+		      (host1 (match-string 3 host))
+		      (user2 (match-string 6 host))
+		      (host2 (match-string 7 host)))
+		 (if host1
+		     (ha/eshell-host->tramp user1 host1)
+		   (ha/eshell-host->tramp user2 host2))))
 
-            (t (format "/%s:" host)))))
-    (eshell-here)))
+	      (t (format "/%s:" host)))))
+      (eshell-here)))
 
-(defun e/eshell-close ()
-  "Close eshell."
-  (insert "exit")
-  (eshell-send-input)
-  (delete-window))
+  (defun e/eshell-close ()
+    "Close eshell."
+    (insert "exit")
+    (eshell-send-input)
+    (delete-window))
 
-(defun eshell-next-prompt (n)
-  "Move to end of Nth next prompt in the buffer.
+  (defun eshell-next-prompt (n)
+    "Move to end of Nth next prompt in the buffer.
   See `eshell-prompt-regexp'."
-  (interactive "p")
-  (re-search-forward eshell-prompt-regexp nil t n)
-  (when eshell-highlight-prompt
-    (while (not (get-text-property (line-beginning-position) 'read-only) )
-      (re-search-forward eshell-prompt-regexp nil t n)))
-  (eshell-skip-prompt))
+    (interactive "p")
+    (re-search-forward eshell-prompt-regexp nil t n)
+    (when eshell-highlight-prompt
+      (while (not (get-text-property (line-beginning-position) 'read-only) )
+	(re-search-forward eshell-prompt-regexp nil t n)))
+    (eshell-skip-prompt))
 
-(defun eshell-previous-prompt (n)
-  "Move to end of Nth previous prompt in the buffer.
+  (defun eshell-previous-prompt (n)
+    "Move to end of Nth previous prompt in the buffer.
   See `eshell-prompt-regexp'."
-  (interactive "p")
-  (backward-char)
-  (eshell-next-prompt (- n)))
+    (interactive "p")
+    (backward-char)
+    (eshell-next-prompt (- n)))
 
-(defun eshell-insert-history ()
-  "Displays the eshell history to select and insert back into your eshell."
-  (interactive)
-  (insert (ido-completing-read "Eshell history: "
-                               (delete-dups
-                                (ring-elements eshell-history-ring)))))
+  (defun eshell-insert-history ()
+    "Displays the eshell history to select and insert back into your eshell."
+    (interactive)
+    (insert (ido-completing-read "Eshell history: "
+				 (delete-dups
+				  (ring-elements eshell-history-ring)))))
 
-(add-hook 'eshell-mode-hook
-          (lambda ()
-            (define-key eshell-mode-map (kbd "M-S-P") 'eshell-previous-prompt)
-            (define-key eshell-mode-map (kbd "M-S-N") 'eshell-next-prompt)
-            (define-key eshell-mode-map (kbd "M-r") 'eshell-insert-history)))
+  (add-hook 'eshell-mode-hook
+	    (lambda ()
+	      (define-key eshell-mode-map (kbd "M-S-P") 'eshell-previous-prompt)
+	      (define-key eshell-mode-map (kbd "M-S-N") 'eshell-next-prompt)
+	      (define-key eshell-mode-map (kbd "M-r") 'eshell-insert-history)))
 
-(add-hook 'after-save-hook
-          'executable-make-buffer-file-executable-if-script-p)
+  (add-hook 'after-save-hook
+	    'executable-make-buffer-file-executable-if-script-p)
 
-(defun e/shell-here ()
-  "Open `shell' using directory associated with the current buffer's file.
+  (defun e/shell-here ()
+    "Open `shell' using directory associated with the current buffer's file.
 
-         The `shell' is renamed to match that
-         directory to make multiple eshell windows easier."
-  (interactive)
-  (let* ((height (/ (window-total-height) 3)))
-    (split-window-vertically (- height))
-    (other-window 1)
-    (shell))))
+	 The `shell' is renamed to match that
+	 directory to make multiple eshell windows easier."
+    (interactive)
+    (let* ((height (/ (window-total-height) 3)))
+      (split-window-vertically (- height))
+      (other-window 1)
+      (shell))))
 
 
 (use-package ansi-term
@@ -314,7 +310,7 @@
 (use-package info
   :init
   :custom (Info-additional-directory-list
-           (list (expand-file-name (concat *share* "/info/"))))
+	   (list (expand-file-name (concat *share* "/info/"))))
   (define-key Info-mode-map (kbd "W") 'define-word-at-point))
 
 (use-package vc
@@ -324,23 +320,23 @@
 (use-package diff
   :init
   (setq-local whitespace-style
-              '(face
-                tabs
-                tab-mark
-                spaces
-                space-mark
-                trailing
-                indentation::space
-                indentation::tab
-                newline
-                newline-mark))
+	      '(face
+		tabs
+		tab-mark
+		spaces
+		space-mark
+		trailing
+		indentation::space
+		indentation::tab
+		newline
+		newline-mark))
   (whitespace-mode 1))
 
 (use-package ediff
   :init
   (setq-default ediff-diff-options "-w"
-                ediff-split-window-function 'split-window-horizontally
-                ediff-window-setup-function 'ediff-setup-windows-plain)
+		ediff-split-window-function 'split-window-horizontally
+		ediff-window-setup-function 'ediff-setup-windows-plain)
   (add-hook 'ediff-after-quit-hook-internal 'winner-undo))
 
 (use-package outline
@@ -357,23 +353,23 @@
   (recentf-auto-cleanup 'never) ;; problems with remote files
   (recentf-auto-cleanup 600)  ;; clean up the recent files
   (recentf-exclude '("^/var/folders\\.*"
-                     "COMMIT_MSG"
-                     "[0-9a-f]\\{32\\}-[0-9a-f]\\{32\\}\\.org"
-                     "github.*txt$"
-                     "COMMIT_EDITMSG\\'"
-                     ()			".*-autoloads\\.el\\'"
-                     "recentf"
-                     ".*pang$" ".*cache$"
-                     "[/\\]\\.elpa/"))) ;; exclude ** from recentfiles buffer
+		     "COMMIT_MSG"
+		     "[0-9a-f]\\{32\\}-[0-9a-f]\\{32\\}\\.org"
+		     "github.*txt$"
+		     "COMMIT_EDITMSG\\'"
+		     ()			".*-autoloads\\.el\\'"
+		     "recentf"
+		     ".*pang$" ".*cache$"
+		     "[/\\]\\.elpa/"))) ;; exclude ** from recentfiles buffer
 
 ;; Add visited dired visited directories to recentf
 (defun recentf-track-opened-file ()
   "Insert dired/file name just opened or written into the recent list."
   (let ((buff-name (or buffer-file-name
-                       (and (derived-mode-p 'dired-mode)
-                            default-directory))))
+		       (and (derived-mode-p 'dired-mode)
+			    default-directory))))
     (and buff-name
-         (recentf-add-file buff-name)))
+	 (recentf-add-file buff-name)))
   ;; Must return nil because it is run from `write-file-functions'.
   nil)
 
@@ -381,11 +377,11 @@
   "Update the recent list when a file or dired buffer is killed.
 That is, remove a non kept file from the recent list."
   (let ((buff-name (or buffer-file-name
-                       (and
-                        (derived-mode-p 'dired-mode)
-                        default-directory))))
+		       (and
+			(derived-mode-p 'dired-mode)
+			default-directory))))
     (and buff-name
-         (recentf-remove-if-non-kept buff-name))))
+	 (recentf-remove-if-non-kept buff-name))))
 (add-hook 'dired-after-readin-hook 'recentf-track-opened-file)
 
 (use-package ibuffer
@@ -599,7 +595,7 @@ Requires an installation of ImageMagick (\"convert\")."
   (if (executable-find "aspell")
       (progn
 	(setq ispell-program-name "aspell"
-              ispell-extra-args '("--sug-mode=ultra")))
+	      ispell-extra-args '("--sug-mode=ultra")))
     (setq ispell-program-name "ispell")))
 
 (use-package icomplete
@@ -613,9 +609,9 @@ Requires an installation of ImageMagick (\"convert\")."
 Return true if found, else false. Version 2016-10-24"
     (interactive)
     (let (($found-p (search-backward "^" (if @pos
-                                             @pos
-                                           (max (point-min) (- (point) 100)))
-                                     t)))
+					     @pos
+					   (max (point-min) (- (point) 100)))
+				     t)))
       (when $found-p (delete-char 1))
       $found-p))
 
@@ -631,7 +627,7 @@ Return true if found, else false. Version 2016-10-24"
   :custom
   (save-place-file (expand-file-name "etc/places" user-emacs-directory))
   (backup-directory-alist `(("." . ,(concat user-emacs-directory
-						 "etc/backups")))))
+					    "etc/backups")))))
 
 (use-package goto-addr
   :config
@@ -669,22 +665,22 @@ Return true if found, else false. Version 2016-10-24"
   :init
   ;; open next/previous image fitted
   (local-set-key (kbd "<right>") (defun next-image-fitted ()
-                                   (interactive)
-                                   (image-next-file)
-                                   (image-transform-fit-to-width)))
+				   (interactive)
+				   (image-next-file)
+				   (image-transform-fit-to-width)))
   (local-set-key (kbd "<left>") (defun left-image-fitted ()
-                                  (interactive)
-                                  (image-previous-file 1)
-                                  (image-transform-fit-to-width))))
+				  (interactive)
+				  (image-previous-file 1)
+				  (image-transform-fit-to-width))))
 
 (use-package whitespace
   :init
   (add-hook 'before-save-hook 'whitespace-cleanup)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (add-hook 'prog-mode-hook
-            (lambda () (interactive) (setq show-trailing-whitespace 1)))
+	    (lambda () (interactive) (setq show-trailing-whitespace 1)))
   (add-hook 'org-mode-hook
-            (lambda () (interactive) (setq show-trailing-whitespace 1)))
+	    (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
   ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -717,10 +713,10 @@ Return true if found, else false. Version 2016-10-24"
   (defun e/add-pretty-lambda ()
     "Lisp symbols as pretty Unicode symbols."
     (setq prettify-symbols-alist
-          '(("lambda" . 955)  ;; λ
-            ("->" . 8594)     ;; →
-            ("=>" . 8658)     ;; ⇒
-            ("map" . 8614)))) ;; ↦
+	  '(("lambda" . 955)  ;; λ
+	    ("->" . 8594)     ;; →
+	    ("=>" . 8658)     ;; ⇒
+	    ("map" . 8614)))) ;; ↦
   (add-hook 'scheme-mode-hook 'e/add-pretty-lambda)
   (add-hook 'clojure-mode-hook 'e/add-pretty-lambda)
   (add-hook 'haskell-mode-hook 'e/add-pretty-lambda))
@@ -729,7 +725,7 @@ Return true if found, else false. Version 2016-10-24"
   :init (winner-mode 1))
 
 (use-package midnight
-  :init 
+  :init
   (midnight-delay-set 'midnight-delay "4:30am")
   :custom ( midnight-period 5000))
 
@@ -755,7 +751,7 @@ Return true if found, else false. Version 2016-10-24"
   (eldoc-echo-area-use-multiline-p nil))
 
 (use-package paren
-  :init (show-paren-mode 1)) 
+  :init (show-paren-mode 1))
 
 (provide 'init-builtin)
 ;;; init-builtin.el ends here

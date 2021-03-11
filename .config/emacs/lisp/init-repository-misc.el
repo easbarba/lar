@@ -70,8 +70,8 @@
   :config
   (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
   (setq ivy-posframe-parameters '((parent-frame . nil)
-                                  (left-fringe . 8)
-                                  (right-fringe . 8)))
+				  (left-fringe . 8)
+				  (right-fringe . 8)))
   (ivy-posframe-mode 1))
 
 (use-package ivy-avy
@@ -85,23 +85,23 @@
   :disabled
   :config
   (setq openwith-associations
-        (list
-          (list (openwith-make-extension-regexp
-                '("mpg" "mpeg" "mp3" "mp4"
-                  "avi" "wmv" "wav" "mov" "flv"
-                  "ogm" "ogg" "mkv"))
-                "mpv"
-                '(file))
-          (list (openwith-make-extension-regexp
-                '("xbm" "pbm" "pgm" "ppm" "pnm"
-                  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
-                  ;; causing feh to be opened...
-                  "feh"
-                  '(file))
-          (list (openwith-make-extension-regexp
-                '("pdf"))
-                "zathura"
-                '(file))))
+	(list
+	  (list (openwith-make-extension-regexp
+		'("mpg" "mpeg" "mp3" "mp4"
+		  "avi" "wmv" "wav" "mov" "flv"
+		  "ogm" "ogg" "mkv"))
+		"mpv"
+		'(file))
+	  (list (openwith-make-extension-regexp
+		'("xbm" "pbm" "pgm" "ppm" "pnm"
+		  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
+		  ;; causing feh to be opened...
+		  "feh"
+		  '(file))
+	  (list (openwith-make-extension-regexp
+		'("pdf"))
+		"zathura"
+		'(file))))
   (openwith-mode 1))
 
 (use-package all-the-icons-ivy-rich
@@ -111,8 +111,8 @@
 (use-package deft
   :commands (deft)
   :config (setq deft-directory (f-join *home* "Documents")
-                deft-recursive t
-                deft-extensions '("md" "org")))
+		deft-recursive t
+		deft-extensions '("md" "org")))
 
 (use-package org-appear
   :disabled
@@ -200,12 +200,12 @@
   :commands telega
   :config
   (setq telega-user-use-avatars nil
-        telega-use-tracking-for '(any pin unread)
-        telega-chat-use-markdown-formatting t
-        telega-emoji-use-images t
-        telega-completing-read-function #'ivy-completing-read
-        telega-msg-rainbow-title nil
-        telega-chat-fill-column 75))
+	telega-use-tracking-for '(any pin unread)
+	telega-chat-use-markdown-formatting t
+	telega-emoji-use-images t
+	telega-completing-read-function #'ivy-completing-read
+	telega-msg-rainbow-title nil
+	telega-chat-fill-column 75))
 
 (use-package deadgrep
   :defer t
@@ -219,6 +219,7 @@
   (elfeed-feeds
    '("https://bits.debian.org/feeds/atom.xml"
      "https://micronews.debian.org/feeds/atom.xml"
+     "https://sourcehut.org/blog/index.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://weblog.rubyonrails.org/feed/atom.xml"
      "https://rubyweekly.com/rss/"
@@ -230,6 +231,7 @@
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
      "https://www.omnycontent.com/d/playlist/651a251e-06e1-47e0-9336-ac5a00f41628/04561b43-753d-4784-8e19-ac8b00e86411/3036d550-85b2-4301-b1e4-ac8b00e8641f/podcast.rss"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" ;; Veritasium
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCz0799M83kYvb6qBkHxTWFQ" ;; UJS Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" ;; Paulo Kretcheu
@@ -246,13 +248,11 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCv1Kcz-CuGM6mxzL3B1_Eiw" ;; Gardiner Bryant
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese Onze
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas feios
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCC6f63SXY0CDpsPGDBtTWVg" ;; Henry Bugalho
      "http://sachachua.com/blog/category/emacs/feed"))
   :config
   (setq url-queue-timeout 30)

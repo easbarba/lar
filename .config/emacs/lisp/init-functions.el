@@ -7,13 +7,6 @@
 ;; ===============
 ;; * SYSTEM SOFTWARE
 
-(defun e/return-exec (apps)
-  "Return first executable in APPS found.
-TODO: return if running"
-  (require 'cl-lib)
-  (cl-dolist (app apps)
-    (when (executable-find app)
-      (cl-return app))))
 
 (defcustom *ffmpeg-p* (when (e/return-exec '("ffmpeg")) t)
   "FFMPEG - confirm if it installed."

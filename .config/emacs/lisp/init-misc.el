@@ -92,4 +92,5 @@ Saves to a temp file and puts the filename in the kill ring."
   (mapc #'disable-theme custom-enabled-themes)
   (apply (if (called-interactively-p 'any) #'funcall-interactively #'funcall)
 	 #'load-theme args))
+
 (provide 'init-misc)
