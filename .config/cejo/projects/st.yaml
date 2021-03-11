@@ -1,0 +1,10 @@
+---
+name: st
+url: https://git.suckless.org/st
+tag: '0.8.4'
+patch: yes
+commands:
+  - make clean
+  - rm config.h
+  -
+  - make install PREFIX={0}
