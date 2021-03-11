@@ -10,12 +10,12 @@
 
 ;; * UNIVERSAL
 (require 'init-base)
+(require 'init-utils)
 (require 'init-variables)
 (require 'init-settings)
 
 ;; * CUSTOM
 (require 'init-bindings)
-(require 'init-utils)
 (require 'init-functions)
 (require 'init-misc)
 
