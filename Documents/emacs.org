@@ -40,11 +40,11 @@
    | Emacs Manual |         |                          |                                 |          |
 
 ** SLOC
-   | Source Code | folder      | file        | @ |
-   |-------------+-------------+-------------+---|
-   | emacs       | lisp/eshell | esh-util.el |   |
-   | use-package |             |             |   |
-   |             |             |             |   |
+   | Source Code | folder      | file         | @ |
+   |-------------+-------------+--------------+---|
+   | emacs       | lisp/eshell | esh-alias.el |   |
+   | use-package |             |              |   |
+   |             |             |              |   |
 
 * Features
 ** Types
