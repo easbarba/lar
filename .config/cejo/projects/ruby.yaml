@@ -2,8 +2,11 @@
 name: ruby
 url: https://github.com/ruby/ruby
 tag: v2_7_1
+patch: ''
 commands:
   - autoconf
   - sh configure --prefix={0}
   - make -j2
   - make install
+purge:
+  - git reset --hard HEAD

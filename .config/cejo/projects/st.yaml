@@ -1,10 +1,12 @@
 ---
 name: st
-url: https://git.suckless.org/st
+url: git://git.suckless.org/st
 tag: '0.8.4'
 patch: yes
 commands:
+  - make install PREFIX={0}
+purge:
   - make clean
   - rm config.h
-  -
-  - make install PREFIX={0}
+  - git reset --hard HEAD
+  - git checkout master
