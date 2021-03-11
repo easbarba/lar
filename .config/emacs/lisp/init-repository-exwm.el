@@ -242,7 +242,7 @@
     "Aumenta brilho do sistema."
     (interactive)
     (message "brilho -")
-    (start-process "BRILHO-BAIXO" nil "cejo" "ops" "brightness" "up"))
+    (start-process "BRILHO-BAIXO" nil "cejo" "ops" "brightness" "down"))
 
   (defun e/sistema-volume-cima ()
     "Aumenta volume do sistema."
@@ -326,7 +326,7 @@
     (interactive)
     (message "Opening terminal.")
     (e/exwm-switch-to-worskpace 3)
-    (start-process "TERMINAL" nil (e/return-exec '("mate-terminal" "st" "konsole"))))
+    (start-process "TERMINAL" nil (e/return-exec '("st" "mate-terminal" "konsole"))))
 
   (defun e/sistema-browser ()
     "Open Web Browser"
@@ -339,7 +339,7 @@
 
   (defun e/sistema-tirador ()
     (interactive)
-    (message "Taking a shot.")
+    (message "I shot the sheriff")
     (start-process "SCREENSHOT" nil "cejo" "ops" "screenshot"))
 
   (defun e/sistema-screenshot-partial ()
@@ -450,24 +450,18 @@
   (exwm-input-set-key (kbd "<XF86AudioLowerVolume>") #'e/sistema-volume-baixo)
   (exwm-input-set-key (kbd "<XF86AudioMute>") #'e/sistema-volume-alternar)
   (exwm-input-set-key (kbd "<print>") #'e/sistema-tirador)
-
-  (exwm-input-set-key (kbd "M-s-w") 'e/sistema-brilho-cima)
-  (exwm-input-set-key (kbd "M-s-s") 'e/sistema-brilho-baixo)
-
+  (exwm-input-set-key (kbd "s-D") 'e/sistema-brilho-baixo)
+  (exwm-input-set-key (kbd "s-A") 'e/sistema-brilho-cima)
   (exwm-input-set-key (kbd "s-W") 'e/sistema-volume-cima)
   (exwm-input-set-key (kbd "s-S") 'e/sistema-volume-baixo)
   (exwm-input-set-key (kbd "s-E") 'e/sistema-volume-alternar)
+  (exwm-input-set-key (kbd "s-P") 'e/sistema-toca)
 
   (exwm-input-set-key (kbd "s-Q") 'e/sistema-sair)
   (exwm-input-set-key (kbd "s-l") 'e/sistema-fechar)
 
   (exwm-input-set-key (kbd "s-B") 'e/sistema-browser)
   (exwm-input-set-key (kbd "s-T") 'e/sistema-terminal)
-
-  (exwm-input-set-key (kbd "s-P") 'e/sistema-toca)
-  (exwm-input-set-key (kbd "s-V") 'e/sistema-pegavideo)
-  (exwm-input-set-key (kbd "s-A") 'e/sistema-pegaaudio)
-
   (exwm-input-set-key (kbd "s-v") 'e/sysinfo)
 
   (exwm-input-set-key (kbd "s-I") 'e/exwm-input-toggle-mode)
