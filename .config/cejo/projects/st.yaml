@@ -2,6 +2,7 @@
 name: st
 url: git://git.suckless.org/st
 tag: '0.8.4'
+default: 'master'
 patch:
   - st-bigger-fonts.patch
   - st-dracula-0.8.2.diff
@@ -10,5 +11,3 @@ commands:
 purge:
   - make clean
   - rm config.h
-  - git reset --hard HEAD
-  - git checkout master
