@@ -231,6 +231,7 @@
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
      "https://www.omnycontent.com/d/playlist/651a251e-06e1-47e0-9336-ac5a00f41628/04561b43-753d-4784-8e19-ac8b00e86411/3036d550-85b2-4301-b1e4-ac8b00e8641f/podcast.rss"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCPdT6WY5Cl0o90m4Fca3zIg" ;; Tutameia TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" ;; Veritasium
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCz0799M83kYvb6qBkHxTWFQ" ;; UJS Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
