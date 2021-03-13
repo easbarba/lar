@@ -57,8 +57,13 @@ js()
 
 guix()
 {
-    local dir="/home/easbarbosa/.guix-profile"
+    local dir="$HOME/.guix-profile"
     export PATH="$dir"${PATH:+:}$PATH
+}
+
+gnome_keyring()
+{
+    bash "$HOME/.config/autostart-scripts/gnome_keyring"
 }
 
 asdf()
@@ -73,3 +78,4 @@ asdf
 binaries
 ruby
 js
+gnome_keyring
