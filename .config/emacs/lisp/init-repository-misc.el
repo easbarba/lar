@@ -230,6 +230,7 @@
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" ;; Veritasium
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" ;; Paulo Kretcheu
@@ -651,7 +652,7 @@
   :config
   (defun e/cool-themes()
     (interactive)
-    (let ((cool-themes '(doom-ayu-light
+    (let* ((day-themes '(doom-ayu-light
 			 doom-acario-light
 			 doom-flatwhite
 			 doom-one-light
@@ -662,10 +663,20 @@
 			 doom-nord-light
 			 doom-homage-white
 			 doom-plain
-			 doom-tomorrow-day)))
-      (e/change-theme (nth (random (length cool-themes))
-		       cool-themes)
-		  t)))
+			 doom-tomorrow-day))
+	  (night-themes '(doom-gruvbox
+			  doom-miramare
+			  doom-dracula
+			  doom-laserwave
+			  doom-oldhope
+			  doom-rouge))
+	  (current-hour (string-to-number
+			 (format-time-string "%H" (current-time))))
+	  (current-themes (if (< 13 current-hour)
+			      day-themes
+			    night-themes)))
+      (e/change-theme (nth (random (length current-themes))
+		       current-themes) t)))
   (e/cool-themes))
 
 (use-package magit
