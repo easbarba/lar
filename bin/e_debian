@@ -13,7 +13,7 @@ upgrade()
     sudo apt autoremove
 }
 
-packages ()
+packages()
 {
     essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
 		build-essential curl emacs)
@@ -100,6 +100,16 @@ packages ()
     echo "Done"
 }
 
+clean()
+{
+    unused=(firefox-esr)
+
+    local command
+    command='sudo apt remove -y'
+
+    e_foreach "$command" "${unused[@]}"
+}
+
 services()
 {
     kdeconnect()
@@ -157,5 +167,6 @@ foreign()
 
 upgrade
 packages
+clean
 services
 foreign
