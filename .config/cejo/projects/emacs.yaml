@@ -2,7 +2,8 @@
 name: emacs
 url: https://git.savannah.gnu.org/git/emacs
 tag: master
-patch: ''
+default: master
+patch: none
 commands:
   - make distclean
   - sh autogen.sh

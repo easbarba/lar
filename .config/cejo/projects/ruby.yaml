@@ -2,7 +2,8 @@
 name: ruby
 url: https://github.com/ruby/ruby
 tag: v2_7_1
-patch: ''
+default: master
+patch: none
 commands:
   - autoconf
   - sh configure --prefix={0}
