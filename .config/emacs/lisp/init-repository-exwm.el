@@ -114,6 +114,21 @@
 			(error "~")))))
       (message " %s)" workspace)))
 
+
+  (setq exwm-manage-configurations
+	'(((equal exwm-class-name "st-256color") workspace 2)
+	  ((equal exwm-class-name "st-256color") fullscreen t)
+	  ((equal exwm-class-name "Konsole") workspace 2)
+	  ((equal exwm-class-name "mpv") workspace 3)
+	  ((equal exwm-class-name "Firefox") workspace 4)
+	  ((equal exwm-class-name "Firefox") char-mode t)
+	  ((equal exwm-class-name "Firefox-esr") workspace 4)
+	  ((equal exwm-class-name "Chromium-browser") workspace 4)
+	  ((equal exwm-class-name "Chromium") workspace 4)
+	  ((equal exwm-class-name "Telegram") workspace 4)
+	  ((equal exwm-class-name "TelegramDesktop") workspace 4)
+	  ((equal exwm-class-name "Steam") workspace 5)))
+
   (defun e/exwm-switch-to-worskpace (n)
     "Switch to N worskpace."
     (interactive)
