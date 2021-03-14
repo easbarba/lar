@@ -672,9 +672,9 @@
 			  doom-rouge))
 	  (current-hour (string-to-number
 			 (format-time-string "%H" (current-time))))
-	  (current-themes (if (< 13 current-hour)
-			      day-themes
-			    night-themes)))
+	  (current-themes (if (< 16 current-hour)
+			      night-themes
+			    day-themes)))
       (e/change-theme (nth (random (length current-themes))
 		       current-themes) t)))
   (e/cool-themes))
