@@ -23,18 +23,12 @@ Cpuf()
     local prevtotal
     local total
     local result
-
     read -r _ a b c previdle rest < /proc/stat
-
     prevtotal=$((a+b+c+previdle))
-
     sleep 0.5
-
     read -r _ a b c idle rest < /proc/stat
-
     total=$((a+b+c+idle))
     result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
-
     printf "%s" "CPUF: ${result}%"
 }
 
@@ -42,7 +36,6 @@ Cput()
 {
     local result
     result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
-
     printf "%s" "CPUT: ${result}"
 }
 
@@ -50,7 +43,6 @@ Memory()
 {
     local result
     result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
-
     printf "%s" "MEM: ${result}"
 }
 
@@ -58,7 +50,6 @@ Date()
 {
     local result
     result="$(date "+%H:%M - %a, %b %d")"
-
     printf "%s" "${result}"
 }
 
@@ -66,7 +57,6 @@ Battery()
 {
     local result
     result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
-
     printf "%s" "BAT: ${result}"
 }
 
@@ -74,11 +64,10 @@ Gput()
 {
     local result
     result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
-
     printf "%s" "GPUT: $result"
 }
 
-Update()
+arch-update()
 {
     local sys
     local aur
@@ -92,12 +81,17 @@ Update()
     [[ "$check" != "0" ]] && printf "%s" " $pac  $aur $sys "
 }
 
+update-debian()
+{
+    local packs=$(apt list --upgradable 2>&1)
+    local num=$(($packs | wc -l))
+    printf "%s" "Packs: $num"
+}
+
 Connection()
 {
     local result
     result=$(nmcli connection show | awk 'NR==2 {print $4}')
-
-
     if [[ "$result" != '--' ]]; then
 	printf 'CON: ON'
     else
@@ -110,9 +104,8 @@ Host()
     printf "%s" "${HOSTNAME^}"
 }
 
-# apt list --upgradable | wc -l
 
 sep=" | "
-printf "%s" "$(Host)$sep$(Volume)$sep$(Battery)$sep$(Memory)$sep$(Cpuf)$sep$(Cput)$sep$(Gput)$sep$(Date)"
+printf "%s" "$(Volume)$sep$(Battery)$sep$(Memory)$sep$(Cpuf)$sep$(Cput)$sep$(Gput)$sep$(Date)"
 
 exit 0
