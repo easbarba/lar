@@ -25,7 +25,7 @@ packages()
 {
     echo 'Installing gem packages'
 
-    local packages=(bundler)
+    local packages=(bundler asciidoctor rouge)
 
     for pack in "${packages[@]}"
     do
