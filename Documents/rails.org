@@ -41,14 +41,16 @@
 - [[#traits][Traits]]
 - [[#i18n][i18n]]
 - [[#models][Models]]
+- [[#misc][Misc]]
 - [[#priorities][Priorities]]
 :END:
 * Progress
 ** Books
-   | Books                | Chapter                                       | @                               | late | revision |
-   |----------------------+-----------------------------------------------+---------------------------------+------+----------|
-   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Using an Array Condition Syntax |      |          |
-   | Active Record Basics |                                               |                                 |      |          |
+   | Books                | Chapter                                       | @                | late | revision |
+   |----------------------+-----------------------------------------------+------------------+------+----------|
+   | Beginning Rails 6    | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
+   | Active Record Basics |                                               |                  |      |          |
+   | Raisl Style Guide    | Controllers: Rendering                        |                  |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
@@ -207,6 +209,8 @@
   |--------+---+-------------|
   | Models |   | Camel-Cased |
   |        |   |             |
+* Misc
+  HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
 * Priorities
   - TDD BDD
   - Rails / MVC

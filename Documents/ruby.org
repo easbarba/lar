@@ -127,12 +127,12 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
 
 ** SLOC
-   | Project    | folder                            | file          | @                     |
-   |------------+-----------------------------------+---------------+-----------------------|
-   | ruby       | lib/bundler/compact_index_client/ | cache.rb      |                       |
-   | rake       | rake                              | file_list.rb  | display_cause_details |
-   | rspec-core | core                              | configuration | deprecation_stream=   |
-   | rubocop    |                                   |               |                       |
+   | Project    | folder                            | file          | @                   |
+   |------------+-----------------------------------+---------------+---------------------|
+   | ruby       | lib/bundler/compact_index_client/ | cache.rb      |                     |
+   | rake       | rake                              | file_list.rb  | pathmap             |
+   | rspec-core | core                              | configuration | deprecation_stream= |
+   | rubocop    |                                   |               |                     |
 
 * Packages
 ** Packagement
