@@ -230,6 +230,8 @@
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCwefw3viiiaxprsV6jgJvEA" ;; Midia Ninja
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" ;; Veritasium
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
@@ -241,7 +243,6 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCPdT6WY5Cl0o90m4Fca3zIg" ;; Tutameia TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCz0799M83kYvb6qBkHxTWFQ" ;; UJS Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; BoiTempo
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese Onze
@@ -672,9 +673,7 @@
 			  doom-rouge))
 	  (current-hour (string-to-number
 			 (format-time-string "%H" (current-time))))
-	  (current-themes (if (< 16 current-hour)
-			      night-themes
-			    day-themes)))
+	  (current-themes day-themes))
       (e/change-theme (nth (random (length current-themes))
 		       current-themes) t)))
   (e/cool-themes))
