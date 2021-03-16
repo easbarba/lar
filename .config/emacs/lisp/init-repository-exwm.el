@@ -237,7 +237,8 @@
 
   (defconst e/autostart-apps '(udiskie unclutter ibus-daemon dunst
 			       nm-applet blueman-applet mate-power-manager
-			       diodon pasystray)
+			       diodon pasystray
+			       st firefox)
     "List of Apps to auto start in EXWM")
 
   (defun e/autostart ()
@@ -465,7 +466,7 @@
   (exwm-input-set-key (kbd "<XF86AudioLowerVolume>") #'e/sistema-volume-baixo)
   (exwm-input-set-key (kbd "<XF86AudioMute>") #'e/sistema-volume-alternar)
   (exwm-input-set-key (kbd "<print>") #'e/sistema-tirador)
-  (exwm-input-set-key (kbd "s-D") 'e/sistema-brilho-baixo)
+  (exwm-input-set-key (kbd "s-C-x") 'e/sistema-tirador)
   (exwm-input-set-key (kbd "s-A") 'e/sistema-brilho-cima)
   (exwm-input-set-key (kbd "s-W") 'e/sistema-volume-cima)
   (exwm-input-set-key (kbd "s-S") 'e/sistema-volume-baixo)
