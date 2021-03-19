@@ -1,0 +1,5 @@
+---
+exec: 'maim'
+full: ''
+partial: '--select'
+folder: '{filepath}'
