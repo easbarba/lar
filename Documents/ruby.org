@@ -116,14 +116,14 @@
 ** Books
    | Books                            | Chapter                                | @                                           | late                                          | revision |
    |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
-   | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Proc Objects                                | Fibers, Threads, and Processes/Multithreading |          |
-   | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
+   | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Two Other Forms of Class Definition         | Fibers, Threads, and Processes/Multithreading |          |
+   | Closure in Ruby                  | The Power of Procs and Lambdas         |                                             |                                               |          |
    | Effective Testing - RSpec3       | Building an App With RSpec 3           |                                             |                                               |          |
+   | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
+   | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
+   | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
    | Design Patterns in Ruby          | Template Method                        |                                             |                                               |          |
    | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing      | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
-   | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
-   | Closure in Ruby                  |                                        |                                             |                                               |          |
-   | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
    | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
 
 ** SLOC
@@ -1063,6 +1063,17 @@
    ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
    my_enum.take(5).force // actual result rather than lazy enumerator
    #+end_src
+** metaprogramming
+*** Singleton Classes
+*** instance_variable_set
+*** instance_eval
+    - class methods
+*** class_eval
+    - instance methods
+
+*** Object#instance_exec
+*** Module#class_exec
+*** Module#mod-ule_exec
 ** enum_for
    #+begin_src ruby
    e = names.enum_for(:inject, "Names: ")
