@@ -155,16 +155,17 @@
 ;; * LSP CLIENTS/SERVERS
 
 (use-package eglot
-  :defer t
+  :disabled
+  :defer 1
   :commands (eglot eglot-ensure)
   :custom (eglot-autoshutdown t)
   :config
+  (add-hook 'ruby-mode 'eglot-ensure)
   (define-key eglot-mode-map (kbd "C-c c r") 'eglot-rename)
   (define-key eglot-mode-map (kbd "C-c c f") 'eglot-format)
+  (define-key eglot-mode-map (kbd "C-c c h") 'eldoc)
   (define-key eglot-mode-map (kbd "C-c c h") 'eglot-help-at-point)
-
-  (add-to-list 'eglot-server-programs `((css-mode scss-mode) . ("css-languageserver" "--stdio")))
-  (add-to-list 'eglot-server-programs `((html-mode . ("html-languageserver" "--stdio")))))
+  (define-key eglot-mode-map (kbd ".") 'xref-find-definitions))
 
 
 (use-package lsp-mode
