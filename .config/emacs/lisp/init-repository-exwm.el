@@ -232,7 +232,7 @@
     (let* ((scripts-dir (f-join *xdg-config* "autostart-scripts"))
 	   (scripts (directory-files-recursively scripts-dir "")))
       (dolist (script scripts)
-	(message "Starting: %s" script)
+	(alert (format "Starting: %s" script))
 	(start-process "AUTOSTART" "AUTOSTART" (f-join scripts-dir script)))))
 
   (defconst e/autostart-apps '(udiskie unclutter ibus-daemon dunst
@@ -251,31 +251,31 @@
   (defun e/sistema-brilho-cima ()
     "Aumenta brilho do sistema."
     (interactive)
-    (message "brilho +")
+    (alert "brilho +")
     (start-process "BRILHO-CIMA" nil "cejo" "ops" "brightness" "up"))
 
   (defun e/sistema-brilho-baixo ()
     "Aumenta brilho do sistema."
     (interactive)
-    (message "brilho -")
+    (alert "brilho -")
     (start-process "BRILHO-BAIXO" nil "cejo" "ops" "brightness" "down"))
 
   (defun e/sistema-volume-cima ()
     "Aumenta volume do sistema."
     (interactive)
-    (message "Volume: %s" (e/exwm-statusbar-volume))
+    (alert (format "Volume: %s" (e/exwm-statusbar-volume)))
     (start-process "VOLUME-CIMA" nil "cejo" "ops" "volume" "up"))
 
   (defun e/sistema-volume-baixo ()
     "Diminui volume do sistema."
     (interactive)
-    (message "Volume: %s" (e/exwm-statusbar-volume))
+    (alert (format "Volume: %s" (e/exwm-statusbar-volume)))
     (start-process "VOLUME-BAIXO" nil "cejo" "ops" "volume" "down"))
 
   (defun e/sistema-volume-alternar ()
     "Mute System audio"
     (interactive)
-    (message "Volume alternado!" (e/exwm-statusbar-volume))
+    (alert (format "Volume alternado!" (e/exwm-statusbar-volume)))
     (start-process "VOLUME-ALTERNAR" nil "cejo" "ops" "volume" "toggle"))
 
   (defun e/sistema-volume-reload ()
@@ -284,51 +284,51 @@
     (when (executable-find "pulseaudio")
       (start-process "PULSEAUDIO-RELOAD" nil "pulseaudio" "-k" )
       (start-process "PULSEAUDIO-RELOAD" nil "pulseaudio" "-D" )
-      (message "Pulseaudio reloaded")))
+      (alert "Pulseaudio reloaded")))
 
   (defun e/sistema-toca ()
     "Play Video"
     (interactive)
-    (message "Opening video")
+    (alert "Opening video")
     (start-process "REBOOT" nil "cejo" "media" "play"))
 
   (defun e/sistema-pegavideo ()
     "Get Video"
     (interactive)
-    (message "Getting video")
+    (alert "Getting video")
     (start-process "PEGAVIDEO" nil "cejo" "media" "get"))
 
   (defun e/sistema-pegaaudio ()
     "Pegando Auido"
     (interactive)
-    (message "Pegando audio")
+    (alert "Pegando audio")
     (start-process "PEGAAUDIO" nil "cejo" "media" "get" "vorbis"))
 
   (defun e/sistema-reiniciar ()
     "Reiniciando Sistema."
     (interactive)
-    (message "Reiniciando em 10 segundos.")
+    (alert "Reiniciando em alguns segundos.")
     (sleep-for 10)
     (start-process "REINICIA" nil "systemctl" "reboot"))
 
   (defun e/sistema-desliga ()
     "Desligando Sistema."
     (interactive)
-    (message "Desligando em 10 segundos.")
+    (alert "Desligando em alguns segundos.")
     (sleep-for 10)
     (start-process "DESLIGAR" nil "systemctl" "poweroff"))
 
   (defun e/sistema-suspender ()
     "Poweroff System"
     (interactive)
-    (message "Suspendendo em 5 segundos.")
+    (alert "Suspendendo em alguns segundos.")
     (sleep-for 5)
     (start-process "SUSPENDE" nil "systemctl" "hibernate"))
 
   (defun e/sistema-sair ()
     "Saindo da sessao do usuario."
     (interactive)
-    (message "Saindo do usuario em 5 segundos.")
+    (alert "Saindo da sessao em alguns segundos.")
     (sleep-for 5)
     (start-process "SAINDO" nil "loginctl" "terminate-user" user-full-name))
 
@@ -340,14 +340,14 @@
   (defun e/sistema-terminal ()
     "Open Terminal Console"
     (interactive)
-    (message "Opening terminal.")
+    (alert "Opening terminal.")
     (e/exwm-switch-to-worskpace 3)
     (start-process "TERMINAL" nil (e/return-exec '("st" "mate-terminal" "konsole"))))
 
   (defun e/sistema-browser ()
     "Open Web Browser"
     (interactive)
-    (message "Opening browser.")
+    (alert "Opening browser.")
     (e/exwm-switch-to-worskpace 5)
     (cl-dolist (app '("firefox" "icecat" "chromium" "google-chrome"))
       (when (executable-find app)
@@ -355,12 +355,12 @@
 
   (defun e/sistema-tirador ()
     (interactive)
-    (message "I shot the sheriff")
-    (start-process "SCREENSHOT" nil "cejo" "ops" "screenshot"))
+    (alert "I shot the sheriff")
+    (start-process "SCREENSHOT" nil "cejo" "ops" "screenshot" "full"))
 
   (defun e/sistema-screenshot-partial ()
     (interactive)
-    (message "Taking partial shot.")
+    (alert "Taking partial shot.")
     (start-process "SCREENSHOT" nil "cejo" "ops" "screenshot" "partial"))
 
   (defun e/sistema-inicia-comando ()
@@ -429,10 +429,7 @@
 
   (defun e/exwm-statusbar ()
     "Use echo-area to display system stats"
-    (require 'subr-x)
-    (message "%s %s"
-	     (e/exwm-get-workspace-number)
-	     (e/sysinfo)))
+    (e/sysinfo))
 
   (defun e/exwm-cmd (program &rest program-args)
     (interactive)
