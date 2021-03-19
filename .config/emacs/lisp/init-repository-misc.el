@@ -230,6 +230,14 @@
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW42h2qDbbX3a9RsQT4pnYQ" ;; Paulo Gala
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCuecx9Re-uu9TnTp0brXpOg" ;; André Roncaglia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCz4ChMHDx4DScNtMQRMECpA" ;; Flipei OficialfV
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" ;; Natalia Bonavides
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCddvwB05ICnMVAkBnBqg-FQ" ;; Youtimao
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC-I7i0YfLPHfUoH6-m2uUAw" ;; Podcastimao
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCRuy5PigeeBuecKnwqhM4yg" ;; TV 247
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCwefw3viiiaxprsV6jgJvEA" ;; Midia Ninja
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
@@ -279,11 +287,7 @@
 		     elfeed-show-entry
 		   (elfeed-search-selected :single))))
       (e/play-video (elfeed-entry-link entry))))
-  (define-key elfeed-search-mode-map "m" #'(lambda ()
-					    (interactive)
-					    (e/elfeed-play-with-video-player)
-					    (when (frame-parameter (selected-frame) 'exwm-active)
-					      (e/exwm-switch-to-worskpace 4))))
+  (define-key elfeed-search-mode-map "m" #'e/elfeed-play-with-video-player)
 
   (defun e/elfeed-open-with-eww ()
     "Open in eww with `eww-readable' - Ambrevar."
