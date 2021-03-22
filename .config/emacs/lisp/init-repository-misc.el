@@ -231,6 +231,17 @@
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
      "http://comidasaudavelpratodos.com.br/feed/"
+     "https://feeds.buzzsprout.com/1004689.rss"
+     "https://naildrivin5.com/atom.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=The Will to Kill-mzHVQ-OyfSM.ogg" ;; Meteoro Brasil
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCXdXYG8dUmEv6jhEji_lSHg" ;; Jornal Cultura
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCRxJP6a-ZisisT-Xknobgng" ;; Na Raiz
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC3qAUf53j_dUv09jH7jsUJw" ;; Humberto Matos
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCxgRxPTCZqeB6Rx_VKvVN6A" ;; O Que Você Faria se Soubesse
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0zWycogkQFXMnk-CVZAxyQ" ;; Jornal Antijuridico
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCoAcADzxpCN6yot4MC0Az5A" ;; Bem Vivendo
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCcgl8D1QAwAmZekgv1-BaQg" ;; Doutora Drag
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCC6f63SXY0CDpsPGDBtTWVg" ;; Henry Bugalho
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCz4ChMHDx4DScNtMQRMECpA" ;; Flipei Oficial
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" ;; Natalia Bonavides
