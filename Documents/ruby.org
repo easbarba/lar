@@ -117,11 +117,11 @@
    | Books                            | Chapter                                | @                                           | late                                          | revision |
    |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
    | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Two Other Forms of Class Definition         | Fibers, Threads, and Processes/Multithreading |          |
-   | Closure in Ruby                  | The Power of Procs and Lambdas         |                                             |                                               |          |
+   | Closure in Ruby                  | The Power of Procs and Lambdas         | Implementing Lax                            |                                               |          |
+   | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
+   | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
    | Effective Testing - RSpec3       | Building an App With RSpec 3           |                                             |                                               |          |
    | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
-   | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
-   | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
    | Design Patterns in Ruby          | Template Method                        |                                             |                                               |          |
    | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing      | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
    | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
@@ -265,6 +265,13 @@
   - rack: A modular Ruby web server interface.
 
 * Features
+** super
+   #+begin_src ruby
+   def x(y,z)
+     super # passes all the parameters from the current method and hands the parameters to the method from the base class
+     super() # calls the method without any arguments.
+   end
+   #+end_src
 ** project structure
    #+begin_src ruby
    anagram/    <- top-level
@@ -815,6 +822,19 @@
 
     enum_a = a.each # create an Enumerator using an internal iterator
     #+end_src
+*** generator
+** fibers
+   -
+   #+begin_src ruby
+   f = Fiber.new do
+     x = 0
+     loop do
+       Fiber.yield x
+       x -= 1
+     end
+   end
+   #+end_src
+*** yield
 ** inject
    accumulate a value across the members of a collection
 ** select
