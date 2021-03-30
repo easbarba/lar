@@ -147,6 +147,12 @@
 ** Validations
 ** Migrations
 ** Callbacks
+   - before_create
+   - after_create
+   - before_save
+   - after_save
+   - before_destroy
+   - after_destroy
 ** Query Interface
 ** Find
 *** SQL Syntax

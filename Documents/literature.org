@@ -13,10 +13,11 @@
 - [[#more][more]]
 :END:
 * Progress
-   | Book          | chapter                     | @ | later | revision |
-   |---------------+-----------------------------+---+-------+----------|
-   | Manifesto     | Proletarians and Communists |   |       |          |
-   | Paradise Lost |                             |   |       |          |
+   | Book                 | chapter                     | @                                                                       | later | revision |
+   |----------------------+-----------------------------+-------------------------------------------------------------------------+-------+----------|
+   | Manifesto            | Proletarians and Communists |                                                                         |       |          |
+   | state and Revolution | 1                           | 3. The State: an Instrument for the Exploitation of the Oppressed Class |       |          |
+   | Paradise Lost        |                             |                                                                         |       |          |
 * Sociology
 ** Karl Marx
 ** Max Weber

@@ -127,13 +127,24 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
 
 ** SLOC
-   | Project    | folder                            | file          | @                   |
-   |------------+-----------------------------------+---------------+---------------------|
-   | ruby       | lib/bundler/compact_index_client/ | cache.rb      |                     |
-   | rake       | rake                              | file_list.rb  | pathmap             |
-   | rspec-core | core                              | configuration | deprecation_stream= |
-   | rubocop    |                                   |               |                     |
+   | Project | folder              | file          | @       |
+   |---------+---------------------+---------------+---------|
+   | ruby    |                     |               |         |
+   | rake    | rake                | file_list     | pathmap |
+   | bundle  | lib/bundler/fetcher | compact_index |         |
 
+** Priorities
+   - Ruby
+   - Rails
+   - PostgreSQL
+   - JS
+   - Git
+   - Unit Test / Rspec
+   - SOLID / Clean Code
+   - Design Patterns
+   - Container
+   - CI/CD
+   - Cloud
 * Packages
 ** Packagement
 *** gem
@@ -200,6 +211,18 @@
 ** Web Applications
    - Sinatra: Sinatra is a DSL for quickly creating web applications
    - Rails: A web-application framework that includes everything needed to create database-backed web applications
+** Documentation
+*** Rdoc
+    - nodoc: [all]
+
+
+*** console
+    |        |   |
+    |--------+---|
+    | --all  |   |
+    | --fmt  |   |
+    | --main |   |
+
 ** Formatter
 *** Rufo
 **** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
@@ -261,10 +284,20 @@
 *** Unit Test
 ** Currency
    - Money: A Ruby Library for dealing with money and currency conversion.
+** Profiling
+   - ruby-prof
 ** Web-server
   - rack: A modular Ruby web server interface.
 
 * Features
+** path
+   #+begin_src ruby
+   $LOAD_PATH.each { |x| puts x } or $:
+
+   # add dir to path
+   $:.push '/your/directory/here'
+   require 'yourfile'
+   #+end_src
 ** super
    #+begin_src ruby
    def x(y,z)
@@ -858,6 +891,34 @@
    #+end_src
 ** dig
 ** fetch
+** String
+   #+begin_src ruby
+   "Test" + "Test" #TestTest
+   "test".capitalize #Test
+   "Test".downcase #test
+   "Test".chop #Tes
+   "Test".next #Tesu
+   "Test".reverse #tseT
+   "Test".sum #416
+   "Test".swapcase #tEST
+   "Test".upcase #TEST
+   "Test".upcase.reverse #TSET
+   "Test".upcase.reverse.next
+   "Test".ord
+   "Test".chr
+   "xyz".scan(/./) { |letter| puts letter }
+
+   # SUBSTITUTION
+
+   "".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
+   "".gsub('i', '') #  whereas gsub does multiple substitutions at once
+   #+end_src
+** Array
+   #+begin_src ruby
+   h = { a: 100, b: 20 }
+   h.delete_if { |key, value| value < 25 }
+   h.delete(:a)
+   #+end_src
 ** tap
 ** map
 ** pluck
