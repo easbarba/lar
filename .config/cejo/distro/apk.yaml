@@ -1,0 +1,15 @@
+---
+builddep:
+clean:
+depends:
+download:
+fix:
+help:
+info: info
+install: add
+installed:
+remove: del
+search: search
+sysupgrade:
+update: update
+upgrade: upgrade
