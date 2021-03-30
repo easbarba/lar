@@ -263,20 +263,20 @@
   (defun e/sistema-volume-cima ()
     "Aumenta volume do sistema."
     (interactive)
-    (alert (format "Volume: %s" (e/exwm-statusbar-volume)))
-    (start-process "VOLUME-CIMA" nil "cejo" "ops" "volume" "up"))
+    (start-process "VOLUME-CIMA" nil "cejo" "ops" "volume" "up")
+    (sleep-for 2 (alert (format "Volume: %s" (e/exwm-statusbar-volume)))))
 
   (defun e/sistema-volume-baixo ()
     "Diminui volume do sistema."
     (interactive)
-    (alert (format "Volume: %s" (e/exwm-statusbar-volume)))
-    (start-process "VOLUME-BAIXO" nil "cejo" "ops" "volume" "down"))
+    (start-process "VOLUME-BAIXO" nil "cejo" "ops" "volume" "down")
+    (sleep-for 2 (alert (format "Volume: %s" (e/exwm-statusbar-volume)))))
 
   (defun e/sistema-volume-alternar ()
     "Mute System audio"
     (interactive)
-    (alert (format "Volume alternado!" (e/exwm-statusbar-volume)))
-    (start-process "VOLUME-ALTERNAR" nil "cejo" "ops" "volume" "toggle"))
+    (start-process "VOLUME-ALTERNAR" nil "cejo" "ops" "volume" "toggle")
+    (alert (format "Volume alternado!" (e/exwm-statusbar-volume))))
 
   (defun e/sistema-volume-reload ()
     "Reload System volume backend."
@@ -465,6 +465,7 @@
   (exwm-input-set-key (kbd "<print>") #'e/sistema-tirador)
   (exwm-input-set-key (kbd "s-C-x") 'e/sistema-tirador)
   (exwm-input-set-key (kbd "s-A") 'e/sistema-brilho-cima)
+  (exwm-input-set-key (kbd "s-D") 'e/sistema-brilho-baixo)
   (exwm-input-set-key (kbd "s-W") 'e/sistema-volume-cima)
   (exwm-input-set-key (kbd "s-S") 'e/sistema-volume-baixo)
   (exwm-input-set-key (kbd "s-E") 'e/sistema-volume-alternar)
