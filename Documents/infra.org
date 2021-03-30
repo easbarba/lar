@@ -112,7 +112,19 @@
    |               |                                     |                                                 |
 
 ** Podman
+*** docs
+    http://docs.podman.io/en/latest/index.html
+
 *** commands
+    |          |                                           |
+    |----------+-------------------------------------------|
+    | images   |                                           |
+    | rmi <ID> | Removes one or more locally stored images |
+    | info     |                                           |
+    | run      |                                           |
+    | run      |                                           |         |                                           |
+
+*** tricks
     - podman info | grep rootless
 *** fixes
 **** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
