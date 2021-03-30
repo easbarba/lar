@@ -1,0 +1,4 @@
+---
+name: 'mixer'
+toggle: ''
+updown: "mixer vol #{states[state]}#{STEP}"

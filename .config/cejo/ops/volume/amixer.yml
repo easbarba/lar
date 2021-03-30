@@ -1,0 +1,4 @@
+---
+name: 'amixer'
+toggle: '-q sset Master toggle'
+updown: "set Master #{STEP}%#{states[state]}"
