@@ -9,23 +9,26 @@ asdf_ruby()
 {
     # https://github.com/asdf_vm/asdf_ruby
 
-    [[ -f "$HOME/.asdf/shims/node" ]] && return
+    [[ -f "$HOME/.asdf/shims/ruby" ]] && return
 
     echo 'Installing ruby binaries'
 
+    # add plugin repo
     asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
+    # install versions
     asdf install ruby 2.7.2
-    asdf install ruby latest
+    asdf install ruby 3.0.0
 
-    asdf global ruby "$(asdf latest ruby)"
+    # global
+    asdf global ruby 3.0.0
 }
 
 packages()
 {
     echo 'Installing gem packages'
 
-    local packages=(bundler asciidoctor rouge gem-man ronn)
+    local packages=(bundler) # asciidoctor rouge gem-man ronn)
 
     for pack in "${packages[@]}"
     do
