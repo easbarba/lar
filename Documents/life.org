@@ -393,35 +393,40 @@
 
   easbarbosa@pm.me
 
-  @easbarbosa: git.sr.ht
+  https://git.sr.ht/~easbarbosa
 
 
-  *OBJETIVO*
+  *SOBRE*
   -----
-    Usuário de Distribuições Linux por mais de 10 anos qual experimentei
-    suas versões de servidores e suas ferramentas internas como compilamento de Kernel,
-    gerenciadores de empacotamento, compilacao de software C com uso do make, cmake, ninja,
-    como também uso extenso de aplicacoes cli como Grep, Find, Gerenciamento de Processos, ssh,
-    Windows Managers e automação de tarefas com Shell Scripts.
+    Sou usuário de Distribuições Linux por mais de 10 anos com foco em
+    servidores com Kernel customizado, familiaridade de ferramentas
+    cli como gerenciadores de empacotamento, make, cmake, ninja, rake,
+    assim como grep, find, ps, ssh, windows managers e automação de
+    tarefas com shell scripts.
 
 
   *EDUCAÇÃO*
   -----
     - Direito - IESB (Trancado)
     - Ciência da Computação, UCB (Cursando)
-    - Inglês Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
-    - Soft Skills sendo Secretário de Advocacia e Radio Taxi.
+
 
   *SKILLS*
   -----
-    - Desenvolvimento de Aplicações CLI em Ruby e .
-    - Ferramentas e Configurações do Debian, CentOS.
-    - Experiência em Shell Script em GNU Bash, Fish Shell e POSIX.
-    - Controle de Versão com Git: Rebase, Squash, Merge.
-    - Databases
-    - Criacao e Gerencia de imagens containers.
-    - Básico em Front-End: HTML,CSS.
-    - Uso de editores GNU Emacs, NeoVIM, Nano, VSCode.
+    - Linguagens: Ruby e Emacs Lisp.
+    - Debian/Fedora: administração, ferramentas e configurações.
+    - Shell Script: GNU Bash, Fish Shell e POSIX.
+    - Git: rebase, squash, merge.
+    - Containers: podman, dockerfile, criação e gerência de imagens.
+    - Unit Test: Minitest, RSpec, ERT.
+    - Front-End: HTML,CSS Grid/Flexbox.
+    - Editores: GNU Emacs, NeoVIM, Nano.
+
+
+  *MAIS*
+  -----
+    - Inglês: Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
+    - Soft Skills em Secretário de Advocacia e Radio Taxi.
 
 * Delivery
   981103178
