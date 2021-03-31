@@ -237,8 +237,6 @@
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCvO2BExvkAbGMsTGnEnI_Ng" communism) ;; Lula
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCq8LkP7VWVgowQxSDtOZQHw" news) ;; Marcelus Tumulto
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCthbIFAxbXTTQEC7EcQvP1Q" news) ;; BBC Brasil
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC7SnJS5o1os7a6CaiNabzcg" communim) ;; PSOL
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC0xqLnPTcFVf8MXaIoHPeDw" communism) ;; PT
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" games) ;; Xletalis
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UC3Ooj_iDWELBumIEDejyNHQ" misc) ;; BlaBla Logia
      ("https://www.youtube.com/feeds/videos.xml?channel_id=UCWnPjmqvljcafA0z2U1fwKQ" ruby) ;; Confreaks
