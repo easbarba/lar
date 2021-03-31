@@ -127,12 +127,12 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
 
 ** SLOC
-   | Project    | folder              | file          | @       |
-   |------------+---------------------+---------------+---------|
-   | ruby       |                     |               |         |
-   | rake       | rake                | file_list     | pathmap |
-   | bundle     | lib/bundler/fetcher | compact_index |         |
-   | solargraph |                     |               |         |
+   | Project    | folder                 | file               | @       |
+   |------------+------------------------+--------------------+---------|
+   | ruby       | lib/cgi                | cookie.rb          |         |
+   | rake       | rake                   | file_list          | pathmap |
+   | bundle     | lib/bundler/installer  | gem_installer.rb   |         |
+   | solargraph | lib/solargraph/api_map | bundler_methods.rb |         |
 
 ** Priorities
    - Ruby
