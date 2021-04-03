@@ -23,6 +23,8 @@ packages()
 
     ruby=(libssl-dev)
 
+    postgres=(libreadline-dev zlib1g-dev curl)
+
     system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
 	    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
 	    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
@@ -84,6 +86,7 @@ packages()
     e_foreach "$command" "${debian[@]}"; sudo apt-file update # update Debian database
     e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${ruby[@]}"
+    e_foreach "$command" "${postgres[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${gtk[@]}"
     e_foreach "$command" "${qt[@]}"
