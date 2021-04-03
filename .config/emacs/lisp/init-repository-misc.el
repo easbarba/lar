@@ -212,57 +212,58 @@
   :bind ("C-c b g" . 'deadgrep))
 
 (use-package elfeed
-  :defer t
+  :defer 2
   :custom
   (elfeed-db-directory "~/.config/elfeed")
-
   (elfeed-feeds
-   '(("https://bits.debian.org/feeds/atom.xml" debian)
-     ("https://micronews.debian.org/feeds/atom.xml" debian)
-     ("https://sourcehut.org/blog/index.xml" unix)
-     ("https://www.ruby-lang.org/en/feeds/news.rss" ruby)
-     ("https://weblog.rubyonrails.org/feed/atom.xml" ruby)
-     ("https://rubyweekly.com/rss/" ruby)
+   '("https://bits.debian.org/feeds/atom.xml"
+     "https://micronews.debian.org/feeds/atom.xml"
+     "https://sourcehut.org/blog/index.xml"
+     "https://www.ruby-lang.org/en/feeds/news.rss"
+     "https://weblog.rubyonrails.org/feed/atom.xml"
+     "https://rubyweekly.com/rss/"
      "https://edelpero.svbtle.com/feed"
-     ("https://debxp.org/feed/" debian)
-     ("https://drewdevault.com/blog/index.xml" unix)
+     "https://debxp.org/feed/"
+     "https://drewdevault.com/blog/index.xml"
      "https://eregon.me/blog/feed.xml"
-     ("https://blog.appsignal.com/feed.xml" ruby)
-     ("https://emacsredux.com/feed.xml" emacs)
-     ("https://metaredux.com/feed.xml" emacs)
+     "https://blog.appsignal.com/feed.xml"
+     "https://emacsredux.com/feed.xml"
+     "https://metaredux.com/feed.xml"
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC5ed3F-1on364XihtRFagJg" vegan) ;; Vitor Vegano
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCblJ3bb2DDJSD7PyJXcg7qA" health) ;; Gonzalo Vecina
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCvO2BExvkAbGMsTGnEnI_Ng" communism) ;; Lula
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCq8LkP7VWVgowQxSDtOZQHw" news) ;; Marcelus Tumulto
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCthbIFAxbXTTQEC7EcQvP1Q" news) ;; BBC Brasil
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" games) ;; Xletalis
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC3Ooj_iDWELBumIEDejyNHQ" misc) ;; BlaBla Logia
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCWnPjmqvljcafA0z2U1fwKQ" ruby) ;; Confreaks
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCcgl8D1QAwAmZekgv1-BaQg" communism) ;; Doutora Drag
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCC6f63SXY0CDpsPGDBtTWVg" communism) ;; Henry Bugalho
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" communism) ;; Natalia Bonavides
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" games) ;; VaatiVidya
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" communism) ;; Guilherme Boulos
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" communism economy) ;; Ju Furno
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ruby) ;; Ruby Australia
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" debian) ;; Paulo Kretcheu
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC7SbfAPZf8SMvAxp8t51qtQ" debian) ;; DebianConf
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" vegan) ;; Fabio Chaves
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" debian) ;; Debian Brasil
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ruby) ;; Ruby Central
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" health) ;; Atila Iamarino
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" health) ;; Ola Ciencia
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" unix) ;; LinuxTips
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCz0799M83kYvb6qBkHxTWFQ" communism) ;; UJS Brasil
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" communism) ;; BoiTempo
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" communism) ;; Tese Onze
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" communism) ;; Tempero Drag
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" communism) ;; Galas feios
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" communism) ;; Laura Sabino
-     ("https://www.youtube.com/feeds/videos.xml?channel_id=UC02coXfDPjEmU8uDT2G8Z2A" communism) ;; Jones Manoel
-     ("http://sachachua.com/blog/category/emacs/feed" emacs))
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCmQTY7b5w61WlmBbJ5a8XrQ" ;; Rede TVT
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC5ed3F-1on364XihtRFagJg" ;; Vitor Vegano
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCblJ3bb2DDJSD7PyJXcg7qA" ;; Gonzalo Vecina
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCvO2BExvkAbGMsTGnEnI_Ng" ;; Lula
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCq8LkP7VWVgowQxSDtOZQHw" ;; Marcelus Tumulto
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCthbIFAxbXTTQEC7EcQvP1Q" ;; BBC Brasil
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Ooj_iDWELBumIEDejyNHQ" ;; BlaBla Logia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCWnPjmqvljcafA0z2U1fwKQ" ;; Confreaks
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCcgl8D1QAwAmZekgv1-BaQg" ;; Doutora Drag
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCC6f63SXY0CDpsPGDBtTWVg" ;; Henry Bugalho
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" ;; Natalia Bonavides
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" ;; Paulo Kretcheu
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SbfAPZf8SMvAxp8t51qtQ" ;; DebianConf
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Central
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCz0799M83kYvb6qBkHxTWFQ" ;; UJS Brasil
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; BoiTempo
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese Onze
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas feios
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC02coXfDPjEmU8uDT2G8Z2A" ;; Jones Manoel
+     "http://sachachua.com/blog/category/emacs/feed"))
   :config
   (setq url-queue-timeout 30)
   (setq-default elfeed-search-filter "@2-week-ago +unread")
@@ -324,7 +325,7 @@
 	(funcall (cdar patterns)))
        ((eq major-mode 'elfeed-search-mode)
 	(call-interactively 'elfeed-search-show-entry))
-       (t (elfeed-show-visit)))))))
+       (t (elfeed-show-visit))))))
 
 (use-package define-word
   :defer 3
