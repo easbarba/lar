@@ -8,6 +8,8 @@
 - [[#progress][Progress]]
 - [[#books][Books]]
 - [[#postgresql][PostgreSQL]]
+  - [[#terms][Terms]]
+  - [[#features][Features]]
 - [[#sqlite][SQLite]]
 - [[#json][JSON]]
   - [[#json-online-resources][JSON Online resources]]
@@ -20,6 +22,10 @@
 - [[#later][Later]]
 :END:
 * Progress
+  |                        |   |                            |   |
+  |------------------------+---+----------------------------+---|
+  | Learn PostgreSQL 12/13 |   | Introduction to PostgreSQL |   |
+
 * Books
   | Book                                                      | cap | @ | late |
   |-----------------------------------------------------------+-----+---+------|
@@ -27,6 +33,21 @@
   | Mastering PostgreSQL 12                                   |     |   |      |
 
 * [[https://www.postgresql.org/][PostgreSQL]]
+** Terms
+   - ACID: atomicity, consistency, isolation, and durability
+   - DMBS: Database Management System
+   - PID: Process Identifier
+** Features
+*** pg_ctl
+    |                          |   |
+    |--------------------------+---|
+    | start, stop, and restart |   |
+    | status                   |   |
+    | initdb                   |   |
+    | reload                   |   |
+    | promote                  |   |
+*** psql
+*** pstree
 * [[https://sqlite.org/][SQLite]]
 * JSON
 ** JSON Online resources
