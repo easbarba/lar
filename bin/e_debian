@@ -34,7 +34,7 @@ packages()
 
     qt=(kdeconnect kdenlive clementine dolphin)
 
-    gtk=(cheese transmission-gtk atril numix-icon-theme numix-gtk-theme tranmission-gtk)
+    gtk=(cheese transmission-gtk atril numix-icon-theme numix-gtk-theme)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
 	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
