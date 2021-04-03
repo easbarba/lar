@@ -22,9 +22,9 @@
 - [[#later][Later]]
 :END:
 * Progress
-  |                        |   |                            |   |
-  |------------------------+---+----------------------------+---|
-  | Learn PostgreSQL 12/13 |   | Introduction to PostgreSQL |   |
+  |                        |   |                           |   |
+  |------------------------+---+---------------------------+---|
+  | Learn PostgreSQL 12/13 |   | Connecting to the cluster |   |
 
 * Books
   | Book                                                      | cap | @ | late |
@@ -48,6 +48,11 @@
     | promote                  |   |
 *** psql
 *** pstree
+    - checkpointer
+    - background writer
+    - walwriter
+    - stats collector
+    - logical replication launcher
 * [[https://sqlite.org/][SQLite]]
 * JSON
 ** JSON Online resources
