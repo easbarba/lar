@@ -8,6 +8,7 @@
 - [[#dotfiles][Dotfiles]]
   - [[#cejo][Cejo]]
   - [[#blog][Blog]]
+  - [[#asdf][asdf]]
   - [[#shell-software][shell-software]]
   - [[#shell-misc][shell-misc]]
   - [[#shell-custom][shell-custom]]
@@ -168,7 +169,7 @@ upgrade: upgrade
     #+end_src
 *** floss
    #+begin_src yaml
---- elixir
+--- # elixir
 - https://github.com/bitwalker/distillery
 - https://github.com/ueberauth/guardian
 - https://github.com/absinthe-graphql/absinthe
@@ -185,185 +186,185 @@ upgrade: upgrade
 - https://github.com/elixir-lang/ex_doc
 - https://github.com/elixir-lang/elixir
 
-      --- # Lua
-	 - https://github.com/vicious-widgets/vicious
-	 - https://github.com/streetturtle/awesome-wm-widgets
-	 - https://github.com/actboy168/luamake
-	 - https://github.com/sumneko/lua-language-server
-	 - https://github.com/EmmyLua/EmmyLua-LanguageServer
-	 - https://github.com/arthurealike/turtle.lua
-	 - https://github.com/luvit/luvit
-	 - https://github.com/rxi/lite
-	 - https://github.com/lcpz/awesome-copycats
-	 - https://salsa.debian.org/lua-team/lua5.4
-	 - https://salsa.debian.org/reiner/awesome
-	 - https://github.com/awesomeWM/awesome
-	 - https://github.com/luarocks/luarocks
-	 - https://github.com/lua/lua
+--- # lisp
+- https://github.com/CodyReichert/awesome-cl.git
+- https://github.com/atlas-engineer/nyxt.git
+- https://github.com/LispCookbook/cl-cookbook.git
+- https://github.com/quicklisp/quicklisp-client.git
+- https://github.com/quicklisp/quicklisp-bootstrap.git
+- https://github.com/quicklisp/quicklisp-controller.git
+- https://github.com/franzinc/clx.git
+- https://gitlab.common-lisp.net/alexandria/alexandria.git
+- https://gitlab.common-lisp.net/asdf/asdf.git
+- https://gitlab.common-lisp.net/clpm/clpm.git
+- git://git.code.sf.net/p/sbcl/sbcl.git
+- https://git.sv.gnu.org/git/guile.git
+- https://git.savannah.gnu.org/git/guix.git
 
 
-	 --- # lisp
-	 - https://github.com/CodyReichert/awesome-cl.git
-	 - https://github.com/atlas-engineer/nyxt.git
-	 - https://github.com/LispCookbook/cl-cookbook.git
-	 - https://github.com/quicklisp/quicklisp-client.git
-	 - https://github.com/quicklisp/quicklisp-bootstrap.git
-	 - https://github.com/quicklisp/quicklisp-controller.git
-	 - https://github.com/franzinc/clx.git
-	 - https://gitlab.common-lisp.net/alexandria/alexandria.git
-	 - https://gitlab.common-lisp.net/asdf/asdf.git
-	 - https://gitlab.common-lisp.net/clpm/clpm.git
-	 - git://git.code.sf.net/p/sbcl/sbcl.git
-	 - https://git.sv.gnu.org/git/guile.git
-	 - https://git.savannah.gnu.org/git/guix.git
+	    --- # Lua
+	       - https://github.com/vicious-widgets/vicious
+	       - https://github.com/streetturtle/awesome-wm-widgets
+	       - https://github.com/actboy168/luamake
+	       - https://github.com/sumneko/lua-language-server
+	       - https://github.com/EmmyLua/EmmyLua-LanguageServer
+	       - https://github.com/arthurealike/turtle.lua
+	       - https://github.com/luvit/luvit
+	       - https://github.com/rxi/lite
+	       - https://github.com/lcpz/awesome-copycats
+	       - https://salsa.debian.org/lua-team/lua5.4
+	       - https://salsa.debian.org/reiner/awesome
+	       - https://github.com/awesomeWM/awesome
+	       - https://github.com/luarocks/luarocks
+	       - https://github.com/lua/lua
 
 
-	 --- # C
-	 - https://gitlab.freedesktop.org/mesa/mesa.git
-	 - git://source.winehq.org/git/wine.git
-	 - https://github.com/openssh/openssh-portable.git
-	 - https://github.com/libressl-portable/portable.git
-	 - https://git.suckless.org/dwm
-	 - https://github.com/zsh-users/zsh.git
-	 - https://github.com/git/git.git
-	 - https://github.com/tmux/tmux.git
-	 - https://github.com/antirez/redis.git
-	 - https://github.com/curl/curl.git
-	 - git://c9x.me/qbe.git
+	       --- # C
+	       - https://gitlab.freedesktop.org/mesa/mesa.git
+	       - git://source.winehq.org/git/wine.git
+	       - https://github.com/openssh/openssh-portable.git
+	       - https://github.com/libressl-portable/portable.git
+	       - https://git.suckless.org/dwm
+	       - https://github.com/zsh-users/zsh.git
+	       - https://github.com/git/git.git
+	       - https://github.com/tmux/tmux.git
+	       - https://github.com/antirez/redis.git
+	       - https://github.com/curl/curl.git
+	       - git://c9x.me/qbe.git
 
 
-	 ---golang
-	 - https://github.com/hashicorp/nomad
-	 - https://github.com/hashicorp/consul
-	 - https://github.com/hashicorp/terraform
-	 - https://github.com/containers/buildah
-	 - https://github.com/containers/podman
-	 - https://github.com/sourcegraph/go-langserver
-	 - https://github.com/gorilla/mux
-	 - https://github.com/cli/cli
-	 - https://github.com/rclone/rclone
-	 - https://github.com/avelino/awesome-go
-	 - https://github.com/kubernetes-sigs/kind/
-	 - https://github.com/kubernetes/kubernetes
-	 - https://github.com/adonovan/gopl.io
-	 - https://github.com/golang/net
-	 - https://github.com/golang/tools
-	 - https://github.com/golang/go
+	       ---golang
+	       - https://github.com/hashicorp/nomad
+	       - https://github.com/hashicorp/consul
+	       - https://github.com/hashicorp/terraform
+	       - https://github.com/containers/buildah
+	       - https://github.com/containers/podman
+	       - https://github.com/sourcegraph/go-langserver
+	       - https://github.com/gorilla/mux
+	       - https://github.com/cli/cli
+	       - https://github.com/rclone/rclone
+	       - https://github.com/avelino/awesome-go
+	       - https://github.com/kubernetes-sigs/kind/
+	       - https://github.com/kubernetes/kubernetes
+	       - https://github.com/adonovan/gopl.io
+	       - https://github.com/golang/net
+	       - https://github.com/golang/tools
+	       - https://github.com/golang/go
 
 
-	 ---Javascript
-	 - https://github.com/SBoudrias/Inquirer.js
-	 - https://github.com/mrdoob/three.js
-	 - https://github.com/parcel-bundler/parcel
-	 - https://github.com/prettier/prettier
-	 - https://github.com/yarnpkg/yarn
-	 - https://github.com/meteor/meteor
-	 - https://github.com/expressjs/express
-	 - https://github.com/axios/axios
-	 - https://github.com/nodejs/node
+	       ---Javascript
+	       - https://github.com/SBoudrias/Inquirer.js
+	       - https://github.com/mrdoob/three.js
+	       - https://github.com/parcel-bundler/parcel
+	       - https://github.com/prettier/prettier
+	       - https://github.com/yarnpkg/yarn
+	       - https://github.com/meteor/meteor
+	       - https://github.com/expressjs/express
+	       - https://github.com/axios/axios
+	       - https://github.com/nodejs/node
 
 
-	 ---Haskell
-	 - https://gitlab.haskell.org/ghc/ghc
-	 - https://gitlab.haskell.org/haskell/ghcup
-	 - https://github.com/haskell/cabal
-	 - https://github.com/commercialhaskell/stack
-	 - https://github.com/haskell/haskell-language-server
-	 - https://github.com/koalaman/shellcheck
-	 - https://github.com/jgm/pandoc
-	 - https://github.com/elm/compiler
+	       ---Haskell
+	       - https://gitlab.haskell.org/ghc/ghc
+	       - https://gitlab.haskell.org/haskell/ghcup
+	       - https://github.com/haskell/cabal
+	       - https://github.com/commercialhaskell/stack
+	       - https://github.com/haskell/haskell-language-server
+	       - https://github.com/koalaman/shellcheck
+	       - https://github.com/jgm/pandoc
+	       - https://github.com/elm/compiler
 
 
-	 ---Distros
-	 - https://github.com/purcell/nix-emacs-ci
-	 - https://github.com/jwiegley/nix-config
-	 - https://github.com/NixOS/nixos-hardware
-	 - https://github.com/NixOS/nixos-org-configurations
-	 - https://github.com/NixOS/nixpkgs
-	 - https://github.com/NixOS/nix
-	 - https://gitlab.com/guix-gaming-channels/games
-	 - https://gitlab.com/nonguix
-	 - https://git.savannah.gnu.org/git/guix.git
+	       ---Distros
+	       - https://github.com/purcell/nix-emacs-ci
+	       - https://github.com/jwiegley/nix-config
+	       - https://github.com/NixOS/nixos-hardware
+	       - https://github.com/NixOS/nixos-org-configurations
+	       - https://github.com/NixOS/nixpkgs
+	       - https://github.com/NixOS/nix
+	       - https://gitlab.com/guix-gaming-channels/games
+	       - https://gitlab.com/nonguix
+	       - https://git.savannah.gnu.org/git/guix.git
 
 
-	 ---Dart
-	 - https://github.com/roughike/inKino
-	 - https://github.com/flame-engine/flame
-	 - https://github.com/felangel/bloc
-	 - https://github.com/flutter/plugins
-	 - https://github.com/dart-lang/build
-	 - https://github.com/dart-lang/sdk
+	       ---Dart
+	       - https://github.com/roughike/inKino
+	       - https://github.com/flame-engine/flame
+	       - https://github.com/felangel/bloc
+	       - https://github.com/flutter/plugins
+	       - https://github.com/dart-lang/build
+	       - https://github.com/dart-lang/sdk
 
 
-	 ---css
-	 - https://github.com/IanLunn/Hover
-	 - https://github.com/jgthms/bulma
-	 - https://github.com/daneden/animate.css
-	 - https://github.com/oddbird/susy
-	 - https://github.com/necolas/normalize.css
-	 - https://github.com/mozdevs/cssremedy
+	       ---css
+	       - https://github.com/IanLunn/Hover
+	       - https://github.com/jgthms/bulma
+	       - https://github.com/daneden/animate.css
+	       - https://github.com/oddbird/susy
+	       - https://github.com/necolas/normalize.css
+	       - https://github.com/mozdevs/cssremedy
 
 
-	 ---Perl
-	 - https://github.com/moose/Moose
-	 - https://github.com/richterger/Perl-LanguageServer
-	 - https://github.com/imapsync/imapsync
-	 - https://github.com/ddclient/ddclient
-	 - https://github.com/apache/avro
-	 - https://github.com/mojolicious/mojo
-	 - https://github.com/i3/i3
-	 - https://github.com/bugzilla/bugzilla
-	 - https://github.com/hachiojipm/awesome-perl
-	 - https://github.com/Perl/perl5
+	       ---Perl
+	       - https://github.com/moose/Moose
+	       - https://github.com/richterger/Perl-LanguageServer
+	       - https://github.com/imapsync/imapsync
+	       - https://github.com/ddclient/ddclient
+	       - https://github.com/apache/avro
+	       - https://github.com/mojolicious/mojo
+	       - https://github.com/i3/i3
+	       - https://github.com/bugzilla/bugzilla
+	       - https://github.com/hachiojipm/awesome-perl
+	       - https://github.com/Perl/perl5
 
 
-	 ---python
-	 - https://github.com/python/cpython
-	 - https://github.com/python/mypy
-	 - https://github.com/python/peps
-	 - https://github.com/pypa/pip
-	 - https://github.com/pypa/wheel
-	 - https://github.com/pytest-dev/pytest
-	 - https://github.com/pypa/setuptools
-	 - https://github.com/PyCQA/pylint
-	 - https://github.com/nedbat/coveragepy
-	 - https://github.com/psf/black
+	       ---python
+	       - https://github.com/python/cpython
+	       - https://github.com/python/mypy
+	       - https://github.com/python/peps
+	       - https://github.com/pypa/pip
+	       - https://github.com/pypa/wheel
+	       - https://github.com/pytest-dev/pytest
+	       - https://github.com/pypa/setuptools
+	       - https://github.com/PyCQA/pylint
+	       - https://github.com/nedbat/coveragepy
+	       - https://github.com/psf/black
 
 
-	 ---misc
-	 - https://github.com/ytdl-org/youtube-dl
-	 - https://github.com/BurntSushi/ripgrep
-	 - https://github.com/jgm/pandoc
-	 - https://github.com/tmux/tmux
-	 - https://github.com/ziglang/zig
-	 - https://code.videolan.org/videolan/vlc-android
-	 - https://github.com/laravel/laravel
-	 - https://github.com/jekyll/jekyll
-	 - https://github.com/go-gitea/gitea
-	 - https://github.com/OmniSharp/omnisharp-roslyn
-	 - https://github.com/eclipse/eclipse.jdt.ls
-	 - https://github.com/amberframework/amber
-	 - https://github.com/dom96/choosenim
-	 - https://github.com/aria2/aria2
-	 - https://github.com/vapor/vapor
-	 - https://github.com/mojolicious/mojo
-	 - https://github.com/racket/racket
-	 - https://git.savannah.gnu.org/git/guix
-	 - https://github.com/b4b4r07/enhancd
+	       ---misc
+	       - https://github.com/ytdl-org/youtube-dl
+	       - https://github.com/BurntSushi/ripgrep
+	       - https://github.com/jgm/pandoc
+	       - https://github.com/tmux/tmux
+	       - https://github.com/ziglang/zig
+	       - https://code.videolan.org/videolan/vlc-android
+	       - https://github.com/laravel/laravel
+	       - https://github.com/jekyll/jekyll
+	       - https://github.com/go-gitea/gitea
+	       - https://github.com/OmniSharp/omnisharp-roslyn
+	       - https://github.com/eclipse/eclipse.jdt.ls
+	       - https://github.com/amberframework/amber
+	       - https://github.com/dom96/choosenim
+	       - https://github.com/aria2/aria2
+	       - https://github.com/vapor/vapor
+	       - https://github.com/mojolicious/mojo
+	       - https://github.com/racket/racket
+	       - https://git.savannah.gnu.org/git/guix
+	       - https://github.com/b4b4r07/enhancd
 
 
-	 ---php
-	 - https://github.com/PacktPublishing/Mastering-PHP-7
-	 - https://github.com/bcit-ci/CodeIgniter
-	 - https://github.com/felixfbecker/php-language-server
-	 - https://github.com/vimeo/psalm
-	 - https://github.com/laravel/lumen
-	 - https://github.com/nikic/php-parser
-	 - https://github.com/phpstan/phpstan
-	 - https://github.com/composer/composer
-	 - https://github.com/symfony/symfony
-	 - https://github.com/laravel/laravel
-	 - https://github.com/php/php-src
+	       ---php
+	       - https://github.com/PacktPublishing/Mastering-PHP-7
+	       - https://github.com/bcit-ci/CodeIgniter
+	       - https://github.com/felixfbecker/php-language-server
+	       - https://github.com/vimeo/psalm
+	       - https://github.com/laravel/lumen
+	       - https://github.com/nikic/php-parser
+	       - https://github.com/phpstan/phpstan
+	       - https://github.com/composer/composer
+	       - https://github.com/symfony/symfony
+	       - https://github.com/laravel/laravel
+	       - https://github.com/php/php-src
    #+end_src
 *** Cero Linguagens
 **** Ruby
@@ -1179,6 +1180,88 @@ upgrade: upgrade
     run:
 	    ./$(DIST)/$(PROJECT)
     #+end_src
+** asdf
+   #+begin_src shell-script
+   #!/usr/bin/env bash
+   #!/usr/bin/env bash
+
+   # set -e
+
+   source "$HOME/.asdf/completions/asdf.bash"
+   source "$HOME/.asdf/asdf.sh"
+
+   asdf_lua()
+   {
+       [[ -f "$HOME/.asdf/shims/lua" ]] && return
+
+       echo 'Installing Lua binaries'
+
+       asdf plugin-add lua https://github.com/Stratus3D/asdf-lua
+
+       asdf install lua latest
+
+       asdf global lua "$(asdf latest lua)"
+   }
+
+   packages()
+   {
+       echo 'Installing  packages'
+
+       local packages=()
+
+       for pack in "${packages[@]}"
+       do
+	    install "${pack}" # --user-install
+	    update  "${pack}"
+       done
+   }
+
+   # * RUN
+
+   echo 'Lua - ASDF'
+
+   asdf_lua
+   packages
+
+
+
+   # set -e
+
+   erlang()
+   {
+       # https://github.com/asdf-vm/asdf-erlang
+
+       [[ -f "$HOME/.asdf/shims/erl" ]] && return
+
+       echo 'Installing Erlang binaries'
+
+       asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+       asdf install erlang latest
+
+       asdf global erlang "$(asdf latest erlang)"
+   }
+
+   elixir()
+   {
+       # https://github.com/asdf_vm/asdf_elixir
+
+       [[ -f "$HOME/.asdf/shims/elixir" ]] && return
+
+       echo 'Installing Elixir binaries'
+
+       asdf plugin-add ruby https://github.com/asdf-vm/asdf-elixir.git
+
+       asdf install elixir latest
+
+       asdf global elixir "$(asdf latest elixir)"
+   }
+
+   # * Run
+   erlang
+   elixir
+
+   #+end_src
 ** shell-software
    #+begin_src shell-script
    s-startx()
@@ -1276,61 +1359,25 @@ upgrade: upgrade
 ** shell-custom
    #+begin_src shell-script
    #!/usr/bin/env bash
-#!/usr/bin/env bash
 
-# set -e
+   packages()
+   {
+       echo 'Installing packages'
 
-source "$HOME/.asdf/completions/asdf.bash"
-source "$HOME/.asdf/asdf.sh"
+       # local packages=()
 
-asdf_elixir()
-{
-    # https://github.com/asdf_vm/asdf_elixir
+       # for pack in "${packages[@]}"
+       # do
+       # done
+   }
 
-    [[ -f "$HOME/.asdf/shims/elixir" ]] && return
+   # * RUN
 
-    echo 'Installing Elixir binaries'
+   echo 'Elixir - ASDF'
 
-    asdf plugin-add ruby https://github.com/asdf-vm/asdf-elixir.git
-
-    asdf install elixir latest
-
-    asdf global elixir "$(asdf latest elixir)"
-}
-
-asdf_erlang()
-{
-    # https://github.com/asdf-vm/asdf-erlang
-
-    [[ -f "$HOME/.asdf/shims/erl" ]] && return
-
-    echo 'Installing Erlang binaries'
-
-    asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-
-    asdf install erlang latest
-
-    asdf global erlang "$(asdf latest erlang)"
-}
-
-packages()
-{
-    echo 'Installing packages'
-
-    # local packages=()
-
-    # for pack in "${packages[@]}"
-    # do
-    # done
-}
-
-# * RUN
-
-echo 'Elixir - ASDF'
-
-asdf_erlang
-asdf_elixir
-packages
+   asdf_erlang
+   asdf_elixir
+   packages
 
 
 
@@ -1570,6 +1617,15 @@ packages
        export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
    }
 
+   e-debian()
+   {
+
+       elixir=(build-essential autoconf m4 libncurses5-dev
+	       libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev
+	       libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev
+	       openjdk-11-jdk)
+
+   }
    e-ubuntu()
    {
        sudo systemctl set-default multi-user.target
@@ -2123,24 +2179,24 @@ packages
 
        echo " -- Configuring Emacs"
        ./configure --prefix=$HOME_LOCAL \
-		   --with-modules \
-		   --with-xwidgets \
-		   --with-gif \
-		   --with-jpeg \
-		   --with-png \
-		   --with-rsvg \
-		   --with-tiff \
-		   --with-xft \
-		   --with-xpm \
-		   --with-x \
-		   --with-dbus \
-		   --with-json \
-		   --with-imagemagick \
-		   --with-jansson \
-		   --with-multicolor-fonts \
-		   --with-x-toolkit=gtk3 \
-		   --with-mailutils \
-		   --with-gnutls
+	--with-modules \
+	--with-xwidgets \
+	--with-gif \
+	--with-jpeg \
+	--with-png \
+	--with-rsvg \
+	--with-tiff \
+	--with-xft \
+	--with-xpm \
+	--with-x \
+	--with-dbus \
+	--with-json \
+	--with-imagemagick \
+	--with-jansson \
+	--with-multicolor-fonts \
+	--with-x-toolkit=gtk3 \
+	--with-mailutils \
+	--with-gnutls
 
        echo " -- -- Deploying binaries"
        make -j2
@@ -2957,63 +3013,63 @@ packages
    # alias Nqa='nix-env -qa' # search for specific app or no argument view the set of available packages in Nixpkgs
    # alias Nu='nix-env -u' # update specific package or no arguments upgrade all packages
    # alias Nrb='nix-env --rollback' # rollback specific package
-   # alias Ngc='nix-collect-garbage -d' #  run the Nix garbage collector to get rid of unused packages, since uninstalls or upgrades don't actually delete them
-   # alias Ndr='nix-env -u --dry-run' # mimic universal upgrade, just like Gentoo's emerge
+      # alias Ngc='nix-collect-garbage -d' #  run the Nix garbage collector to get rid of unused packages, since uninstalls or upgrades don't actually delete them
+      # alias Ndr='nix-env -u --dry-run' # mimic universal upgrade, just like Gentoo's emerge
 
-   # # Gentoo - # https://wiki.gentoo.org/wiki/Portage#emerge
-   # alias Ema='sudo emerge --ask'
-   # alias Ems='sudo emerge --search'
-   # alias Emu='sudo emerge --unmerge'
-   # alias Ema='emerge --ask'
-   # alias Ems='emerge --search'
-   # alias Empv='emerge --pretend --verbose'
-   # alias Eman='sudo emerge --ask --newuse'
-   # alias Emudnw='sudo emerge --update --deep --newuse @world'
-   # alias Emundww='sudo emerge --ask --update --newuse --deep --with-bdeps=y @world'
-   # alias Emacdw='sudo emerge --ask --changed-use --deep @world'
-   # alias Emdc='sudo emerge --depclean'
-   # alias Emrr='sudo revdep-rebuild'
-   # alias Emdc='sudo dispatch-conf'
-   # alias Emig='emerge --info | grep -i'
-   # alias Emigu='emerge --info | grep USE'
-   # alias Empr='sudo emerge @preserved-rebuild'
-   # # Eclean https://wiki.gentoo.org/wiki/Eclean#Cleaning_distendles
-   # alias Emc='sudo eclean distendles'
-   # alias Emc='sudo eclean packages'
-   # # qpkg
+      # # Gentoo - # https://wiki.gentoo.org/wiki/Portage#emerge
+      # alias Ema='sudo emerge --ask'
+      # alias Ems='sudo emerge --search'
+      # alias Emu='sudo emerge --unmerge'
+      # alias Ema='emerge --ask'
+      # alias Ems='emerge --search'
+      # alias Empv='emerge --pretend --verbose'
+      # alias Eman='sudo emerge --ask --newuse'
+      # alias Emudnw='sudo emerge --update --deep --newuse @world'
+      # alias Emundww='sudo emerge --ask --update --newuse --deep --with-bdeps=y @world'
+      # alias Emacdw='sudo emerge --ask --changed-use --deep @world'
+      # alias Emdc='sudo emerge --depclean'
+      # alias Emrr='sudo revdep-rebuild'
+      # alias Emdc='sudo dispatch-conf'
+      # alias Emig='emerge --info | grep -i'
+      # alias Emigu='emerge --info | grep USE'
+      # alias Empr='sudo emerge @preserved-rebuild'
+      # # Eclean https://wiki.gentoo.org/wiki/Eclean#Cleaning_distendles
+      # alias Emc='sudo eclean distendles'
+      # alias Emc='sudo eclean packages'
+      # # qpkg
 
-   # # Arch Linux
-   # alias Pacu='sudo pacman -Syu'
-   # alias Paci='sudo pacman -S'
-   # alias Pacr='sudo pacman -R'
-   # alias Pacr='sudo pacman -Rd'
-   # alias Pacrns='sudo pacman -Rns'
-   # alias Pacrcns='sudo pacman -Rcns'
-   # # alias Pacrnsqd='pacman -Rsn $(pacman -Qdtq)'
-   # alias Pacs='pacman -Ss'
-   # alias Pacud='pacman -U'
-   # alias Pacqe='pacman -Qe'
-   # alias Pacqi='pacman -Qi'
-   # alias Pacqt='pacman -Qt | less'
-   # # alias Mirrors='sudo pacman-mirrors -g; and sudo pacman -Su'
+      # # Arch Linux
+      # alias Pacu='sudo pacman -Syu'
+      # alias Paci='sudo pacman -S'
+      # alias Pacr='sudo pacman -R'
+      # alias Pacr='sudo pacman -Rd'
+      # alias Pacrns='sudo pacman -Rns'
+      # alias Pacrcns='sudo pacman -Rcns'
+      # # alias Pacrnsqd='pacman -Rsn $(pacman -Qdtq)'
+      # alias Pacs='pacman -Ss'
+      # alias Pacud='pacman -U'
+      # alias Pacqe='pacman -Qe'
+      # alias Pacqi='pacman -Qi'
+      # alias Pacqt='pacman -Qt | less'
+      # # alias Mirrors='sudo pacman-mirrors -g; and sudo pacman -Su'
 
-   # # Arch Linux Pckbuild Handlers
-   # alias Yi='yaourt -S --aur'
-   # alias Yu='yaourt -Su --aur'
-   # alias Ys='yaourt -Ss --aur'
-   # alias Pru='pacaur -Su -a'
-   # alias Pri='pacaur -S'
-   # alias Prs='pacaur -Ss'
-   # alias Prr='pacaur -R'
+      # # Arch Linux Pckbuild Handlers
+      # alias Yi='yaourt -S --aur'
+      # alias Yu='yaourt -Su --aur'
+      # alias Ys='yaourt -Ss --aur'
+      # alias Pru='pacaur -Su -a'
+      # alias Pri='pacaur -S'
+      # alias Prs='pacaur -Ss'
+      # alias Prr='pacaur -R'
 
-   # #PCKBUILD
-   # alias Mpsi='makepkg -si'
+      # #PCKBUILD
+      # alias Mpsi='makepkg -si'
 
-   # alias Strc="awk '!/^ *#/ && NF'"
-   alias Dmesg='clear; dmesg -eL -w'
+      # alias Strc="awk '!/^ *#/ && NF'"
+      alias Dmesg='clear; dmesg -eL -w'
 
-   # Scripts for recursive tasks (without space on endlename)
-   alias Jpg='for f in *.jpg; do mv "$f" "$f/%.jpg/.jp"; done'
+      # Scripts for recursive tasks (without space on endlename)
+      alias Jpg='for f in *.jpg; do mv "$f" "$f/%.jpg/.jp"; done'
     #+end_src
 ** Emacs
 *** scripts
