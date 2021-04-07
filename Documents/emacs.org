@@ -34,10 +34,10 @@
 :END:
 * Progress
 ** Books
-   | Books        | Cap     | @                        | late                            | revision |
-   |--------------+---------+--------------------------+---------------------------------+----------|
-   | Emacs Lisp   | 5 Lists | 5.1 Lists and Cons Cells | s2.5.6 Window Configuration Type |          |
-   | Emacs Manual |         |                          |                                 |          |
+   | Books        | Cap     | @                            | late | revision |
+   |--------------+---------+------------------------------+------+----------|
+   | Emacs Lisp   | 5 Lists | 5.5 Modifying List Variables |      |          |
+   | Emacs Manual |         |                              |      |          |
 
 ** SLOC
    | Source Code | folder      | file         | @ |

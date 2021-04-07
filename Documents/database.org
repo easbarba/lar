@@ -6,7 +6,6 @@
   :END:
 :CONTENTS:
 - [[#progress][Progress]]
-- [[#books][Books]]
 - [[#postgresql][PostgreSQL]]
   - [[#terms][Terms]]
   - [[#features][Features]]
@@ -22,15 +21,9 @@
 - [[#later][Later]]
 :END:
 * Progress
-  |                        |   |                           |   |
-  |------------------------+---+---------------------------+---|
-  | Learn PostgreSQL 12/13 |   | Connecting to the cluster |   |
-
-* Books
-  | Book                                                      | cap | @ | late |
-  |-----------------------------------------------------------+-----+---+------|
-  | Practical SQL A Beginners Guide to Storytelling with Data |     |   |      |
-  | Mastering PostgreSQL 12                                   |     |   |      |
+  |                        |   |                                   |   |
+  |------------------------+---+-----------------------------------+---|
+  | Learn PostgreSQL 12/13 |   | Introducing the connection string |   |
 
 * [[https://www.postgresql.org/][PostgreSQL]]
 ** Terms
@@ -47,6 +40,23 @@
     | reload                   |   |
     | promote                  |   |
 *** psql
+    |    |                                                         |
+    |----+---------------------------------------------------------|
+    | -l |                                                         |
+    | -d | The database name                                       |
+    | -U | The username                                            |
+    | -h | The host (either an IPv4 or IPv6 address or a hostname) |
+    |    |                                                         |
+*** psql prompt
+    |                                          |                |
+    |------------------------------------------+----------------|
+    | \i <file>                                | load file      |
+    | <statement> \g                           | same as ;      |
+    | \e <file> or \e <statement>              | open in editor |
+    | \h <command>                             | command doc    |
+    | \?                                       |                |
+    | \d                                       |                |
+    | postgresql://username@host:port/database |                |
 *** pstree
     - checkpointer
     - background writer

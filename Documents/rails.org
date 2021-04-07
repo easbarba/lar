@@ -48,7 +48,7 @@
 ** Books
    | Books                   | Chapter                                       | @                | late | revision |
    |-------------------------+-----------------------------------------------+------------------+------+----------|
-   | Agile Rails Development | Action Pack: The View and Controller          |                  |      |          |
+   | Agile Rails Development | Task B: Validation and Unit Testing           |                  |      |          |
    | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
    | Active Record Basics    |                                               |                  |      |          |
    | Raisl Style Guide       | Controllers: Rendering                        |                  |      |          |
