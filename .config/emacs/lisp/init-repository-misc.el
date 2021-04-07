@@ -231,7 +231,8 @@
      "https://metaredux.com/feed.xml"
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCmQTY7b5w61WlmBbJ5a8XrQ" ;; Rede TVT
+     "https://mtst.org/feed/"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5ed3F-1on364XihtRFagJg" ;; Vitor Vegano
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCblJ3bb2DDJSD7PyJXcg7qA" ;; Gonzalo Vecina
@@ -242,7 +243,6 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Ooj_iDWELBumIEDejyNHQ" ;; BlaBla Logia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCWnPjmqvljcafA0z2U1fwKQ" ;; Confreaks
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCcgl8D1QAwAmZekgv1-BaQg" ;; Doutora Drag
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCC6f63SXY0CDpsPGDBtTWVg" ;; Henry Bugalho
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" ;; Natalia Bonavides
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
@@ -673,9 +673,7 @@
 			 doom-gruvbox-light
 			 doom-solarized-light
 			 doom-nord-light
-			 doom-homage-white
-			 doom-plain
-			 doom-tomorrow-day))
+			 doom-homage-white))
 	  (night-themes '(doom-gruvbox
 			  doom-miramare
 			  doom-dracula
