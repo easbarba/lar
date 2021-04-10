@@ -34,7 +34,7 @@ packages()
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
 	    firewall-config socat vrms fzf aria2)
 
-    qt=(kdeconnect kdenlive clementine dolphin)
+    qt=(kdeconnect kdenlive clementine)
 
     gtk=(cheese transmission-gtk atril numix-icon-theme numix-gtk-theme)
 
@@ -96,7 +96,6 @@ packages()
     e_foreach "$command" "${laptop[@]}"
     e_foreach "$command" "${latex[@]}"
     e_foreach "$command" "${user[@]}"
-    e_foreach "$command" "${wm[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${amd[@]}"
 
