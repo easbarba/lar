@@ -34,7 +34,7 @@ export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 
 # $PATH DIRECTORIES
 
-binaries()
+home_bin()
 {
     export PATH="$HOME/bin"${PATH:+:}${PATH}
     export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
@@ -43,27 +43,16 @@ binaries()
 
 # * PACKAGES
 
-ruby()
-{
-    local dir="$HOME/.local/share/gem/ruby/3.0.0/bin"
-    export PATH="$dir"${PATH:+:}$PATH
-}
-
-js()
-{
-    local dir="$HOME/.asdf/shims/node_modules/.bin"
-    export PATH="$dir"${PATH:+:}$PATH
-}
-
 guix()
 {
     local dir="$HOME/.guix-profile"
     export PATH="$dir"${PATH:+:}$PATH
 }
 
-gnome_keyring()
+ruby()
 {
-    bash "$HOME/.config/autostart-scripts/gnome_keyring"
+    local dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
+    export PATH="$dir"${PATH:+:}$PATH
 }
 
 asdf()
@@ -72,10 +61,15 @@ asdf()
     export PATH="$dir"${PATH:+:}$PATH
 }
 
+asdf_js()
+{
+    local dir="$HOME/.asdf/shims/node_modules/.bin"
+    export PATH="$dir"${PATH:+:}$PATH
+}
+
+
 # * RUN
 
+home_bin
 asdf
-binaries
-ruby
-js
-gnome_keyring
+asdf_js
