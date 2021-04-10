@@ -232,6 +232,7 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://mtst.org/feed/"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5ed3F-1on364XihtRFagJg" ;; Vitor Vegano
