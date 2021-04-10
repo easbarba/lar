@@ -18,9 +18,10 @@ asdf_nodejs()
 
     bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 
-    asdf install nodejs latest
+    local $default=14.16.1
+    asdf install nodejs $default
 
-    asdf global nodejs "$(asdf latest nodejs)"
+    asdf global nodejs $default
 }
 
 asdf_yarn()
