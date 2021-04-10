@@ -31,7 +31,7 @@
 (require 'init-repository-languages)
 (require 'init-repository-misc)
 (require 'init-repository-readers)
-(require 'init-repository-exwm)
+;; (require 'init-repository-exwm)
 
 (provide 'init)
 ;;; init.el ends here
