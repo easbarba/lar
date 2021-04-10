@@ -46,12 +46,12 @@
 :END:
 * Progress
 ** Books
-   | Books                   | Chapter                                       | @                                    | late | revision |
-   |-------------------------+-----------------------------------------------+--------------------------------------+------+----------|
-   | Agile Rails Development | Building an Application                       | Iteration B2: Unit Testing of Models |      |          |
-   | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks                     |      |          |
-   | Active Record Basics    |                                               |                                      |      |          |
-   | Raisl Style Guide       | Controllers: Rendering                        |                                      |      |          |
+   | Books                   | Chapter                                       | @                | late | revision |
+   |-------------------------+-----------------------------------------------+------------------+------+----------|
+   | Agile Rails Development | Task C: Catalog Display                       |                  |      |          |
+   | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
+   | Active Record Basics    |                                               |                  |      |          |
+   | Raisl Style Guide       | Controllers: Rendering                        |                  |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           | @ |
