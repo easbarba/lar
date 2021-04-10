@@ -5,7 +5,7 @@
 source "$HOME/.asdf/completions/asdf.bash"
 source "$HOME/.asdf/asdf.sh"
 
-asdf_ruby()
+binary()
 {
     # https://github.com/asdf_vm/asdf_ruby
 
@@ -17,11 +17,11 @@ asdf_ruby()
     asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
     # install versions
-    asdf install ruby 2.7.2
-    asdf install ruby 3.0.0
+    local default=2.7.2
+    asdf install ruby $default
 
     # global
-    asdf global ruby 3.0.0
+    asdf global ruby $default
 }
 
 packages()
@@ -41,5 +41,5 @@ packages()
 
 echo 'Ruby - ASDF'
 
-asdf_ruby
+binary
 packages
