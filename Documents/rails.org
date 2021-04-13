@@ -51,7 +51,7 @@
 ** Books
    | Books                   | Chapter                                       | @                | late | revision |
    |-------------------------+-----------------------------------------------+------------------+------+----------|
-   | Agile Rails Development | Iteration D3: Adding a Button                 |                  |      |          |
+   | Agile Rails Development | Task E: A Smarter Cart                        |                  |      |          |
    | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
    | Active Record Basics    |                                               |                  |      |          |
    | Raisl Style Guide       | Controllers: Rendering                        |                  |      |          |
