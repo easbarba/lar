@@ -21,4 +21,6 @@ autostart()
     done
 }
 
+[ "$DESKTOP_SESSION" == "plasma" ] && return
+
 autostart
