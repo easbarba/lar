@@ -13,11 +13,12 @@
 - [[#more][more]]
 :END:
 * Progress
-   | Book                 | chapter                               | @ | later | revision |
-   |----------------------+---------------------------------------+---+-------+----------|
-   | Manifesto            | Proletarians and Communists           |   |       |          |
-   | state and Revolution | Chapter II: The Experience of 1848-51 |   |       |          |
-   | Paradise Lost        |                                       |   |       |          |
+   | Book                 | chapter                                                         | @ | later | revision |
+   |----------------------+-----------------------------------------------------------------+---+-------+----------|
+   | Manifesto            | Proletarians and Communists                                     |   |       |          |
+   | state and Revolution | Chapter II: The Experience of 1848-51                           |   |       |          |
+   | Paradise Lost        |                                                                 |   |       |          |
+   | Philosophy Right     | German philosophy of right and state is the only German history |   |       |          |
 * Sociology
 ** Karl Marx
 ** Max Weber
