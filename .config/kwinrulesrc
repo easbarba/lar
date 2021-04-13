@@ -3,7 +3,7 @@ update_info=kwinrules.upd:replace-placement-string-to-enum
 
 [1]
 Description=clementine
-desktop=4
+desktop=5
 desktoprule=2
 wmclass=clementine
 wmclassmatch=1
