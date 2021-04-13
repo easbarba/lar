@@ -232,16 +232,16 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://mtst.org/feed/"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCMUoZehUZBhLb8XaTc8TQrA" ;; FullCycle
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5ed3F-1on364XihtRFagJg" ;; Vitor Vegano
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCblJ3bb2DDJSD7PyJXcg7qA" ;; Gonzalo Vecina
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCvO2BExvkAbGMsTGnEnI_Ng" ;; Lula
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCq8LkP7VWVgowQxSDtOZQHw" ;; Marcelus Tumulto
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCthbIFAxbXTTQEC7EcQvP1Q" ;; BBC Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Ooj_iDWELBumIEDejyNHQ" ;; BlaBla Logia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCWnPjmqvljcafA0z2U1fwKQ" ;; Confreaks
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCcgl8D1QAwAmZekgv1-BaQg" ;; Doutora Drag
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" ;; Natalia Bonavides
