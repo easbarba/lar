@@ -21,9 +21,9 @@
 - [[#later][Later]]
 :END:
 * Progress
-  |                        |   |                                   |   |
-  |------------------------+---+-----------------------------------+---|
-  | Learn PostgreSQL 12/13 |   | Introducing the connection string |   |
+  | book                   | chapter                      | @                    | revision |
+  |------------------------+------------------------------+----------------------+----------|
+  | Learn PostgreSQL 12/13 | Getting to Know Your Cluster | No pg_hba.conf entry |          |
 
 * [[https://www.postgresql.org/][PostgreSQL]]
 ** Terms
