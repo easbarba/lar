@@ -136,13 +136,13 @@
 
 ** Priorities
    - Ruby
-   - Rails
+   - Rails { Active Admin, }
    - PostgreSQL
-   - HTML/CSS/JS
    - Git
-   - API REST
+   - API REST { YAML, JSON, XML, SOAP }
    - Unit Test / Rspec
    - SOLID, KISS, YAGNI, DRY / Clean Code
+   - HTML/CSS/JS
    - Design Patterns
    - Container
    - CS
