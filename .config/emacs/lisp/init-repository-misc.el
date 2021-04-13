@@ -216,7 +216,8 @@
   :custom
   (elfeed-db-directory "~/.config/elfeed")
   (elfeed-feeds
-   '("https://bits.debian.org/feeds/atom.xml"
+   '("https://mtst.org/feed/"
+     "https://bits.debian.org/feeds/atom.xml"
      "https://micronews.debian.org/feeds/atom.xml"
      "https://sourcehut.org/blog/index.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
@@ -231,7 +232,7 @@
      "https://metaredux.com/feed.xml"
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
-     "https://mtst.org/feed/"
+     "https://boringrails.com/feed.xml"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCMUoZehUZBhLb8XaTc8TQrA" ;; FullCycle
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
