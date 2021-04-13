@@ -138,14 +138,21 @@
    - Ruby
    - Rails
    - PostgreSQL
-   - JS
+   - HTML/CSS/JS
    - Git
+   - API REST
    - Unit Test / Rspec
-   - SOLID / Clean Code
+   - SOLID, KISS, YAGNI, DRY / Clean Code
    - Design Patterns
    - Container
+   - CS
+   - English
+   - Sidekiq
+   - Heroku
+   - Slim
    - CI/CD
    - Cloud
+
 * Packages
 ** Packagement
 *** gem
