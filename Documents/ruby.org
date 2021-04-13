@@ -141,17 +141,16 @@
    - Git
    - API REST { YAML, JSON, XML, SOAP }
    - Unit Test / Rspec
-   - SOLID, KISS, YAGNI, DRY / Clean Code
+   - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
    - HTML/CSS/JS
-   - Design Patterns
    - Container
-   - CS
-   - English
    - Sidekiq
    - Heroku
    - Slim
    - CI/CD
    - Cloud
+   - CS
+   - English
 
 * Packages
 ** Packagement
