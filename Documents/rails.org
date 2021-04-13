@@ -13,8 +13,8 @@
   - [[#misc][Misc]]
   - [[#tasks-rake][Tasks (rake)]]
   - [[#models][Models]]
-  - [[#console-rails-console][Console (rails console)]]
-  - [[#env][ENV]]
+  - [[#console][Console]]
+  - [[#enviroment][Enviroment]]
 - [[#logger][Logger]]
 - [[#active-record][Active Record]]
   - [[#associations][Associations]]
@@ -36,6 +36,9 @@
 - [[#tests][Tests]]
   - [[#rspec][RSpec]]
   - [[#unit][Unit]]
+  - [[#rails][Rails]]
+    - [[#cli][cli]]
+    - [[#files][files]]
 - [[#rest][REST]]
 - [[#json][JSON]]
 - [[#traits][Traits]]
@@ -48,7 +51,7 @@
 ** Books
    | Books                   | Chapter                                       | @                | late | revision |
    |-------------------------+-----------------------------------------------+------------------+------+----------|
-   | Agile Rails Development | Task C: Catalog Display                       |                  |      |          |
+   | Agile Rails Development | Task D: Cart Creation                         |                  |      |          |
    | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
    | Active Record Basics    |                                               |                  |      |          |
    | Raisl Style Guide       | Controllers: Rendering                        |                  |      |          |
@@ -98,7 +101,7 @@
    |        | generate scaffold Article title:string body:text published_at:datetime |      |
    |        |                                                                        |      |
 
-** Console (rails console)
+** Console
    | what              | how                                                                | desc                                                                                                                               |
    |-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------|
    | create            | create(title: "foo", body: "bar", published_at: '2020-01-31')      | create new and save to db                                                                                                          |
@@ -123,10 +126,12 @@
    | routes --expanded |                                                                    |                                                                                                                                    |
    | byebug            |                                                                    |                                                                                                                                    |
 
-** ENV
-   |   |                      |   |
-   |---+----------------------+---|
-   |   | RAILS_ENV=production |   |
+** Enviroment
+   |                      |                                                                          |
+   |----------------------+--------------------------------------------------------------------------|
+   | RAILS_ENV=production |                                                                          |
+   | dev:cache            | toggle caching on and off in the development environment(restart server) |
+   |                      |                                                                          |
 * Logger
   - live log feed: tail -f log/development.log
 
@@ -203,6 +208,18 @@
 * Tests
 ** RSpec
 ** Unit
+** Rails
+*** cli
+    |                  |   |
+    |------------------+---|
+    | test             |   |
+    | test:controllers |   |
+*** files
+    |                 |             |
+    |-----------------+-------------|
+    | assert_select   | integration |
+    | assert_response |             |
+
 * REST
 * JSON
 * Traits
@@ -218,6 +235,7 @@
   |        |   |             |
 * Misc
   HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
+
 * Priorities
   - TDD BDD
   - Rails / MVC
