@@ -53,12 +53,12 @@
 :END:
 * Progress
 ** Books
-   | Books                   | Chapter                                       | @                                | late | revision |
-   |-------------------------+-----------------------------------------------+----------------------------------+------+----------|
-   | Agile Rails Development | Task E: A Smarter Cart                        | Iteration E3: Finishing the Cart |      |          |
-   | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks                 |      |          |
-   | Active Record Basics    |                                               |                                  |      |          |
-   | Raisl Style Guide       | Controllers: Rendering                        |                                  |      |          |
+   | Books                   | Chapter                                       | @                | late | revision |
+   |-------------------------+-----------------------------------------------+------------------+------+----------|
+   | Agile Rails Development | Task F: Add a Dash of Ajax                    |                  |      |          |
+   | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
+   | Active Record Basics    |                                               |                  |      |          |
+   | Raisl Style Guide       | Controllers: Rendering                        |                  |      |          |
 
 ** SLOC
    | Project | folder                                                    | file           |
