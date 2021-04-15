@@ -21,6 +21,7 @@ autostart()
     done
 }
 
-[ "$DESKTOP_SESSION" == "plasma" ] && return
+[ "$DESKTOP_SESSION" == "plasma" ] && exit
+[ "$DESKTOP_SESSION" == "gnome" ] && exit
 
 autostart
