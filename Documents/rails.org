@@ -12,10 +12,14 @@
   - [[#database][Database]]
   - [[#misc][Misc]]
   - [[#tasks-rake][Tasks (rake)]]
+  - [[#log][Log]]
+  - [[#migration][Migration]]
   - [[#models][Models]]
   - [[#console][Console]]
   - [[#enviroment][Enviroment]]
+- [[#methods][Methods]]
 - [[#logger][Logger]]
+  - [[#methods][Methods]]
 - [[#active-record][Active Record]]
   - [[#associations][Associations]]
   - [[#validations][Validations]]
@@ -49,17 +53,17 @@
 :END:
 * Progress
 ** Books
-   | Books                   | Chapter                                       | @                | late | revision |
-   |-------------------------+-----------------------------------------------+------------------+------+----------|
-   | Agile Rails Development | Task E: A Smarter Cart                        |                  |      |          |
-   | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks |      |          |
-   | Active Record Basics    |                                               |                  |      |          |
-   | Raisl Style Guide       | Controllers: Rendering                        |                  |      |          |
+   | Books                   | Chapter                                       | @                                | late | revision |
+   |-------------------------+-----------------------------------------------+----------------------------------+------+----------|
+   | Agile Rails Development | Task E: A Smarter Cart                        | Iteration E3: Finishing the Cart |      |          |
+   | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks                 |      |          |
+   | Active Record Basics    |                                               |                                  |      |          |
+   | Raisl Style Guide       | Controllers: Rendering                        |                                  |      |          |
 
 ** SLOC
-   | Project | folder                                                    | file           | @ |
-   |---------+-----------------------------------------------------------+----------------+---|
-   | rails   | rails/activerecord/lib/active_record/associations/builder | association.rb |   |
+   | Project | folder                                                    | file           |
+   |---------+-----------------------------------------------------------+----------------+
+   | rails   | rails/activerecord/lib/active_record/associations/builder | association.rb |
 
 * Cli
 ** Database
@@ -90,6 +94,17 @@
    | what | how | desc |
    |------+-----+------|
    |      |     |      |
+
+** Log
+   |                  |   |
+   |------------------+---|
+   | :clear LOGS=test |   |
+
+** Migration
+   |                    |   |
+   |--------------------+---|
+   | AddXXXToTABLE      |   |
+   | RemoveXXXFromTABLE |   |
 
 ** Models
    | what   | how                                                                    | desc |
@@ -132,14 +147,27 @@
    | RAILS_ENV=production |                                                                          |
    | dev:cache            | toggle caching on and off in the development environment(restart server) |
    |                      |                                                                          |
+* Methods
+  |        |                                            |
+  |--------+--------------------------------------------|
+  | where  | returns an array of results                |
+  | findby | returns either an existing LineItem or nil |
+  |        |                                            |
+
 * Logger
   - live log feed: tail -f log/development.log
+  -  Every controller has a logger attribute.
+** Methods
+  |       |   |
+  |-------+---|
+  | error |   |
+  | debug |   |
+  | warn  |   |
 
   #+begin_src ruby
   Rails.logger.debug "This will only show in development"
   Rails.logger.warn "This will show in all environments"
   #+end_src
-
 * Active Record
   - Single-Table Inheritance
 ** Associations
