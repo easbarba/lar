@@ -6,6 +6,7 @@
   :END:
 :CONTENTS:
 - [[#dotfiles][Dotfiles]]
+  - [[#irbrc][irbrc]]
   - [[#cejo][Cejo]]
   - [[#blog][Blog]]
   - [[#asdf][asdf]]
@@ -65,6 +66,24 @@
 :END:
 
 * Dotfiles
+** irbrc
+   #+begin_src ruby
+
+
+# IRB.conf[:IRB_RC] = nil
+# IRB.conf[:BACK_TRACE_LIMIT]=16
+# IRB.conf[:USE_LOADER] = false
+# IRB.conf[:USE_MULTILINE] = nil
+# IRB.conf[:USE_SINGLELINE] = nil
+# IRB.conf[:USE_COLORIZE] = true
+# IRB.conf[:USE_TRACER] = false
+# IRB.conf[:IGNORE_SIGINT] = true
+# IRB.conf[:IGNORE_EOF] = false
+# IRB.conf[:PROMPT] = {...}
+# IRB.conf[:SAVE_HISTORY] = nil
+# IRB.conf[:INSPECT_MODE]=nil
+
+   #+end_src
 ** Cejo
 *** distro
     #+begin_src yaml
