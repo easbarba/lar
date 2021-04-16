@@ -116,6 +116,7 @@
 ** Books
    | Books                            | Chapter                                | @                                           | late                                          | revision |
    |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
+   | Confident Ruby                   | Perfoming Work                         |                                             |                                               |          |
    | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Two Other Forms of Class Definition         | Fibers, Threads, and Processes/Multithreading |          |
    | Closure in Ruby                  | The Power of Procs and Lambdas         | Implementing Lax                            |                                               |          |
    | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
