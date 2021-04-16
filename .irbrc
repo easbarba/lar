@@ -1,21 +1,13 @@
+# -*- ruby -*-
+
 require 'irb/completion'
 
 IRB.conf[:IRB_NAME] = "❯"
 IRB.conf[:PROMPT_MODE] = :DEFAULT
 IRB.conf[:AUTO_INDENT] = true
 
-# IRB.conf[:IRB_RC] = nil
-# IRB.conf[:BACK_TRACE_LIMIT]=16
-# IRB.conf[:USE_LOADER] = false
-# IRB.conf[:USE_MULTILINE] = nil
-# IRB.conf[:USE_SINGLELINE] = nil
-# IRB.conf[:USE_COLORIZE] = true
-# IRB.conf[:USE_TRACER] = false
-# IRB.conf[:IGNORE_SIGINT] = true
-# IRB.conf[:IGNORE_EOF] = false
-# IRB.conf[:PROMPT] = {...}
-# IRB.conf[:SAVE_HISTORY] = nil
-# IRB.conf[:INSPECT_MODE]=nil
+# This will allow us to access our previous 3 evaluations in an IRB console
+IRB.conf[:EVAL_HISTORY] = 3
 
 module IRBExtension
   def start
