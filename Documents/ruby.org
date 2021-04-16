@@ -137,12 +137,12 @@
 ** Priorities
    - Ruby
    - Rails { Active Admin, }
-   - PostgreSQL
-   - Git
-   - API REST { YAML, JSON, XML, SOAP }
    - Unit Test / Rspec
    - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
+   - Git
    - HTML/CSS/JS
+   - PostgreSQL
+   - API REST { YAML, JSON, XML, SOAP }
    - Container
    - Sidekiq
    - Heroku
@@ -825,16 +825,18 @@
    #+end_src
 ** enumerable
    #+begin_src ruby
-
    # iterate over only those lines that end with a d
    File.open("ordinal").grep(/d$/) do |line|
      puts line
    end
-
-
-
-
    #+end_src
+*** compact
+    #+begin_src ruby
+
+   enum = [1, nil, 3, nil, 5].to_enum.compact
+   enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
+
+    #+end_src
 ** enumerator
 *** lazy
     #+begin_src ruby
