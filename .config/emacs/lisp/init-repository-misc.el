@@ -233,6 +233,8 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://boringrails.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWus46Vy8gwf1rRLu4II0w" ;; Chavoso da USP
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCMUoZehUZBhLb8XaTc8TQrA" ;; FullCycle
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
