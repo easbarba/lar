@@ -10,7 +10,7 @@ wmclassmatch=1
 
 [10]
 Description=csgo
-desktop=4
+desktop=5
 desktoprule=2
 wmclass="csgo_linux64"
 wmclassmatch=1
