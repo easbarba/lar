@@ -3,6 +3,7 @@
 ;; =========================
 
 (use-package async
+  :disabled
   :after dired
   :config
   (when (equal system-name "WINDOWS-LX")
