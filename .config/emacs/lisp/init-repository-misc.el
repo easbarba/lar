@@ -233,6 +233,7 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://boringrails.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW42h2qDbbX3a9RsQT4pnYQ" ;; Paulo Gala
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWus46Vy8gwf1rRLu4II0w" ;; Chavoso da USP
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCMUoZehUZBhLb8XaTc8TQrA" ;; FullCycle
