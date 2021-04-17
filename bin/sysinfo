@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# DEBUG OPTIONS
+set -euxo pipefail
+
 # * Dependencies: sensors, ping, awk, grep, sed, amd ryzen, vega 10, debian
 
 deps=(sensors ping awk grep sed) # TODO: Check deps
@@ -83,7 +86,7 @@ arch-update()
 
 update-debian()
 {
-    local packs=$(apt list --upgradable 2>&1)
+    local output=$(aptitude full-upgrade --simulate --assume-yes)
     local num=$(($packs | wc -l))
     printf "%s" "Packs: $num"
 }

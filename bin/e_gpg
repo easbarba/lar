@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# set -e
+# Debug Options
+set -euxo pipefail
 
 # * "TIP: RSA Default -> 4096 bits"
 gpg --full-generate-key

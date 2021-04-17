@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# set -e
+# DEBUG OPTIONS
+set -euxo pipefailxo pipefail
+
 EMAIL="$USER@pm.me"
 
 # Generating a new SSH key

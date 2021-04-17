@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Debug Options
+set -euxo pipefail
+
+
 bootstrap()
 {
     [[ -x $(command -v guix) ]] && return

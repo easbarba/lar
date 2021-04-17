@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# set -e
+# Debug Options
+set -euxo pipefail
 
 # * ASDF
 

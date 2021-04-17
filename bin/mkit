@@ -4,6 +4,9 @@
 # Shell Supported: GNU Bash
 # Inspiration: https://github.com/tanrax/terminal-AdvancedNewFile
 
+# DEBUG OPTIONS
+set -euxo pipefail
+
 # * ARGUMENTS
 
 arguments=("$@")

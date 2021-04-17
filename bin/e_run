@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# set -e
+# DEBUG OPTIONS
+set -euxo pipefailxo pipefail
 
 NUMBER=${1}
 
