@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euxo pipefail
+
+
+URL=$(xclip -selection clipboard -o)
+
+cejo media get $URL vorbis
