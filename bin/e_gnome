@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euxo pipefail
+
+switch()
+{
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']"
+
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>A']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>D']"
+}
+
+move()
+{
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Super><Shift>1']"
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Super><Shift>2']"
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Super><Shift>3']"
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Super><Shift>4']"
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Super><Shift>5']"
+}
+
+volume()
+{
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Super><Shift>4']"
+
+    gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+    gsettings set org.gnome.desktop.wm.preferences audible-bell false
+}
+
+
+misc()
+{
+    gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
+    gsettings set org.gnome.desktop.wm.preferences workspace-names "['MX','Read','Term','WWW','Media']"
+
+    gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>M']"
+
+    gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    gsettings set org.gnome.desktop.background show-desktop-icons false
+}
+
+apps()
+{
+    gsettings set org.gnome.shell.extensions.auto-move-windows application-list "['emacs.desktop:1', 'org.gnome.Evince.desktop:2', 'okular.desktop:2', 'atril.desktop:2', 'org.gnome.Terminal.desktop:3', 'firefox.desktop:4', 'mpv.desktop:5', 'vlc.desktop:5', 'clementine.desktop:5', 'steam.desktop:5', 'transmission-gtk.desktop:5', 'telegramdesktop.desktop:5', 'okularApplication_kimgio.desktop:1']"
+}
+
+
+# * RUN
+
+switch
+move
+misc
+apps
