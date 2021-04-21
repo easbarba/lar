@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=mate-terminal
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_US]=Terminal
+Icon=mate-terminal
+Name=Terminal
+Comment[en_US]=A terminal emulator for the MATE desktop
+Comment=A terminal emulator for the MATE desktop
+X-MATE-Autostart-Delay=0

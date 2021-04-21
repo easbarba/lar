@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t;
 
 (use-package pdf-tools
+  :disabled
   :config
   (pdf-tools-install)
   ;; (add-hook 'pdf-tools-enabled-hook 'auto-revert-mode)
@@ -20,7 +21,7 @@
 	      (setq-local mode-line-position
 			  '(" ("
 			    ;; (:eval (nth (1- (pdf-view-current-page))
-			    ;; 		  (pdf-cache-pagelabels)))
+			    ;;		  (pdf-cache-pagelabels)))
 			    ;; "/"
 			    (:eval (number-to-string
 				    (pdf-view-current-page)))

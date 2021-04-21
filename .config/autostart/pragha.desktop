@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=pragha
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[en_US]=Pragha
+Name=Pragha
+Icon=pragha
+Comment[en_US]=A lightweight GTK+ music player
+Comment=A lightweight GTK+ music player
+X-MATE-Autostart-Delay=0
