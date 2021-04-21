@@ -37,7 +37,7 @@ packages()
 
     qt=(kdeconnect kdenlive)
 
-    gtk=(cheese transmission-gtk pragha numix-icon-theme numix-gtk-theme)
+    gtk=(cheese transmission-gtk pragha materia-gtk-theme apirus-icon-theme suru-icon-theme)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
 	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
