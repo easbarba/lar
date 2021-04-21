@@ -1,0 +1,10 @@
+---
+name: exaile
+url: https://github.com/exaile/exaile
+tag: '4.1.1'
+default: master
+patch: none
+commands:
+  - make install PREFIX={0}
+purge:
+  - make clean
