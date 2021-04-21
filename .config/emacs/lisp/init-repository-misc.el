@@ -233,7 +233,7 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://boringrails.com/feed.xml"
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW42h2qDbbX3a9RsQT4pnYQ" ;; Paulo Gala
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCrxf9jYw4gva_9jwb-77AqQ" ;; Guru SP
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWus46Vy8gwf1rRLu4II0w" ;; Chavoso da USP
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCMUoZehUZBhLb8XaTc8TQrA" ;; FullCycle
@@ -253,7 +253,6 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" ;; Paulo Kretcheu
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SbfAPZf8SMvAxp8t51qtQ" ;; DebianConf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
