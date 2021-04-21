@@ -35,9 +35,9 @@ packages()
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
 	    firewall-config socat vrms fzf aria2)
 
-    qt=(kdeconnect kdenlive clementine)
+    qt=(kdeconnect kdenlive)
 
-    gtk=(cheese transmission-gtk atril numix-icon-theme numix-gtk-theme)
+    gtk=(cheese transmission-gtk pragha numix-icon-theme numix-gtk-theme)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
 	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
