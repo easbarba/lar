@@ -2275,6 +2275,17 @@
 ** SystemD Read Later
    https://www.maketecheasier.com/make-linux-boot-faster/
 
+* Desktop Environments
+
+** GNOME
+
+*** Gsettings/Dconf
+    |                  |                  |
+    |------------------+------------------|
+    | reset to default | dconf reset -f / |
+    |                  |                  |
+
+
 * Disk Space and Partition
   # df - report file system disk space usage
   # du - estimate file space usage
