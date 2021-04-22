@@ -2134,6 +2134,78 @@
 *** Htop
 *** Top
 ** Misc
+*** devilspie
+    get_window_name()
+     returns a string containing the name of the current window.
+
+    get_application_name()
+    returns the application name of the current window.
+
+    set_window_position(xpos, ypos)
+    Sets the position of a window.
+
+    set_window_size(xsize, ysize)
+    Sets the size of a window.
+
+    set_window_geometry(xpos, ypos, xsize ysize)
+    Set the geometry of a window.
+
+    make_always_on_top()
+    Set the windows always on top flag.
+
+    set_on_top()
+    Sets a window on top of the others (this will however not lock the window in this position).
+
+    debug_print()
+    Debug helper that prints a string to stdout. It is only printed if devilspie2 is run with the --debug option.
+
+    shade()
+    "Shades" a window, showing only the title-bar.
+
+    unshade()
+    Unshades a window - the opposite of "shade"
+
+    maximize()
+    maximizes a window
+
+    unmaximize()
+    unmaximizes a window
+
+    maximize_vertically()
+    maximizes the current window vertically.
+
+    maximize_horisontally()
+    maximizes the current window horisontally.
+
+    minimize()
+    minimizes a window
+
+    unminimize()
+    unminimizes a window, that is bringing it back to screen from the minimized position/size.
+
+    decorate_window()
+    Shows all window decoration.
+
+    undecorate_window()
+    Removes all window decorations.
+
+    set_window_workspace(number)
+    Moves a window to another workspace. The number variable starts counting at 1.
+
+    change_workspace(number)
+    Changes the current workspace to another. The number variable starts counting at 1.
+
+    pin_window()
+    asks the window manager to put the window on all workspaces.
+
+    unpin_window()
+    Asks the window manager to put window only in the currently active workspace.
+
+    stick_window()
+    Asks the window manager to keep the window's position fixed on the screen, even when the workspace or viewport scrolls.
+
+    unstick_window()
+    Asks the window manager to not have window's position fixed on the screen when the workspace or viewport scrolls.
 *** cut
 *** cat
     |    |                 |
@@ -2276,7 +2348,6 @@
    https://www.maketecheasier.com/make-linux-boot-faster/
 
 * Desktop Environments
-
 ** GNOME
 
 *** Gsettings/Dconf
@@ -2284,7 +2355,6 @@
     |------------------+------------------|
     | reset to default | dconf reset -f / |
     |                  |                  |
-
 
 * Disk Space and Partition
   # df - report file system disk space usage

@@ -29,7 +29,7 @@ packages()
     system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
 	    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
 	    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
-	    cpio lhasa lzop atool wmctrl poppler-utils linux-perf sysstat jq
+	    cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
 	    dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
 	    locate info wget stow parted texinfo autoconf automake gnutls-bin
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
@@ -37,7 +37,7 @@ packages()
 
     qt=(kdeconnect kdenlive)
 
-    gtk=(cheese transmission-gtk pragha materia-gtk-theme apirus-icon-theme suru-icon-theme)
+    gtk=(cheese transmission-gtk pragha materia-gtk-theme papirus-icon-theme suru-icon-theme)
 
     infra=(podman wine winetricks wine32 qemu qemu-system-gui
 	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
@@ -62,7 +62,7 @@ packages()
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
-	  screenfetch aspell aspell-pt-br gopher)
+	  screenfetch aspell aspell-pt-br gopher telegram-desktop)
 
     media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
 	   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
@@ -95,7 +95,6 @@ packages()
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
-    e_foreach "$command" "${latex[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${amd[@]}"
