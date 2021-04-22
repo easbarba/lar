@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # DEBUG OPTIONS
-set -euxo pipefailxo pipefail
+set -euxo pipefail
 
 # * SOURCING
 source "$HOME/.asdf/completions/asdf.bash"
