@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# DEBUG OPTIONS
-set -euxo pipefailxo pipefail
+# Debug Options
+set -euxo pipefail
 
 EMAIL="$USER@pm.me"
 
