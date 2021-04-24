@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
+# Description:
+# Deps: youtube-dl, ffmpeg
 
-URL=$(xclip -selection clipboard -o)
-
-cejo media play $URL
+cejo media play "$(e_url)"

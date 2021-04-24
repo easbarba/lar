@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
+# Description:
+# Deps: youtube-dl, ffmpeg
 
-URL=$(xclip -selection clipboard -o)
+# TODO: check deps are available
+# TODO: Url has url?
+# TODO: Url as standalone script
 
-cejo media get $URL vorbis
+EXT=vorbis
+
+notify-send "Getting Audio"
+
+cejo media get "$(e_url)" "$EXT"

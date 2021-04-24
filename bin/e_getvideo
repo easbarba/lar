@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
+# Description:
+# Deps: youtube-dl, ffmpeg
 
-URL=$(xclip -selection clipboard -o)
+EXT=vorbis
 
-cejo media get $URL
+cejo media get "$(e_url)" mkv
