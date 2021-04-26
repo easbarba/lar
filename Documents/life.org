@@ -383,6 +383,7 @@
 * Donations
   https://www.acnur.org
 * Paintings
+   - Candido Portinari
    - J. M. W. Turner
 * Résumé
   #+OPTIONS: toc:nil author:nil date:nil num:nil
