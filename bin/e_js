@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
 # Sourcing
 source "$HOME/.asdf/completions/asdf.bash"
 source "$HOME/.asdf/asdf.sh"
 
-asdf_nodejs()
+nodejs()
 {
     # https://github.com/asdf-vm/asdf-nodejs
 
     [[ -f "$HOME/.asdf/shims/node" ]] && return
-
 
     echo 'Installing nodejs binaries'
 
@@ -26,11 +25,11 @@ asdf_nodejs()
     asdf global nodejs $default
 }
 
-asdf_yarn()
+yarn()
 {
     # https://github.com/asdf-vm/asdf-yarn
 
-    [[ -f "$HOME/.asdf/shims/yarn" ]] && return
+    # [[ -f "$HOME/.asdf/shims/yarn" ]] && return
 
     echo 'Installing Yarn binaries'
 
@@ -59,6 +58,6 @@ packages()
 
 echo 'Nodejs - ASDF'
 
-asdf_nodejs
-asdf_yarn
+nodejs
+yarn
 packages
