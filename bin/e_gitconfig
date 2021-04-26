@@ -6,7 +6,7 @@ set -euxo pipefail
 git config --global init.defaultBranch main
 
 git config --global user.name "$USER"
-git config --global user.email "$USER@pm.me"
+git config --global user.email "$USER@tutanota.me"
 
 git config --global core.editor "emacs -nw"
 git config --global core.autocrlf input
