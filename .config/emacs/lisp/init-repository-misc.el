@@ -233,6 +233,7 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://boringrails.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCss9-PQj-X5aMhLYSt60NDw" ;; Classe Esquerda
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCOjUlJ4EpPxuhtT0zEVw25A" ;; Opera Mundi
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrxf9jYw4gva_9jwb-77AqQ" ;; Guru SP
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWus46Vy8gwf1rRLu4II0w" ;; Chavoso da USP
@@ -669,16 +670,14 @@
   :config
   (defun e/cool-themes()
     (interactive)
-    (let* ((day-themes '(doom-ayu-light
-			 doom-acario-light
+    (let* ((day-themes '(doom-acario-light
 			 doom-flatwhite
 			 doom-one-light
 			 doom-homage-white
 			 doom-opera-light
 			 doom-gruvbox-light
 			 doom-solarized-light
-			 doom-nord-light
-			 doom-homage-white))
+			 doom-nord-light))
 	  (night-themes '(doom-gruvbox
 			  doom-miramare
 			  doom-dracula
@@ -687,7 +686,7 @@
 			  doom-rouge))
 	  (current-hour (string-to-number
 			 (format-time-string "%H" (current-time))))
-	  (current-themes day-themes))
+	  (current-themes night-themes))
       (e/change-theme (nth (random (length current-themes))
 		       current-themes) t)))
   (e/cool-themes))
