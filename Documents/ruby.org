@@ -128,12 +128,13 @@
    | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
 
 ** SLOC
-   | Project    | folder                 | file               | @                |
-   |------------+------------------------+--------------------+------------------|
-   | ruby       | lib/cgi                | cookie.rb          |                  |
-   | rake       | lib/rake               | file_task          | def out_of_date? |
-   | bundle     | lib/bundler/installer  | gem_installer.rb   |                  |
-   | solargraph | lib/solargraph/api_map | bundler_methods.rb |                  |
+   | Project       | folder                                                        | file               | @                |
+   |---------------+---------------------------------------------------------------+--------------------+------------------|
+   | ruby          | cgi                                                           | cookie.rb          |                  |
+   | rake          | rake                                                          | file_task          | def out_of_date? |
+   | bundle        | bundler/installer                                             | gem_installer.rb   |                  |
+   | solargraph    | solargraph/api_map                                            | bundler_methods.rb |                  |
+   | dry-container | dry/container                                                 | mixin.rb           |                  |
 
 ** Priorities
    - Ruby
@@ -298,6 +299,10 @@
   - rack: A modular Ruby web server interface.
 
 * Features
+** Classes
+   #+begin_src ruby
+   [].methods.grep /^re/ # finds methods begins with re
+   #+end_src
 ** path
    #+begin_src ruby
    $LOAD_PATH.each { |x| puts x } or $:
