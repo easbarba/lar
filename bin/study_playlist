@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+# Description:
+# Deps: clementine
+
+clementine --load ~/.config/Clementine/playlists/Study.xspf
+clementine -f
