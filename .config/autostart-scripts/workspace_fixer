@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+devil() { devilspie2 --folder ~/.config/devilspie2 & }
+
+devil

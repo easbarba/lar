@@ -67,12 +67,6 @@ asdf_js()
     export PATH="$dir"${PATH:+:}$PATH
 }
 
-apps()
-{
-    devilspie2 --folder  ~/.config/devilspie2 &
-}
-
-
 # * RUN
 
 home_bin
