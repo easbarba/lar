@@ -2,31 +2,20 @@
 <playlist version="1" xmlns="http://xspf.org/ns/0/">
   <trackList>
     <track>
-      <location>/midias/Music/Djent/Animals as Leaders/Animals as Leaders - Animals as Leaders/02 - Soraya.flac</location>
-      <title>Soraya</title>
-      <creator>Animals as Leaders</creator>
-      <album>Animals as Leaders</album>
-      <duration>267000</duration>
+      <location>/midias/Music/Metal/Meshuggah/Albums/(1998) Chaosphere/04 Neurotica.flac</location>
+      <title>Neurotica</title>
+      <creator>Meshuggah</creator>
+      <album>Chaosphere</album>
+      <duration>319000</duration>
+      <trackNum>4</trackNum>
+    </track>
+    <track>
+      <location>/midias/Music/Metal/Meshuggah/Albums/(1998) Chaosphere/02 New Millenium Cyanide Christ.flac</location>
+      <title>New Millenium Cyanide Christ</title>
+      <creator>Meshuggah</creator>
+      <album>Chaosphere</album>
+      <duration>335000</duration>
       <trackNum>2</trackNum>
-      <image>(embedded)</image>
-    </track>
-    <track>
-      <location>/midias/Music/Djent/Animals as Leaders/Animals as Leaders - Animals as Leaders/08 - Cafo.flac</location>
-      <title>Cafo</title>
-      <creator>Animals as Leaders</creator>
-      <album>Animals as Leaders</album>
-      <duration>401000</duration>
-      <trackNum>8</trackNum>
-      <image>(embedded)</image>
-    </track>
-    <track>
-      <location>/midias/Music/Djent/Animals as Leaders/Animals as Leaders - Animals as Leaders/01 - Tempting Time.flac</location>
-      <title>Tempting Time</title>
-      <creator>Animals as Leaders</creator>
-      <album>Animals as Leaders</album>
-      <duration>323000</duration>
-      <trackNum>1</trackNum>
-      <image>(embedded)</image>
     </track>
   </trackList>
 </playlist>
