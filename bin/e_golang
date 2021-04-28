@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+# Sourcing
+source "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.asdf/asdf.sh"
+
+binary()
+{
+    # https://github.com/kennyp/asdf_golang
+    echo 'Installing golang binaries'
+
+    asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+
+    asdf install golang latest
+
+    asdf global golang "$(asdf latest golang)"
+}
+
+packages()
+{
+    echo 'Installing golang packages'
+
+    export GO111MODULE=on
+
+    local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
+
+    for pack in "${packages[@]}"
+    do
+	go get "${pack}"
+    done
+}
+
+# * RUN
+
+echo 'Golang - ASDF'
+
+binary
+packages
