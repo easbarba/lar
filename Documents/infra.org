@@ -703,21 +703,24 @@
 
     #+END_SRC
 * Skills
-  | Skill                           | eg                                                                                          |
-  |---------------------------------+---------------------------------------------------------------------------------------------|
-  | Unix                            | CentOs, Ubuntu                                                                              |
-  | Languages                       | shell, go, ruby, python, perl                                                               |
-  | Controle De Versionamento       | git                                                                                         |
-  | Container                       | Docker Kubernetes OpenShift Helm Rancher                                                    |
-  | Config Management               | Ansible Chef Puppet Salt                                                                    |
-  | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda |
-  | Continuous Integration/Delivery | jenkins                                                                                     |
-  | Virtualization                  |                                                                                             |
-  | Infra provisioning              | Terraform                                                                                   |
-  | Observability e Monitoring      | nagios Nginx, Apache                                                                        |
-  | agile                           | scrum                                                                                       |
-  | micro services                  |                                                                                             |
-  | cloud native                    |                                                                                             |
+  | Skill                           | eg                                                                                               |
+  |---------------------------------+--------------------------------------------------------------------------------------------------|
+  | Unix                            | CentOs, Ubuntu                                                                                   |
+  | Languages                       | shell, go, ruby, python, perl                                                                    |
+  | Controle De Versionamento       | git                                                                                              |
+  | Container                       | Docker Kubernetes OpenShift Helm Rancher                                                         |
+  | Config Management               | Ansible Chef Puppet Salt                                                                         |
+  | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda      |
+  | Continuous Integration/Delivery | jenkins                                                                                          |
+  | Virtualization                  |                                                                                                  |
+  | Infra provisioning              | Terraform                                                                                        |
+  | Observability e Monitoring      | nagios Nginx, Apache                                                                             |
+  | agile                           | scrum                                                                                            |
+  | micro services                  |                                                                                                  |
+  | cloud native                    |                                                                                                  |
+  |                                 | performance issues, package management, load estimation, kernel tuning, networking configuration |
+  | Networking                      | HTTP, DNS, TCP/IP, the OSI Model, Subnetting and Load Balancing strategies                       |
+  |                                 |                                                                                                  |
 * DevOps
   |                 |                                                |
   |-----------------+------------------------------------------------|
