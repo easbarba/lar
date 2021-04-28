@@ -67,10 +67,16 @@ asdf_js()
     export PATH="$dir"${PATH:+:}$PATH
 }
 
+golang()
+{
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+}
+
 # * RUN
 
 home_bin
 asdf
 asdf_js
 guix
-apps
+golang
