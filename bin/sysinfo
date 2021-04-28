@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # DEBUG OPTIONS
-set -euxo pipefail
+set -euo pipefail
 
 # * Dependencies: sensors, ping, awk, grep, sed, amd ryzen, vega 10, debian
 
