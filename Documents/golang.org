@@ -126,11 +126,29 @@
    | go          | src/archive/tar | common.go |   |
 * Features
 ** cli
+*** build
+    - build project and create binary
+    |                  |              |
+    |------------------+--------------|
+    | -o <name> <file> | set location |
+    |                  |              |
+
+*** install
+    |               |                            |
+    |---------------+----------------------------|
+    | <name>        |                            |
+    | <name>@latest | latest version of the tool |
+
+*** run
+    |   |   |
+    |---+---|
+    |   |   |
+
 *** env
-    |     |                                   |
-    |-----+-----------------------------------|
-    | env | list golang environment variables |
-    |     |                                   |
+    - list golang environment variables
+    |   |   |
+    |---+---|
+    |   |   |
 
 ** mutex
    #+begin_src go emacs-lisp
