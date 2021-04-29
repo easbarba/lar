@@ -2447,9 +2447,12 @@
 
    #+end_src
 ** Networks Toolings
-   |        |   |
-   |--------+---|
-   | TCP/IP |   |
+*** ip
+    | command | ...         |
+    |---------+-------------|
+    | link    | Mac Address |
+    |         |             |
+
 ** Firewall
 *** Firewalld
     https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7
