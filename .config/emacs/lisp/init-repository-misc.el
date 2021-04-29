@@ -233,6 +233,7 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://boringrails.com/feed.xml"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdngmbVKX1Tgre699-XLlUA" ;; TechTips w/ Nana
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCss9-PQj-X5aMhLYSt60NDw" ;; Classe Esquerda
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCOjUlJ4EpPxuhtT0zEVw25A" ;; Opera Mundi
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrxf9jYw4gva_9jwb-77AqQ" ;; Guru SP
