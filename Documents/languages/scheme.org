@@ -114,12 +114,15 @@
   :END:
 * Progress
 ** Books
-   | name | chapter | @ | late | revision |
-   |------+---------+---+------+----------|
-   |      |         |   |      |          |
+   | name      | chapter | @                                          | late | revision |
+   |-----------+---------+--------------------------------------------+------+----------|
+   | Scheme PL |       2 | Section 2.3. Evaluating Scheme Expressions |      |          |
 
 ** LDC
    | Source Code | folder | file | @ |
    |-------------+--------+------+---|
-   | guile       |        |      |   |
    | guix        |        |      |   |
+   | guile       |        |      |   |
+
+* Information
+  https://schemers.org/
