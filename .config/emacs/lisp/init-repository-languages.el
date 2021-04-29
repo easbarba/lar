@@ -91,11 +91,12 @@
 
 (use-package geiser
   :defer 1
-  :commands (geiser-mode)
+  :hook (scheme-mode . geiser)
   :custom
   (geiser-active-implementations '(guile))
-  (geiser-repl-history-filename (concat user-emacs-directory
-					"geiser-history")))
+  (geiser-guile-binary "guile")
+  (geiser-default-implementation 'guile)
+  (geiser-repl-history-filename (f-join user-emacs-directory "geiser-history")))
 
 ;; ====================
 ;; ** JAVASCRIPT
