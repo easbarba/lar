@@ -164,9 +164,9 @@
 * Networking
 ** Progress
 *** Books
-    | Books               | capitulo       | em                    | @later | revisao |
-    |---------------------+----------------+-----------------------+--------+---------|
-    | Comptia Net+ Meyers | Network models | Historical/Conceptual |        |         |
+    | Books               | capitulo       | em                   | @later | revisao |
+    |---------------------+----------------+----------------------+--------+---------|
+    | Comptia Net+ Meyers | Network models | Into the Central Box |        |         |
 
 ** Load balancing
 ** Subneting
