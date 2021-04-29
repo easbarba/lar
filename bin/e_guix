@@ -39,7 +39,7 @@ packages()
 
     for pack in "${packages[@]}"
     do
-	guix install "${pack}"
+	guix install "$pack"
     done
 }
 
