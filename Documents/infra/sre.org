@@ -94,111 +94,14 @@
   :END:
 * Progress
 ** Buch
-   | Buch                                         | Capitulo       | em                        | tarde                                              | revisao |
-   |----------------------------------------------+----------------+---------------------------+----------------------------------------------------+---------|
-   | CompTIA Networkplus Certification All-in-One | Network Models |                           |                                                    |         |
-   | Computer Networks                            | INTRODUCTION   | USES OF COMPUTER NETWORKS | Text messaging or texting is tremendously popular. |         |
-   | Distributed Systems                          |                |                           |                                                    |         |
-   | LPIC-1 101-400                               |                |                           |                                                    |         |
-   | Chef                                         |                |                           |                                                    |         |
-   | Puppet                                       |                |                           |                                                    |         |
-   | CI/CD                                        |                |                           |                                                    |         |
-   | Docker/Kubernetes                            |                |                           |                                                    |         |
-* Containers
-** Fortschritt
-   |               |                                     |                                                 |
-   |---------------+-------------------------------------+-------------------------------------------------|
-   | Docker 4 Devs | Sharing Containers Using Docker Hub | Implementing a sample microservices application |
-   |               |                                     |                                                 |
-
-** Podman
-*** docs
-    http://docs.podman.io/en/latest/index.html
-
-*** commands
-    |          |                                           |
-    |----------+-------------------------------------------|
-    | images   |                                           |
-    | rmi <ID> | Removes one or more locally stored images |
-    | info     |                                           |
-    | run      |                                           |
-    | run      |                                           |         |                                           |
-
-*** tricks
-    - podman info | grep rootless
-*** fixes
-**** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
-     Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
-**** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
-     sudo sysctl -w kernel.unprivileged_userns_clone=1
-** Docker
-*** Fortschritt
-    |                       |                        |
-    |-----------------------+------------------------|
-    | Docker For Developers | Introduction to Docker |
-
-*** Dockerfile
-*** Traits
-    - cgroups
-    - use linux security primitives
-    - prevent MITM attack
-    - images are immutable
-*** Commands
-    | command             | description                            |
-    |---------------------+----------------------------------------|
-    | login               |                                        |
-    | container ls        |                                        |
-    | images              |                                        |
-    | pull <img>          |                                        |
-    | ps                  |                                        |
-    | run <img>           |                                        |
-    | run -d <img>        |                                        |
-    | run -dp 80:80 <img> |                                        |
-    | stop <id>           |                                        |
-    | rm $(docker ps -aq) | remove all images running              |
-    | run --name <name>   |                                        |
-    | run -rm             | clean up when the container exits      |
-    | run -p              | port                                   |
-    | exec -it            | run command in container interactively |
-    |                     |                                        |
-* Networking
-** Progress
-*** Books
-    | Books               | capitulo       | em                   | @later | revisao |
-    |---------------------+----------------+----------------------+--------+---------|
-    | Comptia Net+ Meyers | Network models | Into the Central Box |        |         |
-
-** Load balancing
-** Subneting
-** Models
-*** OSI Model
-    - 7 layers
-    - works for almost every type of network, even extremely old and long-obsolete ones
-**** Layers
-***** Layer 7 Application
-***** Layer 6 Presentation
-***** Layer 5 Session
-***** Layer 4 Transport
-***** Layer 3 Network
-***** Layer 2 Data Link
-***** Layer 1 Physical
-*** TCP/IP
-** Protocols
-*** HTTP
-*** HTTPS
-*** FTP
-*** SSL/TLS
-*** SSH
-**** OpenSSH
-     - ControlPersist
-     - ssh-copy-id
-** Terms
-   - hotspot
-   - VOIP
-   - IPTV
-   - RFID
-   - 2 family (p2p)
-   - desktop sharing
+   | Buch                                         | Capitulo                                       | em                        | tarde                                              | revisao |
+   |----------------------------------------------+------------------------------------------------+---------------------------+----------------------------------------------------+---------|
+   | Distributed Systems                          |                                                |                           |                                                    |         |
+   | LPIC-1 101-400                               |                                                |                           |                                                    |         |
+   | Chef                                         |                                                |                           |                                                    |         |
+   | Puppet                                       |                                                |                           |                                                    |         |
+   | CI/CD                                        |                                                |                           |                                                    |         |
+   | DevOps HandBook                              | Agile, Continuous Delivery, and the Three Ways |                           |                                                    |         |
 * Infra Provisioning
 ** CloudFormation
 ** Pulumi
@@ -739,4 +642,3 @@
 * DevOps
   |                 |                                                |
   |-----------------+------------------------------------------------|
-  | DevOps HandBook | Agile, Continuous Delivery, and the Three Ways |

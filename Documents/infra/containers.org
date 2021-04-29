@@ -1,0 +1,57 @@
+#+TILE: Containers - Annotations
+
+* Progresso
+  |                   |                                     |                                                 |   |   |
+  |-------------------+-------------------------------------+-------------------------------------------------+---+---|
+  | Docker 4 Devs     | Sharing Containers Using Docker Hub | Implementing a sample microservices application |   |   |
+  | Docker/Kubernetes |                                     |                                                 |   |   |
+* Podman
+** docs
+   http://docs.podman.io/en/latest/index.html
+
+** commands
+   |          |                                           |
+   |----------+-------------------------------------------|
+   | images   |                                           |
+   | rmi <ID> | Removes one or more locally stored images |
+   | info     |                                           |
+   | run      |                                           |
+   | run      |                                           |         |                                           |
+
+** tricks
+   - podman info | grep rootless
+** fixes
+*** "sudo -k -n podman version --format " exit status 1: sudo: a password is required
+    Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
+*** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
+    sudo sysctl -w kernel.unprivileged_userns_clone=1
+* Docker
+** Fortschritt
+   |                       |                        |
+   |-----------------------+------------------------|
+   | Docker For Developers | Introduction to Docker |
+
+** Dockerfile
+** Traits
+   - cgroups
+   - use linux security primitives
+   - prevent MITM attack
+   - images are immutable
+** Commands
+   | command             | description                            |
+   |---------------------+----------------------------------------|
+   | login               |                                        |
+   | container ls        |                                        |
+   | images              |                                        |
+   | pull <img>          |                                        |
+   | ps                  |                                        |
+   | run <img>           |                                        |
+   | run -d <img>        |                                        |
+   | run -dp 80:80 <img> |                                        |
+   | stop <id>           |                                        |
+   | rm $(docker ps -aq) | remove all images running              |
+   | run --name <name>   |                                        |
+   | run -rm             | clean up when the container exits      |
+   | run -p              | port                                   |
+   | exec -it            | run command in container interactively |
+   |                     |                                        |
