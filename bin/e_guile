@@ -33,7 +33,7 @@ install()
 
 # * Run
 
-echo "Installing $LANG binaries"
+echo "Installing ${LANG^}"
 
 keys
 add
