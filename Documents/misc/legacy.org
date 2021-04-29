@@ -45,12 +45,12 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#languages][Languages]]
+  - [[#golang][Golang]]
   - [[#elixir][Elixir]]
   - [[#scheme][Scheme]]
   - [[#common-lisp][Common Lisp]]
   - [[#haskell][Haskell]]
   - [[#elixir][Elixir]]
-  - [[#guile][Guile]]
   - [[#c][C]]
   - [[#rust][Rust]]
   - [[#net][.NET]]
@@ -187,163 +187,179 @@ upgrade: upgrade
     #+end_src
 *** floss
    #+begin_src yaml
+--- # golang
+- https://github.com/golang-standards/project-layout
+- https://github.com/hashicorp/nomad
+- https://github.com/hashicorp/consul
+- https://github.com/hashicorp/terraform
+- https://github.com/containers/buildah
+- https://github.com/containers/podman
+- https://github.com/sourcegraph/go-langserver
+- https://github.com/gorilla/mux
+- https://github.com/cli/cli
+- https://github.com/rclone/rclone
+- https://github.com/avelino/awesome-go
+- https://github.com/kubernetes-sigs/kind/
+- https://github.com/kubernetes/kubernetes
+- https://github.com/adonovan/gopl.io
+- https://github.com/golang/net
+- https://github.com/golang/tools
+- https://github.com/golang/go
+
+
    --- # c
-   - https://gitlab.freedesktop.org/mesa/mesa.git
-   - git://source.winehq.org/git/wine.git
-   - https://github.com/openssh/openssh-portable.git
-   - https://github.com/libressl-portable/portable.git
-   - https://git.suckless.org/dwm
-   - https://github.com/zsh-users/zsh.git
-   - https://github.com/git/git.git
-   - https://github.com/tmux/tmux.git
-   - https://github.com/antirez/redis.git
-   - https://github.com/curl/curl.git
-   - git://c9x.me/qbe.git
-   - https://github.com/mate-desktop/mate-terminal
-   - https://github.com/mate-desktop/atril
-   - https://github.com/mate-desktop/marco
+      - https://gitlab.freedesktop.org/mesa/mesa.git
+      - git://source.winehq.org/git/wine.git
+      - https://github.com/openssh/openssh-portable.git
+      - https://github.com/libressl-portable/portable.git
+      - https://git.suckless.org/dwm
+      - https://github.com/zsh-users/zsh.git
+      - https://github.com/git/git.git
+      - https://github.com/tmux/tmux.git
+      - https://github.com/antirez/redis.git
+      - https://github.com/curl/curl.git
+      - git://c9x.me/qbe.git
+      - https://github.com/mate-desktop/mate-terminal
+      - https://github.com/mate-desktop/atril
+      - https://github.com/mate-desktop/marco
 
-   --- # elixir
-   - https://github.com/bitwalker/distillery
-   - https://github.com/ueberauth/guardian
-   - https://github.com/absinthe-graphql/absinthe
-   - https://github.com/christopheradams/elixir_style_guide
-   - https://github.com/rrrene/credo
-   - https://github.com/taylor/kiex
-   - https://github.com/kerl/kerl
-   - https://github.com/jeremyjh/dialyxir
-   - https://github.com/elixir-lsp/elixir-ls
-   - https://github.com/elixir-ecto/ecto
-   - https://github.com/hexpm/hex
-   - https://github.com/phoenixframework/phoenix
-   - https://github.com/erlang/otp
-   - https://github.com/elixir-lang/ex_doc
-   - https://github.com/elixir-lang/elixir
+      --- # elixir
+      - https://github.com/bitwalker/distillery
+      - https://github.com/ueberauth/guardian
+      - https://github.com/absinthe-graphql/absinthe
+      - https://github.com/christopheradams/elixir_style_guide
+      - https://github.com/rrrene/credo
+      - https://github.com/taylor/kiex
+      - https://github.com/kerl/kerl
+      - https://github.com/jeremyjh/dialyxir
+      - https://github.com/elixir-lsp/elixir-ls
+      - https://github.com/elixir-ecto/ecto
+      - https://github.com/hexpm/hex
+      - https://github.com/phoenixframework/phoenix
+      - https://github.com/erlang/otp
+      - https://github.com/elixir-lang/ex_doc
+      - https://github.com/elixir-lang/elixir
 
-   --- # lisp
-   - https://github.com/CodyReichert/awesome-cl.git
-   - https://github.com/atlas-engineer/nyxt.git
-   - https://github.com/LispCookbook/cl-cookbook.git
-   - https://github.com/quicklisp/quicklisp-client.git
-   - https://github.com/quicklisp/quicklisp-bootstrap.git
-   - https://github.com/quicklisp/quicklisp-controller.git
-   - https://github.com/franzinc/clx.git
-   - https://gitlab.common-lisp.net/alexandria/alexandria.git
-   - https://gitlab.common-lisp.net/asdf/asdf.git
-   - https://gitlab.common-lisp.net/clpm/clpm.git
-   - git://git.code.sf.net/p/sbcl/sbcl.git
-   - https://git.sv.gnu.org/git/guile.git
-   - https://git.savannah.gnu.org/git/guix.git
+      --- # common lisp
+      - https://github.com/CodyReichert/awesome-cl.git
+      - https://github.com/atlas-engineer/nyxt.git
+      - https://github.com/LispCookbook/cl-cookbook.git
+      - https://github.com/quicklisp/quicklisp-client.git
+      - https://github.com/quicklisp/quicklisp-bootstrap.git
+      - https://github.com/quicklisp/quicklisp-controller.git
+      - https://github.com/franzinc/clx.git
+      - https://gitlab.common-lisp.net/alexandria/alexandria.git
+      - https://gitlab.common-lisp.net/asdf/asdf.git
+      - https://gitlab.common-lisp.net/clpm/clpm.git
+      - git://git.code.sf.net/p/sbcl/sbcl.git
 
+      --- # Lua
+      - https://github.com/vicious-widgets/vicious
+      - https://github.com/streetturtle/awesome-wm-widgets
+      - https://github.com/actboy168/luamake
+      - https://github.com/sumneko/lua-language-server
+      - https://github.com/EmmyLua/EmmyLua-LanguageServer
+      - https://github.com/arthurealike/turtle.lua
+      - https://github.com/luvit/luvit
+      - https://github.com/rxi/lite
+      - https://github.com/lcpz/awesome-copycats
+      - https://salsa.debian.org/lua-team/lua5.4
+      - https://salsa.debian.org/reiner/awesome
+      - https://github.com/awesomeWM/awesome
+      - https://github.com/luarocks/luarocks
+      - https://github.com/lua/lua
 
-   --- # Lua
-   - https://github.com/vicious-widgets/vicious
-   - https://github.com/streetturtle/awesome-wm-widgets
-   - https://github.com/actboy168/luamake
-   - https://github.com/sumneko/lua-language-server
-   - https://github.com/EmmyLua/EmmyLua-LanguageServer
-   - https://github.com/arthurealike/turtle.lua
-   - https://github.com/luvit/luvit
-   - https://github.com/rxi/lite
-   - https://github.com/lcpz/awesome-copycats
-   - https://salsa.debian.org/lua-team/lua5.4
-   - https://salsa.debian.org/reiner/awesome
-   - https://github.com/awesomeWM/awesome
-   - https://github.com/luarocks/luarocks
-   - https://github.com/lua/lua
-
-
-   --- # Javascript
-   - https://github.com/SBoudrias/Inquirer.js
-   - https://github.com/mrdoob/three.js
-   - https://github.com/parcel-bundler/parcel
-   - https://github.com/prettier/prettier
-   - https://github.com/yarnpkg/yarn
-   - https://github.com/meteor/meteor
-   - https://github.com/expressjs/express
-   - https://github.com/axios/axios
-   - https://github.com/nodejs/node
+      --- # Javascript
+      - https://github.com/SBoudrias/Inquirer.js
+      - https://github.com/mrdoob/three.js
+      - https://github.com/parcel-bundler/parcel
+      - https://github.com/prettier/prettier
+      - https://github.com/yarnpkg/yarn
+      - https://github.com/meteor/meteor
+      - https://github.com/expressjs/express
+      - https://github.com/axios/axios
+      - https://github.com/nodejs/node
 
 
-   --- # Haskell
-   - https://gitlab.haskell.org/ghc/ghc
-   - https://gitlab.haskell.org/haskell/ghcup
-   - https://github.com/haskell/cabal
-   - https://github.com/commercialhaskell/stack
-   - https://github.com/haskell/haskell-language-server
-   - https://github.com/koalaman/shellcheck
-   - https://github.com/jgm/pandoc
-   - https://github.com/elm/compiler
+      --- # Haskell
+      - https://gitlab.haskell.org/ghc/ghc
+      - https://gitlab.haskell.org/haskell/ghcup
+      - https://github.com/haskell/cabal
+      - https://github.com/commercialhaskell/stack
+      - https://github.com/haskell/haskell-language-server
+      - https://github.com/koalaman/shellcheck
+      - https://github.com/jgm/pandoc
+      - https://github.com/elm/compiler
 
 
-   --- # Distros
-   - https://github.com/purcell/nix-emacs-ci
-   - https://github.com/jwiegley/nix-config
-   - https://github.com/NixOS/nixos-hardware
-   - https://github.com/NixOS/nixos-org-configurations
-   - https://github.com/NixOS/nixpkgs
-   - https://github.com/NixOS/nix
-   - https://gitlab.com/guix-gaming-channels/games
-   - https://gitlab.com/nonguix
-   - https://git.savannah.gnu.org/git/guix.git
+      --- # Distros
+      - https://github.com/purcell/nix-emacs-ci
+      - https://github.com/jwiegley/nix-config
+      - https://github.com/NixOS/nixos-hardware
+      - https://github.com/NixOS/nixos-org-configurations
+      - https://github.com/NixOS/nixpkgs
+      - https://github.com/NixOS/nix
+      - https://gitlab.com/guix-gaming-channels/games
+      - https://gitlab.com/nonguix
+      - https://git.savannah.gnu.org/git/guix.git
 
 
-   --- # Dart
-   - https://github.com/roughike/inKino
-   - https://github.com/flame-engine/flame
-   - https://github.com/felangel/bloc
-   - https://github.com/flutter/plugins
-   - https://github.com/dart-lang/build
-   - https://github.com/dart-lang/sdk
+      --- # Dart
+      - https://github.com/roughike/inKino
+      - https://github.com/flame-engine/flame
+      - https://github.com/felangel/bloc
+      - https://github.com/flutter/plugins
+      - https://github.com/dart-lang/build
+      - https://github.com/dart-lang/sdk
 
 
-   --- # css
-   - https://github.com/IanLunn/Hover
-   - https://github.com/jgthms/bulma
-   - https://github.com/daneden/animate.css
-   - https://github.com/oddbird/susy
-   - https://github.com/necolas/normalize.css
-   - https://github.com/mozdevs/cssremedy
+      --- # css
+      - https://github.com/IanLunn/Hover
+      - https://github.com/jgthms/bulma
+      - https://github.com/daneden/animate.css
+      - https://github.com/oddbird/susy
+      - https://github.com/necolas/normalize.css
+      - https://github.com/mozdevs/cssremedy
 
 
-   --- # Perl
-   - https://github.com/moose/Moose
-   - https://github.com/richterger/Perl-LanguageServer
-   - https://github.com/imapsync/imapsync
-   - https://github.com/ddclient/ddclient
-   - https://github.com/apache/avro
-   - https://github.com/mojolicious/mojo
-   - https://github.com/i3/i3
-   - https://github.com/bugzilla/bugzilla
-   - https://github.com/hachiojipm/awesome-perl
-   - https://github.com/Perl/perl5
+      --- # Perl
+      - https://github.com/moose/Moose
+      - https://github.com/richterger/Perl-LanguageServer
+      - https://github.com/imapsync/imapsync
+      - https://github.com/ddclient/ddclient
+      - https://github.com/apache/avro
+      - https://github.com/mojolicious/mojo
+      - https://github.com/i3/i3
+      - https://github.com/bugzilla/bugzilla
+      - https://github.com/hachiojipm/awesome-perl
+      - https://github.com/Perl/perl5
 
 
-   --- # python
-   - https://github.com/python/cpython
-   - https://github.com/python/mypy
-   - https://github.com/python/peps
-   - https://github.com/pypa/pip
-   - https://github.com/pypa/wheel
-   - https://github.com/pytest-dev/pytest
-   - https://github.com/pypa/setuptools
-   - https://github.com/PyCQA/pylint
-   - https://github.com/nedbat/coveragepy
-   - https://github.com/psf/black
+      --- # python
+      - https://github.com/python/cpython
+      - https://github.com/python/mypy
+      - https://github.com/python/peps
+      - https://github.com/pypa/pip
+      - https://github.com/pypa/wheel
+      - https://github.com/pytest-dev/pytest
+      - https://github.com/pypa/setuptools
+      - https://github.com/PyCQA/pylint
+      - https://github.com/nedbat/coveragepy
+      - https://github.com/psf/black
 
 
-   --- # php
-   - https://github.com/PacktPublishing/Mastering-PHP-7
-   - https://github.com/bcit-ci/CodeIgniter
-   - https://github.com/felixfbecker/php-language-server
-   - https://github.com/vimeo/psalm
-   - https://github.com/laravel/lumen
-   - https://github.com/nikic/php-parser
-   - https://github.com/phpstan/phpstan
-   - https://github.com/composer/composer
-   - https://github.com/symfony/symfony
-   - https://github.com/laravel/laravel
-   - https://github.com/php/php-src
+      --- # php
+      - https://github.com/PacktPublishing/Mastering-PHP-7
+      - https://github.com/bcit-ci/CodeIgniter
+      - https://github.com/felixfbecker/php-language-server
+      - https://github.com/vimeo/psalm
+      - https://github.com/laravel/lumen
+      - https://github.com/nikic/php-parser
+      - https://github.com/phpstan/phpstan
+      - https://github.com/composer/composer
+      - https://github.com/symfony/symfony
+      - https://github.com/laravel/laravel
+      - https://github.com/php/php-src
    #+end_src
 *** Cero Linguagens
 **** Ruby
@@ -9136,6 +9152,340 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 
      #+END_SRC
 * Languages
+** Golang
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+    :CONTENTS:
+    - [[#progress][Progress]]
+      - [[#books][Books]]
+      - [[#sloc][SLOC]]
+    - [[#packages][Packages]]
+      - [[#gem][gem]]
+      - [[#bundle][bundle]]
+	- [[#outdated][outdated]]
+	- [[#gem][gem]]
+	- [[#install][install]]
+	- [[#update][update]]
+      - [[#irb][irb]]
+	- [[#cli][cli]]
+	- [[#inside][inside]]
+      - [[#rspec][rspec]]
+      - [[#unit-test][unit test]]
+      - [[#pry][pry]]
+    - [[#features][Features]]
+      - [[#project-structure][project structure]]
+      - [[#system-errors][System Errors]]
+	- [[#usage][usage]]
+      - [[#exceptions][exceptions]]
+	- [[#errors][Errors]]
+	- [[#usage][usage]]
+      - [[#writable-object-attribute][writable object attribute]]
+      - [[#multithreading][Multithreading]]
+	- [[#usage][usage]]
+      - [[#modules][modules]]
+      - [[#continuation][continuation]]
+      - [[#fibers][Fibers]]
+	- [[#errors][errors]]
+	- [[#usage][usage]]
+      - [[#delimited-input][delimited input]]
+      - [[#rake][rake]]
+	- [[#usage][usage]]
+      - [[#gem][gem]]
+      - [[#variables][Variables]]
+	- [[#class-variables][class variables]]
+	- [[#global-variables][global variables]]
+      - [[#self][self]]
+      - [[#commentary][commentary]]
+      - [[#defined][defined?]]
+      - [[#iterators][iterators]]
+      - [[#block-local-variables][block-local variables]]
+      - [[#loops][loops]]
+      - [[#statement-modifiers][statement modifiers]]
+      - [[#comparison][comparison]]
+      - [[#conditional][conditional]]
+      - [[#class][class]]
+	- [[#class][class]]
+      - [[#append-][append <<]]
+      - [[#blocks][blocks]]
+      - [[#lambda][lambda]]
+	- [[#how][How]]
+	- [[#usage][Usage]]
+      - [[#methods][methods]]
+      - [[#yield][yield]]
+      - [[#procs][procs]]
+      - [[#operators][operators]]
+      - [[#enumerable][enumerable]]
+      - [[#enumerator][enumerator]]
+	- [[#lazy][lazy]]
+	- [[#each_car][each_car]]
+	- [[#each][each]]
+	- [[#to_enumenum_for][to_enum/enum_for]]
+      - [[#inject][inject]]
+      - [[#select][select]]
+      - [[#succ][succ]]
+      - [[#collect][collect]]
+      - [[#freeze][freeze]]
+      - [[#dup][dup]]
+      - [[#dig][dig]]
+      - [[#fetch][fetch]]
+      - [[#tap][tap]]
+      - [[#map][map]]
+      - [[#pluck][pluck]]
+      - [[#quoting][Quoting]]
+      - [[#here-documents][here documents]]
+      - [[#proc][proc]]
+      - [[#do-end-as-param][do end as param]]
+      - [[#array][array]]
+      - [[#datetime][date/time]]
+      - [[#lambda][lambda]]
+      - [[#begin-rescue][begin rescue]]
+      - [[#hash][hash]]
+      - [[#range][range]]
+      - [[#sets][sets]]
+      - [[#gsub][gsub]]
+      - [[#find][find]]
+      - [[#map][map]]
+      - [[#each_slice][each_slice]]
+      - [[#lazy][lazy]]
+      - [[#with_index][with_index]]
+      - [[#enum_for][enum_for]]
+      - [[#more][more]]
+      - [[#concepts][Concepts]]
+	- [[#iterator][Iterator]]
+	- [[#methods][Methods]]
+	- [[#enumerator][Enumerator]]
+      - [[#instructions][Instructions]]
+	- [[#rbenv][Rbenv]]
+	- [[#misc][misc]]
+    - [[#toolings][Toolings]]
+    - [[#videos][Videos]]
+    - [[#tests][Tests]]
+      - [[#rspec][RSpec]]
+      - [[#unit][Unit]]
+    :END:
+*** Progress
+**** Books
+     | name                    | chapter | @                                    | late | revision |
+     |-------------------------+---------+--------------------------------------+------+----------|
+     | Learning go             |         | Using const                          |      |          |
+     | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
+     |                         |         |                                      |      |          |
+
+**** LDC
+     | Source Code | folder          | file            | @ |
+     |-------------+-----------------+-----------------+---|
+     | go          | src/archive/tar | example_test.go |   |
+
+*** Features
+**** operators
+***** arithmetic
+      |          |                           |
+      |----------+---------------------------|
+      | combined | += , -= , *= ,/= , and %= |
+      |          |                           |
+
+**** types
+***** numeric
+      |         |                 |
+      |---------+-----------------|
+      | byte    | uint8           |
+      | int     | int64           |
+      | uint    | unsigned  int64 |
+      | complex |                 |
+      | float   |                 |
+
+
+****** byte
+****** int
+****** complext
+****** float
+***** strings
+      |              |              |
+      |--------------+--------------|
+      | immutable    |              |
+      | zero value   | empty string |
+      | concatenate  | +            |
+      | equality     | \==, !=      |
+      | empty string | s == ""      |
+      |              |              |
+
+***** boolean
+      - no other type can be converted to a bool, implicitly or explicitly
+      - convert to boolean with: \== , != , > , < , <= , or >=
+
+***** runes
+      - chars
+      - int32 type
+      -
+
+**** cli
+***** vet
+      Examines Go source code and reports suspicious constructs
+
+      |   |   |
+      |---+---|
+      |   |   |
+
+***** build
+      - build project and create binary
+      |                  |              |
+      |------------------+--------------|
+      | -o <name> <file> | set location |
+      |                  |              |
+
+***** get
+      |   |   |
+      |---+---|
+      |   |   |
+
+***** install
+      |               |                            |
+      |---------------+----------------------------|
+      | <name>        |                            |
+      | <name>@latest | latest version of the tool |
+
+***** run
+      |   |   |
+      |---+---|
+      |   |   |
+
+***** env
+      - list golang environment variables
+      |   |   |
+      |---+---|
+      |   |   |
+
+**** mutex
+     #+begin_src go emacs-lisp
+     sync.Mutex
+     #+end_src
+**** collective
+     #+begin_src go
+     strings.Map
+     #+end_src
+**** standary library
+     #+begin_src go
+     // end of line
+     io.EOF
+
+     #+end_src
+**** functions
+     - reference type
+     - function values are not comparable.
+
+     #+begin_src go
+     // assign f to nil function
+     var f func(int) int
+
+     // assign var to a function
+     func square(n int) int { return n * n }
+     f =  square
+     fmt.Println(f(3)) // "9"
+
+     // can compare function to nil but not another function
+     if f != nil { ... }
+
+     // recursion in go is fast
+
+     // lambda/anonymous function
+     strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")
+
+
+     // function that returns a lambda
+     func squares() func() int {
+	     var x int
+	     return func() int {
+		     x++
+		     return x * x
+	     }
+     }
+     func main() {
+	     f := squares()
+	     fmt.Println(f()) // "1"
+	     fmt.Println(f()) // "4"
+	     fmt.Println(f())
+	     fmt.Println(f())
+     }
+
+     // Defer
+     var mu sync.Mutex
+     var m = make(map[string]int)
+
+     func lookup(key string) int {
+	     mu.Lock()
+	     defer mu.Unlock()
+	     return m[key]
+     }
+     #+end_src
+**** print
+     #+begin_src go
+     Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
+     #+end_src
+**** make
+     #+begin_src go
+     make([]T, len)
+     make([]T, len, cap) // same as make([]T, cap)[:len]
+     #+end_src
+**** type
+     #+begin_src go
+     func (c Clear) String() string { // associates Clear to String
+	     ...
+     }
+
+     #+end_src
+**** variables
+***** var
+      #+begin_src go
+      var x int
+
+      var x int = 10
+      var x = 10
+      #+end_src
+***** :=
+      - allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
+      - uses type inference
+      - inside function
+
+     #+begin_src go
+     func main() {
+	     x := 10
+	     x, y := 30, "hello"
+     }
+
+
+     #+end_src
+**** const
+**** doc comment
+     Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
+**** pointers
+     #+Begin_Src go
+
+     func main() {
+	     x = 1
+	     ,*p = x
+	     Printf(&p) // address of x
+     }
+     #+end_src
+*** Terms
+    - runes: single characthers
+*** Packages
+**** golint
+     |       |                                  |
+     |-------+----------------------------------|
+     | ./... | runs golint over entire project. |
+     |       |                                  |
+
+**** goimports
+     |    |                                                     |
+     |----+-----------------------------------------------------|
+     | -l | list files whose formatting differs from goimport's |
+     | -w | write result to (source) file instead of stdout     |
+     |    |                                                     |
+     #+begin_src shell-script
+     goimports -l -w .
+     #+end_src
 ** Elixir
 *** Summary
     :PROPERTIES:
@@ -9727,20 +10077,6 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
      | deps help   | mix help deps                   |      |
      | New package | new <name> --module <Namespace> |      |
 *** Annotations
-** Guile
-*** Progresso
-**** Livros
-     | Livros           | Capitulo | em | tarde | revisao |
-     |------------------+----------+----+-------+---------|
-     | ANSI Common Lisp |          |    |       |         |
-     |                  |          |    |       |         |
-
-**** LDC
-     | Source Code | folder | file | @ |
-     |-------------+--------+------+---|
-     | sbcl        |        |      |   |
-     | asdf        |        |      |   |
-     | alexandria  |        |      |   |
 ** C
 *** Fortschritt
 **** Buch
