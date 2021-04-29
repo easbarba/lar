@@ -1,16 +1,28 @@
 #!/usr/bin/env bash
 
-# Debug Options
-set -euxo pipefail
+# * Debug Options
+set -euo pipefail
 
+# * Information
+# Site: https://guix.gnu.org/
 
-bootstrap()
+# * PATH
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+keys()
+{
+    wget 'https://sv.gnu.org/people/viewgpg.php?user_id=15145' -qO - | sudo -i gpg --import -
+}
+
+get()
+{
+    local script=https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
+    wget -P /tmp $script
+}
+
+install()
 {
     [[ -x $(command -v guix) ]] && return
-
-    wget -P /tmp https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
-
-    wget 'https://sv.gnu.org/people/viewgpg.php?user_id=15145' -qO - | sudo -i gpg --import -
 
     sudo bash /tmp/guix-install.sh
 }
@@ -23,8 +35,6 @@ update()
 
 packages()
 {
-    echo 'Installing guix packages'
-
     local packages=(glibc-utf8-locales font-gnu-freefont-ttf icecat)
 
     for pack in "${packages[@]}"
@@ -33,14 +43,10 @@ packages()
     done
 }
 
-# * PATH
-
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-
 # * RUN
 
-echo 'Guix Packs'
-
-bootstrap
+keys
+get
+install
 update
 packages
