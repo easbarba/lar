@@ -116,22 +116,76 @@
 ** Books
    | name                    | chapter | @                                    | late | revision |
    |-------------------------+---------+--------------------------------------+------+----------|
+   | Learning go             |         | Using const                          |      |          |
    | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
    |                         |         |                                      |      |          |
 
 ** LDC
-   | Source Code | folder          | file      | @ |
-   |-------------+-----------------+-----------+---|
-   | consul      |                 |           |   |
-   | go          | src/archive/tar | common.go |   |
+   | Source Code | folder          | file            | @ |
+   |-------------+-----------------+-----------------+---|
+   | go          | src/archive/tar | example_test.go |   |
+
 * Features
+** operators
+*** arithmetic
+    |          |                           |
+    |----------+---------------------------|
+    | combined | += , -= , *= ,/= , and %= |
+    |          |                           |
+
+** types
+*** numeric
+    |         |                 |
+    |---------+-----------------|
+    | byte    | uint8           |
+    | int     | int64           |
+    | uint    | unsigned  int64 |
+    | complex |                 |
+    | float   |                 |
+
+
+**** byte
+**** int
+**** complext
+**** float
+*** strings
+    |              |              |
+    |--------------+--------------|
+    | immutable    |              |
+    | zero value   | empty string |
+    | concatenate  | +            |
+    | equality     | \==, !=      |
+    | empty string | s == ""      |
+    |              |              |
+
+*** boolean
+    - no other type can be converted to a bool, implicitly or explicitly
+    - convert to boolean with: \== , != , > , < , <= , or >=
+
+*** runes
+    - chars
+    - int32 type
+    -
+
 ** cli
+*** vet
+    Examines Go source code and reports suspicious constructs
+
+    |   |   |
+    |---+---|
+    |   |   |
+
 *** build
     - build project and create binary
     |                  |              |
     |------------------+--------------|
     | -o <name> <file> | set location |
     |                  |              |
+
+*** get
+    |   |   |
+    |---+---|
+    |   |   |
 
 *** install
     |               |                            |
@@ -229,10 +283,25 @@
 
    #+end_src
 ** variables
+*** var
+    #+begin_src go
+    var x int
+
+    var x int = 10
+    var x = 10
+    #+end_src
+*** :=
+    - allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
+    - uses type inference
+    - inside function
+
    #+begin_src go
-   var x
-   a int = 1
-   a := 1
+   func main() {
+	   x := 10
+	   x, y := 30, "hello"
+   }
+
+
    #+end_src
 ** const
 ** doc comment
@@ -248,3 +317,19 @@
    #+end_src
 * Terms
   - runes: single characthers
+* Packages
+** golint
+   |       |                                  |
+   |-------+----------------------------------|
+   | ./... | runs golint over entire project. |
+   |       |                                  |
+
+** goimports
+   |    |                                                     |
+   |----+-----------------------------------------------------|
+   | -l | list files whose formatting differs from goimport's |
+   | -w | write result to (source) file instead of stdout     |
+   |    |                                                     |
+   #+begin_src shell-script
+   goimports -l -w .
+   #+end_src
