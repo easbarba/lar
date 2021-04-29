@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# * Debug Options
+set -euo pipefail
+
+# * Information
+# Dependencies: libunistring-dev libgc-dev
+
+# * Sourcing
+source "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.asdf/asdf.sh"
+
+LANG=guile
+REPOSITORY="https://github.com/indiebrain/asdf-guile.git"
+
+keys()
+{
+    gpg --receive-keys 4FD4D288D445934E0A14F9A5A8803732E4436885 # Andy Wingo
+    # gpg --receive-keys 3605E7256D155F47430C9F53B332C57A4353E1C8 # Ruse Guile
+}
+
+add()
+{
+    [[ $(asdf list all $LANG) ]] && return
+
+    asdf plugin-add $LANG $REPOSITORY
+}
+
+install()
+{
+    asdf install $LANG latest
+    asdf global $LANG "$(asdf latest $LANG)"
+}
+
+# * Run
+
+echo "Installing $LANG binaries"
+
+keys
+add
+install
