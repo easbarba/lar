@@ -164,10 +164,25 @@
 * Networking
 ** Progress
 *** Books
-    | Books | capitulo | em | @later | revisao |
-    |-------+----------+----+--------+---------|
-    |       |          |    |        |         |
+    | Books               | capitulo       | em                    | @later | revisao |
+    |---------------------+----------------+-----------------------+--------+---------|
+    | Comptia Net+ Meyers | Network models | Historical/Conceptual |        |         |
 
+** Load balancing
+** Subneting
+** Models
+*** OSI Model
+    - 7 layers
+    - works for almost every type of network, even extremely old and long-obsolete ones
+**** Layers
+***** Layer 7 Application
+***** Layer 6 Presentation
+***** Layer 5 Session
+***** Layer 4 Transport
+***** Layer 3 Network
+***** Layer 2 Data Link
+***** Layer 1 Physical
+*** TCP/IP
 ** Protocols
 *** HTTP
 *** HTTPS
