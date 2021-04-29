@@ -25,11 +25,15 @@ packages()
 
     export GO111MODULE=on
 
-    local packages=("golang.org/x/tools/gopls@latest" "sigs.k8s.io/kind")
+    local packages=("golang.org/x/tools/cmd/goimports@latest"
+		    "golang.org/x/lint/golint@latest"
+		    "golang.org/x/tools/gopls@latest"
+		    "github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0"
+		    "sigs.k8s.io/kind")
 
     for pack in "${packages[@]}"
     do
-	go get "${pack}"
+	go install "${pack}"
     done
 }
 
