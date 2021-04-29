@@ -211,14 +211,23 @@
   :defer t
   :bind ("C-c b g" . 'deadgrep))
 
+(use-package guix
+  :defer t
+  :hook (scheme-mode . guix-devel-mode))
+
 (use-package elfeed
   :defer 2
   :custom
   (elfeed-db-directory "~/.config/elfeed")
   (elfeed-feeds
-   '("https://mtst.org/feed/"
+   '("https://www.fsf.org/static/fsforg/rss/news.xml"
+     "https://www.fsf.org/static/fsforg/rss/blogs.xml"
+     "https://planet.gnu.org/rss20.xml"
+     "https://planet.scheme.org/atom.xml"
+     "https://guix.gnu.org/feeds/blog.atom"
      "https://bits.debian.org/feeds/atom.xml"
      "https://micronews.debian.org/feeds/atom.xml"
+     "https://wingolog.org/feed/atom"
      "https://sourcehut.org/blog/index.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://weblog.rubyonrails.org/feed/atom.xml"
@@ -233,41 +242,21 @@
      "https://feeds.buzzsprout.com/1004689.rss"
      "https://naildrivin5.com/atom.xml"
      "https://boringrails.com/feed.xml"
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdngmbVKX1Tgre699-XLlUA" ;; TechTips w/ Nana
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCss9-PQj-X5aMhLYSt60NDw" ;; Classe Esquerda
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCOjUlJ4EpPxuhtT0zEVw25A" ;; Opera Mundi
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCrxf9jYw4gva_9jwb-77AqQ" ;; Guru SP
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWus46Vy8gwf1rRLu4II0w" ;; Chavoso da USP
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCMUoZehUZBhLb8XaTc8TQrA" ;; FullCycle
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC5ed3F-1on364XihtRFagJg" ;; Vitor Vegano
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCblJ3bb2DDJSD7PyJXcg7qA" ;; Gonzalo Vecina
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCq8LkP7VWVgowQxSDtOZQHw" ;; Marcelus Tumulto
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCthbIFAxbXTTQEC7EcQvP1Q" ;; BBC Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCWnPjmqvljcafA0z2U1fwKQ" ;; Confreaks
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCcgl8D1QAwAmZekgv1-BaQg" ;; Doutora Drag
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC4SZ1UNy6t9Mz99In-Rt1tw" ;; Natalia Bonavides
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCr38SHAvOKMDyX3-8lhvJHA" ;; Ruby Australia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQnpN5AUd36lnMHuIl_rihA" ;; Caio Delgado
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SbfAPZf8SMvAxp8t51qtQ" ;; DebianConf
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Central
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdngmbVKX1Tgre699-XLlUA" ;; TechTips w/ Nana
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCz0799M83kYvb6qBkHxTWFQ" ;; UJS Brasil
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; BoiTempo
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese Onze
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas feios
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC02coXfDPjEmU8uDT2G8Z2A" ;; Jones Manoel
      "http://sachachua.com/blog/category/emacs/feed"))
