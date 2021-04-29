@@ -35,6 +35,8 @@ packages()
 	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
 	    firewall-config socat vrms fzf aria2)
 
+    emacs=(libgccjit-10-dev)
+
     qt=(kdeconnect kdenlive)
 
     gtk=(cheese transmission-gtk pragha materia-gtk-theme papirus-icon-theme suru-icon-theme)
@@ -85,8 +87,9 @@ packages()
 
     e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
     e_foreach "$command" "${debian[@]}"; sudo apt-file update # update Debian database
-    e_foreach "$command" "${programming[@]}"
+    e_foreach "$command" "${emacs[@]}"
     e_foreach "$command" "${ruby[@]}"
+    e_foreach "$command" "${programming[@]}"
     e_foreach "$command" "${postgres[@]}"
     e_foreach "$command" "${system[@]}"
     e_foreach "$command" "${gtk[@]}"
