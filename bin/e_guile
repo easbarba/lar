@@ -15,8 +15,7 @@ REPOSITORY="https://github.com/indiebrain/asdf-guile.git"
 
 keys()
 {
-    gpg --receive-keys 4FD4D288D445934E0A14F9A5A8803732E4436885 # Andy Wingo
-    # gpg --receive-keys 3605E7256D155F47430C9F53B332C57A4353E1C8 # Ruse Guile
+    gpg --keyserver keys.gnupg.net --recv-keys 4FD4D288D445934E0A14F9A5A8803732E4436885
 }
 
 add()
