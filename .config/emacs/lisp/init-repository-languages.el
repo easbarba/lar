@@ -173,7 +173,7 @@
   :commands lsp
   :hook
   (ruby-mode . lsp)
-  (elixir-mode . lsp)
+  (go-mode . lsp)
   (css-mode . lsp)
   (js-mode . lsp)
   (html-mode . lsp)
