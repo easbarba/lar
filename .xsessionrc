@@ -45,8 +45,8 @@ home_bin()
 
 guix()
 {
-    local dir="$HOME/.guix-profile"
-    export PATH="$dir"${PATH:+:}$PATH
+    GUIX_PROFILE="$HOME/.guix-profile"
+    export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
 ruby()
