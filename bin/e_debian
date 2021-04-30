@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
 # * DEBIAN
 
@@ -56,11 +56,11 @@ packages()
 
     debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    wm=(network-manager-gnome aria2 dunst maim udiskie
+    wm=(awesome awesome-extra network-manager-gnome aria2 maim udiskie
 	unclutter diodon gnome-keyring ssh-askpass-gnome pasystray
 	libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
 	lxappearance seahorse x11proto-dev brightnessctl tlp acpi-call
-	blueman volumeicon-alsa)
+	blueman volumeicon-alsa) # dunst
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
@@ -98,6 +98,7 @@ packages()
     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
     e_foreach "$command" "${security[@]}"
     e_foreach "$command" "${laptop[@]}"
+    e_foreach "$command" "${wm[@]}"
     e_foreach "$command" "${user[@]}"
     e_foreach "$command" "${media[@]}"
     e_foreach "$command" "${amd[@]}"
@@ -161,7 +162,6 @@ foreign()
     chrome()
     {
 	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
 	sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
     }
 
