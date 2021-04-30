@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-   | name      | chapter | @                                          | late | revision |
-   |-----------+---------+--------------------------------------------+------+----------|
-   | Scheme PL |       2 | Section 2.3. Evaluating Scheme Expressions |      |          |
+   | name      | chapter | @                               | late | revision |
+   |-----------+---------+---------------------------------+------+----------|
+   | Scheme PL |       2 | Section 2.5. Lambda Expressions |      |          |
 
 ** LDC
    | Source Code | folder | file | @ |
