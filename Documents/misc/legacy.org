@@ -7,7 +7,7 @@
 :CONTENTS:
 - [[#dotfiles][Dotfiles]]
   - [[#irbrc][irbrc]]
-  - [[#cejo][Cejo]]
+  - [[#cejo][cejo]]
   - [[#blog][Blog]]
   - [[#asdf][asdf]]
   - [[#shell-software][shell-software]]
@@ -83,7 +83,7 @@
 # IRB.conf[:INSPECT_MODE]=nil
 
    #+end_src
-** Cejo
+** cejo
 *** distro
     #+begin_src yaml
 		---
@@ -252,22 +252,6 @@ upgrade: upgrade
       - https://gitlab.common-lisp.net/asdf/asdf.git
       - https://gitlab.common-lisp.net/clpm/clpm.git
       - git://git.code.sf.net/p/sbcl/sbcl.git
-
-      --- # Lua
-      - https://github.com/vicious-widgets/vicious
-      - https://github.com/streetturtle/awesome-wm-widgets
-      - https://github.com/actboy168/luamake
-      - https://github.com/sumneko/lua-language-server
-      - https://github.com/EmmyLua/EmmyLua-LanguageServer
-      - https://github.com/arthurealike/turtle.lua
-      - https://github.com/luvit/luvit
-      - https://github.com/rxi/lite
-      - https://github.com/lcpz/awesome-copycats
-      - https://salsa.debian.org/lua-team/lua5.4
-      - https://salsa.debian.org/reiner/awesome
-      - https://github.com/awesomeWM/awesome
-      - https://github.com/luarocks/luarocks
-      - https://github.com/lua/lua
 
       --- # Javascript
       - https://github.com/SBoudrias/Inquirer.js
@@ -522,7 +506,7 @@ upgrade: upgrade
 
 	      public void Start()
 	      {
-		  foreach (var pack in _packages)
+		  dolist (var pack in _packages)
 		      _di._runners.RunCommand(_name, $"{ _manager } -u -v { pack }");
 	      }
 	  }
@@ -554,7 +538,7 @@ upgrade: upgrade
 
 	      private void InstallPackages()
 	      {
-		  foreach (var args in from pack in _packages
+		  dolist (var args in from pack in _packages
 				       let args = $"{ _manager } --lib --upgrade { pack } --user"
 				       select args)
 		  {
@@ -595,7 +579,7 @@ upgrade: upgrade
 
 	      public void Start()
 	      {
-		  foreach (var args in from pack in _packages
+		  dolist (var args in from pack in _packages
 				       let args = $"{_manager} { pack }"
 				       select args)
 		  {
@@ -657,7 +641,7 @@ upgrade: upgrade
 
 	      private void InstallPackages()
 	      {
-		  foreach (var args in from pack in _packages
+		  dolist (var args in from pack in _packages
 				       let args = $@"--eval ""(ql:quickload ""{ pack }"")"" --eval (quit)"
 				       select args)
 		  {
@@ -725,7 +709,7 @@ upgrade: upgrade
 
 	      public void InstallPackages()
 	      {
-		  foreach (var args in from pack in _packages
+		  dolist (var args in from pack in _packages
 				       let args = $"{_manager} add { pack }"
 				       select args)
 		  {
@@ -2829,7 +2813,7 @@ upgrade: upgrade
    }
 
 
-   lxForeach ()
+   lxDolist ()
    {
        local packages="$2"
        local runner="$1"
@@ -7020,20 +7004,20 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 		local command='nix-env -i'
 		local command_nixos='nix-env --installi -A'
 
-		e_foreach "$command" "${essentials[@]}"
-		e_foreach "$command" "${wm[@]}"
-		e_foreach "$command" "${languages[@]}"
-		e_foreach "$command" "${devops[@]}"
-		e_foreach "$command" "${wm_packges[@]}"
-		e_foreach "$command" "${user_packages[@]}"
-		e_foreach "$command" "${media[@]}"
-		e_foreach "$command" "${virtualization[@]}"
-		e_foreach "$command" "${wine[@]}"
-		e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-		e_foreach "$command" "${ruby_tools[@]}"
-		e_foreach "$command" "${emacs_deps[@]}"
-		# e_foreach "$command" "${misc_deps[@]}"
-		e_foreach "$command" "${laptop[@]}"
+		e_dolist "$command" "${essentials[@]}"
+		e_dolist "$command" "${wm[@]}"
+		e_dolist "$command" "${languages[@]}"
+		e_dolist "$command" "${devops[@]}"
+		e_dolist "$command" "${wm_packges[@]}"
+		e_dolist "$command" "${user_packages[@]}"
+		e_dolist "$command" "${media[@]}"
+		e_dolist "$command" "${virtualization[@]}"
+		e_dolist "$command" "${wine[@]}"
+		e_dolist "$command" "${fonts[@]}"; sudo fc-cache -fv
+		e_dolist "$command" "${ruby_tools[@]}"
+		e_dolist "$command" "${emacs_deps[@]}"
+		# e_dolist "$command" "${misc_deps[@]}"
+		e_dolist "$command" "${laptop[@]}"
 
 		echo "-- Preparacoes finais: limpando e arrumando o sistema"
 		sudo apt -y autoremove
@@ -7153,19 +7137,19 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 
 	     local command='sudo pacman -S --noconfirm'
 
-	     e_foreach "$command" "${essentials[@]}"
-	     e_foreach "$command" "${languages[@]}"
-	     e_foreach "$command" "${devops[@]}"
-	     e_foreach "$command" "${wm_packges[@]}"
-	     e_foreach "$command" "${user_packages[@]}"
-	     e_foreach "$command" "${media[@]}"
-	     e_foreach "$command" "${virtualization[@]}"
-	     e_foreach "$command" "${wine[@]}"
-	     e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-	     e_foreach "$command" "${ruby_tools[@]}"
-	     # e_foreach "$command" "${emacs_deps[@]}"
-	     # e_foreach "$command" "${misc_deps[@]}"
-	     e_foreach "$command" "${laptop[@]}"
+	     e_dolist "$command" "${essentials[@]}"
+	     e_dolist "$command" "${languages[@]}"
+	     e_dolist "$command" "${devops[@]}"
+	     e_dolist "$command" "${wm_packges[@]}"
+	     e_dolist "$command" "${user_packages[@]}"
+	     e_dolist "$command" "${media[@]}"
+	     e_dolist "$command" "${virtualization[@]}"
+	     e_dolist "$command" "${wine[@]}"
+	     e_dolist "$command" "${fonts[@]}"; sudo fc-cache -fv
+	     e_dolist "$command" "${ruby_tools[@]}"
+	     # e_dolist "$command" "${emacs_deps[@]}"
+	     # e_dolist "$command" "${misc_deps[@]}"
+	     e_dolist "$command" "${laptop[@]}"
 	 }
 
 	 arch-services()
@@ -7246,14 +7230,14 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 
 	  local command='sudo dnf install -y'
 
-	  e_foreach "$command ${essentials[@]}"
-	  e_foreach "$command ${ruby[@]}"
-	  e_foreach "$command ${programming[@]}"
-	  e_foreach "$command ${system[@]}"
-	  e_foreach "$command ${infra[@]}"
-	  e_foreach "$command ${user[@]}"
-	  e_foreach "$command ${fonts[@]}"; sudo fc-cache -fv
-	  e_foreach "$command ${media[@]}"
+	  e_dolist "$command ${essentials[@]}"
+	  e_dolist "$command ${ruby[@]}"
+	  e_dolist "$command ${programming[@]}"
+	  e_dolist "$command ${system[@]}"
+	  e_dolist "$command ${infra[@]}"
+	  e_dolist "$command ${user[@]}"
+	  e_dolist "$command ${fonts[@]}"; sudo fc-cache -fv
+	  e_dolist "$command ${media[@]}"
       }
 
       fedora-upgrade()
@@ -7342,14 +7326,14 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
        echo "Instalando pacotes."
 
        local command='sudo apt install -y'
-       e_foreach "$command" "${essentials[@]}"
-       e_foreach "$command" "${ruby[@]}"
-       e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-       e_foreach "$command" "${programming[@]}"
-       e_foreach "$command" "${virtualization[@]}"
-       e_foreach "$command" "${toolings[@]}"
-       e_foreach "$command" "${de[@]}"
-       e_foreach "$command" "${media[@]}"
+       e_dolist "$command" "${essentials[@]}"
+       e_dolist "$command" "${ruby[@]}"
+       e_dolist "$command" "${fonts[@]}"; sudo fc-cache -fv
+       e_dolist "$command" "${programming[@]}"
+       e_dolist "$command" "${virtualization[@]}"
+       e_dolist "$command" "${toolings[@]}"
+       e_dolist "$command" "${de[@]}"
+       e_dolist "$command" "${media[@]}"
    }
 
    ubuntu-upgrade()
@@ -10710,7 +10694,7 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 
 		  try
 		  {
-		      foreach (var directory in current.DirectoryNames)
+		      dolist (var directory in current.DirectoryNames)
 		      {
 			  nodes.Enqueue(new DirectoryTreeNode(Path.Combine(current.DirectoryName, directory)));
 		      }
@@ -10791,7 +10775,7 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 	  .Dump();
 
 
-	  foreach (var (dirpath, dirnames, filenames) in directoryTree.WalkSilently(@"c:\temp").Where(n => !n.DirectoryName.Contains(".git")).Take(10))
+	  dolist (var (dirpath, dirnames, filenames) in directoryTree.WalkSilently(@"c:\temp").Where(n => !n.DirectoryName.Contains(".git")).Take(10))
 	  {
 	      filenames.Dump();
 	  }
@@ -11339,7 +11323,7 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 ********* 3.   Write a program that uses an array to find the average of 10 double values. Use any 10 values you like.
 	  #+BEGIN_SRC java
 
-	  public class BubbleForEach {
+	  public class BubbleDolist {
 
 	      public static void main(String[] args) {
 
@@ -11426,7 +11410,7 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 ********* 13.   Rewrite the MinMax class shown earlier in this chapter so that it uses a for-each style for loop.
 	  #+BEGIN_SRC java
 
-	  class MinMaxForEach {
+	  class MinMaxDolist {
 	      public static void main(String[] args) {
 		  int nums[] = {1, 99, -10, 100123, 18, -978,
 				5623, 463, -9, 287, 49};
@@ -11449,7 +11433,7 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
 	  As for-each loops only objects I could not achieve a full for-each Bubble without some hackish trick! hehe
 	  #+BEGIN_SRC java
 
-	  class BubbleForEach {
+	  class BubbleDolist {
 	      public static void main(String[] args) {
 
 		  int nums[] = {99, -10, 100123, 18, -978,
