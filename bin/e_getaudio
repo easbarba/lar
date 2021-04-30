@@ -14,4 +14,4 @@ EXT=vorbis
 
 notify-send "Getting Audio"
 
-cejo media get "$(e_url)" "$EXT"
+cejo media get "$EXT" "$(e_url)"

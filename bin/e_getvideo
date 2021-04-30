@@ -6,6 +6,6 @@ set -euo pipefail
 # Description:
 # Deps: youtube-dl, ffmpeg
 
-EXT=vorbis
+EXT=mkv
 
-cejo media get "$(e_url)" mkv
+cejo media get $EXT "$(e_url)"
