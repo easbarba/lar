@@ -1,24 +1,24 @@
-if (get_application_name() == "Emacs") then
-   set_window_workspace(1)
-   maximize()
+-- Devilspie Apps
+-- Description: Move Apps to Workspace X
+
+apps = {
+   [1] = {"Emacs"},
+   [2] = {"Atril Document Viewer"},
+   [3] = {"Terminal"},
+   [4] = {"Firefox"},
+   [5] = {"TelegramDesktop", "Clementine", "Pragha Music Player"},
+}
+
+function move_it_to (name, wk)
+   if (get_application_name() == name) then
+      set_window_workspace(wk)
+      maximize()
+   end
 end
-if (get_application_name() == "Atril Document Viewer") then
-   set_window_workspace(2)
-   maximize()
-end
-if (get_application_name() == "Terminal") then
-   set_window_workspace(3)
-   maximize()
-end
-if (get_application_name() == "Firefox") then
-   set_window_workspace(4)
-   maximize()
-end
-if (get_application_name() == "TelegramDesktop") then
-   set_window_workspace(5)
-   maximize()
-end
-if (get_application_name() == "Pragha Music Player") then
-   set_window_workspace(5)
-   maximize()
+
+-- * run
+for wk,apps in pairs(apps) do
+   for _, app in ipairs(apps) do
+      move_it_to(app, wk)
+   end
 end
