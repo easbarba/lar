@@ -1,27 +1,50 @@
 #!/usr/bin/env bash
 
-# DESCRIPTION: AutoStart software
+# Description: auto-start list of software toolings
+# Deps: pgrep, command, bash-4
 
-APPS=(udiskie unclutter ibus-daemon nm-applet
-      blueman-applet mate-power-manager diodon)
-
-not-found() { [[ ! -x $(command -v "$1") ]]; }
-
-running() { [[ $(pgrep -f "$1") ]]; }
-
-run() { "$@" & }
-
-autostart()
-{
-    for app in "${APPS[@]}"
-    do
-	not-found "$app" && continue
-	running "$app" && continue
-	run "$app"
-    done
-}
+# * Guards
 
 [ "$DESKTOP_SESSION" == "plasma" ] && exit
 [ "$DESKTOP_SESSION" == "gnome" ] && exit
 
-autostart
+# * Lists
+
+tools=(udiskie unclutter ibus-daemon nm-applet
+       blueman-applet mate-power-manager diodon)
+
+apps=(emacs st firefox atril clementine)
+
+# * Utils, Helps
+
+not_found()
+{
+    [[ ! -x $(command -v "$1") ]];
+}
+
+is_running()
+{
+    [[ $(pgrep -f "$1") ]];
+}
+
+run()
+{
+    "$1" &
+}
+
+autostart()
+{
+    local apps=("$@")
+
+    for app in "${apps[@]}"
+    do
+	not_found "$app" && continue
+	is_running "$app" && continue
+	run "$app"
+    done
+}
+
+# * Run
+
+autostart "${tools[@]}"
+autostart "${apps[@]}"
