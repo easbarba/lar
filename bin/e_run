@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # DEBUG OPTIONS
-set -euxo pipefailxo pipefail
+set -euo pipefailxo pipefail
 
-NUMBER=${1}
+NUMBER=$1
 
 shift
 

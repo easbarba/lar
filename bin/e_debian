@@ -82,26 +82,25 @@ packages()
 
     echo "Instalando pacotes."
 
-    local command
-    command='sudo apt install -y'
+    local command='sudo apt install -y'
 
-    e_foreach "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
-    e_foreach "$command" "${debian[@]}"; sudo apt-file update # update Debian database
-    e_foreach "$command" "${emacs[@]}"
-    e_foreach "$command" "${ruby[@]}"
-    e_foreach "$command" "${programming[@]}"
-    e_foreach "$command" "${postgres[@]}"
-    e_foreach "$command" "${system[@]}"
-    e_foreach "$command" "${gtk[@]}"
-    e_foreach "$command" "${qt[@]}"
-    e_foreach "$command" "${infra[@]}";
-    e_foreach "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e_foreach "$command" "${security[@]}"
-    e_foreach "$command" "${laptop[@]}"
-    e_foreach "$command" "${wm[@]}"
-    e_foreach "$command" "${user[@]}"
-    e_foreach "$command" "${media[@]}"
-    e_foreach "$command" "${amd[@]}"
+    e_dolist "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
+    e_dolist "$command" "${debian[@]}"; sudo apt-file update # update Debian database
+    e_dolist "$command" "${emacs[@]}"
+    e_dolist "$command" "${ruby[@]}"
+    e_dolist "$command" "${programming[@]}"
+    e_dolist "$command" "${postgres[@]}"
+    e_dolist "$command" "${system[@]}"
+    e_dolist "$command" "${gtk[@]}"
+    e_dolist "$command" "${qt[@]}"
+    e_dolist "$command" "${infra[@]}";
+    e_dolist "$command" "${fonts[@]}"; sudo fc-cache -fv
+    e_dolist "$command" "${security[@]}"
+    e_dolist "$command" "${laptop[@]}"
+    e_dolist "$command" "${wm[@]}"
+    e_dolist "$command" "${user[@]}"
+    e_dolist "$command" "${media[@]}"
+    e_dolist "$command" "${amd[@]}"
 
     echo "Done"
 }
@@ -110,10 +109,9 @@ clean()
 {
     unused=(firefox-esr)
 
-    local command
-    command='sudo apt remove -y'
+    local command='sudo apt remove -y'
 
-    e_foreach "$command" "${unused[@]}"
+    e_dolist "$command" "${unused[@]}"
 }
 
 services()

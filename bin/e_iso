@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
-sudo dd bs=4M if="$1" of="$2" status=progress oflag=sync
+# TODO: check if iso is valid
+
+ISO="$1"
+TO="$2"
+
+sudo dd bs=4M if=$ISO of=$TO status=progress oflag=sync

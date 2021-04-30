@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
 BUILDS="$HOME/Builds"
 EMACS_DIR="$BUILDS/emacs"
@@ -50,7 +50,6 @@ install()
 echo "Emacs - Installing local build"
 
 check_deps
-
 repo_get
 repo_update
 repo_checkout

@@ -1,21 +1,32 @@
 #!/usr/bin/env bash
 
+# Information
+# Repository: https://github.com/asdf-vm/asdf.git
+
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
-# * ASDF
+export PATH="$HOME/.asdf/shims"${PATH:+:}$PATH
 
-if [[ ! -d "$HOME/.asdf" ]]; then
+grab()
+{
+    [[ -d "$HOME/.asdf" ]] && return
+
     git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf"
 
-    cd "$HOME/.asdf" && git checkout "$(git describe --abbrev=0 --tags)"
-fi
+    cd "$HOME/.asdf"
+
+    git checkout "$(git describe --abbrev=0 --tags)"
+}
+
+
+# * RUN
+
+grab
 
 # * LOAD ASDF
 source "$HOME/.asdf/completions/asdf.bash"
 source "$HOME/.asdf/asdf.sh"
-
-export PATH="$HOME/.asdf/shims"${PATH:+:}$PATH
 
 # * UPDATING ASDF
 asdf update
