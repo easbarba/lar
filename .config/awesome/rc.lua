@@ -270,17 +270,17 @@ globalkeys = gears.table.join(
 
    -- USER CUSTOM CONFIG - BEGIN
 
-   awful.key({ modkey,         },     "c",                                                   lockscreen),
-   awful.key({ modkey, "Shift" },     "w",  function() os.execute("cejo ops volume up")             end),
-   awful.key({ modkey, "Shift" },     "s",  function() os.execute("cejo ops volume down")           end),
-   awful.key({ modkey, "Shift" },     "e",  function() os.execute("cejo ops volume toggle")         end),
-   awful.key({ modkey, "Shift" },     "a",  function() os.execute("cejo ops brightness up")         end),
-   awful.key({ modkey, "Shift" },     "d",  function() os.execute("cejo ops brightness down")       end),
+   awful.key({ modkey,         }, "c",                                                       lockscreen),
+   awful.key({ modkey, "Shift" }, "w",      function() os.execute("cejo ops volume up")             end),
+   awful.key({ modkey, "Shift" }, "s",      function() os.execute("cejo ops volume down")           end),
+   awful.key({ modkey, "Shift" }, "e",      function() os.execute("cejo ops volume toggle")         end),
+   awful.key({ modkey, "Shift" }, "a",      function() os.execute("cejo ops brightness up")         end),
+   awful.key({ modkey, "Shift" }, "d",      function() os.execute("cejo ops brightness down")       end),
    awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot")            end),
-   awful.key({ modkey, "Shift" },     "p",  function() os.execute("cejo media play")                end),
-   awful.key({ modkey          },     "z",  function() os.execute("playerctl play-pause")           end),
-   awful.key({ modkey          },     "v",  function() os.execute("sysinfo")                        end),
-   awful.key({ modkey, "Shift" },     "r",  function() os.execute("systemctl reboot")               end),
+   awful.key({ modkey, "Shift" }, "p",      function() os.execute("cejo media play")                end),
+   awful.key({ modkey          }, "z",      function() os.execute("playerctl play-pause")           end),
+   awful.key({ modkey          }, "v",      function() os.execute("sysinfo")                        end),
+   awful.key({ modkey, "Shift" }, "r",      function() os.execute("systemctl reboot")               end),
 
    -- USER CUSTOM CONFIG - END
 
@@ -562,7 +562,7 @@ awful.rules.rules = {
 
 
    -- Fullscreen Windows:
-   { rule_any = { class = { "Emacs", "emacs", "mpv", "st", "Mate-terminal", "Atril" }},
+   { rule_any = { class = { "Emacs", "emacs", "mpv", "st", "Mate-terminal" }},
      properties = { fullscreen = true }},
    { rule_any = { class = { "mpv", "vlc" }},
      properties = { switchtotag = true }},
