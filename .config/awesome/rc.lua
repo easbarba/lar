@@ -200,7 +200,7 @@ awful.screen.connect_for_each_screen(function(s)
       set_wallpaper(s)
 
       -- Each screen has its own tag table.
-      awful.tag({ "mx", "reader", "term", "media", "www" }, s, awful.layout.layouts[1])
+      awful.tag({ "mx", "reader", "term", "www", "media"  }, s, awful.layout.layouts[1])
 
       -- Create a promptbox for each screen
       s.mypromptbox = awful.widget.prompt()
@@ -555,10 +555,11 @@ awful.rules.rules = {
      properties = { tag = "reader" } },
    { rule_any = { class = { "st", "st-256color", "Mate-terminal" }},
      properties = { tag = "term" } },
-   { rule_any = { class = { "mpv", "vlc", "Clementine", "feh", "Steam" }},
-     properties = { tag = "media" } },
-   { rule_any = { class = { "IceCat", "Firefox", "Chromium", "TelegramDesktop" }},
+   { rule_any = { class = { "IceCat", "Firefox", "Chromium" }},
      properties = { tag = "www" } },
+   { rule_any = { class = { "mpv", "vlc", "Clementine", "feh", "Steam", "TelegramDesktop" }},
+     properties = { tag = "media" } },
+
 
    -- Fullscreen Windows:
    { rule_any = { class = { "Emacs", "emacs", "mpv", "st", "Mate-terminal", "Atril" }},
