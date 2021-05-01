@@ -55,7 +55,7 @@
 ** Books
    | Books                   | Chapter                                       | @                                         | late | revision |
    |-------------------------+-----------------------------------------------+-------------------------------------------+------+----------|
-   | Agile Rails Development | Task F: Add a Dash of Ajax                    | Iteration F2: Creating an Ajax-Based Cart |      |          |
+   | Agile Rails Development | zTask F: Add a Dash of Ajax                   | Iteration F2: Creating an Ajax-Based Cart |      |          |
    | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks                          |      |          |
    | Active Record Basics    |                                               |                                           |      |          |
    | Raisl Style Guide       | Controllers: Rendering                        |                                           |      |          |
