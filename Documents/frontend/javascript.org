@@ -8,10 +8,11 @@
 - [[#progress][Progress]]
   - [[#books][Books]]
   - [[#sloc][SLOC]]
+- [[#features][Features]]
+  - [[#nubers][Nubers]]
+- [[#concepts][Concepts]]
 - [[#books][Books]]
   - [[#eloquent-javascript][Eloquent JavaScript]]
-- [[#concepts][Concepts]]
-- [[#features][Features]]
 - [[#sites][Sites]]
   - [[#web-js---misc][Web JS - Misc]]
   - [[#web-js---online-tools][Web JS - Online Tools]]
@@ -22,17 +23,32 @@
 :END:
 * Progress
 ** Books
-   | Books                                     | Cap                                     | @                                     | late | revision |
-   |-------------------------------------------+-----------------------------------------+---------------------------------------+------+---------|
-   | JavaScript The Definitive Guide           | Chapter 3. Types, Values, and Variables | 3.9.3 Object to Primitive Conversions |      |         |
-   | Essential TypeScript From Beginner to Pro |                                         | Marking Tasks Complete                |      |         |
+   | Books                                     | Cap | @                                               | late | revision |
+   |-------------------------------------------+-----+-------------------------------------------------+------+----------|
+   | JavaScript The Definitive Guide           |   3 | 3.2.4 Binary Floating-Point and Rounding Errors |      |          |
+   | Essential TypeScript From Beginner to Pro |     | Marking Tasks Complete                          |      |          |
 
 ** SLOC
-   | Project | folder | file | @ |
-   |-------------+--------+------+---|
-   | node        |        |      |   |
-   | angular     |        |      |   |
-   | inquirer    |        |      |   |
+   | Project  | folder           | file      | @ |
+   |----------+------------------+-----------+---|
+   | yarn     | src/cli/commands | access.js |   |
+   | node     |                  |           |   |
+   | inquirer |                  |           |   |
+* Features
+** Nubers
+   #+begin_src javascript
+   0 === -0 // true
+   1/0 === 1/-0 // false
+
+   NaN === NaN // false
+   Number.isNaN(NaN) // true
+
+   #+end_src
+
+* Concepts
+  - Types: numbers, strings, boolean, null, undefined, symbols
+  - Primitives: numbers, strings, boolean, null, undefined
+
 * Books
 ** Eloquent JavaScript
 *** 2. Program Structure
@@ -44,9 +60,9 @@
       let numberLoop = 1;
 
       do {
-          console.log(Hash);
-          Hash = Hash + "#";
-          numberLoop++;
+	  console.log(Hash);
+	  Hash = Hash + "#";
+	  numberLoop++;
       } while (numberLoop <= 7)
 
       #+END_SRC
@@ -57,18 +73,18 @@
 
       while (numberIncreasing <= 100) {
 
-          if ((numberIncreasing % 3) == 0 && (numberIncreasing % 5)  == 0)
-              console.log("FizzBuzz");
-          else
-              if ((numberIncreasing % 3) == 0)
-                  console.log("Fizz");
-          else
-              if ((numberIncreasing % 5)  == 0)
-                  console.log("Buzz");
-          else
-              console.log(numberIncreasing);
+	  if ((numberIncreasing % 3) == 0 && (numberIncreasing % 5)  == 0)
+	      console.log("FizzBuzz");
+	  else
+	      if ((numberIncreasing % 3) == 0)
+		  console.log("Fizz");
+	  else
+	      if ((numberIncreasing % 5)  == 0)
+		  console.log("Buzz");
+	  else
+	      console.log(numberIncreasing);
 
-          numberIncreasing++;
+	  numberIncreasing++;
       }
 
       #+END_SRC
@@ -78,14 +94,14 @@
       let columns = 1;
 
       while (columns <= 8) {
-          let symbol = "# # # #";
+	  let symbol = "# # # #";
 
-          if ((columns % 2) === 0)
-              console.log(" " + symbol);
-          else
-              console.log(symbol);
+	  if ((columns % 2) === 0)
+	      console.log(" " + symbol);
+	  else
+	      console.log(symbol);
 
-          columns++;
+	  columns++;
       }
 
       #+END_SRC
@@ -95,7 +111,7 @@
 
      // -----
      const makeNoise = function() {
-         console.log(square("Pling!"));
+	 console.log(square("Pling!"));
      };
 
      makeNoise();
@@ -103,22 +119,22 @@
 
      // -----
      const power = function(base, exponent) {
-         let result = 1;
-         for (let count = 0; count < exponent; count++) {
+	 let result = 1;
+	 for (let count = 0; count < exponent; count++) {
 	     result *= base;
-         }
-         return result;
+	 }
+	 return result;
      };
 
      console.log(power(2, 10));
 
      // -----
      const power = (base, exponent) => {
-         let result = 1;
-         for (let count = 0; count < exponent; count++) {
+	 let result = 1;
+	 for (let count = 0; count < exponent; count++) {
 	     result *= base;
-         }
-         return result;
+	 }
+	 return result;
      };
 
 
@@ -129,19 +145,19 @@
 
      // -----
      const hummus = function(factor) {
-         const ingredient = function(amount, unit, name){
+	 const ingredient = function(amount, unit, name){
 	     let ingredientAmount = amount * factor;
 	     if (ingredientAmount > 1) {
-                 unit += "s";
+		 unit += "s";
 	     }
 	     console.log(`${ingredientAmount} ${unit} ${name}`);
-         };
+	 };
 
-         ingredient(1, "can", "chickpeas");
-         ingredient(0.25, "cup", "tahini");
-         ingredient(0.25, "cup", "lemon juice");
-         ingredient(1, "tablespoon", "olive oil");
-         ingredient(0.5, "teaspoon", "cumin");
+	 ingredient(1, "can", "chickpeas");
+	 ingredient(0.25, "cup", "tahini");
+	 ingredient(0.25, "cup", "lemon juice");
+	 ingredient(1, "tablespoon", "olive oil");
+	 ingredient(0.5, "teaspoon", "cumin");
      };
      #+END_SRC
 **** exercises
@@ -150,7 +166,7 @@
 
 
       function min(a, b){
-          return (a < b) ? a : b
+	  return (a < b) ? a : b
       }
 
       console.log(min(20,2))
@@ -161,16 +177,16 @@
 
       function isEven(number){
 
-          let numberIsEven = false;
+	  let numberIsEven = false;
 
-          if (number == 0)
-              return numberIsEven = true;
-          else if (number == 1)
-              return numberIsEven = false;
-          else if (number <= 0)
-              return console.log("Please, enter a natural(positive) number.")
-          else
-              return isEven(number - 2);
+	  if (number == 0)
+	      return numberIsEven = true;
+	  else if (number == 1)
+	      return numberIsEven = false;
+	  else if (number <= 0)
+	      return console.log("Please, enter a natural(positive) number.")
+	  else
+	      return isEven(number - 2);
       }
 
       isEven(50); // true
@@ -185,14 +201,14 @@
       // -----
       function countBs(string){
 
-          let BinString = 0;
+	  let BinString = 0;
 
-          for (let i = 0; i < string.length; i++) {
-              if (string[i] == "B")
-                  BinString++;
-          }
+	  for (let i = 0; i < string.length; i++) {
+	      if (string[i] == "B")
+		  BinString++;
+	  }
 
-          return BinString;
+	  return BinString;
       }
 
       console.log(countBs("bbC"))
@@ -201,25 +217,19 @@
       // -----
       function countChar(string, charToMatch){
 
-          let BinString = 0;
+	  let BinString = 0;
 
-          for (let i = 0; i < string.length; i++) {
-              if (string[i] == charToMatch)
-                  BinString++;
-          }
+	  for (let i = 0; i < string.length; i++) {
+	      if (string[i] == charToMatch)
+		  BinString++;
+	  }
 
-          return BinString;
+	  return BinString;
       }
 
       console.log(countChar("bbC", "B"))
 
       #+END_SRC
-
-* Concepts
-  - Types: numbers, strings, boolean, null, undefined, symbols
-  - Primitives: numbers, strings, boolean, null, undefined
-
-* Features
 * Sites
 ** Web JS - Misc
    https://bestofjs.org/
