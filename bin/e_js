@@ -58,7 +58,7 @@ yarn()
 
 packages()
 {
-    local command='npm i -g'
+    local command='yarn add global'
 
     local essential=(npm typescript)
     local servers=(bash-language-server yaml-language-server
