@@ -1540,7 +1540,6 @@ upgrade: upgrade
        done
    }
 
-
    e_path_luarocks()
    {
        export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
