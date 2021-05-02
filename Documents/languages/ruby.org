@@ -138,21 +138,21 @@
 
 ** Priorities
    - Ruby
-   - Rails { Active Admin, }
+   - Rails
    - Unit Test / Rspec
    - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
    - Git
    - HTML/CSS/JS
    - PostgreSQL
    - API REST { YAML, JSON, XML, SOAP }
+   - CS
+   - English
    - Container
    - Sidekiq
    - Heroku
    - Slim
    - CI/CD
    - Cloud
-   - CS
-   - English
 
 * Packages
 ** Packagement
