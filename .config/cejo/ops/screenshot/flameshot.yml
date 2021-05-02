@@ -1,5 +1,5 @@
 ---
-exec: 'flameshot'
+bin: 'flameshot'
 full: 'full -p'
 partial: 'gui -p'
-folder: '{folder}'
+folder: '{0}'

@@ -1,5 +1,5 @@
 ---
-exec: 'maim'
+bin: 'maim'
 full: ''
 partial: '--select'
-folder: '{filepath}'
+folder: '{0}'

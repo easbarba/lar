@@ -2,4 +2,4 @@
 exec: 'scrot'
 full: '--focused --silent'
 partial: '--select --silent'
-folder: '{filepath}'
+folder: '{0}'
