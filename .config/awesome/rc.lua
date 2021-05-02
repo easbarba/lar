@@ -71,7 +71,7 @@ local screenshot_folder = os.getenv("HOME") .. "/Pictures/communist-flag.jpg"
 beautiful.wallpaper = screenshot_folder
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+terminal = "st"
 editor = "emacs"
 lockscreen = function() awful.util.spawn("slock") end
 
@@ -276,7 +276,8 @@ globalkeys = gears.table.join(
    awful.key({ modkey, "Shift" }, "e",      function() os.execute("cejo ops volume toggle")         end),
    awful.key({ modkey, "Shift" }, "a",      function() os.execute("cejo ops brightness up")         end),
    awful.key({ modkey, "Shift" }, "d",      function() os.execute("cejo ops brightness down")       end),
-   awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot")            end),
+   awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot full")       end),
+   awful.key({ "Shift"         }, "Print",  function() os.execute("cejo ops screenshot partial")    end),
    awful.key({ modkey, "Shift" }, "p",      function() os.execute("cejo media play")                end),
    awful.key({ modkey          }, "z",      function() os.execute("playerctl play-pause")           end),
    awful.key({ modkey          }, "v",      function() os.execute("sysinfo")                        end),
