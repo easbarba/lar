@@ -174,8 +174,9 @@
   :commands lsp
   :hook
   (ruby-mode . lsp)
-  (go-mode . lsp)
+  (lua-mode . lsp)
   (css-mode . lsp)
+  (shell-script-mode . lsp)
   (js-mode . lsp)
   (html-mode . lsp)
   (shell-mode . lsp)
@@ -192,8 +193,8 @@
   (lsp-signature-auto-activate t)
   (flycheck-checker-error-threshold 1400)
   (lsp-clients-elixir-server-executable (f-join user-emacs-directory
-						 ".cache" "lsp" "elixir-ls"
-						 "language_server.sh"))
+						".cache" "lsp" "elixir-ls"
+						"language_server.sh"))
   :bind
   ("C-c l w" . lsp-restart-workspace)
   ("C-c l r" . lsp-rename)
