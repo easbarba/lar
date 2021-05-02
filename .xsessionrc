@@ -67,6 +67,11 @@ asdf_js()
     export PATH="$dir"${PATH:+:}$PATH
 }
 
+luarocks()
+{
+    export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
+}
+
 golang()
 {
     export GOPATH=$HOME/.local/go
@@ -80,3 +85,4 @@ asdf
 asdf_js
 guix
 golang
+luarocks
