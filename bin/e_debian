@@ -24,6 +24,8 @@ packages()
 
     ruby=(libssl-dev)
 
+    lua=(lua5.4 luarocks lua-check)
+
     postgres=(libreadline-dev zlib1g-dev curl)
 
     system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
@@ -88,6 +90,7 @@ packages()
     e_dolist "$command" "${debian[@]}"; sudo apt-file update # update Debian database
     e_dolist "$command" "${emacs[@]}"
     e_dolist "$command" "${ruby[@]}"
+    e_dolist "$command" "${lua[@]}"
     e_dolist "$command" "${programming[@]}"
     e_dolist "$command" "${postgres[@]}"
     e_dolist "$command" "${system[@]}"
