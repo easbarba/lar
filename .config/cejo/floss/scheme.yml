@@ -1,11 +1,16 @@
---- # Scheme
-- https://github.com/aconchillo/guile-json
-- https://gitlab.com/guile-git/guile-git
-- https://gitlab.com/leoprikler/guile-filesystem
-- https://github.com/mwette/guile-libyaml
-- https://gitlab.com/emacs-geiser/racket
-- https://github.com/alezost/guix-config
-- https://gitlab.com/emacs-geiser/guile
-- https://github.com/wingo/fibers
-- https://git.savannah.gnu.org/git/guix.git
-- https://git.sv.gnu.org/git/guile.git
+--- # elixir
+- https://github.com/bitwalker/distillery
+- https://github.com/ueberauth/guardian
+- https://github.com/absinthe-graphql/absinthe
+- https://github.com/christopheradams/elixir_style_guide
+- https://github.com/rrrene/credo
+- https://github.com/taylor/kiex
+- https://github.com/kerl/kerl
+- https://github.com/jeremyjh/dialyxir
+- https://github.com/elixir-lsp/elixir-ls
+- https://github.com/elixir-ecto/ecto
+- https://github.com/hexpm/hex
+- https://github.com/phoenixframework/phoenix
+- https://github.com/erlang/otp
+- https://github.com/elixir-lang/ex_doc
+- https://github.com/elixir-lang/elixir
