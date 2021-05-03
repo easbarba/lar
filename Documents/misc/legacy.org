@@ -9,6 +9,7 @@
   - [[#irbrc][irbrc]]
   - [[#cejo][cejo]]
   - [[#blog][Blog]]
+  - [[#neovim][neovim]]
   - [[#asdf][asdf]]
   - [[#shell-software][shell-software]]
   - [[#shell-misc][shell-misc]]
@@ -1115,6 +1116,51 @@ upgrade: upgrade
     run:
 	    ./$(DIST)/$(PROJECT)
     #+end_src
+** neovim
+   #+begin_src vimrc
+   " Termite True Colors
+   " if &term=~'termite'
+   "
+   "     if has("termguicolors")
+   "
+   "         set termguicolors
+   "         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+   "         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+   "
+   "     endif
+   "
+   "     elseif &term=~'screen'
+   "
+   "         if has("termguicolors")
+   "
+   "             set termguicolors
+   "             let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+   "             let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+   "
+   "         endif
+   "
+   " endif
+   "
+
+
+   " "airlines themes
+   " let g:airline_theme='zenburn'
+   " let g:airline_powerline_fonts = 1
+
+   " 256 colors
+   " set t_ut=
+
+   " if &term=~'rxvt-unicode-256color'
+       "
+       " if &term=~'screen-256color'
+       "
+       "     " set t_co=256
+       "
+       " endif
+       "
+   " endif
+
+   #+end_src
 ** asdf
    #+begin_src shell-script
    #!/usr/bin/env bash
