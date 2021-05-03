@@ -3,9 +3,9 @@
   allowUnfree = true;
 
   # * Browsers
-  chromium = {
-    enablePepperFlash = true;
-  };
+  #chromium = {
+   # enablePepperFlash = true;
+  #};
 
   firefox = {
     enableGoogleTalkPlugin = true;
