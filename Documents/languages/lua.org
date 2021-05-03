@@ -1,0 +1,22 @@
+#+TILE: Lua - Study Annotations
+
+* Sumario
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+  - [[#livros][Livros]]
+  - [[#ldc][LDC]]
+:END:
+* Progresso
+** Livros
+   | Livros | Capitulo | em | tarde | revisao |
+   |--------+----------+----+-------+---------|
+   | Lua    |          |    |       |         |
+** LDC
+   | Source Code | folder | file | @ |
+   |-------------+--------+------+---|
+   | lua         |        |      |   |
+   | luarocks    |        |      |   |
+   | awesome     |        |      |   |
