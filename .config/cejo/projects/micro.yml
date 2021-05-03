@@ -1,0 +1,11 @@
+---
+name: micro
+url: https://github.com/zyedidia/micro
+tag: v2.0.8
+default: master
+patch: none
+commands:
+  - make build
+  - mv micro "$HOME/.local/bin"
+purge:
+  - make clean
