@@ -90,6 +90,7 @@
 ;; ** SCHEME
 
 (use-package geiser
+  :disabled
   :defer 1
   :hook (scheme-mode . geiser)
   :custom
