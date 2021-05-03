@@ -130,5 +130,11 @@ e_nix()
     fi
 }
 
+e_direnv()
+{
+    direnv hook fish | source
+}
+
 e_prompt
 e_nix
+e_direnv
