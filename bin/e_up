@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+cejo distro update
+cejo distro upgrade
+
+cejo floss grab
+cejo floss archive
+
+cejo projects emacs
