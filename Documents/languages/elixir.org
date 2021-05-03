@@ -1,0 +1,52 @@
+#+TILE: GNU Guile Language - Study Annotations
+
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 3 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+  - [[#books][Books]]
+  - [[#sloc][SLOC]]
+- [[#packages][Packages]]
+  - [[#iex][iex]]
+- [[#features][Features]]
+  - [[#mix][Mix]]
+- [[#tests][Tests]]
+  - [[#rspec][RSpec]]
+  - [[#unit][Unit]]
+:END:
+* Progress
+** Books
+   | Books                  | Chapter                  | @                                    | late | revision |
+   |------------------------+--------------------------+--------------------------------------+------+----------|
+   | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
+   | Programming in Elixir  | Elixir Basics            |                                      |      |          |
+** SLOC
+   | Project | folder | file | @ |
+   |---------+--------+------+---|
+   | elixir  |        |      |   |
+
+* Packages
+** iex
+   |               |               |                     |
+   |---------------+---------------+---------------------|
+   | h [<feature>] | h IO.puts     | help                |
+   | i             |               | interactive         |
+   | c <filepath>  | c 'hello.exs' | compile and execute |
+
+* Features
+  | features     | example                              | desc   |
+  |--------------+--------------------------------------+--------|
+  | pin operator | ^                                    | forces |
+  | ranges       | 1..100                               |        |
+  | regex        | Regex.run ~r{[aeiou]}, "caterpillar" |        |
+** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][Mix]]
+   | features    | options                         | desc |
+   |-------------+---------------------------------+------|
+   | deps help   | mix help deps                   |      |
+   | New package | new <name> --module <Namespace> |      |
+* Tests
+** RSpec
+** Unit
