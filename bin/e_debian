@@ -28,7 +28,7 @@ packages()
 
     postgres=(libreadline-dev zlib1g-dev curl)
 
-    system=(screen neovim zsh fish unrar rar ripgrep lshw at usbutils
+    system=(screen micro neovim zsh fish unrar rar ripgrep lshw at usbutils
 	    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
 	    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
 	    cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
