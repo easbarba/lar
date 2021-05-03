@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Info: boostrap Nix
+# Dependencies: sudo, curl, bash
+
+install()
+{
+    [[ -x $(command -v nix-env) ]] && return
+
+    curl -L https://nixos.org/nix/install | sh
+}
+
+
+install
