@@ -49,6 +49,11 @@ guix()
     export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
+nix()
+{
+    . $HOME/.nix-profile/etc/profile.d/nix.sh
+}
+
 ruby()
 {
     local dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
