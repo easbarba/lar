@@ -1,5 +1,3 @@
-source "$HOME/.xsessionrc"
-
 nix()
 {
     if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
