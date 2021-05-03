@@ -77,6 +77,10 @@ e-zplug-install-plugins() {
     zplug "felixr/docker-zsh-completion" # Docker completion
     zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
+    # nix
+    zplug "chisui/zsh-nix-shell"
+    zplug "spwhitt/nix-zsh-completions"
+
     if ! zplug check; then # install plugins
 	zplug install
     fi
