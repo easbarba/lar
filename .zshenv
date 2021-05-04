@@ -1,8 +1,12 @@
-nix()
+e_direnv()
 {
-    if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-	. $HOME/.nix-profile/etc/profile.d/nix.sh;
-    fi
+    eval "$(direnv hook zsh)"
 }
 
-nix
+e_nix()
+{
+    [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . $HOME/.nix-profile/etc/profile.d/nix.sh
+}
+
+e_direnv
+e_nix
