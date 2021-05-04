@@ -10,7 +10,7 @@ set -U fish_greeting # disable greeting
 # * GLOBAL ENV VARIABLES
 
 set -Ux PAGER less
-set -Ux EDITOR nvim
+set -Ux EDITOR micro
 set -Ux VISUAL emacs
 
 # * ALIAS
@@ -19,23 +19,15 @@ set -Ux VISUAL emacs
 
 # * PACKAGES CONFIGURATION
 
+# * Prompt
+
 # ** STARSHIP
 if type -q starship
     starship init fish | source
 end
 
-# ** RBENV
-# if type -q rbenv
-#     status --is-interactive; and rbenv init - | source
-# end
-
-# ** ASDF
-
-if test -e ~/.asdf/completions/asdf.fish
-    cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-end
-
 # ** PYTHON
+
 if type -q python
     # PIP COMPLETION
     function __fish_complete_pip
