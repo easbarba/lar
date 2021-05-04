@@ -3,57 +3,14 @@
 # Debug Options
 set -euo pipefail
 
-# Sourcing
-source "$HOME/.asdf/completions/asdf.bash"
-source "$HOME/.asdf/asdf.sh"
-
 nodejs()
 {
-    # https://github.com/asdf-vm/asdf-nodejs
-
-    add()
-    {
-	[[ -f "$HOME/.asdf/shims/node" ]] && return
-
-	asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-
-	bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-
-    }
-
-    install()
-    {
-	local default=14.16.1
-	asdf install nodejs $default
-
-	asdf global nodejs $default
-    }
-
-    add
-    install
-
+    echo
 }
 
 yarn()
 {
-    # https://github.com/asdf-vm/asdf-yarn
-
-    add()
-    {
-	[[ -f "$HOME/.asdf/shims/yarn" ]] && return
-
-	asdf plugin-add yarn
-
-    }
-
-    install()
-    {
-	asdf install yarn latest
-	asdf global yarn "$(asdf latest yarn)"
-    }
-
-    add
-    install
+    echo
 }
 
 packages()
