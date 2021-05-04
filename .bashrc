@@ -87,16 +87,7 @@ fi
 
 e_prompt()
 {
-    local liquid="$HOME/bin/liquidprompt"
-    [[ -f "$liquid" ]] && source "$liquid"
-
     [[ $(command -v starship) ]] && eval "$(starship init bash)"
-}
-
-e_asdf()
-{
-    source "$HOME/.asdf/completions/asdf.bash"
-    source "$HOME/.asdf/asdf.sh"
 }
 
 e_multiplexers()
@@ -110,22 +101,15 @@ e_multiplexers()
     fi
 }
 
-e_guix()
-{
-    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-}
-
 e_nix()
 {
-    if [ -e /home/easbarbosa/.nix-profile/etc/profile.d/nix.sh ]; then
-	. /home/easbarbosa/.nix-profile/etc/profile.d/nix.sh;
-    fi
+    eval "$(direnv hook bash)"
+
+    [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 }
 
 # * RUN
 
-e_guix
-e_nix
-e_asdf
 e_prompt
+e_nix
 e_multiplexers
