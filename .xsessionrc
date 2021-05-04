@@ -4,9 +4,9 @@
 
 # * DEFAULT SOFTWARE:
 
-export EDITOR="emacs -nw"
-export TERMINAL="konsole"
-export BROWSER="chromium"
+export EDITOR="micro"
+export TERMINAL="st"
+export BROWSER="firefox"
 
 # * DIRECTORIES ENV VARS
 
@@ -45,26 +45,19 @@ home_bin()
 
 guix()
 {
+    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
     GUIX_PROFILE="$HOME/.guix-profile"
     export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
 ruby()
 {
-    local dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
-    export PATH="$dir"${PATH:+:}$PATH
-}
+    local local_dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
+    export PATH="$localdir"${PATH:+:}$PATH
 
-asdf()
-{
-    local dir="$HOME"/.asdf/shims
-    export PATH="$dir"${PATH:+:}$PATH
-}
-
-asdf_js()
-{
-    local dir="$HOME/.asdf/shims/node_modules/.bin"
-    export PATH="$dir"${PATH:+:}$PATH
+    local gem_dir="$HOME/.gem/ruby/2.7.0/bin"
+    export PATH="$gem_dir"${PATH:+:}$PATH
 }
 
 luarocks()
@@ -81,8 +74,7 @@ golang()
 # * RUN
 
 home_bin
-asdf
-asdf_js
-guix
 golang
 luarocks
+ruby
+nix
