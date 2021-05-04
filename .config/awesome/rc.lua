@@ -271,17 +271,17 @@ globalkeys = gears.table.join(
    -- USER CUSTOM CONFIG - BEGIN
 
    awful.key({ modkey,         }, "c",                                                       lockscreen),
-   awful.key({ modkey, "Shift" }, "w",      function() os.execute("cejo ops volume up")             end),
-   awful.key({ modkey, "Shift" }, "s",      function() os.execute("cejo ops volume down")           end),
-   awful.key({ modkey, "Shift" }, "e",      function() os.execute("cejo ops volume toggle")         end),
-   awful.key({ modkey, "Shift" }, "a",      function() os.execute("cejo ops brightness up")         end),
-   awful.key({ modkey, "Shift" }, "d",      function() os.execute("cejo ops brightness down")       end),
-   awful.key({                 }, "Print",  function() os.execute("cejo ops screenshot full")       end),
-   awful.key({ "Shift"         }, "Print",  function() os.execute("cejo ops screenshot partial")    end),
-   awful.key({ modkey, "Shift" }, "p",      function() os.execute("cejo media play")                end),
-   awful.key({ modkey          }, "z",      function() os.execute("playerctl play-pause")           end),
-   awful.key({ modkey          }, "v",      function() os.execute("sysinfo")                        end),
-   awful.key({ modkey, "Shift" }, "r",      function() os.execute("systemctl reboot")               end),
+   awful.key({ modkey, "Shift" }, "w",      function() awful.spawn("cejo ops volume up")             end),
+   awful.key({ modkey, "Shift" }, "s",      function() awful.spawn("cejo ops volume down")           end),
+   awful.key({ modkey, "Shift" }, "e",      function() awful.spawn("cejo ops volume toggle")         end),
+   awful.key({ modkey, "Shift" }, "a",      function() awful.spawn("cejo ops brightness up")         end),
+   awful.key({ modkey, "Shift" }, "d",      function() awful.spawn("cejo ops brightness down")       end),
+   awful.key({                 }, "Print",  function() awful.spawn("cejo ops screenshot full")       end),
+   awful.key({ "Shift"         }, "Print",  function() awful.spawn("cejo ops screenshot partial")    end),
+   awful.key({ modkey, "Shift" }, "p",      function() awful.spawn.with_shell("e_play")              end),
+   awful.key({ modkey          }, "z",      function() awful.spawn("playerctl play-pause")           end),
+   awful.key({ modkey          }, "v",      function() awful.spawn("sysinfo")                        end),
+   awful.key({ modkey, "Shift" }, "r",      function() awful.spawn("systemctl reboot")               end),
 
    -- USER CUSTOM CONFIG - END
 
