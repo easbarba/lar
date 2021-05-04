@@ -8,6 +8,14 @@ export EDITOR="micro"
 export TERMINAL="st"
 export BROWSER="firefox"
 
+# * LOCALE
+
+export LANG="C.UTF-8"
+export LC_ALL="C.UTF-8"
+
+# export LC_ALL="en_US.utf-8"
+# export LANG="en_US.utf-8"
+
 # * DIRECTORIES ENV VARS
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -43,7 +51,7 @@ home_bin()
 
 # * PACKAGES
 
-guix()
+e_guix()
 {
     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
@@ -51,7 +59,7 @@ guix()
     export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
-ruby()
+e_ruby()
 {
     local local_dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
     export PATH="$localdir"${PATH:+:}$PATH
@@ -60,21 +68,27 @@ ruby()
     export PATH="$gem_dir"${PATH:+:}$PATH
 }
 
-luarocks()
+e_luarocks()
 {
     export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 }
 
-golang()
+e_golang()
 {
     export GOPATH=$HOME/.local/go
     export PATH="$GOPATH/bin"${PATH:+:}$PATH
 }
 
+e_nix()
+{
+    local dir="$HOME/.nix-profile/bin"
+    export PATH="$dir"${PATH:+:}$PATH
+}
+
 # * RUN
 
 home_bin
-golang
-luarocks
-ruby
-nix
+e_golang
+e_luarocks
+e_ruby
+e_nix
