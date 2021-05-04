@@ -39,7 +39,7 @@ packages()
 
     emacs=(libgccjit-10-dev)
 
-    qt=(kdeconnect kdenlive)
+    qt=(kdeconnect kdenlive clementine)
 
     gtk=(cheese transmission-gtk pragha materia-gtk-theme papirus-icon-theme suru-icon-theme)
 
