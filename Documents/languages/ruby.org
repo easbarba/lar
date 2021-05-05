@@ -175,6 +175,7 @@
      | gem search <name> |   |
 
 **** install
+     bundle config set --local deployment 'true'
 **** update
      | subcommand                  | desc                                                       |
      |-----------------------------+------------------------------------------------------------|
