@@ -12,5 +12,11 @@ install()
     curl -L https://nixos.org/nix/install | sh
 }
 
+packages()
+{
+    local packs=(ruby direnv cpufetch)
+    e_dolist ${packs[@]}
+}
 
 install
+packages
