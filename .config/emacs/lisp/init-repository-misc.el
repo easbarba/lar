@@ -672,7 +672,7 @@
 			  doom-miramare
 			  doom-dracula
 			  doom-laserwave
-			  doom-oldhope
+			  doom-old-hope
 			  doom-rouge))
 	  (current-hour (string-to-number
 			 (format-time-string "%H" (current-time))))
