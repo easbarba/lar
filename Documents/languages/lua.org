@@ -8,6 +8,8 @@
 - [[#progresso][Progresso]]
   - [[#livros][Livros]]
   - [[#ldc][LDC]]
+- [[#features][Features]]
+  - [[#strings][Strings]]
 :END:
 * Progresso
 ** Livros
@@ -20,3 +22,8 @@
    | lua         |        |      |   |
    | luarocks    |        |      |   |
    | awesome     |        |      |   |
+* Features
+** Strings
+   #+begin_src lua
+   print(#"Pepsi") -- # means string length
+   #+end_src
