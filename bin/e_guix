@@ -11,7 +11,7 @@ export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 keys()
 {
-    wget 'https://sv.gnu.org/people/viewgpg.php?user_id=15145' -qO - | sudo -i gpg --import -
+    wget "https://sv.gnu.org/people/viewgpg.php?user_id=127547" -qO - | sudo -i gpg --import -
 }
 
 get()
