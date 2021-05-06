@@ -174,12 +174,13 @@
   :defer 1
   :commands lsp
   :hook
-  (ruby-mode . lsp)
   (lua-mode . lsp)
-  (css-mode . lsp)
-  (shell-script-mode . lsp)
+  (elixir-mode . lsp)
+  (ruby-mode . lsp)
   (js-mode . lsp)
+  (css-mode . lsp)
   (html-mode . lsp)
+  (shell-script-mode . lsp)
   (shell-mode . lsp)
   (json-mode . lsp)
   (yaml-mode . lsp)
