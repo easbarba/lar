@@ -7,6 +7,6 @@ patch: none
 commands:
   - mix compile
   - mix deps.get
-  - mix elixir_ls.release -o ~/.config/emacs/.cache/lsp
+  - mix elixir_ls.release -o ~/.config/emacs/.cache/lsp/elixir-ls
 purge:
   - make clean
