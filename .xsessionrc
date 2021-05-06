@@ -61,11 +61,11 @@ e_guix()
 
 e_ruby()
 {
-    local local_dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
-    export PATH="$localdir"${PATH:+:}$PATH
+    local ruby3_dir="$HOME/.gem/ruby/3.0.0/bin/"
+    export PATH="$ruby3_dir"${PATH:+:}$PATH
 
-    local gem_dir="$HOME/.gem/ruby/2.7.0/bin"
-    export PATH="$gem_dir"${PATH:+:}$PATH
+    local ruby2_dir="$HOME/.gem/ruby/2.7.0/bin"
+    export PATH="$ruby2_dir"${PATH:+:}$PATH
 }
 
 e_luarocks()
