@@ -1,6 +1,5 @@
 #+TILE: GNU Guile Language - Study Annotations
 
-
 * Summary
   :PROPERTIES:
   :TOC:      :include all :depth 3 :ignore this
@@ -21,6 +20,7 @@
 ** Books
    | Books                  | Chapter                  | @                                    | late | revision |
    |------------------------+--------------------------+--------------------------------------+------+----------|
+   | Elixir in Action       | Building blocks          | Functions                            |      |          |
    | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
    | Programming in Elixir  | Elixir Basics            |                                      |      |          |
 ** SLOC
