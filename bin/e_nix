@@ -14,8 +14,11 @@ install()
 
 packages()
 {
-    local packs=(ruby direnv cpufetch)
-    e_dolist ${packs[@]}
+    local packs=(direnv cpufetch solargraph mcfly)
+    e_dolist 'nix-env -i' "${packs[@]}"
+
+    local packs2=(nixpkgs.ruby_2_7 nixpkgs.nodejs nixpkgs.nodePackages.npm)
+    e_dolist 'nix-env -iA' "${packs2[@]}"
 }
 
 install
