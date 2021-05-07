@@ -189,14 +189,12 @@
   (lsp-completion-provider :capf)
   (lsp-modeline-diagnostics-scope :workspace)
   (lsp-enable-indentation t)
+  (lsp-solargraph-use-bundler t)
   ;; (lsp-log-io nil) ; if set to true can cause a performance hit
   ;; (lsp-print-performance t)
   ;; (lsp-enable-file-watchers nil)
   (lsp-signature-auto-activate t)
   (flycheck-checker-error-threshold 1400)
-  (lsp-clients-elixir-server-executable (f-join user-emacs-directory
-						".cache" "lsp" "elixir-ls"
-						"language_server.sh"))
   :bind
   ("C-c l w" . lsp-restart-workspace)
   ("C-c l r" . lsp-rename)
