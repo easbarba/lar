@@ -59,6 +59,17 @@ e_guix()
     export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
+e_npm()
+{
+    export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
+    export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+    export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+    export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
+    export NPM_HOME="$NPM_CONFIG_PREFIX/npm"
+    export NPM_BIN="$NPM_HOME/bin"
+    PATH="$NPM_BIN":$PATH
+}
+
 e_ruby()
 {
     local ruby3_dir="$HOME/.gem/ruby/3.0.0/bin/"
