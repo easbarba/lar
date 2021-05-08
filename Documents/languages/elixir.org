@@ -8,6 +8,7 @@
 - [[#progress][Progress]]
   - [[#books][Books]]
   - [[#sloc][SLOC]]
+  - [[#priorities][Priorities]]
 - [[#packages][Packages]]
   - [[#iex][iex]]
 - [[#features][Features]]
@@ -20,13 +21,32 @@
 ** Books
    | Books                  | Chapter                  | @                                    | late | revision |
    |------------------------+--------------------------+--------------------------------------+------+----------|
-   | Elixir in Action       | Building blocks          | Functions                            |      |          |
+   | Elixir in Action       | Building blocks          | Module attributes                    |      |          |
    | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
    | Programming in Elixir  | Elixir Basics            |                                      |      |          |
 ** SLOC
-   | Project | folder | file | @ |
-   |---------+--------+------+---|
-   | elixir  |        |      |   |
+   | Project   | folder | file | @ |
+   |-----------+--------+------+---|
+   | elixir    |        |      |   |
+   | phoenix   |        |      |   |
+   | elixir-ls |        |      |   |
+** Priorities
+   - Elixir
+   - Phoenix
+   - Unit Test
+   - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
+   - Git
+   - HTML/CSS/JS
+   - PostgreSQL
+   - API REST { YAML, JSON, XML, SOAP }
+   - CS
+   - English
+   - Container
+   - Sidekiq
+   - Heroku
+   - Slim
+   - CI/CD
+   - Cloud
 
 * Packages
 ** iex
