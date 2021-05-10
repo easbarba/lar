@@ -85,6 +85,7 @@ globalkeys = gears.table.join(
    awful.key({ modkey, "Shift" }, "p",     function() awful.spawn.with_shell("e_play")              end),
    awful.key({ modkey          }, "z",     function() awful.spawn("playerctl play-pause")           end),
    awful.key({ modkey          }, "v",     function() awful.spawn("sysinfo")                        end),
+   awful.key({ modkey, "Shift" }, "v",     function() awful.spawn("e_getvideo")                     end),
    awful.key({ modkey, "Shift" }, "r",     function() awful.spawn("systemctl reboot")               end),
 
    -- USER CUSTOM CONFIG - END
