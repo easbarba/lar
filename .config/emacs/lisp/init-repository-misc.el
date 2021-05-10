@@ -227,21 +227,19 @@
      "https://guix.gnu.org/feeds/blog.atom"
      "https://bits.debian.org/feeds/atom.xml"
      "https://micronews.debian.org/feeds/atom.xml"
-     "https://wingolog.org/feed/atom"
-     "https://sourcehut.org/blog/index.xml"
+     "https://elixir-lang.org/atom.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://weblog.rubyonrails.org/feed/atom.xml"
      "https://rubyweekly.com/rss/"
      "https://edelpero.svbtle.com/feed"
      "https://debxp.org/feed/"
+     "https://sourcehut.org/blog/index.xml"
      "https://drewdevault.com/blog/index.xml"
      "https://eregon.me/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
      "https://feeds.buzzsprout.com/1004689.rss"
-     "https://naildrivin5.com/atom.xml"
-     "https://boringrails.com/feed.xml"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQnpN5AUd36lnMHuIl_rihA" ;; Caio Delgado
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SbfAPZf8SMvAxp8t51qtQ" ;; DebianConf
