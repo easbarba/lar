@@ -11,8 +11,15 @@
   - [[#priorities][Priorities]]
 - [[#packages][Packages]]
   - [[#iex][iex]]
+  - [[#ex_doc][ex_doc]]
+  - [[#phoenix][phoenix]]
+  - [[#mix][mix]]
 - [[#features][Features]]
-  - [[#mix][Mix]]
+  - [[#atoms][atoms]]
+    - [[#aliases][aliases]]
+  - [[#boolean][Boolean]]
+  - [[#map][map]]
+  - [[#typespec][typespec]]
 - [[#tests][Tests]]
   - [[#rspec][RSpec]]
   - [[#unit][Unit]]
@@ -55,18 +62,61 @@
    | h [<feature>] | h IO.puts     | help                |
    | i             |               | interactive         |
    | c <filepath>  | c 'hello.exs' | compile and execute |
-
+** ex_doc
+** phoenix
+** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][mix]]
+   | features    | options                         | desc |
+   |-------------+---------------------------------+------|
+   | deps help   | mix help deps                   |      |
+   | New package | new <name> --module <Namespace> |      |
 * Features
   | features     | example                              | desc   |
   |--------------+--------------------------------------+--------|
   | pin operator | ^                                    | forces |
   | ranges       | 1..100                               |        |
   | regex        | Regex.run ~r{[aeiou]}, "caterpillar" |        |
-** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][Mix]]
-   | features    | options                         | desc |
-   |-------------+---------------------------------+------|
-   | deps help   | mix help deps                   |      |
-   | New package | new <name> --module <Namespace> |      |
+** atoms
+   #+begin_src elixir
+   :an_atom
+   #+end_src
+**** aliases
+     - aliases are atoms that begin with upcased: AnAtom
+       -
+** Boolean
+   - :true
+   - :false
+   - true, false are syntax sugar of those
+** map
+   #+begin_src elixir
+   x = %{1 => '1'}
+   y = Map.new({1,'1'}, {2, '2'})
+
+   y[1] # '1'
+
+   Map.get(y, 1)
+   Map.get(y, 3, :not_found) # returns `:not_found` as default value if index is no found
+
+   Map.fetch(y, 1) # {:ok, '1'}
+   Map.fetch(y, 3) # :error
+
+   Map.put a, 4, '4'
+
+   a = %{:name => 'boy', :age => 2}
+   a = %{name: 'boy', age: 2} # shorter notation if keys are atom
+
+   a[:name] #  'boy'
+   a.name # 'boy'
+   a.height # ** (KeyError) key :non_existent_field not found
+   b = %{a | name: 'gota', age: 4}
+
+   #+end_src
+** typespec
+   - type
+   - opaque
+   - typep
+   - spec
+   - callback
+   - macrocallback
 * Tests
 ** RSpec
 ** Unit
