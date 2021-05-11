@@ -9,17 +9,28 @@
   - [[#books][Books]]
   - [[#sloc][SLOC]]
   - [[#priorities][Priorities]]
-- [[#packages][Packages]]
-  - [[#iex][iex]]
-  - [[#ex_doc][ex_doc]]
-  - [[#phoenix][phoenix]]
-  - [[#mix][mix]]
 - [[#features][Features]]
   - [[#atoms][atoms]]
     - [[#aliases][aliases]]
   - [[#boolean][Boolean]]
   - [[#map][map]]
+  - [[#binaries-and-bitstrings][Binaries and bitstrings]]
+  - [[#strings-binary-strings][Strings (binary strings)]]
+    - [[#conversion][conversion]]
+    - [[#embedded-string-expressions][embedded string expressions]]
+    - [[#sigils][sigils]]
+    - [[#heredocs][heredocs]]
+  - [[#character-lists][Character lists]]
+    - [[#conversion][conversion]]
+  - [[#functions][Functions]]
+  - [[#lambdaanonymous-func][lambda/anonymous func]]
+    - [[#-operator][& operator]]
   - [[#typespec][typespec]]
+- [[#packages][Packages]]
+  - [[#iex][iex]]
+  - [[#ex_doc][ex_doc]]
+  - [[#phoenix][phoenix]]
+  - [[#mix][mix]]
 - [[#tests][Tests]]
   - [[#rspec][RSpec]]
   - [[#unit][Unit]]
@@ -28,7 +39,7 @@
 ** Books
    | Books                  | Chapter                  | @                                    | late | revision |
    |------------------------+--------------------------+--------------------------------------+------+----------|
-   | Elixir in Action       | Building blocks          | Module attributes                    |      |          |
+   | Elixir in Action       | Building blocks          | Other built-in types                 |      |          |
    | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
    | Programming in Elixir  | Elixir Basics            |                                      |      |          |
 ** SLOC
@@ -55,20 +66,6 @@
    - CI/CD
    - Cloud
 
-* Packages
-** iex
-   |               |               |                     |
-   |---------------+---------------+---------------------|
-   | h [<feature>] | h IO.puts     | help                |
-   | i             |               | interactive         |
-   | c <filepath>  | c 'hello.exs' | compile and execute |
-** ex_doc
-** phoenix
-** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][mix]]
-   | features    | options                         | desc |
-   |-------------+---------------------------------+------|
-   | deps help   | mix help deps                   |      |
-   | New package | new <name> --module <Namespace> |      |
 * Features
   | features     | example                              | desc   |
   |--------------+--------------------------------------+--------|
@@ -110,6 +107,89 @@
    b = %{a | name: 'gota', age: 4}
 
    #+end_src
+** Binaries and bitstrings
+   #+begin_src elixir
+      <<1, 2, 3>>
+      <<257::16>> # use 16bits
+   <<1, 2>> <> <<3, 4>>
+   #+end_src
+** Strings (binary strings)
+   - printed as a string, but underneath it’s a binary
+
+   #+begin_src elixir
+   "Hello World"
+
+   #
+   "1 + 1 is equal #{1+1}"
+
+   "String" <> " " <> "concatenation"
+
+   #+end_src
+*** conversion
+    #+begin_src elixir
+    List.to_string/1
+    #+end_src
+*** embedded string expressions
+    #+begin_src elixir
+    "1 + 1 is equal #{1+1}"
+    #+end_src
+*** sigils
+    - ~S that doesn’t handle interpolation or escape characters
+    #+begin_src elixir
+    ~s(This is also a string)
+    ~s(1 + 1 = #{3 + 0.14})
+
+    ~S(Not interpolated #{3 + 0.14})
+    #+end_src
+*** heredocs
+    #+begin_src elixir
+    """
+    Heredoc must end on its own line """
+    """
+    #+end_src
+** Character lists
+   #+begin_src elixir
+   'ABC'
+
+   [65, 66, 67]
+
+   ~c(Barri gota)
+   ~C(Unescaped sigil #{3 + 0.14})
+
+   '''
+   Heredoc
+   '''
+   #+end_src
+*** conversion
+    #+begin_src elixir
+    String.to_charlist("ABC")
+    #+end_src
+** Functions
+   - can be assigned to a variable
+
+** lambda/anonymous func
+   - can be assigned to a variable
+   - can be argument of function
+   - closure capts outside vars value
+   - captures a specific memory location. Rebinding a variable doesn’t affect the previously defined lambda that references the same symbolic name
+   #+begin_src elixir
+   fn x -> IO.puts(x) end
+
+   Enum.each(
+     [1, 2, 3],
+     fn x -> IO.puts(x) end
+   )
+   #+end_src
+*** & operator
+   - capture operator: &, turns that function into a lambda that can be assigned to a variable.
+   - & operator can be used to shorten the lambda definition, making it possible to omit explicit argument naming.
+     #+begin_src elixir
+     Enum.each([1, 2, 3], &IO.puts/1)
+
+     lambda = fn x, y, z -> x * y + z end # short version of is
+     lambda = &(&1 * &2 + &3)
+     lambda.(2, 3, 4)
+     #+end_src
 ** typespec
    - type
    - opaque
@@ -117,6 +197,20 @@
    - spec
    - callback
    - macrocallback
+* Packages
+** iex
+   |               |               |                     |
+   |---------------+---------------+---------------------|
+   | h [<feature>] | h IO.puts     | help                |
+   | i             |               | interactive         |
+   | c <filepath>  | c 'hello.exs' | compile and execute |
+** ex_doc
+** phoenix
+** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][mix]]
+   | features    | options                         | desc |
+   |-------------+---------------------------------+------|
+   | deps help   | mix help deps                   |      |
+   | New package | new <name> --module <Namespace> |      |
 * Tests
 ** RSpec
 ** Unit
