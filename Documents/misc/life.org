@@ -1,17 +1,14 @@
 #+TILE: Life Annotations
 
-* Inhaltsverzeichnis
+* Sumario
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
 - [[#progress][Progress]]
   - [[#books-videos][Books, Videos]]
-- [[#quotes][Quotes]]
-- [[#dreams][Dreams]]
 - [[#movies][Movies]]
   - [[#favorites][Favorites]]
-  - [[#wishlist][WishList]]
 - [[#tv-shows][TV Shows]]
   - [[#favorites][Favorites]]
 - [[#books][Books]]
@@ -36,8 +33,6 @@
 - [[#résumé][Résumé]]
 - [[#delivery][Delivery]]
 - [[#misc][Misc]]
-- [[#quotes][Quotes]]
-- [[#yearly-aspiration][Yearly Aspiration]]
 :END:
 * Progress
 ** Books, Videos
@@ -48,32 +43,6 @@
    | The War of the Worlds  |                            |                                 |
    | Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
    | Plato: Five Dialogues  |                            |                                 |
-* Quotes
-  Write programs that do one thing and do it well. Write programs to
-  work together. Write programs to handle text streams, because that
-  is a universal interface. - Doug Mcllroy
-
-  I do what you dont want to do that you know you've got to do to be
-  where you want to be - Dan Pena
-
-  A receita do fracasso é ficar tentando 1001 coisas diferentes e
-  nunca investir energia real em algo por muito tempo - Jabur
-
-  - E os seus discípulos lembraram-se do que está escrito: O zelo da tua casa me devorou. Joao 2:17
-
-  - Não abandone a sabedoria, e ela o protegerá; ame-a, e ela cuidará de você.
-    O conselho da sabedoria é: Procure obter sabedoria; use tudo o que você possui para adquirir entendimento.
-    Proverbios 4:6-7
-
-* Dreams
-   - Play Bach's Guitar BWV - 1006 - Prelude from lute suite 4
-   - Exciting Carrer
-   - CS PHD
-   - An unforgetful vacation
-   - Go out w/ cousin and have lots of fun
-   - A notorius project
-   - A House
-   - Cousin's College Tuition
 * Movies
 ** Favorites
    - 12 Angry Men
@@ -133,7 +102,6 @@
    - The Last Man on Earth (Vincent Price)
    - Independency Day
    - The Fifth Element
-** WishList
 * TV Shows
 ** Favorites
    - Star Trek - The Next Generation
@@ -433,10 +401,3 @@
   981103178
 * Misc
   VIVO Protocolo: 181220208858338
-* Quotes
-  Jovem de 19 anos que frequentava festas , morava c os pais e  irmã,  contaminou todos da familia;  estava na UTI desde a semana do carnaval.Foi para o quarto no sabado e ficou sabendo q todos da sua familia haviam falecido.
-( do Facebook)
-* Yearly Aspiration
- - 5 non-work related books
- - CSGO MM Gold Rank
- - 1 Classic guitar song
