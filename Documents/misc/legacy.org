@@ -47,6 +47,11 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#languages][Languages]]
+  - [[#ruby][Ruby]]
+  - [[#rails][Rails]]
+  - [[#frontend][FrontEnd]]
+  - [[#css][Css]]
+  - [[#html][HTML]]
   - [[#haskell][Haskell]]
   - [[#scheme][Scheme]]
   - [[#common-lisp][Common Lisp]]
@@ -186,6 +191,44 @@ upgrade: upgrade
     #+end_src
 *** floss
    #+begin_src yaml
+   --- # css
+   - https://github.com/IanLunn/Hover
+   - https://github.com/jgthms/bulma
+   - https://github.com/daneden/animate.css
+   - https://github.com/oddbird/susy
+   - https://github.com/necolas/normalize.css
+   - https://github.com/mozdevs/cssremedy
+
+   --- # ruby
+   - https://github.com/markets/awesome-ruby
+   - https://github.com/davetron5000/naildrivin5.com
+   - https://github.com/davidgf/design-patterns-in-ruby
+   - https://github.com/rubocop-hq/rails-style-guide
+   - https://github.com/rubocop-hq/rspec-style-guide
+   - https://github.com/rubocop-hq/ruby-style-guide
+   - https://github.com/mperham/sidekiq
+   - https://github.com/middleman/middleman
+   - https://github.com/nix-community/bundix
+   - https://github.com/ruby-git/ruby-git
+   - https://github.com/rubocop-hq/rubocop
+   - https://github.com/castwide/solargraph
+   - https://github.com/dry-rb/dry-core
+   - https://github.com/dry-rb/dry-auto_inject
+   - https://github.com/dry-rb/dry-container
+   - https://github.com/rubygems/rubygems
+   - https://github.com/rails/rails
+   - https://github.com/erikhuda/thor
+   - https://github.com/davetron5000/gli
+   - https://github.com/pry/pry
+   - https://github.com/rspec/rspec
+   - https://github.com/rspec/rspec-rails
+   - https://github.com/rspec/rspec-core
+   - https://github.com/ruby/spec
+   - https://github.com/ruby/rake
+   - https://github.com/ruby/rdoc
+   - https://github.com/ruby/ruby
+
+
    --- # Scheme
    - https://github.com/aconchillo/guile-json
    - https://gitlab.com/guile-git/guile-git
@@ -198,110 +241,109 @@ upgrade: upgrade
    - https://git.savannah.gnu.org/git/guix.git
    - https://git.sv.gnu.org/git/guile.git
 
-      --- # golang
-      - https://github.com/golang-standards/project-layout
-      - https://github.com/hashicorp/nomad
-      - https://github.com/hashicorp/consul
-      - https://github.com/hashicorp/terraform
-      - https://github.com/containers/buildah
-      - https://github.com/containers/podman
-      - https://github.com/sourcegraph/go-langserver
-      - https://github.com/gorilla/mux
-      - https://github.com/cli/cli
-      - https://github.com/rclone/rclone
-      - https://github.com/avelino/awesome-go
-      - https://github.com/kubernetes-sigs/kind/
-      - https://github.com/kubernetes/kubernetes
-      - https://github.com/adonovan/gopl.io
-      - https://github.com/golang/net
-      - https://github.com/golang/tools
-      - https://github.com/golang/go
+   --- # golang
+   - https://github.com/golang-standards/project-layout
+   - https://github.com/hashicorp/nomad
+   - https://github.com/hashicorp/consul
+   - https://github.com/hashicorp/terraform
+   - https://github.com/containers/buildah
+   - https://github.com/containers/podman
+   - https://github.com/sourcegraph/go-langserver
+   - https://github.com/gorilla/mux
+   - https://github.com/cli/cli
+   - https://github.com/rclone/rclone
+   - https://github.com/avelino/awesome-go
+   - https://github.com/kubernetes-sigs/kind/
+   - https://github.com/kubernetes/kubernetes
+   - https://github.com/adonovan/gopl.io
+   - https://github.com/golang/net
+   - https://github.com/golang/tools
+   - https://github.com/golang/go
 
-      --- # c
-      - https://gitlab.freedesktop.org/mesa/mesa.git
-      - git://source.winehq.org/git/wine.git
-      - https://github.com/openssh/openssh-portable.git
-      - https://github.com/libressl-portable/portable.git
-      - https://git.suckless.org/dwm
-      - https://github.com/zsh-users/zsh.git
-      - https://github.com/git/git.git
-      - https://github.com/tmux/tmux.git
-      - https://github.com/antirez/redis.git
-      - https://github.com/curl/curl.git
-      - git://c9x.me/qbe.git
-      - https://github.com/mate-desktop/mate-terminal
-      - https://github.com/mate-desktop/atril
-      - https://github.com/mate-desktop/marco
+   --- # c
+   - https://gitlab.freedesktop.org/mesa/mesa.git
+   - git://source.winehq.org/git/wine.git
+   - https://github.com/openssh/openssh-portable.git
+   - https://github.com/libressl-portable/portable.git
+   - https://git.suckless.org/dwm
+   - https://github.com/zsh-users/zsh.git
+   - https://github.com/git/git.git
+   - https://github.com/tmux/tmux.git
+   - https://github.com/antirez/redis.git
+   - https://github.com/curl/curl.git
+   - git://c9x.me/qbe.git
+   - https://github.com/mate-desktop/mate-terminal
+   - https://github.com/mate-desktop/atril
+   - https://github.com/mate-desktop/marco
 
-      --- # common lisp
-      - https://github.com/CodyReichert/awesome-cl.git
-      - https://github.com/atlas-engineer/nyxt.git
-      - https://github.com/LispCookbook/cl-cookbook.git
-      - https://github.com/quicklisp/quicklisp-client.git
-      - https://github.com/quicklisp/quicklisp-bootstrap.git
-      - https://github.com/quicklisp/quicklisp-controller.git
-      - https://github.com/franzinc/clx.git
-      - https://gitlab.common-lisp.net/alexandria/alexandria.git
-      - https://gitlab.common-lisp.net/asdf/asdf.git
-      - https://gitlab.common-lisp.net/clpm/clpm.git
-      - git://git.code.sf.net/p/sbcl/sbcl.git
+   --- # common lisp
+   - https://github.com/CodyReichert/awesome-cl.git
+   - https://github.com/atlas-engineer/nyxt.git
+   - https://github.com/LispCookbook/cl-cookbook.git
+   - https://github.com/quicklisp/quicklisp-client.git
+   - https://github.com/quicklisp/quicklisp-bootstrap.git
+   - https://github.com/quicklisp/quicklisp-controller.git
+   - https://github.com/franzinc/clx.git
+   - https://gitlab.common-lisp.net/alexandria/alexandria.git
+   - https://gitlab.common-lisp.net/asdf/asdf.git
+   - https://gitlab.common-lisp.net/clpm/clpm.git
+   - git://git.code.sf.net/p/sbcl/sbcl.git
 
-      --- # Haskell
-      - https://gitlab.haskell.org/ghc/ghc
-      - https://gitlab.haskell.org/haskell/ghcup
-      - https://github.com/haskell/cabal
-      - https://github.com/commercialhaskell/stack
-      - https://github.com/haskell/haskell-language-server
-      - https://github.com/koalaman/shellcheck
-      - https://github.com/jgm/pandoc
-      - https://github.com/elm/compiler
+   --- # Haskell
+   - https://gitlab.haskell.org/ghc/ghc
+   - https://gitlab.haskell.org/haskell/ghcup
+   - https://github.com/haskell/cabal
+   - https://github.com/commercialhaskell/stack
+   - https://github.com/haskell/haskell-language-server
+   - https://github.com/koalaman/shellcheck
+   - https://github.com/jgm/pandoc
+   - https://github.com/elm/compiler
 
-      --- # Dart
-      - https://github.com/roughike/inKino
-      - https://github.com/flame-engine/flame
-      - https://github.com/felangel/bloc
-      - https://github.com/flutter/plugins
-      - https://github.com/dart-lang/build
-      - https://github.com/dart-lang/sdk
+   --- # Dart
+   - https://github.com/roughike/inKino
+   - https://github.com/flame-engine/flame
+   - https://github.com/felangel/bloc
+   - https://github.com/flutter/plugins
+   - https://github.com/dart-lang/build
+   - https://github.com/dart-lang/sdk
 
-      --- # Perl
-      - https://github.com/moose/Moose
-      - https://github.com/richterger/Perl-LanguageServer
-      - https://github.com/imapsync/imapsync
-      - https://github.com/ddclient/ddclient
-      - https://github.com/apache/avro
-      - https://github.com/mojolicious/mojo
-      - https://github.com/i3/i3
-      - https://github.com/bugzilla/bugzilla
-      - https://github.com/hachiojipm/awesome-perl
-      - https://github.com/Perl/perl5
-
-
-      --- # python
-      - https://github.com/python/cpython
-      - https://github.com/python/mypy
-      - https://github.com/python/peps
-      - https://github.com/pypa/pip
-      - https://github.com/pypa/wheel
-      - https://github.com/pytest-dev/pytest
-      - https://github.com/pypa/setuptools
-      - https://github.com/PyCQA/pylint
-      - https://github.com/nedbat/coveragepy
-      - https://github.com/psf/black
+   --- # Perl
+   - https://github.com/moose/Moose
+   - https://github.com/richterger/Perl-LanguageServer
+   - https://github.com/imapsync/imapsync
+   - https://github.com/ddclient/ddclient
+   - https://github.com/apache/avro
+   - https://github.com/mojolicious/mojo
+   - https://github.com/i3/i3
+   - https://github.com/bugzilla/bugzilla
+   - https://github.com/hachiojipm/awesome-perl
+   - https://github.com/Perl/perl5
 
 
-      --- # php
-      - https://github.com/PacktPublishing/Mastering-PHP-7
-      - https://github.com/bcit-ci/CodeIgniter
-      - https://github.com/felixfbecker/php-language-server
-      - https://github.com/vimeo/psalm
-      - https://github.com/laravel/lumen
-      - https://github.com/nikic/php-parser
-      - https://github.com/phpstan/phpstan
-      - https://github.com/composer/composer
-      - https://github.com/symfony/symfony
-      - https://github.com/laravel/laravel
-      - https://github.com/php/php-src
+   --- # python
+   - https://github.com/python/cpython
+   - https://github.com/python/mypy
+   - https://github.com/python/peps
+   - https://github.com/pypa/pip
+   - https://github.com/pypa/wheel
+   - https://github.com/pytest-dev/pytest
+   - https://github.com/pypa/setuptools
+   - https://github.com/PyCQA/pylint
+   - https://github.com/nedbat/coveragepy
+   - https://github.com/psf/black
+
+   --- # php
+   - https://github.com/PacktPublishing/Mastering-PHP-7
+   - https://github.com/bcit-ci/CodeIgniter
+   - https://github.com/felixfbecker/php-language-server
+   - https://github.com/vimeo/psalm
+   - https://github.com/laravel/lumen
+   - https://github.com/nikic/php-parser
+   - https://github.com/phpstan/phpstan
+   - https://github.com/composer/composer
+   - https://github.com/symfony/symfony
+   - https://github.com/laravel/laravel
+   - https://github.com/php/php-src
    #+end_src
 *** Cero Linguagens
 **** Ruby
@@ -9366,6 +9408,1996 @@ asdf_js()
 
      #+END_SRC
 * Languages
+** Ruby
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+    :CONTENTS:
+    - [[#progress][Progress]]
+      - [[#books][Books]]
+      - [[#sloc][SLOC]]
+    - [[#packages][Packages]]
+      - [[#gem][gem]]
+      - [[#bundle][bundle]]
+	- [[#outdated][outdated]]
+	- [[#gem][gem]]
+	- [[#install][install]]
+	- [[#update][update]]
+      - [[#irb][irb]]
+	- [[#cli][cli]]
+	- [[#inside][inside]]
+      - [[#rspec][rspec]]
+      - [[#unit-test][unit test]]
+      - [[#pry][pry]]
+    - [[#features][Features]]
+      - [[#project-structure][project structure]]
+      - [[#system-errors][System Errors]]
+	- [[#usage][usage]]
+      - [[#exceptions][exceptions]]
+	- [[#errors][Errors]]
+	- [[#usage][usage]]
+      - [[#writable-object-attribute][writable object attribute]]
+      - [[#multithreading][Multithreading]]
+	- [[#usage][usage]]
+      - [[#modules][modules]]
+      - [[#continuation][continuation]]
+      - [[#fibers][Fibers]]
+	- [[#errors][errors]]
+	- [[#usage][usage]]
+      - [[#delimited-input][delimited input]]
+      - [[#rake][rake]]
+	- [[#usage][usage]]
+      - [[#gem][gem]]
+      - [[#variables][Variables]]
+	- [[#class-variables][class variables]]
+	- [[#global-variables][global variables]]
+      - [[#self][self]]
+      - [[#commentary][commentary]]
+      - [[#defined][defined?]]
+      - [[#iterators][iterators]]
+      - [[#block-local-variables][block-local variables]]
+      - [[#loops][loops]]
+      - [[#statement-modifiers][statement modifiers]]
+      - [[#comparison][comparison]]
+      - [[#conditional][conditional]]
+      - [[#class][class]]
+	- [[#class][class]]
+      - [[#append-][append <<]]
+      - [[#blocks][blocks]]
+      - [[#lambda][lambda]]
+	- [[#how][How]]
+	- [[#usage][Usage]]
+      - [[#methods][methods]]
+      - [[#yield][yield]]
+      - [[#procs][procs]]
+      - [[#operators][operators]]
+      - [[#enumerable][enumerable]]
+      - [[#enumerator][enumerator]]
+	- [[#lazy][lazy]]
+	- [[#each_car][each_car]]
+	- [[#each][each]]
+	- [[#to_enumenum_for][to_enum/enum_for]]
+      - [[#inject][inject]]
+      - [[#select][select]]
+      - [[#succ][succ]]
+      - [[#collect][collect]]
+      - [[#freeze][freeze]]
+      - [[#dup][dup]]
+      - [[#dig][dig]]
+      - [[#fetch][fetch]]
+      - [[#tap][tap]]
+      - [[#map][map]]
+      - [[#pluck][pluck]]
+      - [[#quoting][Quoting]]
+      - [[#here-documents][here documents]]
+      - [[#proc][proc]]
+      - [[#do-end-as-param][do end as param]]
+      - [[#array][array]]
+      - [[#datetime][date/time]]
+      - [[#lambda][lambda]]
+      - [[#begin-rescue][begin rescue]]
+      - [[#hash][hash]]
+      - [[#range][range]]
+      - [[#sets][sets]]
+      - [[#gsub][gsub]]
+      - [[#find][find]]
+      - [[#map][map]]
+      - [[#each_slice][each_slice]]
+      - [[#lazy][lazy]]
+      - [[#with_index][with_index]]
+      - [[#enum_for][enum_for]]
+      - [[#more][more]]
+      - [[#concepts][Concepts]]
+	- [[#iterator][Iterator]]
+	- [[#methods][Methods]]
+	- [[#enumerator][Enumerator]]
+      - [[#instructions][Instructions]]
+	- [[#rbenv][Rbenv]]
+	- [[#misc][misc]]
+    - [[#toolings][Toolings]]
+    - [[#videos][Videos]]
+    - [[#tests][Tests]]
+      - [[#rspec][RSpec]]
+      - [[#unit][Unit]]
+    :END:
+*** Progress
+**** Books
+     | Books                            | Chapter                                | @                                           | late                                          | revision |
+     |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
+     | Confident Ruby                   | Perfoming Work                         |                                             |                                               |          |
+     | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Two Other Forms of Class Definition         | Fibers, Threads, and Processes/Multithreading |          |
+     | Closure in Ruby                  | The Power of Procs and Lambdas         | Implementing Lax                            |                                               |          |
+     | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
+     | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
+     | Effective Testing - RSpec3       | Building an App With RSpec 3           |                                             |                                               |          |
+     | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
+     | Design Patterns in Ruby          | Template Method                        |                                             |                                               |          |
+     | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing      | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
+     | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
+
+**** SLOC
+     | Project       | folder                                                        | file               | @                |
+     |---------------+---------------------------------------------------------------+--------------------+------------------|
+     | ruby          | cgi                                                           | cookie.rb          |                  |
+     | rake          | rake                                                          | file_task          | def out_of_date? |
+     | bundle        | bundler/installer                                             | gem_installer.rb   |                  |
+     | solargraph    | solargraph/api_map                                            | bundler_methods.rb |                  |
+     | dry-container | dry/container                                                 | mixin.rb           |                  |
+
+**** Priorities
+     - Ruby
+     - Rails
+     - Unit Test / Rspec
+     - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
+     - Git
+     - HTML/CSS/JS
+     - PostgreSQL
+     - API REST { YAML, JSON, XML, SOAP }
+     - CS
+     - English
+     - Container
+     - Sidekiq
+     - Heroku
+     - Slim
+     - CI/CD
+     - Cloud
+
+*** Packages
+**** Packagement
+***** gem
+      |                             |   |
+      |-----------------------------+---|
+      | install <name> -v <version> |   |
+      | which                       |   |
+      | list                        |   |
+      | search                      |   |
+      | env                         |   |
+      | info <name>                 |   |
+***** bundle
+****** outdated
+****** gem
+       |                   |   |
+       |-------------------+---|
+       | list              |   |
+       | which <name>      |   |
+       | gem search <name> |   |
+
+****** install
+       bundle config set --local deployment 'true'
+****** update
+       | subcommand                  | desc                                                       |
+       |-----------------------------+------------------------------------------------------------|
+       | all                         | update all gems                                            |
+       | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
+       | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
+       | --quiet                     |                                                            |
+       | --redownload                |                                                            |
+       | --minor                     | Prefer updating only to next minor version.                |
+       | --major                     | Prefer updating to next major version (default).           |
+       |                             |                                                            |
+
+**** Console
+***** irb
+****** cli
+       |                          |   |
+       |--------------------------+---|
+       | -r ./<file>              |   |
+       | irb_load                 |   |
+       | irb_source               |   |
+       | irb --prompt <my-prompt> |   |
+****** inside
+       |                           |         |
+       |---------------------------+---------|
+       | context.use_tracer = true | tracker |
+       |                           |         |
+***** pry
+**** Serialization
+***** JSON
+****** Commands
+       |                 |   |
+       |-----------------+---|
+       | generate <this> |   |
+
+***** YAML
+****** Commands
+       |                 |               |
+       |-----------------+---------------|
+       | YAML.dump <obj> |               |
+       | <obj>.to_yaml   | same as above |
+       |                 |               |
+
+**** Web Applications
+     - Sinatra: Sinatra is a DSL for quickly creating web applications
+     - Rails: A web-application framework that includes everything needed to create database-backed web applications
+**** Documentation
+***** Rdoc
+      - nodoc: [all]
+
+
+***** console
+      |        |   |
+      |--------+---|
+      | --all  |   |
+      | --fmt  |   |
+      | --main |   |
+
+**** Formatter
+***** Rufo
+****** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
+**** Testing
+***** RSpec
+      Behaviour Driven Development for Ruby
+****** Cli
+      |          |                                                  |
+      |----------+--------------------------------------------------|
+      | describe | creates an example group (set of related tests). |
+      | expect   | verifies an expected outcome (assertion)         |
+      | example  | individual test                                  |
+      |          |                                                  |
+****** Terms
+       - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
+       -
+       - Arrange/Act/Assert pattern
+****** Commands
+       |                                   |                                      |
+       |-----------------------------------+--------------------------------------|
+       | RSpec.describe                    |                                      |
+       | describe                          |                                      |
+       | context                           |                                      |
+       | it 'foo bar'                      |                                      |
+       | expect(foo).to eq(bar)            |                                      |
+       | expect(foo).to be > :bar          |                                      |
+       | before(:xx)                       |                                      |
+       | after(:xxx)                       |                                      |
+       | before(:context)                  |                                      |
+       | after(:context)                   |                                      |
+       | let(:foo) { Bar.new }             |                                      |
+       | pending 'foo not yet implemented' |                                      |
+       | skip or xit 'foo bar'             | x prepended to it '' to skip example |
+****** Expect
+       |                                   |   |
+       |-----------------------------------+---|
+       | to                                |   |
+       | include(<obj>: a_kind_of(<Class>) |   |
+
+****** metadata
+       |                               |   |
+       |-------------------------------+---|
+       | context 'foobar', focus: true |   |
+       |                               |   |
+****** cli
+       | cmd                          | desc                          |
+       |------------------------------+-------------------------------|
+       | --profile                    | test time                     |
+       | --format <type>              |                               |
+       | folder                       | run allfolders specs          |
+       | spec                         | run just one spec             |
+       | -e <name>                    | run spec(s) begins w/ name    |
+       | <file>:N                     | run examples in lineN of file |
+       | --only-failures              |                               |
+       | --next-failure               |                               |
+       | --tag last_run_status:failed |                               |
+       | --tag focus                  |                               |
+
+***** Unit Test
+**** Currency
+     - Money: A Ruby Library for dealing with money and currency conversion.
+**** Profiling
+     - ruby-prof
+**** Web-server
+    - rack: A modular Ruby web server interface.
+
+*** Features
+**** Classes
+     #+begin_src ruby
+     [].methods.grep /^re/ # finds methods begins with re
+     #+end_src
+**** path
+     #+begin_src ruby
+     $LOAD_PATH.each { |x| puts x } or $:
+
+     # add dir to path
+     $:.push '/your/directory/here'
+     require 'yourfile'
+     #+end_src
+**** super
+     #+begin_src ruby
+     def x(y,z)
+       super # passes all the parameters from the current method and hands the parameters to the method from the base class
+       super() # calls the method without any arguments.
+     end
+     #+end_src
+**** project structure
+     #+begin_src ruby
+     anagram/    <- top-level
+     bin/      <- command-line interface goes here
+     lib/      <- three library files go here
+     test/     <- test files go here
+     #+end_src
+**** System Errors
+     - SystemCallError
+     - subclasses are defined in a module called Errno
+***** usage
+      #+begin_src ruby
+      Errno::EAGAIN
+      Errno::EIO
+      Errno::EPERM
+
+      Errno::EAGAIN::Errno # => 35, same error number as EWOULDBLOCK, can be interchangeable
+      Errno::EPERM::Errno # => 1
+      Errno::EWOULDBLOCK::Errno # => 35
+      #+end_src
+**** exceptions
+     - class *Exception*
+     - Custom exceptions subclasses of StandardError or its children.
+     - Exception has an associated message string and a stack backtrace.
+     - Custom exceptions can add extra information
+     - rescue matches thrown Exception and use it. Similar to case statement
+     - rescue clause with no parameter list, the parameter defaults to StandardError .
+     - rescue clause can be arbitrary expressions (including method calls) that return an Exception class.
+***** Errors
+      - StandardError
+      -
+***** usage
+      #+begin_src ruby
+
+      # Exception skeleton
+
+      f = File.open("/a/file")
+      begin
+      # .....
+      rescue Exception
+	if @esmtp then
+	  @esmtp = false
+	  retry # repeat the entire begin / end block
+	else
+	  raise # reraise the exception. FAIL is similar
+	end
+      else # after RESCUE and before any ENSURE, is executed only if no exceptions are raised by the main body of code.
+	puts "Congratulations-- no errors!"
+      ensure
+	f.close
+      end
+
+      # At the end of each rescue clause, you can give Ruby the name
+      # of a local variable to receive the matched exception.
+      begin
+	eval string
+      rescue SyntaxError, NameError => boom
+	print "String doesn't compile: " + boom
+      rescue StandardError => bang
+	print "Error running script: " + bang
+      end
+
+      # reraises the current exception (or a RuntimeError if there is no current exception).
+      # This is used in exception handlers that intercept an exception before passing it on.
+      raise
+
+      # Creates a new RuntimeError exception, setting its message to the given string.
+      raise "bad mp3 encoding" #
+
+      # first argument to create an exception and then sets the associated
+      # message to the second argument and the stack trace to the third argument.
+      raise InterfaceException, "Keyboard failure", caller
+
+      raise
+
+      raise "Missing name" if name.nil?
+
+      if i >= names.size
+	raise IndexError, "#{i} >= size (#{names.size})"
+      end
+
+      raise ArgumentError, "Name too big", caller
+
+      # removes two routines from the backtrace
+      # by passing only a subset of the call stack to the new exception:
+      raise ArgumentError, "Name too big", caller[1..-1]
+      #+end_src
+**** writable object attribute
+     #+begin_src ruby
+     class ProjectList
+       def initialize
+	 @projects = []
+       end
+       def projects=(list)
+	 @projects = list.map(&:upcase)
+       end
+       def [](offset)
+	 @projects[offset]
+       end
+     end
+
+     # store list of names in uppercase
+     list = ProjectList.new
+     list.projects = %w{ strip sand prime sand paint sand paint rub paint }
+     list[3]   # => "SAND"
+     list[4]   # => "PAINT"
+     #+end_src
+
+     - attribute-setting methods
+**** Multithreading
+     -
+***** usage
+**** modules
+     #+begin_src ruby
+
+     module A
+       module_function
+
+       def foo
+       end
+     end
+
+     module A
+       module SubA
+	 def bar
+	 end
+       end
+     end
+
+
+     A::foo
+     A::SubA:bar
+
+     a = Module.new
+
+     a.class_eval do
+       remove_method
+       method_defined?
+
+       attr_reader name
+       alias_method x,e
+     end
+
+     #+end_src
+**** continuation
+     - require 'continuation'
+
+**** Fibers
+     - no require
+     - resume
+     - yield
+     - require: requiring `fiber library` gives additional `transfer` methods
+***** errors
+      - FiberError: calling resume after last fiber returned `nil`
+***** usage
+      #+begin_src ruby
+
+
+      twos = Fiber.new do
+	num = 2
+	loop do
+	  Fiber.yield(num) unless num % 3 == 0
+	  num += 2
+	end
+      end
+
+      10.times { print twos.resume, " " }
+      #+end_src
+**** delimited input
+     #+begin_src ruby
+     # %q - Single-quoted string
+     %q{\a and #{1+2} are literal}
+
+     # %Q, % - Double-quoted string
+     %Q{\a and #{1+2} are expanded}
+
+     # %w, %W - Array of strings
+     %w[ one two three ]
+
+     # %i, %I -  Array of symbols
+     %i[ one two three ]
+
+     # %r - Regular expression pattern
+     %r{cat|dog}
+
+     # %s - A symbol
+     %s!a symbol!
+
+     # %x, `` - Shell command
+     %x(df -h)
+
+     #+end_src
+**** rake
+     - -T: list avaiable tasks
+     - spec: run spec tests
+
+***** usage
+      #+begin_src ruby
+      # desc:
+      # task:
+
+      desc "Remove Unix and Windows backup files"
+      task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do # depends on two other tasks
+	puts "All backups deleted"
+      end
+      #+end_src
+
+**** gem
+     gem build GEM.gemspec
+     gem install --user-install pkg/GEM
+     gem list GEM -d
+
+**** Variables
+
+***** class variables
+      - available throughout a class or module body
+      - must be initialized before use
+      - is shared among all instances of a class and is available within the class itself.
+
+***** global variables
+      - available throughout a program.
+      - references to it returns the same object.
+      - referencing an uninitialized global variable returns nil.
+
+      #+begin_src ruby
+      $? # return global status of last command
+      #+end_src
+**** self
+     - is a keyword
+     - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
+
+       #+begin_src ruby
+
+       class tea
+	 def self.drink () # Class-Level method (static)
+	   puts 'drinking'
+	 end
+
+	 def meh
+	   puts self # refers to tea class
+	 end
+
+	 def builder
+
+	   self # return class
+	 end
+       end
+       #+end_src
+**** autoload
+     #+begin_src ruby
+     autoload :SharedContext, 'rspec/core/shared_context'
+     #+end_src
+**** commentary
+     #+begin_src ruby
+     # one line commentary
+
+     =begin
+     multiline
+     commentary
+     =end
+     #+end_src
+**** defined?
+**** iterators
+     #+begin_src ruby
+     3.times { p 'meh' } # easy to avoid fence-post and off-by-one errors
+
+     9.downto(5) { p 'meh' }
+
+     0.upto(9) { p 'meh' }
+
+     0.step(12, 3) {|x| print x, " " }
+
+     [ 1, 1, 2, 3, 5 ].each {|val| print val, " " }
+
+
+     #+end_src
+**** block-local variables
+     #+begin_src ruby
+     square = "yes"
+     total = 0
+     [ 1, 2, 3 ].each do |val; square|
+       square = val * val
+       total += square
+     end
+     puts "Total = #{total}, square = #{square}"
+     produces:
+       Total = 14, square = yes
+     #+end_src
+**** loops
+     #+begin_src ruby
+     # WHILE , UNTIL , and FOR loops are built into the language and do not introduce new scope;
+
+     while line = gets
+       # ...
+     end
+
+     until play_list.duration > 60
+       play_list.add(song_list.pop)
+     end
+
+     # when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
+     # newly local variables created in LOOP are not accessible outside the block
+     loop do
+       puts "#{short_enum.next} - #{long_enum.next}"
+     end
+
+     # not a ruby way, translated by ruby to x.each
+     for song in playlist
+       song.play
+     end
+
+
+     # NEXT skips to the end of the loop, effectively starting the next iteration
+     # BREAKn
+
+     i=0
+     loop do
+       i += 1
+       next if i < 3
+       print i
+       break if i > 4 # If a conventional loop doesn’t execute a break , its value is nil .
+     end
+
+     # REDO repeats the current iteration of the loop from the start but without reevaluating
+     # the condition or fetching the next element (in an iterator)
+     while line = gets
+       next if line =~ /^\s*#/   # skip comments
+       break if line =~ /^END/   # stop at end
+
+       # substitute stuff in backticks and try again
+       redo if line.gsub!(/`(.*?)`/) { eval($1) }
+
+       # process line ...
+     end
+
+
+
+     #+end_src
+**** statement modifiers
+     if and unless Modifiers
+     #+begin_src ruby
+     puts "a = #{a}" if $DEBUG
+     print total unless total.zero?
+     a *= 2 while a < 100
+     a -= 10 until a < 10
+     #+end_src
+**** comparison
+     #+begin_src ruby
+     # ==
+     # ===
+     # <=>
+     # =~
+     # eql?
+     # equal?
+     # !=
+     # !~
+     #+end_src
+**** conditional
+     #+begin_src ruby
+     '11' || 11
+     '11' or 11 # same precedence
+     var ||= "default value" # assign a value to a variable only if that variable isn’t already set
+
+
+     '11' && 11 # higher precedence
+     '11' and 11
+
+     !true
+     not true
+     #+end_src
+**** class
+     - :: is Ruby’s namespace resolution operator.
+     - Math::PI - access Math PI variable
+     - Math.sin(Math::PI/6.0) - access Math sin method
+     - Names of classes and modules are just constants.
+     - can nest classes and modules inside other classes and modules to any depth
+
+***** class
+      #+begin_src ruby
+      # frozen_string_literal: true
+
+      require 'pathname'
+
+      # Class Description
+      class Meh # Class name in Camel Case
+	OUCH = 'asdasd' # 1
+	attr_reader :lo, :fi # 2
+
+	# static method
+	def self.from_file(file_name) # 3
+	  new(File.readlines(file_name))
+	end
+
+	def initialize(lo, fi) # 4
+	  @alpha = OUCH
+	  @lo = lo #
+	  @fi = fi #
+	end
+
+	private_class_method :new
+
+	private
+
+	def alfa # instance method
+	  @localVar = 1
+	end
+
+	def use_local_var # instance method
+	  @localVar
+	end
+
+	def self.zeta #
+	end
+      end
+
+      Eija = Class.new #
+
+      def Eija.beta # singleton
+      end
+
+
+      # superclass
+
+      class Parent
+      end
+      class Child < Parent
+      end
+
+      Child.superclass # => Parent
+
+      #
+
+      #
+      #+end_src
+**** append <<
+**** blocks
+     #+begin_src ruby
+
+     #+end_src
+**** lambda
+***** How
+      #+begin_src ruby
+      lambda { |params| ... } # form 1
+
+      -> params { ... }  # form 2
+      #+end_src
+***** Usage
+      #+begin_src ruby
+      proc1 = -> arg { puts "In proc1 with #{arg}" }
+      proc1.call "ant"
+
+      def n_times(thing)
+	lambda {|n| thing * n }
+      end
+
+      p1 = n_times(23)
+      p1.call(3) # => 69
+      #+end_src
+**** methods
+     default values, splat args (described later on page 120), keyword args, and a block parameter
+     #+begin_src ruby
+     def splating(*rest)
+       puts rest.each { |x| puts }
+     end
+
+     def split_apart(first, *, last) # get first and last args, ignore middle ones
+     #+end_src
+**** yield
+     #+begin_src ruby
+
+     def foo
+       yield
+     end
+
+     def bar
+       if block_given?
+	 yield
+       else
+	 'lol'
+       end
+
+       foo { p 'meh' }
+       bar # => lol
+       bar { p 'yahoo' } # => yahoo
+     #+end_src
+**** procs
+     #+begin_src ruby
+     def pass_in_block(asdf, &block)
+     end
+
+     multiple_of_three = -> n { (n % 3).zero? }
+     palindrome = -> n { n = n.to_s; n == n.reverse }
+
+     p Integer
+	 .all
+	 .select(&multiple_of_three)
+	 .select(&palindrome)
+	 .first(10)
+
+     a = Proc.new
+
+     def initialize(name, &block) # initialize can receive proc object
+
+       tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
+       tc.get_tax(100) # => "Sales tax on 100 = 7.5"
+     #+end_src
+     - if the last parameter in a method definition is prefixed with an ampersand, any associated block is converted to a Proc object, and that object is assigned to the parameter. This allows you to store the block for use later.
+**** operators
+     #+begin_src ruby
+     val.to_s =~ /3/
+     #+end_src
+**** enumerable
+     #+begin_src ruby
+     # iterate over only those lines that end with a d
+     File.open("ordinal").grep(/d$/) do |line|
+       puts line
+     end
+     #+end_src
+***** compact
+      #+begin_src ruby
+
+     enum = [1, nil, 3, nil, 5].to_enum.compact
+     enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
+
+      #+end_src
+**** enumerator
+***** lazy
+      #+begin_src ruby
+      def Integer.all
+	Enumerator.new do |yielder, n: 0|
+	  loop { yielder.yield(n += 1) }
+	end.lazy
+      end
+      #+end_src
+***** each_car
+***** each
+***** to_enum/enum_for
+      #+begin_src ruby
+      a = [ 1, 3, "cat" ]
+      h = { dog: "canine", fox: "vulpine" }
+
+      # Create Enumerators
+      enum_a = a.to_enum
+      enum_h = h.to_enum
+
+      enum_a.next # 1
+      enum_h.next # [:dog, "canine"]
+      enum_a.next # 3
+      enum_h.next # [:fox, "vulpine"]
+
+      enum_a = a.each # create an Enumerator using an internal iterator
+      #+end_src
+***** generator
+**** fibers
+     -
+     #+begin_src ruby
+     f = Fiber.new do
+       x = 0
+       loop do
+	 Fiber.yield x
+	 x -= 1
+       end
+     end
+     #+end_src
+***** yield
+**** inject
+     accumulate a value across the members of a collection
+**** select
+**** succ
+     increments a string value
+     #+begin_src ruby
+     'e'.succ # f
+     #+end_src
+**** collect
+     #+begin_src ruby
+     ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
+     #+end_src
+**** freeze
+     #+begin_src ruby
+     person1.freeze # prevent modifications to the object
+     #+end_src
+**** dup
+     #+begin_src ruby
+     person1 = "Tim"
+     person2 = person1.dup # not aliasing person1
+     #+end_src
+**** dig
+**** fetch
+**** String
+     #+begin_src ruby
+     "Test" + "Test" #TestTest
+     "test".capitalize #Test
+     "Test".downcase #test
+     "Test".chop #Tes
+     "Test".next #Tesu
+     "Test".reverse #tseT
+     "Test".sum #416
+     "Test".swapcase #tEST
+     "Test".upcase #TEST
+     "Test".upcase.reverse #TSET
+     "Test".upcase.reverse.next
+     "Test".ord
+     "Test".chr
+     "xyz".scan(/./) { |letter| puts letter }
+
+     # SUBSTITUTION
+
+     "".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
+     "".gsub('i', '') #  whereas gsub does multiple substitutions at once
+     #+end_src
+**** Array
+     #+begin_src ruby
+     h = { a: 100, b: 20 }
+     h.delete_if { |key, value| value < 25 }
+     h.delete(:a)
+     #+end_src
+**** tap
+**** map
+**** pluck
+**** Quoting
+     %char{text}
+     #+begin_src ruby
+     a = %q(a b c d)
+
+     b = %Q(a b c)
+     #+end_src
+**** here documents
+     #+begin_src ruby
+     <<EOL # double quote document
+	\n
+     #{Time.now}
+     EOL
+
+     <<EOL.to_i * 10
+     EOL
+
+     <<'EOL' # single quote document
+	\n
+     #{Time.now}
+     EOL
+
+     <<-EOL
+     EOL
+
+     <<~EOL
+     EOL
+
+     [1,2, <<EO asdasd EO]
+
+     a(false, <<EO asd... EO)
+     #+end_src
+**** proc
+     #+begin_src ruby
+
+     #+end_src
+**** do end as param
+     #+begin_src ruby
+     x = (do  1 + 2 end)
+     x = (do 'a' + 'b' end).join(',')
+     #+end_src
+**** array
+     #+begin_src ruby
+     # creation
+     a = [1, ["a", "b"], 4]
+     a = Array.new(1,2)
+     a = arr = %w( Hey!\tIt is now -#{Time.now}- )
+
+
+     # indexing
+     arr[1][0]
+     [1,2][0]
+     arr.dig(3,0) value_at, a[2,3] = ..
+				     a[2..3]
+     a.slice()
+     a.[]=(0, "first")
+     a.[](2)
+     a = %w(a b c)
+     a= %W({a} b c)
+     x.to_ary
+     x.to_arr
+     Array()
+     def string.to_arr
+     end
+     a.unshift(0)
+     a.push(1,2,3)
+     a << 5
+     a.pop
+     a.shift
+     a.concat
+     a.replace([1,2,3])
+     a.flatten
+     a.reverse
+     a.join(" , ")
+     a = *
+	 a.uniq
+     a.compact
+     a.size
+     a.empty
+     a.include?
+     a.first
+     a.last
+     a.sample # return
+     a.count(1)
+     #+end_src
+     [[file:path]]
+**** date/time
+     #+begin_src ruby
+     require 'date'
+     d = date.today
+
+     require 'time'
+     t = time.zxcz
+     #+end_src
+**** lambda
+     #+begin_src ruby
+     l = -> { xx; aa }
+     l = lambda do
+       yield xx
+     end
+     #+end_src
+**** begin rescue
+     #+begin_src ruby
+     begin
+       puts 'I am before the raise.'
+       raise 'An error has occured.'
+       puts 'I am after the raise.'
+     rescue
+       puts 'I am rescued.'
+     end
+     #+end_src
+**** hash
+     #+begin_src ruby
+     h = Hash.new
+     h = { one: 1, :two => 2 }
+     h = Hash[1, "one", 2, "two"]
+
+     h.rehash # force the hash to be reindexed
+
+
+     h["1"] = 1
+     h.[]=("New York", "NY")
+     h.store("New York", "NY")
+     a.update(b)
+     a.merge(b)
+     h.select {k,vk > 1 } !
+     h.reject {  k,v  k > 1 } !
+     h.reject! {  k,v  k > 1 }
+     h = { street: "127th Street", apt: nil }.compact !
+     h = { street: "127th Street", apt: nil }.compact!
+     h.invert
+     h.clear
+     h = {...}.replace({...})
+     h.key?
+     h.empty?
+     #+end_src
+**** range
+     #+begin_src ruby
+     # create a new range object
+     r = 1..2
+
+     # include all elements
+     r =  1..99
+
+     # exclude last element
+     r = 1...199
+
+     # verbose object creation
+     r = Range.new(1,100)
+     r = Range.new(1,100, true)
+
+     # methods
+     r.cover? 2
+     r.include? 3
+     r.max
+     r.reject {}
+     r.inject {}
+
+     # range of object need to return the next object `succ` and be comparable <=>
+
+     # ranges as conditions
+     while line = gets
+       puts line if line =~ /start/ .. line =~ /end/
+     end
+
+     # ranges as intervals
+     (1..10) === 5   # => true
+     (1..10) === 15  # => false
+
+
+
+
+
+     #+end_src
+**** sets
+     #+begin_src ruby
+     s = Set.new(array)
+     s = Set.new(names) {name name.upcase }
+     s << 5
+     s.add 5
+     s.delete(1)
+     s.intersection|&| x
+     s.union x
+     s + x
+     s.difference x
+     s - x
+     s ^ x
+     s.merge [2]
+     s.subset? b
+     s.superset? b
+     s.proper_subset? x
+     s.proper_superset? x
+     #+end_src
+**** gsub
+     Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
+**** find
+     #+begin_src ruby
+     a.find { ¦n¦ n > 5 }
+     a.find { ¦n¦ n > 5 }
+     a.find_all
+     a.select
+     a.reject
+     a.map
+     #+end_src
+**** map
+     #+begin_src ruby
+     a.map { |x| x.uppercase}
+     a.map! { |x| x.uppercase}
+     #+end_src
+**** each_slice
+     #+begin_src ruby
+     animals.each_slice(2).map do |predator, prey|
+     #+end_src
+**** lazy
+     #+begin_src ruby
+     (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
+     #+end_src
+**** with_index
+     #+begin_src ruby
+     ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
+     my_enum.take(5).force // actual result rather than lazy enumerator
+     #+end_src
+**** metaprogramming
+***** Singleton Classes
+***** instance_variable_set
+***** instance_eval
+      - class methods
+***** class_eval
+      - instance methods
+
+***** Object#instance_exec
+***** Module#class_exec
+***** Module#mod-ule_exec
+**** enum_for
+     #+begin_src ruby
+     e = names.enum_for(:inject, "Names: ")
+     #+end_src
+**** more
+     |                        |                                                                                                           |                                                                                                             |
+     |------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+     | drop_while             | a.drop_while { true }                                                                                     |                                                                                                             |
+     | take_while             | a.take_while { true }                                                                                     |                                                                                                             |
+     | find_all               | a.find_all ¦ a.select                                                                                     |                                                                                                             |
+     | reject                 | a.reject { ¦i¦ i > 4 } ¦ a.reject! { ¦i¦ i > 4 }                                                          |                                                                                                             |
+     | select                 |                                                                                                           |                                                                                                             |
+     | grep                   | a.grep(//o//) ¦ a.grep(String) ¦ a.grep(50..100) ¦                                                          |                                                                                                             |
+     | group_by               | a.group_by { ¦s¦ s.size }                                                                                 |                                                                                                             |
+     | match                  | //n//.match(s)                                                                                              |                                                                                                             |
+     | String                 | 'C'.size ¦ each_byte ¦ each_line ¦ each_codepoint ¦ each_char ¦ s.bytes ¦                                 |                                                                                                             |
+     | min/min_by             | a.min { ¦a,b¦ a.size <=> b.size } ¦  a.min { ¦lang¦ lang.size } ¦ state_hash.min_by { ¦name, abbr¦ name } |                                                                                                             |
+     | max/max_by             |                                                                                                           |                                                                                                             |
+     | minmax/minmax_by       | a.minmax ¦ a.minmax_by { ¦lang¦ lang.size }                                                               |                                                                                                             |
+     | reverse_each           | [1,2,3].reverse_each { ¦e¦ puts e * 10 }                                                                  |                                                                                                             |
+     | with_index             | letters.each.with_index {¦(key,value),i¦ puts i }                                                         |                                                                                                             |
+     | each_index             | names.each.with_index(1) { ¦pres, i¦ p i }                                                                |                                                                                                             |
+     | each_slice             |                                                                                                           |                                                                                                             |
+     | each_cons              |                                                                                                           |                                                                                                             |
+     | slice_before           | a.slice_before(\/=/).to_a ¦ (1..10).slice_before { ¦num¦ num % 2 == 0 }.to_a ¦                            |                                                                                                             |
+     | slice_after            |                                                                                                           |                                                                                                             |
+     | slice_when             | a.slice_when { ¦i,j¦ i == j }.to_a                                                                        |                                                                                                             |
+     | inject/reduce          | [1,2,3,4].inject(:+)                                                                                      |                                                                                                             |
+     | cycle                  |                                                                                                           |                                                                                                             |
+     | map                    | names.map { ¦name¦ name.upcase } ¦  x = 5.times.map { Apple.new(rand(100..900)) }                         |                                                                                                             |
+     | map!                   |                                                                                                           |                                                                                                             |
+     | symbol-argument blocks | names.map(&:upcase)                                                                                       |                                                                                                             |
+     | <=>                    | Apple#<=> ¦ Apple.sort { ¦a,b¦ a.brand <=> b.brand } ¦                                                    | implementing a spaceship test method is enough to sort a class, or use a block to sort, or even override it |
+     | comparable             | Apple#<=> ¦                                                                                               | include comparable                                                                                          |
+     | clamp                  |                                                                                                           |                                                                                                             |
+     | between                |                                                                                                           |                                                                                                             |
+     | functions              | -> (args) {} ¦ Sum = -> (a, b) { a + b }                                                                  |                                                                                                             |
+     | <<                     | yielder                                                                                                   |                                                                                                             |
+     |                        | enum_for                                                                                                  |                                                                                                             |
+     |                        | to_enum                                                                                                   |                                                                                                             |
+     | dup                    |                                                                                                           |                                                                                                             |
+     |------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
+**** Concepts
+***** Iterator
+      - is a method
+      - it start and finish in the same call
+***** Methods
+****** Methods chaining
+       creates a new object at it chains
+       #+begin_src ruby
+       puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
+       #+end_src
+***** Enumerator
+      - is an object
+      - chaining
+      - block based
+      - method attachment (enum_for)
+      - un-overriding of methods in Enumerable
+      - maintain state
+      - is an enumerable object
+      - can add enumerability to objects
+      - can stop and resume collection cycling
+**** Instructions
+***** Rbenv
+      rbenv global 2.3.0 && rbenv rehash
+***** misc
+      - $! → Exception: The exception object passed to raise.
+      - $@ → Array: The stack backtrace generated by the last exception.
+      - $& → String : The string matched (following a successful pattern match). This variable is local to the current scope.
+*** Toolings
+**** Online
+     https://rubular.com
+*** Videos
+    https://www.youtube.com/watch?v=hnGVFzZ0DuI - "300x faster ruby" - Dana Sherson
+*** Tests
+**** RSpec
+**** Unit
+     tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782
+** Rails
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#cli][Cli]]
+    - [[#database][Database]]
+    - [[#misc][Misc]]
+    - [[#tasks-rake][Tasks (rake)]]
+    - [[#log][Log]]
+    - [[#migration][Migration]]
+    - [[#models][Models]]
+    - [[#console][Console]]
+    - [[#enviroment][Enviroment]]
+  - [[#methods][Methods]]
+  - [[#logger][Logger]]
+    - [[#methods][Methods]]
+  - [[#active-record][Active Record]]
+    - [[#associations][Associations]]
+    - [[#validations][Validations]]
+    - [[#migrations][Migrations]]
+    - [[#callbacks][Callbacks]]
+    - [[#query-interface][Query Interface]]
+    - [[#find][Find]]
+      - [[#sql-syntax][SQL Syntax]]
+      - [[#array-condition][Array Condition]]
+      - [[#association-proxies][Association Proxies]]
+      - [[#more][more]]
+    - [[#named-scope][Named Scope]]
+  - [[#database][Database]]
+  - [[#views][Views]]
+  - [[#controller][Controller]]
+  - [[#models][Models]]
+    - [[#fat-models][Fat models]]
+  - [[#tests][Tests]]
+    - [[#rspec][RSpec]]
+    - [[#unit][Unit]]
+    - [[#rails][Rails]]
+      - [[#cli][cli]]
+      - [[#files][files]]
+  - [[#rest][REST]]
+  - [[#json][JSON]]
+  - [[#traits][Traits]]
+  - [[#i18n][i18n]]
+  - [[#models][Models]]
+  - [[#misc][Misc]]
+  - [[#priorities][Priorities]]
+  :END:
+*** Progress
+**** Books
+     | Books                   | Chapter                                       | @                                         | late | revision |
+     |-------------------------+-----------------------------------------------+-------------------------------------------+------+----------|
+     | Agile Rails Development | Task F: Add a Dash of Ajax                    | Iteration F2: Creating an Ajax-Based Cart |      |          |
+     | Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks                          |      |          |
+     | Active Record Basics    |                                               |                                           |      |          |
+     | Raisl Style Guide       | Controllers: Rendering                        |                                           |      |          |
+
+**** SLOC
+     | Project | folder                                                    | file           |
+     |---------+-----------------------------------------------------------+----------------+
+     | rails   | rails/activerecord/lib/active_record/associations/builder | association.rb |
+
+*** Cli
+**** Database
+     | what     | how                                                                    | desc                                              |
+     |----------+------------------------------------------------------------------------+---------------------------------------------------|
+     | database | –d or --database=                                                      | use the database management system of your choice |
+     |          | db:create:all                                                          |                                                   |
+     |          | db:create                                                              |                                                   |
+     |          | dbconsole                                                              |                                                   |
+     |          | db:migrate                                                             |                                                   |
+     |          | new <name>                                                             |                                                   |
+     | models   | generate model <Name>                                                  |                                                   |
+     |          | destroy controller articles                                            |                                                   |
+     |          | destroy model Artile                                                   |                                                   |
+     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+     |          | db:system:change                                                       | switch databases                                  |
+     |          | db:rollback                                                            |                                                   |
+     |          | db:seed                                                                |                                                   |
+     |          |                                                                        |                                                   |
+
+**** Misc
+     | what       | how         | desc |
+     |------------+-------------+------|
+     | destroy    | destroy / d |      |
+     | belongs_to |             |      |
+
+**** Tasks (rake)
+     | what | how | desc |
+     |------+-----+------|
+     |      |     |      |
+
+**** Log
+     |                  |   |
+     |------------------+---|
+     | :clear LOGS=test |   |
+
+**** Migration
+     |                    |   |
+     |--------------------+---|
+     | AddXXXToTABLE      |   |
+     | RemoveXXXFromTABLE |   |
+
+**** Models
+     | what   | how                                                                    | desc |
+     |--------+------------------------------------------------------------------------+------|
+     | models | generate model <Name>                                                  |      |
+     |        | destroy controller articles                                            |      |
+     |        | destroy model Artile                                                   |      |
+     | a      |                                                                        |      |
+     |        | generate scaffold Article title:string body:text published_at:datetime |      |
+     |        |                                                                        |      |
+
+**** Console
+     | what              | how                                                                | desc                                                                                                                               |
+     |-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------|
+     | create            | create(title: "foo", body: "bar", published_at: '2020-01-31')      | create new and save to db                                                                                                          |
+     | save              | a.save  / a.save!                                                  | save object to db / save and show errors                                                                                           |
+     | new               | a.new                                                              | create an empty object                                                                                                             |
+     | count             | A.count                                                            |                                                                                                                                    |
+     | find              | A.find(3) / A.find([4,5])                                          |                                                                                                                                    |
+     | first             | A.first   / A.first.title                                          |                                                                                                                                    |
+     | last              | A.last                                                             |                                                                                                                                    |
+     | all               | A.all / A.all.size / A.all.each { \a\ puts a.title }               | relational collection                                                                                                              |
+     | order             | A.order(:order) / A.order(:order :desc)                            | order per title / order descedent                                                                                                  |
+     | where             | A.where(title: 'foo')                                              |                                                                                                                                    |
+     | update_attributes | update_attributes(title: "foo", published_at: 1.day.ago)           |                                                                                                                                    |
+     | find_or_create_by |                                                                    | find or if none is found create a db anew                                                                                          |
+     | <<                | a.x << x                                                           |                                                                                                                                    |
+     | delete            |                                                                    | don’t instantiate or perform callbacks on the object they’re deleting. They remove the row immediately from the database.          |
+     | destroy           | A.destroy(1) / .destroy([3,4])                                     | finds a single row first and then deletes the row /works on the instance                                                           |
+     | delete_by         |                                                                    |                                                                                                                                    |
+     | errors            | a.errors.any? / a.errors.full_messages / a.errors.messages[:title] |                                                                                                                                    |
+     |                   | a.valid?                                                           |                                                                                                                                    |
+     | reload            |                                                                    | reloads the Rails application environment within your console session. You need to call it when you make changes to existing code. |
+     | routes --expanded |                                                                    |                                                                                                                                    |
+     | byebug            |                                                                    |                                                                                                                                    |
+
+**** Enviroment
+     |                      |                                                                          |
+     |----------------------+--------------------------------------------------------------------------|
+     | RAILS_ENV=production |                                                                          |
+     | dev:cache            | toggle caching on and off in the development environment(restart server) |
+     |                      |                                                                          |
+*** Methods
+    |        |                                            |
+    |--------+--------------------------------------------|
+    | where  | returns an array of results                |
+    | findby | returns either an existing LineItem or nil |
+    |        |                                            |
+
+*** Logger
+    - live log feed: tail -f log/development.log
+    -  Every controller has a logger attribute.
+**** Methods
+    |       |   |
+    |-------+---|
+    | error |   |
+    | debug |   |
+    | warn  |   |
+
+    #+begin_src ruby
+    Rails.logger.debug "This will only show in development"
+    Rails.logger.warn "This will show in all environments"
+    #+end_src
+*** Active Record
+    - Single-Table Inheritance
+**** Associations
+     |                         |                                        |
+     |-------------------------+----------------------------------------|
+     | has_many                |                                        |
+     | has_one                 |                                        |
+     | belongs_to              | goes in the class with the foreign key |
+     | many_to_many            |                                        |
+     | has_and_belongs_to_many |                                        |
+**** Validations
+**** Migrations
+**** Callbacks
+     - before_create
+     - after_create
+     - before_save
+     - after_save
+     - before_destroy
+     - after_destroy
+**** Query Interface
+**** Find
+***** SQL Syntax
+      #+begin_src ruby
+      Obj.where(title: 'AwesomeWM is really awesome')
+      #+end_src
+
+***** Array Condition
+      #+begin_src ruby
+      Article.where("published_at < ?", Time.now)
+      Article.where("published_at < ?", Time.now).to_sql # inspect the issued SQL statement
+
+      Article.where("title LIKE :search OR body LIKE :search", {search: '%association%'})
+      #+end_src
+
+***** Association Proxies
+      - Chain together multiple calls to Active Record
+      #+begin_src ruby
+
+      #+end_src
+***** more
+      #+begin_src ruby
+      Article.order("published_at DESC")
+      Article.limit(1)
+      Article.joins(:comments)
+      Article.includes(:comments)
+      Article.order("title DESC").limit(2)
+      #+end_src
+**** Named Scope
+     #+begin_src ruby
+     scope :published, -> { where.not(published_at: nil) }
+     scope :draft, -> { where(published_at: nil) }
+     #+end_src
+*** Database
+    | it    | desc                                                     |
+    |-------+----------------------------------------------------------|
+    | seeds | which defines some data you always need in your database |
+    |       |                                                          |
+
+*** Views
+*** Controller
+*** Models
+**** Fat models
+     An intelligent model like this is often called fat. Instead of performing model-related logic in
+     other places (i.e., in controllers or views), you keep it in the model, thus making it fat. This
+     makes your models easier to work with and helps your code stay DRY.
+*** Tests
+**** RSpec
+**** Unit
+**** Rails
+***** cli
+      |                  |   |
+      |------------------+---|
+      | test             |   |
+      | test:controllers |   |
+***** files
+      |                 |             |
+      |-----------------+-------------|
+      | assert_select   | integration |
+      | assert_response |             |
+
+*** REST
+*** JSON
+*** Traits
+    - Active Records: Ruby object-relational mapping (ORM) library
+    - root_path
+*** i18n
+    - i18n.t()
+    - i18n.l()
+*** Models
+    | what   | $ | ...         |
+    |--------+---+-------------|
+    | Models |   | Camel-Cased |
+    |        |   |             |
+*** Misc
+    HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
+
+*** Priorities
+    - TDD BDD
+    - Rails / MVC
+    - PostgreSQL
+    - Docker/Kubernetes
+    - Redis/SideKick/
+    - MicroServices
+    - AWS
+    - Circle CI
+    - REST
+** FrontEnd
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 2 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#frontend][FrontEnd]]
+  - [[#progress][Progress]]
+  - [[#web-studies][Web Studies]]
+  - [[#web-node][Web Node]]
+  - [[#web-tools][Web Tools]]
+  - [[#web-design][Web Design]]
+  - [[#web-frameworks][Web Frameworks]]
+  - [[#web-images][Web Images]]
+  - [[#web-performance][Web Performance]]
+  - [[#web-crossbrowsers][Web CrossBrowsers]]
+  - [[#web-backend][Web Backend]]
+  - [[#web-native-apps][Web Native Apps]]
+  - [[#web-security][Web Security]]
+  - [[#web-more][Web More]]
+  :END:
+*** Progress
+**** Books
+     | Books                                     | Cap                                     | @                                     | late | revision |
+     |-------------------------------------------+-----------------------------------------+---------------------------------------+------+---------|
+     | JavaScript The Definitive Guide           | Chapter 3. Types, Values, and Variables | 3.9.3 Object to Primitive Conversions |      |         |
+     | Essential TypeScript From Beginner to Pro |                                         | Marking Tasks Complete                |      |         |
+
+**** SLOC
+     | Project | folder | file | @ |
+     |-------------+--------+------+---|
+     | node        |        |      |   |
+     | angular     |        |      |   |
+     | inquirer    |        |      |   |
+*** Web Studies
+**** Web Books
+***** Learning Web Design
+****** Exercises
+****** Books/Articles recommended
+       | Books/Articles                                                                                                             |   |
+       |----------------------------------------------------------------------------------------------------------------------------+---|
+       | Adaptive Web Design: Crafting Rich Experiences with Progressive Enhancement, 2nd Edition, by Aaron Gustafson (New Riders). |   |
+       | The Uncertain Web: Web Development in a Changing Landscape by Rob Larson                                                   |   |
+       | Designing with Progressive Enhancement by Todd Parker                                                                      |   |
+       | https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html                                                       |   |
+       |                                                                                                                            |   |
+**** Web Courses
+     https://courses.wesbos.com/account
+***** Web Courses Tips
+      https://freefrontend.com/html-css-books/
+      https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-1-7d4f7f0bff02
+      https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-2-adfa4824da9b
+
+*** Web Node
+**** Node frameworks
+     https://adonisjs.com/
+*** Web Tools
+***** Web Tools - Task Runners
+****** Gulp
+       https://css-tricks.com/gulp-for-beginners/
+****** Grunt
+***** Web Tools - Debug
+****** Unitary Test:
+****** UI Test
+****** TDD:
+       Selenium
+       Test Complete
+       Cuit
+***** Web Tools - Dep Manger
+      Bower
+      Yarn
+***** Web Tools - Misc
+      https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=db
+
+      http://gs.statcounter.com/
+
+      https://caniuse.com/
+
+      https://egghead.io/
+
+      http://overapi.com
+
+      https://web.dev/
+***** Web Tools - Test Automation
+      Selenium, Jest, or Enzyme
+*** Web Design
+    http://paletton.com/
+
+    https://webgradients.com/
+**** Web Design - Articles
+     https://www.smashingmagazine.com/2019/05/svg-design-tools-practical-guide/
+
+     https://www.yeseniaperezcruz.com/blog-1/2018/4/28/scenario-driven-design-systems
+
+     https://jakearchibald.com/2015/anatomy-of-responsive-images/
+**** Web Desing - People
+     Aaron Draplin
+
+**** Web Desing - Sites
+     https://tympanus.net/codrops/
+*** Web Frameworks
+    bootstrap
+    materalize
+    foundation
+*** Web Images
+    http://responsiveimages.org/
+*** Web Performance
+    https://larahogan.me/design/
+
+    High Performance Mobile Web: Best Practices for Optimizing Mobile Web Apps by Maximiliano Firtman
+
+    https://developers.google.com/speed/?csw=1
+
+    http://webpagetest.org/
+
+    https://developers.google.com/speed/pagespeed/insights/
+
+    http://yslow.org/
+
+*** Web CrossBrowsers
+**** <IE10 - Excuses:
+     - E10 and below don't have support for the latest TLS encryption (out of the
+     box), and thus if you handle any credit card payments, IE10 is no longer
+     considered secure.
+     - Entering passwords becomes risky too. Logging in no longer becomes
+       secure. That will affect a much greater number of sites and is another
+       good point to raise.
+
+*** Web Backend
+**** Web Backend - Node.js
+     [[https://nodejs.org/en/][Node.js]]
+****** NPM commands
+       List all npm packages (no verbose): npm list -g --depth=0
+****** NPM Tips
+       https://www.sitepoint.com/beginners-guide-node-package-manager/
+**** Web Backend - Ruby
+**** Web Backend - PHP
+**** Web Backend - Python
+     https://welcometothedjango.com.br
+*** Web Native Apps
+    https://www.nativescript.org/
+*** Web Security
+    Strong understanding of web application security (e.g. XSS, CSRF, CORS)
+*** Web More
+    https://www.schoolofnet.com/plano-de-estudo-frontend-developer/
+
+    https://www.htmldog.com/
+
+    https://web.archive.org/web/20151110193658/https://www.drupal.org/node/1245650
+
+    https://www.happybearsoftware.com/how-to-get-a-programmer-job
+
+    https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work#Summary
+
+
+    li <strong>Semantics:</strong> Semantic, SEO, HTTP Requests, Viewport.
+    li <strong>CSS:</strong> Grid, Flexbox, Sizing, Queries.
+    li <strong>JavaScript:</strong> Dynamic transitions, Complex/Immersive UI animations.
+    li <strong>Design:</strong> Unified, Reusable & Flexible Design, Animated Illustrations, Infographics, Morphing Shapes.
+
+**** Web Beginners - Books/Videos/Tips
+     Books and w3.org Standards:
+     Learning Web Design by Jennifer Niederst Robbins
+     CSS Definitive Guide by Eric Meyer
+     Eloquent Javascript by Marijn Haverbeke
+
+     Youtube:
+     Jen Simmons,
+     Rachel Andrew,
+     Brad Traversy Media,
+     Kevin Powell,
+     Dev Ed,
+     Wes Bros
+     whatsdev
+     Joshua Fluke
+     Logos by Nick
+     Design Matters
+
+     Blogs:
+     aneventapart.com
+     smashingmagazine.com
+     css-tricks.com
+     syntax.fm
+     javascript weekly
+
+**** Web More - Sites Eg
+     https://projecteuler.net/archives
+
+     https://html5up.net/
+
+     https://codesandbox.io/
+
+     https://www.awwwards.com/
+
+     https://www.hackerrank.com/
+
+     https://eusoudev.com.br/
+
+     https://tableless.com.br/todos-os-posts/
+
+**** Web More - Terms
+     | Terms                     |   |
+     |---------------------------+---|
+     | standards-compliant sites |   |
+
+**** Web More - PodCasts
+     https://soundcloud.com/lambdatres
+**** Web More - Articles
+     https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-1-7d4f7f0bff02
+
+     https://hackernoon.com/how-i-used-my-programming-skills-to-save-over-8-hours-of-writing-work-7aba154d4232
+
+     https://soundcloud.com/lambdatres/100-aprendendo-javascript
+
+     https://dev.to/gypsydave5/why-you-shouldnt-use-a-web-framework-3g24
+
+     https://www.slideshare.net/bryanrieger/rethinking-the-mobile-web-by-yiibu/140-thank_youhelloyiibucom
+**** Web More - Jobs
+     https://vulpi.com.br/
+
+     upwork
+**** Web More - Learning resources
+     https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
+
+     https://abookapart.com/
+
+     https://www.learnenough.com/
+
+     https://www.theodinproject.com/home
+**** Web More - Standards
+     https://www.w3.org/standards/
+***** Web Standards - Best Pratices
+      https://www.w3.org/standards/techs/htmlbp#w3c_all
+
+**** Web More - Skill and Projects
+     | Skill                 | ....                                                                                                                             |
+     |-----------------------+----------------------------------------------------------------------------------------------------------------------------------|
+     | Editors               | '(Emacs VSCode)                                                                                                                  |
+     | Design/Mockup         | '(Gimp Krita Photoshop)                                                                                                          |
+     | HTML                  | semantics HTML5                                                                                                                  |
+     | CSS                   | (Positionint Box Model  Flexbox  CSS Grid  CSS Variables)                                                                        |
+     | Browser               | Dev Tools                                                                                                                        |
+     | Layout                | Responsive - Set viewport - Fluid width - Media Queries - rem over px - Mobile First/Stacked Columns                             |
+     | Hosting/Domain        | FTP/SFTP(Filezilla...) - Sharing Hostesd (hostgator) - (Static hosting (Netlify Github Pages))                                   |
+     | JS                    | DOM manipulation / Events - JSON - FetchAPI - ES8+                                                                               |
+     | Frameworks            | ((HTML '(Bootstrap Materalize Bulma))  (CSS '(Sass)) (JS '(Vue React Angular)))                                                  |
+     | Git & Tooling         | ((Packages Manager (NPM Yarn)) (Module Bundling (WebPack Parcel)) (TaskRunners (Gulp Grunt NPMscripts)))                         |
+     | Server Side Languages | (Languages '(NodeJS ((Pack Managn) (HTTP Routing)) (Framework (Express Koa Adonis))))                                            |
+     | Server Side Database  | ((Relational '(MySQL PosteSQL)) (NoSQL '(MongoDB CouchBase)) (Cloud '(Firebase AWS Azure)) (Lighweight '(SQLite NeDB Redis)))    |
+     | State Management      | '(Redux ContextAPI (Apollo '(GraphQL Client)) (VueX NgRx))                                                                       |
+     | Server Rendered Pages | '(Next.js Nuxt.js )                                                                                                              |
+     | CMS                   | ((PHP '(WordPress Drupal)) (JS '(Ghost KeyStone)))                                                                               |
+     | DevOPS Deploying      | ((Virtual '(Docker Vagrant)) (Testing '(Unit Integration Functional System) (Jest Mocha)) (Platform '(DigitalOcean AWS Heroku))) |
+     | Mobile Apps           | (ReactNative Flutter)                                                                                                            |
+     | Desktop               | (Electron)                                                                                                                       |
+
+
+     | Projects              |                  |
+     |-----------------------+------------------|
+     | Static Website        | small, informal  |
+     | UI Layouts            | create           |
+     | Dynamic Functionality | modal, slideshow |
+     | Deploy/Maintain       | ...              |
+
+***** Interview Tips
+***** Questions/Answers
+      | Questions                                                  | Answers                                                                           |
+      |------------------------------------------------------------+-----------------------------------------------------------------------------------|
+      | 1. Why you are interested in this job?                     | What drivers and motivates to this choose this job?                               |
+      | 2. Why/How do you want to sell this product (pen)?         | Why you are worthy their time ? Be thoughtful why you want to sell this product   |
+      | 3. What do you know about our costumers? Why they chose us |                                                                                   |
+      | 4. Tell me about our competitors,                          | Who we are, what they know about our clients, and why you can win their proposals |
+      | 5. How you deal with work burnout                          | What you do solve it and keep up selling well...                                  |
+      | 6. Last time you took risk and it did not pay out!         | Be honest. You should have take more risks and why it did not work out, SMILE!    |
+      | 7.                                                         |                                                                                   |
+      | 8.                                                         |                                                                                   |
+      | 9. What last time you did what you learned and succed.     | Sources may vary from books, random ads...what you have learn from people         |
+      | 10. What do you would take you sell yourself to them       | what on you makes you special...                                                  |
+      | 11. Do you like this person and why would by its product?  | No one buys if they dont like who is selling                                      |
+      | 12. How fast you sell this product                         | Taking long means less chance to sell                                             |
+      | 13. Connections and network                                |                                                                                   |
+      | 14. What are your prospect/strategy                        |                                                                                   |
+
+      https://medium.freecodecamp.org/9-books-for-junior-developers-in-2019-e41fc7ecc586
+**** Web More - Organizations
+     https://www.w3.org
+** Css
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 2 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#css-pre-processors][CSS Pre-Processors]]
+  - [[#css-resources][CSS Resources]]
+  - [[#frameworks][Frameworks]]
+  - [[#tools][Tools]]
+  - [[#css-properties][CSS Properties]]
+  - [[#css-articles][CSS Articles]]
+    - [[#css-grid][CSS Grid]]
+    - [[#css-flexbox][CSS Flexbox]]
+    - [[#css-misc][CSS Misc]]
+  - [[#css-blogssite][CSS Blogs/Site]]
+  - [[#css-frameworks][CSS Frameworks]]
+  - [[#css-backward-compatibility][CSS Backward Compatibility]]
+  :END:
+*** Progress
+**** Books
+     | Books                                     | Cap                                     | @                                     | late | revision |
+     |-------------------------------------------+-----------------------------------------+---------------------------------------+------+---------|
+     | JavaScript The Definitive Guide           | Chapter 3. Types, Values, and Variables | 3.9.3 Object to Primitive Conversions |      |         |
+     | Essential TypeScript From Beginner to Pro |                                         | Marking Tasks Complete                |      |         |
+
+**** SLOC
+     | Project | folder | file | @ |
+     |-------------+--------+------+---|
+     | node        |        |      |   |
+     | angular     |        |      |   |
+     | inquirer    |        |      |   |
+*** CSS Pre-Processors
+    [[https://sass-lang.com/][SASS]]
+    less
+    flexbox
+*** CSS Resources
+    https://jensimmons.github.io/
+
+    https://labs.jensimmons.com
+
+    https://daneden.github.io/animate.css/
+
+    https://css-tricks.com
+
+    https://flexboxfroggy.com/
+
+    https://leaverou.github.io/css3patterns/#lined-paper
+*** Frameworks
+    - semantic-ui
+    - materialize
+
+*** Tools
+    https://cssicon.space/#/
+
+    greensock
+    velocity,js
+    anime.js
+
+    https://animejs.com/
+
+    https://postcss.org/
+
+    https://autoprefixer.github.io/
+
+    http://screensiz.es/
+
+    http://mqtest.io/
+
+    https://www.axis-praxis.org/
+*** CSS Properties
+    | Properties                         |                                                              |
+    |------------------------------------+--------------------------------------------------------------|
+    | font-variant-numeric: tabular-nums | aplied in time interval, ensure its number to use even space |
+    |                                    |                                                              |
+*** CSS Articles
+**** CSS Grid
+     https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
+
+     https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid/
+
+     https://medium.com/@elad/supporting-css-grid-in-internet-explorer-b38669e75d66
+
+     https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
+
+     https://css-tricks.com/css-grid-in-ie-duplicate-area-names-now-supported/
+
+**** CSS Flexbox
+     https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+
+     https://codepen.io/chriscoyier/pen/vWEMWw?editors=1100
+**** CSS Misc
+
+     https://clubmate.fi/oocss-acss-bem-smacss-what-are-they-what-should-i-use/
+
+     https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+
+     http://bradfrost.com/blog/post/responsive-nav-patterns/
+
+     https://css-irl.info/how-to-convince-your-team-to-adopt-grid/
+
+     https://love2dev.com/blog/html-css-underline/
+
+     https://flaviocopes.com/css-centering/
+
+     https://meyerweb.com/eric/tools/css/reset/index.html
+
+     https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
+
+     https://css-tricks.com/dont-overthink-it-grids/
+
+     https://www.sitepoint.com/understanding-css-grid-systems/
+
+     https://www.sitepoint.com/css-architectures-refactor-your-css/
+
+     https://www.smashingmagazine.com/2013/06/workflow-design-develop-modern-portfolio-website/
+
+     https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+     https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/
+
+     https://medium.freecodecamp.org/how-to-get-better-at-writing-css-a1732c32a72f
+
+     https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+     https://css-tricks.com/snippets/css/complete-guide-grid/
+
+     https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index
+
+     https://www.learnenough.com/css-and-layout-tutorial/css/introduction
+*** CSS Blogs/Site
+    csstriggers.com
+    https://thecssworkshop.com/
+
+    https://gridbyexample.com/
+
+    http://www.csszengarden.com/
+
+    http://learnlayout.com/
+
+*** CSS Frameworks
+    Compass
+*** CSS Backward Compatibility
+    https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks
+** HTML
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 2 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#tips][Tips]]
+    - [[#html-workaround][HTML Workaround]]
+  :END:
+*** Progress
+**** Books
+     | Books                                     | Cap                                     | @                                     | late | revision |
+     |-------------------------------------------+-----------------------------------------+---------------------------------------+------+---------|
+     | JavaScript The Definitive Guide           | Chapter 3. Types, Values, and Variables | 3.9.3 Object to Primitive Conversions |      |         |
+     | Essential TypeScript From Beginner to Pro |                                         | Marking Tasks Complete                |      |         |
+
+**** SLOC
+     | Project | folder | file | @ |
+     |-------------+--------+------+---|
+     | node        |        |      |   |
+     | angular     |        |      |   |
+     | inquirer    |        |      |   |
+
+*** Tips
+**** HTML Workaround
+****** IE8 - HTML5
+       #+BEGIN_SRC html
+       <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/ html5shiv.min.js"></script ><![endif]-->
+       #+END_SRC
 ** Haskell
 *** TOC
     :PROPERTIES:
