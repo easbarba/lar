@@ -420,7 +420,7 @@ That is, remove a non kept file from the recent list."
 	erc-spelling-dictionaries '(("#emacs" "american"))
 	erc-autojoin-channels-alist '(("freenode.net"
 				       "#debian"
-				       "#ruby"
+				       "elixir-lang"
 				       "#emacs"))
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 	erc-track-exclude-types
