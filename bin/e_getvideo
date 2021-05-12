@@ -6,6 +6,6 @@ set -euo pipefail
 # Description:
 # Deps: youtube-dl, ffmpeg
 
-EXT=mkv
+EXT=mp4
 
 cejo media get $EXT "$(e_url)"
