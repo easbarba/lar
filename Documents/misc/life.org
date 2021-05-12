@@ -32,7 +32,6 @@
 - [[#paintings][Paintings]]
 - [[#résumé][Résumé]]
 - [[#delivery][Delivery]]
-- [[#misc][Misc]]
 :END:
 * Progress
 ** Books, Videos
@@ -399,5 +398,4 @@
 
 * Delivery
   981103178
-* Misc
-  VIVO Protocolo: 181220208858338
+  tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782

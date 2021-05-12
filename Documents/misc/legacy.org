@@ -6,8 +6,8 @@
   :END:
 :CONTENTS:
 - [[#dotfiles][Dotfiles]]
-  - [[#irbrc][irbrc]]
   - [[#cejo][cejo]]
+  - [[#irbrc][irbrc]]
   - [[#blog][Blog]]
   - [[#neovim][neovim]]
   - [[#asdf][asdf]]
@@ -47,7 +47,7 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#languages][Languages]]
-  - [[#ruby][Ruby]]
+  - [[#javascript][Javascript]]
   - [[#rails][Rails]]
   - [[#frontend][FrontEnd]]
   - [[#css][Css]]
@@ -69,24 +69,6 @@
 :END:
 
 * Dotfiles
-** irbrc
-   #+begin_src ruby
-
-
-# IRB.conf[:IRB_RC] = nil
-# IRB.conf[:BACK_TRACE_LIMIT]=16
-# IRB.conf[:USE_LOADER] = false
-# IRB.conf[:USE_MULTILINE] = nil
-# IRB.conf[:USE_SINGLELINE] = nil
-# IRB.conf[:USE_COLORIZE] = true
-# IRB.conf[:USE_TRACER] = false
-# IRB.conf[:IGNORE_SIGINT] = true
-# IRB.conf[:IGNORE_EOF] = false
-# IRB.conf[:PROMPT] = {...}
-# IRB.conf[:SAVE_HISTORY] = nil
-# IRB.conf[:INSPECT_MODE]=nil
-
-   #+end_src
 ** cejo
 *** distro
     #+begin_src yaml
@@ -191,6 +173,16 @@ upgrade: upgrade
     #+end_src
 *** floss
    #+begin_src yaml
+   --- # Javascript
+   - https://github.com/SBoudrias/Inquirer.js
+   - https://github.com/parcel-bundler/parcel
+   - https://github.com/prettier/prettier
+   - https://github.com/yarnpkg/yarn
+   - https://github.com/meteor/meteor
+   - https://github.com/axios/axios
+   - https://github.com/nodejs/node
+
+
    --- # css
    - https://github.com/IanLunn/Hover
    - https://github.com/jgthms/bulma
@@ -198,36 +190,6 @@ upgrade: upgrade
    - https://github.com/oddbird/susy
    - https://github.com/necolas/normalize.css
    - https://github.com/mozdevs/cssremedy
-
-   --- # ruby
-   - https://github.com/markets/awesome-ruby
-   - https://github.com/davetron5000/naildrivin5.com
-   - https://github.com/davidgf/design-patterns-in-ruby
-   - https://github.com/rubocop-hq/rails-style-guide
-   - https://github.com/rubocop-hq/rspec-style-guide
-   - https://github.com/rubocop-hq/ruby-style-guide
-   - https://github.com/mperham/sidekiq
-   - https://github.com/middleman/middleman
-   - https://github.com/nix-community/bundix
-   - https://github.com/ruby-git/ruby-git
-   - https://github.com/rubocop-hq/rubocop
-   - https://github.com/castwide/solargraph
-   - https://github.com/dry-rb/dry-core
-   - https://github.com/dry-rb/dry-auto_inject
-   - https://github.com/dry-rb/dry-container
-   - https://github.com/rubygems/rubygems
-   - https://github.com/rails/rails
-   - https://github.com/erikhuda/thor
-   - https://github.com/davetron5000/gli
-   - https://github.com/pry/pry
-   - https://github.com/rspec/rspec
-   - https://github.com/rspec/rspec-rails
-   - https://github.com/rspec/rspec-core
-   - https://github.com/ruby/spec
-   - https://github.com/ruby/rake
-   - https://github.com/ruby/rdoc
-   - https://github.com/ruby/ruby
-
 
    --- # Scheme
    - https://github.com/aconchillo/guile-json
@@ -1105,6 +1067,24 @@ upgrade: upgrade
 	      rm $(BIN)/pan.py
 
       #+end_src
+** irbrc
+   #+begin_src ruby
+
+
+# IRB.conf[:IRB_RC] = nil
+# IRB.conf[:BACK_TRACE_LIMIT]=16
+# IRB.conf[:USE_LOADER] = false
+# IRB.conf[:USE_MULTILINE] = nil
+# IRB.conf[:USE_SINGLELINE] = nil
+# IRB.conf[:USE_COLORIZE] = true
+# IRB.conf[:USE_TRACER] = false
+# IRB.conf[:IGNORE_SIGINT] = true
+# IRB.conf[:IGNORE_EOF] = false
+# IRB.conf[:PROMPT] = {...}
+# IRB.conf[:SAVE_HISTORY] = nil
+# IRB.conf[:INSPECT_MODE]=nil
+
+   #+end_src
 ** Blog
 *** css
     #+begin_src css
@@ -9408,1256 +9388,266 @@ asdf_js()
 
      #+END_SRC
 * Languages
-** Ruby
+** Javascript
 *** Summary
     :PROPERTIES:
-    :TOC:      :include all :depth 3 :ignore this
+    :TOC:      :include all :depth 2 :ignore this
     :END:
-    :CONTENTS:
-    - [[#progress][Progress]]
-      - [[#books][Books]]
-      - [[#sloc][SLOC]]
-    - [[#packages][Packages]]
-      - [[#gem][gem]]
-      - [[#bundle][bundle]]
-	- [[#outdated][outdated]]
-	- [[#gem][gem]]
-	- [[#install][install]]
-	- [[#update][update]]
-      - [[#irb][irb]]
-	- [[#cli][cli]]
-	- [[#inside][inside]]
-      - [[#rspec][rspec]]
-      - [[#unit-test][unit test]]
-      - [[#pry][pry]]
-    - [[#features][Features]]
-      - [[#project-structure][project structure]]
-      - [[#system-errors][System Errors]]
-	- [[#usage][usage]]
-      - [[#exceptions][exceptions]]
-	- [[#errors][Errors]]
-	- [[#usage][usage]]
-      - [[#writable-object-attribute][writable object attribute]]
-      - [[#multithreading][Multithreading]]
-	- [[#usage][usage]]
-      - [[#modules][modules]]
-      - [[#continuation][continuation]]
-      - [[#fibers][Fibers]]
-	- [[#errors][errors]]
-	- [[#usage][usage]]
-      - [[#delimited-input][delimited input]]
-      - [[#rake][rake]]
-	- [[#usage][usage]]
-      - [[#gem][gem]]
-      - [[#variables][Variables]]
-	- [[#class-variables][class variables]]
-	- [[#global-variables][global variables]]
-      - [[#self][self]]
-      - [[#commentary][commentary]]
-      - [[#defined][defined?]]
-      - [[#iterators][iterators]]
-      - [[#block-local-variables][block-local variables]]
-      - [[#loops][loops]]
-      - [[#statement-modifiers][statement modifiers]]
-      - [[#comparison][comparison]]
-      - [[#conditional][conditional]]
-      - [[#class][class]]
-	- [[#class][class]]
-      - [[#append-][append <<]]
-      - [[#blocks][blocks]]
-      - [[#lambda][lambda]]
-	- [[#how][How]]
-	- [[#usage][Usage]]
-      - [[#methods][methods]]
-      - [[#yield][yield]]
-      - [[#procs][procs]]
-      - [[#operators][operators]]
-      - [[#enumerable][enumerable]]
-      - [[#enumerator][enumerator]]
-	- [[#lazy][lazy]]
-	- [[#each_car][each_car]]
-	- [[#each][each]]
-	- [[#to_enumenum_for][to_enum/enum_for]]
-      - [[#inject][inject]]
-      - [[#select][select]]
-      - [[#succ][succ]]
-      - [[#collect][collect]]
-      - [[#freeze][freeze]]
-      - [[#dup][dup]]
-      - [[#dig][dig]]
-      - [[#fetch][fetch]]
-      - [[#tap][tap]]
-      - [[#map][map]]
-      - [[#pluck][pluck]]
-      - [[#quoting][Quoting]]
-      - [[#here-documents][here documents]]
-      - [[#proc][proc]]
-      - [[#do-end-as-param][do end as param]]
-      - [[#array][array]]
-      - [[#datetime][date/time]]
-      - [[#lambda][lambda]]
-      - [[#begin-rescue][begin rescue]]
-      - [[#hash][hash]]
-      - [[#range][range]]
-      - [[#sets][sets]]
-      - [[#gsub][gsub]]
-      - [[#find][find]]
-      - [[#map][map]]
-      - [[#each_slice][each_slice]]
-      - [[#lazy][lazy]]
-      - [[#with_index][with_index]]
-      - [[#enum_for][enum_for]]
-      - [[#more][more]]
-      - [[#concepts][Concepts]]
-	- [[#iterator][Iterator]]
-	- [[#methods][Methods]]
-	- [[#enumerator][Enumerator]]
-      - [[#instructions][Instructions]]
-	- [[#rbenv][Rbenv]]
-	- [[#misc][misc]]
-    - [[#toolings][Toolings]]
-    - [[#videos][Videos]]
-    - [[#tests][Tests]]
-      - [[#rspec][RSpec]]
-      - [[#unit][Unit]]
-    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+    - [[#skills][SKills]]
+  - [[#features][Features]]
+    - [[#nubers][Nubers]]
+  - [[#concepts][Concepts]]
+  - [[#books][Books]]
+    - [[#eloquent-javascript][Eloquent JavaScript]]
+  - [[#sites][Sites]]
+    - [[#web-js---misc][Web JS - Misc]]
+    - [[#web-js---online-tools][Web JS - Online Tools]]
+  - [[#frameworks][Frameworks]]
+  - [[#refactoring][Refactoring]]
+  - [[#articles][Articles]]
+  - [[#interview][Interview]]
+  :END:
 *** Progress
 **** Books
-     | Books                            | Chapter                                | @                                           | late                                          | revision |
-     |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
-     | Confident Ruby                   | Perfoming Work                         |                                             |                                               |          |
-     | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Two Other Forms of Class Definition         | Fibers, Threads, and Processes/Multithreading |          |
-     | Closure in Ruby                  | The Power of Procs and Lambdas         | Implementing Lax                            |                                               |          |
-     | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
-     | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
-     | Effective Testing - RSpec3       | Building an App With RSpec 3           |                                             |                                               |          |
-     | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
-     | Design Patterns in Ruby          | Template Method                        |                                             |                                               |          |
-     | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing      | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
-     | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
+     | Books                                     | Cap | @                                               | late | revision |
+     |-------------------------------------------+-----+-------------------------------------------------+------+----------|
+     | JavaScript The Definitive Guide           |   3 | 3.2.4 Binary Floating-Point and Rounding Errors |      |          |
+     | Essential TypeScript From Beginner to Pro |     | Marking Tasks Complete                          |      |          |
 
 **** SLOC
-     | Project       | folder                                                        | file               | @                |
-     |---------------+---------------------------------------------------------------+--------------------+------------------|
-     | ruby          | cgi                                                           | cookie.rb          |                  |
-     | rake          | rake                                                          | file_task          | def out_of_date? |
-     | bundle        | bundler/installer                                             | gem_installer.rb   |                  |
-     | solargraph    | solargraph/api_map                                            | bundler_methods.rb |                  |
-     | dry-container | dry/container                                                 | mixin.rb           |                  |
-
-**** Priorities
-     - Ruby
-     - Rails
-     - Unit Test / Rspec
-     - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
-     - Git
-     - HTML/CSS/JS
-     - PostgreSQL
-     - API REST { YAML, JSON, XML, SOAP }
-     - CS
-     - English
-     - Container
-     - Sidekiq
-     - Heroku
-     - Slim
-     - CI/CD
-     - Cloud
-
-*** Packages
-**** Packagement
-***** gem
-      |                             |   |
-      |-----------------------------+---|
-      | install <name> -v <version> |   |
-      | which                       |   |
-      | list                        |   |
-      | search                      |   |
-      | env                         |   |
-      | info <name>                 |   |
-***** bundle
-****** outdated
-****** gem
-       |                   |   |
-       |-------------------+---|
-       | list              |   |
-       | which <name>      |   |
-       | gem search <name> |   |
-
-****** install
-       bundle config set --local deployment 'true'
-****** update
-       | subcommand                  | desc                                                       |
-       |-----------------------------+------------------------------------------------------------|
-       | all                         | update all gems                                            |
-       | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
-       | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
-       | --quiet                     |                                                            |
-       | --redownload                |                                                            |
-       | --minor                     | Prefer updating only to next minor version.                |
-       | --major                     | Prefer updating to next major version (default).           |
-       |                             |                                                            |
-
-**** Console
-***** irb
-****** cli
-       |                          |   |
-       |--------------------------+---|
-       | -r ./<file>              |   |
-       | irb_load                 |   |
-       | irb_source               |   |
-       | irb --prompt <my-prompt> |   |
-****** inside
-       |                           |         |
-       |---------------------------+---------|
-       | context.use_tracer = true | tracker |
-       |                           |         |
-***** pry
-**** Serialization
-***** JSON
-****** Commands
-       |                 |   |
-       |-----------------+---|
-       | generate <this> |   |
-
-***** YAML
-****** Commands
-       |                 |               |
-       |-----------------+---------------|
-       | YAML.dump <obj> |               |
-       | <obj>.to_yaml   | same as above |
-       |                 |               |
-
-**** Web Applications
-     - Sinatra: Sinatra is a DSL for quickly creating web applications
-     - Rails: A web-application framework that includes everything needed to create database-backed web applications
-**** Documentation
-***** Rdoc
-      - nodoc: [all]
-
-
-***** console
-      |        |   |
-      |--------+---|
-      | --all  |   |
-      | --fmt  |   |
-      | --main |   |
-
-**** Formatter
-***** Rufo
-****** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
-**** Testing
-***** RSpec
-      Behaviour Driven Development for Ruby
-****** Cli
-      |          |                                                  |
-      |----------+--------------------------------------------------|
-      | describe | creates an example group (set of related tests). |
-      | expect   | verifies an expected outcome (assertion)         |
-      | example  | individual test                                  |
-      |          |                                                  |
-****** Terms
-       - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
-       -
-       - Arrange/Act/Assert pattern
-****** Commands
-       |                                   |                                      |
-       |-----------------------------------+--------------------------------------|
-       | RSpec.describe                    |                                      |
-       | describe                          |                                      |
-       | context                           |                                      |
-       | it 'foo bar'                      |                                      |
-       | expect(foo).to eq(bar)            |                                      |
-       | expect(foo).to be > :bar          |                                      |
-       | before(:xx)                       |                                      |
-       | after(:xxx)                       |                                      |
-       | before(:context)                  |                                      |
-       | after(:context)                   |                                      |
-       | let(:foo) { Bar.new }             |                                      |
-       | pending 'foo not yet implemented' |                                      |
-       | skip or xit 'foo bar'             | x prepended to it '' to skip example |
-****** Expect
-       |                                   |   |
-       |-----------------------------------+---|
-       | to                                |   |
-       | include(<obj>: a_kind_of(<Class>) |   |
-
-****** metadata
-       |                               |   |
-       |-------------------------------+---|
-       | context 'foobar', focus: true |   |
-       |                               |   |
-****** cli
-       | cmd                          | desc                          |
-       |------------------------------+-------------------------------|
-       | --profile                    | test time                     |
-       | --format <type>              |                               |
-       | folder                       | run allfolders specs          |
-       | spec                         | run just one spec             |
-       | -e <name>                    | run spec(s) begins w/ name    |
-       | <file>:N                     | run examples in lineN of file |
-       | --only-failures              |                               |
-       | --next-failure               |                               |
-       | --tag last_run_status:failed |                               |
-       | --tag focus                  |                               |
-
-***** Unit Test
-**** Currency
-     - Money: A Ruby Library for dealing with money and currency conversion.
-**** Profiling
-     - ruby-prof
-**** Web-server
-    - rack: A modular Ruby web server interface.
-
+     | Project  | folder           | file      | @ |
+     |----------+------------------+-----------+---|
+     | yarn     | src/cli/commands | access.js |   |
+     | node     |                  |           |   |
+     | inquirer |                  |           |   |
+**** SKills
+     - Javascript
+     - ES6+
+     - NodeJS
+     - Design Patterns
 *** Features
-**** Classes
-     #+begin_src ruby
-     [].methods.grep /^re/ # finds methods begins with re
-     #+end_src
-**** path
-     #+begin_src ruby
-     $LOAD_PATH.each { |x| puts x } or $:
+**** Nubers
+     #+begin_src javascript
+     0 === -0 // true
+     1/0 === 1/-0 // false
 
-     # add dir to path
-     $:.push '/your/directory/here'
-     require 'yourfile'
-     #+end_src
-**** super
-     #+begin_src ruby
-     def x(y,z)
-       super # passes all the parameters from the current method and hands the parameters to the method from the base class
-       super() # calls the method without any arguments.
-     end
-     #+end_src
-**** project structure
-     #+begin_src ruby
-     anagram/    <- top-level
-     bin/      <- command-line interface goes here
-     lib/      <- three library files go here
-     test/     <- test files go here
-     #+end_src
-**** System Errors
-     - SystemCallError
-     - subclasses are defined in a module called Errno
-***** usage
-      #+begin_src ruby
-      Errno::EAGAIN
-      Errno::EIO
-      Errno::EPERM
-
-      Errno::EAGAIN::Errno # => 35, same error number as EWOULDBLOCK, can be interchangeable
-      Errno::EPERM::Errno # => 1
-      Errno::EWOULDBLOCK::Errno # => 35
-      #+end_src
-**** exceptions
-     - class *Exception*
-     - Custom exceptions subclasses of StandardError or its children.
-     - Exception has an associated message string and a stack backtrace.
-     - Custom exceptions can add extra information
-     - rescue matches thrown Exception and use it. Similar to case statement
-     - rescue clause with no parameter list, the parameter defaults to StandardError .
-     - rescue clause can be arbitrary expressions (including method calls) that return an Exception class.
-***** Errors
-      - StandardError
-      -
-***** usage
-      #+begin_src ruby
-
-      # Exception skeleton
-
-      f = File.open("/a/file")
-      begin
-      # .....
-      rescue Exception
-	if @esmtp then
-	  @esmtp = false
-	  retry # repeat the entire begin / end block
-	else
-	  raise # reraise the exception. FAIL is similar
-	end
-      else # after RESCUE and before any ENSURE, is executed only if no exceptions are raised by the main body of code.
-	puts "Congratulations-- no errors!"
-      ensure
-	f.close
-      end
-
-      # At the end of each rescue clause, you can give Ruby the name
-      # of a local variable to receive the matched exception.
-      begin
-	eval string
-      rescue SyntaxError, NameError => boom
-	print "String doesn't compile: " + boom
-      rescue StandardError => bang
-	print "Error running script: " + bang
-      end
-
-      # reraises the current exception (or a RuntimeError if there is no current exception).
-      # This is used in exception handlers that intercept an exception before passing it on.
-      raise
-
-      # Creates a new RuntimeError exception, setting its message to the given string.
-      raise "bad mp3 encoding" #
-
-      # first argument to create an exception and then sets the associated
-      # message to the second argument and the stack trace to the third argument.
-      raise InterfaceException, "Keyboard failure", caller
-
-      raise
-
-      raise "Missing name" if name.nil?
-
-      if i >= names.size
-	raise IndexError, "#{i} >= size (#{names.size})"
-      end
-
-      raise ArgumentError, "Name too big", caller
-
-      # removes two routines from the backtrace
-      # by passing only a subset of the call stack to the new exception:
-      raise ArgumentError, "Name too big", caller[1..-1]
-      #+end_src
-**** writable object attribute
-     #+begin_src ruby
-     class ProjectList
-       def initialize
-	 @projects = []
-       end
-       def projects=(list)
-	 @projects = list.map(&:upcase)
-       end
-       def [](offset)
-	 @projects[offset]
-       end
-     end
-
-     # store list of names in uppercase
-     list = ProjectList.new
-     list.projects = %w{ strip sand prime sand paint sand paint rub paint }
-     list[3]   # => "SAND"
-     list[4]   # => "PAINT"
-     #+end_src
-
-     - attribute-setting methods
-**** Multithreading
-     -
-***** usage
-**** modules
-     #+begin_src ruby
-
-     module A
-       module_function
-
-       def foo
-       end
-     end
-
-     module A
-       module SubA
-	 def bar
-	 end
-       end
-     end
-
-
-     A::foo
-     A::SubA:bar
-
-     a = Module.new
-
-     a.class_eval do
-       remove_method
-       method_defined?
-
-       attr_reader name
-       alias_method x,e
-     end
+     NaN === NaN // false
+     Number.isNaN(NaN) // true
 
      #+end_src
-**** continuation
-     - require 'continuation'
-
-**** Fibers
-     - no require
-     - resume
-     - yield
-     - require: requiring `fiber library` gives additional `transfer` methods
-***** errors
-      - FiberError: calling resume after last fiber returned `nil`
-***** usage
-      #+begin_src ruby
-
-
-      twos = Fiber.new do
-	num = 2
-	loop do
-	  Fiber.yield(num) unless num % 3 == 0
-	  num += 2
-	end
-      end
-
-      10.times { print twos.resume, " " }
-      #+end_src
-**** delimited input
-     #+begin_src ruby
-     # %q - Single-quoted string
-     %q{\a and #{1+2} are literal}
-
-     # %Q, % - Double-quoted string
-     %Q{\a and #{1+2} are expanded}
-
-     # %w, %W - Array of strings
-     %w[ one two three ]
-
-     # %i, %I -  Array of symbols
-     %i[ one two three ]
-
-     # %r - Regular expression pattern
-     %r{cat|dog}
-
-     # %s - A symbol
-     %s!a symbol!
-
-     # %x, `` - Shell command
-     %x(df -h)
-
-     #+end_src
-**** rake
-     - -T: list avaiable tasks
-     - spec: run spec tests
-
-***** usage
-      #+begin_src ruby
-      # desc:
-      # task:
-
-      desc "Remove Unix and Windows backup files"
-      task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do # depends on two other tasks
-	puts "All backups deleted"
-      end
-      #+end_src
-
-**** gem
-     gem build GEM.gemspec
-     gem install --user-install pkg/GEM
-     gem list GEM -d
-
-**** Variables
-
-***** class variables
-      - available throughout a class or module body
-      - must be initialized before use
-      - is shared among all instances of a class and is available within the class itself.
-
-***** global variables
-      - available throughout a program.
-      - references to it returns the same object.
-      - referencing an uninitialized global variable returns nil.
-
-      #+begin_src ruby
-      $? # return global status of last command
-      #+end_src
-**** self
-     - is a keyword
-     - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
-
-       #+begin_src ruby
-
-       class tea
-	 def self.drink () # Class-Level method (static)
-	   puts 'drinking'
-	 end
-
-	 def meh
-	   puts self # refers to tea class
-	 end
-
-	 def builder
-
-	   self # return class
-	 end
-       end
-       #+end_src
-**** autoload
-     #+begin_src ruby
-     autoload :SharedContext, 'rspec/core/shared_context'
-     #+end_src
-**** commentary
-     #+begin_src ruby
-     # one line commentary
-
-     =begin
-     multiline
-     commentary
-     =end
-     #+end_src
-**** defined?
-**** iterators
-     #+begin_src ruby
-     3.times { p 'meh' } # easy to avoid fence-post and off-by-one errors
-
-     9.downto(5) { p 'meh' }
-
-     0.upto(9) { p 'meh' }
-
-     0.step(12, 3) {|x| print x, " " }
-
-     [ 1, 1, 2, 3, 5 ].each {|val| print val, " " }
-
-
-     #+end_src
-**** block-local variables
-     #+begin_src ruby
-     square = "yes"
-     total = 0
-     [ 1, 2, 3 ].each do |val; square|
-       square = val * val
-       total += square
-     end
-     puts "Total = #{total}, square = #{square}"
-     produces:
-       Total = 14, square = yes
-     #+end_src
-**** loops
-     #+begin_src ruby
-     # WHILE , UNTIL , and FOR loops are built into the language and do not introduce new scope;
-
-     while line = gets
-       # ...
-     end
-
-     until play_list.duration > 60
-       play_list.add(song_list.pop)
-     end
-
-     # when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
-     # newly local variables created in LOOP are not accessible outside the block
-     loop do
-       puts "#{short_enum.next} - #{long_enum.next}"
-     end
-
-     # not a ruby way, translated by ruby to x.each
-     for song in playlist
-       song.play
-     end
-
-
-     # NEXT skips to the end of the loop, effectively starting the next iteration
-     # BREAKn
-
-     i=0
-     loop do
-       i += 1
-       next if i < 3
-       print i
-       break if i > 4 # If a conventional loop doesn’t execute a break , its value is nil .
-     end
-
-     # REDO repeats the current iteration of the loop from the start but without reevaluating
-     # the condition or fetching the next element (in an iterator)
-     while line = gets
-       next if line =~ /^\s*#/   # skip comments
-       break if line =~ /^END/   # stop at end
-
-       # substitute stuff in backticks and try again
-       redo if line.gsub!(/`(.*?)`/) { eval($1) }
-
-       # process line ...
-     end
-
-
-
-     #+end_src
-**** statement modifiers
-     if and unless Modifiers
-     #+begin_src ruby
-     puts "a = #{a}" if $DEBUG
-     print total unless total.zero?
-     a *= 2 while a < 100
-     a -= 10 until a < 10
-     #+end_src
-**** comparison
-     #+begin_src ruby
-     # ==
-     # ===
-     # <=>
-     # =~
-     # eql?
-     # equal?
-     # !=
-     # !~
-     #+end_src
-**** conditional
-     #+begin_src ruby
-     '11' || 11
-     '11' or 11 # same precedence
-     var ||= "default value" # assign a value to a variable only if that variable isn’t already set
-
-
-     '11' && 11 # higher precedence
-     '11' and 11
-
-     !true
-     not true
-     #+end_src
-**** class
-     - :: is Ruby’s namespace resolution operator.
-     - Math::PI - access Math PI variable
-     - Math.sin(Math::PI/6.0) - access Math sin method
-     - Names of classes and modules are just constants.
-     - can nest classes and modules inside other classes and modules to any depth
-
-***** class
-      #+begin_src ruby
-      # frozen_string_literal: true
-
-      require 'pathname'
-
-      # Class Description
-      class Meh # Class name in Camel Case
-	OUCH = 'asdasd' # 1
-	attr_reader :lo, :fi # 2
-
-	# static method
-	def self.from_file(file_name) # 3
-	  new(File.readlines(file_name))
-	end
-
-	def initialize(lo, fi) # 4
-	  @alpha = OUCH
-	  @lo = lo #
-	  @fi = fi #
-	end
-
-	private_class_method :new
-
-	private
-
-	def alfa # instance method
-	  @localVar = 1
-	end
-
-	def use_local_var # instance method
-	  @localVar
-	end
-
-	def self.zeta #
-	end
-      end
-
-      Eija = Class.new #
-
-      def Eija.beta # singleton
-      end
-
-
-      # superclass
-
-      class Parent
-      end
-      class Child < Parent
-      end
-
-      Child.superclass # => Parent
-
-      #
-
-      #
-      #+end_src
-**** append <<
-**** blocks
-     #+begin_src ruby
-
-     #+end_src
-**** lambda
-***** How
-      #+begin_src ruby
-      lambda { |params| ... } # form 1
-
-      -> params { ... }  # form 2
-      #+end_src
-***** Usage
-      #+begin_src ruby
-      proc1 = -> arg { puts "In proc1 with #{arg}" }
-      proc1.call "ant"
-
-      def n_times(thing)
-	lambda {|n| thing * n }
-      end
-
-      p1 = n_times(23)
-      p1.call(3) # => 69
-      #+end_src
-**** methods
-     default values, splat args (described later on page 120), keyword args, and a block parameter
-     #+begin_src ruby
-     def splating(*rest)
-       puts rest.each { |x| puts }
-     end
-
-     def split_apart(first, *, last) # get first and last args, ignore middle ones
-     #+end_src
-**** yield
-     #+begin_src ruby
-
-     def foo
-       yield
-     end
-
-     def bar
-       if block_given?
-	 yield
-       else
-	 'lol'
-       end
-
-       foo { p 'meh' }
-       bar # => lol
-       bar { p 'yahoo' } # => yahoo
-     #+end_src
-**** procs
-     #+begin_src ruby
-     def pass_in_block(asdf, &block)
-     end
-
-     multiple_of_three = -> n { (n % 3).zero? }
-     palindrome = -> n { n = n.to_s; n == n.reverse }
-
-     p Integer
-	 .all
-	 .select(&multiple_of_three)
-	 .select(&palindrome)
-	 .first(10)
-
-     a = Proc.new
-
-     def initialize(name, &block) # initialize can receive proc object
-
-       tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
-       tc.get_tax(100) # => "Sales tax on 100 = 7.5"
-     #+end_src
-     - if the last parameter in a method definition is prefixed with an ampersand, any associated block is converted to a Proc object, and that object is assigned to the parameter. This allows you to store the block for use later.
-**** operators
-     #+begin_src ruby
-     val.to_s =~ /3/
-     #+end_src
-**** enumerable
-     #+begin_src ruby
-     # iterate over only those lines that end with a d
-     File.open("ordinal").grep(/d$/) do |line|
-       puts line
-     end
-     #+end_src
-***** compact
-      #+begin_src ruby
-
-     enum = [1, nil, 3, nil, 5].to_enum.compact
-     enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
-
-      #+end_src
-**** enumerator
-***** lazy
-      #+begin_src ruby
-      def Integer.all
-	Enumerator.new do |yielder, n: 0|
-	  loop { yielder.yield(n += 1) }
-	end.lazy
-      end
-      #+end_src
-***** each_car
-***** each
-***** to_enum/enum_for
-      #+begin_src ruby
-      a = [ 1, 3, "cat" ]
-      h = { dog: "canine", fox: "vulpine" }
-
-      # Create Enumerators
-      enum_a = a.to_enum
-      enum_h = h.to_enum
-
-      enum_a.next # 1
-      enum_h.next # [:dog, "canine"]
-      enum_a.next # 3
-      enum_h.next # [:fox, "vulpine"]
-
-      enum_a = a.each # create an Enumerator using an internal iterator
-      #+end_src
-***** generator
-**** fibers
-     -
-     #+begin_src ruby
-     f = Fiber.new do
-       x = 0
-       loop do
-	 Fiber.yield x
-	 x -= 1
-       end
-     end
-     #+end_src
-***** yield
-**** inject
-     accumulate a value across the members of a collection
-**** select
-**** succ
-     increments a string value
-     #+begin_src ruby
-     'e'.succ # f
-     #+end_src
-**** collect
-     #+begin_src ruby
-     ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
-     #+end_src
-**** freeze
-     #+begin_src ruby
-     person1.freeze # prevent modifications to the object
-     #+end_src
-**** dup
-     #+begin_src ruby
-     person1 = "Tim"
-     person2 = person1.dup # not aliasing person1
-     #+end_src
-**** dig
-**** fetch
-**** String
-     #+begin_src ruby
-     "Test" + "Test" #TestTest
-     "test".capitalize #Test
-     "Test".downcase #test
-     "Test".chop #Tes
-     "Test".next #Tesu
-     "Test".reverse #tseT
-     "Test".sum #416
-     "Test".swapcase #tEST
-     "Test".upcase #TEST
-     "Test".upcase.reverse #TSET
-     "Test".upcase.reverse.next
-     "Test".ord
-     "Test".chr
-     "xyz".scan(/./) { |letter| puts letter }
-
-     # SUBSTITUTION
-
-     "".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
-     "".gsub('i', '') #  whereas gsub does multiple substitutions at once
-     #+end_src
-**** Array
-     #+begin_src ruby
-     h = { a: 100, b: 20 }
-     h.delete_if { |key, value| value < 25 }
-     h.delete(:a)
-     #+end_src
-**** tap
-**** map
-**** pluck
-**** Quoting
-     %char{text}
-     #+begin_src ruby
-     a = %q(a b c d)
-
-     b = %Q(a b c)
-     #+end_src
-**** here documents
-     #+begin_src ruby
-     <<EOL # double quote document
-	\n
-     #{Time.now}
-     EOL
-
-     <<EOL.to_i * 10
-     EOL
-
-     <<'EOL' # single quote document
-	\n
-     #{Time.now}
-     EOL
-
-     <<-EOL
-     EOL
-
-     <<~EOL
-     EOL
-
-     [1,2, <<EO asdasd EO]
-
-     a(false, <<EO asd... EO)
-     #+end_src
-**** proc
-     #+begin_src ruby
-
-     #+end_src
-**** do end as param
-     #+begin_src ruby
-     x = (do  1 + 2 end)
-     x = (do 'a' + 'b' end).join(',')
-     #+end_src
-**** array
-     #+begin_src ruby
-     # creation
-     a = [1, ["a", "b"], 4]
-     a = Array.new(1,2)
-     a = arr = %w( Hey!\tIt is now -#{Time.now}- )
-
-
-     # indexing
-     arr[1][0]
-     [1,2][0]
-     arr.dig(3,0) value_at, a[2,3] = ..
-				     a[2..3]
-     a.slice()
-     a.[]=(0, "first")
-     a.[](2)
-     a = %w(a b c)
-     a= %W({a} b c)
-     x.to_ary
-     x.to_arr
-     Array()
-     def string.to_arr
-     end
-     a.unshift(0)
-     a.push(1,2,3)
-     a << 5
-     a.pop
-     a.shift
-     a.concat
-     a.replace([1,2,3])
-     a.flatten
-     a.reverse
-     a.join(" , ")
-     a = *
-	 a.uniq
-     a.compact
-     a.size
-     a.empty
-     a.include?
-     a.first
-     a.last
-     a.sample # return
-     a.count(1)
-     #+end_src
-     [[file:path]]
-**** date/time
-     #+begin_src ruby
-     require 'date'
-     d = date.today
-
-     require 'time'
-     t = time.zxcz
-     #+end_src
-**** lambda
-     #+begin_src ruby
-     l = -> { xx; aa }
-     l = lambda do
-       yield xx
-     end
-     #+end_src
-**** begin rescue
-     #+begin_src ruby
-     begin
-       puts 'I am before the raise.'
-       raise 'An error has occured.'
-       puts 'I am after the raise.'
-     rescue
-       puts 'I am rescued.'
-     end
-     #+end_src
-**** hash
-     #+begin_src ruby
-     h = Hash.new
-     h = { one: 1, :two => 2 }
-     h = Hash[1, "one", 2, "two"]
-
-     h.rehash # force the hash to be reindexed
-
-
-     h["1"] = 1
-     h.[]=("New York", "NY")
-     h.store("New York", "NY")
-     a.update(b)
-     a.merge(b)
-     h.select {k,vk > 1 } !
-     h.reject {  k,v  k > 1 } !
-     h.reject! {  k,v  k > 1 }
-     h = { street: "127th Street", apt: nil }.compact !
-     h = { street: "127th Street", apt: nil }.compact!
-     h.invert
-     h.clear
-     h = {...}.replace({...})
-     h.key?
-     h.empty?
-     #+end_src
-**** range
-     #+begin_src ruby
-     # create a new range object
-     r = 1..2
-
-     # include all elements
-     r =  1..99
-
-     # exclude last element
-     r = 1...199
-
-     # verbose object creation
-     r = Range.new(1,100)
-     r = Range.new(1,100, true)
-
-     # methods
-     r.cover? 2
-     r.include? 3
-     r.max
-     r.reject {}
-     r.inject {}
-
-     # range of object need to return the next object `succ` and be comparable <=>
-
-     # ranges as conditions
-     while line = gets
-       puts line if line =~ /start/ .. line =~ /end/
-     end
-
-     # ranges as intervals
-     (1..10) === 5   # => true
-     (1..10) === 15  # => false
-
-
-
-
-
-     #+end_src
-**** sets
-     #+begin_src ruby
-     s = Set.new(array)
-     s = Set.new(names) {name name.upcase }
-     s << 5
-     s.add 5
-     s.delete(1)
-     s.intersection|&| x
-     s.union x
-     s + x
-     s.difference x
-     s - x
-     s ^ x
-     s.merge [2]
-     s.subset? b
-     s.superset? b
-     s.proper_subset? x
-     s.proper_superset? x
-     #+end_src
-**** gsub
-     Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
-**** find
-     #+begin_src ruby
-     a.find { ¦n¦ n > 5 }
-     a.find { ¦n¦ n > 5 }
-     a.find_all
-     a.select
-     a.reject
-     a.map
-     #+end_src
-**** map
-     #+begin_src ruby
-     a.map { |x| x.uppercase}
-     a.map! { |x| x.uppercase}
-     #+end_src
-**** each_slice
-     #+begin_src ruby
-     animals.each_slice(2).map do |predator, prey|
-     #+end_src
-**** lazy
-     #+begin_src ruby
-     (1..Float::INFINITY).lazy.select {|n| n % 3 == 0 }
-     #+end_src
-**** with_index
-     #+begin_src ruby
-     ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
-     my_enum.take(5).force // actual result rather than lazy enumerator
-     #+end_src
-**** metaprogramming
-***** Singleton Classes
-***** instance_variable_set
-***** instance_eval
-      - class methods
-***** class_eval
-      - instance methods
-
-***** Object#instance_exec
-***** Module#class_exec
-***** Module#mod-ule_exec
-**** enum_for
-     #+begin_src ruby
-     e = names.enum_for(:inject, "Names: ")
-     #+end_src
-**** more
-     |                        |                                                                                                           |                                                                                                             |
-     |------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
-     | drop_while             | a.drop_while { true }                                                                                     |                                                                                                             |
-     | take_while             | a.take_while { true }                                                                                     |                                                                                                             |
-     | find_all               | a.find_all ¦ a.select                                                                                     |                                                                                                             |
-     | reject                 | a.reject { ¦i¦ i > 4 } ¦ a.reject! { ¦i¦ i > 4 }                                                          |                                                                                                             |
-     | select                 |                                                                                                           |                                                                                                             |
-     | grep                   | a.grep(//o//) ¦ a.grep(String) ¦ a.grep(50..100) ¦                                                          |                                                                                                             |
-     | group_by               | a.group_by { ¦s¦ s.size }                                                                                 |                                                                                                             |
-     | match                  | //n//.match(s)                                                                                              |                                                                                                             |
-     | String                 | 'C'.size ¦ each_byte ¦ each_line ¦ each_codepoint ¦ each_char ¦ s.bytes ¦                                 |                                                                                                             |
-     | min/min_by             | a.min { ¦a,b¦ a.size <=> b.size } ¦  a.min { ¦lang¦ lang.size } ¦ state_hash.min_by { ¦name, abbr¦ name } |                                                                                                             |
-     | max/max_by             |                                                                                                           |                                                                                                             |
-     | minmax/minmax_by       | a.minmax ¦ a.minmax_by { ¦lang¦ lang.size }                                                               |                                                                                                             |
-     | reverse_each           | [1,2,3].reverse_each { ¦e¦ puts e * 10 }                                                                  |                                                                                                             |
-     | with_index             | letters.each.with_index {¦(key,value),i¦ puts i }                                                         |                                                                                                             |
-     | each_index             | names.each.with_index(1) { ¦pres, i¦ p i }                                                                |                                                                                                             |
-     | each_slice             |                                                                                                           |                                                                                                             |
-     | each_cons              |                                                                                                           |                                                                                                             |
-     | slice_before           | a.slice_before(\/=/).to_a ¦ (1..10).slice_before { ¦num¦ num % 2 == 0 }.to_a ¦                            |                                                                                                             |
-     | slice_after            |                                                                                                           |                                                                                                             |
-     | slice_when             | a.slice_when { ¦i,j¦ i == j }.to_a                                                                        |                                                                                                             |
-     | inject/reduce          | [1,2,3,4].inject(:+)                                                                                      |                                                                                                             |
-     | cycle                  |                                                                                                           |                                                                                                             |
-     | map                    | names.map { ¦name¦ name.upcase } ¦  x = 5.times.map { Apple.new(rand(100..900)) }                         |                                                                                                             |
-     | map!                   |                                                                                                           |                                                                                                             |
-     | symbol-argument blocks | names.map(&:upcase)                                                                                       |                                                                                                             |
-     | <=>                    | Apple#<=> ¦ Apple.sort { ¦a,b¦ a.brand <=> b.brand } ¦                                                    | implementing a spaceship test method is enough to sort a class, or use a block to sort, or even override it |
-     | comparable             | Apple#<=> ¦                                                                                               | include comparable                                                                                          |
-     | clamp                  |                                                                                                           |                                                                                                             |
-     | between                |                                                                                                           |                                                                                                             |
-     | functions              | -> (args) {} ¦ Sum = -> (a, b) { a + b }                                                                  |                                                                                                             |
-     | <<                     | yielder                                                                                                   |                                                                                                             |
-     |                        | enum_for                                                                                                  |                                                                                                             |
-     |                        | to_enum                                                                                                   |                                                                                                             |
-     | dup                    |                                                                                                           |                                                                                                             |
-     |------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
-**** Concepts
-***** Iterator
-      - is a method
-      - it start and finish in the same call
-***** Methods
-****** Methods chaining
-       creates a new object at it chains
-       #+begin_src ruby
-       puts animals.select {¦n¦ n[0] < 'M' }.map(&:upcase).join(", ")
-       #+end_src
-***** Enumerator
-      - is an object
-      - chaining
-      - block based
-      - method attachment (enum_for)
-      - un-overriding of methods in Enumerable
-      - maintain state
-      - is an enumerable object
-      - can add enumerability to objects
-      - can stop and resume collection cycling
-**** Instructions
-***** Rbenv
-      rbenv global 2.3.0 && rbenv rehash
-***** misc
-      - $! → Exception: The exception object passed to raise.
-      - $@ → Array: The stack backtrace generated by the last exception.
-      - $& → String : The string matched (following a successful pattern match). This variable is local to the current scope.
-*** Toolings
-**** Online
-     https://rubular.com
-*** Videos
-    https://www.youtube.com/watch?v=hnGVFzZ0DuI - "300x faster ruby" - Dana Sherson
-*** Tests
-**** RSpec
-**** Unit
-     tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782
+
+*** Concepts
+    - Types: numbers, strings, boolean, null, undefined, symbols
+    - Primitives: numbers, strings, boolean, null, undefined
+
+*** Books
+**** Eloquent JavaScript
+***** 2. Program Structure
+****** Exercises
+******* Looping a triangle
+	#+BEGIN_SRC javascript
+
+	let Hash = "#";
+	let numberLoop = 1;
+
+	do {
+	    console.log(Hash);
+	    Hash = Hash + "#";
+	    numberLoop++;
+	} while (numberLoop <= 7)
+
+	#+END_SRC
+******* FizzBuzz
+	#+BEGIN_SRC javascript
+
+	let numberIncreasing = 1;
+
+	while (numberIncreasing <= 100) {
+
+	    if ((numberIncreasing % 3) == 0 && (numberIncreasing % 5)  == 0)
+		console.log("FizzBuzz");
+	    else
+		if ((numberIncreasing % 3) == 0)
+		    console.log("Fizz");
+	    else
+		if ((numberIncreasing % 5)  == 0)
+		    console.log("Buzz");
+	    else
+		console.log(numberIncreasing);
+
+	    numberIncreasing++;
+	}
+
+	#+END_SRC
+******* ChessBoard
+	#+BEGIN_SRC javascript
+
+	let columns = 1;
+
+	while (columns <= 8) {
+	    let symbol = "# # # #";
+
+	    if ((columns % 2) === 0)
+		console.log(" " + symbol);
+	    else
+		console.log(symbol);
+
+	    columns++;
+	}
+
+	#+END_SRC
+***** 3. Functions
+****** examples
+       #+BEGIN_SRC javascript
+
+       // -----
+       const makeNoise = function() {
+	   console.log(square("Pling!"));
+       };
+
+       makeNoise();
+
+
+       // -----
+       const power = function(base, exponent) {
+	   let result = 1;
+	   for (let count = 0; count < exponent; count++) {
+	       result *= base;
+	   }
+	   return result;
+       };
+
+       console.log(power(2, 10));
+
+       // -----
+       const power = (base, exponent) => {
+	   let result = 1;
+	   for (let count = 0; count < exponent; count++) {
+	       result *= base;
+	   }
+	   return result;
+       };
+
+
+       // -----
+       const square1 = (x) => { return x * x; };
+       const square1 = x => x * x;
+
+
+       // -----
+       const hummus = function(factor) {
+	   const ingredient = function(amount, unit, name){
+	       let ingredientAmount = amount * factor;
+	       if (ingredientAmount > 1) {
+		   unit += "s";
+	       }
+	       console.log(`${ingredientAmount} ${unit} ${name}`);
+	   };
+
+	   ingredient(1, "can", "chickpeas");
+	   ingredient(0.25, "cup", "tahini");
+	   ingredient(0.25, "cup", "lemon juice");
+	   ingredient(1, "tablespoon", "olive oil");
+	   ingredient(0.5, "teaspoon", "cumin");
+       };
+       #+END_SRC
+****** exercises
+******* Minimum
+	#+BEGIN_SRC javascript
+
+
+	function min(a, b){
+	    return (a < b) ? a : b
+	}
+
+	console.log(min(20,2))
+
+	#+END_SRC
+******* Recursion - isEven
+	#+BEGIN_SRC javascript
+
+	function isEven(number){
+
+	    let numberIsEven = false;
+
+	    if (number == 0)
+		return numberIsEven = true;
+	    else if (number == 1)
+		return numberIsEven = false;
+	    else if (number <= 0)
+		return console.log("Please, enter a natural(positive) number.")
+	    else
+		return isEven(number - 2);
+	}
+
+	isEven(50); // true
+	isEven(75); // false
+	isEven(-1); // RangeError: Maximum call stack size exceeded
+	isEven(-1); // Please, enter a positive number.
+
+	#+END_SRC
+******* Bean Counting
+	#+BEGIN_SRC javascript
+
+	// -----
+	function countBs(string){
+
+	    let BinString = 0;
+
+	    for (let i = 0; i < string.length; i++) {
+		if (string[i] == "B")
+		    BinString++;
+	    }
+
+	    return BinString;
+	}
+
+	console.log(countBs("bbC"))
+
+
+	// -----
+	function countChar(string, charToMatch){
+
+	    let BinString = 0;
+
+	    for (let i = 0; i < string.length; i++) {
+		if (string[i] == charToMatch)
+		    BinString++;
+	    }
+
+	    return BinString;
+	}
+
+	console.log(countChar("bbC", "B"))
+
+	#+END_SRC
+*** Sites
+**** Web JS - Misc
+     https://bestofjs.org/
+
+     https://leanpub.com/understandinges6/read/#leanpub-auto-block-bindings
+**** Web JS - Online Tools
+     https://jsperf.com/
+*** Frameworks
+    https://polyfill.io/v3/
+
+    https://github.com/vuejs/vue
+
+    https://api.jquery.com/
+*** Refactoring
+    https://medium.com/@jochasinga/how-i-refactor-my-code-561aa9132045
+*** Articles
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+    https://medium.com/womakerscode/10-dicas-para-se-tornar-ninja-em-javascript-31a963ad17a1
+
+    https://medium.com/@oliver.grack/using-eslint-with-typescript-and-react-hooks-and-vscode-c583a18f0c75
+*** Interview
+    https://www.pixelstech.net/article/1552133174-JavaScript-interview-questions
 ** Rails
 *** Summary
     :PROPERTIES:
