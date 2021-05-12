@@ -1,4 +1,4 @@
-#+TILE: GNU Guile Language - Study Annotations
+#+TILE: Elixir Language - Study Annotations
 
 * Summary
   :PROPERTIES:
