@@ -21,9 +21,7 @@
 (use-package ivy
   :defer 1
   :config
-
   (use-package counsel :defer 1)
-
   (use-package swiper :defer 1)
 
   (ivy-mode 1)
@@ -77,31 +75,30 @@
 (use-package ivy-avy
   :defer 1)
 
-
-;; ========================================
-;; ** TOOLS
+;; ;; ========================================
+;; ;; ** TOOLS
 
 (use-package openwith
   :disabled
   :config
   (setq openwith-associations
 	(list
-	  (list (openwith-make-extension-regexp
+	 (list (openwith-make-extension-regexp
 		'("mpg" "mpeg" "mp3" "mp4"
 		  "avi" "wmv" "wav" "mov" "flv"
 		  "ogm" "ogg" "mkv"))
-		"mpv"
-		'(file))
-	  (list (openwith-make-extension-regexp
+	       "mpv"
+	       '(file))
+	 (list (openwith-make-extension-regexp
 		'("xbm" "pbm" "pgm" "ppm" "pnm"
 		  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
-		  ;; causing feh to be opened...
-		  "feh"
-		  '(file))
-	  (list (openwith-make-extension-regexp
+	       ;; causing feh to be opened...
+	       "feh"
+	       '(file))
+	 (list (openwith-make-extension-regexp
 		'("pdf"))
-		"zathura"
-		'(file))))
+	       "zathura"
+	       '(file))))
   (openwith-mode 1))
 
 (use-package all-the-icons-ivy-rich
@@ -550,6 +547,7 @@
   :defer t)
 
 (use-package paradox
+  :disabled
   :defer 1
   :custom
   (paradox-execute-asynchronously t)
@@ -574,8 +572,9 @@
   :bind (("C-c a m" . macrostep-expand)))
 
 (use-package company
-  :init (add-hook 'after-init-hook 'global-company-mode)
+  :defer 1
   :config
+  (add-hook 'after-init-hook 'global-company-mode)
   (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
   (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
   (setq-default company-dabbrev-other-buffers 'all
@@ -620,6 +619,7 @@
      :url "https://github.com/quelpa/quelpa-use-package.git"))
   (require 'quelpa-use-package))
 
+
 (use-package beacon
   :defer 1
   :config
@@ -660,17 +660,17 @@
 			 doom-gruvbox-light
 			 doom-solarized-light
 			 doom-nord-light))
-	  (night-themes '(doom-gruvbox
-			  doom-miramare
-			  doom-dracula
-			  doom-laserwave
-			  doom-old-hope
-			  doom-rouge))
-	  (current-hour (string-to-number
-			 (format-time-string "%H" (current-time))))
-	  (current-themes night-themes))
+	   (night-themes '(doom-gruvbox
+			   doom-miramare
+			   doom-dracula
+			   doom-laserwave
+			   doom-old-hope
+			   doom-rouge))
+	   (current-hour (string-to-number
+			  (format-time-string "%H" (current-time))))
+	   (current-themes night-themes))
       (e/change-theme (nth (random (length current-themes))
-		       current-themes) t)))
+			   current-themes) t)))
   (e/cool-themes))
 
 (use-package magit
