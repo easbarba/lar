@@ -5,8 +5,9 @@
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#dotfiles][Dotfiles]]
+- [[#projects][Projects]]
   - [[#cejo][cejo]]
+- [[#dotfiles][Dotfiles]]
   - [[#irbrc][irbrc]]
   - [[#blog][Blog]]
   - [[#neovim][neovim]]
@@ -47,13 +48,13 @@
   - [[#make][Make]]
   - [[#suckless][Suckless]]
 - [[#languages][Languages]]
+  - [[#elixir][Elixir]]
   - [[#javascript][Javascript]]
   - [[#rails][Rails]]
   - [[#frontend][FrontEnd]]
   - [[#css][Css]]
   - [[#html][HTML]]
   - [[#haskell][Haskell]]
-  - [[#scheme][Scheme]]
   - [[#common-lisp][Common Lisp]]
   - [[#golang][Golang]]
   - [[#php][PHP]]
@@ -68,73 +69,73 @@
   - [[#devops][DevOps]]
 :END:
 
-* Dotfiles
+* Projects
 ** cejo
 *** distro
     #+begin_src yaml
-		---
-		builddep: builddep
-		clean: autoremove
-		depends: repoquery --requires --resolve
-		download: ''
-		fix: fix
-		help: help
-		info: info
-		install: install
-		installed: list installed
-		remove: remove
-		search: search
-		sysupgrade: sysupgrade
-		update: update
-		upgrade: upgrade
+    ---
+    builddep: builddep
+    clean: autoremove
+    depends: repoquery --requires --resolve
+    download: ''
+    fix: fix
+    help: help
+    info: info
+    install: install
+    installed: list installed
+    remove: remove
+    search: search
+    sysupgrade: sysupgrade
+    update: update
+    upgrade: upgrade
 
-	    ---
-	    builddep: ''
-	    clean: autoremove
-	    depends: ''
-	    download: fetch
-	    fix: fix
-	    help: help
-	    info: query
-	    install: install
-	    installed: version
-	    remove: remove
-	    search: search
-	    sysupgrade: ''
-	    update: update
-	    upgrade: upgrade
-	    ---
-	    builddep: ''
-	    clean: autoremove
-	    depends: ''
-	    download: fetch
-	    fix: fix
-	    help: help
-	    info: query
-	    install: install
-	    installed: version
-	    remove: remove
-	    search: search
-	    sysupgrade: ''
-	    update: update
-	    upgrade: upgrade
+    ---
+    builddep: ''
+    clean: autoremove
+    depends: ''
+    download: fetch
+    fix: fix
+    help: help
+    info: query
+    install: install
+    installed: version
+    remove: remove
+    search: search
+    sysupgrade: ''
+    update: update
+    upgrade: upgrade
+    ---
+    builddep: ''
+    clean: autoremove
+    depends: ''
+    download: fetch
+    fix: fix
+    help: help
+    info: query
+    install: install
+    installed: version
+    remove: remove
+    search: search
+    sysupgrade: ''
+    update: update
+    upgrade: upgrade
 
-	---
-	builddep: build-dep
-	clean: nix-store --gc
-	depends: depends
-	download: download
-	fix: install -f
-	help: help
-	info: show
-	install: nix-env --install
-	install+: nix-env --install -A
-	installed: nix-env -qa
-	remove: nix-env --uninstall
-	search: nix-env -qa
-	sysupgrade: ''
-	update: nix-env --update
-	upgrade: nix-env --upgrade
+    ---
+    builddep: build-dep
+    clean: nix-store --gc
+    depends: depends
+    download: download
+    fix: install -f
+    help: help
+    info: show
+    install: nix-env --install
+    install+: nix-env --install -A
+    installed: nix-env -qa
+    remove: nix-env --uninstall
+    search: nix-env -qa
+    sysupgrade: ''
+    update: nix-env --update
+    upgrade: nix-env --upgrade
 
 
     ---
@@ -154,21 +155,21 @@
     upgrade: "-Syu"
 
 
----
-builddep: ''
-clean: autoremove
-depends: ''
-download: fetch
-fix: fix
-help: help
-info: query
-install: install
-installed: version
-remove: remove
-search: search
-sysupgrade: ''
-update: update
-upgrade: upgrade
+    ---
+    builddep: ''
+    clean: autoremove
+    depends: ''
+    download: fetch
+    fix: fix
+    help: help
+    info: query
+    install: install
+    installed: version
+    remove: remove
+    search: search
+    sysupgrade: ''
+    update: update
+    upgrade: upgrade
 
     #+end_src
 *** floss
@@ -182,6 +183,27 @@ upgrade: upgrade
    - https://github.com/axios/axios
    - https://github.com/nodejs/node
 
+   --- # elixir
+   - https://github.com/plausible/analytics
+   - https://github.com/blackode/elixir_cli_spinners
+   - https://github.com/ndreynolds/ex_termbox
+   - https://github.com/tefter/cli
+   - https://github.com/ndreynolds/ratatouille
+   - https://github.com/bitwalker/distillery
+   - https://github.com/ueberauth/guardian
+   - https://github.com/absinthe-graphql/absinthe
+   - https://github.com/christopheradams/elixir_style_guide
+   - https://github.com/rrrene/credo
+   - https://github.com/taylor/kiex
+   - https://github.com/kerl/kerl
+   - https://github.com/jeremyjh/dialyxir
+   - https://github.com/elixir-lsp/elixir-ls
+   - https://github.com/elixir-ecto/ecto
+   - https://github.com/hexpm/hex
+   - https://github.com/phoenixframework/phoenix
+   - https://github.com/erlang/otp
+   - https://github.com/elixir-lang/ex_doc
+   - https://github.com/elixir-lang/elixir
 
    --- # css
    - https://github.com/IanLunn/Hover
@@ -190,18 +212,6 @@ upgrade: upgrade
    - https://github.com/oddbird/susy
    - https://github.com/necolas/normalize.css
    - https://github.com/mozdevs/cssremedy
-
-   --- # Scheme
-   - https://github.com/aconchillo/guile-json
-   - https://gitlab.com/guile-git/guile-git
-   - https://gitlab.com/leoprikler/guile-filesystem
-   - https://github.com/mwette/guile-libyaml
-   - https://gitlab.com/emacs-geiser/racket
-   - https://github.com/alezost/guix-config
-   - https://gitlab.com/emacs-geiser/guile
-   - https://github.com/wingo/fibers
-   - https://git.savannah.gnu.org/git/guix.git
-   - https://git.sv.gnu.org/git/guile.git
 
    --- # golang
    - https://github.com/golang-standards/project-layout
@@ -307,7 +317,7 @@ upgrade: upgrade
    - https://github.com/laravel/laravel
    - https://github.com/php/php-src
    #+end_src
-*** Cero Linguagens
+*** Ports
 **** Ruby
      #+begin_src ruby
      def get_name_files(folder)
@@ -1067,6 +1077,7 @@ upgrade: upgrade
 	      rm $(BIN)/pan.py
 
       #+end_src
+* Dotfiles
 ** irbrc
    #+begin_src ruby
 
@@ -9388,6 +9399,325 @@ asdf_js()
 
      #+END_SRC
 * Languages
+** Elixir
+*** Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+    - [[#priorities][Priorities]]
+  - [[#features][Features]]
+    - [[#type][Type]]
+      - [[#atoms][atoms]]
+      - [[#boolean][Boolean]]
+      - [[#map][map]]
+      - [[#binaries-and-bitstrings][Binaries and bitstrings]]
+      - [[#strings-binary-strings][Strings (binary strings)]]
+      - [[#character-lists][Character lists]]
+      - [[#keyword][Keyword]]
+      - [[#mapset][MapSet]]
+      - [[#dates][Dates]]
+      - [[#time][Time]]
+      - [[#datetime][DateTime]]
+      - [[#io-lists][IO lists]]
+      - [[#typespec][Typespec]]
+    - [[#operators][Operators]]
+    - [[#macros][Macros]]
+    - [[#beam][BEAM]]
+      - [[#apply][Apply]]
+    - [[#functions][Functions]]
+      - [[#default-argument-values][default argument values]]
+    - [[#lambdaanonymous-func][lambda/anonymous func]]
+      - [[#-operator][& operator]]
+  - [[#packages][Packages]]
+    - [[#elixir][elixir]]
+    - [[#elixirc][elixirc]]
+    - [[#eex][eex]]
+    - [[#ex_unit][ex_unit]]
+    - [[#iex][iex]]
+    - [[#paths][Paths]]
+    - [[#ex_doc][ex_doc]]
+    - [[#phoenix][phoenix]]
+    - [[#mix][mix]]
+      - [[#format][format]]
+  - [[#tests][Tests]]
+    - [[#rspec][RSpec]]
+    - [[#unit][Unit]]
+  :END:
+*** Progress
+**** Books
+     | Books                  | Chapter                  | @                                    | late | revision |
+     |------------------------+--------------------------+--------------------------------------+------+----------|
+     | Elixir in Action       | Building blocks          | Other built-in types                 |      |          |
+     | Programming Elixir 1.6 | Conventional Programming | Ignoring a Value with _ (Underscore) |      |          |
+     | Programming in Elixir  | Elixir Basics            |                                      |      |          |
+**** SLOC
+     | Project   | folder | file | @ |
+     |-----------+--------+------+---|
+     | elixir    |        |      |   |
+     | phoenix   |        |      |   |
+     | elixir-ls |        |      |   |
+**** Priorities
+     - Elixir
+     - Phoenix
+     - Unit Test
+     - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
+     - Git
+     - HTML/CSS/JS
+     - PostgreSQL
+     - API REST { YAML, JSON, XML, SOAP }
+     - CS
+     - English
+     - Container
+     - Sidekiq
+     - Heroku
+     - Slim
+     - CI/CD
+     - Cloud
+
+*** Features
+    | features     | example                              | desc   |
+    |--------------+--------------------------------------+--------|
+    | pin operator | ^                                    | forces |
+    | ranges       | 1..100                               |        |
+    | regex        | Regex.run ~r{[aeiou]}, "caterpillar" |        |
+
+**** Type
+***** atoms
+      #+begin_src elixir
+      :an_atom
+      #+end_src
+******* aliases
+	- aliases are atoms that begin with upcased: AnAtom
+	  -
+***** Boolean
+      - :true
+      - :false
+      - true, false are syntax sugar of those
+***** map
+      #+begin_src elixir
+      x = %{1 => '1'}
+      y = Map.new({1,'1'}, {2, '2'})
+
+      y[1] # '1'
+
+      Map.get(y, 1)
+      Map.get(y, 3, :not_found) # returns `:not_found` as default value if index is no found
+
+      Map.fetch(y, 1) # {:ok, '1'}
+      Map.fetch(y, 3) # :error
+
+      Map.put a, 4, '4'
+
+      a = %{:name => 'boy', :age => 2}
+      a = %{name: 'boy', age: 2} # shorter notation if keys are atom
+
+      a[:name] #  'boy'
+      a.name # 'boy'
+      a.height # ** (KeyError) key :non_existent_field not found
+      b = %{a | name: 'gota', age: 4}
+
+      #+end_src
+***** Binaries and bitstrings
+      #+begin_src elixir
+      <<1, 2, 3>>
+      <<257::16>> # use 16bits
+      <<1, 2>> <> <<3, 4>>
+      #+end_src
+***** Strings (binary strings)
+      - printed as a string, but underneath it’s a binary
+
+      #+begin_src elixir
+      "Hello World"
+
+      #
+      "1 + 1 is equal #{1+1}"
+
+      "String" <> " " <> "concatenation"
+
+      #+end_src
+****** conversion
+       #+begin_src elixir
+       List.to_string/1
+       #+end_src
+****** embedded string expressions
+       #+begin_src elixir
+       "1 + 1 is equal #{1+1}"
+       #+end_src
+****** sigils
+       - ~S that doesn’t handle interpolation or escape characters
+       #+begin_src elixir
+       ~s(This is also a string)
+       ~s(1 + 1 = #{3 + 0.14})
+
+       ~S(Not interpolated #{3 + 0.14})
+       #+end_src
+****** heredocs
+       #+begin_src elixir
+       """
+       Heredoc must end on its own line """
+       """
+       #+end_src
+***** Character lists
+      #+begin_src elixir
+      'ABC'
+
+      [65, 66, 67]
+
+      ~c(Barri gota)
+      ~C(Unescaped sigil #{3 + 0.14})
+
+      '''
+      Heredoc
+      '''
+      #+end_src
+****** conversion
+       #+begin_src elixir
+       String.to_charlist("ABC")
+       #+end_src
+***** Keyword
+      - a list, where each element is a two-element tuple, and the first element of each tuple is an atom. The second element can be of any type
+      - often used for small-size key/value structures
+      - can contain multiple values for the same key
+      - can control the ordering of keyword list elements
+      - many functions in standard libraries of Elixir and Erlang take their options as keyword lists.
+
+	#+begin_src elixir
+	[{:monday, 1}, {:tuesday, 2}, {:wednesday, 3}]
+	[monday: 1, tuesday: 2, wednesday: 3]
+	days[:tuesday]
+	#+end_src
+***** MapSet
+      - store of unique values
+       #+begin_src elixir
+       MapSet.new([:monday, :tuesday, :wednesday])
+       #+end_src
+
+****** Functions
+       #+begin_src elixir
+       MapSet.member?(days, :monday)
+       MapSet.put(days, :thursday)
+       #+end_src
+***** Dates
+      - ~D sigil.
+	#+begin_src elixir
+	date = ~D[2018-01-31]
+	date.year # 2018
+	#+end_src
+
+***** Time
+      - ~T sigil
+      #+begin_src elixir
+      time = ~T[11:59:12.00007]
+      time.hour
+      #+end_src
+
+***** DateTime
+      #+begin_src elixir
+      naive_datetime = ~N[2018-01-31 11:59:12.000007]
+      naive_datetime.year
+      datetime = DateTime.from_naive!(naive_datetime, "Etc/UTC")
+      #+end_src
+
+***** IO lists
+      - useful for incrementally building output that will be forwarded to an I/O device, such as a network or a file.
+      - Each element of an IO list must be: An integer in the range of 0 to 255, a binary, An IO list
+      - Under the hood, the structure is flattened
+
+	#+begin_src elixir
+	iolist = [[['H', 'e'], "llo,"], " worl", "d!"]
+	IO.puts(iolist)
+	#+end_src
+
+***** Typespec
+      - type
+      - opaque
+      - typep
+      - spec
+      - callback
+      - macrocallback
+**** Operators
+     - many operators in Elixir are actually functions
+     - atoms false and nil are treated as falsy
+**** Macros
+**** BEAM
+***** Apply
+      Dynamically call functions at runtime.
+      #+begin_src elixir
+      apply(IO, :puts, ["Dynamic function call."])
+      #+end_src
+**** Functions
+     - can be assigned to a variable
+
+***** default argument values
+      #+begin_src elixir
+      def my_fun(arg1, arg2, opts \\ "foo")
+      #+end_src
+**** lambda/anonymous func
+     - can be assigned to a variable
+     - can be argument of function
+     - closure capts outside vars value
+     - captures a specific memory location. Rebinding a variable doesn’t affect the previously defined lambda that references the same symbolic name
+     #+begin_src elixir
+     fn x -> IO.puts(x) end
+
+     Enum.each(
+       [1, 2, 3],
+       fn x -> IO.puts(x) end
+     )
+     #+end_src
+***** & operator
+     - capture operator: &, turns that function into a lambda that can be assigned to a variable.
+     - & operator can be used to shorten the lambda definition, making it possible to omit explicit argument naming.
+       #+begin_src elixir
+       Enum.each([1, 2, 3], &IO.puts/1)
+
+       lambda = fn x, y, z -> x * y + z end # short version of is
+       lambda = &(&1 * &2 + &3)
+       lambda.(2, 3, 4)
+       #+end_src
+*** Packages
+**** elixir
+     |                    |                                                   |
+     |--------------------+---------------------------------------------------|
+     | --no-halt <script> | BEAM instance wont terminate after script is run |
+     |                    |                                                   |
+
+**** elixirc
+**** eex
+**** ex_unit
+**** iex
+     |               |               |                     |
+     |---------------+---------------+---------------------|
+     | h [<feature>] | h IO.puts     | help                |
+     | i             |               | interactive         |
+     | c <filepath>  | c 'hello.exs' | compile and execute |
+
+**** Paths
+     add additional code paths by providing the -pa switch:
+     #+begin_src elixir
+     iex -pa my/code/path -pa another/code/path
+     #+end_src
+
+**** ex_doc
+**** phoenix
+**** [[https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html][mix]]
+     | options                         | desc                       |
+     +---------------------------------+----------------------------|
+     | mix help deps                   |                            |
+     | new <name> --module <Namespace> | new project named <name>   |
+     | compile                         | compile the entire project |
+     | run -e "<code>"                 |                            |
+     | test                            |                            |
+
+***** format
+
+*** Tests
+**** RSpec
+**** Unit
 ** Javascript
 *** Summary
     :PROPERTIES:
@@ -10419,533 +10749,6 @@ asdf_js()
     https://www.haskell.org/cabal/
 
     https://www.haskellstack.org/
-** [[https://schemers.org/][Scheme]]
-*** Summary
-    :PROPERTIES:
-    :TOC:      :include all :depth 3 :ignore this
-    :END:
-    :CONTENTS:
-    - [[#progress][Progress]]
-      - [[#books][Books]]
-      - [[#sloc][SLOC]]
-    - [[#packages][Packages]]
-      - [[#gem][gem]]
-      - [[#bundle][bundle]]
-	- [[#outdated][outdated]]
-	- [[#gem][gem]]
-	- [[#install][install]]
-	- [[#update][update]]
-      - [[#irb][irb]]
-	- [[#cli][cli]]
-	- [[#inside][inside]]
-      - [[#rspec][rspec]]
-      - [[#unit-test][unit test]]
-      - [[#pry][pry]]
-    - [[#features][Features]]
-      - [[#project-structure][project structure]]
-      - [[#system-errors][System Errors]]
-	- [[#usage][usage]]
-      - [[#exceptions][exceptions]]
-	- [[#errors][Errors]]
-	- [[#usage][usage]]
-      - [[#writable-object-attribute][writable object attribute]]
-      - [[#multithreading][Multithreading]]
-	- [[#usage][usage]]
-      - [[#modules][modules]]
-      - [[#continuation][continuation]]
-      - [[#fibers][Fibers]]
-	- [[#errors][errors]]
-	- [[#usage][usage]]
-      - [[#delimited-input][delimited input]]
-      - [[#rake][rake]]
-	- [[#usage][usage]]
-      - [[#gem][gem]]
-      - [[#variables][Variables]]
-	- [[#class-variables][class variables]]
-	- [[#global-variables][global variables]]
-      - [[#self][self]]
-      - [[#commentary][commentary]]
-      - [[#defined][defined?]]
-      - [[#iterators][iterators]]
-      - [[#block-local-variables][block-local variables]]
-      - [[#loops][loops]]
-      - [[#statement-modifiers][statement modifiers]]
-      - [[#comparison][comparison]]
-      - [[#conditional][conditional]]
-      - [[#class][class]]
-	- [[#class][class]]
-      - [[#append-][append <<]]
-      - [[#blocks][blocks]]
-      - [[#lambda][lambda]]
-	- [[#how][How]]
-	- [[#usage][Usage]]
-      - [[#methods][methods]]
-      - [[#yield][yield]]
-      - [[#procs][procs]]
-      - [[#operators][operators]]
-      - [[#enumerable][enumerable]]
-      - [[#enumerator][enumerator]]
-	- [[#lazy][lazy]]
-	- [[#each_car][each_car]]
-	- [[#each][each]]
-	- [[#to_enumenum_for][to_enum/enum_for]]
-      - [[#inject][inject]]
-      - [[#select][select]]
-      - [[#succ][succ]]
-      - [[#collect][collect]]
-      - [[#freeze][freeze]]
-      - [[#dup][dup]]
-      - [[#dig][dig]]
-      - [[#fetch][fetch]]
-      - [[#tap][tap]]
-      - [[#map][map]]
-      - [[#pluck][pluck]]
-      - [[#quoting][Quoting]]
-      - [[#here-documents][here documents]]
-      - [[#proc][proc]]
-      - [[#do-end-as-param][do end as param]]
-      - [[#array][array]]
-      - [[#datetime][date/time]]
-      - [[#lambda][lambda]]
-      - [[#begin-rescue][begin rescue]]
-      - [[#hash][hash]]
-      - [[#range][range]]
-      - [[#sets][sets]]
-      - [[#gsub][gsub]]
-      - [[#find][find]]
-      - [[#map][map]]
-      - [[#each_slice][each_slice]]
-      - [[#lazy][lazy]]
-      - [[#with_index][with_index]]
-      - [[#enum_for][enum_for]]
-      - [[#more][more]]
-      - [[#concepts][Concepts]]
-	- [[#iterator][Iterator]]
-	- [[#methods][Methods]]
-	- [[#enumerator][Enumerator]]
-      - [[#instructions][Instructions]]
-	- [[#rbenv][Rbenv]]
-	- [[#misc][misc]]
-    - [[#toolings][Toolings]]
-    - [[#videos][Videos]]
-    - [[#tests][Tests]]
-      - [[#rspec][RSpec]]
-      - [[#unit][Unit]]
-    :END:
-*** Progress
-**** Books
-     | name      | chapter | @                                  | late | revision |
-     |-----------+---------+------------------------------------+------+----------|
-     | Scheme PL |       2 | Section 2.6. Top-Level Definitions |      |          |
-
-**** LDC
-     | Source Code | folder | file | @ |
-     |-------------+--------+------+---|
-     | guix        |        |      |   |
-     | guile       |        |      |   |
-*** Information
-    https://schemers.org/
-*** Progress
-**** Books
-     | Books            | Cap | @ | late | revision |
-     |------------------+-----+---+------+----------|
-     | Emacs Lisp       |     |   |      |          |
-     | Emacs Manual     |     |   |      |          |
-     | ANSI Common Lisp |     |   |      |          |
-
-**** SLOC
-     | Source Code | folder      | file        | @ |
-     |-------------+-------------+-------------+---|
-     | emacs       | lisp/eshell | esh-util.el |   |
-     | use-package |             |             |   |
-     |             |             |             |   |
-*** Scheme Books
-**** SICP
-***** Chapter 1
-****** Examples
-******* sqrt
-	#+BEGIN_SRC scheme
-
-	(define (average x y)
-	  (/ (+ x y) 2))
-
-	(define (improve guess x)
-	  (average guess (/ x guess)))
-
-	(define (square y)
-	  (* y y))
-
-	(define (good-enough? guess x)
-	  (< (abs (- (square guess) x)) 0.001))
-
-	(define (sqrt-iter guess x)
-	  (if (good-enough? guess x)
-	      guess
-	      (sqrt-iter (improve guess x) x)))
-
-
-	(sqrt 9)
-	(sqrt (+ 100 37))
-	(sqrt (+ (sqrt 2) (sqrt 3)))
-	(square (sqrt 1000))
-
-	#+END_SRC
-******* sqrt (nested)
-	#+BEGIN_SRC scheme
-
-	(define (sqrt x)
-	  (define (good-enough? guess x)
-	    (< (abs (- (square guess) x)) 0.001))
-
-	  (define (improve guess x) (average guess (/ x guess)))
-
-	  (define (sqrt-iter guess x)
-	    (if (good-enough? guess x)
-		guess
-		(sqrt-iter (improve guess x) x)))
-	  (sqrt-iter 1.0 x))
-	#+END_SRC
-
-******* sqrt (nested/improved)
-	#+BEGIN_SRC scheme
-
-	(define (sqrt x)
-	  (define (good-enough? guess)
-	    (< (abs (- (square guess) x)) 0.001))
-
-	  (define (improve guess)
-	    (average guess (/ x guess)))
-
-	  (define (sqrt-iter guess)
-	    (if (good-enough? guess)
-		guess
-		(sqrt-iter (improve guess))))
-	  (sqrt-iter 1.0))
-	#+END_SRC
-
-******* factorial
-	#+BEGIN_SRC scheme
-
-	(define (factorial n)
-	  (if (= n 1)
-	      1
-	      (* n (factorial (- n 1)))))
-
-
-	(define (fact-iter product counter max-count)
-	  (if (> counter max-count)
-	      product
-	      (fact-iter (* counter product)
-			 (* counter 1)
-			 max-count)))
-
-	(define (factorial n)
-	  (fact-iter 1 1 n))
-
-	(define (factorial n)
-	  (define (iter product counter)
-	    (if (> counter n)
-		product
-		(iter (* counter product)
-		      (+ counter 1))))
-	  (iter 1 1))
-
-	(factorial 3)
-
-	#+END_SRC
-
-****** Exercises
-******* Exercise 1.1:
-	Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression?
-	Assume that the sequence is to be evaluated in the order in which it is presented.
-
-	#+BEGIN_SRC scheme
-
-	10 ;; 10
-	(+ 5 3 4) ;; 12
-	(- 9 1) ;; 8
-	(/ 6 2) ;; 3
-	(+ (* 2 4) (- 4 6)) ;; 6
-	(define a 3) ;; a
-	(define b (+ a 1)) ;; b
-	(+ a b (* a b)) ;; 19
-	(= a b) ;; #f
-	(if (and (> b a) (< b (* a b)))
-	    b
-	    a) ;; 4 (#t)
-	(cond ((= a 4) 6)
-	      ((= b 4) (+ 6 7 a))
-	      (else 25)) ;; 16 (2)
-	(+ 2 (if (> b a) b a)) ;; 6
-	(* (cond ((> a b) a)
-		 ((< a b) b)
-		 (else -1))
-	   (+ a 1)) ;; 16
-
-	#+END_SRC
-******* Exercise 1.2:
-	Translate the following expression into prefix form: 5+4+(2−(3−(6+45)))3(6−2)(2−7).
-
-	#+BEGIN_SRC scheme
-
-	(/ (+ 5 4
-	      (- 2
-		 (- 3 (+ 6 (/ 4 5)))))
-	   (* 3 (- 6 2) (- 2 7)))
-
-	#+END_SRC
-******* Exercise 1.3:
-	Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
-	*QUESTION* *ERROR?*: If 2 number are equal but both are the smalest ones
-
-	#+BEGIN_SRC scheme
-
-	(define (square y)
-	  (* y y))
-
-	(define (sum-square-two-numbers x y)
-	  (+ (square x) (square y)))
-
-	(define (sum-square-the-two-largest-three-numbers x y n)
-	  (if (and (>= x y) (>= y n))
-	      (sum-square-two-numbers x y)
-
-	      (if (<= y n)
-		  (if (<= x y)
-		      (sum-square-two-numbers n y)
-		      (sum-square-two-numbers x n))
-		  (sum-square-two-numbers y n))))
-
-	(two-largest-of-three 4 4 4)
-	(two-largest-of-three 4 3 2)
-	(two-largest-of-three 4 1 2)
-	(two-largest-of-three 1 4 3)
-
-	(define (sum-square-two-largest-of-three-numbers x y n)
-	  (if (and (>= x y) (>= y n))
-	      (display "x & y are the larger ones")
-
-	      (if (<= y n)
-		  (if (<= x y)
-		      (display "n & y are the larger ones")
-		      (display "x & n are the larger ones"))
-		  (display "y & n are the larger ones"))))
-
-	#+END_SRC
-******* Exercise 1.4:
-	Observe that our model of evaluation allows for combinations whose operators are compound expressions.
-	Use this observation to describe the behavior of the following procedure:
-
-	#+BEGIN_SRC scheme
-
-	(define (a-plus-abs-b a b)
-	  ((if (> b 0)
-	       + -)
-	   a b))
-
-	(a-plus-abs-b 3 2)
-	(a-plus-abs-b -3 2)
-	(a-plus-abs-b 3 -2)
-
-	ANSWER: If B is bigger than 0, (+ a b), else (- a b)
-
-	#+END_SRC
-******* Exercise 1.5:
-	Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using
-	applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
-
-	#+BEGIN_SRC scheme
-
-	(define (p) (p))
-
-	(define (test x y)
-	  (if (= x 0)
-	      0
-	      y))
-
-	#+END_SRC
-
-	Then he evaluates the expression
-
-	#+BEGIN_SRC scheme
-
-	(test 0 (p))
-
-	#+END_SRC
-
-	What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What behavior will he
-	observe with an interpreter that uses normal-order evaluation? Explain your answer. (Assume that the evaluation rule
-	for the special form if is the same whether the interpreter is using normal or applicative order: The predicate
-	expression is evaluated first, and the result determines whether to evaluate the consequent or the alternative
-	expression.)
-******* Exercise 1.6
-	the new-if evaluate all of its parameters resulting in an
-	endless loop under sqrt-iter
-
-	sqrt-iter
-	new-if
-	sqrt-iter
-	new-if
-	#+BEGIN_SRC scheme
-
-
-	(define (average x y)
-	  (/ (+ x y) 2))
-
-	(define (improve guess x)
-	  (average guess (/ x guess)))
-
-	(define (square y) (* y y))
-
-	(define (good-enough? guess x)
-	  (< (abs (- (square guess) x)) 0.001))
-
-	(define (new-if predicate then-clause else-clause)
-	  (cond (predicate then-clause)
-		(else else-clause)))
-
-	(if (= 2 3) 0 5)
-	(if (= 1 1) 0 5)
-	(new-if (= 2 3) 0 5)
-	(new-if (= 1 1) 0 5)
-
-
-	(define (sqrt-iter guess x)
-	  (new-if (good-enough? guess x)
-		  guess
-		  (sqrt-iter (improve guess x) x)))
-
-	(sqrt 9)
-	(sqrt (+ 100 37))
-	(sqrt (+ (sqrt 2) (sqrt 3)))
-	(square (sqrt 1000))
-
-	#+END_SRC
-
-**** Little Schemer
-***** Chapter 3 - Cons the Magnificent
-****** rember
-****** insertR
-       #+BEGIN_SRC scheme
-
-       (define insertR
-	 (lambda (new old lat)
-	   (cond
-	    ((null? lat) (quote ()))
-	    (else (cond
-		   ((eq? (car lat) old)
-		    (cons old
-			  (cons new (cdr lat))))
-		   (else (cons (car lat)
-			       (insertR new old (cdr lat)))))))))
-
-       (insertR 'topping 'fudge
-		(quote (ice cream with fudge for dessert)))
-       #+END_SRC
-****** insertL
-       #+BEGIN_SRC scheme
-
-       (define insertL
-	 (lambda (new old lat)
-	   (cond
-	    ((null? lat) (quote ()))
-	    (else (cond
-		   ((eq? (car lat) old)
-		    (cons new
-			  (cons old (dr lat)
-				(insertL)))))))))
-
-       (subst 'topping 'fudge
-	      (quote (ice cream with fudge for dessert)))
-       #+END_SRC
-
-****** subst
-       #+BEGIN_SRC scheme
-
-       (define subst
-	 (lambda (new old lat)
-	   (cond
-	    ((null? lat) (quote ()))
-	    (else (cond
-		   ((eq? (car lat) old)
-		    (cons new (cdr lat)))
-		   (else (cons (car lat)
-			       (subst new old (cdr lat)))))))))
-
-       (subst 'topping 'fudge
-	      (quote (ice cream with fudge for dessert)))
-
-
-
-
-       #+END_SRC
-
-****** subst2
-       #+BEGIN_SRC scheme
-
-       (define subst2
-	 (lambda (new o1 o2 lat)
-	   (cond
-	    ((null? lat) (quote ()))
-	    (else (cond
-		   ((eq? (car lat) o1)
-		    (cons new (cdr lat)))
-		   ((eq? (car lat) o2)
-		    (cons new (cdr lat)))
-		   (else (cons (car lat)
-			       (subst2 new o1 o2
-				       (cdr lat)))))))))
-
-       (define lat )
-
-       (subst2 'vanilla 'chocolate 'banana '(banana ice cream
-						    with chocolate topping))
-       #+END_SRC
-
-**** Online books
-     https://htdp.org/2018-01-06/Book/
-
-*** Scheme Terms (table)
-    | Term                                         | Meaning |
-    |----------------------------------------------+---------|
-    | data directed programming (complex numbers)  |         |
-    | messaging passing                            |         |
-    | term list                                    |         |
-    | big case analisys                            |         |
-    | decentralized control                        |         |
-    | stream processing                            |         |
-    | state variables                              |         |
-    | backtracking search                          |         |
-    | memoization                                  |         |
-    | Normal Order Evaluation vs Applicative Order |         |
-
-*** Scheme Libraries
-    http://synthcode.com/scheme/fmt/
-*** TODO Scheme
-**** TODO wayland guile scheme window manager -- with an emacs feels
-*** Scheme Videos
-    [[https:https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures][SICP Videos]]
-
-    https://vimeo.com/lispnyc
-
-*** Scheme Articles
-    http://www.troubleshooters.com/codecorn/scheme_guile/hello.htm
-
-    https://schemers.org/Documents/
-
-    https://schemers.org/
-
-    https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/
-
-    https://www.wikiwand.com/en/Homoiconicity#/Implementation_methods
-*** Scheme - Blogs
-    https://catonmat.net/
-
-    http://www.lambdanative.org
-
-    http://www.schemespheres.org
-
-    https://schemers.org
 ** Common Lisp
 *** Progress
 **** Books
