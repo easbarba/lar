@@ -56,7 +56,7 @@ e_guix()
     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
     GUIX_PROFILE="$HOME/.guix-profile"
-    export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
+    PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
 e_npm()
@@ -103,3 +103,4 @@ e_golang
 e_luarocks
 e_ruby
 e_nix
+e_guix
