@@ -399,7 +399,6 @@ That is, remove a non kept file from the recent list."
   (add-hook 'window-configuration-change-hook
 	    #'(lambda ()
 		(setq erc-fill-column (- (window-width) 2))))
-  (erc-track-remove-from-mode-line)
   (setq-local scroll-margin 1)
   (setq erc-nick "easbarbosa"
 	erc-user-full-name "EAS Barbosa"
@@ -420,7 +419,9 @@ That is, remove a non kept file from the recent list."
 	erc-spelling-dictionaries '(("#emacs" "american"))
 	erc-autojoin-channels-alist '(("freenode.net"
 				       "#debian"
-				       "elixir-lang"
+				       "#guix"
+				       "#scheme"
+				       "#lua"
 				       "#emacs"))
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 	erc-track-exclude-types
@@ -662,7 +663,7 @@ Return true if found, else false. Version 2016-10-24"
      try-expand-line)))
 
 (use-package image
-  :init
+ :init
   ;; open next/previous image fitted
   (local-set-key (kbd "<right>") (defun next-image-fitted ()
 				   (interactive)
