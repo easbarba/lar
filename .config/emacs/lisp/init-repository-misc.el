@@ -229,8 +229,8 @@
      "https://micronews.debian.org/feeds/atom.xml"
      "https://elixir-lang.org/atom.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
-     "https://weblog.rubyonrails.org/feed/atom.xml"
      "https://rubyweekly.com/rss/"
+     "https://michael.stapelberg.ch/feed.xml"
      "https://edelpero.svbtle.com/feed"
      "https://debxp.org/feed/"
      "https://sourcehut.org/blog/index.xml"
@@ -239,15 +239,9 @@
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
-     "https://feeds.buzzsprout.com/1004689.rss"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQnpN5AUd36lnMHuIl_rihA" ;; Caio Delgado
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SbfAPZf8SMvAxp8t51qtQ" ;; DebianConf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Central
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdngmbVKX1Tgre699-XLlUA" ;; TechTips w/ Nana
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
