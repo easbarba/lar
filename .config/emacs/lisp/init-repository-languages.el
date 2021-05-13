@@ -189,7 +189,7 @@
   (lsp-completion-provider :capf)
   (lsp-modeline-diagnostics-scope :workspace)
   (lsp-enable-indentation t)
-  (lsp-solargraph-use-bundler t)
+  ;; (lsp-solargraph-use-bundler t)
   ;; (lsp-log-io nil) ; if set to true can cause a performance hit
   ;; (lsp-print-performance t)
   ;; (lsp-enable-file-watchers nil)
