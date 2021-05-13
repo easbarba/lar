@@ -51,6 +51,13 @@ home_bin()
 
 # * PACKAGES
 
+e_doom()
+{
+    DOOM_DIR="$HOME/.config/emacs"
+    PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
+}
+
+
 e_guix()
 {
     export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
@@ -99,8 +106,12 @@ e_nix()
 # * RUN
 
 home_bin
+
+e_doom
+
 e_golang
 e_luarocks
 e_ruby
+
 e_nix
 e_guix
