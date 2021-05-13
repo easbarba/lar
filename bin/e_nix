@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+# Debug Options
 set -euo pipefail
 
-# Info: boostrap Nix
+# Description: boostrap Nix
 # Dependencies: sudo, curl, bash
 
 install()
@@ -16,10 +17,14 @@ packages()
 {
     local packs=(direnv cpufetch solargraph mcfly)
     e_dolist 'nix-env -i' "${packs[@]}"
+}
 
+languages()
+{
     local packs2=(nixpkgs.ruby_2_7 nixpkgs.nodejs nixpkgs.nodePackages.npm)
     e_dolist 'nix-env -iA' "${packs2[@]}"
 }
 
 install
 packages
+languages
