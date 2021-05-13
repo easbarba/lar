@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-
+# * Cejo
 cejo distro update
 cejo distro upgrade
 
@@ -8,3 +8,10 @@ cejo floss grab
 cejo floss archive
 
 cejo projects emacs
+
+# * Guix
+
+guix pull
+guix package -u
+
+# * Nix
