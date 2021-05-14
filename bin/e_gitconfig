@@ -17,3 +17,5 @@ git config --global color.ui true
 git config --global credential.helper cache --timeout=1600
 
 git config --global pull.ff only
+
+git config --global fetch.prune true
