@@ -4134,6 +4134,41 @@ emacs -q -l "$MX/profiles/emacs-reader.el"
     #+END_SRC
 *** Packages
     #+BEGIN_SRC emacs-lisp :results code
+(elfeed
+:config
+  (defun e/elfeed-open-with-eww ()
+    "Open in eww with `eww-readable' - Ambrevar."
+    (interactive)
+    (let ((entry (if (eq major-mode 'elfeed-show-mode)
+		     elfeed-show-entry (elfeed-search-selected :single))))
+      (eww  (elfeed-entry-link entry))
+      (add-hook 'eww-after-render-hook 'eww-readable nil t)))
+  (define-key elfeed-search-mode-map "e" 'e/elfeed-open-with-eww)
+
+(defvar elfeed-visit-patterns
+    '(("youtu\\.?be" . elfeed-play-with-player)
+      ("phoronix" . elfeed-open-with-eww))
+    "List of (regexps . function) to match against elfeed entry link to know
+	    whether how to visit the link.")
+(defun e/elfeed-visit-maybe-externally ()
+    "Open w/ external function if entry link matches `elfeed-visit-patterns',
+	    show normally otherwise.  - Ambrevar."
+    (interactive)
+    (let ((entry (if (eq major-mode 'elfeed-show-mode)
+		     elfeed-show-entry
+		   (elfeed-search-selected :single)))
+	  (patterns elfeed-visit-patterns))
+      (while (and patterns (not (string-match (caar patterns)
+					      (elfeed-entry-link entry))))
+	(setq patterns (cdr patterns)))
+      (cond
+       (patterns
+	(funcall (cdar patterns)))
+       ((eq major-mode 'elfeed-search-mode)
+	(call-interactively 'elfeed-search-show-entry))
+       (t (elfeed-show-visit)))))
+)
+
     (use-package feather
       :disabled
       :config (feather-mode))
