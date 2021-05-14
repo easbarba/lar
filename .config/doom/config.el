@@ -60,9 +60,16 @@
 
 (push (expand-file-name "~/.config/doom/lisp" ) load-path)
 
+;; BUILT-IN
+
 (require 'init-dired)
 (require 'init-utils)
 (require 'init-variables)
 (require 'init-functions)
 (require 'init-misc)
 (require 'init-settings)
+
+;; REPOSITORY
+
+(require 'init-repository-languages)
+(require 'init-repository-misc)
