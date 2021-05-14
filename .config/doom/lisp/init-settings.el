@@ -1,4 +1,7 @@
-;;; -*- lexical-binding: t;
+;;; init-settings --- Summary: -*- lexical-binding: t;
+
+;;; Code:
+;;; Commentary:
 
 ;; =================================
 ;; * MISCELLANEOUS DEFAULT SETTINGS
@@ -55,4 +58,8 @@
       apropos-sort-by-scores t
       register-separator ?+)
 
+;; DOOM SETTINGS
+(remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
+
 (provide 'init-settings)
+;;; init-settings.el ends here
