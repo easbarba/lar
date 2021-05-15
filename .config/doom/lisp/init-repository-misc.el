@@ -245,6 +245,7 @@
      "https://blog.appsignal.com/feed.xml"
      "https://emacsredux.com/feed.xml"
      "https://metaredux.com/feed.xml"
+     "https://tonarinoyj.jp/atom/series/13932016480028984490"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
