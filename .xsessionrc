@@ -57,15 +57,6 @@ e_doom()
     PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
 }
 
-
-e_guix()
-{
-    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-
-    GUIX_PROFILE="$HOME/.guix-profile"
-    PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
-}
-
 e_npm()
 {
     export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
@@ -97,12 +88,6 @@ e_golang()
     export PATH="$GOPATH/bin"${PATH:+:}$PATH
 }
 
-e_nix()
-{
-    local dir="$HOME/.nix-profile/bin"
-    export PATH="$dir"${PATH:+:}$PATH
-}
-
 # * RUN
 
 home_bin
@@ -113,5 +98,3 @@ e_golang
 e_luarocks
 e_ruby
 
-e_nix
-e_guix
