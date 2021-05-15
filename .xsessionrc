@@ -70,10 +70,10 @@ e_npm()
 
 e_ruby()
 {
-    local ruby3_dir="$HOME/.gem/ruby/3.0.0/bin/"
+    local ruby3_dir="$HOME/.local/share/gem/ruby/3.0.0/bin/"
     export PATH="$ruby3_dir"${PATH:+:}$PATH
 
-    local ruby2_dir="$HOME/.gem/ruby/2.7.0/bin"
+    local ruby2_dir="$HOME/.local/share/gem/ruby/2.7.0/bin"
     export PATH="$ruby2_dir"${PATH:+:}$PATH
 }
 
