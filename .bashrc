@@ -93,23 +93,34 @@ e_prompt()
 e_multiplexers()
 {
     if [[ "$DISPLAY" ]]; then
-	if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
+    if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
 	    tmux attach || tmux new-session
 	fi
     else
-	[[ -x "$(command -v screen)" ]] && screen -RR Session
+	    [[ -x "$(command -v screen)" ]] && screen -RR Session
     fi
 }
 
-e_nix()
-{
-    eval "$(direnv hook bash)"
+e_direnv() { eval "$(direnv hook bash)"; }
 
-    [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+p_nix()
+{
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+}
+
+p_guix()
+{
+    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+    GUIX_PROFILE="$HOME/.guix-profile"
+    . "$GUIX_PROFILE/etc/profile"
 }
 
 # * RUN
 
+p_nix
+p_guix
+
 e_prompt
-e_nix
+e_direnv
 e_multiplexers

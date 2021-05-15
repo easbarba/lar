@@ -119,4 +119,25 @@ e_prompt()
     [ -x $(command -v starship) ] && eval "$(starship init zsh)"
 }
 
-e_prompt
+e_direnv() { eval "$(direnv hook zsh)"; }
+
+p_nix()
+{
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+}
+
+p_guix()
+{
+    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+    GUIX_PROFILE="$HOME/.guix-profile"
+    . "$GUIX_PROFILE/etc/profile"
+}
+
+# * RUN
+
+p_guix
+prompt
+
+e_direnv
+e_nix
