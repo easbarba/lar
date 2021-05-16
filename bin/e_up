@@ -12,6 +12,6 @@ cejo projects emacs
 # * Guix
 
 guix pull
-guix package -u
+guix upgrade
 
 # * Nix
