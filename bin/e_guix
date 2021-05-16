@@ -30,7 +30,7 @@ install()
 update()
 {
     guix pull
-    guix package -u
+    guix upgrade
 }
 
 packages()
