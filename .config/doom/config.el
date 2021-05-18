@@ -1,24 +1,8 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
 (setq user-full-name "EAS Barbosa"
       user-mail-address "easbarbosa@tutanota.com")
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
 (cond ((member "Hack" (font-family-list))
        (setq doom-font (font-spec :family "Hack" :size 23 :weight 'semi-light)
              doom-variable-pitch-font (font-spec :family "sans" :size 23)))
@@ -26,50 +10,20 @@
        (setq doom-font (font-spec :family "DejaVu Sans Mono" :size 23 :weight 'semi-light)
              doom-variable-pitch-font (font-spec :family "sans" :size 23))))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-old-hope)
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Documents/")
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
-;; Here are some additional functions/macros that could help you configure Doom:
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
-
-;; REQUIRE
-
-(push (expand-file-name "~/.config/doom/lisp" ) load-path)
+(setq doom-theme 'doom-manegarm
+      org-directory "~/Documents/"
+      display-line-numbers-type t)
 
 ;; BUILT-IN
 
-(require 'init-dired)
-(require 'init-utils)
-(require 'init-variables)
-(require 'init-functions)
-(require 'init-misc)
-(require 'init-settings)
+(load! "lisp/init-dired")
+(load! "lisp/init-utils")
+(load! "lisp/init-variables")
+(load! "lisp/init-functions")
+(load! "lisp/init-misc")
+(load! "lisp/init-settings")
 
 ;; REPOSITORY
 
-(require 'init-repository-languages)
-(require 'init-repository-misc)
+(load! "lisp/init-repository-languages")
+(load! "lisp/init-repository-misc")
