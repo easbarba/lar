@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-   | Books                            | Chapter                                | @                                           | late                                          | revision |
-   |----------------------------------+----------------------------------------+---------------------------------------------+-----------------------------------------------+----------|
-   | Confident Ruby                   | Perfoming Work                         |                                             |                                               |          |
-   | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                  | Two Other Forms of Class Definition         | Fibers, Threads, and Processes/Multithreading |          |
-   | Closure in Ruby                  | The Power of Procs and Lambdas         | Implementing Lax                            |                                               |          |
-   | Build Awesome Cli apps           | Easy to use                            | Documenting a Command Suite                 |                                               |          |
-   | Clean Ruby                       | Using Boolean Logic                    |                                             |                                               |          |
-   | Effective Testing - RSpec3       | Building an App With RSpec 3           |                                             |                                               |          |
-   | Practical Object-Oriented Design | Acquiring Behavior through Inheritance |                                             |                                               |          |
-   | Design Patterns in Ruby          | Template Method                        |                                             |                                               |          |
-   | Eloquent Ruby                    | Chapter 8. Embrace Dynamic Typing      | Shorter Programs, But Not the Way You Think | Spec: A Plethora of Assertions                |          |
-   | The Well Grounded Rubyist        | 12  File and I/O operations            |                                             |                                               |          |
+| Books                            | Chapter                        | late                                | revision        |
+|----------------------------------+--------------------------------+-------------------------------------+-----------------|
+| Confident Ruby                   | Perfoming Work                 |                                     |                 |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language          | Two Other Forms of Class Definition | Fibers, Threads |
+| Closure in Ruby                  | The Power of Procs and Lambdas | Implementing Lax                    |                 |
+| Build Awesome Cli apps           | Easy to use                    | Documenting a Command Suite         |                 |
+| Clean Ruby                       | Using Boolean Logic            |                                     |                 |
+| Effective Testing - RSpec3       | Testing in Isolation           | Sketching the Behavior              |                 |
+| Practical Object-Oriented Design | Acquiring Behavior through     |                                     |                 |
+| Design Patterns in Ruby          | Template Method                |                                     |                 |
+| Eloquent Ruby                    | Embrace Dynamic Typing         | Shorter Programs, But Not           |                 |
+| The Well Grounded Rubyist        | File and I/O                   |                                     |                 |
 
 ** SLOC
    | Project       | folder                                                        | file               | @                |
@@ -196,7 +196,11 @@
 ***** .rspec
       Default command-line flags
 ***** spec/spec_helper.rb
-      Configuration options
+|                                          |   |
+|------------------------------------------+---|
+| Configuration options                    |   |
+| config.filter_gems_from_backtrace <list> |   |
+|                                          |   |
 
 ****** Options
        - ENV['RACK_ENV'] = 'test'
@@ -219,9 +223,15 @@
      | example                      | individual test                                  |
 
 **** Terms
-     - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
-     -
-     - Arrange/Act/Assert pattern
+ - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
+ -
+ - Arrange/Act/Assert pattern
+
+**** Features
+|         |   |
+|---------+---|
+| pending |   |
+
 **** Commands
      |                                   |                                      |
      |-----------------------------------+--------------------------------------|
@@ -285,6 +295,9 @@
     Sinatra is a DSL for quickly creating web applications
 *** [[https://rubyonrails.org/][Ruby On Rails]]
     A web-application framework that includes everything needed to create database-backed web applications
+
+** HTTP
+*** Rack
 ** Documentation
 *** Rdoc
     - nodoc: [all]
