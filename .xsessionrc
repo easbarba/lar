@@ -70,11 +70,8 @@ e_npm()
 
 e_ruby()
 {
-    local RUBY3_DIR="$HOME/.gem/ruby/3.0.0/bin"
-    export PATH="$RUBY3_DIR"${PATH:+:}$PATH
-
-    local RUBY2_DIR="$HOME/.gem/ruby/2.7.0/bin"
-    export PATH="$RUBY2_DIR"${PATH:+:}$PATH
+    export GEM_HOME="$HOME/.local/gem"
+    export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 }
 
 e_luarocks()
