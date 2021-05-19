@@ -230,6 +230,7 @@
      "https://planet.gnu.org/rss20.xml"
      "https://planet.scheme.org/atom.xml"
      "https://guix.gnu.org/feeds/blog.atom"
+     "https://elephly.net/feed.xml"
      "https://bits.debian.org/feeds/atom.xml"
      "https://micronews.debian.org/feeds/atom.xml"
      "https://elixir-lang.org/atom.xml"
@@ -247,6 +248,9 @@
      "https://metaredux.com/feed.xml"
      "https://revolushow.com/feed"
      "https://tonarinoyj.jp/atom/series/13932016480028984490"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC6l62xBsdRKExxgmYGh8RLA" ;; Filosofia Vermelha
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas Feios
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCELku_rf-FHbWhLIwsKLGGA" ;; Portal do Jose
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; TV BoiTempo
      "https://www.youtube.com/feeds/videos.xml?channel_id=UClNe40Z_ufT3GOdR3Jirbvw" ;; The Nocturnal Rambler
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCvO2BExvkAbGMsTGnEnI_Ng" ;; Lula
