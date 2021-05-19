@@ -4,8 +4,8 @@
       user-mail-address "easbarbosa@tutanota.com")
 
 (cond ((member "Hack" (font-family-list))
-       (setq doom-font (font-spec :family "Hack" :size 23 :weight 'semi-light)
-             doom-variable-pitch-font (font-spec :family "sans" :size 23)))
+       (setq doom-font (font-spec :family "Hack" :size 22 :weight 'semi-light)
+             doom-variable-pitch-font (font-spec :family "sans" :size 22)))
       ((member "DejaVu Sans Mono" (font-family-list))
        (setq doom-font (font-spec :family "DejaVu Sans Mono" :size 23 :weight 'semi-light)
              doom-variable-pitch-font (font-spec :family "sans" :size 23))))
