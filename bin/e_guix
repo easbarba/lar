@@ -6,18 +6,22 @@ set -euo pipefail
 # * Information
 # Site: https://guix.gnu.org/
 
-# * PATH
+# * ENV VARS
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 keys()
 {
+    [[ -x $(command -v guix) ]] && return
+
     wget "https://sv.gnu.org/people/viewgpg.php?user_id=127547" -qO - | sudo -i gpg --import -
 }
 
 get()
 {
-    local script=https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh
-    wget -P /tmp $script
+    [[ -x $(command -v guix) ]] && return
+
+    local installer='https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh'
+    wget -P /tmp "$installer"
 }
 
 install()
@@ -33,14 +37,18 @@ update()
     guix upgrade
 }
 
+locale()
+{
+    local version=$(ls ~/.guix-profile/lib/locale/)
+    guix install glibc-locale@"$version"
+}
+
 packages()
 {
-    local packages=(glibc-utf8-locales font-gnu-freefont-ttf icecat)
+    # Fix that annoying GUIX_LOCPATH warning
 
-    for pack in "${packages[@]}"
-    do
-	guix install "$pack"
-    done
+    local packages=(font-gnu-freefont-ttf icecat nyxt ruby)
+	e_dolist "guix install" "${pack[@]}"
 }
 
 # * RUN
@@ -49,4 +57,7 @@ keys
 get
 install
 update
+
+locale
 packages
+
