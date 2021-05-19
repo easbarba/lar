@@ -16,13 +16,13 @@ install()
 packages()
 {
     local packs=(direnv cpufetch solargraph mcfly)
-    e_dolist 'nix-env -i' "${packs[@]}"
+    e_dolist 'nix-env --uninstall' "${packs[@]}"
 }
 
 languages()
 {
     local packs2=(nixpkgs.ruby_2_7 nixpkgs.nodejs nixpkgs.nodePackages.npm)
-    e_dolist 'nix-env -iA' "${packs2[@]}"
+    e_dolist 'nix-env --uninstall' "${packs2[@]}"
 }
 
 install
