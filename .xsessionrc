@@ -10,8 +10,8 @@ export BROWSER="firefox"
 
 # * LOCALE
 
-export LANG="C.UTF-8"
-export LC_ALL="C.UTF-8"
+# export LANG="C.UTF-8"
+# export LC_ALL="C.UTF-8"
 
 # export LC_ALL="en_US.utf-8"
 # export LANG="en_US.utf-8"
@@ -85,11 +85,38 @@ e_golang()
     export PATH="$GOPATH/bin"${PATH:+:}$PATH
 }
 
+p_nix()
+{
+    export NIX_PROFILE=$HOME/.nix-profile
+    
+    # PATH
+    export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
+}
+
+p_guix()
+{
+    export GUIX_PROFILE="$HOME/.guix-profile"
+    
+    # LOCALE
+    export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+
+    # GUILE
+    export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
+    export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
+
+    # PATH
+    export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH    
+}
+
+
 # * RUN
 
 home_bin
 
 e_doom
+
+p_nix
+p_guix
 
 e_golang
 e_luarocks
