@@ -12,37 +12,26 @@ source "$HOME/.asdf/asdf.sh"
 
 export GO111MODULE=on
 
-add()
-{
-    echo 'Installing golang binaries'
+packages() {
+	local command='go install'
+	local packages=("golang.org/x/tools/cmd/goimports@latest"
+		"golang.org/x/lint/golint@latest"
+		"golang.org/x/tools/gopls@latest"
+		"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0")
 
-    asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+	local tools=("sigs.k8s.io/kind")
 }
 
-install()
-{
-    asdf install golang latest
-    asdf global golang "$(asdf latest golang)"
-}
+development() {
+	local command='go get'
+	local development=("mvdan.cc/sh/v3/cmd/shfmt")
 
-packages()
-{
-    echo 'Installing golang packages'
-
-    local command='go install'
-    local packages=("golang.org/x/tools/cmd/goimports@latest"
-		    "golang.org/x/lint/golint@latest"
-		    "golang.org/x/tools/gopls@latest"
-		    "github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0"
-		    "sigs.k8s.io/kind")
-
-    e_dolist $command ${packages[@]}
+	e_dolist $command ${development[@]}
 }
 
 # * RUN
 
 echo 'Golang - ASDF'
 
-add
-install
 packages
+development
