@@ -6,7 +6,7 @@ default: master
 patch: none
 commands:
   - sh autogen.sh
-  - sh configure --prefix={0} --with-modules --with-cairo --with-gif=ifavailable --with-jpeg=ifavailable --with-png --with-rsvg --with-tiff=ifavailable --with-xft --with-xpm=ifavailable --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls=ifavailable --with-x-toolkit=gtk3 --with-native-compilation
+  - sh configure --prefix={0} --with-modules --with-cairo --with-gif=ifavailable --with-jpeg=ifavailable --with-png --with-rsvg     --with-tiff=ifavailable --with-xft --with-xpm=ifavailable --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls=ifavailable --with-x-toolkit=gtk3 --with-native-compilation --with-xwidgets
   - make -j2
   - make install
 purge:
