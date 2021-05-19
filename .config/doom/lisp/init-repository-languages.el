@@ -4,6 +4,39 @@
 ;; ADDITIONAL LANGUAGES TOOLINGS
 ;; ================================
 
+
+(add-hook! ruby-mode lsp)
+(add-hook! js-mode lsp)
+(add-hook! css-mode lsp)
+(add-hook! html-mode lsp)
+(add-hook! shell-script-mode lsp)
+(add-hook! shell-mode lsp)
+(add-hook! json-mode lsp)
+(add-hook! yaml-mode lsp)
+
+
+  ;; (setq lsp-idle-delay 0.500)
+  ;; (setq lsp-completion-provider :capf)
+  ;; (setq lsp-modeline-diagnostics-scope :workspace)
+  ;; (setq lsp-enable-indentation t)
+  ;; (setq lsp-ui-doc-max-height 15)
+  ;; (setq lsp-ui-doc-use-webkit t)
+  ;; (setq lsp-signature-auto-activate t)
+  ;; (setq flycheck-checker-error-threshold 1400))
+  ;; (lsp-solargraph-use-bundler t)
+  ;; (lsp-log-io nil) ; if set to true can cause a performance hit
+  ;; (lsp-print-performance t)
+  ;; (lsp-enable-file-watchers nil)
+  ;; :bind
+  ;; ("C-c l w" . lsp-restart-workspace)
+  ;; ("C-c l r" . lsp-rename)
+  ;; ("C-c l a" . lsp-execute-code-action)
+
+
+(after! lsp-ui
+  (setq lsp-ui-doc-enable t))
+
+
 ;; ====================
 ;; * LANGUAGES FORMATERS
 
@@ -169,47 +202,13 @@
 ;;   (define-key eglot-mode-map (kbd "C-c c h") 'eglot-help-at-point)
 ;;   (define-key eglot-mode-map (kbd ".") 'xref-find-definitions))
 
+;; (after! lsp-treemacs
+;;   :defer t
+;;   :commands lsp-treemacs-errors-list)
 
-(use-package! lsp
-  ;; :commands lsp
-  :hook
-  (lua-mode . lsp)
-  (ruby-mode . lsp)
-  (js-mode . lsp)
-  (css-mode . lsp)
-  (html-mode . lsp)
-  (shell-script-mode . lsp)
-  (shell-mode . lsp)
-  (json-mode . lsp)
-  (yaml-mode . lsp)
-  :custom
-  (lsp-idle-delay 0.500)
-  (lsp-completion-provider :capf)
-  (lsp-modeline-diagnostics-scope :workspace)
-  (lsp-enable-indentation t)
-  ;; (lsp-solargraph-use-bundler t)
-  ;; (lsp-log-io nil) ; if set to true can cause a performance hit
-  ;; (lsp-print-performance t)
-  ;; (lsp-enable-file-watchers nil)
-  (lsp-signature-auto-activate t)
-  (flycheck-checker-error-threshold 1400)
-  :bind
-  ("C-c l w" . lsp-restart-workspace)
-  ("C-c l r" . lsp-rename)
-  ("C-c l a" . lsp-execute-code-action))
-
-(after! lsp-ui
-  (setq lsp-ui-doc-enable t))
-
-(after! lsp-treemacs
-  :defer t
-  :commands lsp-treemacs-errors-list)
-
-(use-package dap-mode
-  :defer t
-  ;; :after lsp-mode
-  :config
-  (dap-mode t)
-  (dap-ui-mode t))
+;; (use-package dap-mode
+;;   :config
+;;   (dap-mode t)
+;;   (dap-ui-mode t))
 
 (provide 'init-repository-languages)
