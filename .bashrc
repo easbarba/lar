@@ -103,23 +103,7 @@ e_multiplexers()
 
 e_direnv() { eval "$(direnv hook bash)"; }
 
-p_nix()
-{
-    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-}
-
-p_guix()
-{
-    export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-
-    GUIX_PROFILE="$HOME/.guix-profile"
-    . "$GUIX_PROFILE/etc/profile"
-}
-
 # * RUN
-
-p_nix
-p_guix
 
 e_prompt
 e_direnv
