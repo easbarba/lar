@@ -139,7 +139,7 @@
    | emacs       | lisp/eshell | esh-util.el |   |
    | use-package |             |             |   |
    |             |             |             |   |
-* Scheme Books
+* Books
 ** SICP
 *** Chapter 1
 **** Examples
@@ -484,8 +484,22 @@
 
 ** Online books
    https://htdp.org/2018-01-06/Book/
+* Features
+** Predicates
+=, <, >, <=, and >=
+** xx
+*** cond
+*** if
 
-* Scheme Terms (table)
+** Methods
+|       |   |
+|-------+---|
+| eqv?  |   |
+| pair? |   |
+** errors
+assertion-violation
+
+* Terms (table)
   | Term                                         | Meaning |
   |----------------------------------------------+---------|
   | data directed programming (complex numbers)  |         |
@@ -499,16 +513,16 @@
   | memoization                                  |         |
   | Normal Order Evaluation vs Applicative Order |         |
 
-* Scheme Libraries
+* Libraries
   http://synthcode.com/scheme/fmt/
 * TODO Scheme
 ** TODO wayland guile scheme window manager -- with an emacs feels
-* Scheme Videos
+* Videos
   [[https:https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures][SICP Videos]]
 
   https://vimeo.com/lispnyc
 
-* Scheme Articles
+* Articles
   http://www.troubleshooters.com/codecorn/scheme_guile/hello.htm
 
   https://schemers.org/Documents/
@@ -518,11 +532,11 @@
   https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/
 
   https://www.wikiwand.com/en/Homoiconicity#/Implementation_methods
-* Scheme - Blogs
-  https://catonmat.net/
+* Blogs
+https://catonmat.net/
 
-  http://www.lambdanative.org
+http://www.lambdanative.org
 
-  http://www.schemespheres.org
+http://www.schemespheres.org
 
-  https://schemers.org
+https://schemers.org
