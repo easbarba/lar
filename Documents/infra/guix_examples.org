@@ -1,0 +1,1823 @@
+#+TITLE: Guix_examples
+
+* config.scm examples
+** Orianj
+    #+BEGIN_SRC scheme
+    ;; This is an operating system configuration template
+    ;; for a "desktop" setup without full-blown desktop
+    ;; environments.
+
+    (use-modules
+     (gnu)
+     (gnu system nss)
+     (gnu services xorg)
+     )
+    (use-service-modules desktop networking)
+    (use-package-modules
+     admin
+     bash
+     certs
+     compression
+     curl
+     emacs
+     fonts
+     gawk
+     guile
+     gnome
+     gnupg
+     gnuzilla
+     less
+     linux
+     lxde
+     man
+     password-utils
+     pciutils
+     screen
+     ssh
+     suckless
+     texinfo
+     tmux
+     tor
+     version-control
+     video
+     wget
+     wm
+     xdisorg
+     xfce
+     xorg
+     zile
+     )
+
+    (operating-system
+     (host-name "encom")
+     (timezone "America/New_York")
+     (locale "en_US.UTF-8")
+
+     ;; Assuming /dev/sdX is the target hard disk, and "my-root"
+     ;; is the label of the target root file system.
+     (bootloader (bootloader-configuration
+		  (bootloader grub-bootloader)
+		  (target "/dev/sda")))
+
+     (file-systems
+      (list
+       (file-system
+	(device "/dev/sda1")
+	;;(title 'label)
+	(mount-point "/")
+	(type "ext4"))
+
+       ;; List of basic file systems to be mounted.  Note that /proc and /sys are
+       ;; currently mounted by the initrd.
+
+       ;; The pseudo-terminal file system.  It needs to be mounted so that
+       ;; statfs(2) returns DEVPTS_SUPER_MAGIC like libc's getpt(3) expects (and
+       ;; thus openpty(3) and its users, such as xterm.)
+       (file-system
+	(device "none")
+	(mount-point "/dev/pts")
+	(type "devpts")
+	(check? #f)
+	(needed-for-boot? #f)
+	(create-mount-point? #t)
+	;; ID of the 'tty' group.
+	(options "gid=996,mode=620"))
+
+       ;; Shared memory.
+       (file-system
+	(device "tmpfs")
+	(mount-point "/dev/shm")
+	(type "tmpfs")
+	(check? #f)
+	(flags '(no-suid no-dev))
+	(options "size=50%")                         ;TODO: make size configurable
+	(create-mount-point? #t))
+
+       ;; Read-only store to avoid users or daemons accidentally modifying it.
+       ;; 'guix-daemon' has provisions to remount it read-write in its own name
+       ;; space.
+       (file-system
+	(device "/gnu/store")
+	(mount-point "/gnu/store")
+	(type "none")
+	(check? #f)
+	(flags '(read-only bind-mount)))
+       )
+      )
+
+     (users
+      (list
+       ;; Desired user accounts
+       (user-account
+	(name "oriansj")
+	(comment "Sysadmin")
+	(group "users")
+	(supplementary-groups '("wheel" "netdev" "audio" "video"))
+	(home-directory "/home/oriansj"))
+
+       ;; Service accounts required
+       (user-account
+	(name "nobody")
+	(uid 65534)
+	(group "nogroup")
+	(shell (file-append shadow "/sbin/nologin"))
+	(home-directory "/nonexistent")
+	(create-home-directory? #f)
+	(system? #t))))
+
+     ;; The barebones programs needed to get work done
+     (packages
+      (list
+       bash               ; Get a standard shell
+       bash-completion    ; Get proper tab completion
+       bzip2              ; Support bz2
+       coreutils          ; Make bash useful
+       curl               ; Web scripting
+       diffutils          ; For diffing files
+       dmenu              ; Application spawner
+       e2fsprogs          ; EXT filesystem manipulation tools
+       emacs              ; gui text editor
+       eudev              ; Userspace hotplug daemon
+       findutils          ; Be able to leverage find
+       font-dejavu        ; Baseline font
+       gawk               ; Awk is rather handy
+       git                ; Primary version control
+       gnupg              ; Encryption
+       grep               ; For searching for strings
+       guile-2.2          ; XXX: We don't use (canonical-package guile-2.2) here because that would create a collision in the global profile.
+       gzip               ; Support gz
+       htop               ; System performance
+       i3-wm              ; window manager
+       icecat             ; Web Browser
+       inetutils          ; For hostname
+       info-reader        ;the standalone Info reader (no Perl)
+       iproute            ; Core network routing tools
+       isc-dhcp           ; For DHCP
+       iw                 ; New standard tool for configuring wireless devices
+       kbd                ; Keyboard and key map utilities
+       kmod               ; Get 'insmod' & co. from kmod, not module-init-tools, since udev  already depends on it anyway.
+       less               ; No explaination required
+       lzip               ; Support lz
+       man-db             ; Enable manpages
+       net-tools          ; XXX: remove when Inetutils suffices
+       nss-certs          ; for HTTPS access
+       openssh            ; ssh client
+       patch              ; Patch files are useful
+       pciutils           ; For manipulating PCI devices (lspci and setpci)
+       pcmanfm            ; File browser
+       pinentry-gtk2      ; gnupg agent
+       procps             ; /proc process tools (vmstat, ps, w, etc)
+       psmisc             ; More /proc process tools
+       rfkill             ; Even more wireless tools
+       rxvt-unicode       ; Terminal
+       sed                ; Search and replace
+       shadow             ; User management tools (and passwd)
+       sudo               ; The 'sudo' command is already in %SETUID-PROGRAMS, but we also want the other commands and the man pages.
+       tar                ; Packing of files
+       tig                ; git diff viewing
+       tor                ; Anonymity
+       torsocks           ; Wrapping alternate apps with tor
+       tree               ; Handy file directory map generator
+       usbutils           ; For manipulating USB devices (lsusb)
+       util-linux         ; For dmesg
+       vlc                ; Media player
+       wget               ; Downloader
+       which              ; Find full path
+       wireless-tools     ; wireless-tools is deprecated in favor of iw, but it's still what  many people are familiar with, so keep it around.
+       xfce4-terminal     ; Gui Console
+       xz                 ; Support xz
+       zile               ; In the event emacs breaks
+       )
+      )
+
+     ;; Essential Minimal services
+     (services
+      (list
+       (service slim-service-type)
+       (dhcp-client-service)
+       (login-service)
+
+       (service console-font-service-type
+		(map (lambda (tty) (cons tty %default-console-font)) '("tty1" "tty2")))
+
+       (mingetty-service (mingetty-configuration (tty "tty1")))
+       (mingetty-service (mingetty-configuration (tty "tty2")))
+
+       (service static-networking-service-type
+		(list (static-networking
+		       (interface "lo")
+		       (ip "127.0.0.1")
+		       (provision '(loopback)))))
+
+       (syslog-service)
+       ;; (service urandom-seed-service-type)
+       (guix-service)
+       ;; (nscd-service)
+
+       ;; The LVM2 rules are needed as soon as LVM2 or the device-mapper is
+       ;; used, so enable them by default.  The FUSE and ALSA rules are
+       ;; less critical, but handy.
+       (udev-service #:rules (list lvm2 fuse alsa-utils crda))
+
+       (service special-files-service-type `(("/bin/sh" ,(file-append (canonical-package bash) "/bin/sh"))))
+       (service special-files-service-type `(("/usr/bin/env" ,(file-append (canonical-package coreutils) "/bin/env"))))
+       )
+      )
+     )
+
+    #+END_SRC
+** nikolaev
+    #+BEGIN_SRC scheme
+    (use-modules (gnu)
+		 (gnu packages admin)
+		 (gnu packages fonts)
+		 (gnu packages gl)
+		 (gnu packages gnome)
+		 (gnu packages gnuzilla)
+		 (gnu packages guile)
+		 (gnu packages java)
+		 (gnu packages linux)
+		 (gnu packages ntp)
+		 (gnu packages pulseaudio)
+		 (gnu packages ruby)
+		 (gnu packages screen)
+		 (gnu packages slim)
+		 (gnu packages suckless)
+		 (gnu packages version-control)
+		 (gnu packages wget)
+		 (gnu packages wicd)
+		 (gnu packages wm)
+		 (gnu packages xdisorg)
+		 (gnu packages xorg)
+		 (gnu packages zip)
+		 (gnu services)
+		 (gnu services avahi)
+		 (gnu services dbus)
+		 (gnu services desktop)
+		 (gnu services xorg)
+		 (gnu system nss)
+		 (guix gexp)
+		 (guix monads)
+		 (guix store)
+		 (srfi srfi-1)
+		 ;; (linux-nonfree)
+		 ;; (xorg-ati)
+		 ;; (font-hack)
+		 )
+    ;; (use-service-modules xorg ati avahi dbus desktop networking ssh)
+    ;; (use-package-modules admin certs slim xorg)
+    (use-service-modules avahi dbus networking ssh)
+    (use-package-modules admin certs ntp)
+
+    (define libinput.conf "
+    # Use the libinput driver for all event devices
+    Section \"InputClass\"
+	Identifier \"libinput keyboard catchall\"
+	MatchIsKeyboard \"on\"
+	MatchDevicePath \"/dev/input/event*\"
+	Driver \"libinput\"
+	Option \"XkbLayout\" \"us,ru\"
+	Option \"XkbOptions\" \"grp_led:scroll,grp:caps_toggle,grp:lwin_compose\"
+    EndSection
+    ")
+
+    (operating-system
+     ;; (kernel linux-nonfree)
+     ;; (firmware (cons* radeon-RS780-firmware-non-free
+     ;;                  RTL8188CE-firmware-non-free %base-firmware))
+     (host-name "camelot")
+     (timezone "Europe/Moscow")
+     (locale "en_US.UTF-8")
+
+     (bootloader (grub-configuration (device "/dev/sda")))
+     (file-systems (cons (file-system
+			  (device "root")
+			  (title 'label)
+			  (mount-point "/")
+			  (type "ext4"))
+			 %base-file-systems))
+
+     (users (cons (user-account
+		   (name "camel")
+		   (comment "Camel")
+		   (group "users")
+		   (supplementary-groups '("wheel" "netdev"
+					   "audio" "video"))
+		   (home-directory "/home/camel"))
+		  %base-user-accounts))
+
+     ;; This is where we specify system-wide packages.
+     (packages (cons*
+		evince
+		font-dejavu
+		;; font-hack
+		font-inconsolata
+		font-liberation
+		font-terminus
+		font-ubuntu
+		git
+		;; guile
+		htop
+		i3-wm
+		icecat
+		icedtea
+		lm-sensors
+		mesa
+		mesa-utils
+		nss-certs          ;for HTTPS access
+		screen
+		slim
+		pavucontrol
+		;; perf-nonfree
+		ruby
+		rxvt-unicode
+		tcpdump
+		wget
+		wicd
+		wpa-supplicant
+		xf86-input-evdev
+		xf86-video-ati
+		xf86-video-fbdev
+		xf86-video-modesetting
+		xorg-server
+		xsensors
+		unzip
+		%base-packages))
+
+     (services
+      (cons*
+       (lsh-service #:port-number 2222)
+       (gnome-desktop-service)
+       (xfce-desktop-service)
+       (console-keymap-service "ru")
+       (slim-service
+	#:allow-empty-passwords? #f #:auto-login? #f
+	#:startx (xorg-start-command
+		  #:configuration-file
+		  (xorg-configuration-file
+		   #:extra-config (list libinput.conf)
+		   #:drivers '("radeon" "vesa")
+		   #:resolutions
+		   '((1366 768) (1024 768)))))
+
+       ;; (screen-locker-service slock)
+       ;; (screen-locker-service xlockmore "xlock")
+       ;; ;; The D-Bus clique.
+       ;; (avahi-service)
+       ;; (wicd-service)
+       ;; (udisks-service)
+       ;; (upower-service)
+       ;; (colord-service)
+       ;; (geoclue-service)
+       ;; (polkit-service)
+       ;; (elogind-service)
+       ;; (dbus-service)
+       ;; (ntp-service)
+       ;; %base-services))
+
+       (remove (lambda (service)
+		 (eq? (service-kind service) slim-service-type))
+	       %desktop-services)))
+     ;; Allow resolution of '.local' host names with mDNS.
+     (name-service-switch %mdns-host-lookup-nss))
+
+    #+END_SRC
+** Mes
+    #+BEGIN_SRC scheme
+    ;;; guix.scm -- Guix package definition
+
+    ;;; Mes --- Maxwell Equations of Software
+    ;;; Copyright © 2016,2017,2018 Jan (janneke) Nieuwenhuizen <janneke@gnu.org>
+
+    ;;; Also borrowing code from:
+    ;;; guile-sdl2 --- FFI bindings for SDL2
+    ;;; Copyright © 2015 David Thompson <davet@gnu.org>
+
+    ;;;
+    ;;; guix.scm: This file is part of Mes.
+    ;;;
+    ;;; Mes is free software; you can redistribute it and/or modify it
+    ;;; under the terms of the GNU General Public License as published by
+    ;;; the Free Software Foundation; either version 3 of the License, or (at
+    ;;; your option) any later version.
+    ;;;
+    ;;; Mes is distributed in the hope that it will be useful, but
+    ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+    ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ;;; GNU General Public License for more details.
+    ;;;
+    ;;; You should have received a copy of the GNU General Public License
+    ;;; along with Mes.  If not, see <http://www.gnu.org/licenses/>.
+
+    ;;; Commentary:
+    ;;
+    ;; GNU Guix development package.  To build and install, run:
+    ;;
+    ;;   guix package -f guix.scm
+    ;;
+    ;; To build it, but not install it, run:
+    ;;
+    ;;   guix build -f guix.scm
+    ;;
+    ;; To use as the basis for a development environment, run:
+    ;;
+    ;;   guix environment -l guix.scm
+    ;;
+    ;;; Code:
+
+    (use-modules (srfi srfi-1)
+		 (srfi srfi-26)
+		 (ice-9 match)
+		 (ice-9 popen)
+		 (ice-9 rdelim)
+		 (gnu packages)
+		 (gnu packages base)
+		 (gnu packages commencement)
+		 (gnu packages cross-base)
+		 (gnu packages gcc)
+		 (gnu packages guile)
+		 (gnu packages mes)
+		 (gnu packages package-management)
+		 (gnu packages perl)
+		 ((guix build utils) #:select (with-directory-excursion))
+		 (guix build-system gnu)
+		 (guix build-system trivial)
+		 (guix gexp)
+		 (guix download)
+		 (guix git-download)
+		 (guix licenses)
+		 (guix packages))
+
+    (define %source-dir (dirname (current-filename)))
+
+    (define git-file?
+      (let* ((pipe (with-directory-excursion %source-dir
+					     (open-pipe* OPEN_READ "git" "ls-files")))
+	     (files (let loop ((lines '()))
+		      (match (read-line pipe)
+			     ((? eof-object?)
+			      (reverse lines))
+			     (line
+			      (loop (cons line lines))))))
+	     (status (close-pipe pipe)))
+	(lambda (file stat)
+	  (match (stat:type stat)
+		 ('directory #t)
+		 ((or 'regular 'symlink)
+		  (any (cut string-suffix? <> file) files))
+		 (_ #f)))))
+
+    (define-public nyacc-for-mes
+      (package
+       (inherit nyacc)
+       (version "0.80.42")
+       (source (origin
+		(method url-fetch)
+		(uri (string-append "https://gitlab.com/janneke/nyacc"
+				    "/-/archive/v" version
+				    "/nyacc-" version ".tar.gz"))
+		(sha256
+		 (base32
+		  "101k3hy4jk5p109k6w4dpx3bjm0g53zwb1yxvvad8khfq00wb8hd"))))))
+
+    (define-public mescc-tools
+      (package
+       (name "mescc-tools")
+       (version "0.4")
+       (source (origin
+		(method url-fetch)
+		(uri (string-append
+		      "https://github.com/oriansj/mescc-tools/archive/Release_"
+		      version
+		      ".tar.gz"))
+		(file-name (string-append name "-" version ".tar.gz"))
+		(sha256
+		 (base32
+		  "1iwc8xqwzdaqckb4jkkisljrgn8ii4bl7dzk1l2kpv98hsyq9vi1"))))
+       (build-system gnu-build-system)
+       (supported-systems '("i686-linux" "x86_64-linux"))
+       (arguments
+	`(#:make-flags (list (string-append "PREFIX=" (assoc-ref %outputs "out")))
+		       #:test-target "test"
+		       #:phases (modify-phases %standard-phases
+					       (delete 'configure)
+					       (add-after 'install 'install-2
+							  (lambda _
+							    (let ((out (assoc-ref %outputs "out")))
+							      (copy-file "bin/blood-elf" (string-append out "/bin/blood-elf"))))))))
+       (synopsis "Tools for the full source bootstrapping process")
+       (description
+	"Mescc-tools is a collection of tools for use in a full source
+    bootstrapping process.  Currently consists of the M1 macro assembler and the
+    hex2 linker.")
+       (home-page "https://github.com/oriansj/mescc-tools")
+       (license gpl3+)))
+
+    (define-public mes
+      (let ((commit "3e5215b4853fe0b3bfa012d343ce62a79017c04c")
+	    (revision "0")
+	    (triplet "i686-unknown-linux-gnu")
+	    (version "0.15"))
+	(package
+	 (name "mes")
+	 (version (string-append version "-" revision "." (string-take commit 7)))
+	 (source (origin
+		  (method git-fetch)
+		  (uri (git-reference
+			(url "https://gitlab.com/janneke/mes")
+			(commit commit)))
+		  (file-name (string-append name "-" version))
+		  (sha256
+		   (base32 "1r82lpwmzqp9ih83s79zicvcza89walydn0yhjlkzvvwfiiqqg08"))))
+	 (build-system gnu-build-system)
+	 (supported-systems '("i686-linux" "x86_64-linux"))
+	 (propagated-inputs
+	  `(("mescc-tools" ,mescc-tools)
+	    ("nyacc" ,nyacc-for-mes)))
+	 (native-inputs
+	  `(("guile" ,guile-2.2)
+	    ,@(if (string-prefix? "x86_64-linux" (or (%current-target-system)
+						     (%current-system)))
+		  ;; Use cross-compiler rather than #:system "i686-linux" to get
+		  ;; MesCC 64 bit .go files installed ready for use with Guile.
+		  `(("i686-linux-binutils" ,(cross-binutils triplet))
+		    ("i686-linux-gcc" ,(cross-gcc triplet)))
+		  '())
+	    ("perl" ,perl)))               ;build-aux/gitlog-to-changelog
+	 (arguments
+	  `(#:phases
+	    (modify-phases %standard-phases
+			   (add-before 'build 'make-git-source-writable
+				       (lambda* (#:key outputs #:allow-other-keys)
+						(for-each make-file-writable
+							  (find-files "." ".*\\.M1"))))
+			   (add-before 'install 'generate-changelog
+				       (lambda _
+					 (with-output-to-file "ChangeLog"
+					   (lambda ()
+					     (display "Please run
+	build-aux/gitlog-to-changelog --srcdir=<git-checkout> > ChangeLog\n")))
+					 #t))
+			   (delete 'strip)))) ; binutil's strip b0rkes Mescc/M1/hex2 binaries
+	 (synopsis "Scheme interpreter and C compiler for full source bootstrapping")
+	 (description
+	  "Mes [Maxwell Equations of Software] aims to create full source
+    bootstrapping for GuixSD.  It consists of a mutual self-hosting [close to
+    Guile-] Scheme interpreter prototype in C and a Nyacc-based C compiler in
+    [Guile] Scheme.")
+	 (home-page "https://gitlab.com/janneke/mes")
+	 (license gpl3+))))
+
+    (define-public mes.git
+      (let ((version "0.15")
+	    (revision "0")
+	    (commit (read-string (open-pipe "git show HEAD | head -1 | cut -d ' ' -f 2" OPEN_READ))))
+	(package
+	 (inherit mes)
+	 (name "mes.git")
+	 (version (string-append version "-" revision "." (string-take commit 7)))
+	 (source (local-file %source-dir #:recursive? #t #:select? git-file?)))))
+
+    ;; Return it here so `guix build/environment/package' can consume it directly.
+    mes.git
+
+    #+END_SRC
+** fusion809
+    #+BEGIN_SRC scheme
+    ;; This is an operating system configuration template
+    ;; for a "desktop" setup with GNOME and Xfce where the
+    ;; root partition is encrypted with LUKS.
+
+    (use-modules
+     (gnu)
+     (gnu system nss)
+     (gnu packages base)
+     (gnu packages shells)
+     )
+    (use-service-modules desktop)
+    (use-package-modules certs gnome)
+    (use-package-modules shells)
+
+    (operating-system
+     (host-name "fusion809-vbox")
+     (timezone "Australia/Brisbane")
+     (locale "en_AU.utf8")
+     ;;  (shell "/run/current-system/profile/bin/zsh")
+
+     ;; Assuming /dev/sdX is the target hard disk, and "my-root"
+     ;; is the label of the target root file system.
+     (bootloader (bootloader-configuration
+		  (bootloader grub-bootloader)
+		  (target "/dev/sda")))
+
+     ;; Specify a mapped device for the encrypted root partition.
+     ;; The UUID is that returned by 'cryptsetup luksUUID'.
+     (file-systems (cons (file-system
+			  (device "guixsd")
+			  (mount-point "/")
+			  (type "btrfs"))
+			 %base-file-systems))
+
+     (users (cons (user-account
+		   (name "fusion809")
+		   (comment "Brenton Horne")
+		   (group "users")
+		   (supplementary-groups '("wheel" "netdev"
+					   "audio" "video"))
+		   (home-directory "/home/fusion809")
+		   (shell "/run/current-system/profile/bin/zsh"))
+		  %base-user-accounts))
+
+     ;; This is where we specify system-wide packages.
+     (packages (cons* nss-certs         ;for HTTPS access
+		      zsh               ; for Z shell
+		      gvfs              ;for user mounts
+		      %base-packages))
+
+     ;; Add GNOME and/or Xfce---we can choose at the log-in
+     ;; screen with F1.  Use the "desktop" services, which
+     ;; include the X11 log-in service, networking with Wicd,
+     ;; and more.
+     (services (cons* (gnome-desktop-service)
+		      %desktop-services))
+
+     (sudoers-file (local-file "/etc/guix/sudoers"))
+     ;; Allow resolution of '.local' host names with mDNS.
+     (name-service-switch %mdns-host-lookup-nss))
+
+    #+END_SRC
+** mbakke
+    #+BEGIN_SRC scheme
+    (define-module (my packages)
+      #:use-module ((guix licenses) #:prefix license:)
+      #:use-module (gnu packages linux)
+      #:use-module (guix build-system trivial)
+      #:use-module (gnu)
+      #:use-module (guix download)
+      #:use-module (guix git-download)
+      #:use-module (guix packages))
+
+    (define (linux-nonfree-urls version)
+      "Return a list of URLs for Linux-Nonfree VERSION."
+      (list (string-append
+	     "https://www.kernel.org/pub/linux/kernel/v4.x/"
+	     "linux-" version ".tar.xz")))
+
+    ;; Remove this and native-inputs below to use the default config from Guix.
+    ;; Make sure the kernel minor version matches, though.
+    (define kernel-config
+      (string-append (dirname (current-filename)) "/kernel.config"))
+
+    (define-public linux-nonfree
+      (package
+       (inherit linux-libre)
+       (name "linux-nonfree")
+       (version "4.13.11")
+       (source (origin
+		(method url-fetch)
+		(uri (linux-nonfree-urls version))
+		(sha256
+		 (base32
+		  "1vzl2i72c8iidhdc8a490npsbk7q7iphjqil4i9609disqw75gx4"))))
+       (native-inputs
+	`(("kconfig" ,kernel-config)
+	  ,@(alist-delete "kconfig"
+			  (package-native-inputs linux-libre))))
+       (synopsis "Mainline Linux kernel, nonfree binary blobs included")
+       (description "Linux is a kernel.")
+       (license license:gpl2)              ;XXX with proprietary firmware
+       (home-page "https://kernel.org")))
+
+    (define (linux-firmware-version) "9d40a17beaf271e6ad47a5e714a296100eef4692")
+    (define (linux-firmware-source version)
+      (origin
+       (method git-fetch)
+       (uri (git-reference
+	     (url (string-append "https://git.kernel.org/pub/scm/linux/kernel"
+				 "/git/firmware/linux-firmware.git"))
+	     (commit version)))
+       (file-name (string-append "linux-firmware-" version "-checkout"))
+       (sha256
+	(base32
+	 "099kll2n1zvps5qawnbm6c75khgn81j8ns0widiw0lnwm8s9q6ch"))))
+
+    (define-public iwlwifi-firmware-nonfree
+      (package
+       (name "iwlwifi-firmware-nonfree")
+       (version (linux-firmware-version))
+       (source (linux-firmware-source version))
+       (build-system trivial-build-system)
+       (arguments
+	`(#:modules ((guix build utils))
+		    #:builder (begin
+				(use-modules (guix build utils))
+				(let ((source (assoc-ref %build-inputs "source"))
+				      (fw-dir (string-append %output "/lib/firmware/")))
+				  (mkdir-p fw-dir)
+				  (for-each (lambda (file)
+					      (copy-file file
+							 (string-append fw-dir (basename file))))
+					    (find-files source
+							"iwlwifi-.*\\.ucode$|LICENSE\\.iwlwifi_firmware$"))
+				  #t))))
+       (home-page "https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi")
+       (synopsis "Non-free firmware for Intel wifi chips")
+       (description "Non-free iwlwifi firmware")
+       (license (license:non-copyleft
+		 "https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.iwlwifi_firmware?id=HEAD"))))
+
+
+
+    (define %sysctl-activation-service
+      (simple-service 'sysctl activation-service-type
+		      #~(let ((sysctl
+			       (lambda (str)
+				 (zero? (apply system*
+					       #$(file-append procps
+							      "/sbin/sysctl")
+					       "-w" (string-tokenize str))))))
+			  (and
+			   ;; Enable IPv6 privacy extensions.
+			   (sysctl "net.ipv6.conf.eth0.use_tempaddr=2")
+			   ;; Enable SYN cookie protection.
+			   (sysctl "net.ipv4.tcp_syncookies=1")
+			   ;; Log Martian packets.
+			   (sysctl "net.ipv4.conf.default.log_martians=1")))))
+
+    (define %powertop-service
+      (simple-service 'powertop activation-service-type
+		      #~(zero? (system* #$(file-append powertop "/sbin/powertop")
+					"--auto-tune"))))
+
+
+
+    (use-modules (gnu)
+		 (guix store)               ;for %default-substitute-urls
+		 (gnu system nss)
+		 (my packages)
+		 (srfi srfi-1))
+    (use-service-modules admin base dbus desktop mcron networking ssh xorg sddm)
+    (use-package-modules admin bootloaders certs disk fonts file emacs
+			 libusb linux version-control
+			 ssh tls tmux wm xdisorg xorg)
+
+    (operating-system
+     (host-name "kirby")
+     (timezone "Europe/Oslo")
+     (kernel linux-nonfree)
+     (kernel-arguments '("modprobe.blacklist=pcspkr,snd_pcsp"))
+     ;; (locale "en_GB.utf8")
+     ;; (locale-libcs (list glibc-2.24 (canonical-package glibc)))
+     (firmware (append (list
+			iwlwifi-firmware-nonfree)
+		       %base-firmware))
+
+     (mapped-devices (list (mapped-device
+			    (source "/dev/sda4")
+			    (type luks-device-mapping)
+			    (target "guixhome"))))
+
+     (bootloader (bootloader-configuration
+		  (bootloader grub-efi-bootloader)
+		  (target "/boot/efi")))
+
+     (file-systems (cons* (file-system
+			   (device "guixroot")
+			   (title 'label)
+			   (mount-point "/")
+			   (needed-for-boot? #t)
+			   (type "ext4"))
+			  (file-system
+			   (device "/dev/mapper/guixhome")
+			   (mount-point "/home")
+			   (type "ext4"))
+			  (file-system
+			   (device "/dev/sda2")
+			   (mount-point "/boot")
+			   (type "vfat"))
+			  %base-file-systems))
+
+     (groups (cons (user-group
+		    (name "marius"))
+		   %base-groups))
+     (users (cons (user-account
+		   (name "marius")
+		   (comment "Meh")
+		   (group "marius")
+		   (supplementary-groups '("wheel" "netdev" "audio" "video" "kvm" "disk"))
+		   (home-directory "/home/marius"))
+		  %base-user-accounts))
+
+     (packages (cons*
+		dosfstools
+		nss-certs
+		htop
+		wpa-supplicant
+		acpid
+		i3-wm
+		i3status
+		xscreensaver
+		%base-packages))
+     (services (cons*
+		(sddm-service)
+		(screen-locker-service xscreensaver)
+		(service wpa-supplicant-service-type)
+		(service network-manager-service-type)
+		(upower-service)
+		(colord-service)
+		;;(geoclue-service)
+		(polkit-service)
+		(elogind-service)
+		(dbus-service)
+		(service rottlog-service-type (rottlog-configuration))
+		(service mcron-service-type)
+		%sysctl-activation-service
+		%powertop-service
+
+		;; Add udev rules for MTP devices so that non-root users can access
+		;; them.
+		(simple-service 'mtp udev-service-type (list libmtp))
+
+		;; Store the current configuration with the generation.
+		(simple-service 'store-my-config
+				etc-service-type
+				`(("current-config.scm"
+				   ,(local-file (assoc-ref
+						 (current-source-location)
+						 'filename)))))
+		(ntp-service #:servers '("nissen.uio.no"
+					 "2.no.pool.ntp.org"
+					 "1.no.pool.ntp.org"
+					 "0.sv.pool.ntp.org"))
+		(modify-services %base-services
+				 (guix-service-type
+				  config =>
+				  (guix-configuration
+				   (inherit config)
+				   (substitute-urls
+				    (cons* "http://192.168.2.11:8181"
+					   "http://192.168.2.5:3000"
+					   "http://137.205.52.16"
+					   %default-substitute-urls))))))))
+    #+END_SRC
+** wingo
+    #+BEGIN_SRC scheme
+    ;;; GNU Guix --- Functional package management for GNU
+    ;;; Copyright © 2012, 2013, 2014, 2015, 2017 Ludovic Courtès <ludo@gnu.org>
+    ;;; Copyright © 2013, 2014 Andreas Enge <andreas@enge.fr>
+    ;;; Copyright © 2012 Nikita Karetnikov <nikita@karetnikov.org>
+    ;;; Copyright © 2014, 2015 Mark H Weaver <mhw@netris.org>
+    ;;; Copyright © 2015 Federico Beffa <beffa@fbengineering.ch>
+    ;;; Copyright © 2015 Taylan Ulrich Bayırlı/Kammer <taylanbayirli@gmail.com>
+    ;;; Copyright © 2015, 2017 Andy Wingo <wingo@igalia.com>
+    ;;;
+    ;;; This file is part of GNU Guix.
+    ;;;
+    ;;; GNU Guix is free software; you can redistribute it and/or modify it
+    ;;; under the terms of the GNU General Public License as published by
+    ;;; the Free Software Foundation; either version 3 of the License, or (at
+    ;;; your option) any later version.
+    ;;;
+    ;;; GNU Guix is distributed in the hope that it will be useful, but
+    ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+    ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ;;; GNU General Public License for more details.
+    ;;;
+    ;;; You should have received a copy of the GNU General Public License
+    ;;; along with GNU Guix.  If not, see <http://www.gnu.org/licenses/>.
+
+    (define-module (gnu packages linux-nonfree)
+      #:use-module ((guix licenses) #:prefix license:)
+      #:use-module (gnu packages linux)
+      #:use-module (gnu packages tls)
+      #:use-module (guix build-system trivial)
+      #:use-module (guix git-download)
+      #:use-module (guix packages)
+      #:use-module (guix download))
+
+    (define (linux-nonfree-urls version)
+      "Return a list of URLs for Linux-Nonfree VERSION."
+      (list (string-append
+	     "https://www.kernel.org/pub/linux/kernel/v4.x/"
+	     "linux-" version ".tar.xz")))
+
+    (define-public linux-nonfree
+      (let* ((version "4.14.12"))
+	(package
+	 (inherit linux-libre)
+	 (name "linux-nonfree")
+	 (version version)
+	 (source (origin
+		  (method url-fetch)
+		  (uri (linux-nonfree-urls version))
+		  (sha256
+		   (base32
+		    "1bsn73h3ilf7msyiqm5ny2zdj30b9r7k9sc8i03w3iggh3agf236"))))
+	 (synopsis "Mainline Linux kernel, nonfree binary blobs included.")
+	 (description "Linux is a kernel.")
+	 (license license:gpl2)
+	 (home-page "http://kernel.org/"))))
+
+    ;;; Forgive me Stallman for I have sinned.
+
+    (define-public radeon-firmware-non-free
+      (package
+       (name "radeon-firmware-non-free")
+       (version "65b1c68c63f974d72610db38dfae49861117cae2")
+       (source (origin
+		(method git-fetch)
+		(uri (git-reference
+		      (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+		      (commit version)))
+		(sha256
+		 (base32
+		  "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+       (build-system trivial-build-system)
+       (arguments
+	`(#:modules ((guix build utils))
+		    #:builder (begin
+				(use-modules (guix build utils))
+				(let ((source (assoc-ref %build-inputs "source"))
+				      (fw-dir (string-append %output "/lib/firmware/radeon/")))
+				  (mkdir-p fw-dir)
+				  (for-each (lambda (file)
+					      (copy-file file
+							 (string-append fw-dir "/"
+									(basename file))))
+					    (find-files source
+							(lambda (file stat)
+							  (string-contains file "radeon"))))
+				  #t))))
+
+       (home-page "")
+       (synopsis "Non-free firmware for Radeon integrated chips")
+       (description "Non-free firmware for Radeon integrated chips")
+       ;; FIXME: What license?
+       (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
+
+    (define-public ath10k-firmware-non-free
+      (package
+       (name "ath10k-firmware-non-free")
+       (version "65b1c68c63f974d72610db38dfae49861117cae2")
+       (source (origin
+		(method git-fetch)
+		(uri (git-reference
+		      (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+		      (commit version)))
+		(sha256
+		 (base32
+		  "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+       (build-system trivial-build-system)
+       (arguments
+	`(#:modules ((guix build utils))
+		    #:builder (begin
+				(use-modules (guix build utils))
+				(let ((source (assoc-ref %build-inputs "source"))
+				      (fw-dir (string-append %output "/lib/firmware/")))
+				  (mkdir-p fw-dir)
+				  (copy-recursively (string-append source "/ath10k")
+						    (string-append fw-dir "/ath10k"))
+				  #t))))
+
+       (home-page "")
+       (synopsis "Non-free firmware for ath10k wireless chips")
+       (description "Non-free firmware for ath10k integrated chips")
+       ;; FIXME: What license?
+       (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
+
+    (define-public linux-firmware-non-free
+      (package
+       (name "linux-firmware-non-free")
+       (version "65b1c68c63f974d72610db38dfae49861117cae2")
+       (source (origin
+		(method git-fetch)
+		(uri (git-reference
+		      (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+		      (commit version)))
+		(sha256
+		 (base32
+		  "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+       (build-system trivial-build-system)
+       (arguments
+	`(#:modules ((guix build utils))
+		    #:builder (begin
+				(use-modules (guix build utils))
+				(let ((source (assoc-ref %build-inputs "source"))
+				      (fw-dir (string-append %output "/lib/firmware/")))
+				  (mkdir-p fw-dir)
+				  (copy-recursively source fw-dir)
+				  #t))))
+
+       (home-page "")
+       (synopsis "Non-free firmware for Linux")
+       (description "Non-free firmware for Linux")
+       ;; FIXME: What license?
+       (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.radeon_firmware;hb=HEAD"))))
+
+    (define-public perf-nonfree
+      (package
+       (inherit perf)
+       (name "perf-nonfree")
+       (version (package-version linux-nonfree))
+       (source (package-source linux-nonfree))
+       (license (package-license linux-nonfree))))
+
+    (define-public iwlwifi-firmware-nonfree
+      (package
+       (name "iwlwifi-firmware-nonfree")
+       (version "65b1c68c63f974d72610db38dfae49861117cae2")
+       (source (origin
+		(method git-fetch)
+		(uri (git-reference
+		      (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+		      (commit version)))
+		(sha256
+		 (base32
+		  "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+       (build-system trivial-build-system)
+       (arguments
+	`(#:modules ((guix build utils))
+		    #:builder (begin
+				(use-modules (guix build utils))
+				(let ((source (assoc-ref %build-inputs "source"))
+				      (fw-dir (string-append %output "/lib/firmware")))
+				  (mkdir-p fw-dir)
+				  (for-each (lambda (file)
+					      (copy-file file
+							 (string-append fw-dir "/"
+									(basename file))))
+					    (find-files source "iwlwifi-.*\\.ucode$|LICENCE\\.iwlwifi_firmware$"))
+				  #t))))
+
+       (home-page "https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi")
+       (synopsis "Non-free firmware for Intel wifi chips")
+       (description "Non-free firmware for Intel wifi chips")
+       ;; FIXME: What license?
+       (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.iwlwifi_firmware;hb=HEAD"))))
+
+    (define-public ibt-hw-firmware-nonfree
+      (package
+       (name "ibt-hw-firmware-nonfree")
+       (version "65b1c68c63f974d72610db38dfae49861117cae2")
+       (source (origin
+		(method git-fetch)
+		(uri (git-reference
+		      (url "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git")
+		      (commit version)))
+		(sha256
+		 (base32
+		  "1anr7fblxfcrfrrgq98kzy64yrwygc2wdgi47skdmjxhi3wbrvxz"))))
+       (build-system trivial-build-system)
+       (arguments
+	`(#:modules ((guix build utils))
+		    #:builder (begin
+				(use-modules (guix build utils))
+				(let ((source (assoc-ref %build-inputs "source"))
+				      (fw-dir (string-append %output "/lib/firmware/intel")))
+				  (mkdir-p fw-dir)
+				  (for-each (lambda (file)
+					      (copy-file file
+							 (string-append fw-dir "/"
+									(basename file))))
+					    (find-files source "ibt-hw-.*\\.bseq$|LICENCE\\.ibt_firmware$"))
+				  #t))))
+
+       (home-page "http://www.intel.com/support/wireless/wlan/sb/CS-016675.htm")
+       (synopsis "Non-free firmware for Intel bluetooth chips")
+       (description "Non-free firmware for Intel bluetooth chips")
+       ;; FIXME: What license?
+       (license (license:non-copyleft "http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=blob_plain;f=LICENCE.ibt_firmware;hb=HEAD"))))
+
+    #+END_SRC
+** yenda
+    #+BEGIN_SRC scheme
+    ;; This is an operating system configuration template
+    ;; for a "desktop" setup with X11.
+
+    (use-modules (gnu) (gnu system nss) (linux-nonfree))
+    (use-service-modules desktop)
+    (use-package-modules wicd avahi xorg certs suckless i3)
+
+    (operating-system
+     (host-name "project2501")
+     (timezone "Europe/Paris")
+     (locale "en_US.UTF-8")
+
+     (kernel linux-nonfree)
+     (firmware (cons* radeon-RS780-firmware-non-free %base-firmware))
+
+     ;; Assuming /dev/sdX is the target hard disk, and "root" is
+     ;; the label of the target root file system.
+     (bootloader (grub-configuration (device "/dev/sda")))
+     (file-systems (cons* (file-system
+			   (device "root")
+			   (title 'label)
+			   (mount-point "/")
+			   (type "ext4"))
+			  (file-system
+			   (device "home")
+			   (title 'label)
+			   (mount-point "/home")
+			   (type "ext4"))
+			  (file-system
+			   (device "/dev/sdb1")
+			   (mount-point "/mnt/Monster1")
+			   (type "ext4"))
+			  %base-file-systems))
+
+     (swap-devices '("/dev/sda2"))
+     (groups (cons (user-group (name "nixbld")) %base-groups))
+     (users (list (user-account
+		   (name "yenda")
+		   (comment "Lisp rocks")
+		   (group "users")
+		   (supplementary-groups '("wheel" "netdev"
+					   "audio" "video"
+					   "nixbld"))
+		   (home-directory "/home/yenda"))))
+
+     ;; Add Xfce and Ratpoison; that allows us to choose
+     ;; sessions using either of these at the log-in screen.
+     (packages (cons* i3-wm i3status dmenu		     ;desktop environments
+		      xterm wicd avahi  ;useful tools
+		      nss-certs         ;for HTTPS access
+		      xorg-server xf86-input-evdev
+		      xf86-video-fbdev
+		      xf86-video-modesetting
+		      xf86-video-ati
+		      %base-packages))
+
+     ;; Use the "desktop" services, which include the X11
+     ;; log-in service, networking with Wicd, and more.
+     (services (cons* (console-keymap-service "fr")
+		      %desktop-services))
+     ;;(services %desktop-services)
+     ;; Allow resolution of '.local' host names with mDNS.
+     (name-service-switch %mdns-host-lookup-nss))
+
+    #+END_SRC
+** Alex Kost
+    #+BEGIN_SRC scheme
+    (use-modules
+     (srfi srfi-1)
+     (gnu)
+     (gnu system locale)
+     (gnu services networking)
+     (gnu services dbus)
+     (gnu services desktop)
+     (gnu services ssh)
+     (gnu services lirc)
+     (gnu packages base)            ; for 'canonical-package'
+     (al places)
+     (al files)
+     (al utils)
+     (al guix packages)
+     (al guix services linux)
+     (al guix utils))
+
+    (define %user-name "al")
+    (define %group-name "users")
+    (define %host-name "leviafan")
+
+    (define %extra-linux-modules
+      '("fuse"                      ; for sshfs
+	"nbd"                       ; to mount qcow2 images
+	"sata_nv"                   ; for my HDD to be recognized
+	"snd-seq"                   ; for MIDI-keyboard
+	))
+
+    (define %redundant-linux-modules
+      '("pcspkr" "snd_pcsp"))
+
+    (define %redundant-packages
+      '("info-reader"
+	"iw"
+	"nano"
+	"net-tools"
+	"wireless-tools"
+	"zile"))
+
+    (define os
+      (operating-system
+       ;; (locale-libcs
+       ;;  (cons (guix-package base glibc-2.23)
+       ;;        %default-locale-libcs))
+
+       (host-name %host-name)
+       (timezone "Europe/Moscow")
+
+       (locale "en_US.utf8")
+       (locale-definitions
+	(list (locale-definition (source "en_US")
+				 (name   "en_US.utf8"))
+	      (locale-definition (source "ru_RU")
+				 (name   "ru_RU.utf8"))))
+
+       (bootloader
+	;; Since I always use "guix system build --no-bootloader", I don't want
+	;; to build grub, but guix wants to build it anyway (it is done by
+	;; 'perform-action' procedure in (guix scripts system) module).  So
+	;; I simply replace the default 'grub' with my 'empty-package'.
+	(bootloader-configuration
+	 (bootloader (bootloader
+		      (inherit grub-bootloader)
+		      (name 'fake-grub)
+		      (package (my-package misc empty-package))))
+	 (device "/dev/sda")
+	 (theme (grub-theme))))
+
+       (kernel-arguments
+	(list (string-append "modprobe.blacklist="
+			     (apply comma-separated
+				    %redundant-linux-modules))))
+
+       (initrd-modules (append %extra-linux-modules %base-initrd-modules))
+
+       (file-systems
+	(cons* (file-system
+		(device "guix")
+		(title 'label)
+		(type "ext4")
+		(mount-point "/"))
+	       (file-system
+		(device "storage")
+		(title 'label)
+		(type "ext4")
+		(mount-point "/mnt/storage")
+		(create-mount-point? #t)
+		(check? #f))
+	       (file-system
+		(device "arch")
+		(title 'label)
+		(type "ext4")
+		(mount-point "/mnt/arch")
+		(create-mount-point? #t)
+		(check? #f))
+	       (file-system
+		(device "boot")
+		(title 'label)
+		(type "ext4")
+		(mount-point "/mnt/boot")
+		(create-mount-point? #t)
+		(check? #f))
+	       (file-system
+		(device "/dev/sr0")
+		(title 'device)
+		(type "iso9660")
+		(mount-point "/mnt/cdrom")
+		(mount? #f)
+		(create-mount-point? #t)
+		(check? #f)
+		(options (comma-separated "ro" "user" "noauto")))
+	       (file-system
+		(device "teXet")
+		(title 'label)
+		(type "vfat")
+		(mount-point "/mnt/texet")
+		(mount? #f)
+		(create-mount-point? #t)
+		(check? #f)
+		(options (comma-separated
+			  "rw" "user" "noauto" "utf8" "umask=0002"
+			  (string-append "gid=" %group-name))))
+	       %base-file-systems))
+
+       (users
+	(cons* (user-account
+		(name %user-name)
+		(uid 1000)
+		(comment "Alex Kost")
+		(home-directory (string-append "/home/" %user-name))
+		(group %group-name)
+		(supplementary-groups
+		 '("wheel" "kvm" "audio" "video" "lp" "cdrom")))
+	       %base-user-accounts))
+
+       (groups
+	;; Use ID 100 for "users" group.  Actually, this wouldn't change ID
+	;; of an existing group, because the following command (called by
+	;; 'add-group' in (gnu build activation) module):
+	;;
+	;;   groupadd -g 100 --system users
+	;;
+	;; fails telling: "group 'users' already exists".
+	(replace (lambda (group)
+		   (string=? "users" (user-group-name group)))
+		 (user-group (name "users")
+			     (id 100)
+			     (system? #t))
+		 %base-groups))
+
+
+       (sudoers-file (local-file (config-file "etc/sudoers")))
+       (hosts-file (local-file (config-file "etc/hosts")))
+
+       (issue "Guix is Great!  Ave Guix!!  Ave!!!\n\n")
+
+       (packages
+	(append (specifications->packages
+		 "nss-certs" "iptables")
+		(my-packages
+		 (misc suspend))
+		xorg-packages
+		(remove-packages %redundant-packages
+				 %base-packages)))
+
+       (services
+	(list
+	 (service virtual-terminal-service-type)
+	 (service console-font-service-type
+		  (map (lambda (tty)
+			 (cons tty %default-console-font))
+		       '("tty1" "tty2" "tty3" "tty4" "tty5" "tty6")))
+
+	 (agetty-service (agetty-configuration
+			  (extra-options '("-L")) ; no carrier detect
+			  (term "vt100")
+			  (tty #f)))
+
+	 (mingetty-service (mingetty-configuration
+			    (tty "tty1")
+			    (auto-login %user-name)))
+	 (mingetty-service (mingetty-configuration
+			    (tty "tty2")))
+	 (mingetty-service (mingetty-configuration
+			    (tty "tty3")))
+	 (mingetty-service (mingetty-configuration
+			    (tty "tty4")))
+	 (mingetty-service (mingetty-configuration
+			    (tty "tty5")))
+	 (mingetty-service (mingetty-configuration
+			    (tty "tty6")))
+
+	 (login-service (login-configuration
+			 (motd (plain-file "motd" "\
+    Welcome to Hyksos!  I mean GuixOS!  I mean GuixSD!\n\n"))))
+
+	 (console-keymap-service (local-file
+				  (config-file "kbd/dvorak-alt.map")))
+	 (keycodes-from-file-service (local-file
+				      (config-file "kbd/scancodes-msmult")))
+	 (lirc-service #:device "name=i2c*" #:driver "devinput"
+		       #:config-file (local-file
+				      (config-file "lirc/devinput.conf")))
+
+	 (tor-service)
+	 (dhcp-client-service)
+	 (service static-networking-service-type
+		  (list ;; (static-networking (interface "enp0s7")
+		   ;;                    (ip "192.168.1.32")
+		   ;;                    (gateway "192.168.1.1")
+		   ;;                    (name-servers '("77.88.8.8")))
+		   (static-networking (interface "lo")
+				      (ip "127.0.0.1")
+				      (provision '(loopback)))))
+
+	 (udisks-service)
+	 (polkit-service)
+	 (elogind-service)
+	 (dbus-service)
+	 (lsh-service)
+	 (syslog-service (syslog-configuration
+			  (config-file (local-file
+					(config-file "syslog/syslog.conf")))))
+	 (service urandom-seed-service-type)
+	 (guix-service)
+	 (nscd-service)
+	 (udev-service #:rules (specifications->packages
+				"alsa-utils" "fuse" "lvm2"))
+	 (service special-files-service-type
+		  ;; Using 'canonical-package' as bash and coreutils
+		  ;; canonical packages are already a part of
+		  ;; '%base-packages'.
+		  `(("/bin/sh"
+		     ,(file-append (canonical-package
+				    (guix-package bash bash))
+				   "/bin/bash"))
+		    ("/bin/bash"
+		     ,(file-append (canonical-package
+				    (guix-package bash bash))
+				   "/bin/bash"))
+		    ("/usr/bin/env"
+		     ,(file-append (canonical-package
+				    (guix-package base coreutils))
+				   "/bin/env"))))))))
+    os
+
+    #+END_SRC
+** PACKAGE GENERIC
+    #+BEGIN_SRC scheme
+    ;;; mescc-tools.scm -- Guix package definition
+    ;;; Copyright © 2017 Jan Nieuwenhuizen <janneke@gnu.org>
+    ;;; Copyright 2016 Jeremiah Orians
+    ;;; guix.scm: This file is part of mescc-tools.
+    ;;;
+    ;;; mescc-tools is free software; you can redistribute it and/or modify it
+    ;;; under the terms of the GNU General Public License as published by
+    ;;; the Free Software Foundation; either version 3 of the License, or (at
+    ;;; your option) any later version.
+    ;;;
+    ;;; mescc-tools is distributed in the hope that it will be useful, but
+    ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+    ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ;;; GNU General Public License for more details.
+    ;;;
+    ;;; You should have received a copy of the GNU General Public License
+    ;;; along with mescc-tools.  If not, see <http://www.gnu.org/licenses/>.
+
+    ;;; Commentary:
+    ;; GNU Guix development package.  To build and install, run:
+    ;;   guix package -f guix.scm
+    ;;
+    ;; To build it, but not install it, run:
+    ;;   guix build -f guix.scm
+    ;;
+    ;; To use as the basis for a development environment, run:
+    ;;   guix environment -l guix.scm
+    ;;
+    ;;; Code:
+
+    (use-modules (ice-9 match)
+		 (gnu packages)
+		 (gnu packages gcc)
+		 (guix build-system gnu)
+		 (guix download)
+		 (guix licenses)
+		 (guix packages))
+
+    (define-public mescc-tools
+      (package
+       (name "mescc-tools")
+       (version "0.5.2")
+       (source (origin
+		(method url-fetch)
+		(uri (string-append "http://git.savannah.nongnu.org/cgit/mescc-tools.git/snapshot/mescc-tools-Release_" version ".tar.gz"))
+		(sha256
+		 (base32 "01x7bhmgwyf6mc2g1hcvibhps98nllacqm4f0j5l51b1mbi18pc2"))))
+       (build-system gnu-build-system)
+       (arguments
+	`(#:make-flags (list (string-append "PREFIX=" (assoc-ref %outputs "out")))
+		       #:test-target "test"
+		       #:phases
+		       (modify-phases %standard-phases
+				      (delete 'configure))))
+       (synopsis "tools for the full source bootstrapping process")
+       (description
+	"Mescc-tools is a collection of tools for use in full source bootstrapping process.
+    Currently consists of the M0 macro assembler and the hex2 linker.")
+       (home-page "https://github.com/oriansj/mescc-tools")
+       (license gpl3+)))
+
+    ;; Return it here so `guix build/environment/package' can consume it directly.
+    mescc-tools
+
+
+    #+END_SRC
+
+* Config templates
+** bare-bones.tmpl
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "bare bones" setup, with no X11 display server.
+
+      (use-modules (gnu))
+      (use-service-modules networking ssh)
+      (use-package-modules screen ssh)
+
+      (operating-system
+       (host-name "komputilo")
+       (timezone "Europe/Berlin")
+       (locale "en_US.utf8")
+
+       ;; Assuming /dev/sdX is the target hard disk, and "my-root" is
+       ;; the label of the target root file system.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-bootloader)
+		    (target "/dev/sdX")))
+       (file-systems (cons (file-system
+			    (device "my-root")
+			    (title 'label)
+			    (mount-point "/")
+			    (type "ext4"))
+			   %base-file-systems))
+
+       ;; This is where user accounts are specified.  The "root"
+       ;; account is implicit, and is initially created with the
+       ;; empty password.
+       (users (cons (user-account
+		     (name "alice")
+		     (comment "Bob's sister")
+		     (group "users")
+
+		     ;; Adding the account to the "wheel" group
+		     ;; makes it a sudoer.  Adding it to "audio"
+		     ;; and "video" allows the user to play sound
+		     ;; and access the webcam.
+		     (supplementary-groups '("wheel"
+					     "audio" "video"))
+		     (home-directory "/home/alice"))
+		    %base-user-accounts))
+
+       ;; Globally-installed packages.
+       (packages (cons* screen openssh %base-packages))
+
+       ;; Add services to the baseline: a DHCP client and
+       ;; an SSH server.
+       (services (cons* (dhcp-client-service)
+			(service openssh-service-type
+				 (openssh-configuration
+				  (port-number 2222)))
+			%base-services)))
+
+      #+END_SRC
+** beaglebone-black.tmpl
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "bare bones" setup on BeagleBone Black board.
+
+      (use-modules (gnu) (gnu bootloader u-boot))
+      (use-service-modules networking)
+      (use-package-modules bootloaders screen ssh)
+
+      (operating-system
+       (host-name "komputilo")
+       (timezone "Europe/Berlin")
+       (locale "en_US.utf8")
+
+       ;; Assuming /dev/mmcblk1 is the eMMC, and "my-root" is
+       ;; the label of the target root file system.
+       (bootloader (bootloader-configuration
+		    (bootloader u-boot-beaglebone-black-bootloader)
+		    (target "/dev/mmcblk1")))
+
+       ;; This module is required to mount the SD card.
+       (initrd-modules (cons "omap_hsmmc" %base-initrd-modules))
+
+       (file-systems (cons (file-system
+			    (device "my-root")
+			    (title 'label)
+			    (mount-point "/")
+			    (type "ext4"))
+			   %base-file-systems))
+
+       ;; This is where user accounts are specified.  The "root"
+       ;; account is implicit, and is initially created with the
+       ;; empty password.
+       (users (cons (user-account
+		     (name "alice")
+		     (comment "Bob's sister")
+		     (group "users")
+
+		     ;; Adding the account to the "wheel" group
+		     ;; makes it a sudoer.  Adding it to "audio"
+		     ;; and "video" allows the user to play sound
+		     ;; and access the webcam.
+		     (supplementary-groups '("wheel"
+					     "audio" "video"))
+		     (home-directory "/home/alice"))
+		    %base-user-accounts))
+
+       ;; Globally-installed packages.
+       (packages (cons* screen openssh %base-packages))
+
+       (services (cons* (dhcp-client-service)
+			;; mingetty does not work on serial lines.
+			;; Use agetty with board-specific serial parameters.
+			(agetty-service
+			 (agetty-configuration
+			  (extra-options '("-L"))
+			  (baud-rate "115200")
+			  (term "vt100")
+			  (tty "ttyO0")))
+			%base-services)))
+      #+END_SRC
+** desktop.tmpl
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "desktop" setup with GNOME and Xfce where the
+      ;; root partition is encrypted with LUKS.
+
+      (use-modules (gnu) (gnu system nss))
+      (use-service-modules desktop)
+      (use-package-modules certs gnome)
+
+      (operating-system
+       (host-name "antelope")
+       (timezone "Europe/Paris")
+       (locale "en_US.utf8")
+
+       ;; Assuming /dev/sdX is the target hard disk, and "my-root"
+       ;; is the label of the target root file system.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-bootloader)
+		    (target "/dev/sdX")))
+
+       ;; Specify a mapped device for the encrypted root partition.
+       ;; The UUID is that returned by 'cryptsetup luksUUID'.
+       (mapped-devices
+	(list (mapped-device
+	       (source (uuid "12345678-1234-1234-1234-123456789abc"))
+	       (target "my-root")
+	       (type luks-device-mapping))))
+
+       (file-systems (cons (file-system
+			    (device "my-root")
+			    (mount-point "/")
+			    (type "ext4")
+			    (dependencies mapped-devices))
+			   %base-file-systems))
+
+       (users (cons (user-account
+		     (name "bob")
+		     (comment "Alice's brother")
+		     (group "users")
+		     (supplementary-groups '("wheel" "netdev"
+					     "audio" "video"))
+		     (home-directory "/home/bob"))
+		    %base-user-accounts))
+
+       ;; This is where we specify system-wide packages.
+       (packages (cons* nss-certs         ;for HTTPS access
+			gvfs              ;for user mounts
+			%base-packages))
+
+       ;; Add GNOME and/or Xfce---we can choose at the log-in
+       ;; screen with F1.  Use the "desktop" services, which
+       ;; include the X11 log-in service, networking with
+       ;; NetworkManager, and more.
+       (services (cons* (gnome-desktop-service)
+			(xfce-desktop-service)
+			%desktop-services))
+
+       ;; Allow resolution of '.local' host names with mDNS.
+       (name-service-switch %mdns-host-lookup-nss))
+
+      #+END_SRC
+** docker-image.tmpl
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template for a "Docker image"
+      ;; setup, so it has barely any services at all.
+
+      (use-modules (gnu))
+
+      (operating-system
+       (host-name "komputilo")
+       (timezone "Europe/Berlin")
+       (locale "en_US.utf8")
+
+       ;; This is where user accounts are specified.  The "root" account is
+       ;; implicit, and is initially created with the empty password.
+       (users (cons (user-account
+		     (name "alice")
+		     (comment "Bob's sister")
+		     (group "users")
+		     (supplementary-groups '("wheel"
+					     "audio" "video"))
+		     (home-directory "/home/alice"))
+		    %base-user-accounts))
+
+       ;; Globally-installed packages.
+       (packages %base-packages)
+
+       ;; Because the system will run in a Docker container, we may omit many
+       ;; things that would normally be required in an operating system
+       ;; configuration file.  These things include:
+       ;;
+       ;;   * bootloader
+       ;;   * file-systems
+       ;;   * services such as mingetty, udevd, slim, networking, dhcp
+       ;;
+       ;; Either these things are simply not required, or Docker provides
+       ;; similar services for us.
+
+       ;; This will be ignored.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-bootloader)
+		    (target "does-not-matter")))
+       ;; This will be ignored, too.
+       (file-systems (list (file-system
+			    (device "does-not-matter")
+			    (mount-point "/")
+			    (type "does-not-matter"))))
+
+       ;; Guix is all you need!
+       (services (list (guix-service))))
+
+      #+END_SRC
+** lightweight-desktop.tmpl
+      #+BEGIN_SRC scheme
+      ;; This is an operating system configuration template
+      ;; for a "desktop" setup without full-blown desktop
+      ;; environments.
+
+      (use-modules (gnu) (gnu system nss))
+      (use-service-modules desktop)
+      (use-package-modules bootloaders certs ratpoison suckless wm)
+
+      (operating-system
+       (host-name "antelope")
+       (timezone "Europe/Paris")
+       (locale "en_US.utf8")
+
+       ;; Use the UEFI variant of GRUB with the EFI System
+       ;; Partition mounted on /boot/efi.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-efi-bootloader)
+		    (target "/boot/efi")))
+
+       ;; Assume the target root file system is labelled "my-root",
+       ;; and the EFI System Partition has UUID 1234-ABCD.
+       (file-systems (cons* (file-system
+			     (device "my-root")
+			     (title 'label)
+			     (mount-point "/")
+			     (type "ext4"))
+			    (file-system
+			     (device (uuid "1234-ABCD" 'fat))
+			     (title 'uuid)
+			     (mount-point "/boot/efi")
+			     (type "vfat"))
+			    %base-file-systems))
+
+       (users (cons (user-account
+		     (name "alice")
+		     (comment "Bob's sister")
+		     (group "users")
+		     (supplementary-groups '("wheel" "netdev"
+					     "audio" "video"))
+		     (home-directory "/home/alice"))
+		    %base-user-accounts))
+
+       ;; Add a bunch of window managers; we can choose one at
+       ;; the log-in screen with F1.
+       (packages (cons* ratpoison i3-wm i3status dmenu ;window managers
+			nss-certs                      ;for HTTPS access
+			%base-packages))
+
+       ;; Use the "desktop" services, which include the X11
+       ;; log-in service, networking with NetworkManager, and more.
+       (services %desktop-services)
+
+       ;; Allow resolution of '.local' host names with mDNS.
+       (name-service-switch %mdns-host-lookup-nss))
+
+      #+END_SRC
+** vm-image.tmpl
+      #+BEGIN_SRC scheme
+      ;;; This is an operating system configuration template for a "bare-bones" setup,
+      ;;; suitable for booting in a virtualized environment, including virtual private
+      ;;; servers (VPS).
+
+      (use-modules (gnu))
+      (use-package-modules bootloaders disk nvi)
+
+      (define vm-image-motd (plain-file "motd" "
+      This is the GNU system.  Welcome!
+
+      This instance of GuixSD is a bare-bones template for virtualized environments.
+
+      You will probably want to do these things first if you booted in a virtual
+      private server (VPS):
+
+      ,* Set a password for 'root'.
+      ,* Set up networking.
+      ,* Expand the root partition to fill the space available by 0) deleting and
+      recreating the partition with fdisk, 1) reloading the partition table with
+      partprobe, and then 2) resizing the filesystem with resize2fs.\n"))
+
+      (operating-system
+       (host-name "gnu")
+       (timezone "Etc/UTC")
+       (locale "en_US.utf8")
+
+       ;; Assuming /dev/sdX is the target hard disk, and "my-root" is
+       ;; the label of the target root file system.
+       (bootloader (bootloader-configuration
+		    (bootloader grub-bootloader)
+		    (target "/dev/sda")
+		    (terminal-outputs '(console))))
+       (file-systems (cons (file-system
+			    (device "my-root")
+			    (title 'label)
+			    (mount-point "/")
+			    (type "ext4"))
+			   %base-file-systems))
+
+       ;; This is where user accounts are specified.  The "root"
+       ;; account is implicit, and is initially created with the
+       ;; empty password.
+       (users %base-user-accounts)
+
+       ;; Globally-installed packages.
+       (packages (cons* nvi fdisk
+			grub   ; mostly so xrefs to its manual work
+			parted ; partprobe
+			%base-packages))
+
+       (services (modify-services %base-services
+				  (login-service-type config =>
+						      (login-configuration
+						       (inherit config)
+						       (motd vm-image-motd))))))
+
+      #+END_SRC
