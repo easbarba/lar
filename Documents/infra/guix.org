@@ -32,6 +32,17 @@
 ** package
 guix package --search-paths  # env variables needed to export
 eval `guix package --search-paths=prefix` # eval env variables needed
+** gc
+|                                 |                                                           |
+|---------------------------------+-----------------------------------------------------------|
+| --list-roots                    |                                                           |
+| --collect-garbage[min]          |                                                           |
+| --delete-generations[=duration] |                                                           |
+| -F <size>                       | guarantee that at least <size> are available on your disk |
+| --free-space=free               |                                                           |
+| --delete                        |                                                           |
+| --list-failures                 |                                                           |
+** pull
 
 * System
 guix system build (dry-run)
