@@ -18,9 +18,9 @@
   - [[#commands][Commands]]
 :END:
 * Progresso
-| livro       | em           |
-|-------------+--------------|
-| Guix Manual | 5.1 Features |
+| livro       | em                             |
+|-------------+--------------------------------|
+| Guix Manual | 5.7 Invoking guix time-machine |
 
 * Comandos
 ** cli
