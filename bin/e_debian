@@ -5,168 +5,160 @@ set -euo pipefail
 
 # * DEBIAN
 
-upgrade()
-{
-    echo "-- Updating Debian"
+upgrade() {
+	echo "-- Updating Debian"
 
-    sudo apt update
-    sudo apt upgrade -y
-    sudo apt autoremove
+	sudo apt update
+	sudo apt upgrade -y
+	sudo apt autoremove
 }
 
-packages()
-{
-    essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
+packages() {
+	essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
 		build-essential curl emacs)
 
-    programming=(shellcheck zenity libpq-dev bash-completion cmake
-		 mercurial clang libsqlite3-dev)
+	programming=(direnv shellcheck zenity libpq-dev bash-completion cmake
+		mercurial clang libsqlite3-dev)
 
-    ruby=(libssl-dev ruby-dev)
+	ruby=(libssl-dev ruby-dev)
 
-    lua=(lua5.4 luarocks lua-check)
+	lua=(lua5.4 luarocks lua-check)
 
-    postgres=(libreadline-dev zlib1g-dev curl)
+	postgres=(libreadline-dev zlib1g-dev curl)
 
-    system=(fd-find screen micro neovim zsh fish unrar rar ripgrep lshw at usbutils
-	    lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
-	    fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
-	    cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
-	    dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
-	    locate info wget stow parted texinfo autoconf automake gnutls-bin
-	    bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
-	    firewall-config socat vrms fzf aria2)
+	system=(fd-find screen micro neovim zsh fish unrar rar ripgrep lshw at usbutils
+		lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
+		fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
+		cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
+		dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
+		locate info wget stow parted texinfo autoconf automake gnutls-bin
+		bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
+		firewall-config socat vrms fzf aria2)
 
-    emacs=(libgccjit-10-dev)
+	emacs=(libgccjit-10-dev)
 
-    qt=(kdeconnect kdenlive clementine)
+	qt=(kdeconnect kdenlive clementine)
 
-    gtk=(cheese transmission-gtk pragha materia-gtk-theme papirus-icon-theme suru-icon-theme)
+	gtk=(cheese transmission-gtk pragha materia-gtk-theme papirus-icon-theme suru-icon-theme)
 
-    infra=(podman wine winetricks wine32 qemu qemu-system-gui
-	   qemu-utils qemu-efi qemu-kvm virt-manager ovmf
-	   bridge-utils)
+	infra=(podman wine winetricks wine32 qemu qemu-system-gui
+		qemu-utils qemu-efi qemu-kvm virt-manager ovmf
+		bridge-utils)
 
-    fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack
-	   fonts-freefont-ttf fonts-dejavu)
+	fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack
+		fonts-freefont-ttf fonts-dejavu)
 
-    security=(gnutls-bin)
+	security=(gnutls-bin)
 
-    laptop=(iw wireless-tools libiw-dev laptop-mode-tools
-	    i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
-	    lm-sensors hddtemp)
+	laptop=(iw wireless-tools libiw-dev laptop-mode-tools
+		i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
+		lm-sensors hddtemp)
 
-    debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
+	debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
 
-    wm=(awesome awesome-extra network-manager-gnome aria2 maim udiskie
-	unclutter diodon gnome-keyring ssh-askpass-gnome pasystray
-	libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
-	lxappearance seahorse x11proto-dev brightnessctl tlp acpi-call
-	blueman volumeicon-alsa) # dunst
+	wm=(awesome awesome-extra network-manager-gnome aria2 maim udiskie
+		unclutter diodon gnome-keyring ssh-askpass-gnome pasystray
+		libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
+		lxappearance seahorse x11proto-dev brightnessctl tlp acpi-call
+		blueman volumeicon-alsa) # dunst
 
-    user=(firefox chromium libreoffice calibre inkscape screenkey gimp
-	  obs-studio syncthing mpv libnotify-bin imagemagick pandoc
-	  screenfetch aspell aspell-pt-br gopher telegram-desktop)
+	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
+		obs-studio syncthing mpv libnotify-bin imagemagick pandoc
+		screenfetch aspell aspell-pt-br gopher telegram-desktop)
 
-    media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
-	   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
-	   gstreamer1.0-plugins-ugly)
+	media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
+		gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+		gstreamer1.0-plugins-ugly)
 
-    latex=(texlive-latex-recommended texlive-latex-extra
-	   texlive-latex-base)
+	latex=(texlive-latex-recommended texlive-latex-extra
+		texlive-latex-base)
 
-    amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0
-	 mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
-	 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
+	amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0
+		mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
+		mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
 
-    echo "-- Habilita Multi-Arch"
-    sudo dpkg --add-architecture i386
+	echo "-- Habilita Multi-Arch"
+	sudo dpkg --add-architecture i386
 
-    echo "Instalando pacotes."
+	echo "Instalando pacotes."
 
-    local command='sudo apt install -y'
+	local command='sudo apt install -y'
 
-    e_dolist "$command" "${essentials[@]}"; sudo apt -y build-dep emacs
-    e_dolist "$command" "${debian[@]}"; sudo apt-file update # update Debian database
-    e_dolist "$command" "${emacs[@]}"
-    e_dolist "$command" "${ruby[@]}"
-    e_dolist "$command" "${lua[@]}"
-    e_dolist "$command" "${programming[@]}"
-    e_dolist "$command" "${postgres[@]}"
-    e_dolist "$command" "${system[@]}"
-    e_dolist "$command" "${gtk[@]}"
-    e_dolist "$command" "${qt[@]}"
-    e_dolist "$command" "${infra[@]}";
-    e_dolist "$command" "${fonts[@]}"; sudo fc-cache -fv
-    e_dolist "$command" "${security[@]}"
-    e_dolist "$command" "${laptop[@]}"
-    e_dolist "$command" "${wm[@]}"
-    e_dolist "$command" "${user[@]}"
-    e_dolist "$command" "${media[@]}"
-    e_dolist "$command" "${amd[@]}"
+	e_dolist "$command" "${essentials[@]}"
+	sudo apt -y build-dep emacs
+	e_dolist "$command" "${debian[@]}"
+	sudo apt-file update # update Debian database
+	e_dolist "$command" "${emacs[@]}"
+	e_dolist "$command" "${ruby[@]}"
+	e_dolist "$command" "${lua[@]}"
+	e_dolist "$command" "${programming[@]}"
+	e_dolist "$command" "${postgres[@]}"
+	e_dolist "$command" "${system[@]}"
+	e_dolist "$command" "${gtk[@]}"
+	e_dolist "$command" "${qt[@]}"
+	e_dolist "$command" "${infra[@]}"
+	e_dolist "$command" "${fonts[@]}"
+	sudo fc-cache -fv
+	e_dolist "$command" "${security[@]}"
+	e_dolist "$command" "${laptop[@]}"
+	e_dolist "$command" "${wm[@]}"
+	e_dolist "$command" "${user[@]}"
+	e_dolist "$command" "${media[@]}"
+	e_dolist "$command" "${amd[@]}"
 
-    echo "Done"
+	echo "Done"
 }
 
-clean()
-{
-    unused=(firefox-esr)
+clean() {
+	unused=(firefox-esr)
 
-    local command='sudo apt remove -y'
+	local command='sudo apt remove -y'
 
-    e_dolist "$command" "${unused[@]}"
+	e_dolist "$command" "${unused[@]}"
 }
 
-services()
-{
-    kdeconnect()
-    {
-	sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-	sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-	sudo systemctl restart firewalld.service
-    }
+services() {
+	kdeconnect() {
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		sudo systemctl restart firewalld.service
+	}
 
-    timezone()
-    {
-	local current_zone
-	local desired_zone
+	timezone() {
+		local current_zone
+		local desired_zone
 
-	desired_zone='America/Sao_Paulo'
-	current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+		desired_zone='America/Sao_Paulo'
+		current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
 
-	[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
-    }
+		[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
+	}
 
-    alternatives()
-    {
-	# set python to python3
-	sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
-    }
+	alternatives() {
+		# set python to python3
+		sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+	}
 
-    virtualization()
-    {
-	sudo usermod -aG libvirt "$USER"
-	sudo usermod -aG kvm "$USER"
-    }
+	virtualization() {
+		sudo usermod -aG libvirt "$USER"
+		sudo usermod -aG kvm "$USER"
+	}
 
-
-    alternatives
-    timezone
-    kdeconnect
-    virtualization
+	alternatives
+	timezone
+	kdeconnect
+	virtualization
 }
 
-foreign()
-{
-    # Non-Debian packages
+foreign() {
+	# Non-Debian packages
 
-    chrome()
-    {
-	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
-    }
+	chrome() {
+		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+	}
 
-    chrome
+	chrome
 }
 
 # * RUN
