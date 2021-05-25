@@ -9,45 +9,39 @@ set -euo pipefail
 # * ENV VARS
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
-keys()
-{
-    [[ -x $(command -v guix) ]] && return
+keys() {
+	[[ -x $(command -v guix) ]] && return
 
-    wget "https://sv.gnu.org/people/viewgpg.php?user_id=127547" -qO - | sudo -i gpg --import -
+	wget "https://sv.gnu.org/people/viewgpg.php?user_id=127547" -qO - | sudo -i gpg --import -
 }
 
-get()
-{
-    [[ -x $(command -v guix) ]] && return
+get() {
+	[[ -x $(command -v guix) ]] && return
 
-    local installer='https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh'
-    wget -P /tmp "$installer"
+	local installer='https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh'
+	wget -P /tmp "$installer"
 }
 
-install()
-{
-    [[ -x $(command -v guix) ]] && return
+install() {
+	[[ -x $(command -v guix) ]] && return
 
-    sudo bash /tmp/guix-install.sh
+	sudo bash /tmp/guix-install.sh
 }
 
-update()
-{
-    guix pull
-    guix upgrade
+update() {
+	guix pull
+	guix upgrade
 }
 
-locale()
-{
-    local version=$(ls ~/.guix-profile/lib/locale/)
-    guix install glibc-locale@"$version"
+locale() {
+	local version=$(ls ~/.guix-profile/lib/locale/)
+	guix install glibc-locales@"$version"
 }
 
-packages()
-{
-    # Fix that annoying GUIX_LOCPATH warning
+packages() {
+	# Fix that annoying GUIX_LOCPATH warning
 
-    local packages=(font-gnu-freefont-ttf icecat nyxt ruby)
+	local packages=(font-gnu-freefont-ttf font-dejavu icecat nyxt)
 	e_dolist "guix install" "${pack[@]}"
 }
 
@@ -60,4 +54,3 @@ update
 
 locale
 packages
-
