@@ -128,31 +128,29 @@
 | The Well Grounded Rubyist        | File and I/O                   |                                     |                 |
 
 ** SLOC
-   | Project       | folder                                                        | file               | @                |
-   |---------------+---------------------------------------------------------------+--------------------+------------------|
-   | ruby          | cgi                                                           | cookie.rb          |                  |
-   | rake          | rake                                                          | file_task          | def out_of_date? |
-   | bundle        | bundler/installer                                             | gem_installer.rb   |                  |
-   | solargraph    | solargraph/api_map                                            | bundler_methods.rb |                  |
-   | dry-container | dry/container                                                 | mixin.rb           |                  |
+| Project       | folder                                                        | file               | @                |
+|---------------+---------------------------------------------------------------+--------------------+------------------|
+| ruby          | cgi                                                           | cookie.rb          |                  |
+| rake          | rake                                                          | file_task          | def out_of_date? |
+| bundle        | bundler/installer                                             | gem_installer.rb   |                  |
+| solargraph    | solargraph/api_map                                            | bundler_methods.rb |                  |
+| dry-container | dry/container                                                 | mixin.rb           |                  |
 
 ** Priorities
-   - Ruby
-   - Rails
-   - Unit Test / Rspec
-   - SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
-   - Git
-   - HTML/CSS/JS
-   - PostgreSQL
-   - API REST { YAML, JSON, XML, SOAP }
-   - CS
-   - English
-   - Container
-   - Sidekiq
-   - Heroku
-   - Slim
-   - CI/CD
-   - Cloud
+- Ruby
+- Rails
+- Unit Test / Rspec
+- SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
+- Git
+- REST / SOAP / GraphQL
+- YAML, JSON, XML, SOAP
+- PostgreSQL
+- Container
+- Sidekiq
+- Heroku
+- Slim
+- CI/CD
+- Cloud
 
 * Packages
 ** Packagement
@@ -228,9 +226,21 @@
  - Arrange/Act/Assert pattern
 
 **** Features
-|         |   |
-|---------+---|
-| pending |   |
+***** before
+#+begin_src ruby
+before do
+  allow(ledger).to receive(:record)
+                     .with(expense)
+                     .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
+end
+#+end_src
+
+***** pending
+
+***** let
+#+begin_src ruby
+let(:expense) { { 'some' => 'data' } }
+#+end_src
 
 **** Commands
      |                                   |                                      |
