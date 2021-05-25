@@ -7,11 +7,9 @@ cejo distro upgrade
 cejo floss grab
 cejo floss archive
 
-cejo projects emacs
-
 # * Guix
-
 guix pull
 guix upgrade
 
-# * Nix
+cejo projects emacs
+doom upgrade --yes
