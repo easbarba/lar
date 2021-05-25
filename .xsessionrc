@@ -42,72 +42,67 @@ export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 
 # $PATH DIRECTORIES
 
-home_bin()
-{
-    export PATH="$HOME/bin"${PATH:+:}${PATH}
-    export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
-    export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
+home_bin() {
+	export PATH="$HOME/bin"${PATH:+:}${PATH}
+	export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
+	export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 }
 
 # * PACKAGES
 
-e_doom()
-{
-    DOOM_DIR="$HOME/.config/emacs"
-    PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
+e_doom() {
+	DOOM_DIR="$HOME/.config/emacs"
+	PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
 }
 
-e_npm()
-{
-    export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
-    export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-    export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-    export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
-    export NPM_HOME="$NPM_CONFIG_PREFIX/npm"
-    export NPM_BIN="$NPM_HOME/bin"
-    PATH="$NPM_BIN":$PATH
+e_npm() {
+	export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
+	export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+	export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+	export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
+	export NPM_HOME="$NPM_CONFIG_PREFIX/npm"
+	export NPM_BIN="$NPM_HOME/bin"
+	PATH="$NPM_BIN":$PATH
 }
 
-e_ruby()
-{
-    export GEM_HOME="$HOME/.local/gem"
-    export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
+e_ruby() {
+	export GEM_HOME="$HOME/.local/gem"
+	export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 }
 
-e_luarocks()
-{
-    export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
+e_luarocks() {
+	export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 }
 
-e_golang()
-{
-    export GOPATH=$HOME/.local/go
-    export PATH="$GOPATH/bin"${PATH:+:}$PATH
+e_golang() {
+	export GOPATH=$HOME/.local/go
+	export PATH="$GOPATH/bin"${PATH:+:}$PATH
 }
 
-p_nix()
-{
-    export NIX_PROFILE=$HOME/.nix-profile
-    
-    # PATH
-    export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
+p_nix() {
+	export NIX_PROFILE=$HOME/.nix-profile
+
+	# PATH
+	export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
-p_guix()
-{
-    export GUIX_PROFILE="$HOME/.guix-profile"
-    
-    # LOCALE
-    export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+p_guix() {
+	export GUIX_PROFILE="$HOME/.guix-profile"
 
-    # GUILE
-    export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
-    export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
+	# LOCALE
+	export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 
-    # PATH
-    export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH    
+	# RUBY
+	local GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
+	export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
+
+	# GUILE
+	export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
+	export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
+
+	# PATH
+	export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 }
-
 
 # * RUN
 
@@ -121,4 +116,3 @@ p_guix
 e_golang
 e_luarocks
 e_ruby
-
