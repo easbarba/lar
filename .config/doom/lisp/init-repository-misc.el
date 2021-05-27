@@ -265,6 +265,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCtMjnvODdK1Gwy8psW3dzrg" ;; Leitura ObrigaHISTÓRIA
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese Onze
