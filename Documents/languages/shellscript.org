@@ -34,6 +34,11 @@
     | -p          | Turn on privileged mode.                           |
     | -t          | Exit after reading and executing one command.      |
     | +           | options to be turned off.                          |
+*** variables
+**** undeclared vars
+Use :- if you want to test variables that could be undeclared. For instance: if
+[ "${NAME:-}" = "Kevin" ] will set $NAME to be empty if it's not declared.
+
 
 *** read
 *** shift
