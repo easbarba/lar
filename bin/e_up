@@ -12,4 +12,4 @@ guix pull
 guix upgrade
 
 cejo projects emacs
-doom upgrade --yes
+doom upgrade
