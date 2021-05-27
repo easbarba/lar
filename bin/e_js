@@ -3,40 +3,39 @@
 # Debug Options
 set -euo pipefail
 
-nodejs()
-{
-    echo
+readonly COMMAND='npm i -g'
+
+base() {
+	local packs=(npm typescript)
+	e_dolist "$COMMAND" "${packs[@]}"
 }
 
-yarn()
-{
-    echo
-}
-
-packages()
-{
-    local command='npm i -g'
-
-    local essential=(npm typescript)
-    local servers=(bash-language-server yaml-language-server
-		   vscode-json-languageserver typescript-language-server
-		   vscode-html-languageserver-bin vscode-css-languageserver-bin)
-    local misc=(eslint-config-airbnb-base parcel-bundler
+front() {
+	local packs=(eslint-config-airbnb-base parcel-bundler
 		webpack-dev-server prettier gulp js-beautify tern eslint eslint_d
 		ionic babel pug webpack-cli dockerfile-language-server-nodejs
 		generator-code indium gulp-pug browser-sync typescript-formatter
 		vue-language-server eslint-plugin-import sass jshint pug-cli
 		babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+	e_dolist "$COMMAND" "${packs[@]}"
+}
 
-    # * install
-    e_dolist "$command" "${essential[@]}"
-    e_dolist "$command" "${servers[@]}"
+servers() {
+	local packs=(bash-language-server yaml-language-server
+		vscode-json-languageserver typescript-language-server
+		vscode-html-languageserver-bin vscode-css-languageserver-bin)
+	e_dolist "$COMMAND" "${packs[@]}"
+}
+
+devel() {
+	local packs=(lua-fmt)
+	e_dolist "$COMMAND" "${packs[@]}"
 }
 
 # * RUN
 
 echo 'Nodejs - ASDF'
 
-nodejs
-yarn
-packages
+base
+servers
+devel
