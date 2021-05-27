@@ -128,13 +128,13 @@
 | The Well Grounded Rubyist        | File and I/O                   |                                     |                 |
 
 ** SLOC
-| Project       | folder                                                        | file               | @                |
-|---------------+---------------------------------------------------------------+--------------------+------------------|
-| ruby          | cgi                                                           | cookie.rb          |                  |
-| rake          | rake                                                          | file_task          | def out_of_date? |
-| bundle        | bundler/installer                                             | gem_installer.rb   |                  |
-| solargraph    | solargraph/api_map                                            | bundler_methods.rb |                  |
-| dry-container | dry/container                                                 | mixin.rb           |                  |
+| Project       | folder             | file                   | @ |
+|---------------+--------------------+------------------------+---|
+| ruby          | cgi                | cookie.rb              |   |
+| rake          | test               | test_private_reader.rb |   |
+| bundle        | bundler/installer  | gem_installer.rb       |   |
+| solargraph    | solargraph/api_map | bundler_methods.rb     |   |
+| dry-container | dry/container      | mixin.rb               |   |
 
 ** Priorities
 - Ruby
@@ -437,6 +437,24 @@ let(:expense) { { 'some' => 'data' } }
     # by passing only a subset of the call stack to the new exception:
     raise ArgumentError, "Name too big", caller[1..-1]
     #+end_src
+** thread
+#+begin_src ruby
+x = Thread.new { puts "What's the big deal" }
+x.value
+x.join
+x.exit
+Thread.kill(x)
+
+
+threads = []
+threads << Thread.new { puts "What's the big deal" }
+threads << Thread.new { 3.times { puts "Threads are fun!" } }
+threads.each { |thr| thr.join }
+
+
+
+#+end_src
+
 ** writable object attribute
    #+begin_src ruby
    class ProjectList
