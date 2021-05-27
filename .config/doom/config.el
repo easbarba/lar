@@ -16,11 +16,14 @@
 
 ;; BUILT-IN
 
+(use-package! matrix-client)
+
 (load! "lisp/init-dired")
 (load! "lisp/init-utils")
 (load! "lisp/init-variables")
 (load! "lisp/init-functions")
 (load! "lisp/init-misc")
+(load! "lisp/init-builtin")
 (load! "lisp/init-settings")
 
 ;; REPOSITORY
