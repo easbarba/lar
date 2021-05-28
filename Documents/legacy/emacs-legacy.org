@@ -1,0 +1,3427 @@
+#+TITLE: Emacs Legacy
+
+* scripts
+    #+begin_src shell-script
+#!/usr/bin/env bash
+
+MX="$HOME/.config/emacs"
+
+emacs -q -l "$MX/profiles/emacs-reader.el"
+
+    #+end_src
+* EXWM - Emacs como Sistem Operacional
+    #+begin_src emacs-lisp ~/.config/emacs/init.el :mkdirp yes
+
+
+
+    (use-package exwm
+      :config
+      (defcustom a/controler (when (executable-find "pactl")
+			       "pactl")
+	"pactl - Control a running PulseAudio sound server")
+
+      (defcustom a/controler-volume "set-sink-volume"
+	"Set the volume of the specified sink")
+
+      (defun a/system-volume-get ()
+	"Get System Current Volume"
+	(when (executable-find "amixer")
+	  (let ((current-volume (shell-command-to-string "amixer get Master")))
+	    (string-match "\\([0-9]+%\\)" current-volume)
+	    (match-string 0 current-volume))))
+
+      (defun a/system-volume-set (delta)
+	"Increase System Volume"
+	(interactive)
+	(when a/controler
+	  (start-process "PULSEAUDIO-INCREASE" nil
+			 a/controler a/controler-volume "0" delta)))
+
+      (defun a/system-volume-increase ()
+	"Increase System Volume"
+	(interactive)
+	(a/system-volume-set "+3%")
+	(a/system-volume-get)
+	(message "Volume: %s" (a/system-volume-get)))
+
+      (defun a/system-volume-decrease ()
+	"Decrease System Volume"
+	(interactive)
+	(a/system-volume-set "-3%")
+	(message "Volume: %s" (a/system-volume-get)))
+
+      (defun a/system-volume-toggle ()
+	"Mute System audio"
+	(interactive)
+	(when a/controler
+	  (start-process "PULSEAUDIO-INCREASE" nil  a/controler
+			 "set-sink-mute" "0" "toggle")))
+      )
+    #+end_src
+* Built-in definitions
+    #+BEGIN_SRC emacs-lisp
+
+
+(erc
+  ;; (require 'erc-log)
+  ;; (require 'erc-notify)
+  ;; (require 'erc-spelling)
+  ;; (require 'erc-autoaway)
+  ;; (add-hook 'window-configuration-change-hook
+  ;;           #'(lambda ()
+  ;;       	(setq erc-fill-column (- (window-width) 2))))
+
+  ;; (add-to-list 'erc-modules 'notifications)
+  ;; (add-to-list 'erc-modules 'spelling)
+  ;; (erc-track-mode t)
+  ;; (erc-spelling-mode 1)
+  ;; (erc-truncate-mode +1)
+  ;; (erc-services-mode 1)
+  ;; (erc-update-modules)
+
+
+
+)
+	      ;; (add-hook 'text-mode-hook 'abbrev-mode) ;; abbrev config
+	      ;; (setq-default abbrev-mode t)  ;; turn on abbrev mode globally
+	      ;; (setq save-abbrevs 'silently)
+
+      ;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+      ;; (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+      ;; (global-set-key (kbd "C-M-s") 'isearch-forward)
+      ;; (global-set-key (kbd "C-M-r") 'isearch-backward)
+
+  ;; (global-eldoc-mode)
+	    ;; (remove-hook 'minibuffer-setup-hook 'winner-save-unconditionally)
+
+		  ;; (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+		  ;; (dolist (hooks '(org-mode-hook
+		  ;;                  text-mode-hook))
+		  ;;   (add-hook hooks 'flyspell-mode))
+
+
+			;; (define-ibuffer-column size-h
+			;;   (:name "Size" :inline t)
+			;;   (file-size-human-readable (buffer-size))) ;
+
+
+			;; ;; Modify the default ibuffer-formats (toggle with `)
+			;; (setq ibuffer-formats
+			;;       '((mark modified read-only vc-status-mini " "
+			;;               (name 22 22 :left :elide)
+			;;               " "
+			;;               (size-h 9 -1 :right)
+			;;               " "
+			;;               (mode 12 12 :left :elide)
+			;;               " "
+			;;               vc-relative-file)
+			;;         (mark modified read-only vc-status-mini " "
+			;;               (name 22 22 :left :elide)
+			;;               " "
+			;;               (size-h 9 -1 :right)
+			;;               " "
+			;;               (mode 14 14 :left :elide)
+			;;               " "
+			;;               (vc-status 12 12 :left)
+			;;               " "
+			;;               vc-relative-file)))
+
+			;; (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
+
+			    (concat (getenv "GUIX_PROFILE") "/share/info")
+				(add-to-list 'Info-directory-list "/usr/local/share/info/")
+
+
+
+				  (when (fboundp 'fringe-mode) (set-fringe-mode '(2 . 6)))
+				      (display-time)
+
+
+				      (when (> emacs-major-version 25) (pixel-scroll-mode))
+
+				      (stq text-scale-mode-step 0.8
+					   display-time-day-and-date t
+					   display-time-24hr-format t
+					   display-time-string-forms
+					   '(" "
+					     dayname " "
+					     month " / "
+					     day " "
+					     24-hours ":"
+					     minutes " "  (if mail " Mail " " "))
+					   display-battery-mode t
+					   battery-mode-line-format " %p "
+					   )
+				      ;; =============== TIME / BATTERY
+				      (display-battery-mode)
+
+				      (cond ((member "Noto Sans Mono" (font-family-list))
+					     (set-face-attribute 'mode-line nil :font "Noto Sans Mono-10"))
+					    ((member "DejaVu Sans Mono" (font-family-list))
+					     (set-face-attribute 'mode-line nil :font "DejaVu Sans Mono-10")))
+
+
+				      (global-set-key [remap forward-word] 'forward-same-syntax)
+
+				      ;; ** ADVICES
+				      (defun elisp-index-search-with-text-at-point ()
+					"Provide the symbol at point as the default when reading TOPIC interactively."
+					(interactive
+					 (let ((symbol-at-point (thing-at-point 'symbol)))
+					   (list (read-string (if symbol-at-point
+								  (format "Topic (%s): " symbol-at-point)
+								(format "Topic: "))
+							      nil nil symbol-at-point)))))
+
+				      (advice-add 'elisp-index-search :before #'elisp-index-search-with-text-at-point)
+
+				      (defun previous-line--next-line-at-end (&optional arg try-vscroll)
+					"Insert an empty line when moving up from the top line."
+					(if (and next-line-add-newlines (= arg 1)
+						 (save-excursion (beginning-of-line) (bobp)))
+					    (progn
+					      (beginning-of-line)
+					      (newline))))
+
+				      (advice-add 'previous-line :before #'previous-line--next-line-at-end)
+
+
+				      (put 'narrow-to-region 'disabled nil)
+				      (put 'narrow-to-page 'disabled nil)
+				      (put 'narrow-to-defun 'disabled nil)
+				      (put 'upcase-region 'disabled nil)
+				      (put 'downcase-region 'disabled nil)
+
+    #+END_SRC
+
+* Functions,variables
+    #+BEGIN_SRC emacs-lisp :results code
+    (defun dired-two-pane ()
+      "Open dired in two-pane setup."
+      (interactive)
+      (push-window-configuration)
+      (let ((here default-directory))
+	(delete-other-windows)
+	(dired "~/")
+	(split-window-horizontally)
+	(dired here)))
+
+
+
+
+    ;; --------------- JAVA
+    (when (executable-find "pacmd")
+      (let ((current-volume
+	     (substring
+	      (shell-command-to-string
+	       "pacmd list-sink-inputs | grep -m 1 volume \
+    | awk '{print substr($5, 1, length($1)-2)}'")
+	      0 -1)))
+	(message "VOL: %s" current-volume)))
+
+
+
+       ;;;###autoload
+    (defun my-java-eclipse-jdt-ls-server-install ()
+      "Download and extract eclipse lsp server into .emacs.d folder."
+      (interactive)
+
+      (let* ((default-directory user-emacs-directory))
+	(when (file-directory-p "eclipse.jdt.ls") (delete-directory "eclipse.jdt.ls" t t))
+	(make-directory "eclipse.jdt.ls")
+
+	(when (file-exists-p "jdt-language-server-latest.tar.gz") (delete-file "jdt-language-server-latest.tar.gz" t))
+
+	(set-process-sentinel ;; !!! Use a sentinel to make sure second start-process only begins after this one finish!
+	 (start-process "ECLIPSE-LS-INSTALL" "ECLIPSE-LS-INSTALL"
+			"wget" "http://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz")
+
+	 (lambda (p e) (when (= 0 (process-exit-status p))
+		    (start-process "ECLIPSE-SERVER-EXTRACT" "ECLIPSE-SERVER-EXTRACT"
+				   "tar" "zxvf" "jdt-language-server-latest.tar.gz" "-C" "eclipse.jdt.ls"))))))
+
+
+       ;;;###autoload
+    (defun my-langtool-install ()
+      "Install languagetool server."
+      (interactive)
+      (start-process-shell-command "LanguageTool Server Install" nil "
+		     cd ~/.emacs.d/ || exit
+		     wget -N https://languagetool.org/download/LanguageTool-stable.zip
+		     unzip LanguageTool-stable.zip
+		     mv LanguageTool-??? LanguageTool
+		     rm LanguageTool-stable.zip ")
+      (message "LangTool installed"))
+
+    ;; =============== MPC
+    ;; (require 'mpc)
+
+    ;; (autoload 'zap-up-to-char "misc"
+    ;;   "Kill up to, but not including ARGth occurrence of CHAR." t)
+
+    (:eval (when (frame-parameter (selected-frame) 'exwm-active)
+	     (condition-case nil
+		 (number-to-string
+		  (+ 1
+		     (exwm-workspace--position
+		      (exwm-workspace--workspace-from-frame-or-index
+		       (selected-frame)))))
+	       (error "~"))))
+
+
+    ;; ** LOCAL LIBRARIES (USER-LISP)
+    (when (file-exists-p (expand-file-name "site-lisp" user-emacs-directory))
+
+      (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
+
+      (progn   ;; PO-MODE
+	(setq auto-mode-alist (cons '("\\.pot\\'\\|\\.pot\\." . po-mode)  auto-mode-alist))
+	(autoload 'po-mode "po-mode" "Major mode for translators to edit PO files" t))
+
+      (require 'xahlee)
+      (require 'prelude)
+      (require 'cherry-picked-defun))
+
+
+
+       ;;;###autoload
+
+
+
+    ;; ------------------ EXWM
+     ;;;###autoload
+    (defun my-audio-reload ()
+      "Reload stuck pulseaudio"
+      (interactive)
+      (start-process "PULSEAUDIO-RELOAD" nil "pulseaudio" "-k" )
+      (start-process "PULSEAUDIO-RELOAD" nil "pulseaudio" "-D" )
+      (message "Pulseaudio reloaded"))
+
+     ;;;###autoload
+    (defun my-videocam-record ()
+      "Record webcam."
+      (interactive)
+      (async-shell-command "cd ~/Videos; ffmpeg -f v4l2 -video_size 1280x720 -i /dev/video0 -c:v libx264 -preset ultrafast webcam.mkv")
+      (other-window 1)
+      (message "recording webcam using ffmpeg"))
+
+    ;; ------------------ SYSTEM UPDATE
+    (defcustom my-system-package-manager
+      (let ((package-manager (cond ((executable-find "apt") "apt")
+				   ((executable-find "dnf") "dnf"))))
+	package-manager)
+      "Define System's Package Manager.")
+
+    (defun guixp ()
+      "Is System Package Manager `guix'?."
+      (when (executable-find "guix") "t"))
+
+    (defun npmp ()
+      "Is System Package Manager `npm'?."
+      (when (executable-find "npm") "t"))
+
+    (defun my-system-packages-run-command (sudo package-manager command command2 noconfirm)
+      "Update and Upgrade System packages."
+      (let* ((height (/ (window-total-height) 3))
+	     (command2 (when command2
+			 (concat *and* sudo *space* my-system-package-manager *space* command2))))
+
+	;; Run with Shell
+	(split-window-vertically (- height))
+	(other-window 1)
+	(eshell "new")
+	(insert (concat
+		 sudo *space* package-manager *space* command
+		 command2
+		 ,*space* noconfirm))
+	(eshell-send-input)))
+
+    (defun my-system-packages-update ()
+      "Update System Packages database."
+      (interactive)
+      (when (guixp)
+	(let ((update "pull"))
+	  (my-system-packages-run-command "sudo" my-system-package-manager "update" nil "-y"))))
+
+    (defun my-system-packages-upgrade ()
+      "Upgrade System Packages."
+      (interactive)
+      (my-system-packages-run-command "sudo" my-system-package-manager "update" "upgrade" "-y")
+      (cond ((guixp)
+	     (my-system-packages-run-command nil "guix" "pull" "package -u" nil))
+	    ((npmp)
+	     (my-system-packages-run-command nil "npm" "update -g" nil nil))))
+
+
+    ;; --------------- MISC
+
+     ;;;###autoload
+    (defun my-query-replace-word-at-point ()
+      "Replace word at point with given string."
+      (interactive)
+      (setq word (thing-at-point 'word t))
+      (message "String is %s"
+	       (setq nameto (read-minibuffer (format "Replace %s with: " word))))
+      (query-replace word nameto))
+
+     ;;;###autoload
+    (defun my-java-find-pom-file ()
+      "Find file in upper dirs."
+      (interactive)
+      (if-let* ((pf (expand-file-name
+		     (concat (locate-dominating-file
+			      (if (string= (file-name-nondirectory (buffer-file-name)) "pom.xml")
+				  (file-name-directory
+				   (directory-file-name (file-name-directory (buffer-file-name))))
+				(buffer-file-name))
+			      "pom.xml")
+			     "pom.xml"))))
+	  (find-file pf)
+	(message "Unable to find pom.xml")))
+
+
+    (defun next-word (p)
+      "Move point to the beginning of the next word, past any spaces"
+      (interactive "d")
+      (forward-word)
+      (forward-word)
+      (backward-word))
+    (global-set-key [remap forward-word] 'next-word)
+
+     ;;;###autoload
+    (defun my-to-next-word (&optional n)
+      "Go to the beginning of the Nth word after point.
+	 N defaults to 1 (next word)."
+      (interactive "p")
+      (if (< n 0)
+	  (to-previous-word (- n))
+	(dotimes (_  n)
+	  (let ((opt  (point)))
+	    (skip-syntax-forward "^w")
+	    (when (eq opt (point))
+	      (skip-syntax-forward "w")
+	      (skip-syntax-forward "^w"))))))
+    ;; (global-set-key [remap forward-word] 'my-to-next-word)
+
+     ;;;###autoload
+    (defun my-to-previous-word (&optional n)
+      "Go to the beginning of the Nth word before point.
+	 N defaults to 1 (previous word)."
+      (interactive "p")
+      (if (< n 0)
+	  (to-next-word (- n))
+	(dotimes (_  n)
+	  (let ((opt  (point)))
+	    (skip-syntax-backward "w")
+	    (when (eq opt (point))
+	      (skip-syntax-backward "^w")
+	      (skip-syntax-backward "w"))))))
+    ;; (global-set-key [remap backward-word] 'my-to-previous-word)
+
+
+    ;; =============== EGLOT
+    ;; ECLIPSER SERVER JAR TO CLASSPATH
+    (defconst my/eclipse-jdt-home (concat user-emacs-directory "eclipse.jdt.ls/plugins/org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar"))
+
+    (defun my/eclipse-jdt-contact (interactive)
+      (let ((cp (getenv "CLASSPATH")))
+	(setenv "CLASSPATH" (concat cp ":" my/eclipse-jdt-home))
+	(unwind-protect
+	    (eglot--eclipse-jdt-contact nil)
+	  (setenv "CLASSPATH" cp))))
+
+    (setcdr (assq 'java-mode eglot-server-programs) #'my/eclipse-jdt-contact)
+
+    (unless (file-exists-p "~/.emacs.d/eclipse.jdt.ls/plugins")
+      (my-java-eclipse-jdt-ls-server-install))
+
+    (defadvice elisp-index-search (before interactive-default activate)
+      "Provide the symbol at point as the default when reading TOPIC interactively."
+      (interactive
+       (let ((symbol-at-point (thing-at-point 'symbol)))
+	 (list (read-string (if symbol-at-point
+				(format "Topic (%s): " symbol-at-point)
+			      (format "Topic: "))
+			    nil nil symbol-at-point)))))
+
+
+
+    (defun e-ido-for-mode(prompt the-mode)
+      (switch-to-buffer
+       (ido-completing-read prompt
+			    (save-excursion
+			      (delq
+			       nil
+			       (mapcar (lambda (buf)
+					 (when (buffer-live-p buf)
+					   (with-current-buffer buf
+					     (and (eq major-mode the-mode)
+						  (buffer-name buf)))))
+				       (buffer-list)))))))
+
+    (defun e-ido-shell-buffer()
+      (interactive)
+      (ido-for-mode "Shell:" 'shell-mode))
+
+    ;; (global-set-key (kbd "C-c s") 'ido-shell-buffer)
+
+    (defun e-ido-for-this-mode
+	()
+      (interactive)
+      (let
+	  ((the-mode major-mode))
+	(switch-to-buffer
+	 (ido-completing-read
+	  (format "Buffers of %s: " the-mode)
+	  (save-excursion
+	    (delq
+	     nil
+	     (mapcar
+	      (lambda
+		(buf)
+		(when
+		    (buffer-live-p buf)
+		  (with-current-buffer buf
+		    (and
+		     (eq major-mode the-mode)
+		     (buffer-name buf)))))
+	      (buffer-list))))))))
+
+
+    (defun e-recentf-ido-find-file-prelude ()
+      "Find a recent file using Ido."
+      (interactive)
+      (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+	(when file
+	  (find-file file))))
+
+
+
+    (defun e-recentf-ido-find-file ()
+      "Find a recent file using Ido."
+      (interactive)
+      (let* ((file-assoc-list
+	      (mapcar (lambda (x)
+			(cons (file-name-nondirectory x)
+			      x))
+		      recentf-list))
+	     (filename-list
+	      (remove-duplicates (mapcar #'car file-assoc-list)
+				 :test #'string=))
+	     (filename (ido-completing-read "Choose recent file: "
+					    filename-list
+					    nil
+					    t)))
+	(when filename
+	  (find-file (cdr (assoc filename
+				 file-assoc-list))))))
+
+    (defun e-recentf-open-files-compl ()
+      (interactive)
+      (let* ((all-files recentf-list)
+	     (tocpl (mapcar (function
+			     (lambda (x) (cons (file-name-nondirectory x) x))) all-files))
+	     (prompt (append '("File name: ") tocpl))
+	     (fname (completing-read (car prompt) (cdr prompt) nil nil)))
+	(find-file (cdr (assoc-ignore-representation fname tocpl)))))
+
+
+
+    ;; =============== Filtering messages
+    ;; filter annoying messages
+    ;; (defvar message-filter-regexp-list '("^Starting new Ispell process \\[.+\\] \\.\\.\\.$"
+    ;;				     "^Ispell process killed$")
+    ;;   "filter formatted message string to remove noisy messages")
+    ;; (defadvice message (around message-filter-by-regexp activate)
+    ;;   (if (not (ad-get-arg 0))
+    ;;       ad-do-it
+    ;;     (let ((formatted-string (apply 'format (ad-get-args 0))))
+    ;;       (if (and (stringp formatted-string)
+    ;;	       (some (lambda (re) (string-match re formatted-string)) message-filter-regexp-list))
+    ;;	  (save-excursion
+    ;;	    (set-buffer "*Messages*")
+    ;;	    (goto-char (point-max))
+    ;;	    (insert formatted-string "\n"))
+    ;;	(progn
+    ;;	  (ad-set-args 0 `("%s" ,formatted-string))
+    ;;	  ad-do-it)))))
+
+    ;; Highlight Current Line
+    ;; (global-hl-line-mode +1)
+
+
+    ;; =============== PO-MODE
+
+    (progn
+      ;; (require 'po-mode)
+      ;; (require 'po-mode+)
+
+      (autoload 'po-mode "po-mode"
+	"Major mode for translators to edit PO files" t)
+      (setq auto-mode-alist (cons '("\\.pot\\'\\|\\.pot\\." . po-mode)
+				  auto-mode-alist))
+
+      (autoload 'po-mode "po-mode+"
+	"Major mode for translators to edit PO files" t))
+
+
+    (defun j-youtube-dl ()
+      "Abo abo youtube video downloader | improved version"
+      (interactive)
+      (setq terminal-process (get-buffer-process "*ansi-term*"))
+      (let* ((str (current-kill 0))
+	     (proc (if (get-buffer "*ansi-term*")
+		       (switch-to-buffer "*ansi-term*")
+		     (ansi-term "/bin/bash"))))
+	(term-send-string
+	 proc (concat "cd ~/Videos && youtube-dl " str "\n"))))
+
+
+    ;; ==================================================
+    ;; IDO
+    ;; ==================================================
+
+    ;; __________________________________________________
+    ;; Make Ido complete almost anything (except the stuff where it shouldn't)
+    ;; M-x to ido like
+
+    (defvar ido-enable-replace-completing-read t
+      "If t, use ido-completing-read instead of completing-read if possible.
+
+						      Set it to nil using let in around-advice for functions where the
+						      original completing-read is required.  For example, if a function
+						      foo absolutely must use the original completing-read, define some
+						      advice like this:
+
+						      (defadvice foo (around original-completing-read-only activate)
+							(let (ido-enable-replace-completing-read) ad-do-it))")
+
+    ;; Replace completing-read wherever possible, unless directed otherwise
+    (defadvice completing-read
+	(around use-ido-when-possible activate)
+      (if (or (not ido-enable-replace-completing-read) ; Manual override disable ido
+	      (and (boundp 'ido-cur-list)
+		   ido-cur-list)) ; Avoid infinite loop from ido calling this
+	  ad-do-it
+	(let ((allcomp (all-completions "" collection predicate)))
+	  (if allcomp
+	      (setq ad-return-value
+		    (ido-completing-read prompt
+					 allcomp
+					 nil require-match initial-input hist def))
+	    ad-do-it))))
+
+    ;; OR
+
+    (global-set-key
+     "\M-X"
+     (lambda ()
+       (interactive)
+       (call-interactively
+	(intern
+	 (ido-completing-read
+	  "M-X "
+	  (all-completions "" obarray 'commandp))))))
+
+
+    ;; ==================================================
+    ;; MISC
+
+    (global-set-key (kbd "M-w") ; C-c
+		    (lambda (beg end &optional region)
+		      (interactive (list (mark) (point) 'region))
+		      (let ((old-point end))
+			(if (use-region-p)
+			    (kill-ring-save beg end region)
+			  (kill-ring-save
+			   (move-beginning-of-line nil)
+			   (progn (move-end-of-line nil)
+				  (point)))
+			  (goto-char old-point)))))
+
+
+    (require 'f)
+    (require 's)
+    (defun e-download-file (url directory file-name)
+      "Download the file at URL into DIRECTORY.
+		The FILE-NAME defaults to the one used in the URL."
+      (interactive
+       ;; We're forced to let-bind url here since we access it before
+       ;; interactive binds the function parameters.
+       (let ((url (read-from-minibuffer "URL: ")))
+	 (list
+	  url
+	  (read-directory-name "Destination dir: ")
+	  ;; deliberately not using read-file-name since that inludes the directory
+	  (read-from-minibuffer
+	   "File name: "
+	   (car (last (s-split "/" url)))))))
+      (letu ((destination (f-join directory file-name)))
+	    (url-copy-file url destination 't)
+	    (find-file destination)))
+
+    (defun yank-pop-forwards (arg)
+      (interactive "p")
+      (ya
+       nk-pop (- arg)))
+    (global-set-key "\M-Y" 'yank-pop-forwards) ; M-Y (Meta-Shift-Y)
+
+
+     ;;;###autoload
+    (defun keep-beginning-of-line (ARG)
+      "Make `C-a` keep going to first non-whitespace character _and_then_ beginning of
+       next line(previous with C-u).
+     It will not work as expected in comment block because of goddamn rebox2"
+      (interactive "P")
+      (when (bolp) (forward-line (if ARG -1 1)))
+      (let ((orig-point (point)))
+	(back-to-indentation)
+	(when (= orig-point (point))
+	  (move-beginning-of-line 1))))
+    ;; (global-set-key [remap move-beginning-of-line] #'keep-beginning-of-line)
+
+     ;;;###autoload
+    (defun keep-end-of-line (ARG)
+      "Make `C-e` keep going to end of next line(previous with C-u).
+     It will become normal in comment block because of goddamn rebox2"
+      (interactive "P")
+      (when (eolp) (forward-line (if ARG -1 1)))
+      (move-end-of-line nil))
+    ;; (global-set-key [remap move-end-of-line] #'keep-end-of-line)
+
+
+     ;;;###autoload
+    (defun increment-region (&optional beg end ARG)
+      "Increment all decimal numbers in region between `beg' and `end' by `ARG'.
+     If no prefix ARG is given, increment by 1.
+     If the mark is not active, try to build a region using `symbol-at-point'."
+      (interactive "r\np")
+      (or ARG (setq ARG 1))
+      (unless (and mark-active transient-mark-mode)
+	(let ((bounds (bounds-of-thing-at-point 'symbol)))
+	  (if bounds (setq beg (car bounds) end (cdr bounds)))))
+      (if (< end beg)
+	  (let ((tmp end))
+	    (setq beg end end tmp)))
+      (save-excursion
+	(goto-char beg)
+	(while (re-search-forward "-?[0-9]+" end t)
+	  (replace-match (number-to-string (+ ARG (string-to-number (match-string 0)))))))
+      (setq deactivate-mark nil))
+    ;;
+     ;;;###autoload
+    (defun decrement-region (&optional beg end ARG)
+      "Decrement all decimal numbers in region between `beg' and `end' by `ARG'.
+      If no prefix ARG is given, increment by 1.
+      If the mark is not active, try to build a region using `symbol-at-point'."
+      (interactive "r\np")
+      (or ARG (setq ARG 1))
+      (unless (and mark-active transient-mark-mode)
+	(let ((bounds (bounds-of-thing-at-point 'symbol)))
+	  (if bounds (setq beg (car bounds) end (cdr bounds)))))
+      (increment-region beg end (- ARG)))
+
+
+    ;; ==================================================
+    ;; CASE
+    ;; ==================================================
+
+    ;; ;; You can do M-c/u/l the whole word in any position inside the word
+    ;; (defadvice endless/upcase (before upcase-word-advice activate)
+    ;;   (unless (looking-back "\\b")
+    ;;     (backward-word)))
+    ;; (defadvice endless/downcase (before downcase-word-advice activate)
+    ;;   (unless (looking-back "\\b")
+    ;;     (backward-word)))
+    ;; (defadvice endless/capitalize (before capitalize-word-advice activate)
+    ;;   (unless (looking-back "\\b")
+    ;;     (backward-word)))
+
+    ;; automatically convert the comma/dot once downcase/upcase next character
+     ;;;###autoload
+    (defun endless/convert-punctuation (rg rp)
+      "Look for regexp RG around point, and replace with RP.
+     Only applies to text-mode."
+      (let ((f "\\(%s\\)\\(%s\\)")
+	    (space "?:[[:blank:]\n\r]*"))
+	;; We obviously don't want to do this in prog-mode.
+	(if (and (derived-mode-p 'org-mode)
+		 (or (looking-at (format f space rg))
+		     (looking-back (format f rg space))))
+	    (replace-match rp nil nil nil 1))))
+
+     ;;;###autoload
+    (defun endless/capitalize ()
+      "Capitalize region or word.
+     Also converts commas to full stops, and kills
+     extraneous space at beginning of line."
+      (interactive)
+      (endless/convert-punctuation "," ".")
+      (if (use-region-p)
+	  (call-interactively 'capitalize-region)
+	;; A single space at the start of a line:
+	(when (looking-at "^\\s-\\b")
+	  ;; get rid of it!
+	  (delete-char 1))
+	(call-interactively 'subword-capitalize)))
+
+     ;;;###autoload
+    (defun endless/downcase ()
+      "Downcase region or word.
+     Also converts full stops to commas."
+      (interactive)
+      (endless/convert-punctuation "\\." ",")
+      (if (use-region-p)
+	  (call-interactively 'downcase-region)
+	(call-interactively 'subword-downcase)))
+
+     ;;;###autoload
+    (defun endless/upcase ()
+      "Upcase region or word."
+      (interactive)
+      (if (use-region-p)
+	  (call-interactively 'upcase-region)
+	(call-interactively 'subword-upcase)))
+
+
+
+    ;; MoveText
+    (defun e-move-text-internal (arg)
+      (cond
+       ((and mark-active transient-mark-mode)
+	(if (> (point) (mark))
+	    (exchange-point-and-mark))
+	(let ((column (current-column))
+	      (text (delete-and-extract-region (point) (mark))))
+	  (forward-line arg)
+	  (move-to-column column t)
+	  (set-mark (point))
+	  (insert text)
+	  (exchange-point-and-mark)
+	  (setq deactivate-mark nil)))
+       (t
+	(let ((column (current-column)))
+	  (beginning-of-line)
+	  (when (or (> arg 0) (not (bobp)))
+	    (forward-line)
+	    (when (or (< arg 0) (not (eobp)))
+	      (transpose-lines arg))
+	    (forward-line -1))
+	  (move-to-column column t)))))
+
+    (defun e-move-text-down (arg)
+      "Move region (transient-mark-mode active) or current line
+	   arg lines down."
+      (interactive "*p")
+      (e-move-text-internal arg))
+    (global-set-key (kbd "C-c <down>") 'e-move-text-down)
+
+    (defun e-move-text-up (arg)
+      "Move region (transient-mark-mode active) or current line
+	   arg lines up."
+      (interactive "*p")
+      (e-move-text-internal (- arg)))
+    (global-set-key (kbd "C-c <up>") 'e-move-text-up)
+
+    (defun e-ido-imenu ()
+      "Update the imenu index and then use ido to select a symbol to navigate to.
+		Symbols matching the text at point are put first in the completion list."
+      (interactive)
+      (imenu--make-index-alist)
+      (let ((name-and-pos '())
+	    (symbol-names '()))
+	(flet ((addsymbols (symbol-list)
+			   (when (listp symbol-list)
+			     (dolist (symbol symbol-list)
+			       (let ((name nil) (position nil))
+				 (cond
+				  ((and (listp symbol) (imenu--subalist-p symbol))
+				   (addsymbols symbol))
+
+				  ((listp symbol)
+				   (setq name (car symbol))
+				   (setq position (cdr symbol)))
+
+				  ((stringp symbol)
+				   (setq name symbol)
+				   (setq position (get-text-property 1 'org-imenu-marker symbol))))
+
+				 (unless (or (null position) (null name))
+				   (add-to-list 'symbol-names name)
+				   (add-to-list 'name-and-pos (cons name position))))))))
+	  (addsymbols imenu--index-alist))
+	;; If there are matching symbols at point, put them at the beginning of `symbol-names'.
+	(let ((symbol-at-point (thing-at-point 'symbol)))
+	  (when symbol-at-point
+	    (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
+		   (matching-symbols (delq nil (mapcar (lambda (symbol)
+							 (if (string-match regexp symbol) symbol))
+						       symbol-names))))
+	      (when matching-symbols
+		(sort matching-symbols (lambda (a b) (> (length a) (length b))))
+		(mapc (lambda (symbol) (setq symbol-names (cons symbol (delete symbol symbol-names))))
+		      matching-symbols)))))
+	(let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
+	       (position (cdr (assoc selected-symbol name-and-pos))))
+	  (push-mark (point))
+	  (goto-char position))))
+    #+END_SRC
+
+    #+RESULTS:
+    #+BEGIN_SRC emacs-lisp
+    e-ido-imenu
+    #+END_SRC
+* Packages
+    #+BEGIN_SRC emacs-lisp :results code
+(elfeed
+:config
+  (defun e/elfeed-open-with-eww ()
+    "Open in eww with `eww-readable' - Ambrevar."
+    (interactive)
+    (let ((entry (if (eq major-mode 'elfeed-show-mode)
+		     elfeed-show-entry (elfeed-search-selected :single))))
+      (eww  (elfeed-entry-link entry))
+      (add-hook 'eww-after-render-hook 'eww-readable nil t)))
+  (define-key elfeed-search-mode-map "e" 'e/elfeed-open-with-eww)
+
+(defvar elfeed-visit-patterns
+    '(("youtu\\.?be" . elfeed-play-with-player)
+      ("phoronix" . elfeed-open-with-eww))
+    "List of (regexps . function) to match against elfeed entry link to know
+	    whether how to visit the link.")
+(defun e/elfeed-visit-maybe-externally ()
+    "Open w/ external function if entry link matches `elfeed-visit-patterns',
+	    show normally otherwise.  - Ambrevar."
+    (interactive)
+    (let ((entry (if (eq major-mode 'elfeed-show-mode)
+		     elfeed-show-entry
+		   (elfeed-search-selected :single)))
+	  (patterns elfeed-visit-patterns))
+      (while (and patterns (not (string-match (caar patterns)
+					      (elfeed-entry-link entry))))
+	(setq patterns (cdr patterns)))
+      (cond
+       (patterns
+	(funcall (cdar patterns)))
+       ((eq major-mode 'elfeed-search-mode)
+	(call-interactively 'elfeed-search-show-entry))
+       (t (elfeed-show-visit)))))
+)
+
+    (use-package feather
+      :disabled
+      :config (feather-mode))
+
+    (use-package leaf
+      :disabled
+      :config (feather-mode))
+
+    (use-package leaf-keywords
+      :disabled
+      :config (leaf-keywords-init))
+
+    (use-package selectrum
+      :disabled
+      :defer 1
+      :config
+      (ido-mode 0)
+      (selectrum-mode +1))
+
+    (use-package selectrum-prescient
+      :disabled
+      :defer 1
+      :config
+      (selectrum-prescient-mode +1)
+      (prescient-persist-mode +1))
+
+    (use-package ereader
+      :defer 1
+      :config
+      (add-hook 'ereader-mode-hook
+		(lambda ()
+		  (face-remap-add-relative 'variable-pitch
+					   :family "Hack"
+					   :height 1.4)))
+      (setq visual-fill-column-center-text t)
+      (add-hook 'ereader-mode-hook 'visual-line-mode))
+
+   (use-package csharp-mode
+      :defer 1
+      :hook (csharp-mode . company-mode)
+      :config
+      (add-to-list 'auto-mode-alist '("\\.csproj\\'" . xml-mode))
+      (add-hook 'csharp-mode-hook (lambda () (setq truncate-lines t)))
+      (defun csharp-disable-clear-string-fences (orig-fun &rest args)
+	"This turns off `c-clear-string-fences' for `csharp-mode'. When
+			      on for `csharp-mode' font lock breaks after an interpolated string
+			      or terminating simple string."
+	(unless (equal major-mode 'csharp-mode)
+	  (apply orig-fun args)))
+      (advice-add 'c-clear-string-fences :around 'csharp-disable-clear-string-fences))
+
+
+    (defvar sharper-path (f-join *site-lisp* "/sharper.el"))
+    (use-package sharper
+      :load-path sharper-path
+      :bind ("C-c S" . sharper-main-transient))
+
+
+    (use-package slime
+      :defer t
+      :custom
+      (slime-contribs '(slime-fancy))
+      (inferior-lisp-program "sbcl")
+      :bind (:map slime-mode-map ("C-c s" . slime-selector))
+      :config (slime-setup '(slime-fancy slime-asdf slime-company)))
+
+    (use-package slime-company
+      :after (slime company)
+      :config (setq slime-company-completion 'fuzzy
+		    slime-company-after-completion 'slime-company-just-one-space))
+
+    (use-package flymake-diagnostic-at-point
+      :defer 1
+      :config (add-hook 'flymake-mode-hook #'flymake-diagnostic-at-point-mode))
+
+    (use-package eldoc-box
+      :after eglot-mode
+      :config (add-hook 'eglot--managed-mode-hook #'eldoc-box-hover-mode t))
+
+    (use-package dante
+      :after haskell-mode
+      :commands 'dante-mode
+      :hook
+      ('haskell--mode . 'flymake-mode)
+      ('haskell--mode . 'dante-mode))
+
+    (use-package pydoc
+      :defer 1
+      :custom (pydoc-command "python3 -m pydoc"))
+
+    (use-package dap-java :after (lsp-java))
+
+    (use-package lsp-java
+      :disabled
+      :after lsp
+      :hook ('java-mode-hook . 'lsp)
+      :config  (use-package dap-java :after (lsp-java)))
+
+    (use-package company-lsp
+      :disabled
+      :defer t
+      :commands company-lsp)
+
+    (use-package omnisharp
+      :disabled
+      :defer 1
+      :hook
+      (csharp-mode . company-mode)
+      (omnisharp-mode . csharp-mode)
+      :custom (omnisharp-debug t)
+      :config
+      (eval-after-load 'company'(add-to-list 'company-backends
+					     'company-omnisharp)))
+
+    (use-package elpy
+      :disabled
+      :defer 1
+      :custom
+      (elpy-rpc-python-command "python3.8")
+      (python-shell-interpreter-args "-i")
+      (elpy-syntax-check-command "pylint")
+      :init (advice-add 'python-mode :before 'elpy-enable))
+
+    (use-package quickrun
+      :defer t
+      :bind (("C-c q" . quickrun)))
+
+    (use-package centaur-tabs
+      :disabled
+      :defer 1
+      :demand
+      :config (centaur-tabs-mode t)
+      :custom
+      (centaur-tabs-set-bar 'under)
+      :bind
+      ("C-<prior>" . centaur-tabs-backward)
+      ("C-<next>" . centaur-tabs-forward))
+
+    ;; (use-package haskell-mode
+    ;;   :custom haskell-check-command)
+
+    ;; (quelpa '(mini-frame :repo "muffinmad/emacs-mini-frame" :fetcher github) :upgrade nil)
+    ;; (require 'mini-frame)
+    ;; (mini-frame-mode)
+    (use-package lsp-python-ms
+      :hook (python-mode . (lambda ()
+			     (require 'lsp-python-ms)
+			     (lsp))))
+
+    (when (require 'quelpa nil :noerror)
+      (quelpa
+       '(quelpa-use-package
+	 :fetcher git
+	 :url "https://github.com/quelpa/quelpa-use-package.git"))
+      (require 'quelpa-use-package)
+
+      (use-package mini-frame
+	:quelpa ((mini-frame :repo "muffinmad/emacs-mini-frame" :fetcher github) :upgrade t))
+
+      (use-package sbuffer
+	:quelpa (sbuffer :fetcher github :repo "alphapapa/sbuffer.el")))
+
+
+    (use-package evil
+      :disabled
+      :defer 1
+      :config (evil-mode 1))
+
+    (use-package evil-collection
+      :disabled
+      :custom (evil-collection-setup-minibuffer t)
+      (evil-want-keybinding nil)
+      :init (evil-collection-init))
+
+    (use-package ido-at-point
+      :disabled
+      :after ido
+      :config (ido-at-point-mode))
+
+    (use-package ess
+      :disabled
+      :defer 1
+      :custom ((ess-indent-level 4)
+	       (ess-arg-function-offset 4)
+	       (ess-else-offset 4)))
+
+    (use-package spaceline
+      :disabled
+      :defer 1
+      :config
+      (require 'spaceline-config)
+      (spaceline-spacemacs-theme)
+      (setq-default spaceline-erc-track-p nil
+		    spaceline-buffer-encoding-abbrev-p nil
+		    spaceline-buffer-size-p nil
+		    spaceline-version-control-p nil
+		    spaceline-hud-p nil
+		    spaceline-buffer-modified-p nil
+		    powerline-default-separator 'slant))
+
+    (use-package ace-window
+      :defer 1
+      :bind (("C-c c" . ace-window)))
+
+    (use-package highlight-indentation
+      :defer 1
+      :config )
+
+    (dolist (modes '(python-mode-hook
+		     js-mode-hook
+		     css-mode-hook
+		     c-mode-hook
+		     c++-mode-hook
+		     java-mode-hook))
+      (add-hook modes 'eglot-ensure))
+
+    (use-package pipenv
+      :disabled
+      :hook (python-mode . pipenv-mode)
+      :custom
+      (pipenv-keymap-prefix "C-c p")
+      (pipenv-projectile-after-switch-function
+       #'pipenv-projectile-after-switch-extended))
+
+    (use-package circadian
+      :defer 1
+      :custom (circadian-themes '(("6:00" . tsdh-light)
+				  ("19:30" . wombat)))
+      :config (circadian-setup))
+
+    (use-package color-identifiers-mode
+      :init (add-hook 'after-init-hook 'global-color-identifiers-mode))
+
+    (use-package browse-kill-ring
+      :defer 1
+      :config
+      (setq browse-kill-ring-separator "\f")
+      (global-set-key (kbd "M-Y") 'browse-kill-ring)
+      (with-eval-after-load 'browse-kill-ring
+	(define-key browse-kill-ring-mode-map (kbd "C-g") 'browse-kill-ring-quit)
+	(define-key browse-kill-ring-mode-map (kbd "M-n") 'browse-kill-ring-forward)
+	(define-key browse-kill-ring-mode-map (kbd "M-p") 'browse-kill-ring-previous)))
+
+    (use-package mini-modeline
+      :disabled
+      :defer 1
+      :config (mini-modeline-mode t))
+
+    #+END_SRC
+* Functions - Cherry Picked
+    #+BEGIN_SRC emacs-lisp :mkdirp yes
+    ;; CHERRY-PICKED FUNCTIONS
+    ;; ========================================
+
+    (defun my-unkillable-scratch-buffer ()
+      "Nope, I must not do it!"
+      (if (equal (buffer-name (current-buffer)) "*scratch*")
+	  (progn
+	    (delete-region (point-min) (point-max))
+	    nil)
+	t))
+    (add-hook 'kill-buffer-query-functions 'my-unkillable-scratch-buffer)
+
+    ;;;###autoload
+    (defun my-swap-buffer ()
+      "Repeated invocations will make the selected buffer appear in each windows successively."
+      (interactive)
+      (cond ((one-window-p) (display-buffer (other-buffer)))
+	    ((let* ((buffer-a (current-buffer))
+		    (window-b (cadr (window-list)))
+		    (buffer-b (window-buffer window-b)))
+	       (set-window-buffer window-b buffer-a)
+	       (switch-to-buffer buffer-b)
+	       (other-window 1)))))
+
+    ;;;###autoload
+    (defun my-window-split-toggle ()
+      "Toggle between horizontal and vertical split with two windows."
+      (interactive)
+      (if (> (length (window-list)) 2)
+	  (error "Can't toggle with more than 2 windows!")
+	(let ((func (if (window-full-height-p)
+			#'split-window-vertically
+		      #'split-window-horizontally)))
+	  (delete-other-windows)
+	  (funcall func)
+	  (save-selected-window
+	    (other-window 1)
+	    (switch-to-buffer (other-buffer))))))
+
+    ;;;###autoload
+    (defun elisp-index-search+ ()
+      "Look up TOPIC in the indices of the Emacs Lisp Reference Manual."
+      (interactive)
+      (let (topic)
+	(setq topic (read-string (concat "Subject to look up: ") nil nil
+				 (symbol-name (symbol-at-point))))
+	(funcall 'switch-to-buffer-other-window nil)
+	(info "elisp")
+	(Info-index topic)))
+
+
+    ;; Helper function
+    (defun my-shorten-directory (dir max-length)
+      "Show up to `max-length' characters of a directory name `dir'."
+      (let ((path (reverse (split-string (abbreviate-file-name dir) "/")))
+	    (output ""))
+	(when (and path (equal "" (car path)))
+	  (setq path (cdr path)))
+	(while (and path (< (length output) (- max-length 4)))
+	  (setq output (concat (car path) "/" output))
+	  (setq path (cdr path)))
+	(when path
+	  (setq output (concat ".../" output)))
+	output))
+
+    ;;;###autoload
+    (defun my-current-minor-modes ()
+      "Return the list of minor modes enabled in the current buffer."
+      (interactive)
+      (delq nil
+	    (mapcar (lambda (mode)
+		      (if (and (boundp mode) (symbol-value mode))
+			  mode))
+		    minor-mode-list)))
+
+    ;;;###autoload
+    (defun my-find-symbol-at-point ()
+      "Find the symbol at point, i.e. go to definition."
+      (interactive)
+      (let ((sym (symbol-at-point)))
+	(if (boundp sym)
+	    (find-variable sym)
+	  (find-function sym))))
+
+    ;; (define-key lisp-mode-shared-map (kbd "M-.") 'find-symbol-at-point)
+
+
+    ;; BUFFER-MOVE: https://www.emacswiki.org/emacs/buffer-move.el
+
+    ;;;###autoload
+    (defun my-buf-move-up ()
+      "Swap the current buffer and the buffer above the split.
+
+    If there is no split, ie now window above the current one, an
+    error is signaled."
+      ;;  "Switches between the current buffer, and the buffer above the
+      ;;  split, if possible."
+      (interactive)
+      (let* ((other-win (windmove-find-other-window 'up))
+	     (buf-this-buf (window-buffer (selected-window))))
+	(if (null other-win)
+	    (error "No window above this one")
+	  ;; swap top with this one
+	  (set-window-buffer (selected-window) (window-buffer other-win))
+	  ;; move this one to top
+	  (set-window-buffer other-win buf-this-buf)
+	  (select-window other-win))))
+
+    ;;;###autoload
+    (defun my-buf-move-down ()
+      "Swap the current buffer and the buffer under the split.
+
+    If there is no split, ie now window under the current one, an
+    error is signaled."
+      (interactive)
+      (let* ((other-win (windmove-find-other-window 'down))
+	     (buf-this-buf (window-buffer (selected-window))))
+	(if (or (null other-win)
+		(string-match "^ \\*Minibuf" (buffer-name (window-buffer other-win))))
+	    (error "No window under this one")
+	  ;; swap top with this one
+	  (set-window-buffer (selected-window) (window-buffer other-win))
+	  ;; move this one to top
+	  (set-window-buffer other-win buf-this-buf)
+	  (select-window other-win))))
+
+    ;;;###autoload
+    (defun my-buf-move-left ()
+      "Swap the current buffer and the buffer on the left of the split.
+
+    If there is no split, ie now window on the left of the current
+    one, an error is signaled."
+      (interactive)
+      (let* ((other-win (windmove-find-other-window 'left))
+	     (buf-this-buf (window-buffer (selected-window))))
+	(if (null other-win)
+	    (error "No left split")
+	  ;; swap top with this one
+	  (set-window-buffer (selected-window) (window-buffer other-win))
+	  ;; move this one to top
+	  (set-window-buffer other-win buf-this-buf)
+	  (select-window other-win))))
+
+    ;;;###autoload
+    (defun my-mini-buffer-scratch ()
+      "Opens up a new mini-buffer scratch!"
+      (interactive)
+      (let* ((height (/ (window-total-height) 3)))
+	(split-window-vertically (- height))
+	(other-window 1)
+	(switch-to-buffer (get-buffer-create "*scratch*"))
+	(lisp-interaction-mode)))
+
+
+    ;; --------------------------------------------------
+    ;; misc-cmd.el
+    ;;;###autoload
+    (defun my-delete-window-maybe-kill-buffer ()
+      "Delete selected window.
+
+    If no other window shows its buffer, kill the buffer too."
+      (interactive)
+      (let* ((selwin  (selected-window))
+	     (buf     (window-buffer selwin)))
+	(delete-window selwin)
+	(unless (get-buffer-window buf 'visible) (kill-buffer buf))))
+
+    ;;;###autoload
+    (defun server-shutdown ()
+      "Save buffers, Quit, and Shutdown (kill) server."
+      (interactive)
+      (save-some-buffers)
+      (kill-emacs))
+
+
+    ;;;###autoload
+    (defun my-buf-move-right ()
+      "Swap the current buffer and the buffer on the right of the split.
+
+    If there is no split, ie now window on the right of the current
+    one, an error is signaled."
+      (interactive)
+      (let* ((other-win (windmove-find-other-window 'right))
+	     (buf-this-buf (window-buffer (selected-window))))
+	(if (null other-win)
+	    (error "No right split")
+	  ;; swap top with this one
+	  (set-window-buffer (selected-window) (window-buffer other-win))
+	  ;; move this one to top
+	  (set-window-buffer other-win buf-this-buf)
+	  (select-window other-win))))
+
+    ;;;###autoload
+    (defun my-mark-line (&optional arg)
+      "Put mark at end of line, point at beginning, ARG.
+
+    A numeric prefix arg means move forward (backward if negative) that
+    many lines, thus marking a line other than the one point was
+    originally in."
+      (interactive "P")
+      (setq arg  (if arg (prefix-numeric-value arg) 0))
+      (let ((inhibit-field-motion  t))
+	(forward-line arg)
+	(push-mark nil t t)
+	(goto-char (line-end-position))))
+
+
+    (defun insert-filename-as-heading ()
+      "Take current filename (word separated by dash) as heading."
+      (interactive)
+      (insert
+       (capitalize
+	(replace-regexp-in-string "-" " " (file-name-sans-extension (buffer-name))))))
+
+    (defun my-toggle-camelcase-underscores ()
+      "Toggle between camelcase and underscore notation for the symbol at point."
+      (interactive)
+      (save-excursion
+	(let* ((bounds (bounds-of-thing-at-point 'symbol))
+	       (start (car bounds))
+	       (end (cdr bounds))
+	       (currently-using-underscores-p (progn (goto-char start)
+						     (re-search-forward "_" end t))))
+	  (if currently-using-underscores-p
+	      (progn
+		(upcase-initials-region start end)
+		(replace-string "_" "" nil start end)
+		(downcase-region start (1+ start)))
+	    (replace-regexp "\\([A-Z]\\)" "_\\1" nil (1+ start) end)
+	    (downcase-region start (cdr (bounds-of-thing-at-point 'symbol)))))))
+
+
+    (defun ambrevar/call-process-to-string (program &rest args)
+      "Call PROGRAM with ARGS and return output."
+      (with-output-to-string
+	(with-current-buffer standard-output
+	  (apply 'call-process program nil t nil args))))
+
+
+    ;;;###autoload
+    (defun my-yank-more ()
+      (interactive)
+      (insert "[[")
+      (yank)
+      (insert "][more]]"))
+
+    ;;;###autoload
+    (defun my-install-maybe (pkg)
+      (when (not (package-installed-p pkg))
+	(package-install pkg)))
+
+    ;; (my-install-maybe 'yasnippet)
+
+    ;;;###autoload
+    (defun my-number-of-packages ()
+      "Function to return the number of active packages."
+      (interactive)
+      (message (concat (number-to-string (length package-selected-packages))
+		       " packages installed...")))
+
+    ;;;###autoload
+    (defun my-spell-buffer-pt-BR ()
+      "Function to spell checking inside the buffer."
+      (interactive)
+      (ispell-change-dictionary "brasileiro")
+      (flyspell-buffer))
+
+    ;;;###autoload
+    (defun my-spell-buffer-en ()
+      "Function to spell checking the buffer in US language."
+      (interactive)
+      (ispell-change-dictionary "en_US")
+      (flyspell-buffer))
+
+
+    ;;;###autoload
+    (defun idomenu--read (index-alist &optional prompt guess)
+      (let* ((symatpt (thing-at-point 'symbol))
+	     (names (mapcar 'car index-alist))
+	     (name (ido-completing-read (or prompt "imenu ") names
+					nil t nil nil nil))
+	     (choice (assoc name index-alist)))
+	(if (imenu--subalist-p choice)
+	    (idomenu--read (cdr choice) prompt nil)
+	  choice)))
+
+    ;;;###autoload
+    (defun my-ido-menu ()
+      (interactive)
+      (let ((index-alist (cdr (imenu--make-index-alist))))
+	(if (equal index-alist '(nil))
+	    (message "No imenu tags in buffer")
+	  (imenu (idomenu--read index-alist nil t)))))
+
+
+    ;;;###autoload
+    (defun my-hrs/find-file-as-sudo ()
+      (interactive)
+      (let ((file-name (buffer-file-name)))
+	(when file-name
+	  (find-alternate-file (concat "/sudo::" file-name)))))
+
+    ;;;###autoload
+    (defun my-sudo-edit (&optional arg)
+      "Edit currently visited file as root.
+
+			With a prefix ARG prompt for a file to visit.
+			Will also prompt for a file to visit if current
+			buffer is not visiting a file."
+      (interactive "P")
+      (if (or arg (not buffer-file-name))
+	  (find-file (concat "/sudo:root@localhost:"
+			     (ido-read-file-name "Find file(as root): ")))
+	(find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+    ;; Vi-like text processing
+
+    ;; https://www.emacswiki.org/emacs/CopyWithoutSelection
+    ;;;###autoload
+    (defun my-get-point (symbol &optional arg)
+      "get the point"
+      (funcall symbol arg)
+      (point))
+
+
+    ;;;###autoload
+    (defun my-copy-thing (begin-of-thing end-of-thing &optional arg)
+      "copy thing between beg & end into kill ring"
+      (save-excursion
+	(let ((beg (my-get-point begin-of-thing 1))
+	      (end (my-get-point end-of-thing arg)))
+	  (copy-region-as-kill beg end))))
+
+    ;;;###autoload
+    (defun my-paste-to-mark(&optional arg)
+      "Paste things to mark, or to the prompt in shell-mode"
+      (let ((pasteMe
+	     (lambda()
+	       (if (string= "shell-mode" major-mode)
+		   (progn (comint-next-prompt 25535) (yank))
+		 (progn (goto-char (mark)) (yank) )))))
+	(if arg
+	    (if (= arg 1)
+		nil
+	      (funcall pasteMe))
+	  (funcall pasteMe))))
+
+    ;;;###autoload
+    (defun my-copy-word (&optional arg)
+      "Copy words at point into kill-ring"
+      (interactive "P")
+      (copy-thing 'backward-word 'forward-word arg)
+      (message "Copied word"))
+
+    ;;;###autoload
+    (defun my-copy-backward-word ()
+      "copy word before point"
+      (interactive "")
+      (save-excursion
+	(let ((end (point))
+	      (beg (my-get-point 'backward-word)))
+	  (copy-region-as-kill beg end)))
+      (message "Copied backward word"))
+
+
+    ;;;###autoload
+    (defun my-hrs/append-to-path (path)
+      "Add a path both to the $PATH variable and to Emacs' exec-path."
+      (setenv "PATH" (concat (getenv "PATH") ":" path))
+      (add-to-list 'exec-path path))
+
+    ;;;###autoload
+    (defun my-def-word ()
+      "Find definition of the word at point"
+      (interactive)
+      (browse-url (concat "https://www.merriam-webster.com/dictionary/" (thing-at-point 'word))))
+
+    ;; Zap to before char - Just like Vi Copy inside delimiters
+    ;;;###autoload
+    (defun my-zap-to-before-char (arg char)
+      "Kill up to and ARGth occurrence of CHAR.
+				      Case is ignored if `case-fold-search' is non-nil in the current buffer.
+				      Goes backward if ARG is negative; error if CHAR not found."
+      (interactive "p\ncZap to BEFORE char: ")
+      ;; Avoid "obsolete" warnings for translation-table-for-input.
+      (with-no-warnings
+	(if (char-table-p translation-table-for-input)
+	    (setq char (or (aref translation-table-for-input char) char))))
+      (kill-region (point) (progn
+			     (search-forward (char-to-string char) nil nil arg)
+			     (goto-char (if (> arg 0) (1- (point)) (1+ (point))))
+			     (point))))
+
+
+    ;; Capitalize word despite where point is (/u/dakra)
+
+    (defmacro dakra-define-up/downcase-dwim (case)
+      (let ((func (intern (concat "dakra-" case "-dwim")))
+	    (doc (format "Like `%s-dwim' but %s from beginning when no region is active." case case))
+	    (case-region (intern (concat case "-region")))
+	    (case-word (intern (concat case "-word"))))
+	`(defun ,func (arg)
+	   ,doc
+	   (interactive "*p")
+	   (save-excursion
+	     (if (use-region-p)
+		 (,case-region (region-beginning) (region-end))
+	       (beginning-of-thing 'symbol)
+	       (,case-word arg))))))
+    (dakra-define-up/downcase-dwim "upcase")
+    (dakra-define-up/downcase-dwim "downcase")
+    (dakra-define-up/downcase-dwim "capitalize")
+
+
+
+    ;;;###autoload
+    (defun my-mark-sexp-backward (N)
+      "Mark word backword"
+      (interactive "p")
+      (if (and
+	   (not (eq last-command this-command))
+	   (not (eq last-command 'e-mark-word)))
+	  (set-mark (point)))
+      (backward-word N))
+
+
+
+    ;;;###autoload
+    (defun my-replace-next-underscore-with-camel (arg)
+      (interactive "p")
+      (if (> arg 0)
+	  (setq arg (1+ arg))) ; 1-based index to get eternal loop with 0
+      (let ((case-fold-search nil))
+	(while (not (= arg 1))
+	  (search-forward-regexp "\\b_[a-z]")
+	  (forward-char -2)
+	  (delete-char 1)
+	  (capitalize-word 1)
+	  (setq arg (1- arg)))))
+
+
+    ;;;###autoload
+    (defun my-yank-to-x-clipboard ()
+      "Terminal x to clipboard workaround"
+      (interactive)
+      (if (region-active-p)
+	  (progn
+	    (shell-command-on-region (region-beginning) (region-end) "xsel -i")
+	    (message "Yanked region to clipboard!")
+	    (deactivate-mark))
+	(message "No region active; can't yank to clipboard!")))
+
+    ;; Permit yanking text to X11 clipboard; beats the heck out of
+    ;; manually copying with the cursor.
+
+
+    ;;;###autoload
+    (defun my-copy-file-name-to-clipboard ()
+      "Copy the current buffer file name to the clipboard."
+      (interactive)
+      (let ((filename (if (equal major-mode 'dired-mode)
+			  default-directory
+			(buffer-file-name))))
+	(when filename
+	  (kill-new filename)
+	  (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+
+    ;;;###autoload
+    (defun my-switch-bury-or-kill-buffer (&optional aggr)
+      "With no argument, switch (but unlike C-x b, without the need
+			to confirm).  With C-u, bury current buffer.  With double C-u,
+			kill it (unless it's modified)."
+      (interactive "P")
+      (cond
+       ((eq aggr nil) (progn
+			(cl-dolist (buf '("*Buffer List*" "*Ibuffer*" "*Bookmark List* " "*vc-change-log*" "*Locate*" "*grep*" "*compilation*" ))
+			  (when (get-buffer buf)
+			    (bury-buffer buf)))
+			(switch-to-buffer (other-buffer))))
+       ((equal aggr '(4)) (bury-buffer))
+       ((equal aggr '(16)) (kill-buffer-if-not-modified (current-buffer)))))
+
+
+
+    ;;;###autoload
+    (defun my-transpose-chars (arg)
+      "Move character at point forward one character.
+			With prefix arg ARG, effect is to take character at point and
+			drag it forward past ARG other characters (backward if ARG
+			negative)."
+      (interactive "P")
+      (forward-char)
+      (if arg
+	  (transpose-chars arg)
+	(transpose-chars 1))
+      (backward-char))
+
+    ;;;###autoload
+    (defun my-backward-transpose-chars (arg)
+      "Move character at point backward one character.
+			With prefix arg ARG, effect is to take character at point and
+			drag it backward past ARG other characters (backward if ARG
+			negative)."
+      (interactive "P")
+      (my-transpose-chars (- (or arg 1))))
+
+    ;;;###autoload
+    (defun my-backward-transpose-words (arg)
+      "Interchange wnords around point, leaving point at end of them.
+			With prefix arg ARG, effect is to take word before or around
+			point and drag it forward past ARG other words (backward if ARG
+			negative). If ARG is zero, the words around or after point and
+			around or after mark are interchanged."
+      (interactive "P")
+      (transpose-words (- (or arg 1))))
+
+    ;;;###autoload
+    (defun my-transpose-lines (arg)
+      (interactive "P")
+      (save-excursion
+	(end-of-line)
+	(when (eobp) (insert "\n")))
+      (forward-line 1)
+      (with-demoted-errors "%s"
+	(transpose-lines (or arg 1)))
+      (forward-line -1))
+
+    ;;;###autoload
+    (defun my-backward-transpose-lines (arg)
+      (interactive "P")
+      (my-transpose-lines (- (or arg 1))))
+
+    ;;;###autoload
+    (defun my-paragraphize ()
+      "Remove empty newlines from region."
+      (interactive)
+      (if (region-active-p)
+	  (flush-lines "^$" (region-beginning) (region-end))
+	(message "No region active.")))
+
+    ;;;###autoload
+    (defun my-transpose-window ()
+      "Switch between vertical and horizontal window split.
+
+			Source: http://tinyurl.com/k7s96fa"
+      (interactive)
+      (if (= (count-wiqndows) 2)
+	  (let* ((this-win-buffer (window-buffer))
+		 (next-win-buffer (window-buffer (next-window)))
+		 (this-win-edges (window-edges (selected-window)))
+		 (next-win-edges (window-edges (next-window)))
+		 (this-win-2nd (not (and (<= (car this-win-edges)
+					     (car next-win-edges))
+					 (<= (cadr this-win-edges)
+					     (cadr next-win-edges)))))
+		 (splitter
+		  (if (= (car this-win-edges)
+			 (car (window-edges (next-window))))
+		      #'split-window-horizontally
+		    #'split-window-vertically)))
+	    (delete-other-windows)
+	    (let ((first-win (selected-window)))
+	      (funcall splitter)
+	      (if this-win-2nd (other-window 1))
+	      (set-window-buffer (selected-window) this-win-buffer)
+	      (set-window-buffer (next-window) next-win-buffer)
+	      (select-window first-win)
+	      (if this-win-2nd (other-window 1))))))
+
+    ;;;###autoload
+    (defun my-split-vert-focus ()
+      "Split window vertically and move focus to other window."
+      (interactive)
+      (split-window-right)
+      (other-window 1))
+
+    ;;;###autoload
+    (defun my-split-horz-focus ()
+      "Split window horizontally and move focus to other window."
+      (interactive)
+      (split-window-below)
+      (other-window 1))
+
+    ;;;###autoload
+    (defun sudo-shell-command (command)
+      (interactive "MShell command (root): ")
+      (with-temp-buffer
+	(cd "/sudo::/")
+	(async-shell-command command)))
+
+    ;;;###autoload
+    (defun my-auto-commit-on-kill ()
+      (when buffer-file-name
+	(let* ((current (magit-file-relative-name))
+	       (choices (nconc (magit-modified-files) (magit-untracked-files)))
+	       (to-stage (car (member current choices))))
+	  (when to-stage
+	    (magit-stage-file to-stage)
+	    (magit-commit)))))
+
+    ;; (add-hook 'kill-buffer-hook 'my/auto-commit-on-kill)
+
+    ;;;###autoload
+    (defun my-open-line-below ()
+      (interactive)
+      (end-of-line)
+      (newline)
+      (indent-for-tab-command))
+
+    ;;;###autoload
+    (defun my-open-line-above ()
+      (interactive)
+      (beginning-of-line)
+      (newline)
+      (forward-line -1)
+      (indent-for-tab-command))
+
+    ;;;###autoload
+    (defun my-goto-line-with-feedback ()
+      "Show line numbers temporarily, while prompting for the line number input"
+      (interactive)
+      (unwind-protect
+	  (progn
+	    (linum-mode 1)
+	    (goto-line (read-number "Goto line: ")))
+	(linum-mode -1)))
+
+    ;;;###autoload
+    (defun my-dired-du ()
+      (interactive)
+      (let ((files (dired-get-marked-files)))
+	(with-temp-buffer
+	  (apply 'call-process "/usr/bin/du" nil t nil "-sch" files)
+	  (message "Size of all marked files: %s"
+		   (progn
+		     (re-search-backward "\\(^[0-9.,]+[A-Za-z]+\\).*total$")
+		     (match-string 1))))))
+
+
+    (require 'url)
+
+    ;;;###autoload
+    (defun my-download-file (&optional url download-dir download-name)
+      (interactive)
+      (let ((url (or
+		  url
+		  (read-string "Enter download URL: "))))
+	(let ((download-buffer (url-retrieve-synchronously url)))
+	  (save-excursion
+	    (set-buffer download-buffer)
+	    ;; we may have to trim the http response
+	    (goto-char (point-min))
+	    (re-search-forward "^$" nil 'move)
+	    (forward-char)
+	    (delete-region (point-min) (point))
+	    (write-file (concat (or download-dir
+				    "~/Downloads/")
+				(or download-name
+				    (car (last (split-string url "/" t))))))))))
+
+
+    ;;;###autoload
+    (defun query-replace-from-top ()
+      (interactive)
+      (save-excursion
+	(goto-char (point-min))
+	(call-interactively 'query-replace)))
+
+    ;;;###autoload
+    (defun flush-blank-lines (start end)
+      "Mark a block and delete all blank/empty lines inside it."
+      (interactive "r")
+      (flush-lines "^\\s-*$" start end nil))
+
+    ;;;###autoload
+    (defun wh/start-tmp-file (file-name)
+      "Create a file in /tmp for the given file name."
+      (interactive "sName of temporary file: ")
+      (start--file (expand-file-name (format "/tmp/%s" file-name))))
+
+    ;;;###autoload
+    (defun my-increment-region (&optional beg end ARG)
+      "Increment all decimal numbers in region between `beg' and `end' by `ARG'.
+    If no prefix ARG is given, increment by 1.
+    If the mark is not active, try to build a region using `symbol-at-point'."
+      (interactive "r\np")
+      (or ARG (setq ARG 1))
+      (unless (and mark-active transient-mark-mode)
+	(let ((bounds (bounds-of-thing-at-point 'symbol)))
+	  (if bounds (setq beg (car bounds) end (cdr bounds)))))
+      (if (< end beg)
+	  (let ((tmp end))
+	    (setq beg end end tmp)))
+      (save-excursion
+	(goto-char beg)
+	(while (re-search-forward "-?[0-9]+" end t)
+	  (replace-match (number-to-string (+ ARG (string-to-number (match-string 0)))))))
+      (setq deactivate-mark nil))
+    ;;
+    ;;;###autoload
+    (defun my-decrement-region (&optional beg end ARG)
+      "Decrement all decimal numbers in region between `beg' and `end' by `ARG'.
+     If no prefix ARG is given, increment by 1.
+     If the mark is not active, try to build a region using `symbol-at-point'."
+      (interactive "r\np")
+      (or ARG (setq ARG 1))
+      (unless (and mark-active transient-mark-mode)
+	(let ((bounds (bounds-of-thing-at-point 'symbol)))
+	  (if bounds (setq beg (car bounds) end (cdr bounds)))))
+      (increment-region beg end (- ARG)))
+
+
+    (defun ora-shell-command-sentinel (process signal)
+      (when (memq (process-status process) '(exit signal))
+	(advice-remove 'shell-command-sentinel 'ora-shell-command-sentinel)
+	(message (with-current-buffer (process-buffer process)
+		   (string-trim (buffer-string))))))
+
+    (defun ora-dired-do-async-shell-command ()
+      "Wrap `dired-do-async-shell-command' without popup windows."
+      (interactive)
+      (advice-add 'shell-command-sentinel :override #'ora-shell-command-sentinel)
+      (save-window-excursion
+	(call-interactively 'dired-do-async-shell-command)))
+
+    (provide 'cherry-picked-defun)
+
+
+
+    #+END_SRC
+
+    #+RESULTS:
+    : cherry-picked-defun
+
+* Prelude - Functions
+    #+BEGIN_SRC emacs-lisp :mkdirp yes
+    ;; PRELUDE
+    ;; ========================================
+
+    (defun prelude-move-beginning-of-line (arg)
+      "Move point back to indentation of beginning of line.
+
+    Move point to the first non-whitespace character on this line.
+    If point is already there, move to the beginning of the line.
+    Effectively toggle between the first non-whitespace character and
+    the beginning of the line.
+
+    If ARG is not nil or 1, move forward ARG - 1 lines first. If
+    point reaches the beginning or end of the buffer, stop there."
+      (interactive "^p")
+      (setq arg (or arg 1))
+
+      ;; Move lines first
+      (when (/= arg 1)
+	(let ((line-move-visual nil))
+	  (forward-line (1- arg))))
+
+      (let ((orig-point (point)))
+	(back-to-indentation)
+	(when (= orig-point (point))
+	  (move-beginning-of-line 1))))
+
+    ;; (global-set-key (kbd "C-a") 'prelude-move-beginning-of-line)
+
+    (defadvice kill-ring-save (before slick-copy activate compile)
+      "When called interactively with no active region, copy a single
+    line instead."
+      (interactive
+       (if mark-active (list (region-beginning) (region-end))
+	 (message "Copied line")
+	 (list (line-beginning-position)
+	       (line-beginning-position 2)))))
+
+    (defadvice kill-region (before slick-cut activate compile)
+      "When called interactively with no active region, kill a single
+      line instead."
+      (interactive
+       (if mark-active (list (region-beginning) (region-end))
+	 (list (line-beginning-position)
+	       (line-beginning-position 2)))))
+
+    ;; kill a line, including whitespace characters until next non-whiepsace character
+    ;; of next line
+    (defadvice kill-line (before check-position activate)
+      (if (member major-mode
+		  '(emacs-lisp-mode scheme-mode lisp-mode
+				    c-mode c++-mode objc-mode
+				    latex-mode plain-tex-mode))
+	  (if (and (eolp) (not (bolp)))
+	      (progn (forward-char 1)
+		     (just-one-space 0)
+		     (backward-char 1)))))
+
+    ;; taken from prelude-editor.el
+    ;; automatically indenting yanked text if in programming-modes
+    (defvar yank-indent-modes
+      '(LaTeX-mode TeX-mode)
+      "Modes in which to indent regions that are yanked (or yank-popped).
+    Only modes that don't derive from `prog-mode' should be listed here.")
+
+    (defvar yank-indent-blacklisted-modes
+      '(python-mode slim-mode haml-mode)
+      "Modes for which auto-indenting is suppressed.")
+
+    (defvar yank-advised-indent-threshold 1000
+      "Threshold (# chars) over which indentation does not automatically occur.")
+
+    (defun yank-advised-indent-function (beg end)
+      "Do indentation, as long as the region isn't too large."
+      (if (<= (- end beg) yank-advised-indent-threshold)
+	  (indent-region beg end nil)))
+
+    (defadvice yank (after yank-indent activate)
+      "If current mode is one of 'yank-indent-modes,
+    indent yanked text (with prefix arg don't indent)."
+      (if (and (not (ad-get-arg 0))
+	       (not (member major-mode yank-indent-blacklisted-modes))
+	       (or (derived-mode-p 'prog-mode)
+		   (member major-mode yank-indent-modes)))
+	  (let ((transient-mark-mode nil))
+	    (yank-advised-indent-function (region-beginning) (region-end)))))
+
+    (defadvice yank-pop (after yank-pop-indent activate)
+      "If current mode is one of `yank-indent-modes',
+    indent yanked text (with prefix arg don't indent)."
+      (when (and (not (ad-get-arg 0))
+		 (not (member major-mode yank-indent-blacklisted-modes))
+		 (or (derived-mode-p 'prog-mode)
+		     (member major-mode yank-indent-modes)))
+	(let ((transient-mark-mode nil))
+	  (yank-advised-indent-function (region-beginning) (region-end)))))
+
+    ;; prelude-core.el
+    (defun prelude-duplicate-current-line-or-region (arg)
+      "Duplicates the current line or region ARG times.
+    If there's no region, the current line will be duplicated. However, if
+    there's a region, all lines that region covers will be duplicated."
+      (interactive "p")
+      (pcase-let* ((origin (point))
+		   (`(,beg . ,end) (prelude-get-positions-of-line-or-region))
+		   (region (buffer-substring-no-properties beg end)))
+	(-dotimes arg
+	  (lambda (n)
+	    (goto-char end)
+	    (newline)
+	    (insert region)
+	    (setq end (point))))
+	(goto-char (+ origin (* (length region) arg) arg))))
+
+    ;; prelude-core.el
+    (defun indent-buffer ()
+      "Indent the currently visited buffer."
+      (interactive)
+      (indent-region (point-min) (point-max)))
+
+    ;; prelude-editing.el
+    (defcustom prelude-indent-sensitive-modes
+      '(coffee-mode python-mode slim-mode haml-mode yaml-mode)
+      "Modes for which auto-indenting is suppressed."
+      :type 'list)
+
+    (defun indent-region-or-buffer ()
+      "Indent a region if selected, otherwise the whole buffer."
+      (interactive)
+      (unless (member major-mode prelude-indent-sensitive-modes)
+	(save-excursion
+	  (if (region-active-p)
+	      (progn
+		(indent-region (region-beginning) (region-end))
+		(message "Indented selected region."))
+	    (progn
+	      (indent-buffer)
+	      (message "Indented buffer.")))
+	  (whitespace-cleanup))))
+
+
+    ;; add duplicate line function from Prelude
+    ;; taken from prelude-core.el
+    (defun prelude-get-positions-of-line-or-region ()
+      "Return positions (beg . end) of the current line
+    or region."
+      (let (beg end)
+	(if (and mark-active (> (point) (mark)))
+	    (exchange-point-and-mark))
+	(setq beg (line-beginning-position))
+	(if mark-active
+	    (exchange-point-and-mark))
+	(setq end (line-end-position))
+	(cons beg end)))
+
+    (defun kill-default-buffer ()
+      "Kill the currently active buffer -- set to C-x k so that users are not asked which buffer they want to kill."
+      (interactive)
+      (let (kill-buffer-query-functions) (kill-buffer)))
+
+    ;; smart openline
+    (defun prelude-smart-open-line (arg)
+      "Insert an empty line after the current line.
+    Position the cursor at its beginning, according to the current mode.
+    With a prefix ARG open line above the current line."
+      (interactive "P")
+      (if arg
+	  (prelude-smart-open-line-above)
+	(progn
+	  (move-end-of-line nil)
+	  (newline-and-indent))))
+
+    (defun prelude-smart-open-line-above ()
+      "Insert an empty line above the current line.
+    Position the cursor at it's beginning, according to the current mode."
+      (interactive)
+      (move-beginning-of-line nil)
+      (newline-and-indent)
+      (forward-line -1)
+      (indent-according-to-mode))
+
+    (defadvice kill-ring-save (before slick-copy activate compile)
+      "When called interactively with no active region, copy a single
+    line instead."
+      (interactive
+       (if mark-active (list (region-beginning) (region-end))
+	 (message "Copied line")
+	 (list (line-beginning-position)
+	       (line-beginning-position 2)))))
+
+    (defadvice kill-region (before slick-cut activate compile)
+      "When called interactively with no active region, kill a single
+      line instead."
+      (interactive
+       (if mark-active (list (region-beginning) (region-end))
+	 (list (line-beginning-position)
+	       (line-beginning-position 2)))))
+
+    ;; kill a line, including whitespace characters until next non-whiepsace character
+    ;; of next line
+    (defadvice kill-line (before check-position activate)
+      (if (member major-mode
+		  '(emacs-lisp-mode scheme-mode lisp-mode
+				    c-mode c++-mode objc-mode
+				    latex-mode plain-tex-mode))
+	  (if (and (eolp) (not (bolp)))
+	      (progn (forward-char 1)
+		     (just-one-space 0)
+		     (backward-char 1)))))
+
+    ;; Emacs-Redux - Increment and Decrement Integer at Point
+
+    (require 'thingatpt)
+
+    (defun my-thing-at-point-goto-end-of-integer ()
+      "Go to end of integer at point."
+      (let ((inhibit-changing-match-data t))
+	;; Skip over optional sign
+	(when (looking-at "[+-]")
+	  (forward-char 1))
+	;; Skip over digits
+	(skip-chars-forward "[[:digit:]]")
+	;; Check for at least one digit
+	(unless (looking-back "[[:digit:]]")
+	  (error "No integer here"))))
+    (put 'integer 'beginning-op 'thing-at-point-goto-end-of-integer)
+
+    (defun my-thing-at-point-goto-beginning-of-integer ()
+      "Go to end of integer at point."
+      (let ((inhibit-changing-match-data t))
+	;; Skip backward over digits
+	(skip-chars-backward "[[:digit:]]")
+	;; Check for digits and optional sign
+	(unless (looking-at "[+-]?[[:digit:]]")
+	  (error "No integer here"))
+	;; Skip backward over optional sign
+	(when (looking-back "[+-]")
+	  (backward-char 1))))
+    (put 'integer 'beginning-op 'thing-at-point-goto-beginning-of-integer)
+
+    (defun my-thing-at-point-bounds-of-integer-at-point ()
+      "Get boundaries of integer at point."
+      (save-excursion
+	(let (beg end)
+	  (thing-at-point-goto-beginning-of-integer)
+	  (setq beg (point))
+	  (thing-at-point-goto-end-of-integer)
+	  (setq end (point))
+	  (cons beg end))))
+    (put 'integer 'bounds-of-thing-at-point 'thing-at-point-bounds-of-integer-at-point)
+
+    (defun my-thing-at-point-integer-at-point ()
+      "Get integer at point."
+      (let ((bounds (bounds-of-thing-at-point 'integer)))
+	(string-to-number (buffer-substring (car bounds) (cdr bounds)))))
+    (put 'integer 'thing-at-point 'thing-at-point-integer-at-point)
+
+    (defun my-increment-integer-at-point (&optional inc)
+      "Increment integer at point by one.
+
+	  With numeric prefix arg INC, increment the integer by INC amount."
+      (interactive "p")
+      (let ((inc (or inc 1))
+	    (n (thing-at-point 'integer))
+	    (bounds (bounds-of-thing-at-point 'integer)))
+	(delete-region (car bounds) (cdr bounds))
+	(insert (int-to-string (+ n inc)))))
+
+    (defun my-decrement-integer-at-point (&optional dec)
+      "Decrement integer at point by one.
+
+	  With numeric prefix arg DEC, decrement the integer by DEC amount."
+      (interactive "p")
+      (increment-integer-at-point (- (or dec 1))))
+
+    (defun my-prelude-open-with (arg)
+      "Open visited file in default external program.
+
+	  With a prefix ARG always prompt for command to use."
+      (interactive "P")
+      (when buffer-file-name
+	(shell-command (concat
+			(cond
+			 ((and (not arg) (eq system-type 'darwin)) "open")
+			 ((and (not arg) (member system-type '(gnu gnu/linux gnu/kfreebsd))) "xdg-open")
+			 (t (read-shell-command "Open current file with: ")))
+			" "
+			(shell-quote-argument buffer-file-name)))))
+
+    (defun my-byte-compile-init-dir ()
+      "Byte-compile all your dotfiles."
+      (interactive)
+      (byte-recompile-directory user-emacs-directory 0))
+
+    (defun my-remove-elc-on-save ()
+      "If you're saving an elisp file, likely the .elc is no longer valid."
+      (add-hook 'after-save-hook
+		(lambda ()
+		  (if (file-exists-p (concat buffer-file-name "c"))
+		      (delete-file (concat buffer-file-name "c"))))
+		nil
+		t))
+
+    ;; (add-hook 'emacs-lisp-mode-hook 'e-remove-elc-on-save)
+
+    (defun my-eval-and-replace ()
+      "Replace the preceding sexp with its value."
+      (interactive)
+      (backward-kill-sexp)
+      (condition-case nil
+	  (prin1 (eval (read (current-kill 0)))
+		 (current-buffer))
+	(error (message "Invalid expression")
+	       (insert (current-kill 0)))))
+
+    (defun my-smart-open-line-above ()
+      "Insert an empty line above the current line.
+	Position the cursor at it's beginning, according to the current mode."
+      (interactive)
+      (move-beginning-of-line nil)
+      (newline-and-indent)
+      (forward-line -1)
+      (indent-according-to-mode))
+
+    (defun top-join-line ()
+      "Join the current line with the line beneath it."
+      (interactive)
+      (delete-indentation 1))
+
+    (defun smarter-move-beginning-of-line (arg)
+      "Move point back to indentation of beginning of line.
+
+	Move point to the first non-whitespace character on this line.
+	If point is already there, move to the beginning of the line.
+	Effectively toggle between the first non-whitespace character and
+	the beginning of the line.
+
+	If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+	point reaches the beginning or end of the buffer, stop there."
+      (interactive "^p")
+      (setq arg (or arg 1))
+
+      ;; Move lines first
+      (when (/= arg 1)
+	(let ((line-move-visual nil))
+	  (forward-line (1- arg))))
+
+      (let ((orig-point (point)))
+	(back-to-indentation)
+	(when (= orig-point (point))
+	  (move-beginning-of-line 1))))
+
+    ;; remap C-a to `smarter-move-beginning-of-line'
+    ;;                 'smarter-move-beginning-of-line)
+
+    (defun my-find-user-init-file ()
+      "Edit the `user-init-file', in another window."
+      (interactive)
+      (find-file user-init-file))
+
+    (defun my-rename-file-and-buffer ()
+      "Rename the current buffer and file it is visiting."
+      (interactive)
+      (let ((filename (buffer-file-name)))
+	(if (not (and filename (file-exists-p filename)))
+	    (message "Buffer is not visiting a file!")
+	  (let ((new-name (read-file-name "New name: " filename)))
+	    (cond
+	     ((vc-backend filename) (vc-rename-file filename new-name))
+	     (t
+	      (rename-file filename new-name t)
+	      (set-visited-file-name new-name t t)))))))
+
+    (defun my-delete-file-and-buffer ()
+      "Kill the current buffer and deletes the file it is visiting."
+      (interactive)
+      (let ((filename (buffer-file-name)))
+	(when filename
+	  (if (vc-backend filename)
+	      (vc-delete-file filename)
+	    (progn
+	      (delete-file filename)
+	      (message "Deleted file %s" filename)
+	      (kill-buffer))))))
+
+
+    (defun my-start-or-switch-to (function buffer-name)
+      "Invoke FUNCTION if there is no buffer with BUFFER-NAME.
+	Otherwise switch to the buffer named BUFFER-NAME.  Don't clobber
+	the current buffer."
+      (if (not (get-buffer buffer-name))
+	  (progn
+	    (split-window-sensibly (selected-window))
+	    (other-window 1)
+	    (funcall function))
+	(switch-to-buffer-other-window buffer-name)))
+
+    (defun my-visit-term-buffer ()
+      "Create or visit a terminal buffer."
+      (interactive)
+      (start-or-switch-to (lambda ()
+			    (ansi-term (getenv "SHELL")))
+			  "*ansi-term*"))
+
+    (defun my-visit-ielm ()
+      "Switch to default `ielm' buffer.
+	Start `ielm' if it's not already running."
+      (interactive)
+      (prelude-start-or-switch-to 'ielm "*ielm*"))
+
+
+    ;; (define-key emacs-lisp-mode-map (kbd "C-c C-z") 'visit-ielm)
+
+    (defun my-switch-to-previous-buffer ()
+      "Switch to previously open buffer.
+	Repeated invocations toggle between the two most recently open buffers."
+      (interactive)
+      (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+    (defun my-move-text-up ()
+      "Move up the current line."
+      (interactive)
+      (transpose-lines 1)
+      (forward-line -2)
+      (indent-according-to-mode))
+
+    (defun my-move-text-down ()
+      "Move down the current line."
+      (interactive)
+      (forward-line 1)
+      (transpose-lines 1)
+      (forward-line -1)
+      (indent-according-to-mode))
+
+    (defun my-visit-term-buffer ()
+      "Create or visit a terminal buffer."
+      (interactive)
+      (if (not (get-buffer "*ansi-term*"))
+	  (progn
+	    (split-window-sensibly (selected-window))
+	    (other-window 1)
+	    (ansi-term (getenv "SHELL")))
+	(switch-to-buffer-other-window "*ansi-term*")))
+
+    (defun my-indent-buffer ()
+      "Indent the currently visited buffer."
+      (interactive)
+      (indent-region (point-min) (point-max)))
+
+    (defun my-indent-region-or-buffer ()
+      "Indent a region if selected, otherwise the whole buffer."
+      (interactive)
+      (save-excursion
+	(if (region-active-p)
+	    (progn
+	      (indent-region (region-beginning) (region-end))
+	      (message "Indented selected region."))
+	  (progn
+	    (my-indent-buffer)
+	    (message "Indented buffer.")))))
+
+    (defun my-toggle-window-split ()
+      (interactive)
+      (if (= (count-windows) 2)
+	  (let* ((this-win-buffer (window-buffer))
+		 (next-win-buffer (window-buffer (next-window)))
+		 (this-win-edges (window-edges (selected-window)))
+		 (next-win-edges (window-edges (next-window)))
+		 (this-win-2nd (not (and (<= (car this-win-edges)
+					     (car next-win-edges))
+					 (<= (cadr this-win-edges)
+					     (cadr next-win-edges)))))
+		 (splitter
+		  (if (= (car this-win-edges)
+			 (car (window-edges (next-window))))
+		      'split-window-horizontally
+		    'split-window-vertically)))
+	    (delete-other-windows)
+	    (let ((first-win (selected-window)))
+	      (funcall splitter)
+	      (if this-win-2nd (other-window 1))
+	      (set-window-buffer (selected-window) this-win-buffer)
+	      (set-window-buffer (next-window) next-win-buffer)
+	      (select-window first-win)
+	      (if this-win-2nd (other-window 1))))))
+
+
+
+    (defun my-rotate-windows ()
+      "Rotate your windows"
+      (interactive)
+      (cond ((not (> (count-windows)1))
+	     (message "You can't rotate a single window!"))
+	    (t
+	     (setq i 1)
+	     (setq numWindows (count-windows))
+	     (while  (< i numWindows)
+	       (let* (
+		      (w1 (elt (window-list) i))
+		      (w2 (elt (window-list) (+ (% i numWindows) 1)))
+
+		      (b1 (window-buffer w1))
+		      (b2 (window-buffer w2))
+
+		      (s1 (window-start w1))
+		      (s2 (window-start w2))
+		      )
+		 (set-window-buffer w1  b2)
+		 (set-window-buffer w2 b1)
+		 (set-window-start w1 s2)
+		 (set-window-start w2 s1)
+		 (setq i (1+ i)))))))
+
+
+
+
+    (defun my-delete-current-buffer-file ()
+      "Removes file connected to current buffer and kills buffer."
+      (interactive)
+      (let ((filename (buffer-file-name))
+	    (buffer (current-buffer))
+	    (name (buffer-name)))
+	(if (not (and filename (file-exists-p filename)))
+	    (ido-kill-buffer)
+	  (when (yes-or-no-p "Are you sure you want to remove this file? ")
+	    (delete-file filename)
+	    (kill-buffer buffer)
+	    (message "File '%s' successfully removed" filename)))))
+
+
+
+    (defun my-rename-current-buffer-file ()
+      "Renames current buffer and file it is visiting."
+      (interactive)
+      (let ((name (buffer-name))
+	    (filename (buffer-file-name)))
+	(if (not (and filename (file-exists-p filename)))
+	    (error "Buffer '%s' is not visiting a file!" name)
+	  (let ((new-name (read-file-name "New name: " filename)))
+	    (if (get-buffer new-name)
+		(error "A buffer named '%s' already exists!" new-name)
+	      (rename-file filename new-name 1)
+	      (rename-buffer new-name)
+	      (set-visited-file-name new-name)
+	      (set-buffer-modified-p nil)
+	      (message "File '%s' successfully renamed to '%s'"
+		       name (file-name-nondirectory new-name)))))))
+
+    ;; --------------------------------------------------
+    (provide 'prelude)
+
+    #+END_SRC
+
+    #+RESULTS:
+    : prelude
+
+* XahLee - Functions
+    #+BEGIN_SRC emacs-lisp :mkdirp yes
+    ;; ==================================================
+    (defvar xah-run-current-file-before-hook nil "Hook for `xah-run-current-file'. Before the file is run.")
+
+    (defvar xah-run-current-file-after-hook nil "Hook for `xah-run-current-file'. After the file is run.")
+
+    (defun xah-run-current-file ()
+      "Execute the current file.
+    For example, if the current buffer is x.py, then it'll call 「python x.py」 in a shell.
+    Output is printed to buffer “*xah-run output*”.
+
+    The file can be Emacs Lisp, PHP, Perl, Python, Ruby, JavaScript, TypeScript, golang, Bash, Ocaml, Visual Basic, TeX, Java, Clojure.
+    File suffix is used to determine what program to run.
+
+    If the file is modified or not saved, save it automatically before run.
+
+    URL `http://ergoemacs.org/emacs/elisp_run_current_file.html'
+    Version 2018-08-30"
+      (interactive)
+      (let (
+	    ($outputb "*xah-run output*")
+	    (resize-mini-windows nil)
+	    ($suffix-map
+	     ;; (‹extension› . ‹shell program name›)
+	     `(
+	       ("php" . "php")
+	       ("pl" . "perl")
+	       ("py" . "python")
+	       ("py3" . ,(if (string-equal system-type "windows-nt") "c:/Python32/python.exe" "python3"))
+	       ("rb" . "ruby")
+	       ("go" . "go run")
+	       ("hs" . "runhaskell")
+	       ("js" . "node")
+	       ("mjs" . "node --experimental-modules ")
+	       ("ts" . "tsc") ; TypeScript
+	       ("tsx" . "tsc")
+	       ("sh" . "bash")
+	       ("clj" . "java -cp ~/apps/clojure-1.6.0/clojure-1.6.0.jar clojure.main")
+	       ("rkt" . "racket")
+	       ("ml" . "ocaml")
+	       ("vbs" . "cscript")
+	       ("tex" . "pdflatex")
+	       ("latex" . "pdflatex")
+	       ("java" . "javac")
+	       ;; ("pov" . "/usr/local/bin/povray +R2 +A0.1 +J1.2 +Am2 +Q9 +H480 +W640")
+	       ))
+	    $fname
+	    $fSuffix
+	    $prog-name
+	    $cmd-str)
+	(when (not (buffer-file-name)) (save-buffer))
+	(when (buffer-modified-p) (save-buffer))
+	(setq $fname (buffer-file-name))
+	(setq $fSuffix (file-name-extension $fname))
+	(setq $prog-name (cdr (assoc $fSuffix $suffix-map)))
+	(setq $cmd-str (concat $prog-name " \""   $fname "\" &"))
+	(run-hooks 'xah-run-current-file-before-hook)
+	(cond
+	 ((string-equal $fSuffix "el")
+	  (load $fname))
+	 ((or (string-equal $fSuffix "ts") (string-equal $fSuffix "tsx"))
+	  (if (fboundp 'xah-ts-compile-file)
+	      (progn
+		(xah-ts-compile-file current-prefix-arg))
+	    (if $prog-name
+		(progn
+		  (message "Running")
+		  (shell-command $cmd-str $outputb ))
+	      (error "No recognized program file suffix for this file."))))
+	 ;; ((string-equal $fSuffix "go")
+	 ;;  (when (fboundp 'gofmt) (gofmt) )
+	 ;;  (shell-command $cmd-str $outputb ))
+	 ((string-equal $fSuffix "java")
+	  (progn
+	    (shell-command (format "java %s" (file-name-sans-extension (file-name-nondirectory $fname))) $outputb )))
+	 (t (if $prog-name
+		(progn
+		  (message "Running")
+		  (shell-command $cmd-str $outputb ))
+	      (error "No recognized program file suffix for this file."))))
+	(run-hooks 'xah-run-current-file-after-hook)))
+
+    ;; ==================================================
+
+    (defun xah-html-url-linkify ()
+      "Make the URL at cursor point into a HTML link.
+      Work on current non-whitespace char sequence or text selection.
+      URL `http://ergoemacs.org/emacs/wrap-url.html'
+      Version 2018-03-22"
+      (interactive)
+      (let ( $p1 $p2 $new-str )
+	(if (region-active-p)
+	    (progn (setq $p1 (region-beginning) $p2 (region-end)))
+	  (save-excursion
+	    (skip-chars-backward "^ \n\t")
+	    (setq $p1 (point))
+	    (skip-chars-forward "^ \n\t" )
+	    (setq $p2 (point))))
+	(setq $new-str (file-relative-name
+			(replace-regexp-in-string "^file:///" "/" (buffer-substring-no-properties $p1 $p2) t t)))
+	(delete-region $p1 $p2)
+	(insert (concat "<a href=\"" (url-encode-url $new-str) "\">" $new-str "</a>" ))))
+
+    ;; ==================================================
+
+    (defun xah-dired-sort ()
+      "Sort dired dir listing in different ways.
+    Prompt for a choice.
+    URL `http://ergoemacs.org/emacs/dired_sort.html'
+    Version 2015-07-30"
+      (interactive)
+      (let ($sort-by $arg)
+	(setq $sort-by (ido-completing-read "Sort by:" '( "date" "size" "name" "dir")))
+	(cond
+	 ((equal $sort-by "name") (setq $arg "-Al --si --time-style long-iso "))
+	 ((equal $sort-by "date") (setq $arg "-Al --si --time-style long-iso -t"))
+	 ((equal $sort-by "size") (setq $arg "-Al --si --time-style long-iso -S"))
+	 ((equal $sort-by "dir") (setq $arg "-Al --si --time-style long-iso --group-directories-first"))
+	 (t (error "logic error 09535" )))
+	(dired-sort-other $arg )))
+
+    ;; (define-key dired-mode-map (kbd "s") 'xah-dired-sort)
+
+    ;; ==================================================
+
+    (defun xah-delete-current-file-make-backup (&optional @no-backup-p)
+      "Delete current file, makes a backup~, closes the buffer.
+     Backup filename is “‹name›~‹date time stamp›~”. Existing file of the same name is overwritten. If the file is not associated with buffer, the backup file name starts with “xx_”.
+    When `universal-argument' is called first, don't create backup.
+    URL `http://ergoemacs.org/emacs/elisp_delete-current-file.html'
+    Version 2016-07-20"
+      (interactive "P")
+      (let* (
+	     ($fname (buffer-file-name))
+	     ($buffer-is-file-p $fname)
+	     ($backup-suffix (concat "~" (format-time-string "%Y%m%dT%H%M%S") "~")))
+	(if $buffer-is-file-p
+	    (progn
+	      (save-buffer $fname)
+	      (when (not @no-backup-p)
+		(copy-file
+		 $fname
+		 (concat $fname $backup-suffix)
+		 t))
+	      (delete-file $fname)
+	      (message "Deleted. Backup created at 「%s」." (concat $fname $backup-suffix)))
+	  (when (not @no-backup-p)
+	    (widen)
+	    (write-region (point-min) (point-max) (concat "xx" $backup-suffix))
+	    (message "Backup created at 「%s」." (concat "xx" $backup-suffix))))
+	(kill-buffer (current-buffer))))
+
+    ;; ==================================================
+
+    (defun xah-dired-rename-space-to-underscore ()
+      "In dired, rename current or marked files by replacing space to underscore _.
+    If not in `dired', do nothing.
+    URL `http://ergoemacs.org/emacs/elisp_dired_rename_space_to_underscore.html'
+    Version 2017-01-02"
+      (interactive)
+      (require 'dired-aux)
+      (if (equal major-mode 'dired-mode)
+	  (progn
+	    (mapc (lambda (x)
+		    (when (string-match " " x )
+		      (dired-rename-file x (replace-regexp-in-string " " "_" x) nil)))
+		  (dired-get-marked-files ))
+	    (revert-buffer))
+	(user-error "Not in dired.")))
+
+    ;; ==================================================
+
+    (defun xah-open-in-gimp ()
+      "Open the current file or `dired' marked files in gimp.
+    Works in linux and Mac. Not tested on Microsoft Windows.
+
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2015-07-30"
+      (interactive)
+      (let* (
+	     ($file-list
+	      (if (string-equal major-mode "dired-mode")
+		  (dired-get-marked-files)
+		(list (buffer-file-name))))
+	     ($do-it-p (if (<= (length $file-list) 5)
+			   t
+			 (y-or-n-p "Open more than 5 files? "))))
+	(when $do-it-p
+	  (cond
+	   ((string-equal system-type "windows-nt")
+	    (mapc
+	     (lambda ($fpath)
+	       (w32-shell-execute "gimp" (replace-regexp-in-string "/" "\\" $fpath t t))) $file-list))
+	   ((string-equal system-type "darwin")
+	    (mapc
+	     (lambda ($fpath)
+	       (shell-command
+		(format "open -a /Applications/GIMP.app \"%s\"" $fpath))) $file-list))
+	   ((string-equal system-type "gnu/linux")
+	    (mapc
+	     (lambda ($fpath) (let ((process-connection-type nil)) (start-process "" nil "gimp" $fpath))) $file-list))))))
+
+
+    ;; ==================================================
+
+    (defun xah-dired-to-zip ()
+      "Zip the current file in `dired'.
+    If multiple files are marked, only zip the first one.
+    Require unix zip command line tool.
+
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2015-07-30"
+      (interactive)
+      (require 'dired)
+      (let ( ($fName (elt (dired-get-marked-files) 0)))
+	(shell-command
+	 (format
+	  "zip -r '%s.zip' '%s'"
+	  (file-relative-name $fName)
+	  (file-relative-name $fName)))))
+
+    ;; ==================================================
+
+    (defun xah-dired-show-metadata (@file-list)
+      "Display metatata of buffer image file or marked files in dired.
+     (typically image files)
+    URL `http://xahlee.info/img/metadata_in_image_files.html'
+    Requires exiftool shell command.
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2016-07-19"
+      (interactive
+       (list
+	(cond
+	 ((string-equal major-mode "dired-mode") (dired-get-marked-files))
+	 ((string-equal major-mode "image-mode") (list (buffer-file-name)))
+	 (t (list (read-from-minibuffer "file name:"))))))
+      (mapc
+       (lambda ($f)
+	 (shell-command
+	  (format "exiftool '%s'" (file-relative-name $f))
+	  ;; relative paths used to get around Windows/Cygwin path remapping problem
+	  ))
+       @file-list ))
+
+    ;; ==================================================
+
+    (defun xah-dired-remove-all-metadata (@file-list)
+      "Remove all metatata of buffer image file or marked files in dired.
+     (typically image files)
+    URL `http://xahlee.info/img/metadata_in_image_files.html'
+    Requires exiftool shell command.
+
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2016-07-19"
+      (interactive
+       (list
+	(cond
+	 ((string-equal major-mode "dired-mode") (dired-get-marked-files))
+	 ((string-equal major-mode "image-mode") (list (buffer-file-name)))
+	 (t (list (read-from-minibuffer "file name:"))))))
+      (if (y-or-n-p "Sure to remove all metadata?")
+	  (mapc
+	   (lambda ($f)
+	     (let ($cmdStr)
+	       (setq $cmdStr
+		     (format "exiftool -all= -overwrite_original '%s'" (file-relative-name $f))) ; relative paths used to get around Windows/Cygwin path remapping problem
+	       (shell-command $cmdStr)))
+	   @file-list )
+	nil
+	))
+
+    ;; ==================================================
+
+    (defun xah-dired-2jpg (@file-list)
+      "Create a JPG version of images of marked files in dired.
+    Requires ImageMagick shell command.
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2016-07-19"
+      (interactive
+       (let (
+	     ($fileList
+	      (cond
+	       ((string-equal major-mode "dired-mode") (dired-get-marked-files))
+	       ((string-equal major-mode "image-mode") (list (buffer-file-name)))
+	       (t (list (read-from-minibuffer "file name:"))))))
+	 (list $fileList)))
+      (xah-process-image @file-list "-quality 90%" "-2" ".jpg" ))
+
+    ;; ==================================================
+
+    (defun xah-dired-2png (@file-list)
+      "Create a png version of images of marked files in dired.
+    Requires ImageMagick shell command.
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2016-07-19"
+      (interactive
+       (let (
+	     ($fileList
+	      (cond
+	       ((string-equal major-mode "dired-mode") (dired-get-marked-files))
+	       ((string-equal major-mode "image-mode") (list (buffer-file-name)))
+	       (t (list (read-from-minibuffer "file name:"))))))
+	 (list $fileList)))
+      (xah-process-image @file-list "" "-2" ".png" ))
+
+    ;; ==================================================
+
+    (defun xah-image-autocrop ()
+      "Create a new auto-cropped version of image.
+    If current buffer is jpg or png file, crop it.
+    If current buffer is dired, do the file under cursor or marked files.
+
+    The created file has “_crop.” in the name, in the same dir.
+    It's in png or jpg, same as the original.
+
+    Requires ImageMagick shell command “convert”
+
+    If `universal-argument' is called first, output is PNG format. Else, JPG.
+    URL `http://ergoemacs.org/emacs/emacs_dired_convert_images.html'
+    Version 2017-10-08"
+      (interactive)
+      (let (
+	    ($bfName (buffer-file-name))
+	    $newName
+	    $cmdStr
+	    )
+	(if (string-equal major-mode "dired-mode")
+	    (progn
+	      (let (($flist (dired-get-marked-files)))
+		(mapc
+		 (lambda ($f)
+		   (setq $newName (concat (file-name-sans-extension $f) "_crop." (file-name-extension $f)))
+		   (setq $cmdStr (format "convert -trim '%s' '%s'" (file-relative-name $f) (file-relative-name $newName)))
+		   (shell-command $cmdStr))
+		 $flist ))
+	      (revert-buffer))
+	  (progn
+	    (if $bfName
+		(let (($ext (file-name-extension $bfName)))
+		  (if (and (not (string-equal $ext "jpg"))
+			   (not (string-equal $ext "png")))
+		      (user-error "not png or jpg at %s" $bfName)
+		    (progn
+		      (setq $cmdStr
+			    (format
+			     "convert -trim '%s' '%s'"
+			     $bfName
+			     (concat (file-name-sans-extension $bfName) "_crop." $ext)))
+		      (shell-command  $cmdStr )
+		      (message  $cmdStr))))
+	      (user-error "not img file or dired at %s" $bfName))))))
+
+    ;; ==================================================
+
+    (defun xah-new-empty-buffer ()
+      "Create a new empty buffer.
+    New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
+
+    It returns the buffer (for elisp programing).
+
+    URL `http://ergoemacs.org/emacs/emacs_new_empty_buffer.html'
+    Version 2017-11-01"
+      (interactive)
+      (let (($buf (generate-new-buffer "untitled")))
+	(switch-to-buffer $buf)
+	(funcall initial-major-mode)
+	(setq buffer-offer-save t)
+	$buf))
+
+    ;; ==================================================
+
+    (defun xah-new-empty-buffer ()
+      "Create a new empty buffer.
+    New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
+
+    It returns the buffer (for elisp programing).
+
+    URL `http://ergoemacs.org/emacs/emacs_new_empty_buffer.html'
+    Version 2017-11-01"
+      (interactive)
+      (let (($buf (generate-new-buffer "untitled")))
+	(switch-to-buffer $buf)
+	(funcall initial-major-mode)
+	(setq buffer-offer-save t)
+	$buf))
+
+    ;; ==================================================
+
+    (defun xah-next-emacs-buffer ()
+      "Switch to the next emacs buffer.
+    “emacs buffer” here is buffer whose name starts with *.
+    URL `http://ergoemacs.org/emacs/elisp_next_prev_user_buffer.html'
+    Version 2016-06-19"
+      (interactive)
+      (next-buffer)
+      (let ((i 0))
+	(while (and (not (string-equal "*" (substring (buffer-name) 0 1))) (< i 20))
+	  (setq i (1+ i)) (next-buffer))))
+
+    (defun xah-previous-emacs-buffer ()
+      "Switch to the previous emacs buffer.
+    “emacs buffer” here is buffer whose name starts with *.
+    URL `http://ergoemacs.org/emacs/elisp_next_prev_user_buffer.html'
+    Version 2016-06-19"
+      (interactive)
+      (previous-buffer)
+      (let ((i 0))
+	(while (and (not (string-equal "*" (substring (buffer-name) 0 1))) (< i 20))
+	  (setq i (1+ i)) (previous-buffer))))
+
+    ;; ==================================================
+
+    (defvar xah-recently-closed-buffers nil "alist of recently closed buffers. Each element is (buffer name, file path). The max number to track is controlled by the variable `xah-recently-closed-buffers-max'.")
+
+    (defvar xah-recently-closed-buffers-max 40 "The maximum length for `xah-recently-closed-buffers'.")
+
+    (defun xah-close-current-buffer ()
+      "Close the current buffer.
+
+    Similar to `kill-buffer', with the following addition:
+
+    • Prompt user to save if the buffer has been modified even if the buffer is not associated with a file.
+    • If the buffer is editing a source file in an org-mode file, prompt the user to save before closing.
+    • If the buffer is a file, add the path to the list `xah-recently-closed-buffers'.
+    • If it is the minibuffer, exit the minibuffer
+
+    URL `http://ergoemacs.org/emacs/elisp_close_buffer_open_last_closed.html'
+    Version 2016-06-19"
+      (interactive)
+      (let ($emacs-buff-p
+	    ($org-p (string-match "^*Org Src" (buffer-name))))
+
+	(setq $emacs-buff-p (if (string-match "^*" (buffer-name)) t nil))
+
+	(if (string= major-mode "minibuffer-inactive-mode")
+	    (minibuffer-keyboard-quit) ; if the buffer is minibuffer
+	  (progn
+	    ;; offer to save buffers that are non-empty and modified, even for non-file visiting buffer. (because kill-buffer does not offer to save buffers that are not associated with files)
+	    (when (and (buffer-modified-p)
+		       (not $emacs-buff-p)
+		       (not (string-equal major-mode "dired-mode"))
+		       (if (equal (buffer-file-name) nil)
+			   (if (string-equal "" (save-restriction (widen) (buffer-string))) nil t)
+			 t))
+	      (if (y-or-n-p (format "Buffer %s modified; Do you want to save? " (buffer-name)))
+		  (save-buffer)
+		(set-buffer-modified-p nil)))
+	    (when (and (buffer-modified-p)
+		       $org-p)
+	      (if (y-or-n-p (format "Buffer %s modified; Do you want to save? " (buffer-name)))
+		  (org-edit-src-save)
+		(set-buffer-modified-p nil)))
+
+	    ;; save to a list of closed buffer
+	    (when (buffer-file-name)
+	      (setq xah-recently-closed-buffers
+		    (cons (cons (buffer-name) (buffer-file-name)) xah-recently-closed-buffers))
+	      (when (> (length xah-recently-closed-buffers) xah-recently-closed-buffers-max)
+		(setq xah-recently-closed-buffers (butlast xah-recently-closed-buffers 1))))
+
+	    ;; close
+	    (kill-buffer (current-buffer))))))
+
+    (defun xah-open-last-closed ()
+      "Open the last closed file.
+    URL `http://ergoemacs.org/emacs/elisp_close_buffer_open_last_closed.html'
+    Version 2016-06-19"
+      (interactive)
+      (if (> (length xah-recently-closed-buffers) 0)
+	  (find-file (cdr (pop xah-recently-closed-buffers)))
+	(progn (message "No recently close buffer in this session."))))
+
+    (defun xah-open-recently-closed ()
+      "Open recently closed file.
+    Prompt for a choice.
+    URL `http://ergoemacs.org/emacs/elisp_close_buffer_open_last_closed.html'
+    Version 2016-06-19"
+      (interactive)
+      (find-file (ido-completing-read "open:" (mapcar (lambda (f) (cdr f)) xah-recently-closed-buffers))))
+
+    (defun xah-list-recently-closed ()
+      "List recently closed file.
+    URL `http://ergoemacs.org/emacs/elisp_close_buffer_open_last_closed.html'
+    Version 2016-06-19"
+      (interactive)
+      (let (($buf (generate-new-buffer "*recently closed*")))
+	(switch-to-buffer $buf)
+	(mapc (lambda ($f) (insert (cdr $f) "\n"))
+	      xah-recently-closed-buffers)))
+
+    ;; ==================================================
+
+    (defun xah-open-file-at-cursor ()
+      "Open the file path under cursor.
+    If there is text selection, uses the text selection for path.
+    If the path starts with “http://”, open the URL in browser.
+    Input path can be {relative, full path, URL}.
+    Path may have a trailing “:‹n›” that indicates line number. If so, jump to that line number.
+    If path does not have a file extension, automatically try with “.el” for elisp files.
+    This command is similar to `find-file-at-point' but without prompting for confirmation.
+
+    URL `http://ergoemacs.org/emacs/emacs_open_file_path_fast.html'
+    Version 2018-02-21"
+      (interactive)
+      (let* (($inputStr (if (use-region-p)
+			    (buffer-substring-no-properties (region-beginning) (region-end))
+			  (let ($p0 $p1 $p2
+				    ;; chars that are likely to be delimiters of file path or url, e.g. space, tabs, brakets. The colon is a problem. cuz it's in url, but not in file name. Don't want to use just space as delimiter because path or url are often in brackets or quotes as in markdown or html
+				    ($pathStops "^  \t\n\"`'‘’“”|()[]{}「」<>〔〕〈〉《》【】〖〗«»‹›❮❯❬❭·。\\"))
+			    (setq $p0 (point))
+			    (skip-chars-backward $pathStops)
+			    (setq $p1 (point))
+			    (goto-char $p0)
+			    (skip-chars-forward $pathStops)
+			    (setq $p2 (point))
+			    (goto-char $p0)
+			    (buffer-substring-no-properties $p1 $p2))))
+	     ($path
+	      (replace-regexp-in-string
+	       "^file:///" "/"
+	       (replace-regexp-in-string
+		":\\'" "" $inputStr))))
+	(if (string-match-p "\\`https?://" $path)
+	    (if (fboundp 'xahsite-url-to-filepath)
+		(let (($x (xahsite-url-to-filepath $path)))
+		  (if (string-match "^http" $x )
+		      (browse-url $x)
+		    (find-file $x)))
+	      (progn (browse-url $path)))
+	  (if ; not starting “http://”
+	      (string-match "^\\`\\(.+?\\):\\([0-9]+\\)\\'" $path)
+	      (let (
+		    ($fpath (match-string 1 $path))
+		    ($line-num (string-to-number (match-string 2 $path))))
+		(if (file-exists-p $fpath)
+		    (progn
+		      (find-file $fpath)
+		      (goto-char 1)
+		      (forward-line (1- $line-num)))
+		  (when (y-or-n-p (format "file no exist: 「%s」. Create?" $fpath))
+		    (find-file $fpath))))
+	    (if (file-exists-p $path)
+		(progn ; open f.ts instead of f.js
+		  (let (($ext (file-name-extension $path))
+			($fnamecore (file-name-sans-extension $path)))
+		    (if (and (string-equal $ext "js")
+			     (file-exists-p (concat $fnamecore ".ts")))
+			(find-file (concat $fnamecore ".ts"))
+		      (find-file $path))))
+	      (if (file-exists-p (concat $path ".el"))
+		  (find-file (concat $path ".el"))
+		(when (y-or-n-p (format "file no exist: 「%s」. Create?" $path))
+		  (find-file $path ))))))))
+
+    ;; ==================================================
+
+    (defun xah-search-current-word ()
+      "Call `isearch' on current word or text selection.
+    “word” here is A to Z, a to z, and hyphen 「-」 and underline 「_」, independent of syntax table.
+    URL `http://ergoemacs.org/emacs/modernization_isearch.html'
+    Version 2015-04-09"
+      (interactive)
+      (let ( $p1 $p2 )
+	(if (use-region-p)
+	    (progn
+	      (setq $p1 (region-beginning))
+	      (setq $p2 (region-end)))
+	  (save-excursion
+	    (skip-chars-backward "-_A-Za-z0-9")
+	    (setq $p1 (point))
+	    (right-char)
+	    (skip-chars-forward "-_A-Za-z0-9")
+	    (setq $p2 (point))))
+	(setq mark-active nil)
+	(when (< $p1 (point))
+	  (goto-char $p1))
+	(isearch-mode t)
+	(isearch-yank-string (buffer-substring-no-properties $p1 $p2))))
+
+    ;; ==================================================
+
+    (defun xah-select-text-in-quote ()
+      "Select text between the nearest left and right delimiters.
+    Delimiters here includes the following chars: \"<>(){}[]“”‘’‹›«»「」『』【】〖〗《》〈〉〔〕（）
+    This command select between any bracket chars, not the inner text of a bracket. For example, if text is
+
+     (a(b)c▮)
+
+     the selected char is “c”, not “a(b)c”.
+
+    URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+    Version 2016-12-18"
+      (interactive)
+      (let (
+	    ($skipChars
+	     (if (boundp 'xah-brackets)
+		 (concat "^\"" xah-brackets)
+	       "^\"<>(){}[]“”‘’‹›«»「」『』【】〖〗《》〈〉〔〕（）"))
+	    $pos
+	    )
+	(skip-chars-backward $skipChars)
+	(setq $pos (point))
+	(skip-chars-forward $skipChars)
+	(set-mark $pos)))
+
+    (defun xah-select-line ()
+      "Select current line. If region is active, extend selection downward by line.
+    URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+    Version 2017-11-01"
+      (interactive)
+      (if (region-active-p)
+	  (progn
+	    (forward-line 1)
+	    (end-of-line))
+	(progn
+	  (end-of-line)
+	  (set-mark (line-beginning-position)))))
+
+    (defun xah-select-current-line ()
+      "Select current line.
+    URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+    Version 2016-07-22"
+      (interactive)
+      (end-of-line)
+      (set-mark (line-beginning-position)))
+
+    (defun xah-select-block ()
+      "Select the current/next block of text between blank lines.
+    If region is active, extend selection downward by block.
+
+    URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+    Version 2017-11-01"
+      (interactive)
+      (if (region-active-p)
+	  (re-search-forward "\n[ \t]*\n" nil "move")
+	(progn
+	  (skip-chars-forward " \n\t")
+	  (when (re-search-backward "\n[ \t]*\n" nil "move")
+	    (re-search-forward "\n[ \t]*\n"))
+	  (push-mark (point) t t)
+	  (re-search-forward "\n[ \t]*\n" nil "move"))))
+
+
+
+
+    (defun xah-select-current-block ()
+      "Select the current block of text between blank lines.
+
+    URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+    Version 2017-07-02"
+      (interactive)
+      (progn
+	(skip-chars-forward " \n\t")
+	(when (re-search-backward "\n[ \t]*\n" nil "move")
+	  (re-search-forward "\n[ \t]*\n"))
+	(push-mark (point) t t)
+	(re-search-forward "\n[ \t]*\n" nil "move")))
+
+    (defun xah-extend-selection ()
+      "Select the current word, bracket/quote expression, or expand selection.
+    Subsequent calls expands the selection.
+
+    when no selection,
+    • if cursor is on a bracket, select whole bracketed thing including bracket
+    • if cursor is on a quote, select whole quoted thing including quoted
+    • if cursor is on the beginning of line, select the line.
+    • else, select current word.
+
+    when there's a selection, the selection extension behavior is still experimental.
+    Roughly:
+    • if 1 line is selected, extend to next line.
+    • if multiple lines is selected, extend to next line.
+    • if a bracketed text is selected, extend to include the outer bracket. If there's no outer, select current line.
+
+     to line, or bracket/quoted text,
+    or text block, whichever is the smallest.
+
+    URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+    Version 2017-01-15"
+      (interactive)
+      (if (region-active-p)
+	  (progn
+	    (let (($rb (region-beginning)) ($re (region-end)))
+	      (goto-char $rb)
+	      (cond
+	       ((looking-at "\\s(")
+		(if (eq (nth 0 (syntax-ppss)) 0)
+		    (progn
+		      (message "left bracket, depth 0.")
+		      (end-of-line) ; select current line
+		      (set-mark (line-beginning-position)))
+		  (progn
+		    (message "left bracket, depth not 0")
+		    (up-list -1 t t)
+		    (mark-sexp))))
+	       ((eq $rb (line-beginning-position))
+		(progn
+		  (goto-char $rb)
+		  (let (($firstLineEndPos (line-end-position)))
+		    (cond
+		     ((eq $re $firstLineEndPos)
+		      (progn
+			(message "exactly 1 line. extend to next whole line." )
+			(forward-line 1)
+			(end-of-line)))
+		     ((< $re $firstLineEndPos)
+		      (progn
+			(message "less than 1 line. complete the line." )
+			(end-of-line)))
+		     ((> $re $firstLineEndPos)
+		      (progn
+			(message "beginning of line, but end is greater than 1st end of line" )
+			(goto-char $re)
+			(if (eq (point) (line-end-position))
+			    (progn
+			      (message "exactly multiple lines" )
+			      (forward-line 1)
+			      (end-of-line))
+			  (progn
+			    (message "multiple lines but end is not eol. make it so" )
+			    (goto-char $re)
+			    (end-of-line)))))
+		     (t (error "logic error 42946" ))))))
+	       ((and (> (point) (line-beginning-position)) (<= (point) (line-end-position)))
+		(progn
+		  (message "less than 1 line" )
+		  (end-of-line) ; select current line
+		  (set-mark (line-beginning-position))))
+	       (t (message "last resort" ) nil))))
+	(progn
+	  (cond
+	   ((looking-at "\\s(")
+	    (message "left bracket")
+	    (mark-sexp)) ; left bracket
+	   ((looking-at "\\s)")
+	    (message "right bracket")
+	    (backward-up-list) (mark-sexp))
+	   ((looking-at "\\s\"")
+	    (message "string quote")
+	    (mark-sexp)) ; string quote
+	   ((and (eq (point) (line-beginning-position)) (not (looking-at "\n")))
+	    (message "beginning of line and not empty")
+	    (end-of-line)
+	    (set-mark (line-beginning-position)))
+	   ((or (looking-back "\\s_" 1) (looking-back "\\sw" 1))
+	    (message "left is word or symbol")
+	    (skip-syntax-backward "_w" )
+	    ;; (re-search-backward "^\\(\\sw\\|\\s_\\)" nil t)
+	    (mark-sexp))
+	   ((and (looking-at "\\s ") (looking-back "\\s " 1))
+	    (message "left and right both space" )
+	    (skip-chars-backward "\\s " ) (set-mark (point))
+	    (skip-chars-forward "\\s "))
+	   ((and (looking-at "\n") (looking-back "\n" 1))
+	    (message "left and right both newline")
+	    (skip-chars-forward "\n")
+	    (set-mark (point))
+	    (re-search-forward "\n[ \t]*\n")) ; between blank lines, select next text block
+	   (t (message "just mark sexp" )
+	      (mark-sexp))
+	   ;;
+	   ))))
+
+    ;; ==================================================
+
+    (defun xah-forward-block (&optional n)
+      "Move cursor beginning of next text block.
+    A text block is separated by blank lines.
+    This command similar to `forward-paragraph', but this command's behavior is the same regardless of syntax table.
+    URL `http://ergoemacs.org/emacs/emacs_move_by_paragraph.html'
+    Version 2016-06-15"
+      (interactive "p")
+      (let ((n (if (null n) 1 n)))
+	(re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" n)))
+
+    (defun xah-backward-block (&optional n)
+      "Move cursor to previous text block.
+    See: `xah-forward-block'
+    URL `http://ergoemacs.org/emacs/emacs_move_by_paragraph.html'
+    Version 2016-06-15"
+      (interactive "p")
+      (let ((n (if (null n) 1 n))
+	    ($i 1))
+	(while (<= $i n)
+	  (if (re-search-backward "\n[\t\n ]*\n+" nil "NOERROR")
+	      (progn (skip-chars-backward "\n\t "))
+	    (progn (goto-char (point-min))
+		   (setq $i n)))
+	  (setq $i (1+ $i)))))
+
+    (defun xah-open-in-external-app ()
+      "Open the current file or dired marked files in external app.
+    The app is chosen from your OS's preference.
+    URL `http://ergoemacs.org/emacs/emacs_dired_open_file_in_ext_apps.html'
+    Version 2016-10-15"
+      (interactive)
+      (let* (
+	     ($file-list
+	      (if (string-equal major-mode "dired-mode")
+		  (dired-get-marked-files)
+		(list (buffer-file-name))))
+	     ($do-it-p (if (<= (length $file-list) 5)
+			   t
+			 (y-or-n-p "Open more than 5 files? "))))
+	(when $do-it-p
+	  (cond
+	   ((string-equal system-type "windows-nt")
+	    (mapc
+	     (lambda ($fpath)
+	       (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" $fpath t t))) $file-list))
+	   ((string-equal system-type "darwin")
+	    (mapc
+	     (lambda ($fpath)
+	       (shell-command
+		(concat "open " (shell-quote-argument $fpath))))  $file-list))
+	   ((string-equal system-type "gnu/linux")
+	    (mapc
+	     (lambda ($fpath) (let ((process-connection-type nil))
+				(start-process "" nil "xdg-open" $fpath))) $file-list))))))
+
+    ;; ==================================================
+    (defun xah-space-to-newline ()
+      "Replace space sequence to a newline char.
+    Works on current block or selection.
+
+    URL `http://ergoemacs.org/emacs/emacs_space_to_newline.html'
+    Version 2017-08-19"
+      (interactive)
+      (let* ( $p1 $p2 )
+	(if (use-region-p)
+	    (progn
+	      (setq $p1 (region-beginning))
+	      (setq $p2 (region-end)))
+	  (save-excursion
+	    (if (re-search-backward "\n[ \t]*\n" nil "move")
+		(progn (re-search-forward "\n[ \t]*\n")
+		       (setq $p1 (point)))
+	      (setq $p1 (point)))
+	    (re-search-forward "\n[ \t]*\n" nil "move")
+	    (skip-chars-backward " \t\n" )
+	    (setq $p2 (point))))
+	(save-excursion
+	  (save-restriction
+	    (narrow-to-region $p1 $p2)
+	    (goto-char (point-min))
+	    (while (re-search-forward " +" nil t)
+	      (replace-match "\n" ))))))
+
+
+
+    ;; --------------------------------------------------
+    (provide 'xahlee)
+
+    #+END_SRC
+* C bult-in
+    #+BEGIN_SRC emacs-lisp :results code
+
+    ;; =============== CC-MODE
+    (with-eval-after-load "cc-mode"
+      ;; ==================================================
+      ;; SEMANTIC
+      ;; ==================================================
+
+      (progn
+	(require 'semantic)
+	(require 'semantic/ia)
+	(require 'semantic/bovine/gcc)
+	(semantic-mode 1)
+	;; (semantic-enable)
+	(setq dtrt-indent-verbosity 0)           ;; turn off dtrt-indent messages
+	(setq-mode-local c-mode semanticdb-find-default-throttle
+			 '(project unloaded system recursive))
+	(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+	(global-semanticdb-minor-mode 1)
+	(global-semantic-idle-scheduler-mode 1)
+	(global-semantic-idle-summary-mode 1)
+
+	;; ;; if you want to enable support for gnu global
+	;; (when (cedet-gnu-global-version-check t)
+	;;   (semanticdb-enable-gnu-global-databases 'c-mode)
+	;;   (semanticdb-enable-gnu-global-databases 'c++-mode))
+
+	;; enable ctags for some languages:
+	;;  Unix Shell, Perl, Pascal, Tcl, Fortran, Asm
+	;; (when (cedet-ectag-version-check t)
+	;;   (semantic-load-enable-primary-exuberent-ctags-support))
+
+	(defun my-cedet-hook ()
+	  (local-set-key [(control return)] 'semantic-ia-complete-symbol)
+	  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+	  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+	  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
+	;; (add-hook 'c-mode-common-hook 'my-cedet-hook)
+
+	(defun my-semantic-hook ()
+	  (imenu-add-to-menubar "TAGS"))
+	(add-hook 'semantic-init-hooks 'my-semantic-hook))
+
+      ;; ==================================================
+      ;; EDE
+      ;; ==================================================
+
+      (progn
+	(global-ede-mode t))
+
+      ;; ==================================================
+      ;; GDB
+      ;; ==================================================
+
+      (setq gdb-many-windows t        ; use gdb-many-windows by default
+	    gdb-show-main t)          ; Non-nil means display source file containing the main routine at startup
+
+      ;; ==================================================
+      ;; C-MODE
+      ;; ==================================================
+
+      (defun my/c-mode-hook ()
+	"add to cc-mode"
+	;; C-IDE based on https://github.com/tuhdo/emacs-c-ide-demo
+	;; Available C style:
+	;; "gnu": The default style for GNU projects
+	;; "k&r": What Kernighan and Ritchie, the authors of C used in their book
+	;; "bsd": What BSD developers use, aka "Allman style" after Eric Allman.
+	;; "whitesmith": Popularized by the examples that came with Whitesmiths C, an early commercial C compiler.
+	;; "stroustrup": What Stroustrup, the author of C++ used in his book
+	;; "ellemtel": Popular C++ coding standards as defined by "Programming in C++, Rules and Recommendations," Erik Nyquist and Mats Henricson, Ellemtel
+	;; "linux": What the Linux developers use for kernel development
+	;; "python": What Python developers use for extension modules
+	;; "java": The default style for java-mode (see below)
+	;; "user": When you want to define your own style
+	;; (setq c-default-style "gnu")
+	;; (setq gdb-many-windows t ;; use gdb-many-windows by default
+	;;		gdb-show-main t
+	;;		c-basic-offset 4
+	;;		tab-width 4
+	;;		indent-tabs-mode t)
+	(progn
+	  (setq c-default-style "gnu")        ;; flycheck-gcc-language-standard "gnu99"
+	  (flymake-mode)
+	  ;; Folding
+	  (add-hook 'c-mode-common-hook 'hs-minor-mode)))
+      (add-hook 'c-mode-common-hook'my/c-mode-hook)
+
+      ;; Compilation from Emacs
+      (defun prelude-colorize-compilation-buffer ()
+	"Colorize a compilation mode buffer."
+	(interactive)
+	;; we don't want to mess with child modes such as grep-mode, ack, ag, etc
+	(when (eq amjor-mode 'compilation-mode)
+	  (let ((inhibit-read-only t))
+	    (ansi-color-apply-on-region (point-min) (point-max)))))
+
+      ;; setup compilation-mode used by `compile' command
+      (require 'compile)
+      (setq compilation-ask-about-save nil          ; Just save before compiling
+	    compilation-always-kill t               ; Just kill old compile processes before starting the new one
+	    compilation-scroll-output 'first-error) ; Automatically scroll to first
+
+
+      ;; GROUP: Programming -> Tools -> Makefile
+      ;; takenn from prelude-c.el:48: https://github.com/bbatsov/prelude/blob/master/modules/prelude-c.el
+      (defun prelude-makefile-mode-defaults ()
+	(whitespace-toggle-options '(tabs))
+	(setq indent-tabs-mode t))
+
+      (setq prelude-makefile-mode-hook 'prelude-makefile-mode-defaults)
+
+      ;;(add-hook 'makefile-mode-hook (lambda ()
+	;;                              (run-hooks 'prelude-makefile-mode-hook)))) ;; End of eval after load
+
+    #+END_SRC
+
+    #+RESULTS:
