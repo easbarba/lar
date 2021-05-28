@@ -1,0 +1,1079 @@
+#+TITLE: Projects Legacy
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#projects][Projects]]
+  - [[#cejo][cejo]]
+- [[#dotfiles][Dotfiles]]
+  - [[#irbrc][irbrc]]
+  - [[#blog][Blog]]
+  - [[#neovim][neovim]]
+  - [[#asdf][asdf]]
+  - [[#fish][fish]]
+  - [[#shell-software][shell-software]]
+  - [[#shell-misc][shell-misc]]
+  - [[#shell-custom][shell-custom]]
+  - [[#emacs][Emacs]]
+  - [[#nixos][Nixos]]
+  - [[#bin][bin]]
+  - [[#autostart][autostart]]
+  - [[#xsessionrc][.xsessionrc]]
+  - [[#xinitrc][.xinitrc]]
+  - [[#sysinfo][sysinfo]]
+  - [[#guix-config][Guix Config]]
+  - [[#e_packs][e_packs]]
+  - [[#e_distro][e_distro]]
+  - [[#nyxt][Nyxt]]
+  - [[#bashrc][bashrc]]
+  - [[#xserverrc][.xserverrc]]
+  - [[#sbcl][Sbcl]]
+  - [[#xmobar][Xmobar]]
+  - [[#pypirc][.pypirc]]
+  - [[#gtk-30][gtk-3.0]]
+  - [[#fontconfig][fontconfig]]
+  - [[#stalonetray][StaloneTray]]
+  - [[#pycodestyle][pycodestyle]]
+  - [[#flake][Flake]]
+  - [[#stumpwm][StumpWM]]
+  - [[#xmonad][Xmonad]]
+  - [[#xmobar][Xmobar]]
+  - [[#qtile][Qtile]]
+  - [[#bashrc][Bashrc]]
+  - [[#tmux][Tmux]]
+  - [[#xprofile][.xprofile]]
+  - [[#autostart][autostart]]
+  - [[#make][Make]]
+  - [[#suckless][Suckless]]
+- [[#languages][Languages]]
+  - [[#elixir][Elixir]]
+  - [[#javascript][Javascript]]
+  - [[#rails][Rails]]
+  - [[#frontend][FrontEnd]]
+  - [[#css][Css]]
+  - [[#html][HTML]]
+  - [[#haskell][Haskell]]
+  - [[#common-lisp][Common Lisp]]
+  - [[#golang][Golang]]
+  - [[#php][PHP]]
+  - [[#python][Python]]
+  - [[#c][C]]
+  - [[#rust][Rust]]
+  - [[#net][.NET]]
+  - [[#swift][Swift]]
+  - [[#java][Java]]
+  - [[#cpp][CPP]]
+- [[#tools][Tools]]
+  - [[#devops][DevOps]]
+:END:
+
+* Projects
+** cejo
+*** distro
+    #+begin_src yaml
+    ---
+    builddep: builddep
+    clean: autoremove
+    depends: repoquery --requires --resolve
+    download: ''
+    fix: fix
+    help: help
+    info: info
+    install: install
+    installed: list installed
+    remove: remove
+    search: search
+    sysupgrade: sysupgrade
+    update: update
+    upgrade: upgrade
+
+    ---
+    builddep: ''
+    clean: autoremove
+    depends: ''
+    download: fetch
+    fix: fix
+    help: help
+    info: query
+    install: install
+    installed: version
+    remove: remove
+    search: search
+    sysupgrade: ''
+    update: update
+    upgrade: upgrade
+    ---
+    builddep: ''
+    clean: autoremove
+    depends: ''
+    download: fetch
+    fix: fix
+    help: help
+    info: query
+    install: install
+    installed: version
+    remove: remove
+    search: search
+    sysupgrade: ''
+    update: update
+    upgrade: upgrade
+
+    ---
+    builddep: build-dep
+    clean: nix-store --gc
+    depends: depends
+    download: download
+    fix: install -f
+    help: help
+    info: show
+    install: nix-env --install
+    install+: nix-env --install -A
+    installed: nix-env -qa
+    remove: nix-env --uninstall
+    search: nix-env -qa
+    sysupgrade: ''
+    update: nix-env --update
+    upgrade: nix-env --upgrade
+
+
+    ---
+    builddep: ''
+    clean: ''
+    depends: ''
+    download: ''
+    fix: ''
+    help: help
+    info: ''
+    install: "-S"
+    installed: ''
+    remove: "-R"
+    search: "-Ss"
+    sysupgrade: ''
+    update: "-Syy"
+    upgrade: "-Syu"
+
+
+    ---
+    builddep: ''
+    clean: autoremove
+    depends: ''
+    download: fetch
+    fix: fix
+    help: help
+    info: query
+    install: install
+    installed: version
+    remove: remove
+    search: search
+    sysupgrade: ''
+    update: update
+    upgrade: upgrade
+
+    #+end_src
+*** floss
+   #+begin_src yaml
+   --- # Javascript
+   - https://github.com/SBoudrias/Inquirer.js
+   - https://github.com/parcel-bundler/parcel
+   - https://github.com/prettier/prettier
+   - https://github.com/yarnpkg/yarn
+   - https://github.com/meteor/meteor
+   - https://github.com/axios/axios
+   - https://github.com/nodejs/node
+
+   --- # elixir
+   - https://github.com/plausible/analytics
+   - https://github.com/blackode/elixir_cli_spinners
+   - https://github.com/ndreynolds/ex_termbox
+   - https://github.com/tefter/cli
+   - https://github.com/ndreynolds/ratatouille
+   - https://github.com/bitwalker/distillery
+   - https://github.com/ueberauth/guardian
+   - https://github.com/absinthe-graphql/absinthe
+   - https://github.com/christopheradams/elixir_style_guide
+   - https://github.com/rrrene/credo
+   - https://github.com/taylor/kiex
+   - https://github.com/kerl/kerl
+   - https://github.com/jeremyjh/dialyxir
+   - https://github.com/elixir-lsp/elixir-ls
+   - https://github.com/elixir-ecto/ecto
+   - https://github.com/hexpm/hex
+   - https://github.com/phoenixframework/phoenix
+   - https://github.com/erlang/otp
+   - https://github.com/elixir-lang/ex_doc
+   - https://github.com/elixir-lang/elixir
+
+   --- # css
+   - https://github.com/IanLunn/Hover
+   - https://github.com/jgthms/bulma
+   - https://github.com/daneden/animate.css
+   - https://github.com/oddbird/susy
+   - https://github.com/necolas/normalize.css
+   - https://github.com/mozdevs/cssremedy
+
+   --- # golang
+   - https://github.com/golang-standards/project-layout
+   - https://github.com/hashicorp/nomad
+   - https://github.com/hashicorp/consul
+   - https://github.com/hashicorp/terraform
+   - https://github.com/containers/buildah
+   - https://github.com/containers/podman
+   - https://github.com/sourcegraph/go-langserver
+   - https://github.com/gorilla/mux
+   - https://github.com/cli/cli
+   - https://github.com/rclone/rclone
+   - https://github.com/avelino/awesome-go
+   - https://github.com/kubernetes-sigs/kind/
+   - https://github.com/kubernetes/kubernetes
+   - https://github.com/adonovan/gopl.io
+   - https://github.com/golang/net
+   - https://github.com/golang/tools
+   - https://github.com/golang/go
+
+   --- # c
+   - https://gitlab.freedesktop.org/mesa/mesa.git
+   - git://source.winehq.org/git/wine.git
+   - https://github.com/openssh/openssh-portable.git
+   - https://github.com/libressl-portable/portable.git
+   - https://git.suckless.org/dwm
+   - https://github.com/zsh-users/zsh.git
+   - https://github.com/git/git.git
+   - https://github.com/tmux/tmux.git
+   - https://github.com/antirez/redis.git
+   - https://github.com/curl/curl.git
+   - git://c9x.me/qbe.git
+   - https://github.com/mate-desktop/mate-terminal
+   - https://github.com/mate-desktop/atril
+   - https://github.com/mate-desktop/marco
+
+   --- # common lisp
+   - https://github.com/CodyReichert/awesome-cl.git
+   - https://github.com/atlas-engineer/nyxt.git
+   - https://github.com/LispCookbook/cl-cookbook.git
+   - https://github.com/quicklisp/quicklisp-client.git
+   - https://github.com/quicklisp/quicklisp-bootstrap.git
+   - https://github.com/quicklisp/quicklisp-controller.git
+   - https://github.com/franzinc/clx.git
+   - https://gitlab.common-lisp.net/alexandria/alexandria.git
+   - https://gitlab.common-lisp.net/asdf/asdf.git
+   - https://gitlab.common-lisp.net/clpm/clpm.git
+   - git://git.code.sf.net/p/sbcl/sbcl.git
+
+   --- # Haskell
+   - https://gitlab.haskell.org/ghc/ghc
+   - https://gitlab.haskell.org/haskell/ghcup
+   - https://github.com/haskell/cabal
+   - https://github.com/commercialhaskell/stack
+   - https://github.com/haskell/haskell-language-server
+   - https://github.com/koalaman/shellcheck
+   - https://github.com/jgm/pandoc
+   - https://github.com/elm/compiler
+
+   --- # Dart
+   - https://github.com/roughike/inKino
+   - https://github.com/flame-engine/flame
+   - https://github.com/felangel/bloc
+   - https://github.com/flutter/plugins
+   - https://github.com/dart-lang/build
+   - https://github.com/dart-lang/sdk
+
+   --- # Perl
+   - https://github.com/moose/Moose
+   - https://github.com/richterger/Perl-LanguageServer
+   - https://github.com/imapsync/imapsync
+   - https://github.com/ddclient/ddclient
+   - https://github.com/apache/avro
+   - https://github.com/mojolicious/mojo
+   - https://github.com/i3/i3
+   - https://github.com/bugzilla/bugzilla
+   - https://github.com/hachiojipm/awesome-perl
+   - https://github.com/Perl/perl5
+
+
+   --- # python
+   - https://github.com/python/cpython
+   - https://github.com/python/mypy
+   - https://github.com/python/peps
+   - https://github.com/pypa/pip
+   - https://github.com/pypa/wheel
+   - https://github.com/pytest-dev/pytest
+   - https://github.com/pypa/setuptools
+   - https://github.com/PyCQA/pylint
+   - https://github.com/nedbat/coveragepy
+   - https://github.com/psf/black
+
+   --- # php
+   - https://github.com/PacktPublishing/Mastering-PHP-7
+   - https://github.com/bcit-ci/CodeIgniter
+   - https://github.com/felixfbecker/php-language-server
+   - https://github.com/vimeo/psalm
+   - https://github.com/laravel/lumen
+   - https://github.com/nikic/php-parser
+   - https://github.com/phpstan/phpstan
+   - https://github.com/composer/composer
+   - https://github.com/symfony/symfony
+   - https://github.com/laravel/laravel
+   - https://github.com/php/php-src
+   #+end_src
+*** Ports
+**** Ruby
+     #+begin_src ruby
+     def get_name_files(folder)
+       name = folder.to_path
+       files = []
+
+       folder.children.each do |f|
+	 files << f if f.file?
+       end
+
+       { name => files }
+     end
+
+     def prepare_folders
+       Find.find(a) do |f|
+	 next if f.start_with? a.join('.git').to_path # ignore .git folder
+
+	 x = Pathname.new f
+	 puts x.parent.to_path
+       end
+
+       # result = {}
+
+       # SOURCE_FOLDER.children.each do |f|
+       #   next unless f.basename.to_s != '.git' && f.directory?
+
+       #   x = get_name_files f
+       #   result[x.keys.first] = x.values
+       # end
+
+       # result
+     end
+
+     #+end_src
+**** .NET
+***** Temp
+      #+begin_src csharp
+     #+end_src
+***** Projects
+      #+begin_src csharp
+      using System.Collections.Generic;
+      using System.IO;
+
+      using Cero.Services;
+
+      namespace Cero.Sections.Projects
+      {
+	  /// <summary>
+	  ///  A set of values used to specify a project information to start.
+	  /// </summary>
+	  public class Cpython : IProject
+	  {
+	      private readonly Folders _folders;
+	      private readonly Git _git;
+	      private readonly Runners _runners;
+
+	      public Cpython(Folders folders, Git git, Runners runners) =>
+		  (_folders, _git, _runners) = (folders, git, runners);
+
+	      ProjectInfo Info() => new ProjectInfo()
+	      {
+		  Name = "cpython",
+		  Url = "https://github.com/python/cpython",
+		  Folder = Path.Join(_folders.Builds, "cpython"),
+		  Tag = "v3.8.2",
+		  Commands = new List<(string, string)>
+		  {                ("mkdir", "-pv build"),
+		      ("make", "distclean"),
+		      ("sh", $@"configure --prefix={ _folders.Local } --enable-optimizations --with-lto --with-pydebug"),
+		      ("make", "-s"),
+		      ("make", "-j2 install"),
+		  }
+	      };
+
+	      public void Start() =>
+		  new ProjectBuilder(_git, _runners, Info()).Build();
+	  }
+      }
+
+
+      using System.Collections.Generic;
+      using System.IO;
+
+      using Cero.Services;
+
+      namespace Cero.Sections.Projects
+      {
+	  /// <summary>
+	  ///  A set of values used to specify a project information to start.
+	  /// </summary>
+	  public class Nyxt : IProject
+	  {
+	      private readonly Folders _folders;
+	      private readonly Git _git;
+	      private readonly Runners _runners;
+
+	      public Nyxt(Folders folders, Git git, Runners runners) =>
+		  (_folders, _git, _runners) = (folders, git, runners);
+
+
+	      ProjectInfo Info() => new ProjectInfo()
+	      {
+		  Name = "nyxt",
+		  Url = "https://github.com/atlas-engineer/nyxt",
+		  Folder = Path.Join(_folders.Builds, "nyxt"),
+		  Commands = new List<(string, string)>
+		  {
+		      ("make", "all NYXT_INTERNAL_QUICKLISP=true"),
+		      ("make", $"install PREFIX={ _folders.Local }")
+		  }
+	      };
+
+	      public void Start() =>
+		  new ProjectBuilder(_git, _runners, Info()).Build();
+	  }
+      }
+
+
+
+
+
+      #+end_src
+***** Packers
+      #+begin_src csharp
+
+      // "redhat.java",
+      // "vscjava.vscode-java-debug",
+      // "vscjava.vscode-maven",
+      // "vscjava.vscode-java-test",
+      // "vscjava.vscode-java-pack",
+      // "vscjava.vscode-java-dependency",
+      // "ms-vscode.go",
+      // "ms-vscode.cpptools",
+      // "ms-python.python",
+      // "ms-python.anaconda-extension-pack",
+      // "ms-python.anaconda-extension-pack",
+
+      using Cero.Library;
+
+      namespace Cero.Sections.Packers
+      {
+	  public class Go : IPacker
+	  {
+	      Di _di;
+
+	      public string _name = "go";
+	      public string _manager = "get";
+	      string[] _packages = new string[]
+	      {
+		  "github.com/sourcegraph/go-langserver",
+		  "golang.org/x/tools/cmd/gopls",
+		  "golang.org/x/tools/cmd/goimports",
+		  "github.com/saibing/bingo"
+	      };
+
+	      public Go(Di di) =>
+		  _di = di;
+
+	      public void Start()
+	      {
+		  dolist (var pack in _packages)
+		      _di._runners.RunCommand(_name, $"{ _manager } -u -v { pack }");
+	      }
+	  }
+      }
+
+
+      using System.Linq;
+
+      using Cero.Services;
+
+      namespace Cero.Sections.Packers
+      {
+	  public class Cabal : IPacker
+	  {
+	      private readonly Runners _runners;
+
+	      private readonly string _name;
+	      private readonly string _manager;
+	      private readonly string[] _packages;
+
+	      public Cabal(Runners runners)
+	      {
+		  _runners = runners;
+
+		  _name = "cabal";
+		  _manager = "new-install";
+		  _packages = new string[] { "hlint", "xmonad", "xmonad-contrib" };
+	      }
+
+	      private void InstallPackages()
+	      {
+		  dolist (var args in from pack in _packages
+				       let args = $"{ _manager } --lib --upgrade { pack } --user"
+				       select args)
+		  {
+		      _runners.RunCommand(_name, args);
+		  }
+	      }
+
+	      public void Start()
+	      {
+		  _runners.RunCommand(_name, $"update");
+		  InstallPackages();
+	      }
+	  }
+      }
+
+      using System.Linq;
+
+      using Cero.Services;
+
+      namespace Cero.Sections.Packers
+      {
+	  public class Cargo : IPacker
+	  {
+	      private readonly Runners _runners;
+
+	      private readonly string _name;
+	      private readonly string _manager;
+	      private readonly string[] _packages;
+
+	      public Cargo(Runners runners)
+	      {
+		  _runners = runners;
+
+		  _name = "cargo";
+		  _manager = "install";
+		  _packages = new string[] { "ripgrep" };
+	      }
+
+	      public void Start()
+	      {
+		  dolist (var args in from pack in _packages
+				       let args = $"{_manager} { pack }"
+				       select args)
+		  {
+		      _runners.RunCommand(_name, args);
+		  }
+	      }
+	  }
+      }
+
+      using System.IO;
+      using System.Net;
+      using System.Linq;
+
+      using Cero.Services;
+
+      namespace Cero.Sections.Packers
+      {
+	  public class QuickLisp : IPacker
+	  {
+	      private readonly WebClient _webClient;
+	      private readonly Runners _runners;
+	      private readonly Folders _folders;
+
+	      private readonly string _name;
+	      private readonly string[] _packages = default!;
+	      private readonly string _quickLispFile;
+	      private readonly string _quickLispSetupFile;
+
+	      public QuickLisp(WebClient webClient, Folders folders, Runners runners)
+	      {
+		  _webClient = webClient;
+		  _folders = folders;
+		  _runners = runners;
+
+		  _name = "sbcl";
+		  _packages = new string[]
+		  {
+		      ":quicklisp-slime-helper", ":swank", ":clx", ":cl-ppcre", ":alexandria",
+		      ":xembed", ":xml-emitter", ":dbus", ":prove", ":swank"
+		  };
+		  _quickLispFile = Path.Join(_folders.Home, "quicklisp.lisp");
+		  _quickLispSetupFile = Path.Combine(_folders.Home, "quicklisp", "setup.lisp");
+	      }
+
+	      private void GetQuickLispFile()
+	      {
+		  if (File.Exists(_quickLispFile)) { return; }
+
+		  _webClient.DownloadFile("https://beta.quicklisp.org/quicklisp.lisp", _quickLispFile);
+	      }
+
+	      private void InstallQuickLisp()
+	      {
+		  if (File.Exists(_quickLispSetupFile)) { return; }
+
+		  var args = $@"--load { _quickLispFile } --eval (quicklisp-quickstart:install) --eval (quit)";
+		  _runners.RunCommand(_name, args);
+	      }
+
+	      private void InstallPackages()
+	      {
+		  dolist (var args in from pack in _packages
+				       let args = $@"--eval ""(ql:quickload ""{ pack }"")"" --eval (quit)"
+				       select args)
+		  {
+		      _runners.RunCommand(_name, args);
+		  }
+	      }
+
+	      public void Start()
+	      {
+		  GetQuickLispFile();
+		  InstallQuickLisp();
+		  InstallPackages();
+	      }
+	  }
+      }
+
+
+      using System.IO;
+      using System.Net;
+
+      using Cero.Services;
+      using System.Linq;
+
+      namespace Cero.Sections.Packers
+      {
+	  public class RustUp : IPacker
+	  {
+	      WebClient _webClient;
+	      private readonly Folders _folders;
+	      private readonly Runners _runners;
+
+	      private readonly string _name;
+	      private readonly string _manager;
+	      private readonly string[] _packages;
+
+	      public RustUp(WebClient webClient, Folders folders, Runners runners)
+	      {
+		  _webClient = webClient;
+		  _folders = folders;
+		  _runners = runners;
+
+		  _name = "rustup";
+		  _manager = "component";
+		  _packages = new string[] { "rls", "rust-analysis", "rust-src", "clippy" };
+	      }
+
+	      string RustInit() =>
+		  Path.Join(_folders.Home, "rustup-init.sh");
+
+	      void GetRustUp()
+	      {
+		  if (File.Exists(RustInit())) { return; }
+
+		  _webClient.DownloadFile(
+		      "https://raw.githubusercontent.com/rust-lang/rustup/master/rustup-init.sh",
+		      RustInit());
+	      }
+
+	      void InstallRustUp()
+	      {
+		  if (File.Exists(Path.Join(_folders.Home, ".rustup"))) { return; }
+
+		  _runners.RunCommand("sh", $"{ RustInit() }");
+	      }
+
+	      public void InstallPackages()
+	      {
+		  dolist (var args in from pack in _packages
+				       let args = $"{_manager} add { pack }"
+				       select args)
+		  {
+		      _runners.RunCommand(_name, args);
+		  }
+	      }
+
+	      public void Start()
+	      {
+		  GetRustUp();
+		  InstallRustUp();
+		  InstallPackages();
+	      }
+	  }
+      }
+      #+end_src
+**** Python
+     #+begin_src python
+
+	 def advice(self) -> None:
+	     """Additional instruction before building."""
+	     from shutil import copy2
+
+	     definitions = VARS.build / folder / "config.def.h"
+	     config = VARS.build / folder / "config.h"
+	     for file in definitions, config:
+		 file.unlink()
+
+	     source = VARS.software / "st_config.def.h"
+	     copy2(source, definitions)
+
+
+     pip  = ("requests",
+	     "pyre-check",
+	     "pyxdg",
+	     "pillow",
+	     "pyqt5",
+	     "doc8",
+	     "html5lib",
+	     "grip",
+	     "ninja",
+	     "scipy",
+	     "pep8",
+	     "virtualenvwrapper",
+	     "dulwich",
+	     "fastapi",
+	     "autopep8",
+	     "pysimplegui",
+	     "sympy",
+	     "PyOpenAL",
+	     "click",
+	     "buku",
+	     "bandit",
+	     "django",
+	     "pylint-django",
+	     "flask",
+	     "meson",
+	     "sphinx",
+	     "lxml",
+	     "selenium",
+	     "watchman",
+	     "notebook",
+	     "mutagen",
+	     "pyperclip",
+	     "pandas",
+	     "pre-commit",
+	     "pipenv",
+	     "matplotlib",
+	     "wily",
+	     "monkeytype",
+	     "astroid",
+	     "flake8-bugbear",
+	     "pyperf",
+	     "hy",
+	     "pip-tools",
+	     "beautifulsoup4",
+	     "prospector",
+	     "jedi",
+	     "jc",)
+
+
+     PACKAGERS_COMMANDS: dict = {  # abstract command and real command
+	 "apt": {  # Debian Family
+	     "install": "install",
+	     "search": "search",
+	     "remove": "remove",
+	     "upgrade": "upgrade",
+	     "dist-upgrade": "dist-upgrade",
+	     "update": "update",
+	     "autoremove": "autoremove",
+	     "download": "download",
+	     "depends": "depends",
+	     "system-upgrade": "dist-upgrade",
+	     "installed": ["list", "--installed"],
+	     "fix": "fix",
+	     "info": "show",
+	 },
+	 "dnf": {  # Fedora
+	     "install": "install",
+	     "search": "search",
+	     "remove": "remove",
+	     "upgrade": "upgrade",
+	     "update": "update",
+	     "autoremove": "autoremove",
+	     "system-upgrade": "system-upgrade",
+	     "depends": ["repoquery", "--requires", "--resolve"],
+	     "installed": ["list", "installed"],
+	     "build-dep": "builddep",
+	     "fix": "fix",
+	     "info": "info",
+	     "help": "help",
+	 },
+	 "pacman": {  # ArchLinux
+	     "install": "-S",
+	     "search": "-Ss",
+	     "remove": "-R",
+	     "upgrade": "-Syu",
+	     "update": "-Syy",
+	 },
+	 "pkg": {  # FreeBSD
+	     "install": "install",
+	     "search": "search",
+	     "remove": "remove",
+	     "upgrade": "upgrade",
+	     "update": "update",
+	     "download": "fetch",
+	     "autoremove": "autoremove",
+	     "installed": "version",
+	     "fix": "fix",
+	     "info": "query",
+	     "help": "help",
+	 },
+	 "help": {
+	     "install": "Install a Package from Repositories",
+	     "file": "Install a Package from the Local Filesystem",
+	     "search": "Find a Package",
+	     "remove": "Remove One or More Installed Packages",
+	     "upgrade": "Upgrade Installed Packages",
+	     "update": "Update Package Lists",
+	     "autoremove": "Remove unused packages",
+	     "system-upgrade": "Upgrade System",
+	     "depends": "Package dependencies",
+	     "installed": "List installed",
+	     "build-dep": "Get dependencies to build package",
+	     "fix": "Fix common issues in System",
+	     "info": "View Info About a Specific Package",
+	 },  # source: digitalocean
+     }
+
+
+     sleep(360)  # main terminal closing in...
+     run(["killall", "kdeconnectd"], check=False, shell=False)
+
+
+
+     # GLOBAL VARS
+     GLOBAL_VARIABLES: dict = {
+	 "HOME": Path.home(),
+	 "DOCUMENTS": Path.home().joinpath("Documents"),
+	 "BIN": Path.home().joinpath("bin"),
+	 "VIDEOS": Path.home().joinpath("Videos"),
+	 "PICTURES": Path.home().joinpath("Pictures"),
+	 "MUSIC": Path.home().joinpath("Music"),
+	 "DOWNLOADS": Path.home().joinpath("Downloads"),
+	 "BUILD": Path.home().joinpath("Downloads/Build"),
+	 "PROJECTS": Path.home().joinpath("Projects"),
+	 "SOFTWARE": Path.home().joinpath("Documents/Settings"),
+	 "XDG_CONFIG_HOME": Path.home().joinpath(".config"),
+	 "HOME_LOCAL": Path.home().joinpath(".local"),
+	 "HOME_LOCAL_BIN": Path.home().joinpath(".local/bin"),
+	 "HOME_LOCAL_LIB": Path.home().joinpath(".local/lib"),
+	 "XDG_DATA_HOME": Path.home().joinpath(".local/share"),
+	 "PERSONAL": Path.home().joinpath("/data/Personal"),
+	 "FONTS": Path.home().joinpath(".local/share/fonts"),
+	 "DESCRIPTION": "An elegant collection of system automation solutions and software interface",
+     }
+
+
+     class Struct:
+	 """Global Variables."""
+
+	 def __init__(self, **entries):
+	     """Literal Dict to Class attributes."""
+	     self.__dict__.update(entries)
+
+
+     VARS = Struct(**GLOBAL_VARIABLES)
+
+
+
+     for packer in {"apt", "pacman", "dnf", "pkg"}:
+	     if executable_exist(packer):
+		 distro = packer
+
+     except OSError:
+	 LOGGER.exception("Unable to play media!")
+	 LOGGER.exception("Could not download media")
+	 LOGGER.exception("Unable to extract file.")
+	 LOGGER.exception("Unable to compress")
+	 LOGGER.exception("Unable to turn on/off network")
+	 LOGGER.exception("SSH - Unable to set keys!")
+	 LOGGER.exception("Unable to save screnshot")
+	 LOGGER.exception("Unable to build dwm!")
+	 LOGGER.exception("Unable to build st!")
+	 LOGGER.exception("Unable to build Qtile!")
+	 LOGGER.exception("Unable to install QuickLisp!")
+	 LOGGER.exception("Go - Unable to install package!")
+	 LOGGER.exception("Unable to install QuickLisp Packages!")
+	 LOGGER.exception("NPM Unable to set prefix!")
+	 LOGGER.exception("NPM - Unable to install package!")
+	 LOGGER.exception("VSCode: Unable to install package!")
+	 LOGGER.exception("Pip - Unable to install package.")
+	 LOGGER.exception("Unable to send notification!")
+	 LOGGER.exception("No permission to clean projects!")
+	 LOGGER.exception("No permission to move file")
+	 LOGGER.exception("Unable to retrieve item!")
+	 LOGGER.exception("No permission to symlink file!")
+
+     subprocess.run(  # Remove untracked files
+	 ["git", "clean", "-fdx"],
+	 cwd=folder,
+	 check=False,
+	 stdout=subprocess.DEVNULL,
+     )
+
+     # <kapsh> Do you need them to be functions and not class methods? You can write
+     #         simple class with __getattr__(name): getattr(self, "do_" + name)()
+
+
+     registry = {}
+
+
+     def register(func):
+	 registry[func.__name__] = func
+	 return func
+
+     import re
+     # find all functions that begins with do_NAME
+     funcs_name = re.findall(r"do_\w+", Path(__file__).resolve().read_text())
+     # create a dict with function name and functio object references. eg: {"do_homer", <function do_homer at 0x7fe19d72d70>}
+     functions = {key: eval(value) for key, value in zip(funcs_name, funcs_name)}
+
+
+     HOME = Path.home()
+     DOCUMENTS = HOME / "Documents"
+     SOFTWARE = DOCUMENTS / "software"
+     VIDEOS = HOME / "Videos"
+     PICTURES = HOME / "Pictures"
+     MUSIC = HOME / "Music"
+     DOWNLOADS = HOME / "Downloads"
+     PROJECTS = HOME / "Projects"
+     HOME_LOCAL = HOME / ".local"
+     HOME_LOCAL_BIN = HOME_LOCAL / "bin"
+     HOME_LOCAL_LIB = HOME_LOCAL / "lib"
+     XDG_CONFIG_HOME = HOME / ".config"
+     XDG_DATA_HOME = HOME_LOCAL / "share"
+     DATA = Path("/data")
+     PERSONAL = DATA / "Personal"
+
+
+
+     # TODO
+     def do_wakeup(minutes) -> None:
+	 """Wake up, Mr Freeman."""
+	 # Start alarm in a give minutes
+	 return minutes
+
+
+     # TODO
+     def do_help() -> None:
+	 """List all functions available."""
+	 # Use regext matching string to find all functions starting with "def do_*("
+
+
+     def ts(fld):
+	 import os
+
+	 for root, dir, files in os.walk(fld):
+	     for file in files:
+		 print(os.path.isdir(root), os.path.isdir(file))
+
+
+     def path_walk(top, topdown=False, followlinks=False):
+	 """
+	      See Python docs for os.walk, exact same behavior but it yields Path() instances instead
+	 """
+	 names = list(top.iterdir())
+
+	 dirs = (node for node in names if node.is_dir() is True)
+	 nondirs = (node for node in names if node.is_dir() is False)
+
+	 if topdown:
+	     yield top, dirs, nondirs
+
+	 for name in dirs:
+	     if followlinks or name.is_symlink() is False:
+		 for x in path_walk(name, topdown, followlinks):
+		     yield x
+
+	 if topdown is not True:
+	     yield top, dirs, nondirs
+
+
+     (".css", ".js", ".svg", ".html", "iku.jpg")
+
+     def ts(fld):
+	 """Test."""
+	 import os
+
+	 for root, dir, files in os.walk(fld):
+	     for file in files:
+		 print(os.path.isdir(root), os.path.isdir(file))
+
+     print(f"Download {pj_name}")  # Github only!
+     pj_github_url = f"{pj_url}/archive/master.{compress_format}"
+     pj_new_name = zip_folder / f"{pj_name}.{compress_format}"
+     _retrieve_this(pj_github_url, pj_new_name)
+
+     from urllib.request import urlopen
+     import json
+
+     try:
+	 with urlopen("http://wttr.in/Brasilia?format=j1") as url:
+	     data = json.loads(url.read().decode())
+	     weather = data.get("weather")[0].get("hourly")[0].get("tempC")
+     except Exception as why:
+	 print(why)
+     else:
+	 con = "ON"
+
+     def internet_on():
+	 """Internet connection is on."""
+
+	 import urllib.error
+
+	 try:
+	     urllib.request.urlopen("http://216.58.192.142", timeout=1)  # google
+	 except urllib.error.URLError:
+	     return False
+	 else:
+	     del urllib.error
+	     return True
+
+     folder = PROJECTS / parent / os.path.basename(url)
+     #+end_src
+***** Makefile
+      #+begin_src makefile
+      # Licensed under the Apache License: http://www.apache.org/licenses/LICENSE-2.0
+      .POSIX:
+      SHELL=sh
+      PYTHON=python3
+      PROJECT=pan
+      PIP= $(PYTHON) -m pip
+
+      help:
+	      @echo "make install        "	"---    "  fresh install of package
+	      @echo "make dev            "	"---    "  set up development env and toolings
+	      @echo "make doc            "	"---    "  generate documentation in /docsn
+	      @echo "make clean          "	"---    "  clean project non-essential files
+	      @echo "make all            "	"---    "  install package and set up devel toolings
+
+
+      install:
+	      $(PIP) install --user .
+
+      clean:
+	      $(PIP) uninstall $(PROJECT)
+
+      doc:
+	      sphinx-build -b html sourcedir builddir
+
+      dev:
+	      $(PYTHON) devel/deploy.py
+
+
+      ENV=env
+      BIN=~/bin
+
+      env:
+	      $(PYTHON) -m venv env
+
+      req:
+	      $(PIP) install -r requirements.txt
+
+      req-dev:
+	      $(PIP) install -r requirements-dev.txt
+
+      script:
+	      mkdir -pv ~/bin
+	      ln -sf $(PWD)/pan/__main__.py $(BIN)/pan.py
+
+      script-clean:
+	      rm $(BIN)/pan.py
+
+      #+end_src
