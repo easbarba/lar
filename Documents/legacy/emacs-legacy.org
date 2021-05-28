@@ -1,5 +1,21 @@
 #+TITLE: Emacs Legacy
 
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#scripts][scripts]]
+- [[#exwm---emacs-como-sistem-operacional][EXWM - Emacs como Sistem Operacional]]
+- [[#built-in-definitions][Built-in definitions]]
+- [[#functionsvariables][Functions,variables]]
+- [[#packages][Packages]]
+- [[#functions---cherry-picked][Functions - Cherry Picked]]
+- [[#prelude---functions][Prelude - Functions]]
+- [[#xahlee---functions][XahLee - Functions]]
+- [[#c-bult-in][C bult-in]]
+:END:
+
 * scripts
     #+begin_src shell-script
 #!/usr/bin/env bash

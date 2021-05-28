@@ -5,73 +5,14 @@
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
-- [[#projects][Projects]]
-  - [[#cejo][cejo]]
-- [[#dotfiles][Dotfiles]]
-  - [[#irbrc][irbrc]]
-  - [[#blog][Blog]]
-  - [[#neovim][neovim]]
-  - [[#asdf][asdf]]
-  - [[#fish][fish]]
-  - [[#shell-software][shell-software]]
-  - [[#shell-misc][shell-misc]]
-  - [[#shell-custom][shell-custom]]
-  - [[#emacs][Emacs]]
-  - [[#nixos][Nixos]]
-  - [[#bin][bin]]
-  - [[#autostart][autostart]]
-  - [[#xsessionrc][.xsessionrc]]
-  - [[#xinitrc][.xinitrc]]
-  - [[#sysinfo][sysinfo]]
-  - [[#guix-config][Guix Config]]
-  - [[#e_packs][e_packs]]
-  - [[#e_distro][e_distro]]
-  - [[#nyxt][Nyxt]]
-  - [[#bashrc][bashrc]]
-  - [[#xserverrc][.xserverrc]]
-  - [[#sbcl][Sbcl]]
-  - [[#xmobar][Xmobar]]
-  - [[#pypirc][.pypirc]]
-  - [[#gtk-30][gtk-3.0]]
-  - [[#fontconfig][fontconfig]]
-  - [[#stalonetray][StaloneTray]]
-  - [[#pycodestyle][pycodestyle]]
-  - [[#flake][Flake]]
-  - [[#stumpwm][StumpWM]]
-  - [[#xmonad][Xmonad]]
-  - [[#xmobar][Xmobar]]
-  - [[#qtile][Qtile]]
-  - [[#bashrc][Bashrc]]
-  - [[#tmux][Tmux]]
-  - [[#xprofile][.xprofile]]
-  - [[#autostart][autostart]]
-  - [[#make][Make]]
-  - [[#suckless][Suckless]]
-- [[#languages][Languages]]
-  - [[#elixir][Elixir]]
-  - [[#javascript][Javascript]]
-  - [[#rails][Rails]]
-  - [[#frontend][FrontEnd]]
-  - [[#css][Css]]
-  - [[#html][HTML]]
-  - [[#haskell][Haskell]]
-  - [[#common-lisp][Common Lisp]]
-  - [[#golang][Golang]]
-  - [[#php][PHP]]
-  - [[#python][Python]]
-  - [[#c][C]]
-  - [[#rust][Rust]]
-  - [[#net][.NET]]
-  - [[#swift][Swift]]
-  - [[#java][Java]]
-  - [[#cpp][CPP]]
-- [[#tools][Tools]]
-  - [[#devops][DevOps]]
+- [[#cejo][cejo]]
+  - [[#distro][distro]]
+  - [[#floss][floss]]
+  - [[#ports][Ports]]
 :END:
 
-* Projects
-** cejo
-*** distro
+* cejo
+** distro
     #+begin_src yaml
     ---
     builddep: builddep
@@ -172,7 +113,7 @@
     upgrade: upgrade
 
     #+end_src
-*** floss
+** floss
    #+begin_src yaml
    --- # Javascript
    - https://github.com/SBoudrias/Inquirer.js
@@ -317,8 +258,8 @@
    - https://github.com/laravel/laravel
    - https://github.com/php/php-src
    #+end_src
-*** Ports
-**** Ruby
+** Ports
+*** Ruby
      #+begin_src ruby
      def get_name_files(folder)
        name = folder.to_path
@@ -352,11 +293,11 @@
      end
 
      #+end_src
-**** .NET
-***** Temp
+*** .NET
+**** Temp
       #+begin_src csharp
      #+end_src
-***** Projects
+**** Projects
       #+begin_src csharp
       using System.Collections.Generic;
       using System.IO;
@@ -440,7 +381,7 @@
 
 
       #+end_src
-***** Packers
+**** Packers
       #+begin_src csharp
 
       // "redhat.java",
@@ -698,7 +639,7 @@
 	  }
       }
       #+end_src
-**** Python
+*** Python
      #+begin_src python
 
 	 def advice(self) -> None:
@@ -1027,7 +968,7 @@
 
      folder = PROJECTS / parent / os.path.basename(url)
      #+end_src
-***** Makefile
+**** Makefile
       #+begin_src makefile
       # Licensed under the Apache License: http://www.apache.org/licenses/LICENSE-2.0
       .POSIX:

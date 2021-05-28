@@ -1,5 +1,21 @@
 #+TITLE: Wm Legacy
 
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#sysinfo][sysinfo]]
+- [[#dwm][dwm]]
+  - [[#dwm-bar][dwm-bar]]
+- [[#qtile][Qtile]]
+- [[#xmobar][Xmobar]]
+- [[#xmonad][Xmonad]]
+- [[#stumpwm][StumpWM]]
+- [[#xmobar][Xmobar]]
+- [[#stalonetray][StaloneTray]]
+:END:
+
 * sysinfo
    #+begin_src shell-script
    #!/usr/bin/env bash
