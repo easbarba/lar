@@ -24,6 +24,19 @@
    | awesome     |        |      |   |
 * Features
 ** Strings
-   #+begin_src lua
-   print(#"Pepsi") -- # means string length
-   #+end_src
+#+begin_src lua
+print(#"Pepsi") -- # means string length
+#+end_src
+*** long string
+#+begin_src lua
+page = [[
+<html>
+<head>
+<title>An HTML Page</title>
+</head>
+<body>
+<a href="http://www.lua.org">Lua</a>
+</body>
+</html>
+]]
+#+end_src
