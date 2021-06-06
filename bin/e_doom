@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+EMACS_HOME="$HOME/.config/emacs"
+
+git clone --depth 1 https://github.com/hlissner/doom-emacs "$EMACS_HOME"
+"$EMACS_HOME"/bin/doom install
