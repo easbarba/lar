@@ -53,17 +53,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                                       | @                                         | late | revision |
-|-------------------------+-----------------------------------------------+-------------------------------------------+------+----------|
-| Agile Rails Development | Task F: Add a Dash of Ajax                    | Iteration F2: Creating an Ajax-Based Cart |      |          |
-| Beginning Rails 6       | Advanced Active Record: Enhancing Your Models | Making Callbacks                          |      |          |
-| Active Record Basics    |                                               |                                           |      |          |
-| Rails Style Guide       | Controllers: Rendering                        |                                           |      |          |
-
-** SLOC
-     | Project | folder                                                    | file           |
-     |---------+-----------------------------------------------------------+----------------+
-     | rails   | rails/activerecord/lib/active_record/associations/builder | association.rb |
+|                         |        |                                                         |   |
+|-------------------------+--------+---------------------------------------------------------+---|
+| Agile Development Rails | Task F | Iteration F4: Hiding an Empty Cart with a Custom Helper |   |
 
 * Cli
 ** Database
@@ -147,6 +139,7 @@
      | RAILS_ENV=production |                                                                          |
      | dev:cache            | toggle caching on and off in the development environment(restart server) |
      |                      |                                                                          |
+
 * Methods
     |        |                                            |
     |--------+--------------------------------------------|
