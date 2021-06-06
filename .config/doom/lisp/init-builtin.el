@@ -8,13 +8,6 @@
 ;; =========================
 
 (after! erc
-  ;; (require 'erc-log)
-  ;; (require 'erc-notify)
-  ;; (require 'erc-spelling)
-  ;; (require 'erc-autoaway)
-  ;; (add-hook 'window-configuration-change-hook
-  ;;           #'(lambda ()
-  ;;       	(setq erc-fill-column (- (window-width) 2))))
   (setq-local scroll-margin 1)
   (setq erc-nick "easbarbosa"
 	erc-user-full-name "EAS Barbosa"
@@ -43,15 +36,8 @@
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 	erc-track-exclude-types
 	'("JOIN" "NICK" "PART" "QUIT" "MODE"
-	  "324" "329" "332" "333" "353" "477"))
-  ;; (add-to-list 'erc-modules 'notifications)
-  ;; (add-to-list 'erc-modules 'spelling)
-  ;; (erc-track-mode t)
-  ;; (erc-spelling-mode 1)
-  ;; (erc-truncate-mode +1)
-  ;; (erc-services-mode 1)
-  ;; (erc-update-modules)
-)
+	  "324" "329" "332" "333" "353" "477")))
+
 
 ;; (use-package ido
 ;;   :init
