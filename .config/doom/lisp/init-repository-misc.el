@@ -6,220 +6,34 @@
 ;;; * REPOSITORY MISCELLANEOUS PACKAGES & LIBRARIES
 ;; ================================================
 
-;;; Code:
-
 ;; ========================================
 ;; * LIBRARIES
 
-(use-package! f)
-(use-package! s)
-(use-package! dash)
+;; (use-package! f)
+;; (use-package! s)
+;; (use-package! dash)
 
-;; ========================================
-;; ** EXPLORE COMPLETION EXTRA
+;;; Code:
 
-;; (use-package ivy
-;;   :defer 1
-;;   :config
-;;   (use-package counsel :defer 1)
-;;   (use-package swiper :defer 1)
+(use-package! duplicate-thing
+  :defer 1
+  :bind (("C-c a q" . duplicate-thing)))
 
-;;   (ivy-mode 1)
+(use-package! alert
+  :commands alert
+  :custom (alert-default-style 'notifications))
 
-;;   (setq ivy-use-virtual-buffers t
-;; 	search-default-mode #'char-fold-to-regexp ;; enable this if you want `swiper' to use it
-;; 	enable-recursive-minibuffers t)
+;; (after! magit
+;;   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
 
-;;   (global-set-key "\C-s" 'swiper)
-;;   (global-set-key (kbd "C-c C-r") 'ivy-resume)
-;;   (global-set-key (kbd "<f6>") 'ivy-resume)
-;;   (global-set-key (kbd "M-x") 'counsel-M-x)
-;;   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;;   (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-;;   (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-;;   (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
-;;   (global-set-key (kbd "<f1> l") 'counsel-find-library)
-;;   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-;;   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-;;   (global-set-key (kbd "C-c r") 'counsel-recentf)
-;;   (global-set-key (kbd "C-c g") 'counsel-git)
-;;   (global-set-key (kbd "C-c j") 'counsel-git-grep)
-;;   ;; (global-set-key (kbd "C-c k") 'counsel-ag)n
-;;   (global-set-key (kbd "C-x l") 'counsel-locate)
-;;   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+(use-package! outshine
+  :defer t
+  :hook (prog-mode . outshine-mode)
+  :bind ("C-c b c" . outshine-cycle))
 
-;; (use-package ivy-yasnippet
-;;   :defer 1)
-
-;; (use-package ivy-rich
-;;   :defer 1
-;;   :config
-;;   (ivy-rich-mode 1)
-;;   (setcdr (assq t ivy-format-functions-alist)
-;; 	  #'ivy-format-function-line))
-
-;; (use-package ivy-posframe
-;;   :defer 1
-;;   :custom
-;;   (ivy-posframe-width      115)
-;;   (ivy-posframe-min-width  115)
-;;   (ivy-posframe-height     10)
-;;   (ivy-posframe-min-height 10)
-;;   :config
-;;   (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
-;;   (setq ivy-posframe-parameters '((parent-frame . nil)
-;; 				  (left-fringe . 8)
-;; 				  (right-fringe . 8)))
-;;   (ivy-posframe-mode 1))
-
-;; (use-package ivy-avy
-;;   :defer 1)
-
-;; ;; ;; ========================================
-;; ;; ;; ** TOOLS
-
-;; (use-package async
-;;   :after dired
-;;   :config
-;;   (when (equal system-name "WINDOWS-LX")
-;;     (setq dired-async-log-file (concat temporary-file-directory "dired-async.log")))
-;;   (global-set-key [remap dired-do-copy] 'dired-async-do-copy)
-;;   (global-set-key [remap dired-do-rename] 'dired-async-do-rename)
-;;   (global-set-key [remap dired-do-shell-command]
-;; 		  'dired-do-async-shell-command)
-;;   (global-set-key [remap dired-do-symlink] 'dired-async-do-symlink)
-;;   (global-set-key [remap dired-do-hardlink] 'dired-async-do-hardlink))
-
-;; (use-package openwith
-;;   :disabled
-;;   :config
-;;   (setq openwith-associations
-;; 	(list
-;; 	 (list (openwith-make-extension-regexp
-;; 		'("mpg" "mpeg" "mp3" "mp4"
-;; 		  "avi" "wmv" "wav" "mov" "flv"
-;; 		  "ogm" "ogg" "mkv"))
-;; 	       "mpv"
-;; 	       '(file))
-;; 	 (list (openwith-make-extension-regexp
-;; 		'("xbm" "pbm" "pgm" "ppm" "pnm"
-;; 		  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
-;; 	       ;; causing feh to be opened...
-;; 	       "feh"
-;; 	       '(file))
-;; 	 (list (openwith-make-extension-regexp
-;; 		'("pdf"))
-;; 	       "zathura"
-;; 	       '(file))))
-;;   (openwith-mode 1))
-
-;; (use-package all-the-icons-ivy-rich
-;;   :defer 1
-;;   :config (all-the-icons-ivy-rich-mode 1))
-
-;; (use-package deft
-;;   :commands (deft)
-;;   :config (setq deft-directory (f-join *home* "Documents")
-;; 		deft-recursive t
-;; 		deft-extensions '("md" "org")))
-
-;; (use-package org-appear
-;;   :disabled
-;;   :hook (org-mode . org-appear-mode))
-
-;; (use-package alert
-;;   :commands alert
-;;   :custom (alert-default-style 'notifications))
-
-;; (use-package beginend
-;;   :defer 1
-;;   :config (beginend-global-mode))
-
-
-;; (use-package exec-path-from-shell
-;;   :defer 1
-;;   :config (when (memq window-system '(mac ns x))
-;; 	    (exec-path-from-shell-initialize)))
-
-;; (use-package vimish-fold
-;;   :defer 1)
-
-;; (use-package origami
-;;   :defer t
-;;   :hook (yaml-mode . origami-mode))
-
-;; (use-package duplicate-thing
-;;   :defer 1
-;;   :bind (("C-c q" . duplicate-thing)))
-
-;; (use-package webpaste
-;;   :defer t)
-
-;; (use-package imgbb
-;;   :defer t)
-
-;; (use-package treemacs
-;;   :defer t
-;;   :bind ("C-c z" . treemacs))
-
-;; (use-package outshine
-;;   :defer t
-;;   :hook (prog-mode . outshine-mode)
-;;   :bind ("C-c b c" . outshine-cycle))
-
-;; (use-package bug-hunter
-;;   :defer t)
-
-;; (use-package indent-guide-char
-;;   :defer t
-;;   :config (indent-guide-global-mode))
-
-;; (use-package highlight-indent-guides
-;;   :defer t
-;;   :custom (highlight-indent-guides-method 'character))
-
-;; (use-package eyebrowse
-;;   :defer 1
-;;   :bind (("<C-S-iso-lefttab>" . eyebrowse-last-window-config)
-;; 	 ("C-c C-w n" . (lambda () (interactive) (eyebrowse-next-window-config 1)))
-;; 	 ("C-c C-w p" . (lambda () (interactive) (eyebrowse-prev-window-config 1))))
-;;   :custom
-;;   (eyebrowse-new-workspace t)
-;;   (eyebrowse-mode-line-style 'current)
-;;   :config (eyebrowse-mode t))
-
-;; (use-package helpful
-;;   :defer t
-;;   :bind
-;;   (("C-h f" . 'helpful-callable)
-;;    ("C-h F" . 'helpful-function)
-;;    ("C-h v" . 'helpful-variable)
-;;    ("C-h k" . 'helpful-key)
-;;    ("C-c C-d" . 'helpful-at-point)
-;;    ("C-c c" . 'helpful-command)))
-
-;; (use-package vterm
-;;   :defer t
-;;   :bind ("C-c T" . 'vterm))
-
-;; (use-package telega
-;;   :commands telega
-;;   :config
-;;   (setq telega-user-use-avatars nil
-;; 	telega-use-tracking-for '(any pin unread)
-;; 	telega-chat-use-markdown-formatting t
-;; 	telega-emoji-use-images t
-;; 	telega-completing-read-function #'ivy-completing-read
-;; 	telega-msg-rainbow-title nil
-;; 	telega-chat-fill-column 75))
-
-;; (use-package deadgrep
-;;   :defer t
-;;   :bind ("C-c b g" . 'deadgrep))
-
-;; (use-package guix
-;;   :defer t
-;;   :hook (scheme-mode . guix-devel-mode))
+(use-package! guix
+  :defer t
+  :hook (scheme-mode . guix-devel-mode))
 
 (use-package! elfeed
   :custom
@@ -260,6 +74,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC3sMBA3BdnsKSVI0WB9yVWQ" ;; TV Forum
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SnJS5o1os7a6CaiNabzcg" ;; PSOL
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3-otiFWQJrVwi22oce0oQ" ;; Fernanda Melchionna
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
@@ -301,11 +116,27 @@
       (e/play-video (elfeed-entry-link entry))))
   (define-key elfeed-search-mode-map "m" #'e/elfeed-play-with-video-player))
 
-;; (use-package define-word
-;;   :defer 3
-;;   :config
-;;   (global-set-key (kbd "C-c a d p") 'define-word-at-point)
-;;   (global-set-key (kbd "C-c a d w") 'define-word))
+(use-package! define-word
+  :defer 3
+  :config
+  (global-set-key (kbd "C-c a d p") 'define-word-at-point)
+  (global-set-key (kbd "C-c a d w") 'define-word))
+
+(use-package! bufler
+  :defer t
+  :bind ("C-c b i" . 'bufler))
+
+(use-package! org-make-toc
+  :defer t
+  :hook (org-mode . org-make-toc-mode))
+
+(use-package! zoom
+  :defer 1
+  :config
+  (zoom-mode)
+  (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
+
+;; (use-package! matrix-client)
 
 ;; (use-package emms
 ;;   :defer 1
@@ -419,10 +250,6 @@
 ;; 			("*slime-repl sbcl*" :regexp t :align 'below :size 15))))
 
 
-;; (use-package bufler
-;;   :defer t
-;;   :bind ("C-c b i" . 'bufler))
-
 ;; (use-package highlight-indent-guides
 ;;   :defer t
 ;;   :config (add-hook 'prog-mode-hook 'highlight-indent-guides-mode))
@@ -439,9 +266,6 @@
 ;;   :defer 1
 ;;   :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; (use-package org-make-toc
-;;   :defer t
-;;   :hook (org-mode . org-make-toc-mode))
 
 ;; (use-package erc-hl-nicks
 ;;   :disabled
@@ -593,12 +417,6 @@
 ;;    (nov-mode . olivetti-mode))
 ;;   :custom (olivetti-body-width 86))
 
-;; (use-package zoom
-;;   :defer 1
-;;   :config
-;;   (zoom-mode)
-;;   (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
-
 ;; (use-package quelpa
 ;;   :defer t
 ;;   :config
@@ -665,11 +483,195 @@
 ;; (use-package magit-todos
 ;;   :defer t)
 
-(use-package! magit
-  :bind
-  ("C-c m" . 'magit-status)
-  ("C-c M" . 'magit-dispatch)
-  :custom  (ediff-window-setup-function 'ediff-setup-windows-plain))
+;; (use-package bug-hunter
+;;   :defer t)
+
+;; (use-package indent-guide-char
+;;   :defer t
+;;   :config (indent-guide-global-mode))
+
+;; (use-package highlight-indent-guides
+;;   :defer t
+;;   :custom (highlight-indent-guides-method 'character))
+
+;; (use-package eyebrowse
+;;   :defer 1
+;;   :bind (("<C-S-iso-lefttab>" . eyebrowse-last-window-config)
+;; 	 ("C-c C-w n" . (lambda () (interactive) (eyebrowse-next-window-config 1)))
+;; 	 ("C-c C-w p" . (lambda () (interactive) (eyebrowse-prev-window-config 1))))
+;;   :custom
+;;   (eyebrowse-new-workspace t)
+;;   (eyebrowse-mode-line-style 'current)
+;;   :config (eyebrowse-mode t))
+
+;; (use-package helpful
+;;   :defer t
+;;   :bind
+;;   (("C-h f" . 'helpful-callable)
+;;    ("C-h F" . 'helpful-function)
+;;    ("C-h v" . 'helpful-variable)
+;;    ("C-h k" . 'helpful-key)
+;;    ("C-c C-d" . 'helpful-at-point)
+;;    ("C-c c" . 'helpful-command)))
+
+;; (use-package vterm
+;;   :defer t
+;;   :bind ("C-c T" . 'vterm))
+
+;; (use-package telega
+;;   :commands telega
+;;   :config
+;;   (setq telega-user-use-avatars nil
+;; 	telega-use-tracking-for '(any pin unread)
+;; 	telega-chat-use-markdown-formatting t
+;; 	telega-emoji-use-images t
+;; 	telega-completing-read-function #'ivy-completing-read
+;; 	telega-msg-rainbow-title nil
+;; 	telega-chat-fill-column 75))
+
+;; (use-package deadgrep
+;;   :defer t
+;;   :bind ("C-c b g" . 'deadgrep))
+
+
+;; ========================================
+;; ** EXPLORE COMPLETION EXTRA
+
+;; (use-package ivy
+;;   :defer 1
+;;   :config
+;;   (use-package counsel :defer 1)
+;;   (use-package swiper :defer 1)
+
+;;   (ivy-mode 1)
+
+;;   (setq ivy-use-virtual-buffers t
+;; 	search-default-mode #'char-fold-to-regexp ;; enable this if you want `swiper' to use it
+;; 	enable-recursive-minibuffers t)
+
+;;   (global-set-key "\C-s" 'swiper)
+;;   (global-set-key (kbd "C-c C-r") 'ivy-resume)
+;;   (global-set-key (kbd "<f6>") 'ivy-resume)
+;;   (global-set-key (kbd "M-x") 'counsel-M-x)
+;;   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;;   (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+;;   (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+;;   (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+;;   (global-set-key (kbd "<f1> l") 'counsel-find-library)
+;;   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+;;   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;;   (global-set-key (kbd "C-c r") 'counsel-recentf)
+;;   (global-set-key (kbd "C-c g") 'counsel-git)
+;;   (global-set-key (kbd "C-c j") 'counsel-git-grep)
+;;   ;; (global-set-key (kbd "C-c k") 'counsel-ag)n
+;;   (global-set-key (kbd "C-x l") 'counsel-locate)
+;;   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+
+;; (use-package ivy-yasnippet
+;;   :defer 1)
+
+;; (use-package ivy-rich
+;;   :defer 1
+;;   :config
+;;   (ivy-rich-mode 1)
+;;   (setcdr (assq t ivy-format-functions-alist)
+;; 	  #'ivy-format-function-line))
+
+;; (use-package ivy-posframe
+;;   :defer 1
+;;   :custom
+;;   (ivy-posframe-width      115)
+;;   (ivy-posframe-min-width  115)
+;;   (ivy-posframe-height     10)
+;;   (ivy-posframe-min-height 10)
+;;   :config
+;;   (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+;;   (setq ivy-posframe-parameters '((parent-frame . nil)
+;; 				  (left-fringe . 8)
+;; 				  (right-fringe . 8)))
+;;   (ivy-posframe-mode 1))
+
+;; (use-package ivy-avy
+;;   :defer 1)
+
+;; ;; ;; ========================================
+;; ;; ;; ** TOOLS
+
+;; (use-package async
+;;   :after dired
+;;   :config
+;;   (when (equal system-name "WINDOWS-LX")
+;;     (setq dired-async-log-file (concat temporary-file-directory "dired-async.log")))
+;;   (global-set-key [remap dired-do-copy] 'dired-async-do-copy)
+;;   (global-set-key [remap dired-do-rename] 'dired-async-do-rename)
+;;   (global-set-key [remap dired-do-shell-command]
+;; 		  'dired-do-async-shell-command)
+;;   (global-set-key [remap dired-do-symlink] 'dired-async-do-symlink)
+;;   (global-set-key [remap dired-do-hardlink] 'dired-async-do-hardlink))
+
+;; (use-package openwith
+;;   :disabled
+;;   :config
+;;   (setq openwith-associations
+;; 	(list
+;; 	 (list (openwith-make-extension-regexp
+;; 		'("mpg" "mpeg" "mp3" "mp4"
+;; 		  "avi" "wmv" "wav" "mov" "flv"
+;; 		  "ogm" "ogg" "mkv"))
+;; 	       "mpv"
+;; 	       '(file))
+;; 	 (list (openwith-make-extension-regexp
+;; 		'("xbm" "pbm" "pgm" "ppm" "pnm"
+;; 		  "png" "gif" "bmp" "tif" "jpeg")) ;; Removed jpg because Telega was
+;; 	       ;; causing feh to be opened...
+;; 	       "feh"
+;; 	       '(file))
+;; 	 (list (openwith-make-extension-regexp
+;; 		'("pdf"))
+;; 	       "zathura"
+;; 	       '(file))))
+;;   (openwith-mode 1))
+
+;; (use-package all-the-icons-ivy-rich
+;;   :defer 1
+;;   :config (all-the-icons-ivy-rich-mode 1))
+
+;; (use-package deft
+;;   :commands (deft)
+;;   :config (setq deft-directory (f-join *home* "Documents")
+;; 		deft-recursive t
+;; 		deft-extensions '("md" "org")))
+
+;; (use-package org-appear
+;;   :disabled
+;;   :hook (org-mode . org-appear-mode))
+
+;; (use-package beginend
+;;   :defer 1
+;;   :config (beginend-global-mode))
+
+;; (use-package exec-path-from-shell
+;;   :defer 1
+;;   :config (when (memq window-system '(mac ns x))
+;; 	    (exec-path-from-shell-initialize)))
+
+;; (use-package vimish-fold
+;;   :defer 1)
+
+;; (use-package origami
+;;   :defer t
+;;   :hook (yaml-mode . origami-mode))
+
+;; (use-package webpaste
+;;   :defer t)
+
+;; (use-package imgbb
+;;   :defer t)
+
+;; (use-package treemacs
+;;   :defer t
+;;   :bind ("C-c z" . treemacs))
+
 
 (provide 'init-repository-misc)
 ;;; init-repository-misc.el ends here
