@@ -18,20 +18,23 @@
   - [[#ftp][FTP]]
   - [[#ssltls][SSL/TLS]]
   - [[#ssh][SSH]]
+- [[#physical][Physical]]
+  - [[#cable][Cable]]
 - [[#terms][Terms]]
 :END:
 * Progress
 ** Books
-   | Books               | capitulo       | em                   | @later | revisao |
-   |---------------------+----------------+----------------------+--------+---------|
-   | Comptia Net+ Meyers | Network models | Into the Central Box |        |         |
+| Books                   | capitulo       | em                      | @later | revisao |
+|-------------------------+----------------+-------------------------+--------+---------|
+| Comptia Network+ Meyers | Network models | The Two Aspects of NICs |        |         |
 
 * Load balancing
 * Subneting
 * Models
 ** OSI Model
-   - 7 layers
-   - works for almost every type of network, even extremely old and long-obsolete ones
+*** Concepts
+- 7 layers
+- works for almost every type of network, even extremely old and long-obsolete ones
 *** Layers
 **** Layer 7 Application
 **** Layer 6 Presentation
@@ -39,7 +42,15 @@
 **** Layer 4 Transport
 **** Layer 3 Network
 **** Layer 2 Data Link
+- Data Link layer
+- Switches handle traffic using MAC addresses
+- NIC is in the Data Link layer and the Physical layer
 **** Layer 1 Physical
+- defines the method of moving data between computers
+- cabling and central box are part of the Physical layer
+- doesn’t care what data goes through
+- it just moves the data from one system to another system
+- NIC interface between the PC and the network
 ** TCP/IP
 * Protocols
 ** HTTP
@@ -50,6 +61,12 @@
 *** OpenSSH
     - ControlPersist
     - ssh-copy-id
+* Physical
+** Cable
+*** UTP
+- unshielded twisted pair
+- contains four pairs of wires
+*** central box
 * Terms
   - hotspot
   - VOIP
