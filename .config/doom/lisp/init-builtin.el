@@ -39,6 +39,46 @@
 	  "324" "329" "332" "333" "353" "477")))
 
 
+
+(after! org
+  (setq-hook! org-mode truncate-lines t)
+
+  (defun e/tangle-on-save-org-mode-file()
+    "Tangle org file on save."
+    (interactive)
+    (when (eq major-mode 'org-mode)
+      (message "%s" major-mode)
+      (org-babel-tangle)))
+  (add-hook 'after-save-hook 'e/tangle-on-save-org-mode-file)
+
+  (defun e/narrow-or-widen-dwim (p)
+    "If the buffer is narrowed, it widens. Otherwise, it narrows intelligently.
+
+      Intelligently means: region, org-src-block, org-subtree, or defun,
+      whichever applies first.
+      Narrowing to org-src-block actually calls `org-edit-src-code'.
+      With prefix P, don't widen, just narrow even if buffer is already narrowed."
+    (interactive "P")
+    (declare (interactive-only))
+    (cond ((and (buffer-narrowed-p) (not p)) (widen))
+	  ((region-active-p)
+	   (narrow-to-region (region-beginning) (region-end)))
+	  ((derived-mode-p 'org-mode)
+	   ;; `org-edit-src-code' is not a real narrowing command.
+	   ;; Remove this first conditional if you don't want it.
+	   (cond ((org-in-src-block-p)
+		  (org-edit-src-code)
+		  (delete-other-windows))
+		 ((org-at-block-p)
+		  (org-narrow-to-block))
+		 (t (org-narrow-to-subtree))))
+	  (t (narrow-to-defun))))
+  (global-set-key (kbd "C-c d") 'e/narrow-or-widen-dwim)
+
+  (eval-after-load 'org-src
+    '(define-key org-src-mode-map
+       "\C-x\C-s" #'org-edit-src-exit)))
+
 ;; (use-package ido
 ;;   :init
 ;;   (setq ido-everywhere t)
@@ -88,7 +128,7 @@
 ;;        "M-x "
 ;;        (all-completions "" obarray 'commandp))))))
 
-;; (use-package org
+;; (after! org
 ;;   :init
 ;;   (require 'ox-md)
 
@@ -106,42 +146,7 @@
 ;; 	org-startup-with-inline-images nil
 ;; 	org-preview-latex-default-process 'dvisvgm
 ;; 	org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
-
-;;   (defun e/tangle-on-save-org-mode-file()
-;;     "Tangle org file on save."
-;;     (interactive)
-;;     (when (eq major-mode 'org-mode)
-;;       (message "%s" major-mode)
-;;       (org-babel-tangle)))
-;;   (add-hook 'after-save-hook 'e/tangle-on-save-org-mode-file)
-
-;;   (defun e/narrow-or-widen-dwim (p)
-;;     "If the buffer is narrowed, it widens. Otherwise, it narrows intelligently.
-
-;;       Intelligently means: region, org-src-block, org-subtree, or defun,
-;;       whichever applies first.
-;;       Narrowing to org-src-block actually calls `org-edit-src-code'.
-;;       With prefix P, don't widen, just narrow even if buffer is already narrowed."
-;;     (interactive "P")
-;;     (declare (interactive-only))
-;;     (cond ((and (buffer-narrowed-p) (not p)) (widen))
-;; 	  ((region-active-p)
-;; 	   (narrow-to-region (region-beginning) (region-end)))
-;; 	  ((derived-mode-p 'org-mode)
-;; 	   ;; `org-edit-src-code' is not a real narrowing command.
-;; 	   ;; Remove this first conditional if you don't want it.
-;; 	   (cond ((org-in-src-block-p)
-;; 		  (org-edit-src-code)
-;; 		  (delete-other-windows))
-;; 		 ((org-at-block-p)
-;; 		  (org-narrow-to-block))
-;; 		 (t (org-narrow-to-subtree))))
-;; 	  (t (narrow-to-defun))))
-;;   (global-set-key (kbd "C-c d") 'e/narrow-or-widen-dwim)
-
-;;   (eval-after-load 'org-src
-;;     '(define-key org-src-mode-map
-;;        "\C-x\C-s" #'org-edit-src-exit)))
+;; )
 
 ;; (use-package eshell
 ;;   :init
