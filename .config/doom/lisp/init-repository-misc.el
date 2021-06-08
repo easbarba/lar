@@ -136,6 +136,13 @@
   (zoom-mode)
   (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
 
+(use-package! company-org-block
+  :custom
+  (company-org-block-edit-style 'auto) ;; 'auto, 'prompt, or 'inline
+  :hook ((org-mode . (lambda ()
+                       (setq-local company-backends '(company-org-block))
+                       (company-mode +1)))))
+
 ;; (use-package! matrix-client)
 
 ;; (use-package emms

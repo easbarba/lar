@@ -11,6 +11,8 @@
 (package! guix)
 (package! zoom)
 (package! bufler)
+(package! nov)
+(package! company-org-block)
 
 ;; RECIPE
 

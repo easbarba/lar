@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t;
 
-(use-package pdf-tools
+(use-package! pdf-tools
   :disabled
   :config
   (pdf-tools-install)
@@ -60,7 +60,7 @@
   (unless noninteractive
     (add-hook 'kill-emacs-hook #'e/pdf-set-all-last-viewed-bookmarks)))
 
-(use-package nov
+(use-package! nov
   :defer t
   :init (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
   :config
