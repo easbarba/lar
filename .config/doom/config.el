@@ -28,4 +28,4 @@
 
 (load! "lisp/init-repository-languages")
 (load! "lisp/init-repository-misc")
-
+(load! "lisp/init-repository-readers")
