@@ -8,6 +8,7 @@ cejo floss grab
 cejo floss archive
 
 # * Guix
+sudo guix pull
 guix pull
 guix upgrade
 
