@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Information
-# Repo: https://github.com/kennyp/asdf_golang
-
 # Debug Options
 set -euo pipefail
 
@@ -12,26 +9,36 @@ source "$HOME/.asdf/asdf.sh"
 
 export GO111MODULE=on
 
-packages() {
-	local command='go install'
+packages()
+{
+	local command="go install"
 	local packages=("golang.org/x/tools/cmd/goimports@latest"
-		"golang.org/x/lint/golint@latest"
-		"golang.org/x/tools/gopls@latest"
-		"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0")
+					"golang.org/x/lint/golint@latest"
+					"golang.org/x/tools/gopls@latest"
+					"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0")
 
-	local tools=("sigs.k8s.io/kind")
+	e_dolist $command ${packages[@]}
 }
 
-development() {
+tols()
+{
+	local packages=("sigs.k8s.io/kind")
 	local command='go get'
-	local development=("mvdan.cc/sh/v3/cmd/shfmt")
 
-	e_dolist $command ${development[@]}
+	e_dolist $command ${packages[@]}
+}
+
+devel() {
+	local packages=("mvdan.cc/sh/v3/cmd/shfmt")
+	local command='go get'
+
+	e_dolist $command "${packages[@]}"
 }
 
 # * RUN
 
-echo 'Golang - ASDF'
+echo 'Golang'
 
+tools
+devel
 packages
-development
