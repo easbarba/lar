@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+ARGS="$@"
+
+for arg in "${ARGS[@]}"; do
+	[[ -x $(command -v "$arg") ]]
+done
