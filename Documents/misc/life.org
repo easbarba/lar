@@ -1,9 +1,9 @@
 #+TILE: Life Annotations
 
 * Sumario
-  :PROPERTIES:
-  :TOC:      :include all :depth 2 :ignore this
-  :END:
+:PROPERTIES:
+:TOC:      :include all :depth 2 :ignore this
+:END:
 :CONTENTS:
 - [[#progress][Progress]]
   - [[#books-videos][Books, Videos]]
@@ -13,7 +13,6 @@
   - [[#favorites][Favorites]]
 - [[#books][Books]]
   - [[#favs][Favs]]
-  - [[#recomendations][Recomendations]]
 - [[#manga][Manga]]
   - [[#favorites][Favorites]]
 - [[#games][Games]]
@@ -28,154 +27,111 @@
   - [[#bands][Bands]]
 - [[#gifts][Gifts]]
   - [[#nephew][Nephew]]
-- [[#donations][Donations]]
 - [[#paintings][Paintings]]
+- [[#donations][Donations]]
 - [[#résumé][Résumé]]
 - [[#delivery][Delivery]]
 :END:
 * Progress
 ** Books, Videos
-   | Books                  | Capts                      | @                               |
-   |------------------------+----------------------------+---------------------------------|
-   | Attack of Titan(manga) | Chapter 93                 |                                 |
-   | Last Wish              | The Voice of Reason 2      |                                 |
-   | The War of the Worlds  |                            |                                 |
-   | Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
-   | Plato: Five Dialogues  |                            |                                 |
+| Books                  | Capts                      | @                               |
+|------------------------+----------------------------+---------------------------------|
+| Attack of Titan(manga) | Chapter 93                 |                                 |
+| Last Wish              | The Voice of Reason 2      |                                 |
+| The War of the Worlds  |                            |                                 |
+| Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
+| Plato: Five Dialogues  |                            |                                 |
 * Movies
 ** Favorites
-   - 12 Angry Men
-   - 7 Samurai
-   - Casablanca
-   - Lawrence of Arabia
-   - Silence of Lambs
-   - Jurassic Park
-   - Lawman (Burt Lancaster)
-   - Alien
-   - The Maltese Falcon
-   - The Searchers
-   - Hearts in Atlantis
-   - Rashomon
-   - Stalker (Andrei Tarkovsky)
-   - La dolce Vita
-   - Judgement in Nuremberg
-   - To Kill A Mockingbird
-   - Anatomy of a Murder
-   - Inherit the Wind
-   - Witness for the Prosecution (1
-   - Spartacus
-   - Moby Dick (Gregory Pack)
-   - Planet of Apes
-   - Se7en
-   - Amistad
-   - The Shawshank Redemption
-   - The Third Man
-   - Let the Right One In
-   - 20,000 Leagues Under the Sea (Kirk Douglas)
-   - Rio Bravo
-   - High Noon
-   - True Git (John Wayne)
-   - For a Few Dollars More
-   - Escape from Alcatraz
-   - Shane
-   - The Wild Bunch
-   - No Country for Old Men
-   - Search Results
-   - Above the Law
-   - Shutter (Banjong Pisanthanakun)
-   - El espíritu de la colmena
-   - Rec
-   - El Bola
-   - The Seventh Seal
-   - Shin Godzilla
-   - GodZilla (Ishirō Honda)
-   - You Only Live Twice
-   - The Man with the Golden Gun
-   - Lake Mungo
-   - The Innocents (Jack Clayton)
-   - The Haunting 1963
-   - The Sixth Sense
-   - Signals
-   - Ghost
-   - Memories of Murder (Bong Joon-ho)
-   - The Last Man on Earth (Vincent Price)
-   - Independency Day
-   - The Fifth Element
+- 12 Angry Men
+- 7 Samurai
+- Casablanca
+- Lawrence of Arabia
+- Silence of Lambs
+- Jurassic Park
+- Lawman (Burt Lancaster)
+- Alien
+- The Maltese Falcon
+- The Searchers
+- Hearts in Atlantis
+- Rashomon
+- Stalker (Andrei Tarkovsky)
+- La dolce Vita
+- Judgement in Nuremberg
+- To Kill A Mockingbird
+- Anatomy of a Murder
+- Inherit the Wind
+- Witness for the Prosecution (1
+- Spartacus
+- Moby Dick (Gregory Pack)
+- Planet of Apes
+- Se7en
+- Amistad
+- The Shawshank Redemption
+- The Third Man
+- Let the Right One In
+- 20,000 Leagues Under the Sea (Kirk Douglas)
+- Rio Bravo
+- High Noon
+- True Git (John Wayne)
+- For a Few Dollars More
+- Escape from Alcatraz
+- Shane
+- The Wild Bunch
+- No Country for Old Men
+- Search Results
+- Above the Law
+- Shutter (Banjong Pisanthanakun)
+- El espíritu de la colmena
+- Rec
+- El Bola
+- The Seventh Seal
+- Shin Godzilla
+- GodZilla (Ishirō Honda)
+- You Only Live Twice
+- The Man with the Golden Gun
+- Lake Mungo
+- The Innocents (Jack Clayton)
+- The Haunting 1963
+- The Sixth Sense
+- Signals
+- Ghost
+- Memories of Murder (Bong Joon-ho)
+- The Last Man on Earth (Vincent Price)
+- Independency Day
+- The Fifth Element
 * TV Shows
 ** Favorites
-   - Star Trek - The Next Generation
-   - Sherlock Holmes (Jeremy Brett)
-   - Chespirito
-   - Master's Sun
-   - Great Teacher Onizuka
-   - Full Metal Alchemist
-   - walking dead (season1 and 2)
-   - 1 Litre of Tears
-   - Trick
-   - Gokusen
-   - Kekkon Dekinai Otoko
-   - Dragon Zakura
-   - Grave of the Fireflies
-   - Spirited Away
-   - Chobits
-   - Bucky
-   - Dragon Ball Z
+- Star Trek - The Next Generation
+- Sherlock Holmes (Jeremy Brett)
+- Chespirito
+- Master's Sun
+- Great Teacher Onizuka
+- Full Metal Alchemist
+- walking dead (season1 and 2)
+- 1 Litre of Tears
+- Trick
+- Gokusen
+- Kekkon Dekinai Otoko
+- Dragon Zakura
+- Grave of the Fireflies
+- Spirited Away
+- Chobits
+- Bucky
+- Dragon Ball Z
 * Books
 ** Favs
-   - Dr Jekyll and Hide
-   - The Lost World
-** Recomendations
-   Livros indicados por Leandro Karnal
-   1. As ilações de Narizinho, A gramática da Emília - Monteiro Lobato
-   2. A Ilha do Tesouro de Robert Louis Stevenson
-   3. Robison Crusoe – Daniel Defoe
-   4. As viagens de Gulliver
-   5. Zygmunt Bauman
-   6. Cidarta - Herman Hesse
-   7. Ter ou ser?, O dogma de Cristo - Erich Fromm
-   8. A relíquia - Eça de Queiroz
-   9. O Existencialismo é um Humanismo – Sartre
-   10. Fenomenologia do Espírito - Hegel
-   11. Kant
-   12. A paixão segundo G.H. – Clarice Lispector
-   13. A metamorfose – Kafka
-   14. Milan Kundera
-   15. Don CasmorroMachado de Assis
-   16. Don Quixote - Cervantes
-   17. Um Copo de Cólera, Lavoura Arcaica - Raduan Nassar
-   18. Dois Irmãos - Milton Hatoum
-   19. O Coração das Trevas -  Joseph Conrad – Inspirou Apocalipse Now
-   20. Marx – Teoria Socialista
-   21. Adam Smith – Capitalista Liberais
-   22. Romeu e Julieta – Shakespeare
-   23. A Tempestade (1623) William Shakespeare
-   24. Hamlet – Loucura do próprio H
-   25. Discurso da Servidão Voluntária - Etienne de La Boétie
-   26. O príncipe – Maquiavel
-   27. O primo Basílio
-   28. Madame Bovary (1857), romance de Gustave Flaubert
-   29. O Guarani – José de Alencar
-   30. Iracema – José de Alencar
-   31. Escrava Isaura - Bernardo Guimarães
-   32. O Moço Loiro - Joaquim Manuel de Macedo.
-   33. A normalista – Adolfo Caminha
-   34. A Carne, de Maria Luisa Sprovieri Ribeiro
-   35. Crime e Castigo - Fiódor Dostoiévski
-   36. Os Irmãos Karamazov
-   37. O Grande Inquisidor
-   38. O Tempo e o Vento, Incidente em Antares, As Aventuras de Tibicuera e Olhai os Lírios do Campo - Érico Veríssimo
-   39. Os cem anos de solidão – Gabriel Garcia Marques
-   40. A Colônia Penal, de Franz Kafka
-   41. Moby Dick, de Herman Melville.
-   42. Tabacaria de Álvaro de Campos (Fernando Pessoa)
+- Dr Jekyll and Hide
+- The Lost World
+
 * Manga
 ** Favorites
-   - Lone Wolf and Cub
-   - One Punch Man
-   - Elfen Lied
-   - Love Hina
+- Lone Wolf and Cub
+- One Punch Man
+- Elfen Lied
+- Love Hina
 * Games
-  http://steamcommunity.com/id/elxbarbosa
+http://steamcommunity.com/id/elxbarbosa
 ** Steam
    cd ~/.steam/bin32
    LD_LIBRARY_PATH=. ldd vgui2_s.so
@@ -301,101 +257,101 @@
    0340
 * Music
 ** Classic Composers
-   - Berlioz
-   - Mahler
-   - Felix Mendelssohn
-   - Joseph Haydn
-   - Johann Sebastian Bach
-   - Wagner
-   - Camille Saint Saëns
-   - Vivaldi
-   - Tchaikovsky
-   - Rimsky-Korsakov
-   - Rachmaninoff
-   - Maurice Ravel
-   - Beethoven
-   - Dvořák
-   - Leoš Janáček
-   - Béla Bartók
-   - Edward Elgar
-   - Gabriel Fauré
-   - Arnold Schoenberg
+- Berlioz
+- Mahler
+- Felix Mendelssohn
+- Joseph Haydn
+- Johann Sebastian Bach
+- Wagner
+- Camille Saint Saëns
+- Vivaldi
+- Tchaikovsky
+- Rimsky-Korsakov
+- Rachmaninoff
+- Maurice Ravel
+- Beethoven
+- Dvořák
+- Leoš Janáček
+- Béla Bartók
+- Edward Elgar
+- Gabriel Fauré
+- Arnold Schoenberg
 ** Misc
-  - Perez Prado
-  - Compay Segundo
-  - Ibrahim Ferrer
-  - Ink Spot
-  - Marcus MIller
-  - Nat King Cole
+- Perez Prado
+- Compay Segundo
+- Ibrahim Ferrer
+- Ink Spot
+- Marcus MIller
+- Nat King Cole
 ** Musician
-  - John Williams
-  - Julian Bream
-  - Garoto
-  - Baden Powell
-  - Marco Pereira
+- John Williams
+- Julian Bream
+- Garoto
+- Baden Powell
+- Marco Pereira
 ** Bands
-  - Deepeche Mode
-  - a-ha
-  - hy
-  - Tatsuro Yamashita
-  - ROUND TABLE featuring Nino
-  - k - only human
-  - stratovarius
-  - meshuggah
-  - DC talk
+- Deepeche Mode
+- a-ha
+- hy
+- Tatsuro Yamashita
+- ROUND TABLE featuring Nino
+- k - only human
+- stratovarius
+- meshuggah
+- DC talk
 * Gifts
 ** Nephew
-   - Nintendo Switch
-   - College Car
-* Donations
-  https://www.acnur.org
+- Nintendo Switch
+- College Car
 * Paintings
-   - Candido Portinari
-   - J. M. W. Turner
+- Candido Portinari
+- J. M. W. Turner
+* Donations
+https://apoia.se/cozinhasolidaria
 * Résumé
-  #+OPTIONS: toc:nil author:nil date:nil num:nil
+#+OPTIONS: toc:nil author:nil date:nil num:nil
 
-  *Euber Alexandre De Sousa Barbosa*
+*Euber Alexandre De Sousa Barbosa*
 
-  Brasília, DF - (61) 981103178
+Brasília, DF - (61) 981103178
 
-  easbarbosa@tutanota.me
-  https://git.sr.ht/~easbarbosa
+easbarbosa@tutanota.me
+https://git.sr.ht/~easbarbosa
 
-  @easbarbosa
+@easbarbosa
 
-  *SOBRE*
-  -----
-    Sou usuário de Distribuições Linux por mais de 10 anos com foco em
-    servidores com Kernel customizado, familiaridade de ferramentas
-    cli como gerenciadores de empacotamento, make, cmake, ninja, rake,
-    assim como grep, find, ps, ssh, windows managers e automação de
-    tarefas com shell scripts.
-
-
-  *EDUCAÇÃO*
-  -----
-    - Direito - IESB (Trancado)
-    - Ciência da Computação, UCB (Cursando)
+*SOBRE*
+-----
+  Sou usuário de Distribuições Linux por mais de 10 anos com foco em
+  servidores com Kernel customizado, familiaridade de ferramentas
+  cli como gerenciadores de empacotamento, make, cmake, ninja, rake,
+  assim como grep, find, ps, ssh, windows managers e automação de
+  tarefas com shell scripts.
 
 
-  *SKILLS*
-  -----
-    - Linguagens: Ruby e Emacs Lisp.
-    - Debian/Fedora: administração, ferramentas e configurações.
-    - Shell Script: GNU Bash, Fish Shell e POSIX.
-    - Git: rebase, squash, merge.
-    - Containers: podman, dockerfile, criação e gerência de imagens.
-    - Unit Test: Minitest, RSpec, ERT.
-    - Front-End: HTML,CSS Grid/Flexbox.
-    - Editores: GNU Emacs, NeoVIM, Nano.
+*EDUCAÇÃO*
+-----
+  - Direito - IESB (Trancado)
+  - Ciência da Computação, UCB (Cursando)
 
 
-  *MAIS*
-  -----
-    - Inglês: Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
-    - Soft Skills em Secretário de Advocacia e Radio Taxi.
+*SKILLS*
+-----
+  - Linguagens: Ruby e Emacs Lisp.
+  - Debian/Fedora: administração, ferramentas e configurações.
+  - Shell Script: GNU Bash, Fish Shell e POSIX.
+  - Git: rebase, squash, merge.
+  - Containers: podman, dockerfile, criação e gerência de imagens.
+  - Unit Test: Minitest, RSpec, ERT.
+  - Front-End: HTML,CSS Grid/Flexbox.
+  - Editores: GNU Emacs, NeoVIM, Nano.
+
+
+*MAIS*
+-----
+  - Inglês: Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
+  - Soft Skills em Secretário de Advocacia e Radio Taxi.
 
 * Delivery
-  981103178
-  tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782
+981103178
+tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782
