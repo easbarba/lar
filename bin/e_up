@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # * Cejo
-cejo distro update
-cejo distro upgrade
+distro update
+distro upgrade
 
 cejo floss grab
 cejo floss archive
