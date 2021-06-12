@@ -114,7 +114,7 @@ awful.rules.rules = {
      properties = { tag = "mx" } },
    { rule_any = { class = { "Atril", "libreoffice-writer" }},
      properties = { tag = "reader" } },
-   { rule_any = { class = { "st", "st-256color", "Mate-terminal" }},
+   { rule_any = { class = { "Alacritty", "st", "st-256color", "Mate-terminal" }},
      properties = { tag = "term" } },
    { rule_any = { class = { "IceCat", "Firefox", "Chromium" }},
      properties = { tag = "www" } },
@@ -123,7 +123,7 @@ awful.rules.rules = {
 
 
    -- Fullscreen Windows:
-   { rule_any = { class = { "Emacs", "emacs", "mpv", "st", "Mate-terminal" }},
+   { rule_any = { class = { "Emacs", "emacs", "mpv", "Alacritty", "st", "Mate-terminal" }},
      properties = { fullscreen = true }},
    { rule_any = { class = { "mpv", "vlc" }},
      properties = { switchtotag = true }},
