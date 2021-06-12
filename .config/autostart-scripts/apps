@@ -13,7 +13,7 @@
 tools=(udiskie unclutter ibus-daemon nm-applet
        blueman-applet mate-power-manager diodon)
 
-apps=(emacs st firefox atril clementine)
+apps=(emacs alacritty firefox atril clementine)
 
 # * Utils, Helps
 
