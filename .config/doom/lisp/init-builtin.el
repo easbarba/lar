@@ -30,6 +30,7 @@
 	erc-autojoin-channels-alist '(("libera.chat"
 				       "#debian"
 				       "#guix"
+                                       "#ruby"
 				       "#scheme"
 				       "#lua"
 				       "#emacs"))
@@ -37,8 +38,6 @@
 	erc-track-exclude-types
 	'("JOIN" "NICK" "PART" "QUIT" "MODE"
 	  "324" "329" "332" "333" "353" "477")))
-
-
 
 (after! org
   (setq-hook! org-mode truncate-lines t)
