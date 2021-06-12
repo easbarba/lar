@@ -53,124 +53,124 @@
   :END:
 * Progress
 ** Books
-|                         |        |                                                         |   |
-|-------------------------+--------+---------------------------------------------------------+---|
-| Agile Development Rails | Task F | Iteration F4: Hiding an Empty Cart with a Custom Helper |   |
+|                         |        |                                  |   |
+|-------------------------+--------+----------------------------------+---|
+| Agile Development Rails | Task G | Iteration G1: Capturing an Order |   |
 
 * Cli
 ** Database
-     | what     | how                                                                    | desc                                              |
-     |----------+------------------------------------------------------------------------+---------------------------------------------------|
-     | database | –d or --database=                                                      | use the database management system of your choice |
-     |          | db:create:all                                                          |                                                   |
-     |          | db:create                                                              |                                                   |
-     |          | dbconsole                                                              |                                                   |
-     |          | db:migrate                                                             |                                                   |
-     |          | new <name>                                                             |                                                   |
-     | models   | generate model <Name>                                                  |                                                   |
-     |          | destroy controller articles                                            |                                                   |
-     |          | destroy model Artile                                                   |                                                   |
-     |          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-     |          | db:system:change                                                       | switch databases                                  |
-     |          | db:rollback                                                            |                                                   |
-     |          | db:seed                                                                |                                                   |
-     |          |                                                                        |                                                   |
+| what     | how                                                                    | desc                                              |
+|----------+------------------------------------------------------------------------+---------------------------------------------------|
+| database | –d or --database=                                                      | use the database management system of your choice |
+|          | db:create:all                                                          |                                                   |
+|          | db:create                                                              |                                                   |
+|          | dbconsole                                                              |                                                   |
+|          | db:migrate                                                             |                                                   |
+|          | new <name>                                                             |                                                   |
+| models   | generate model <Name>                                                  |                                                   |
+|          | destroy controller articles                                            |                                                   |
+|          | destroy model Artile                                                   |                                                   |
+|          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
+|          | db:system:change                                                       | switch databases                                  |
+|          | db:rollback                                                            |                                                   |
+|          | db:seed                                                                |                                                   |
+|          |                                                                        |                                                   |
 
 ** Misc
-     | what       | how         | desc |
-     |------------+-------------+------|
-     | destroy    | destroy / d |      |
-     | belongs_to |             |      |
+| what       | how         | desc |
+|------------+-------------+------|
+| destroy    | destroy / d |      |
+| belongs_to |             |      |
 
 ** Tasks (rake)
-     | what | how | desc |
-     |------+-----+------|
-     |      |     |      |
+| what | how | desc |
+|------+-----+------|
+|      |     |      |
 
 ** Log
-     |                  |   |
-     |------------------+---|
-     | :clear LOGS=test |   |
+|                  |   |
+|------------------+---|
+| :clear LOGS=test |   |
 
 ** Migration
-     |                    |   |
-     |--------------------+---|
-     | AddXXXToTABLE      |   |
-     | RemoveXXXFromTABLE |   |
+|                    |   |
+|--------------------+---|
+| AddXXXToTABLE      |   |
+| RemoveXXXFromTABLE |   |
 
 ** Models
-     | what   | how                                                                    | desc |
-     |--------+------------------------------------------------------------------------+------|
-     | models | generate model <Name>                                                  |      |
-     |        | destroy controller articles                                            |      |
-     |        | destroy model Artile                                                   |      |
-     | a      |                                                                        |      |
-     |        | generate scaffold Article title:string body:text published_at:datetime |      |
-     |        |                                                                        |      |
+| what   | how                                                                    | desc |
+|--------+------------------------------------------------------------------------+------|
+| models | generate model <Name>                                                  |      |
+|        | destroy controller articles                                            |      |
+|        | destroy model Artile                                                   |      |
+| a      |                                                                        |      |
+|        | generate scaffold Article title:string body:text published_at:datetime |      |
+|        |                                                                        |      |
 
 ** Console
-     | what              | how                                                                | desc                                                                                                                               |
-     |-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------|
-     | create            | create(title: "foo", body: "bar", published_at: '2020-01-31')      | create new and save to db                                                                                                          |
-     | save              | a.save  / a.save!                                                  | save object to db / save and show errors                                                                                           |
-     | new               | a.new                                                              | create an empty object                                                                                                             |
-     | count             | A.count                                                            |                                                                                                                                    |
-     | find              | A.find(3) / A.find([4,5])                                          |                                                                                                                                    |
-     | first             | A.first   / A.first.title                                          |                                                                                                                                    |
-     | last              | A.last                                                             |                                                                                                                                    |
-     | all               | A.all / A.all.size / A.all.each { \a\ puts a.title }               | relational collection                                                                                                              |
-     | order             | A.order(:order) / A.order(:order :desc)                            | order per title / order descedent                                                                                                  |
-     | where             | A.where(title: 'foo')                                              |                                                                                                                                    |
-     | update_attributes | update_attributes(title: "foo", published_at: 1.day.ago)           |                                                                                                                                    |
-     | find_or_create_by |                                                                    | find or if none is found create a db anew                                                                                          |
-     | <<                | a.x << x                                                           |                                                                                                                                    |
-     | delete            |                                                                    | don’t instantiate or perform callbacks on the object they’re deleting. They remove the row immediately from the database.          |
-     | destroy           | A.destroy(1) / .destroy([3,4])                                     | finds a single row first and then deletes the row /works on the instance                                                           |
-     | delete_by         |                                                                    |                                                                                                                                    |
-     | errors            | a.errors.any? / a.errors.full_messages / a.errors.messages[:title] |                                                                                                                                    |
-     |                   | a.valid?                                                           |                                                                                                                                    |
-     | reload            |                                                                    | reloads the Rails application environment within your console session. You need to call it when you make changes to existing code. |
-     | routes --expanded |                                                                    |                                                                                                                                    |
-     | byebug            |                                                                    |                                                                                                                                    |
+| what              | how                                                                | desc                                                                                                                               |
+|-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------|
+| create            | create(title: "foo", body: "bar", published_at: '2020-01-31')      | create new and save to db                                                                                                          |
+| save              | a.save  / a.save!                                                  | save object to db / save and show errors                                                                                           |
+| new               | a.new                                                              | create an empty object                                                                                                             |
+| count             | A.count                                                            |                                                                                                                                    |
+| find              | A.find(3) / A.find([4,5])                                          |                                                                                                                                    |
+| first             | A.first   / A.first.title                                          |                                                                                                                                    |
+| last              | A.last                                                             |                                                                                                                                    |
+| all               | A.all / A.all.size / A.all.each { \a\ puts a.title }               | relational collection                                                                                                              |
+| order             | A.order(:order) / A.order(:order :desc)                            | order per title / order descedent                                                                                                  |
+| where             | A.where(title: 'foo')                                              |                                                                                                                                    |
+| update_attributes | update_attributes(title: "foo", published_at: 1.day.ago)           |                                                                                                                                    |
+| find_or_create_by |                                                                    | find or if none is found create a db anew                                                                                          |
+| <<                | a.x << x                                                           |                                                                                                                                    |
+| delete            |                                                                    | don’t instantiate or perform callbacks on the object they’re deleting. They remove the row immediately from the database.          |
+| destroy           | A.destroy(1) / .destroy([3,4])                                     | finds a single row first and then deletes the row /works on the instance                                                           |
+| delete_by         |                                                                    |                                                                                                                                    |
+| errors            | a.errors.any? / a.errors.full_messages / a.errors.messages[:title] |                                                                                                                                    |
+|                   | a.valid?                                                           |                                                                                                                                    |
+| reload            |                                                                    | reloads the Rails application environment within your console session. You need to call it when you make changes to existing code. |
+| routes --expanded |                                                                    |                                                                                                                                    |
+| byebug            |                                                                    |                                                                                                                                    |
 
 ** Enviroment
-     |                      |                                                                          |
-     |----------------------+--------------------------------------------------------------------------|
-     | RAILS_ENV=production |                                                                          |
-     | dev:cache            | toggle caching on and off in the development environment(restart server) |
-     |                      |                                                                          |
+|                      |                                                                          |
+|----------------------+--------------------------------------------------------------------------|
+| RAILS_ENV=production |                                                                          |
+| dev:cache            | toggle caching on and off in the development environment(restart server) |
+|                      |                                                                          |
 
 * Methods
-    |        |                                            |
-    |--------+--------------------------------------------|
-    | where  | returns an array of results                |
-    | findby | returns either an existing LineItem or nil |
-    |        |                                            |
+|        |                                            |
+|--------+--------------------------------------------|
+| where  | returns an array of results                |
+| findby | returns either an existing LineItem or nil |
+|        |                                            |
 
 * Logger
-    - live log feed: tail -f log/development.log
-    -  Every controller has a logger attribute.
+- live log feed: tail -f log/development.log
+-  Every controller has a logger attribute.
 ** Methods
-    |       |   |
-    |-------+---|
-    | error |   |
-    | debug |   |
-    | warn  |   |
+|       |   |
+|-------+---|
+| error |   |
+| debug |   |
+| warn  |   |
 
-    #+begin_src ruby
-    Rails.logger.debug "This will only show in development"
-    Rails.logger.warn "This will show in all environments"
-    #+end_src
+#+begin_src ruby
+Rails.logger.debug "This will only show in development"
+Rails.logger.warn "This will show in all environments"
+#+end_src
 * Active Record
-    - Single-Table Inheritance
+- Single-Table Inheritance
 ** Associations
-     |                         |                                        |
-     |-------------------------+----------------------------------------|
-     | has_many                |                                        |
-     | has_one                 |                                        |
-     | belongs_to              | goes in the class with the foreign key |
-     | many_to_many            |                                        |
-     | has_and_belongs_to_many |                                        |
+|                         |                                        |
+|-------------------------+----------------------------------------|
+| has_many                |                                        |
+| has_one                 |                                        |
+| belongs_to              | goes in the class with the foreign key |
+| many_to_many            |                                        |
+| has_and_belongs_to_many |                                        |
 ** Validations
 ** Migrations
 ** Callbacks
@@ -213,12 +213,21 @@
      scope :published, -> { where.not(published_at: nil) }
      scope :draft, -> { where(published_at: nil) }
      #+end_src
+* Action Cable
+** concept
+- create a channel, broadcast some data, and receive the data.
+- support multiple streams
+** cli
+|                          |                 |
+|--------------------------+-----------------|
+| generate channels <name> | in /app/channel |
+|                          |                 |
+
 * Database
     | it    | desc                                                     |
     |-------+----------------------------------------------------------|
     | seeds | which defines some data you always need in your database |
     |       |                                                          |
-
 * Views
 * Controller
 * Models
