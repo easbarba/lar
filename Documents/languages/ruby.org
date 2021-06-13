@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                | revision        |
-|----------------------------------+------------------------------------+-------------------------------------+-----------------|
-| Confident Ruby                   | Perfoming Work                     |                                     |                 |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition | Fibers, Threads |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                    |                 |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite         |                 |
-| Clean Ruby                       | Using Boolean Logic                |                                     |                 |
-| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior              |                 |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                     |                 |
-| Design Patterns in Ruby          | Template Method                    |                                     |                 |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not           |                 |
-| The Well Grounded Rubyist        | File and I/O                       |                                     |                 |
+| Books                            | Chapter                            | late                                      | revision        |
+|----------------------------------+------------------------------------+-------------------------------------------+-----------------|
+| Confident Ruby                   | Perfoming Work                     |                                           |                 |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition       | Fibers, Threads |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                          |                 |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite               |                 |
+| Clean Ruby                       | Using Boolean Logic                |                                           |                 |
+| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                    |                 |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                           |                 |
+| Design Patterns in Ruby          | Template Method                    |                                           |                 |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                 |                 |
+| The Well Grounded Rubyist        | Object individualization           | 13.1.5 Class methods in (even more) depth |                 |
 
 ** SLOC
 | Project       | folder             | file                   | @ |
@@ -138,18 +138,14 @@
 
 ** Priorities
 - Ruby
-- Rails
-- Unit Test / Rspec
-- SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
-- Git
-- REST / SOAP / GraphQL
-- YAML, JSON, XML, SOAP
+- Rails, Slim, Sidekiq, REST, SOAP, GraphQL
+- Unit Test, Rspec
+- OOP, SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
 - PostgreSQL
+- Git
 - Container
-- Sidekiq
 - Heroku
-- Slim
-- CI/CD
+- CI / CD
 - Cloud
 
 * Packages
@@ -335,6 +331,74 @@ let(:expense) { { 'some' => 'data' } }
    #+begin_src ruby
    [].methods.grep /^re/ # finds methods begins with re
    #+end_src
+
+*** include
+The include directive includes all methods from the given module and make them
+available as instance methods in your class
+
+#+begin_src ruby
+module Greeting
+  def hello
+    puts 'Hello from module'
+  end
+end
+
+class MyClass
+  include Greeting
+end
+
+my_class = MyClass.new
+my_class.hello # => 'Hello from module'
+
+MyClass.ancestors # [MyClass, Greeting, Object, Kernel, BasicObject]
+
+#+end_src
+
+*** prepend
+- The extend directive includes all methods from the given module and make them
+  available as class methods in your class
+#+begin_src ruby
+module Greeting
+  def hello
+    puts 'Hello from module'
+  end
+end
+
+class MyClass
+  extend Greeting
+end
+
+MyClass.hello # => 'Hello from module'
+
+MyClass.singleton_class.ancestors # [#<Class:MyClass>, Greeting, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, Kernel, BasicObject
+#+end_src
+*** extend
+- the module is placed right after your class, but when you use prepend is
+  prepended, which means that it is set before your class:
+#+begin_src ruby
+module Greeting
+  def hello
+    puts "Hello from module"
+    super
+  end
+end
+
+class MyClass
+  prepend Greeting
+
+  def hello
+    puts "Hello from class"
+  end
+end
+
+MyClass.new.hello
+# => "Hello from module"
+# => "Hello from class"
+
+MyClass.ancestors # => [Greeting, MyClass, Object, Kernel, BasicObject]
+
+
+#+end_src
 ** path
    #+begin_src ruby
    $LOAD_PATH.each { |x| puts x } or $:
@@ -477,6 +541,8 @@ threads.each { |thr| thr.join }
    #+end_src
 
    - attribute-setting methods
+** ancestor
+An array of ancestors—essentially, the method-lookup path for instances of this class.
 ** Multithreading
    -
 *** usage
@@ -1211,6 +1277,12 @@ threads.each { |thr| thr.join }
    #+end_src
 ** metaprogramming
 *** Singleton Classes
+**** #singleton_class
+Refers directly to the singleton class of an object
+#+begin_src ruby
+string = "a string"
+string.singleton_class.ancestors # => [#<Class:#<String:0x0000563fb8797270>>, String, Comparable, Object,Kernel, BasicObject]
+#+end_src
 *** instance_variable_set
 *** instance_eval
     - class methods
