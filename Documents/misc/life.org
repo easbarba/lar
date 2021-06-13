@@ -22,9 +22,18 @@
   - [[#alien-isolation][alien isolation]]
 - [[#music][Music]]
   - [[#classic-composers][Classic Composers]]
-  - [[#misc][Misc]]
-  - [[#musician][Musician]]
-  - [[#bands][Bands]]
+  - [[#american][American]]
+  - [[#japan][Japan]]
+  - [[#bass][Bass]]
+  - [[#cuba][Cuba]]
+  - [[#christian][Christian]]
+  - [[#djent][Djent]]
+  - [[#death-metal][Death Metal]]
+  - [[#progressive-metal][Progressive Metal]]
+  - [[#rock][Rock]]
+  - [[#mpb][MPB]]
+  - [[#violao][Violao]]
+  - [[#classic-guitar][Classic Guitar]]
 - [[#gifts][Gifts]]
   - [[#nephew][Nephew]]
 - [[#paintings][Paintings]]
@@ -276,29 +285,51 @@ http://steamcommunity.com/id/elxbarbosa
 - Edward Elgar
 - Gabriel Fauré
 - Arnold Schoenberg
-** Misc
-- Perez Prado
-- Compay Segundo
-- Ibrahim Ferrer
+** American
 - Ink Spot
-- Marcus MIller
-- Nat King Cole
-** Musician
-- John Williams
-- Julian Bream
-- Garoto
-- Baden Powell
-- Marco Pereira
-** Bands
-- Deepeche Mode
+
+
+** Japan
 - a-ha
 - hy
 - Tatsuro Yamashita
 - ROUND TABLE featuring Nino
 - k - only human
-- stratovarius
-- meshuggah
+
+** Bass
+- Marcus MIller
+
+** Cuba
+- Nat King Cole
+- Perez Prado
+- Compay Segundo
+- Ibrahim Ferrer
+
+** Christian
 - DC talk
+** Djent
+- Acadence
+- Animals as leaders
+- Plini
+- Vitalism
+-
+** Death Metal
+- meshuggah
+** Progressive Metal
+- stratovarius
+** Rock
+- Deepeche Mode
+** MPB
+- Ze
+** Violao
+- Baden Powell
+- Garoto
+- Marco Pereira
+
+** Classic Guitar
+- John Williams
+- Julian Bream
+- Yepes
 * Gifts
 ** Nephew
 - Nintendo Switch
