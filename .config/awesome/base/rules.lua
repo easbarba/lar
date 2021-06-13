@@ -114,7 +114,7 @@ awful.rules.rules = {
      properties = { tag = "mx" } },
    { rule_any = { class = { "Atril", "libreoffice-writer" }},
      properties = { tag = "reader" } },
-   { rule_any = { class = { "Alacritty", "st", "st-256color", "Mate-terminal" }},
+   { rule_any = { class = { "Alacritty", "Mate-terminal" }},
      properties = { tag = "term" } },
    { rule_any = { class = { "IceCat", "Firefox", "Chromium" }},
      properties = { tag = "www" } },
