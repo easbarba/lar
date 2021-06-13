@@ -93,8 +93,6 @@ e_zinit()
     e_zinit_plugins
 }
 
-e_direnv() { eval "$(direnv hook zsh)"; }
-
 e_prompt()
 {
     [ -x $(command -v starship) ] && eval "$(starship init zsh)"
