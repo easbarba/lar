@@ -3,6 +3,7 @@
 # * Cejo
 distro update
 distro upgrade
+distro clean
 
 cejo floss grab
 cejo floss archive
