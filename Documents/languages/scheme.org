@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-   | name      | chapter | @                                  | late | revision |
-   |-----------+---------+------------------------------------+------+----------|
-   | Scheme PL |       2 | Section 2.6. Top-Level Definitions |      |          |
+   | name      | chapter | @                       | late | revision |
+   |-----------+---------+-------------------------+------+----------|
+   | Scheme PL |       2 | Section 2.9. Assignment |      |          |
 
 ** LDC
    | Source Code | folder | file | @ |
