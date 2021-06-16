@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                      | revision        |
-|----------------------------------+------------------------------------+-------------------------------------------+-----------------|
-| Confident Ruby                   | Perfoming Work                     |                                           |                 |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition       | Fibers, Threads |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                          |                 |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite               |                 |
-| Clean Ruby                       | Using Boolean Logic                |                                           |                 |
-| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                    |                 |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                           |                 |
-| Design Patterns in Ruby          | Template Method                    |                                           |                 |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                 |                 |
-| The Well Grounded Rubyist        | Object individualization           | 13.1.5 Class methods in (even more) depth |                 |
+| Books                            | Chapter                            | late                                           | revision        |
+|----------------------------------+------------------------------------+------------------------------------------------+-----------------|
+| The Well Grounded Rubyist        | Object individualization           | 13.2 Modifying Ruby’s core classes and modules |                 |
+| Confident Ruby                   | Perfoming Work                     |                                                |                 |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition            | Fibers, Threads |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                               |                 |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite                    |                 |
+| Clean Ruby                       | Using Boolean Logic                |                                                |                 |
+| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                         |                 |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                                |                 |
+| Design Patterns in Ruby          | Template Method                    |                                                |                 |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                      |                 |
 
 ** SLOC
 | Project       | folder             | file                   | @ |
@@ -332,6 +332,21 @@ let(:expense) { { 'some' => 'data' } }
    [].methods.grep /^re/ # finds methods begins with re
    #+end_src
 
+*** Class methods
+- Class methods are singleton methods defined on objects of class `Class`.
+- a method defined as a singleton method of a class object can 2also be called on subclasses of that class.
+
+#+begin_src ruby
+class C
+end
+
+def C.a_class_method
+  puts "Singleton method defined on C"
+end
+
+C.a_class_method # Singleton method defined on C
+#+end_src
+
 *** include
 The include directive includes all methods from the given module and make them
 available as instance methods in your class
@@ -399,6 +414,25 @@ MyClass.ancestors # => [Greeting, MyClass, Object, Kernel, BasicObject]
 
 
 #+end_src
+*** super
+   #+begin_src ruby
+   def x(y,z)
+     super # passes all the parameters from the current method and hands the parameters to the method from the base class
+     super() # calls the method without any arguments.
+   end
+   #+end_src
+*** Singleton Classes
+- Sometimes called meta-classes
+- The Ruby standard library includes an implementation of the singleton pattern *require 'singleton'*
+**** Methods
+***** #singleton_class
+Refers directly to the singleton class of an object
+#+begin_src ruby
+string = "a string"
+string.singleton_class.ancestors # => [#<Class:#<String:0x0000563fb8797270>>, String, Comparable, Object,Kernel, BasicObject]
+#+end_src
+**** Singleton methods
+
 ** path
    #+begin_src ruby
    $LOAD_PATH.each { |x| puts x } or $:
@@ -407,13 +441,7 @@ MyClass.ancestors # => [Greeting, MyClass, Object, Kernel, BasicObject]
    $:.push '/your/directory/here'
    require 'yourfile'
    #+end_src
-** super
-   #+begin_src ruby
-   def x(y,z)
-     super # passes all the parameters from the current method and hands the parameters to the method from the base class
-     super() # calls the method without any arguments.
-   end
-   #+end_src
+
 ** project structure
    #+begin_src ruby
    anagram/    <- top-level
