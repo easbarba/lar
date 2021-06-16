@@ -1276,22 +1276,15 @@ An array of ancestors—essentially, the method-lookup path for instances of thi
    my_enum.take(5).force // actual result rather than lazy enumerator
    #+end_src
 ** metaprogramming
-*** Singleton Classes
-**** #singleton_class
-Refers directly to the singleton class of an object
-#+begin_src ruby
-string = "a string"
-string.singleton_class.ancestors # => [#<Class:#<String:0x0000563fb8797270>>, String, Comparable, Object,Kernel, BasicObject]
-#+end_src
-*** instance_variable_set
-*** instance_eval
+**** instance_variable_set
+**** instance_eval
     - class methods
-*** class_eval
+**** class_eval
     - instance methods
 
-*** Object#instance_exec
-*** Module#class_exec
-*** Module#mod-ule_exec
+**** Object#instance_exec
+**** Module#class_exec
+**** Module#mod-ule_exec
 ** enum_for
    #+begin_src ruby
    e = names.enum_for(:inject, "Names: ")
