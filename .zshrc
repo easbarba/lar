@@ -104,4 +104,3 @@ e_prompt()
 
 e_default | e_zinit
 e_prompt
-e_direnv
