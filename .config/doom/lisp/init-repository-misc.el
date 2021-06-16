@@ -35,49 +35,25 @@
   :defer t
   :hook (scheme-mode . guix-devel-mode))
 
-(use-package! elfeed
-  :custom
-  (elfeed-db-directory "~/.config/elfeed")
-  (elfeed-feeds
-   '("https://www.fsf.org/static/fsforg/rss/news.xml"
-     "https://www.fsf.org/static/fsforg/rss/blogs.xml"
-     "https://planet.gnu.org/rss20.xml"
-     "https://planet.scheme.org/atom.xml"
-     "https://guix.gnu.org/feeds/blog.atom"
+(after! elfeed
+
+  (setq elfeed-db-directory "~/.config/elfeed")
+  (setq elfeed-feeds
+   '("https://guix.gnu.org/feeds/blog.atom"
      "https://elephly.net/feed.xml"
-     "https://bits.debian.org/feeds/atom.xml"
-     "https://micronews.debian.org/feeds/atom.xml"
-     "https://elixir-lang.org/atom.xml"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://rubyweekly.com/rss/"
+     "https://www.honeybadger.io/blog/feed.xml"
      "https://michael.stapelberg.ch/feed.xml"
-     "https://rubytogether.org/news.xml"
      "https://edelpero.svbtle.com/feed"
      "https://debxp.org/feed/"
-     "https://sourcehut.org/blog/index.xml"
      "https://drewdevault.com/blog/index.xml"
-     "https://eregon.me/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
-     "https://emacsredux.com/feed.xml"
-     "https://metaredux.com/feed.xml"
-     "https://revolushow.com/feed"
      "https://tonarinoyj.jp/atom/series/13932016480028984490"
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC6l62xBsdRKExxgmYGh8RLA" ;; Filosofia Vermelha
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas Feios
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCELku_rf-FHbWhLIwsKLGGA" ;; Portal do Jose
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; TV BoiTempo
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UClNe40Z_ufT3GOdR3Jirbvw" ;; The Nocturnal Rambler
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCvO2BExvkAbGMsTGnEnI_Ng" ;; Lula
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; Xletalis
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC3sMBA3BdnsKSVI0WB9yVWQ" ;; TV Forum
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC7SnJS5o1os7a6CaiNabzcg" ;; PSOL
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3-otiFWQJrVwi22oce0oQ" ;; Fernanda Melchionna
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Guilherme Boulos
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; Tempero Drag
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro Brasil
@@ -87,9 +63,9 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC02coXfDPjEmU8uDT2G8Z2A" ;; Jones Manoel
      "http://sachachua.com/blog/category/emacs/feed"))
-  (url-queue-timeout 30)
-  (elfeed-search-filter "@2-week-ago +unread")
-  :config
+  (setq url-queue-timeout 30)
+  (setq elfeed-search-filter "@2-week-ago +unread")
+
   ;; Entries older than 2 weeks are marked as read
   (add-hook 'elfeed-new-entry-hook
 	    (elfeed-make-tagger :before "3 weeks ago"
