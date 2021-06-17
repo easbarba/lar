@@ -346,19 +346,11 @@ https://apoia.se/cozinhasolidaria
 
 Brasília, DF - (61) 981103178
 
-easbarbosa@tutanota.me
+easbarbosa@tutanota.com
+
 https://git.sr.ht/~easbarbosa
 
-@easbarbosa
-
-*SOBRE*
------
-  Sou usuário de Distribuições Linux por mais de 10 anos com foco em
-  servidores com Kernel customizado, familiaridade de ferramentas
-  cli como gerenciadores de empacotamento, make, cmake, ninja, rake,
-  assim como grep, find, ps, ssh, windows managers e automação de
-  tarefas com shell scripts.
-
+Rede sociais: @easbarbosa
 
 *EDUCAÇÃO*
 -----
@@ -368,14 +360,14 @@ https://git.sr.ht/~easbarbosa
 
 *SKILLS*
 -----
-  - Linguagens: Ruby e Emacs Lisp.
-  - Debian/Fedora: administração, ferramentas e configurações.
+  - Linguagens: Ruby, Scheme e Emacs Lisp.
+  - Debian/FreeBSD/GuixSD: administração e configurações.
   - Shell Script: GNU Bash, Fish Shell e POSIX.
   - Git: rebase, squash, merge.
   - Containers: podman, dockerfile, criação e gerência de imagens.
-  - Unit Test: Minitest, RSpec, ERT.
+  - Unit Test: RSpec, ERT.
   - Front-End: HTML,CSS Grid/Flexbox.
-  - Editores: GNU Emacs, NeoVIM, Nano.
+  - Editores: GNU Emacs, NeoVim, Micro, Nano.
 
 
 *MAIS*
