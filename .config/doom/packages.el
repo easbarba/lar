@@ -13,6 +13,7 @@
 (package! bufler)
 (package! nov)
 (package! company-org-block)
+(package! org-present)
 
 ;; RECIPE
 
