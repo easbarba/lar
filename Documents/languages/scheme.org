@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-   | name      | chapter | @                       | late | revision |
-   |-----------+---------+-------------------------+------+----------|
-   | Scheme PL |       2 | Section 2.9. Assignment |      |          |
+   | name      | chapter                  | @ | late | revision |
+   |-----------+--------------------------+---+------+----------|
+   | Scheme PL | Chapter 3. Going Further |   |      |          |
 
 ** LDC
    | Source Code | folder | file | @ |
@@ -498,7 +498,17 @@
 | pair? |   |
 ** errors
 assertion-violation
-
+** iteration
+#+begin_src scheme
+(map cons '(a b c) '(1 2 3))
+#+end_src
+** assignment
+#+begin_src scheme
+(define abcde '(a b c d e))
+(set! abcde (cdr abcde))
+set-car
+set-cdr
+#+end_src
 * Terms (table)
   | Term                                         | Meaning |
   |----------------------------------------------+---------|
