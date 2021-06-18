@@ -41,9 +41,17 @@ locale() {
 packages() {
 	# Fix that annoying GUIX_LOCPATH warning
 
-	local packages=(font-gnu-freefont-ttf font-dejavu icecat nyxt node)
+	local packages=(font-gnu-freefont-ttf font-dejavu fish nyxt icecat node)
 	e_dolist "guix install" "${pack[@]}"
 }
+
+development() {
+	# Fix that annoying GUIX_LOCPATH warning
+
+	local packages=(node)
+	e_dolist "guix install" "${pack[@]}"
+}
+
 
 # * RUN
 
@@ -54,3 +62,4 @@ update
 
 locale
 packages
+development
