@@ -162,6 +162,18 @@
 Rails.logger.debug "This will only show in development"
 Rails.logger.warn "This will show in all environments"
 #+end_src
+
+* Debugging
+
+** Views
+
+
+** <% console %>
+ abre um console na página que vc coloca <% console %> aí vc pode chamar as variáveis daquela página pra entender o que tá rolando
+#+begin_src ruby
+<% console %>
+#+end_src
+
 * Active Record
 - Single-Table Inheritance
 ** Associations
