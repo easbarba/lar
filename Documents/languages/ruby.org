@@ -124,7 +124,7 @@
 | Clean Ruby                       | Using Boolean Logic                |                                                |                 |
 | Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                         |                 |
 | Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                                |                 |
-| Design Patterns in Ruby          | Template Method                    |                                                |                 |
+| Design Patterns in Ruby          | Composite                          |                                                |                 |
 | Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                      |                 |
 
 ** SLOC
