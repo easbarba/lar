@@ -5,14 +5,19 @@ set -euo pipefail
 
 # TODO: Second argument set color, if none use default one
 
+# * COLORS
+RED="41m"
+GREEN="42m"
+PURPLE="45m"
+
 # * Config
-DEFAULT_COLOR='green'
+DEFAULT_COLOR=$RED
 
 # * Arguments
 MSG=$1
-COLOR=$2
+COLOR=$DEFAULT_COLOR
 
 # * Run
 echo
-echo -e "\e[42m $MSG \e[0m"
+echo -e " \e[$COLOR $MSG \e[0m"
 echo
