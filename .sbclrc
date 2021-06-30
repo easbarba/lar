@@ -1,6 +1,6 @@
 ;; -*- lisp -*-
 
-   ;;; The following lines added by ql:add-to-init-file:
+;;; The following lines added by ql:add-to-init-file:
 #-quicklisp
 (let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
                                        (user-homedir-pathname))))
@@ -8,4 +8,4 @@
     (load quicklisp-init)))
 
 (setf *print-length* 20
-      ,*print-array* t)
+      *print-array* t)

@@ -314,7 +314,7 @@
 ;; -----------------
 
 ;; CONTRIB MODULOS LOCALIZACAO
-(set-module-dir (pathname-as-directory (concat *lar* "/Builds/stumpwm-contrib")))
+(set-module-dir (pathname-as-directory (concat *lar* "/Projects/lisp/stumpwm-contrib")))
 
 ;; LOAD MODULES
 (load-module "battery-portable")
