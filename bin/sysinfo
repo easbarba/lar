@@ -9,16 +9,14 @@ deps=(sensors ping awk grep sed) # TODO: Check deps
 
 Volume()
 {
-    local result
-    result="???"
+    local result="???"
+    local check="$(amixer get Master | tail -1)"
 
     [[ $(pgrep -x "pulseaudio") ]] && result="$(pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}')"
     [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
 
-    local check
-    check="$(amixer get Master | tail -1)"
     [[ $check == *\[off\]* ]] && printf "VOL: MUTE"
-    [[ $check == *\[on\]* ]] && printf "%s" "VOL: ${result}"
+    [[ $check == *\[on\]* ]] && printf "%s" "VOL: $result"
 }
 
 Cpuf()
