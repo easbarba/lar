@@ -10,6 +10,6 @@ ARGUMENTS=("$@")
 
 for arg in "${ARGUMENTS[@]}"
 do
-    echo -e "\n \e[42m $arg \e[0m \n" # white/green
+    e_echo "$arg"
     $COMMAND "$arg" # do not quote $COMMAND
 done
