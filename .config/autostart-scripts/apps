@@ -10,10 +10,10 @@
 
 # * Lists
 
-tools=(udiskie unclutter ibus-daemon nm-applet
-       blueman-applet mate-power-manager diodon)
+tools=(udiskie unclutter nm-applet mpd
+       blueman-applet mate-power-manager) #ibus-daemon
 
-apps=(emacs alacritty firefox atril clementine)
+apps=(emacs alacritty firefox atril diodon)
 
 # * Utils, Helps
 
