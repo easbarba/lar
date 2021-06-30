@@ -5,20 +5,30 @@ set -euo pipefail
 
 # * DEBIAN
 
+e_echo "Debian"
+
 upgrade() {
-	echo "-- Updating Debian"
+	e_echo "Updating Debian"
 
 	sudo apt update
 	sudo apt upgrade -y
 	sudo apt autoremove
 }
 
+pre() {
+	e_echo "Enable Multi-Arch"
+
+	sudo dpkg --add-architecture i386
+}
+
 packages() {
+	e_echo "Installing system packages"
+
 	essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
 		build-essential curl emacs)
 
 	programming=(direnv shellcheck zenity libpq-dev bash-completion cmake
-		mercurial clang libsqlite3-dev)
+		mercurial clang libsqlite3-dev) # libfixposix-dev
 
 	ruby=(libssl-dev ruby-dev)
 
@@ -26,14 +36,16 @@ packages() {
 
 	postgres=(libreadline-dev zlib1g-dev curl)
 
-	system=(fd-find screen micro neovim zsh fish unrar rar ripgrep lshw at usbutils
-		lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
-		fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
-		cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
-		dialog ncdu nnn fzf fzy rsync bat rclone xonsh pv wget2 parallel
-		locate info wget stow parted texinfo autoconf automake gnutls-bin
-		bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
-		firewall-config socat vrms fzf aria2)
+	music=(mpd mpc ncmpcpp)
+
+	system=(telnet fd-find screen micro neovim zsh fish unrar rar ripgrep lshw at usbutils
+			lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
+			fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
+			cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
+			dialog ncdu nnn fzy rsync bat rclone xonsh pv wget2 parallel
+			locate info wget stow parted texinfo autoconf automake gnutls-bin
+			bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
+			firewall-config socat vrms fzf aria2)
 
 	emacs=(libgccjit-10-dev)
 
@@ -77,39 +89,48 @@ packages() {
 		mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
 		mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
 
-	echo "-- Habilita Multi-Arch"
-	sudo dpkg --add-architecture i386
-
-	echo "Instalando pacotes."
-
 	local command='sudo apt install -y'
 
-	e_dolist "$command" "${essentials[@]}"
-	sudo apt -y build-dep emacs
-	e_dolist "$command" "${debian[@]}"
-	sudo apt-file update # update Debian database
-	e_dolist "$command" "${emacs[@]}"
-	e_dolist "$command" "${ruby[@]}"
-	e_dolist "$command" "${lua[@]}"
-	e_dolist "$command" "${programming[@]}"
-	e_dolist "$command" "${postgres[@]}"
-	e_dolist "$command" "${system[@]}"
-	e_dolist "$command" "${gtk[@]}"
-	e_dolist "$command" "${qt[@]}"
-	e_dolist "$command" "${infra[@]}"
-	e_dolist "$command" "${fonts[@]}"
-	sudo fc-cache -fv
-	e_dolist "$command" "${security[@]}"
-	e_dolist "$command" "${laptop[@]}"
-	e_dolist "$command" "${wm[@]}"
-	e_dolist "$command" "${user[@]}"
-	e_dolist "$command" "${media[@]}"
-	e_dolist "$command" "${amd[@]}"
+	enabled=("${essentials[@]}"
+			 "${debian[@]}"
+			 "${emacs[@]}"
+			 "${ruby[@]}"
+			 "${lua[@]}"
+			 "${programming[@]}"
+			 "${postgres[@]}"
+			 "${system[@]}"
+			 "${music[@]}"
+			 "${gtk[@]}"
+			 "${qt[@]}"
+			 "${infra[@]}"
+			 "${fonts[@]}"
+			 "${security[@]}"
+			 "${laptop[@]}"
+			 "${wm[@]}"
+			 "${user[@]}"
+			 "${media[@]}"
+			 "${amd[@]}")
 
-	echo "Done"
+	for i in "${enabled[@]}"; do
+		e_dolist "$command" "$i"
+	done
+
+	# builds dep
+	sudo apt -y build-dep emacs
+
+	e_echo "Done"
+}
+
+post(){
+	e_echo "Post install"
+
+	sudo apt-file update # update Debian database
+	sudo fc-cache -fv
 }
 
 clean() {
+	e_echo "Clean up"
+
 	unused=(firefox-esr)
 
 	local command='sudo apt remove -y'
@@ -118,6 +139,12 @@ clean() {
 }
 
 services() {
+	e_echo "Debian Services"
+
+	mpd() {
+		sudo systemctl disable mpd
+	}
+
 	kdeconnect() {
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
@@ -144,6 +171,7 @@ services() {
 		sudo usermod -aG kvm "$USER"
 	}
 
+	mpd
 	alternatives
 	timezone
 	kdeconnect
@@ -151,20 +179,20 @@ services() {
 }
 
 foreign() {
-	# Non-Debian packages
+	echo "Non-Debian packages"
 
 	chrome() {
 		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
 	}
-
-	chrome
 }
 
 # * RUN
 
 upgrade
+pre
 packages
+post
 clean
 services
 foreign
