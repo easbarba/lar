@@ -269,12 +269,13 @@ let(:expense) { { 'some' => 'data' } }
 ** Console
 *** irb
 **** cli
-     |                          |   |
-     |--------------------------+---|
-     | -r ./<file>              |   |
-     | irb_load                 |   |
-     | irb_source               |   |
-     | irb --prompt <my-prompt> |   |
+|                      |              |
+|----------------------+--------------|
+| -r ./<file>          |              |
+| irb_load             |              |
+| irb_source           |              |
+| --prompt <my-prompt> |              |
+| -I                   | include path |
 **** inside
      |                           |         |
      |---------------------------+---------|
@@ -529,14 +530,17 @@ string.singleton_class.ancestors # => [#<Class:#<String:0x0000563fb8797270>>, St
     # by passing only a subset of the call stack to the new exception:
     raise ArgumentError, "Name too big", caller[1..-1]
     #+end_src
-** thread
+** Thread
+- If the program ends while one or more threads are running, those threads are killed.
+- can be asleep or awake, and alive or dead.
+
 #+begin_src ruby
 x = Thread.new { puts "What's the big deal" }
 x.value
 x.join
 x.exit
-Thread.kill(x)
 
+Thread.kill(x)
 
 threads = []
 threads << Thread.new { puts "What's the big deal" }
@@ -544,9 +548,50 @@ threads << Thread.new { 3.times { puts "Threads are fun!" } }
 threads.each { |thr| thr.join }
 
 
+t = Thread.new do
+  (0..2).each do |n|
+    begin
+      File.open("part0#{n}") do |f|
+        text << f.readlines
+      end
+    rescue Errno::ENOENT
+      puts "Message from
+thread: Failed on n=#{n}"
+      Thread.exit
+    end
+  end
+end
+t.join
 
+Thread.stop
+t.status
+t.stop?
+t.alive
+t.wakeup
+t.join
+t.inspect
 #+end_src
 
+** Fibers
+- no require
+- resume
+- yield
+- require: requiring `fiber library` gives additional `transfer` methods
+*** errors
+    - FiberError: calling resume after last fiber returned `nil`
+*** usage
+#+begin_src ruby
+
+twos = Fiber.new do
+  num = 2
+  loop do
+	Fiber.yield(num) unless num % 3 == 0 # returning control to the calling context
+	num += 2
+  end
+end
+
+10.times { print twos.resume, " " }
+#+end_src
 ** writable object attribute
    #+begin_src ruby
    class ProjectList
@@ -620,27 +665,6 @@ end
 ** continuation
    - require 'continuation'
 
-** Fibers
-   - no require
-   - resume
-   - yield
-   - require: requiring `fiber library` gives additional `transfer` methods
-*** errors
-    - FiberError: calling resume after last fiber returned `nil`
-*** usage
-    #+begin_src ruby
-
-
-    twos = Fiber.new do
-      num = 2
-      loop do
-	Fiber.yield(num) unless num % 3 == 0
-	num += 2
-      end
-    end
-
-    10.times { print twos.resume, " " }
-    #+end_src
 ** delimited input
    #+begin_src ruby
    # %q - Single-quoted string
@@ -686,7 +710,6 @@ end
    gem list GEM -d
 
 ** Variables
-
 *** class variables
     - available throughout a class or module body
     - must be initialized before use
@@ -696,9 +719,13 @@ end
     - available throughout a program.
     - references to it returns the same object.
     - referencing an uninitialized global variable returns nil.
+    - $SAFE —set to 0 by default. Setting $SAFE
+      to 1 will prevent Ruby from running potentially unsafe methods like eval on
+      tainted data by raising a SecurityError .
 
     #+begin_src ruby
     $? # return global status of last command
+    $SAFE
     #+end_src
 ** self
    - is a keyword
@@ -904,7 +931,7 @@ end
     Child.superclass # => Parent
 
     #
-
+    meth.owner
     #
     #+end_src
 ** append <<
@@ -912,6 +939,36 @@ end
    #+begin_src ruby
 
    #+end_src
+** proc
+#+begin_src ruby
+p = Proc.new { puts "yay" }
+p = proc { puts "yay" }
+p.call
+
+def x(&block)
+  block.call
+end
+
+x(&p) # => yay
+x(p.to_proc) # => yay
+
+y = Proc.new {|y| puts y.upcase }
+%w{ David Black }.each(&y) # => DAVID BLACK
+
+class Symbol
+  def to_proc
+    puts "In the new Symbol#to_proc!"
+    Proc.new {|obj| obj.public_send(self) }
+  end
+end
+
+def multiply_by(m)
+  Proc.new {|x| puts x * m }
+end
+mult = multiply_by(10)
+mult.call(12
+
+#+end_src
 ** lambda
 *** How
     #+begin_src ruby
@@ -933,13 +990,43 @@ end
     #+end_src
 ** methods
    default values, splat args (described later on page 120), keyword args, and a block parameter
-   #+begin_src ruby
-   def splating(*rest)
-     puts rest.each { |x| puts }
-   end
+#+begin_src ruby
+def splating(*rest)
+  puts rest.each { |x| puts }
+end
 
-   def split_apart(first, *, last) # get first and last args, ignore middle ones
-   #+end_src
+def split_apart(first, *, last) # get first and last args, ignore middle ones
+end
+#+end_src
+*** capture methods
+#+begin_src ruby
+
+class C
+  def talk
+    puts "Method-grabbing test!"
+  end
+end
+
+c = C.new
+
+meth = c.method(:talk)
+meth.owner
+meth.call # to exeute
+meth[]
+meth.()
+#+end_src
+*** unbind methods
+unbind the method from its object and then bind it to another object, as long as
+that other object is of the same class as the original object
+#+begin_src ruby
+class D < C
+end
+
+d = D.new
+unbound = meth.unbind
+unbound.bind(d).call
+#+end_src
+
 ** yield
    #+begin_src ruby
 
@@ -1314,16 +1401,57 @@ end
    ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
    my_enum.take(5).force // actual result rather than lazy enumerator
    #+end_src
+** eval family
+*** eval
+#+begin_src ruby
+eval("puts 'x'")
+eval("puts 'x'", b) # b for binding
+#+end_src
+*** instance_eval
+    - class methods
+*** Binding
+#+begin_src ruby
+def use_a_binding(b)
+  eval("puts str", b)
+end
+str = "I'm a string in top-level binding!"
+use_a_binding(binding)
+#+end_src
+*** instance_exec
+- take arguments. Any arguments you pass it will be passed, in turn, to the code block.
+#+begin_src ruby
+string = "A sample string"
+string.instance_exec("s") {|delim| self.split(delim) }
+#+end_src
+*** class_eval
+- instance methods
+#+begin_src ruby
+c = Class.new
+c.class_eval do
+  def some_method
+    puts "Created in class_eval"
+  end
+end
+
+c_instance = c.new
+c_instance.some_method
+#+end_src
+*** evals perils
+#+begin_src ruby
+x = gets
+"any user input here\n"
+x.tainted?
+true
+#+end_src
+*** define_method
+#+begin_src ruby
+C.class_eval { define_method ("talk") { puts var }
+#+end_src
 ** metaprogramming
 **** instance_variable_set
-**** instance_eval
-    - class methods
-**** class_eval
-    - instance methods
-
 **** Object#instance_exec
 **** Module#class_exec
-**** Module#mod-ule_exec
+**** Module#module_exec
 ** enum_for
    #+begin_src ruby
    e = names.enum_for(:inject, "Names: ")

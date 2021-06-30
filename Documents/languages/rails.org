@@ -53,10 +53,10 @@
   :END:
 * Progress
 ** Books
-|                         |                   |                                  |   |
-|-------------------------+-------------------+----------------------------------+---|
-| Agile Development Rails | Task G            | Iteration G1: Capturing an Order |   |
-| Rails Guide             | Action Controller | 4.4 default_url_options          |   |
+|                         |                   |                                  |
+|-------------------------+-------------------+----------------------------------+
+| Agile Development Rails | Task G            | Iteration G1: Capturing an Order |
+| Rails Guide             | Action Controller | 4.4 default_url_options          |
 
 * Cli
 ** Database
