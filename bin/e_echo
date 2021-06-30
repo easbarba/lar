@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# DEBUG
+set -euo pipefail
+
+# TODO: Second argument set color, if none use default one
+
+# * Config
+DEFAULT_COLOR='green'
+
+# * Arguments
+MSG=$1
+COLOR=$2
+
+# * Run
+echo
+echo -e "\e[42m $MSG \e[0m"
+echo
