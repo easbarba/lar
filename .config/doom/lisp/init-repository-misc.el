@@ -38,8 +38,12 @@
 (after! elfeed
   (setq elfeed-db-directory "~/.config/elfeed")
   (setq elfeed-feeds
-   '("https://guix.gnu.org/feeds/blog.atom"
+   '("https://www.fsf.org/static/fsforg/rss/news.xml"
+     "https://www.fsf.org/static/fsforg/rss/blogs.xml"
+     "https://guix.gnu.org/feeds/blog.atom"
+     "https://feeds.feedburner.com/linuxtoday/linux"
      "https://elephly.net/feed.xml"
+     "https://www.phoronix.com/rss.php"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://rubyweekly.com/rss/"
      "https://www.honeybadger.io/blog/feed.xml"
@@ -49,6 +53,15 @@
      "https://drewdevault.com/blog/index.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://tonarinoyj.jp/atom/series/13932016480028984490"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; XLetails
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" ;; Kretcheu
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC8EGrwe_DXSzrCQclf_pv9g" ;; Debxp
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; PunkDevOps
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
