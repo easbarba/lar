@@ -63,7 +63,7 @@ root.buttons(gears.table.join(
 
 -- * Key bindings
 globalkeys = gears.table.join(
-   awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+   awful.key({ modkey, "Shift"   }, "h",      hotkeys_popup.show_help,
       {description="show help", group="awesome"}),
    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
       {description = "view previous", group = "tag"}),
@@ -74,14 +74,19 @@ globalkeys = gears.table.join(
 
    -- USER CUSTOM CONFIG - BEGIN
 
-   awful.key({ modkey,         }, "c",                                                   lockscreen),
-   awful.key({ modkey, "Shift" }, "w",     function() awful.spawn("cejo ops volume up")             end),
-   awful.key({ modkey, "Shift" }, "s",     function() awful.spawn("cejo ops volume down")           end),
-   awful.key({ modkey, "Shift" }, "e",     function() awful.spawn("cejo ops volume toggle")         end),
-   awful.key({ modkey, "Shift" }, "a",     function() awful.spawn("cejo ops brightness up")         end),
-   awful.key({ modkey, "Shift" }, "d",     function() awful.spawn("cejo ops brightness down")       end),
-   awful.key({                 }, "Print", function() awful.spawn("cejo ops screenshot full")       end),
-   awful.key({ "Shift"         }, "Print", function() awful.spawn("cejo ops screenshot partial")    end),
+   awful.key({ modkey,         }, "c",                                                       lockscreen),
+   awful.key({ modkey, "Shift" }, "w",     function() awful.spawn("volume up")                      end),
+   awful.key({ modkey, "Shift" }, "s",     function() awful.spawn("volume down")                    end),
+   awful.key({ modkey, "Shift" }, "e",     function() awful.spawn("volume toggle")                  end),
+   awful.key({ modkey, "Shift" }, "a",     function() awful.spawn("brightnessctl up")               end),
+   awful.key({ modkey, "Shift" }, "d",     function() awful.spawn("brightnessctl down")             end),
+   awful.key({ modkey,         }, "e",     function() awful.spawn("mpc toggle")                     end),
+   awful.key({ modkey,         }, "a",     function() awful.spawn("mpc prev")                       end),
+   awful.key({ modkey,         }, "d",     function() awful.spawn("mpc next")                       end),
+   awful.key({ modkey,         }, "w",     function() awful.spawn("mpc volume +3")                  end),
+   awful.key({ modkey,         }, "s",     function() awful.spawn("mpc volume -3")                  end),
+   awful.key({                 }, "Print", function() awful.spawn("screenshot full")                end),
+   awful.key({ "Shift"         }, "Print", function() awful.spawn("screenshot partial")             end),
    awful.key({ modkey, "Shift" }, "p",     function() awful.spawn.with_shell("e_play")              end),
    awful.key({ modkey          }, "z",     function() awful.spawn("playerctl play-pause")           end),
    awful.key({ modkey          }, "v",     function() awful.spawn("sysinfo")                        end),
@@ -112,7 +117,7 @@ globalkeys = gears.table.join(
       end,
       {description = "focus previous by index", group = "client"}
    ),
-   awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+   awful.key({ modkey, "Shift"          }, "m", function () mymainmenu:show() end,
       {description = "show main menu", group = "awesome"}),
 
    -- Layout manipulation
