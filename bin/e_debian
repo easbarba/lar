@@ -34,7 +34,7 @@ packages() {
 
 	lua=(lua5.4 luarocks lua-check)
 
-	postgres=(libreadline-dev zlib1g-dev curl)
+	database=(postgresql postgresql-contrib)
 
 	music=(mpd mpc ncmpcpp)
 
@@ -97,7 +97,7 @@ packages() {
 			 "${ruby[@]}"
 			 "${lua[@]}"
 			 "${programming[@]}"
-			 "${postgres[@]}"
+			 "${database[@]}"
 			 "${system[@]}"
 			 "${music[@]}"
 			 "${gtk[@]}"
@@ -140,6 +140,10 @@ clean() {
 
 services() {
 	e_echo "Debian Services"
+
+	postgres() {
+		sudo systemctl restart postgresql
+	}
 
 	mpd() {
 		sudo systemctl disable mpd
