@@ -75,9 +75,9 @@ globalkeys = gears.table.join(
    -- USER CUSTOM CONFIG - BEGIN
 
    awful.key({ modkey,         }, "c",                                                       lockscreen),
-   awful.key({ modkey, "Shift" }, "w",     function() awful.spawn("volume up")                      end),
-   awful.key({ modkey, "Shift" }, "s",     function() awful.spawn("volume down")                    end),
-   awful.key({ modkey, "Shift" }, "e",     function() awful.spawn("volume toggle")                  end),
+   awful.key({ modkey, "Shift" }, "w",     function() awful.spawn("cejo ops volume up")                      end),
+   awful.key({ modkey, "Shift" }, "s",     function() awful.spawn("cejo ops volume down")                    end),
+   awful.key({ modkey, "Shift" }, "e",     function() awful.spawn("cejo ops volume toggle")                  end),
    awful.key({ modkey, "Shift" }, "a",     function() awful.spawn("brightnessctl up")               end),
    awful.key({ modkey, "Shift" }, "d",     function() awful.spawn("brightnessctl down")             end),
    awful.key({ modkey,         }, "e",     function() awful.spawn("mpc toggle")                     end),
@@ -85,8 +85,8 @@ globalkeys = gears.table.join(
    awful.key({ modkey,         }, "d",     function() awful.spawn("mpc next")                       end),
    awful.key({ modkey,         }, "w",     function() awful.spawn("mpc volume +3")                  end),
    awful.key({ modkey,         }, "s",     function() awful.spawn("mpc volume -3")                  end),
-   awful.key({                 }, "Print", function() awful.spawn("screenshot full")                end),
-   awful.key({ "Shift"         }, "Print", function() awful.spawn("screenshot partial")             end),
+   awful.key({ modkey,         }, "o",     function() awful.spawn("flameshot full -p ~/Pictures")   end),
+   awful.key({ modkey, "Shift" }, "o",     function() awful.spawn("screenshot partial")             end),
    awful.key({ modkey, "Shift" }, "p",     function() awful.spawn.with_shell("e_play")              end),
    awful.key({ modkey          }, "z",     function() awful.spawn("playerctl play-pause")           end),
    awful.key({ modkey          }, "v",     function() awful.spawn("sysinfo")                        end),
