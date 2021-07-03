@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                           | revision        |
-|----------------------------------+------------------------------------+------------------------------------------------+-----------------|
-| The Well Grounded Rubyist        | Object individualization           | 13.2 Modifying Ruby’s core classes and modules |                 |
-| Confident Ruby                   | Perfoming Work                     |                                                |                 |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition            | Fibers, Threads |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                               |                 |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite                    |                 |
-| Clean Ruby                       | Using Boolean Logic                |                                                |                 |
-| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                         |                 |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                                |                 |
-| Design Patterns in Ruby          | Composite                          |                                                |                 |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                      |                 |
+| Books                            | Chapter                            | late                                            | revision        |
+|----------------------------------+------------------------------------+-------------------------------------------------+-----------------|
+| The Well Grounded Rubyist        | Callable and runnable objects      | Writing a chat server using sockets and threads |                 |
+| Confident Ruby                   | Perfoming Work                     |                                                 |                 |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition             | Fibers, Threads |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                                |                 |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite                     |                 |
+| Clean Ruby                       | Using Boolean Logic                |                                                 |                 |
+| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                          |                 |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                                 |                 |
+| Design Patterns in Ruby          | Composite                          |                                                 |                 |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                       |                 |
 
 ** SLOC
 | Project       | folder             | file                   | @ |
@@ -570,8 +570,12 @@ t.alive
 t.wakeup
 t.join
 t.inspect
-#+end_src
 
+t.current[:message] = "Holla"
+
+t.fetch(:message)
+t.fetch(:msg, "ola")
+#+end_src
 ** Fibers
 - no require
 - resume
@@ -616,9 +620,6 @@ end
    - attribute-setting methods
 ** ancestor
 An array of ancestors—essentially, the method-lookup path for instances of this class.
-** Multithreading
-   -
-*** usage
 ** modules
    #+begin_src ruby
 
