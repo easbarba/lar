@@ -8,6 +8,8 @@
 - [[#yaml][Yaml]]
   - [[#traits][Traits]]
   - [[#resources][Resources]]
+- [[#markdown][Markdown]]
+- [[#rst][Rst]]
 :END:
 * Yaml
 ** Traits
@@ -24,3 +26,5 @@
      barri go ta
 ** Resources
    https://yamllint.com
+* Markdown
+* Rst
