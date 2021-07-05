@@ -2,4 +2,4 @@
 bin: 'maim'
 full: ''
 partial: '--select'
-folder: '{0}'
+folder: 'FOLDER.join(screenshot_name)'

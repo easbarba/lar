@@ -2,4 +2,4 @@
 bin: 'flameshot'
 full: 'full -p'
 partial: 'gui -p'
-folder: '{0}'
+folder: 'FOLDER.to_path'
