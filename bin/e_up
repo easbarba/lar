@@ -13,5 +13,5 @@ sudo -i guix pull
 guix pull
 guix upgrade
 
-cejo projects emacs
+cejo emacs
 doom upgrade
