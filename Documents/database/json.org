@@ -1,0 +1,4 @@
+#+TITLE: Json
+
+* Online resources
+   [[https://jsonplaceholder.typicode.com/][jsonplaceholder]]
