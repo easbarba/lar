@@ -1,0 +1,17 @@
+#+TITLE: Job
+
+* Priorities
+|                     |                                                           |
+|---------------------+-----------------------------------------------------------|
+| Lang                | Ruby                                                      |
+| framework           | Rails, Slim, Sidekiq, , GraphQL                           |
+| Web API             | REST, SOAP                                                |
+| Network             | HTTP, HTTPS, TCP, SSH, FTP                                |
+| Unit Test           | Minitest, Rspec                                           |
+| SQL                 | PostgreSQL                                                |
+| Architecture Design | OOP, SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns |
+| Version Control     | Git                                                       |
+| Container           | Podman, Docker                                            |
+| CI / CD             |                                                           |
+| Cloud               |                                                           |
+| Hosting             | Heroku                                                    |

@@ -128,25 +128,13 @@
 | Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                       |                 |
 
 ** SLOC
-| Project       | folder             | file                   | @ |
-|---------------+--------------------+------------------------+---|
-| ruby          | cgi                | cookie.rb              |   |
-| rake          | test               | test_private_reader.rb |   |
-| bundle        | bundler/installer  | gem_installer.rb       |   |
-| solargraph    | solargraph/api_map | bundler_methods.rb     |   |
-| dry-container | dry/container      | mixin.rb               |   |
-
-** Priorities
-- Ruby
-- Rails, Slim, Sidekiq, REST, SOAP, GraphQL
-- Unit Test, Rspec
-- OOP, SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns
-- PostgreSQL
-- Git
-- Container
-- Heroku
-- CI / CD
-- Cloud
+| Project          | folder             | file                   | @ |
+|------------------+--------------------+------------------------+---|
+| ruby             | cgi                | cookie.rb              |   |
+| rake             | test               | test_private_reader.rb |   |
+| rubygems/bundler | cli                | add.rb                 |   |
+| solargraph       | solargraph/api_map | bundler_methods.rb     |   |
+| dry-container    | dry/container      | mixin.rb               |   |
 
 * Packages
 ** Packagement
