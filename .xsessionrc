@@ -5,8 +5,8 @@
 # * DEFAULT SOFTWARE:
 
 export EDITOR="micro"
-export TERMINAL="st"
-export BROWSER="firefox"
+export TERMINAL="alacritty"
+export BROWSER="chromium"
 
 # * LOCALE
 
