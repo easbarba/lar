@@ -6,4 +6,4 @@ set -euo pipefail
 # Description:
 # Deps: youtube-dl, ffmpeg
 
-cejo media play "$(e_url)"
+ixe play "$(e_url)"
