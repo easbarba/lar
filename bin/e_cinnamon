@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euxo pipefail
+set -euo pipefail
 
-switch()
-{
+switch() {
     gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-1 "['<Super>1']"
     gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-2 "['<Super>2']"
     gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-3 "['<Super>3']"
@@ -13,11 +12,10 @@ switch()
 
     gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-left "['<Super>A']"
     gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-right "['<Super>D']"
-    gsettings set org.cinnamon.desktop.keybindings.wm show-desktop  "['<Super>v']"
+    gsettings set org.cinnamon.desktop.keybindings.wm show-desktop "['<Super>v']"
 }
 
-move()
-{
+move() {
     gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-1 "['<Super><Shift>1']"
     gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-2 "['<Super><Shift>2']"
     gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-3 "['<Super><Shift>3']"
@@ -25,8 +23,7 @@ move()
     gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-5 "['<Super><Shift>5']"
 }
 
-volume()
-{
+volume() {
     gsettings set org.cinnamon.desktop.keybindings.media-keys volume-up "['<Super><Shift>w']"
     gsettings set org.cinnamon.desktop.keybindings.media-keys volume-down "['<Super><Shift>s']"
     gsettings set org.cinnamon.desktop.keybindings.media-keys volume-mute "['<Super><Shift>e']"
@@ -35,14 +32,13 @@ volume()
     gsettings set org.cinnamon.desktop.wm.preferences audible-bell false
 }
 
-media()
-{
+media() {
     # gsettings set org.cinnamon.desktop.keybindings.media-keys kbd-brightness-down "['<Super><Shift>d', 'XF86KbdBrightnessDown']"
     # gsettings set org.cinnamon.desktop.keybindings.media-keys kbd-brightness-up "['<Super><Shift>a', 'XF86KbdBrightnessUp']"
 
     gsettings set org.cinnamon.desktop.keybindings.media-keys mic-mute "['<Super><Shift>q', 'XF86AudioMicMute']"
 
-    gsettings set org.cinnamon.desktop.keybindings.media-keys screenshot-clip  "['<Super><Shift>q', '<Control>Print']"
+    gsettings set org.cinnamon.desktop.keybindings.media-keys screenshot-clip "['<Super><Shift>q', '<Control>Print']"
     gsettings set org.cinnamon.desktop.keybindings.media-keys screenshot "['<Super><Shift>q', 'Print']"
 
     gsettings set org.cinnamon.desktop.keybindings.media-keys play "['<Super>z', 'XF86AudioPlay']"
@@ -50,8 +46,7 @@ media()
     gsettings set org.cinnamon.desktop.keybindings.media-keys previous "['<Super><Shift>d', 'XF86AudioPrev']"
 }
 
-misc()
-{
+misc() {
     gsettings set org.cinnamon.desktop.wm.preferences num-workspaces 5
     gsettings set org.cinnamon.desktop.wm.preferences workspace-names "['MX','Read','Term','WWW','Media']"
 

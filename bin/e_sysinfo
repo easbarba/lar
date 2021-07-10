@@ -1,27 +1,112 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-# frozen_string_literal: true
+# DEBUG OPTIONS
+set -euo pipefail
 
-module Cejo
-  module Ops
-    # Display System Hardware Information.
-    class Sysinfo
-      attr_reader :services, :command
+# Dependencies: sensors, ping, awk, grep, sed, amd ryzen, vega 10, debian
 
-      DEPS = %w[pulseaudio amixer ping sensors ryzen vega].freeze
+deps=(sensors ping awk grep sed) # TODO: Check deps
 
-      def initialize(services, command)
-        @services = services
-        @command = command
-      end
+Volume()
+{
+    local result="???"
+    local check="$(amixer get Master | tail -1)"
 
-      def run_args
-        DEPS
-      end
+    [[ $(pgrep -x "pulseaudio") ]] && result="$(pactl list sinks | grep '^[[:space:]]Volume:' | awk '{print $5}')"
+    [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
 
-      def run
-        run_args
-      end
-    end
-  end
-end
+    [[ $check == *\[off\]* ]] && printf "VOL: MUTE"
+    [[ $check == *\[on\]* ]] && printf "%s" "VOL: $result"
+}
+
+Cpuf()
+{
+    local prevtotal
+    local total
+    local result
+    read -r _ a b c previdle rest < /proc/stat
+    prevtotal=$((a+b+c+previdle))
+    sleep 0.5
+    read -r _ a b c idle rest < /proc/stat
+    total=$((a+b+c+idle))
+    result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
+    printf "%s" "CPUF: ${result}%"
+}
+
+Cput()
+{
+    local result
+    result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
+    printf "%s" "CPUT: ${result}"
+}
+
+Memory()
+{
+    local result
+    result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
+    printf "%s" "MEM: ${result}"
+}
+
+Date()
+{
+    local result
+    result="$(date "+%H:%M - %a, %b %d")"
+    printf "%s" "${result}"
+}
+
+Battery()
+{
+    local result
+    result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
+    printf "%s" "BAT: ${result}"
+}
+
+Gput()
+{
+    local result
+    result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
+    printf "%s" "GPUT: $result"
+}
+
+arch-update()
+{
+    local sys
+    local aur
+    local check
+
+    # Arch/Manjaro
+    sys=$(checkupdates | wc -l)
+    aur=$(cower -u | wc -l)
+
+    check=$((pac + "$aur"))
+    [[ "$check" != "0" ]] && printf "%s" " $pac  $aur $sys "
+}
+
+update-debian()
+{
+    local output=$(aptitude full-upgrade --simulate --assume-yes)
+    local num=$(($packs | wc -l))
+    printf "%s" "Packs: $num"
+}
+
+Connection()
+{
+    local result
+    result=$(nmcli connection show | awk 'NR==2 {print $4}')
+    if [[ "$result" != '--' ]]; then
+	printf 'CON: ON'
+    else
+	printf 'CON: OFF'
+    fi
+}
+
+Host()
+{
+    printf "%s" "${HOSTNAME^}"
+}
+
+
+sep=" | "
+printf "%s" "$(Volume)$sep$(Battery)$sep$(Memory)$sep$(Cpuf)$sep$(Cput)$sep$(Gput)$sep$(Date)"
+
+exit 0

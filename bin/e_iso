@@ -8,4 +8,4 @@ set -euo pipefail
 ISO="$1"
 TO="$2"
 
-sudo dd bs=4M if=$ISO of=$TO status=progress oflag=sync
+sudo dd bs=4M if="$ISO" of="$TO" status=progress oflag=sync

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 EMACS_HOME="$HOME/.config/emacs"
 
 git clone --depth 1 https://github.com/hlissner/doom-emacs "$EMACS_HOME"

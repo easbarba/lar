@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# DEBUG OPTIONS
+set -euo pipefail
+
 # * Cejo
 distro update
 distro upgrade
