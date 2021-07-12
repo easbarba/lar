@@ -1,0 +1,13 @@
+#+TITLE: Cli
+
+** write
+Send a message to another user.
+
+** mesg
+Control write access of other users to your terminal.
+
+** news
+** dirs
+print directory stack
+** popd
+move through directory stack
