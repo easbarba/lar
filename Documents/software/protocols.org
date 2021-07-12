@@ -1,0 +1,6 @@
+* HTTP2
+ - supports any number of requests and responses over a single connection.
+ - connections can also be bidirectional.
+ - a client opens a connection to a target server, and that connection stays open until either the client or server closes it.
+ - allow requests, responses and data streams to move through the connection
+ - client can keep sending data to the server in a continuous stream.
