@@ -25,9 +25,9 @@
 - [[#utils][Utils]]
 :END:
 * Progress
-| book                   | chapter          | @ | revision |
-|------------------------+------------------+---+----------|
-| Learn PostgreSQL 12/13 | Basic Statements |   |          |
+| book                   | chapter          | @                         | revision |
+|------------------------+------------------+---------------------------+----------|
+| Learn PostgreSQL 12/13 | Basic Statements | Managing temporary tables |          |
 
 * Official
 https://www.postgresql.org/
@@ -35,15 +35,17 @@ https://www.postgresql.org/
 https://www.postgresql.org/docs/
 
 * Terms
-|   |   |
-|---+---|
-|   |   |
+|              |                                                                        |
+|--------------+------------------------------------------------------------------------|
+| session      |                                                                        |
+| transactions |                                                                        |
+| concurrency  |                                                                        |
+| ACID         | atomicity, consistency, isolation, and durability                      |
+| DMBS         | Database Management System                                             |
+| PID          | Process Identifier                                                     |
+| TableSpace   | tablespace is a storage space that can be outside the PGDATA directory |
+| PGDATA       |                                                                        |
 
-   - ACID: atomicity, consistency, isolation, and durability
-   - DMBS: Database Management System
-   - PID: Process Identifier
-   - TableSpace: tablespace is a storage space that can be outside the PGDATA directory.
-   - PGDATA
 * Cli
 ** pg_ctl
     |                          |                                                             |
@@ -68,23 +70,24 @@ databases and the cluster itself.
 
 *** commands (\)
 
-|   |                                                        |
-|---+--------------------------------------------------------|
-| x | expanded mode                                          |
-| l | list all the databases that are present in the cluster |
-| c | connect                                                |
-
+|                |                                                        |
+|----------------+--------------------------------------------------------|
+| \x             | expanded mode                                          |
+| \l             | list all the databases that are present in the cluster |
+| \c             | connect                                                |
+| \l+ <database> |                                                        |
 
 *** psql prompt
-    |                                          |                |
-    |------------------------------------------+----------------|
-    | \i <file>                                | load file      |
-    | <statement> \g                           | same as ;      |
-    | \e <file> or \e <statement>              | open in editor |
-    | \h <command>                             | command doc    |
-    | \?                                       |                |
-    | \d                                       |                |
-    | postgresql://username@host:port/database |                |
+|                                          |                |
+|------------------------------------------+----------------|
+| \i <file>                                | load file      |
+| <statement> \g                           | same as ;      |
+| \e <file> or \e <statement>              | open in editor |
+| \h <command>                             | command doc    |
+| \?                                       |                |
+| \d                                       |                |
+| postgresql://username@host:port/database |                |
+
 ** pstree
     - checkpointer
     - background writer
@@ -95,20 +98,55 @@ databases and the cluster itself.
 ** createdb
 * Features
 ** tables
+*** concept
+**** types
+- Temporary tables: Very fast tables, visible only to the user who created them
+- Unlogged tables: Very fast tables to be used as support tables common to all users
+- Logged tables: Regular tables
+
 *** create
 #+begin_src sql
-create table dummytable (dummyfield integer not null primary key);
+CREATE TABLE dummytable (dummyfield integer not null primary key);
+
+CREATE TABLE users (
+pk int GENERATED ALWAYS AS IDENTITY
+, username text NOT NULL
+, gecos text
+, email text NOT NULL
+, PRIMARY KEY(pk)
+, UNIQUE(username)
+);
 #+end_src
 *** drop
 
 #+begin_src sql
-DROP TABLE tablename
+DROP TABLE tablename;
 
 #+end_src
+
 ** databases
 *** drop
+#+begin_src sqld
+DROP DATABASE tablename;
+#+end_src
+*** copy
 #+begin_src sql
-
+CREATE DATABASE forumdb2 template forumdb;
+#+end_src
+*** size
+**** via psql
+#+begin_src conf
+\x
+\l+ databasename
+#+end_src
+**** via sql
+#+begin_src sql
+SELECT pg_database_size('forumdb');
+SELECT pg_size_pretty(pg_database_size('forumdb'));
+#+end_src
+*** query
+#+begin_src sql
+select * from pg_database where datname='forumdb';
 #+end_src
 ** DDL
 
