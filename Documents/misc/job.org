@@ -1,12 +1,13 @@
 #+TITLE: Job
 
 * Priorities
-|                     |                                                           |
+| @                   | desc                                                      |
 |---------------------+-----------------------------------------------------------|
 | Lang                | Ruby                                                      |
-| framework           | Rails, Slim, Sidekiq, , GraphQL                           |
-| Web API             | REST, SOAP                                                |
+| framework           | Rails, Slim, Sidekiq                                      |
+| Web API             | REST, SOAP, GraphQL                                       |
 | Network             | HTTP, HTTPS, TCP, SSH, FTP                                |
+| Front-end           | JS/CSS/HTML                                               |
 | Unit Test           | Minitest, Rspec                                           |
 | SQL                 | PostgreSQL                                                |
 | Architecture Design | OOP, SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns |
