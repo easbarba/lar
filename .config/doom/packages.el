@@ -10,10 +10,9 @@
 (package! define-word)
 (package! guix)
 (package! zoom)
-(package! bufler)
+;; (package! bufler)
 (package! nov)
-(package! company-org-block)
-(package! org-present)
+;; (package! org-present)
 
 ;; RECIPE
 
