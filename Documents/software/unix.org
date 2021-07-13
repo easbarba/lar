@@ -100,6 +100,7 @@
 ** Books
    | Books                                         | capitulo                                   | em                           | @later | revisao |
    |-----------------------------------------------+--------------------------------------------+------------------------------+--------+---------|
+   | Unix Environment                              |                                            | The manuals                  |        |         |
    | UNIX and Linux System Administration Handbook |                                            |                              |        |         |
    | LPIC                                          | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
    | The Art of Unix programming                   | 2 History                                  |                              |        |         |
@@ -117,6 +118,11 @@
 *** Htop
 *** Top
 ** Misc
+*** write
+Send a message to another user.
+*** mesg
+Control write access of other users to your terminal.
+*** news
 *** devilspie
     get_window_name()
      returns a string containing the name of the current window.
