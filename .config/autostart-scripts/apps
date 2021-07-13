@@ -13,7 +13,7 @@
 tools=(udiskie unclutter nm-applet mpd
        blueman-applet mate-power-manager) #ibus-daemon
 
-apps=(emacs "$TERMINAL" "$BROSWER" atril diodon)
+apps=(emacs alacritty chromium evince diodon)
 
 # * Utils, Helps
 
