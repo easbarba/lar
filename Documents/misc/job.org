@@ -16,3 +16,38 @@
 | CI / CD             |                                                           |
 | Cloud               |                                                           |
 | Hosting             | Heroku                                                    |
+* Résumé
+#+OPTIONS: toc:nil author:nil date:nil num:nil
+
+*Euber Alexandre De Sousa Barbosa*
+
+Brasília, DF - (61) 981103178
+
+easbarbosa@tutanota.com
+
+https://git.sr.ht/~easbarbosa
+
+Rede sociais: @easbarbosa
+
+*EDUCAÇÃO*
+-----
+  - Direito - IESB (Trancado)
+  - Ciência da Computação, UCB (Cursando)
+
+
+*SKILLS*
+-----
+  - Linguagens: Ruby, Scheme e Emacs Lisp.
+  - Debian/FreeBSD/GuixSD: administração e configurações.
+  - Shell Script: GNU Bash, Fish Shell e POSIX.
+  - Git: rebase, squash, merge.
+  - Containers: podman, dockerfile, criação e gerência de imagens.
+  - Unit Test: RSpec, ERT.
+  - Front-End: HTML,CSS Grid/Flexbox.
+  - Editores: GNU Emacs, NeoVim, Micro, Nano.
+
+
+*MAIS*
+-----
+  - Inglês: Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
+  - Soft Skills em Secretário de Advocacia e Radio Taxi.
