@@ -4,5 +4,8 @@ set -euo pipefail
 
 EMACS_HOME="$HOME/.config/emacs"
 
+rm -rf $EMACS_HOME
+
 git clone --depth 1 https://github.com/hlissner/doom-emacs "$EMACS_HOME"
+
 "$EMACS_HOME"/bin/doom install
