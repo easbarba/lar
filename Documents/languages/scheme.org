@@ -509,6 +509,21 @@ assertion-violation
 set-car
 set-cdr
 #+end_src
+** let
+** letrec
+- Unlike let, the variables var ... are visible not only within the body of the letrec but also within expr ....
+
+#+begin_src scheme
+(letrec ((var expr) ...) body 1 body 2 ...)
+
+(letrec ([sum (lambda (ls)
+(if (null? ls)
+0
+(+ (car ls) (sum (cdr ls)))))])
+(sum '(1 2 3 4 5)))
+
+#+end_src
+
 * Terms (table)
   | Term                                         | Meaning |
   |----------------------------------------------+---------|
