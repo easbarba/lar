@@ -15,7 +15,7 @@ install()
 
 packages()
 {
-    local packs=(direnv cpufetch solargraph mcfly)
+    local packs=(direnv cpufetch ) # mcfly
     e_dolist 'nix-env --uninstall' "${packs[@]}"
 }
 
@@ -27,4 +27,3 @@ languages()
 
 install
 packages
-languages
