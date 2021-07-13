@@ -52,9 +52,13 @@
      "https://debxp.org/feed/"
      "https://drewdevault.com/blog/index.xml"
      "https://libreplanet.org/w/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom"
+     "https://www.redhat.com/en/rss/blog/101"
+     "https://www.redhat.com/architect/rss.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://tonarinoyj.jp/atom/series/13932016480028984490"
-     "https://www.youtube.com/channel/UC7MUgl7pf_OfZhWurZQS1oA"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCMwf3xCcqFCsUISSQRckZGQ" ;; Noblat
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; XLetails
@@ -119,12 +123,12 @@
   (zoom-mode)
   (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
 
-(use-package! company-org-block
-  :custom
-  (company-org-block-edit-style 'auto) ;; 'auto, 'prompt, or 'inline
-  :hook ((org-mode . (lambda ()
-                       (setq-local company-backends '(company-org-block))
-                       (company-mode +1)))))
+;; (use-package! company-org-block
+;;   :custom
+;;   (company-org-block-edit-style 'auto) ;; 'auto, 'prompt, or 'inline
+;;   :hook ((org-mode . (lambda ()
+;;                        (setq-local company-backends '(company-org-block))
+;;                        (company-mode +1)))))
 
 ;; (use-package! org-present
 ;;   :config
