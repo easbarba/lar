@@ -8,7 +8,7 @@
 
 
 # bin 
-  Miscellaneous scripts to aid bootstrap services and utilities on a freshly
+  Miscellaneous scripts to aid bootstraping services and utilities on a freshly
   Debian install. 
 
   Mostly bash, guile and lua scripts.
