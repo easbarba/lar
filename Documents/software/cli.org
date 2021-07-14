@@ -11,3 +11,9 @@ Control write access of other users to your terminal.
 print directory stack
 ** popd
 move through directory stack
+** curl
+*** read local file
+#+begin_src shell-script
+curl file:///home/easbarbosa/.bashrc
+
+#+end_src
