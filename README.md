@@ -1,24 +1,22 @@
-# $HOME
-    All configuration dotfiles that should be mirror'ed into $HOME directory.  
+# HOME
+  All configuration dotfiles that should be mirror'ed into $HOME directory.
    
-# Documents
+## Documents
   Study annotations as org-mode literate programming documents.
 
-  more info: https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html
+  info: https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html
 
-
-# bin 
+## bin 
   Miscellaneous scripts to aid bootstraping services and utilities on a freshly
   Debian install. 
 
-  Mostly bash, guile and lua scripts.
+  Usually bash, guile and lua scripts.
 
-# Guix
+## [Guix](https://guix.gnu.org)
+  I heavily rely on Guix toolings, so there may be lots of weird files running on it :)
 
-    I heavily rely on Guix utilities so there a lots of s
-
-    more info: https://guix.gnu.org
+  info: https://guix.gnu.org
     
-# license
-  GPL v3
+## license
+  [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
