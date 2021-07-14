@@ -117,7 +117,7 @@
 | Books                            | Chapter                            | late                                            | revision        |
 |----------------------------------+------------------------------------+-------------------------------------------------+-----------------|
 | The Well Grounded Rubyist        | Callable and runnable objects      | Writing a chat server using sockets and threads |                 |
-| Confident Ruby                   | Perfoming Work                     |                                                 |                 |
+| Confident Ruby                   | Collecting input                   | 3.3 Conditionally call conversion methods       |                 |
 | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition             | Fibers, Threads |
 | Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                                |                 |
 | Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite                     |                 |
@@ -1074,6 +1074,27 @@ unbound.bind(d).call
    enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
 
     #+end_src
+** open
+- | pipe The pipe in front of the word cat indicates that we’re looking to talk to a program and not open a file.
+#+begin_src ruby
+
+d = open("|cat", "w+")
+d.puts "Hello world"
+d.gets
+d.close
+
+
+open("|cat", "w+") {|p| p.puts("hi"); p.gets }
+#+end_src
+** open3
+opens communication with an external program and gives you handles on the
+external program’s standard input, standard output, and standard error streams.
+
+#+begin_src ruby
+require 'open3'
+
+#+end_src
+
 ** enumerator
 *** lazy
     #+begin_src ruby
@@ -1436,6 +1457,12 @@ true
 #+begin_src ruby
 C.class_eval { define_method ("talk") { puts var }
 #+end_src
+** callbacks / hooks
+Callbacks and hooks methods are called when a particular event takes place during the run of a program.
+
+#+begin_src ruby
+#+end_src
+
 ** metaprogramming
 **** instance_variable_set
 **** Object#instance_exec
@@ -1529,3 +1556,17 @@ C.class_eval { define_method ("talk") { puts var }
    https://rubular.com
 * Videos
   https://www.youtube.com/watch?v=hnGVFzZ0DuI - "300x faster ruby" - Dana Sherson
+* Best Practices
+** Methods
+- methods have four parts
+  1. Collecting input
+  2. Performing work
+  3. Delivering output
+  4. Handling failures
+ - asd
+   1. We must identify the messages we want to send in order to accomplish the task at hand.
+   2. We must identify the roles which correspond to those messages.
+   3. We must ensure the method's logic receives objects which can play those roles
+* Messages
+- Has a role: set of related responsibilities
+- role is not the same concept as a class
