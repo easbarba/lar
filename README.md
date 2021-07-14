@@ -8,7 +8,10 @@
 
 
 # bin 
-    Lots of scripts for most general utilites, most bootstrap setup on freshly Debian install.
+  Miscellaneous scripts to aid bootstrap services and utilities on a freshly
+  Debian install. 
+
+  Mostly bash, guile and lua scripts.
 
 # Guix
 
