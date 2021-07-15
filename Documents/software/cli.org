@@ -17,3 +17,29 @@ move through directory stack
 curl file:///home/easbarbosa/.bashrc
 
 #+end_src
+** ed
+|              |                                                    |
+|--------------+----------------------------------------------------|
+| a            | enter insert mode in next line                     |
+| i            | enter insert mode in the beginning of current line |
+| .            | exit insert mode                                   |
+| q            | quit                                               |
+| w <filename> | write to file with name                            |
+| p            | print current line                                 |
+| n            | print current line number and text                 |
+| <n>          | print line in number <n>                           |
+| c            | change content line                                |
+| h            | display error messages                             |
+| ?            | command not available                              |
+| P            | set prompt                                         |
+| <n>t<n>      | copy line <n> in line <n>                          |
+| /<word>      | search for word in file                            |
+
+
+#+begin_src shell-script
+0 meh
+1 hahaha
+2 kkkkkkkkk
+
+2t0 # copy line 2 to line 0
+#+end_src
