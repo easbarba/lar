@@ -20,9 +20,9 @@ curl file:///home/easbarbosa/.bashrc
 ** ed
 |              |                                                    |
 |--------------+----------------------------------------------------|
-| a            | enter insert mode in next line                     |
+| a            | append text in next line                           |
 | i            | enter insert mode in the beginning of current line |
-| .            | exit insert mode                                   |
+| .            | stop adding text                                   |
 | q            | quit                                               |
 | w <filename> | write to file with name                            |
 | p            | print current line                                 |
@@ -34,6 +34,7 @@ curl file:///home/easbarbosa/.bashrc
 | P            | set prompt                                         |
 | <n>t<n>      | copy line <n> in line <n>                          |
 | /<word>      | search for word in file                            |
+| 1,$p         | display all lines till the end of file             |
 
 
 #+begin_src shell-script
@@ -43,3 +44,55 @@ curl file:///home/easbarbosa/.bashrc
 
 2t0 # copy line 2 to line 0
 #+end_src
+** ls
+ list directory contents
+
+ | options |                     |
+ |---------+---------------------|
+ | -l      | long list           |
+ | -a      | list dotfiles too   |
+ | -t      | list in time order  |
+ | -u      | sort by access time |
+ | -U      | do not sort         |
+ | -r      | reverse             |
+** cat
+concatenate files and print on the standard output
+** pr
+concatenate files and print on the standard output
+|                  |                         |
+|------------------+-------------------------|
+|               -3 | print in three columns  |
+| -m <file> <file> | print files in parallel |
+|                  |                         |
+
+** lpr
+
+** more
+
+** nroff
+
+** troff
+
+** mv
+move, or rename, files
+
+|                         |   |
+|-------------------------+---|
+| oldname newname         |   |
+| oldlocation newlocation |   |
+| -i                      |   |
+| -f                      |   |
+
+** cp
+copy files and directories
+
+** rm
+remove files or directories
+
+|          |   |
+|----------+---|
+| -f       |   |
+| -i       |   |
+| -I       |   |
+| -r or -R |   |
+| -d       | remove empty dir  |
