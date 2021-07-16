@@ -57,6 +57,12 @@ curl file:///home/easbarbosa/.bashrc
  | -r      | reverse             |
 ** cat
 concatenate files and print on the standard output
+|    |   |
+|----+---|
+| -u |   |
+
+
+
 ** pr
 concatenate files and print on the standard output
 |                  |                         |
@@ -96,3 +102,38 @@ remove files or directories
 | -I       |   |
 | -r or -R |   |
 | -d       | remove empty dir  |
+
+** wc
+print newline, word, and byte counts for each file
+
+** grep
+|    |                                 |
+|----+---------------------------------|
+| -v | lines that doesnt match pattern |
+|    |                                 |
+
+** sort
+|    |   |
+|----+---|
+| -r |   |
+| -n |   |
+| -f |   |
+| +n |   |
+
+** tail
+output the last part of files
+
+** cmp
+compare two files byte by byte
+** diff
+compare files line by line
+** pwd
+** od
+dump files in octal and other formats
+|    |   |
+|----+---|
+| -c |   |
+| -b |   |
+** stty
+** read
+read line of input into variables
