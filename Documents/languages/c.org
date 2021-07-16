@@ -2,9 +2,9 @@
 
 * Fortschritt
 ** Buch
-     | Buch              | Capitulo | em | tarde | revisao |
-     |-------------------+----------+----+-------+---------|
-     | C Modern Approach |          |    |       |         |
+     | Buch              | Capitulo | em                      | tarde | revisao |
+     |-------------------+----------+-------------------------+-------+---------|
+     | C Modern Approach | Pointers | Declaring pointers vars |       |         |
 
 ** LDC
      | Source Code | folder    | file        | @ |
