@@ -1,0 +1,336 @@
+#+TITLE: Golang
+
+
+* Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+    :CONTENTS:
+    - [[#progress][Progress]]
+      - [[#books][Books]]
+      - [[#sloc][SLOC]]
+    - [[#packages][Packages]]
+      - [[#gem][gem]]
+      - [[#bundle][bundle]]
+	- [[#outdated][outdated]]
+	- [[#gem][gem]]
+	- [[#install][install]]
+	- [[#update][update]]
+      - [[#irb][irb]]
+	- [[#cli][cli]]
+	- [[#inside][inside]]
+      - [[#rspec][rspec]]
+      - [[#unit-test][unit test]]
+      - [[#pry][pry]]
+    - [[#features][Features]]
+      - [[#project-structure][project structure]]
+      - [[#system-errors][System Errors]]
+	- [[#usage][usage]]
+      - [[#exceptions][exceptions]]
+	- [[#errors][Errors]]
+	- [[#usage][usage]]
+      - [[#writable-object-attribute][writable object attribute]]
+      - [[#multithreading][Multithreading]]
+	- [[#usage][usage]]
+      - [[#modules][modules]]
+      - [[#continuation][continuation]]
+      - [[#fibers][Fibers]]
+	- [[#errors][errors]]
+	- [[#usage][usage]]
+      - [[#delimited-input][delimited input]]
+      - [[#rake][rake]]
+	- [[#usage][usage]]
+      - [[#gem][gem]]
+      - [[#variables][Variables]]
+	- [[#class-variables][class variables]]
+	- [[#global-variables][global variables]]
+      - [[#self][self]]
+      - [[#commentary][commentary]]
+      - [[#defined][defined?]]
+      - [[#iterators][iterators]]
+      - [[#block-local-variables][block-local variables]]
+      - [[#loops][loops]]
+      - [[#statement-modifiers][statement modifiers]]
+      - [[#comparison][comparison]]
+      - [[#conditional][conditional]]
+      - [[#class][class]]
+	- [[#class][class]]
+      - [[#append-][append <<]]
+      - [[#blocks][blocks]]
+      - [[#lambda][lambda]]
+	- [[#how][How]]
+	- [[#usage][Usage]]
+      - [[#methods][methods]]
+      - [[#yield][yield]]
+      - [[#procs][procs]]
+      - [[#operators][operators]]
+      - [[#enumerable][enumerable]]
+      - [[#enumerator][enumerator]]
+	- [[#lazy][lazy]]
+	- [[#each_car][each_car]]
+	- [[#each][each]]
+	- [[#to_enumenum_for][to_enum/enum_for]]
+      - [[#inject][inject]]
+      - [[#select][select]]
+      - [[#succ][succ]]
+      - [[#collect][collect]]
+      - [[#freeze][freeze]]
+      - [[#dup][dup]]
+      - [[#dig][dig]]
+      - [[#fetch][fetch]]
+      - [[#tap][tap]]
+      - [[#map][map]]
+      - [[#pluck][pluck]]
+      - [[#quoting][Quoting]]
+      - [[#here-documents][here documents]]
+      - [[#proc][proc]]
+      - [[#do-end-as-param][do end as param]]
+      - [[#array][array]]
+      - [[#datetime][date/time]]
+      - [[#lambda][lambda]]
+      - [[#begin-rescue][begin rescue]]
+      - [[#hash][hash]]
+      - [[#range][range]]
+      - [[#sets][sets]]
+      - [[#gsub][gsub]]
+      - [[#find][find]]
+      - [[#map][map]]
+      - [[#each_slice][each_slice]]
+      - [[#lazy][lazy]]
+      - [[#with_index][with_index]]
+      - [[#enum_for][enum_for]]
+      - [[#more][more]]
+      - [[#concepts][Concepts]]
+	- [[#iterator][Iterator]]
+	- [[#methods][Methods]]
+	- [[#enumerator][Enumerator]]
+      - [[#instructions][Instructions]]
+	- [[#rbenv][Rbenv]]
+	- [[#misc][misc]]
+    - [[#toolings][Toolings]]
+    - [[#videos][Videos]]
+    - [[#tests][Tests]]
+      - [[#rspec][RSpec]]
+      - [[#unit][Unit]]
+    :END:
+* Progress
+** Books
+     | name                    | chapter | @                                    | late | revision |
+     |-------------------------+---------+--------------------------------------+------+----------|
+     | Learning go             |         | Using const                          |      |          |
+     | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
+     |                         |         |                                      |      |          |
+
+** LDC
+     | Source Code | folder          | file            | @ |
+     |-------------+-----------------+-----------------+---|
+     | go          | src/archive/tar | example_test.go |   |
+
+* Features
+** operators
+*** arithmetic
+      |          |                           |
+      |----------+---------------------------|
+      | combined | += , -= , *= ,/= , and %= |
+      |          |                           |
+
+** types
+*** numeric
+      |         |                 |
+      |---------+-----------------|
+      | byte    | uint8           |
+      | int     | int64           |
+      | uint    | unsigned  int64 |
+      | complex |                 |
+      | float   |                 |
+
+
+**** byte
+**** int
+**** complext
+**** float
+*** strings
+      |              |              |
+      |--------------+--------------|
+      | immutable    |              |
+      | zero value   | empty string |
+      | concatenate  | +            |
+      | equality     | \==, !=      |
+      | empty string | s == ""      |
+      |              |              |
+
+*** boolean
+      - no other type can be converted to a bool, implicitly or explicitly
+      - convert to boolean with: \== , != , > , < , <= , or >=
+
+*** runes
+      - chars
+      - int32 type
+      -
+
+** cli
+*** vet
+      Examines Go source code and reports suspicious constructs
+
+      |   |   |
+      |---+---|
+      |   |   |
+
+*** build
+      - build project and create binary
+      |                  |              |
+      |------------------+--------------|
+      | -o <name> <file> | set location |
+      |                  |              |
+
+*** get
+      |   |   |
+      |---+---|
+      |   |   |
+
+*** install
+      |               |                            |
+      |---------------+----------------------------|
+      | <name>        |                            |
+      | <name>@latest | latest version of the tool |
+
+*** run
+      |   |   |
+      |---+---|
+      |   |   |
+
+*** env
+      - list golang environment variables
+      |   |   |
+      |---+---|
+      |   |   |
+
+** mutex
+     #+begin_src go emacs-lisp
+     sync.Mutex
+     #+end_src
+** collective
+     #+begin_src go
+     strings.Map
+     #+end_src
+** standary library
+     #+begin_src go
+     // end of line
+     io.EOF
+
+     #+end_src
+** functions
+     - reference type
+     - function values are not comparable.
+
+     #+begin_src go
+     // assign f to nil function
+     var f func(int) int
+
+     // assign var to a function
+     func square(n int) int { return n * n }
+     f =  square
+     fmt.Println(f(3)) // "9"
+
+     // can compare function to nil but not another function
+     if f != nil { ... }
+
+     // recursion in go is fast
+
+     // lambda/anonymous function
+     strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")
+
+
+     // function that returns a lambda
+     func squares() func() int {
+	     var x int
+	     return func() int {
+		     x++
+		     return x * x
+	     }
+     }
+     func main() {
+	     f := squares()
+	     fmt.Println(f()) // "1"
+	     fmt.Println(f()) // "4"
+	     fmt.Println(f())
+	     fmt.Println(f())
+     }
+
+     // Defer
+     var mu sync.Mutex
+     var m = make(map[string]int)
+
+     func lookup(key string) int {
+	     mu.Lock()
+	     defer mu.Unlock()
+	     return m[key]
+     }
+     #+end_src
+** print
+     #+begin_src go
+     Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
+     #+end_src
+** make
+     #+begin_src go
+     make([]T, len)
+     make([]T, len, cap) // same as make([]T, cap)[:len]
+     #+end_src
+** type
+     #+begin_src go
+     func (c Clear) String() string { // associates Clear to String
+	     ...
+     }
+
+     #+end_src
+** variables
+*** var
+      #+begin_src go
+      var x int
+
+      var x int = 10
+      var x = 10
+      #+end_src
+*** :=
+      - allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
+      - uses type inference
+      - inside function
+
+     #+begin_src go
+     func main() {
+	     x := 10
+	     x, y := 30, "hello"
+     }
+
+
+     #+end_src
+** const
+** doc comment
+     Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
+** pointers
+     #+Begin_Src go
+
+     func main() {
+	     x = 1
+	     ,*p = x
+	     Printf(&p) // address of x
+     }
+     #+end_src
+* Terms
+    - runes: single characthers
+* Packages
+** golint
+     |       |                                  |
+     |-------+----------------------------------|
+     | ./... | runs golint over entire project. |
+     |       |                                  |
+
+** goimports
+     |    |                                                     |
+     |----+-----------------------------------------------------|
+     | -l | list files whose formatting differs from goimport's |
+     | -w | write result to (source) file instead of stdout     |
+     |    |                                                     |
+     #+begin_src shell-script
+     goimports -l -w .
+     #+end_src

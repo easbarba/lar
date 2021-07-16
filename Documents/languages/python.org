@@ -1,0 +1,343 @@
+#+TITLE: Python
+
+* Modules
+    | Modules   |   |
+    |-----------+---|
+    | [[https://docs.python.org/3/library/shutil.html][shutil]]    |   |
+    | [[https://docs.python.org/3/library/os.html][os]]        |   |
+    | [[https://docs.python.org/3/library/os.path.html][os.path]]   |   |
+    | [[https://docs.python.org/3/library/builtins.html][bultins]]   |   |
+    | [[https://docs.python.org/3/library/sys.html][sys]]       |   |
+    | importlib |   |
+
+* Features
+    | Command                                        | description                                                                                      |   |
+    |------------------------------------------------+--------------------------------------------------------------------------------------------------+---|
+    | sys.ps1/ sys.ps2                               | variables that define the strings used as primary and secondary prompts                          |   |
+    | sys.path                                       | list of strings that determines the interpreter’s search path for modules                        |   |
+    | PYTHONPATH                                     |                                                                                                  |   |
+    | importlib.reload()                             | reload modules in interpreter session                                                            |   |
+    | dir()                                          | find out which names a module defines / no arguments: lists the names you have defined currently |   |
+    | vars()                                         |                                                                                                  |   |
+    | import builtins                                | list the names of built-in functions and variables                                               |   |
+    | import inspect                                 | analyze functions...                                                                             |   |
+    | itertools                                      |                                                                                                  |   |
+    | argparse                                       |                                                                                                  |   |
+    | pickle                                         | object serialization                                                                             |   |
+    | dbm                                            |                                                                                                  |   |
+    | unpacking assignment(comma)                    | x, = lst equal [x] = lst equal x, y = 1, 2                                                       |   |
+    | list index as value in assignment              | var = [asd][0]                                                                                   |   |
+    | args                                           |                                                                                                  |   |
+    | kwargs                                         |                                                                                                  |   |
+    | yield                                          |                                                                                                  |   |
+    | collections.defaultdict                        |                                                                                                  |   |
+    | itertools.product                              |                                                                                                  |   |
+    | functools.lru_cache                            |                                                                                                  |   |
+    | itertools                                      |                                                                                                  |   |
+    | dunders                                        |                                                                                                  |   |
+    | (__repr__, __init__, ...)                          |                                                                                                  |   |
+    | decorators                                     |                                                                                                  |   |
+    | classes                                        |                                                                                                  |   |
+    | lambda                                         |                                                                                                  |   |
+    | debug                                          |                                                                                                  |   |
+    | hash                                           |                                                                                                  |   |
+    | Unit tests                                     |                                                                                                  |   |
+    | operator: attrgetter, itemgetter, methodcaller |                                                                                                  |   |
+    | functools.partial                              |                                                                                                  |   |
+    | metaclasses                                    |                                                                                                  |   |
+    | getattr__ / __getattribute__                     |                                                                                                  |   |
+    | operator overloading                           |                                                                                                  |   |
+    | ast, inspect, dis                              |                                                                                                  |   |
+    | pdb                                            | debuggin                                                                                         |   |
+    | faulthandler                                   | dump python tracebacks                                                                           |   |
+    | python -vv                                     | run python in verbose                                                                            |   |
+    | python -I                                      | lock user customization                                                                          |   |
+    | PYTHONHOME                                     |                                                                                                  |   |
+    | from operator import or_                       | functional version of set union or                                                               |   |
+    | from functools import reduce                   |                                                                                                  |   |
+    | from itertools import chain                    |                                                                                                  |   |
+* Books
+** Python Crash Course
+** Automating
+** Fluent Python
+* PEPs
+    - PEP 582 -- Python local packages directory
+    - PEP 428 -- The pathlib module -- object-oriented filesystem paths
+    - PEP 519 -- Adding a file system path protocol
+    - PEP 443 -- Single dispatch generic functions
+    - PEP 441 -- Execute zip file with py files inside as package
+    - PEP 318 — Decorators for Functions and Methods
+    - http://www.diegor.it/2017/06/15/the-must-read-pythons-peps/
+* Tools
+** build Tools
+     https://github.com/SCons/scons
+     https://github.com/pre-commit/pre-commit
+     https://github.com/LINKIT-Group/pyshipper
+** code formatter
+     https://github.com/psf/black
+
+** Browser tools
+     http://chromedriver.chromium.org/downloads
+** Games Engine
+     https://github.com/pvcraven/arcade
+
+** Misc
+     https://github.com/pygobject/pycairo
+     https://github.com/tonybaloney/wily
+     https://github.com/python-mario/mario
+     https://github.com/celery/celery
+     https://github.com/cs01/pythonloc
+     https://github.com/tqdm/tqdm
+     https://github.com/dabeaz/thredo
+     poetry
+     tox
+     pyenv
+     pyinstaller
+
+** CLI
+     https://gitlab.com/dslackw/colored
+** env
+     https://github.com/pyenv/pyenv
+
+** Data
+     https://github.com/numba/numba
+
+** Perfomance
+     https://github.com/numba/llvmlite
+     https://github.com/microsoft/Pyjion
+* Hacks
+    | hack                     | eg             | description                                                                         |
+    |--------------------------+----------------+-------------------------------------------------------------------------------------|
+    | Unpacking Empty List     | *[]            | Return empty output                                                                 |
+    | C's cast-like on the fly | type(EXP)(EXP) | type coercion just like in C, (float) 2, useful when you dont know what type EXP is |
+* Warning
+    https://github.com/pypa/pip/issues/5599
+* Blogs
+    https://julien.danjou.info/
+* PSF
+    https://www.python.org/psf/contrib/contrib-form/
+* Read Later
+** Packaging
+     https://docs.python-guide.org/writing/structure/
+     https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
+** Argparse
+     https://dusty.phillips.codes/2018/08/13/python-loading-pathlib-paths-with-argparse/
+** Misc
+     tox
+     nose
+
+     https://www.artima.com/forums/flat.jsp?forum=106&thread=161207
+
+     http://www.attrs.org/en/stable/why.html#data-classes
+
+     https://docs.python-guide.org/writing/style/
+
+     https://devblogs.microsoft.com/python/idiomatic-python-functions-versus-classes/
+
+     https://old.reddit.com/r/learnpython/comments/d7o8qr/how_do_you_work_freelance_as_a_python_programmer/
+
+     https://github.com/python-trio/trio
+
+     https://glyph.twistedmatrix.com/2016/08/attrs.html
+
+     https://realpython.com/command-line-interfaces-python-argparse/
+
+     https://www.reddit.com/r/Python/comments/3p8m2s/what_did_you_automate_with_python/
+
+     https://www.fullstackpython.com/best-python-resources.html
+
+     https://docs.python-guide.org/
+
+     https://docs.python.org/3/library/index.html
+
+     https://bugs.python.org/
+
+     [[https://www.youtube.com/watch?v=e4S8zfLdLgQ&list=PLLy4MeON3hKCtMvu4yA-DKRG_gsgRR1jM&index=45&t=0s][How the Internet Works for Developers - Pt 1 - Overview & Frontend]]
+
+     https://treyhunner.com/2019/01/no-really-pathlib-is-great/
+** Blogs
+     http://inventwithpython.com/blog/
+
+** Web Scrapping
+     https://www.freecodecamp.org/news/web-scraping-101-in-python/
+** Code Style - Read later
+     https://realpython.com/cpython-source-code-guide/
+** Sequences - Read later
+     https://eli.thegreenplace.net/2011/11/28/less-copies-in-python-with-the-buffer-protocol-and-memoryviews
+** Authors
+     | Author            |
+     |-------------------|
+     | Trey Hunner       |
+     | Raymond Hettinger |
+     | Jack Diederich    |
+
+** Videos
+*** Worthy to watch
+      | title                                             | @                                           |
+      |---------------------------------------------------+---------------------------------------------|
+      | Python Conferences Videos                         | http://www.pyvideo.org                      |
+      | transforming code into beautiful idiomatic python | https://www.youtube.com/watch?v=OSGv2VnC0go |
+      | Pycon                                             |                                             |
+      | EuroPython Conference                             |                                             |
+
+*** Still to watch
+      |                                                                            |   |
+      |----------------------------------------------------------------------------+---|
+      | Andrey Vlasovskikh - The Story of Features Coming in Python 3.8 and Beyond |   |
+** TODO
+**** TODO Dired Cli App: Fork Ranger and change it into dired
+* BackEnd Job - Priorities
+    | Skill           | desc                             |
+    |-----------------+----------------------------------|
+    | Languages       | Python (+3yrs) - ...             |
+    | Back-End        | Django (+2yrs) - ORM             |
+    | REST API        | ...                              |
+    | Database Engine | PostgreSQL - NoSQL - SQLAlchemy- |
+    | Linux           | CLI Toolings -                   |
+    | Git             | ... - GitHub                     |
+    | Test Unit       | pytest ...                       |
+    | Misc            | Nginx, Redis                     |
+    | Education       | CS Bachelor’s degree             |
+    | Nice to have    | AWS - Docker - Front-End - ...   |
+
+* Skills
+    | Skills To learn                                                                         |
+    |-----------------------------------------------------------------------------------------|
+    | UniTest & Pytest                                                                        |
+    | OOP & Class                                                                             |
+    | dataclasses                                                                             |
+    | p                                                                                       |
+    | Python Interfaces                                                                       |
+    | ContextManager                                                                          |
+    | refactoring                                                                             |
+    | exception system                                                                        |
+    | recursion                                                                               |
+    | REST API, docker, testing, etc. testing concepts, algorithms, databases, devops, ci/cd, |
+
+
+
+    | Python related tools |
+    |----------------------|
+    | https://redash.io/   |
+    | Django               |
+    | Flask                |
+    | SQL & Non-SQL        |
+    | Docker               |
+    | pyQT                 |
+    | SQLAlquemy           |
+    | Celery               |
+    | Pytest               |
+    | Agile                |
+    | Scrum                |
+    | PostgreSQL / MySQL   |
+    | Redis                |
+    | Ansible              |
+    | ElasticSearch        |
+    | Logstash             |
+    | HTTP Request         |
+    | API Rest             |
+    | JSON                 |
+    | Grafana              |
+    | Postman              |
+    | Buildout             |
+* Misc
+    #+begin_src python
+    phone_folder = Path( str("/run/user/1001/" + phone_id + "/SD
+	card/Download/sent") )
+
+    copyfile(this, Path(phone_folder) / file_name)
+    copytree(this, phone_folder, dirs_exist_ok=True)
+
+    def asd(*args):
+	lst = args[0][1:]
+	subprocess.run(['sudo', 'apt', args[0][0], *lst], check=True)
+
+    asd(sys.argv[1:])
+
+    # Create CLI commands
+    parser = argparse.ArgumentParser(
+	description=__doc__,
+	prog=sys.argv[0],
+	usage='lx <command> <subcommands>',
+    )
+
+    # Set CLI Commands
+    parser.add_argument(
+	'homer',
+	help='Prepare home folders/files software',
+    )
+
+    parser.add_argument(
+	'gitter',
+	help='Clone/Pull group of git repositories',
+    )
+
+    # Collect CLI commands as dict(key:value)
+    args = vars(parser.parse_args())
+
+    # CLI Command call for specific function
+    if args['homer'] == 'homer':
+	home_setup()
+
+    if args['gitter'] == 'gitter':
+	file = Path(sys.argv[2])
+	to = Path(sys.argv[3])
+
+	gitter(file, to)
+
+
+    class CliColors:
+	""" Provide CLI's Font Colors """
+
+	def __init__(self):
+	    self.cli_color_red = '\033[31m'
+	    self.cli_color_green = "\033[32m"
+	    self.cli_color_blue = "\033[34m"
+	    self.cli_color_purple = "\033[45m"
+	    self.cli_color_bold = "\033[1m"
+	    self.cli_color_reset = "\033[0m"
+
+	def warning(self, message=None):
+	    """ Warning Color Text Print """
+	    print(f'{self.cli_color_red}{message}{self.cli_color_reset} \n')
+
+	def success(self, message=None):
+	    """ Success Color Text Print """
+	    print(f'{self.cli_color_green}{message}{self.cli_color_reset} \n')
+
+	def notify(self, message=None):
+	    """ Notify Color Text Print """
+	    print(f'{self.cli_color_purple}{message}{self.cli_color_reset} \n')
+
+	def welcome(self, message=None):
+	    """ Welcome Color Text Print """
+	    print(f'{self.cli_color_blue}{message}{self.cli_color_reset} \n')
+
+	def bold(self, message=None):
+	    """ Bold Color Text Print """
+	    print(f'{self.cli_color_bold}{message}{self.cli_color_reset} \n')
+
+
+    def main():
+	""" and, so it begins. """
+
+	tools_install = ToolsPip()
+
+	parser = argparse.ArgumentParser()
+	subparsers = parser.add_subparsers()
+
+	parser_echo = subparsers.add_parser(
+	    "tools_python",
+	    help="Pip install packages"
+	)
+	parser_echo.set_defaults(func=tools_install.tools_python)
+
+	options = parser.parse_args()
+	options.func()
+
+
+    #+end_src
+* setup.py
+    #+begin_src python
+    setup(scripts=["bin/liz"],)
+    #+end_src

@@ -1,0 +1,85 @@
+#+TITLE: Common Lisp
+
+* Progress
+** Books
+     | Books            | Capitulo      | em | tarde | revisao |
+     |------------------+---------------+----+-------+---------|
+     | ANSI Common Lisp | 4.4 Sequences |    |       |         |
+     |                  |               |    |       |         |
+** SLOC
+     | Source Code | folder | file | @ |
+     |-------------+--------+------+---|
+     | sbcl        |        |      |   |
+     | asdf        |        |      |   |
+     | alexandria  |        |      |   |
+* Features
+** char
+     |           |   |
+     |-----------+---|
+     | char-code |   |
+
+** array
+*** eg
+      #+begin_src lisp
+      (setf *print-array* t) ;; display form
+
+      (setf arr (make-array '(2 3) : initial-element nil)) ;; make
+      (aref arr 0 0) ;; retrieve
+      (setf (aref arr 0 0) 'b) ;; replace
+      #2a((b nil nil) (nil nil nil))
+      (vector "a" 'b 3)
+      #+end_src
+*** annnotaion
+      - multiple dimensions
+      - zero indexed
+      - one-dimensional array is also called a vector
+
+** lists
+*** list
+*** dotted (proper) list
+      - is either nil, or a cons whose cdr is a proper list
+      - dot notation
+      - separated by a period
+*** assoc lists (alist)
+      - mapping
+      - are slow
+      - good for prototyping
+      - assoc retrieves the pair associated with a given key else nil
+      - assoc-if
+** conditionals
+*** let
+*** cond
+*** when
+*** unless
+** comparable
+*** equal
+*** eql
+*** nth
+*** sort
+      - destructive
+** Misc
+*** member
+*** member-if
+*** every
+*** some
+*** keywords (:test)
+** Short Notations
+*** #'
+*** '
+*** `(,)
+*** '()
+** Predicates
+*** evenp
+*** oddp
+*** consp
+*** atom
+** Sets
+*** union
+*** intersection
+*** set-difference
+*** adjoin
+*** member
+** Sequences
+*** length
+*** subseq
+*** reverse

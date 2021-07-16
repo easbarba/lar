@@ -1,0 +1,32 @@
+#+TITLE: Haskell
+
+* TOC
+    :PROPERTIES:
+    :TOC:      :include all :depth 2 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#haskell-resources][Haskell Resources]]
+  - [[#haskell-toolings][Haskell Toolings]]
+  :END:
+* Progress
+** Books
+     | Books                  | cap | @ | later | revision |
+     |------------------------+-----+---+-------+----------|
+     | Programming in Haskell |     |   |       |          |
+** SLOC
+     | Source Code | folder | file | @ |
+     |-------------+--------+------+---|
+     | ghc         |        |      |   |
+     | xmonad      |        |      |   |
+
+* Haskell Resources
+    https://www.haskell.org/documentation/
+
+    http://hackage.haskell.org/
+* Haskell Toolings
+    https://www.haskell.org/cabal/
+
+    https://www.haskellstack.org/

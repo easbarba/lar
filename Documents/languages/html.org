@@ -1,0 +1,33 @@
+#+TITLE: HTML
+
+* Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 2 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#tips][Tips]]
+    - [[#html-workaround][HTML Workaround]]
+  :END:
+* Progress
+** Books
+     | Books                                     | Cap                                     | @                                     | late | revision |
+     |-------------------------------------------+-----------------------------------------+---------------------------------------+------+---------|
+     | JavaScript The Definitive Guide           | Chapter 3. Types, Values, and Variables | 3.9.3 Object to Primitive Conversions |      |         |
+     | Essential TypeScript From Beginner to Pro |                                         | Marking Tasks Complete                |      |         |
+
+** SLOC
+     | Project | folder | file | @ |
+     |-------------+--------+------+---|
+     | node        |        |      |   |
+     | angular     |        |      |   |
+     | inquirer    |        |      |   |
+
+* Tips
+** HTML Workaround
+**** IE8 - HTML5
+       #+BEGIN_SRC html
+       <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/ html5shiv.min.js"></script ><![endif]-->
+       #+END_SRC
