@@ -34,11 +34,11 @@
      | node        |        |      |   |
      | angular     |        |      |   |
      | inquirer    |        |      |   |
-* CSS Pre-Processors
+* Pre-Processors
     [[https://sass-lang.com/][SASS]]
     less
     flexbox
-* CSS Resources
+* Resources
     https://jensimmons.github.io/
 
     https://labs.jensimmons.com
@@ -72,12 +72,12 @@
     http://mqtest.io/
 
     https://www.axis-praxis.org/
-* CSS Properties
+* Properties
     | Properties                         |                                                              |
     |------------------------------------+--------------------------------------------------------------|
     | font-variant-numeric: tabular-nums | aplied in time interval, ensure its number to use even space |
     |                                    |                                                              |
-* CSS Articles
+* Articles
 ** CSS Grid
      https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
 
@@ -132,7 +132,7 @@
      https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index
 
      https://www.learnenough.com/css-and-layout-tutorial/css/introduction
-* CSS Blogs/Site
+* Blogs/Site
     csstriggers.com
     https://thecssworkshop.com/
 
@@ -142,7 +142,7 @@
 
     http://learnlayout.com/
 
-* CSS Frameworks
+* Frameworks
     Compass
-* CSS Backward Compatibility
+* Backward Compatibility
     https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks

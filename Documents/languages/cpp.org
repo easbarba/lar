@@ -1,8 +1,8 @@
 #+TITLE: C++
 
-* CPP Best Practices
+* Best Practices
     http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
-* CPP Errors
+* Errors
 ** Source of errors
      • Poor specification: If we are not specific about what a program should do, we are unlikely to adequately examine the
      “dark corners” and make sure that all cases are handled (i.e., that every input gives a correct answer or an adequate
@@ -26,8 +26,8 @@
      • Logical errors: That is, code that simply doesn’t do what it was supposed to do; we’ll just have to find and fix such
      problems. §6.6 and §6.9 give examples of finding such problems.
 
-* CPP Embedded
-* CPP - Jobs Skills
+* Embedded
+* Jobs Skills
     | SKILLS                                                                    |
     |---------------------------------------------------------------------------|
     | data structures                                                           |
@@ -46,9 +46,9 @@
     | Automated testing.  unit tests                                            |
     | networking                                                                |
 
-* CPP Read Later
+* Read Later
     https://caseymuratori.com/blog_0015
     http://www.elbeno.com/blog/?p=1598
     https://www.reddit.com/r/cpp/comments/c7nka1/employment_using_c/
-* CPP Compilers
+* Compilers
 ** Clang

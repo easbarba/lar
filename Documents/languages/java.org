@@ -1,6 +1,6 @@
 #+TITLE: Java
 
-* Java Books
+* Books
 **** JBG
 ***** Chapter 1
 ****** Chapter 1 Self Test
@@ -4204,7 +4204,7 @@
 
 	 #+END_SRC
 
-* Java Tools
+* Tools
 *** Java Tools - Web Frameworks
       [[https://spring.io/][Spring]]
       [[https://vaadin.com/][Vaadin]]
@@ -4229,13 +4229,13 @@
       [[https://docs.seleniumhq.org/][Selenium]]
       [[junit.org][JUnit]]
       [[mockito.org][mockito]]
-* Java Commands/Features
+* Commands/Features
     |                               |
     |-------------------------------|
     | [[https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr006.html][The jcmd Utility ]]             |
     | [[https://openjdk.java.net/jeps/341][JEP 341: Default CDS Archives]] |
 
-* Java Skills
+* Skills
       |------------------------------------------------|
       | OOP (inheretince, polymorphism, encapsulation) |
       | Generics                                       |
@@ -4264,15 +4264,15 @@
       | [[https://www.sonarsource.com/products/codeanalyzers/sonarjava.html][sonar]]                                          |
       | [[https://mantisbt.org/][mantisbt]]                                       |
 
-* Java Bad code Tips
+* Bad code Tips
     https://www.reddit.com/r/java/comments/apnj6j/what_are_various_red_flags_for_you_in_java_code/
 
-* Java Documentation
+* Documentation
      https://docs.oracle.com/javase/specs/
 
      www.netlib.org/fdlibm
 
-* Java Blogs
+* Blogs
       https://icedtea.classpath.org/bugzilla/
 
       https://spring.io/guides
@@ -4280,7 +4280,7 @@
       https://mjg123.github.io/
 
       https://vimeo.com/javazone
-* Java read later
+* read later
     https://advancedweb.hu/2019/02/19/post_java_8/
 
     https://filippobuletto.github.io/solid-java/#srp-code-smells

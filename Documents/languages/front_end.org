@@ -33,11 +33,10 @@
      | node        |        |      |   |
      | angular     |        |      |   |
      | inquirer    |        |      |   |
-* Web Studies
-** Web Books
-*** Learning Web Design
-**** Exercises
-**** Books/Articles recommended
+* Books
+** Learning Web Design
+*** Exercises
+*** Books/Articles recommended
        | Books/Articles                                                                                                             |   |
        |----------------------------------------------------------------------------------------------------------------------------+---|
        | Adaptive Web Design: Crafting Rich Experiences with Progressive Enhancement, 2nd Edition, by Aaron Gustafson (New Riders). |   |
@@ -45,17 +44,14 @@
        | Designing with Progressive Enhancement by Todd Parker                                                                      |   |
        | https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html                                                       |   |
        |                                                                                                                            |   |
-** Web Courses
+* Courses
      https://courses.wesbos.com/account
-*** Web Courses Tips
+** Web Courses Tips
       https://freefrontend.com/html-css-books/
       https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-1-7d4f7f0bff02
       https://medium.freecodecamp.org/from-zero-to-front-end-hero-part-2-adfa4824da9b
 
-* Web Node
-** Node frameworks
-     https://adonisjs.com/
-* Web Tools
+* Tools
 *** Web Tools - Task Runners
 **** Gulp
        https://css-tricks.com/gulp-for-beginners/
@@ -84,7 +80,7 @@
       https://web.dev/
 *** Web Tools - Test Automation
       Selenium, Jest, or Enzyme
-* Web Design
+* Design
     http://paletton.com/
 
     https://webgradients.com/
@@ -99,13 +95,13 @@
 
 ** Web Desing - Sites
      https://tympanus.net/codrops/
-* Web Frameworks
+* Frameworks
     bootstrap
     materalize
     foundation
-* Web Images
+* Images
     http://responsiveimages.org/
-* Web Performance
+* Performance
     https://larahogan.me/design/
 
     High Performance Mobile Web: Best Practices for Optimizing Mobile Web Apps by Maximiliano Firtman
@@ -118,7 +114,7 @@
 
     http://yslow.org/
 
-* Web CrossBrowsers
+* CrossBrowsers
 ** <IE10 - Excuses:
      - E10 and below don't have support for the latest TLS encryption (out of the
      box), and thus if you handle any credit card payments, IE10 is no longer
@@ -127,7 +123,7 @@
        secure. That will affect a much greater number of sites and is another
        good point to raise.
 
-* Web Backend
+* Backend
 ** Web Backend - Node.js
      [[https://nodejs.org/en/][Node.js]]
 **** NPM commands
@@ -138,11 +134,11 @@
 ** Web Backend - PHP
 ** Web Backend - Python
      https://welcometothedjango.com.br
-* Web Native Apps
+* Native Apps
     https://www.nativescript.org/
-* Web Security
+* Security
     Strong understanding of web application security (e.g. XSS, CSRF, CORS)
-* Web More
+* More
     https://www.schoolofnet.com/plano-de-estudo-frontend-developer/
 
     https://www.htmldog.com/
