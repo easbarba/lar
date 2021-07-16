@@ -56,17 +56,15 @@
      "https://www.redhat.com/architect/rss.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://tonarinoyj.jp/atom/series/13932016480028984490"
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCMwf3xCcqFCsUISSQRckZGQ" ;; Noblat
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg" ;; Galas
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw" ;; Meteoro
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; XLetails
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQTTe8puVKqurziI6Do-H-Q" ;; Kretcheu
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC8EGrwe_DXSzrCQclf_pv9g" ;; Debxp
+     "https://odysee.com/$/rss/@kretcheu2001:8" ;; Kretcheu
+     "https://odysee.com/$/rss/@debxp:9" ;; Debxp
+     "https://odysee.com/$/rss/@leandroramos:3" ;; Leandro Ramos
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; PunkDevOps
