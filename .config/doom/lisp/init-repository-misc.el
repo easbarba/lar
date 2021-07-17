@@ -51,11 +51,10 @@
      "https://edelpero.svbtle.com/feed"
      "https://debxp.org/feed/"
      "https://drewdevault.com/blog/index.xml"
-     "https://libreplanet.org/w/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom"
-     "https://www.redhat.com/en/rss/blog/101"
-     "https://www.redhat.com/architect/rss.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://tonarinoyj.jp/atom/series/13932016480028984490"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQCrbWOFRmFYqoeou0Qv3Kg" ;; Tony Aldon
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCwrCgfC5Z5biFxMZCSqnEcA" ;; Abe Peters
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; XLetails
