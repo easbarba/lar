@@ -1,7 +1,7 @@
 #+TITLE: Haskell
 
 * TOC
-    :PROPERTIES:
+  :PROPERTIES:
     :TOC:      :include all :depth 2 :ignore this
     :END:
   :CONTENTS:
@@ -13,20 +13,21 @@
   :END:
 * Progress
 ** Books
-     | Books                  | cap | @ | later | revision |
-     |------------------------+-----+---+-------+----------|
-     | Programming in Haskell |     |   |       |          |
+| Books                  | cap | @ | later | revision |
+|------------------------+-----+---+-------+----------|
+| Programming in Haskell |     |   |       |          |
+
 ** SLOC
-     | Source Code | folder | file | @ |
-     |-------------+--------+------+---|
-     | ghc         |        |      |   |
-     | xmonad      |        |      |   |
+| Source Code | folder | file | @ |
+|-------------+--------+------+---|
+| ghc         |        |      |   |
+| xmonad      |        |      |   |
 
-* Haskell Resources
-    https://www.haskell.org/documentation/
+* Resources
+https://www.haskell.org/documentation/
 
-    http://hackage.haskell.org/
-* Haskell Toolings
-    https://www.haskell.org/cabal/
+http://hackage.haskell.org/
+* Toolings
+https://www.haskell.org/cabal/
 
-    https://www.haskellstack.org/
+https://www.haskellstack.org/
