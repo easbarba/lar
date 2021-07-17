@@ -6,13 +6,16 @@
   :END:
 :CONTENTS:
 - [[#cejo][cejo]]
-  - [[#distro][distro]]
-  - [[#floss][floss]]
-  - [[#ports][Ports]]
+- [[#distro][distro]]
+- [[#floss][floss]]
+- [[#ports][Ports]]
+  - [[#ruby][Ruby]]
+  - [[#net][.NET]]
+  - [[#python][Python]]
 :END:
 
 * cejo
-** distro
+* distro
     #+begin_src yaml
     ---
     builddep: builddep
@@ -113,7 +116,7 @@
     upgrade: upgrade
 
     #+end_src
-** floss
+* floss
    #+begin_src yaml
    --- # Javascript
    - https://github.com/SBoudrias/Inquirer.js
@@ -173,22 +176,6 @@
    - https://github.com/golang/tools
    - https://github.com/golang/go
 
-   --- # c
-   - https://gitlab.freedesktop.org/mesa/mesa.git
-   - git://source.winehq.org/git/wine.git
-   - https://github.com/openssh/openssh-portable.git
-   - https://github.com/libressl-portable/portable.git
-   - https://git.suckless.org/dwm
-   - https://github.com/zsh-users/zsh.git
-   - https://github.com/git/git.git
-   - https://github.com/tmux/tmux.git
-   - https://github.com/antirez/redis.git
-   - https://github.com/curl/curl.git
-   - git://c9x.me/qbe.git
-   - https://github.com/mate-desktop/mate-terminal
-   - https://github.com/mate-desktop/atril
-   - https://github.com/mate-desktop/marco
-
    --- # common lisp
    - https://github.com/CodyReichert/awesome-cl.git
    - https://github.com/atlas-engineer/nyxt.git
@@ -202,15 +189,33 @@
    - https://gitlab.common-lisp.net/clpm/clpm.git
    - git://git.code.sf.net/p/sbcl/sbcl.git
 
-   --- # Haskell
-   - https://gitlab.haskell.org/ghc/ghc
-   - https://gitlab.haskell.org/haskell/ghcup
-   - https://github.com/haskell/cabal
-   - https://github.com/commercialhaskell/stack
-   - https://github.com/haskell/haskell-language-server
-   - https://github.com/koalaman/shellcheck
-   - https://github.com/jgm/pandoc
-   - https://github.com/elm/compiler
+--- # Haskell
+- https://gitlab.haskell.org/ghc/ghc
+- https://gitlab.haskell.org/haskell/ghcup
+- https://github.com/haskell/cabal
+- https://github.com/commercialhaskell/stack
+- https://github.com/haskell/haskell-language-server
+- https://github.com/koalaman/shellcheck
+- https://github.com/jgm/pandoc
+- https://github.com/elm/compiler
+
+--- # c
+- https://gitlab.freedesktop.org/mesa/mesa
+- git://source.winehq.org/git/wine
+- https://github.com/openssh/openssh-portable
+- https://github.com/libressl-portable/portable
+- https://git.suckless.org/dwm
+- https://github.com/zsh-users/zsh
+- https://github.com/git/git
+- https://github.com/tmux/tmux
+- https://github.com/antirez/redis
+- https://github.com/curl/curl
+- git://c9x.me/qbe
+- https://github.com/mate-desktop/mate-terminal
+- https://github.com/mate-desktop/atril
+- https://github.com/mate-desktop/marco
+
+
 
    --- # Dart
    - https://github.com/roughike/inKino
@@ -258,8 +263,8 @@
    - https://github.com/laravel/laravel
    - https://github.com/php/php-src
    #+end_src
-** Ports
-*** Ruby
+* Ports
+** Ruby
      #+begin_src ruby
      def get_name_files(folder)
        name = folder.to_path
@@ -293,11 +298,11 @@
      end
 
      #+end_src
-*** .NET
-**** Temp
+** .NET
+*** Temp
       #+begin_src csharp
      #+end_src
-**** Projects
+*** Projects
       #+begin_src csharp
       using System.Collections.Generic;
       using System.IO;
@@ -381,7 +386,7 @@
 
 
       #+end_src
-**** Packers
+*** Packers
       #+begin_src csharp
 
       // "redhat.java",
@@ -639,7 +644,7 @@
 	  }
       }
       #+end_src
-*** Python
+** Python
      #+begin_src python
 
 	 def advice(self) -> None:
@@ -968,7 +973,7 @@
 
      folder = PROJECTS / parent / os.path.basename(url)
      #+end_src
-**** Makefile
+*** Makefile
       #+begin_src makefile
       # Licensed under the Apache License: http://www.apache.org/licenses/LICENSE-2.0
       .POSIX:
