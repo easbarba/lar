@@ -1,10 +1,8 @@
 ---
-- https://github.com/purcell/envrc
-- https://gitlab.com/emacs-geiser/geiser
-- https://github.com/alezost/guix.el
 - https://github.com/abo-abo/oremacs
 - https://github.com/jwiegley/dot-emacs
 - https://github.com/purcell/emacs.d
+- https://github.com/purcell/envrc
 - https://github.com/bbatsov/prelude
 - https://github.com/hlissner/doom-emacs
 - https://github.com/syl20bnr/spacemacs
@@ -12,5 +10,3 @@
 - https://github.com/jwiegley/emacs-async
 - https://github.com/jwiegley/use-package
 - https://github.com/emacs-lsp/lsp-mode
-- https://github.com/emacs-tw/awesome-emacs
-- https://github.com/purcell/reformatter.el
