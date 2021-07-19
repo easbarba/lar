@@ -1,0 +1,188 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+# * DEBIAN
+
+e_echo "Debian"
+
+upgrade() {
+	e_echo "Updating Arch Linux"
+
+	sudo pacman -Syu
+}
+
+pre() {
+	# e_echo "Enable Multi-Arch"
+
+	# sudo dpkg --add-architecture i386
+}
+
+packages() {
+	e_echo "Installing system packages"
+
+	essentials=(git p7zip zip unzip bash tmux zile gcc make curl emacs)
+
+	programming=(shellcheck zenity bash-completion cmake mercurial clang sqlite3) # libfixposix-dev libpq-dev
+
+	# ruby=(libssl-dev ruby-dev)
+
+	lua=(lua5.4 luarocks) # lua-check
+
+	# database=(postgresql postgresql-contrib)
+
+	music=(mpd mpc ncmpcpp)
+
+	system=(screen micro neovim zsh fish unrar ripgrep lshw at usbutils
+		lsof time net-tools iproute2 entr tree xsel xclip ctags
+		fontconfig  subversion bc htop strace ltrace openssh 
+		cpio lhasa lzop atool wmctrl perf sysstat jq
+		dialog ncdu nnn fzy rsync bat rclone xonsh pv parallel
+		wget stow parted texinfo autoconf automake 
+		nftables firewalld socat fzf aria2) # bash-doc gcc-doc gdb-doc gdbserver locate info freetype telnet fd-find firewall-config
+
+	emacs=(libgccjit-10-dev)
+
+	qt=(kdeconnect kdenlive)
+
+	gtk=(cheese transmission-gtk evince shotcut arc-icon-theme)
+
+	infra=(podman winetricks qemu virt-manager ovmf bridge-utils) # qemu-system-gui qemu-utils qemu-efi qemu-kvm 
+
+	fonts=(ttf-dejavu) # fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack fonts-freefont-ttf 
+
+	security=(gnutls)
+
+	laptop=(iw wireless-tools libiw-dev laptop-mode-tools
+		i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
+		lm-sensors hddtemp pulseaudio-bluetooth mate-power-manager)
+
+	debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
+
+	wm=(awesome network-manager-applet aria2 maim udiskie
+	    unclutter gnome-keyring mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
+	    seahorse x11proto-dev brightnessctl tlp blueman) # dunst diodon ssh-askpass-gnome acpi-call volumeicon-alsa lxappearance
+
+	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
+		obs-studio syncthing mpv libnotify imagemagick pandoc
+		screenfetch aspell telegram-desktop steam) # aspell-pt-br gopher
+
+	media=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
+	       gst-plugins-base gst-plugins-good gst-plugins-ugly)
+
+	latex=(texlive-latex-recommended texlive-latex-extra
+		texlive-latex-base)
+
+	amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
+	     lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
+	     lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
+
+	local command='sudo apt install -y'
+
+	enabled=("${essentials[@]}"
+			 "${debian[@]}"
+			 "${emacs[@]}"
+			 # "${ruby[@]}"
+			 "${lua[@]}"
+			 "${programming[@]}"
+			 # "${database[@]}"
+			 "${system[@]}"
+			 "${music[@]}"
+			 "${gtk[@]}"
+			 "${qt[@]}"
+			 "${infra[@]}"
+			 # "${fonts[@]}"
+			 "${security[@]}"
+			 "${laptop[@]}"
+			 "${wm[@]}"
+			 "${user[@]}"
+			 "${media[@]}"
+			 "${amd[@]}")
+
+	for i in "${enabled[@]}"; do
+		e_dolist "$command" "$i"
+	done
+
+	e_echo "Done"
+}
+
+post(){
+	e_echo "Post install"
+
+	sudo apt-file update # update Debian database
+	sudo fc-cache -fv
+}
+
+clean() {
+	e_echo "Clean up"
+
+	unused=(firefox-esr)
+
+	local command='sudo apt remove -y'
+
+	e_dolist "$command" "${unused[@]}"
+}
+
+services() {
+	e_echo "Debian Services"
+
+	postgres() {
+		sudo systemctl restart postgresql
+	}
+
+	mpd() {
+		sudo systemctl disable mpd
+	}
+
+	kdeconnect() {
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		sudo systemctl restart firewalld.service
+	}
+
+	timezone() {
+		local current_zone
+		local desired_zone
+
+		desired_zone='America/Sao_Paulo'
+		current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+
+		[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
+	}
+
+	alternatives() {
+		# set python to python3
+		sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+	}
+
+	virtualization() {
+		sudo usermod -aG libvirt "$USER"
+		sudo usermod -aG kvm "$USER"
+	}
+
+	mpd
+	alternatives
+	timezone
+	kdeconnect
+	virtualization
+}
+
+foreign() {
+	echo "Non-Debian packages"
+
+	chrome() {
+		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+	}
+}
+
+# * RUN
+
+upgrade
+pre
+packages
+post
+clean
+services
+foreign
