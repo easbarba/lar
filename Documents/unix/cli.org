@@ -138,29 +138,6 @@ read line of input into variables
 ** cd
 ** mkdir
 ** shell
-*** glob
-|     |                                     |
-|-----+-------------------------------------|
-| ch* | select all files that begin w/ 'ch' |
-|     |                                     |
-
-
-#+begin_src shell
-ls ch.*
-
-#+end_src
-*** pattern matching
-
-|         |                                                               |
-|---------+---------------------------------------------------------------|
-| Do[cw]* | match any file that begins w/ 'Do' and followed by 'c' or 'w' |
-|         |                                                               |
-
-#+begin_src shell
-
-echo Do[cw]* # => Documents Downloads
-#+end_src
-
 ** echo
 display a line of text
 
@@ -169,3 +146,11 @@ echo * # echo all files in dir
 echo .bash* # echo all files beginning with '.bash'
 
 #+end_src
+** make
+|                 |                                                                 |
+|-----------------+-----------------------------------------------------------------|
+| .DEFAULT_GOAL   | deﬁnes which target is run when no target is speciﬁed.          |
+| <word>:         | name of the target                                              |
+| <word>: <word2> | other targets that must be run before the speciﬁed target runs. |
+| .PHONY:<word>   | <word> doesn't represent a file name in this Makefile           |
+|                 |                                                                 |
