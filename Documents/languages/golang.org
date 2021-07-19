@@ -1,6 +1,5 @@
 #+TITLE: Golang
 
-
 * Summary
     :PROPERTIES:
     :TOC:      :include all :depth 3 :ignore this
@@ -115,17 +114,69 @@
     :END:
 * Progress
 ** Books
-     | name                    | chapter | @                                    | late | revision |
-     |-------------------------+---------+--------------------------------------+------+----------|
-     | Learning go             |         | Using const                          |      |          |
-     | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
-     |                         |         |                                      |      |          |
+| name                    | chapter | @                                    | late | revision |
+|-------------------------+---------+--------------------------------------+------+----------|
+| Learning go             |         | Using const                          |      |          |
+| Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
      | Source Code | folder          | file            | @ |
      |-------------+-----------------+-----------------+---|
      | go          | src/archive/tar | example_test.go |   |
 
+* cli
+** vet
+      Examines Go source code and reports suspicious constructs
+
+      |   |   |
+      |---+---|
+      |   |   |
+
+** build
+      - build project and create binary
+      |                  |              |
+      |------------------+--------------|
+      | -o <name> <file> | set location |
+      |                  |              |
+
+** get
+      |   |   |
+      |---+---|
+      |   |   |
+
+** install
+|               |                            |
+|---------------+----------------------------|
+| <name>        |                            |
+| <name>@latest | latest version of the tool |
+
+#+begin_src shell
+
+go install github.com/rakyll/hey@latest
+
+#+end_src
+
+** run
+      |   |   |
+      |---+---|
+      |   |   |
+
+** env
+      - list golang environment variables
+      |   |   |
+      |---+---|
+      |   |   |
+** others
+*** imports
+|    |   |
+|----+---|
+| -l |   |
+| -w |   |
+
+*** tool
+**** vet
+vet is a tool for static analysis of Go programs.
+*** golangci-lint
 * Features
 ** operators
 *** arithmetic
@@ -167,43 +218,6 @@
       - chars
       - int32 type
       -
-
-** cli
-*** vet
-      Examines Go source code and reports suspicious constructs
-
-      |   |   |
-      |---+---|
-      |   |   |
-
-*** build
-      - build project and create binary
-      |                  |              |
-      |------------------+--------------|
-      | -o <name> <file> | set location |
-      |                  |              |
-
-*** get
-      |   |   |
-      |---+---|
-      |   |   |
-
-*** install
-      |               |                            |
-      |---------------+----------------------------|
-      | <name>        |                            |
-      | <name>@latest | latest version of the tool |
-
-*** run
-      |   |   |
-      |---+---|
-      |   |   |
-
-*** env
-      - list golang environment variables
-      |   |   |
-      |---+---|
-      |   |   |
 
 ** mutex
      #+begin_src go emacs-lisp
@@ -304,6 +318,9 @@
 
 
      #+end_src
+** Env Vars
+*** $GOPATH
+*** $GOPROXY
 ** const
 ** doc comment
      Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
