@@ -28,6 +28,55 @@ Process substitution allows a process’s input or output to be referred to usin
 >(list)
 
 #+end_src
+* Pattern Matching
+** glob
+|     |                                     |
+|-----+-------------------------------------|
+| ch* | select all files that begin w/ 'ch' |
+|     |                                     |
+
+
+#+begin_src shell
+ls ch.*
+
+#+end_src
+
+** any
+|         |                                                               |
+|---------+---------------------------------------------------------------|
+| Do[cw]* | match any file that begins w/ 'Do' and followed by 'c' or 'w' |
+|         |                                                               |
+
+
+#+begin_src shell
+
+echo Do[cw]* # Documents Downloads
+echo ch[1-46-9] # all numbers up to 9 but not 5
+
+#+end_src
+
+** any single char
+#+begin_src shell
+
+ls ? # a
+ls -l ch?.1 # ch1.1 ch2.1
+
+#+end_src
 * set
 ** set
 display all environment variables and Shell functions
+* Redirection
+- > : add or overwrite
+- >>: add or append
+- < : get input from file to program
+
+#+begin_src shell
+
+ls >filelist
+cat f1 f2 >temp
+echo "use guix" >>.bashrc
+
+who >temp
+wc -l <temp
+
+#+end_src
