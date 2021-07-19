@@ -1,0 +1,33 @@
+#+TITLE: Bash
+
+* Brace Expansion
+#+begin_src shell
+
+mkdir /usr/local/src/bash/{old,new,dist,bugs}
+#+end_src
+
+* Environments Vars
+** $DIRSTACK
+** $BASH_ENV
+
+* Shell Expansions
+** Arithmetic Expansion
+Arithmetic expansion allows the evaluation of an arithmetic expression and the substitution of the result.
+
+#+begin_src shell
+$(( expression ))
+
+
+#+end_src
+
+** Process Substitution
+Process substitution allows a process’s input or output to be referred to using a filename.
+
+#+begin_src shell
+<(list)
+>(list)
+
+#+end_src
+* set
+** set
+display all environment variables and Shell functions
