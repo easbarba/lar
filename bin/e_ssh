@@ -3,7 +3,7 @@
 # Debug Options
 set -euo pipefail
 
-EMAIL="$USER@pm.me"
+EMAIL="$USER@tutanota.com"
 
 # Generating a new SSH key
 ssh-keygen -t ed25519 -C $EMAIL
