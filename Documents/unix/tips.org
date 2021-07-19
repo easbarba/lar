@@ -14,16 +14,13 @@ echo @(.)bash* # => .bash_history .bash_logout .bash_profile .bashrc
 echo ~/Pictures/?(*.jpg|*.gif) # =>  Pictures/avatar.jpg parsnip-tabbouleg-1efa127.jpg
 #+end_src
 
-* mkdir
-** create multiple sub-directories
-
-
+* Brace Expansion
+** create multiple directories
 PS: Do not use space between folders names.
 
 #+begin_src shell
 
+mkdir -p {Documents,Downloads}
 mkdir -p ~/Downloads/{one,two,three}
-
-ls ~/Downloads # => one two three
 
 #+end_src
