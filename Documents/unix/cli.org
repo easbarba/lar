@@ -61,8 +61,6 @@ concatenate files and print on the standard output
 |----+---|
 | -u |   |
 
-
-
 ** pr
 concatenate files and print on the standard output
 |                  |                         |
@@ -137,3 +135,37 @@ dump files in octal and other formats
 ** stty
 ** read
 read line of input into variables
+** cd
+** mkdir
+** shell
+*** glob
+|     |                                     |
+|-----+-------------------------------------|
+| ch* | select all files that begin w/ 'ch' |
+|     |                                     |
+
+
+#+begin_src shell
+ls ch.*
+
+#+end_src
+*** pattern matching
+
+|         |                                                               |
+|---------+---------------------------------------------------------------|
+| Do[cw]* | match any file that begins w/ 'Do' and followed by 'c' or 'w' |
+|         |                                                               |
+
+#+begin_src shell
+
+echo Do[cw]* # => Documents Downloads
+#+end_src
+
+** echo
+display a line of text
+
+#+begin_src shell
+echo * # echo all files in dir
+echo .bash* # echo all files beginning with '.bash'
+
+#+end_src
