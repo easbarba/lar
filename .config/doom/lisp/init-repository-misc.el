@@ -41,20 +41,24 @@
    '("https://www.fsf.org/static/fsforg/rss/news.xml"
      "https://www.fsf.org/static/fsforg/rss/blogs.xml"
      "https://guix.gnu.org/feeds/blog.atom"
+     ;; distros
      "https://archlinux.org/feeds/news/"
+     "https://debxp.org/feed/"
      "https://micronews.debian.org/feeds/feed.rss"
      "https://feeds.feedburner.com/linuxtoday/linux"
+     ;; prog blogs
      "https://elephly.net/feed.xml"
      "https://www.phoronix.com/rss.php"
+     "https://michael.stapelberg.ch/feed.xml"
+     "https://edelpero.svbtle.com/feed"
+     "https://drewdevault.com/blog/index.xml"
+     ;; langs blog
+     "https://research.swtch.com/feed.atom"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://rubyweekly.com/rss/"
      "https://www.honeybadger.io/blog/feed.xml"
-     "https://michael.stapelberg.ch/feed.xml"
-     "https://edelpero.svbtle.com/feed"
-     "https://debxp.org/feed/"
-     "https://drewdevault.com/blog/index.xml"
      "https://blog.appsignal.com/feed.xml"
-     "https://tonarinoyj.jp/atom/series/13932016480028984490"
+     ;; video channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQCrbWOFRmFYqoeou0Qv3Kg" ;; Tony Aldon
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCwrCgfC5Z5biFxMZCSqnEcA" ;; Abe Peters
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
