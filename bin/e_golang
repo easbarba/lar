@@ -3,10 +3,6 @@
 # Debug Options
 set -euo pipefail
 
-# Sourcing
-source "$HOME/.asdf/completions/asdf.bash"
-source "$HOME/.asdf/asdf.sh"
-
 export GO111MODULE=on
 
 packages()
@@ -15,30 +11,31 @@ packages()
 	local packages=("golang.org/x/tools/cmd/goimports@latest"
 					"golang.org/x/lint/golint@latest"
 					"golang.org/x/tools/gopls@latest"
-					"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0")
+					"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0"
+					"github.com/rakyll/hey@latest")
 
-	e_dolist $command ${packages[@]}
+	e_dolist "$command" "${packages[@]}"
 }
 
 tols()
 {
-	local packages=("sigs.k8s.io/kind")
 	local command='go get'
+	local packages=("sigs.k8s.io/kind")
 
-	e_dolist $command ${packages[@]}
+	e_dolist "$command" "${packages[@]}"
 }
 
 devel() {
-	local packages=("mvdan.cc/sh/v3/cmd/shfmt")
 	local command='go get'
+	local packages=("mvdan.cc/sh/v3/cmd/shfmt")
 
-	e_dolist $command "${packages[@]}"
+	e_dolist "$command" "${packages[@]}"
 }
 
 # * RUN
 
 echo 'Golang'
 
-tools
-devel
 packages
+# tools
+devel
