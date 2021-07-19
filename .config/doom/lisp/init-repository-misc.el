@@ -41,6 +41,8 @@
    '("https://www.fsf.org/static/fsforg/rss/news.xml"
      "https://www.fsf.org/static/fsforg/rss/blogs.xml"
      "https://guix.gnu.org/feeds/blog.atom"
+     "https://archlinux.org/feeds/news/"
+     "https://micronews.debian.org/feeds/feed.rss"
      "https://feeds.feedburner.com/linuxtoday/linux"
      "https://elephly.net/feed.xml"
      "https://www.phoronix.com/rss.php"
