@@ -8,8 +8,6 @@
 - [[#progress][Progress]]
 - [[#awesomewm][AwesomeWM]]
   - [[#awful][Awful]]
-- [[#mate][Mate]]
-- [[#kde][KDE]]
 :END:
 * Progress
   | book                                   | chapter          | @                                                     | revision |
@@ -21,5 +19,3 @@
      #+begin_src lua
      awful.spawn(terminal.." -e my_command")
      #+end_src
-* Mate
-* KDE

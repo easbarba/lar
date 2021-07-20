@@ -1,0 +1,17 @@
+#+TITLE: Desktop
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+- [[#mate][Mate]]
+- [[#kde][KDE]]
+:END:
+* Progress
+  | book                                   | chapter          | @                                                     | revision |
+  |----------------------------------------+------------------+-------------------------------------------------------+----------|
+  | https://awesomewm.org/apidoc/libraries | awful.spawn.html | Understanding blocking versus asynchronous execution: |          |
+* Mate
+* KDE
