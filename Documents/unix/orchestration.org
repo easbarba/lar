@@ -1,0 +1,12 @@
+#+TITLE: Orchestration
+
+** Kubernetes (k8s)
+*** terms
+
+*** alternatives
+**** Kind
+**** MiniKube
+     |                       |                             |
+     |-----------------------+-----------------------------|
+     | start --driver=<NAME> | select what driver to start |
+     |                       |                             |

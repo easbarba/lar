@@ -1,0 +1,15 @@
+#+TITLE: Virtual_machine
+
+* Vagrant
+   |        |               |   |
+   |--------+---------------+---|
+   | status | global-status |   |
+   | init   | init [DISTRO] |   |
+   | up     | up            |   |
+   |        | halt          |   |
+   |        | package       |   |
+
+* libvirt
+* qemu
+* kvm
+* virtualbox

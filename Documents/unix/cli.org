@@ -154,3 +154,5 @@ echo .bash* # echo all files beginning with '.bash'
 | <word>: <word2> | other targets that must be run before the speciﬁed target runs. |
 | .PHONY:<word>   | <word> doesn't represent a file name in this Makefile           |
 |                 |                                                                 |
+** scp
+OpenSSH secure file copy

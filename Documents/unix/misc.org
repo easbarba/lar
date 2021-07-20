@@ -1,0 +1,241 @@
+#+TILE: Site Reliability Enginnering - Annotations
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+  :CONTENTS:
+  - [[#fortschritt][Fortschritt]]
+    - [[#buch][Buch]]
+  - [[#infra-provisioning][Infra Provisioning]]
+    - [[#cloudformation][CloudFormation]]
+    - [[#pulumi][Pulumi]]
+    - [[#terraform][Terraform]]
+  - [[#configuration-management][Configuration Management]]
+    - [[#terms][terms]]
+    - [[#alternatives][alternatives]]
+  - [[#containers][Containers]]
+    - [[#images][Images]]
+  - [[#orchestration][Orchestration]]
+    - [[#kubernetes-k8s][Kubernetes (k8s)]]
+  - [[#cloud-providers][Cloud Providers]]
+    - [[#heroku][Heroku]]
+    - [[#azure][Azure]]
+    - [[#aws][AWS]]
+  - [[#linux][Linux]]
+    - [[#progresso][Progresso]]
+    - [[#text-manipulation][Text Manipulation]]
+    - [[#process-monitoring][Process Monitoring]]
+    - [[#df][Df]]
+    - [[#strace][strace]]
+    - [[#dstrace][dstrace]]
+    - [[#multiplexers][Multiplexers]]
+    - [[#firewall][Firewall]]
+    - [[#lvm][LVM]]
+    - [[#swap][Swap]]
+    - [[#systemd][SystemD]]
+    - [[#disk-space-and-partition][Disk Space and Partition]]
+    - [[#sync][Sync]]
+    - [[#laptop][Laptop]]
+    - [[#steam][Steam]]
+    - [[#boot][Boot]]
+    - [[#xorg][X.org]]
+    - [[#network][Network]]
+    - [[#containers-virtualization][Containers, Virtualization]]
+    - [[#terminal][Terminal]]
+    - [[#home][$HOME]]
+    - [[#commands][Commands]]
+    - [[#packages][Packages]]
+    - [[#udev-rules-udevrulesd][Udev rules (udev/rules.d)]]
+  - [[#cicd][CI/CD]]
+    - [[#gitlab][Gitlab]]
+    - [[#github-actions][Github Actions]]
+    - [[#circle-ci][Circle CI]]
+    - [[#jenkins][Jenkins]]
+  - [[#virtual-machine][Virtual Machine]]
+  - [[#web-server][Web Server]]
+    - [[#apache][Apache]]
+    - [[#nginx][Nginx]]
+  - [[#toolings][Toolings]]
+    - [[#hcl][Hcl]]
+  - [[#version-control][Version Control]]
+    - [[#git][Git]]
+  - [[#shell][Shell]]
+    - [[#gnu-bash][GNU Bash]]
+    - [[#bash-resources][Bash resources]]
+    - [[#fish][Fish]]
+    - [[#zsh][Zsh]]
+    - [[#tcsh][TCSH]]
+    - [[#posix][Posix]]
+  - [[#compilers][Compilers]]
+    - [[#gnu-gcc][GNU GCC]]
+    - [[#clang][Clang]]
+  - [[#editors][Editors]]
+    - [[#nano][Nano]]
+    - [[#vimneovim][Vim/NeoVim]]
+    - [[#emacs][Emacs]]
+  - [[#network][Network]]
+    - [[#protocols][Protocols]]
+    - [[#terms][Terms]]
+  - [[#concepts][Concepts]]
+  - [[#skills][Skills]]
+  - [[#concepts][Concepts]]
+  - [[#sites][Sites]]
+  - [[#distros][Distros]]
+    - [[#apt][APT]]
+    - [[#rpm][RPM]]
+    - [[#gentoo][Gentoo]]
+    - [[#functional][Functional]]
+  - [[#yet-to-learn][Yet to learn]]
+  - [[#software][Software]]
+    - [[#onlines][Onlines]]
+    - [[#media][Media]]
+    - [[#browser][Browser]]
+  :END:
+* Progress
+** Buch
+   | Buch                                         | Capitulo                                       | em                        | tarde                                              | revisao |
+   |----------------------------------------------+------------------------------------------------+---------------------------+----------------------------------------------------+---------|
+   | Distributed Systems                          |                                                |                           |                                                    |         |
+   | LPIC-1 101-400                               |                                                |                           |                                                    |         |
+   | Chef                                         |                                                |                           |                                                    |         |
+   | Puppet                                       |                                                |                           |                                                    |         |
+   | CI/CD                                        |                                                |                           |                                                    |         |
+   | DevOps HandBook                              | Agile, Continuous Delivery, and the Three Ways |                           |                                                    |         |
+* Toolings
+** Hcl
+* Concepts
+  | Term               | ...                                                                                  | eg       |
+  |--------------------+--------------------------------------------------------------------------------------+----------|
+  | Distributed System | Collection of independent computers appears to its users as a single coherent system | internet |
+  | Computer Network   |                                                                                      |          |
+* Sites
+  - visual subnet calculator
+* Yet to learn
+  |                                                                                                      |                                                 |
+  |------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+  | df -i                                                                                                | inodes                                          |
+  | netstat -atunp                                                                                       | listening network ports                         |
+  | pid                                                                                                  |                                                 |
+  | ps -ef                                                                                               |                                                 |
+  | ps aux                                                                                               |                                                 |
+  | Hashicorp Vault                                                                                      |                                                 |
+  | Hashicorp boundary                                                                                   |                                                 |
+  | !*                                                                                                   | reuse shell args of command                     |
+  | kubectl get pods                                                                                     |                                                 |
+  | alt+t                                                                                                | alterna a posicao de ultimas 2 palavras no bash |
+  | gpg                                                                                                  |                                                 |
+  | rsync                                                                                                |                                                 |
+  | cacat                                                                                                |                                                 |
+  | goto                                                                                                 |                                                 |
+  | journalctl -b                                                                                        | grep -i bluetooth                               |
+  | kerberos                                                                                             |                                                 |
+  | OpenShift and OpenStack                                                                              |                                                 |
+  | ss -ln / grep 22                                                                                     |                                                 |
+  | ssh -vvv user@address -p port-id # verbose connecting steps                                          |                                                 |
+  | ssh-copy-id user@address -p port-id # copy client pub ssh keys to client ~/.ssh/authorized_keys file |                                                 |
+
+* Software
+** Onlines
+   https://www.urionlinejudge.com.br/judge/en/login
+
+   https://projecteuler.net/
+
+   http://typicalprogrammer.com/
+
+   https://www.coderhood.com/5-problem-solving-skills-great-software-developers/
+
+   https://onlinetexttools.com/
+
+   https://devurls.com/
+** Media
+*** Youtube-dl
+**** Download from YT
+
+     To list the available formats type:
+     youtube-dl -F url
+
+     Then choose the best one
+     Example  720p : youtube-dl -f 22 url
+**** Download audio from YT video
+     youtube-dl -x --audio-format vorbis
+     youtube-dl -x --audio-format flac
+
+*** mpv
+**** IPC
+     https://alexherbo2.github.io/config/mpv/control-mpv-through-command-line/
+     https://github.com/mpv-player/mpv/blob/master/DOCS/man/ipc.rst
+**** config eg
+     https://github.com/mpv-player/mpv/blob/master/etc/input.conf
+*** FFmpeg
+**** ffmpeg sound booster
+     https://trac.ffmpeg.org/wiki
+
+     # Audio Increase/Decrease
+     ffmpeg -i input.flac -filter:a "volume=1.5" output.flac
+     ffmpeg -i input.flac -af 'volume=1.5' output.flac
+
+**** ffmpeg cut/trim audio/video
+     - You can use the time offset parameter (-ss) to specify the start time stamp in HH:MM:SS.ms format
+     while the -t parameter is for specifying the actual duration of the clip in seconds:
+
+     ffmpeg -i input.mp4 -ss 00:00:50.0 -codec copy -t 20 output.mp4
+**** ffmpeg video to audio
+     ffmpeg -i input.mp4 output.flac
+**** ffmpeg mic recording
+     ffmpeg -f pulse -i default output.wav
+**** ffmpeg read later
+     https://www.labnol.org/internet/useful-ffmpeg-commands/28490/
+**** ffmpeg -dvd ripper
+     cat *.VOB > moviename.vob; ffmpeg -i moviename.vob -acodec libfaac -ac 2 -ab 128k -vcodec libx264 -vpre fast -crf 20 -threads 0 moviename.mp4
+**** ffmpeg concat files
+     ffmpeg -f concat -i mylist -c copy ap2-long.flac
+** Browser
+*** Vimium - Emacs bindings
+    #+BEGIN_SRC text
+
+    unmap j
+    unmap k
+    unmap h
+    unmap l
+    unmap f
+    unmap F
+    unmap B
+    unmap n
+    unmap N
+    unmap gg
+    unmap G
+
+    map n scrollDown
+    map p scrollUp
+    map b scrollLeft
+    map f scrollRight
+    map < scrollToTop
+    map > scrollToBottom
+
+    map B goBack
+    map F goForward
+    map s performFind
+    map l LinkHints.activateMode
+    mpa r performBackwardsFind
+
+    #+END_SRC
+* Skills
+  | Skill                           | eg                                                                                               |
+  |---------------------------------+--------------------------------------------------------------------------------------------------|
+  | Unix                            | CentOs, Ubuntu                                                                                   |
+  | Languages                       | shell, go, ruby, python, perl                                                                    |
+  | Controle De Versionamento       | git                                                                                              |
+  | Container                       | Docker Kubernetes OpenShift Helm Rancher                                                         |
+  | Config Management               | Ansible Chef Puppet Salt                                                                         |
+  | Cloud                           | AWS: Compute (ECS e EC2), Networking, RDS, S3, Monitoria (CloudWatch e CloudTrail) e Lambda      |
+  | Continuous Integration/Delivery | jenkins                                                                                          |
+  | Virtualization                  |                                                                                                  |
+  | Infra provisioning              | Terraform                                                                                        |
+  | Observability e Monitoring      | nagios Nginx, Apache                                                                             |
+  | agile                           | scrum                                                                                            |
+  | micro services                  |                                                                                                  |
+  | cloud native                    |                                                                                                  |
+  |                                 | performance issues, package management, load estimation, kernel tuning, networking configuration |
+  | Networking                      | HTTP, DNS, TCP/IP, the OSI Model, Subnetting and Load Balancing strategies                       |
+  |                                 |                                                                                                  |

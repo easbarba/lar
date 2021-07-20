@@ -1,0 +1,6 @@
+#+TITLE: Cicd
+
+* Gitlab
+* Github Actions
+* Circle CI
+* Jenkins
