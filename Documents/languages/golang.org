@@ -112,11 +112,11 @@
       - [[#rspec][RSpec]]
       - [[#unit][Unit]]
     :END:
-* Progress
+* progress
 ** Books
 | name                    | chapter | @                                    | late | revision |
 |-------------------------+---------+--------------------------------------+------+----------|
-| Learning go             |         | Using const                          |      |          |
+| Learning go             | Types   | A Taste of Strings and Runes         |      |          |
 | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
@@ -166,18 +166,7 @@ go install github.com/rakyll/hey@latest
       |   |   |
       |---+---|
       |   |   |
-** others
-*** imports
-|    |   |
-|----+---|
-| -l |   |
-| -w |   |
-
-*** tool
-**** vet
-vet is a tool for static analysis of Go programs.
-*** golangci-lint
-* Features
+* features
 ** operators
 *** arithmetic
       |          |                           |
@@ -187,19 +176,41 @@ vet is a tool for static analysis of Go programs.
 
 ** types
 *** numeric
-      |         |                 |
-      |---------+-----------------|
-      | byte    | uint8           |
-      | int     | int64           |
-      | uint    | unsigned  int64 |
-      | complex |                 |
-      | float   |                 |
-
+|         |                 |
+|---------+-----------------|
+| byte    | uint8           |
+| int     | int64           |
+| uint    | unsigned  int64 |
+| complex |                 |
+| float   |                 |
 
 **** byte
 **** int
+On a 32-bit CPU, int is a 32-bit signed integer like an
+int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
+**** uint
+**** rune
+**** uintptr
+
 **** complext
 **** float
+*** literals
+|                |                              |
+|----------------+------------------------------|
+| binary         | 0b                           |
+| octal          | 0o                           |
+| hex            | 0x                           |
+| floating point | 1.2                          |
+| rune           | 'a' '\141'                   |
+| string         | "meh"                        |
+| raw string     | `Greetings and"Salutations"` |
+| bool           | true false                   |
+
+#+begin_src go
+1234
+1_234
+#+end_src
+
 *** strings
       |              |              |
       |--------------+--------------|
@@ -333,9 +344,13 @@ vet is a tool for static analysis of Go programs.
 	     Printf(&p) // address of x
      }
      #+end_src
-* Terms
+* terms
     - runes: single characthers
-* Packages
+* packages
+** tool
+*** vet
+vet is a tool for static analysis of Go programs.
+** golangci-lint
 ** golint
      |       |                                  |
      |-------+----------------------------------|
@@ -343,11 +358,12 @@ vet is a tool for static analysis of Go programs.
      |       |                                  |
 
 ** goimports
-     |    |                                                     |
-     |----+-----------------------------------------------------|
-     | -l | list files whose formatting differs from goimport's |
-     | -w | write result to (source) file instead of stdout     |
-     |    |                                                     |
-     #+begin_src shell-script
-     goimports -l -w .
-     #+end_src
+|    |                                                     |
+|----+-----------------------------------------------------|
+| -l | list files whose formatting differs from goimport's |
+| -w | write result to (source) file instead of stdout     |
+|    |                                                     |
+
+#+begin_src shell-script
+goimports -l -w .
+#+end_src
