@@ -420,6 +420,20 @@ string = "a string"
 string.singleton_class.ancestors # => [#<Class:#<String:0x0000563fb8797270>>, String, Comparable, Object,Kernel, BasicObject]
 #+end_src
 **** Singleton methods
+** Objects
+*** methods
+Returns a list of the names of public and protected methods of obj.
+#+begin_src ruby
+string = "aaa"
+string.methods.grep(/case/).sort
+#+end_src
+*** private_methods / protected_methods
+private and protected method names
+
+#+begin_src ruby
+Object.new.private_methods # 77
+Object.new.protected_methods # 0
+#+end_src
 
 ** path
    #+begin_src ruby
@@ -1073,6 +1087,20 @@ unbound.bind(d).call
    enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
 
     #+end_src
+*** grep
+#+begin_src ruby
+
+['gr', 'xr', 'cd', 'dg'].grep /r/ # ["gr", "xr"]
+['gr', 'xr', 1, 2].grep Integer # [1, 2]
+["apple", "orange", "banana"].grep(/^a/)
+["apple", "orange", "banana"].grep(/e$/)
+[9, 10, 11, 20].grep(5..10) # [9, 10]
+[9, 10, 11, 20].grep(5..10) { |n| n * 2 } # [18, 20]
+
+times_two = ->(x) { x * 2 }
+numbers.grep(5..10, &times_two) # [18, 20]
+
+#+end_src
 ** open
 - | pipe The pipe in front of the word cat indicates that we’re looking to talk to a program and not open a file.
 #+begin_src ruby
@@ -1462,7 +1490,7 @@ Callbacks and hooks methods are called when a particular event takes place durin
 #+begin_src ruby
 #+end_src
 *** method_missing
-*** respond_to_missing
+*** respond_to_missingp
 
 ** metaprogramming
 **** instance_variable_set
@@ -1561,6 +1589,13 @@ The Forwardable module provides delegation of specified methods to a designated
 object, using the methods def_delegator and def_delegators.
 
 *** def_delegators
+
+* Internal
+
+** ObjectSpace
+The objspace library extends the ObjectSpace module and adds several
+methods to get internal statistic information about object/memory
+management.
 * Toolings
 ** Online
    https://rubular.com
