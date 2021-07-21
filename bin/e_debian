@@ -176,6 +176,7 @@ services() {
 	}
 
 	mpd
+	postgresql
 	alternatives
 	timezone
 	kdeconnect
