@@ -21,3 +21,7 @@ check_empty_pass() {
 boot_readonly() {
 
 }
+
+disable_root() {
+    /usr/bin/sudo /usr/bin/passwd -l root
+}
