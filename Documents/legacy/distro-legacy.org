@@ -1,0 +1,23 @@
+#+TITLE: Distro Legacy
+* Arch
+** Worthy packages
+
+#+begin_src shell-script
+bash-doc gcc-doc gdb-doc gdbserver locate info freetype telnet fd-find firewall-config stow
+lua-check luarocks
+libfixposix-dev libpq-dev clang
+nnn fzy maim unclutter perl-file-mimeinfo rofi
+ # dunst diodon ssh-askpass-gnome acpi-call volumeicon-alsa lxappearance
+syncthing screenfetch  # aspell-pt-br gopher
+
+	latex=(texlive-latex-recommended texlive-latex-extra
+		texlive-latex-base)
+screen  unrar
+make
+ ctags
+# fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack fonts-freefont-ttf
+# qemu-system-gui qemu-utils qemu-efi qemu-kvm
+ i965-va-driver vainfo libvdpau-va-gl1
+			libinput-tools  acpid hddtemp
+
+#+end_src
