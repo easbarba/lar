@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PAM_AUTH='/etc/pam.d/system-auth'
+
+only_new_passwords() {
+    /usr/bin/echo auth sufficient pam_unix.so likeauth nullok >>$PAM_AUTH
+
+    /usr/bin/echo password sufficient pam_unix.so nullok use_authtok md5 shadow remember=5 $PAM_AUTH
+
+}
+
+strong_pass_only() {
+    /usr/bin/echo /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-2 dcredit=-2 ocredit=-1 $PAM_AUTH
+}
+
+check_empty_pass() {
+    /usr/bin/cat /etc/shadow | awk -F: '($2==""){print $1}'
+}
+
+boot_readonly() {
+
+}
