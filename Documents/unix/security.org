@@ -1,0 +1,22 @@
+#+TITLE: Security
+* su
+use the full pathname to su `/bin/su` rather than relying
+on the shell to find the command for you.
+
+|              |                               |
+|--------------+-------------------------------|
+| - <username> | acess username account        |
+| -            | spawn the shell in login mode |
+|              |                               |
+
+* sudo
+
+* login
+
+* chage
+
+* pam
+- restrict users to use old passwords
+
+* files/directories
+- avoid using . as it might call a invasion trap
