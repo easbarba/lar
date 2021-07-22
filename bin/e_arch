@@ -25,7 +25,7 @@ packages() {
 
 	programming=(shellcheck bash-completion subversion jq)
 
-	editors=(micro neovim)
+	editors=(emacs micro neovim)
 
 	ruby=(ruby openssl)
 
@@ -43,9 +43,7 @@ packages() {
 
 	gnu=(wget parted texinfo parallel automake autoconf)
 
-	network=(net-tools iproute2 socat iw wireless-tools)
-
-	emacs=(emacs libgccjit-10-dev)
+	network=(net-tools iproute2 socat iw) # wireless-tools
 
 	qt=(kdeconnect kdenlive)
 
@@ -57,13 +55,13 @@ packages() {
 
 	security=(nftables firewalld gnutls)
 
-	laptop=(libiw-dev laptop-mode-tools acpi tlp)
+	laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
 
-	arch=('')
+	arch=(pactree checkupdates)
 
 	wm=(awesome network-manager-applet flameshot udiskie
 	    gnome-keyring xdg-utils playerctl mate-power-manager
-	    seahorse brightnessctl blueman picom lm-sensors)
+	    seahorse brightnessctl blueman picom lm_sensors)
 
 	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 		  obs-studio mpv libnotify imagemagick pandoc aspell
@@ -78,14 +76,9 @@ packages() {
 	     lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
 	     lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
 
-	local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm'
+	local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm --needed'
 
 	enabled=("${essentials[@]}"
-			 # "${arch[@]}"
-			 # "${ruby[@]}"
-			 # "${sql[@]}"
-			 "${sound[@]}"
-			 "${emacs[@]}"
 			 "${network[@]}"
 			 "${gnu[@]}"
 			 "${editors[@]}"
@@ -101,9 +94,11 @@ packages() {
 			 "${security[@]}"
 			 "${laptop[@]}"
 			 "${wm[@]}"
+             "${sound[@]}"
 			 "${user[@]}"
 			 "${codec[@]}"
-			 "${amd[@]}")
+			 "${amd[@]}") 			# "${arch[@]}" 			 # "${ruby[@]}" 			 # "${sql[@]}"
+
 
 	for i in "${enabled[@]}"; do
 		e_dolist "$command" "$i"
