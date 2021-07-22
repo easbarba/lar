@@ -1,7 +1,7 @@
 #+TITLE: Security
 * su
-use the full pathname to su `/bin/su` rather than relying
-on the shell to find the command for you.
+- log who entered as root but not commands run
+- must be a member of the group “wheel”
 
 |              |                               |
 |--------------+-------------------------------|
@@ -10,6 +10,18 @@ on the shell to find the command for you.
 |              |                               |
 
 * sudo
+- 5 minutes
+- config at: /etc/sudoers or /usr/local/etc/sudoers
+- log the hosts run, the people, the directories from which they were run, and the times at which they were invoked.
+- can be logged by syslog or placed in a file
+- use visudo to modify sudoer
+
+
+  |                   |                                    |
+  |-------------------+------------------------------------|
+  | -u <user>         | enter as <user>                    |
+  | EDITOR=emacs vipw | set EDITOR to emacs so sudo use it |
+  |                   |                                    |
 
 * login
 
@@ -18,5 +30,9 @@ on the shell to find the command for you.
 * pam
 - restrict users to use old passwords
 
+* journalctl
+
 * files/directories
 - avoid using . as it might call a invasion trap
+- use the full pathname to su `/bin/su` rather than relying
+on the shell to find the command for you.

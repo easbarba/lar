@@ -14,6 +14,7 @@ configure a network interface
 * netstat
 |        |   |
 |--------+---|
+| -natp  |   |
 | -tulpn |   |
 * telnet
 * rlogin
