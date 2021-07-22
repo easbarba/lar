@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Description: auto-start list of software toolings
-# Deps: pgrep, command, bash-4
+# Deps: pgrep, command, bash4
 
 # * Guards
 
@@ -10,10 +10,10 @@
 
 # * Lists
 
-tools=(udiskie unclutter nm-applet mpd
-       blueman-applet mate-power-manager) #ibus-daemon
+tools=(/usr/bin/udiskie /usr/bin/unclutter /usr/bin/nm-applet /usr/bin/mpd
+       /usr/bin/blueman-applet /usr/bin/mate-power-manager) #ibus-daemon
 
-apps=(emacs alacritty chromium evince diodon)
+apps=(/usr/bin/emacs /usr/bin/alacritty "$HOME/.guix-profile/bin/chromium" /usr/bin/evinced /usr/bin/copyq)
 
 # * Utils, Helps
 
@@ -36,11 +36,10 @@ autostart()
 {
     local apps=("$@")
 
-    for app in "${apps[@]}"
-    do
-	not_found "$app" && continue
-	is_running "$app" && continue
-	run "$app"
+    for app in "${apps[@]}"; do
+	  not_found "$app" && continue
+	  is_running "$app" && continue
+	  run "$app"
     done
 }
 
