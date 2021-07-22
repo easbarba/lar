@@ -1,4 +1,5 @@
 ---
+exec: /usr/bin/apt
 builddep: build-dep
 clean: autoremove
 depends: depends
