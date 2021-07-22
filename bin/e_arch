@@ -3,20 +3,19 @@
 # Debug Options
 set -euo pipefail
 
-# * DEBIAN
+e_echo "Arch Linux - System Packages and Services Instalation."
 
-e_echo "Debian"
 
 upgrade() {
 	e_echo "Updating Arch Linux"
 
-	sudo pacman -Syu
+	/usr/bin/sudo /usr/bin/pacman -Syu
 }
 
 pre() {
-	# e_echo "Enable Multi-Arch"
+	e_echo "Enable Multi-Arch"
 
-	# sudo dpkg --add-architecture i386
+	/usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 }
 
 packages() {
@@ -28,7 +27,7 @@ packages() {
 
 	# ruby=(libssl-dev ruby-dev)
 
-	lua=(lua5.4 luarocks) # lua-check
+	lua=(lua luarocks) # lua-check
 
 	# database=(postgresql postgresql-contrib)
 
@@ -58,11 +57,11 @@ packages() {
 		i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
 		lm-sensors hddtemp pulseaudio-bluetooth mate-power-manager)
 
-	debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
+	arch=('')
 
 	wm=(awesome network-manager-applet aria2 maim udiskie
 	    unclutter gnome-keyring mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
-	    seahorse x11proto-dev brightnessctl tlp blueman) # dunst diodon ssh-askpass-gnome acpi-call volumeicon-alsa lxappearance
+	    seahorse x11proto-dev brightnessctl tlp blueman picom) # dunst diodon ssh-askpass-gnome acpi-call volumeicon-alsa lxappearance
 
 	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 		obs-studio syncthing mpv libnotify imagemagick pandoc
@@ -78,11 +77,11 @@ packages() {
 	     lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
 	     lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
 
-	local command='sudo apt install -y'
+	local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm'
 
 	enabled=("${essentials[@]}"
-			 "${debian[@]}"
-			 "${emacs[@]}"
+			 # "${arch[@]}"
+			 # "${emacs[@]}"
 			 # "${ruby[@]}"
 			 "${lua[@]}"
 			 "${programming[@]}"
@@ -94,7 +93,7 @@ packages() {
 			 "${infra[@]}"
 			 # "${fonts[@]}"
 			 "${security[@]}"
-			 "${laptop[@]}"
+			 # "${laptop[@]}"
 			 "${wm[@]}"
 			 "${user[@]}"
 			 "${media[@]}"
@@ -110,35 +109,33 @@ packages() {
 post(){
 	e_echo "Post install"
 
-	sudo apt-file update # update Debian database
-	sudo fc-cache -fv
+	# /usr/bin/sudo apt-file update # update Debian database
+	/usr/bin/sudo /usr/bin/fc-cache -fv
 }
 
 clean() {
 	e_echo "Clean up"
 
-	unused=(firefox-esr)
-
-	local command='sudo apt remove -y'
-
-	e_dolist "$command" "${unused[@]}"
+	/usr/bin/pacman -Rns $(/usr/bin/pacman -Qdtq)
 }
 
 services() {
 	e_echo "Debian Services"
 
+	aur() { ''; }
+
 	postgres() {
-		sudo systemctl restart postgresql
+		/usr/bin/sudo /usr/bin/systemctl restart postgresql
 	}
 
 	mpd() {
-		sudo systemctl disable mpd
+		/usr/bin/sudo /usr/bin/systemctl disable mpd
 	}
 
 	kdeconnect() {
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		sudo systemctl restart firewalld.service
+		/usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		/usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		/usr/bin/sudo systemctl restart firewalld.service
 	}
 
 	timezone() {
@@ -146,22 +143,24 @@ services() {
 		local desired_zone
 
 		desired_zone='America/Sao_Paulo'
-		current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+		current_zone=$(/usr/bin/timedatectl | /usr/bin/grep 'Time zone' | /usr/bin/awk '{print $3}')
 
-		[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
+		[[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
 	}
 
 	alternatives() {
 		# set python to python3
-		sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+		/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 	}
 
 	virtualization() {
-		sudo usermod -aG libvirt "$USER"
-		sudo usermod -aG kvm "$USER"
+		/usr/bin/sudo /usr/bin/usermod -aG libvirt "$USER"
+		/usr/bin/sudo /usr/bin/usermod -aG kvm "$USER"
 	}
 
+	aur
 	mpd
+	postgresql
 	alternatives
 	timezone
 	kdeconnect
@@ -172,17 +171,17 @@ foreign() {
 	echo "Non-Debian packages"
 
 	chrome() {
-		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-		sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+		/usr/bin/wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+		/usr/bin/sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
 	}
 }
 
 # * RUN
 
-upgrade
-pre
+# upgrade
+# pre
 packages
-post
-clean
-services
-foreign
+# post
+# clean
+# services
+# foreign
