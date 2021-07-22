@@ -23,28 +23,25 @@ packages() {
 
 	essentials=(git openssh curl p7zip zip unzip fish tmux zile)
 
-	programming=(shellcheck bash-completion subversion)
+	programming=(shellcheck bash-completion subversion jq)
 
 	editors=(micro neovim)
 
-	ruby=(libssl-dev ruby-dev)
+	ruby=(ruby openssl)
 
 	lua=(lua)
 
-	sql=(postgresql postgresql-contrib)
+	sql=(postgresql)
 
 	shell=(zsh bash)
 
 	music=(mpd mpc ncmpcpp)
 
-	system=(ripgrep lshw at usbutils
-			lsof time  entr tree xsel xclip
-			fontconfig bc htop strace ltrace
-			cpio lhasa lzop atool perf sysstat jq
-			dialog ncdu rsync bat rclone xonsh pv parallel
-			autoconf automake)
+	system=(ripgrep lshw at usbutils lsof time entr tree xsel xclip fontconfig
+			bc htop strace ltrace cpio lhasa lzop atool perf sysstat ncdu rsync
+			rclone)
 
-	gnu=(wget parted texinfo)
+	gnu=(wget parted texinfo parallel automake autoconf)
 
 	network=(net-tools iproute2 socat iw wireless-tools)
 
@@ -52,7 +49,7 @@ packages() {
 
 	qt=(kdeconnect kdenlive)
 
-	gtk=(cheese transmission-gtk evince shotcut arc-icon-theme)
+	gtk=(cheese transmission-gtk evince shotcut)
 
 	infra=(podman winetricks qemu virt-manager ovmf bridge-utils)
 
@@ -60,13 +57,13 @@ packages() {
 
 	security=(nftables firewalld gnutls)
 
-	laptop=(libiw-dev laptop-mode-tools acpi)
+	laptop=(libiw-dev laptop-mode-tools acpi tlp)
 
 	arch=('')
 
-	wm=(awesome network-manager-applet flameshot udiskie pulseaudio-bluetooth
-	    gnome-keyring  dmenu xdg-utils wofi playerctl mate-power-manager
-	    seahorse x11proto-dev brightnessctl tlp blueman picom lm-sensors)
+	wm=(awesome network-manager-applet flameshot udiskie
+	    gnome-keyring xdg-utils playerctl mate-power-manager
+	    seahorse brightnessctl blueman picom lm-sensors)
 
 	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
 		  obs-studio mpv libnotify imagemagick pandoc aspell
@@ -74,6 +71,8 @@ packages() {
 
 	codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
 	       gst-plugins-base gst-plugins-good gst-plugins-ugly)
+
+	sound=(pulseaudio-bluetooth)
 
 	amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
 	     lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
@@ -85,6 +84,7 @@ packages() {
 			 # "${arch[@]}"
 			 # "${ruby[@]}"
 			 # "${sql[@]}"
+			 "${sound[@]}"
 			 "${emacs[@]}"
 			 "${network[@]}"
 			 "${gnu[@]}"

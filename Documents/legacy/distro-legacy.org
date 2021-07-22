@@ -19,5 +19,5 @@ make
 # qemu-system-gui qemu-utils qemu-efi qemu-kvm
  i965-va-driver vainfo libvdpau-va-gl1
 			libinput-tools  acpid hddtemp
-
+wofi xonsh x11proto-dev bat  dialog arc-icon-theme
 #+end_src
