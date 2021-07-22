@@ -78,6 +78,18 @@
     '(define-key org-src-mode-map
        "\C-x\C-s" #'org-edit-src-exit)))
 
+(add-hook 'image-mode-hook
+          (lambda ()
+            ;; open next/previous image fitted
+            (local-set-key (kbd "<right>") (lambda ()
+				             (interactive)
+				             (image-next-file)
+				             (image-transform-fit-to-width)))
+            (local-set-key (kbd "<left>") (lambda ()
+				            (interactive)
+				            (image-previous-file 1)
+				            (image-transform-fit-to-width)))))
+
 ;; (use-package ido
 ;;   :init
 ;;   (setq ido-everywhere t)
@@ -651,18 +663,6 @@
 ;;      try-expand-list
 ;;      ;; Try to complete the current line to an entire line in the buffer.
 ;;      try-expand-line)))
-
-;; (use-package image
-;;  :init
-;;   ;; open next/previous image fitted
-;;   (local-set-key (kbd "<right>") (defun next-image-fitted ()
-;; 				   (interactive)
-;; 				   (image-next-file)
-;; 				   (image-transform-fit-to-width)))
-;;   (local-set-key (kbd "<left>") (defun left-image-fitted ()
-;; 				  (interactive)
-;; 				  (image-previous-file 1)
-;; 				  (image-transform-fit-to-width))))
 
 ;; (use-package whitespace
 ;;   :init
