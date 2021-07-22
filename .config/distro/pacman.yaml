@@ -1,14 +1,14 @@
 ---
 exec: '/usr/bin/pacman'
 builddep: ''
-clean: ''
-depends: ''
-download: ''
+clean: '-Sc'
+depends: '-Si'
+download: '-Sw'
 fix: ''
-help: help
-info: ''
+help: 'help'
+info: 'Si'
 install: "-S"
-installed: ''
+installed: '-Q'
 remove: "-R"
 search: "-Ss"
 sysupgrade: ''
