@@ -3,6 +3,8 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
+e_echo "Daily update of system packagers."
+
 e_echo "Upgrading system."
 distro update
 distro upgrade
