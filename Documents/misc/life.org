@@ -5,8 +5,6 @@
 :TOC:      :include all :depth 2 :ignore this
 :END:
 :CONTENTS:
-- [[#progress][Progress]]
-  - [[#books-videos][Books, Videos]]
 - [[#movies][Movies]]
   - [[#favorites][Favorites]]
 - [[#tv-shows][TV Shows]]
@@ -40,15 +38,6 @@
 - [[#donations][Donations]]
 - [[#delivery][Delivery]]
 :END:
-* Progress
-** Books, Videos
-| Books                  | Capts                      | @                               |
-|------------------------+----------------------------+---------------------------------|
-| Attack of Titan(manga) | Chapter 93                 |                                 |
-| Last Wish              | The Voice of Reason 2      |                                 |
-| The War of the Worlds  |                            |                                 |
-| Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
-| Plato: Five Dialogues  |                            |                                 |
 * Movies
 ** Favorites
 - 12 Angry Men

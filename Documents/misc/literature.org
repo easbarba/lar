@@ -1,5 +1,12 @@
 #+TITLE: Literature
+
 * Progress
-|               |            |   |
-|---------------+------------+---|
-| one punch man | chapter 46 |   |
+** Books, Videos
+| Books                  | Capts                      | @                               |
+|------------------------+----------------------------+---------------------------------|
+| Attack of Titan(manga) | Chapter 93                 |                                 |
+| Last Wish              | The Voice of Reason 2      |                                 |
+| The War of the Worlds  |                            |                                 |
+| Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
+| Plato: Five Dialogues  |                            |                                 |
+| one punch man          |                            |                                 |

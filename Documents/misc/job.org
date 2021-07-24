@@ -4,18 +4,21 @@
 | @                   | desc                                                      |
 |---------------------+-----------------------------------------------------------|
 | Lang                | Ruby                                                      |
-| framework           | Rails, Slim, Sidekiq                                      |
+| framework           | Rails, MVC, Slim, Sidekiq                                 |
 | Web API             | REST, SOAP, GraphQL                                       |
 | Network             | HTTP, HTTPS, TCP, SSH, FTP                                |
+| OOP                 | Clean Code, SOLID, Design Patterns                        |
 | Front-end           | JS/CSS/HTML                                               |
 | Unit Test           | Minitest, Rspec                                           |
 | SQL                 | PostgreSQL                                                |
 | Architecture Design | OOP, SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns |
 | Version Control     | Git                                                       |
 | Container           | Podman, Docker                                            |
-| CI / CD             |                                                           |
-| Cloud               |                                                           |
+| CI / CD             | Jenkins                                                   |
+| Cloud               | AWS, Azure                                                |
 | Hosting             | Heroku                                                    |
+| Message             | RabbitMQ/ Kafka                                                          |
+
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
 

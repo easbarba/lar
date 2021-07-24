@@ -1,0 +1,16 @@
+#+TITLE: Yaml
+
+* Traits
+** pair = key: value
+** | =  pipe
+** > = pipe
+** indentaion = new objects
+** - = list
+** # = commentary
+** --- = multi archive
+** {{ var }} = use variables
+** quotes
+     "barri go ta" or
+     barri go ta
+* Resources
+   https://yamllint.com

@@ -1,5 +1,0 @@
-#+TITLE: Oop
-
-* Messages
-- Has a role: set of related responsibilities
-- role is not the same concept as a class

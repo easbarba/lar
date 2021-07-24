@@ -137,14 +137,14 @@
 
 * Features
 ** Classes
-   - :: is Ruby’s namespace resolution operator.
-   - Math::PI - access Math PI variable
-   - Math.sin(Math::PI/6.0) - access Math sin method
-   - Names of classes and modules are just constants.
-   - can nest classes and modules inside other classes and modules to any depth
+- :: is Ruby’s namespace resolution operator.
+- Math::PI - access Math PI variable
+- Math.sin(Math::PI/6.0) - access Math sin method
+- Names of classes and modules are just constants.
+- can nest classes and modules inside other classes and modules to any depth
 
-    #+begin_src ruby
-    # frozen_string_literal: true
+#+begin_src ruby
+# frozen_string_literal: true
 
 [].methods.grep /^re/ # finds methods begins with re
 
@@ -200,7 +200,7 @@
     #
     meth.owner
     #
-    #+end_src
+#+end_src
 
 *** Class methods
 - Class methods are singleton methods defined on objects of class `Class`.
@@ -448,28 +448,49 @@ An array of ancestors—essentially, the method-lookup path for instances of thi
 
 ** Types
 *** String
-   #+begin_src ruby
-   "Test" + "Test" #TestTest
-   "test".capitalize #Test
-   "Test".downcase #test
-   "Test".chop #Tes
-   "Test".next #Tesu
-   "Test".reverse #tseT
-   "Test".sum #416
-   "Test".swapcase #tEST
-   "Test".upcase #TEST
-   "Test".upcase.reverse #TSET
-   "Test".upcase.reverse.next
-   "Test".ord
-   "Test".chr
-   "xyz".scan(/./) { |letter| puts letter }
+**** new
+#+begin_src ruby
+String.new("an unfrozen string")
+#+end_src
+**** concat
+#+begin_src ruby
+str = ""
 
-   # SUBSTITUTION
+str.concat("a")
+str.concat("a")
 
-   "".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
-   "".gsub('i', '') #  whereas gsub does multiple substitutions at once
-   #+end_src
+str
+# "aa"
+#+end_src
 
+**** prepend
+#+begin_src ruby
+str = ""
+
+str.prepend("1")
+str.prepend("2")
+str.prepend("3")
+
+# "321"
+#+end_src
+
+**** interpolation
+#+begin_src ruby
+age  = 33
+name = "Jesus"
+
+"Hello, my name is #{name} & I'm #{age} years old."
+#+end_src
+**** freeze
+***** unfreezen
+unary plus operator
+#+begin_src ruby
+str = "frozen!"
+str.frozen? # true
+
+unfrozen_str = +str
+unfrozen_str.frozen? # false
+#+end_src
 **** here documents
    #+begin_src ruby
    <<EOL # double quote document
@@ -505,8 +526,75 @@ An array of ancestors—essentially, the method-lookup path for instances of thi
    #+end_src
 
 **** gsub
-   Returns a copy of str with all occurrences of pattern substituted for the second argument.                                                                                                                                                                                                                                                                                                                              |
+Returns a copy of str with all occurrences of pattern substituted for the second argument.
+
+#+begin_src ruby
+str = "white chocolate"
+
+str.gsub("white", "dark")
+
+# Regular Expression
+"a1".gsub(/\d/, "2") # "a2"
+
+"a1".gsub(/(\w)(\d)/, '\2\1') # "1a"
+
+# Blocks
+"dog".gsub(/\w+/) { |animal| animal == "dog" ? "cat" : "dog" }
+
+# Replace Multiple Tersm
+colors = {
+  "B" => "blue",
+  "G" => "green",
+  "R" => "red"
+}
+
+"BBBGR".gsub(/\w/, colors) # "bluebluebluegreenred"
+#+end_src
+
+**** examples
+#+begin_src ruby
+"Test" + "Test" #TestTest
+"test".capitalize #Test
+"Test".downcase #test
+"Test".chop #Tes
+"Test".next #Tesu
+"Test".reverse #tseT
+"Test".sum #416
+"Test".swapcase #tEST
+"Test".upcase #TEST
+"Test".upcase.reverse #TSET
+"Test".upcase.reverse.next
+"Test".ord
+"Test".chr
+"xyz".scan(/./) { |letter| puts letter }
+
+# SUBSTITUTION
+
+"".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
+"".gsub('i', '') #  whereas gsub does multiple substitutions at once
+#+end_src
+
 *** Array
+**** intersection / &
+**** queue
+#+begin_src ruby
+queue = []
+
+queue.unshift "apple"
+queue.unshift "orange"
+queue.unshift "banana"
+
+# ["banana", "orange", "apple]"
+
+queue.pop
+# "apple"
+
+queue.pop
+# "orange"
+#+end_src
+**** union / |
+**** difference / -
+**** usage
    #+begin_src ruby
    h = { a: 100, b: 20 }
    h.delete_if { |key, value| value < 25 }
@@ -557,6 +645,36 @@ An array of ancestors—essentially, the method-lookup path for instances of thi
    a.count(1)
    #+end_src
    [[file:path]]
+**** compact
+*** Queue
+- thread-safe, blocking.
+- If the queue is empty, calling pop will put your current thread to sleep &
+  wait until something is added to the queue.
+- passing true to avoid blocking
+
+
+#+begin_src ruby
+que = Queue.new
+
+que << 1
+que << 2
+que << 3
+
+que.pop # 1
+que.pop # 2
+
+que.pop(true)
+#+end_src
+*** Sized Queue
+- push (same as <<) operation will suspend the current thread until an item is taken off the queue.
+- same as a regular queue but with a size limit.
+- raise an exception instead, passing true as an argument to push
+
+#+begin_src ruby
+que = SizedQueue.new(5)
+que.push(:bacon)
+que.push(:bacon, true) # raises ThreadError: queue full
+#+end_src
 *** commentary
    #+begin_src ruby
    # one line commentary
@@ -650,6 +768,14 @@ An array of ancestors—essentially, the method-lookup path for instances of thi
    #+end_src
 
 ** Functional
+*** concepts
+**** immutability
+nope
+**** method chaining
+#+begin_src ruby
+"joe".upcase.reverse # "EOJ"
+#+end_src
+
 *** map
    #+begin_src ruby
    a.map { |x| x.uppercase}
@@ -736,6 +862,28 @@ mult.call(12
      yield xx
    end
    #+end_src
+** Logs
+*** Logger
+- 1st parameter is where to save log messages
+- 2nd parameter is how many log files you want to keep (log rotation)
+- the last parameter is the maximum file size.
+- levels: DEBUG INFO WARN ERROR FATAL UNKNOWN
+- different levels helps you filter your log file
+
+#+begin_src ruby
+Logger.new(<file>, <how many log files>, <maximum file size>)
+#+end_src
+
+
+#+begin_src ruby
+logger = Logger.new("my_log")
+
+logger = Logger.new(STDOUT) #  display messages on the terminal
+
+logger.info("I'm reading a RubyGuide about logging!")
+
+logger.formatter = proc { |severity, datetime, progname, msg| "#{severity}, #{datetime}, #{msg}\n" } # DEBUG, 2019-08-08 19:39:01 +0200, testing
+#+end_src
 ** Kernel
 *** alias
 #+begin_src ruby
@@ -752,6 +900,7 @@ end
 #+begin_src ruby
 autoload :SharedContext, 'rspec/core/shared_context'
 #+end_src
+*** grep
 
 ** Methods
 *** Parameters
@@ -760,6 +909,25 @@ autoload :SharedContext, 'rspec/core/shared_context'
    x = (do  1 + 2 end)
    x = (do 'a' + 'b' end).join(',')
    #+end_src
+**** takes no keywords
+#+begin_src ruby
+def x(**nil)
+end
+#+end_src
+**** argument forwarding
+#+begin_src ruby
+def x(...)
+end
+#+end_src
+
+** Pattern Matching
+#+begin_src ruby
+[1,2,3] in [a,b,c] # true
+[1,2,3] in [a]     # false
+
+{ a: 1, b: 2, c: [] } in { a: a, b: b, c: [] } # true
+p a # 1
+#+end_src
 ** Project structure
    #+begin_src ruby
    anagram/    <- top-level
@@ -866,7 +1034,6 @@ def x
     Errno::EPERM::Errno # => 1
     Errno::EWOULDBLOCK::Errno # => 35
     #+end_src
-
 ** Parallel / Concurrency
 *** Thread
 - If the program ends while one or more threads are running, those threads are killed.
@@ -944,24 +1111,7 @@ end
      end
    end
    #+end_src
-*** yield
-   #+begin_src ruby
-
-   def foo
-     yield
-   end
-
-   def bar
-     if block_given?
-       yield
-     else
-       'lol'
-     end
-
-     foo { p 'meh' }
-     bar # => lol
-     bar { p 'yahoo' } # => yahoo
-   #+end_src
+*** Mutex
 ** delimited input
    #+begin_src ruby
    # %q - Single-quoted string
@@ -1005,7 +1155,6 @@ end
     $SAFE
     #+end_src
 
-
 ** Comparison
    #+begin_src ruby
    # ==
@@ -1043,6 +1192,38 @@ end
    produces:
      Total = 14, square = yes
    #+end_src
+*** numbered parameters
+#+begin_src ruby
+[1,2,3].each { puts _1 }
+#+end_src
+*** yield
+   #+begin_src ruby
+
+   def foo
+     yield
+   end
+
+   def bar
+     if block_given?
+       yield
+     else
+       'lol'
+     end
+
+     foo { p 'meh' }
+     bar # => lol
+     bar { p 'yahoo' } # => yahoo
+   #+end_src
+*** yield_self
+refers to the object we’re calling the method on.
+
+#+begin_src ruby
+n_squared = ->(n) { n ** 2 }
+
+2.yield_self(&n_squared) # 4
+  .yield_self(&n_squared) # 16
+
+#+end_src
 ** Regexp
 ** Operators
    #+begin_src ruby
@@ -1084,6 +1265,13 @@ open("|cat", "w+") {|p| p.puts("hi"); p.gets }
    enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
 
     #+end_src
+*** filter_map
+combine the select & map
+
+#+begin_src ruby
+(1..8).filter_map { |n| n ** 2 if n.even? } # [4, 16, 36, 64]
+#+end_src
+
 *** grep
 #+begin_src ruby
 
@@ -1097,6 +1285,12 @@ open("|cat", "w+") {|p| p.puts("hi"); p.gets }
 times_two = ->(x) { x * 2 }
 numbers.grep(5..10, &times_two) # [18, 20]
 
+#+end_src
+*** tally
+counts all the elements in an array & returns a hash with their counts.
+
+#+begin_src ruby
+%w(a a a b b c).tally
 #+end_src
 ** Enumerator
 *** lazy
@@ -1130,6 +1324,18 @@ numbers.grep(5..10, &times_two) # [18, 20]
    e = names.enum_for(:inject, "Names: ")
    #+end_src
 *** generator
+*** produce
+Produces an infinite sequence where each next element is calculated by applying
+the block to the previous element.
+
+#+begin_src ruby
+Enumerator.produce(1, &:next).take(5) # [1, 2, 3, 4, 5]
+#+end_src
+
+*** upto
+#+begin_src ruby
+0.upto(9).each(&method(:puts))
+#+end_src
 
 ** Iterators
    #+begin_src ruby
@@ -1151,8 +1357,7 @@ numbers.grep(5..10, &times_two) # [18, 20]
    ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
    #+end_src
 *** each
-*** select
-*** inject
+*** select/inject
    accumulate a value across the members of a collection
 *** find
    #+begin_src ruby
@@ -1168,6 +1373,10 @@ numbers.grep(5..10, &times_two) # [18, 20]
    #+begin_src ruby
    animals.each_slice(2).map do |predator, prey|
    #+end_src
+*** with_index.
+*** reject
+
+*** each_byte
 *** tap
 *** with_index
    #+begin_src ruby
@@ -1616,21 +1825,44 @@ let(:expense) { { 'some' => 'data' } }
 ** Formatter
 *** Rufo
 **** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
+** System
+*** FFI
+- Foreign Function Interface
+- gives you access to external libraries
+
+#+begin_src ruby
+require 'ffi'
+
+module A
+  extend FFI::Library
+  ffi_lib 'c'
+end
+#+end_src
 ** Currency
    - Money: A Ruby Library for dealing with money and currency conversion.
 ** Profiling
    - ruby-prof
 ** Web-server
   - rack: A modular Ruby web server interface.
-* Modules
+* Modules / Library
 Useful bultin modules
 ** continuation
    - require 'continuation'
+** Tempfile
+- `new` creates a Tempfile object (as you would expect),
+- `create` gives you a File object.
+
+#+begin_src ruby
+require 'tempfile'
+
+Tempfile.create { |f| f << "abc\n" }
+#+end_src
 ** forwardable
 The Forwardable module provides delegation of specified methods to a designated
 object, using the methods def_delegator and def_delegators.
 
 *** def_delegators
+** Errno
 
 ** Kernel
 *** global_variables

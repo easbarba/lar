@@ -6,7 +6,8 @@
   :END:
 :CONTENTS:
 - [[#progress][Progress]]
-- [[#oop][OOP]]
+- [[#messages][Messages]]
+- [[#base][Base]]
   - [[#definition][Definition]]
   - [[#interface][Interface]]
   - [[#public][Public]]
@@ -34,7 +35,6 @@
   - [[#strategy][Strategy]]
 - [[#algorithms][Algorithms]]
 - [[#articles][Articles]]
-- [[#skills][Skills]]
 - [[#misc][Misc]]
   - [[#terms][Terms]]
   - [[#books][Books]]
@@ -49,7 +49,10 @@
    | Object Thinking                                        | Chapter 1                              |                                                   |       |                |
    | Algorithms                                             | 1 Fundamentals                         |                                                   |       |                |
    | Clean Code                                             | Chapter 1: Clean Code                  |                                                   |       |                |
-* OOP
+* Messages
+- Has a role: set of related responsibilities
+- role is not the same concept as a class
+* Base
 ** Definition
    Object-oriented applications are made up of objects and the
    messages that pass between them.
@@ -184,26 +187,6 @@
   http://languagelog.ldc.upenn.edu/nll/?p=2483
 
   https://learnxinyminutes.com/
-* Skills
-  - OOP
-  - MVC *
-  - TDD *
-  - Clean Code *
-  - SOLID *
-  - Design Patterns ***
-  - PostgreSQL
-  - Rest/Soap/GraphQL
-  - Ágil
-  - Cloud (AWS, Azure)
-  - CI, CD (Jenkins, )
-  - Sistemas Distribuídos WEB;
-  - JavaScript/Typescript
-  - SPA
-  - Redis, Memcached ou ElasticSearch
-  - Docker
-  - RabbitMQ/ Kafka
-  - Firebase
-  - Postfix, Nginx
 * Misc
 ** Terms
 *** Search Traversal
