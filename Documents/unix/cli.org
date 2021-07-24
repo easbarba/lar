@@ -156,3 +156,5 @@ echo .bash* # echo all files beginning with '.bash'
 |                 |                                                                 |
 ** scp
 OpenSSH secure file copy
+** pgrep/pkill/pwait
+look up, signal, or wait for processes based on name and other attributes
