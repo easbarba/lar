@@ -19,7 +19,6 @@
 - [[#nixos][Nixos]]
   - [[#config][Config]]
 - [[#bin][bin]]
-- [[#autostart][autostart]]
 - [[#xsessionrc][.xsessionrc]]
 - [[#xinitrc][.xinitrc]]
 - [[#guix-config][Guix Config]]
@@ -2474,10 +2473,7 @@ e_dolist "$COMMAND" "${BINARIES[@]}"
 
 
    #+end_src
-* autostart
-   #+begin_src shell-script
 
-   #+end_src
 * .xsessionrc
    #+begin_src shell-script
 asdf()
@@ -2686,6 +2682,7 @@ asdf_js()
    # unset __conda_setup
    # # <<< conda initialize <<<
    #+end_src
+
 * .xinitrc
    #+begin_src shell-script
 
@@ -3340,7 +3337,6 @@ asdf_js()
    exclude = tests/*
    max-complexity = 10
    #+end_src
-
 
 * Bashrc
    #+BEGIN_SRC shell-script
