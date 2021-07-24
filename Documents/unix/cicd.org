@@ -1,5 +1,23 @@
 #+TITLE: Cicd
 
+* Concepts
+** Continuous integration
+
+is the process of collaborating on a shared code base, merging
+disparate code changes into a version control system, and automatically creating and
+testing builds.
+
+** Continuous delivery
+ is the process of automatically deploying builds to
+nonproduction environments after the continuous integration process completes.
+
+** Continuous deployment
+closes the loop by deploying to live systems that serve real
+users without any operator intervention.
+
+** Pipelines
+A CI/CD pipeline is a series of steps, called “stages,” that run in sequence.
+
 * Gitlab
 * Github Actions
 * Circle CI
