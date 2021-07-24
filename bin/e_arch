@@ -51,7 +51,7 @@ packages() {
 
 	infra=(podman winetricks qemu virt-manager ovmf bridge-utils)
 
-	fonts=(ttf-dejavu)
+	fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
 
 	security=(nftables firewalld gnutls)
 
