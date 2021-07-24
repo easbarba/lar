@@ -13,10 +13,10 @@
   - [[#cons-cell][Cons Cell]]
   - [[#lists][Lists]]
   - [[#terms][Terms]]
-- [[#emacs-resources][Emacs Resources]]
-- [[#emacs-important-commands][Emacs Important Commands]]
-- [[#emacs-regexp][Emacs RegExp]]
-- [[#emacs-packages-brainstorm][Emacs Packages Brainstorm]]
+- [[#resources][Resources]]
+- [[#important-commands][Important Commands]]
+- [[#regexp][RegExp]]
+- [[#packages-brainstorm][Packages Brainstorm]]
   - [[#exwm-notify-dbus-notification-as-tool-box][EXWM notify dbus notification as tool-box]]
   - [[#exwm-status-bar][EXWM status bar]]
   - [[#ffmpeg-trim-audio][ffmpeg: trim audio]]
@@ -170,9 +170,9 @@
    | point | cursor position |
    |       |                 |
 
-* Emacs Resources
+* Resources
   - Development Group: https://lists.gnu.org/archive/html/emacs-devel/
-* Emacs Important Commands
+* Important Commands
   | Command                                       | Description                                                                                                                                           |
   |-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------|
   | dired-mark-extension                          | Mark all files with a certain extension for use in later commands.                                                                                    |
@@ -204,12 +204,12 @@
   | url-hexify-string                             |                                                                                                                                                       |
   | artist-mode                                   | painting in emacs                                                                                                                                     |
 
-* Emacs RegExp
+* RegExp
   | regexp           | desc                          |
   |------------------+-------------------------------|
   | \(\<\w+-?\w+\>\) | match any "word-word" pattern |
 
-* Emacs Packages Brainstorm
+* Packages Brainstorm
 ** TODO EXWM notify dbus notification as tool-box
 ** TODO EXWM status bar
    #+begin_src emacs-lisp
