@@ -2,10 +2,22 @@
 
 set -euo pipefail
 
+e_echo "Doom Emacs"
+
 EMACS_HOME="$HOME/.config/emacs"
 
-rm -rf $EMACS_HOME
+wipe() {
+    rm -rf $EMACS_HOME
+}
 
-git clone --depth 1 https://github.com/hlissner/doom-emacs "$EMACS_HOME"
+grab() {
+    git clone --depth 1 https://github.com/hlissner/doom-emacs "$EMACS_HOME"
+}
 
-"$EMACS_HOME"/bin/doom install
+install() {
+    "$EMACS_HOME"/bin/doom install
+}
+
+upgrade() {
+    doom upgrade
+}

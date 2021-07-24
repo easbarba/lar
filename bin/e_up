@@ -3,18 +3,17 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-# * Cejo
+e_echo "Upgrading system."
 distro update
 distro upgrade
-distro clean
 
+e_guix
+
+e_echo "FLOSS projects"
 floss grab
 floss archive
 
-# * Guix
-sudo -i guix pull
-guix pull
-guix upgrade
-
+e_echo "Building Nightly Emacs"
 cejo projects emacs
-doom upgrade
+
+e_doom

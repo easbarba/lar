@@ -5,7 +5,6 @@ set -euo pipefail
 
 e_echo "Arch Linux - System Packages and Services Instalation."
 
-
 upgrade() {
 	e_echo "Updating Arch Linux"
 
