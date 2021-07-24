@@ -137,9 +137,70 @@
 
 * Features
 ** Classes
-   #+begin_src ruby
-   [].methods.grep /^re/ # finds methods begins with re
-   #+end_src
+   - :: is Ruby’s namespace resolution operator.
+   - Math::PI - access Math PI variable
+   - Math.sin(Math::PI/6.0) - access Math sin method
+   - Names of classes and modules are just constants.
+   - can nest classes and modules inside other classes and modules to any depth
+
+    #+begin_src ruby
+    # frozen_string_literal: true
+
+[].methods.grep /^re/ # finds methods begins with re
+
+    require 'pathname'
+
+    # Class Description
+    class Meh # Class name in Camel Case
+      OUCH = 'asdasd' # 1
+      attr_reader :lo, :fi # 2
+
+      # static method
+      def self.from_file(file_name) # 3
+	new(File.readlines(file_name))
+      end
+
+      def initialize(lo, fi) # 4
+	@alpha = OUCH
+	@lo = lo #
+	@fi = fi #
+      end
+
+      private_class_method :new
+
+      private
+
+      def alfa # instance method
+	@localVar = 1
+      end
+
+      def use_local_var # instance method
+	@localVar
+      end
+
+      def self.zeta #
+      end
+    end
+
+    Eija = Class.new #
+
+    def Eija.beta # singleton
+    end
+
+
+    # superclass
+
+    class Parent
+    end
+    class Child < Parent
+    end
+
+    Child.superclass # => Parent
+
+    #
+    meth.owner
+    #
+    #+end_src
 
 *** Class methods
 - Class methods are singleton methods defined on objects of class `Class`.
@@ -242,7 +303,7 @@ string.singleton_class.ancestors # => [#<Class:#<String:0x0000563fb8797270>>, St
 #+end_src
 **** Singleton methods
 ** Objects
-*** methods
+*** methods query
 Returns a list of the names of public and protected methods of obj.
 #+begin_src ruby
 string = "aaa"
@@ -257,37 +318,294 @@ Object.new.protected_methods # 0
 #+end_src
 *** instance variables
 *** freeze
+- make objects (nearly) immutable
 
-** path
+**** Add the following line to the top of any individual file:
+# frozen_string_literal: true
+
+**** Run your programs on the command line with a specific instruction.
+This will make every string in your program frozen by default:
+
+$ ruby --enable-frozen-string-literal my_program.rb
+*** object_id
+- Returns an integer identifier for obj.
+- The same number will be returned on all calls to object_id for a given object, and no two active objects will share an id.
+
+*** self
+   - is a keyword
+   - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
+
+     #+begin_src ruby
+
+     class tea
+       def self.drink () # Class-Level method (static)
+	 puts 'drinking'
+       end
+
+       def meh
+	 puts self # refers to tea class
+       end
+
+       def builder
+
+	 self # return class
+       end
+     end
+     #+end_src
+*** methods
+   default values, splat args (described later on page 120), keyword args, and a block parameter
+#+begin_src ruby
+def splating(*rest)
+  puts rest.each { |x| puts }
+end
+
+def split_apart(first, *, last) # get first and last args, ignore middle ones
+end
+
+#+end_src
+**** capture methods
+#+begin_src ruby
+
+class C
+  def talk
+    puts "Method-grabbing test!"
+  end
+end
+
+c = C.new
+
+meth = c.method(:talk)
+meth.owner
+meth.call # to exeute
+meth[]
+meth.()
+#+end_src
+**** unbind methods
+unbind the method from its object and then bind it to another object, as long as
+that other object is of the same class as the original object
+#+begin_src ruby
+class D < C
+end
+
+d = D.new
+unbound = meth.unbind
+unbound.bind(d).call
+#+end_src
+
+** Modules
    #+begin_src ruby
-   $LOAD_PATH.each { |x| puts x } or $:
 
-   # add dir to path
-   $:.push '/your/directory/here'
-   require 'yourfile'
+   module A
+     module_function
+
+     def foo
+     end
+   end
+
+   module A
+     module SubA
+       def bar
+       end
+     end
+   end
+
+
+   A::foo
+   A::SubA:bar
+
+   a = Module.new
+
+   a.class_eval do
+     remove_method
+     method_defined?
+
+     attr_reader name
+     alias_method x,e
+   end
+
    #+end_src
 
-** project structure
+*** Mixin
+
+** Types
+*** String
+   #+begin_src ruby
+   "Test" + "Test" #TestTest
+   "test".capitalize #Test
+   "Test".downcase #test
+   "Test".chop #Tes
+   "Test".next #Tesu
+   "Test".reverse #tseT
+   "Test".sum #416
+   "Test".swapcase #tEST
+   "Test".upcase #TEST
+   "Test".upcase.reverse #TSET
+   "Test".upcase.reverse.next
+   "Test".ord
+   "Test".chr
+   "xyz".scan(/./) { |letter| puts letter }
+
+   # SUBSTITUTION
+
+   "".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
+   "".gsub('i', '') #  whereas gsub does multiple substitutions at once
+   #+end_src
+
+**** here documents
+   #+begin_src ruby
+   <<EOL # double quote document
+      \n
+   #{Time.now}
+   EOL
+
+   <<EOL.to_i * 10
+   EOL
+
+   <<'EOL' # single quote document
+      \n
+   #{Time.now}
+   EOL
+
+   <<-EOL
+   EOL
+
+   <<~EOL
+   EOL
+
+   [1,2, <<EO asdasd EO]
+
+   a(false, <<EO asd... EO)
+   #+end_src
+**** dup
+**** Quoting
+   %char{text}
+   #+begin_src ruby
+   a = %q(a b c d)
+
+   b = %Q(a b c)
+   #+end_src
+
+*** Array
+   #+begin_src ruby
+   h = { a: 100, b: 20 }
+   h.delete_if { |key, value| value < 25 }
+   h.delete(:a)
+   #+end_src
+*** commentary
+   #+begin_src ruby
+   # one line commentary
+
+   =begin
+   multiline
+   commentary
+   =end
+   #+end_src
+** Functional
+*** map
+   #+begin_src ruby
+   a.map { |x| x.uppercase}
+   a.map! { |x| x.uppercase}
+   #+end_src
+*** proc
+   - if the last parameter in a method definition is prefixed with an ampersand,
+     any associated block is converted to a Proc object, and that object is
+     assigned to the parameter. This allows you to store the block for use
+     later.
+
+#+begin_src ruby
+p = Proc.new { puts "yay" }
+p = proc { puts "yay" }
+p.call
+
+def x(&block)
+  block.call
+end
+
+x(&p) # => yay
+x(p.to_proc) # => yay
+
+y = Proc.new {|y| puts y.upcase }
+%w{ David Black }.each(&y) # => DAVID BLACK
+
+class Symbol
+  def to_proc
+    puts "In the new Symbol#to_proc!"
+    Proc.new {|obj| obj.public_send(self) }
+  end
+end
+
+def multiply_by(m)
+  Proc.new {|x| puts x * m }
+end
+mult = multiply_by(10)
+mult.call(12
+
+   def pass_in_block(asdf, &block)
+   end
+
+   multiple_of_three = -> n { (n % 3).zero? }
+   palindrome = -> n { n = n.to_s; n == n.reverse }
+
+   p Integer
+       .all
+       .select(&multiple_of_three)
+       .select(&palindrome)
+       .first(10)
+
+   a = Proc.new
+
+   def initialize(name, &block) # initialize can receive proc object
+
+     tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
+     tc.get_tax(100) # => "Sales tax on 100 = 7.5"
+
+#+end_src
+*** lambda
+**** How
+    #+begin_src ruby
+    lambda { |params| ... } # form 1
+
+    -> params { ... }  # form 2
+    #+end_src
+**** Usage
+    #+begin_src ruby
+    proc1 = -> arg { puts "In proc1 with #{arg}" }
+    proc1.call "ant"
+
+    def n_times(thing)
+      lambda {|n| thing * n }
+    end
+
+    p1 = n_times(23)
+    p1.call(3) # => 69
+    #+end_src
+
+** Methods
+*** alias
+#+begin_src ruby
+class String
+  alias __old_reverse__ reverse
+end
+
+class String
+  alias_method :__old_reverse__, :reverse
+end
+
+#+end_src
+*** autoload
+   #+begin_src ruby
+   autoload :SharedContext, 'rspec/core/shared_context'
+   #+end_src
+
+** Project structure
    #+begin_src ruby
    anagram/    <- top-level
    bin/      <- command-line interface goes here
    lib/      <- three library files go here
    test/     <- test files go here
    #+end_src
-** System Errors
-   - SystemCallError
-   - subclasses are defined in a module called Errno
-*** usage
-    #+begin_src ruby
-    Errno::EAGAIN
-    Errno::EIO
-    Errno::EPERM
-
-    Errno::EAGAIN::Errno # => 35, same error number as EWOULDBLOCK, can be interchangeable
-    Errno::EPERM::Errno # => 1
-    Errno::EWOULDBLOCK::Errno # => 35
-    #+end_src
-** exceptions
+** Errors
+*** Exceptions
    - class *Exception*
    - Custom exceptions subclasses of StandardError or its children.
    - Exception has an associated message string and a stack backtrace.
@@ -295,10 +613,10 @@ Object.new.protected_methods # 0
    - rescue matches thrown Exception and use it. Similar to case statement
    - rescue clause with no parameter list, the parameter defaults to StandardError .
    - rescue clause can be arbitrary expressions (including method calls) that return an Exception class.
-*** Errors
+**** Errors
     - StandardError
     -
-*** usage
+**** usage
     #+begin_src ruby
 
     # Exception skeleton
@@ -354,7 +672,47 @@ Object.new.protected_methods # 0
     # by passing only a subset of the call stack to the new exception:
     raise ArgumentError, "Name too big", caller[1..-1]
     #+end_src
-** Thread
+**** begin rescue
+   #+begin_src ruby
+   begin
+     puts 'I am before the raise.'
+     raise 'An error has occured.'
+     puts 'I am after the raise.'
+   rescue
+     puts 'I am rescued.'
+   end
+   #+end_src
+*** Trace
+**** caller
+The caller method provides an array of strings. Each string represents one step in the stack trace:
+#+begin_src ruby
+def x
+  p caller
+  end
+#+end_src
+*** System Errors
+   - SystemCallError
+   - subclasses are defined in a module called Errno
+**** usage
+    #+begin_src ruby
+    Errno::EAGAIN
+    Errno::EIO
+    Errno::EPERM
+
+    Errno::EAGAIN::Errno # => 35, same error number as EWOULDBLOCK, can be interchangeable
+    Errno::EPERM::Errno # => 1
+    Errno::EWOULDBLOCK::Errno # => 35
+    #+end_src
+** path
+   #+begin_src ruby
+   $LOAD_PATH.each { |x| puts x } or $:
+
+   # add dir to path
+   $:.push '/your/directory/here'
+   require 'yourfile'
+   #+end_src
+** Parallel / Concurrency
+*** Thread
 - If the program ends while one or more threads are running, those threads are killed.
 - can be asleep or awake, and alive or dead.
 
@@ -400,22 +758,14 @@ t.current[:message] = "Holla"
 t.fetch(:message)
 t.fetch(:msg, "ola")
 #+end_src
-** trace
-*** caller
-The caller method provides an array of strings. Each string represents one step in the stack trace:
-#+begin_src ruby
-def x
-  p caller
-  end
-#+end_src
-** Fibers
+*** Fibers
 - no require
 - resume
 - yield
 - require: requiring `fiber library` gives additional `transfer` methods
-*** errors
+**** errors
     - FiberError: calling resume after last fiber returned `nil`
-*** usage
+**** usage
 #+begin_src ruby
 
 twos = Fiber.new do
@@ -428,6 +778,34 @@ end
 
 10.times { print twos.resume, " " }
 #+end_src
+
+   #+begin_src ruby
+   f = Fiber.new do
+     x = 0
+     loop do
+       Fiber.yield x
+       x -= 1
+     end
+   end
+   #+end_src
+*** yield
+   #+begin_src ruby
+
+   def foo
+     yield
+   end
+
+   def bar
+     if block_given?
+       yield
+     else
+       'lol'
+     end
+
+     foo { p 'meh' }
+     bar # => lol
+     bar { p 'yahoo' } # => yahoo
+   #+end_src
 ** writable object attribute
    #+begin_src ruby
    class ProjectList
@@ -452,52 +830,6 @@ end
    - attribute-setting methods
 ** ancestor
 An array of ancestors—essentially, the method-lookup path for instances of this class.
-** modules
-   #+begin_src ruby
-
-   module A
-     module_function
-
-     def foo
-     end
-   end
-
-   module A
-     module SubA
-       def bar
-       end
-     end
-   end
-
-
-   A::foo
-   A::SubA:bar
-
-   a = Module.new
-
-   a.class_eval do
-     remove_method
-     method_defined?
-
-     attr_reader name
-     alias_method x,e
-   end
-
-   #+end_src
-** alias
-#+begin_src ruby
-class String
-  alias __old_reverse__ reverse
-end
-
-class String
-  alias_method :__old_reverse__, :reverse
-end
-
-#+end_src
-** continuation
-   - require 'continuation'
-
 ** delimited input
    #+begin_src ruby
    # %q - Single-quoted string
@@ -522,26 +854,6 @@ end
    %x(df -h)
 
    #+end_src
-** rake
-   - -T: list avaiable tasks
-   - spec: run spec tests
-
-*** usage
-    #+begin_src ruby
-    # desc:
-    # task:
-
-    desc "Remove Unix and Windows backup files"
-    task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do # depends on two other tasks
-      puts "All backups deleted"
-    end
-    #+end_src
-
-** gem
-   gem build GEM.gemspec
-   gem install --user-install pkg/GEM
-   gem list GEM -d
-
 ** Variables
 *** class variables
     - available throughout a class or module body
@@ -560,42 +872,8 @@ end
     $? # return global status of last command
     $SAFE
     #+end_src
-** self
-   - is a keyword
-   - It does this to allow the method chaining in the line scores << 10 << 20 << 40 . Because each call to << returns the scores object, you can then call << again, passing in a new score.
-
-     #+begin_src ruby
-
-     class tea
-       def self.drink () # Class-Level method (static)
-	 puts 'drinking'
-       end
-
-       def meh
-	 puts self # refers to tea class
-       end
-
-       def builder
-
-	 self # return class
-       end
-     end
-     #+end_src
-** autoload
-   #+begin_src ruby
-   autoload :SharedContext, 'rspec/core/shared_context'
-   #+end_src
-** commentary
-   #+begin_src ruby
-   # one line commentary
-
-   =begin
-   multiline
-   commentary
-   =end
-   #+end_src
 ** defined?
-** iterators
+** Iterators
    #+begin_src ruby
    3.times { p 'meh' } # easy to avoid fence-post and off-by-one errors
 
@@ -703,203 +981,12 @@ end
    !true
    not true
    #+end_src
-** class
-   - :: is Ruby’s namespace resolution operator.
-   - Math::PI - access Math PI variable
-   - Math.sin(Math::PI/6.0) - access Math sin method
-   - Names of classes and modules are just constants.
-   - can nest classes and modules inside other classes and modules to any depth
-
-*** class
-    #+begin_src ruby
-    # frozen_string_literal: true
-
-    require 'pathname'
-
-    # Class Description
-    class Meh # Class name in Camel Case
-      OUCH = 'asdasd' # 1
-      attr_reader :lo, :fi # 2
-
-      # static method
-      def self.from_file(file_name) # 3
-	new(File.readlines(file_name))
-      end
-
-      def initialize(lo, fi) # 4
-	@alpha = OUCH
-	@lo = lo #
-	@fi = fi #
-      end
-
-      private_class_method :new
-
-      private
-
-      def alfa # instance method
-	@localVar = 1
-      end
-
-      def use_local_var # instance method
-	@localVar
-      end
-
-      def self.zeta #
-      end
-    end
-
-    Eija = Class.new #
-
-    def Eija.beta # singleton
-    end
-
-
-    # superclass
-
-    class Parent
-    end
-    class Child < Parent
-    end
-
-    Child.superclass # => Parent
-
-    #
-    meth.owner
-    #
-    #+end_src
 ** append <<
 ** blocks
    #+begin_src ruby
 
    #+end_src
-** proc
-#+begin_src ruby
-p = Proc.new { puts "yay" }
-p = proc { puts "yay" }
-p.call
-
-def x(&block)
-  block.call
-end
-
-x(&p) # => yay
-x(p.to_proc) # => yay
-
-y = Proc.new {|y| puts y.upcase }
-%w{ David Black }.each(&y) # => DAVID BLACK
-
-class Symbol
-  def to_proc
-    puts "In the new Symbol#to_proc!"
-    Proc.new {|obj| obj.public_send(self) }
-  end
-end
-
-def multiply_by(m)
-  Proc.new {|x| puts x * m }
-end
-mult = multiply_by(10)
-mult.call(12
-
-#+end_src
-** lambda
-*** How
-    #+begin_src ruby
-    lambda { |params| ... } # form 1
-
-    -> params { ... }  # form 2
-    #+end_src
-*** Usage
-    #+begin_src ruby
-    proc1 = -> arg { puts "In proc1 with #{arg}" }
-    proc1.call "ant"
-
-    def n_times(thing)
-      lambda {|n| thing * n }
-    end
-
-    p1 = n_times(23)
-    p1.call(3) # => 69
-    #+end_src
-** methods
-   default values, splat args (described later on page 120), keyword args, and a block parameter
-#+begin_src ruby
-def splating(*rest)
-  puts rest.each { |x| puts }
-end
-
-def split_apart(first, *, last) # get first and last args, ignore middle ones
-end
-#+end_src
-*** capture methods
-#+begin_src ruby
-
-class C
-  def talk
-    puts "Method-grabbing test!"
-  end
-end
-
-c = C.new
-
-meth = c.method(:talk)
-meth.owner
-meth.call # to exeute
-meth[]
-meth.()
-#+end_src
-*** unbind methods
-unbind the method from its object and then bind it to another object, as long as
-that other object is of the same class as the original object
-#+begin_src ruby
-class D < C
-end
-
-d = D.new
-unbound = meth.unbind
-unbound.bind(d).call
-#+end_src
-
-** yield
-   #+begin_src ruby
-
-   def foo
-     yield
-   end
-
-   def bar
-     if block_given?
-       yield
-     else
-       'lol'
-     end
-
-     foo { p 'meh' }
-     bar # => lol
-     bar { p 'yahoo' } # => yahoo
-   #+end_src
-** procs
-   #+begin_src ruby
-   def pass_in_block(asdf, &block)
-   end
-
-   multiple_of_three = -> n { (n % 3).zero? }
-   palindrome = -> n { n = n.to_s; n == n.reverse }
-
-   p Integer
-       .all
-       .select(&multiple_of_three)
-       .select(&palindrome)
-       .first(10)
-
-   a = Proc.new
-
-   def initialize(name, &block) # initialize can receive proc object
-
-     tc = TaxCalculator.new("Sales tax") {|amt| amt * 0.075 }
-     tc.get_tax(100) # => "Sales tax on 100 = 7.5"
-   #+end_src
-   - if the last parameter in a method definition is prefixed with an ampersand, any associated block is converted to a Proc object, and that object is assigned to the parameter. This allows you to store the block for use later.
+** Regexp
 ** operators
    #+begin_src ruby
    val.to_s =~ /3/
@@ -932,7 +1019,18 @@ times_two = ->(x) { x * 2 }
 numbers.grep(5..10, &times_two) # [18, 20]
 
 #+end_src
-** open
+
+** System calls
+*** open3
+opens communication with an external program and gives you handles on the
+external program’s standard input, standard output, and standard error streams.
+
+#+begin_src ruby
+require 'open3'
+
+#+end_src
+
+*** open
 - | pipe The pipe in front of the word cat indicates that we’re looking to talk to a program and not open a file.
 #+begin_src ruby
 
@@ -944,15 +1042,6 @@ d.close
 
 open("|cat", "w+") {|p| p.puts("hi"); p.gets }
 #+end_src
-** open3
-opens communication with an external program and gives you handles on the
-external program’s standard input, standard output, and standard error streams.
-
-#+begin_src ruby
-require 'open3'
-
-#+end_src
-
 ** enumerator
 *** lazy
     #+begin_src ruby
@@ -981,30 +1070,21 @@ require 'open3'
     enum_a = a.each # create an Enumerator using an internal iterator
     #+end_src
 *** generator
-** fibers
-   -
-   #+begin_src ruby
-   f = Fiber.new do
-     x = 0
-     loop do
-       Fiber.yield x
-       x -= 1
-     end
-   end
-   #+end_src
-*** yield
-** inject
-   accumulate a value across the members of a collection
-** select
+
 ** succ
    increments a string value
    #+begin_src ruby
    'e'.succ # f
    #+end_src
-** collect
+
+** Each
+*** collect
    #+begin_src ruby
    ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
    #+end_src
+*** select
+*** inject
+   accumulate a value across the members of a collection
 ** freeze
    #+begin_src ruby
    person1.freeze # prevent modifications to the object
@@ -1016,73 +1096,8 @@ require 'open3'
    #+end_src
 ** dig
 ** fetch
-** String
-   #+begin_src ruby
-   "Test" + "Test" #TestTest
-   "test".capitalize #Test
-   "Test".downcase #test
-   "Test".chop #Tes
-   "Test".next #Tesu
-   "Test".reverse #tseT
-   "Test".sum #416
-   "Test".swapcase #tEST
-   "Test".upcase #TEST
-   "Test".upcase.reverse #TSET
-   "Test".upcase.reverse.next
-   "Test".ord
-   "Test".chr
-   "xyz".scan(/./) { |letter| puts letter }
-
-   # SUBSTITUTION
-
-   "".sub('i', '') # only does one substitution at a time, on the first instance of the text to match
-   "".gsub('i', '') #  whereas gsub does multiple substitutions at once
-   #+end_src
-** Array
-   #+begin_src ruby
-   h = { a: 100, b: 20 }
-   h.delete_if { |key, value| value < 25 }
-   h.delete(:a)
-   #+end_src
 ** tap
-** map
 ** pluck
-** Quoting
-   %char{text}
-   #+begin_src ruby
-   a = %q(a b c d)
-
-   b = %Q(a b c)
-   #+end_src
-** here documents
-   #+begin_src ruby
-   <<EOL # double quote document
-      \n
-   #{Time.now}
-   EOL
-
-   <<EOL.to_i * 10
-   EOL
-
-   <<'EOL' # single quote document
-      \n
-   #{Time.now}
-   EOL
-
-   <<-EOL
-   EOL
-
-   <<~EOL
-   EOL
-
-   [1,2, <<EO asdasd EO]
-
-   a(false, <<EO asd... EO)
-   #+end_src
-** proc
-   #+begin_src ruby
-
-   #+end_src
 ** do end as param
    #+begin_src ruby
    x = (do  1 + 2 end)
@@ -1146,16 +1161,6 @@ require 'open3'
    l = -> { xx; aa }
    l = lambda do
      yield xx
-   end
-   #+end_src
-** begin rescue
-   #+begin_src ruby
-   begin
-     puts 'I am before the raise.'
-     raise 'An error has occured.'
-     puts 'I am after the raise.'
-   rescue
-     puts 'I am rescued.'
    end
    #+end_src
 ** hash
@@ -1251,11 +1256,6 @@ require 'open3'
    a.reject
    a.map
    #+end_src
-** map
-   #+begin_src ruby
-   a.map { |x| x.uppercase}
-   a.map! { |x| x.uppercase}
-   #+end_src
 ** each_slice
    #+begin_src ruby
    animals.each_slice(2).map do |predator, prey|
@@ -1269,7 +1269,7 @@ require 'open3'
    ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
    my_enum.take(5).force // actual result rather than lazy enumerator
    #+end_src
-** eval family
+** Eval
 *** eval
 #+begin_src ruby
 eval("puts 'x'")
@@ -1315,7 +1315,7 @@ true
 #+begin_src ruby
 C.class_eval { define_method ("talk") { puts var }
 #+end_src
-** callbacks / hooks
+** Callbacks / Hooks
 Callbacks and hooks methods are called when a particular event takes place during the run of a program.
 
 #+begin_src ruby
@@ -1323,16 +1323,17 @@ Callbacks and hooks methods are called when a particular event takes place durin
 *** method_missing
 *** respond_to_missingp
 
-** metaprogramming
-**** instance_variable_set
-**** Object#instance_exec
-**** Module#class_exec
-**** Module#module_exec
-** enum_for
+** Metaprogramming
+*** instance_variable_set
+*** Object#instance_exec
+*** Module#class_exec
+*** Module#module_exec
+** Enumerator
+*** enum_for
    #+begin_src ruby
    e = names.enum_for(:inject, "Names: ")
    #+end_src
-** more
+** Misc
    |                        |                                                                                                           |                                                                                                             |
    |------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------|
    | drop_while             | a.drop_while { true }                                                                                     |                                                                                                             |
@@ -1423,6 +1424,12 @@ Callbacks and hooks methods are called when a particular event takes place durin
     | search                      |   |
     | env                         |   |
     | info <name>                 |   |
+
+#+begin_src shell-script
+   gem build GEM.gemspec
+   gem install --user-install pkg/GEM
+   gem list GEM -d
+#+end_src
 *** bundle
 **** outdated
 **** gem
@@ -1535,19 +1542,35 @@ let(:expense) { { 'some' => 'data' } }
 ** Console
 *** irb
 **** cli
-|                      |              |
-|----------------------+--------------|
-| -r ./<file>          |              |
-| irb_load             |              |
-| irb_source           |              |
-| --prompt <my-prompt> |              |
-| -I                   | include path |
+|                                            |                               |
+|--------------------------------------------+-------------------------------|
+| -r ./<file>                                |                               |
+| irb_load                                   |                               |
+| irb_source                                 |                               |
+| --prompt <my-prompt>                       |                               |
+| -I                                         | include path                  |
+| RUBYOPT=--enable-frozen-string-literal irb | freeze all strings in section |
+|                                            |                               |
 **** inside
      |                           |         |
      |---------------------------+---------|
      | context.use_tracer = true | tracker |
      |                           |         |
 *** pry
+*** rake
+   - -T: list avaiable tasks
+   - spec: run spec tests
+
+**** usage
+    #+begin_src ruby
+    # desc:
+    # task:
+
+    desc "Remove Unix and Windows backup files"
+    task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do # depends on two other tasks
+      puts "All backups deleted"
+    end
+    #+end_src
 ** Serialization
 *** JSON
 **** Commands
@@ -1594,7 +1617,8 @@ let(:expense) { { 'some' => 'data' } }
   - rack: A modular Ruby web server interface.
 * Modules
 Useful bultin modules
-
+** continuation
+   - require 'continuation'
 ** forwardable
 The Forwardable module provides delegation of specified methods to a designated
 object, using the methods def_delegator and def_delegators.
