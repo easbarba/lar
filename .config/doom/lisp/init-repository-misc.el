@@ -52,6 +52,7 @@
      "https://michael.stapelberg.ch/feed.xml"
      "https://edelpero.svbtle.com/feed"
      "https://drewdevault.com/blog/index.xml"
+     "https://ambrevar.xyz/atom.xml"
      ;; langs blog
      "https://research.swtch.com/feed.atom"
      "https://www.ruby-lang.org/en/feeds/news.rss"
