@@ -114,17 +114,17 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                            | revision        |
-|----------------------------------+------------------------------------+-------------------------------------------------+-----------------|
-| The Well Grounded Rubyist        | Callable and runnable objects      | Writing a chat server using sockets and threads |                 |
-| Confident Ruby                   | Collecting input                   | 3.6 Use built-in conversion functions           |                 |
-| Design Patterns in Ruby          | Composite                          |                                                 |                 |
-| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                          |                 |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition             | Fibers, Threads |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                                |                 |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite                     |                 |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                                 |                 |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                       |                 |
+| Books                            | Chapter                            | late                                  | revision        |
+|----------------------------------+------------------------------------+---------------------------------------+-----------------|
+| The Well Grounded Rubyist        | Functional                         | 16.1.4 Modifying an object’s state    |                 |
+| Confident Ruby                   | Collecting input                   | 3.6 Use built-in conversion functions |                 |
+| Design Patterns in Ruby          | Composite                          |                                       |                 |
+| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                |                 |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition   | Fibers, Threads |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                      |                 |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite           |                 |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                       |                 |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not             |                 |
 
 ** SLOC
 | Project          | folder             | file                   | @ |
@@ -252,7 +252,9 @@ let(:expense) { { 'some' => 'data' } }
      |-------------------------------+---|
      | context 'foobar', focus: true |   |
      |                               |   |
-*** Unit Test
+*** Minitest
+**** setup
+
 ** Console
 *** irb
 **** cli
@@ -434,6 +436,7 @@ private and protected method names
 Object.new.private_methods # 77
 Object.new.protected_methods # 0
 #+end_src
+*** instance variables
 
 ** path
    #+begin_src ruby
@@ -576,6 +579,14 @@ t.current[:message] = "Holla"
 
 t.fetch(:message)
 t.fetch(:msg, "ola")
+#+end_src
+** trace
+*** caller
+The caller method provides an array of strings. Each string represents one step in the stack trace:
+#+begin_src ruby
+def x
+  p caller
+  end
 #+end_src
 ** Fibers
 - no require
@@ -1589,6 +1600,19 @@ The Forwardable module provides delegation of specified methods to a designated
 object, using the methods def_delegator and def_delegators.
 
 *** def_delegators
+
+** Kernel
+*** global_variables
+|            |                                                                          |
+|------------+--------------------------------------------------------------------------|
+| $:         | library load path, also available as                                     |
+| $LOAD_PATH | idem                                                                     |
+| $0         | name of the file in which execution of the current program was initiated |
+| $FILENAME  | (the name of the file currently being executed                           |
+| _          | value of the last expression evaluated by irb.                           |
+|            |                                                                          |
+
+*** local_variables
 
 * Internal
 
