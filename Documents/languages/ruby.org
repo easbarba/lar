@@ -114,17 +114,17 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                  | revision        |
-|----------------------------------+------------------------------------+---------------------------------------+-----------------|
-| The Well Grounded Rubyist        | Functional                         | 16.1.4 Modifying an object’s state    |                 |
-| Confident Ruby                   | Collecting input                   | 3.6 Use built-in conversion functions |                 |
-| Design Patterns in Ruby          | Composite                          |                                       |                 |
-| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                |                 |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition   | Fibers, Threads |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                      |                 |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite           |                 |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                       |                 |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not             |                 |
+| Books                            | Chapter                            | late                                    | revision        |
+|----------------------------------+------------------------------------+-----------------------------------------+-----------------|
+| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |                 |
+| Confident Ruby                   | Collecting input                   | 3.6 Use built-in conversion functions   |                 |
+| Design Patterns in Ruby          | Composite                          |                                         |                 |
+| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                  |                 |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     | Fibers, Threads |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                        |                 |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite             |                 |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                         |                 |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not               |                 |
 
 ** SLOC
 | Project          | folder             | file                   | @ |
@@ -134,187 +134,6 @@
 | rubygems/bundler | cli                | add.rb                 |   |
 | solargraph       | solargraph/api_map | bundler_methods.rb     |   |
 | dry-container    | dry/container      | mixin.rb               |   |
-
-* Packages
-** Packagement
-*** gem
-    |                             |   |
-    |-----------------------------+---|
-    | install <name> -v <version> |   |
-    | which                       |   |
-    | list                        |   |
-    | search                      |   |
-    | env                         |   |
-    | info <name>                 |   |
-*** bundle
-**** outdated
-**** gem
-     |                   |                                                    |
-     |-------------------+----------------------------------------------------|
-     | <name>            | Generate a project skeleton for creating a rubygem |
-     | list              |                                                    |
-     | which <name>      |                                                    |
-     | gem search <name> |                                                    |
-
-**** install
-     bundle config set --local deployment 'true'
-**** update
-     | subcommand                  | desc                                                       |
-     |-----------------------------+------------------------------------------------------------|
-     | all                         | update all gems                                            |
-     | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
-     | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
-     | --quiet                     |                                                            |
-     | --redownload                |                                                            |
-     | --minor                     | Prefer updating only to next minor version.                |
-     | --major                     | Prefer updating to next major version (default).           |
-     |                             |                                                            |
-
-** Testing
-*** RSpec
-    Behaviour Driven Development for Ruby
-**** Config
-***** .rspec
-      Default command-line flags
-***** spec/spec_helper.rb
-|                                          |   |
-|------------------------------------------+---|
-| Configuration options                    |   |
-| config.filter_gems_from_backtrace <list> |   |
-|                                          |   |
-
-****** Options
-       - ENV['RACK_ENV'] = 'test'
-**** Cli
-     | cmd                          | desc                                             |
-     |------------------------------+--------------------------------------------------|
-     | --init                       | Initialize your project with RSpec.              |
-     | --profile                    | test time                                        |
-     | --format <type>              |                                                  |
-     | folder                       | run allfolders specs                             |
-     | spec                         | run just one spec                                |
-     | -e <name>                    | run spec(s) begins w/ name                       |
-     | <file>:N                     | run examples in lineN of file                    |
-     | --only-failures              |                                                  |
-     | --next-failure               |                                                  |
-     | --tag last_run_status:failed |                                                  |
-     | --tag focus                  |                                                  |
-     | describe                     | creates an example group (set of related tests). |
-     | expect                       | verifies an expected outcome (assertion)         |
-     | example                      | individual test                                  |
-
-**** Terms
- - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
- -
- - Arrange/Act/Assert pattern
-
-**** Features
-***** before
-#+begin_src ruby
-before do
-  allow(ledger).to receive(:record)
-                     .with(expense)
-                     .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
-end
-#+end_src
-
-***** pending
-
-***** let
-#+begin_src ruby
-let(:expense) { { 'some' => 'data' } }
-#+end_src
-
-**** Commands
-     |                                   |                                      |
-     |-----------------------------------+--------------------------------------|
-     | RSpec.describe                    |                                      |
-     | describe                          |                                      |
-     | context                           |                                      |
-     | it 'foo bar'                      |                                      |
-     | expect(foo).to eq(bar)            |                                      |
-     | expect(foo).to be > :bar          |                                      |
-     | before(:xx)                       |                                      |
-     | after(:xxx)                       |                                      |
-     | before(:context)                  |                                      |
-     | after(:context)                   |                                      |
-     | let(:foo) { Bar.new }             |                                      |
-     | pending 'foo not yet implemented' |                                      |
-     | skip or xit 'foo bar'             | x prepended to it '' to skip example |
-**** Expect
-     |                                   |   |
-     |-----------------------------------+---|
-     | to                                |   |
-     | include(<obj>: a_kind_of(<Class>) |   |
-
-**** metadata
-     |                               |   |
-     |-------------------------------+---|
-     | context 'foobar', focus: true |   |
-     |                               |   |
-*** Minitest
-**** setup
-
-** Console
-*** irb
-**** cli
-|                      |              |
-|----------------------+--------------|
-| -r ./<file>          |              |
-| irb_load             |              |
-| irb_source           |              |
-| --prompt <my-prompt> |              |
-| -I                   | include path |
-**** inside
-     |                           |         |
-     |---------------------------+---------|
-     | context.use_tracer = true | tracker |
-     |                           |         |
-*** pry
-** Serialization
-*** JSON
-**** Commands
-     |                 |   |
-     |-----------------+---|
-     | generate <this> |   |
-
-*** YAML
-**** Commands
-     |                 |               |
-     |-----------------+---------------|
-     | YAML.dump <obj> |               |
-     | <obj>.to_yaml   | same as above |
-     |                 |               |
-
-** Web Applications
-*** [[http://sinatrarb.com/][Sinatra]]
-    Sinatra is a DSL for quickly creating web applications
-*** [[https://rubyonrails.org/][Ruby On Rails]]
-    A web-application framework that includes everything needed to create database-backed web applications
-
-** HTTP
-*** Rack
-** Documentation
-*** Rdoc
-    - nodoc: [all]
-
-
-*** console
-    |        |   |
-    |--------+---|
-    | --all  |   |
-    | --fmt  |   |
-    | --main |   |
-
-** Formatter
-*** Rufo
-**** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
-** Currency
-   - Money: A Ruby Library for dealing with money and currency conversion.
-** Profiling
-   - ruby-prof
-** Web-server
-  - rack: A modular Ruby web server interface.
 
 * Features
 ** Classes
@@ -437,6 +256,7 @@ Object.new.private_methods # 77
 Object.new.protected_methods # 0
 #+end_src
 *** instance variables
+*** freeze
 
 ** path
    #+begin_src ruby
@@ -1578,20 +1398,200 @@ Callbacks and hooks methods are called when a particular event takes place durin
     - $@ → Array: The stack backtrace generated by the last exception.
     - $& → String : The string matched (following a successful pattern match). This variable is local to the current scope.
 
-* Builtin Modifications
-** additive change
+** Builtin Modifications
+*** additive change
 - adding a method that doesn’t exist.
 - doesn’t clobber existing methods.
 -
-** Pass-through
+*** Pass-through
 - overriding an existing method in such a way that the original version of the method ends up getting called along with the new version.
 -
-** Additive / Pass-Through Hybrids
+*** Additive / Pass-Through Hybrids
 - is a method that has the same name as an existing core
   method, calls the old version of the method (so it’s not an out-and-out
   replacement), and adds something to the method’s interface.
 -
 
+* Packages
+** Packagement
+*** gem
+    |                             |   |
+    |-----------------------------+---|
+    | install <name> -v <version> |   |
+    | which                       |   |
+    | list                        |   |
+    | search                      |   |
+    | env                         |   |
+    | info <name>                 |   |
+*** bundle
+**** outdated
+**** gem
+     |                   |                                                    |
+     |-------------------+----------------------------------------------------|
+     | <name>            | Generate a project skeleton for creating a rubygem |
+     | list              |                                                    |
+     | which <name>      |                                                    |
+     | gem search <name> |                                                    |
+
+**** install
+     bundle config set --local deployment 'true'
+**** update
+     | subcommand                  | desc                                                       |
+     |-----------------------------+------------------------------------------------------------|
+     | all                         | update all gems                                            |
+     | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
+     | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
+     | --quiet                     |                                                            |
+     | --redownload                |                                                            |
+     | --minor                     | Prefer updating only to next minor version.                |
+     | --major                     | Prefer updating to next major version (default).           |
+     |                             |                                                            |
+
+** Testing
+*** RSpec
+    Behaviour Driven Development for Ruby
+**** Config
+***** .rspec
+      Default command-line flags
+***** spec/spec_helper.rb
+|                                          |   |
+|------------------------------------------+---|
+| Configuration options                    |   |
+| config.filter_gems_from_backtrace <list> |   |
+|                                          |   |
+
+****** Options
+       - ENV['RACK_ENV'] = 'test'
+**** Cli
+     | cmd                          | desc                                             |
+     |------------------------------+--------------------------------------------------|
+     | --init                       | Initialize your project with RSpec.              |
+     | --profile                    | test time                                        |
+     | --format <type>              |                                                  |
+     | folder                       | run allfolders specs                             |
+     | spec                         | run just one spec                                |
+     | -e <name>                    | run spec(s) begins w/ name                       |
+     | <file>:N                     | run examples in lineN of file                    |
+     | --only-failures              |                                                  |
+     | --next-failure               |                                                  |
+     | --tag last_run_status:failed |                                                  |
+     | --tag focus                  |                                                  |
+     | describe                     | creates an example group (set of related tests). |
+     | expect                       | verifies an expected outcome (assertion)         |
+     | example                      | individual test                                  |
+
+**** Terms
+ - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
+ -
+ - Arrange/Act/Assert pattern
+
+**** Features
+***** before
+#+begin_src ruby
+before do
+  allow(ledger).to receive(:record)
+                     .with(expense)
+                     .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
+end
+#+end_src
+
+***** pending
+
+***** let
+#+begin_src ruby
+let(:expense) { { 'some' => 'data' } }
+#+end_src
+
+**** Commands
+     |                                   |                                      |
+     |-----------------------------------+--------------------------------------|
+     | RSpec.describe                    |                                      |
+     | describe                          |                                      |
+     | context                           |                                      |
+     | it 'foo bar'                      |                                      |
+     | expect(foo).to eq(bar)            |                                      |
+     | expect(foo).to be > :bar          |                                      |
+     | before(:xx)                       |                                      |
+     | after(:xxx)                       |                                      |
+     | before(:context)                  |                                      |
+     | after(:context)                   |                                      |
+     | let(:foo) { Bar.new }             |                                      |
+     | pending 'foo not yet implemented' |                                      |
+     | skip or xit 'foo bar'             | x prepended to it '' to skip example |
+**** Expect
+     |                                   |   |
+     |-----------------------------------+---|
+     | to                                |   |
+     | include(<obj>: a_kind_of(<Class>) |   |
+
+**** metadata
+     |                               |   |
+     |-------------------------------+---|
+     | context 'foobar', focus: true |   |
+     |                               |   |
+*** Minitest
+**** setup
+
+** Console
+*** irb
+**** cli
+|                      |              |
+|----------------------+--------------|
+| -r ./<file>          |              |
+| irb_load             |              |
+| irb_source           |              |
+| --prompt <my-prompt> |              |
+| -I                   | include path |
+**** inside
+     |                           |         |
+     |---------------------------+---------|
+     | context.use_tracer = true | tracker |
+     |                           |         |
+*** pry
+** Serialization
+*** JSON
+**** Commands
+     |                 |   |
+     |-----------------+---|
+     | generate <this> |   |
+
+*** YAML
+**** Commands
+     |                 |               |
+     |-----------------+---------------|
+     | YAML.dump <obj> |               |
+     | <obj>.to_yaml   | same as above |
+     |                 |               |
+
+** Web Applications
+*** [[http://sinatrarb.com/][Sinatra]]
+    Sinatra is a DSL for quickly creating web applications
+*** [[https://rubyonrails.org/][Ruby On Rails]]
+    A web-application framework that includes everything needed to create database-backed web applications
+
+** HTTP
+*** Rack
+** Documentation
+*** Rdoc
+    - nodoc: [all]
+
+
+*** console
+    |        |   |
+    |--------+---|
+    | --all  |   |
+    | --fmt  |   |
+    | --main |   |
+
+** Formatter
+*** Rufo
+**** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
+** Currency
+   - Money: A Ruby Library for dealing with money and currency conversion.
+** Profiling
+   - ruby-prof
+** Web-server
+  - rack: A modular Ruby web server interface.
 * Modules
 Useful bultin modules
 
@@ -1614,8 +1614,6 @@ object, using the methods def_delegator and def_delegators.
 
 *** local_variables
 
-* Internal
-
 ** ObjectSpace
 The objspace library extends the ObjectSpace module and adds several
 methods to get internal statistic information about object/memory
@@ -1636,6 +1634,3 @@ management.
    1. We must identify the messages we want to send in order to accomplish the task at hand.
    2. We must identify the roles which correspond to those messages.
    3. We must ensure the method's logic receives objects which can play those roles
-* Messages
-- Has a role: set of related responsibilities
-- role is not the same concept as a class
