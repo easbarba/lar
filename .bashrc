@@ -102,5 +102,11 @@ e_direnv() { eval "$(direnv hook bash)"; }
 # * RUN
 
 e_prompt
-e_direnv
 e_multiplexers
+e_direnv
+
+# * STARTX
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    mkdir ~/.local/share/xinit
+    exec startx 2>>~/.local/share/xinit/errors
+fi
