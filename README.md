@@ -6,7 +6,7 @@
 
   info: https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html
 
-## bin 
+## .local/bin 
   Miscellaneous scripts to aid bootstraping services and utilities on a freshly
   Debian install. 
 
