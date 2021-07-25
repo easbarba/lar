@@ -6,7 +6,7 @@
 [core]
 	editor = micro
 	autocrlf = input
-	excludesfile = easbarbosa/.gitignore_global
+	excludesfile = easbarbosa/.config/git/ignore
 [color]
 	ui = true
 [credential]
