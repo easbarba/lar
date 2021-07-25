@@ -58,12 +58,12 @@ packages() {
 
 	arch=(pactree checkupdates pacman-contrib)
 
-	wm=(awesome network-manager-applet flameshot udiskie
+	wm=(awesome network-manager-applet flameshot udiskie parcellite
 	    gnome-keyring xdg-utils playerctl mate-power-manager
 	    seahorse brightnessctl blueman picom lm_sensors)
 
 	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
-		  obs-studio mpv libnotify imagemagick pandoc aspell
+		  obs-studio mpv libnotify imagemagick pandoc aspell atril
 		  telegram-desktop steam)
 
 	codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
