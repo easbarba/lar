@@ -1,0 +1,17 @@
+[init]
+	defaultBranch = main
+[user]
+	name = easbarbosa
+	email = easbarbosa@tutanota.me
+[core]
+	editor = micro
+	autocrlf = input
+	excludesfile = easbarbosa/.gitignore_global
+[color]
+	ui = true
+[credential]
+	helper = cache
+[pull]
+	ff = only
+[fetch]
+	prune = true
