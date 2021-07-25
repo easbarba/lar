@@ -66,6 +66,10 @@ e_npm() {
 }
 
 e_ruby() {
+    # irb
+    export irbrc="$XDG_CONFIG_HOME/irb"
+
+    # gem
     export GEM_HOME="$HOME/.local/gem"
     export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 }
