@@ -6,7 +6,7 @@
 
 export EDITOR="micro"
 export TERMINAL="alacritty"
-export BROWSER="chromium"
+export BROWSER="firefox"
 
 # * LOCALE
 
