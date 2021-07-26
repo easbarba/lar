@@ -1,23 +1,22 @@
 #+TITLE: Job
 
 * Priorities
-| @                   | desc                                                      |
-|---------------------+-----------------------------------------------------------|
-| Lang                | Ruby                                                      |
-| framework           | Rails, MVC, Slim, Sidekiq                                 |
-| Web API             | REST, SOAP, GraphQL                                       |
-| Network             | HTTP, HTTPS, TCP, SSH, FTP                                |
-| OOP                 | Clean Code, SOLID, Design Patterns                        |
-| Front-end           | JS/CSS/HTML                                               |
-| Unit Test           | Minitest, Rspec                                           |
-| SQL                 | PostgreSQL                                                |
-| Architecture Design | OOP, SOLID, KISS, YAGNI, DRY, Clean Code, Design Patterns |
-| Version Control     | Git                                                       |
-| Container           | Podman, Docker                                            |
-| CI / CD             | Jenkins                                                   |
-| Cloud               | AWS, Azure                                                |
-| Hosting             | Heroku                                                    |
-| Message             | RabbitMQ/ Kafka                                                          |
+| @               | desc                                                        |
+|-----------------+-------------------------------------------------------------|
+| Lang            | Ruby                                                        |
+| Framework       | Rails, MVC, Slim, Sidekiq                                   |
+| OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
+| Unit Test       | Minitest, Rspec                                             |
+| SQL             | PostgreSQL                                                  |
+| Version Control | Git                                                         |
+| Front-end       | JS/CSS/HTML                                                 |
+| Container       | Podman, Docker                                              |
+| CI / CD         | Jenkins                                                     |
+| Web API         | REST, SOAP, GraphQL                                         |
+| Network         | HTTP, HTTPS, TCP, SSH, FTP                                  |
+| Cloud           | AWS, Azure                                                  |
+| Hosting         | Heroku                                                      |
+| Message         | RabbitMQ/ Kafka                                             |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
