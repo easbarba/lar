@@ -13,7 +13,8 @@
 tools=(/usr/bin/udiskie /usr/bin/unclutter /usr/bin/nm-applet /usr/bin/mpd
        /usr/bin/blueman-applet /usr/bin/mate-power-manager /usr/bin/picom) #ibus-daemon
 
-apps=(/usr/bin/emacs /usr/bin/alacritty /usr/bin/chromium /usr/bin/atril /usr/bin/parcellite)
+apps=(/usr/bin/emacs /usr/bin/alacritty /usr/bin/firefox /usr/bin/atril
+      /usr/bin/parcellite)
 
 # * Utils, Helps
 
