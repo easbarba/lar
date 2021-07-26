@@ -20,11 +20,9 @@ pre() {
 packages() {
 	e_echo "Installing system packages"
 
-	essentials=(git openssh curl p7zip zip unzip fish tmux zile)
+	essentials=(git openssh curl unzip tmux)
 
-	programming=(shellcheck bash-completion subversion jq)
-
-	editors=(emacs micro neovim)
+	editors=(emacs zile micro neovim)
 
 	ruby=(ruby openssl)
 
@@ -32,13 +30,13 @@ packages() {
 
 	sql=(postgresql)
 
-	shell=(zsh bash)
+	shell=(bash bash-completion shellcheck zsh fish)
 
 	music=(mpd mpc ncmpcpp)
 
-	system=(ripgrep lshw at usbutils lsof time entr tree xsel xclip fontconfig
-			bc htop strace ltrace cpio lhasa lzop atool perf sysstat ncdu rsync
-			rclone)
+	system=(p7zip zip subversion jq ripgrep lshw at usbutils lsof
+			time entr tree xsel xclip fontconfig bc htop strace ltrace cpio
+			lhasa lzop atool perf sysstat ncdu rsync rclone)
 
 	gnu=(wget parted texinfo parallel automake autoconf)
 
@@ -85,7 +83,6 @@ packages() {
 			 "${editors[@]}"
 			 "${shell[@]}"
 			 "${lua[@]}"
-			 "${programming[@]}"
 			 "${system[@]}"
 			 "${music[@]}"
 			 "${gtk[@]}"
