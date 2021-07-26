@@ -114,15 +114,17 @@
   :END:
 * Progress
 ** Books
-   | name      | chapter                  | @ | late | revision |
-   |-----------+--------------------------+---+------+----------|
-   | Scheme PL | Chapter 3. Going Further |   |      |          |
+| name        | chapter                  | @ | late | revision |
+|-------------+--------------------------+---+------+----------|
+| Lil Schemer | 1                        |   |      |          |
+| Scheme PL   | Chapter 3. Going Further |   |      |          |
 
 ** LDC
-   | Source Code | folder | file | @ |
-   |-------------+--------+------+---|
-   | guix        |        |      |   |
-   | guile       |        |      |   |
+| Source Code | folder | file | @ |
+|-------------+--------+------+---|
+| guix        |        |      |   |
+| guile       |        |      |   |
+
 * Books
 ** SICP
 *** Chapter 1
@@ -485,8 +487,86 @@
 https://htdp.org/2018-01-06/Book/
 
 * Features
+** S-expression
+- atom
+- list
+
+** Types
+*** Atom
+- all atoms are s-expression
+- empty list is not an atom
+
+#+begin_src scheme
+
+'atom ;; atom
+
+#+end_src
+*** list
+- lists are s-expressions
+- empty list = null
+
+#+begin_src scheme
+
+'()
+'(x '(y)) ;; (x (quote (y)))
+
+#+end_src
+*** number
+#+begin_src scheme
+
+1234 ;; 1234
+
+#+end_src
+*** null
+#+begin_src scheme
+
+
+#+end_src
+** Selection
+*** car
+- non-empty list
+
+#+begin_src scheme
+
+(car '(a x y)) ;; a
+(car '('(x) '(y))) ;; '(x)
+
+#+end_src
+*** cdr
+- could-er
+- non-empty list
+- cdr of a list is always another list
+
+#+begin_src scheme
+
+(cdr '(a x y)) ;; '(x y)
+
+
+#+end_src
+*** cons
+- takes two arguments: the first one is any S-expression; the second one is any list.
+- The second argument to cons must be alist. The result is a list.
+#+begin_src scheme
+
+(cons 'x '()) ;; '(x)
+(cons '(x y) '(d f)) ;; '((x y) d f)
+(cons '(a b (c)) '()) ;; '((a b (c)))
+#+end_src
+
+
 ** Predicates
+
 =, <, >, <=, and >=
+
+*** null?
+- only for lists
+
+#+begin_src scheme
+
+(null? '()) ; #t
+(null? '(x y)) ; #f
+
+#+end_src
 ** xx
 *** cond
 *** if
