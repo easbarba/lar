@@ -4,6 +4,7 @@
 
 # * DEFAULT SOFTWARE:
 
+export VISUAL="emacs"
 export EDITOR="micro"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
