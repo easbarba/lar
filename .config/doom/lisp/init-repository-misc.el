@@ -43,8 +43,6 @@
      "https://guix.gnu.org/feeds/blog.atom"
      ;; distros
      "https://archlinux.org/feeds/news/"
-     "https://debxp.org/feed/"
-     "https://micronews.debian.org/feeds/feed.rss"
      "https://feeds.feedburner.com/linuxtoday/linux"
      ;; prog blogs
      "https://elephly.net/feed.xml"
@@ -53,6 +51,8 @@
      "https://edelpero.svbtle.com/feed"
      "https://drewdevault.com/blog/index.xml"
      "https://ambrevar.xyz/atom.xml"
+     ;; news
+     "https://www.brasil247.com/feed.rss"
      ;; langs blog
      "https://research.swtch.com/feed.atom"
      "https://www.ruby-lang.org/en/feeds/news.rss"
@@ -60,20 +60,11 @@
      "https://www.honeybadger.io/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
      ;; video channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQCrbWOFRmFYqoeou0Qv3Kg" ;; Tony Aldon
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCwrCgfC5Z5biFxMZCSqnEcA" ;; Abe Peters
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; XLetails
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCe0DNp0mKMqrYVaTundyr9w" ;; VaatiVidya
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCc6Yr77vh0vVh-yDXYwKLXg" ;; Debian Brasil
-     "https://odysee.com/$/rss/@kretcheu2001:8" ;; Kretcheu
-     "https://odysee.com/$/rss/@debxp:9" ;; Debxp
-     "https://odysee.com/$/rss/@leandroramos:3" ;; Leandro Ramos
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; PunkDevOps
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
