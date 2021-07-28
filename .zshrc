@@ -102,5 +102,5 @@ e_prompt()
 
 # * RUN
 
-e_default | e_zinit
+e_zinit # e_default |
 e_prompt
