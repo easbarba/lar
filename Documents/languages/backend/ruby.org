@@ -588,9 +588,17 @@ queue.pop
 queue.pop
 # "orange"
 #+end_src
+**** new
+#+begin_src ruby
+
+Array.new(4) # [nil, nil, nil, nil]
+Array.new(4) { |x| x + 1 } # [1, 2, 3, 4]
+
+#+end_src
+
 **** union / |
 **** difference / -
-**** usage
+**** examples
    #+begin_src ruby
    h = { a: 100, b: 20 }
    h.delete_if { |key, value| value < 25 }
@@ -636,6 +644,7 @@ queue.pop
    a.empty
    a.include?
    a.first
+   a.first[<num>]
    a.last
    a.sample # return
    a.count(1)
@@ -850,26 +859,40 @@ mult.call(12
     -> params { ... }  # form 2
     #+end_src
 **** Usage
-    #+begin_src ruby
-    proc1 = -> arg { puts "In proc1 with #{arg}" }
-    proc1.call "ant"
+#+begin_src ruby
+proc1 = -> arg { puts "In proc1 with #{arg}" }
+proc1.call "ant"
 
-    def n_times(thing)
-      lambda {|n| thing * n }
-    end
+def n_times(thing)
+  lambda {|n| thing * n }
+end
 
-    p1 = n_times(23)
-    p1.call(3) # => 69
-    #+end_src
+p1 = n_times(23)
+p1.call(3) # => 69
+#+end_src
 
 
-   #+begin_src ruby
-   l = -> { xx; aa }
-   l = lambda do
-     yield xx
-   end
-   #+end_src
+ #+begin_src ruby
+ l = -> { xx; aa }
+ l = lambda do
+   yield xx
+ end
+ #+end_src
+
+sugar syntax:
+- dot operator as shortcut. note: better avoid this one
+- square brackets too
+
+#+begin_src ruby
+
+l = -> (x) { p x }
+l.('meh')
+l['meh']
+
+#+end_src
+
 *** curry
+**** desc
 Returns a curried proc based on the method. When the proc is called with a
 number of arguments that is lower than the method’s arity, then another curried
 proc is returned. Only when enough arguments have been supplied to satisfy the
@@ -878,7 +901,39 @@ method signature, will the method actually be called.
 The optional arity argument should be supplied when currying methods with
 variable arguments to determine how many arguments are needed before the method
 is called.
+**** usage
 
+#+begin_src ruby
+
+
+#+end_src
+
+**** optional arity argument
+
+When called with this argument, the curried object will only be evaluated when
+the given number of arguments has been supplied:
+
+#+begin_src ruby
+
+sum_all = -> (*nums) { nums.reduce(:+) }
+sum_all.curry.(1,2,3) # 6
+sum_at_least_four = sum_all.curry(4)
+sum1 = sum_at_least_four.(3,4) # #<Proc:0x000055d2f90867a0 (lambda)>
+sum2 = sum1.(5) # #<Proc:0x000055d2f90b4948 (lambda)>
+sum3 = sum2.(7) # 19
+
+#+end_src
+
+**** currying methods
+
+#+begin_src ruby
+
+def add(a, b, c) ; a + b + c ; end # :add
+
+fun = method(:add).curry # #<Proc:0x000055f71cb45758 (lambda)>
+fun.(1,2,3) # 6
+
+#+end_src
 
 ** Logs
 *** Logger
@@ -1349,13 +1404,29 @@ counts all the elements in an array & returns a hash with their counts.
 #+end_src
 ** Enumerator
 *** lazy
-    #+begin_src ruby
-    def Integer.all
-      Enumerator.new do |yielder, n: 0|
-	loop { yielder.yield(n += 1) }
-      end.lazy
-    end
-    #+end_src
+#+begin_src ruby
+def Integer.all
+  Enumerator.new do |yielder, n: 0|
+	  loop { yielder.yield(n += 1) }
+  end.lazy
+end
+
+
+def find_multiples(num, mult)
+  (1..Float::INFINITY).lazy.select { |x| x % mult == 0}.first(num)
+end
+find_multiples(3, 50) # [50, 100, 150]
+
+
+first_3_multiples = self.method(:find_multiples).curry.(3) # #<Proc:0x000055c3b7d76088 (lambda)>
+first_5_multiples = self.method(:find_multiples).curry.(5) # #<Proc:0x000055c3b8243368 (lambda)>
+first_3_multiples.(256) # [256, 512, 768]
+
+
+squares = (1..Float::INFINITY).lazy.map { |x| x * x } # #<Enumerator::Lazy: #<Enumerator::Lazy: 1..Infinity>:map>
+squares.first 4 # [1, 4, 9, 16]
+
+#+end_src
 *** each_car
 *** each
 *** to_enum/enum_for
