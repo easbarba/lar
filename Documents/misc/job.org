@@ -38,16 +38,16 @@ git.sr.ht/~easbarbosa
 *SKILLS*
 -----
   - Linguagens: Ruby, Scheme e Emacs Lisp.
-  - Debian/FreeBSD/GuixSD: administração e configurações.
+  - Debian/Arch/GuixSD: administração e configurações.
   - Shell Script: GNU Bash, Fish Shell e POSIX.
   - Git: rebase, squash, merge.
   - Containers: podman, dockerfile, criação e gerência de imagens.
-  - Unit Test: RSpec, ERT.
+  - Unit Test: RSpec, Minitest.
   - Front-End: HTML,CSS Grid/Flexbox.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
 
 
 *MAIS*
 -----
-  - Inglês: Intermediário em conversação, Avancado em Leitura/Escrita/Ouvir.
-  - Soft Skills em Secretário de Advocacia e Radio Taxi.
+  - Inglês: Intermediário Ativo, Avancado Passivo.
+  - Soft Skills como Secretário de Advocacia e Radio Taxi.
