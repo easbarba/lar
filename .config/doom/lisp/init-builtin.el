@@ -28,12 +28,10 @@
 	erc-interpret-mirc-color t
 	erc-spelling-dictionaries '(("#emacs" "american"))
 	erc-autojoin-channels-alist '(("libera.chat"
-				       "#archlinux"
-                                       "#debian"
 				       "#guix"
                                        "#ruby"
 				       "#scheme"
-				       "#lua"
+				       "#guile"
 				       "#emacs"))
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 	erc-track-exclude-types
