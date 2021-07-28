@@ -501,6 +501,7 @@ https://htdp.org/2018-01-06/Book/
 'atom ;; atom
 
 #+end_src
+
 *** list
 - lists are s-expressions
 - empty list = null
@@ -511,17 +512,20 @@ https://htdp.org/2018-01-06/Book/
 '(x '(y)) ;; (x (quote (y)))
 
 #+end_src
+
 *** number
 #+begin_src scheme
 
 1234 ;; 1234
 
 #+end_src
+
 *** null
 #+begin_src scheme
 
 
 #+end_src
+
 ** Selection
 *** car
 - non-empty list
@@ -532,6 +536,7 @@ https://htdp.org/2018-01-06/Book/
 (car '('(x) '(y))) ;; '(x)
 
 #+end_src
+
 *** cdr
 - could-er
 - non-empty list
@@ -543,9 +548,11 @@ https://htdp.org/2018-01-06/Book/
 
 
 #+end_src
+
 *** cons
 - takes two arguments: the first one is any S-expression; the second one is any list.
 - The second argument to cons must be alist. The result is a list.
+
 #+begin_src scheme
 
 (cons 'x '()) ;; '(x)
@@ -553,10 +560,8 @@ https://htdp.org/2018-01-06/Book/
 (cons '(a b (c)) '()) ;; '((a b (c)))
 #+end_src
 
-
 ** Predicates
-
-=, <, >, <=, and >=
+- =, <, >, <=, and >=
 
 *** null?
 - only for lists
@@ -567,10 +572,48 @@ https://htdp.org/2018-01-06/Book/
 (null? '(x y)) ; #f
 
 #+end_src
+
+*** atom?
+
+#+begin_src scheme
+(define (atom? x)
+  (and (not (pair? x)) (not (null? x))))
+
+(atom? 'a) ; #t
+
+#+end_src
+*** eq?
+- two non-numeric atom arguments
+
+#+begin_src scheme
+
+(eq? 'Harry 'Harry) ; #t
+(eq? 'Larry 'Harry) ; #f
+
+#+end_src
 ** xx
 *** cond
+
+#+begin_src scheme
+
+(cond
+  ((null? l) #t)
+  ((atom? (car l)) (lat? (cdr l)))
+  (else #f))
+
+#+end_src
+
 *** if
 
+#+begin_src scheme
+#+end_src
+
+*** or
+#+begin_src scheme
+
+(or (null? '()) (atom ? '(a x d))) ; #t
+
+#+end_src
 ** Methods
 |       |   |
 |-------+---|
@@ -607,6 +650,14 @@ set-cdr
 0
 (+ (car ls) (sum (cdr ls)))))])
 (sum '(1 2 3 4 5)))
+
+#+end_src
+
+*** define
+
+#+begin_src scheme
+
+(define a 'meh)
 
 #+end_src
 
