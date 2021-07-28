@@ -6,174 +6,175 @@ set -euo pipefail
 e_echo "Arch Linux - System Packages and Services Instalation."
 
 upgrade() {
-	e_echo "Updating Arch Linux"
+    e_echo "Updating Arch Linux"
 
-	/usr/bin/sudo /usr/bin/pacman -Syu
+    /usr/bin/sudo /usr/bin/pacman -Syu
 }
 
 pre() {
-	e_echo "Enable Multi-Arch"
+    e_echo "Enable Multi-Arch"
 
-	/usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+    /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 }
 
 packages() {
-	e_echo "Installing system packages"
+    e_echo "Installing system packages"
 
-	essentials=(git openssh curl unzip tmux)
+    essentials=(git openssh curl unzip tmux)
 
-	editors=(emacs zile micro neovim)
+    editors=(emacs zile micro neovim)
 
-	ruby=(ruby openssl)
+    ruby=(ruby openssl)
 
-	lua=(lua)
+    lua=(lua)
 
-	sql=(postgresql)
+    sql=(postgresql)
 
-	shell=(bash bash-completion shellcheck zsh fish)
+    shell=(bash bash-completion shellcheck zsh fish)
 
-	music=(mpd mpc ncmpcpp)
+    music=(mpd mpc ncmpcpp)
 
-	system=(p7zip zip subversion jq ripgrep lshw at usbutils lsof
-			time entr tree xsel xclip fontconfig bc htop strace ltrace cpio
-			lhasa lzop atool perf sysstat ncdu rsync rclone)
+    system=(p7zip zip subversion jq ripgrep lshw at usbutils lsof
+        time entr tree xsel xclip fontconfig bc htop strace ltrace cpio
+        lhasa lzop atool perf sysstat ncdu rsync rclone)
 
-	gnu=(wget parted texinfo parallel automake autoconf)
+    gnu=(wget parted texinfo parallel automake autoconf)
 
-	network=(net-tools iproute2 socat iw) # wireless-tools
+    network=(net-tools iproute2 socat iw) # wireless-tools
 
-	qt=(kdeconnect kdenlive)
+    qt=(kdeconnect kdenlive)
 
-	gtk=(cheese transmission-gtk evince shotcut)
+    gtk=(cheese transmission-gtk evince shotcut)
 
-	infra=(podman winetricks qemu virt-manager ovmf bridge-utils)
+    infra=(podman winetricks qemu virt-manager ovmf bridge-utils)
 
-	fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
+    fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
 
-	security=(nftables firewalld gnutls)
+    security=(nftables firewalld gnutls)
 
-	laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
+    laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
 
-	arch=(pactree checkupdates pacman-contrib)
+    arch=(pactree checkupdates pacman-contrib)
 
-	wm=(awesome network-manager-applet flameshot udiskie parcellite
-	    gnome-keyring xdg-utils playerctl mate-power-manager
-	    seahorse brightnessctl blueman picom lm_sensors)
+    wm=(awesome network-manager-applet flameshot udiskie parcellite
+        gnome-keyring xdg-utils playerctl mate-power-manager
+        seahorse brightnessctl blueman picom lm_sensors)
 
-	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
-		  obs-studio mpv libnotify imagemagick pandoc aspell atril
-		  telegram-desktop steam)
+    user=(firefox chromium libreoffice calibre inkscape screenkey gimp
+        obs-studio mpv libnotify imagemagick pandoc aspell atril
+        element-desktop telegram-desktop steam)
 
-	codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
-	       gst-plugins-base gst-plugins-good gst-plugins-ugly)
+    codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
+        gst-plugins-base gst-plugins-good gst-plugins-ugly)
 
-	sound=(pulseaudio-bluetooth)
+    sound=(pulseaudio-bluetooth)
 
     x11=(xorg xorg-xinit)
 
-	amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
-	     lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
-	     lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
+    amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
+        lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
+        lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
 
-	local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm --needed'
+    local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm --needed'
 
-	enabled=("${essentials[@]}"
-			 "${network[@]}"
-			 "${gnu[@]}"
-			 "${editors[@]}"
-			 "${shell[@]}"
-			 "${lua[@]}"
-			 "${system[@]}"
-			 "${music[@]}"
-			 "${gtk[@]}"
-			 "${qt[@]}"
-			 "${infra[@]}"
-			 "${fonts[@]}"
-			 "${security[@]}"
-			 "${laptop[@]}"
-			 "${wm[@]}"
-             "${x11[@]}"
-             "${sound[@]}"
-			 "${user[@]}"
-			 "${codec[@]}"
-			 "${amd[@]}") 			# "${arch[@]}" 			 # "${ruby[@]}" 			 # "${sql[@]}"
+    enabled=("${essentials[@]}"
+        "${arch[@]}"
+        "${network[@]}"
+        "${gnu[@]}"
+        "${editors[@]}"
+        "${ruby[@]}"
+        "${shell[@]}"
+        "${lua[@]}"
+        "${system[@]}"
+        "${music[@]}"
+        "${gtk[@]}"
+        "${qt[@]}"
+        "${infra[@]}"
+        "${fonts[@]}"
+        "${security[@]}"
+        "${laptop[@]}"
+        "${wm[@]}"
+        "${x11[@]}"
+        "${sound[@]}"
+        "${user[@]}"
+        "${codec[@]}"
+        "${amd[@]}") # "${ruby[@]}" "${sql[@]}"
 
+    for i in "${enabled[@]}"; do
+        e_dolist "$command" "$i"
+    done
 
-	for i in "${enabled[@]}"; do
-		e_dolist "$command" "$i"
-	done
-
-	e_echo "Done"
+    e_echo "Done"
 }
 
-post(){
-	e_echo "Post install"
+post() {
+    e_echo "Post install"
 
-	# /usr/bin/sudo apt-file update # update Debian database
-	/usr/bin/sudo /usr/bin/fc-cache -fv
+    # /usr/bin/sudo apt-file update # update Debian database
+    /usr/bin/sudo /usr/bin/fc-cache -fv
 }
 
 clean() {
-	e_echo "Clean up"
+    e_echo "Clean up"
 
-	/usr/bin/pacman -Rns $(/usr/bin/pacman -Qdtq)
+    /usr/bin/pacman -Rns $(/usr/bin/pacman -Qdtq)
 }
 
 services() {
-	e_echo "Debian Services"
+    e_echo "Debian Services"
 
-	aur() { ''; }
+    aur() { ''; }
 
-	postgres() {
-		/usr/bin/sudo /usr/bin/systemctl restart postgresql
-	}
+    postgres() {
+        /usr/bin/sudo /usr/bin/systemctl restart postgresql
+    }
 
-	mpd() {
-		/usr/bin/sudo /usr/bin/systemctl disable mpd
-	}
+    mpd() {
+        /usr/bin/sudo /usr/bin/systemctl disable mpd
+    }
 
-	kdeconnect() {
-		/usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		/usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		/usr/bin/sudo systemctl restart firewalld.service
-	}
+    kdeconnect() {
+        /usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+        /usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+        /usr/bin/sudo systemctl restart firewalld.service
+    }
 
-	timezone() {
-		local current_zone
-		local desired_zone
+    timezone() {
+        local current_zone
+        local desired_zone
 
-		desired_zone='America/Sao_Paulo'
-		current_zone=$(/usr/bin/timedatectl | /usr/bin/grep 'Time zone' | /usr/bin/awk '{print $3}')
+        desired_zone='America/Sao_Paulo'
+        current_zone=$(/usr/bin/timedatectl | /usr/bin/grep 'Time zone' | /usr/bin/awk '{print $3}')
 
-		[[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
-	}
+        [[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
+    }
 
-	alternatives() {
-		# set python to python3
-		/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
-	}
+    alternatives() {
+        # set python to python3
+        /usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+    }
 
-	virtualization() {
-		/usr/bin/sudo /usr/bin/usermod -aG libvirt "$USER"
-		/usr/bin/sudo /usr/bin/usermod -aG kvm "$USER"
-	}
+    virtualization() {
+        /usr/bin/sudo /usr/bin/usermod -aG libvirt "$USER"
+        /usr/bin/sudo /usr/bin/usermod -aG kvm "$USER"
+    }
 
-	aur
-	mpd
-	postgresql
-	alternatives
-	timezone
-	kdeconnect
-	virtualization
+    aur
+    mpd
+    postgresql
+    alternatives
+    timezone
+    kdeconnect
+    virtualization
 }
 
 foreign() {
-	echo "Non-Debian packages"
+    echo "Non-Debian packages"
 
-	chrome() {
-		/usr/bin/wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-		/usr/bin/sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
-	}
+    chrome() {
+        /usr/bin/wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        /usr/bin/sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+    }
 }
 
 # * RUN
