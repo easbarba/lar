@@ -15,13 +15,14 @@
 - log the hosts run, the people, the directories from which they were run, and the times at which they were invoked.
 - can be logged by syslog or placed in a file
 - use visudo to modify sudoer
+- sudoedit as a script to safely edit files without exposing system to editor extensions.
 
-
-  |                   |                                    |
-  |-------------------+------------------------------------|
-  | -u <user>         | enter as <user>                    |
-  | EDITOR=emacs vipw | set EDITOR to emacs so sudo use it |
-  |                   |                                    |
+  |                   |                                                                                        |
+  |-------------------+----------------------------------------------------------------------------------------|
+  | -u <user>         | enter as <user>                                                                        |
+  | EDITOR=emacs vipw | set EDITOR to emacs so sudo use it                                                     |
+  | -e <file>         | safer way of editing files without expose system to $EDITOR extensions vulnerabilities |
+  |                   |                                                                                        |
 
 * login
 
