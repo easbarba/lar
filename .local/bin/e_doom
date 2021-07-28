@@ -6,18 +6,21 @@ e_echo "Doom Emacs"
 
 EMACS_HOME="$HOME/.config/emacs"
 
-wipe() {
-    rm -rf $EMACS_HOME
-}
+wipe() { rm -rf ~/.emacs.d; }
 
 grab() {
+    [[ -x "$EMACS_HOME"/bin/doom ]] && return
+
+    rm -rf "$EMACS_HOME"
     git clone --depth 1 https://github.com/hlissner/doom-emacs "$EMACS_HOME"
 }
 
-install() {
-    "$EMACS_HOME"/bin/doom install
-}
+install() { "$EMACS_HOME"/bin/doom install; }
 
-upgrade() {
-    doom upgrade
-}
+upgrade() { doom upgrade; }
+
+# * RUN
+wipe
+grab
+# install
+upgrade
