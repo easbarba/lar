@@ -1,6 +1,6 @@
 # -*- ruby -*-
 
-require 'irb/completion'
+require "irb/completion"
 
 IRB.conf[:IRB_NAME] = "❯"
 IRB.conf[:PROMPT_MODE] = :DEFAULT
@@ -8,6 +8,10 @@ IRB.conf[:AUTO_INDENT] = true
 
 # This will allow us to access our previous 3 evaluations in an IRB console
 IRB.conf[:EVAL_HISTORY] = 3
+
+def verbose_toggle
+  irb_context.echo ? irb_context.echo = false : irb_context.echo = true
+end
 
 module IRBExtension
   def start
@@ -23,7 +27,7 @@ module IRBExtension
       PROMPT_I: "#{prompt}> ",
       PROMPT_N: "#{prompt}> ",
       PROMPT_S: "#{prompt}%l ",
-      RETURN: "=> %s\n"
+      RETURN: "=> %s\n",
     }
   end
 
@@ -55,9 +59,9 @@ module IRBExtension
 
   def audit_setup_instructions
     <<~INSTRUCTIONS
-    In order to ensure changes you make are properly associated with your account,
-    please run the following command with your User's id in place of <user_id>:
-    Thread.current.thread_variable_set :audit_user_id, <user_id>
+      In order to ensure changes you make are properly associated with your account,
+      please run the following command with your User's id in place of <user_id>:
+      Thread.current.thread_variable_set :audit_user_id, <user_id>
     INSTRUCTIONS
   end
 end
