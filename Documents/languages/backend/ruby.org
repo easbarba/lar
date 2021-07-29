@@ -117,7 +117,7 @@
 | Books                            | Chapter                            | late                                    | revision        |
 |----------------------------------+------------------------------------+-----------------------------------------+-----------------|
 | The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |                 |
-| Confident Ruby                   | Collecting input                   | 3.6 Use built-in conversion functions   |                 |
+| Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |                 |
 | Design Patterns in Ruby          | Composite                          |                                         |                 |
 | Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                  |                 |
 | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     | Fibers, Threads |
@@ -594,6 +594,12 @@ queue.pop
 Array.new(4) # [nil, nil, nil, nil]
 Array.new(4) { |x| x + 1 } # [1, 2, 3, 4]
 
+#+end_src
+**** Kernel#Array
+- More forgiving than .to_a
+
+#+begin_src ruby
+Array 1 # [1]
 #+end_src
 
 **** union / |
