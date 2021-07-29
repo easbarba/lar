@@ -1,0 +1,10 @@
+name,repository
+guile-json,https://github.com/aconchillo/guile-json
+guile-git,https://gitlab.com/guile-git/guile-git
+guile-filesystem,https://gitlab.com/leoprikler/guile-filesystem
+guile-libyaml,https://github.com/mwette/guile-libyaml
+geiser-guile,https://gitlab.com/emacs-geiser/guile
+alezost-guix-config,https://github.com/alezost/guix-config
+fibers,https://github.com/wingo/fibers
+guix,https://git.savannah.gnu.org/git/guix
+guile,https://git.sv.gnu.org/git/guile
