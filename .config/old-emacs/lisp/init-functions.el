@@ -18,7 +18,7 @@
   "Download Video w/ URL - GPL-3.0."
   (interactive)
   (alert "Getting Video.")
-  (start-process "GET-VIDEO" "GET-VIDEO" "cejo" "media" "get" url))
+  (start-process "GET-VIDEO" "GET-VIDEO" "ixe" "get" "mp4" url))
 (global-set-key (kbd "C-c f V") #'(lambda () (interactive) (e/get-video (current-kill 0 t))))
 
 (defun e/get-audio (url)
@@ -32,7 +32,7 @@
   "Call Video Player with online video's URL on clipboard!"
   (interactive)
   (alert "Playing Video.")
-  (start-process "PLAY-VIDEO" "PLAY-VIDEO" "cejo" "media" "play" url))
+  (start-process "PLAY-VIDEO" "PLAY-VIDEO" "ixe" "play" url))
 (global-set-key (kbd "C-c f P") #'(lambda () (interactive) (e/play-video (current-kill 0 t))))
 
 ;; * FFMPEG - ffmpeg features using Dired
