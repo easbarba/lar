@@ -9,6 +9,19 @@ configure a network interface
 * dig
 * curl
 * nmap
+* nmcli
+|                               |                                                                |
+|-------------------------------+----------------------------------------------------------------|
+| radio wifi on                 | Enable Your Wi-Fi Device                                       |
+| dev status                    | Status                                                         |
+| mcli dev wifi list            | Lisit available SSID                                           |
+| dev wifi connect <SSID>       | connect to SSID                                                |
+| --ask dev wifi connect <SSID> | password is provided in a manager to avoid dirty shell history |
+| nmcli con show                | list saved connections                                         |
+| nmcli con down <SSID>         | disconnect of SSID                                             |
+| nmcli con up <SSID>           | reconnect to SSID                                              |
+|                               |                                                                |
+
 * nslookup
 * route
 * netstat
