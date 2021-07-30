@@ -50,7 +50,7 @@ git.sr.ht/~easbarbosa
   - Frameworks: Ruby on Rails.
   - Debian/Arch/GuixSD: administração e configurações.
   - Shell Script: GNU Bash, Fish Shell e POSIX.
-  - Git: rebase, squash, merge.
+  - Git: rebase, squash, merge, format-patch.
   - Containers: podman, dockerfile, criação e gerência de imagens.
   - Unit Test: RSpec, Minitest.
   - Front-End: HTML,CSS Grid/Flexbox.
