@@ -112,7 +112,7 @@ awful.rules.rules = {
    -- Tags: Apps to always map on the specified tag.
    { rule_any = { class = { "Emacs" }},
      properties = { tag = "mx" } },
-   { rule_any = { class = { "Atril", "libreoffice-writer", "Evince" }},
+   { rule_any = { class = { "Atril", "libreoffice-writer", "libreoffice", "Evince" }},
      properties = { tag = "reader" } },
    { rule_any = { class = { "Alacritty", "Mate-terminal" }},
      properties = { tag = "term" } },
