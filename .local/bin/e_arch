@@ -62,7 +62,7 @@ packages() {
 
     user=(firefox chromium libreoffice calibre inkscape screenkey gimp
         obs-studio mpv libnotify imagemagick pandoc aspell atril
-        element-desktop telegram-desktop steam)
+        element-desktop telegram-desktop amfora steam)
 
     codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
         gst-plugins-base gst-plugins-good gst-plugins-ugly)
