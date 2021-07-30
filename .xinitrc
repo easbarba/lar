@@ -37,9 +37,9 @@ done &
 
 # * EXEC
 
-while true; do
-    "$HOME"/.config/autostart-scripts/apps
+"$HOME"/.config/autostart-scripts/apps
 
+while true; do
     # Log stderror to a file
     dwm 2>~/.local/share/dwm.log
     # No error logging
