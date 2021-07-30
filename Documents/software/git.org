@@ -34,6 +34,13 @@
       Print lines matching a pattern.
 *** help
       Display help information.
+*** format-patch
+#+begin_src shell
+
+git format-patch 6.2 --stdout > /data/personal/lar/.config/cejo/patches/dwm/newdefault.patch
+
+#+end_src
+
 *** log
       Show commit logs.
 *** merge
