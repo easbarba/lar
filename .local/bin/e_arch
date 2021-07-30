@@ -54,7 +54,7 @@ packages() {
 
     laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
 
-    arch=(pactree checkupdates pacman-contrib)
+    arch=(pactree checkupdates pacman-contrib base-devel)
 
     wm=(awesome network-manager-applet flameshot udiskie parcellite
         gnome-keyring xdg-utils playerctl mate-power-manager
