@@ -1,5 +1,14 @@
 #+TITLE: Job
 
+* schedule
+
+| mon   | tue   | wed   | thru  | fri   | sat | sun   |
+|-------+-------+-------+-------+-------+-----+-------|
+| rails | rails | rails | rails | rails |     | elisp |
+| tdd   | tdd   | tdd   | tdd   | tdd   |     | unix  |
+| clean | clean | clean | clean | clean |     |       |
+| git   | git   | git   | git   | git   |     |       |
+
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
@@ -37,7 +46,7 @@ git.sr.ht/~easbarbosa
 
 *SKILLS*
 -----
-  - Linguagens: Ruby, Scheme e Emacs Lisp.
+  - Linguagens: Ruby, Scheme, Awk e Emacs Lisp.
   - Frameworks: Ruby on Rails.
   - Debian/Arch/GuixSD: administração e configurações.
   - Shell Script: GNU Bash, Fish Shell e POSIX.
