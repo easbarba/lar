@@ -1,3 +1,4 @@
+
 #+TITLE: Cli
 
 ** write
@@ -170,6 +171,10 @@ OpenSSH secure file copy
 look up, signal, or wait for processes based on name and other attributes
 ** parallel
 ** xargs
+#+begin_src shell-script
+echo 'Meh' | xargs -I {} echo 'Ultra {}' # ultra Meh
+
+#+end_src
 ** sed
 ** sshuttle
 ** tmux
