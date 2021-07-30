@@ -62,6 +62,8 @@ packages() {
         obs-studio mpv libnotify imagemagick pandoc aspell
         element-desktop telegram-desktop amfora steam)
 
+    suckless=(dmenu slock)
+
     codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
         gst-plugins-base gst-plugins-good gst-plugins-ugly)
 
@@ -90,6 +92,7 @@ packages() {
         "${fonts[@]}"
         "${security[@]}"
         "${laptop[@]}"
+        "${suckless[@]}"
         "${wm[@]}"
         "${x11[@]}"
         "${sound[@]}"
