@@ -5,10 +5,9 @@ set -euo pipefail
 
 # Dependencies: sensors, ping, awk, grep, sed, amd ryzen, vega 10, debian
 
-deps=(sensors ping awk grep sed) # TODO: Check deps
+deps=(sensors ping gawk grep sed amixer pactl) # TODO: Check deps
 
-Volume()
-{
+Volume() {
     local result="???"
     local check="$(amixer get Master | tail -1)"
 
@@ -19,57 +18,50 @@ Volume()
     [[ $check == *\[on\]* ]] && printf "%s" "VOL: $result"
 }
 
-Cpuf()
-{
+Cpuf() {
     local prevtotal
     local total
     local result
-    read -r _ a b c previdle rest < /proc/stat
-    prevtotal=$((a+b+c+previdle))
+    read -r _ a b c previdle rest </proc/stat
+    prevtotal=$((a + b + c + previdle))
     sleep 0.5
-    read -r _ a b c idle rest < /proc/stat
-    total=$((a+b+c+idle))
-    result="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))"
+    read -r _ a b c idle rest </proc/stat
+    total=$((a + b + c + idle))
+    result="$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))"
     printf "%s" "CPUF: ${result}%"
 }
 
-Cput()
-{
+Cput() {
     local result
     result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
     printf "%s" "CPUT: ${result}"
 }
 
-Memory()
-{
+Memory() {
     local result
     result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
     printf "%s" "MEM: ${result}"
 }
 
-Date()
-{
+Date() {
     local result
     result="$(date "+%H:%M - %a, %b %d")"
     printf "%s" "${result}"
 }
 
-Battery()
-{
+Battery() {
     local result
     result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
     printf "%s" "BAT: ${result}"
 }
 
-Gput()
-{
+Gput() {
     local result
     result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
     printf "%s" "GPUT: $result"
 }
 
-arch-update()
-{
+arch-update() {
     local sys
     local aur
     local check
@@ -82,29 +74,25 @@ arch-update()
     [[ "$check" != "0" ]] && printf "%s" " $pac  $aur $sys "
 }
 
-update-debian()
-{
+update-debian() {
     local output=$(aptitude full-upgrade --simulate --assume-yes)
-    local num=$(($packs | wc -l))
+    local num=$(($packs | wc - l))
     printf "%s" "Packs: $num"
 }
 
-Connection()
-{
+Connection() {
     local result
     result=$(nmcli connection show | awk 'NR==2 {print $4}')
     if [[ "$result" != '--' ]]; then
-	printf 'CON: ON'
+        printf 'CON: ON'
     else
-	printf 'CON: OFF'
+        printf 'CON: OFF'
     fi
 }
 
-Host()
-{
+Host() {
     printf "%s" "${HOSTNAME^}"
 }
-
 
 sep=" | "
 printf "%s" "$(Volume)$sep$(Battery)$sep$(Memory)$sep$(Cpuf)$sep$(Cput)$sep$(Gput)$sep$(Date)"
