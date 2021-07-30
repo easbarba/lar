@@ -54,8 +54,7 @@ packages() {
 
     arch=(pactree checkupdates pacman-contrib base-devel)
 
-    wm=(awesome scrot udiskie parcellite
-        gnome-keyring xdg-utils playerctl
+    wm=(awesome scrot udiskie parcellite feh gnome-keyring xdg-utils playerctl
         seahorse brightnessctl bluez bluez-utils lm_sensors)
 
     user=(firefox chromium libreoffice calibre gimp

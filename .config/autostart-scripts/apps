@@ -39,7 +39,12 @@ autostart() {
   done
 }
 
+wallpaper() {
+  feh --bg-max --randomize ~/Pictures/wallpapers/* &
+}
+
 # * Run
 
+wallpaper
 autostart "${tools[@]}"
 autostart "${apps[@]}"
