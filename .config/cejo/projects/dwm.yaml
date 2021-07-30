@@ -1,9 +1,10 @@
 ---
 name: dwm
 url: git://git.suckless.org/dwm
-tag:
 default: master
-patch: none
+tag: "6.2"
+patch:
+  - newdefault.patch
 commands:
   - rm config.h
   - make clean
