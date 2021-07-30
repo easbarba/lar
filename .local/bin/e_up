@@ -16,6 +16,6 @@ floss grab
 floss archive
 
 e_echo "Building Nightly Emacs"
-cejo projects emacs
+cejo project emacs
 
 e_doom
