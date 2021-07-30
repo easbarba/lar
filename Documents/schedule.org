@@ -1,0 +1,9 @@
+#+TITLE: Schedule
+
+| seg    | ter | quar | qui | sex | sab    | dom    |
+|--------+-----+------+-----+-----+--------+--------|
+| rails  |     |      |     |     | scheme | scheme |
+| oop    |     |      |     |     | unix   | unix   |
+| rspec  |     |      |     |     |        |        |
+| git    |     |      |     |     |        |        |
+| guitar |     |      |     |     |        |        |
