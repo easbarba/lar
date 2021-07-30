@@ -1,7 +1,7 @@
 From 4c8c406034d6ce2e400efb89f3ac97c750b56b22 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:22:34 -0300
-Subject: [PATCH 01/10] new functions and bindings
+Subject: [PATCH 01/11] new functions and bindings
 
 ---
  config.def.h | 209 +++++++++++++++++++++++++++++----------------------
@@ -255,7 +255,7 @@ index 1c0b587..61fde86 100644
 From 2bbd31127ddab0798c4b071d5202e21097e1b335 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:35:13 -0300
-Subject: [PATCH 02/10] append lacking colon
+Subject: [PATCH 02/11] append lacking colon
 
 ---
  config.def.h | 20 ++++++++++----------
@@ -299,7 +299,7 @@ index 61fde86..439d006 100644
 From f5c8dd690587b5c6b765728ae5820c1a9a777b7e Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:52:48 -0300
-Subject: [PATCH 03/10] bar: all blackey
+Subject: [PATCH 03/11] bar: all blackey
 
 ---
  config.def.h | 2 +-
@@ -325,7 +325,7 @@ index 439d006..0479b54 100644
 From 94e209947471f65f570af2403dc3a7440b2dad57 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:59:14 -0300
-Subject: [PATCH 04/10] add some apps to rule
+Subject: [PATCH 04/11] add some apps to rule
 
 ---
  config.def.h | 7 +++++--
@@ -356,7 +356,7 @@ index 0479b54..5b1fb5a 100644
 From d8ce63bf06b6cac27f9ee8fe80da836c4f2150a1 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:02:33 -0300
-Subject: [PATCH 05/10] more rules
+Subject: [PATCH 05/11] more rules
 
 ---
  config.def.h | 8 ++++----
@@ -388,7 +388,7 @@ index 5b1fb5a..40aca6d 100644
 From 5ac1933c559a19a9d52fce068fdf5b71fe062b03 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:04:43 -0300
-Subject: [PATCH 06/10] rules in order ascendent
+Subject: [PATCH 06/11] rules in order ascendent
 
 ---
  config.def.h | 10 +++++-----
@@ -423,7 +423,7 @@ index 40aca6d..07a9360 100644
 From ddf1af0fca5e532bd80b8860c8b3d4f931ca6ab3 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:05:54 -0300
-Subject: [PATCH 07/10] rule: fix firefox string
+Subject: [PATCH 07/11] rule: fix firefox string
 
 ---
  config.def.h | 2 +-
@@ -449,7 +449,7 @@ index 07a9360..184180b 100644
 From 989e7da74c591029512d2e4c07236c18d114b365 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:48:55 -0300
-Subject: [PATCH 08/10] fix volume bindings
+Subject: [PATCH 08/11] fix volume bindings
 
 ---
  config.def.h | 4 ++--
@@ -484,7 +484,7 @@ index 184180b..5e56284 100644
 From e371ad06e169d53b24c28b4615be7a0f25c58b29 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:55:03 -0300
-Subject: [PATCH 09/10] add slock binding
+Subject: [PATCH 09/11] add slock binding
 
 ---
  config.def.h | 4 ++++
@@ -519,7 +519,7 @@ index 5e56284..861e7ac 100644
 From 275be167ca42e5d8d0cf5e8087ac062e36a92b35 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 16:38:10 -0300
-Subject: [PATCH 10/10] do not show bar & disable resize hint
+Subject: [PATCH 10/11] do not show bar & disable resize hint
 
 ---
  config.def.h | 4 ++--
@@ -547,6 +547,35 @@ index 861e7ac..6fe4a53 100644
  static const int lockfullscreen =
      1; /* 1 will force focus on the fullscreen window */
  
+-- 
+2.32.0
+
+
+From 9aa7545c49855a0dfeb3e7a0d3bf579be4a7196d Mon Sep 17 00:00:00 2001
+From: easbarbosa <easbarbosa@tutanota.me>
+Date: Fri, 30 Jul 2021 17:00:34 -0300
+Subject: [PATCH 11/11] monocle as default layout
+
+---
+ config.def.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 6fe4a53..2a756fc 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -45,9 +45,9 @@ static const int lockfullscreen =
+ 
+ static const Layout layouts[] = {
+     /* symbol     arrange function */
+-    {"[]=", tile}, /* first entry is default */
++    {"[M]", monocle}, /* first entry is default */
++    {"[]=", tile},
+     {"><>", NULL}, /* no layout function means floating behavior */
+-    {"[M]", monocle},
+ };
+ 
+ /* key definitions */
 -- 
 2.32.0
 
