@@ -118,8 +118,18 @@ print newline, word, and byte counts for each file
 | -f |   |
 | +n |   |
 
+** ripgrep
+** parted
 ** tail
 output the last part of files
+** gdisk
+** fdisk
+** mount
+** iwctl
+** imagemagick
+** man
+** info
+** rsync
 
 ** cmp
 compare two files byte by byte
@@ -158,3 +168,20 @@ echo .bash* # echo all files beginning with '.bash'
 OpenSSH secure file copy
 ** pgrep/pkill/pwait
 look up, signal, or wait for processes based on name and other attributes
+** parallel
+** xargs
+** sed
+** sshuttle
+** tmux
+** htop
+** ncdu
+** df
+** du
+** pv
+** fzf
+** fd
+** midnight
+** cron
+** tr
+** ts
+** screen
