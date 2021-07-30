@@ -5,20 +5,20 @@ set -euo pipefail
 
 e_echo "Connect to Bluetooth Paired Devices"
 
-DEPS=(sudo sed grep)
+DEPS=(bluetoothctl sudo sed grep)
 
 autoenable() {
-    [[ $(cat /etc/bluetooth/main.conf | grep AutoEnable=) != '#AutoEnable=false' ]] && return
+    [[ $(grep 'AutoEnable=' /etc/bluetooth/main.conf) != '#AutoEnable=false' ]] && return
 
     /usr/bin/sudo /usr/bin/sed -i 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf
 }
 
 poweron() {
-    echo 'power on' | bluetoothctl
+    bluetoothctl power on
 }
 
 connect() {
-    echo 'devices' | bluetoothctl | awk '/Device/ {printf $2}' | xargs -I {} bluetoothctl 'connect {}'
+    bluetoothctl devices | awk '/Device/ {printf $2}' | xargs -I {} bluetoothctl 'connect {}'
 }
 
 # * RUN
