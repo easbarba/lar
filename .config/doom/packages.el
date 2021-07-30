@@ -10,6 +10,7 @@
 (package! define-word)
 (package! guix)
 (package! zoom)
+(package! undo-tree)
 ;; (package! bufler)
 (package! nov)
 ;; (package! org-present)

@@ -118,6 +118,13 @@
   (zoom-mode)
   (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
 
+(use-package undo-tree
+  :defer 1
+  :bind
+  (("C-c u" . 'undo-tree-visualize)
+   ("C-c U" . 'undo-tree-visualize-redo))
+  :config (global-undo-tree-mode))
+
 ;; (use-package! company-org-block
 ;;   :custom
 ;;   (company-org-block-edit-style 'auto) ;; 'auto, 'prompt, or 'inline
@@ -367,13 +374,6 @@
 ;;      (if mark-active (list (region-beginning) (region-end))
 ;;        (list (line-beginning-position)
 ;; 	     (line-beginning-position 2))))))
-
-;; (use-package undo-tree
-;;   :defer 1
-;;   :bind
-;;   (("C-c u" . 'undo-tree-visualize)
-;;    ("C-c U" . 'undo-tree-visualize-redo))
-;;   :config (global-undo-tree-mode))
 
 ;; (use-package multiple-cursors
 ;;   :defer 1
