@@ -10,7 +10,7 @@ nnn fzy maim unclutter perl-file-mimeinfo rofi
  # dunst diodon ssh-askpass-gnome acpi-call volumeicon-alsa lxappearance
 syncthing screenfetch  # aspell-pt-br gopher
 
-	latex=(texlive-latex-recommended texlive-latex-extra
+latex=(texlive-latex-recommended texlive-latex-extra
 		texlive-latex-base)
 screen  unrar
 make
@@ -20,4 +20,6 @@ make
  i965-va-driver vainfo libvdpau-va-gl1
 			libinput-tools  acpid hddtemp
 wofi xonsh x11proto-dev bat  dialog arc-icon-theme
+
+picom network-manage-applet flameshot inkscape screenkey micro kdenlive shotcut
 #+end_src
