@@ -176,6 +176,10 @@ echo 'Meh' | xargs -I {} echo 'Ultra {}' # ultra Meh
 
 #+end_src
 ** sed
+#+begin_src shell
+
+sed -i 's/Meh/Foo/g'
+#+end_src
 ** sshuttle
 ** tmux
 ** htop
