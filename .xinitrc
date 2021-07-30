@@ -21,6 +21,27 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
     unset f
 fi
 
-# * RUN WM
+# --------------------------------------------------------
+
+# * WM FIXES
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# * SOURCE PATHS
 . "$HOME/.xprofile"
-exec awesome
+
+# * STATUSBAR
+while true; do
+    xsetroot -name "$(e_sysinfo)"
+    sleep 20s # Update time every minute
+done &
+
+# * EXEC
+
+while true; do
+    "$HOME"/.config/autostart-scripts/apps
+
+    # Log stderror to a file
+    dwm 2>~/.local/share/dwm.log
+    # No error logging
+    #dwm >/dev/null 2>&1
+done
