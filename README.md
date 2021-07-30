@@ -10,7 +10,7 @@
   Miscellaneous scripts to aid bootstraping services and utilities on a freshly
   Debian install. 
 
-  Usually bash, guile and lua scripts.
+  Usually bash, guile and awk scripts.
 
 ## [Guix](https://guix.gnu.org)
   I heavily rely on Guix toolings, so there may be lots of weird files running on it :)
