@@ -10,7 +10,7 @@
        (setq doom-font (font-spec :family "DejaVu Sans Mono" :size 23 :weight 'semi-light)
              doom-variable-pitch-font (font-spec :family "sans" :size 23))))
 
-(setq doom-theme 'doom-laserwave
+(setq doom-theme 'doom-gruvbox-light
       org-directory "~/Documents/"
       display-line-numbers-type t)
 
