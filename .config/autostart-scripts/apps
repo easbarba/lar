@@ -10,38 +10,34 @@
 
 # * Lists
 
-tools=(/usr/bin/udiskie /usr/bin/unclutter /usr/bin/nm-applet /usr/bin/mpd
-       /usr/bin/blueman-applet /usr/bin/mate-power-manager /usr/bin/picom) #ibus-daemon
+tools=(/usr/bin/udiskie /usr/bin/nm-applet /usr/bin/mpd
+  /usr/bin/blueman-applet) #ibus-daemon
 
-apps=(/usr/bin/emacs /usr/bin/alacritty /usr/bin/firefox /usr/bin/atril
-      /usr/bin/parcellite)
+apps=(/usr/bin/emacs "$HOME"/.local/bin/st /usr/bin/firefox /usr/bin/atril
+  /usr/bin/parcellite)
 
-# * Utils, Helps
+# * Helpers
 
-not_found()
-{
-    [[ ! -x $(command -v "$1") ]];
+not_found() {
+  [[ ! -x $(command -v "$1") ]]
 }
 
-is_running()
-{
-    [[ $(pgrep -f "$1") ]];
+is_running() {
+  [[ $(pgrep -f "$1") ]]
 }
 
-run()
-{
-    "$1" &
+run() {
+  "$1" &
 }
 
-autostart()
-{
-    local apps=("$@")
+autostart() {
+  local apps=("$@")
 
-    for app in "${apps[@]}"; do
-	  not_found "$app" && continue
-	  is_running "$app" && continue
-	  run "$app"
-    done
+  for app in "${apps[@]}"; do
+    not_found "$app" && continue
+    is_running "$app" && continue
+    run "$app"
+  done
 }
 
 # * Run
