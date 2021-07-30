@@ -10,8 +10,7 @@
 
 # * Lists
 
-tools=(/usr/bin/udiskie /usr/bin/nm-applet /usr/bin/mpd
-  /usr/bin/blueman-applet) #ibus-daemon
+tools=(/usr/bin/udiskie /usr/bin/mpd /usr/bin/blueman-applet)
 
 apps=(/usr/bin/emacs "$HOME"/.local/bin/st /usr/bin/firefox /usr/bin/atril
   /usr/bin/parcellite)
