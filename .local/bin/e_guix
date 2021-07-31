@@ -48,7 +48,7 @@ packages() {
 }
 
 development() {
-	local packages=(node)
+	local packages=(node direnv)
 	e_dolist "guix install" "${packages[@]}"
 }
 
