@@ -55,7 +55,7 @@ packages() {
     arch=(pactree checkupdates pacman-contrib base-devel)
 
     wm=(awesome scrot udiskie parcellite feh gnome-keyring xdg-utils playerctl
-        seahorse brightnessctl bluez bluez-utils lm_sensors)
+        seahorse brightnessctl bluez bluez-utils lm_sensors dunst)
 
     user=(firefox chromium libreoffice calibre gimp
         obs-studio mpv libnotify imagemagick pandoc aspell
