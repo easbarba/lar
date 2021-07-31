@@ -1,7 +1,7 @@
 From 4c8c406034d6ce2e400efb89f3ac97c750b56b22 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:22:34 -0300
-Subject: [PATCH 01/12] new functions and bindings
+Subject: [PATCH 01/13] new functions and bindings
 
 ---
  config.def.h | 209 +++++++++++++++++++++++++++++----------------------
@@ -255,7 +255,7 @@ index 1c0b587..61fde86 100644
 From 2bbd31127ddab0798c4b071d5202e21097e1b335 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:35:13 -0300
-Subject: [PATCH 02/12] append lacking colon
+Subject: [PATCH 02/13] append lacking colon
 
 ---
  config.def.h | 20 ++++++++++----------
@@ -299,7 +299,7 @@ index 61fde86..439d006 100644
 From f5c8dd690587b5c6b765728ae5820c1a9a777b7e Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:52:48 -0300
-Subject: [PATCH 03/12] bar: all blackey
+Subject: [PATCH 03/13] bar: all blackey
 
 ---
  config.def.h | 2 +-
@@ -325,7 +325,7 @@ index 439d006..0479b54 100644
 From 94e209947471f65f570af2403dc3a7440b2dad57 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 14:59:14 -0300
-Subject: [PATCH 04/12] add some apps to rule
+Subject: [PATCH 04/13] add some apps to rule
 
 ---
  config.def.h | 7 +++++--
@@ -356,7 +356,7 @@ index 0479b54..5b1fb5a 100644
 From d8ce63bf06b6cac27f9ee8fe80da836c4f2150a1 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:02:33 -0300
-Subject: [PATCH 05/12] more rules
+Subject: [PATCH 05/13] more rules
 
 ---
  config.def.h | 8 ++++----
@@ -388,7 +388,7 @@ index 5b1fb5a..40aca6d 100644
 From 5ac1933c559a19a9d52fce068fdf5b71fe062b03 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:04:43 -0300
-Subject: [PATCH 06/12] rules in order ascendent
+Subject: [PATCH 06/13] rules in order ascendent
 
 ---
  config.def.h | 10 +++++-----
@@ -423,7 +423,7 @@ index 40aca6d..07a9360 100644
 From ddf1af0fca5e532bd80b8860c8b3d4f931ca6ab3 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:05:54 -0300
-Subject: [PATCH 07/12] rule: fix firefox string
+Subject: [PATCH 07/13] rule: fix firefox string
 
 ---
  config.def.h | 2 +-
@@ -449,7 +449,7 @@ index 07a9360..184180b 100644
 From 989e7da74c591029512d2e4c07236c18d114b365 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:48:55 -0300
-Subject: [PATCH 08/12] fix volume bindings
+Subject: [PATCH 08/13] fix volume bindings
 
 ---
  config.def.h | 4 ++--
@@ -484,7 +484,7 @@ index 184180b..5e56284 100644
 From e371ad06e169d53b24c28b4615be7a0f25c58b29 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 15:55:03 -0300
-Subject: [PATCH 09/12] add slock binding
+Subject: [PATCH 09/13] add slock binding
 
 ---
  config.def.h | 4 ++++
@@ -519,7 +519,7 @@ index 5e56284..861e7ac 100644
 From 275be167ca42e5d8d0cf5e8087ac062e36a92b35 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 16:38:10 -0300
-Subject: [PATCH 10/12] do not show bar & disable resize hint
+Subject: [PATCH 10/13] do not show bar & disable resize hint
 
 ---
  config.def.h | 4 ++--
@@ -554,7 +554,7 @@ index 861e7ac..6fe4a53 100644
 From 9aa7545c49855a0dfeb3e7a0d3bf579be4a7196d Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 17:00:34 -0300
-Subject: [PATCH 11/12] monocle as default layout
+Subject: [PATCH 11/13] monocle as default layout
 
 ---
  config.def.h | 4 ++--
@@ -583,7 +583,7 @@ index 6fe4a53..2a756fc 100644
 From 9cabbd6f45d929421639e2684db906705f1c4355 Mon Sep 17 00:00:00 2001
 From: easbarbosa <easbarbosa@tutanota.me>
 Date: Fri, 30 Jul 2021 17:01:40 -0300
-Subject: [PATCH 12/12] rule: add steam
+Subject: [PATCH 12/13] rule: add steam
 
 ---
  config.def.h | 1 +
@@ -601,6 +601,46 @@ index 2a756fc..b1c2247 100644
      {"firefox", NULL, NULL, 1 << 4, 0, -1},
  };
  
+-- 
+2.32.0
+
+
+From c99ba2ac4aaad91fd8c8170086bc69a0374da502 Mon Sep 17 00:00:00 2001
+From: easbarbosa <easbarbosa@tutanota.me>
+Date: Fri, 30 Jul 2021 22:44:01 -0300
+Subject: [PATCH 13/13] media tag as last one
+
+---
+ config.def.h | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index b1c2247..54763fa 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -19,7 +19,7 @@ static const char *colors[][3] = {
+ };
+ 
+ /* tagging */
+-static const char *tags[] = {"mx", "read", "term", "media", "www"};
++static const char *tags[] = {"mx", "read", "term", "www", "media"};
+ 
+ static const Rule rules[] = {
+     /* xprop(1):
+@@ -31,9 +31,10 @@ static const Rule rules[] = {
+     {"Atril", NULL, NULL, 1 << 1, 0, -1},
+     {"st-256color", NULL, NULL, 1 << 2, 0, -1},
+     {"Gimp", NULL, NULL, 1 << 3, 1, -1},
+-    {"mpv", NULL, NULL, 1 << 3, 0, -1},
+-    {"Steam", NULL, NULL, 1 << 3, 0, -1},
+-    {"firefox", NULL, NULL, 1 << 4, 0, -1},
++    {"firefox", NULL, NULL, 1 << 3, 0, -1},
++    {"Chromium", NULL, NULL, 1 << 3, 0, -1},
++    {"mpv", NULL, NULL, 1 << 4, 0, -1},
++    {"Steam", NULL, NULL, 1 << 4, 0, -1},
+ };
+ 
+ /* layout(s) */
 -- 
 2.32.0
 
