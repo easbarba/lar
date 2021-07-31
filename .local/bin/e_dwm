@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# * STATUSBAR
+while true; do
+    xsetroot -name "$(e_sysinfo)"
+    sleep 20s # Update time every minute
+done &
+
+# * EXEC
+
+while true; do
+    # Log stderror to a file
+    dwm 2>~/.local/share/dwm.log
+    # No error logging
+    #dwm >/dev/null 2>&1
+done
