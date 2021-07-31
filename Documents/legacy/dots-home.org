@@ -1,3 +1,6 @@
+#+TITLE: Dots Home
+* zshrc
+#+begin_src shell-script
 #!/usr/bin/env zsh
 
 # * Zsh
@@ -63,11 +66,11 @@ e_zinit_begin()
 
 e_zinit_plugins()
 {
-    # ESSENTIAL 
+    # ESSENTIAL
     zinit light zsh-users/zsh-autosuggestions
     zinit light zdharma/fast-syntax-highlighting
     zinit light zsh-users/zsh-completions
- 
+
     # Plugin history-search-multi-word loaded with investigating.
     zinit load zdharma/history-search-multi-word
 
@@ -104,3 +107,25 @@ e_prompt()
 
 e_zinit # e_default |
 e_prompt
+
+#+end_src
+* .xprofile
+#+begin_src shell
+e_luarocks() {
+    export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
+}
+
+e_golang() {
+    export GOPATH=$HOME/.local/go
+    export PATH="$GOPATH/bin"${PATH:+:}$PATH
+}
+
+p_nix() {
+    export NIX_PROFILE=$HOME/.nix-profile
+
+    # PATH
+    export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
+}
+
+
+#+end_src

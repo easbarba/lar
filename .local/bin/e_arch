@@ -28,7 +28,7 @@ packages() {
 
     sql=(postgresql)
 
-    shell=(bash bash-completion shellcheck zsh fish)
+    shell=(bash bash-completion shellcheck fish)
 
     music=(mpd mpc ncmpcpp)
 
