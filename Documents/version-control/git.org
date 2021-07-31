@@ -6,72 +6,92 @@
      |------------------+----------+-----------------+-------+---------|
      | Professional Git |          | CONFIGURING GIT |       |         |
 
-* Commands
-** Porcelain
-*** add
+* Features
+** add
       Add file contents to the index.
-*** bisect
+** bisect
       Find by binary search the change that introduced a bug.
-*** branch
+** branch
       List, create, or delete branches.
-*** checkout
+** checkout
       Switch branches or restore working tree files.
-*** cherry
+** cherry
       Find commits yet to be applied to upstream (branch on the remote).
-*** cherry-pick
+** cherry-pick
       Apply the changes introduced by some existing commits.
-*** clone
-      Clone a repository into a new directory.
-*** commit
+** clone
+Clone a repository into a new directory.
+
+|                                   |   |
+|-----------------------------------+---|
+| <URL> -b <BRANCH> --single-branch |   |
+| -–depth <URL>                     |   |
+| --shallow-exclude <BRANCH>        |   |
+
+** commit
       Record changes to the repository.
-*** config
+** config
       Get and set repository or global options.
-*** diff
-      Show changes between commits, commits and working tree, and so on.
-*** fetch
+** diff
+Show changes between commits, commits and working tree, and so on.
+
+|                                              |                         |
+|----------------------------------------------+-------------------------|
+| --oneline --graph <branch>..<current_branch> | differ between branches |
+|                                              |                         |
+
+** fetch
       Download objects and refs from another repository.
-*** grep
+** grep
       Print lines matching a pattern.
-*** help
+** help
       Display help information.
-*** format-patch
+** format-patch
+
+|                                   |                                                  |
+|-----------------------------------+--------------------------------------------------|
+| 6.2 --stdout > ~/newdefault.patch | bundle all commits of branch in one single patch |
+| master -o patches                 | patch files in a given directory                 |
+|                                   |                                                  |
+
+
 #+begin_src shell
 
-git format-patch 6.2 --stdout > /data/personal/lar/.config/cejo/patches/dwm/newdefault.patch
+git format-patch
 
 #+end_src
 
-*** log
+** log
       Show commit logs.
-*** merge
+** merge
       Join two or more development histories together.
-*** mv
+** mv
       Move or rename a file, directory, or symlink.
-*** pull
+** pull
       Fetch from, or integrate with, another repository or a local branch.
-*** push
+** push
       Update remote refs along with associated objects.
-*** rebase
+** rebase
       Forward-port local commits to the updated upstream head.
-*** rerere
+** rerere
       Reuse recorded resolution for merged conflicts.
-*** reset
+** reset
       Reset current HEAD to the specified state.
-*** revert
+** revert
       Revert some existing commits.
-*** rm
+** rm
       Remove files from the working tree and from the index.
-*** show
+** show
       Show various types of objects.
-*** status
+** status
       Show the working tree status.
-*** submodule
+** submodule
       Initialize, update, or inspect submodules.
-*** subtree
+** subtree
       Merge subtrees and split repositories into subtrees.
-*** tag
+** tag
       Create, list, delete, or verify a tagged object.
-*** worktree
+** worktree
       Manage multiple working trees.
 * Official
     https://git-scm.com/docs
