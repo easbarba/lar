@@ -47,6 +47,11 @@ packages
 devel
 
 #+end_src
+
+* e_arch
+#+begin_src shell
+element-desktop telegram-desktop transmission-gtk winetricks ripgrep parcellite
+#+end_src
 * e_gnome
 #+begin_src shell
 

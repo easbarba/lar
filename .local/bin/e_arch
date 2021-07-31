@@ -32,7 +32,7 @@ packages() {
 
     music=(mpd mpc ncmpcpp)
 
-    system=(p7zip zip subversion jq ripgrep lshw at usbutils lsof
+    system=(p7zip zip subversion jq lshw at usbutils lsof
         time entr tree xsel xclip fontconfig bc htop strace ltrace cpio
         lhasa lzop atool perf sysstat ncdu rsync rclone)
 
@@ -42,9 +42,9 @@ packages() {
 
     qt=(kdeconnect)
 
-    gtk=(cheese transmission-gtk atril)
+    gtk=(cheese atril)
 
-    infra=(podman winetricks qemu virt-manager ovmf bridge-utils)
+    infra=(podman qemu virt-manager ovmf bridge-utils)
 
     fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
 
@@ -54,14 +54,14 @@ packages() {
 
     arch=(pactree checkupdates pacman-contrib base-devel)
 
-    wm=(awesome scrot udiskie parcellite feh gnome-keyring xdg-utils playerctl
-        seahorse brightnessctl bluez bluez-utils lm_sensors dunst)
+    wm=(awesome scrot udiskie feh gnome-keyring xdg-utils playerctl
+        seahorse bluez bluez-utils lm_sensors aria2)
 
     user=(firefox chromium libreoffice calibre gimp
         obs-studio mpv libnotify imagemagick pandoc aspell
-        element-desktop telegram-desktop amfora steam)
+        amfora steam)
 
-    suckless=(dmenu slock)
+    suckless=(slock)
 
     codec=(ffmpeg vorbis-tools gst-libav gst-plugins-bad
         gst-plugins-base gst-plugins-good gst-plugins-ugly)
@@ -79,6 +79,7 @@ packages() {
     enabled=("${essentials[@]}"
         "${arch[@]}"
         "${network[@]}"
+        "${sql[@]}"
         "${gnu[@]}"
         "${editors[@]}"
         "${ruby[@]}"
