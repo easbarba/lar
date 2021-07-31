@@ -10,3 +10,4 @@ rspec,https://github.com/rspec/rspec
 rspec-core,https://github.com/rspec/rspec-core
 rake,https://github.com/ruby/rake
 ruby,https://github.com/ruby/ruby
+ruby-debug,https://github.com/ruby/debug
