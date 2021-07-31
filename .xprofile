@@ -5,8 +5,8 @@
 # * DEFAULT SOFTWARE:
 
 export VISUAL="emacs"
-export EDITOR="micro"
-export TERMINAL="alacritty"
+export EDITOR="nvim"
+export TERMINAL="st"
 export BROWSER="firefox"
 
 # * LOCALE
@@ -49,7 +49,7 @@ home_bin() {
     export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 }
 
-# * PACKAGES
+# * PACKAGERS
 
 e_doom() {
     DOOM_DIR="$HOME/.config/emacs"
@@ -73,22 +73,6 @@ e_ruby() {
     # gem
     export GEM_HOME="$HOME/.local/gem"
     export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
-}
-
-e_luarocks() {
-    export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
-}
-
-e_golang() {
-    export GOPATH=$HOME/.local/go
-    export PATH="$GOPATH/bin"${PATH:+:}$PATH
-}
-
-p_nix() {
-    export NIX_PROFILE=$HOME/.nix-profile
-
-    # PATH
-    export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 }
 
 p_guix() {
@@ -118,9 +102,7 @@ home_bin
 
 e_doom
 
+e_npm
+e_ruby
 p_nix
 p_guix
-e_npm
-e_golang
-e_luarocks
-e_ruby
