@@ -3,6 +3,11 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
+DEPS=(grep cut tr distro floss cejo emacs guix)
+e_checkdeps ${DEPS[@]}
+
+DISTRO=$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')
+
 e_echo "Daily update of system packagers."
 
 e_echo "Upgrading system."
@@ -16,6 +21,6 @@ floss grab
 floss archive
 
 e_echo "Building Nightly Emacs"
-cejo project emacs
+[[ $DISTRO != "Arch Linux" ]] && cejo project emacs
 
 e_doom
