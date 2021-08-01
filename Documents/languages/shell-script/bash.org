@@ -22,7 +22,6 @@
 Use :- if you want to test variables that could be undeclared. For instance: if
 [ "${NAME:-}" = "Kevin" ] will set $NAME to be empty if it's not declared.
 
-
 ** read
 ** shift
     shift: shift cli args to next right
@@ -45,6 +44,17 @@ Use :- if you want to test variables that could be undeclared. For instance: if
     here documents
 ** <<<
     here-string
+** unicode
+
+PS: remove + sign as shell does not what is.
+
+#+begin_src shell
+
+# U+f026
+
+echo -e "\Uf026"
+
+#+end_src
 ** Group Commands
 *** subshell (...)
      Placing a list of commands between parentheses causes a subshell
