@@ -52,7 +52,7 @@ packages() {
 
     laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
 
-    arch=(pactree checkupdates pacman-contrib base-devel)
+    arch=(pacman-contrib base-devel)
 
     wm=(awesome scrot udiskie feh gnome-keyring xdg-utils playerctl
         seahorse bluez bluez-utils)
