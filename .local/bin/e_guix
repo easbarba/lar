@@ -43,7 +43,7 @@ glocale() {
 }
 
 packages() {
-	local packages=(font-gnu-freefont-ttf font-dejavu fish nyxt icecat)
+	local packages=(font-gnu-freefont-ttf font-dejavu)
 	e_dolist "guix install" "${packages[@]}"
 }
 
