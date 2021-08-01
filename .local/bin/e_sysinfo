@@ -14,8 +14,8 @@ Volume() {
 
     [[ $(pgrep -x "pulseaudio") ]] && result="$(pactl list sinks | grep 'Volume: front' | tail -1 | awk '{print $5}')"
 
-    [[ $check == *\[yes\]* ]] && printf "VOL: MUTE"
-    [[ $check == *no* ]] && printf "%s" "VOL: $result"
+    [[ $check == *\[yes\]* ]] && printf "\Uf026"
+    [[ $check == *no* ]] && printf "%s" "\Uf028 $result"
 }
 
 Cpuf() {
@@ -28,50 +28,46 @@ Cpuf() {
     read -r _ a b c idle rest </proc/stat
     total=$((a + b + c + idle))
     result="$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))"
-    printf "%s" "CPUF: ${result}%"
+    printf "%s" "\Uf2db ${result}%"
 }
 
 Cput() {
     local result
     result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
-    printf "%s" "CPUT: ${result}"
+    printf "%s" "\Uf06d ${result}"
 }
 
 Memory() {
     local result
     result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
-    printf "%s" "MEM: ${result}"
+    printf "%s" "\Uf7c2 ${result}"
 }
 
 Date() {
     local result
     result="$(date "+%H:%M - %a, %b %d")"
-    printf "%s" "${result}"
+    printf "%s" "\Uf017 ${result}"
 }
 
 Battery() {
     local result
-    result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"("substr($3, 1, length($3)-1)")"}')"
-    printf "%s" "BAT: ${result}"
+    result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"% ("substr($3, 1, length($3)-1)")"}')"
+    printf "%s" "\Uf241: ${result}"
 }
 
 Gput() {
     local result
     result="$(sensors 2>&1 | grep edge | awk '{print substr($2, 2)}')"
-    printf "%s" "GPUT: $result"
+    printf "%s" "\Uf11b  $result"
 }
 
 arch-update() {
     local sys
-    local aur
     local check
 
-    # Arch/Manjaro
     sys=$(checkupdates | wc -l)
-    aur=$(cower -u | wc -l)
 
-    check=$((pac + "$aur"))
-    [[ "$check" != "0" ]] && printf "%s" " $pac  $aur $sys "
+    [[ "$sys" != "0" ]] && printf "%s" "$sys "
 }
 
 update-debian() {
@@ -94,7 +90,7 @@ Host() {
     printf "%s" "${HOSTNAME^}"
 }
 
-sep=" | "
-printf "%s" "$(Volume)$sep$(Battery)$sep$(Memory)$sep$(Cpuf)$sep$(Cput)$sep$(Gput)$sep$(Date)"
+SEP="  "
+echo -e "$(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date)"
 
 exit 0
