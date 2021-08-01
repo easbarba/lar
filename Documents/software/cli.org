@@ -1,24 +1,23 @@
-
 #+TITLE: Cli
 
-** write
+* write
 Send a message to another user.
 
-** mesg
+* mesg
 Control write access of other users to your terminal.
 
-** news
-** dirs
+* news
+* dirs
 print directory stack
-** popd
+* popd
 move through directory stack
-** curl
-*** read local file
+* curl
+** read local file
 #+begin_src shell-script
 curl file:///home/easbarbosa/.bashrc
 
 #+end_src
-** ed
+* ed
 |              |                                                    |
 |--------------+----------------------------------------------------|
 | a            | append text in next line                           |
@@ -45,7 +44,7 @@ curl file:///home/easbarbosa/.bashrc
 
 2t0 # copy line 2 to line 0
 #+end_src
-** ls
+* ls
  list directory contents
 
  | options |                     |
@@ -56,13 +55,13 @@ curl file:///home/easbarbosa/.bashrc
  | -u      | sort by access time |
  | -U      | do not sort         |
  | -r      | reverse             |
-** cat
+* cat
 concatenate files and print on the standard output
 |    |   |
 |----+---|
 | -u |   |
 
-** pr
+* pr
 concatenate files and print on the standard output
 |                  |                         |
 |------------------+-------------------------|
@@ -70,15 +69,15 @@ concatenate files and print on the standard output
 | -m <file> <file> | print files in parallel |
 |                  |                         |
 
-** lpr
+* lpr
 
-** more
+* more
 
-** nroff
+* nroff
 
-** troff
+* troff
 
-** mv
+* mv
 move, or rename, files
 
 |                         |   |
@@ -88,10 +87,10 @@ move, or rename, files
 | -i                      |   |
 | -f                      |   |
 
-** cp
+* cp
 copy files and directories
 
-** rm
+* rm
 remove files or directories
 
 |          |   |
@@ -102,16 +101,16 @@ remove files or directories
 | -r or -R |   |
 | -d       | remove empty dir  |
 
-** wc
+* wc
 print newline, word, and byte counts for each file
 
-** grep
+* grep
 |    |                                 |
 |----+---------------------------------|
 | -v | lines that doesnt match pattern |
 |    |                                 |
 
-** sort
+* sort
 |    |   |
 |----+---|
 | -r |   |
@@ -119,37 +118,37 @@ print newline, word, and byte counts for each file
 | -f |   |
 | +n |   |
 
-** ripgrep
-** parted
-** tail
+* ripgrep
+* parted
+* tail
 output the last part of files
-** gdisk
-** fdisk
-** mount
-** iwctl
-** imagemagick
-** man
-** info
-** rsync
+* gdisk
+* fdisk
+* mount
+* iwctl
+* imagemagick
+* man
+* info
+* rsync
 
-** cmp
+* cmp
 compare two files byte by byte
-** diff
+* diff
 compare files line by line
-** pwd
-** od
+* pwd
+* od
 dump files in octal and other formats
 |    |   |
 |----+---|
 | -c |   |
 | -b |   |
-** stty
-** read
+* stty
+* read
 read line of input into variables
-** cd
-** mkdir
-** shell
-** echo
+* cd
+* mkdir
+* shell
+* echo
 display a line of text
 
 #+begin_src shell
@@ -157,7 +156,7 @@ echo * # echo all files in dir
 echo .bash* # echo all files beginning with '.bash'
 
 #+end_src
-** make
+* make
 |                 |                                                                 |
 |-----------------+-----------------------------------------------------------------|
 | .DEFAULT_GOAL   | deﬁnes which target is run when no target is speciﬁed.          |
@@ -165,32 +164,62 @@ echo .bash* # echo all files beginning with '.bash'
 | <word>: <word2> | other targets that must be run before the speciﬁed target runs. |
 | .PHONY:<word>   | <word> doesn't represent a file name in this Makefile           |
 |                 |                                                                 |
-** scp
+* scp
 OpenSSH secure file copy
-** pgrep/pkill/pwait
+* pgrep/pkill/pwait
 look up, signal, or wait for processes based on name and other attributes
-** parallel
-** xargs
+* parallel
+* xargs
 #+begin_src shell-script
 echo 'Meh' | xargs -I {} echo 'Ultra {}' # ultra Meh
 
 #+end_src
-** sed
+* sed
 #+begin_src shell
 
 sed -i 's/Meh/Foo/g'
 #+end_src
-** sshuttle
-** tmux
-** htop
-** ncdu
-** df
-** du
-** pv
-** fzf
-** fd
-** midnight
-** cron
-** tr
-** ts
-** screen
+* sshuttle
+* tmux
+* htop
+* ncdu
+* df
+* du
+* pv
+* fzf
+* fd
+* midnight
+* cron
+* tr
+Translate, squeeze, and/or delete characters from standard input, writing to standard output.
+
+|              |                                             |
+|--------------+---------------------------------------------|
+| -d, --delete | delete characters in SET1, do not translate |
+|              |                                             |
+
+#+begin_src shell
+
+echo '"Arch Linux"' | tr -d '"' # 'Arch Linux'
+#+end_src
+* cut
+Print selected parts of lines from each FILE to standard output.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+
+|                       |                                                                                                                         |
+|-----------------------+-------------------------------------------------------------------------------------------------------------------------|
+| -f<n> --fields=LIST   | select  only these fields;  also print any line that contains no delimiter character, unless the -s option is specified |
+| -d, --delimiter=DELIM | use DELIM instead of TAB for field delimiter                                                                                                                        |
+
+
+#+begin_src shell
+
+echo 'NAME="Arch Linux"' | cut -f2 -d '=' # "Arch Linux"
+
+#+end_src
+
+* ts
+* screen
