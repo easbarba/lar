@@ -118,26 +118,6 @@
     #+end_src
 * floss
 #+begin_src csv
--- lua
-
-name,repository
-nvim-lspinstall,https://github.com/kabouzeid/nvim-lspinstall
-packer.nvim,https://github.com/wbthomason/packer.nvim
-which-key.nvim,https://github.com/folke/which-key.nvim
-WillPower3309-awesome-dotfiles,https://github.com/WillPower3309/awesome-dotfiles
-Elv13-awesome-configs,https://github.com/Elv13/awesome-configs
-vicious,https://github.com/vicious-widgets/vicious
-awesome-wm-widgets,https://github.com/streetturtle/awesome-wm-widgets
-luamake,https://github.com/actboy168/luamake
-lua-language-server,https://github.com/sumneko/lua-language-server
-EmmyLua-LanguageServer,https://github.com/EmmyLua/EmmyLua-LanguageServer
-turtle.lua,https://github.com/arthurealike/turtle.lua
-luvit,https://github.com/luvit/luvit
-lite,https://github.com/rxi/lite
-awesome-copycats,https://github.com/lcpz/awesome-copycats
-awesome,https://github.com/awesomeWM/awesome
-luarocks,https://github.com/luarocks/luarocks
-lua,https://github.com/lua/lua
 
 
 #+end_src
