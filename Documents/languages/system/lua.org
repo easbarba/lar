@@ -9,7 +9,9 @@
   - [[#livros][Livros]]
   - [[#ldc][LDC]]
 - [[#features][Features]]
-  - [[#strings][Strings]]
+  - [[#types][Types]]
+  - [[#assignment][assignment]]
+  - [[#functions][functions]]
 :END:
 * Progresso
 ** Livros
@@ -23,11 +25,12 @@
    | luarocks    |        |      |   |
    | awesome     |        |      |   |
 * Features
-** Strings
+** Types
+*** Strings
 #+begin_src lua
 print(#"Pepsi") -- # means string length
 #+end_src
-*** long string
+**** long string
 #+begin_src lua
 page = [[
 <html>
@@ -39,4 +42,43 @@ page = [[
 </body>
 </html>
 ]]
+#+end_src
+*** Number
+
+#+begin_src lua
+type(1) -- number
+math.type(1) -- integer
+math.type(1.0) -- flot
+
+0xff -- 255
+0x1A3 -- 419
+0x0.2  -- 0.125
+0x1p-1 -- 0.5
+0xa.bp2 -- 42.75
+
+#+end_src
+
+%a preserves the full precision of any float value, and the conversion is faster than with decimals
+
+#+begin_src lua
+
+string.format("%a", 419) --> 0x1.a3p+8
+string.format("%a", 0.1) --> 0x1.999999999999ap-4
+
+#+end_src
+**** operations
+** assignment
+*** local
+#+begin_src lua
+local tolerance = 10
+
+#+end_src
+** functions
+#+begin_src lua
+
+function isturnback (angle)
+  angle = angle % 360
+  return (math.abs(angle - 180) < tolerance)
+end
+
 #+end_src
