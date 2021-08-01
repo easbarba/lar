@@ -7,7 +7,7 @@ local beautiful = require("beautiful")
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
--- Create a wibox for each screen and add it
+-- create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
    awful.button({ }, 1, function(t) t:view_only() end),
    awful.button({ modkey }, 1, function(t)
@@ -73,6 +73,7 @@ awful.layout.layouts = {
    awful.layout.suit.fair.horizontal,
    awful.layout.suit.spiral,
    awful.layout.suit.spiral.dwindle,
+
    awful.layout.suit.max,
    awful.layout.suit.max.fullscreen,
    awful.layout.suit.magnifier,
@@ -120,6 +121,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mywibox:setup {
 	 layout = wibox.layout.align.horizontal,
 	 { -- Left widgets
+	    s.mytaglist,
 	    layout = wibox.layout.fixed.horizontal,
 	    s.mytasklist,
 	 },
@@ -127,11 +129,10 @@ awful.screen.connect_for_each_screen(function(s)
 	 { -- Right widgets
 	    -- mylauncher,
 	    -- s.mylayoutbox
-	    s.mytaglist,
 	    layout = wibox.layout.fixed.horizontal,
-	    awful.widget.watch([[bash -c "wmbar-info"]], 2),
+	    awful.widget.watch([[bash -c "e_sysinfo"]], 2),
 	    -- mykeyboardlayout,
-	    mytextclock,
+	    -- mytextclock,
 	    wibox.widget.systray(),
 	 },
       }
