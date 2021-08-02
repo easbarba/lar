@@ -12,3 +12,5 @@ rake,https://github.com/ruby/rake
 ruby,https://github.com/ruby/ruby
 ruby-debug,https://github.com/ruby/debug
 ruby-rbs,https://github.com/ruby/rbs
+rack,https://github.com/rack/rack
+rack-test,https://github.com/rack/rack-test
