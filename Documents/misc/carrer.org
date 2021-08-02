@@ -46,14 +46,14 @@ git.sr.ht/~easbarbosa
 
 *SKILLS*
 -----
-  - Linguagens: Ruby, Scheme, Awk e Emacs Lisp.
-  - Frameworks: Ruby on Rails.
-  - Debian/Arch/GuixSD: administração e configurações.
+  - Linguagens: Awk, Lua, Guile Scheme, Emacs-Lisp e Ruby.
+  - Frameworks: Sinatra.
+  - Distros: Debian, Arch, GuixSD.
   - Shell Script: GNU Bash, Fish Shell e POSIX.
   - Git: rebase, squash, merge, format-patch.
   - Containers: podman, dockerfile, criação e gerência de imagens.
   - Unit Test: RSpec, Minitest.
-  - Front-End: HTML,CSS Grid/Flexbox.
+  - Front-End: HTML, CSS (Grid,Flexbox).
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
 
 
