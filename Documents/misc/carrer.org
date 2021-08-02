@@ -2,12 +2,12 @@
 
 * schedule
 
-| mon   | tue   | wed   | thru  | fri   | sat | sun   |
-|-------+-------+-------+-------+-------+-----+-------|
-| rails | rails | rails | rails | rails |     | elisp |
-| tdd   | tdd   | tdd   | tdd   | tdd   |     | unix  |
-| clean | clean | clean | clean | clean |     |       |
-| git   | git   | git   | git   | git   |     |       |
+| mon        | tue        | wed        | thru       | fri        | sat | sun   |
+|------------+------------+------------+------------+------------+-----+-------|
+| rspec      | rspec      | rspec      | rspec      | rspec      |     | guile |
+| postgresql | postgresql | postgresql | postgresql | postgresql |     | unix  |
+| oop        | oop        | oop        | oop        | oop        |     | emacs |
+| git        | git        | git        | git        | git        |     |       |
 
 * Priorities
 | @               | desc                                                        |
