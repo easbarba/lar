@@ -1,6 +1,20 @@
 #+TITLE: Network
 
 * ssh
+
+** --
+end of command line flags
+
+It tells ssh or any other valid shell command not to try to parse what comes after command line options
+
+#+begin_src shell
+
+ssh nixcraft@server1.cyberciti.biz -- command1 --arg1 --arg2
+
+#+end_src
+
+ This ensures that command1 will accept --arg1 and --arg2 (or -opt1) as command-line arguments.
+
 * ip
 * ifconfig
 configure a network interface
