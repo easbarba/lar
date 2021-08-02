@@ -11,6 +11,11 @@ Control write access of other users to your terminal.
 print directory stack
 * popd
 move through directory stack
+* watch
+watch runs command repeatedly, displaying its output and errors (the first
+screenfull). This allows you to watch the program output change over time. By
+default, command is run every 2 seconds and watch will run until inter‐ rupted.
+* finger
 * curl
 ** read local file
 #+begin_src shell-script
