@@ -91,6 +91,6 @@ Host() {
 }
 
 SEP="  "
-echo -e "$(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date)"
+echo -e " $(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date) "
 
 exit 0
