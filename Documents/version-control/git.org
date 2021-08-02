@@ -31,7 +31,24 @@ Clone a repository into a new directory.
 ** commit
       Record changes to the repository.
 ** config
-      Get and set repository or global options.
+Get and set repository or global options.
+*** --get
+
+|                    |   |
+|--------------------+---|
+| --get <name.value> |   |
+|                    |   |
+
+
+**** usage
+#+begin_src shell
+
+git config --get remote.origin.url
+git config --get user.name
+git config --get pull.ff # only
+
+#+end_src
+
 ** diff
 Show changes between commits, commits and working tree, and so on.
 
@@ -41,7 +58,11 @@ Show changes between commits, commits and working tree, and so on.
 |                                              |                         |
 
 ** fetch
-      Download objects and refs from another repository.
+Fetch branches and/or tags (collectively, "refs") from one or more other
+repositories, along with the objects necessary to complete their histories.
+Remote-tracking branches are updated (see the description of <refspec> below for
+ways to control this behavior).
+
 ** grep
       Print lines matching a pattern.
 ** help
