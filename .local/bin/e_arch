@@ -3,6 +3,9 @@
 # Debug Options
 set -euo pipefail
 
+DEPS=(sudo pacman sed)
+e_checkdeps ${DEPS[@]}
+
 e_echo "Arch Linux - System Packages and Services Instalation."
 
 upgrade() {
@@ -12,6 +15,8 @@ upgrade() {
 }
 
 pre() {
+    [[ $(grep '^\[multilib\]' /etc/pacman.conf) == '[multilib]' ]] && return
+
     e_echo "Enable Multi-Arch"
 
     /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
@@ -170,17 +175,12 @@ services() {
 
 foreign() {
     echo "Non-Debian packages"
-
-    chrome() {
-        /usr/bin/wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        /usr/bin/sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
-    }
 }
 
 # * RUN
 
-# upgrade
-# pre
+upgrade
+pre
 packages
 # post
 # clean
