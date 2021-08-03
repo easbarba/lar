@@ -32,32 +32,31 @@
 
 *Euber Alexandre De Sousa Barbosa*
 
-Brasília, DF - (61) 981103178
+easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
 
-easbarbosa@tutanota.com
+*SOBRE*
+-----
 
-git.sr.ht/~easbarbosa
+
+*SKILLS*
+-----
+  - Linguagens: Ruby, Guile Scheme, Emacs-Lisp.
+  - Frameworks: Sinatra.
+  - Distros: Arch Linux, Debian, GuixSD.
+  - Shell Script: Awk, Sed, GNU Bash, Fish.
+  - Git: rebase, squash, merge, format-patch.
+  - Containers: Podman, dockerfile, criação e gerência de imagens.
+  - Unit Test: RSpec, Minitest.
+  - Front-End: HTML, CSS (Grid,Flexbox).
+  - Editores: GNU Emacs, NeoVim, Micro, Nano.
+  - Inglês: Ativo/Intermediário , Passivo/Avancado.
+
+*PROJETOS*
+-----
+
+  https://git.sr.ht/~easbarbosa
 
 *EDUCAÇÃO*
 -----
   - Direito - IESB (Trancado)
   - Ciência da Computação, UCB (Cursando)
-
-
-*SKILLS*
------
-  - Linguagens: Awk, Lua, Guile Scheme, Emacs-Lisp e Ruby.
-  - Frameworks: Sinatra.
-  - Distros: Debian, Arch, GuixSD.
-  - Shell Script: GNU Bash, Fish Shell e POSIX.
-  - Git: rebase, squash, merge, format-patch.
-  - Containers: podman, dockerfile, criação e gerência de imagens.
-  - Unit Test: RSpec, Minitest.
-  - Front-End: HTML, CSS (Grid,Flexbox).
-  - Editores: GNU Emacs, NeoVim, Micro, Nano.
-
-
-*MAIS*
------
-  - Inglês: Intermediário Ativo, Avancado Passivo.
-  - Soft Skills como Secretário de Advocacia e Radio Taxi.
