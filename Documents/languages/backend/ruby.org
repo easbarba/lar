@@ -1808,20 +1808,9 @@ Callbacks and hooks methods are called when a particular event takes place durin
      |                             |                                                            |
 
 ** Testing
-*** RSpec
-    Behaviour Driven Development for Ruby
-**** Config
-***** .rspec
-      Default command-line flags
-***** spec/spec_helper.rb
-|                                          |   |
-|------------------------------------------+---|
-| Configuration options                    |   |
-| config.filter_gems_from_backtrace <list> |   |
-|                                          |   |
+*** [[https://rspec.info/][RSpec]]
+Behaviour Driven Development for Ruby
 
-****** Options
-       - ENV['RACK_ENV'] = 'test'
 **** Cli
      | cmd                          | desc                                             |
      |------------------------------+--------------------------------------------------|
@@ -1854,6 +1843,14 @@ before do
                      .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
 end
 #+end_src
+***** matchers
+- contain_exactly
+- a_kind_of
+- include
+
+***** expect / to
+expect() and to() check a result in order to signal success or failure.
+They compare a value using a matcher.
 
 ***** pending
 
@@ -1862,6 +1859,11 @@ end
 let(:expense) { { 'some' => 'data' } }
 #+end_src
 
+***** metadata
+     |                               |   |
+     |-------------------------------+---|
+     | context 'foobar', focus: true |   |
+     |                               |   |
 **** Commands
      |                                   |                                      |
      |-----------------------------------+--------------------------------------|
@@ -1878,17 +1880,19 @@ let(:expense) { { 'some' => 'data' } }
      | let(:foo) { Bar.new }             |                                      |
      | pending 'foo not yet implemented' |                                      |
      | skip or xit 'foo bar'             | x prepended to it '' to skip example |
-**** Expect
-     |                                   |   |
-     |-----------------------------------+---|
-     | to                                |   |
-     | include(<obj>: a_kind_of(<Class>) |   |
+**** Config
+***** .rspec
+      Default command-line flags
+***** spec/spec_helper.rb
+|                                          |   |
+|------------------------------------------+---|
+| Configuration options                    |   |
+| config.filter_gems_from_backtrace <list> |   |
+|                                          |   |
 
-**** metadata
-     |                               |   |
-     |-------------------------------+---|
-     | context 'foobar', focus: true |   |
-     |                               |   |
+****** Options
+       - ENV['RACK_ENV'] = 'test'
+
 *** Minitest
 **** setup
 
