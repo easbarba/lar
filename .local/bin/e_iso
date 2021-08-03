@@ -3,9 +3,18 @@
 # Debug Options
 set -euo pipefail
 
-# TODO: check if iso is valid
+DEPS=(sudo dd)
+e_checkdeps "${DEPS[@]}"
 
-ISO="$1"
-TO="$2"
+# Check if minimal arguments are given.
+[[ $# -ne 2 ]] && echo -e '\nUsage: </iso/location> </usb/location/>' && exit
 
-sudo dd bs=4M if="$ISO" of="$TO" status=progress oflag=sync
+# * Arguments
+ISO="$1" # TODO: check if ISO is valid
+TO="$2" # TODO: check if TO exist
+
+echo "ISO: $ISO"
+echo "TO: $TO"
+
+e_echo "Burning"
+/usr/bin/sudo /usr/bin/dd bs=4M if="$ISO" of="$TO" status=progress oflag=sync
