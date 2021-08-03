@@ -41,15 +41,14 @@ easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
 *SKILLS*
 -----
   - Linguagens: Ruby, Guile Scheme, Emacs-Lisp.
-  - Frameworks: Sinatra.
-  - Distros: Arch Linux, Debian, GuixSD.
-  - Shell Script: Awk, Sed, GNU Bash, Fish.
-  - Git: rebase, squash, merge, format-patch.
-  - Containers: Podman, dockerfile, criação e gerência de imagens.
   - Unit Test: RSpec, Minitest.
   - Front-End: HTML, CSS (Grid,Flexbox).
+  - Frameworks: Sinatra.
+  - Distros: Arch Linux, Debian, GuixSD.
+  - Scripting: Awk, Sed, GNU Bash, Fish.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
-  - Inglês: Ativo/Intermediário , Passivo/Avancado.
+  - Git: rebase, squash, merge, format-patch.
+  - Containers: Podman, dockerfile, criação e gerência de imagens.
 
 *PROJETOS*
 -----
@@ -60,3 +59,4 @@ easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
 -----
   - Direito - IESB (Trancado)
   - Ciência da Computação, UCB (Cursando)
+  - Inglês: Ativo/Intermediário , Passivo/Avancado.
