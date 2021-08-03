@@ -6,4 +6,4 @@ local beautiful = require("beautiful")
 beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 
 -- Wallpaper
-beautiful.wallpaper = os.getenv("HOME") .. "/Pictures/wallpapers/seo-hyun-jin-1.jpg"
+-- beautiful.wallpaper = os.getenv("HOME") .. "/Pictures/wallpapers/seo-hyun-jin-1.jpg"
