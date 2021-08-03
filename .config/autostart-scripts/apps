@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Description: auto-start list of software toolings
-# Deps: pgrep, command, bash4
+DEPS=(pgrep bash feh)
+e_checkdeps ${DEPS[@]}
 
 # * Guards
 
