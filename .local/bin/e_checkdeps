@@ -5,10 +5,12 @@ set -euo pipefail
 
 DEPS=("$@")
 
-e_echo "Checking Dependencies"
+e_echo "Dependencies location:"
 
 for dep in "${DEPS[@]}"; do
 	dep_location="$(command -v $dep)"
 
 	[[ -x $dep_location ]] && echo "$dep: $dep_location"
 done
+
+echo
