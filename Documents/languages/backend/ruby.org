@@ -119,7 +119,7 @@
 | The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |                 |
 | Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |                 |
 | Design Patterns in Ruby          | Composite                          |                                         |                 |
-| Effective Testing - RSpec3       | Testing in Isolation               | Sketching the Behavior                  |                 |
+| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   |                 |
 | Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     | Fibers, Threads |
 | Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                        |                 |
 | Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite             |                 |
@@ -1828,6 +1828,7 @@ Behaviour Driven Development for Ruby
      | describe                     | creates an example group (set of related tests). |
      | expect                       | verifies an expected outcome (assertion)         |
      | example                      | individual test                                  |
+     | -b                           | display backtrace                                |
 
 **** Terms
  - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
@@ -1844,16 +1845,18 @@ before do
 end
 #+end_src
 ***** matchers
-- contain_exactly
-- a_kind_of
-- include
+|                 |                              |
+|-----------------+------------------------------|
+| eq              | exact argument and order     |
+| contain_exactly | exact arguments in any order |
+| a_kind_of       |                              |
+| include         |                              |
 
 ***** expect / to
 expect() and to() check a result in order to signal success or failure.
 They compare a value using a matcher.
 
 ***** pending
-
 ***** let
 #+begin_src ruby
 let(:expense) { { 'some' => 'data' } }
@@ -1888,7 +1891,7 @@ let(:expense) { { 'some' => 'data' } }
 |------------------------------------------+---|
 | Configuration options                    |   |
 | config.filter_gems_from_backtrace <list> |   |
-|                                          |   |
+| filter_gems_from_backtrace <list>        |   |
 
 ****** Options
        - ENV['RACK_ENV'] = 'test'
