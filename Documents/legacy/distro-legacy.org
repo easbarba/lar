@@ -1,4 +1,34 @@
 #+TITLE: Distro Legacy
+
+* Debian
+
+** Unlisted
+#+begin_src shell
+
+zsh unrar rar ripgrep locate stow xonsh wmctrl devilspie2 poppler-utils exuberant-ctags bat wget2   parted
+nnn fzy  screen ncdu pragha materia-gtk-theme papirus-icon-theme suru-icon-theme winetricks fonts-firacode
+fonts-freefont-ttf network-manager-gnome  maim unclutter diodon pasystray libfile-mimeinfo-perl dmenu
+wofi rofi lxappearance x11proto-dev volumeicon-alsa dunst rclone
+calibre inkscape screenkey syncthing screenfetch gopher ssh-askpass-gnome fd-find
+
+bash-doc gcc-doc gdb-doc gdbserver
+
+fontconfig libfreetype6
+
+libsqlite3-dev cmake
+
+transmission-gtk
+kdenlive clementine
+
+libiw-dev hddtemp acpi-call
+
+dialog
+
+sysstat
+awesome-extra
+
+#+end_src
+
 * Arch
 ** Worthy packages
 
