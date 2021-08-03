@@ -3,34 +3,59 @@
 # Debug Options
 set -euo pipefail
 
+DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
+e_checkdeps "${DEPS[@]}"
+
 # * DEBIAN
 
-e_echo "Debian"
+e_echo "Debian GNU/Linux -- The Universal Operating System"
 
 upgrade() {
-	e_echo "Updating Debian"
+	e_echo "Upgrading System"
 
-	sudo apt update
-	sudo apt upgrade -y
-	sudo apt autoremove -y
+	/usr/bin/sudo /usr/bin/apt update
+	/usr/bin/sudo /usr/bin/apt upgrade -y
+	/usr/bin/sudo /usr/bin/apt autoremove -y
 }
 
 pre() {
-	e_echo "Enable Multi-Arch"
 
-	sudo dpkg --add-architecture i386
+	sid(){
+	    [[ $(grep '^\[multilib\]' /etc/apt/sources.list) == '[multilib]' ]] && return
+
+		# /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+	}
+
+	multi(){
+		e_echo "Enable Multi-Arch"
+
+		/usr/bin/sudo /usr/bin/dpkg --add-architecture i386
+	}
+
+	# * RUN
+	multi
 }
 
 packages() {
 	e_echo "Installing system packages"
 
-	essentials=(git p7zip p7zip-full zip unzip bash tmux zile gcc make
-		build-essential curl emacs)
+	essentials=(git ssh curl unzip bash tmux zile)
 
-	programming=(direnv shellcheck zenity libpq-dev bash-completion cmake
-		mercurial clang libsqlite3-dev) # libfixposix-dev
+	system=(zip p7zip p7zip-full lshw at usbutils lsof atool linux-perf time
+			entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
+			jq rsync pv texinfo autoconf automake socat)
 
-	ruby=(libssl-dev ruby-dev)
+	network=(net-tools iproute2 telnet)
+
+	programming=(subversion mercurial direnv clang libpq-dev)
+
+	shell=(bash-completion bash-completion zenity fish)
+
+	editors=(neovim micro)
+
+	gnu=(gcc make vrms info wget parallel)
+
+	ruby=(ruby-dev libssl-dev)
 
 	lua=(lua5.4 luarocks lua-check)
 
@@ -38,49 +63,35 @@ packages() {
 
 	music=(mpd mpc ncmpcpp)
 
-	system=(telnet fd-find screen micro neovim zsh fish unrar rar ripgrep lshw at usbutils
-			lsof time net-tools iproute2 entr tree xsel xclip exuberant-ctags
-			fontconfig libfreetype6 subversion bc gdebi htop strace ltrace ssh
-			cpio lhasa lzop atool wmctrl devilspie2 lua5.2 poppler-utils linux-perf sysstat jq
-			dialog ncdu nnn fzy rsync bat rclone xonsh pv wget2 parallel
-			locate info wget stow parted texinfo autoconf automake gnutls-bin
-			bash-doc gcc-doc gdb-doc gdbserver nftables firewalld
-			firewall-config socat vrms fzf aria2)
+	emacs=(emacs libgccjit-10-dev)
 
-	emacs=(libgccjit-10-dev)
+	qt=(kdeconnect)
 
-	qt=(kdeconnect kdenlive clementine)
+	gtk=(cheese)
 
-	gtk=(cheese transmission-gtk pragha materia-gtk-theme papirus-icon-theme suru-icon-theme)
+	infra=(podman qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm
+		   virt-manager ovmf bridge-utils)
 
-	infra=(podman winetricks qemu qemu-system-gui
-		qemu-utils qemu-efi qemu-kvm virt-manager ovmf
-		bridge-utils)
+	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
-	fonts=(fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack
-		fonts-freefont-ttf fonts-dejavu)
+	security=(nftables firewalld firewall-config gnutls-bin)
 
-	security=(gnutls-bin)
+	laptop=(iw wireless-tools laptop-mode-tools i965-va-driver vainfo
+		libvdpau-va-gl1 libinput-tools tlp acpi acpid lm-sensors)
 
-	laptop=(iw wireless-tools libiw-dev laptop-mode-tools
-		i965-va-driver vainfo libvdpau-va-gl1 libinput-tools acpi acpid
-		lm-sensors hddtemp)
+	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	debian=(apt-listbugs apt-listchanges reportbug aptitude apt-file)
+	wm=(awesome scrot udiskie gnome-keyring ffmpeg aria2
+		xdg-utils playerctl brightnessctl seahorse blueman)
 
-	wm=(awesome awesome-extra network-manager-gnome aria2 maim udiskie
-		unclutter diodon gnome-keyring ssh-askpass-gnome pasystray
-		libfile-mimeinfo-perl dmenu xdg-utils wofi rofi playerctl
-		lxappearance seahorse x11proto-dev brightnessctl tlp acpi-call
-		blueman volumeicon-alsa) # dunst
+	user=(firefox chromium libreoffice gimp obs-studio mpv libnotify-bin
+		imagemagick pandoc aspell aspell-pt-br amfora telegram-desktop)
 
-	user=(firefox chromium libreoffice calibre inkscape screenkey gimp
-		obs-studio syncthing mpv libnotify-bin imagemagick pandoc
-		screenfetch aspell aspell-pt-br gopher telegram-desktop)
-
-	media=(ffmpeg vorbis-tools gstreamer1.0-plugins-bad
+	media=(vorbis-tools gstreamer1.0-plugins-bad
 		gstreamer1.0-plugins-base gstreamer1.0-plugins-good
 		gstreamer1.0-plugins-ugly)
+
+	lisp=(libfixposix-dev)
 
 	latex=(texlive-latex-recommended texlive-latex-extra
 		texlive-latex-base)
@@ -89,10 +100,14 @@ packages() {
 		mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
 		mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
 
-	local command='sudo apt install -y'
+	local command='/usr/bin/sudo /usr/bin/apt install -y'
 
 	enabled=("${essentials[@]}"
+			 "${gnu[@]}"
+			 "${network[@]}"
+			 "${shell[@]}"
 			 "${debian[@]}"
+			 "${editors[@]}"
 			 "${emacs[@]}"
 			 "${ruby[@]}"
 			 "${lua[@]}"
@@ -116,7 +131,7 @@ packages() {
 	done
 
 	# builds dep
-	sudo apt -y build-dep emacs
+	/usr/bin/sudo /usr/bin/apt -y build-dep emacs
 
 	e_echo "Done"
 }
@@ -124,35 +139,38 @@ packages() {
 post(){
 	e_echo "Post install"
 
-	sudo apt-file update # update Debian database
-	sudo fc-cache -fv
+	/usr/bin/sudo /usr/bin/apt-file update # update Debian database
+	/usr/bin/sudo /usr/bin/fc-cache -fv # cache all system fonts
 }
 
 clean() {
 	e_echo "Clean up"
 
-	unused=(firefox-esr)
+	unused=(firefox-esr )
 
-	local command='sudo apt remove -y'
-
+	local command='/usr/bin/sudo /usr/bin/apt remove -y'
 	e_dolist "$command" "${unused[@]}"
+
+	purging=(*nvidia*)
+	local command='/usr/bin/sudo /usr/bin/apt purge -y'
+	e_dolist "$command" "${purging[@]}"
 }
 
 services() {
 	e_echo "Debian Services"
 
 	postgres() {
-		sudo systemctl restart postgresql
+		/usr/bin/sudo /usr/bin/systemctl restart postgresql
 	}
 
 	mpd() {
-		sudo systemctl disable mpd
+		/usr/bin/sudo /usr/bin/systemctl disable mpd
 	}
 
 	kdeconnect() {
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		sudo systemctl restart firewalld.service
+		/usr/bin/sudo /usr/bin/firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		/usr/bin/sudo /usr/bin/firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		/usr/bin/sudo /usr/bin/systemctl restart firewalld.service
 	}
 
 	timezone() {
@@ -160,19 +178,19 @@ services() {
 		local desired_zone
 
 		desired_zone='America/Sao_Paulo'
-		current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
+		current_zone=$(/usr/bin/timedatectl | grep 'Time zone' | awk '{print $3}')
 
-		[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
+		[[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
 	}
 
 	alternatives() {
 		# set python to python3
-		sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+		/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 	}
 
 	virtualization() {
-		sudo usermod -aG libvirt "$USER"
-		sudo usermod -aG kvm "$USER"
+		/usr/bin/sudo usermod -aG libvirt "$USER"
+		/usr/bin/sudo usermod -aG kvm "$USER"
 	}
 
 	mpd
@@ -188,7 +206,7 @@ foreign() {
 
 	chrome() {
 		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-		sudo apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+		/usr/bin/sudo /usr/bin/apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
 	}
 }
 
