@@ -114,10 +114,11 @@
   :END:
 * Progress
 ** Books
-| name        | chapter                  | @ | late | revision |
-|-------------+--------------------------+---+------+----------|
-| Lil Schemer | 1                        |   |      |          |
-| Scheme PL   | Chapter 3. Going Further |   |      |          |
+| name         | chapter                  | @                                              | late | revision |
+|--------------+--------------------------+------------------------------------------------+------+----------|
+| Lil Schemer  | 1                        |                                                |      |          |
+| Guile manual | API Reference            | 6.6.2.9 Converting Numbers To and From Strings |      |          |
+| Scheme PL    | Chapter 3. Going Further |                                                |      |          |
 
 ** LDC
 | Source Code | folder | file | @ |
