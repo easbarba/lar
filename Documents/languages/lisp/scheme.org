@@ -502,6 +502,16 @@ https://htdp.org/2018-01-06/Book/
 
 #+end_src
 
+**** atom?
+
+#+begin_src scheme
+(define (atom? x)
+  (and (not (pair? x)) (not (null? x))))
+
+(atom? 'a) ; #t
+
+#+end_src
+
 *** list
 - lists are s-expressions
 - empty list = null
@@ -546,6 +556,9 @@ https://htdp.org/2018-01-06/Book/
 ***** for-each
 
 *** boleans
+- #t and #f
+- #true and #false in R7RS
+
 #+begin_src scheme
 #t
 #true
@@ -554,13 +567,39 @@ https://htdp.org/2018-01-06/Book/
 
 #+end_src
 
+**** functions
+***** boolean?
 *** [[https://www.gnu.org/software/guile/manual/html_node/Symbols.html][symbols]]
-*** number
+*** numerics
 #+begin_src scheme
 
 1234 ;; 1234
 
 #+end_src
+**** functions
+***** number?
+***** integer?
+***** exact-integer?
+***** real?
+***** rational?
+***** inf?
+***** nan?
+***** finite?
+***** nan
+***** inf
+***** numerator
+***** denominator
+***** complex?
+***** exact?
+***** inexact?
+***** odd?
+***** even?
+***** quotient
+***** modulo
+***** gcd
+***** lcm
+***** modulo-expt
+***** exact-integer-sqrt
 
 *** null
 #+begin_src scheme
@@ -613,19 +652,6 @@ https://htdp.org/2018-01-06/Book/
 
 #+end_src
 
-*** <=
-*** <
-*** >=
-*** >
-*** atom?
-
-#+begin_src scheme
-(define (atom? x)
-  (and (not (pair? x)) (not (null? x))))
-
-(atom? 'a) ; #t
-
-#+end_src
 *** eq?
 - two non-numeric atom arguments
 
@@ -637,6 +663,25 @@ https://htdp.org/2018-01-06/Book/
 #+end_src
 *** eqv?
 *** equal?
+
+** Comparison
+*** <=
+*** <
+*** >=
+*** >
+*** zero?
+*** positive?
+*** negative?
+** Conditinals
+*** if
+#+begin_src scheme
+
+(if #t "yes" "no")
+(if 0 "yes" "no")
+(if #f "yes" "no")
+
+#+end_src
+*** cond
 ** modules
 *** [[https://www.gnu.org/software/guile/manual/html_node/Using-Guile-Modules.html][use-modules]]
 
@@ -730,9 +775,9 @@ https://htdp.org/2018-01-06/Book/
 *** eof-object?
 *** pair?
 *** append
+** Anonymous Functions
+*** [[https://www.gnu.org/software/guile/manual/html_node/lambda_002a-and-define_002a.html][lambda*]]
 ** Functions
-*** anonymous functions
-**** [[https://www.gnu.org/software/guile/manual/html_node/lambda_002a-and-define_002a.html][lambda*]]
 *** optional and keywords arguments
 *** high-order functions
 **** map
