@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Debug Options
-set -euo pipefail
+# set -euo pipefail
 
 DEPS=("$@")
 
@@ -10,7 +10,7 @@ e_echo "Dependencies location:"
 for dep in "${DEPS[@]}"; do
 	dep_location="$(command -v $dep)"
 
-	[[ -x $dep_location ]] && echo "$dep: $dep_location"
+	[[ -x $dep_location ]] && echo "$dep: $dep_location" || echo "$dep: NOT FOUND!"
 done
 
 echo
