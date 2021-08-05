@@ -8,7 +8,8 @@ set -euo pipefail
 deps=(sensors ping gawk grep sed amixer pactl) # TODO: Check deps
 
 Distro() {
-    echo -e "$(cat /etc/hostname)"
+    result=$(cat /etc/hostname)
+    echo -e "\uf05a  GNU / ${result^}"
 }
 
 Kernel() {
@@ -17,7 +18,8 @@ Kernel() {
 }
 
 Uptime() {
-    echo -e "$(uptime -p | tr -d ',' | awk '{print $2 $3}')"
+    result=$(uptime -p)
+    echo -e "${result:3}"
 }
 
 Volume() {
@@ -104,7 +106,7 @@ Host() {
 }
 
 SEP="  "
-SEP2=" | "
-echo -e "$(Distro)$SEP2$(Uptime)$SEP2$(Kernel)$SEP2$(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date) "
+SEP2=" / "
+echo -e "$(Distro)$SEP2$(Kernel)$SEP2$(Uptime)$SEP$(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date) "
 
 exit 0
