@@ -66,7 +66,7 @@ Date() {
 
 Battery() {
     local result
-    result="$(acpi -b | awk '{ print substr($4, 1, length($4)-1)"% ("substr($3, 1, length($3)-1)")"}')"
+    result="$(acpi -b | awk '{print $4}')"
     printf "%s" "\Uf241: ${result}"
 }
 
