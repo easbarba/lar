@@ -1,5 +1,3 @@
--- lua
-
 name,repository
 nvim-lspinstall,https://github.com/kabouzeid/nvim-lspinstall
 packer.nvim,https://github.com/wbthomason/packer.nvim
