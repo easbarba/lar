@@ -7,6 +7,19 @@ set -euo pipefail
 
 deps=(sensors ping gawk grep sed amixer pactl) # TODO: Check deps
 
+Distro() {
+    echo -e "$(cat /etc/hostname)"
+}
+
+Kernel() {
+    local result=$(uname -r | sed 's/.//5g')
+    echo -e $result
+}
+
+Uptime() {
+    echo -e "$(uptime -p | tr -d ',' | awk '{print $2 $3}')"
+}
+
 Volume() {
     local result="???"
     local check="$(pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')"
@@ -28,19 +41,19 @@ Cpuf() {
     read -r _ a b c idle rest </proc/stat
     total=$((a + b + c + idle))
     result="$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))"
-    printf "%s" "\Uf2db ${result}%"
+    echo -e "\Uf110 ${result}%"
 }
 
 Cput() {
     local result
     result="$(sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}')"
-    printf "%s" "\Uf06d ${result}"
+    echo -e "\Uf134 ${result}"
 }
 
 Memory() {
     local result
     result="$(free -m | awk 'NR==2{printf "%dMB\n", $3,$2,$3*100/$2 }')"
-    printf "%s" "\Uf7c2 ${result}"
+    printf "%s" "\Uf1c0 ${result}"
 }
 
 Date() {
@@ -91,6 +104,7 @@ Host() {
 }
 
 SEP="  "
-echo -e " $(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date) "
+SEP2=" | "
+echo -e "$(Distro)$SEP2$(Uptime)$SEP2$(Kernel)$SEP2$(Volume)$SEP$(Battery)$SEP$(Memory)$SEP$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Date) "
 
 exit 0
