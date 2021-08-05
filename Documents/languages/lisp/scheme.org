@@ -513,6 +513,48 @@ https://htdp.org/2018-01-06/Book/
 
 #+end_src
 
+**** '()
+**** cons*
+**** list-copy
+**** length
+**** last-pair
+**** list-ref
+**** list-tail
+**** list-head
+**** append
+**** append!
+**** reverse
+**** reverse!
+**** list-set!
+**** list-cdr-set!
+**** delq
+**** delq!
+**** delv
+**** delv!
+**** delete
+**** delete!
+**** delq1!
+**** delv1!
+**** delete1!
+**** filter
+**** [[https://www.gnu.org/software/guile/manual/html_node/List-Searching.html][searching]]
+***** memq
+***** memv
+***** member
+**** mapping
+***** map
+***** for-each
+
+*** boleans
+#+begin_src scheme
+#t
+#true
+#f
+#false
+
+#+end_src
+
+*** [[https://www.gnu.org/software/guile/manual/html_node/Symbols.html][symbols]]
 *** number
 #+begin_src scheme
 
@@ -561,8 +603,6 @@ https://htdp.org/2018-01-06/Book/
 #+end_src
 
 ** Predicates
-- =, <, >, <=, and >=
-
 *** null?
 - only for lists
 
@@ -573,6 +613,10 @@ https://htdp.org/2018-01-06/Book/
 
 #+end_src
 
+*** <=
+*** <
+*** >=
+*** >
 *** atom?
 
 #+begin_src scheme
@@ -591,6 +635,65 @@ https://htdp.org/2018-01-06/Book/
 (eq? 'Larry 'Harry) ; #f
 
 #+end_src
+*** eqv?
+*** equal?
+** modules
+*** [[https://www.gnu.org/software/guile/manual/html_node/Using-Guile-Modules.html][use-modules]]
+
+#+begin_src scheme
+
+(use-modules (srfi srfi-1)) ; https://www.gnu.org/software/guile/manual/html_node/SRFI_002d1-Fold-and-Map.html
+(fold cons '() '(1 2 3))
+
+#+end_src
+
+*** [[https://www.gnu.org/software/guile/manual/html_node/Declarative-Modules.html][define-module]]
+#+begin_src scheme
+
+(define-module (gota dots run)
+   #:use-modules (srfi srfi-1)
+   #:use-modules (ice-9 open))
+
+
+#+end_src
+*** [[https://www.gnu.org/software/guile/manual/html_node/SRFI-Support.html][srfi]]
+*** [[https://www.gnu.org/software/guile/manual/html_node/rnrs-base.html][rnrs]]
+** [[https://www.gnu.org/software/guile/manual/html_node/Records.html][records]]
+** Quotes
+*** quasi-quote `
+#+begin_src scheme
+
+`(1 2 (* 9 9) 3 4)       ; ⇒ (1 2 (* 9 9) 3 4)
+
+#+end_src
+*** unquote ,
+#+begin_src scheme
+
+`(1 2 (* 9 9) 3 4)       ⇒ (1 2 (* 9 9) 3 4)
+`(1 2 ,(* 9 9) 3 4)      ⇒ (1 2 81 3 4)
+`(1 (unquote (+ 1 1)) 3) ⇒ (1 2 3)
+`#(1 ,(/ 12 2))          ⇒ #(1 6)
+
+#+end_src
+
+*** unquote-splicing @
+#+begin_src scheme
+
+(define x '(2 3))
+`(1 ,x 4)                          ; ⇒ (1 (2 3) 4)
+`(1 ,@x 4)                         ; ⇒ (1 2 3 4)
+`(1 (unquote-splicing (map 1+ x))) ; ⇒ (1 3 4)
+`#(9 ,@x 9)                        ; ⇒ #(9 2 3 9)
+
+#+end_src
+
+*** quote '
+** Macros
+** high-order functions
+*** map
+*** fold
+*** reduce
+
 ** xx
 *** cond
 
@@ -614,11 +717,26 @@ https://htdp.org/2018-01-06/Book/
 (or (null? '()) (atom ? '(a x d))) ; #t
 
 #+end_src
-** Methods
-|       |   |
-|-------+---|
-| eqv?  |   |
-| pair? |   |
+** More
+*** cons*
+*** primitive-eval
+#+begin_src scheme
+(primitive-eval '(+ 2 5)) ;; 7
+
+#+end_src
+
+*** eval
+*** eqv?
+*** eof-object?
+*** pair?
+*** append
+** Functions
+*** anonymous functions
+**** [[https://www.gnu.org/software/guile/manual/html_node/lambda_002a-and-define_002a.html][lambda*]]
+*** optional and keywords arguments
+*** high-order functions
+**** map
+
 ** errors
 assertion-violation
 ** iteration
@@ -661,6 +779,7 @@ set-cdr
 
 #+end_src
 
+*** define*
 * Terms
   | Term                                         | Meaning |
   |----------------------------------------------+---------|
