@@ -21,6 +21,34 @@ configure a network interface
 * whois
 * host
 * dig
+* iwd
+  #+begin_src shell
+
+  ip a
+  iw dev
+  ip link set wlp2s0 up
+
+  iwlist scan
+  #+end_src
+
+  add to /etc/network/interfaces
+
+  #+begin_src shell
+  iface wlp2s0 inet dhcp
+        wpa-ssid ESSID
+        wpa-psk PASSWORD
+  #+end_src
+
+  Bring up your interface and verify the connection:
+
+  #+begin_src shell
+  ifup wlp2s0
+  iw wlp2s0 link
+  ip a
+  #+end_src
+
+* iw
+* wpa_supplicant
 * curl
 * nmap
 * nmcli
@@ -35,6 +63,8 @@ configure a network interface
 | nmcli con down <SSID>         | disconnect of SSID                                             |
 | nmcli con up <SSID>           | reconnect to SSID                                              |
 |                               |                                                                |
+
+network manager wont work if /etc/network/interface is set to any device, remove it and procced again
 
 * nslookup
 * route
