@@ -60,6 +60,7 @@
      "https://www.honeybadger.io/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
      ;; video channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC_UwerUx8bGApFn_oIAuilw" ;; XLetails
