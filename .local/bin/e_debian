@@ -81,11 +81,13 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	wm=(awesome scrot udiskie gnome-keyring ffmpeg aria2
-		xdg-utils playerctl brightnessctl seahorse blueman)
+	window=(xorg awesome)
+
+	wm=(feh scrot udiskie gnome-keyring ffmpeg aria2
+	    xdg-utils playerctl brightnessctl seahorse bluez)
 
 	user=(firefox chromium libreoffice gimp obs-studio mpv libnotify-bin
-		imagemagick pandoc aspell aspell-pt-br amfora telegram-desktop)
+		atril imagemagick pandoc aspell aspell-pt-br amfora telegram-desktop)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad
 		gstreamer1.0-plugins-base gstreamer1.0-plugins-good
@@ -96,9 +98,10 @@ packages() {
 	latex=(texlive-latex-recommended texlive-latex-extra
 		texlive-latex-base)
 
-	amd=(firmware-linux-nonfree libgl1-mesa-dri libglx-mesa0
-		mesa-vulkan-drivers xserver-xorg-video-all libglx-mesa0:i386
-		mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386)
+	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
+		libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
+		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
+		radeontop)
 
 	local command='/usr/bin/sudo /usr/bin/apt install -y'
 
@@ -106,6 +109,7 @@ packages() {
 			 "${gnu[@]}"
 			 "${network[@]}"
 			 "${shell[@]}"
+			 "${window[@]}"
 			 "${debian[@]}"
 			 "${editors[@]}"
 			 "${emacs[@]}"
@@ -219,3 +223,6 @@ post
 clean
 services
 foreign
+
+# dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
+# firmware-linux-nonfree, firmware-misc-nonfree, firmware-atheros, and firmware-ath9k-htc
