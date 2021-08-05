@@ -8,3 +8,5 @@ alezost-guix-config,https://github.com/alezost/guix-config
 fibers,https://github.com/wingo/fibers
 guix,https://git.savannah.gnu.org/git/guix
 guile,https://git.sv.gnu.org/git/guile
+akku,https://gitlab.com/akkuscm/akku
+lokke,https://github.com/lokke-org/lokke
