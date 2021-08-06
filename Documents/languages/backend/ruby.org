@@ -1,4 +1,4 @@
-#+TILE: Ruby Language - Study Annotations
+#+TILE: Ruby Language - Annotations
 
 * Summary
   :PROPERTIES:
