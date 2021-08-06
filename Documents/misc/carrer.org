@@ -1,31 +1,31 @@
 #+TITLE: Job
 
-* schedule
-
+* Schedule
 | mon        | tue        | wed        | thru       | fri        | sat | sun   |
 |------------+------------+------------+------------+------------+-----+-------|
 | rspec      | rspec      | rspec      | rspec      | rspec      |     | guile |
-| postgresql | postgresql | postgresql | postgresql | postgresql |     | unix  |
 | oop        | oop        | oop        | oop        | oop        |     | emacs |
+| postgresql | postgresql | postgresql | postgresql | postgresql |     | unix  |
+| elixir     | elixir     | elixir     | elixir     | elixir     |     |       |
 | git        | git        | git        | git        | git        |     |       |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| Lang            | Ruby                                                        |
-| Framework       | Rails, MVC, Slim, Sidekiq                                   |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
 | Unit Test       | Minitest, Rspec                                             |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
-| Front-end       | JS/CSS/HTML                                                 |
-| Container       | Podman, Docker                                              |
-| CI / CD         | Jenkins                                                     |
+| Lang            | Ruby                                                        |
 | Web API         | REST, SOAP, GraphQL                                         |
-| Network         | HTTP, HTTPS, TCP, SSH, FTP                                  |
+| Container       | Podman, Docker                                              |
 | Cloud           | AWS, Azure                                                  |
+| Front-end       | JS/CSS/HTML                                                 |
+| CI / CD         | Jenkins                                                     |
+| Network         | HTTP, HTTPS, TCP, SSH, FTP                                  |
 | Hosting         | Heroku                                                      |
 | Message         | RabbitMQ/ Kafka                                             |
+| Framework       | Sinatra, Rails, MVC, Slim, Sidekiq                          |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
@@ -36,19 +36,19 @@ easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
 
 *SOBRE*
 -----
+.....
 
 
 *SKILLS*
 -----
   - Linguagens: Ruby, Guile Scheme, Emacs-Lisp.
   - Unit Test: RSpec, Minitest.
-  - Front-End: HTML, CSS (Grid,Flexbox).
-  - Frameworks: Sinatra.
   - Distros: Arch Linux, Debian, GuixSD.
   - Scripting: Awk, Sed, GNU Bash, Fish.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
   - Git: rebase, squash, merge, format-patch.
   - Containers: Podman, dockerfile, criação e gerência de imagens.
+  - Front-End: HTML, CSS (Grid,Flexbox).
 
 *PROJETOS*
 -----
@@ -59,4 +59,4 @@ easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
 -----
   - Direito - IESB (Trancado)
   - Ciência da Computação, UniDF (Cursando)
-  - Inglês: Ativo/Intermediário , Passivo/Avancado.
+  - Inglês: Ativo(Intermediário), Passivo(Avancado).
