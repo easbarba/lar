@@ -1,0 +1,13 @@
+name,repository
+absinthe,https://github.com/absinthe-graphql/absinthe
+elixir_style_guide,https://github.com/christopheradams/elixir_style_guide
+credo,https://github.com/rrrene/credo
+kiex,https://github.com/taylor/kiex
+kerl,https://github.com/kerl/kerl
+dialyxir,https://github.com/jeremyjh/dialyxir
+elixir-ls,https://github.com/elixir-lsp/elixir-ls
+ecto,https://github.com/elixir-ecto/ecto
+hex,https://github.com/hexpm/hex
+phoenix,https://github.com/phoenixframework/phoenix
+otp,https://github.com/erlang/otp
+elixir,https://github.com/elixir-lang/elixir
