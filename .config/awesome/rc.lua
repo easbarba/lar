@@ -15,7 +15,7 @@ require "awful.hotkeys_popup.keys"
 
 -- base
 require "base.autorun"
-require "base.themes"
+-- require "base.themes"
 require "base.errors"
 require "base.inputs"
 require "base.wibar"
@@ -23,5 +23,5 @@ require "base.rules"
 require "base.signals"
 
 -- Non-Standard additional libraries
-require "modules.gtk-icons"
-require "modules.battery-warning"
+-- require "modules.gtk-icons"
+-- require "modules.battery-warning"
