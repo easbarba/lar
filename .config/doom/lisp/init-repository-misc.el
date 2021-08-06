@@ -42,24 +42,26 @@
      "https://www.fsf.org/static/fsforg/rss/blogs.xml"
      "https://guix.gnu.org/feeds/blog.atom"
      ;; distros
-     "https://archlinux.org/feeds/news/"
+     "https://guix.gnu.org/feeds/blog.atom"
      "https://feeds.feedburner.com/linuxtoday/linux"
      ;; prog blogs
+     "https://wingolog.org/feed/atom"
      "https://elephly.net/feed.xml"
      "https://www.phoronix.com/rss.php"
      "https://michael.stapelberg.ch/feed.xml"
      "https://edelpero.svbtle.com/feed"
      "https://drewdevault.com/blog/index.xml"
      "https://ambrevar.xyz/atom.xml"
-     ;; news
-     "https://www.brasil247.com/feed.rss"
      ;; langs blog
+     "https://elixir-lang.org/atom.xml"
+     "https://ulisses.dev/feed.xml"
      "https://research.swtch.com/feed.atom"
      "https://www.ruby-lang.org/en/feeds/news.rss"
      "https://rubyweekly.com/rss/"
      "https://www.honeybadger.io/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
      ;; video channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Boulos
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
