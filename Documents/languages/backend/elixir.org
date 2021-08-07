@@ -191,5 +191,24 @@ Join strings
 #+end_src
 
 ** Functions
+
+** Anonymous Functions
+#+begin_src elixir
+
+hello = fn name -> "Hello, " <> name <> "!" end
+hello.("Foo")  # Hello Foo
+
+
+greet = fn name ->
+  greetings = "Hello, #{name}"
+  "#{greetings}! Enjoy your stay."
+end
+
+fn -> 1 + 1 end.()
+
+fair_price = fn price, quantity -> price * quantity end
+fair_price.(5, 6)
+
+#+end_src
 ** High Order Functions
 ** Pipe
