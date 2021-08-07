@@ -1,19 +1,20 @@
 # HOME
-  All configuration dotfiles that should be mirror'ed into $HOME directory.
+  Unix software dotfiles that I use daily, it follows $HOME structure to easily
+  mirror late on in a freshly install, I use my own dotfiler *gota* to achieve a
+  minimal reproducibility.
    
 ## Documents
-  Study annotations as org-mode literate programming documents.
+  Study annotations in org-mode literate documents.
 
   info: https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html
 
 ## .local/bin 
-  Miscellaneous scripts to aid bootstraping services and utilities on a freshly
-  Debian install. 
-
-  Usually bash, guile and awk scripts.
+  Miscellaneous scripts to aid bootstraping services and random utilities on a Debian box, 
+  usually bash, guile and awk scripts.
 
 ## [Guix](https://guix.gnu.org)
-  I heavily rely on Guix toolings, so there may be lots of weird files running on it :)
+  I like to try experimental branches of software and its deps, with Guix that
+  easily achieved with a single file, just amazing. :)
 
   info: https://guix.gnu.org
     
