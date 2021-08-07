@@ -137,6 +137,20 @@
 | list    | [1,23,4]                 |
 | map     | %{id: 123, name: "anna"} |
 | nil     | nil                      |
+** Arithmetic
+|    |                                       |                      |
+|----+---------------------------------------+----------------------|
+| +  |                                       |                      |
+| -  |                                       |                      |
+| /  |                                       |                      |
+| *  |                                       |                      |
+| == |                                       |                      |
+| != |                                       |                      |
+| <  |                                       |                      |
+| >  |                                       |                      |
+| ++ | Concatenating two lists               | [1, 2] ++ [3, 4]     |
+| <> | Concatenating two strings or binaries | "Hello, " <> "World" |
+
 
 ** Functions
 ** High Order Functions
