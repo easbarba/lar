@@ -1,8 +1,8 @@
-# -*- ruby -*-
+k # -*- ruby -*-
 
-require "irb/completion"
+require 'irb/completion'
 
-IRB.conf[:IRB_NAME] = "❯"
+IRB.conf[:IRB_NAME] = '❯'
 IRB.conf[:PROMPT_MODE] = :DEFAULT
 IRB.conf[:AUTO_INDENT] = true
 
@@ -10,7 +10,7 @@ IRB.conf[:AUTO_INDENT] = true
 IRB.conf[:EVAL_HISTORY] = 3
 
 def verbose_toggle
-  irb_context.echo ? irb_context.echo = false : irb_context.echo = true
+  irb_context.echo = (irb_context.echo ? false : true)
 end
 
 module IRBExtension
@@ -27,16 +27,16 @@ module IRBExtension
       PROMPT_I: "#{prompt}> ",
       PROMPT_N: "#{prompt}> ",
       PROMPT_S: "#{prompt}%l ",
-      RETURN: "=> %s\n",
+      RETURN: "=> %s\n"
     }
   end
 
   def irb_env
     case Rails.env
     when development
-      Rainbow("development").green
-    when "production"
-      Rainbow("production").red
+      Rainbow('development').green
+    when 'production'
+      Rainbow('production').red
     else
       Rainbow(Rails.env.to_s).yellow
     end
@@ -54,7 +54,7 @@ module IRBExtension
   end
 
   def audit_login
-    @audit_login ||= ENV.fetch("LOGGED_IN_USER", nil)
+    @audit_login ||= ENV.fetch('LOGGED_IN_USER', nil)
   end
 
   def audit_setup_instructions
