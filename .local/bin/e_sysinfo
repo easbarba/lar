@@ -18,8 +18,8 @@ Kernel() {
 }
 
 Uptime() {
-    result=$(uptime -p)
-    echo -e "${result:3}"
+    result=$(uptime -p | awk '{print $2 $3}' | tr -d ',')
+    echo -e "$result"
 }
 
 Volume() {
