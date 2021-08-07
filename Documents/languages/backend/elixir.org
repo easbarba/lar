@@ -151,6 +151,24 @@
 | ++ | Concatenating two lists               | [1, 2] ++ [3, 4]     |
 | <> | Concatenating two strings or binaries | "Hello, " <> "World" |
 
+** Logical
+- left side of the operators and and or must be Boolean values
+
+|     |   |
+|-----+---|
+| and |   |
+| or  |   |
+| not |   |
+
+- accept truthy and falsy values on their left side.
+- works with Booleans and values
+
+|    |   |   |
+|----+---+---|
+| && |   |   |
+| \\ |   |   |
+| !  |   |   |
+
 
 ** Functions
 ** High Order Functions
