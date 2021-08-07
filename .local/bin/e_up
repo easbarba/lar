@@ -19,6 +19,7 @@ e_guix
 e_echo "FLOSS projects"
 floss grab
 floss archive
+cp -rpv $HOME/Downloads/archived/* /media/easbarbosa/MACHO/dots
 
 e_echo "Building Nightly Emacs"
 [[ $DISTRO != "Arch Linux" ]] && cejo project emacs
