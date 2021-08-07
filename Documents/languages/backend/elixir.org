@@ -169,6 +169,26 @@
 | \\ |   |   |
 | !  |   |   |
 
+** Types
+*** Strings
+**** Functions
+*****  <>
+Join strings
+
+#+begin_src elixir
+
+"Hello, " <> name <> "!"
+
+#+end_src
+***** interpolation
+
+#+begin_src elixir
+
+"Hello, #{name}!"
+
+"1 + 1 = #{1+1}"
+
+#+end_src
 
 ** Functions
 ** High Order Functions
