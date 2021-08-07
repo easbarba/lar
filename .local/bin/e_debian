@@ -163,6 +163,13 @@ clean() {
 services() {
 	e_echo "Debian Services"
 
+	awesome() {
+		local awe=$HOME/.config/awesome
+
+		mkdir $awe
+		cp -pvr /usr/share/awesome/themes/ $awe
+	}
+
 	postgres() {
 		/usr/bin/sudo /usr/bin/systemctl restart postgresql
 	}
@@ -197,6 +204,7 @@ services() {
 		/usr/bin/sudo usermod -aG kvm "$USER"
 	}
 
+	awesome
 	mpd
 	postgresql
 	alternatives
