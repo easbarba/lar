@@ -63,7 +63,7 @@ packages() {
 
 	music=(mpd mpc ncmpcpp)
 
-	emacs=(emacs libgccjit-10-dev)
+	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
 	qt=(kdeconnect)
 
