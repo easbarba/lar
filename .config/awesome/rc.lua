@@ -15,7 +15,7 @@ require "awful.hotkeys_popup.keys"
 
 -- base
 require "base.autorun"
--- require "base.themes"
+require "base.themes"
 require "base.errors"
 require "base.inputs"
 require "base.wibar"
