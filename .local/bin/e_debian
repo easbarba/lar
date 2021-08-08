@@ -39,7 +39,7 @@ pre() {
 packages() {
 	e_echo "Installing system packages"
 
-	essentials=(git ssh curl unzip bash tmux zile)
+	essentials=(git ssh curl unzip bash tmux zile lynx)
 
 	system=(zip p7zip p7zip-full lshw at usbutils lsof atool linux-perf time
 			entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
