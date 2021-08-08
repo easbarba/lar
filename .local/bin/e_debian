@@ -69,22 +69,20 @@ packages() {
 
 	gtk=(cheese)
 
-	infra=(podman qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm
-		   virt-manager ovmf bridge-utils)
+	infra=(podman) # qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm ovmf bridge-utils
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
-	security=(nftables firewalld firewall-config gnutls-bin)
+	security=(nftables gnutls-bin) # firewalld firewall-config
 
 	laptop=(iw wireless-tools laptop-mode-tools i965-va-driver vainfo
-		libvdpau-va-gl1 libinput-tools tlp acpi acpid lm-sensors)
+		libvdpau-va-gl1 libinput-tools tlp acpi lm-sensors) # acpid
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
 	window=(xorg awesome)
 
-	wm=(feh scrot udiskie gnome-keyring ffmpeg aria2
-	    xdg-utils playerctl brightnessctl seahorse bluez)
+	wm=(feh scrot udiskie ffmpeg aria2 xdg-utils playerctl brightnessctl bluez) # gnome-keyring seahorse
 
 	user=(firefox chromium libreoffice gimp obs-studio mpv libnotify-bin
 		zathura imagemagick pandoc aspell aspell-pt-br telegram-desktop) # amfora
