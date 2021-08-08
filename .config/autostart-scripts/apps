@@ -15,7 +15,7 @@ LOCAL_BIN="$HOME/.local/bin"
 
 tools=(/usr/bin/udiskie /usr/bin/mpd)
 
-apps=($LOCAL_BIN/emacs $LOCAL_BIN/st /usr/bin/atril)
+apps=($LOCAL_BIN/emacs $LOCAL_BIN/st $LOCAL_BIN/e_wall /usr/bin/atril)
 
 # * Helpers
 

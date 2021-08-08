@@ -118,7 +118,7 @@ awful.rules.rules = {
      properties = { tag = "term" } },
    { rule_any = { class = { "IceCat", "Firefox", "firefox", "Chromium" }},
      properties = { tag = "www" } },
-   { rule_any = { class = { "mpv", "vlc", "Clementine", "feh", "Steam", "telegram-desktop", "TelegramDesktop" }},
+   { rule_any = { class = { "mpv", "vlc", "feh", "Steam", "TelegramDesktop" }},
      properties = { tag = "media" } },
 
 
