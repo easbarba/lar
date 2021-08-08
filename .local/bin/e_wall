@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+deps=(feh)
+e_checkdeps ${deps[@]}
+
+apply() {
+  feh --bg-max --randomize ~/Pictures/wallpapers/* &
+}
+
+# * RUN
+apply
