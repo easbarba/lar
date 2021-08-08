@@ -1,4 +1,5 @@
 #+TITLE: Dots Home
+
 * zshrc
 #+begin_src shell-script
 #!/usr/bin/env zsh
