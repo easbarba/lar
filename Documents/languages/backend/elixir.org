@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter             | late                              | revision |
-|-------------------------+---------------------+-----------------------------------+----------|
-| Learn Functional Elixir | Variable, Functions | Functions as First-Class Citizens |          |
+| Books                   | Chapter             | late             | revision |
+|-------------------------+---------------------+------------------+----------|
+| Learn Functional Elixir | Variable, Functions | Naming Functions |          |
 
 ** SLOC
 | Project | folder      | file     | @ |
