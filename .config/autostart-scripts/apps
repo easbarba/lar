@@ -11,9 +11,11 @@ e_checkdeps ${DEPS[@]}
 
 # * Lists
 
+LOCAL_BIN="$HOME/.local/bin"
+
 tools=(/usr/bin/udiskie /usr/bin/mpd)
 
-apps=(/usr/bin/emacs "$HOME/.local/bin/st" /usr/bin/atril)
+apps=($LOCAL_BIN/emacs $LOCAL_BIN/st /usr/bin/atril)
 
 # * Helpers
 
