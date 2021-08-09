@@ -25,3 +25,8 @@ e_echo "Building Nightly Emacs"
 [[ $DISTRO != "Arch Linux" ]] && cejo project emacs
 
 e_doom
+
+e_echo "LANGS"
+
+e_ruby
+e_js
