@@ -78,8 +78,10 @@ packages() {
 
 	window=(xorg awesome)
 
-	wm=(feh scrot udiskie ffmpeg pandoc zathura aria2 playerctl libnotify-bin
+	wm=(feh scrot udiskie ffmpeg  zathura aria2 playerctl libnotify-bin
 		brightnessctl bluez mpv) # gnome-keyring seahorse
+
+	books=(pandoc texlive texlive-xetex)
 
 	user=(firefox chromium libreoffice gimp obs-studio kdeconnect cheese
 		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop) # amfora
@@ -103,6 +105,7 @@ packages() {
 			 "${gnu[@]}"
 			 "${network[@]}"
 			 "${shell[@]}"
+			 "${books[@]}"
 			 "${window[@]}"
 			 "${debian[@]}"
 			 "${editors[@]}"
