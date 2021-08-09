@@ -1,30 +1,20 @@
 #!/usr/bin/env bash
 
-# Repository: https://github.com/asdf-vm/asdf-ruby.git
-
 # Debug Options
 set -euo pipefail
 
-# * Sourcing
-#source "$HOME/.asdf/completions/asdf.bash"
-#source "$HOME/.asdf/asdf.sh"
-
-install()
-{
-    nix-env -i ruby-2.7.3
-}
+deps=(ruby gem)
+e_checkdeps ${deps[@]}
 
 packages()
 {
-    local packages=(bundler rake) # asciidoctor rouge gem-man ronn)
+    e_echo "Install global ruby gems"
 
-    e_dolist "gem install" "${packages[@]}" # --user-install
+    local packages=(bundler rake solargraph)
+
+    e_dolist "gem install" "${packages[@]}"
     e_dolist "gem update" "${packages[@]}"
 }
 
 # * RUN
-
-echo 'Ruby - ASDF'
-
-install
 packages
