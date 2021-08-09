@@ -47,11 +47,11 @@ packages() {
 
 	network=(net-tools iproute2 telnet)
 
-	programming=(subversion mercurial direnv clang libpq-dev)
+	programming=(subversion mercurial direnv libpq-dev) # clang
 
 	shell=(bash-completion bash-completion zenity fish)
 
-	editors=(neovim micro)
+	editors=(neovim) # micro
 
 	gnu=(gcc make vrms info wget parallel)
 
@@ -65,27 +65,24 @@ packages() {
 
 	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
-	qt=(kdeconnect)
-
-	gtk=(cheese)
-
 	infra=(podman) # qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm ovmf bridge-utils
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
 	security=(nftables gnutls-bin) # firewalld firewall-config
 
-	laptop=(iw wireless-tools laptop-mode-tools i965-va-driver vainfo
-		libvdpau-va-gl1 libinput-tools tlp acpi lm-sensors) # acpid
+	laptop=(iwd iw wireless-tools laptop-mode-tools libinput-tools acpi
+		 lm-sensors) # acpid  tlp vainfo i965-va-driver libvdpau-va-gl1
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
 	window=(xorg awesome)
 
-	wm=(feh scrot udiskie ffmpeg aria2 xdg-utils playerctl brightnessctl bluez) # gnome-keyring seahorse
+	wm=(feh scrot udiskie ffmpeg pandoc zathura aria2 playerctl libnotify-bin
+		brightnessctl bluez mpv) # gnome-keyring seahorse
 
-	user=(firefox chromium libreoffice gimp obs-studio mpv libnotify-bin
-		zathura imagemagick pandoc aspell aspell-pt-br telegram-desktop) # amfora
+	user=(firefox chromium libreoffice gimp obs-studio kdeconnect cheese
+		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop) # amfora
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad
 		gstreamer1.0-plugins-base gstreamer1.0-plugins-good
@@ -93,8 +90,7 @@ packages() {
 
 	lisp=(libfixposix-dev)
 
-	latex=(texlive-latex-recommended texlive-latex-extra
-		texlive-latex-base)
+	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
 		libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
@@ -117,8 +113,6 @@ packages() {
 			 "${database[@]}"
 			 "${system[@]}"
 			 "${music[@]}"
-			 "${gtk[@]}"
-			 "${qt[@]}"
 			 "${infra[@]}"
 			 "${fonts[@]}"
 			 "${security[@]}"
