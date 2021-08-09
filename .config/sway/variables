@@ -1,0 +1,19 @@
+# Variables
+
+set $mod Mod4
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term /usr/bin/foot
+set $editor ~/.local/bin/emacs
+set $locker  /usr/bin/swaylock
+
+set $menu /usr/bin/wofi --show run
+
+# * New Default
+
+default_border none
+workspace_layout stacking

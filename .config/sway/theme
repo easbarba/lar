@@ -1,0 +1,16 @@
+# -------------- THEME
+
+# Status Bar:
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while e_sysinfo; do sleep 1; done
+
+    colors {
+        statusline #76ea02
+        background #4F2F17
+        inactive_workspace #915C2B #ea6302 #4F2F17
+    }
+}

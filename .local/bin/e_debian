@@ -49,7 +49,7 @@ packages() {
 
 	programming=(subversion mercurial direnv libpq-dev) # clang
 
-	shell=(bash-completion bash-completion zenity fish)
+	shell=(bash-completion bash-completion zenity tcsh fish)
 
 	editors=(neovim) # micro
 
@@ -76,19 +76,17 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	window=(xorg awesome)
+	window=(sway swaybg swaylock clipman xwayland dunst grimshot awesome) # xorg
 
-	wm=(feh scrot udiskie ffmpeg  zathura aria2 playerctl libnotify-bin
-		brightnessctl bluez mpv) # gnome-keyring seahorse
+	wm=(udiskie ffmpeg zathura aria2 playerctl brightnessctl bluez mpv) # gnome-keyring seahorse # feh scrot libnotify-bin
 
 	books=(pandoc texlive texlive-xetex)
 
 	user=(firefox chromium libreoffice gimp obs-studio kdeconnect cheese
 		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop) # amfora
 
-	media=(vorbis-tools gstreamer1.0-plugins-bad
-		gstreamer1.0-plugins-base gstreamer1.0-plugins-good
-		gstreamer1.0-plugins-ugly)
+	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
+		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
 	lisp=(libfixposix-dev)
 

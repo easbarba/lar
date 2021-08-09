@@ -7,7 +7,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 . "$HOME/.xprofile"
 
 # * APPS
-xmodmap ~/.config/xmodmap
+# xmodmap ~/.config/xmodmap
 
 # * WINDOW MANAGER
-exec awesome
+exec sway

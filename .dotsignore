@@ -1,12 +1,15 @@
 LICENSE
 README.md
+.xinitrc
+.xprofile
+.config/xmodmap
+.config/awesome
 .config/yabar
 .config/Clementine
 .config/Code
 .config/ansible
 .config/debian
 .config/devilspie2
-.config/dunst
 .config/gh
 .config/gtk-3.0
 .config/i3
@@ -19,6 +22,5 @@ README.md
 .config/powershell
 .config/qtile
 .config/stumpwm
-.config/sway
 .config/xmonad
 .config/kwinrulesrc

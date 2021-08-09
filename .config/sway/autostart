@@ -1,0 +1,10 @@
+# USER
+
+exec /usr/bin/udiskie
+exec /usr/bin/mpd
+exec /usr/bin/dunst
+exec $term
+exec $editor
+exec /usr/bin/zathura
+exec wl-paste -t text --watch clipman store
+exec ~/.local/bin/e_wall

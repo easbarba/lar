@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
 
-deps=(feh)
+deps=(feh swaybg)
 e_checkdeps ${deps[@]}
 
-apply() {
-  feh --bg-max --randomize ~/Pictures/wallpapers/* &
+FOLDER=$HOME/Pictures/wallpapers
+WALL=$(find $FOLDER -type f | shuf -n 1)
+
+Feh() {
+  [[ ! -x /usr/bin/feh ]] && return
+
+  feh --bg-max --randomize $WALL &
+}
+
+Swaybg(){
+  [[ ! -x /usr/bin/swaybg ]] && return
+
+  swaybg -m fit -i $WALL &
 }
 
 # * RUN
-apply
+Swaybg
