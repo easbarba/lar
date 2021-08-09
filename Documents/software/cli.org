@@ -228,3 +228,13 @@ echo 'NAME="Arch Linux"' | cut -f2 -d '=' # "Arch Linux"
 
 * ts
 * screen
+* xmodmap
+|         |                                    |
+|---------+------------------------------------|
+| -pke    |                                    |
+
+* setxkbmap
+|         |                                    |
+|---------+------------------------------------|
+| -option | reset current session modification |
+|         |                                    |
