@@ -48,6 +48,20 @@ devel
 
 #+end_src
 
+* e_js
+#+begin_src shell
+front() {
+	local packs=(eslint-config-airbnb-base parcel-bundler
+		webpack-dev-server prettier gulp js-beautify tern eslint eslint_d
+		ionic babel pug webpack-cli dockerfile-language-server-nodejs
+		generator-code indium gulp-pug browser-sync typescript-formatter
+		vue-language-server eslint-plugin-import sass jshint pug-cli
+		babel-preset-airbnb yo webpack is-website-vulnerable tldr)
+	e_dolist "$COMMAND" "${packs[@]}"
+}
+
+#+end_src
+
 * e_arch
 #+begin_src shell
 element-desktop telegram-desktop transmission-gtk winetricks ripgrep parcellite
