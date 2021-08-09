@@ -191,6 +191,30 @@ Join strings
 #+end_src
 
 ** Functions
+#+begin_src elixir
+
+def total(current) do
+  "Total is #{current}"
+end
+
+#+end_src
+
+*** capture syntax
+#+begin_src elixir
+
+t = &(&1 * &2)
+t.(2,3)
+
+#+end_src
+- parens are optional
+
+** Alias
+Any word that starts with a capital letter,
+
+** Pattern matching
+*** pin operator ^
+*** <>
+
 
 ** Anonymous Functions
 #+begin_src elixir
@@ -212,3 +236,23 @@ fair_price.(5, 6)
 #+end_src
 ** High Order Functions
 ** Pipe
+
+* Modules
+** Kernel
+ Automatically imported in all environments.
+** String
+** Integer
+** Float
+** IO
+* Packages
+** Mix
+** Iex
+|                   |                              |
+|-------------------+------------------------------|
+| c(<filename.iex>) | compile file and load module |
+|                   |                              |
+
+* Read late
+** links
+- https://hexdocs.pm/elixir/master/Kernel.html
+- https://dashbit.co/blog/nx-numerical-elixir-is-now-publicly-available
