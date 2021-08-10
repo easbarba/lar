@@ -93,7 +93,16 @@ git format-patch
 ** push
       Update remote refs along with associated objects.
 ** rebase
-      Forward-port local commits to the updated upstream head.
+Forward-port local commits to the updated upstream head.
+
+#+begin_src shell
+
+git rebase -i HEAD~3
+
+#+end_src
+
+On Magit: r i C-c [fp] C-c
+
 ** rerere
       Reuse recorded resolution for merged conflicts.
 ** reset
