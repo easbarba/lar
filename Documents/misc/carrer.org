@@ -32,7 +32,7 @@
 
 *Euber Alexandre De Sousa Barbosa*
 
-easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
+telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 
 *SOBRE*
 -----
@@ -46,7 +46,7 @@ easbarbosa@tutanota.com / telegram: @easbarbosa / Distrito Federal
   - Distros: Arch Linux, Debian, GuixSD.
   - Scripting: Awk, Sed, GNU Bash, Fish.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
-  - Git: rebase, squash, merge, format-patch.
+  - Git: merge, rebase, email, format-patch.
   - Containers: Podman, dockerfile, criação e gerência de imagens.
   - Front-End: HTML, CSS (Grid,Flexbox).
 
