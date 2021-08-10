@@ -47,7 +47,7 @@ packages() {
 
 	network=(net-tools iproute2 telnet)
 
-	programming=(subversion mercurial direnv libpq-dev) # clang
+	programming=(git-email subversion mercurial direnv libpq-dev) # clang
 
 	shell=(bash-completion bash-completion zenity tcsh fish)
 
