@@ -88,6 +88,19 @@ git format-patch
       Show commit logs.
 ** merge
       Join two or more development histories together.
+#+begin_src shell
+
+git checkout feature
+git merge main
+
+# Or, you can condense this to a one-liner:
+
+git merge feature main
+
+
+
+#+end_src
+
 ** mv
       Move or rename a file, directory, or symlink.
 ** pull
