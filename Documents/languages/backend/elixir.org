@@ -230,6 +230,16 @@ end
 
 #+end_src
 
+*** default values \\
+
+#+begin_src elixir
+
+defmodule Check do
+  def total(price, quantity \\ 10), do: price * quantity
+end
+
+#+end_src
+
 ** Alias
 Any word that starts with a capital letter,
 
