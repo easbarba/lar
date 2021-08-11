@@ -29,7 +29,7 @@ browser = /usr/bin/firefox -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
-frame_color = "#c6797e"
+frame_color = "#915C2B"
 
 
 [shortcuts]
@@ -45,8 +45,8 @@ foreground = "#0E131D"
 
 [urgency_normal]
 timeout = 5
-background = "#172030"
-foreground = "#c6797e"
+background = "#4F2F17"
+foreground = "#76ea02"
 
 [urgency_critical]
 timeout = 0
