@@ -247,7 +247,6 @@ Any word that starts with a capital letter,
 *** pin operator ^
 *** <>
 
-
 ** Anonymous Functions
 #+begin_src elixir
 
