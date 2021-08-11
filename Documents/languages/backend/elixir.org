@@ -189,6 +189,15 @@ Join strings
 "1 + 1 = #{1+1}"
 
 #+end_src
+*** Lists
+**** | operator
+#+begin_src elixir
+
+[ head | tail ] = [1,2,3]
+head # 1
+tail # [2,3]
+
+#+end_src
 
 ** Functions
 #+begin_src elixir
