@@ -22,7 +22,7 @@
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaymsg exit
+    bindsym $mod+Shift+o exec swaymsg exit
 #
 # Moving around:
 #
@@ -133,7 +133,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Mod1+w exec gota volume up
 bindsym $mod+Mod1+s exec gota volume down
 bindsym $mod+Mod1+e exec gota volume toggle
-bindsym $mod+Shift+z exec mpc toggle
+bindsym $mod+Shift+e exec mpc toggle
 bindsym $mod+Shift+w exec mpc volume +3
 bindsym $mod+Shift+s exec mpc volume -3
 bindsym $mod+Mod1+a exec gota back up

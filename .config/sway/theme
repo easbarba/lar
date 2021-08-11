@@ -2,7 +2,7 @@
 
 # Status Bar:
 bar {
-    position top
+    position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -11,6 +11,6 @@ bar {
     colors {
         statusline #76ea02
         background #4F2F17
-        inactive_workspace #915C2B #ea6302 #4F2F17
+        inactive_workspace #915C2B #ea6302 #ffffff
     }
 }
