@@ -12,11 +12,12 @@
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
-| Unit Test       | Minitest, Rspec                                             |
+| Lang            | Elixir, Ruby                                                |
+| Framework       | Phoenix, Sinatra, Rails, MVC, Slim, Sidekiq                 |
+| Unit Test       | xxx, Minitest, Rspec                                        |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
-| Lang            | Ruby                                                        |
+| OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
 | Web API         | REST, SOAP, GraphQL                                         |
 | Container       | Podman, Docker                                              |
 | Cloud           | AWS, Azure                                                  |
@@ -25,7 +26,6 @@
 | Network         | HTTP, HTTPS, TCP, SSH, FTP                                  |
 | Hosting         | Heroku                                                      |
 | Message         | RabbitMQ/ Kafka                                             |
-| Framework       | Sinatra, Rails, MVC, Slim, Sidekiq                          |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
