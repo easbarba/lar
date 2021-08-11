@@ -2,9 +2,11 @@
 
 * Progress
 ** Books
-     | Books            | Capitulo | em              | tarde | revisao |
-     |------------------+----------+-----------------+-------+---------|
-     | Professional Git |          | CONFIGURING GIT |       |         |
+| Books            | Capitulo | em                                       | tarde | revisao |
+|------------------+----------+------------------------------------------+-------+---------|
+| Pro git          | Basics   | Viewing Your Staged and Unstaged Changes |       |         |
+| Professional Git |          | CONFIGURING GIT                          |       |         |
+
 
 * Features
 ** add
