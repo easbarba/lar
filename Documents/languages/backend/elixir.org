@@ -217,6 +217,19 @@ t.(2,3)
 #+end_src
 - parens are optional
 
+*** private functions
+Control acessibiltity from outside.
+
+#+begin_src elixir
+
+defmodule Meh do
+  defp foo do
+    "meh"
+  end
+end
+
+#+end_src
+
 ** Alias
 Any word that starts with a capital letter,
 
