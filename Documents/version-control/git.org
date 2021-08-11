@@ -131,6 +131,10 @@ On Magit: r i C-c [fp] C-c
     https://medium.com/sweetmeat/how-to-keep-a-downstream-git-repository-current-with-upstream-repository-changes-10b76fad6d97
 
     http://gitready.com/intermediate/2009/02/13/list-remote-branches.html
+* gitigonore
+man gitignore
+
+
 * Observations
     | git command                              | description                                                           |
     |------------------------------------------+-----------------------------------------------------------------------|
