@@ -116,7 +116,13 @@ On Magit: r i C-c [fp] C-c
 ** show
       Show various types of objects.
 ** status
-      Show the working tree status.
+Show the working tree status.
+
+|    |                |
+|----+----------------|
+| -s | shorter status |
+|    |                |
+
 ** submodule
       Initialize, update, or inspect submodules.
 ** subtree
