@@ -5,4 +5,4 @@ set -euo pipefail
 
 URL=$(xclip -selection clipboard -o)
 
-printf $URL
+printf "%s" $URL
