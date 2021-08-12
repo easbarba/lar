@@ -269,6 +269,35 @@ defguard is_cents(value) when is_integer(value) and value >= 0
 
 ** Control Flow
 *** case
+allows us to compare a value against many patterns until we find a matching one:
+
+#+begin_src elixir
+
+user_input = IO.gets "Write your ability score:\n"
+ case Integer.parse(user_input) do
+  :error -> IO.puts "Invalid ability score: #{user_input}"
+  {ability_score, _} ->
+    ability_modifier = (ability_score - 10) / 2
+ IO.puts "Your ability modifier is #{ability_modifier}"
+end
+
+
+#+end_src
+*** cond
+
+is useful when you need to match against different values. However, in many
+circumstances, we want to check different conditions and find the first one that
+does not evaluate to nil or false.
+
+#+begin_src elixir
+
+result = cond do
+  age < 13 -> "kid"
+  age <= 18 -> "teen"
+  age > 18 -> "adult"
+end
+
+#+end_src
 
 ** Alias
 Any word that starts with a capital letter,
@@ -296,6 +325,7 @@ fair_price.(5, 6)
 
 #+end_src
 ** High Order Functions
+** Macros
 ** Pipe
 
 * Modules
