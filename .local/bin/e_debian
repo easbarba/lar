@@ -76,9 +76,11 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	window=(sway swaybg swaylock clipman xwayland dunst grimshot awesome) # xorg
+	wayland=(sway swaybg swaylock foot clipman dunst grimshot xwayland)
 
-	wm=(udiskie ffmpeg zathura aria2 playerctl brightnessctl bluez mpv) # gnome-keyring seahorse # feh scrot libnotify-bin
+	xorg=(xorg awesome)
+
+	wmapps=(udiskie ffmpeg atril suckless-tools aria2 playerctl brightnessctl bluez mpv) # gnome-keyring seahorse # feh scrot libnotify-bin
 
 	books=(pandoc texlive texlive-xetex)
 
@@ -104,7 +106,8 @@ packages() {
 			 "${network[@]}"
 			 "${shell[@]}"
 			 "${books[@]}"
-			 "${window[@]}"
+			 "${wayland[@]}"
+			 "${xorg[@]}"
 			 "${debian[@]}"
 			 "${editors[@]}"
 			 "${emacs[@]}"
