@@ -3,18 +3,19 @@
 * Schedule
 | mon        | tue        | wed        | thru       | fri        | sat | sun   |
 |------------+------------+------------+------------+------------+-----+-------|
-| rspec      | rspec      | rspec      | rspec      | rspec      |     | guile |
-| oop        | oop        | oop        | oop        | oop        |     | emacs |
-| postgresql | postgresql | postgresql | postgresql | postgresql |     | unix  |
 | elixir     | elixir     | elixir     | elixir     | elixir     |     |       |
+| phoenix    | phoenix    | phoenix    | phoenix    | phoenix    |     |       |
+| postgresql | postgresql | postgresql | postgresql | postgresql |     | unix  |
+| oop        | oop        | oop        | oop        | oop        |     | emacs |
+| rspec      | rspec      | rspec      | rspec      | rspec      |     | guile |
 | git        | git        | git        | git        | git        |     |       |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| Lang            | Elixir, Ruby                                                |
-| Framework       | Phoenix, Sinatra, Rails, MVC, Slim, Sidekiq                 |
-| Unit Test       | xxx, Minitest, Rspec                                        |
+| Lang            | Elixir                                                      |
+| Framework       | MVC, Phoenix                                                |
+| Unit Test       |                                                             |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
