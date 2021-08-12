@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter             | late             | revision |
-|-------------------------+---------------------+------------------+----------|
-| Learn Functional Elixir | Variable, Functions | Naming Functions |          |
+| Books                   | Chapter               | late | revision |
+|-------------------------+-----------------------+------+----------|
+| Learn Functional Elixir | Diving into Recursion |      |          |
 
 ** SLOC
 | Project | folder      | file     | @ |
@@ -278,7 +278,7 @@ user_input = IO.gets "Write your ability score:\n"
   :error -> IO.puts "Invalid ability score: #{user_input}"
   {ability_score, _} ->
     ability_modifier = (ability_score - 10) / 2
- IO.puts "Your ability modifier is #{ability_modifier}"
+IO.puts "Your ability modifier is #{ability_modifier}"
 end
 
 
