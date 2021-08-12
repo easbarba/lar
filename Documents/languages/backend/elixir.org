@@ -258,6 +258,18 @@ number_compare.(1, 2) # returns 2
 
 #+end_src
 
+*** defguard
+
+#+begin_src elixir
+
+defguard is_rate(value) when is_float(value) and value >= 0 and value <= 1
+defguard is_cents(value) when is_integer(value) and value >= 0
+
+#+end_src
+
+** Control Flow
+*** case
+
 ** Alias
 Any word that starts with a capital letter,
 
