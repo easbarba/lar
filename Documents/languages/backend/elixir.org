@@ -240,6 +240,24 @@ end
 
 #+end_src
 
+*** guard clauses
+run func only if guard match
+
+#+begin_src elixir
+
+defmodule Check do
+    def greater(number, other_number) when number >= other_number, do: number
+end
+
+number_compare = fn
+  number, other_number when number >= other_number -> number
+  _, other_number -> other_number
+end
+
+number_compare.(1, 2) # returns 2
+
+#+end_src
+
 ** Alias
 Any word that starts with a capital letter,
 
