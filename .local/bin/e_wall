@@ -12,11 +12,11 @@ Feh() {
   feh --bg-max --randomize $WALL &
 }
 
-Swaybg(){
+Swaybg() {
   [[ ! -x /usr/bin/swaybg ]] && return
 
   swaybg -m fit -i $WALL &
 }
 
 # * RUN
-Swaybg
+[[ $(pgrep xinit) ]] && Feh || Swaybg
