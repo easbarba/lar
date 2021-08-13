@@ -62,8 +62,17 @@
      "https://rubyweekly.com/rss/"
      "https://www.honeybadger.io/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
-     ;; video channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ" ;; Boulos
+     ;; news channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC02coXfDPjEmU8uDT2G8Z2A"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCk5BcU1rOy6hepflk7_q_Pw"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2bZgihqibFD_vhaYEXQZFg"
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCFwzvNKpQWKMbiOHJ26IEnQ"
+     ;; misc channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
