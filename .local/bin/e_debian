@@ -78,7 +78,7 @@ packages() {
 
 	wayland=(sway swaybg swaylock foot clipman dunst grimshot xwayland)
 
-	xorg=(xorg awesome)
+	xorg=(xorg awesome xinit)
 
 	wmapps=(udiskie ffmpeg atril suckless-tools aria2 playerctl brightnessctl bluez mpv) # gnome-keyring seahorse # feh scrot libnotify-bin
 
