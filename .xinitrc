@@ -4,10 +4,10 @@
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # * SOURCE PATHS
-. "$HOME/.xprofile"
+. "$HOME/.profile"
 
 # * APPS
-# xmodmap ~/.config/xmodmap
+xmodmap ~/.config/xmodmap
 
 # * WINDOW MANAGER
-exec sway
+exec awesome

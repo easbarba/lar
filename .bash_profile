@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+#set -euo pipefail
 
-# export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+. ~/.profile
 
-# If running from tty1 start sway
-if [ "$(tty)" = "/dev/tty1" ]; then
-	. ~/.profile
+# * TTY1
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    mkdir ~/.local/share/xinit
+    exec startx 2>>~/.local/share/xinit/errors
+fi
+
+# * TTY3
+if [ "$(tty)" = "/dev/tty3" ]; then
+	export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 
 	exec sway
 fi

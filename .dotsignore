@@ -1,9 +1,5 @@
 LICENSE
 README.md
-.xinitrc
-.xprofile
-.config/xmodmap
-.config/awesome
 .config/yabar
 .config/Clementine
 .config/Code

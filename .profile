@@ -87,6 +87,8 @@ p_guix() {
     export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
     export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 
+    export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
+
     # Shared Libraries
     export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
 
