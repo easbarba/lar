@@ -54,6 +54,8 @@
      "https://ambrevar.xyz/atom.xml"
      ;; langs blog
      "https://elixir-lang.org/atom.xml"
+     "https://thinkingelixir.com/feed/podcast/"
+     "https://feeds.fireside.fm/smartlogic/rss"
      "https://ulisses.dev/feed.xml"
      "https://research.swtch.com/feed.atom"
      "https://www.ruby-lang.org/en/feeds/news.rss"
