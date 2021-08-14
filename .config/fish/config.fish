@@ -22,9 +22,6 @@ set -Ux VISUAL emacs
 # * Prompt
 
 # ** STARSHIP
-if type -q starship
-    starship init fish | source
-end
 
 eval (direnv hook fish)
 
