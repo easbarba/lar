@@ -1,6 +1,6 @@
 LICENSE
 README.md
-.config/yabar
+.config/alacritty
 .config/Clementine
 .config/Code
 .config/ansible
@@ -19,4 +19,5 @@ README.md
 .config/qtile
 .config/stumpwm
 .config/xmonad
+.config/yabar
 .config/kwinrulesrc
