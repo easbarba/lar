@@ -65,7 +65,7 @@ packages() {
 
 	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
-	infra=(podman) # qemu qemu-system-gui qemu-utils qemu-efi qemu-kvm ovmf bridge-utils
+	infra=(podman qemu qemu-utils qemu-efi qemu-kvm) #   qemu-system-gui ovmf bridge-utils
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
@@ -114,7 +114,6 @@ packages() {
 			 "${ruby[@]}"
 			 "${lua[@]}"
 			 "${programming[@]}"
-			 "${database[@]}"
 			 "${system[@]}"
 			 "${music[@]}"
 			 "${infra[@]}"
