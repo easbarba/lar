@@ -2,18 +2,10 @@
 
 # * DEFAULT SOFTWARE:
 
-export VISUAL="emacs"
-export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="firefox"
-
-# * LOCALE
-
-# export LANG="C.UTF-8"
-# export LC_ALL="C.UTF-8"
-
-# export LC_ALL="en_US.utf-8"
-# export LANG="en_US.utf-8"
+export VISUAL="/usr/bin/emacs"
+export EDITOR="/usr/bin/nvim"
+export TERMINAL="/usr/bin/mate-terminal"
+export BROWSER="/usr/bin/firefox"
 
 # * DIRECTORIES ENV VARS
 
@@ -105,3 +97,12 @@ e_doom
 e_npm
 e_ruby
 p_guix
+
+
+# * LOCALE
+
+# export LANG="C.UTF-8"
+# export LC_ALL="C.UTF-8"
+
+# export LC_ALL="en_US.utf-8"
+# export LANG="en_US.utf-8"
