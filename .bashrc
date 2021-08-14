@@ -86,7 +86,12 @@ fi
 # * CLI SOFTWARE
 
 e_prompt() {
-    [[ $(command -v starship) ]] && eval "$(starship init bash)"
+    local liquid_url=https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt
+    local liquid_file="$HOME/Builds/liquidprompt"
+
+    [[ ! -f $liquid_file ]] && wget -c $liquid_url -O $liquid_file
+
+    . $liquid_file
 }
 
 e_multiplexers() {
