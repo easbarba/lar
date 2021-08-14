@@ -15,8 +15,8 @@ LOCAL_BIN="$HOME/.local/bin"
 
 tools=(/usr/bin/udiskie /usr/bin/mpd)
 
-apps=($($LOCAL_BIN/emacs || /usr/bin/emacs) $LOCAL_BIN/st $LOCAL_BIN/e_wall
-      /usr/bin/atril /usr/bin/picom)
+apps=($($LOCAL_BIN/emacs || /usr/bin/emacs) $LOCAL_BIN/e_wall
+      /usr/bin/mate-terminal /usr/bin/atril /usr/bin/picom)
 
 # * Helpers
 
