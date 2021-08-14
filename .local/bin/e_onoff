@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-deps=(nmcli ping)
+deps=(nmcli)
 e_checkdeps ${deps[@]}
 
 STATE=$(nmcli connection show | awk 'NR==2 {print $4}')
