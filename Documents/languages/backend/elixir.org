@@ -114,15 +114,15 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter               | late | revision |
-|-------------------------+-----------------------+------+----------|
-| Learn Functional Elixir | Diving into Recursion |      |          |
+| Books                   | Chapter               | late            | revision |
+|-------------------------+-----------------------+-----------------+----------|
+| Learn Functional Elixir | Diving into Recursion |                 |          |
 
 ** SLOC
-| Project | folder      | file     | @ |
-|---------+-------------+----------+---|
-| elixir  | eex/lib/eex | compiler |   |
-| phoenix |             |          |   |
+| Project   | folder      | file     | @ |
+|-----------+-------------+----------+---|
+| elixir    | eex/lib/eex | compiler |   |
+| elixir-ls |             |          |   |
 
 * Features
 ** Literals
