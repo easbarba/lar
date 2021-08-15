@@ -1,6 +1,6 @@
 #+TILE: PostgreSQL - Study annotations
 
-* toc
+* summary
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
@@ -9,6 +9,8 @@
 - [[#official][Official]]
 - [[#documentation][Documentation]]
 - [[#terms][Terms]]
+- [[#tips][Tips]]
+  - [[#local-and-non-root-database][local and non-root database]]
 - [[#cli][Cli]]
   - [[#pg_ctl][pg_ctl]]
   - [[#psql][psql]]
@@ -45,6 +47,19 @@ https://www.postgresql.org/docs/
 | PID          | Process Identifier                                                     |
 | TableSpace   | tablespace is a storage space that can be outside the PGDATA directory |
 | PGDATA       |                                                                        |
+
+* Tips
+** local and non-root database
+#+begin_src shell-script
+
+initdb -D .postgres -A md5 -U $USER --pwprompt
+# or
+initdb -D .postgres -A md5 -U $USER --pwfile=/path/to/passfile
+
+pg_ctl -D .postgres -w start
+createdb -U $USER mydb
+
+#+end_src
 
 * Cli
 ** pg_ctl
