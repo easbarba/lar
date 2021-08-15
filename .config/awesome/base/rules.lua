@@ -174,11 +174,11 @@ awful.rules.rules = {
         properties = {tag = "mx"}
     },
     {
-        rule_any = {class = {"Zathura", "libreoffice-writer", "libreoffice"}},
+        rule_any = {class = {"Zathura", "Atril", "libreoffice-writer", "libreoffice"}},
         properties = {tag = "reader"}
     },
     {
-        rule_any = {class = {"st-256color"}},
+        rule_any = {class = {"Mate-terminal", "st-256color"}},
         properties = {tag = "term"}
     },
     {
@@ -191,7 +191,7 @@ awful.rules.rules = {
     },
     -- Fullscreen Windows:
     {
-        rule_any = {class = {"Emacs", "Zathura", "mpv", "st"}},
+        rule_any = {class = {"Emacs", "Mate-terminal", "Zathura", "mpv", "st"}},
         properties = {fullscreen = true}
     },
     {
