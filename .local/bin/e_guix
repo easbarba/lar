@@ -3,6 +3,10 @@
 # * Debug Options
 set -euo pipefail
 
+DEPS=(sudo guix wget bash)
+e_checkdeps "${DEPS[@]}"
+
+
 # * Information
 # Site: https://guix.gnu.org/
 
@@ -27,7 +31,7 @@ get() {
 install() {
 	[[ -x $(command -v guix) ]] && return
 
-	sudo bash /tmp/guix-install.sh
+	sudo /usr/bin/bash /tmp/guix-install.sh
 }
 
 upgrade() {
