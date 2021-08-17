@@ -9,7 +9,7 @@ WALL=$(find $FOLDER -type f | shuf -n 1)
 Feh() {
   [[ ! -x /usr/bin/feh ]] && return
 
-  feh --bg-max --randomize $WALL &
+  feh --bg-max $WALL &
 }
 
 Swaybg() {
