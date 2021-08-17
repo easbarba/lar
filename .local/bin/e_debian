@@ -49,7 +49,7 @@ packages() {
 
 	programming=(git-email subversion mercurial direnv libpq-dev) # clang
 
-	shell=(bash-completion bash-completion zenity tcsh fish)
+	shell=(bash-completion bash-completion zenity tcsh fish kitty)
 
 	editors=(neovim) # micro
 

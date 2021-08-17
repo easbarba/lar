@@ -3,7 +3,7 @@ local awful = require("awful")
 local menubar = require("menubar")
 
 -- * Shared Variables
-local terminal = "mate-terminal"
+local terminal = "kitty"
 local editor = "emacs"
 local lockscreen = function()
     awful.util.spawn("slock")
@@ -17,15 +17,21 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 -- * Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-    {"hotkeys", function()
+    {
+        "hotkeys",
+        function()
             hotkeys_popup.show_help(nil, awful.screen.focused())
-        end},
+        end
+    },
     {"manual", terminal .. " -e man awesome"},
     -- { "edit config", editor_cmd .. " " .. awesome.conffile },
     {"restart", awesome.restart},
-    {"quit", function()
+    {
+        "quit",
+        function()
             awesome.quit()
-        end}
+        end
+    }
 }
 
 local menu_awesome = {"awesome", myawesomemenu, beautiful.awesome_icon}
@@ -132,14 +138,14 @@ globalkeys =
     ),
     awful.key(
         {modkey},
-        "o",
+        "Print",
         function()
             awful.spawn("gota screen full")
         end
     ),
     awful.key(
         {modkey, "Shift"},
-        "o",
+        "Print",
         function()
             awful.spawn("gota screen partial")
         end
