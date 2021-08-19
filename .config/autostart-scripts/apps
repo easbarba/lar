@@ -4,19 +4,18 @@
 DEPS=(pgrep bash feh)
 e_checkdeps ${DEPS[@]}
 
+LOCAL_BIN="$HOME/.local/bin"
+
 # * Guards
 
 [ "$DESKTOP_SESSION" == "plasma" ] && exit
 [ "$DESKTOP_SESSION" == "gnome" ] && exit
 
-# * Lists
-
-LOCAL_BIN="$HOME/.local/bin"
+# * APPS LIST
 
 tools=(/usr/bin/udiskie /usr/bin/mpd)
 
-apps=("$LOCAL_BIN/e_emacs" "$LOCAL_BIN/e_wall" /usr/bin/mate-terminal
-      /usr/bin/atril /usr/bin/picom)
+apps=("$LOCAL_BIN/st" /usr/bin/zathura "$LOCAL_BIN/e_mx" "$LOCAL_BIN/e_wall")
 
 # * Helpers
 

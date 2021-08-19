@@ -4,7 +4,7 @@
 
 export VISUAL="/usr/bin/emacs"
 export EDITOR="/usr/bin/nvim"
-export TERMINAL="/usr/bin/kitty"
+export TERMINAL="/usr/bin/st"
 export BROWSER="/usr/bin/firefox"
 
 # * DIRECTORIES ENV VARS

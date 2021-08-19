@@ -39,7 +39,7 @@ pre() {
 packages() {
 	e_echo "Installing system packages"
 
-	essentials=(git ssh curl unzip bash tmux zile lynx)
+	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
 	system=(zip p7zip p7zip-full lshw at usbutils lsof atool linux-perf time
 			entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
@@ -47,11 +47,11 @@ packages() {
 
 	network=(net-tools iproute2 telnet)
 
-	programming=(git-email subversion mercurial direnv libpq-dev) # clang
+	programming=(git-email subversion mercurial direnv libpq-dev)
 
-	shell=(bash-completion bash-completion zenity tcsh fish kitty)
+	shell=(bash-completion bash-completion zenity tcsh fish)
 
-	editors=(neovim) # micro
+	editors=(neovim)
 
 	gnu=(gcc make vrms info wget parallel)
 
@@ -65,27 +65,29 @@ packages() {
 
 	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
-	infra=(podman qemu qemu-utils qemu-efi qemu-kvm) #   qemu-system-gui ovmf bridge-utils
+	infra=(podman qemu qemu-utils qemu-efi qemu-kvm)
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
-	security=(nftables gnutls-bin) # firewalld firewall-config
+	security=(nftables gnutls-bin)
 
 	laptop=(iwd iw wireless-tools laptop-mode-tools libinput-tools acpi
-		 lm-sensors) # acpid  tlp vainfo i965-va-driver libvdpau-va-gl1
+		 lm-sensors)
 
-	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
+	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
+			apt-file gdebi)
 
 	wayland=(sway swaybg swaylock foot clipman dunst grimshot xwayland)
 
-	xorg=(xorg awesome xinit picom)
+	xorg=(xorg awesome xinit feh scrot)
 
-	wmapps=(udiskie ffmpeg atril suckless-tools aria2 playerctl brightnessctl bluez mpv) # gnome-keyring seahorse # feh scrot libnotify-bin
+	wmapps=(udiskie ffmpeg zathura suckless-tools aria2 playerctl brightnessctl
+			bluez mpv libnotify-bin)
 
 	books=(pandoc texlive texlive-xetex)
 
 	user=(firefox chromium libreoffice gimp obs-studio kdeconnect cheese
-		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop) # amfora
+		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
