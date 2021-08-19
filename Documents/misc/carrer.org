@@ -3,11 +3,10 @@
 * Schedule
 | mon        | tue        | wed        | thru       | fri        | sat | sun   |
 |------------+------------+------------+------------+------------+-----+-------|
-| elixir     | elixir     | elixir     | elixir     | elixir     |     |       |
-| phoenix    | phoenix    | phoenix    | phoenix    | phoenix    |     |       |
-| postgresql | postgresql | postgresql | postgresql | postgresql |     | unix  |
-| oop        | oop        | oop        | oop        | oop        |     | emacs |
-| rspec      | rspec      | rspec      | rspec      | rspec      |     | guile |
+| elixir     | elixir     | elixir     | elixir     | elixir     |     | emacs |
+| phoenix    | phoenix    | phoenix    | phoenix    | phoenix    |     | unix  |
+| postgresql | postgresql | postgresql | postgresql | postgresql |     | guile |
+| oop        | rspec      | oop        | rspec      | oop        |     |       |
 | git        | git        | git        | git        | git        |     |       |
 
 * Priorities
@@ -15,7 +14,7 @@
 |-----------------+-------------------------------------------------------------|
 | Lang            | Elixir                                                      |
 | Framework       | MVC, Phoenix                                                |
-| Unit Test       |                                                             |
+| Unit Test       | ..., Espec                                                  |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
