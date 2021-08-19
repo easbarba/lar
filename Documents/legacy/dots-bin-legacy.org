@@ -1,6 +1,5 @@
 #+TITLE: Dots | .local/bin
 
-
 * e_golang
 #+begin_src shell
 
@@ -45,6 +44,18 @@ echo 'Golang'
 packages
 # tools
 devel
+
+#+end_src
+
+* e_debian
+#+begin_src shell
+
+micro
+ clang
+qemu-system-gui ovmf bridge-utils
+acpid  tlp vainfo i965-va-driver libvdpau-va-gl1
+firewalld firewall-config
+gnome-keyring seahorse
 
 #+end_src
 
