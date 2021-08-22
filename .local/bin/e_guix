@@ -46,13 +46,13 @@ glocale() {
 	guix install glibc-locales@"$version"
 }
 
-packages() {
+system() {
 	local packages=(nss-certs font-gnu-freefont-ttf font-dejavu)
 	e_dolist "guix install" "${packages[@]}"
 }
 
 development() {
-	local packages=(node direnv)
+	local packages=(node direnv elixir ruby)
 	e_dolist "guix install" "${packages[@]}"
 }
 
@@ -64,5 +64,5 @@ install
 upgrade
 
 glocale
-packages
+system
 development
