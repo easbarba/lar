@@ -1,13 +1,12 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon        | tue        | wed        | thru       | fri        | sat | sun   |
-|------------+------------+------------+------------+------------+-----+-------|
-| elixir     | elixir     | elixir     | elixir     | elixir     |     | emacs |
-| phoenix    | phoenix    | phoenix    | phoenix    | phoenix    |     | unix  |
-| postgresql | postgresql | postgresql | postgresql | postgresql |     | guile |
-| oop        | rspec      | oop        | rspec      | oop        |     |       |
-| git        | git        | git        | git        | git        |     |       |
+| mon        | tue        | wed        | thru    | fri     | sat | sun   |
+|------------+------------+------------+---------+---------+-----+-------|
+| elixir     | elixir     | elixir     | phoenix | phoenix |     | emacs |
+| postgresql | postgresql | postgresql | unix    | unix    |     | guile |
+| oop        | rspec      | oop        | rspec   | oop     |     |       |
+| git        | git        | git        | git     | git     |     |       |
 
 * Priorities
 | @               | desc                                                        |
@@ -41,12 +40,13 @@ telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 
 *SKILLS*
 -----
-  - Linguagens: Ruby, Guile Scheme, Emacs-Lisp.
+  - Linguagens: Elixir, Ruby, Guile Scheme, Emacs-Lisp.
+  - Frameworks: Phoenix
   - Unit Test: RSpec, Minitest.
-  - Distros: Arch Linux, Debian, GuixSD.
+  - Distros: Arch, Debian, GuixSD.
   - Scripting: Awk, Sed, GNU Bash, Fish.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
-  - Git: merge, rebase, email, format-patch.
+  - Git: merge, rebase, format-patch.
   - Containers: Podman, dockerfile, criação e gerência de imagens.
   - Front-End: HTML, CSS (Grid,Flexbox).
 
