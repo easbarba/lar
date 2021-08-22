@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq user-full-name "EAS Barbosa"
-      user-mail-address "easbarbosa@tutanota.com")
+(setq-default user-full-name "Quasi Syntaxed"
+              user-login-name "quasisyntaxed")
 
 (cond ((member "Hack" (font-family-list))
        (setq doom-font (font-spec :family "Hack" :size 23 :weight 'semi-light)

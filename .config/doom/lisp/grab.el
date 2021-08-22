@@ -17,11 +17,11 @@
 
 ;;; Information
 
-;; Author: Alexander Barbosa - easbarbosa@pm.me
+;; Author: Quasi Syntaxed - quasisyntaxed@tutanota.com
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: download, git, elisp, library, minor-mode
-;; URL: https://.com/eabarbosa/grab
+;; URL: https://.com/.../grab
 
 ;;; Commentary:
 
@@ -35,7 +35,7 @@
 (defgroup grab nil
   "Simple get Emacs Packages from public repositories or download file."
   :group 'applications
-  :link '(url-link "https://github.com/elxbarbosa/grab")
+  :link '(url-link "https://github.com/quasisyntaxed/grab")
   :version "27.1")
 
 (defcustom grab-repo-list '()

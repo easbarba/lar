@@ -9,8 +9,7 @@
 
 (after! erc
   (setq-local scroll-margin 1)
-  (setq erc-nick "easbarbosa"
-	erc-user-full-name "EAS Barbosa"
+  (setq erc-nick user-login-name
         erc-server "irc.libera.chat"
 	erc-rename-buffers t
 	erc-kill-buffer-on-part t

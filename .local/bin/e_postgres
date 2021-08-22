@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-sudo su - postgres -c "createuser easbarbosa"
-sudo su - postgres -c "createdb easbarbosadb`"
+sudo su - postgres -c "createuser $USER"
+sudo su - postgres -c "createdb meh`"
 
 sudo -u postgres psql
 
-# GRANT ALL PRIVILEGES ON DATABASE easbarbosadb TO easbarbosa;
+# GRANT ALL PRIVILEGES ON DATABASE meh TO $USER;

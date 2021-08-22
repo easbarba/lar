@@ -19,7 +19,7 @@ default, command is run every 2 seconds and watch will run until inter‐ rupted
 * curl
 ** read local file
 #+begin_src shell-script
-curl file:///home/easbarbosa/.bashrc
+curl file:///home/user/.bashrc
 
 #+end_src
 * ed
@@ -110,10 +110,10 @@ remove files or directories
 print newline, word, and byte counts for each file
 
 * grep
-|    |                                 |
-|----+---------------------------------|
-| -v | lines that doesnt match pattern |
-|    |                                 |
+|                     |                                 |
+|---------------------+---------------------------------|
+| -v                  | lines that doesnt match pattern |
+| --exclude-dir=<DIR> |                                 |
 
 * sort
 |    |   |
@@ -238,3 +238,5 @@ echo 'NAME="Arch Linux"' | cut -f2 -d '=' # "Arch Linux"
 |---------+------------------------------------|
 | -option | reset current session modification |
 |         |                                    |
+
+* find

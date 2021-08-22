@@ -16,7 +16,7 @@ e_guix
 e_echo "FLOSS projects"
 floss grab
 floss archive
-cp -rpv $HOME/Downloads/archived/* /media/easbarbosa/MACHO/dots
+cp -rpv $HOME/Downloads/archived/* /media/$USER/MACHO/dots
 
 e_doom
 e_ruby
