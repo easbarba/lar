@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+[[ -x $(command -v systemctl) ]] && systemctl reboot
