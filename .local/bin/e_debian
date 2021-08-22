@@ -81,7 +81,7 @@ packages() {
 
 	xorg=(xorg awesome xinit feh scrot)
 
-	wmapps=(udiskie ffmpeg zathura suckless-tools aria2 playerctl brightnessctl
+	wmapps=(udiskie ffmpeg zathura atril suckless-tools aria2 playerctl brightnessctl
 			bluez mpv libnotify-bin)
 
 	books=(pandoc texlive texlive-xetex)
