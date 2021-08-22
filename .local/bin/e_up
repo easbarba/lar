@@ -3,12 +3,9 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
+DISTRO=$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')
 DEPS=(sudo cp grep cut tr distro floss cejo emacs guix)
 e_checkdeps "${DEPS[@]}"
-
-DISTRO=$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')
-
-e_echo "Daily update of system packagers."
 
 e_echo "Upgrading system."
 distro update
@@ -21,12 +18,9 @@ floss grab
 floss archive
 cp -rpv $HOME/Downloads/archived/* /media/easbarbosa/MACHO/dots
 
-e_echo "Building Nightly Emacs"
-[[ $DISTRO != "Arch Linux" ]] && cejo project emacs
-
 e_doom
-
-e_echo "LANGS"
-
 e_ruby
 e_js
+
+e_echo "Building Nightly Emacs"
+[[ $DISTRO != "Arch Linux" ]] && cejo project emacs
