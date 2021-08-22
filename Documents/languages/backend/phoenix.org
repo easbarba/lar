@@ -136,6 +136,9 @@ MIX_ENV
 ** plug
 ** pipeline
 * config
+* Misc
+** Presence / Tracking
+** LiveView
 * controllers
 * templates
 * routers

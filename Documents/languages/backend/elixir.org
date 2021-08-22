@@ -114,9 +114,10 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter               | late            | revision |
-|-------------------------+-----------------------+-----------------+----------|
-| Learn Functional Elixir | Diving into Recursion |                 |          |
+| Books                   | Chapter | late                   | revision |
+|-------------------------+---------+------------------------+----------|
+| Learn Functional Elixir |         | Tail-Call Optimization |          |
+
 
 ** SLOC
 | Project   | folder      | file     | @ |
@@ -267,6 +268,10 @@ defguard is_cents(value) when is_integer(value) and value >= 0
 
 #+end_src
 
+*** Tail-call
+*** Body recursive
+*** Unbounded recursion
+
 ** Control Flow
 *** case
 allows us to compare a value against many patterns until we find a matching one:
@@ -324,6 +329,17 @@ fair_price = fn price, quantity -> price * quantity end
 fair_price.(5, 6)
 
 #+end_src
+
+Use the capturing feature to use named-function references like anonymous functions:
+
+#+begin_src elixir
+
+iex> c("factorial.ex")
+iex> factorial = &Factorial.of/1
+iex> factorial.(5)
+
+#+end_src
+
 ** High Order Functions
 ** Macros
 ** Pipe
