@@ -11,7 +11,10 @@
 - [[#tv-shows][TV Shows]]
   - [[#favorites][Favorites]]
 - [[#books][Books]]
+  - [[#books-videos][Books, Videos]]
   - [[#favs][Favs]]
+- [[#lectures][Lectures]]
+  - [[#teacher][Teacher]]
 - [[#manga][Manga]]
   - [[#favorites][Favorites]]
 - [[#games][Games]]
@@ -125,9 +128,22 @@
 - Bucky
 - Dragon Ball Z
 * Books
+** Books, Videos
+| Books                  | Capts                      | @                               |
+|------------------------+----------------------------+---------------------------------|
+| Attack of Titan(manga) | Chapter 93                 |                                 |
+| Last Wish              | The Voice of Reason 2      |                                 |
+| The War of the Worlds  |                            |                                 |
+| Study in Scarlet       | 2 The Science of Deduction | SHERLOCK HOLMES  -  his limits. |
+| Plato: Five Dialogues  |                            |                                 |
+| one punch man          |                            |                                 |
+
 ** Favs
 - Dr Jekyll and Hide
 - The Lost World
+* Lectures
+** Teacher
+- Osvaldo Coggiola
 
 * Manga
 ** Favorites
