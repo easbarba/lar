@@ -114,10 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter | late                   | revision |
-|-------------------------+---------+------------------------+----------|
-| Learn Functional Elixir |         | Tail-Call Optimization |          |
-
+| Books                   | Chapter                     | late    | revision |
+|-------------------------+-----------------------------+---------+----------|
+| Learn Functional Elixir | Higher-Order Functions      | Be Lazy |          |
 
 ** SLOC
 | Project   | folder      | file     | @ |
@@ -307,6 +306,28 @@ end
 ** Alias
 Any word that starts with a capital letter,
 
+** Comprehensions
+#+begin_src elixir
+
+iex> for a <- ["dogs", "cats", "flowers"], do: String.upcase(a)
+["DOGS", "CATS", "FLOWERS"]
+
+# filter
+iex> for n <- [1, 2, 3, 4, 5, 6, 7], n > 3, do: n
+[4, 5, 6, 7]
+
+#+end_src
+
+** Lazy
+
+*** Partial Application
+
+** Pipe / Capture operators
+#+begin_src elixir
+
+"Corinthians" |> String.first |> String.downcase
+
+#+end_src
 ** Pattern matching
 *** pin operator ^
 *** <>
@@ -347,7 +368,13 @@ iex> factorial.(5)
 * Modules
 ** Kernel
  Automatically imported in all environments.
+** Streams
 ** String
+** Enum
+*** each
+*** map
+*** reduce
+*** filter
 ** Integer
 ** Float
 ** IO
