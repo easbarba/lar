@@ -1,12 +1,12 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon        | tue        | wed        | thru    | fri     | sat | sun   |
-|------------+------------+------------+---------+---------+-----+-------|
-| elixir     | elixir     | elixir     | phoenix | phoenix |     | emacs |
-| postgresql | postgresql | postgresql | unix    | unix    |     | guile |
-| oop        | rspec      | oop        | rspec   | oop     |     |       |
-| git        | git        | git        | git     | git     |     |       |
+| mon      | tue      | wed      | thru    | fri     | sat | sun   |
+|----------+----------+----------+---------+---------+-----+-------|
+| elixir   | elixir   | elixir   | phoenix | phoenix |     | guile |
+| postgres | postgres | postgres | unix    | unix    |     |       |
+| oop      | rspec    | oop      | rspec   | oop     |     | emacs |
+| git      | git      | git      | git     | git     |     |       |
 
 * Priorities
 | @               | desc                                                        |
