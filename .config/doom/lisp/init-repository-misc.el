@@ -62,6 +62,7 @@
      "https://rubyweekly.com/rss/"
      "https://www.honeybadger.io/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
+     "https://feeds.feedburner.com/AyendeRahien"
      ;; lang channes
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
      ;; news channels
