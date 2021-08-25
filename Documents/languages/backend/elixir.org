@@ -114,9 +114,11 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                     | late    | revision |
-|-------------------------+-----------------------------+---------+----------|
-| Learn Functional Elixir | Higher-Order Functions      | Be Lazy |          |
+| Books                   | Chapter                              | late | revision |
+|-------------------------+--------------------------------------+------+----------|
+| Learn Functional Elixir | 6 Designing Your Elixir Applications |      |          |
+
+
 
 ** SLOC
 | Project   | folder      | file     | @ |
@@ -271,6 +273,12 @@ defguard is_cents(value) when is_integer(value) and value >= 0
 *** Body recursive
 *** Unbounded recursion
 
+** Sigil
+#+begin_src elixir
+
+~w(meh foo bar)
+#+end_src
+
 ** Control Flow
 *** case
 allows us to compare a value against many patterns until we find a matching one:
@@ -369,6 +377,12 @@ iex> factorial.(5)
 ** Kernel
  Automatically imported in all environments.
 ** Streams
+|         |   |
+|---------+---|
+| cycle   |   |
+| iterate |   |
+| chunk   |   |
+
 ** String
 ** Enum
 *** each
