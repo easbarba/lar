@@ -3,9 +3,10 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-DISTRO=$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')
-DEPS=(sudo cp grep cut tr distro floss cejo emacs guix)
+DEPS=(sudo grep cut tr distro floss cejo emacs parallel cp find guix)
 e_checkdeps "${DEPS[@]}"
+
+DISTRO=$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')
 
 e_echo "Upgrading system."
 distro update
@@ -16,7 +17,7 @@ e_guix
 e_echo "FLOSS projects"
 floss grab
 floss archive
-cp -rpv $HOME/Downloads/archived/* /media/$USER/MACHO/dots
+find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv {1} /media/$USER/MACHO/dots
 
 e_doom
 e_ruby
