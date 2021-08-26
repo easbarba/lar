@@ -52,9 +52,15 @@ system() {
 }
 
 development() {
-	local packages=(node direnv elixir ruby)
+	local packages=(direnv)
 	e_dolist "guix install" "${packages[@]}"
 }
+
+languages() {
+	local packages=(node elixir ruby)
+	e_dolist "guix install" "${packages[@]}"
+}
+
 
 # * RUN
 
@@ -66,3 +72,4 @@ upgrade
 glocale
 system
 development
+languages
