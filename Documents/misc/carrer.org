@@ -11,9 +11,9 @@
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| Lang            | Elixir                                                      |
-| Framework       | MVC, Phoenix                                                |
-| Unit Test       | ..., Espec                                                  |
+| Lang            | Elixir, Ruby                                                |
+| Framework       | MVC, Phoenix, Sinatra                                       |
+| testing         | UnitTest, Espec                                             |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
@@ -35,8 +35,20 @@ telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 
 *SOBRE*
 -----
-.....
 
+Usuário de Distros Linux de 2008, habituado a ferramentas CLI como coreutils,
+ssh, systemd, emacs e relatos.
+
+Utilizo extensivamente Bash Scripts para automação e bootstrap de distribuições
+Linux aliados a várias ferramentas como Awk, sed, Parallel...
+
+Ultimamente estive ativamente ajudando através de PRs diversos projetos de
+extensões do editor Emacs, Guix e Nim.
+
+Quanto a projetos pessoais tenho alguns baseados em Ruby, Elixir e Guile, estes
+se encontram em:
+
+https://git.sr.ht/~easbarbosa
 
 *SKILLS*
 -----
