@@ -11,9 +11,9 @@
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| Lang            | Elixir, Ruby                                                |
+| Lang            | Elixir, Ruby, Guile                                         |
 | Framework       | MVC, Phoenix, Sinatra                                       |
-| testing         | UnitTest, Espec                                             |
+| testing         | UnitTest, Rspec                                             |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
