@@ -7,7 +7,6 @@
 | Pro git          | Basics   | Viewing Your Staged and Unstaged Changes |       |         |
 | Professional Git |          | CONFIGURING GIT                          |       |         |
 
-
 * Features
 ** add
       Add file contents to the index.
@@ -15,6 +14,9 @@
       Find by binary search the change that introduced a bug.
 ** branch
       List, create, or delete branches.
+** stash
+ takes your uncommitted changes (both staged and unstaged), saves them away for
+ later use, and then reverts them from your working copy
 ** checkout
       Switch branches or restore working tree files.
 ** cherry
@@ -152,7 +154,6 @@ Show the working tree status.
     http://gitready.com/intermediate/2009/02/13/list-remote-branches.html
 * gitigonore
 man gitignore
-
 
 * Observations
     | git command                              | description                                                           |
