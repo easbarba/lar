@@ -1,3 +1,4 @@
+
 #+TILE: Guile Scheme - Annotations
 
 * Summary
@@ -114,11 +115,11 @@
   :END:
 * Progress
 ** Books
-| name          | chapter                  | @                                              | late | revision |
-|---------------+--------------------------+------------------------------------------------+------+----------|
-| Guile manual  | API Reference            | 6.6.2.9 Converting Numbers To and From Strings |      |          |
-| Litle Schemer | 4                        |                                                |      |          |
-| Scheme PL     | Chapter 3. Going Further |                                                |      |          |
+| name          | chapter                  | @                                        | late | revision |
+|---------------+--------------------------+------------------------------------------+------+----------|
+| Guile manual  | Hello Scheme             | 3.2.3 Creating and Using a New Procedure |      |          |
+| Litle Schemer | 4                        |                                          |      |          |
+| Scheme PL     | Chapter 3. Going Further |                                          |      |          |
 
 ** LDC
 | Source Code | folder           | file            | @ |
@@ -627,19 +628,16 @@ https://htdp.org/2018-01-06/Book/
 
 #+end_src
 
-**** functions
-***** string-append
-***** string->char-set!
-***** string->list
-***** string->number
-***** string->symbol
+|                   |   |
+|-------------------+---|
+| string-append     |   |
+| string-lenght     |   |
+| string->char-set! |   |
+| string->list      |   |
+| string->number    |   |
+| string->symbol    |   |
 
 *** null
-#+begin_src scheme
-
-
-#+end_src
-
 ** Selection
 *** car
 - non-empty list
@@ -696,6 +694,25 @@ https://htdp.org/2018-01-06/Book/
 #+end_src
 *** eqv?
 *** equal?
+
+** Variables
+*** define
+defining a variable
+
+#+begin_src scheme
+
+(define x 1)
+
+#+end_src
+
+*** set!
+changing a variable's value
+
+#+begin_src scheme
+
+(set! x 2)
+
+#+end_src
 
 ** Comparison
 *** <=
