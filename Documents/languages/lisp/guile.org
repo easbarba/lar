@@ -115,11 +115,11 @@
   :END:
 * Progress
 ** Books
-| name          | chapter                  | @                                        | late | revision |
-|---------------+--------------------------+------------------------------------------+------+----------|
-| Guile manual  | Hello Scheme             | 3.2.3 Creating and Using a New Procedure |      |          |
-| Litle Schemer | 4                        |                                          |      |          |
-| Scheme PL     | Chapter 3. Going Further |                                          |      |          |
+| name          | chapter                  | @                              | late | revision |
+|---------------+--------------------------+--------------------------------+------+----------|
+| Guile manual  | Hello Scheme             | 3.3 Expressions and Evaluation |      |          |
+| Litle Schemer | 4                        |                                |      |          |
+| Scheme PL     | Chapter 3. Going Further |                                |      |          |
 
 ** LDC
 | Source Code | folder           | file            | @ |
