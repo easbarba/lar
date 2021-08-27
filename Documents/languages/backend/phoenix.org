@@ -126,15 +126,42 @@
 | plug    |        |      |   |
 
 * Features
-** cli
+** [[https://hexdocs.pm/phoenix/plug.html][plug]]
+Plug lives at the heart of Phoenix's HTTP layer, and Phoenix puts Plug front and
+center. We interact with plugs at every step of the request life-cycle, and the
+core Phoenix components like Endpoints, Routers, and Controllers are all just
+Plugs internally. Let's jump in and find out just what makes Plug so special.
+
+** [[https://hexdocs.pm/phoenix/contexts.html][context]]
+Contexts are dedicated modules that expose and group related functionality.
+
+** [[https://hexdocs.pm/phoenix/routing.html][routing]]
+Routers are the main hubs of Phoenix applications. They match HTTP requests to
+controller actions, wire up real-time channel handlers, and define a series of
+pipeline transformations scoped to a set of routes.
+
+*** pipeline
+
+** controllers
+** view
+** templates
+* cli
+Set environment. (default: env)
 #+begin_src elixir
-
-MIX_ENV
-
-
+export MIX_ENV=env
 #+end_src
-** plug
-** pipeline
+
+You can also run your app inside IEx (Interactive Elixir) as:
+#+begin_src elixir
+iex -S mix phx.server
+#+end_src
+
+same as above but do not run phoenix server
+#+begin_src elixir
+iex -S mix
+#+end_src
+
+
 * config
 * Misc
 ** Presence / Tracking
