@@ -114,11 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                              | late | revision |
-|-------------------------+--------------------------------------+------+----------|
-| Learn Functional Elixir | 6 Designing Your Elixir Applications |      |          |
-
-
+| Books                   | Chapter                              | late               | revision |
+|-------------------------+--------------------------------------+--------------------+----------|
+| Learn Functional Elixir | 6 Designing Your Elixir Applications | Listing the Heroes |          |
 
 ** SLOC
 | Project   | folder      | file     | @ |
@@ -198,6 +196,22 @@ Join strings
 [ head | tail ] = [1,2,3]
 head # 1
 tail # [2,3]
+
+#+end_src
+*** Struct
+#+begin_src elixir
+
+defmodule DungeonCrawl.Character do
+  defstruct name: nil,
+    description: nil,
+    hit_points: 0,
+    max_hit_points: 0,
+    attack_description: nil,
+    damage_range: nil
+end
+
+%DungeonCrawl.Character{name: "Warrior"}
+
 
 #+end_src
 
@@ -398,7 +412,7 @@ iex> factorial.(5)
 |                   |                              |
 |-------------------+------------------------------|
 | c(<filename.iex>) | compile file and load module |
-|                   |                              |
+| -S <script>       | run a script on launch       |
 
 * Read late
 ** links
