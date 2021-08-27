@@ -1,19 +1,19 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon      | tue      | wed      | thru    | fri     | sat | sun   |
-|----------+----------+----------+---------+---------+-----+-------|
-| elixir   | elixir   | elixir   | phoenix | phoenix |     | guile |
-| postgres | postgres | postgres | unix    | unix    |     |       |
-| oop      | rspec    | oop      | rspec   | oop     |     | emacs |
-| git      | git      | git      | git     | git     |     |       |
+| mon      | tue      | wed      | thru     | fri      | sat | sun   |
+|----------+----------+----------+----------+----------+-----+-------|
+| elixir   | elixir   | elixir   | phoenix  | phoenix  |     | guile |
+| phoenix  | phoenix  | phoenix  | phoenix  | phoenix  |     | unix  |
+| postgres | postgres | postgres | postgres | postgres |     | emacs |
+| git      | git      | git      | git      | git      |     |       |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
 | Lang            | Elixir, Ruby, Guile                                         |
 | Framework       | MVC, Phoenix, Sinatra                                       |
-| testing         | UnitTest, Rspec                                             |
+| Unit Test       | ExUnit, Rspec                                               |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
