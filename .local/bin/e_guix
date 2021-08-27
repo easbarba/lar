@@ -31,11 +31,11 @@ get() {
 install() {
 	[[ -x $(command -v guix) ]] && return
 
-	sudo /usr/bin/bash /tmp/guix-install.sh
+	/usr/bin/sudo /usr/bin/bash /tmp/guix-install.sh
 }
 
 upgrade() {
-	sudo -i guix pull
+	/usr/bin/sudo -i guix pull
 	guix pull
 	guix upgrade
 }
