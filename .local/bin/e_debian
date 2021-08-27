@@ -41,7 +41,7 @@ packages() {
 
 	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
-	system=(zip p7zip p7zip-full lshw at usbutils lsof atool linux-perf time
+	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf time
 			entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
 			jq rsync pv texinfo autoconf automake socat)
 

@@ -171,6 +171,18 @@ echo .bash* # echo all files beginning with '.bash'
 |                 |                                                                 |
 * scp
 OpenSSH secure file copy
+* kill
+|    |         |
+|----+---------|
+|  1 | SIGHUP  |
+|  9 | SIGKILL |
+| 15 | SIGTERM |
+* pkill
+* recutils
+** recsel
+print records from a recfile
+* killall
+
 * pgrep/pkill/pwait
 look up, signal, or wait for processes based on name and other attributes
 * parallel
