@@ -63,14 +63,19 @@ createdb -U $USER mydb
 
 * Cli
 ** pg_ctl
-    |                          |                                                             |
-    |--------------------------+-------------------------------------------------------------|
-    | start, stop, and restart | execute the corresponding actions on the cluster            |
-    | status                   | reports the current status (running or not) of the cluster. |
-    | initdb                   | executes the initialization of the cluster, possibly        |
-    | reload                   | causes the PostgreSQL server to reload the configuration    |
-    | promote                  |                                                             |
-    |                          |                                                             |
+    |                          |                                                                                                                                          |
+    |--------------------------+------------------------------------------------------------------------------------------------------------------------------------------|
+    | start, stop, and restart | execute the corresponding actions on the cluster                                                                                         |
+    | status                   | reports the current status (running or not) of the cluster.                                                                              |
+    | initdb                   | executes the initialization of the cluster, possibly                                                                                     |
+    | reload                   | causes the PostgreSQL server to reload the configuration                                                                                 |
+    | promote                  |                                                                                                                                          |
+    | -d <database>            | Specifies the file system location of the database files                                                                                 |
+    | -m <mode>                | Specifies the shutdown mode. mode can be smart, fast, or immediate, or the first letter of one of these three. p, start, restart, reload |
+    | -U <user>                |                                                                                                                                          |
+    | -h <host>                | IPV4,IPV6 or hostname                                                                                                                    |
+    | -p                       | Specifies the location of the postgres executable.                                                                                       |
+    |                          |                                                                                                                                          |
 ** psql
 a command-line client that allows you to interact with, connect, and administer
 databases and the cluster itself.
@@ -84,13 +89,14 @@ databases and the cluster itself.
 |    |                                                         |
 
 *** commands (\)
-
 |                |                                                        |
 |----------------+--------------------------------------------------------|
 | \x             | expanded mode                                          |
 | \l             | list all the databases that are present in the cluster |
 | \c             | connect                                                |
 | \l+ <database> |                                                        |
+| \du            | list roles                                             |
+| \du+           | same as above but more info                            |
 
 *** psql prompt
 |                                          |                |
@@ -102,6 +108,21 @@ databases and the cluster itself.
 | \?                                       |                |
 | \d                                       |                |
 | postgresql://username@host:port/database |                |
+
+*** drop role
+#+begin_src sql
+DROP ROLE [ IF EXISTS ] name [, ...]
+#+end_src
+
+#+begin_src sql
+
+DROP ROLE IF EXISTS saitama;
+#+end_src
+
+*** create role
+*** create group
+*** grant
+*** inspect
 
 ** pstree
     - checkpointer
