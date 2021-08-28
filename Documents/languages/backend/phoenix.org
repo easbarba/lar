@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books   | Chapter       | @                     | late | revision |
-|---------+---------------+-----------------------+------+----------|
-| Phoenix | 3 controllers | Building a Controller |      |          |
+| Books   | Chapter       | @              | late | revision |
+|---------+---------------+----------------+------+----------|
+| Phoenix | 3 controllers | Showing a User |      |          |
 
 ** SLOC
 | Project | folder | file | @ |
