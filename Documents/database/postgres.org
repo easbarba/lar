@@ -1,81 +1,200 @@
 #+TILE: PostgreSQL - Study annotations
 
-* summary
+* Summary
   :PROPERTIES:
   :TOC:      :include all :depth 2 :ignore this
   :END:
 :CONTENTS:
 - [[#progress][Progress]]
-- [[#official][Official]]
-- [[#documentation][Documentation]]
-- [[#terms][Terms]]
-- [[#tips][Tips]]
-  - [[#local-and-non-root-database][local and non-root database]]
-- [[#cli][Cli]]
+- [[#features][Features]]
+  - [[#tables][tables]]
+  - [[#databases][databases]]
+  - [[#data-definition-language-ddl][Data Definition Language (DDL)]]
+  - [[#data-manipulation-language-dml][Data Manipulation Language (DML)]]
+  - [[#tablespace][tablespace]]
+  - [[#users--groups][users & groups]]
+- [[#cli][cli]]
   - [[#pg_ctl][pg_ctl]]
   - [[#psql][psql]]
   - [[#pstree][pstree]]
   - [[#initdb][initdb]]
   - [[#createdb][createdb]]
-- [[#features][Features]]
-  - [[#tables][tables]]
-  - [[#databases][databases]]
-  - [[#ddl][DDL]]
-  - [[#dml][DML]]
-  - [[#tablespace][tablespace]]
-  - [[#users--groups][users & groups]]
+- [[#official][Official]]
+- [[#documentation][Documentation]]
+- [[#terms][Terms]]
+- [[#tips][Tips]]
+  - [[#local-and-non-root-database][local and non-root database]]
 - [[#utils][Utils]]
 :END:
 * Progress
-| book                   | chapter          | @                         | revision |
-|------------------------+------------------+---------------------------+----------|
-| Learn PostgreSQL 12/13 | Basic Statements | Managing temporary tables |          |
+| book                   | chapter          | @             | revision |
+|------------------------+------------------+---------------+----------|
+| Learn PostgreSQL 12/13 | Basic Statements | Updating data |          |
 
-* Official
-https://www.postgresql.org/
-* Documentation
-https://www.postgresql.org/docs/
+* Features
+** tables
+*** concept
+**** types
+- Temporary tables: Very fast tables, visible only to the user who created them
+- Unlogged tables: Very fast tables to be used as support tables common to all users
+- Logged tables: Regular tables
 
-* Terms
-|              |                                                                        |
-|--------------+------------------------------------------------------------------------|
-| session      |                                                                        |
-| transactions |                                                                        |
-| concurrency  |                                                                        |
-| ACID         | atomicity, consistency, isolation, and durability                      |
-| DMBS         | Database Management System                                             |
-| PID          | Process Identifier                                                     |
-| TableSpace   | tablespace is a storage space that can be outside the PGDATA directory |
-| PGDATA       |                                                                        |
+*** create
+#+begin_src sql
+CREATE TABLE dummytable (dummyfield integer not null primary key);
 
-* Tips
-** local and non-root database
-#+begin_src shell-script
+CREATE TABLE users (
+pk int GENERATED ALWAYS AS IDENTITY
+, username text NOT NULL
+, gecos text
+, email text NOT NULL
+, PRIMARY KEY(pk)
+, UNIQUE(username)
+);
+#+end_src
+*** drop
 
-initdb -D .postgres -A md5 -U $USER --pwprompt
-# or
-initdb -D .postgres -A md5 -U $USER --pwfile=/path/to/passfile
+#+begin_src sql
+DROP TABLE tablename;
+#+end_src
 
-pg_ctl -D .postgres -w start
-createdb -U $USER mydb
+#+begin_src sql
+DROP TABLE IF EXISTS users;
+#+end_src
+*** temporary
+table visible only in the session where it was created
+
+#+begin_src sql
+
+forumdb=# create temp table if not exists temp_users
+pk int GENERATED ALWAYS AS IDENTITY
+,username text NOT NULL
+,gecos text
+,email text NOT NULL
+,PRIMARY KEY( pk )
+,UNIQUE ( username )
+);
 
 #+end_src
 
-* Cli
+table visible only within our transaction
+
+#+begin_src sql
+forumdb=# begin work;
+BEGIN
+
+forumdb# create temp table if not exists temp_users (
+pk int GENERATED ALWAYS AS IDENTITY
+,username text NOT NULL
+,gecos text
+,email text NOT NULL
+,PRIMARY KEY( pk )
+,UNIQUE ( username )
+) on commit drop;
+
+forumdb=# commit work;
+COMMIT
+
+in this way :
+forumdb=# \d temp_users;
+Did not find any relation named "temp_users".
+
+#+end_src
+*** unlogged
+*** insert
+#+begin_src sql
+
+forumdb=# insert into users (username,gecos,email) values
+('myusername','mygecos','myemail');
+INSERT 0 1
+
+forumdb=# insert into categories (title,description) values
+('apple', 'fruits'), ('orange','fruits'),('lettuce','vegetable');
+INSERT 0 3
+
+#+end_src
+*** null
+display NULL values present in the tables
+
+#+begin_src sql
+forumdb=# \pset null NULL
+Null display is "NULL".
+#+end_src
+
+Query null values
+
+#+begin_src sql
+forumdb=# SELECT title,description FROM categories WHERE description IS NULL;
+
+forumdb=# select * from categories order by description NULLS first;
+
+#+end_src
+*** updating
+** databases
+*** create
+#+begin_src sql
+CREATE DATABASE dummydb;
+#+end_src
+*** drop
+#+begin_src sqld
+DROP DATABASE tablename;
+#+end_src
+*** copy
+#+begin_src sql
+CREATE DATABASE forumdb2 TEMPLATE forumdb;
+#+end_src
+*** size
+**** via psql
+#+begin_src conf
+\x
+\l+ databasename
+#+end_src
+**** via sql
+#+begin_src sql
+SELECT pg_database_size('forumdb');
+SELECT pg_size_pretty(pg_database_size('forumdb'));
+#+end_src
+*** query
+#+begin_src sql
+select * from pg_database where datname='forumdb';
+#+end_src
+** Data Definition Language (DDL)
+commands are used to manage databases and tables
+** Data Manipulation Language (DML)
+used to insert, delete, update, and select data inside databases
+
+** tablespace
+pg_tblspc
+pg_default
+pg_global
+** users & groups
+*** role
+- A role can be a single account, a group of accounts, or even both depending on how you configure it
+- it should be either a single user or a single group, but not both.
+- have a unique name or identifier, usually called the username.
+- represents a collection of database permissions and connection properties.
+**** Statements
+|             |                             |
+|-------------+-----------------------------|
+| CREATE ROLE | create a role from scratch  |
+| ALTER ROLE  | change some role properties |
+| DROP ROLE   | remove an existing role     |
+
+* cli
 ** pg_ctl
-    |                          |                                                                                                                                          |
-    |--------------------------+------------------------------------------------------------------------------------------------------------------------------------------|
-    | start, stop, and restart | execute the corresponding actions on the cluster                                                                                         |
-    | status                   | reports the current status (running or not) of the cluster.                                                                              |
-    | initdb                   | executes the initialization of the cluster, possibly                                                                                     |
-    | reload                   | causes the PostgreSQL server to reload the configuration                                                                                 |
-    | promote                  |                                                                                                                                          |
-    | -d <database>            | Specifies the file system location of the database files                                                                                 |
-    | -m <mode>                | Specifies the shutdown mode. mode can be smart, fast, or immediate, or the first letter of one of these three. p, start, restart, reload |
-    | -U <user>                |                                                                                                                                          |
-    | -h <host>                | IPV4,IPV6 or hostname                                                                                                                    |
-    | -p                       | Specifies the location of the postgres executable.                                                                                       |
-    |                          |                                                                                                                                          |
+|                          |                                                                                                                                          |
+|--------------------------+------------------------------------------------------------------------------------------------------------------------------------------|
+| start, stop, and restart | execute the corresponding actions on the cluster                                                                                         |
+| status                   | reports the current status (running or not) of the cluster.                                                                              |
+| initdb                   | executes the initialization of the cluster, possibly                                                                                     |
+| reload                   | causes the PostgreSQL server to reload the configuration                                                                                 |
+| promote                  |                                                                                                                                          |
+| -d <database>            | Specifies the file system location of the database files                                                                                 |
+| -m <mode>                | Specifies the shutdown mode. mode can be smart, fast, or immediate, or the first letter of one of these three. p, start, restart, reload |
+| -U <user>                |                                                                                                                                          |
+| -h <host>                | IPV4,IPV6 or hostname                                                                                                                    |
+| -p                       | Specifies the location of the postgres executable.                                                                                       |
+|                          |                                                                                                                                          |
 ** psql
 a command-line client that allows you to interact with, connect, and administer
 databases and the cluster itself.
@@ -132,79 +251,31 @@ DROP ROLE IF EXISTS saitama;
     - logical replication launcher
 ** initdb
 ** createdb
-* Features
-** tables
-*** concept
-**** types
-- Temporary tables: Very fast tables, visible only to the user who created them
-- Unlogged tables: Very fast tables to be used as support tables common to all users
-- Logged tables: Regular tables
+* [[https://www.postgresql.org/][Official]]
+* [[https://www.postgresql.org/docs/][Documentation]]
+* Terms
+|              |                                                                        |
+|--------------+------------------------------------------------------------------------|
+| session      |                                                                        |
+| transactions |                                                                        |
+| concurrency  |                                                                        |
+| ACID         | atomicity, consistency, isolation, and durability                      |
+| DMBS         | Database Management System                                             |
+| PID          | Process Identifier                                                     |
+| TableSpace   | tablespace is a storage space that can be outside the PGDATA directory |
+| PGDATA       |                                                                        |
+* Tips
+** local and non-root database
+#+begin_src shell-script
 
-*** create
-#+begin_src sql
-CREATE TABLE dummytable (dummyfield integer not null primary key);
+initdb -D .postgres -A md5 -U $USER --pwprompt
+# or
+initdb -D .postgres -A md5 -U $USER --pwfile=/path/to/passfile
 
-CREATE TABLE users (
-pk int GENERATED ALWAYS AS IDENTITY
-, username text NOT NULL
-, gecos text
-, email text NOT NULL
-, PRIMARY KEY(pk)
-, UNIQUE(username)
-);
-#+end_src
-*** drop
-
-#+begin_src sql
-DROP TABLE tablename;
+pg_ctl -D .postgres -w start
+createdb -U $USER mydb
 
 #+end_src
-
-** databases
-*** drop
-#+begin_src sqld
-DROP DATABASE tablename;
-#+end_src
-*** copy
-#+begin_src sql
-CREATE DATABASE forumdb2 template forumdb;
-#+end_src
-*** size
-**** via psql
-#+begin_src conf
-\x
-\l+ databasename
-#+end_src
-**** via sql
-#+begin_src sql
-SELECT pg_database_size('forumdb');
-SELECT pg_size_pretty(pg_database_size('forumdb'));
-#+end_src
-*** query
-#+begin_src sql
-select * from pg_database where datname='forumdb';
-#+end_src
-** DDL
-
-** DML
-Data Manipulation Language: used to insert, delete, update, and select data inside databases
-
-** tablespace
-pg_tblspc
-pg_default
-pg_global
-** users & groups
-*** role
-- A role can be a single account, a group of accounts, or even both depending on how you configure it
-- it should be either a single user or a single group, but not both.
-- have a unique name or identifier, usually called the username.
-- represents a collection of database permissions and connection properties.
-**** Statements
-|             |                             |
-|-------------+-----------------------------|
-| CREATE ROLE | create a role from scratch  |
-| ALTER ROLE  | change some role properties |
-| DROP ROLE   | remove an existing role     |
 
 * Utils
 - postmaster: prints out a few log lines before redirecting the logs to the appropriate log file
