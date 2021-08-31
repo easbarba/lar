@@ -122,10 +122,10 @@
 | Litle Schemer | 4                        |                  |      |          |
 
 ** LDC
-| Source Code | folder           | file            | @ |
-|-------------+------------------+-----------------+---|
-| guix        | gnu/bootloader   | depthcharge.scm |   |
-| guile       | lib/module/ice-9 | boot-9.scm      |   |
+| Source Code | folder           | file       | @ |
+|-------------+------------------+------------+---|
+| guix        | gnu/builds       | account    |   |
+| guile       | lib/module/ice-9 | boot-9.scm |   |
 
 * Books
 ** SICP
