@@ -3,10 +3,10 @@
 * Schedule
 | mon      | tue      | wed      | thru     | fri      | sat | sun   |
 |----------+----------+----------+----------+----------+-----+-------|
-| elixir   | elixir   | elixir   | phoenix  | phoenix  |     | guile |
+| elixir   | elixir   | elixir   | elixir   | elixir   |     | guile |
 | phoenix  | phoenix  | phoenix  | phoenix  | phoenix  |     | unix  |
 | postgres | postgres | postgres | postgres | postgres |     | emacs |
-| git      | git      | git      | git      | git      |     |       |
+| git      | git      | git      | js       | js       |     |       |
 
 * Priorities
 | @               | desc                                                        |
