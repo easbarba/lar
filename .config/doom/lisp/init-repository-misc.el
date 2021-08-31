@@ -47,7 +47,6 @@
      ;; prog blogs
      "https://wingolog.org/feed/atom"
      "https://elephly.net/feed.xml"
-     "https://www.phoronix.com/rss.php"
      "https://michael.stapelberg.ch/feed.xml"
      "https://edelpero.svbtle.com/feed"
      "https://drewdevault.com/blog/index.xml"
@@ -81,9 +80,11 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCGJq0eQZoFSwgcqgxIE9MHw" ;; Mic The Vegan
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCOgNPIg-Sw14JbwqaIUkfjg" ;; Vegflix
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCRyMkhsIwck6r5yMJH_DAsQ" ;; Momento Veg
-     ;; misc channels
+     ;; corinthians
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCddvwB05ICnMVAkBnBqg-FQ" ;; Youtimao
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqRraVICLr0asn90cAvkIZQ" ;; Corinthians TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC-I7i0YfLPHfUoH6-m2uUAw" ;; Podcastimao
+     ;; misc channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC7MUgl7pf_OfZhWurZQS1oA" ;; Bero Tech
