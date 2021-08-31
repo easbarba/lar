@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                              | late               | revision |
-|-------------------------+--------------------------------------+--------------------+----------|
-| Learn Functional Elixir | 6 Designing Your Elixir Applications | Listing the Heroes |          |
+| Books                   | Chapter                              | late                                                 | revision |
+|-------------------------+--------------------------------------+------------------------------------------------------+----------|
+| Learn Functional Elixir | 6 Designing Your Elixir Applications | Using Protocols to Create Polymorphic Functions      |
 
 ** SLOC
 | Project   | folder        | file         | @ |
