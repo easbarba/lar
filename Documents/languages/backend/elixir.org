@@ -119,10 +119,11 @@
 | Learn Functional Elixir | 6 Designing Your Elixir Applications | Listing the Heroes |          |
 
 ** SLOC
-| Project   | folder      | file     | @ |
-|-----------+-------------+----------+---|
-| elixir    | eex/lib/eex | compiler |   |
-| elixir-ls |             |          |   |
+| Project   | folder        | file         | @ |
+|-----------+---------------+--------------+---|
+| elixir    | eex/lib/eex   | smart_engine |   |
+| elixir-ls |               |              |   |
+| ecto      | /ecto/adapter | queryable    |   |
 
 * Features
 ** Literals
