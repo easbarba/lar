@@ -119,11 +119,11 @@
 | Learn Functional Elixir | 6 Designing Your Elixir Applications | Displaying Heroes and Room Actions with Protocols |          |
 
 ** SLOC
-| Project   | folder        | file         | @ |
-|-----------+---------------+--------------+---|
-| elixir    | eex/lib/eex   | smart_engine |   |
-| elixir-ls |               |              |   |
-| ecto      | /ecto/adapter | queryable    |   |
+| Project   | folder        | file      | @ |
+|-----------+---------------+-----------+---|
+| elixir    | eex/lib/eex   | tokenizer |   |
+| elixir-ls |               |           |   |
+| ecto      | /ecto/adapter | queryable |   |
 
 * Features
 ** Literals
