@@ -62,6 +62,9 @@
      "https://www.honeybadger.io/blog/feed.xml"
      "https://blog.appsignal.com/feed.xml"
      "https://feeds.feedburner.com/AyendeRahien"
+     ;; street food channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdz7HcTQOaHCoAEJBs-MlNQ" ;; JJin Food
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UChu1vY_Mb0XVpfkruXoaiWg" ;; Bin's food
      ;; lang channes
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
      ;; news channels
