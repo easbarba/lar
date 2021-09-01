@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                              | late                                                 | revision |
-|-------------------------+--------------------------------------+------------------------------------------------------+----------|
-| Learn Functional Elixir | 6 Designing Your Elixir Applications | Using Protocols to Create Polymorphic Functions      |
+| Books                   | Chapter                              | late                                              | revision |
+|-------------------------+--------------------------------------+---------------------------------------------------+----------|
+| Learn Functional Elixir | 6 Designing Your Elixir Applications | Displaying Heroes and Room Actions with Protocols |          |
 
 ** SLOC
 | Project   | folder        | file         | @ |
@@ -354,7 +354,20 @@ iex> for n <- [1, 2, 3, 4, 5, 6, 7], n > 3, do: n
 ** Pattern matching
 *** pin operator ^
 *** <>
+** Protocols
+#+begin_src elixir
+defprotocol DungeonCrawl.Display do
+  def info(value)
+end
 
+defimpl DungeonCrawl.Display, for: DungeonCrawl.Room.Action do
+  def info(action), do: action.label
+end
+
+defimpl DungeonCrawl.Display, for: DungeonCrawl.Character do
+  def info(character), do: character.name
+end
+#+end_src
 ** Anonymous Functions
 #+begin_src elixir
 
