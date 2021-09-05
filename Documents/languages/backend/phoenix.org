@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books   | Chapter       | @              | late | revision |
-|---------+---------------+----------------+------+----------|
-| Phoenix | 3 controllers | Showing a User |      |          |
+| Books   | Chapter               | @                  | late | revision |
+|---------+-----------------------+--------------------+------+----------|
+| Phoenix | 4 Ecto and Changesets | Creating Resources |      |          |
 
 ** SLOC
 | Project | folder | file | @ |
@@ -177,10 +177,28 @@ same as above but do not run phoenix server
 iex -S mix
 #+end_src
 
+see all available routes
+#+begin_src elixir
+mix phx.routes
+#+end_src
+
 * config
 * Misc
 ** Presence / Tracking
 ** LiveView
+* Packages
+** Ecto
+*** Via iex
+#+begin_src elixir
+alias Rumbl.Repo
+alias Rumbl.Accounts.User
+
+Repo.insert(%User{name: "Bruce", username: "redrapids"})
+Repo.all User
+Repo.get User,1
+
+#+end_src
+
 * controllers
 * templates
 * routers
