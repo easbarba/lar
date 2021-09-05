@@ -117,7 +117,47 @@
 
     #+end_src
 * floss
-   #+begin_src yaml
+#+begin_src yaml
+
+name,repository
+nvim-lspinstall,https://github.com/kabouzeid/nvim-lspinstall
+packer.nvim,https://github.com/wbthomason/packer.nvim
+which-key.nvim,https://github.com/folke/which-key.nvim
+WillPower3309-awesome-dotfiles,https://github.com/WillPower3309/awesome-dotfiles
+Elv13-awesome-configs,https://github.com/Elv13/awesome-configs
+vicious,https://github.com/vicious-widgets/vicious
+awesome-wm-widgets,https://github.com/streetturtle/awesome-wm-widgets
+luamake,https://github.com/actboy168/luamake
+lua-language-server,https://github.com/sumneko/lua-language-server
+EmmyLua-LanguageServer,https://github.com/EmmyLua/EmmyLua-LanguageServer
+turtle.lua,https://github.com/arthurealike/turtle.lua
+luvit,https://github.com/luvit/luvit
+lite,https://github.com/rxi/lite
+awesome-copycats,https://github.com/lcpz/awesome-copycats
+awesome,https://github.com/awesomeWM/awesome
+luarocks,https://github.com/luarocks/luarocks
+lua,https://github.com/lua/lua
+
+
+name,repository
+rubocop-hq-rails-style-guide,https://github.com/rubocop-hq/rails-style-guide
+rubocop-hq-rspec-style-guide,https://github.com/rubocop-hq/rspec-style-guide
+rubocop-hq-ruby-style-guide,https://github.com/rubocop-hq/ruby-style-guide
+rubocop,https://github.com/rubocop-hq/rubocop
+solargraph,https://github.com/castwide/solargraph
+sinatra,https://github.com/sinatra/sinatra
+rails,https://github.com/rails/rails
+rspec,https://github.com/rspec/rspec
+rspec-core,https://github.com/rspec/rspec-core
+rake,https://github.com/ruby/rake
+ruby,https://github.com/ruby/ruby
+ruby-debug,https://github.com/ruby/debug
+ruby-rbs,https://github.com/ruby/rbs
+rack,https://github.com/rack/rack
+rack-test,https://github.com/rack/rack-test
+
+
+
 --- # golang
 - https://github.com/golang-standards/project-layout
 - https://github.com/hashicorp/nomad
