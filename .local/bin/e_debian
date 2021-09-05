@@ -86,7 +86,7 @@ packages() {
 
 	books=(pandoc texlive texlive-xetex)
 
-	user=(firefox chromium libreoffice gimp obs-studio kdeconnect cheese
+	user=(firefox libreoffice gimp obs-studio kdeconnect cheese
 		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
