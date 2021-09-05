@@ -3,19 +3,26 @@
 deps=(feh swaybg)
 e_checkdeps ${deps[@]}
 
-FOLDER=$HOME/Pictures/wallpapers
-WALL=$(find $FOLDER -type f | shuf -n 1)
+FOLDER="$HOME/Pictures/wallpapers"
+
+wall() {
+  local found=$(find $FOLDER -type f | shuf -n 1)
+
+  echo $found
+}
+
+echo "wallpaper: $(wall)"
 
 Feh() {
   [[ ! -x /usr/bin/feh ]] && return
 
-  feh --bg-max $WALL &
+  feh --bg-max $(wall) &
 }
 
 Swaybg() {
   [[ ! -x /usr/bin/swaybg ]] && return
 
-  swaybg -m fit -i $WALL &
+  swaybg -m fit -i $(wall) &
 }
 
 # * RUN
