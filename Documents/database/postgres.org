@@ -24,6 +24,7 @@
 - [[#terms][Terms]]
 - [[#tips][Tips]]
   - [[#local-and-non-root-database][local and non-root database]]
+- [[#errors][Errors]]
 - [[#utils][Utils]]
 :END:
 * Progress
@@ -275,6 +276,13 @@ initdb -D .postgres -A md5 -U $USER --pwfile=/path/to/passfile
 pg_ctl -D .postgres -w start
 createdb -U $USER mydb
 
+#+end_src
+* Errors
+
+
+#+begin_src shell
+[error] Postgrex.Protocol (#PID<0.328.0>) failed to connect: ** (DBConnection.ConnectionError) tcp connect (localhost:5432): co
+nnection refused - :econnrefused
 #+end_src
 
 * Utils
