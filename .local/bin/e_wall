@@ -8,7 +8,7 @@ FOLDER="$HOME/Pictures/wallpapers"
 wall() {
   local found=$(find $FOLDER -type f | shuf -n 1)
 
-  echo $found
+  echo "$found"
 }
 
 echo "wallpaper: $(wall)"
