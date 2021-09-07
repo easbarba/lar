@@ -5,7 +5,7 @@
 export VISUAL="/usr/bin/emacs"
 export EDITOR="/usr/bin/nvim"
 export TERMINAL="/usr/bin/st"
-export BROWSER="/usr/bin/firefox"
+export BROWSER="/usr/bin/brave-browser"
 
 # * DIRECTORIES ENV VARS
 
