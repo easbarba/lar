@@ -114,9 +114,10 @@
   :END:
 * Progress
 ** Books
-| Books               | Chapter               | @                  | late | revision |
-|---------------------+-----------------------+--------------------+------+----------|
-| Programming Phoenix | 4 Ecto and Changesets | Creating Resources |      |          |
+| Books               | Chapter                          | @                      | late | revision |
+|---------------------+----------------------------------+------------------------+------+----------|
+| Programming Phoenix | Chapter 5 - Authenticating Users |                        |      |          |
+| Phoenix @ hexdocs   | Request life cycle               | From endpoint to views |      |          |
 
 ** SLOC
 | Project | folder | file | @ |
