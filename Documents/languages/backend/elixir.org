@@ -399,6 +399,21 @@ iex> factorial.(5)
 
 ** High Order Functions
 ** Macros
+** Introspection
+
+*** __info__(atom)
+Provides runtime information about functions, macros, and other information defined by the module.
+
+#+begin_src elixir
+Ecto.Changeset.__info__(:functions)
+#+end_src
+
+*** exports
+*** help
+#+begin_src elixir
+iex> h Ecto.Changeset.cast
+#+end_src
+
 ** Pipe
 
 * Modules
