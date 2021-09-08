@@ -24,10 +24,11 @@
   :END:
 * Progress
 ** Books
-     | Books                                     | Cap | @                                               | late | revision |
-     |-------------------------------------------+-----+-------------------------------------------------+------+----------|
-     | JavaScript The Definitive Guide           |   3 | 3.2.4 Binary Floating-Point and Rounding Errors |      |          |
-     | Essential TypeScript From Beginner to Pro |     | Marking Tasks Complete                          |      |          |
+| Books                                     | Cap    | @                                               | late | revision |
+|-------------------------------------------+--------+-------------------------------------------------+------+----------|
+| Eloquent JS                               | Values |                                                 |      |          |
+| JavaScript The Definitive Guide           | 3      | 3.2.4 Binary Floating-Point and Rounding Errors |      |          |
+| Essential TypeScript From Beginner to Pro |        | Marking Tasks Complete                          |      |          |
 
 ** SLOC
      | Project  | folder           | file      | @ |
