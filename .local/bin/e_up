@@ -6,7 +6,16 @@ set -euo pipefail
 DEPS=(sudo grep cut tr distro floss cejo emacs parallel cp find guix)
 e_checkdeps "${DEPS[@]}"
 
-DISTRO=$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')
+DISTRO="$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
+
+case $DISTRO in
+    "Arch Linux" | "Manjaro")
+        USB="/run/media"
+        ;;
+    "Debian" | "Fedora")
+        USB="/media"
+        ;;
+esac
 
 e_echo "Upgrading system."
 distro update
@@ -17,11 +26,11 @@ e_guix
 e_echo "FLOSS projects"
 floss grab
 floss archive
-find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv {1} /media/$USER/MACHO/dots
+find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv {1} $USB/$USER/MACHO/dots
 
 e_doom
 e_ruby
 e_js
 
 e_echo "Building Nightly Emacs"
-[[ $DISTRO != "Arch Linux" ]] && cejo project emacs
+cejo project emacs
