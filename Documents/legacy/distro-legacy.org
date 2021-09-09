@@ -46,7 +46,7 @@ screen  unrar
 make
  ctags
 # fonts-firacode ttf-ancient-fonts fonts-nanum fonts-hack fonts-freefont-ttf
-# qemu-system-gui qemu-utils qemu-efi qemu-kvm
+p# qemu-system-gui qemu-utils qemu-efi qemu-kvm
  i965-va-driver vainfo libvdpau-va-gl1
 			libinput-tools  acpid hddtemp
 wofi xonsh x11proto-dev bat  dialog arc-icon-theme
