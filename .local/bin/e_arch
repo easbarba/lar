@@ -59,12 +59,14 @@ packages() {
 
     arch=(pacman-contrib base-devel)
 
-    wm=(awesome scrot udiskie feh gnome-keyring xdg-utils playerctl
-        seahorse bluez bluez-utils)
+    xorg=(xorg xorg-xinit xf86-video-fbdev awesome scrot feh zathura)
 
-    user=(firefox chromium libreoffice gimp lm_sensors aria2
-        obs-studio mpv libnotify imagemagick pandoc aspell
-        amfora steam ffmpeg)
+    wayland=(sway)
+
+    wm=(youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
+    aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils) #seahorse
+
+    user=(firefox libreoffice gimp obs-studio amfora telegram-desktop steam)
 
     suckless=(slock)
 
@@ -72,8 +74,6 @@ packages() {
         gst-plugins-base gst-plugins-good gst-plugins-ugly)
 
     sound=(pulseaudio-bluetooth)
-
-    x11=(xorg xorg-xinit)
 
     amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
         lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
@@ -84,7 +84,7 @@ packages() {
     enabled=("${essentials[@]}"
         "${arch[@]}"
         "${network[@]}"
-        "${sql[@]}"
+#        "${sql[@]}"
         "${gnu[@]}"
         "${editors[@]}"
         "${ruby[@]}"
