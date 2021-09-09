@@ -33,7 +33,8 @@ packages() {
 
     sql=(postgresql)
 
-    shell=(bash bash-completion shellcheck fish)
+    shell=(bash bash-completion
+        shellcheck fish shfmt)
 
     music=(mpd mpc ncmpcpp)
 
@@ -64,7 +65,7 @@ packages() {
     wayland=(sway)
 
     wm=(youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
-    aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils) #seahorse
+        aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils) #seahorse
 
     user=(firefox libreoffice gimp obs-studio amfora telegram-desktop steam)
 
@@ -84,7 +85,7 @@ packages() {
     enabled=("${essentials[@]}"
         "${arch[@]}"
         "${network[@]}"
-#        "${sql[@]}"
+        #        "${sql[@]}"
         "${gnu[@]}"
         "${editors[@]}"
         "${ruby[@]}"
