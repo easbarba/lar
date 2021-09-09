@@ -116,7 +116,7 @@
 ** Books
 | Books               | Chapter                          | @                      | late | revision |
 |---------------------+----------------------------------+------------------------+------+----------|
-| Programming Phoenix | Chapter 5 - Authenticating Users | o                      |      |          |
+| Programming Phoenix | Chapter 5 - Authenticating Users | Plug.Conn Fields       |      |          |
 | Phoenix @ hexdocs   | Request life cycle               | From endpoint to views |      |          |
 
 ** SLOC
