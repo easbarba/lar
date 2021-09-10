@@ -10,6 +10,7 @@
 (package! define-word)
 (package! guix)
 (package! zoom)
+(package! fish-mode)
 (package! undo-tree)
 ;; (package! bufler)
 (package! nov)
