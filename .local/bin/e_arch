@@ -4,7 +4,7 @@
 set -euo pipefail
 
 DEPS=(sudo pacman sed)
-e_checkdeps ${DEPS[@]}
+e_checkdeps "${DEPS[@]}"
 
 e_echo "Arch Linux - System Packages and Services Instalation."
 
@@ -85,7 +85,6 @@ packages() {
     enabled=("${essentials[@]}"
         "${arch[@]}"
         "${network[@]}"
-        #        "${sql[@]}"
         "${gnu[@]}"
         "${editors[@]}"
         "${ruby[@]}"
@@ -100,7 +99,8 @@ packages() {
         "${laptop[@]}"
         "${suckless[@]}"
         "${wm[@]}"
-        "${x11[@]}"
+        "${wayland[@]}"
+        "${xorg[@]}"
         "${sound[@]}"
         "${user[@]}"
         "${codec[@]}"
@@ -123,7 +123,7 @@ post() {
 clean() {
     e_echo "Clean up"
 
-    /usr/bin/pacman -Rns $(/usr/bin/pacman -Qdtq)
+    /usr/bin/pacman -Rns "$(/usr/bin/pacman -Qdtq)"
 }
 
 services() {
