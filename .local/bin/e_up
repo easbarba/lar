@@ -26,7 +26,7 @@ e_guix
 e_echo "FLOSS projects"
 floss grab
 floss archive
-find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv {1} $USB/$USER/MACHO/dots
+# find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv {1} $USB/$USER/MACHO/dots
 
 e_doom
 e_ruby
