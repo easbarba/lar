@@ -31,6 +31,8 @@ packages() {
 
     gnu=(emacs zile wget parallel)
 
+    zig=(zig)
+
     ruby=(ruby openssl)
 
     lua=(lua luarocks)
@@ -88,6 +90,7 @@ packages() {
         "${editors[@]}"
         "${ruby[@]}"
         "${lua[@]}"
+        "${zig[@]}"
         "${shell[@]}"
         "${system[@]}"
         "${music[@]}"
