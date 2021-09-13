@@ -114,16 +114,16 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                              | late                                              | revision |
-|-------------------------+--------------------------------------+---------------------------------------------------+----------|
-| Learn Functional Elixir | 6 Designing Your Elixir Applications | Displaying Heroes and Room Actions with Protocols |          |
+| Books                   | Chapter                              | late                       | revision |
+|-------------------------+--------------------------------------+----------------------------+----------|
+| Learn Functional Elixir | 6 Designing Your Elixir Applications | Creating Module Behaviours |          |
 
 ** SLOC
-| Project   | folder        | file      | @ |
-|-----------+---------------+-----------+---|
-| elixir    | eex/lib/eex   | tokenizer |   |
-| elixir-ls |               |           |   |
-| ecto      | /ecto/adapter | queryable |   |
+| Project   | folder        | file        | @ |
+|-----------+---------------+-------------+---|
+| elixir    | eex/lib/eex   | datetime.ex |   |
+| elixir-ls |               |             |   |
+| ecto      | /ecto/adapter | queryable   |   |
 
 * Features
 ** Literals
