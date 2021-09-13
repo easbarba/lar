@@ -69,6 +69,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCsJkVvxwoM7R9oRbzvUhbPQ" ;; Postgre Conf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
      "https://www.youtube.com/feeds/videos.xml?channel_id=j" ;; Prof Ribas
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCfHWv7MMpvVsAE3YO5f5eXQ" ;; Elixir Newbiexs
      ;; news channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g"
