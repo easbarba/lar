@@ -179,6 +179,19 @@ OpenSSH secure file copy
 |  9 | SIGKILL          |
 | 15 | SIGTERM          |
 * pkill
+* nohup
+run a command immune to hangups, with output to a non-tty
+#+begin_src shell-script
+nohup command &
+#+end_src
+* nice
+run a program with modified scheduling priority
+#+begin_src shell
+nice expensive-command &
+#+end_src
+* at
+at, batch, atq, atrm - queue, examine, or delete jobs for later execution
+
 * recutils
 ** recsel
 print records from a recfile
