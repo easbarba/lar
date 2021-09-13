@@ -20,13 +20,13 @@ upgrade() {
 
 pre() {
 
-	sid(){
-	    [[ $(grep '^\[multilib\]' /etc/apt/sources.list) == '[multilib]' ]] && return
+	sid() {
+		[[ $(grep '^\[multilib\]' /etc/apt/sources.list) == '[multilib]' ]] && return
 
 		# /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 	}
 
-	multi(){
+	multi() {
 		e_echo "Enable Multi-Arch"
 
 		/usr/bin/sudo /usr/bin/dpkg --add-architecture i386
@@ -42,8 +42,8 @@ packages() {
 	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
 	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf time
-			entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
-			jq rsync pv texinfo autoconf automake socat)
+		entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
+		jq rsync pv texinfo autoconf automake socat)
 
 	network=(net-tools iproute2 telnet)
 
@@ -61,9 +61,11 @@ packages() {
 
 	database=(postgresql postgresql-contrib)
 
-	music=(mpd mpc ncmpcpp)
-
 	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
+
+	lisp=(libfixposix-dev)
+
+	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	infra=(podman qemu qemu-utils qemu-efi qemu-kvm)
 
@@ -72,29 +74,27 @@ packages() {
 	security=(nftables gnutls-bin)
 
 	laptop=(iwd iw wireless-tools laptop-mode-tools libinput-tools acpi
-		 lm-sensors)
+		lm-sensors)
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
-			apt-file gdebi)
+		apt-file gdebi)
 
-	wayland=(sway swaybg swaylock foot clipman dunst grimshot xwayland)
+	wayland=(sway swaybg swaylock foot clipman grimshot xwayland)
 
-	xorg=(xorg awesome xinit feh scrot)
+	xorg=(xorg awesome xinit feh scrot cheese)
 
 	wmapps=(udiskie ffmpeg zathura atril suckless-tools aria2 playerctl brightnessctl
-			bluez mpv libnotify-bin)
+		bluez mpv libnotify-bin dunst w3m elinks)
+
+	music=(mpd mpc ncmpcpp)
 
 	books=(pandoc texlive texlive-xetex)
 
-	user=(firefox libreoffice gimp obs-studio kdeconnect cheese
+	user=(firefox libreoffice gimp obs-studio kdeconnect
 		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
-
-	lisp=(libfixposix-dev)
-
-	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
 		libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
@@ -104,28 +104,28 @@ packages() {
 	local command='/usr/bin/sudo /usr/bin/apt install -y'
 
 	enabled=("${essentials[@]}"
-			 "${gnu[@]}"
-			 "${network[@]}"
-			 "${shell[@]}"
-			 "${books[@]}"
-			 "${wayland[@]}"
-			 "${xorg[@]}"
-			 "${debian[@]}"
-			 "${editors[@]}"
-			 "${emacs[@]}"
-			 "${ruby[@]}"
-			 "${lua[@]}"
-			 "${programming[@]}"
-			 "${system[@]}"
-			 "${music[@]}"
-			 "${infra[@]}"
-			 "${fonts[@]}"
-			 "${security[@]}"
-			 "${laptop[@]}"
-			 "${wm[@]}"
-			 "${user[@]}"
-			 "${media[@]}"
-			 "${amd[@]}")
+		"${gnu[@]}"
+		"${network[@]}"
+		"${shell[@]}"
+		"${books[@]}"
+		"${wayland[@]}"
+		"${xorg[@]}"
+		"${debian[@]}"
+		"${editors[@]}"
+		"${emacs[@]}"
+		"${ruby[@]}"
+		"${lua[@]}"
+		"${programming[@]}"
+		"${system[@]}"
+		"${music[@]}"
+		"${infra[@]}"
+		"${fonts[@]}"
+		"${security[@]}"
+		"${laptop[@]}"
+		"${wm[@]}"
+		"${user[@]}"
+		"${media[@]}"
+		"${amd[@]}")
 
 	for i in "${enabled[@]}"; do
 		e_dolist "$command" "$i"
@@ -137,17 +137,17 @@ packages() {
 	e_echo "Done"
 }
 
-post(){
+post() {
 	e_echo "Post install"
 
 	/usr/bin/sudo /usr/bin/apt-file update # update Debian database
-	/usr/bin/sudo /usr/bin/fc-cache -fv # cache all system fonts
+	/usr/bin/sudo /usr/bin/fc-cache -fv    # cache all system fonts
 }
 
 clean() {
 	e_echo "Clean up"
 
-	unused=(firefox-esr )
+	unused=(firefox-esr)
 
 	local command='/usr/bin/sudo /usr/bin/apt remove -y'
 	e_dolist "$command" "${unused[@]}"

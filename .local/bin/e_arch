@@ -25,30 +25,29 @@ pre() {
 packages() {
     e_echo "Installing system packages"
 
-    essentials=(git openssh curl unzip tmux)
+    essentials=(git openssh curl unzip tmux lynx)
 
-    editors=(emacs zile neovim)
+    editors=(neovim)
+
+    gnu=(emacs zile wget parallel)
 
     ruby=(ruby openssl)
 
-    sql=(postgresql)
+    lua=(lua luarocks)
 
-    shell=(bash bash-completion
-        shellcheck fish shfmt)
+    database=(postgresql)
+
+    shell=(bash bash-completion shellcheck fish shfmt)
 
     music=(mpd mpc ncmpcpp)
 
-    system=(p7zip zip subversion jq lshw at usbutils lsof
-        time entr tree xsel xclip fontconfig bc htop strace ltrace cpio
-        lhasa lzop atool perf sysstat ncdu rsync rclone)
+    system=(p7zip zip subversion jq lshw at usbutils lsof time entr tree xsel
+        xclip fontconfig bc htop strace ltrace cpio lhasa lzop atool perf
+        sysstat ncdu rsync rclone)
 
     gnu=(wget parted texinfo parallel automake autoconf)
 
     network=(net-tools iproute2 socat iw wireless_tools)
-
-    qt=(kdeconnect)
-
-    gtk=(cheese atril)
 
     infra=(podman qemu virt-manager ovmf bridge-utils)
 
@@ -60,15 +59,16 @@ packages() {
 
     arch=(pacman-contrib base-devel)
 
-    xorg=(xorg xorg-xinit xf86-video-fbdev awesome scrot feh zathura slock)
+    xorg=(xorg xorg-xinit awesome scrot feh zathura slock cheese atril) # xf86-video-fbdev
 
-    wayland=(sway)
+    wayland=(sway swaybg swaylock)
 
-    wm=(youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
-        aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils lynx
-        w3m elinks) #seahorse
+    wmapps=(youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
+        aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils
+        w3m elinks dunst) #seahorse
 
-    user=(firefox libreoffice gimp obs-studio amfora telegram-desktop steam)
+    user=(firefox libreoffice gimp obs-studio amfora telegram-desktop steam
+        kdeconnect)
 
     codec=(vorbis-tools gst-libav gst-plugins-bad
         gst-plugins-base gst-plugins-good gst-plugins-ugly)
@@ -87,6 +87,7 @@ packages() {
         "${gnu[@]}"
         "${editors[@]}"
         "${ruby[@]}"
+        "${lua[@]}"
         "${shell[@]}"
         "${system[@]}"
         "${music[@]}"
@@ -96,13 +97,13 @@ packages() {
         "${fonts[@]}"
         "${security[@]}"
         "${laptop[@]}"
-        "${wm[@]}"
+        "${wmapps[@]}"
         "${wayland[@]}"
         "${xorg[@]}"
         "${sound[@]}"
         "${user[@]}"
         "${codec[@]}"
-        "${amd[@]}") # "${ruby[@]}" "${sql[@]}"
+        "${amd[@]}")
 
     for i in "${enabled[@]}"; do
         e_dolist "$command" "$i"
