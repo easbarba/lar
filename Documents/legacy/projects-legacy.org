@@ -219,22 +219,12 @@ rack-test,https://github.com/rack/rack-test
 - https://github.com/jgm/pandoc
 - https://github.com/elm/compiler
 
---- # c
-- https://gitlab.freedesktop.org/mesa/mesa
-- git://source.winehq.org/git/wine
-- https://github.com/openssh/openssh-portable
-- https://github.com/libressl-portable/portable
-- https://git.suckless.org/dwm
-- https://github.com/zsh-users/zsh
-- https://github.com/git/git
-- https://github.com/tmux/tmux
-- https://github.com/antirez/redis
-- https://github.com/curl/curl
-- git://c9x.me/qbe
-- https://github.com/mate-desktop/mate-terminal
-- https://github.com/mate-desktop/atril
-- https://github.com/mate-desktop/marco
-
+name,repository
+zig,https://github.com/ziglang/zig
+nitter,https://github.com/zedeus/nitter
+river,https://github.com/ifreund/river
+zls,https://github.com/zigtools/zls
+zig-bootstrap,https://github.com/ziglang/zig-bootstrap
 
 
    --- # Dart
