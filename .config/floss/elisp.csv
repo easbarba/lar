@@ -1,4 +1,8 @@
 name,repository
+elixir-yasnippets,https://github.com/hisea/elixir-yasnippets
+ob-elixir,https://github.com/zweifisch/ob-elixir
+alchemist_el,https://github.com/tonini/alchemist.el
+emacs-elixir,https://github.com/elixir-editors/emacs-elixir
 abo-abo-oremacs,https://github.com/abo-abo/oremacs
 jwiegley-dot-emacs,https://github.com/jwiegley/dot-emacs
 purcell-emacs.d,https://github.com/purcell/emacs.d
