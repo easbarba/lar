@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                              | late                         | revision |
-|-------------------------+--------------------------------------+------------------------------+----------|
-| Learn Functional Elixir | 6 Designing Your Elixir Applications | Battling Through to the Exit |          |
+| Books                   | Chapter                     | late | revision |
+|-------------------------+-----------------------------+------+----------|
+| Learn Functional Elixir | 7 Handling Impure Functions |      |          |
 
 ** SLOC
 | Project   | folder        | file        | @ |
