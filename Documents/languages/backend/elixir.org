@@ -114,9 +114,9 @@
   :END:
 * Progress
 ** Books
-| Books                   | Chapter                              | late                       | revision |
-|-------------------------+--------------------------------------+----------------------------+----------|
-| Learn Functional Elixir | 6 Designing Your Elixir Applications | Adding Type Specifications |          |
+| Books                   | Chapter                              | late                         | revision |
+|-------------------------+--------------------------------------+------------------------------+----------|
+| Learn Functional Elixir | 6 Designing Your Elixir Applications | Battling Through to the Exit |          |
 
 ** SLOC
 | Project   | folder        | file        | @ |
