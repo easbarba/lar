@@ -439,6 +439,10 @@ iex> h Ecto.Changeset.cast
 ** IO
 * Packages
 ** Mix
+Run multiple tasks
+#+begin_src shell-script
+mix do deps.get, deps.compile
+#+end_src
 ** Iex
 |                   |                              |
 |-------------------+------------------------------|
