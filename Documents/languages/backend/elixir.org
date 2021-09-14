@@ -354,20 +354,6 @@ iex> for n <- [1, 2, 3, 4, 5, 6, 7], n > 3, do: n
 ** Pattern matching
 *** pin operator ^
 *** <>
-** Protocols
-#+begin_src elixir
-defprotocol DungeonCrawl.Display do
-  def info(value)
-end
-
-defimpl DungeonCrawl.Display, for: DungeonCrawl.Room.Action do
-  def info(action), do: action.label
-end
-
-defimpl DungeonCrawl.Display, for: DungeonCrawl.Character do
-  def info(character), do: character.name
-end
-#+end_src
 ** Anonymous Functions
 #+begin_src elixir
 
@@ -396,7 +382,39 @@ iex> factorial = &Factorial.of/1
 iex> factorial.(5)
 
 #+end_src
+** Protocols
+- works with structs
+- modules. Protocols create a function interface to work with several data type
+#+begin_src elixir
+defprotocol DungeonCrawl.Display do
+  def info(value)
+end
+
+defimpl DungeonCrawl.Display, for: DungeonCrawl.Room.Action do
+  def info(action), do: action.label
+end
+
+defimpl DungeonCrawl.Display, for: DungeonCrawl.Character do
+  def info(character), do: character.name
+end
+#+end_src
 ** Behaviors/Callback
+- works with modules
+- defines a list of functions that a module should implement
+
+#+begin_src elixir
+defmodule DungeonCrawl.Room.Trigger do
+  @callback run(Character.t, Action.t) :: {Character.t, atom}
+end
+
+defmodule DungeonCrawl.Room.Triggers.Enemy do
+  @behaviour DungeonCrawl.Room.Trigger
+
+  def run(character, %DungeonCrawl.Room.Action{id: :forward}) do
+    "..."
+  end
+end
+#+end_src
 ** Specifications
 ** Type Specifications
 - provide documentation (for example, tools such as ExDoc show type specifications in the documentation)
