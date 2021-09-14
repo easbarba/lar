@@ -1,3 +1,4 @@
-*.pdf
-*.tex
-*.html
+.DS_Store
+.idea
+*.log
+tmp/
