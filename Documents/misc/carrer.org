@@ -6,21 +6,21 @@
 | elixir   | elixir   | elixir   | elixir   | elixir   |     | guile |
 | phoenix  | phoenix  | phoenix  | phoenix  | phoenix  |     | unix  |
 | postgres | postgres | postgres | postgres | postgres |     | emacs |
-| git      | git      | git      | js       | js       |     |       |
+| git      | git      | git      | git      | git      |     |       |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| Lang            | Elixir, Ruby, Guile                                         |
-| Framework       | MVC, Phoenix, Sinatra                                       |
-| Unit Test       | ExUnit, Rspec                                               |
+| Lang            | Elixir, Guile                                           |
+| Framework       | MVC, Phoenix                                         |
+| Unit Test       | ExUnit                                                 |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
+| Front-end       | JS/CSS/HTML                                                 |
 | OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
 | Web API         | REST, SOAP, GraphQL                                         |
 | Container       | Podman, Docker                                              |
 | Cloud           | AWS, Azure                                                  |
-| Front-end       | JS/CSS/HTML                                                 |
 | CI / CD         | Jenkins                                                     |
 | Network         | HTTP, HTTPS, TCP, SSH, FTP                                  |
 | Hosting         | Heroku                                                      |
