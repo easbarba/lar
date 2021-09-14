@@ -399,6 +399,9 @@ iex> factorial.(5)
 ** Behaviors/Callback
 ** Specifications
 ** Type Specifications
+- provide documentation (for example, tools such as ExDoc show type specifications in the documentation)
+- used by tools such as Dialyzer, that can analyze code with typespec to find type inconsistencies and possible bugs
+
 ** High Order Functions
 ** Macros
 ** Introspection
