@@ -28,7 +28,6 @@
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
-
 *Euber Alexandre De Sousa Barbosa*
 
 telegram: @easbarbosa / easbarbosa@tutanota.com / DF
@@ -40,21 +39,18 @@ Usuário de Distros Linux de 2008, habituado a ferramentas CLI como coreutils,
 ssh, systemd, emacs e relatos.
 
 Utilizo extensivamente Bash Scripts para automação e bootstrap de distribuições
-Linux aliados a várias ferramentas como Awk, sed, Parallel...
+Linux aliados a várias ferramentas como awk, sed, parallel...
 
 Ultimamente estive ativamente ajudando através de PRs diversos projetos de
-extensões do editor Emacs, Guix e Nim.
+extensões do editor Emacs, e pacotes Guix.
 
-Quanto a projetos pessoais tenho alguns baseados em Ruby, Elixir e Guile, estes
-se encontram em:
-
-https://git.sr.ht/~easbarbosa
+Quanto a projetos pessoais tenho alguns em Ruby, Elixir e Guile.
 
 *SKILLS*
 -----
   - Linguagens: Elixir, Ruby, Guile Scheme, Emacs-Lisp.
   - Frameworks: Phoenix
-  - Unit Test: RSpec, Minitest.
+  - Unit Test: Exunit.
   - Distros: Arch, Debian, GuixSD.
   - Scripting: Awk, Sed, GNU Bash, Fish.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
