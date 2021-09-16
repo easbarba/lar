@@ -117,7 +117,21 @@
 
     #+end_src
 * floss
-#+begin_src yaml
+#+begin_src csv
+name,repository
+absinthe,https://github.com/absinthe-graphql/absinthe
+elixir_style_guide,https://github.com/christopheradams/elixir_style_guide
+credo,https://github.com/rrrene/credo
+kiex,https://github.com/taylor/kiex
+kerl,https://github.com/kerl/kerl
+dialyxir,https://github.com/jeremyjh/dialyxir
+elixir-ls,https://github.com/elixir-lsp/elixir-ls
+ecto,https://github.com/elixir-ecto/ecto
+hex,https://github.com/hexpm/hex
+phoenix,https://github.com/phoenixframework/phoenix
+otp,https://github.com/erlang/otp
+elixir,https://github.com/elixir-lang/elixir
+
 
 name,repository
 nvim-lspinstall,https://github.com/kabouzeid/nvim-lspinstall
@@ -156,26 +170,19 @@ ruby-rbs,https://github.com/ruby/rbs
 rack,https://github.com/rack/rack
 rack-test,https://github.com/rack/rack-test
 
+-- c
+name,repository
+openssh,https://github.com/openssh/openssh-portable
+openssl,git://git.openssl.org/openssl
+dwm,https://git.suckless.org/dwm
+tmux,https://github.com/tmux/tmux
+redis,https://github.com/antirez/redis
+curl,https://github.com/curl/curl
 
 
---- # golang
-- https://github.com/golang-standards/project-layout
-- https://github.com/hashicorp/nomad
-- https://github.com/hashicorp/consul
-- https://github.com/hashicorp/terraform
-- https://github.com/containers/buildah
-- https://github.com/containers/podman
-- https://github.com/sourcegraph/go-langserver
-- https://github.com/gorilla/mux
-- https://github.com/cli/cli
-- https://github.com/rclone/rclone
-- https://github.com/avelino/awesome-go
-- https://github.com/kubernetes-sigs/kind/
-- https://github.com/kubernetes/kubernetes
-- https://github.com/adonovan/gopl.io
-- https://github.com/golang/net
-- https://github.com/golang/tools
-- https://github.com/golang/go
+#+end_src
+
+#+begin_src yaml
 
 
    --- # Javascript
