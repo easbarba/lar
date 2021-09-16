@@ -112,11 +112,11 @@
       - [[#rspec][RSpec]]
       - [[#unit][Unit]]
     :END:
-* progress
+* Progress
 ** Books
 | name                    | chapter | @                                    | late | revision |
 |-------------------------+---------+--------------------------------------+------+----------|
-| Learning go             | Types   | A Taste of Strings and Runes         |      |          |
+| Learning go             | Types   | Unused Variables                     |      |          |
 | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
