@@ -1,7 +1,0 @@
-name,repository
-openssh,https://github.com/openssh/openssh-portable
-openssl,git://git.openssl.org/openssl
-dwm,https://git.suckless.org/dwm
-tmux,https://github.com/tmux/tmux
-redis,https://github.com/antirez/redis
-curl,https://github.com/curl/curl
