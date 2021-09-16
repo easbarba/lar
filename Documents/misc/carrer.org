@@ -1,23 +1,20 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon      | tue      | wed      | thru     | fri      | sat | sun   |
-|----------+----------+----------+----------+----------+-----+-------|
-| elixir   | elixir   | elixir   | elixir   | elixir   |     | guile |
-| phoenix  | phoenix  | phoenix  | phoenix  | phoenix  |     | unix  |
-| postgres | postgres | postgres | postgres | postgres |     | emacs |
-| git      | git      | git      | git      | git      |     |       |
+| mon      | tue      | wed      | thru     | fri      | sat   | sun   |
+|----------+----------+----------+----------+----------+-------+-------|
+| golang   | golang   | golang   | golang   | golang   | guile | guile |
+| postgres | postgres | postgres | postgres | postgres | emacs | emacs |
+| git      | git      | git      | git      | git      |       |       |
+| unix     | unix     | unix     | unix     | unix     | unix  | unix  |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| Lang            | Elixir, Guile                                           |
-| Framework       | MVC, Phoenix                                         |
-| Unit Test       | ExUnit                                                 |
+| Lang            | Golang, Guile                                               |
+| Unit Test       | testing                                               |
 | SQL             | PostgreSQL                                                  |
 | Version Control | Git                                                         |
-| Front-end       | JS/CSS/HTML                                                 |
-| OOP             | Clean Code, SOLID, Design Patterns, SOLID, KISS, YAGNI, DRY |
 | Web API         | REST, SOAP, GraphQL                                         |
 | Container       | Podman, Docker                                              |
 | Cloud           | AWS, Azure                                                  |
@@ -35,28 +32,26 @@ telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 *SOBRE*
 -----
 
-Usuário de Distros Linux de 2008, habituado a ferramentas CLI como coreutils,
-ssh, systemd, emacs e relatos.
+Amante da filosofia Unix, por sua simplicidade, claridade e frugalidade.
 
-Utilizo extensivamente Bash Scripts para automação e bootstrap de distribuições
-Linux aliados a várias ferramentas como awk, sed, parallel...
+A muito prefiro montar sistemas simples e usaveis com foco em usuarios
+experientes como WMs, extensivo uso de shell scripts e auxiliados as várias
+maravilhosas ferramentas cli como awk, sed, parallel para automação e bootstrap
+de distros GNU/Linux e FreeBSD.
 
-Ultimamente estive ativamente ajudando através de PRs diversos projetos de
-extensões do editor Emacs, e pacotes Guix.
+Venho ativamente ajudando a diversos projetos de extensões do editor Emacs,
+pacotes Guix, alem de ter meus proprios projetos os quais sao baseados em
+tecnologias Ruby, Guile e ultimamente Golang.
 
-Quanto a projetos pessoais tenho alguns em Ruby, Elixir e Guile.
-
-*SKILLS*
+*HABILIDADES*
 -----
-  - Linguagens: Elixir, Ruby, Guile Scheme, Emacs-Lisp.
-  - Frameworks: Phoenix
-  - Unit Test: Exunit.
+  - Linguagens: Golang, Ruby, Guile Scheme, Emacs-Lisp.
+  - Unit Test: testing.
   - Distros: Arch, Debian, GuixSD.
   - Scripting: Awk, Sed, GNU Bash, Fish.
   - Editores: GNU Emacs, NeoVim, Micro, Nano.
   - Git: merge, rebase, format-patch.
-  - Containers: Podman, dockerfile, criação e gerência de imagens.
-  - Front-End: HTML, CSS (Grid,Flexbox).
+  - Containers: podman, dockerfile, criação e gerência de imagens.
 
 *PROJETOS*
 -----
