@@ -39,7 +39,7 @@ packages() {
 
     database=(postgresql)
 
-    shell=(bash bash-completion shellcheck fish shfmt)
+    shell=(bash bash-completion shellcheck fish ksh)
 
     music=(mpd mpc ncmpcpp)
 
