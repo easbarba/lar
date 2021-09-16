@@ -110,15 +110,10 @@ e_zinit # e_default |
 e_prompt
 
 #+end_src
-* .xprofile
+* .profile
 #+begin_src shell
 e_luarocks() {
     export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
-}
-
-e_golang() {
-    export GOPATH=$HOME/.local/go
-    export PATH="$GOPATH/bin"${PATH:+:}$PATH
 }
 
 p_nix() {

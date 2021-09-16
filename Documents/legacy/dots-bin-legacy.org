@@ -3,47 +3,6 @@
 * e_golang
 #+begin_src shell
 
-#!/usr/bin/env bash
-
-# Debug Options
-set -euo pipefail
-
-export GO111MODULE=on
-
-packages()
-{
-	local command="go install"
-	local packages=("golang.org/x/tools/cmd/goimports@latest"
-					"golang.org/x/lint/golint@latest"
-					"golang.org/x/tools/gopls@latest"
-					"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0"
-					"github.com/rakyll/hey@latest")
-
-	e_dolist "$command" "${packages[@]}"
-}
-
-tols()
-{
-	local command='go get'
-	local packages=("sigs.k8s.io/kind")
-
-	e_dolist "$command" "${packages[@]}"
-}
-
-devel() {
-	local command='go get'
-	local packages=("mvdan.cc/sh/v3/cmd/shfmt")
-
-	e_dolist "$command" "${packages[@]}"
-}
-
-# * RUN
-
-echo 'Golang'
-
-packages
-# tools
-devel
 
 #+end_src
 
