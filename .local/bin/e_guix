@@ -6,7 +6,6 @@ set -euo pipefail
 DEPS=(sudo guix wget bash)
 e_checkdeps "${DEPS[@]}"
 
-
 # * Information
 # Site: https://guix.gnu.org/
 
@@ -47,7 +46,7 @@ glocale() {
 }
 
 system() {
-	local packages=(nss-certs font-gnu-freefont-ttf font-dejavu)
+	local packages=(nss-certs font-gnu-freefont-ttf font-dejavu nyxt)
 	e_dolist "guix install" "${packages[@]}"
 }
 
@@ -60,7 +59,6 @@ languages() {
 	local packages=(node elixir ruby)
 	e_dolist "guix install" "${packages[@]}"
 }
-
 
 # * RUN
 
