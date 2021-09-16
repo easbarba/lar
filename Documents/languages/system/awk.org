@@ -232,5 +232,10 @@ printf (format, value 1 , value 2 , ... , valueN)
 { printf("total pay for %s is $%.2f\n", $1, $2 * $3) }
 #+end_src
 *** print
+** Functions
+*** substr
+Return a length-character-long substring of string, starting at character number
+start. The first character of a string is character number one.49 For example,
+substr("washington", 5, 3) returns "ing".
 
 * Cli
