@@ -18,7 +18,7 @@ Kernel() {
 }
 
 Uptime() {
-    result=$(uptime -p | gawk '{ print $2 "h, " $4 "m" }') # uptime -p | awk '{print $2 $3}' | tr -d ','
+    result=$(uptime -p | gawk '{ print $2 "d|" $4 "h"}') # uptime -p | awk '{print $2 $3}' | tr -d ','
     echo -e "$result"
 }
 
