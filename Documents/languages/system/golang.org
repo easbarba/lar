@@ -120,61 +120,12 @@
 | Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
-     | Source Code | folder          | file            | @ |
-     |-------------+-----------------+-----------------+---|
-     | go          | src/archive/tar | example_test.go |   |
+| Source Code | folder          | file            | @ |
+|-------------+-----------------+-----------------+---|
+| go          | src/archive/tar | example_test.go |   |
 
-* cli
-** vet
-      Examines Go source code and reports suspicious constructs
-
-      |   |   |
-      |---+---|
-      |   |   |
-
-** build
-      - build project and create binary
-      |                  |              |
-      |------------------+--------------|
-      | -o <name> <file> | set location |
-      |                  |              |
-
-** get
-      |   |   |
-      |---+---|
-      |   |   |
-
-** install
-|               |                            |
-|---------------+----------------------------|
-| <name>        |                            |
-| <name>@latest | latest version of the tool |
-
-#+begin_src shell
-
-go install github.com/rakyll/hey@latest
-
-#+end_src
-
-** run
-      |   |   |
-      |---+---|
-      |   |   |
-
-** env
-      - list golang environment variables
-      |   |   |
-      |---+---|
-      |   |   |
-* features
-** operators
-*** arithmetic
-      |          |                           |
-      |----------+---------------------------|
-      | combined | += , -= , *= ,/= , and %= |
-      |          |                           |
-
-** types
+* Features
+** Types
 *** numeric
 |         |                 |
 |---------+-----------------|
@@ -230,21 +181,17 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
       - int32 type
       -
 
-** mutex
-     #+begin_src go emacs-lisp
-     sync.Mutex
-     #+end_src
-** collective
-     #+begin_src go
-     strings.Map
-     #+end_src
-** standary library
-     #+begin_src go
-     // end of line
-     io.EOF
-
-     #+end_src
-** functions
+** Collections
+#+begin_src go
+strings.Map
+#+end_src
+** Operators
+*** arithmetic
+      |          |                           |
+      |----------+---------------------------|
+      | combined | += , -= , *= ,/= , and %= |
+      |          |                           |
+** Functions
      - reference type
      - function values are not comparable.
 
@@ -292,14 +239,82 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 	     return m[key]
      }
      #+end_src
+** Variables
+*** var
+#+begin_src go
+var x int // defaults to 0
+var x int = 10
+var x, y int = 10, 20 // multiple assignment
+var x, y = 10, "hello" // differents types
+var x = 10
+var (
+    x    int
+    y        = 20
+    z    int = 30
+    d, e     = 40, "hello"
+    f, g string
+)
+
+#+end_src
+*** package-level variables
+*** :=
+- allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
+- uses type inference
+- within function
+
+#+begin_src go
+func main() {
+    x := 10
+    x, y := 30, "hello"
+}
+#+end_src
+** Const
+- a way to give names to literals.
+- there is no way in Go to declare that a variable is
+- Numeric literals
+- true and false
+- Strings
+- Runes
+- The built-in functions complex, real, imag, len, and cap
+- Expressions that consist of operators and the preceding values
+- typed and untyped constants
+- compiler allows you to create unread constants
+
+#+begin_src go
+const x int64 = 10
+
+const (
+    idKey   = "id"
+    nameKey = "name"
+)
+
+const z = 20 * 10
+
+func main() {
+    const y = "hello"
+
+    fmt.Println(x)
+    fmt.Println(y)
+
+    x = x + 1
+    y = "bye"
+
+    fmt.Println(x)
+    fmt.Println(y)
+}
+#+end_src
 ** print
      #+begin_src go
      Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
      #+end_src
 ** make
-     #+begin_src go
-     make([]T, len)
-     make([]T, len, cap) // same as make([]T, cap)[:len]
+#+begin_src go
+make([]T, len)
+make([]T, len, cap) // same as make([]T, cap)[:len]
+#+end_src
+** mutex
+     #+begin_src go emacs-lisp
+     sync.Mutex
      #+end_src
 ** type
      #+begin_src go
@@ -308,31 +323,6 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
      }
 
      #+end_src
-** variables
-*** var
-      #+begin_src go
-      var x int
-
-      var x int = 10
-      var x = 10
-      #+end_src
-*** :=
-      - allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
-      - uses type inference
-      - inside function
-
-     #+begin_src go
-     func main() {
-	     x := 10
-	     x, y := 30, "hello"
-     }
-
-
-     #+end_src
-** Env Vars
-*** $GOPATH
-*** $GOPROXY
-** const
 ** doc comment
      Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
 ** pointers
@@ -344,9 +334,55 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 	     Printf(&p) // address of x
      }
      #+end_src
-* terms
-    - runes: single characthers
-* packages
+* Cli
+** vet
+      Examines Go source code and reports suspicious constructs
+
+      |   |   |
+      |---+---|
+      |   |   |
+
+** build
+- build project and create binary
+|                  |              |
+|------------------+--------------|
+| -o <name> <file> | set location |
+|                  |              |
+
+** get
+      |   |   |
+      |---+---|
+      |   |   |
+
+** install
+|               |                            |
+|---------------+----------------------------|
+| <name>        |                            |
+| <name>@latest | latest version of the tool |
+
+#+begin_src shell
+
+go install github.com/rakyll/hey@latest
+
+#+end_src
+
+** run
+Run compiles and runs the named main Go package.
+
+** env
+- list golang environment variables
+*** $GOPATH
+*** $GOPROXY
+
+* Standary Library
+     #+begin_src go
+     // end of line
+     io.EOF
+
+     #+end_src
+* Terms
+- runes: single characthers
+* Packages
 ** tool
 *** vet
 vet is a tool for static analysis of Go programs.
@@ -358,11 +394,11 @@ vet is a tool for static analysis of Go programs.
      |       |                                  |
 
 ** goimports
-|    |                                                     |
-|----+-----------------------------------------------------|
-| -l | list files whose formatting differs from goimport's |
-| -w | write result to (source) file instead of stdout     |
-|    |                                                     |
+|              |                                                     |
+|--------------+-----------------------------------------------------|
+| -l <project> | list files whose formatting differs from goimport's |
+| -w <project> | write result to (source) file instead of stdout     |
+|              |                                                     |
 
 #+begin_src shell-script
 goimports -l -w .
