@@ -127,6 +127,16 @@
 ** Types
 *** numbers
 *** strings
+** Collections
+*** Array
+#+begin_src shell
+BEGIN {
+    Say[0] = "hello";
+    Say[1] = "world"
+    print Say[0], Say[1]
+ }
+#+end_src
+
 ** syntax
 - pattern, action, files
 - only pattern
@@ -180,20 +190,47 @@ $2 > 10   { print $0, "rate exceeds $10 per hour" }
 ** BEGIN END
 ** fields
 
-|     |                                      |
-|-----+--------------------------------------|
-| $0  | whole line                           |
-| $N  | field                                |
-| NF  | number of fields and in current line |
-| $NF | last input files of current line     |
-| NR  | number of line                       |
-
-** printf
+|     |                                  |
+|-----+----------------------------------|
+| $0  | whole line                       |
+| $N  | field                            |
+| NF  | number of fields in current line |
+| $NF | last input files of current line |
+| NR  | number of line                   |
+** conditionals
+*** if/else
+#+begin_src shell
+$2 > 6 { n = n + 1; pay = pay + $2 * $3 }
+END { if (n > 0)
+        print n
+    else
+        print "meh"
+    }
+#+end_src
+*** while
+#+begin_src shell
+{
+    i = 1
+    while (i <= $3) {
+        printf("\t%.2f\n", $1 * (1 + $2) ^ i)
+        i = i + 1
+    }
+}
+#+end_src
+*** for
+#+begin_src shell
+{
+    for (i = 1; i <= $3; i = i + 1)
+        printf("\t%.2f\n", $1 * (1 + $2) ^ i)
+}
+#+end_src
+** printing
+*** printf
 #+begin_src shell
 printf (format, value 1 , value 2 , ... , valueN)
 
 { printf("total pay for %s is $%.2f\n", $1, $2 * $3) }
 #+end_src
-** print
+*** print
 
 * Cli
