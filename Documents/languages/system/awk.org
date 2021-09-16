@@ -114,9 +114,9 @@
     :END:
 * Progress
 ** Books
-| name                     | chapter | @                       | late | revision |
-|--------------------------+---------+-------------------------+------+----------|
-| Awk Programming Language |       1 | 1.5 Computing with A WK |      |          |
+| name                     | chapter            | @ | late | revision |
+|--------------------------+--------------------+---+------+----------|
+| Awk Programming Language | 2 THE AWK LANGUAGE |   |      |          |
 
 ** LDC
 | Source Code | folder | file | @ |
