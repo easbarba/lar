@@ -65,6 +65,11 @@ e_ruby() {
     export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 }
 
+e_golang() {
+    export GOPATH=$HOME/.local/go
+    export PATH="$GOPATH/bin"${PATH:+:}$PATH
+}
+
 p_guix() {
     export GUIX_PROFILE="$HOME/.guix-profile"
 
@@ -94,10 +99,10 @@ home_bin
 
 e_doom
 
+e_golang
 e_npm
 e_ruby
 p_guix
-
 
 # * LOCALE
 
