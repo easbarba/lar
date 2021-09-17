@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter | @                                    | late | revision |
-|-------------------------+---------+--------------------------------------+------+----------|
-| Learning go             | Types   | Unused Variables                     |      |          |
-| Go Programming Language | Methods | 6.2. Methods with a Pointer Receiver |      |          |
+| name                    | chapter         | @                                    | late | revision |
+|-------------------------+-----------------+--------------------------------------+------+----------|
+| Learning go             | Composite types | Slices                               |      |          |
+| Go Programming Language | Methods         | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
 | Source Code | folder          | file            | @ |
