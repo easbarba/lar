@@ -116,7 +116,7 @@
 ** Books
 | name                    | chapter         | @                                    | late | revision |
 |-------------------------+-----------------+--------------------------------------+------+----------|
-| Learning go             | Composite types | Maps                                 |      |          |
+| Learning go             | Composite types | WHAT IS A HASH MAP?                  |      |          |
 | Go Programming Language | Methods         | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
@@ -246,6 +246,25 @@ n := x[:2] // 1, 4
 h := x[0:2:2] // 1,4 with 2 of cap
 #+end_src
 *** Maps
+- read a nil map always returns the zero value for the map’s value type.
+- write to a nil map variable causes a panic.
+- can read and write to a map assigned an empty map literal.
+- automatically grow as you add key-value pairs
+- can use `make` to create a map with a specific initial size.
+- not comparable w/ *==*  and *!=*
+
+#+begin_src go
+var nilMap map[string]int // map[] // 0 length
+totalWins := map[string]int{}
+
+teams := map[string][]string {
+    "Orcas": []string{"Fred", "Ralph", "Bijou"},
+    "Lions": []string{"Sarah", "Peter", "Billie"},
+    "Kittens": []string{"Waldo", "Raul", "Ze"},
+}
+
+ages := make(map[int][]string, 10)
+#+end_src
 ** Operators
 *** arithmetic
       |          |                           |
