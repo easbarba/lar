@@ -163,15 +163,31 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 #+end_src
 
 *** strings
-      |              |              |
-      |--------------+--------------|
-      | immutable    |              |
-      | zero value   | empty string |
-      | concatenate  | +            |
-      | equality     | \==, !=      |
-      | empty string | s == ""      |
-      |              |              |
+- only use slice/indexing when string contains characters that take up one byte.
+- conversion from int to string yields a string of runes.
+- extract substrings and code points from strings using the functions in the strings and unicode/utf8
 
+|              |              |
+|--------------+--------------|
+| immutable    |              |
+| zero value   | empty string |
+| concatenate  | +            |
+| equality     | \==, !=      |
+| empty string | s == ""      |
+|              |              |
+
+#+begin_src go
+var s string = "Hello there"
+var b byte = s[6]
+var s string = "Hello there"
+
+// slicing
+var s2 string = s[4:7]
+var s3 string = s[:5]
+var s4 string = s[6:]
+
+
+#+end_src
 *** boolean
       - no other type can be converted to a bool, implicitly or explicitly
       - convert to boolean with: \== , != , > , < , <= , or >=
@@ -180,6 +196,9 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
       - chars
       - int32 type
       -
+
+*** nil
+- has no type
 
 ** Collections
 #+begin_src go
@@ -199,7 +218,34 @@ var x [2][3]int // simulate multidemensional array
 **** functions
 ***** len
 *** Slices
+- don’t specify its size
+- not comparable
+- compare a slice with /nil/:
+#+begin_src go
+var x = []int{10, 20, 30}
+var x = []int{1, 5: 4, 6, 10: 100, 15}
+var x [][]int
+x[0] = 10
+var x []int // nil
+var x = []int{} //  zero-length slice, which is non-nil (
+x := make([]int, 5)
+num := copy(y, x) // indenpedent copy of original slice
+#+end_src
+**** functions
+- len
+- append
+- make
+- copy
+**** slicing
+- can slice arrays
 
+#+begin_src go
+var x = []int{1, 4, 6, 10, 15}
+y := x[2:] // 4, 6, 10, 15
+n := x[:2] // 1, 4
+h := x[0:2:2] // 1,4 with 2 of cap
+#+end_src
+*** Maps
 ** Operators
 *** arithmetic
       |          |                           |
@@ -207,53 +253,53 @@ var x [2][3]int // simulate multidemensional array
       | combined | += , -= , *= ,/= , and %= |
       |          |                           |
 ** Functions
-     - reference type
-     - function values are not comparable.
+- reference type
+- function values are not comparable.
 
-     #+begin_src go
-     // assign f to nil function
-     var f func(int) int
+#+begin_src go
+// assign f to nil function
+var f func(int) int
 
-     // assign var to a function
-     func square(n int) int { return n * n }
-     f =  square
-     fmt.Println(f(3)) // "9"
+// assign var to a function
+func square(n int) int { return n * n }
+f =  square
+fmt.Println(f(3)) // "9"
 
-     // can compare function to nil but not another function
-     if f != nil { ... }
+// can compare function to nil but not another function
+if f != nil { ... }
 
-     // recursion in go is fast
+// recursion in go is fast
 
-     // lambda/anonymous function
-     strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")
+// lambda/anonymous function
+strings.Map(func(r rune) rune { return r + 1 }, "HAL-9000")
 
 
-     // function that returns a lambda
-     func squares() func() int {
-	     var x int
-	     return func() int {
-		     x++
-		     return x * x
-	     }
-     }
-     func main() {
-	     f := squares()
-	     fmt.Println(f()) // "1"
-	     fmt.Println(f()) // "4"
-	     fmt.Println(f())
-	     fmt.Println(f())
-     }
+// function that returns a lambda
+func squares() func() int {
+    var x int
+    return func() int {
+        x++
+        return x * x
+    }
+}
+func main() {
+    f := squares()
+    fmt.Println(f()) // "1"
+    fmt.Println(f()) // "4"
+    fmt.Println(f())
+    fmt.Println(f())
+}
 
-     // Defer
-     var mu sync.Mutex
-     var m = make(map[string]int)
+// Defer
+var mu sync.Mutex
+var m = make(map[string]int)
 
-     func lookup(key string) int {
-	     mu.Lock()
-	     defer mu.Unlock()
-	     return m[key]
-     }
-     #+end_src
+func lookup(key string) int {
+    mu.Lock()
+    defer mu.Unlock()
+    return m[key]
+}
+#+end_src
 ** Variables
 *** var
 #+begin_src go
