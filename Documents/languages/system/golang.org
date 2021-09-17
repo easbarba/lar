@@ -185,6 +185,21 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 #+begin_src go
 strings.Map
 #+end_src
+*** Arrays
+- == and != to compare arrays
+- one-dimensional arrays only
+
+#+begin_src go
+var x [3]int // 0,0,0
+var x = [3]int{10, 20, 30}
+var x = [12]int{1, 5: 4, 6, 10: 100, 15} // sparse array
+var x = [...]int{10, 20, 30}
+var x [2][3]int // simulate multidemensional array
+#+end_src
+**** functions
+***** len
+*** Slices
+
 ** Operators
 *** arithmetic
       |          |                           |
