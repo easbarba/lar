@@ -127,9 +127,12 @@ debug probe to print message bus messages
 | -n |   |
 | -f |   |
 | +n |   |
-
 * ripgrep
+* exec
+ execute command in current process
 * parted
+* cal
+display a calendar
 * tail
 output the last part of files
 * gdisk
