@@ -115,6 +115,11 @@ print newline, word, and byte counts for each file
 | -v                  | lines that doesnt match pattern |
 | --exclude-dir=<DIR> |                                 |
 
+* dbus
+** dbus-launch
+Utility to start a message bus from a shell script
+** dbus-monitor
+debug probe to print message bus messages
 * sort
 |    |   |
 |----+---|
