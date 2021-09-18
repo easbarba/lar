@@ -11,6 +11,8 @@
   - [[#commands][commands]]
   - [[#tricks][tricks]]
   - [[#fixes][fixes]]
+- [[#features][Features]]
+- [[#terms][Terms]]
 - [[#docker][Docker]]
   - [[#fortschritt][Fortschritt]]
   - [[#dockerfile][Dockerfile]]
@@ -18,10 +20,10 @@
   - [[#commands][Commands]]
 :END:
 * Progresso
-  |                   |                                     |                                                 |   |   |
-  |-------------------+-------------------------------------+-------------------------------------------------+---+---|
-  | Docker 4 Devs     | Sharing Containers Using Docker Hub | Implementing a sample microservices application |   |   |
-  | Docker/Kubernetes |                                     |                                                 |   |   |
+  |                           |                                     |                                                 |   |   |
+  |---------------------------+-------------------------------------+-------------------------------------------------+---+---|
+  | Learn Docker Fundamentals | 1 What are containers               | What's the benefit for me or for my company?    |   |   |
+  | Docker 4 Devs             | Sharing Containers Using Docker Hub | Implementing a sample microservices application |   |   |
 * Podman
 ** docs
    http://docs.podman.io/en/latest/index.html
@@ -42,6 +44,13 @@
     Add your user to the 'sudoers' file: 'elxbarbosa ALL=(ALL) NOPASSWD: /usr/bin/podman'
 *** user namespaces are not enabled in /proc/sys/kernel/unprivileged_userns_clone
     sudo sysctl -w kernel.unprivileged_userns_clone=1
+* Features
+* Terms
+- kernel namespace & cgropus
+- noisy-neighbor problem
+- common vulnerabilities and exposures (CVEs)
+- content trust
+- man-in-the-middle (MITM)
 * Docker
 ** Fortschritt
    |                       |                        |
