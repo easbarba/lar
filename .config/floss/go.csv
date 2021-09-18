@@ -2,11 +2,10 @@ name,repository
 nomad,https://github.com/hashicorp/nomad
 consul,https://github.com/hashicorp/consul
 terraform,https://github.com/hashicorp/terraform
+packer,https://github.com/hashicorp/packer
+vault,https://github.com/hashicorp/vault
 buildah,https://github.com/containers/buildah
 podman,https://github.com/containers/podman
-mux,https://github.com/gorilla/mux
-rclone,https://github.com/rclone/rclone
 awesome-go,https://github.com/avelino/awesome-go
-go-net,https://github.com/golang/net
 go-tools,https://github.com/golang/tools
 go,https://github.com/golang/go
