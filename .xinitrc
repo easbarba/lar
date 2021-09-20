@@ -10,4 +10,12 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 xmodmap ~/.config/xmodmap
 
 # * WINDOW MANAGER
-exec awesome
+
+# Statusbar loop
+# while true; do
+#     xsetroot -name "$(e_sysinfo)"
+#     sleep 15s # Update time every minute
+# done &
+
+# ~/.config/autostart-scripts/apps
+exec awesome # dwm
