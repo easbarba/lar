@@ -20,10 +20,12 @@
   - [[#commands][Commands]]
 :END:
 * Progresso
-  |                           |                                     |                                                 |   |   |
-  |---------------------------+-------------------------------------+-------------------------------------------------+---+---|
-  | Learn Docker Fundamentals | 1 What are containers               | What's the benefit for me or for my company?    |   |   |
-  | Docker 4 Devs             | Sharing Containers Using Docker Hub | Implementing a sample microservices application |   |   |
+|                           |                                     |                                                 |   |   |
+|---------------------------+-------------------------------------+-------------------------------------------------+---+---|
+| Learn Docker Fundamentals | 2 Setting Up a Working Environment  |                                                 |   |   |
+| Docker 4 Devs             | Sharing Containers Using Docker Hub | Implementing a sample microservices application |   |   |
+
+
 * Podman
 ** docs
    http://docs.podman.io/en/latest/index.html
