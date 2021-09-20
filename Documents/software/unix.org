@@ -97,7 +97,7 @@
 | Books                                         | capitulo                                   | em                           | @later | revisao |
 |-----------------------------------------------+--------------------------------------------+------------------------------+--------+---------|
 | Unix Environment                              | 2 File System                              | 2.2 What’s in a file?        |        |         |
-| Linux Programming Interface                   | Fundamental Concepts                       | Programs                     |        |         |
+| Linux Programming Interface                   | Fundamental Concepts                       | Process                      |        |         |
 | UNIX and Linux System Administration Handbook |                                            |                              |        |         |
 | LPIC                                          | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
 | The Art of Unix programming                   | 2 History                                  |                              |        |         |
