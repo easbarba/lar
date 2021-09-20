@@ -122,6 +122,4 @@ p_nix() {
     # PATH
     export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 }
-
-
 #+end_src
