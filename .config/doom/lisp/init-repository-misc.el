@@ -51,6 +51,7 @@
      "https://edelpero.svbtle.com/feed"
      "https://drewdevault.com/blog/index.xml"
      "https://ambrevar.xyz/atom.xml"
+     "https://250bpm.com/rss.xml"
      ;; langs blog
      "https://elixir-lang.org/atom.xml"
      "https://thinkingelixir.com/feed/podcast/"
