@@ -94,14 +94,14 @@
   :END:
 * Progress
 ** Books
-| Books                                         | capitulo                                   | em                             | @later | revisao |
-|-----------------------------------------------+--------------------------------------------+--------------------------------+--------+---------|
-| Unix Environment                              | 2 File System                              | 2.2 What’s in a file?          |        |         |
-| Linux Programming Interface                   | Fundamental Concepts                       | File ownership and permissions |        |         |
-| UNIX and Linux System Administration Handbook |                                            |                                |        |         |
-| LPIC                                          | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features   |        |         |
-| The Art of Unix programming                   | 2 History                                  |                                |        |         |
-| RHCSA Red Hat Enterprise Linux 8              | Basic File Management                      |                                |        |         |
+| Books                                         | capitulo                                   | em                           | @later | revisao |
+|-----------------------------------------------+--------------------------------------------+------------------------------+--------+---------|
+| Unix Environment                              | 2 File System                              | 2.2 What’s in a file?        |        |         |
+| Linux Programming Interface                   | Fundamental Concepts                       | Programs                     |        |         |
+| UNIX and Linux System Administration Handbook |                                            |                              |        |         |
+| LPIC                                          | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features |        |         |
+| The Art of Unix programming                   | 2 History                                  |                              |        |         |
+| RHCSA Red Hat Enterprise Linux 8              | Basic File Management                      |                              |        |         |
 
 * Internals
 ** Process
