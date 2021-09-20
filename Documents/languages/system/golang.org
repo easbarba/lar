@@ -254,6 +254,7 @@ h := x[0:2:2] // 1,4 with 2 of cap
 - automatically grow as you add key-value pairs
 - can use `make` to create a map with a specific initial size.
 - not comparable w/ *==*  and *!=*
+- comma ok, verifies availibity of key
 
 #+begin_src go
 var nilMap map[string]int // map[] // 0 length
@@ -266,7 +267,26 @@ teams := map[string][]string {
 }
 
 ages := make(map[int][]string, 10)
+
+// comma ok
+m := map[string]int{
+    "hello": 5,
+    "world": 0,
+}
+v, ok := m["hello"]
+fmt.Println(v, ok)
+
+v, ok = m["world"]
+fmt.Println(v, ok)
+
+v, ok = m["goodbye"]
+
+
+delete(m, "hello")
+
 #+end_src
+**** functions
+- delete
 ** Operators
 *** arithmetic
       |          |                           |
