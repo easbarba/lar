@@ -61,7 +61,7 @@ packages() {
 
     arch=(pacman-contrib base-devel)
 
-    xorg=(xorg xorg-xinit awesome scrot feh zathura slock cheese atril) # xf86-video-fbdev
+    xorg=(xorg xorg-xinit awesome scrot feh zathura slock cheese atril dmenu) # xf86-video-fbdev
 
     wayland=(sway swaybg swaylock)
 
