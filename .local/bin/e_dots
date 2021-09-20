@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# DEBUG
+set -euo pipefail
+
+DISTRO="$(awk '/^NAME=/ { split($0,a,"\""); print a[2] }' /etc/os-release)"
+# "$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
+
+case $DISTRO in
+    "Arch Linux" | "Manjaro")
+        USB="/run/media"
+        ;;
+    "Debian" | "Fedora")
+        USB="/media"
+        ;;
+esac
+
+find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv "{1}" "$USB/$USER/MACHO/dots"
