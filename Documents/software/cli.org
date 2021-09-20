@@ -16,6 +16,13 @@ watch runs command repeatedly, displaying its output and errors (the first
 screenfull). This allows you to watch the program output change over time. By
 default, command is run every 2 seconds and watch will run until inter‐ rupted.
 * finger
+* chmod
+|    |                                                    |
+|----+----------------------------------------------------|
+| -R | change files and directories recursively           |
+| -c | like verbose but report only when a change is made |
+|    |                                                    |
+
 * curl
 ** read local file
 #+begin_src shell-script
@@ -62,9 +69,10 @@ curl file:///home/user/.bashrc
  | -r      | reverse             |
 * cat
 concatenate files and print on the standard output
-|    |   |
-|----+---|
-| -u |   |
+|    |            |
+|----+------------|
+| -u | unbuffered |
+| <> | buffered   |
 
 * pr
 concatenate files and print on the standard output
@@ -155,6 +163,7 @@ dump files in octal and other formats
 |----+---|
 | -c |   |
 | -b |   |
+|    |   |
 * stty
 * read
 read line of input into variables
@@ -223,7 +232,22 @@ sed -i 's/Meh/Foo/g'
 * htop
 * ncdu
 * df
+|    |                                                      |
+|----+------------------------------------------------------|
+| -h | print sizes in powers of 1024                        |
+| -x | limit listing to file systems not of type TYPE       |
+| -a | include pseudo, duplicate, inaccessible file systems |
+
 * du
+estimate file space usage
+
+|    |                                                  |
+|----+--------------------------------------------------|
+| -h | print sizes in human readable format             |
+| -a | write counts for all files, not just directories |
+| -s | display only a total for each argument           |
+
+* crypt
 * pv
 * fzf
 * fd
