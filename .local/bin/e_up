@@ -6,7 +6,7 @@ set -euo pipefail
 DEPS=(sudo grep cut tr distro floss cejo emacs parallel cp find guix)
 e_checkdeps "${DEPS[@]}"
 
-DISTRO="$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
+DISTRO="$(awk '/^NAME=/ { split($0,a,"\""); print a[2] }' /etc/os-release)" # "$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
 
 case $DISTRO in
     "Arch Linux" | "Manjaro")
