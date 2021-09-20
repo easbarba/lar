@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter         | @                                    | late | revision |
-|-------------------------+-----------------+--------------------------------------+------+----------|
-| Learning go             | Composite types | Structs                              |      |          |
-| Go Programming Language | Methods         | 6.2. Methods with a Pointer Receiver |      |          |
+| name                    | chapter        | @                                    | late | revision |
+|-------------------------+----------------+--------------------------------------+------+----------|
+| Learning go             | Block, shadows |                                      |      |          |
+| Go Programming Language | Methods        | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -255,6 +255,8 @@ h := x[0:2:2] // 1,4 with 2 of cap
 - can use `make` to create a map with a specific initial size.
 - not comparable w/ *==*  and *!=*
 - comma ok, verifies availibity of key
+- no way to constrain a map to only allow certain keys
+- values in a map must be of the same type
 
 #+begin_src go
 var nilMap map[string]int // map[] // 0 length
@@ -287,6 +289,44 @@ delete(m, "hello")
 #+end_src
 **** functions
 - delete
+*** Struct
+- inside or outside of a function
+#+begin_src go
+type person struct {
+	name string
+	age  int
+	pet  string
+}
+
+var fred person
+
+bob := person{}
+
+julia := person{
+    "Julia",
+    40,
+    "cat",
+}
+
+	beth := person{
+		age:  30,
+		name: "beth",
+	}
+
+fmt.Println(beth.age)
+
+// annonymous struct
+
+pet := struct {
+    name string
+    kind string
+}{
+    name: "Fido",
+    kind: "dog",
+}
+
+
+#+end_src
 ** Operators
 *** arithmetic
       |          |                           |
