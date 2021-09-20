@@ -114,15 +114,15 @@
   :END:
 * Progress
 ** Book
-     | Buch              | Capitulo | em                         | tarde | revisao |
-     |-------------------+----------+----------------------------+-------+---------|
-     | C Modern Approach | Pointers | finding the largest pg 249 |       |         |
+| Buch              | Capitulo | em                         | tarde | revisao |
+|-------------------+----------+----------------------------+-------+---------|
+| C Modern Approach | Pointers | finding the largest pg 249 |       |         |
 
 ** SLOC
-     | Source Code | folder    | file        | @ |
-     |-------------+-----------+-------------+---|
-     | curl        | lib/vauth | cleartext.c |   |
-     | tmux        |           |             |   |
+| Source Code | folder    | file        | @ |
+|-------------+-----------+-------------+---|
+| curl        | lib/vauth | cleartext.c |   |
+| tmux        |           | alert.c     |   |
 
 * Features
 ** pointers
