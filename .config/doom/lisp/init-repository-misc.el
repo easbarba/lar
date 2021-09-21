@@ -41,6 +41,8 @@
    '("https://www.fsf.org/static/fsforg/rss/news.xml"
      "https://www.fsf.org/static/fsforg/rss/blogs.xml"
      "https://guix.gnu.org/feeds/blog.atom"
+     ;; misc
+     "https://tonarinoyj.jp/rss/series/13932016480028984490"
      ;; distros
      "https://guix.gnu.org/feeds/blog.atom"
      "https://feeds.feedburner.com/linuxtoday/linux"
@@ -53,24 +55,16 @@
      "https://ambrevar.xyz/atom.xml"
      "https://250bpm.com/rss.xml"
      ;; langs blog
-     "https://elixir-lang.org/atom.xml"
-     "https://thinkingelixir.com/feed/podcast/"
      "https://feeds.fireside.fm/smartlogic/rss"
      "https://ulisses.dev/feed.xml"
      "https://research.swtch.com/feed.atom"
-     "https://www.ruby-lang.org/en/feeds/news.rss"
-     "https://rubyweekly.com/rss/"
-     "https://www.honeybadger.io/blog/feed.xml"
-     "https://blog.appsignal.com/feed.xml"
      "https://feeds.feedburner.com/AyendeRahien"
      ;; street food channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdz7HcTQOaHCoAEJBs-MlNQ" ;; JJin Food
      "https://www.youtube.com/feeds/videos.xml?channel_id=UChu1vY_Mb0XVpfkruXoaiWg" ;; Bin's food
      ;; lang channes
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCsJkVvxwoM7R9oRbzvUhbPQ" ;; Postgre Conf
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
      "https://www.youtube.com/feeds/videos.xml?channel_id=j" ;; Prof Ribas
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCfHWv7MMpvVsAE3YO5f5eXQ" ;; Elixir Newbiexs
      ;; news channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g"
@@ -92,6 +86,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqRraVICLr0asn90cAvkIZQ" ;; Corinthians TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC-I7i0YfLPHfUoH6-m2uUAw" ;; Podcastimao
      ;; misc channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; Boitempo
      "https://www.youtube.com/feeds/videos.xml?channel_id=UClNe40Z_ufT3GOdR3Jirbvw" ;; Nocturnal Rambler
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCDmXLiZTBaFuCOXjy6mdw5w" ;; FlightlessMango
