@@ -410,6 +410,139 @@ func main() {
     x, y := 30, "hello"
 }
 #+end_src
+** Blocks
+*** Package Levels
+*** Universe block
+** Control
+*** if
+#+begin_src go
+n := rand.Intn(10)
+
+if n == 0 {
+    fmt.Println("That's too low")
+} else if n > 5 {
+    fmt.Println("That's too big:", n)
+} else {
+    fmt.Println("That's a good number:", n)
+}
+
+if n := rand.Intn(10); n == 0 {
+    fmt.Println("That's too low")
+} else if n > 5 {
+    fmt.Println("That's too big:", n)
+} else {
+    fmt.Println("That's a good number:", n)
+}
+
+#+end_src
+*** for
+- for-range's value is a copy
+- complete for loop doesn’t properly handle multibyte characters, for-range do.
+
+#+begin_src go
+// complete for
+for i := 0; i < 10; i++ {
+    fmt.Println(i)
+
+for i := 1; i <= 100; i++ {
+    if i%3 == 0 && i%5 == 0 {
+        fmt.Println("FizzBuzz")
+        continue
+    }
+    if i%3 == 0 {
+        fmt.Println("Fizz")
+        continue
+    }
+    if i%5 == 0 {
+        fmt.Println("Buzz")
+        continue
+    }
+        fmt.Println(i)
+}
+
+// condition-only
+i := 1
+for i < 100 {
+        fmt.Println(i)
+        i = i * 2
+}
+
+// The Infinite for Statement
+func main() {
+	for {
+		// things to do in the loop
+		if !CONDITION {
+			break
+		}
+	}
+}
+
+// for range
+
+#+end_src
+*** switch
+- variable declaration at its head
+- no fall through by default
+- `fallthrough` keyword for one case continue on to the next one
+- no parens after the switch word needed
+- default branch spawn if no case matches.
+- blank switchs:  do not specify the value to compare against, and it allows to use any boolean comparison
+
+#+begin_src go
+words := []string{"a", "cow", "smile", "gopher",
+    "octopus", "anthropologist"}
+for _, word := range words {
+    switch size := len(word); size {
+    case 1, 2, 3, 4:
+        fmt.Println(word, "is a short word!")
+    case 5:
+        wordLen := len(word)
+        fmt.Println(word, "is exactly the right length:", wordLen)
+    case 6, 7, 8, 9:
+    default:
+        fmt.Println(word, "is a long word!")
+    }
+}
+
+// blank switch
+
+words := []string{"hi", "salutations", "hello"}
+for _, word := range words {
+    switch wordLen := len(word); {
+    case wordLen < 5:
+        fmt.Println(word, "is a short word!")
+    case wordLen > 10:
+        fmt.Println(word, "is a long word!")
+    default:
+        fmt.Println(word, "is exactly the right length.")
+    }
+}
+
+#+end_src
+
+** GOTO
+*** continue
+- labelled continue
+
+#+begin_src go
+
+
+// labelled continue
+func main() {
+    samples := []string{"hello", "apple_π!"}
+outer:
+    for _, sample := range samples {
+        for i, r := range sample {
+            fmt.Println(i, r, string(r))
+            if r == 'l' {
+                continue outer
+            }
+        }
+        fmt.Println()
+    }
+}
+#+end_src
+*** break
 ** Const
 - a way to give names to literals.
 - there is no way in Go to declare that a variable is
