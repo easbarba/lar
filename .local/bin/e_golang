@@ -7,11 +7,8 @@ export GO111MODULE=on
 
 packages() {
 	local command="go install"
-	local packages=("golang.org/x/tools/cmd/goimports@latest"
-		"golang.org/x/lint/golint@latest"
-		"golang.org/x/tools/gopls@latest"
-		"github.com/golangci/golangci-lint/cmd/golangci-lint@v1.39.0"
-		"github.com/rakyll/hey@latest")
+	local packages=("golang.org/x/tools/gopls@latest"
+	)
 
 	e_dolist "$command" "${packages[@]}"
 }
@@ -25,12 +22,16 @@ tols() {
 
 devel() {
 	local command='go get'
-	local packages=("mvdan.cc/sh/v3/cmd/shfmt")
+	local packages=("mvdan.cc/sh/v3/cmd/shfmt"
+		"golang.org/x/tools/cmd/goimports@latest"
+		"golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow@latest"
+		"golang.org/x/lint/golint@latest"
+		"github.com/golangci/golangci-lint/cmd/golangci-lint@latest")
 
 	e_dolist "$command" "${packages[@]}"
 }
 
 # * RUN
 # tools
-packages
+\packages
 devel
