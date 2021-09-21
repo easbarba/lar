@@ -116,7 +116,7 @@
 ** Books
 | name                    | chapter        | @                                    | late | revision |
 |-------------------------+----------------+--------------------------------------+------+----------|
-| Learning go             | Block, shadows |                                      |      |          |
+| Learning go             | Block, shadows | Choosing Between if and switch       |      |          |
 | Go Programming Language | Methods        | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
