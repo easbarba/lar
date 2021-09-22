@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter        | @                                    | late | revision |
-|-------------------------+----------------+--------------------------------------+------+----------|
-| Learning go             | Block, shadows | Choosing Between if and switch       |      |          |
-| Go Programming Language | Methods        | 6.2. Methods with a Pointer Receiver |      |          |
+| name                    | chapter              | @                                    | late | revision |
+|-------------------------+----------------------+--------------------------------------+------+----------|
+| Learning go             | Chapter 5. Functions |                                      |      |          |
+| Go Programming Language | Methods              | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -481,6 +481,8 @@ func main() {
 
 #+end_src
 *** switch
+- compare relatable values
+- Favor blank switch statements over if/else chains when you have multiple related cases
 - variable declaration at its head
 - no fall through by default
 - `fallthrough` keyword for one case continue on to the next one
@@ -519,8 +521,8 @@ for _, word := range words {
 }
 
 #+end_src
-
-** GOTO
+*** goto
+** Stop statement
 *** continue
 - labelled continue
 
