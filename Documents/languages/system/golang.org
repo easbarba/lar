@@ -116,7 +116,7 @@
 ** Books
 | name                    | chapter              | @                                    | late | revision |
 |-------------------------+----------------------+--------------------------------------+------+----------|
-| Learning go             | Chapter 5. Functions | Anonymous Functions                  |      |          |
+| Learning go             | Chapter 5. Functions | Passing Functions as Parameters      |      |          |
 | Go Programming Language | Methods              | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
