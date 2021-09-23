@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter              | @                                    | late | revision |
-|-------------------------+----------------------+--------------------------------------+------+----------|
-| Learning go             | Chapter 5. Functions | Go Is Call By Value                  |      |          |
-| Go Programming Language | Methods              | 6.2. Methods with a Pointer Receiver |      |          |
+| name                    | chapter     | @                                    | late | revision |
+|-------------------------+-------------+--------------------------------------+------+----------|
+| Learning go             | 6. Pointers |                                      |      |          |
+| Go Programming Language | Methods     | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
 | Source Code | folder            | file            | @ |
