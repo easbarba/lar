@@ -18,8 +18,8 @@ floss archive
 e_dots
 
 e_doom
+e_golang
 e_ruby
-e_js
 
 e_echo "Building Nightly Emacs"
 cejo project emacs
