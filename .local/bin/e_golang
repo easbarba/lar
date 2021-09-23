@@ -3,6 +3,8 @@
 # Debug Options
 set -euo pipefail
 
+e_echo "Golang Toolings."
+
 export GO111MODULE=on
 
 packages() {
@@ -21,17 +23,13 @@ tols() {
 }
 
 devel() {
-	local command='go get'
-	local packages=("mvdan.cc/sh/v3/cmd/shfmt"
-		"golang.org/x/tools/cmd/goimports@latest"
-		"golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow@latest"
-		"golang.org/x/lint/golint@latest"
-		"github.com/golangci/golangci-lint/cmd/golangci-lint@latest")
+	local command='go install'
+	local packages=("mvdan.cc/sh/v3/cmd/shfmt@latest")
 
 	e_dolist "$command" "${packages[@]}"
 }
 
 # * RUN
 # tools
-\packages
+packages
 devel
