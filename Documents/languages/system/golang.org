@@ -448,6 +448,35 @@ func main() {
 
 
 #+end_src
+** Defer
+- can defer multiple closures in a Go function
+- runs after the return
+- can supply a function that returns values to a defer, but there’s no way to read those values.
+- must suply parentheses when specifying a closure for defer.
+
+#+begin_src go
+func main() {
+	if len(os.Args) < 2 {
+		log.Fatal("no file specified")
+	}
+	f, err := os.Open(os.Args[1])
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+	data := make([]byte, 2048)
+	for {
+		count, err := f.Read(data)
+		os.Stdout.Write(data[:count])
+		if err != nil {
+			if err != io.EOF {
+				log.Fatal(err)
+			}
+			break
+		}
+	}
+}
+#+end_src
 ** Variables
 *** var
 #+begin_src go
