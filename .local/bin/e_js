@@ -4,7 +4,7 @@
 set -euo pipefail
 
 deps=(node npm)
-e_checkdeps ${deps[@]}
+e_checkdeps "${deps[@]}"
 
 readonly COMMAND='npm i -g'
 
