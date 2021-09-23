@@ -28,7 +28,7 @@
 	erc-spelling-dictionaries '(("#emacs" "american"))
 	erc-autojoin-channels-alist '(("libera.chat"
                                        "#postgresql"
-				       "#elixir"
+				       "#golang"
                                        "#scheme"
 				       "#guile"
 				       "#guix"
