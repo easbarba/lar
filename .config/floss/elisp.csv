@@ -10,6 +10,7 @@ envrc,https://github.com/purcell/envrc
 prelude,https://github.com/bbatsov/prelude
 doom-emacs,https://github.com/hlissner/doom-emacs
 spacemacs,https://github.com/syl20bnr/spacemacs
+unpackaged.el,https://github.com/alphapapa/unpackaged.el
 bufler.el,https://github.com/alphapapa/bufler.el
 emacs-async,https://github.com/jwiegley/emacs-async
 use-package,https://github.com/jwiegley/use-package

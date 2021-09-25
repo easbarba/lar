@@ -6,6 +6,7 @@ guile-libyaml,https://github.com/mwette/guile-libyaml
 geiser-guile,https://gitlab.com/emacs-geiser/guile
 alezost-guix-config,https://github.com/alezost/guix-config
 fibers,https://github.com/wingo/fibers
+nonguix,https://gitlab.com/nonguix/nonguix
 guix,https://git.savannah.gnu.org/git/guix
 guile,https://git.sv.gnu.org/git/guile
 akku,https://gitlab.com/akkuscm/akku
