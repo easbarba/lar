@@ -1,4 +1,3 @@
-
 #+TILE: Guile Scheme - Annotations
 
 * Summary
@@ -115,11 +114,11 @@
   :END:
 * Progress
 ** Books
-| name          | chapter                  | @                | late | revision |
-|---------------+--------------------------+------------------+------+----------|
-| Guile manual  | Hello Scheme             | 3.3.2 Tail calls |      |          |
-| Scheme PL     | Chapter 3. Going Further |                  |      |          |
-| Litle Schemer | 4                        |                  |      |          |
+| name          | chapter                  | @                              | late | revision |
+|---------------+--------------------------+--------------------------------+------+----------|
+| Guile manual  | Hello Scheme             | 3.3 Expressions and Evaluation |      |          |
+| Scheme PL     | Chapter 3. Going Further |                                |      |          |
+| Litle Schemer | 4                        |                                |      |          |
 
 ** LDC
 | Source Code | folder           | file       | @ |
