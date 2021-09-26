@@ -9,19 +9,19 @@
 | unix     | unix     | unix     | unix     | unix     | unix  | unix  |
 
 * Priorities
-| @               | desc                                                        |
-|-----------------+-------------------------------------------------------------|
-| Lang            | Golang, Guile                                               |
-| Unit Test       | testing                                               |
-| SQL             | PostgreSQL                                                  |
-| Version Control | Git                                                         |
-| Web API         | REST, SOAP, GraphQL                                         |
-| Container       | Podman, Docker                                              |
-| Cloud           | AWS, Azure                                                  |
-| CI / CD         | Jenkins                                                     |
-| Network         | HTTP, HTTPS, TCP, SSH, FTP                                  |
-| Hosting         | Heroku                                                      |
-| Message         | RabbitMQ/ Kafka                                             |
+| @               | desc                       |
+|-----------------+----------------------------|
+| Lang            | Golang, Guile              |
+| Unit Test       | testing                    |
+| SQL             | PostgreSQL                 |
+| Version Control | Git                        |
+| Container       | Podman, Docker, Kubernetes |
+| Cloud           | AWS, Azure                 |
+| Message         | RabbitMQ/ Kafka            |
+| CI / CD         | Jenkins                    |
+| Network         | HTTP, HTTPS, TCP, SSH, FTP |
+| Hosting         | Heroku                     |
+| Web API         | REST, SOAP, GraphQL        |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
