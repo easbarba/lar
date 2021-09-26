@@ -1,8 +1,9 @@
 #+TITLE: Network
 
-* ssh
+* Software
+** ssh
 
-** --
+*** --
 end of command line flags
 
 It tells ssh or any other valid shell command not to try to parse what comes after command line options
@@ -15,13 +16,13 @@ ssh nixcraft@server1.cyberciti.biz -- command1 --arg1 --arg2
 
  This ensures that command1 will accept --arg1 and --arg2 (or -opt1) as command-line arguments.
 
-* ip
-* ifconfig
+** ip
+** ifconfig
 configure a network interface
-* whois
-* host
-* dig
-* iwd
+** whois
+** host
+** dig
+** iwd
   #+begin_src shell
 
   ip a
@@ -47,32 +48,32 @@ configure a network interface
   ip a
   #+end_src
 
-* iw
-* wpa_supplicant
-* curl
-* nmap
-* nmcli
+** iw
+** wpa_supplicant
+** curl
+** nmap
+** nmcli
 |                               |                                                                |
 |-------------------------------+----------------------------------------------------------------|
 | radio wifi on                 | Enable Your Wi-Fi Device                                       |
 | dev status                    | Status                                                         |
-| mcli dev wifi list            | Lisit available SSID                                           |
+| dev wifi list                 | Lisit available SSID                                           |
 | dev wifi connect <SSID>       | connect to SSID                                                |
 | --ask dev wifi connect <SSID> | password is provided in a manager to avoid dirty shell history |
-| nmcli con show                | list saved connections                                         |
-| nmcli con down <SSID>         | disconnect of SSID                                             |
-| nmcli con up <SSID>           | reconnect to SSID                                              |
+| con show                      | list saved connections                                         |
+| con down <SSID>               | disconnect of SSID                                             |
+| con up <SSID>                 | reconnect to SSID                                              |
 |                               |                                                                |
 
 network manager wont work if /etc/network/interface is set to any device, remove it and procced again
 
-* nslookup
-* route
-* netstat
+** nslookup
+** route
+** netstat
 |        |   |
 |--------+---|
 | -natp  |   |
 | -tulpn |   |
-* telnet
-* rlogin
-* tracerout
+** telnet
+** rlogin
+** tracerout
