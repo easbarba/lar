@@ -116,7 +116,7 @@
 ** Books
 | name                    | chapter     | @                                    | late | revision |
 |-------------------------+-------------+--------------------------------------+------+----------|
-| Learning go             | 6. Pointers | Pointers Indicate Mutable Parameters |      |          |
+| Learning go             | 6. Pointers | Pointer Passing Performance          |      |          |
 | Go Programming Language | Methods     | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
