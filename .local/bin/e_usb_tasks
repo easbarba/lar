@@ -3,6 +3,8 @@
 # DEBUG
 set -euo pipefail
 
+e_echo "USB Tasks"
+
 DISTRO="$(awk '/^NAME=/ { split($0,a,"\""); print a[2] }' /etc/os-release)"
 # "$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
 

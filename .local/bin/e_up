@@ -15,7 +15,8 @@ e_guix
 e_echo "FLOSS projects"
 floss grab
 floss archive
-e_dots
+
+e_usb_tasks
 
 e_doom
 e_golang
