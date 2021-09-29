@@ -1,4 +1,0 @@
-attr,value
-exec,brightnessctl
-up,set {0}%+
-down,set {0}%-

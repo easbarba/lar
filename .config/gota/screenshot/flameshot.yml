@@ -1,5 +1,0 @@
----
-bin: 'flameshot'
-full: 'full -p'
-partial: 'gui -p'
-folder: 'FOLDER.to_path'

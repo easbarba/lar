@@ -1,5 +1,0 @@
----
-bin: 'scrot'
-full: '--focused --silent'
-partial: '--select --silent'
-folder: 'FOLDER.join(screenshot_name)'

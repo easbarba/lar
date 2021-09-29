@@ -1,4 +1,51 @@
 #!/usr/bin/env bash
 
-# DEBUG OPTIONS
-set -euo pipefail
+# frozen_string_literal: true
+
+# Manage System backlight.
+class Backlight
+  STEP = 5
+
+  attr_reader :state
+
+  def initialize(state)
+    @state = state.to_sym
+  end
+
+  def brighter
+    Backers.new.all.first
+  end
+
+  def actions
+    {
+      up: "set #{STEP}%+",
+      down: "set #{STEP}%-"
+    }
+  end
+
+  def final_command
+    "#{brighter} #{actions[state]}"
+  end
+
+  def run
+    return if %w[up down].include? state
+
+    system final_command
+  end
+end
+
+# all available backlight managers
+class Backers
+  B = Struct.new(:bin, :full, :partial)
+
+  def brightnessctl
+    B.new 'brightnessctl', 'set {0}%+', 'set {0}%-'
+  end
+
+  def all
+    [brightnessctl]
+  end
+end
+
+# RUN
+Gota::Screenshot.new(ARGV.first).run
