@@ -1,4 +1,0 @@
----
-name: 'pactl'
-toggle: "set-sink-mute #{info.sink} toggle"
-updown: "set-sink-volume #{info.sink} #{states[state]}#{STEP}%"
