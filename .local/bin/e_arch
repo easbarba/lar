@@ -45,7 +45,7 @@ packages() {
 
     system=(p7zip zip subversion jq lshw at usbutils lsof time entr tree xsel
         xclip fontconfig bc htop strace ltrace cpio lhasa lzop atool perf
-        sysstat ncdu rsync rclone)
+        sysstat ncdu rsync rclone util-linux)
 
     gnu=(wget parted texinfo parallel automake autoconf)
 
