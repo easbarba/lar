@@ -1,4 +1,5 @@
 #+TITLE: Golang
+#+AUTHOR: easbarbosa
 
 * Summary
     :PROPERTIES:
@@ -116,7 +117,7 @@
 ** Books
 | name                    | chapter     | @                                    | late | revision |
 |-------------------------+-------------+--------------------------------------+------+----------|
-| Learning go             | 6. Pointers | Pointer Passing Performance          |      |          |
+| Learning go             | 6. Pointers | The Zero Value Versus No Value       |      |          |
 | Go Programming Language | Methods     | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
@@ -685,6 +686,19 @@ func main() {
 make([]T, len)
 make([]T, len, cap) // same as make([]T, cap)[:len]
 #+end_src
+** Pointers
+- The & is the address operator: returns the address of the memory location where the value is stored.
+- The * is the indirection operator: pointer type and returns the pointed-to value. dereferencing.
+-  new() creates a pointer variable. It returns a pointer to a zero value instance of the provided
+
+#+begin_src go
+def main() {
+	x := "hello"
+	pointToX := &x
+}
+
+
+#+end_src
 ** mutex
      #+begin_src go emacs-lisp
      sync.Mutex
@@ -698,15 +712,6 @@ make([]T, len, cap) // same as make([]T, cap)[:len]
      #+end_src
 ** doc comment
      Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
-** pointers
-     #+Begin_Src go
-
-     func main() {
-	     x = 1
-	     ,*p = x
-	     Printf(&p) // address of x
-     }
-     #+end_src
 * Cli
 ** vet
       Examines Go source code and reports suspicious constructs
