@@ -51,7 +51,7 @@ packages() {
 
     network=(net-tools iproute2 socat iw wireless_tools)
 
-    infra=(podman qemu virt-manager ovmf bridge-utils)
+    infra=(podman qemu virt-manager ovmf bridge-utils vagrant)
 
     fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
 
