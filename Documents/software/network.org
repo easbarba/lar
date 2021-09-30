@@ -1,5 +1,7 @@
 #+TITLE: Network
 
+* Progress
+
 * Software
 ** ssh
 
@@ -51,6 +53,13 @@ configure a network interface
 ** iw
 ** wpa_supplicant
 ** curl
+curl - transfer a URL
+
+|         |   |
+|---------+---|
+| -v <ip> |   |
+| -<N>    |   |
+
 ** nmap
 ** nmcli
 |                               |                                                                |
