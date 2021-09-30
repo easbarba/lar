@@ -8,11 +8,12 @@
 - [[#progresso][Progresso]]
 - [[#features][Features]]
   - [[#container][container]]
+  - [[#stopquitdetach][Stop/Quit/Detach]]
+  - [[#run][run]]
   - [[#images][images]]
 - [[#terms][Terms]]
 - [[#podman][Podman]]
   - [[#docs][docs]]
-  - [[#commands][commands]]
   - [[#tricks][tricks]]
   - [[#fixes][fixes]]
 - [[#docker][Docker]]
@@ -36,6 +37,36 @@
 | -a | Show all the containers, default is only running containers |
 | -q | containers ID                                               |
 | -l |                                                             |
+*** exec
+|    |                           |
+|----+---------------------------|
+| -i | run process interactively |
+| -t | provide tty               |
+| -e | define env vars           |
+| -d | run as daemon             |
+*** attach
+|         |   |
+|---------+---|
+| <image> |   |
+
+*** inspect
+|               |   |
+|---------------+---|
+| ID            |   |
+| -f / --filter |   |
+** Stop/Quit/Detach
+|         |          |
+|---------+----------|
+| C-c     | stop all |
+| C-p C-q | detach   |
+|         |          |
+
+** run
+|        |   |
+|--------+---|
+| -d     |   |
+| --name |   |
+| -p     |   |
 
 ** images
 * Terms
@@ -46,17 +77,7 @@
 - man-in-the-middle (MITM)
 * Podman
 ** docs
-   http://docs.podman.io/en/latest/index.html
-
-** commands
-   |          |                                           |
-   |----------+-------------------------------------------|
-   | images   |                                           |
-   | rmi <ID> | Removes one or more locally stored images |
-   | info     |                                           |
-   | run      |                                           |
-   | run      |                                           |         |                                           |
-
+http://docs.podman.io/en/latest/index.html
 ** tricks
    - podman info | grep rootless
 ** fixes
