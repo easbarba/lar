@@ -361,6 +361,12 @@ http://steamcommunity.com/id/elxbarbosa
 - J. M. W. Turner
 * Donations
 https://apoia.se/cozinhasolidaria
+
+| pix                | nome            |
+|--------------------+-----------------|
+| CPF 333.766.248-01 | Rodrigo Jalloul |
+|                    |                 |
+
 * Delivery
 981103178
 tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782
