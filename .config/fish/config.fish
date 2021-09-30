@@ -41,8 +41,13 @@ function e-direnv
     eval (direnv hook fish)
 end
 
+function e-prompt
+    starship init fish | source
+end
+
 # * SOURCING
 
 # ** RUN
 # e-pip
 e-direnv
+e-prompt

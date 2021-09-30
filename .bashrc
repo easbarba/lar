@@ -86,12 +86,14 @@ fi
 # * CLI SOFTWARE
 
 e_prompt() {
-    local liquid_url=https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt
-    local liquid_file="$HOME/Builds/liquidprompt"
+    # local liquid_url=https://raw.githubusercontent.com/nojhan/liquidprompt/master/liquidprompt
+    # local liquid_file="$HOME/Builds/liquidprompt"
 
-    [[ ! -f $liquid_file ]] && wget -c $liquid_url -O $liquid_file
+    # [[ ! -f $liquid_file ]] && wget -c $liquid_url -O $liquid_file
 
-    . $liquid_file
+    # . $liquid_file
+
+    eval "$(starship init bash)"
 }
 
 e_multiplexers() {
@@ -109,4 +111,3 @@ e_direnv() { eval "$(direnv hook bash)"; }
 e_prompt
 e_multiplexers
 e_direnv
-
