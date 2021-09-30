@@ -25,7 +25,7 @@
 * Progresso
 | books                     | chapter                             | at                                              | revision |   |
 |---------------------------+-------------------------------------+-------------------------------------------------+----------+---|
-| Learn Docker Fundamentals | 3 Mastering Containers              | Retrieving container logs                       |          |   |
+| Learn Docker Fundamentals | 3 Mastering Containers              | Logging drivers                                 |          |   |
 | Docker for Devs           | Sharing Containers Using Docker Hub | Implementing a sample microservices application |          |   |
 
 * Features
