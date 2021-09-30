@@ -571,6 +571,15 @@ https://htdp.org/2018-01-06/Book/
 **** functions
 ***** boolean?
 *** [[https://www.gnu.org/software/guile/manual/html_node/Symbols.html][symbols]]
+*** characters
+- code point
+- unicode
+
+#+begin_src guile
+#\x
+(char? #\U) #t
+
+#+end_src
 *** numerics
 #+begin_src scheme
 
