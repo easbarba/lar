@@ -1,4 +1,5 @@
 name,repository
+project-layout,https://github.com/golang-standards/project-layout
 micro,https://github.com/zyedidia/micro
 nomad,https://github.com/hashicorp/nomad
 consul,https://github.com/hashicorp/consul
