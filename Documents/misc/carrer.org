@@ -1,27 +1,25 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon      | tue      | wed      | thru     | fri      | sat   | sun   |
-|----------+----------+----------+----------+----------+-------+-------|
-| golang   | golang   | golang   | golang   | golang   | guile | guile |
-| postgres | postgres | postgres | postgres | postgres | emacs | emacs |
-| git      | git      | git      | git      | git      |       |       |
-| unix     | unix     | unix     | unix     | unix     | unix  | unix  |
+| mon     | tue     | wed     | thru    | fri     | sat   | sun   |
+|---------+---------+---------+---------+---------+-------+-------|
+| golang  | golang  | golang  | golang  | golang  | guile | guile |
+| docker  | docker  | docker  | docker  | docker  | emacs | emacs |
+| network | network | network | network | network |       |       |
+| unix    | unix    | unix    | unix    | unix    | unix  | unix  |
+| git     | git     | git     | git     | git     |       |       |
 
 * Priorities
 | @               | desc                       |
 |-----------------+----------------------------|
 | Lang            | Golang, Guile              |
 | Unit Test       | testing                    |
-| SQL             | PostgreSQL                 |
-| Version Control | Git                        |
 | Container       | Podman, Docker, Kubernetes |
+| Network         | HTTP, HTTPS, TCP, SSH, FTP |
+| Version Control | Git                        |
 | Cloud           | AWS, Azure                 |
 | Message         | RabbitMQ/ Kafka            |
 | CI / CD         | Jenkins                    |
-| Network         | HTTP, HTTPS, TCP, SSH, FTP |
-| Hosting         | Heroku                     |
-| Web API         | REST, SOAP, GraphQL        |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
