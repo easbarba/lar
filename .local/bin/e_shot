@@ -1,40 +1,43 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby
 # frozen_string_literal: true
+
+require 'pathname'
 
 # Take a shot of the marvelous screen
 class Screenshot
-  PREFERRED_FORMAT = 'png'
-  SHOTTERS_FOLDER = Pathname.new(Dir.home).join('.config', 'gota', 'screenshot')
-  FOLDER = Pathname.new(Dir.home).join('Pictures')
-  CURRENT_TIME = Time.new.strftime '%d-%m-%y-%I-%M'
-
-  attr_reader :utils, :mode
+  attr_reader :mode
 
   def initialize(mode)
     @mode = mode.to_sym if mode
   end
 
+  def which?(executable)
+    ENV['PATH'].split(File::PATH_SEPARATOR).any? do |directory|
+      File.executable?(File.join(directory, executable.to_s))
+    end
+  end
+
   def shotters
-    Shotters.all
+    Shotters.new.all
   end
 
   def shotters_available
     shotters.find_all do |shotter|
-      sh = shotter[1]
-      sh[:bin] if utils.which? sh[:bin]
+      shotter.bin if which? shotter.bin
     end
   end
 
   def shotter
-    shotters_available.first[1]
-  end
-
-  def screenshot_name
-    "screenshot-#{CURRENT_TIME}.#{PREFERRED_FORMAT}"
+    shotters_available.first
   end
 
   def final_command
-    "#{shotter[:bin]} #{shotter[mode]} #{eval shotter[:folder]}"
+    case mode
+    when :partial
+      "#{shotter.bin} #{shotter.partial} #{shotter.folder}"
+    when :full
+      "#{shotter.bin} #{shotter.full} #{shotter.folder}"
+    end
   end
 
   def run
@@ -46,24 +49,35 @@ end
 
 # All available shotters
 class Shotters
+  FOLDER = Pathname.new(Dir.home).join('Pictures')
+  PREFERRED_FORMAT = 'png'
+  CURRENT_TIME = Time.new.strftime '%d-%m-%y-%I-%M'
   S = Struct.new(:bin, :full, :partial, :folder)
 
   #  scrot - command line screen capture utility
   def scrot
-    S.new 'scrot', '--focused --silent', '--select --silent', 'FOLDER.join(screenshot_name)'
+    S.new 'scrot', '--focused --silent', '--select --silent', FOLDER.join(screenshot_name)
   end
 
   def maim
-    S.new 'maim', '', '--select', 'FOLDER.join(screenshot_name)'
+    S.new 'maim', '', '--select', FOLDER.join(screenshot_name)
   end
 
-  def flameshot; end
+  def flameshot
+    S.new 'flameshot', '', '--select', FOLDER.join(screenshot_name)
+  end
 
   # list of shotters
   def all
-    [scrot]
+    [scrot, maim, flameshot]
+  end
+
+  private
+
+  def screenshot_name
+    "screenshot-#{CURRENT_TIME}.#{PREFERRED_FORMAT}"
   end
 end
 
 # RUN
-Gota::Backlight.new(ARGV.first).run
+Screenshot.new(ARGV.first).run
