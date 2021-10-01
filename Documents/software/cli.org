@@ -23,12 +23,6 @@ default, command is run every 2 seconds and watch will run until inter‐ rupted
 | -c | like verbose but report only when a change is made |
 |    |                                                    |
 
-* curl
-** read local file
-#+begin_src shell-script
-curl file:///home/user/.bashrc
-
-#+end_src
 * ed
 |              |                                                    |
 |--------------+----------------------------------------------------|
@@ -56,17 +50,6 @@ curl file:///home/user/.bashrc
 
 2t0 # copy line 2 to line 0
 #+end_src
-* ls
- list directory contents
-
- | options |                     |
- |---------+---------------------|
- | -l      | long list           |
- | -a      | list dotfiles too   |
- | -t      | list in time order  |
- | -u      | sort by access time |
- | -U      | do not sort         |
- | -r      | reverse             |
 * cat
 concatenate files and print on the standard output
 |    |            |
@@ -90,7 +73,29 @@ concatenate files and print on the standard output
 
 * troff
 
-* mv
+* files
+** rsync
+** ls
+ list directory contents
+
+ | options |                     |
+ |---------+---------------------|
+ | -l      | long list           |
+ | -a      | list dotfiles too   |
+ | -t      | list in time order  |
+ | -u      | sort by access time |
+ | -U      | do not sort         |
+ | -r      | reverse             |
+** du
+estimate file space usage
+
+|    |                                                  |
+|----+--------------------------------------------------|
+| -h | print sizes in human readable format             |
+| -a | write counts for all files, not just directories |
+| -s | display only a total for each argument           |
+** ncdu
+** mv
 move, or rename, files
 
 |                         |   |
@@ -100,10 +105,10 @@ move, or rename, files
 | -i                      |   |
 | -f                      |   |
 
-* cp
+** cp
 copy files and directories
 
-* rm
+** rm
 remove files or directories
 
 |          |   |
@@ -117,7 +122,10 @@ remove files or directories
 * wc
 print newline, word, and byte counts for each file
 
-* grep
+* search
+** find
+** ripgrep
+** grep
 |                     |                                 |
 |---------------------+---------------------------------|
 | -v                  | lines that doesnt match pattern |
@@ -135,7 +143,6 @@ debug probe to print message bus messages
 | -n |   |
 | -f |   |
 | +n |   |
-* ripgrep
 * exec
  execute command in current process
 * parted
@@ -147,11 +154,11 @@ output the last part of files
 * fdisk
 * mount
 * iwctl
-* imagemagick
-* man
-* info
-* rsync
-
+* images
+** imagemagick
+* information
+** man
+** info
 * cmp
 compare two files byte by byte
 * diff
@@ -188,34 +195,36 @@ echo .bash* # echo all files beginning with '.bash'
 |                 |                                                                 |
 * scp
 OpenSSH secure file copy
-* kill
-|    |                  |
-|----+------------------|
-|  0 | kill all process |
-|  1 | SIGHUP           |
-|  9 | SIGKILL          |
-| 15 | SIGTERM          |
-* pkill
-* nohup
-run a command immune to hangups, with output to a non-tty
-#+begin_src shell-script
-nohup command &
-#+end_src
-* nice
-run a program with modified scheduling priority
-#+begin_src shell
-nice expensive-command &
-#+end_src
 * at
 at, batch, atq, atrm - queue, examine, or delete jobs for later execution
 
 * recutils
 ** recsel
 print records from a recfile
-* killall
-
-* pgrep/pkill/pwait
+* process
+** htop
+** killall
+** kill
+|    |                  |
+|----+------------------|
+|  0 | kill all process |
+|  1 | SIGHUP           |
+|  9 | SIGKILL          |
+| 15 | SIGTERM          |
+** pgrep
 look up, signal, or wait for processes based on name and other attributes
+** pkill
+** pwait
+** nice
+run a program with modified scheduling priority
+#+begin_src shell
+nice expensive-command &
+#+end_src
+** nohup
+run a command immune to hangups, with output to a non-tty
+#+begin_src shell-script
+nohup command &
+#+end_src
 * parallel
 * xargs
 #+begin_src shell-script
@@ -228,25 +237,9 @@ echo 'Meh' | xargs -I {} echo 'Ultra {}' # ultra Meh
 sed -i 's/Meh/Foo/g'
 #+end_src
 * sshuttle
-* tmux
-* htop
-* ncdu
-* df
-|    |                                                      |
-|----+------------------------------------------------------|
-| -h | print sizes in powers of 1024                        |
-| -x | limit listing to file systems not of type TYPE       |
-| -a | include pseudo, duplicate, inaccessible file systems |
-
-* du
-estimate file space usage
-
-|    |                                                  |
-|----+--------------------------------------------------|
-| -h | print sizes in human readable format             |
-| -a | write counts for all files, not just directories |
-| -s | display only a total for each argument           |
-
+* multiplexer
+** tmux
+** screen
 * crypt
 * pv
 * fzf
@@ -285,7 +278,7 @@ echo 'NAME="Arch Linux"' | cut -f2 -d '=' # "Arch Linux"
 #+end_src
 
 * ts
-* screen
+
 * xmodmap
 |         |                                    |
 |---------+------------------------------------|
@@ -297,4 +290,14 @@ echo 'NAME="Arch Linux"' | cut -f2 -d '=' # "Arch Linux"
 | -option | reset current session modification |
 |         |                                    |
 
-* find
+* file system
+** findmnt
+** lsblk
+** df
+report file system space usage
+
+|    |                                                      |
+|----+------------------------------------------------------|
+| -h | print sizes in powers of 1024                        |
+| -x | limit listing to file systems not of type TYPE       |
+| -a | include pseudo, duplicate, inaccessible file systems |
