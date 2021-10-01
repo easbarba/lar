@@ -10,16 +10,21 @@
 | git     | git     | git     | git     | git     |       |       |
 
 * Priorities
-| @               | desc                       |
-|-----------------+----------------------------|
-| Lang            | Golang, Guile              |
-| Unit Test       | testing                    |
-| Container       | Podman, Docker, Kubernetes |
-| Network         | HTTP, HTTPS, TCP, SSH, FTP |
-| Version Control | Git                        |
-| Cloud           | AWS, Azure                 |
-| Message         | RabbitMQ/ Kafka            |
-| CI / CD         | Jenkins                    |
+| @                     | desc                          |
+|-----------------------+-------------------------------|
+| Lang                  | Golang, Guile                 |
+| Unit Test             | testing                       |
+| Container             | Podman, Docker, Kubernetes    |
+| Network               | HTTP, HTTPS, TCP/IP, SSH, FTP |
+| Version Control       | Git                           |
+| Cloud                 | AWS, Azure                    |
+| Message               | RabbitMQ/ Kafka               |
+| CI / CD               | Jenkins                       |
+| Shell Scripting       |                               |
+| OS                    | Linux, BSD                    |
+| Software Architecture | Micro-services                |
+| IaC                   | Ansible                       |
+| Security              |                               |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
