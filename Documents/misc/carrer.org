@@ -14,18 +14,19 @@
 |-----------------------+-------------------------------|
 | Unix                  | Linux, BSD                    |
 | Lang                  | Golang, Guile                 |
-| Shell Scripting       |                               |
-| Unit Test             | testing                       |
-| Container             | Podman, Docker, Kubernetes    |
+| Shell Script          | Bash, Posix                   |
+| Container             | Podman, Docker,               |
 | Network               | HTTP, HTTPS, TCP/IP, SSH, FTP |
-| Version Control       | Git                           |
-| IaC                   | Ansible                       |
+| IaC                   | Terraform, Ansible            |
 | Cloud                 | AWS, Azure                    |
-| CI / CD               | Jenkins                       |
-| Message               | RabbitMQ/ Kafka               |
+| CI / CD               | Jenkins, Drone, Travis        |
+| Editors               | Emacs, Vim                    |
+| Cluster               | Kubernetes, Nomad             |
+| Metrics, Obs          | Grafana, Elastic              |
+| Version Control       | Git                           |
 | Software Architecture | Micro-services                |
 | Security              |                               |
-| Editors               | Emacs, Vim                    |
+| Message               | RabbitMQ/ Kafka               |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
