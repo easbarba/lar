@@ -63,6 +63,11 @@ curl - transfer a URL
 | -v <ip> |   |
 | -<N>    |   |
 
+*** read local file
+#+begin_src shell-script
+curl file:///home/user/.bashrc
+#+end_src
+
 ** nmap
 ** nmcli
 |                               |                                                                |
