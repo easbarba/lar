@@ -60,6 +60,7 @@
      "https://research.swtch.com/feed.atom"
      "https://feeds.feedburner.com/AyendeRahien"
      ;; Devops
+     "https://www.linuxtips.io/blogs/novidades.atom"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; PunkDevops
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips BR
