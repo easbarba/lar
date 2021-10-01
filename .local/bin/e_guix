@@ -46,7 +46,7 @@ glocale() {
 }
 
 system() {
-	local packages=(nss-certs font-gnu-freefont-ttf font-dejavu nyxt)
+	local packages=(nsns-certs font-gnu-freefont-ttf font-dejavu)
 	e_dolist "guix install" "${packages[@]}"
 }
 
@@ -56,7 +56,7 @@ development() {
 }
 
 languages() {
-	local packages=(node elixir ruby)
+	local packages=(go ruby)
 	e_dolist "guix install" "${packages[@]}"
 }
 
