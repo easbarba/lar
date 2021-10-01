@@ -115,10 +115,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter     | @                                    | late | revision |
-|-------------------------+-------------+--------------------------------------+------+----------|
-| Learning go             | 6. Pointers | The Zero Value Versus No Value       |      |          |
-| Go Programming Language | Methods     | 6.2. Methods with a Pointer Receiver |      |          |
+| name                    | chapter     | @                                      | late | revision |
+|-------------------------+-------------+----------------------------------------+------+----------|
+| Learning go             | 6. Pointers | The Difference Between Maps and Slices |      |          |
+| Go Programming Language | Methods     | 6.2. Methods with a Pointer Receiver   |      |          |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -224,6 +224,10 @@ var x [2][3]int // simulate multidemensional array
 - don’t specify its size
 - not comparable
 - compare a slice with /nil/:
+- slice as arg: any modification to the contents of the slice is reflected in the original variable, but using
+  append to change the length isn’t reflected in the original variable, even if
+  the slice has a capacity greater than its length.
+
 #+begin_src go
 var x = []int{10, 20, 30}
 var x = []int{1, 5: 4, 6, 10: 100, 15}
@@ -258,6 +262,7 @@ h := x[0:2:2] // 1,4 with 2 of cap
 - comma ok, verifies availibity of key
 - no way to constrain a map to only allow certain keys
 - values in a map must be of the same type
+- avoid using maps for input parameters or return values, especially on public APIs
 
 #+begin_src go
 var nilMap map[string]int // map[] // 0 length
@@ -689,7 +694,8 @@ make([]T, len, cap) // same as make([]T, cap)[:len]
 ** Pointers
 - The & is the address operator: returns the address of the memory location where the value is stored.
 - The * is the indirection operator: pointer type and returns the pointed-to value. dereferencing.
--  new() creates a pointer variable. It returns a pointer to a zero value instance of the provided
+- new() creates a pointer variable. It returns a pointer to a zero value instance of the provided
+- return a pointer set to nil from a function, use the comma ok idiom maps and return a value type and a boolean.
 
 #+begin_src go
 def main() {
