@@ -9,7 +9,7 @@
 - [[#movies][Movies]]
   - [[#favorites][Favorites]]
 - [[#tv-shows][TV Shows]]
-  - [[#progress][progress]]
+  - [[#progress][Progress]]
   - [[#favorites][Favorites]]
 - [[#books][Books]]
   - [[#books-videos][Books, Videos]]
@@ -47,7 +47,6 @@
 * Progresso
 |                   |     |   |
 |-------------------+-----+---|
-| The beauty inside |  10 |   |
 | OPM               | 149 |   |
 
 * Movies
@@ -110,11 +109,7 @@
 - Independency Day
 - The Fifth Element
 * TV Shows
-** progress
-|                   |   |
-|-------------------+---|
-| you are my spring | 7 |
-
+** Progress
 ** Favorites
 - Star Trek - The Next Generation
 - Sherlock Holmes (Jeremy Brett)
@@ -152,8 +147,7 @@
 - The Lost World
 * Lectures
 ** Teacher
--
-  Osvaldo Coggiola
+- Osvaldo Coggiola
 
 * Manga
 ** Favorites
@@ -309,18 +303,22 @@ http://steamcommunity.com/id/elxbarbosa
 - Arnold Schoenberg
 ** American
 - Ink Spot
+*** Disco
+- David Ruffin
+- The temptations
+- Chic
+- Brother Johnson
 
-
+*** RB
+- Earth, Wind and fire
 ** Japan
 - a-ha
 - hy
 - Tatsuro Yamashita
 - ROUND TABLE featuring Nino
 - k - only human
-
 ** Bass
 - Marcus MIller
-
 ** Cuba
 - Nat King Cole
 - Perez Prado
@@ -334,11 +332,11 @@ http://steamcommunity.com/id/elxbarbosa
 - Animals as leaders
 - Plini
 - Vitalism
--
+
 ** Death Metal
-- meshuggah
+- Meshuggah
 ** Progressive Metal
-- stratovarius
+- Stratovarius
 ** Rock
 - Deepeche Mode
 ** MPB
