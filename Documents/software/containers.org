@@ -28,6 +28,11 @@
 | Learn Docker Fundamentals | 4 Creating and Managing Container Images |                                                 |          |   |
 | Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |          |   |
 
+| SLOC   | @                 | file          | line |
+|--------+-------------------+---------------+------|
+| go     |                   |               |      |
+| podman | cmd/podman/common | completion.go |      |
+
 * Features
 ** container
 *** ls
