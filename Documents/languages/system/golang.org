@@ -115,10 +115,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter     | @                                         | late | revision |
-|-------------------------+-------------+-------------------------------------------+------+----------|
-| Learning go             | 6. Pointers | Reducing the Garbage Collector’s Workload |      |          |
-| Go Programming Language | Methods     | 6.2. Methods with a Pointer Receiver      |      |          |
+| name                    | chapter                                   | @                                    | late | revision |
+|-------------------------+-------------------------------------------+--------------------------------------+------+----------|
+| Learning go             | Chapter 7. Types, Methods, and Interfaces |                                      |      |          |
+| Go Programming Language | Methods                                   | 6.2. Methods with a Pointer Receiver |      |          |
 
 ** LDC
 | Source Code | folder            | file            | @ |
