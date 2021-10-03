@@ -1,4 +1,4 @@
-#+TITLE: Nixos
+#+TITLE: Nix
 
 * Progress
 | manual  | @                                   |
@@ -7,3 +7,15 @@
 | nixpkgs |                                     |
 | nixos   | 5.3. Modularity                     |
 
+* nix-shell
+** usage
+    nix-shell -p pack1 pack2 --run 'make install PREFIX=/home/elxbarbosa/.local'
+
+** builds deps
+*** rbenv
+**** rbenv faster
+      gcc
+**** rbenv ruby
+*** st
+     freetype glibc pkg-config fontconfig gtk3-x11
+* nix-env

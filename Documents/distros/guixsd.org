@@ -1,0 +1,91 @@
+#+TITLE: Guix
+
+* Sumario
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+- [[#system][System]]
+- [[#read-later][Read Later]]
+- [[#articles][Articles]]
+- [[#tools][Tools]]
+- [[#translations][Translations]]
+- [[#bug-report][Bug report]]
+  - [[#singularity-link][singularity link]]
+  - [[#guix-find-funcionlibrary][guix find-funcion/library]]
+:END:
+* Progresso
+| livro       | em                         |
+|-------------+----------------------------|
+| Guix Manual | 5.10 Invoking guix archive |
+|             |                            |
+
+* System
+guix system build (dry-run)
+export PATH="/root/.config/guix/current/bin${PATH:+:}$PATH"  [14:06]
+* Read Later
+   https://lists.gnu.org/archive/html/guix-devel/2018-10/msg00652.html
+
+   http://guix.info/manual/en/Bootloader-Configuration.html#Bootloader-Configuration
+
+   https://ambrevar.xyz/guix-advance/index.html
+
+   https://guix-hpc.bordeaux.inria.fr/browse
+
+   https://www.gnu.org/software/guix/blog/2018/customize-guixsd-use-stock-ssh-agent-everywhere/
+
+   https://www.gnu.org/software/guix/manual/html_node/Base-Services.html
+
+   https://www.gnu.org/software/guix/manual/html_node/index.html#SEC_Contents
+
+   https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html#Invoking-guix-challenge
+
+   https://gitlab.com/nckx/guix/tree/master
+* Articles
+   https://www.gnu.org/software/guile/manual/html_node/Keywords.html
+   https://www.gnu.org/software/guix/manual/en/html_node/Build-Systems.html
+   https://www.gnu.org/software/guix/blog/2018/a-packaging-tutorial-for-guix/
+   https://www.gnu.org/software/guix/manual/html_node/Services.html#Services
+   https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#Using-the-Configuration-System
+   https://www.gnu.org/software/guix/download/
+   https://www.gnu.org/software/guix/manual/html_node/System-Installation.html
+   https://hal.inria.fr/hal-00824004/en
+   https://www.gnu.org/software/guix/packages/
+   https://www.gnu.org/software/guix/
+   https://www.gnu.org/software/guix/manual/html_node/Package-Management.html
+   ftp://alpha.gnu.org/gnu/guix/
+   https://gist.github.com/mbakke/c91e0eb3d906efd54c88a70c0e25c390
+   https://www.gnu.org/software/guix/manual/html_node/Proceeding-with-the-Installation.html#Proceeding-with-the-Installation
+   https://github.com/yenda/guix-config
+   https://github.com/alezost/guix-config
+   https://notabug.org/thomassgn/guixsd-configuration
+   https://gitlab.com/pjotrp/guix-notes
+   https://www.gnu.org/software/guix/manual/html_node/GNU-Distribution.html
+   https://www.gnu.org/software/guix/manual/html_node/System-Configuration.html#System-Configuration
+   https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html#G_002dExpressions
+   http://bootstrappable.org/
+   https://github.com/oriansj/M2-Planet
+   https://github.com/oriansj/mescc-tools
+   https://github.com/oriansj/stage0
+   https://www.gnu.org/software/guix/security/
+   https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5
+   https://translationproject.org/html/translators.html
+* Tools
+https://guix-hpc.bordeaux.inria.fr/
+
+https://guix-hpc.bordeaux.inria.fr/browse
+
+(termbin.com:curl,netcat),wget
+* Translations
+https://translationproject.org/domain/guix-manual.html
+* Bug report
+** singularity link
+      <USER> hey, update the singularity link on guix manual to https://www.sylabs.io/docs/  [18:32]
+      <USER> guix / package management / guix pack
+      <USER> as you can see its website change to that one https://singularity.lbl.gov/  [18:33]
+** guix find-funcion/library
+      <USER> would be great if the Emacs guix package have a `guix-find-function` `guix-find-library`...  [19:46]
+      <USER> or even guix have those CLI functions hehe  [19:47]
+      <USER> guix package --find-library=PACAKGE, lol  [19:48]
+      <USER> guix find library   [19:49]
