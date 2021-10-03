@@ -1,0 +1,7 @@
+#+TITLE: Gentoo
+
+* Errors
+** Emerge errors
+*** Not enough ram
+    when you see "Killed (program cc1plus)" that means some external process killed cc1plus, it didnt die of its own error.  95% of the time, that's oom-killer. it could in theory be grsec, or even
+    just some joker running "killall cc1plus" from another terminal, etc.
