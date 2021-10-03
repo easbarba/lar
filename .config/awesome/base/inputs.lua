@@ -3,7 +3,7 @@ local awful = require("awful")
 local menubar = require("menubar")
 
 -- * Shared Variables
-local terminal = "st"
+local terminal = "alacritty"
 local editor = "emacs"
 local lockscreen = function()
     awful.util.spawn("slock")
@@ -105,49 +105,49 @@ globalkeys =
         {modkey, "Shift"},
         "w",
         function()
-            awful.spawn("gota volume up")
+            awful.spawn("e_volume up")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "s",
         function()
-            awful.spawn("gota volume down")
+            awful.spawn("e_volume down")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "e",
         function()
-            awful.spawn("gota volume toggle")
+            awful.spawn("e_volume toggle")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "a",
         function()
-            awful.spawn("gota back up")
+            awful.spawn("e_back up")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "d",
         function()
-            awful.spawn("gota back down")
+            awful.spawn("e_back down")
         end
     ),
     awful.key(
         {modkey},
         "Print",
         function()
-            awful.spawn("gota screen full")
+            awful.spawn("e_shot full")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "Print",
         function()
-            awful.spawn("gota screen partial")
+            awful.spawn("e_shot partial")
         end
     ),
     awful.key(
