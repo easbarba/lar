@@ -17,9 +17,9 @@
 | Shell Script          | Bash, Posix                   |
 | Container             | Podman, Docker,               |
 | Network               | HTTP, HTTPS, TCP/IP, SSH, FTP |
-| IaC                   | Terraform, Ansible            |
 | Cloud                 | AWS, Azure                    |
 | CI / CD               | Jenkins, Drone, Travis        |
+| IaC                   | Terraform, Ansible            |
 | Editors               | Emacs, Vim                    |
 | Cluster               | Kubernetes, Nomad             |
 | Metrics, Obs          | Grafana, Elastic              |
