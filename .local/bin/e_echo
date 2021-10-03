@@ -18,6 +18,6 @@ MSG=$1
 COLOR=$DEFAULT_COLOR
 
 # * Run
-/usr/bin/echo
-/usr/bin/echo -e " \e[$COLOR $MSG \e[0m"
-/usr/bin/echo
+echo
+echo -e " \e[$COLOR $MSG \e[0m"
+echo

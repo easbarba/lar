@@ -3,7 +3,7 @@
 # Debug Options
 set -euo pipefail
 
-MX=/usr/bin/emacs
+MX=emacs
 MX2=$HOME/.local/bin/emacs
 
 [[ ! -x $MX2 ]] && $MX || $MX2
