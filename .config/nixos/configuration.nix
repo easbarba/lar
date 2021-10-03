@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./system_packages.nix
       ./hardware-configuration.nix
     ];
 
@@ -91,37 +92,6 @@
     home = "/home/easbarbosa";
     extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     # dev
-     git go ruby direnv starship sqlite
-
-     # shell
-     alacritty tmux fish
-
-     # editors
-     emacs zile
-
-     # sound
-     mpd ncmpcpp
-
-     # system
-     wget openssl
-
-     # xorg
-     feh scrot
-
-     # wm
-     zathura lm_sensors
-
-     # user
-     falkon
-
-     # laptop
-     acpi
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
