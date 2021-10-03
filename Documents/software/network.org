@@ -12,7 +12,21 @@
 ** TCP/IP
 ** NIC
 ** FCS
+** PANs
+Personal Area Networks let devices communicate over the range of a person.
 
+- Bluetooth
+** LAN
+A Local Area Network is a private network that operates within and nearby
+a single building such as a home, office, or factory.
+
+- Access Point: AP
+- IEEE 802.11: WIFI
+- IEEE 802.3: Ethernet
+- switch
+- VLAN
+** MAN
+Metropolitan Area Networks
 * Software
 ** ssh
 *** --
