@@ -13,9 +13,9 @@ LOCAL_BIN="$HOME/.local/bin"
 
 # * APPS LIST
 
-tools=(/usr/bin/udiskie /usr/bin/mpd)
+tools=(udiskie mpd)
 
-apps=("$LOCAL_BIN/st" /usr/bin/zathura "$LOCAL_BIN/e_mx" "$LOCAL_BIN/e_wall")
+apps=(alacritty zathura "$LOCAL_BIN/e_mx" "$LOCAL_BIN/e_wall")
 
 # * Helpers
 
