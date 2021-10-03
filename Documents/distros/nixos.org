@@ -3,7 +3,4 @@
 * Progress
 | manual  | @                                   |
 |---------+-------------------------------------|
-| nix     | Chapter 14. A Simple Nix Expression |
-| nixpkgs |                                     |
-| nixos   | 5.3. Modularity                     |
-
+| nixos   | Chapter 6. Package Management       |

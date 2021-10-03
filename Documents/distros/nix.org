@@ -5,7 +5,6 @@
 |---------+-------------------------------------|
 | nix     | Chapter 14. A Simple Nix Expression |
 | nixpkgs |                                     |
-| nixos   | 5.3. Modularity                     |
 
 * nix-shell
 ** usage
