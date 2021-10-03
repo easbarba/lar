@@ -73,7 +73,7 @@ configure a network interface
   iw wlp2s0 link
   ip a
   #+end_src
-
+** dhcpd
 ** iw
 ** wpa_supplicant
 ** curl
