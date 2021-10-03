@@ -16,7 +16,13 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
+
+  # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # vulkan
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;   # For 32 bit applications
 
   networking.hostName = "Nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -44,6 +50,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
@@ -88,15 +95,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     # dev 
+     # dev
      git go ruby direnv starship sqlite
-     	
+
      # shell
      alacritty tmux fish
 
      # editors
-     emacs
-     zile
+     emacs zile
 
      # sound
      mpd ncmpcpp
@@ -107,8 +113,14 @@
      # xorg
      feh scrot
 
+     # wm
+     zathura lm_sensors
+
      # user
      falkon
+
+     # laptop
+     acpi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -138,4 +150,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.05"; # Did you read the comment?
 }
-
