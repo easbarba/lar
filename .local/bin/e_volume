@@ -8,11 +8,10 @@ module Volume
     attr_reader :state, :manager
     attr_accessor :info
 
-    def initialize(services, state)
+    def initialize(state)
       @state = state.to_sym if state
 
-      utils = services.resolve :utils
-      @manager = SoundManager.new(utils, states[@state]).info
+      @manager = SoundManager.new(states[@state]).info
     end
 
     def states
@@ -55,11 +54,16 @@ end
 
 # Find available sound manager
 class SoundManager
-  attr_reader :utils, :state
+  attr_reader :state
 
-  def initialize(utils, state)
-    @utils = utils
+  def initialize(state)
     @state = state
+  end
+
+  def which?(executable)
+    ENV['PATH'].split(File::PATH_SEPARATOR).any? do |directory|
+      File.executable?(File.join(directory, executable.to_s))
+    end
   end
 
   def managers_available
@@ -68,7 +72,7 @@ class SoundManager
 
   # Sound Manager Information
   def info
-    managers_available.first { |manager| utils.which?(manager.name) }
+    managers_available.first { |manager| which?(manager.name) }
   end
 
   def running?
