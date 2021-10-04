@@ -12,8 +12,8 @@
 * Priorities
 | @                     | desc                          |
 |-----------------------+-------------------------------|
-| Unix                  | Linux, BSD                    |
-| Lang                  | Golang, Guile                 |
+| Unix                  | Debian, NixOS                 |
+| Lang                  | Golang                        |
 | Shell Script          | Bash, Posix                   |
 | Container             | Podman, Docker,               |
 | Network               | HTTP, HTTPS, TCP/IP, SSH, FTP |
