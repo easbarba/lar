@@ -90,6 +90,22 @@ Create a new image from a container’s changes
 | -p     |   |
 
 ** images
+** image
+*** ls
+*** history
+Show the history of an image
+
+|        |   |
+|--------+---|
+| <NAME> |   |
+
+* Dockerfile
+** keywords
+*** FROM
+|                       |                   |
+|-----------------------+-------------------|
+| scratch               | tart from scratch |
+| <image-name> or <uri> |                   |
 * Terms
 - kernel namespace & cgropus
 - noisy-neighbor problem
