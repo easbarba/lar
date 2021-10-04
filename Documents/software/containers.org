@@ -23,10 +23,10 @@
   - [[#commands][Commands]]
 :END:
 * Progresso
-| books                     | chapter                                  | at                                              | revision |   |
-|---------------------------+------------------------------------------+-------------------------------------------------+----------+---|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images |                                                 |          |   |
-| Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |          |   |
+| books                     | chapter                                  | at                                              |
+|---------------------------+------------------------------------------+-------------------------------------------------|
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images | The CMD and ENTRYPOINT keywords                 |
+| Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
 |--------+-------------------+---------------+------|
