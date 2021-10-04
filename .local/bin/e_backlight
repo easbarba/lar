@@ -30,7 +30,7 @@ class Backlight
 
   def run
     return if %w[up down].include? state
-    p  final_command
+
     system final_command
   end
 end
