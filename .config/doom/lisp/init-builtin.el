@@ -27,9 +27,8 @@
 	erc-interpret-mirc-color t
 	erc-spelling-dictionaries '(("#emacs" "american"))
 	erc-autojoin-channels-alist '(("libera.chat"
-				       "#golang"
-				       "#guile"
-				       "#guix"
+				       "#go-nuts"
+                                       "#nixos"
 				       "#emacs"))
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 	erc-track-exclude-types
