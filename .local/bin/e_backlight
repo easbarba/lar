@@ -4,42 +4,44 @@
 
 # Manage System backlight.
 class Backlight
-  STEP = 5
+  attr_reader :state, :brighters
 
-  attr_reader :state
-
-  def initialize(state)
+  def initialize(state, brighters)
     @state = state.to_sym
+    @brighters = brighters
   end
 
   def brighter
-    Backers.new.all.first
+    brighters.first
   end
 
-  def actions
-    {
-      up: "set #{STEP}%+",
-      down: "set #{STEP}%-"
-    }
+  def action(act)
+    case act
+    when :up
+      brighter.up
+    when :down
+      brighter.down
+    end
   end
 
   def final_command
-    "#{brighter} #{actions[state]}"
+    "#{brighter.bin} #{action(state)}"
   end
 
   def run
     return if %w[up down].include? state
-
+    p  final_command
     system final_command
   end
 end
 
 # all available backlight managers
-class Backers
-  B = Struct.new(:bin, :full, :partial)
+class Brighters
+  STEP = 5
+  Brighter = Struct.new(:bin, :up, :down)
 
   def brightnessctl
-    B.new 'brightnessctl', 'set {0}%+', 'set {0}%-'
+    Brighter.new 'brightnessctl', "set #{STEP}%+", "set #{STEP}%-"
   end
 
   def all
@@ -48,4 +50,4 @@ class Backers
 end
 
 # RUN
-Gota::Screenshot.new(ARGV.first).run
+Backlight.new(ARGV.first, Brighters.new.all).run
