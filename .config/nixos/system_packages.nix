@@ -25,7 +25,7 @@
      bash bash-completion shellcheck alacritty tmux fish starship
 
      # infra
-     podman qemu virt-manager vagrant # ovmf bridge-utils
+     podman docker qemu virt-manager vagrant # ovmf bridge-utils
 
      # network
      iproute2 socat iw wirelesstools nettools

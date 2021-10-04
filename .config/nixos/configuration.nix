@@ -21,6 +21,11 @@
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # containers
+  virtualisation.podman.enable = true;
+  # virtualisation.podman.dockerCompat = true; # Create a `docker` alias for podman, to use it as a drop-in replacement
+  virtualisation.docker.enable = true;
+
   # vulkan
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;   # For 32 bit applications
@@ -86,11 +91,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
   users.users.easbarbosa = {
     isNormalUser = true;
     home = "/home/easbarbosa";
-    extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "audio"  "docker" ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
