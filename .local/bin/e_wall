@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 deps=(feh swaybg)
-e_checkdeps ${deps[@]}
+e_checkdeps "${deps[@]}"
 
 FOLDER="$HOME/Pictures/wallpapers"
 
 wall() {
-  local found=$(find $FOLDER -type f | shuf -n 1)
+  local found
+  found=$(find "$FOLDER" -type f | shuf -n 1)
 
   echo "$found"
 }
@@ -14,16 +15,12 @@ wall() {
 echo "wallpaper: $(wall)"
 
 Feh() {
-  [[ ! -x /usr/bin/feh ]] && return
-
-  feh --bg-max $(wall) &
+  feh --bg-max "$(wall)" &
 }
 
 Swaybg() {
-  [[ ! -x /usr/bin/swaybg ]] && return
-
-  swaybg -m fit -i $(wall) &
+  swaybg -m fit -i "$(wall)" &
 }
 
 # * RUN
-[[ $(pgrep xinit) ]] && Feh || Swaybg
+[[ $(pgrep x) ]] && Feh || Swaybg
