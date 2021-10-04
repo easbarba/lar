@@ -13,13 +13,13 @@
      sysstat ncdu rsync rclone util-linux
 
      # gnu
-     wget parted texinfo parallel automake autoconf
+     gcc gnumake wget parted texinfo parallel automake autoconf
 
      # dev
      git direnv sqlite jq
 
      # langs
-     go ruby lua luarocks
+     go python3 ruby lua luarocks
 
      # shell
      bash bash-completion shellcheck alacritty tmux fish starship
@@ -37,7 +37,7 @@
      mpd mpc_cli ncmpcpp
 
      # system
-     wget openssl
+     openssl
 
      # xorg
      feh scrot zathura slock gnome.cheese mate.atril dmenu
@@ -45,11 +45,11 @@
      # wm apps
      youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
      aria2 udiskie gnome.gnome-keyring xdg-utils playerctl bluez bluez-tools
-     w3m elinks dunst
+     w3m elinks dunst brightnessctl
 
      # user
      falkon firefox libreoffice gimp obs-studio amfora # steam netsurf
-     kdeconnect
+     kdeconnect tdesktop
 
      # codec
      vorbis-tools gst_all_1.gst-libav gst_all_1.gst-plugins-bad
