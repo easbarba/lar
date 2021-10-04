@@ -65,6 +65,16 @@
 |---------------+---|
 | ID            |   |
 | -f / --filter |   |
+*** diff
+- A: added
+- C: changed
+- D: deleted
+
+#+begin_src shell
+podman container diff sample
+#+end_src
+*** commit
+Create a new image from a container’s changes
 ** Stop/Quit/Detach
 |         |          |
 |---------+----------|
