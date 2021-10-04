@@ -126,14 +126,14 @@ globalkeys =
         {modkey, "Shift"},
         "a",
         function()
-            awful.spawn("e_back up")
+            awful.spawn("e_backlight up")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "d",
         function()
-            awful.spawn("e_back down")
+            awful.spawn("e_backlight down")
         end
     ),
     awful.key(
