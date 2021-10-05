@@ -31,7 +31,7 @@
 * Progresso
 | books                     | chapter                                  | at                                              |
 |---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | Multi-step builds                               |
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images | Saving and loading images                       |
 | Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
