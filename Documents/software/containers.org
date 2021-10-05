@@ -6,11 +6,14 @@
   :END:
 :CONTENTS:
 - [[#progresso][Progresso]]
-- [[#features][Features]]
+- [[#cli][cli]]
   - [[#container][container]]
   - [[#stopquitdetach][Stop/Quit/Detach]]
   - [[#run][run]]
   - [[#images][images]]
+  - [[#image][image]]
+- [[#dockerfile][Dockerfile]]
+  - [[#keywords][keywords]]
 - [[#terms][Terms]]
 - [[#podman][Podman]]
   - [[#docs][docs]]
@@ -25,7 +28,7 @@
 * Progresso
 | books                     | chapter                                  | at                                              |
 |---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | The CMD and ENTRYPOINT keywords                 |
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images | A complex Dockerfile                            |
 | Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
@@ -33,7 +36,7 @@
 | go     |                   |               |      |
 | podman | cmd/podman/common | completion.go |      |
 
-* Features
+* cli
 ** container
 *** ls
 |    |                                                             |
@@ -58,7 +61,6 @@
 |------------+---|
 | --tail <N> |   |
 | --follow   |   |
-
 
 *** inspect
 |               |   |
@@ -92,6 +94,10 @@ Create a new image from a container’s changes
 ** images
 ** image
 *** ls
+*** build
+#+begin_src shell
+docker image build -t pinger .
+#+end_src
 *** history
 Show the history of an image
 
@@ -106,6 +112,49 @@ Show the history of an image
 |-----------------------+-------------------|
 | scratch               | tart from scratch |
 | <image-name> or <uri> |                   |
+
+*** MAINTAINER
+*** RUN
+*** COPY
+*** ADD
+ADD keyword also lets us copy and unpack TAR files, as well as providing a URL
+as a source for the files and folders to copy.
+
+- can change the ownership that the files
+
+#+begin_src shell
+ADD sample.tar /app/bin/
+ADD http://example.com/sample.txt /data/
+ADD --chown=11:22 ./data/web* /app/data/
+#+end_src
+
+*** WORKDIR
+*** CMD
+used to define the parameters of the program set in ENTRYPOINT
+
+- executed only at the start of image run
+- can be override with `-w`
+#+begin_src shell
+FROM alpine:3.10
+ENTRYPOINT ["ping"]
+CMD ["-c","3","8.8.8.8"]
+
+podman container run -it --rm pinger -w 5 gnu.org
+
+#+end_src
+*** ENTRYPOINT
+used to define the command of the expression
+
+- executed only at the start of image run
+- default value is `/bin/sh -c`
+
+#+begin_src shell
+FROM alpine:3.10
+ENTRYPOINT ["ping"]
+CMD ["-c","3","8.8.8.8"]
+
+podman container run -it --rm --entrypoint bin/sh meh
+#+end_src
 * Terms
 - kernel namespace & cgropus
 - noisy-neighbor problem
