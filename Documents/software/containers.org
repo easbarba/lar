@@ -14,7 +14,10 @@
   - [[#image][image]]
 - [[#dockerfile][Dockerfile]]
   - [[#keywords][keywords]]
+- [[#dockerignore][.dockerignore]]
 - [[#terms][Terms]]
+- [[#multi-stages][Multi-stages]]
+- [[#best-practices][Best practices]]
 - [[#podman][Podman]]
   - [[#docs][docs]]
   - [[#tricks][tricks]]
@@ -28,7 +31,7 @@
 * Progresso
 | books                     | chapter                                  | at                                              |
 |---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | A complex Dockerfile                            |
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images | Multi-step builds                               |
 | Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
@@ -155,12 +158,35 @@ CMD ["-c","3","8.8.8.8"]
 
 podman container run -it --rm --entrypoint bin/sh meh
 #+end_src
+* .dockerignore
 * Terms
 - kernel namespace & cgropus
 - noisy-neighbor problem
 - common vulnerabilities and exposures (CVEs)
 - content trust
 - man-in-the-middle (MITM)
+* Multi-stages
+#+begin_src shell
+FROM alpine:3.7 AS build
+RUN apk update && \
+    apk add --update alpine-sdk
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+RUN mkdir bin
+RUN gcc hello.c -o bin/hello
+FROM alpine:3.7
+COPY --from=build /app/bin/hello /app/hello
+CMD /app/hello
+#+end_src
+* Best practices
+- should be ephemeral
+- order individuals commands so to leverage caching as much as possible
+- less layers by combining related commands, smaller images, faster builds and startup times
+- use .dockerignore to keep image as lean as possible by not copy unnecessary files
+- avoid installing unnecessary packages
+- use multi-stages builds
+
 * Podman
 ** docs
 http://docs.podman.io/en/latest/index.html
