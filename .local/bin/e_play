@@ -6,4 +6,4 @@ set -euo pipefail
 # Description:
 # Deps: youtube-dl, ffmpeg
 
-ixe play "$(e_url)"
+mpv "$(e_url)"
