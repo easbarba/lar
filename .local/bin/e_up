@@ -4,23 +4,26 @@
 set -euo pipefail
 
 DEPS=(sudo grep cut tr distro floss cejo emacs parallel cp find guix)
+DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
+
+# * CHECKER
 e_checkdeps "${DEPS[@]}"
 
-e_echo "Upgrading system."
-distro update
-distro upgrade
+# * RUN
 
-e_guix
+e_echo "Upgrading system packages."
+[[ ! $DISTRO == "NixOS" ]] && distro update
+[[ ! $DISTRO == "NixOS" ]] && distro upgrade
+[[ ! $DISTRO == "NixOS" ]] && e_guix
 
 e_echo "FLOSS projects"
 floss grab
 floss archive
 
-e_usb_tasks
-
+e_echo "Editors and Langs packages"
 e_doom
 e_golang
 e_ruby
 
-e_echo "Building Nightly Emacs"
-cejo project emacs
+# USB STICK TASKS
+e_usb_tasks

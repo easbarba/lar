@@ -5,11 +5,12 @@ set -euo pipefail
 
 e_echo "USB Tasks"
 
-DISTRO="$(awk '/^NAME=/ { split($0,a,"\""); print a[2] }' /etc/os-release)"
-# "$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
+ARCHIVED="$HOME/Downloads/archived"
+DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
+USB_NAME="MACHO"
 
 case $DISTRO in
-    "Arch Linux" | "Manjaro")
+    "NixOS" | "Arch Linux" | "Manjaro")
         USB="/run/media"
         ;;
     "Debian" | "Fedora")
@@ -17,4 +18,8 @@ case $DISTRO in
         ;;
 esac
 
-find ~/Downloads/archived -name "*.tar" | parallel --max-args=1 cp -rpv "{1}" "$USB/$USER/MACHO/dots"
+mkdir -pv "$ARCHIVED"
+find "$ARCHIVED" -name "*.tar" | parallel --max-args=1 cp -rpv "{1}" "$USB/$USER/$USB_NAME/dots"
+
+# LEGACY
+# "$(grep '^NAME=' /etc/os-release | cut -f2 -d"=" | tr -d '"')"
