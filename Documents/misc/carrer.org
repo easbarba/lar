@@ -6,27 +6,29 @@
 | lang       | lang       | lang       | lang       | lang       | lang    | lang    |
 | containers | containers | containers | containers | containers | editors | editors |
 | network    | network    | network    | network    | network    |         |         |
-| unix       | unix       | unix       | unix       | unix       | unix    | unix    |
-| git        | git        | git        | git        | git        |         |         |
+| os         | os         | os         | os         | os         | os      | os      |
+| vc         | vc         | vc         | vc         | vc         |         |         |
 
 * Priorities
-| @                     | desc                          |
-|-----------------------+-------------------------------|
-| Unix                  | Debian, NixOS                 |
-| Lang                  | Golang                        |
-| Shell Script          | Bash, Posix                   |
-| Container             | Podman, Docker,               |
-| Network               | HTTP, HTTPS, TCP/IP, SSH, FTP |
-| Cloud                 | AWS, Azure                    |
-| CI / CD               | Jenkins, Drone, Travis        |
-| IaC                   | Terraform, Ansible            |
-| Editors               | Emacs, Vim                    |
-| Cluster               | Kubernetes, Nomad             |
-| Metrics, Obs          | Grafana, Elastic              |
-| Version Control       | Git                           |
-| Software Architecture | Micro-services                |
-| Security              |                               |
-| Message               | RabbitMQ/ Kafka               |
+| @                     | desc                                                                    |
+|-----------------------+-------------------------------------------------------------------------|
+| OS                    | Debian, NixOS                                                           |
+| Lang                  | Golang                                                                  |
+| Shell Script          | Bash, Posix                                                             |
+| Container             | Podman, Docker, Docker Compose                                          |
+| Network               | HTTP, HTTPS, TCP/IP, SSH, FTP                                           |
+| Cloud                 | AWS, Azure, GCP                                                         |
+| CI / CD               | Jenkins, Drone, Travis                                                  |
+| IaC                   | Terraform, Ansible, Salt                                                |
+| Editors               | Emacs, Vim                                                              |
+| Cluster               | Kubernetes, Nomad                                                       |
+| Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic |
+| Version Control       | Git                                                                     |
+| Software Architecture | Micro-services                                                          |
+| Security              |                                                                         |
+| Message               | RabbitMQ, Kafka                                                         |
+| Database              | PostgreSQL, MySQL, Redis, MongoDB                                       |
+| misc                  | Rancher, Istio, nginx                                                   |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
