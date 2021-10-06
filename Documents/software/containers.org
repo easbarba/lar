@@ -31,7 +31,7 @@
 * Progresso
 | books                     | chapter                                  | at                                              |
 |---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | Saving and loading images                       |
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images | Lift and shift: Containerizing a legacy app     |
 | Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
@@ -107,6 +107,11 @@ Show the history of an image
 |        |   |
 |--------+---|
 | <NAME> |   |
+*** save
+#+begin_src shell
+podman image save -o ./backup/my-alpine.tar my-alpine
+podman image load -i ./backup/my-alpine.tar
+#+end_src
 
 * Dockerfile
 ** keywords
