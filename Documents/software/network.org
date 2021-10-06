@@ -1,10 +1,10 @@
 #+TITLE: Network
 
 * Progress
-|                   |                  |                                  |
-|-------------------+------------------+----------------------------------|
-| Computer Networks | Introduction     | 1.3.4 Metropolitan Area Networks |
-| Comptia Network+  | 2 Network Tables | OSI 7 layer                      |
+|                                |                  |                                  |
+|--------------------------------+------------------+----------------------------------|
+| Comptia Network+ - Mike Meyers | 1 Network Models | The Two Aspects of NICs          |
+| Computer Networks - Stebaun    | Introduction     | 1.3.4 Metropolitan Area Networks |
 
 * Load balancing
 * Subneting
