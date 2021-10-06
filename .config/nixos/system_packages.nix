@@ -28,10 +28,10 @@
      podman docker qemu virt-manager vagrant # ovmf bridge-utils
 
      # network
-     iproute2 socat iw wirelesstools nettools
+     iproute2 socat iw wirelesstools nettools dig
 
      # editors
-     emacs zile neovim
+     emacs libgccjit zile neovim
 
      # sound
      mpd mpc_cli ncmpcpp
@@ -48,8 +48,8 @@
      w3m elinks dunst brightnessctl
 
      # user
-     falkon firefox libreoffice gimp obs-studio amfora # steam netsurf
-     kdeconnect tdesktop
+     falkon firefox libreoffice gimp obs-studio amfora # netsurf
+     kdeconnect tdesktop steam
 
      # codec
      vorbis-tools gst_all_1.gst-libav gst_all_1.gst-plugins-bad

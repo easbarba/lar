@@ -30,6 +30,10 @@
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;   # For 32 bit applications
 
+  # unfree
+  programs.steam.enable = true;
+  nixpkgs.config.allowUnfree = true;
+
   networking.hostName = "Nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
