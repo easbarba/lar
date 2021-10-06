@@ -1,13 +1,14 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon        | tue        | wed        | thru       | fri        | sat     | sun     |
-|------------+------------+------------+------------+------------+---------+---------|
-| lang       | lang       | lang       | lang       | lang       | lang    | lang    |
-| containers | containers | containers | containers | containers | editors | editors |
-| network    | network    | network    | network    | network    |         |         |
-| os         | os         | os         | os         | os         | os      | os      |
-| vc         | vc         | vc         | vc         | vc         |         |         |
+| mon     | tue        | wed     | thru       | fri     | sat     | sun     |
+|---------+------------+---------+------------+---------+---------+---------|
+| lang    |            | lang    |            | lang    | lang    | lang    |
+|         | containers |         | containers |         | editors | editors |
+|         | cloud      |         | cloud      |         |         |         |
+|         |            |         |            |         | os      | os      |
+| network |            | network |            | network |         |         |
+| vc      | vc         | vc      | vc         |         |         |         |
 
 * Priorities
 | @                     | desc                                                                    |
