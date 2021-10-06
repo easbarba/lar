@@ -86,7 +86,11 @@ ssh nixcraft@server1.cyberciti.biz -- command1 --arg1 --arg2
 #+end_src
 
  This ensures that command1 will accept --arg1 and --arg2 (or -opt1) as command-line arguments.
-
+** ping
+#+begin_src shell
+ping 1.1
+#+end_src
+** dig
 ** ip
 ** ifconfig
 configure a network interface
