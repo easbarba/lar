@@ -1,4 +1,4 @@
-#+TITLE: Cloud Providers
+#+TITLE: Cloud
 
 * TOC
   :PROPERTIES:
@@ -93,54 +93,67 @@
     - [[#browser][Browser]]
   :END:
 * Progress
-** Buch
-   | Buch                                         | Capitulo                                       | em                        | tarde                                              | revisao |
-   |----------------------------------------------+------------------------------------------------+---------------------------+----------------------------------------------------+---------|
-   | Distributed Systems                          |                                                |                           |                                                    |         |
-   | LPIC-1 101-400                               |                                                |                           |                                                    |         |
-   | Chef                                         |                                                |                           |                                                    |         |
-   | Puppet                                       |                                                |                           |                                                    |         |
-   | CI/CD                                        |                                                |                           |                                                    |         |
-   | DevOps HandBook                              | Agile, Continuous Delivery, and the Three Ways |                           |                                                    |         |
-* AWS
-** debugging
-    single-user and emergency modes are unavailable
-** Compute
-*** Services
-**** EC2
-***** defition
+** Book
+| Livro                        | Capitulo                         | em                            | tarde | revisao |
+|------------------------------+----------------------------------+-------------------------------+-------+---------|
+| AWS/CLF-C01 Exam - Ben Piper | 2 Understanding Your AWS Account | AWS Simple Monthly Calculator |       |         |
+
+* Terms
+** serverless
+What “serverless” does allow is for individual developers to run their code for
+seconds or minutes at a time on some else’s cloud servers.
+
+** Cloud Platforms Model
+*** SaaS
+*** IaaS
+*** PaaS
+*** Compute
+**** Services
+***** EC2
+****** defition
        -
-***** obs
+****** obs
        - EC2 filesystems can be attached to other virtual servers if they’re backed by Elastic Block Storage (EBS) devices.
-**** Auto Scaling
-**** Elastic Load Balancing
-**** Lambda
-**** Elastic Beanstalk
-*** Networking
-**** Virtual Private Cloud - VCP
-**** Direct Connect
-**** Route 53
-**** CloudFront
-*** Storage
-**** Simple Storage Service (S3)
-**** Glacier
-**** Elastic Block Store (EBS)
-*** Database
-**** Relational Database Service (RDS)
-**** DynamoDB
-*** Application management
-**** CloudWatch
-**** CloudFormation
-**** CloudTrail
-**** Config
-*** Security and identity
-**** Identity and Access Management (IAM)
-**** Key Management Service (KMS)
-*** Application integration
-**** Simple Notification Service (SNS)
-**** Simple WorkFlow (SWF)
-**** Simple Queue Service (SQS)
-**** API Gateway
-** Subnet
-* Heroku
-* Azure
+***** Auto Scaling
+***** Elastic Load Balancing
+***** Lambda
+***** Elastic Beanstalk
+**** Networking
+***** Virtual Private Cloud - VCP
+***** Direct Connect
+***** Route 53
+***** CloudFront
+**** Storage
+***** Simple Storage Service (S3)
+***** Glacier
+***** Elastic Block Store (EBS)
+**** Database
+***** Relational Database Service (RDS)
+***** DynamoDB
+**** Application management
+***** CloudWatch
+***** CloudFormation
+***** CloudTrail
+***** Config
+**** Security and identity
+***** Identity and Access Management (IAM)
+***** Key Management Service (KMS)
+**** Application integration
+***** Simple Notification Service (SNS)
+***** Simple WorkFlow (SWF)
+***** Simple Queue Service (SQS)
+***** API Gateway
+*** Subnet
+
+* Providers
+** AWS
+**** debugging
+    single-user and emergency modes are unavailable
+**** services
+***** Lambda
+***** IAM
+***** Lambda
+***** RDS
+***** EC2
+** Heroku
+** Azure
