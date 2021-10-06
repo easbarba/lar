@@ -1,0 +1,25 @@
+set autoindent
+
+# Constantly display the cursor position in the status bar. T
+set constantshow
+
+# left line numbers
+set linenumbers
+
+# mouse
+set mouse
+
+# Do extended regular expression searches by default.
+set regexp
+
+# Use smooth scrolling by default.
+# set smooth
+
+# Automatically hard-wrap the current line when it becomes overlong.
+set breaklonglines
+
+# Set the target width for justifying and automatic hard-wrapping at this number of columns
+set fill 80
+
+# Save the last hundred search strings
+set historylog

@@ -2,10 +2,10 @@
 
 # * DEFAULT SOFTWARE:
 
-export VISUAL="/usr/bin/emacs"
-export EDITOR="/usr/bin/nvim"
-export TERMINAL="/usr/bin/st"
-export BROWSER="/usr/bin/brave-browser"
+export VISUAL="emacs"
+export EDITOR="nano"
+export TERMINAL="alacritty"
+export BROWSER="firefox"
 
 # * DIRECTORIES ENV VARS
 
@@ -84,7 +84,7 @@ p_guix() {
     export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
     export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 
-#    export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
+    #    export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
 
     # Shared Libraries
     export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"

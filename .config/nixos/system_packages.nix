@@ -10,7 +10,7 @@
      # system
      p7zip zip subversion jq lshw at usbutils lsof time entr tree xsel
      xclip fontconfig bc htop strace ltrace cpio lhasa lzop atool perf-tools
-     sysstat ncdu rsync rclone util-linux
+     sysstat ncdu rsync rclone util-linux unrar
 
      # gnu
      gcc gnumake wget parted texinfo parallel automake autoconf
@@ -31,7 +31,7 @@
      iproute2 socat iw wirelesstools nettools dig
 
      # editors
-     emacs libgccjit zile neovim
+     emacs libgccjit neovim
 
      # sound
      mpd mpc_cli ncmpcpp
@@ -40,7 +40,7 @@
      openssl
 
      # xorg
-     feh scrot zathura slock gnome.cheese mate.atril dmenu
+     feh scrot zathura slock gnome.cheese evince dmenu
 
      # wm apps
      youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
@@ -48,8 +48,8 @@
      w3m elinks dunst brightnessctl
 
      # user
-     falkon firefox libreoffice gimp obs-studio amfora # netsurf
-     kdeconnect tdesktop steam
+     firefox libreoffice gimp obs-studio amfora # netsurf kdeconnect falkon
+     tdesktop steam
 
      # codec
      vorbis-tools gst_all_1.gst-libav gst_all_1.gst-plugins-bad
