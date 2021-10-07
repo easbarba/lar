@@ -8,6 +8,7 @@
 - [[#progresso][Progresso]]
 - [[#cli][cli]]
   - [[#container][container]]
+  - [[#volume][volume]]
   - [[#login][login]]
   - [[#stopquitdetach][Stop/Quit/Detach]]
   - [[#run][run]]
@@ -17,6 +18,7 @@
   - [[#keywords][keywords]]
 - [[#docker-entrypointsh][docker-entrypoint.sh]]
 - [[#dockerignore][.dockerignore]]
+- [[#volumes][Volumes]]
 - [[#images-registry][Images Registry]]
 - [[#terms][Terms]]
 - [[#multi-stages][Multi-stages]]
@@ -34,7 +36,7 @@
 * Progresso
 | books                     | chapter                             | at                                              |
 |---------------------------+-------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 5 Data Volumes and Configuration    | Creating and mounting data volumes                                                |
+| Learn Docker Fundamentals | 5 Data Volumes and Configuration    | Removing volumes                                |
 | Docker for Devs           | Sharing Containers Using Docker Hub | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
@@ -51,6 +53,16 @@
 | -a | Show all the containers, default is only running containers |
 | -q | containers ID                                               |
 | -l |                                                             |
+*** run
+#+begin_src shell
+podman container run --name test -it -v sample:/data alpine /bin/sh
+#+end_src
+**** options
+|                  |   |
+|------------------+---|
+| -v <NAME:/WHERE> |   |
+
+
 *** exec
 |    |                           |
 |----+---------------------------|
@@ -83,6 +95,16 @@ podman container diff sample
 #+end_src
 *** commit
 Create a new image from a container’s changes
+** volume
+*** create
+**** options
+|          |                                   |
+|----------+-----------------------------------|
+| --driver | select a different volume driver. |
+|          |                                   |
+
+
+*** inspect
 ** login
 #+begin_src shell
 docker login -u gnschenker -p <my secret password>
@@ -95,11 +117,23 @@ docker login -u gnschenker -p <my secret password>
 |         |          |
 
 ** run
+#+begin_src shell
+docker run -it --rm --privileged --pid=host fundamentalsofdocker/nsenter
+#+end_src
+
+
 |        |   |
 |--------+---|
 | -d     |   |
 | --name |   |
 | -p     |   |
+
+*** options
+|              |   |
+|--------------+---|
+| --pid=<HOST> |   |
+| --privileged |   |
+
 
 ** images
 ** image
@@ -125,7 +159,6 @@ podman image save -o ./backup/my-alpine.tar my-alpine
 podman image load -i ./backup/my-alpine.tar
 #+end_src
 *** tag
-
 * Dockerfile
 ** keywords
 *** FROM
@@ -183,6 +216,7 @@ podman container run -it --rm --entrypoint bin/sh meh
 #+end_src
 * docker-entrypoint.sh
 * .dockerignore
+* Volumes
 * Images Registry
 - https:/​/​cloud.​google.​com/​container-​registry
 - https:/​/​aws.​amazon.​com/​ecr/​
