@@ -8,13 +8,16 @@
 - [[#progresso][Progresso]]
 - [[#cli][cli]]
   - [[#container][container]]
+  - [[#login][login]]
   - [[#stopquitdetach][Stop/Quit/Detach]]
   - [[#run][run]]
   - [[#images][images]]
   - [[#image][image]]
 - [[#dockerfile][Dockerfile]]
   - [[#keywords][keywords]]
+- [[#docker-entrypointsh][docker-entrypoint.sh]]
 - [[#dockerignore][.dockerignore]]
+- [[#images-registry][Images Registry]]
 - [[#terms][Terms]]
 - [[#multi-stages][Multi-stages]]
 - [[#best-practices][Best practices]]
@@ -29,10 +32,10 @@
   - [[#commands][Commands]]
 :END:
 * Progresso
-| books                     | chapter                                  | at                                              |
-|---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | Lift and shift: Containerizing a legacy app     |
-| Docker for Devs           | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
+| books                     | chapter                             | at                                              |
+|---------------------------+-------------------------------------+-------------------------------------------------|
+| Learn Docker Fundamentals | 5 Data Volumes and Configuration    | Creating and mounting data volumes                                                |
+| Docker for Devs           | Sharing Containers Using Docker Hub | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
 |--------+-------------------+---------------+------|
@@ -80,6 +83,10 @@ podman container diff sample
 #+end_src
 *** commit
 Create a new image from a container’s changes
+** login
+#+begin_src shell
+docker login -u gnschenker -p <my secret password>
+#+end_src
 ** Stop/Quit/Detach
 |         |          |
 |---------+----------|
@@ -97,6 +104,11 @@ Create a new image from a container’s changes
 ** images
 ** image
 *** ls
+*** pull
+#+begin_src shell
+docker image pull alpine
+docker image pull alpine:3.5
+#+end_src
 *** build
 #+begin_src shell
 docker image build -t pinger .
@@ -112,6 +124,7 @@ Show the history of an image
 podman image save -o ./backup/my-alpine.tar my-alpine
 podman image load -i ./backup/my-alpine.tar
 #+end_src
+*** tag
 
 * Dockerfile
 ** keywords
@@ -137,6 +150,11 @@ ADD --chown=11:22 ./data/web* /app/data/
 #+end_src
 
 *** WORKDIR
+*** ENV
+define env variables
+*** EXPOSE
+declare all ports that the application is listening on and that need to be
+accessible from outside of the container
 *** CMD
 used to define the parameters of the program set in ENTRYPOINT
 
@@ -163,7 +181,14 @@ CMD ["-c","3","8.8.8.8"]
 
 podman container run -it --rm --entrypoint bin/sh meh
 #+end_src
+* docker-entrypoint.sh
 * .dockerignore
+* Images Registry
+- https:/​/​cloud.​google.​com/​container-​registry
+- https:/​/​aws.​amazon.​com/​ecr/​
+- https:/​/​azure.​microsoft.​com/​en-​us/
+- https:/​/​access.​redhat.​com/​containers/​
+- https:/​/​jfrog.​com/​integration/​artifactory-docker-​registry/​
 * Terms
 - kernel namespace & cgropus
 - noisy-neighbor problem
