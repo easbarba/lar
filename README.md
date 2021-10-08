@@ -1,7 +1,10 @@
 # HOME
-  Software dotfiles that I use daily, it follows $HOME structure to easily
-  mirror late on in a freshly install, I use my own dotfiler *e_dots* to achieve a
-  minimal reproducibility.
+  On *nix distributions using software dotfiles to configure can lessen the
+  daily burden, mine follows $HOME structure so to easily mirror late on in a
+  fresh install.
+  
+  For now I use my own dotfiler *e_dots* to achieve a minimal reproducibility,
+  but set to move on to Nix [home-manager](https://github.com/nix-community/home-manager) soon.
    
 ## Documents
   To achieve a higher fixation of study, I heavily rely on annotations and [org-mode](https://www.orgmode.org/features.html)  literate documents are just awesome at that.
