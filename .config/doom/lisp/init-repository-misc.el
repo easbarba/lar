@@ -61,6 +61,7 @@
      "https://feeds.feedburner.com/AyendeRahien"
      ;; Devops
      "https://blog.joaovrmaia.com/index.xml"
+     "https://medium.com/feed/getupcloud/tagged/kubicast"
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; PunkDevops
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
