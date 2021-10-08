@@ -31,7 +31,7 @@
      iproute2 socat iw wirelesstools nettools dig
 
      # editors
-     emacs libgccjit neovim
+     emacs libgccjit zile neovim
 
      # sound
      mpd mpc_cli ncmpcpp
@@ -56,6 +56,6 @@
      gst_all_1.gst-plugins-base gst_all_1.gst-plugins-good gst_all_1.gst-plugins-ugly
 
      # laptop
-     acpi tlp
+     acpi tlp pciutils
   ];
 }
