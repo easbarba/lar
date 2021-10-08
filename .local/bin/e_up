@@ -15,6 +15,7 @@ e_echo "Upgrading system packages."
 [[ ! $DISTRO == "NixOS" ]] && distro update
 [[ ! $DISTRO == "NixOS" ]] && distro upgrade
 [[ ! $DISTRO == "NixOS" ]] && e_guix
+[[ $DISTRO == "NixOS" ]] && nix-channel --update
 
 e_echo "FLOSS projects"
 floss grab
