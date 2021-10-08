@@ -1,23 +1,19 @@
 # HOME
-  Unix software dotfiles that I use daily, it follows $HOME structure to easily
-  mirror late on in a freshly install, I use my own dotfiler *gota* to achieve a
+  Software dotfiles that I use daily, it follows $HOME structure to easily
+  mirror late on in a freshly install, I use my own dotfiler *e_dots* to achieve a
   minimal reproducibility.
    
 ## Documents
-  Study annotations in org-mode literate documents.
-
-  info: https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html
+  To achieve a higher fixation of study, I heavily rely on annotations and [org-mode](https://www.orgmode.org/features.html)  literate documents are just awesome at that.
 
 ## .local/bin 
-  Miscellaneous scripts to aid bootstraping services and random utilities on a Debian box, 
-  usually bash, guile and awk scripts.
+  Miscellaneous scripts to aid bootstraping services, utilities on a Linux box, 
+  usually bash, ruby and awk scripts.
 
-## [Guix](https://guix.gnu.org)
-  I like to try experimental branches of software and its deps, with Guix that
+## [Nix](https://nixos.org/)
+  There are some software I need to heavily patch and try on experimental branches and its deps, with Nix that
   easily achieved with a single file, just amazing. :)
 
-  info: https://guix.gnu.org
-    
 ## license
   [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
