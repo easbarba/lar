@@ -3,18 +3,20 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-# Dependencies: sensors, ping, awk, grep, sed
-
-deps=(sensors ping gawk grep sed amixer pactl) # TODO: Check deps
+# Dependencies: sensors ping gawk grep sed amixer pactl
 
 Distro() {
+    local result
     result=$(gawk '{print $1}' /etc/hostname)
+
     echo -e "\uf05a  GNU / ${result^}"
 }
 
 Kernel() {
-    local result=$(gawk '{ print substr($3,1,4)}' /proc/version) # uname -r | sed 's/.//5g'
-    echo -e $result
+    local result
+    result=$(gawk '{ print substr($3,1,4)}' /proc/version) # uname -r | sed 's/.//5g'
+
+    echo -e "$result"
 }
 
 Uptime() {
@@ -23,8 +25,10 @@ Uptime() {
 }
 
 Volume() {
-    local result="???"
-    local check="$(pactl list sinks | gawk '/Mute/ {print $2}')" # pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')
+    local result
+    local check
+
+    check="$(pactl list sinks | gawk '/Mute/ {print $2}')" # pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')
     # [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
 
     [[ $(pgrep -x "pulseaudio") ]] && result="$(pactl list sinks | gawk '/Volume: front/ {print $5}')" # pactl list sinks | grep 'Volume: front' | tail -1 | awk '{print $5}'
@@ -37,6 +41,7 @@ Cpuf() {
     local prevtotal
     local total
     local result
+
     read -r _ a b c previdle rest </proc/stat
     prevtotal=$((a + b + c + previdle))
     sleep 0.5
@@ -49,30 +54,35 @@ Cpuf() {
 Cput() {
     local result
     result="$(sensors 2>&1 | gawk '/Tctl/ {print substr($2, 2)}')" # sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}'
+
     echo -e "\Uf134 ${result}"
 }
 
 Memory() {
     local result
     result="$(free -m | gawk 'NR==2 {printf "%dMB\n", $3,$2,$3*100/$2 }')"
+
     printf "%s" "\Uf1c0 ${result}"
 }
 
 Date() {
     local result
     result="$(date "+%H:%M - %a, %b %d")"
+
     printf "%s" "\Uf017 ${result}"
 }
 
 Battery() {
     local result
     result="$(acpi -b | gawk '{print $4}')"
+
     printf "%s" "\Uf241: ${result}"
 }
 
 Gput() {
     local result
     result="$(sensors 2>&1 | gawk '/edge/ {print substr($2, 2)}')" # sensors 2>&1 | grep edge | awk '{print substr($2, 2)}'
+
     printf "%s" "\Uf11b  $result"
 }
 
@@ -86,14 +96,18 @@ arch-update() {
 }
 
 update-debian() {
-    local output=$(aptitude full-upgrade --simulate --assume-yes)
+    local output
     local num=$(($packs | wc - l))
+    output=$(aptitude full-upgrade --simulate --assume-yes)
+
     printf "%s" "Packs: $num"
 }
 
 Connection() {
     local result
+
     result=$(nmcli connection show | gawk 'NR==2 {print $4}')
+
     if [[ "$result" != '--' ]]; then
         printf 'CON: ON'
     else
