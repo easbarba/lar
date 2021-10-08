@@ -11,8 +11,7 @@
   usually bash, ruby and awk scripts.
 
 ## [Nix](https://nixos.org/)
-  There are some software I need to heavily patch and try on experimental branches and its deps, with Nix that
-  easily achieved with a single file, just amazing. :)
+  An interesting approach to try on experimental branches, heavily patch local builds, use different deps and so on is done in a sophisticate way with Nix, and all thata easily achieved with a single file, just amazing. :)
 
 ## license
   [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
