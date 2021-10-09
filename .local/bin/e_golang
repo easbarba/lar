@@ -10,7 +10,7 @@ export GO111MODULE=on
 packages() {
 	local command="go install"
 	local packages=("golang.org/x/tools/gopls@latest"
-	)
+		github.com/xxxserxxx/gotop/v4/cmd/gotop@latest)
 
 	e_dolist "$command" "${packages[@]}"
 }
