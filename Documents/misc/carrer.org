@@ -18,10 +18,10 @@
 | Shell Script          | Bash, Posix                                                                 |
 | Container             | Podman, Docker, Docker Compose                                              |
 | Cloud                 | AWS, Azure, GCP                                                             |
-| Cluster               | Kubernetes, Nomad                                                           |
+| Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
 | IaC                   | Terraform, Ansible, Salt                                                    |
 | Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
-| CI / CD               | Jenkins, Drone, Travis                                                      |
+| CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                                   |
 | Editors               | Emacs, Vim                                                                  |
 | Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic     |
 | Version Control       | Git                                                                         |
@@ -53,13 +53,12 @@ tecnologias Ruby, Guile e ultimamente Golang.
 
 *HABILIDADES*
 -----
-  - Linguagens: Golang, Ruby, Guile Scheme, Emacs-Lisp.
-  - Unit Test: testing.
-  - Distros: Arch, Debian, GuixSD.
-  - Scripting: Awk, Sed, GNU Bash, Fish.
-  - Editores: GNU Emacs, NeoVim, Micro, Nano.
+  - Linguagens: Golang, Ruby, Emacs-Lisp.
+  - Distros: NixOS, GuixSD, Arch, Debian, .
+  - Shell Script: Awk, Sed, GNU Bash, Fish.
+  - Containers: podman, dockerfile, dockerignore, criação e gerência de imagens.
+  - Editores: GNU Emacs, NeoVim, Nano.
   - Git: merge, rebase, format-patch.
-  - Containers: podman, dockerfile, criação e gerência de imagens.
 
 *PROJETOS*
 -----
