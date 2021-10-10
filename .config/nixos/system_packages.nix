@@ -22,7 +22,7 @@
      go python3 ruby lua luarocks
 
      # shell
-     bash bash-completion shellcheck alacritty tmux fish starship ripgrep graphviz
+     bash bash-completion shellcheck alacritty tmux fish starship ripgrep fd graphviz
 
      # infra
      podman docker qemu virt-manager vagrant # ovmf bridge-utils
