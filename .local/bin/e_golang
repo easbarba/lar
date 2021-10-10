@@ -15,9 +15,9 @@ packages() {
 	e_dolist "$command" "${packages[@]}"
 }
 
-tols() {
+tools() {
 	local command='go get'
-	local packages=("sigs.k8s.io/kind")
+	local packages=("github.com/fatih/gomodifytags@latest" "github.com/cweill/gotests/..." "github.com/x-motemen/gore/cmd/gore@latest" "github.com/mdempsky/gocode@latest" "golang.org/x/tools/cmd/guru") # "sigs.k8s.io/kind"
 
 	e_dolist "$command" "${packages[@]}"
 }
@@ -30,6 +30,6 @@ devel() {
 }
 
 # * RUN
-# tools
+tools
 packages
 devel
