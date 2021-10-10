@@ -1,0 +1,13 @@
+#+TITLE: Data Structure
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+:END:
+* Progress
+| Book                                                   | chapter | @                                          |
+|--------------------------------------------------------+---------+--------------------------------------------|
+| A Common-Sense Guide to Data Structures and Algorithms |       1 | The Array: The Foundational Data Structure |
