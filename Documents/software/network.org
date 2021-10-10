@@ -90,6 +90,7 @@ ssh nixcraft@server1.cyberciti.biz -- command1 --arg1 --arg2
 #+begin_src shell
 ping 1.1
 #+end_src
+** ss
 ** dig
 ** ip
 ** ifconfig
@@ -163,4 +164,12 @@ network manager wont work if /etc/network/interface is set to any device, remove
 | -tulpn |   |
 ** telnet
 ** rlogin
-** tracerout
+** traceroute
+** ethtool
+** netcat
+** socat
+** tcpdump
+** wireshark
+** ngrep
+** iftop
+** nethogs
