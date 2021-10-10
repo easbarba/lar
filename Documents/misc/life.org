@@ -5,7 +5,6 @@
 :TOC:      :include all :depth 2 :ignore this
 :END:
 :CONTENTS:
-- [[#progresso][Progresso]]
 - [[#movies][Movies]]
   - [[#favorites][Favorites]]
 - [[#tv-shows][TV Shows]]
@@ -17,6 +16,7 @@
 - [[#lectures][Lectures]]
   - [[#teacher][Teacher]]
 - [[#manga][Manga]]
+  - [[#progresso][Progresso]]
   - [[#favorites][Favorites]]
 - [[#games][Games]]
   - [[#steam][Steam]]
@@ -44,10 +44,6 @@
 - [[#delivery][Delivery]]
 :END:
 
-* Progresso
-|                   |     |   |
-|-------------------+-----+---|
-| OPM               | 149 |   |
 
 * Movies
 ** Favorites
@@ -150,6 +146,11 @@
 - Osvaldo Coggiola
 
 * Manga
+** Progresso
+|                 |     |   |
+|-----------------+-----+---|
+| One Punch Man   | 149 |   |
+| Attack On Titan | 127 |   |
 ** Favorites
 - Lone Wolf and Cub
 - One Punch Man
@@ -374,6 +375,7 @@ https://apoia.se/cozinhasolidaria
 |-----------------------------+-----------------|
 | CPF 333.766.248-01          | Rodrigo Jalloul |
 | mariaparecida5021@gmail.com |                 |
+| fabynascim77@gmail.com      |                 |
 
 * Delivery
 981103178
