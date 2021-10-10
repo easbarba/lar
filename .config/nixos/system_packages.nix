@@ -22,7 +22,7 @@
      go python3 ruby lua luarocks
 
      # shell
-     bash bash-completion shellcheck alacritty tmux fish starship
+     bash bash-completion shellcheck alacritty tmux fish starship ripgrep graphviz
 
      # infra
      podman docker qemu virt-manager vagrant # ovmf bridge-utils
@@ -31,7 +31,7 @@
      iproute2 socat iw wirelesstools nettools dig
 
      # editors
-     emacs libgccjit zile neovim
+     emacs libgccjit zile neovim editorconfig-core-c
 
      # sound
      mpd mpc_cli ncmpcpp
@@ -49,7 +49,10 @@
 
      # user
      firefox libreoffice gimp obs-studio amfora # netsurf kdeconnect falkon
-     tdesktop steam
+     tdesktop steam falkon
+
+     # nix
+     nixfmt
 
      # codec
      vorbis-tools gst_all_1.gst-libav gst_all_1.gst-plugins-bad
