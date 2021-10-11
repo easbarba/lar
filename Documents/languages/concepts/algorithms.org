@@ -1,0 +1,19 @@
+#+TITLE: Algorithms
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+- [[#search][Search]]
+  - [[#linear-search][Linear Search]]
+  - [[#binary-search][Binary Search]]
+:END:
+* Progress
+| Book                                                   | chapter                 | @              |
+|--------------------------------------------------------+-------------------------+----------------|
+| A Common-Sense Guide to Data Structures and Algorithms | 2 Why Algorithms Matter | Ordered Arrays |
+* Search
+** Linear Search
+** Binary Search
