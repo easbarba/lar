@@ -13,9 +13,9 @@
 - [[#set][Set]]
 :END:
 * Progress
-| Book                                                   | chapter                 | @              |
-|--------------------------------------------------------+-------------------------+----------------|
-| A Common-Sense Guide to Data Structures and Algorithms | 2 Why Algorithms Matter | Ordered Arrays |
+| Book                                                   | chapter                 | @                                  |
+|--------------------------------------------------------+-------------------------+------------------------------------|
+| A Common-Sense Guide to Data Structures and Algorithms | 2 Why Algorithms Matter | Code Implementation: Binary Search |
 
 * Arrays
 - fast reading
