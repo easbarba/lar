@@ -13,9 +13,9 @@
 - [[#set][Set]]
 :END:
 * Progress
-| Book                                                   | chapter                 | @                                  |
-|--------------------------------------------------------+-------------------------+------------------------------------|
-| A Common-Sense Guide to Data Structures and Algorithms | 2 Why Algorithms Matter | Code Implementation: Binary Search |
+| Book                                                   | chapter               | @ |
+|--------------------------------------------------------+-----------------------+---|
+| A Common-Sense Guide to Data Structures and Algorithms | O Yes! Big O Notation |   |
 
 * Arrays
 - fast reading
@@ -31,7 +31,7 @@
 - search correct place, move to right and insert new one
 
 ** search
-- linear search
+- linear search, binary search
 - search stop once bigger number is reached
 * Set
 - does not allow duplicate values to be contained within it.

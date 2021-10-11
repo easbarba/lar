@@ -11,9 +11,13 @@
   - [[#binary-search][Binary Search]]
 :END:
 * Progress
-| Book                                                   | chapter                 | @              |
-|--------------------------------------------------------+-------------------------+----------------|
-| A Common-Sense Guide to Data Structures and Algorithms | 2 Why Algorithms Matter | Ordered Arrays |
+| Book | chapter | @ |
+|------+---------+---|
+|      |         |   |
 * Search
 ** Linear Search
+- preferred in small arrays
 ** Binary Search
+- preferred in large arrays
+- ordered array
+- each lookup eliminates half of elements from the search
