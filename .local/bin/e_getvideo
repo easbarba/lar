@@ -3,9 +3,24 @@
 # Debug Options
 set -euo pipefail
 
-# Description:
-# Deps: youtube-dl, ffmpeg
+# Description: Get video
 
-EXT=mp4
+DEPS=(youtube-dl ffmpeg)
+e_checkdeps "${DEPS[@]}"
 
-ixe get $EXT "$(e_url)"
+FOLDER="$HOME/Videos"
+
+# FOLDER
+[[ ! -d $FOLDER ]] && mkdir "$FOLDER"
+cd "$FOLDER"
+
+# YOUTUBE-DL
+
+GETTER='youtube-dl'
+EXT='webm'
+# QUALITY='bestvideo+bestaudio'
+FORMAT="--format $EXT"
+OUTPUT='%(title)s.f%(format_id)s.%(ext)s'
+
+# RUN
+"$GETTER" --format "$EXT" --output "$OUTPUT" "$(e_url)"
