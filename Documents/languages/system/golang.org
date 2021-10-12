@@ -115,10 +115,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter                                   | @                                    | late | revision |
-|-------------------------+-------------------------------------------+--------------------------------------+------+----------|
-| Learning go             | Chapter 7. Types, Methods, and Interfaces | Code Your Methods for nil Instances  |      |          |
-| Go Programming Language | Methods                                   | 6.2. Methods with a Pointer Receiver |      |          |
+| name                    | chapter                                   | @                                    |
+|-------------------------+-------------------------------------------+--------------------------------------|
+| Learning go             | Chapter 7. Types, Methods, and Interfaces | Embedding Is Not Inheritance         |
+| Go Programming Language | Methods                                   | 6.2. Methods with a Pointer Receiver |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -202,6 +202,98 @@ var s4 string = s[6:]
 
 *** nil
 - has no type
+
+*** Type
+- can declare a user-defined type based on another user-defined type
+- type declarations aren’t inheritance
+- Needs conversion between sub-typed types
+- Cant instance different types to each other, even if sub-typed
+- user-defined types based on built-in types, can be used with the operators for those types, but associates different methods.
+
+#+begin_src go
+type HighScore Score
+type Employee Person
+
+// assigning untyped constants is valid
+var i int = 300
+var s Score = 100
+var hs HighScore = 200
+hs = s                  // compilation error!
+s = i                   // compilation error!
+
+#+end_src
+
+**** methods
+- can be assigned to vars
+- methods expression
+
+#+begin_src go
+f1 := myAdder.AddTo
+fmt.Println(f1(10))           // prints 20
+
+// methods expression
+
+f2 := Adder.AddTo
+fmt.Println(f2(myAdder, 15))  // prints 25
+
+#+end_src
+
+**** iota
+- repeats the type and the assignment to all of the subsequent constants in the block
+
+#+begin_src go
+type MailCategory int
+
+const (
+    Uncategorized MailCategory = iota
+    Personal
+    Spam
+    Social
+    Advertisements
+)
+#+end_src
+
+**** emb
+#+begin_src go
+type Employee struct {
+    Name         string
+    ID           string
+}
+
+func (e Employee) Description() string {
+    return fmt.Sprintf("%s (%s)", e.Name, e.ID)
+}
+
+type Manager struct {
+    Employee
+    Reports []Employee
+}
+
+func (m Manager) FindNewEmployees() []Employee {
+    // do business logic
+}
+
+m := Manager{
+    Employee: Employee{
+        Name:         "Bob Bobson",
+        ID:             "12345",
+    },
+    Reports: []Employee{},
+}
+fmt.Println(m.ID)            // prints 12345
+fmt.Println(m.Description()) // prints Bob Bobson (12345)
+#+end_src
+
+#+begin_src go
+type Inner struct {
+    X int
+}
+
+type Outer struct {
+    Inner
+    X int
+}
+#+end_src
 
 ** Collections
 #+begin_src go
