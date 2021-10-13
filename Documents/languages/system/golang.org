@@ -115,10 +115,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter                                   | @                                    |
-|-------------------------+-------------------------------------------+--------------------------------------|
-| Learning go             | Chapter 7. Types, Methods, and Interfaces | Embedding Is Not Inheritance         |
-| Go Programming Language | Methods                                   | 6.2. Methods with a Pointer Receiver |
+| name                    | chapter                                   | @                          |
+|-------------------------+-------------------------------------------+----------------------------|
+| Learning go             | Chapter 7. Types, Methods, and Interfaces | Quick Lesson on Interfaces |
+| Go Programming Language | 2 Program structure                       | 2.3.3. The new Function    |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -137,6 +137,8 @@
 | uint    | unsigned  int64 |
 | complex |                 |
 | float   |                 |
+
+- zero value = 0
 
 **** byte
 **** int
@@ -166,6 +168,7 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 #+end_src
 
 *** strings
+- zero value = ""
 - only use slice/indexing when string contains characters that take up one byte.
 - conversion from int to string yields a string of runes.
 - extract substrings and code points from strings using the functions in the strings and unicode/utf8
@@ -192,113 +195,21 @@ var s4 string = s[6:]
 
 #+end_src
 *** boolean
-      - no other type can be converted to a bool, implicitly or explicitly
-      - convert to boolean with: \== , != , > , < , <= , or >=
+- zero value = false
+- no other type can be converted to a bool, implicitly or explicitly
+- convert to boolean with: \== , != , > , < , <= , or >=
 
 *** runes
-      - chars
-      - int32 type
-      -
+- chars
+- int32 type
 
 *** nil
 - has no type
-
-*** Type
-- can declare a user-defined type based on another user-defined type
-- type declarations aren’t inheritance
-- Needs conversion between sub-typed types
-- Cant instance different types to each other, even if sub-typed
-- user-defined types based on built-in types, can be used with the operators for those types, but associates different methods.
-
-#+begin_src go
-type HighScore Score
-type Employee Person
-
-// assigning untyped constants is valid
-var i int = 300
-var s Score = 100
-var hs HighScore = 200
-hs = s                  // compilation error!
-s = i                   // compilation error!
-
-#+end_src
-
-**** methods
-- can be assigned to vars
-- methods expression
-
-#+begin_src go
-f1 := myAdder.AddTo
-fmt.Println(f1(10))           // prints 20
-
-// methods expression
-
-f2 := Adder.AddTo
-fmt.Println(f2(myAdder, 15))  // prints 25
-
-#+end_src
-
-**** iota
-- repeats the type and the assignment to all of the subsequent constants in the block
-
-#+begin_src go
-type MailCategory int
-
-const (
-    Uncategorized MailCategory = iota
-    Personal
-    Spam
-    Social
-    Advertisements
-)
-#+end_src
-
-**** emb
-#+begin_src go
-type Employee struct {
-    Name         string
-    ID           string
-}
-
-func (e Employee) Description() string {
-    return fmt.Sprintf("%s (%s)", e.Name, e.ID)
-}
-
-type Manager struct {
-    Employee
-    Reports []Employee
-}
-
-func (m Manager) FindNewEmployees() []Employee {
-    // do business logic
-}
-
-m := Manager{
-    Employee: Employee{
-        Name:         "Bob Bobson",
-        ID:             "12345",
-    },
-    Reports: []Employee{},
-}
-fmt.Println(m.ID)            // prints 12345
-fmt.Println(m.Description()) // prints Bob Bobson (12345)
-#+end_src
-
-#+begin_src go
-type Inner struct {
-    X int
-}
-
-type Outer struct {
-    Inner
-    X int
-}
-#+end_src
-
 ** Collections
 #+begin_src go
 strings.Map
 #+end_src
+
 *** Arrays
 - == and != to compare arrays
 - one-dimensional arrays only
@@ -425,12 +336,120 @@ pet := struct {
 
 
 #+end_src
+*** Type
+- can declare a user-defined type based on another user-defined type
+- type declarations aren’t inheritance
+- Needs conversion between sub-typed types
+- Cant instance different types to each other, even if sub-typed
+- user-defined types based on built-in types, can be used with the operators for those types, but associates different methods.
+
+#+begin_src go
+type HighScore Score
+type Employee Person
+
+// assigning untyped constants is valid
+var i int = 300
+var s Score = 100
+var hs HighScore = 200
+hs = s                  // compilation error!
+s = i                   // compilation error!
+
+#+end_src
+
+**** methods
+- can be assigned to vars
+- methods expression
+
+#+begin_src go
+f1 := myAdder.AddTo
+fmt.Println(f1(10))           // prints 20
+
+// methods expression
+
+f2 := Adder.AddTo
+fmt.Println(f2(myAdder, 15))  // prints 25
+
+#+end_src
+
+**** iota
+- repeats the type and the assignment to all of the subsequent constants in the block
+
+#+begin_src go
+type MailCategory int
+
+const (
+    Uncategorized MailCategory = iota
+    Personal
+    Spam
+    Social
+    Advertisements
+)
+#+end_src
+
+**** emb
+#+begin_src go
+type Employee struct {
+    Name         string
+    ID           string
+}
+
+func (e Employee) Description() string {
+    return fmt.Sprintf("%s (%s)", e.Name, e.ID)
+}
+
+type Manager struct {
+    Employee
+    Reports []Employee
+}
+
+func (m Manager) FindNewEmployees() []Employee {
+    // do business logic
+}
+
+m := Manager{
+    Employee: Employee{
+        Name:         "Bob Bobson",
+        ID:             "12345",
+    },
+    Reports: []Employee{},
+}
+fmt.Println(m.ID)            // prints 12345
+fmt.Println(m.Description()) // prints Bob Bobson (12345)
+#+end_src
+
+#+begin_src go
+type Inner struct {
+    X int
+}
+
+type Outer struct {
+    Inner
+    X int
+}
+#+end_src
+
 ** Operators
 *** arithmetic
       |          |                           |
       |----------+---------------------------|
       | combined | += , -= , *= ,/= , and %= |
       |          |                           |
+** Interface
+- zero value = nil
+- lists the methods that must be implemented by a concrete type to meet the interface
+- method set of the interface.
+- can be declared in any block.
+- Interfaces are named as “er” in the end.
+- depends on behavior allows swap implementations
+- accept interfaces, return structs.
+- not returning interfaces avoid wversioning.
+
+#+begin_src go
+type Stringer interface {
+    String() string
+}
+#+end_src
+
 ** Functions
 - reference type
 - function values are not comparable.
@@ -576,7 +595,15 @@ func main() {
 }
 #+end_src
 ** Variables
+*** package-level variables
+- The name of each package-level entity is visible not only throughout the
+  source file that contains its declaration, but throughout all the files of the
+  package.
+
 *** var
+- assignment
+- local declarations are visible only within the function
+
 #+begin_src go
 var x int // defaults to 0
 var x int = 10
@@ -592,8 +619,8 @@ var (
 )
 
 #+end_src
-*** package-level variables
 *** :=
+- declaration
 - allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
 - uses type inference
 - within function
@@ -603,6 +630,12 @@ func main() {
     x := 10
     x, y := 30, "hello"
 }
+#+end_src
+*** tuple assignment
+- each variable on the left-hand side is assigned the corresponding value from the right-hand side
+
+#+begin_src go
+i, j = j, i // swap values of i and j
 #+end_src
 ** Blocks
 *** Package Levels
@@ -784,6 +817,7 @@ make([]T, len)
 make([]T, len, cap) // same as make([]T, cap)[:len]
 #+end_src
 ** Pointers
+- zero value: nil
 - The & is the address operator: returns the address of the memory location where the value is stored.
 - The * is the indirection operator: pointer type and returns the pointed-to value. dereferencing.
 - new() creates a pointer variable. It returns a pointer to a zero value instance of the provided
@@ -798,9 +832,9 @@ def main() {
 
 #+end_src
 ** mutex
-     #+begin_src go emacs-lisp
-     sync.Mutex
-     #+end_src
+ #+begin_src go emacs-lisp
+ sync.Mutex
+ #+end_src
 ** type
      #+begin_src go
      func (c Clear) String() string { // associates Clear to String
