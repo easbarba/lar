@@ -118,7 +118,7 @@
 | name                    | chapter                                   | @                          |
 |-------------------------+-------------------------------------------+----------------------------|
 | Learning go             | Chapter 7. Types, Methods, and Interfaces | Quick Lesson on Interfaces |
-| Go Programming Language | 2 Program structure                       | 2.3.3. The new Function    |
+| Go Programming Language | 2 Program structure                       | 2.5. Type Declarations     |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -205,6 +205,7 @@ var s4 string = s[6:]
 
 *** nil
 - has no type
+- may be assigned to any variable of interface or reference type.
 ** Collections
 #+begin_src go
 strings.Map
@@ -636,6 +637,46 @@ func main() {
 
 #+begin_src go
 i, j = j, i // swap values of i and j
+
+x, y = y, x
+a[i], a[j] = a[j], a[i]
+
+func gcd(x, y int) int {
+	for y != 0 {
+		x, y = y, x%y
+	}
+	return x
+}
+
+
+func fib(n int) int {
+	x, y := 0, 1
+	for i := 0; i < n; i++ {
+		x, y = y, x+y
+	}
+	return x
+}
+
+#+end_src
+*** new() function
+- new(T) creates an unnamed variable of type T, initializes it to the zero value of T,
+  and returns its address, which is a value of typ e *T.
+- can be use in a expression instead of dummy variable
+
+#+begin_src go
+p := new(int)  // p, of type *int, points to an unnamed int variable
+fmt.Println(*p) // "0"
+*p = 2 // sets the unnamed int to 2
+fmt.Println(*p) // "2"
+
+
+#+end_src
+*** assignment
+#+begin_src go
+x = 1
+d *= 2
+x++
+x--
 #+end_src
 ** Blocks
 *** Package Levels
