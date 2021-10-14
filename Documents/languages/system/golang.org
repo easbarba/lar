@@ -117,8 +117,8 @@
 ** Books
 | name                    | chapter                                   | @                          |
 |-------------------------+-------------------------------------------+----------------------------|
+| Go Programming Language | 2 Program structure                       | 2.6. Packages and Files    |
 | Learning go             | Chapter 7. Types, Methods, and Interfaces | Quick Lesson on Interfaces |
-| Go Programming Language | 2 Program structure                       | 2.5. Type Declarations     |
 
 ** LDC
 | Source Code | folder            | file            | @ |
@@ -337,12 +337,34 @@ pet := struct {
 
 
 #+end_src
-*** Type
+** Type
+- different named types are not comparable even same underlying type
+- conversions are allowed if both has same underlying type T(x)
+- if the name is exported (upper-case letter), it’s accessible from other packages as well.
 - can declare a user-defined type based on another user-defined type
 - type declarations aren’t inheritance
 - Needs conversion between sub-typed types
 - Cant instance different types to each other, even if sub-typed
 - user-defined types based on built-in types, can be used with the operators for those types, but associates different methods.
+
+#+begin_src go
+type Celsius float64
+type Fahrenheit float64
+
+const (
+	AbsoluteZeroC Celsius = -273.15
+	FreezingC
+	Celsius = 0
+	BoilingC
+	Celsius = 100
+)
+
+func CToF(c Celsius) Fahrenheit { return Fahrenheit(c*9/5 + 32) }
+func FToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
+
+Celsius == Fahrenheit // false
+
+#+end_src
 
 #+begin_src go
 type HighScore Score
@@ -357,7 +379,7 @@ s = i                   // compilation error!
 
 #+end_src
 
-**** methods
+*** methods
 - can be assigned to vars
 - methods expression
 
@@ -372,7 +394,7 @@ fmt.Println(f2(myAdder, 15))  // prints 25
 
 #+end_src
 
-**** iota
+*** iota
 - repeats the type and the assignment to all of the subsequent constants in the block
 
 #+begin_src go
@@ -387,7 +409,7 @@ const (
 )
 #+end_src
 
-**** emb
+*** emb
 #+begin_src go
 type Employee struct {
     Name         string
@@ -602,6 +624,7 @@ func main() {
   package.
 
 *** var
+- any block
 - assignment
 - local declarations are visible only within the function
 
@@ -624,7 +647,7 @@ var (
 - declaration
 - allows assign values to existing variables, as long as there is one new variable on the lefthand side of the :=
 - uses type inference
-- within function
+- only function/methods block
 
 #+begin_src go
 func main() {
@@ -849,13 +872,8 @@ func main() {
 }
 #+end_src
 ** print
-     #+begin_src go
-     Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
-     #+end_src
-** make
 #+begin_src go
-make([]T, len)
-make([]T, len, cap) // same as make([]T, cap)[:len]
+Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
 #+end_src
 ** Pointers
 - zero value: nil
@@ -873,18 +891,17 @@ def main() {
 
 #+end_src
 ** mutex
- #+begin_src go emacs-lisp
- sync.Mutex
- #+end_src
-** type
-     #+begin_src go
-     func (c Clear) String() string { // associates Clear to String
-	     ...
-     }
+#+begin_src go emacs-lisp
+sync.Mutex
+#+end_src
+** Packages
+*** doc comment
+Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
 
-     #+end_src
-** doc comment
-     Extensive doc comments are often place d in a file of their own, convent ion ally cal le d doc.go
+#+begin_src go
+// Package tempconv performs Celsius and Fahrenheit conversions.
+package meh
+#+end_src
 * Cli
 ** vet
       Examines Go source code and reports suspicious constructs
@@ -926,11 +943,19 @@ Run compiles and runs the named main Go package.
 *** $GOPROXY
 
 * Standary Library
+
      #+begin_src go
      // end of line
      io.EOF
 
      #+end_src
+
+** misc
+*** make
+#+begin_src go
+make([]T, len)
+make([]T, len, cap) // same as make([]T, cap)[:len]
+#+end_src
 * Terms
 - runes: single characthers
 * Packages
