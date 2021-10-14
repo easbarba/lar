@@ -10,8 +10,8 @@
   - [[#sloc][SLOC]]
 - [[#features][Features]]
   - [[#types][Types]]
+  - [[#sequences][Sequences]]
   - [[#cons-cell][Cons Cell]]
-  - [[#lists][Lists]]
   - [[#terms][Terms]]
 - [[#resources][Resources]]
 - [[#important-commands][Important Commands]]
@@ -69,26 +69,26 @@
 
 *** Float
 *** Characters
-    - characters is a question mark followed by the character
-    #+begin_src elisp
-    ?B
-    ?A
-    ?r
-    ?R
+- characters is a question mark followed by the character
+#+begin_src elisp
+?B
+?A
+?r
+?R
 
-    ;; escape sequences,
-    ?\#
-    ?\\
+;; escape sequences,
+?\#
+?\\
 
-    ;; control-g, backspace, tab, newline, vertical tab, formfeed, space, return, del, and escape as
-    ?\a   ?\b   ?\t   ?\n   ?\v   ?\f   ?\s   ?\r   ?\d ?\e
+;; control-g, backspace, tab, newline, vertical tab, formfeed, space, return, del, and escape as
+?\a   ?\b   ?\t   ?\n   ?\v   ?\f   ?\s   ?\r   ?\d ?\e
 
-    ;; Control-Character Syntax
-    ?\C-i   ?\C-?
+;; Control-Character Syntax
+?\C-i   ?\C-?
 
-    ;; Meta-Character
-    ?\M-\C-b
-    #+end_src
+;; Meta-Character
+?\M-\C-b
+#+end_src
 *** Buffer
     - local keymap
     - local variables
@@ -140,22 +140,15 @@
 
     #+RESULTS:
     : t
-
-** Cons Cell
-   - represents an ordered pair
-   - car slot:
-   - cdr slot: refers to the following cons cell
-   - the cdr of the last cons cell in a list is *nil*
-   - proper list
-
-** Lists
+** Sequences
+*** Lists
    - sequence of zero or more elements
    - can insert or delete elements in a list without copying the whole list.
    - built up from cons cells
    - series of cons cells chained together
-*** Circular List
+**** Circular List
     - cons cell’s cdr point to one of the previous cons cells in the list
-*** Dotted List
+**** Dotted List
     - last cons cell is some value other than nil
     -
     #+begin_src elisp
@@ -163,6 +156,13 @@
     (atom)
     (listp)
     #+end_src
+*** Arrays
+** Cons Cell
+   - represents an ordered pair
+   - car slot:
+   - cdr slot: refers to the following cons cell
+   - the cdr of the last cons cell in a list is *nil*
+   - proper list
 
 ** Terms
    |       |                 |
