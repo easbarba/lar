@@ -53,7 +53,6 @@
      "https://edelpero.svbtle.com/feed"
      "https://drewdevault.com/blog/index.xml"
      "https://ambrevar.xyz/atom.xml"
-     "https://250bpm.com/rss.xml"
      ;; langs blog
      "https://feeds.fireside.fm/smartlogic/rss"
      "https://ulisses.dev/feed.xml"
