@@ -11,17 +11,16 @@
 | @                     | desc                                                                        |
 |-----------------------+-----------------------------------------------------------------------------|
 | OS                    | Debian, NixOS                                                               |
-| Lang                  | Golang, Data Structure, Algorithms                                                |
-| Shell Script          | Bash, Posix                                                                 |
+| Lang                  | Golang, Bash, Posix, Data Structure, Algorithms                                        |
+| Editors               | Emacs, Vim                                                                  |
 | Container             | Podman, Docker, Docker Compose                                              |
 | Cloud                 | AWS, Azure, GCP                                                             |
 | Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
-| IaC                   | Terraform, Ansible, Salt                                                    |
-| Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
-| CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
-| Editors               | Emacs, Vim                                                                  |
-| Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic     |
 | Version Control       | Git                                                                         |
+| Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
+| IaC                   | Terraform, Ansible, Salt                                                    |
+| CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
+| Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic     |
 | Software Architecture | Micro-services                                                              |
 | Security              |                                                                             |
 | Message               | RabbitMQ, Kafka                                                             |
