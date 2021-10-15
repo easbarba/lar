@@ -1,5 +1,4 @@
 #+TITLE: Golang
-#+AUTHOR: easbarbosa
 
 * Summary
     :PROPERTIES:
@@ -117,7 +116,7 @@
 ** Books
 | name                    | chapter                                   | @                          |
 |-------------------------+-------------------------------------------+----------------------------|
-| Go Programming Language | 2 Program structure                       | 2.6. Packages and Files    |
+| Go Programming Language | 3 Basic Data Types                        | 3.3. Complex Numbers       |
 | Learning go             | Chapter 7. Types, Methods, and Interfaces | Quick Lesson on Interfaces |
 
 ** LDC
@@ -128,17 +127,18 @@
 | consul      | acl               | acl.go          |   |
 
 * Features
-** Types
-*** numeric
-|         |                 |
-|---------+-----------------|
-| byte    | uint8           |
-| int     | int64           |
-| uint    | unsigned  int64 |
-| complex |                 |
-| float   |                 |
+** Basic Types
+- comparable
 
+*** integers
 - zero value = 0
+
+|         |        | syn  |
+|---------+--------+------|
+| int8    | uint8  | byte |
+| int16   | uint16 |      |
+| int32   | uint32 | rune |
+| int64   | uint64 |      |
 
 **** byte
 **** int
@@ -148,8 +148,16 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 **** rune
 **** uintptr
 
-**** complext
-**** float
+*** float
+- ieee 7554
+- %g, %e, %f
+
+|         |   |
+|---------+---|
+| float32 |   |
+| float64 |   |
+
+*** complext
 *** literals
 |                |                              |
 |----------------+------------------------------|
@@ -168,10 +176,15 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 #+end_src
 
 *** strings
+- immutable
 - zero value = ""
+- sequence of bytes
 - only use slice/indexing when string contains characters that take up one byte.
 - conversion from int to string yields a string of runes.
 - extract substrings and code points from strings using the functions in the strings and unicode/utf8
+- exa: \xhh
+- ocatal: \ooo
+- Raw string literals are a convenient way to write regular expressions,
 
 |              |              |
 |--------------+--------------|
@@ -180,7 +193,7 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 | concatenate  | +            |
 | equality     | \==, !=      |
 | empty string | s == ""      |
-|              |              |
+| raw string   | `meh`        |
 
 #+begin_src go
 var s string = "Hello there"
@@ -192,21 +205,49 @@ var s2 string = s[4:7]
 var s3 string = s[:5]
 var s4 string = s[6:]
 
+fmt.Println("goodbye" + s[5:]) // "goodbye, world"
 
+s[0] = 'L' // compile error: cannot assign to s[0]
 #+end_src
+
+// raw strings
+const GoUsage = `Go is a tool for managing Go source code.
+
+Usage:
+    go command [arguments]
+...`
+
+
+
+**** functions
+- len
+
+
 *** boolean
 - zero value = false
+- true or false
 - no other type can be converted to a bool, implicitly or explicitly
 - convert to boolean with: \== , != , > , < , <= , or >=
 
 *** runes
+- single quotes
 - chars
 - int32 type
+- %c, %q
+
+#+begin_src go
+ascii := 'a'
+unicode := 'D'
+newline := '\n'
+fmt.Printf("%d %[1]c %[1]q\n", ascii)
+// "97 a 'a'"
+fmt.Printf("%d %[1]c %[1]q\n", unicode) // "22269 D 'D'"
+#+end_src
 
 *** nil
 - has no type
 - may be assigned to any variable of interface or reference type.
-** Collections
+** Agreggate Types
 #+begin_src go
 strings.Map
 #+end_src
@@ -337,7 +378,7 @@ pet := struct {
 
 
 #+end_src
-** Type
+** Reference Type
 - different named types are not comparable even same underlying type
 - conversions are allowed if both has same underlying type T(x)
 - if the name is exported (upper-case letter), it’s accessible from other packages as well.
@@ -450,14 +491,7 @@ type Outer struct {
     X int
 }
 #+end_src
-
-** Operators
-*** arithmetic
-      |          |                           |
-      |----------+---------------------------|
-      | combined | += , -= , *= ,/= , and %= |
-      |          |                           |
-** Interface
+** Interface Types
 - zero value = nil
 - lists the methods that must be implemented by a concrete type to meet the interface
 - method set of the interface.
@@ -472,6 +506,30 @@ type Stringer interface {
     String() string
 }
 #+end_src
+
+** Operators
+|          |                           |
+|----------+---------------------------|
+| combined | += , -= , *= ,/= , and %= |
+|          |                           |
+| *        |                           |
+| /        |                           |
+| %        |                           |
+| <<       | right shift               |
+| >>       | left shift                |
+| &        |                           |
+| &^       |                           |
+| +        | unary                     |
+| -        | unary                     |
+| ^        |                           |
+| ==       |                           |
+| !=       |                           |
+| <        |                           |
+| <=       |                           |
+| >        |                           |
+| >=       |                           |
+| &&       |                           |
+|          |                           |
 
 ** Functions
 - reference type
@@ -701,10 +759,45 @@ d *= 2
 x++
 x--
 #+end_src
+*** Const
+- a way to give names to literals.
+- there is no way in Go to declare that a variable is
+- Numeric literals
+- true and false
+- Strings
+- Runes
+- The built-in functions complex, real, imag, len, and cap
+- Expressions that consist of operators and the preceding values
+- typed and untyped constants
+- compiler allows you to create unread constants
+
+#+begin_src go
+const x int64 = 10
+
+const (
+    idKey   = "id"
+    nameKey = "name"
+)
+
+const z = 20 * 10
+
+func main() {
+    const y = "hello"
+
+    fmt.Println(x)
+    fmt.Println(y)
+
+    x = x + 1
+    y = "bye"
+
+    fmt.Println(x)
+    fmt.Println(y)
+}
+#+end_src
 ** Blocks
 *** Package Levels
 *** Universe block
-** Control
+** Control-flow
 *** if
 #+begin_src go
 n := rand.Intn(10)
@@ -813,7 +906,7 @@ for _, word := range words {
 
 #+end_src
 *** goto
-** Stop statement
+** Stop-flow
 *** continue
 - labelled continue
 
@@ -836,47 +929,14 @@ outer:
 }
 #+end_src
 *** break
-** Const
-- a way to give names to literals.
-- there is no way in Go to declare that a variable is
-- Numeric literals
-- true and false
-- Strings
-- Runes
-- The built-in functions complex, real, imag, len, and cap
-- Expressions that consist of operators and the preceding values
-- typed and untyped constants
-- compiler allows you to create unread constants
 
-#+begin_src go
-const x int64 = 10
-
-const (
-    idKey   = "id"
-    nameKey = "name"
-)
-
-const z = 20 * 10
-
-func main() {
-    const y = "hello"
-
-    fmt.Println(x)
-    fmt.Println(y)
-
-    x = x + 1
-    y = "bye"
-
-    fmt.Println(x)
-    fmt.Println(y)
-}
-#+end_src
 ** print
 #+begin_src go
 Printf("%#v\n", w) // # display values in a form similar to Go synVtax.
 #+end_src
 ** Pointers
 - zero value: nil
+- type uintptr, holds all bits of a pointer value
 - The & is the address operator: returns the address of the memory location where the value is stored.
 - The * is the indirection operator: pointer type and returns the pointed-to value. dereferencing.
 - new() creates a pointer variable. It returns a pointer to a zero value instance of the provided
@@ -956,6 +1016,15 @@ Run compiles and runs the named main Go package.
 make([]T, len)
 make([]T, len, cap) // same as make([]T, cap)[:len]
 #+end_src
+
+** math
+|                 |   |
+|-----------------+---|
+| math.MaxFloat32 |   |
+| math.MaxFloat64 |   |
+| math.NaN        |   |
+| math.IsNaN      |   |
+
 * Terms
 - runes: single characthers
 * Packages
