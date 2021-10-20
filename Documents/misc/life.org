@@ -44,7 +44,6 @@
 - [[#delivery][Delivery]]
 :END:
 
-
 * Movies
 ** Favorites
 - 12 Angry Men
@@ -106,6 +105,10 @@
 - The Fifth Element
 * TV Shows
 ** Progress
+|                    |     |
+|--------------------+-----|
+| Star Trek: Voyager | 3.3 |
+
 ** Favorites
 - Star Trek - The Next Generation
 - Sherlock Holmes (Jeremy Brett)
