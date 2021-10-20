@@ -11,7 +11,7 @@
 | @                     | desc                                                                        |
 |-----------------------+-----------------------------------------------------------------------------|
 | OS                    | Debian, NixOS                                                               |
-| Lang                  | Golang, Bash, Posix, Data Structure, Algorithms                                        |
+| Lang                  | Golang, Bash, Awk, Data Structure, Algorithms                               |
 | Editors               | Emacs, Vim                                                                  |
 | Container             | Podman, Docker, Docker Compose                                              |
 | Cloud                 | AWS, Azure, GCP                                                             |
@@ -29,7 +29,7 @@
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
-*Euber Alexandre De Sousa Barbosa*
+*EAS Barbosa*
 
 telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 
@@ -38,7 +38,7 @@ telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 
 Amante da filosofia Unix, por sua simplicidade, claridade e frugalidade.
 
-A muito prefiro montar sistemas simples e usaveis com foco em usuarios
+A muito prefiro criar sistemas simples e usaveis com foco em usuarios
 experientes como WMs, extensivo uso de shell scripts e auxiliados as várias
 maravilhosas ferramentas cli como awk, sed, parallel para automação e bootstrap
 de distros GNU/Linux e FreeBSD.
