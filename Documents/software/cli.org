@@ -86,6 +86,12 @@ concatenate files and print on the standard output
  | -u      | sort by access time |
  | -U      | do not sort         |
  | -r      | reverse             |
+
+#+begin_src shell
+✦ ❯ ls -l /proc/753237/exe
+lrwxrwxrwx 1 $USER users 0 Oct 18 15:30 /proc/753237/exe -> /nix/store/psbr5ybj16cgdyccc38plkpx3gzcad3w-mpv-0.33.1/bin/mpv
+#+end_src
+
 ** du
 estimate file space usage
 
