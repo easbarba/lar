@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq-default user-full-name "Quasi Syntaxed"
-              user-login-name "quasisyntaxed")
+(setq-default user-full-name "Ol'Tuvok"
+              user-login-name "oltuvok")
 
 (cond ((member "Hack" (font-family-list))
        (setq doom-font (font-spec :family "Hack" :size 23 :weight 'semi-light)
