@@ -187,10 +187,8 @@
 
 (defun e/search-engine ()
   "Search term on internet search engines/repositories.
-
      By default use word-at-point or ask for a term."
   (interactive)
-
   (let* ((word-at-point (word-at-point))
 	 (symbol-at-point (symbol-at-point))
 	 (term-at-point (symbol-name symbol-at-point))
@@ -208,7 +206,7 @@
 	  ;; Pick a search engine
 	  (search-type
 	   (read-from-minibuffer
-	    "Search in Google, .NetDocs, GitHub, SoV, DDG? ")))
+	    "Search on SoV, DDG? ")))
       (cond
        ((string-equal search-type "s")
 	(browse-url (concat "https://stackoverflow.com/search?q=" term)))
