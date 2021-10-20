@@ -11,7 +11,7 @@
 - [[#features][Features]]
   - [[#types][Types]]
   - [[#cons-cell][Cons Cell]]
-  - [[#lists][Lists]]
+  - [[#sequences][Sequences]]
   - [[#terms][Terms]]
 - [[#resources][Resources]]
 - [[#important-commands][Important Commands]]
@@ -34,23 +34,36 @@
 :END:
 * Progress
 ** Books
-| Books        | Cap   | @                     | late | revision |
-|--------------+-------+-----------------------+------+----------|
-| Emacs Lisp   | Lists | 5.8 Association Lists |      |          |
-| Emacs Manual |       |                       |      |          |
+| Books        | Cap       | @ |
+|--------------+-----------+---+
+| Emacs Lisp   | 3 Numbers |   |
 
 ** SLOC
-   | Source Code  | folder      | file           | @ |
-   |--------------+-------------+----------------+---|
-   | emacs        | lisp/eshell | esh-alias.el   |   |
-   | use-package  |             |                |   |
-   | emacs-elixir |             | elixir-mode.el |   |
+| Source Code  | folder      | file           | @ |
+|--------------+-------------+----------------+---|
+| emacs        | lisp/eshell | esh-alias.el   |   |
+| use-package  |             |                |   |
+| emacs-elixir |             | elixir-mode.el |   |
 
 * Features
 ** Types
 *** Integer
-    - fixnums
-    - bignums
+- fixnums
+- bignums
+
+|    |         |
+|----+---------|
+| #o | octal   |
+| #x | hexa    |
+| 1  | integer |
+| #b | binary  |
+
+#+begin_src elisp
+#b101100 ⇒ 44
+#o54 ⇒ 44
+#x2c ⇒ 44
+#24r1k ⇒ 44
+#+end_src
 
 **** predicate: bignums / fixnums
      #+begin_src elisp
@@ -148,14 +161,15 @@
    - the cdr of the last cons cell in a list is *nil*
    - proper list
 
-** Lists
+** Sequences
+*** Lists
    - sequence of zero or more elements
    - can insert or delete elements in a list without copying the whole list.
    - built up from cons cells
    - series of cons cells chained together
-*** Circular List
+**** Circular List
     - cons cell’s cdr point to one of the previous cons cells in the list
-*** Dotted List
+***** Dotted List
     - last cons cell is some value other than nil
     -
     #+begin_src elisp
@@ -163,7 +177,9 @@
     (atom)
     (listp)
     #+end_src
-
+*** Arrays
+*** Char-table
+*** Vectors
 ** Terms
    |       |                 |
    |-------+-----------------|
