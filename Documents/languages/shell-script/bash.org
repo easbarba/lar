@@ -6,6 +6,10 @@
    | Bash Reference Manual |         |   |          |
 
 * Features
+** Redirection
+*** File descriptors
+https://www.gnu.org/software/bash/manual/html_node/Redirections.html
+https://tldp.org/LDP/abs/html/io-redirection.html
 ** set
     |             |                                                    |
     |-------------+----------------------------------------------------|
