@@ -105,9 +105,10 @@
 - The Fifth Element
 * TV Shows
 ** Progress
-|                    |     |
-|--------------------+-----|
-| Star Trek: Voyager | 3.3 |
+|                    |      |
+|--------------------+------|
+| Star Trek: Voyager | 3.13 |
+|                    |      |
 
 ** Favorites
 - Star Trek - The Next Generation
