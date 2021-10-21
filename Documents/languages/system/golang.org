@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter                                   | @                          |
-|-------------------------+-------------------------------------------+----------------------------|
-| Go Programming Language | 3 Basic Data Types                        | 3.3. Complex Numbers       |
-| Learning go             | Chapter 7. Types, Methods, and Interfaces | Quick Lesson on Interfaces |
+| name                    | chapter            | @                    |
+|-------------------------+--------------------+----------------------|
+| Go Programming Language | 3 Basic Data Types | 3.3. Complex Numbers |
+| Learning go             | 9 modules          | import/exports       |
 
 ** LDC
 | Source Code | folder                | file            | @                 |
