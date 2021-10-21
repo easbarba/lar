@@ -1,11 +1,11 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon     | tue        | wed     | thru       | fri  |
-|---------+------------+---------+------------+------|
-| lang    | cloud      | lang    | cloud      | lang |
-| network | containers | network | containers |      |
-| vc      | editors    | vc      | editors    | os   |
+| mon     | tue        | wed     | thru       | fri     |
+|---------+------------+---------+------------+---------|
+| lang    | cloud      | lang    | cloud      | network |
+| iac     | containers | iac     | containers | os      |
+| editors | vc         | editors | vc         |         |
 
 * Priorities
 | @                     | desc                                                                        |
@@ -13,13 +13,13 @@
 | OS                    | Debian, NixOS                                                               |
 | Lang                  | Golang, Bash, Awk, Data Structure, Algorithms                               |
 | Editors               | Emacs, Vim                                                                  |
-| Container             | Podman, Docker, Docker Compose                                              |
-| Cloud                 | AWS, Azure, GCP                                                             |
-| Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
+| Containers            | Podman, Docker, Docker Compose                                              |
+| Cloud Providers       | AWS, Azure, GCP                                                             |
 | Version Control       | Git                                                                         |
 | Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
 | IaC                   | Terraform, Ansible, Salt                                                    |
 | CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
+| Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
 | Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic     |
 | Software Architecture | Micro-services                                                              |
 | Security              |                                                                             |
