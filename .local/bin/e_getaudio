@@ -1,17 +1,30 @@
 #!/usr/bin/env bash
 
-# Debug Options
-set -euo pipefail
+# Description: Extract audio of video pointed in clipboards url.
 
-# Description:
-# Deps: youtube-dl, ffmpeg
-
-# TODO: check deps are available
 # TODO: Url has url?
-# TODO: Url as standalone script
+DEPS=(youtube-dl ffmpeg)
+e_checkdeps "${DEPS[@]}"
 
-EXT=vorbis
+FREE=(vorbis ogg)
 
-notify-send "Getting Audio"
+EXT="${FREE[0]}"
+URL="$(e_url)"
 
-ixe get "$EXT" "$(e_url)"
+FOLDER="$HOME/Music"
+mkdir -p "$FOLDER" && cd "$FOLDER"
+
+# GETTERS ATTRIBUTES
+declare -A YTDL
+YTDL=(
+    [bin]="youtube-dl"
+    [audio]="--extract-audio --audio-format"
+    [title]="-o '%(title)s.%(ext)s'")
+
+# RUN
+__info="Format: $EXT
+      URL: $URL
+      Folder: $PWD"
+echo "$__info"
+
+"${YTDL[bin]}" ${YTDL[audio]} "$EXT" ${YTDL[title]} "$URL"
