@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./system_packages.nix
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./system_packages.nix
+    ./system_packages_user.nix
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -30,7 +30,7 @@
 
   # vulkan
   hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;   # For 32 bit applications
+  hardware.opengl.driSupport32Bit = true; # For 32 bit applications
 
   # unfree
   programs.steam.enable = true;
@@ -70,15 +70,13 @@
 
   services.xserver = {
     displayManager = {
-        sddm.enable = true;
-        defaultSession = "none+awesome";
+      sddm.enable = true;
+      defaultSession = "none+awesome";
     };
 
     windowManager.awesome = {
       enable = true;
-      luaModules = with pkgs.luaPackages; [
-        luarocks luadbi-mysql
-      ];
+      luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
 
     };
   };
@@ -115,7 +113,7 @@
   users.users.easbarbosa = {
     isNormalUser = true;
     home = "/home/easbarbosa";
-    extraGroups = [ "wheel" "networkmanager" "audio"  "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
