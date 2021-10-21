@@ -4,3 +4,12 @@
 | manual  | @                                   |
 |---------+-------------------------------------|
 | nixos   | Chapter 6. Package Management       |
+
+* nix-prefetch-url
+#+begin_src shell
+nix-prefetch-url https://st.suckless.org/patches/dracula/st-dracula-0.8.2.diff
+# 1231u28u31u23u1u23u12u3u
+#+end_src
+
+* nixos-rebuild
+** switch
