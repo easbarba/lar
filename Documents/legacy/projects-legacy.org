@@ -119,22 +119,6 @@
 * floss
 #+begin_src csv
 name,repository
-guile-json,https://github.com/aconchillo/guile-json
-guile-git,https://gitlab.com/guile-git/guile-git
-guile-filesystem,https://gitlab.com/leoprikler/guile-filesystem
-guile-libyaml,https://github.com/mwette/guile-libyaml
-geiser-guile,https://gitlab.com/emacs-geiser/guile
-alezost-guix-config,https://github.com/alezost/guix-config
-fibers,https://github.com/wingo/fibers
-nonguix,https://gitlab.com/nonguix/nonguix
-guix,https://git.savannah.gnu.org/git/guix
-guile,https://git.sv.gnu.org/git/guile
-akku,https://gitlab.com/akkuscm/akku
-lokke,https://github.com/lokke-org/lokke
-
-
-
-name,repository
 absinthe,https://github.com/absinthe-graphql/absinthe
 elixir_style_guide,https://github.com/christopheradams/elixir_style_guide
 credo,https://github.com/rrrene/credo
