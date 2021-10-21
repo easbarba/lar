@@ -23,8 +23,10 @@ YTDL=(
 
 # RUN
 __info="Format: $EXT
-      URL: $URL
-      Folder: $PWD"
+URL: $URL
+Folder: $PWD
+
+"
 echo "$__info"
 
 "${YTDL[bin]}" ${YTDL[audio]} "$EXT" ${YTDL[title]} "$URL"
