@@ -15,7 +15,7 @@ LOCAL_BIN="$HOME/.local/bin"
 
 tools=(udiskie mpd)
 
-apps=(alacritty zathura "$LOCAL_BIN/e_mx" "$LOCAL_BIN/e_wall")
+apps=(st zathura "$LOCAL_BIN/e_mx" "$LOCAL_BIN/e_wall")
 
 # * Helpers
 

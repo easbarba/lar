@@ -4,7 +4,7 @@
 
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="firefox"
 
 # * DIRECTORIES ENV VARS
