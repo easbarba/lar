@@ -79,7 +79,9 @@
 
     # infra
     podman
+    buildah
     docker
+    ansible
     qemu
     virt-manager
     vagrant # ovmf bridge-utils
@@ -166,4 +168,3 @@
     pciutils
   ];
 }
-
