@@ -1,4 +1,4 @@
-#+TITLE: Configuration Management
+#+TITLE: Ansible
 
 * TOC
   :PROPERTIES:
@@ -93,101 +93,80 @@
     - [[#browser][Browser]]
   :END:
 * Progress
-** Buch
-   | Buch                                         | Capitulo                                       | em                        | tarde                                              | revisao |
-   |----------------------------------------------+------------------------------------------------+---------------------------+----------------------------------------------------+---------|
-   | Distributed Systems                          |                                                |                           |                                                    |         |
-   | LPIC-1 101-400                               |                                                |                           |                                                    |         |
-   | Chef                                         |                                                |                           |                                                    |         |
-   | Puppet                                       |                                                |                           |                                                    |         |
-   | CI/CD                                        |                                                |                           |                                                    |         |
-   | DevOps HandBook                              | Agile, Continuous Delivery, and the Three Ways |                           |                                                    |         |
+** Livros
+| Livros             | Capitulo          | em                              |
+|--------------------+-------------------+---------------------------------|
+| Ansible for DevOps | 1 Getting started | Creating a basic inventory file |
+|                    |                   |                                 |
 
+* Defition
+Tool to automate IT tasks
 * Traits
-   - declarative vs procedural
-   - mutable vs immutable
-   - agent vs agentless
-* Alternatives
-** Ansible
-*** defition
-     Tool to automate IT tasks
-*** traits
-     - requires python
-     - agentless
-     - support os, cloud
-     - reusable file configuration for different env
-     - yaml
-     - configuration
-     - mainly configuration
-     - deployment
-     - install/update software
-     - better in configuring
-*** cli
-     |                           |                           |
-     |---------------------------+---------------------------|
-     | -m <MODULE> -a <OPT_ARGS> | use module with arguments |
-     |                           |                           |
+- requires python
+- agentless
+- support os, cloud
+- reusable file configuration for different env
+- yaml
+- configuration
+- mainly configuration
+- deployment
+- install/update software
+- better in configuring
+- procedural
+* cli
+|                           |                           |
+|---------------------------+---------------------------|
+| -m <MODULE> -a <OPT_ARGS> | use module with arguments |
+| --ask-become-pass         | run command as sudo       |
+| --ask-pass                | still require pass        |
 
-*** misc
-     |                   |                     |
-     |-------------------+---------------------|
-     | --ask-become-pass | run command as sudo |
-     | --ask-pass        | still require pass  |
-     |                   |                     |
-
-*** invetory lists
-     - list of the hosts that you wish to run the automation commands against
-     - Ip addres or hostname
-     - webservers: groups multiple ip addresses or hosts names
-     - databases
-     - can dynamic inventories
-     - invetory location: /etc/ansible/hosts
-*** tower
-     - ui dashboard from redhat
-     - centrally automate tools
-     - across teams
-     - configure permissions
-     - manage inventory
-*** playbooks
-**** usage
+* Invetory lists
+- list of the hosts that you wish to run the automation commands against
+- Ip addres or hostname
+- webservers: groups multiple ip addresses or hosts names
+- databases
+- can dynamic inventories
+- invetory location: /etc/ansible/hosts
+* Tower
+- ui dashboard from redhat
+- centrally automate tools
+- across teams
+- configure permissions
+- manage inventory
+* Playbooks
+** usage
       - docker container
       - vagrant container
       - cloud instance
       - bare metal
-**** tips
-***** running ansible command locally
+** tips
+*** running ansible command locally
        ansible-playbook --connection=local --inventory 127.0.0.1, playbook.yml
-**** good practices
+** good practices
       - naming plays
-**** traits
+** traits
       - hosts: execute tasks
       - execute multiple modules in sequence
       - organized in tasks
       - arguments
       - modules name
 
-*** vars
-**** ansible_env.HOME
+* Vars
+** ansible_env.HOME
       get remote home
 
-*** modules
-**** Trais
+* Modules
+** Trais
       - lots of modules avaiable: https://docs.ansible.com/ansible/2.8/modules/modules_by_category.html
       - grouped together
       - one action may require multiple module
       - applied in sequences
-**** packages
+** packages
       https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
-**** Small specific taks
+** Small specific taks
       - create file
       - install nginx
       - start docker container
       - create cloud instance
-**** Perform one action
+** Perform one action
       -
-** Puppet
-*** traits
-     - ruby config
-     - installation needed to manage servers
-** Salt
-** Chef
