@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter            | @                    |
-|-------------------------+--------------------+----------------------|
-| Go Programming Language | 3 Basic Data Types | 3.3. Complex Numbers |
-| Learning go             | 9 modules          | import/exports       |
+| name                    | chapter            | @                          |
+|-------------------------+--------------------+----------------------------|
+| Go Programming Language | 3 Basic Data Types | 3.3. Complex Numbers       |
+| Learning go             | 9 modules          | Importing Third-Party Code |
 
 ** LDC
 | Source Code | folder                | file            | @                 |
@@ -221,7 +221,6 @@ Usage:
 
 **** functions
 - len
-
 
 *** boolean
 - zero value = false
@@ -342,6 +341,7 @@ delete(m, "hello")
 - delete
 *** Struct
 - inside or outside of a function
+- unkeyed structs
 #+begin_src go
 type person struct {
 	name string
@@ -418,6 +418,12 @@ var hs HighScore = 200
 hs = s                  // compilation error!
 s = i                   // compilation error!
 
+#+end_src
+
+- can be aliased
+
+#+begin_src go
+type Bar = Foo
 #+end_src
 
 *** methods
@@ -530,6 +536,10 @@ type Stringer interface {
 | >=       |                           |
 | &&       |                           |
 |          |                           |
+
+** import
+allows you to access exported constants, variables, functions, and types in
+another package.
 
 ** Functions
 - reference type
@@ -794,6 +804,24 @@ func main() {
     fmt.Println(y)
 }
 #+end_src
+*** blank identifier
+The blank identifier is the single underscore (_) operator. It is used to ignore
+the values returned by functions or import for side-effects.
+
+- Ignore values
+- Side effects of import
+- Ignore Compiler Errors
+
+#+begin_src go
+_, err = os.Read(x)
+#+end_src
+** Errors
+*** errors
+*** fmt.Errorf
+#+begin_src go
+return 0, fmt.Errorf("%d isn't an even number", i)
+#+end_src
+*** sentinel error
 ** Blocks
 *** Package Levels
 *** Universe block
@@ -982,6 +1010,10 @@ package meh
       |---+---|
       |   |   |
 
+** doc
+** mod
+go mod init MODULE_PATH
+
 ** install
 |               |                            |
 |---------------+----------------------------|
@@ -1001,6 +1033,54 @@ Run compiles and runs the named main Go package.
 - list golang environment variables
 *** $GOPATH
 *** $GOPROXY
+* Structure
+** internal
+** import
+*** blank import
+- obsolete
+
+#+begin_src go
+import _ "github.com/lib/pq"
+#+end_src
+
+** pkg
+** cmd
+** init function
+The init function is a function that takes no argument and returns nothing. This
+function executes after the package is imported and maintains the order of
+execution. That means multiple init functions can be defined in a file and they
+will be called one after another maintaining the order.
+
+- multiple init
+- no parameters and returns no values
+- runs the first time the package is referenced by another package
+- initialize package-level variables that can’t be configured in a single assignment.
+- should be immutable
+- should declare only init function
+- if loads files or accesses the network, document it.
+* Config
+** go.mod
+*** require
+lists the modules that your module depends on and the minimum version required
+for each one.
+*** replace
+lets you override the location where a dependent module is located
+*** exclude
+prevents a specific version of a module from being used.
+*** version
+minimal version
+
+#+begin_src conf
+go 1.15
+#+end_src
+
+*** module
+
+#+begin_src conf
+module meh.com/gojail/money
+#+end_src
+
+** go.sum
 
 * Standary Library
 
