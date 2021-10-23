@@ -59,7 +59,7 @@ tecnologias Ruby, Guile e ultimamente Golang.
 *PROJETOS*
 -----
 
-  https://git.sr.ht/~easbarbosa
+  https://codeberg.org/easbarbosa
 
 *EDUCAÇÃO*
 -----
