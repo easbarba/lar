@@ -8,12 +8,16 @@
 - [[#progresso][Progresso]]
 - [[#cli][cli]]
   - [[#container][container]]
+  - [[#exec][exec]]
   - [[#volume][volume]]
+  - [[#ps][ps]]
   - [[#login][login]]
-  - [[#stopquitdetach][Stop/Quit/Detach]]
-  - [[#run][run]]
   - [[#images][images]]
   - [[#image][image]]
+  - [[#rm][rm]]
+  - [[#run][run]]
+  - [[#start][start]]
+- [[#stopquitdetach][Stop/Quit/Detach]]
 - [[#dockerfile][Dockerfile]]
   - [[#keywords][keywords]]
 - [[#docker-entrypointsh][docker-entrypoint.sh]]
@@ -62,7 +66,6 @@ podman container run --name test -it -v sample:/data alpine /bin/sh
 |------------------+---|
 | -v <NAME:/WHERE> |   |
 
-
 *** exec
 |    |                           |
 |----+---------------------------|
@@ -95,6 +98,7 @@ podman container diff sample
 #+end_src
 *** commit
 Create a new image from a container’s changes
+** exec
 ** volume
 *** create
 **** options
@@ -105,36 +109,14 @@ Create a new image from a container’s changes
 
 
 *** inspect
+** ps
+|       |   |
+|-------+---|
+| --all |   |
 ** login
 #+begin_src shell
 docker login -u gnschenker -p <my secret password>
 #+end_src
-** Stop/Quit/Detach
-|         |          |
-|---------+----------|
-| C-c     | stop all |
-| C-p C-q | detach   |
-|         |          |
-
-** run
-#+begin_src shell
-docker run -it --rm --privileged --pid=host fundamentalsofdocker/nsenter
-#+end_src
-
-
-|        |   |
-|--------+---|
-| -d     |   |
-| --name |   |
-| -p     |   |
-
-*** options
-|              |   |
-|--------------+---|
-| --pid=<HOST> |   |
-| --privileged |   |
-
-
 ** images
 ** image
 *** ls
@@ -159,6 +141,38 @@ podman image save -o ./backup/my-alpine.tar my-alpine
 podman image load -i ./backup/my-alpine.tar
 #+end_src
 *** tag
+** rm
+|           |   |
+|-----------+---|
+| --storage |   |
+** run
+#+begin_src shell
+docker run -it --rm --privileged --pid=host fundamentalsofdocker/nsenter
+#+end_src
+
+
+|               |                           |
+|---------------+---------------------------|
+| -d            | keep running in backgroun |
+| --name <NAME> | set name                  |
+| -p <ii:II>    | port                      |
+| -i            | interactively             |
+| -t            | tty                       |
+
+*** options
+|              |   |
+|--------------+---|
+| --pid=<HOST> |   |
+| --privileged |   |
+** start
+* Stop/Quit/Detach
+|         |          |
+|---------+----------|
+| C-c     | stop all |
+| C-p C-q | detach   |
+| c-d     | kill     |
+|         |          |
+
 * Dockerfile
 ** keywords
 *** FROM
