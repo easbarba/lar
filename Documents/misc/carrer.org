@@ -1,31 +1,31 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon     | tue        | wed     | thru       | fri     |
-|---------+------------+---------+------------+---------|
-| lang    | cloud      | lang    | cloud      | network |
-| iac     | containers | iac     | containers | os      |
-| editors | vc         | editors | vc         |         |
+| mon     | tue        | wed     | thru       | fri |
+|---------+------------+---------+------------+-----|
+| lang    | containers | lang    | containers | k8s |
+|         | iac        |         | iac        | os  |
+| editors | vc         | editors | vc         |     |
 
 * Priorities
 | @                     | desc                                                                        |
 |-----------------------+-----------------------------------------------------------------------------|
 | OS                    | Debian, NixOS                                                               |
 | Lang                  | Golang, Bash, Awk, Data Structure, Algorithms                               |
-| Editors               | Emacs, Vim                                                                  |
 | Containers            | Podman, Docker, Docker Compose                                              |
-| Cloud Providers       | AWS, Azure, GCP                                                             |
-| Version Control       | Git                                                                         |
-| Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
 | IaC                   | Terraform, Ansible, Salt                                                    |
-| CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
+| Cloud Providers       | AWS, Azure, GCP                                                             |
+| Editors               | Emacs, Vim                                                                  |
+| Version Control       | Git                                                                         |
 | Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
+| Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
+| CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
 | Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic     |
 | Software Architecture | Micro-services                                                              |
 | Security              |                                                                             |
 | Message               | RabbitMQ, Kafka                                                             |
 | Database              | PostgreSQL, MySQL, Redis, MongoDB                                           |
-| misc                  | Rancher, Istio, nginx, sensu, datadog, new relic, zabbix                    |
+| misc                  | Rancher, Istio, nginx, sensu, datadog, new relic, zabbix, cacti             |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
