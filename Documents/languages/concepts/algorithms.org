@@ -9,6 +9,7 @@
 - [[#search][Search]]
   - [[#linear-search][Linear Search]]
   - [[#binary-search][Binary Search]]
+- [[#misc][misc]]
 :END:
 * Progress
 | Book | chapter | @ |
@@ -21,3 +22,23 @@
 - preferred in large arrays
 - ordered array
 - each lookup eliminates half of elements from the search
+* misc
+Sorting
+
+Sorting Algorithms, Arrange the items of a list on order
+
+Bubble Sort
+Merge Sort
+Quick Sort
+Heap Sort
+Search
+
+Find a element in a data set.
+
+Binary Search
+Breath First Search
+
+Dynamic Programming
+Hashing
+Divide and Conquer
+Recursion algorithm
