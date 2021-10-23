@@ -84,7 +84,9 @@
     ansible
     qemu
     virt-manager
-    vagrant # ovmf bridge-utils
+    vagrant
+    virtualbox
+    # ovmf bridge-utils
 
     # network
     iproute2
