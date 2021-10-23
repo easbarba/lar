@@ -94,10 +94,10 @@
   :END:
 * Progress
 ** Livros
-| Livros             | Capitulo          | em                              |
-|--------------------+-------------------+---------------------------------|
-| Ansible for DevOps | 1 Getting started | Creating a basic inventory file |
-|                    |                   |                                 |
+| Livros             | Capitulo                             | em                                                  |
+|--------------------+--------------------------------------+-----------------------------------------------------|
+| Ansible for DevOps | 2 - Local Infrastructure Development | Prototyping and testing with local virtual machines |
+|                    |                                      |                                                     |
 
 * Defition
 Tool to automate IT tasks
@@ -119,14 +119,37 @@ Tool to automate IT tasks
 | -m <MODULE> -a <OPT_ARGS> | use module with arguments |
 | --ask-become-pass         | run command as sudo       |
 | --ask-pass                | still require pass        |
+| -a                        | module arguments          |
+| -k                        | ask pass                  |
+* ansible-playboy
+|                      |   |
+|----------------------+---|
+| --connection=<LOCAL> |   |
+| --inventory <IP>     |   |
+| --limit <IP>         |   |
 
-* Invetory lists
+** run local
+#+begin_src shell
+ansible-playbook \
+    --connection=local \
+    --inventory 127.0.0.1, \
+    --limit 127.0.0.1 ~/Documents/Ansible/local_playbook.yml
+#+end_src
+
+* Invetory
 - list of the hosts that you wish to run the automation commands against
 - Ip addres or hostname
 - webservers: groups multiple ip addresses or hosts names
 - databases
 - can dynamic inventories
 - invetory location: /etc/ansible/hosts
+
+** inventory example
+#+begin_src conf
+[example]
+ubuntu ansible_host=18.1 ansible_connection=ssh ansible_user=ubuntu ansible_ssh_private_key_file=/home/meh/Documents/meh.pem
+#+end_src
+
 * Tower
 - ui dashboard from redhat
 - centrally automate tools
