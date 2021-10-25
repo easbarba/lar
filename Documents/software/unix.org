@@ -97,8 +97,8 @@
 | Books                                         | capitulo                                   | em                             | @later | revisao |
 |-----------------------------------------------+--------------------------------------------+--------------------------------+--------+---------|
 | Unix Environment                              | 2 File System                              | 2.5 Inodes                     |        |         |
-| Modern Operating Systems                      | Introduction                               | 1.2 TYPES OF COMPUTER NETWORKS |        |         |
 | Linux Programming Interface                   | Fundamental Concepts                       | Process                        |        |         |
+| Modern Operating Systems                      | Introduction                               | 1.2 TYPES OF COMPUTER NETWORKS |        |         |
 | UNIX and Linux System Administration Handbook |                                            |                                |        |         |
 | LPIC                                          | Part II Exam / Chapter 6 Configuring the X | Configuring Basic X Features   |        |         |
 | The Art of Unix programming                   | 2 History                                  |                                |        |         |

@@ -285,17 +285,6 @@ echo 'NAME="Arch Linux"' | cut -f2 -d '=' # "Arch Linux"
 
 * ts
 
-* xmodmap
-|         |                                    |
-|---------+------------------------------------|
-| -pke    |                                    |
-
-* setxkbmap
-|         |                                    |
-|---------+------------------------------------|
-| -option | reset current session modification |
-|         |                                    |
-
 * file system
 ** findmnt
 ** lsblk
@@ -307,3 +296,31 @@ report file system space usage
 | -h | print sizes in powers of 1024                        |
 | -x | limit listing to file systems not of type TYPE       |
 | -a | include pseudo, duplicate, inaccessible file systems |
+* Xorg
+** xmodmap
+|         |                                    |
+|---------+------------------------------------|
+| -pke    |                                    |
+
+** setxkbmap
+|         |                                    |
+|---------+------------------------------------|
+| -option | reset current session modification |
+|         |                                    |
+
+** xinput
+- list the devices
+#+begin_src shell
+ xinput --list
+#+end_src
+
+- list details for the mouse (id=3)
+ #+begin_src shell
+xinput --list-props 3
+ #+end_src
+
+- Disable the mouse:
+#+begin_src shell
+$ export DISPLAY=:0
+$ xinput set-int-prop 3 "Device Enabled" 8 0
+#+end_src
