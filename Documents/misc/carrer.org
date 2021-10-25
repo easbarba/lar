@@ -1,22 +1,22 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon     | tue        | wed     | thru       | fri |
-|---------+------------+---------+------------+-----|
-| lang    | containers | lang    | containers | k8s |
-|         | iac        |         | iac        | os  |
-| editors | vc         | editors | vc         |     |
+| mon     | tue  | wed     | thru     | fri        |
+|---------+------+---------+----------+------------|
+| lang    | lang | lang    | database | os         |
+| editors | vc   | editors | vc       | containers |
 
 * Priorities
 | @                     | desc                                                                        |
 |-----------------------+-----------------------------------------------------------------------------|
 | OS                    | Debian, NixOS                                                               |
 | Lang                  | Golang, Bash, Awk, Data Structure, Algorithms                               |
+| Database              | PostgreSQL, MySQL, Redis, MongoDB                                           |
+| Editors               | Emacs, Vim                                                                  |
+| Version Control       | Git                                                                         |
 | Containers            | Podman, Docker, Docker Compose                                              |
 | IaC                   | Terraform, Ansible, Salt                                                    |
 | Cloud Providers       | AWS, Azure, GCP                                                             |
-| Editors               | Emacs, Vim                                                                  |
-| Version Control       | Git                                                                         |
 | Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
 | Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
 | CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
@@ -24,7 +24,6 @@
 | Software Architecture | Micro-services                                                              |
 | Security              |                                                                             |
 | Message               | RabbitMQ, Kafka                                                             |
-| Database              | PostgreSQL, MySQL, Redis, MongoDB                                           |
 | misc                  | Rancher, Istio, nginx, sensu, datadog, new relic, zabbix, cacti             |
 
 * Résumé
