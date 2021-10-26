@@ -116,15 +116,15 @@
 ** Books
 | name                    | chapter           | @                          |
 |-------------------------+-------------------+----------------------------|
-| Go Programming Language | 4 Composite Types | Arrays                     |
+| Go Programming Language | 4 Composite Types | 4.2. Slices                |
 | Learning go             | 9 modules         | Importing Third-Party Code |
 
 ** LDC
 | Source Code | folder                | file            | @                 |
 |-------------+-----------------------+-----------------+-------------------|
 | go          | src/archive/tar       | example_test.go |                   |
+| go-tools    | cmd/auth/authtest     | authtest.go     |                   |
 | podman      | cmd/podman/containers | cp.go           | copyFromContainer |
-| consul      | acl                   | acl.go          |                   |
 
 * Features
 ** Basic Types
@@ -247,13 +247,12 @@ fmt.Printf("%d %[1]c %[1]q\n", unicode) // "22269 D 'D'"
 - has no type
 - may be assigned to any variable of interface or reference type.
 ** Agreggate Types
-#+begin_src go
-strings.Map
-#+end_src
-
 *** Arrays
 - == and != to compare arrays
+- all elements have same type
+- fixed size
 - one-dimensional arrays only
+- ellipsis ‘‘...’’ means array length is determined by the number of initializers.
 
 #+begin_src go
 var x [3]int // 0,0,0
@@ -342,6 +341,9 @@ delete(m, "hello")
 *** Struct
 - inside or outside of a function
 - unkeyed structs
+- elements may have different type
+- fixed size
+
 #+begin_src go
 type person struct {
 	name string
@@ -1116,6 +1118,11 @@ const (
 - HasPrefix
 - Index
 - Join
+
+#+begin_src go
+strings.Map
+#+end_src
+
 ** bytes
 - bytes.Buffer
 - Contains
@@ -1133,7 +1140,7 @@ const (
 ** fmt
 - Sprintf
 - Scanf
-- Printf: %T
+- Printf: %T, %t, %x, %c
 ** unicode
 - isDigit
 - IsLetter
