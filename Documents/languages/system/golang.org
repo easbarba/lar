@@ -116,7 +116,7 @@
 ** Books
 | name                    | chapter            | @                          |
 |-------------------------+--------------------+----------------------------|
-| Go Programming Language | 3 Basic Data Types | 3.3. Complex Numbers       |
+| Go Programming Language | 3 Basic Data Types | 3.6. Constants             |
 | Learning go             | 9 modules          | Importing Third-Party Code |
 
 ** LDC
