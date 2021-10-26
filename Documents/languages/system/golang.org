@@ -178,7 +178,7 @@ int32. On most 64-bit CPUs, int is a 64-bit signed integer, just like an int64.
 *** strings
 - immutable
 - zero value = ""
-- sequence of bytes
+- a sequence of bytes, once created, is immutable.
 - only use slice/indexing when string contains characters that take up one byte.
 - conversion from int to string yields a string of runes.
 - extract substrings and code points from strings using the functions in the strings and unicode/utf8
@@ -1082,21 +1082,51 @@ module meh.com/gojail/money
 
 ** go.sum
 
-* Standary Library
-
-     #+begin_src go
-     // end of line
-     io.EOF
-
-     #+end_src
-
+* Standard Library
 ** misc
+*** basename
+#+begin_src go
+fmt.Println(basename("a/b/c.go")) // "c"
+fmt.Println(basename("c.d.go"))  // "c.d"
+fmt.Println(basename("abc")) // "abc"
+#+end_src
 *** make
 #+begin_src go
 make([]T, len)
 make([]T, len, cap) // same as make([]T, cap)[:len]
 #+end_src
 
+** string
+- IsUpper
+- IsLower
+- Contains
+- Count
+- Fields
+- HasPrefix
+- Index
+- Join
+** bytes
+- bytes.Buffer
+- Contains
+- Count
+- Fields
+- HasPrefix
+- Index
+- Join
+** strconv
+- Itoa
+- ParseInt
+- ParseUint
+- FormatInt
+- FormatUint
+** fmt
+- Sprintf
+- Scanf
+** unicode
+- isDigit
+- IsLetter
+- IsUpper
+- IsLower
 ** math
 |                 |   |
 |-----------------+---|
@@ -1104,6 +1134,14 @@ make([]T, len, cap) // same as make([]T, cap)[:len]
 | math.MaxFloat64 |   |
 | math.NaN        |   |
 | math.IsNaN      |   |
+** path
+** filepath
+** io
+#+begin_src go
+// end of line
+io.EOF
+
+#+end_src
 
 * Terms
 - runes: single characthers
