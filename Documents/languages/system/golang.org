@@ -441,21 +441,6 @@ fmt.Println(f2(myAdder, 15))  // prints 25
 
 #+end_src
 
-*** iota
-- repeats the type and the assignment to all of the subsequent constants in the block
-
-#+begin_src go
-type MailCategory int
-
-const (
-    Uncategorized MailCategory = iota
-    Personal
-    Spam
-    Social
-    Advertisements
-)
-#+end_src
-
 *** emb
 #+begin_src go
 type Employee struct {
@@ -514,28 +499,28 @@ type Stringer interface {
 #+end_src
 
 ** Operators
-|          |                           |
-|----------+---------------------------|
-| combined | += , -= , *= ,/= , and %= |
-|          |                           |
-| *        |                           |
-| /        |                           |
-| %        |                           |
-| <<       | right shift               |
-| >>       | left shift                |
-| &        |                           |
-| &^       |                           |
-| +        | unary                     |
-| -        | unary                     |
-| ^        |                           |
-| ==       |                           |
-| !=       |                           |
-| <        |                           |
-| <=       |                           |
-| >        |                           |
-| >=       |                           |
-| &&       |                           |
-|          |                           |
+|          |                            |
+|----------+----------------------------|
+| combined | += , -= , *= ,/= , and %=  |
+|          |                            |
+| *        |                            |
+| /        |                            |
+| %        |                            |
+| <<       | right shift / power of two |
+| >>       | left shift                 |
+| &        |                            |
+| &^       |                            |
+| +        | unary                      |
+| -        | unary                      |
+| ^        |                            |
+| ==       |                            |
+| !=       |                            |
+| <        |                            |
+| <=       |                            |
+| >        |                            |
+| >=       |                            |
+| &&       |                            |
+|          |                            |
 
 ** import
 allows you to access exported constants, variables, functions, and types in
@@ -779,7 +764,10 @@ x--
 - The built-in functions complex, real, imag, len, and cap
 - Expressions that consist of operators and the preceding values
 - typed and untyped constants
+- evaluated at compile time
+- omiting value but the first and all will have same value
 - compiler allows you to create unread constants
+- allow untyped constants
 
 #+begin_src go
 const x int64 = 10
@@ -803,6 +791,15 @@ func main() {
     fmt.Println(x)
     fmt.Println(y)
 }
+
+const (
+	a = 1
+	b
+	c = 2
+	d
+)
+fmt.Println(a, b, c, d) // "1 1 2 2"
+
 #+end_src
 *** blank identifier
 The blank identifier is the single underscore (_) operator. It is used to ignore
@@ -1096,6 +1093,20 @@ make([]T, len)
 make([]T, len, cap) // same as make([]T, cap)[:len]
 #+end_src
 
+*** iota
+- repeats the type and the assignment to all of the subsequent constants in the block
+
+#+begin_src go
+type MailCategory int
+
+const (
+    Uncategorized MailCategory = iota
+    Personal
+    Spam
+    Social
+    Advertisements
+)
+#+end_src
 ** string
 - IsUpper
 - IsLower
@@ -1122,6 +1133,7 @@ make([]T, len, cap) // same as make([]T, cap)[:len]
 ** fmt
 - Sprintf
 - Scanf
+- Printf: %T
 ** unicode
 - isDigit
 - IsLetter
