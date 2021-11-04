@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter           | @                          |
-|-------------------------+-------------------+----------------------------|
-| Go Programming Language | 4 Composite Types | 4.5. JSON                  |
-| Learning go             | 9 modules         | Importing Third-Party Code |
+| name                    | chapter     | @                          |
+|-------------------------+-------------+----------------------------|
+| Go Programming Language | 5 Functions |                            |
+| Learning go             | 9 modules   | Importing Third-Party Code |
 
 ** LDC
 | Source Code | folder                | file            | @                 |
