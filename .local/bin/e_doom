@@ -2,9 +2,12 @@
 
 set -euo pipefail
 
-e_echo "Doom Emacs - Install/Upgrade."
-
+DEPS=(emacs)
 MX_HOME="$HOME/.config/emacs"
+
+e_checkdeps "${DEPS[@]}"
+
+e_echo "Doom Emacs - Install/Upgrade."
 
 wipe() { rm -rf ~/.emacs.d; }
 grab() { git clone --depth 1 https://github.com/hlissner/doom-emacs "$MX_HOME"; }
