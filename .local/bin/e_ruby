@@ -3,18 +3,14 @@
 # Debug Options
 set -euo pipefail
 
-deps=(ruby gem)
-e_checkdeps ${deps[@]}
+DEPS=(ruby gem)
+DEV=(bundler rake solargraph)
 
-packages()
-{
-    e_echo "Install global ruby gems"
+e_checkdeps "${DEPS[@]}"
 
-    local packages=(bundler rake solargraph)
-
-    e_dolist "gem install" "${packages[@]}"
-    e_dolist "gem update" "${packages[@]}"
-}
+_install() { e_dolist "gem install" "${DEV[@]}"; }
+_update() { e_dolist "gem update" "${DEV[@]}"; }
 
 # * RUN
-packages
+_install
+_update
