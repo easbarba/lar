@@ -324,3 +324,9 @@ xinput --list-props 3
 $ export DISPLAY=:0
 $ xinput set-int-prop 3 "Device Enabled" 8 0
 #+end_src
+
+** xandr
+|           |   |
+|-----------+---|
+| -q        |   |
+| --current |   |
