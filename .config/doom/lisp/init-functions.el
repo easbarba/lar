@@ -32,7 +32,7 @@
   "Call Video Player with online video's URL on clipboard!"
   (interactive)
   (alert "Playing Video.")
-  (start-process "PLAY-VIDEO" "PLAY-VIDEO" "ixe" "play" url))
+  (start-process "PLAY-VIDEO" "PLAY-VIDEO" *player* url))
 (global-set-key (kbd "C-c f P") #'(lambda () (interactive) (e/play-video (current-kill 0 t))))
 
 ;; * FFMPEG - ffmpeg features using Dired
