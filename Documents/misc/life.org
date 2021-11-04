@@ -285,6 +285,22 @@ http://steamcommunity.com/id/elxbarbosa
 
 ** alien isolation
    0340
+* Contas
+#+OPTIONS: toc:nil author:nil date:nil num:nil
+
+| Pagamento            |      R$ |
+|----------------------+---------|
+| Industrializados     |  726.88 |
+| limpeza              |  323.25 |
+| Luvas                |   41.04 |
+| Escova sanitaria     |   19.06 |
+| Assento Sanitario    |   56.03 |
+| Itau master anuidade |   14.70 |
+| Fogao                |   62.27 |
+|----------------------+---------|
+| TOTAL                | 1243.23 |
+#+TBLFM: @>$2=vsum(@2..@-1)
+
 * Music
 ** Classic Composers
 - Berlioz
