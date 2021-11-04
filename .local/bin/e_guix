@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
+# * Information
+# Site: https://guix.gnu.org/
+
 # * Debug Options
 set -euo pipefail
 
 DEPS=(sudo guix wget bash)
 e_checkdeps "${DEPS[@]}"
-
-# * Information
-# Site: https://guix.gnu.org/
 
 # * ENV VARS
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
@@ -30,11 +30,11 @@ get() {
 install() {
 	[[ -x $(command -v guix) ]] && return
 
-	/usr/bin/sudo /usr/bin/bash /tmp/guix-install.sh
+	sudo bash /tmp/guix-install.sh
 }
 
 upgrade() {
-	/usr/bin/sudo -i guix pull
+	sudo -i guix pull
 	guix pull
 	guix upgrade
 }
@@ -51,12 +51,12 @@ system() {
 }
 
 development() {
-	local packages=(direnv)
+	local packages=()
 	e_dolist "guix install" "${packages[@]}"
 }
 
 languages() {
-	local packages=(go ruby)
+	local packages=()
 	e_dolist "guix install" "${packages[@]}"
 }
 
@@ -70,4 +70,3 @@ upgrade
 glocale
 system
 development
-languages
