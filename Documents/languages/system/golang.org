@@ -116,7 +116,7 @@
 ** Books
 | name                    | chapter           | @                          |
 |-------------------------+-------------------+----------------------------|
-| Go Programming Language | 4 Composite Types | 4.2. Slices                |
+| Go Programming Language | 4 Composite Types | 4.5. JSON                  |
 | Learning go             | 9 modules         | Importing Third-Party Code |
 
 ** LDC
@@ -270,6 +270,7 @@ var x [2][3]int // simulate multidemensional array
 - slice as arg: any modification to the contents of the slice is reflected in the original variable, but using
   append to change the length isn’t reflected in the original variable, even if
   the slice has a capacity greater than its length.
+- test whether a slice is empty w/ len(s) == 0
 
 #+begin_src go
 var x = []int{10, 20, 30}
@@ -296,13 +297,17 @@ n := x[:2] // 1, 4
 h := x[0:2:2] // 1,4 with 2 of cap
 #+end_src
 *** Maps
-- read a nil map always returns the zero value for the map’s value type.
+|            |     |
+|------------+-----|
+| zero value | nil |
+
+- always return a value, or a zero value
 - write to a nil map variable causes a panic.
 - can read and write to a map assigned an empty map literal.
 - automatically grow as you add key-value pairs
 - can use `make` to create a map with a specific initial size.
 - not comparable w/ *==*  and *!=*
-- comma ok, verifies availibity of key
+- comma ok, verifies availability of key
 - no way to constrain a map to only allow certain keys
 - values in a map must be of the same type
 - avoid using maps for input parameters or return values, especially on public APIs
@@ -331,18 +336,34 @@ v, ok = m["world"]
 fmt.Println(v, ok)
 
 v, ok = m["goodbye"]
-
+if !ok { fmt.Print("MEEEEEEEEEEH") }
 
 delete(m, "hello")
 
 #+end_src
 **** functions
 - delete
+- len
+- range
+
 *** Struct
-- inside or outside of a function
+|            |                                                    |
+|------------+----------------------------------------------------|
+| zero value | composed of the zero values of each of its fields. |
+| empty      | struct{}                                           |
+| scope      | universe, function                                 |
+| values     | different types                                    |
+| size       | fixed size                                         |
+| repeatable | unique                                             |
+| comparable | if all fields are comparable                       |
+
+- named values
+- value is called fields
 - unkeyed structs
-- elements may have different type
-- fixed size
+- its value cannot contain itself.
+- can assign just some values
+- For efficiency, larger struct types are passed/returned from functions indirectly using a pointer
+
 
 #+begin_src go
 type person struct {
@@ -378,6 +399,11 @@ pet := struct {
     kind: "dog",
 }
 
+// &Struct notation
+pp := &Point{1, 2}
+// same as
+pp := new(Point)
+*pp = Point{1, 2}
 
 #+end_src
 ** Reference Type
@@ -1109,6 +1135,7 @@ const (
     Advertisements
 )
 #+end_src
+*** append
 ** string
 - IsUpper
 - IsLower
