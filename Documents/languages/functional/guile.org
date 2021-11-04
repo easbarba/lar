@@ -123,7 +123,7 @@
 ** LDC
 | Source Code | folder           | file       | @ |
 |-------------+------------------+------------+---|
-| guix        | gnu/builds       | account    |   |
+| guix        | guix/build/maven | java.scm   |   |
 | guile       | lib/module/ice-9 | boot-9.scm |   |
 
 * Books
