@@ -3,14 +3,15 @@
 * Schedule
 | mon     | tue  | wed     | thru     | fri        |
 |---------+------+---------+----------+------------|
-| lang    | lang | lang    | database | os         |
-| editors | vc   | editors | vc       | containers |
+| lang    | lang | lang    | database | containers |
+| editors | vc   | editors | vc       | os         |
 
 * Priorities
 | @                     | desc                                                                        |
 |-----------------------+-----------------------------------------------------------------------------|
 | OS                    | Debian, NixOS                                                               |
-| Lang                  | Golang, Bash, Awk, Data Structure, Algorithms                               |
+| Lang                  | Golang, Guile, Bash, Awk, Data Structure, Algorithms                        |
+| Concepts              | API, Rest, SOAP, OOP                                                        |
 | Database              | PostgreSQL, MySQL, Redis, MongoDB                                           |
 | Editors               | Emacs, Vim                                                                  |
 | Version Control       | Git                                                                         |
