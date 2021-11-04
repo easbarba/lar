@@ -1,12 +1,15 @@
 #+TITLE: Guix
 
-* Comandos
-** cli
-|          |   |
-|----------+---|
-| size     |   |
-| install  |   |
-| describe |   |
+* comandos
+** describe
+** install
+** size
+** edit
+|        |                |
+|--------+----------------|
+| <name> | package's name |
+|        |                |
+
 ** package
 guix package --search-paths  # env variables needed to export
 eval `guix package --search-paths=prefix` # eval env variables needed
@@ -21,3 +24,4 @@ eval `guix package --search-paths=prefix` # eval env variables needed
 | --delete                        |                                                           |
 | --list-failures                 |                                                           |
 ** pull
+** import
