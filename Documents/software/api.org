@@ -1,3 +1,49 @@
+#+TITLE: API
+
+* Summary
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progresso][Progresso]]
+- [[#cli][cli]]
+  - [[#container][container]]
+  - [[#exec][exec]]
+  - [[#volume][volume]]
+  - [[#ps][ps]]
+  - [[#login][login]]
+  - [[#images][images]]
+  - [[#image][image]]
+  - [[#rm][rm]]
+  - [[#run][run]]
+  - [[#start][start]]
+- [[#stopquitdetach][Stop/Quit/Detach]]
+- [[#dockerfile][Dockerfile]]
+  - [[#keywords][keywords]]
+- [[#docker-entrypointsh][docker-entrypoint.sh]]
+- [[#dockerignore][.dockerignore]]
+- [[#volumes][Volumes]]
+- [[#images-registry][Images Registry]]
+- [[#terms][Terms]]
+- [[#multi-stages][Multi-stages]]
+- [[#best-practices][Best practices]]
+- [[#podman][Podman]]
+  - [[#docs][docs]]
+  - [[#tricks][tricks]]
+  - [[#fixes][fixes]]
+- [[#docker][Docker]]
+  - [[#fortschritt][Fortschritt]]
+  - [[#dockerfile][Dockerfile]]
+  - [[#traits][Traits]]
+  - [[#commands][Commands]]
+:END:
+* Progresso
+| books                  | chapter            | at                                                          |
+|------------------------+--------------------+-------------------------------------------------------------|
+| The Design of Web APIs | 2 Designing an API | Focusing on how things work leads to complicated interfaces |
+|                        |                    |                                                             |
+
+
 * SOAP
  - Web Service Description Language
  - uses a standard XML schema (XSL) to encode XML
