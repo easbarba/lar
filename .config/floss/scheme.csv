@@ -4,6 +4,7 @@ guile-git,https://gitlab.com/guile-git/guile-git
 guile-filesystem,https://gitlab.com/leoprikler/guile-filesystem
 guile-libyaml,https://github.com/mwette/guile-libyaml
 geiser-guile,https://gitlab.com/emacs-geiser/guile
+pjotrp-guix-notesz,https://github.com/pjotrp/guix-notes
 alezost-guix-config,https://github.com/alezost/guix-config
 fibers,https://github.com/wingo/fibers
 nonguix,https://gitlab.com/nonguix/nonguix
