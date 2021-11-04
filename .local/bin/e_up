@@ -3,18 +3,23 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-DEPS=(sudo grep cut tr distro floss cejo emacs parallel cp find guix)
+DEPS=(sudo distro floss)
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
 
 # * CHECKER
 e_checkdeps "${DEPS[@]}"
 
+e_echo "Upgrading $DISTRO system and user packages."
+
 # * RUN
 
-e_echo "Upgrading system packages."
-[[ ! $DISTRO == "NixOS" ]] && distro update
-[[ ! $DISTRO == "NixOS" ]] && distro upgrade
-[[ ! $DISTRO == "NixOS" ]] && e_guix
+_distro() {
+    distro update
+    distro upgrade
+    e_guix
+}
+
+[[ ! $DISTRO == "NixOS" ]] && _distro
 [[ $DISTRO == "NixOS" ]] && nix-channel --update
 
 e_echo "FLOSS projects"
