@@ -43,11 +43,11 @@ packages() {
 
 	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf time
 		entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
-		jq rsync pv texinfo autoconf automake socat)
+		jq rsync pv texinfo autoconf automake socat ripgrep)
 
 	network=(net-tools iproute2 telnet)
 
-	programming=(git-email subversion mercurial direnv libpq-dev)
+	programming=(gawk git-email subversion mercurial direnv libpq-dev )
 
 	shell=(bash-completion bash-completion zenity tcsh fish)
 
@@ -57,7 +57,9 @@ packages() {
 
 	ruby=(ruby-dev libssl-dev)
 
-	lua=(lua5.4 luarocks lua-check)
+	go=(golang)
+
+	lua=(lua5.4 lua-check) # luarocks
 
 	database=(postgresql postgresql-contrib)
 
@@ -83,7 +85,7 @@ packages() {
 
 	xorg=(xorg awesome xinit feh scrot cheese)
 
-	wmapps=(udiskie ffmpeg zathura atril suckless-tools aria2 playerctl brightnessctl
+	wmapps=(udiskie ffmpeg zathura suckless-tools aria2 playerctl brightnessctl
 		bluez mpv libnotify-bin dunst w3m elinks)
 
 	music=(mpd mpc ncmpcpp)
@@ -103,29 +105,31 @@ packages() {
 
 	local command='/usr/bin/sudo /usr/bin/apt install -y'
 
-	enabled=("${essentials[@]}"
+	enabled=(
+		"${essentials[@]}"
+		"${system[@]}"
 		"${gnu[@]}"
 		"${network[@]}"
 		"${shell[@]}"
-		"${books[@]}"
-		"${wayland[@]}"
-		"${xorg[@]}"
 		"${debian[@]}"
-		"${editors[@]}"
-		"${emacs[@]}"
+		"${amd[@]}")
+		"${go[@]}"
 		"${ruby[@]}"
 		"${lua[@]}"
 		"${programming[@]}"
-		"${system[@]}"
+		"${editors[@]}"
+		"${emacs[@]}"
+		"${wayland[@]}"
+		"${xorg[@]}"
 		"${music[@]}"
 		"${infra[@]}"
 		"${fonts[@]}"
 		"${security[@]}"
 		"${laptop[@]}"
-		"${wm[@]}"
+		"${wmapps[@]}"
 		"${user[@]}"
 		"${media[@]}"
-		"${amd[@]}")
+		"${books[@]}"
 
 	for i in "${enabled[@]}"; do
 		e_dolist "$command" "$i"
@@ -142,6 +146,15 @@ post() {
 
 	/usr/bin/sudo /usr/bin/apt-file update # update Debian database
 	/usr/bin/sudo /usr/bin/fc-cache -fv    # cache all system fonts
+
+	awesome() {
+		local awe=$HOME/.config/awesome
+
+		mkdir $awe
+		cp -pvr /usr/share/awesome/themes/ $awe
+	}
+
+	awesome
 }
 
 clean() {
@@ -159,13 +172,6 @@ clean() {
 
 services() {
 	e_echo "Debian Services"
-
-	awesome() {
-		local awe=$HOME/.config/awesome
-
-		mkdir $awe
-		cp -pvr /usr/share/awesome/themes/ $awe
-	}
 
 	postgres() {
 		/usr/bin/sudo /usr/bin/systemctl restart postgresql
