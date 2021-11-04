@@ -41,12 +41,12 @@ home_bin() {
 
 # * PACKAGERS
 
-e_doom() {
+_doom() {
     DOOM_DIR="$HOME/.config/emacs"
     PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
 }
 
-e_npm() {
+_npm() {
     export NPM_CONFIG_PREFIX="$HOME/.local/npm"
     export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
     export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
@@ -56,7 +56,7 @@ e_npm() {
     PATH="$NPM_BIN":$PATH
 }
 
-e_ruby() {
+_ruby() {
     # irb
     export irbrc="$XDG_CONFIG_HOME/irb"
 
@@ -65,12 +65,12 @@ e_ruby() {
     export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 }
 
-e_golang() {
+_golang() {
     export GOPATH=$HOME/.local/go
     export PATH="$GOPATH/bin"${PATH:+:}$PATH
 }
 
-p_guix() {
+_guix() {
     export GUIX_PROFILE="$HOME/.guix-profile"
 
     # LOCALE
@@ -96,13 +96,11 @@ p_guix() {
 # * RUN
 
 home_bin
-
-e_doom
-
-e_golang
-e_npm
-e_ruby
-p_guix
+_doom
+_golang
+_npm
+_ruby
+_guix
 
 # * LOCALE
 
