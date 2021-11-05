@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-deps=(nmcli)
-e_checkdeps ${deps[@]}
-
-STATE=$(nmcli connection show | awk 'NR==2 {print $4}')
-SSID=$(nmcli connection show | awk 'NR==2 {print $1}')
-
-[[ "$STATE" == '--' ]] && nmcli con up $SSID || nmcli con down $SSID

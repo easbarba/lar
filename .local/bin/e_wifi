@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+DEVICE=$(ip a | awk '/wl+/ { split($0,a,": "); print a[2] }')
+
+echo "device: $DEVICE found"
+
+_nmcli() {
+    local deps=(nmcli)
+    e_checkdeps "${deps[@]}"
+
+    # return if not running
+    [[ ! $(pgrep -x nmcli) ]] && return
+
+    local state
+    local ssid
+    state=$(nmcli connection show | awk 'NR==2 {print $4}')
+    ssid=$(nmcli connection show | awk 'NR==2 {print $1}')
+
+    if [[ "$state" == '--' ]]; then
+        nmcli con up "$ssid"
+    else
+        nmcli con down "$ssid"
+    fi
+}
+
+_iwd() {
+    local deps=(iwd sudo curl)
+    e_checkdeps "${deps[@]}"
+
+    # return if not running
+    [[ ! $(pgrep -x iwd) ]] && return
+
+    if [[ ! $(curl -I gnu.org) ]]; then
+        echo 'TURNING OFF WIFI'
+        sudo ifup "$DEVICE"
+    else
+        echo 'TURNING ON WIFI'
+        sudo ifdown "$DEVICE"
+    fi
+}
+
+_nmcli
+_iwd
