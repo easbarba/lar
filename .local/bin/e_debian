@@ -47,9 +47,9 @@ packages() {
 
 	network=(net-tools iproute2 telnet)
 
-	programming=(gawk git-email subversion mercurial direnv libpq-dev )
+	programming=(gawk git-email subversion mercurial direnv libpq-dev)
 
-	shell=(bash-completion bash-completion zenity tcsh fish)
+	shell=(bash-completion bash-completion zenity tcsh fish yad)
 
 	editors=(neovim)
 
@@ -113,23 +113,23 @@ packages() {
 		"${shell[@]}"
 		"${debian[@]}"
 		"${amd[@]}")
-		"${go[@]}"
-		"${ruby[@]}"
-		"${lua[@]}"
-		"${programming[@]}"
-		"${editors[@]}"
-		"${emacs[@]}"
-		"${wayland[@]}"
-		"${xorg[@]}"
-		"${music[@]}"
-		"${infra[@]}"
-		"${fonts[@]}"
-		"${security[@]}"
-		"${laptop[@]}"
-		"${wmapps[@]}"
-		"${user[@]}"
-		"${media[@]}"
-		"${books[@]}"
+	"${go[@]}"
+	"${ruby[@]}"
+	"${lua[@]}"
+	"${programming[@]}"
+	"${editors[@]}"
+	"${emacs[@]}"
+	"${wayland[@]}"
+	"${xorg[@]}"
+	"${music[@]}"
+	"${infra[@]}"
+	"${fonts[@]}"
+	"${security[@]}"
+	"${laptop[@]}"
+	"${wmapps[@]}"
+	"${user[@]}"
+	"${media[@]}"
+	"${books[@]}"
 
 	for i in "${enabled[@]}"; do
 		e_dolist "$command" "$i"
