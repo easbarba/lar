@@ -23,6 +23,7 @@
   - [[#fallout-1][Fallout 1]]
   - [[#wineproton][Wine/Proton]]
   - [[#alien-isolation][alien isolation]]
+- [[#contas][Contas]]
 - [[#music][Music]]
   - [[#classic-composers][Classic Composers]]
   - [[#american][American]]
@@ -288,17 +289,31 @@ http://steamcommunity.com/id/elxbarbosa
 * Contas
 #+OPTIONS: toc:nil author:nil date:nil num:nil
 
-| Pagamento            |      R$ |
-|----------------------+---------|
-| Industrializados     |  726.88 |
-| limpeza              |  323.25 |
-| Luvas                |   41.04 |
-| Escova sanitaria     |   19.06 |
-| Assento Sanitario    |   56.03 |
-| Itau master anuidade |   14.70 |
-| Fogao                |   62.27 |
-|----------------------+---------|
-| TOTAL                | 1243.23 |
+| Pagamento              |       R$ | data |
+|------------------------+----------+------|
+| Industrializados       |   726.88 |      |
+| limpeza                |   323.25 |      |
+| Luvas                  |    41.04 |      |
+| Escova sanitaria       |    19.06 |      |
+| Assento Sanitario      |    56.03 | 1/11 |
+| Itau master anuidade   |    14.70 |      |
+| Fogao                  |    62.27 | 2/11 |
+| Carnes                 |      398 | 3/11 |
+| Verduras               |      221 | 4/11 |
+| Remedios               |   412,23 | 5/11 |
+| Mangueira fogao        |    43,54 | 5/11 |
+| Bobina 30x40           |    64,79 | 5/11 |
+| Dizimo                 |    1,140 | 5/11 |
+| Condominio             |      600 | 5/11 |
+| Energia                |   204,39 | 5/11 |
+| Cartao BRB             |   780,34 | 5/11 |
+| Cartao Itau Mastercard | 3.201,87 | 5/11 |
+| Cartao Carrefour       |     4,99 | 5/11 |
+| Vivo Ruth              |    67,26 | 5/11 |
+| Nazare Ajuda           |      200 | 5/11 |
+| Vivo Fixo              |   129,89 | 5/11 |
+|------------------------+----------+------|
+| TOTAL                  | 5039.431 |      |
 #+TBLFM: @>$2=vsum(@2..@-1)
 
 * Music
