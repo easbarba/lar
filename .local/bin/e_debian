@@ -47,9 +47,9 @@ packages() {
 
 	network=(net-tools iproute2 telnet)
 
-	programming=(gawk git-email subversion mercurial direnv libpq-dev)
+	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig)
 
-	shell=(bash-completion bash-completion zenity tcsh fish yad)
+	shell=(bash-completion bash-completion shellcheck zenity tcsh fish yad)
 
 	editors=(neovim)
 
@@ -112,24 +112,24 @@ packages() {
 		"${network[@]}"
 		"${shell[@]}"
 		"${debian[@]}"
-		"${amd[@]}")
-	"${go[@]}"
-	"${ruby[@]}"
-	"${lua[@]}"
-	"${programming[@]}"
-	"${editors[@]}"
-	"${emacs[@]}"
-	"${wayland[@]}"
-	"${xorg[@]}"
-	"${music[@]}"
-	"${infra[@]}"
-	"${fonts[@]}"
-	"${security[@]}"
-	"${laptop[@]}"
-	"${wmapps[@]}"
-	"${user[@]}"
-	"${media[@]}"
-	"${books[@]}"
+		"${amd[@]}"
+		"${go[@]}"
+		"${ruby[@]}"
+		"${lua[@]}"
+		"${programming[@]}"
+		"${editors[@]}"
+		"${emacs[@]}"
+		"${wayland[@]}"
+		"${xorg[@]}"
+		"${music[@]}"
+		"${infra[@]}"
+		"${fonts[@]}"
+		"${security[@]}"
+		"${laptop[@]}"
+		"${wmapps[@]}"
+		"${user[@]}"
+		"${media[@]}"
+		"${books[@]}")
 
 	for i in "${enabled[@]}"; do
 		e_dolist "$command" "$i"
@@ -149,8 +149,7 @@ post() {
 
 	awesome() {
 		local awe=$HOME/.config/awesome
-
-		mkdir $awe
+		mkdir -pv $awe
 		cp -pvr /usr/share/awesome/themes/ $awe
 	}
 
@@ -173,21 +172,26 @@ clean() {
 services() {
 	e_echo "Debian Services"
 
-	postgres() {
+	_postgres() {
 		/usr/bin/sudo /usr/bin/systemctl restart postgresql
 	}
 
-	mpd() {
+	_mpd() {
 		/usr/bin/sudo /usr/bin/systemctl disable mpd
 	}
 
-	kdeconnect() {
+	_iwd() {
+		/usr/bin/sudo /usr/bin/systemctl enable iwd
+		/usr/bin/sudo /usr/bin/systemctl start iwd
+	}
+
+	_kdeconnect() {
 		/usr/bin/sudo /usr/bin/firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
 		/usr/bin/sudo /usr/bin/firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
 		/usr/bin/sudo /usr/bin/systemctl restart firewalld.service
 	}
 
-	timezone() {
+	_timezone() {
 		local current_zone
 		local desired_zone
 
@@ -197,7 +201,7 @@ services() {
 		[[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
 	}
 
-	alternatives() {
+	_alternatives() {
 		# set python to python3
 		/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 	}
@@ -207,13 +211,13 @@ services() {
 		/usr/bin/sudo usermod -aG kvm "$USER"
 	}
 
-	awesome
-	mpd
-	postgresql
-	alternatives
-	timezone
-	kdeconnect
-	virtualization
+	#postgres
+	#kdeconnect
+	#virtualization
+	_mpd
+	_alternatives
+	_timezone
+	_iwd
 }
 
 foreign() {
@@ -233,7 +237,7 @@ packages
 post
 clean
 services
-foreign
+# foreign
 
 # dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
 # firmware-linux-nonfree, firmware-misc-nonfree, firmware-atheros, and firmware-ath9k-htc
