@@ -46,12 +46,12 @@ glocale() {
 }
 
 system() {
-	local packages=(nss-certs font-gnu-freefont-ttf font-dejavu)
+	local packages=(nss-certs font-gnu-freefont-ttf font-dejavu icecat)
 	e_dolist "guix install" "${packages[@]}"
 }
 
 development() {
-	local packages=()
+	local packages=(fd)
 	e_dolist "guix install" "${packages[@]}"
 }
 
