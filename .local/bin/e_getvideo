@@ -17,7 +17,7 @@ cd "$FOLDER"
 # YOUTUBE-DL
 
 GETTER='youtube-dl'
-EXT='webm'
+EXT='mp4'
 # QUALITY='bestvideo+bestaudio'
 FORMAT="--format $EXT"
 OUTPUT='%(title)s.f%(format_id)s.%(ext)s'
