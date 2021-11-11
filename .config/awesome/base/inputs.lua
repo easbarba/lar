@@ -3,7 +3,7 @@ local awful = require("awful")
 local menubar = require("menubar")
 
 -- * Shared Variables
-local terminal = "st"
+local terminal = "alacritty"
 local editor = "emacs"
 local lockscreen = function()
     awful.util.spawn("slock")
