@@ -6,7 +6,10 @@
 :END:
 :CONTENTS:
 - [[#movies][Movies]]
-  - [[#favorites][Favorites]]
+  - [[#korean][Korean]]
+  - [[#chinese][Chinese]]
+  - [[#thailand][Thailand]]
+  - [[#american][American]]
 - [[#tv-shows][TV Shows]]
   - [[#progress][Progress]]
   - [[#favorites][Favorites]]
@@ -46,7 +49,25 @@
 :END:
 
 * Movies
-** Favorites
+** Korean
+- Breathless / 2008
+- Mother
+- Poetry
+- Secret Sunshine
+- New World - 2013
+- The Wailing / 2016
+- The host / 2006
+- Oldboy / 2003
+- parasite
+- A dirty carnival
+- Train to Busan
+- The Chaser
+
+** Chinese
+
+** Thailand
+- Shutter
+** American
 - 12 Angry Men
 - 7 Samurai
 - Casablanca
