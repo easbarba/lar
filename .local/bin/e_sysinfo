@@ -3,28 +3,28 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-# Dependencies: sensors ping gawk grep sed amixer pactl
+# DEPS=(sensors ping gawk grep sed amixer pactl)
 
-Distro() {
+_distro() {
     local result
     result=$(gawk '{print $1}' /etc/hostname)
 
     echo -e "\uf05a  GNU / ${result^}"
 }
 
-Kernel() {
+_kernel() {
     local result
     result=$(gawk '{ print substr($3,1,4)}' /proc/version) # uname -r | sed 's/.//5g'
 
     echo -e "$result"
 }
 
-Uptime() {
+_uptime() {
     result=$(uptime -p | gawk '{ print $2 "d|" $4 "h"}') # uptime -p | awk '{print $2 $3}' | tr -d ','
     echo -e "$result"
 }
 
-Volume() {
+_volume() {
     local result
     local check
 
@@ -37,7 +37,7 @@ Volume() {
     [[ $check == *no* ]] && printf "%s" "\Uf028 $result"
 }
 
-Cpuf() {
+_cpuf() {
     local prevtotal
     local total
     local result
@@ -51,42 +51,42 @@ Cpuf() {
     echo -e "\Uf110 ${result}%"
 }
 
-Cput() {
+_cput() {
     local result
     result="$(sensors 2>&1 | gawk '/Tctl/ {print substr($2, 2)}')" # sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}'
 
     echo -e "\Uf134 ${result}"
 }
 
-Memory() {
+_memory() {
     local result
     result="$(free -m | gawk 'NR==2 {printf "%dMB\n", $3,$2,$3*100/$2 }')"
 
     printf "%s" "\Uf1c0 ${result}"
 }
 
-Date() {
+_date() {
     local result
     result="$(date "+%H:%M - %a, %b %d")"
 
     printf "%s" "\Uf017 ${result}"
 }
 
-Battery() {
+_battery() {
     local result
     result="$(acpi -b | gawk '{print $4}')"
 
     printf "%s" "\Uf241: ${result}"
 }
 
-Gput() {
+_gput() {
     local result
     result="$(sensors 2>&1 | gawk '/edge/ {print substr($2, 2)}')" # sensors 2>&1 | grep edge | awk '{print substr($2, 2)}'
 
     printf "%s" "\Uf11b  $result"
 }
 
-arch-update() {
+_arch-update() {
     local sys
     local check
 
@@ -95,7 +95,7 @@ arch-update() {
     [[ "$sys" != "0" ]] && printf "%s" "$sys "
 }
 
-update-debian() {
+_debian-update() {
     local output
     local num=$(($packs | wc - l))
     output=$(aptitude full-upgrade --simulate --assume-yes)
@@ -103,7 +103,7 @@ update-debian() {
     printf "%s" "Packs: $num"
 }
 
-Connection() {
+_connection() {
     local result
 
     result=$(nmcli connection show | gawk 'NR==2 {print $4}')
@@ -115,12 +115,12 @@ Connection() {
     fi
 }
 
-Host() {
+_host() {
     printf "%s" "${HOSTNAME^}"
 }
 
 SEP="  "
 SEP2=" / "
-echo -e "$(Cpuf)$SEP$(Cput)$SEP$(Gput)$SEP$(Volume)$SEP$(Memory)$SEP$(Battery)$SEP$(Distro)$SEP2$(Kernel)$SEP2$(Uptime)$SEP$(Date) "
+echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_volume)$SEP$(_memory)$SEP$(_battery)$SEP$(_distro)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date) "
 
 exit 0
