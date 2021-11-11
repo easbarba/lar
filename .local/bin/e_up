@@ -3,33 +3,41 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-DEPS=(sudo distro floss)
-DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
-
 # * CHECKER
+DEPS=(sudo distro floss)
 e_checkdeps "${DEPS[@]}"
 
-e_echo "Upgrading $DISTRO system and user packages."
-
-# * RUN
+# * TASKS
 
 _distro() {
+    e_echo "Upgrading $DISTRO system and user packages."
+
     distro update
     distro upgrade
     e_guix
 }
 
+_packagers() {
+    e_echo "Editors and Langs packages"
+
+    e_doom
+    e_golang
+    e_ruby
+}
+
+_user() {
+    e_echo "FLOSS projects"
+    floss grab
+    floss archive
+
+    e_usb_tasks
+}
+
+# * RUN
+
+DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
 [[ ! $DISTRO == "NixOS" ]] && _distro
 [[ $DISTRO == "NixOS" ]] && nix-channel --update
 
-e_echo "FLOSS projects"
-floss grab
-floss archive
-
-e_echo "Editors and Langs packages"
-e_doom
-e_golang
-e_ruby
-
-# USB STICK TASKS
-e_usb_tasks
+_packagers
+_user
