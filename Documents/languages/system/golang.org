@@ -114,17 +114,16 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter     | @                                |
-|-------------------------+-------------+----------------------------------|
-| Go Programming Language | 5 Functions | 5.4.1. Error-Handling Strategies |
-| Learning go             | 9 modules   | Importing Third-Party Code       |
+| name                    | chapter     | @                          |
+|-------------------------+-------------+----------------------------|
+| Go Programming Language | 5 Functions | 5.7. Variadic Functions    |
+| Learning go             | 9 modules   | Importing Third-Party Code |
 
-** LDC
-| Source Code | folder                | file            | @                 |
-|-------------+-----------------------+-----------------+-------------------|
-| go          | src/archive/tar       | example_test.go |                   |
-| go-tools    | cmd/auth/authtest     | authtest.go     |                   |
-| podman      | cmd/podman/containers | cp.go           | copyFromContainer |
+** SLOC
+| Source Code | folder                | file      | @                 |
+|-------------+-----------------------+-----------+-------------------|
+| go          | src/archive/tar       | reader.go |                   |
+| podman      | cmd/podman/containers | cp.go     | copyFromContainer |
 
 * Features
 ** Basic Types
