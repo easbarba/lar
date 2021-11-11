@@ -152,7 +152,7 @@ configure a network interface
   iwlist scan
   #+end_src
 
-  add to /etc/network/interfaces
+add to /etc/network/interfaces (man interfaces) *Debian-only*
 
   #+begin_src shell
   iface wlp2s0 inet dhcp
@@ -160,7 +160,7 @@ configure a network interface
         wpa-psk PASSWORD
   #+end_src
 
-  Bring up your interface and verify the connection:
+Bring up your interface and verify the connection:
 
   #+begin_src shell
   ifup wlp2s0
@@ -198,7 +198,6 @@ curl file:///home/user/.bashrc
 |                               |                                                                |
 
 network manager wont work if /etc/network/interface is set to any device, remove it and procced again
-
 ** nslookup
 ** route
 ** netstat
