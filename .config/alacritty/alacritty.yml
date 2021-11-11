@@ -175,37 +175,35 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Gruvbox light)
+# Colors (Night Owlish Light)
 colors:
-  # Default colors
-  primary:
-    # hard contrast: background = '0xf9f5d7'
-    background: '0xfbf1c7'
-    # soft contrast: background = '0xf2e5bc'
-    foreground: '0x3c3836'
-
-  # Normal colors
-  normal:
-    black:   '0xfbf1c7'
-    red:     '0xcc241d'
-    green:   '0x98971a'
-    yellow:  '0xd79921'
-    blue:    '0x458588'
-    magenta: '0xb16286'
-    cyan:    '0x689d6a'
-    white:   '0x7c6f64'
-
-  # Bright colors
   bright:
-    black:   '0x928374'
-    red:     '0x9d0006'
-    green:   '0x79740e'
-    yellow:  '0xb57614'
-    blue:    '0x076678'
-    magenta: '0x8f3f71'
-    cyan:    '0x427b58'
-    white:   '0x3c3836'
-
+    black: '#7a8181'
+    blue: '#5ca7e4'
+    cyan: '#00c990'
+    green: '#49d0c5'
+    magenta: '#697098'
+    red: '#f76e6e'
+    white: '#989fb1'
+    yellow: '#dac26b'
+  cursor:
+    cursor: '#403f53'
+    text: '#fbfbfb'
+  normal:
+    black: '#011627'
+    blue: '#4876d6'
+    cyan: '#08916a'
+    green: '#2aa298'
+    magenta: '#403f53'
+    red: '#d3423e'
+    white: '#7a8181'
+    yellow: '#daaa01'
+  primary:
+    background: '#ffffff'
+    foreground: '#403f53'
+  selection:
+    background: '#f2f2f2'
+    text: '#403f53'
 
 # Bell
 #
