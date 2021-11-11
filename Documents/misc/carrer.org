@@ -1,10 +1,10 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon     | tue  | wed     | thru     | fri        |
-|---------+------+---------+----------+------------|
-| lang    | lang | lang    | database | containers |
-| editors | vc   | editors | vc       | os         |
+| mon     | tue  | wed     | thru | fri        |
+|---------+------+---------+------+------------|
+| lang    | lang | lang    | lang | containers |
+| editors | vc   | editors | vc   | database   |
 
 * Priorities
 | @                     | desc                                                                        |
@@ -15,17 +15,8 @@
 | Database              | PostgreSQL, MySQL, Redis, MongoDB                                           |
 | Editors               | Emacs, Vim                                                                  |
 | Version Control       | Git                                                                         |
-| Containers            | Podman, Docker, Docker Compose                                              |
-| IaC                   | Terraform, Ansible, Salt                                                    |
-| Cloud Providers       | AWS, Azure, GCP                                                             |
-| Cluster               | Kubernetes, Mesos, Swarm, Nomad                                             |
 | Network               | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies, load balancers |
-| CI / CD               | CircleCI, Gitlab CI, Jenkins, Drone, Travis                                 |
-| Metrics, Obs          | Nagios, Zabbix, Grafana, Graphite, StatsD, Prometheus, Datadog, Elastic     |
-| Software Architecture | Micro-services                                                              |
-| Security              |                                                                             |
-| Message               | RabbitMQ, Kafka                                                             |
-| misc                  | Rancher, Istio, nginx, sensu, datadog, new relic, zabbix, cacti             |
+| Containers            | Podman, Docker, Docker Compose                                              |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
