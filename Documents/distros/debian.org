@@ -31,7 +31,8 @@
    Pin-Priority: -10
 
    #+end_src
-
+* Documentation
+All available Debian documentation can be found at /usr/share/doc/
 * source.list.
    #+begin_src conf
    # [Unstable]
