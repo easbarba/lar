@@ -13,9 +13,6 @@
 - [[#tv-shows][TV Shows]]
   - [[#progress][Progress]]
   - [[#favorites][Favorites]]
-- [[#books][Books]]
-  - [[#books-videos][Books, Videos]]
-  - [[#favs][Favs]]
 - [[#lectures][Lectures]]
   - [[#teacher][Teacher]]
 - [[#manga][Manga]]
@@ -41,6 +38,9 @@
   - [[#mpb][MPB]]
   - [[#violao][Violao]]
   - [[#classic-guitar][Classic Guitar]]
+- [[#books][Books]]
+  - [[#books-videos][Books, Videos]]
+  - [[#favs][Favs]]
 - [[#gifts][Gifts]]
   - [[#nephew][Nephew]]
 - [[#paintings][Paintings]]
@@ -151,26 +151,9 @@
 - Bucky
 - Dragon Ball Z
 
-* Books
-** Books, Videos
-| Books                                                             | Capts                                         | @                               |
-|-------------------------------------------------------------------+-----------------------------------------------+---------------------------------|
-| Attack of Titan(manga)                                            | Chapter 93                                    |                                 |
-| Last Wish                                                         | The Voice of Reason 2                         |                                 |
-| The War of the Worlds                                             |                                               |                                 |
-| Study in Scarlet                                                  | 2 The Science of Deduction                    | SHERLOCK HOLMES  -  his limits. |
-| Plato: Five Dialogues                                             |                                               |                                 |
-| one punch man                                                     |                                               |                                 |
-| Lenin - state and Revolution                                      | 2. Special Bodies of Armed Men, Prisons, etc. |                                 |
-| Engels - The Origin of the Family, Private Property and the State |                                               |                                 |
-
-** Favs
-- Dr Jekyll and Hide
-- The Lost World
 * Lectures
 ** Teacher
 - Osvaldo Coggiola
-
 * Manga
 ** Progresso
 |                 |     |   |
@@ -417,6 +400,23 @@ http://steamcommunity.com/id/elxbarbosa
 - John Williams
 - Julian Bream
 - Yepes
+* Books
+** Books, Videos
+| Books                                                    | Capts                                         | @                               |
+|----------------------------------------------------------+-----------------------------------------------+---------------------------------|
+| Attack of Titan                                          | Chapter 93                                    |                                 |
+| Last Wish                                                | The Voice of Reason 2                         |                                 |
+| The War of the Worlds                                    |                                               |                                 |
+| Study in Scarlet                                         | 2 The Science of Deduction                    | SHERLOCK HOLMES  -  his limits. |
+| State and Revolution                                     | 2. Special Bodies of Armed Men, Prisons, etc. |                                 |
+| The Origin of the Family, Private Property and the State |                                               |                                 |
+| Prison Notebooks                                         | 1. THE INTELLECTUALS                          | alist Politics in Turin         |
+| One Punch Man                                            | 152                                           |                                 |
+| Plato: Five Dialogues                                    |                                               |                                 |
+
+** Favs
+- Dr Jekyll and Hide
+- The Lost World
 * Gifts
 ** Nephew
 - Nintendo Switch
