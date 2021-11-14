@@ -114,10 +114,10 @@
     :END:
 * Progress
 ** Books
-| name                    | chapter     | @                          |
-|-------------------------+-------------+----------------------------|
-| Go Programming Language | 5 Functions | 5.7. Variadic Functions    |
-| Learning go             | 9 modules   | Importing Third-Party Code |
+| name                    | chapter     | @                            |
+|-------------------------+-------------+------------------------------|
+| Go Programming Language | 5 Functions | 5.8. Deferred Function Calls |
+| Learning go             | 9 modules   | Importing Third-Party Code   |
 
 ** SLOC
 | Source Code | folder                | file      | @                 |
@@ -563,6 +563,7 @@ another package.
 - named return values are available within the function, initialized to zero-values
 - blank returns, returns named return variables (AVOID THIS)
 - anonymous functions
+- variadic functions, usually suffixed w/ f
 - return functions
 
 #+begin_src go
