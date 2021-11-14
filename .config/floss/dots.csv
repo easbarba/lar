@@ -4,9 +4,5 @@ alezost-config,https://github.com/alezost/config
 alezost-shell-config,https://github.com/alezost/shell-config
 sircmpwn-dotfiles,https://git.sr.ht/~sircmpwn/dotfiles
 ejpcmac-config,https://github.com/ejpcmac/config
-MCotocel-nixdots,https://github.com/MCotocel/nixdots
 hlissner-dotfiles,https://github.com/hlissner/dotfiles
 lourkeur-config,https://github.com/lourkeur/config
-awesome-nix,https://github.com/nix-community/awesome-nix
-yrashk-nix-home,https://github.com/yrashk/nix-home
-mjlbach-nix-dotfiles,https://github.com/mjlbach/nix-dotfiles
