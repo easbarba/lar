@@ -26,23 +26,23 @@
 ** Books
 | Books                                     | Cap    | @                                               | late | revision |
 |-------------------------------------------+--------+-------------------------------------------------+------+----------|
-| Eloquent JS                               | Values |                                                 |      |          |
 | JavaScript The Definitive Guide           | 3      | 3.2.4 Binary Floating-Point and Rounding Errors |      |          |
+| Eloquent JS                               | Values |                                                 |      |          |
 | Essential TypeScript From Beginner to Pro |        | Marking Tasks Complete                          |      |          |
 
 ** SLOC
-     | Project  | folder           | file      | @ |
-     |----------+------------------+-----------+---|
-     | yarn     | src/cli/commands | access.js |   |
-     | node     |                  |           |   |
-     | inquirer |                  |           |   |
-** SKills
-     - Javascript
-     - ES6+
-     - NodeJS
-     - Design Patterns
+| Project  | folder           | file      | @ |
+|----------+------------------+-----------+---|
+| yarn     | src/cli/commands | access.js |   |
+| node     |                  |           |   |
+| inquirer |                  |           |   |
 * Features
-** Nubers
+** Types
+*** Numbers
+|   |           |
+|---+-----------|
+|   | primitive |
+
      #+begin_src javascript
      0 === -0 // true
      1/0 === 1/-0 // false
@@ -51,11 +51,42 @@
      Number.isNaN(NaN) // true
 
      #+end_src
+*** Strings
+|   |           |
+|---+-----------|
+|   | primitive |
 
+*** Boolean
+|   |           |
+|---+-----------|
+|   | primitive |
+
+*** null
+|   |           |
+|---+-----------|
+|   | primitive |
+
+*** undefined
+|   |           |
+|---+-----------|
+|   | primitive |
+
+*** Symbols
+|   |           |
+|---+-----------|
+|   | primitive |
+** Collection
+*** Array
+*** Set
+*** Map
+** Objects
+*** global object
+*** RegExp
+*** Date
+*** Error
 * Concepts
     - Types: numbers, strings, boolean, null, undefined, symbols
     - Primitives: numbers, strings, boolean, null, undefined
-
 * Books
 ** Eloquent JavaScript
 *** 2. Program Structure
