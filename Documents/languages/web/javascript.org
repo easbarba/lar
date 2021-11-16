@@ -41,39 +41,93 @@
 |   |           |
 |---+-----------|
 |   | primitive |
+|   | immutable |
 
-     #+begin_src javascript
-     0 === -0 // true
-     1/0 === 1/-0 // false
+- Literals
+#+begin_src js
+0
+3
+100000 // or 1_000_000
 
-     NaN === NaN // false
-     Number.isNaN(NaN) // true
+// hexadecimal
 
-     #+end_src
+0xff
+0xBADCAFE
+
+// ES6 added binary and octal
+0b10101
+0o377
+#+end_src
+
+- floating-point
+[digits][.digits][(E|e)[(+|-)]digits]
+
+#+begin_src js
+r example:
+3.14
+2345.6789
+.333333333333333333
+6.02e23
+1.4738223E-32
+#+end_src
+
+- Comparison
+#+begin_src javascript
+0 === -0 // true
+1/0 === 1/-0 // false
+
+NaN === NaN // false
+Number.isNaN(NaN) // true
+
+#+end_src
+
+**** Arithmetic
+- Underflow returns 0.
+- underflow from a negative number, returns “negative zero.”
+-
+#+begin_src js
+1 + 1
+2 - 2
+3 / 2
+4 * 5
+5 % 1
+
+2 / 0 // Infinity or -  Infinity
+0 / 0 // NaN
+Infinity / Infinity // NaN
+#+end_src
+
 *** Strings
 |   |           |
 |---+-----------|
 |   | primitive |
+|   | mutable   |
+
+- arrays of characters
 
 *** Boolean
 |   |           |
 |---+-----------|
 |   | primitive |
+|   | immutable |
 
 *** null
 |   |           |
 |---+-----------|
 |   | primitive |
+|   | immutable |
 
 *** undefined
 |   |           |
 |---+-----------|
 |   | primitive |
+|   | immutable |
 
 *** Symbols
 |   |           |
 |---+-----------|
 |   | primitive |
+
 ** Collection
 *** Array
 *** Set
@@ -83,9 +137,38 @@
 *** RegExp
 *** Date
 *** Error
+** Assignment
+*** Variables
+#+begin_src js
+let meh = 'foo'
+#+end_src
+*** Cont
+#+begin_src js
+const foo = 'bar'
+#+end_src
+
 * Concepts
     - Types: numbers, strings, boolean, null, undefined, symbols
     - Primitives: numbers, strings, boolean, null, undefined
+* Library
+
+** Numbers
+#+begin_src js
+Number.NEGATIVE_INFINITY
+-Number.MAX_VALUE * 2
+Number.NaN
+Number.MIN_VALUE/2
+-Number.MIN_VALUE/2
+Number.parseInt()
+Number.parseFloat()
+Number.isNaN(x)
+Number.isFinite(x)
+Number.isInteger(x)
+Number.isSafeInteger(x)
+Number.MIN_SAFE_INTEGER
+Number.MAX_SAFE_INTEGER
+Number.EPSILON
+#+end_src
 * Books
 ** Eloquent JavaScript
 *** 2. Program Structure
@@ -269,7 +352,7 @@
 	#+END_SRC
 * Node
 ** Node frameworks
-     https://adonisjs.com/
+https://adonisjs.com/
 * Sites
 ** Web JS - Misc
      https://bestofjs.org/
@@ -278,13 +361,11 @@
 ** Web JS - Online Tools
      https://jsperf.com/
 * Frameworks
-    https://polyfill.io/v3/
-
-    https://github.com/vuejs/vue
-
-    https://api.jquery.com/
+- https://polyfill.io/v3/
+- https://github.com/vuejs/vue
+- https://api.jquery.com/
 * Refactoring
-    https://medium.com/@jochasinga/how-i-refactor-my-code-561aa9132045
+https://medium.com/@jochasinga/how-i-refactor-my-code-561aa9132045
 * Articles
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
@@ -292,4 +373,4 @@
 
     https://medium.com/@oliver.grack/using-eslint-with-typescript-and-react-hooks-and-vscode-c583a18f0c75
 * Interview
-    https://www.pixelstech.net/article/1552133174-JavaScript-interview-questions
+https://www.pixelstech.net/article/1552133174-JavaScript-interview-questions
