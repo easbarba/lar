@@ -31,11 +31,10 @@
 | Essential TypeScript From Beginner to Pro |        | Marking Tasks Complete                          |      |          |
 
 ** SLOC
-| Project  | folder           | file      | @ |
-|----------+------------------+-----------+---|
-| yarn     | src/cli/commands | access.js |   |
-| node     |                  |           |   |
-| inquirer |                  |           |   |
+| Project  | folder  | file      | @ |
+|----------+---------+-----------+---|
+| yarn     | src/cli | config.js |   |
+| inquirer |         |           |   |
 * Features
 ** Types
 *** Numbers
