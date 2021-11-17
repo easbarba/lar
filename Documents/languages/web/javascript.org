@@ -24,17 +24,18 @@
   :END:
 * Progress
 ** Books
-| Books                                     | Cap    | @                                               | late | revision |
-|-------------------------------------------+--------+-------------------------------------------------+------+----------|
-| JavaScript The Definitive Guide           | 3      | 3.2.4 Binary Floating-Point and Rounding Errors |      |          |
-| Eloquent JS                               | Values |                                                 |      |          |
-| Essential TypeScript From Beginner to Pro |        | Marking Tasks Complete                          |      |          |
+| Books                                     | Cap    | @                      | late | revision |
+|-------------------------------------------+--------+------------------------+------+----------|
+| JavaScript The Definitive Guide           | 3      | 3.3.5 Pattern Matching |      |          |
+| Eloquent JS                               | Values |                        |      |          |
+| Essential TypeScript From Beginner to Pro |        | Marking Tasks Complete |      |          |
 
 ** SLOC
-| Project  | folder  | file      | @ |
-|----------+---------+-----------+---|
-| yarn     | src/cli | config.js |   |
-| inquirer |         |           |   |
+| Project  | folder | file     | @ |
+|----------+--------+----------+---|
+| glide    | src    | build.js |   |
+| inquirer |        |          |   |
+
 * Features
 ** Types
 *** Numbers
@@ -96,15 +97,49 @@ Number.isNaN(NaN) // true
 0 / 0 // NaN
 Infinity / Infinity // NaN
 #+end_src
+**** BigInt
+- not to mix BigInt with regular number
 
+#+begin_src js
+1234n
+0b111111n
+0o7777n
+0x8000000000000000n
+BigInt()
+#+end_src
 *** Strings
-|   |           |
-|---+-----------|
-|   | primitive |
-|   | mutable   |
+|            |           |
+|------------+-----------|
+|            | primitive |
+|            | immutable |
+| empty      | 0         |
+| UTF        | 16        |
+| comparable | === / !== |
+|            |           |
 
 - arrays of characters
+- In ES6, strings are iterable
+- ES6 added backstick string
+- ES5 allow break string lines w/ backslash '\'
+- template literal: `meh ${foo}`
+- tagged template literals
 
+#+begin_src js
+'meh "xii"'
+
+"foo \
+'bar'"
+
+`fo'o'
+   "bar"`
+'\n' // newline
+'\xA9' // '©'
+'\u{1f600}' // '😀'
+
+'Hello ' + 'World' // 'Hello World'
+
+String.raw`\n`.length
+#+end_src
 *** Boolean
 |   |           |
 |---+-----------|
@@ -146,13 +181,16 @@ let meh = 'foo'
 #+begin_src js
 const foo = 'bar'
 #+end_src
+** Functions
+*** Template tag functions
 
 * Concepts
     - Types: numbers, strings, boolean, null, undefined, symbols
     - Primitives: numbers, strings, boolean, null, undefined
 * Library
-
 ** Numbers
+- do not accept BigInt
+
 #+begin_src js
 Number.NEGATIVE_INFINITY
 -Number.MAX_VALUE * 2
@@ -169,6 +207,7 @@ Number.MIN_SAFE_INTEGER
 Number.MAX_SAFE_INTEGER
 Number.EPSILON
 #+end_src
+** Date
 * Books
 ** Eloquent JavaScript
 *** 2. Program Structure
