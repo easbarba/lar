@@ -1,17 +1,18 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon     | tue  | wed     | thru | fri        |
-|---------+------+---------+------+------------|
-| lang    | lang | lang    | lang | containers |
-| editors | vc   | editors | vc   | database   |
+| mon      | tue        | wed      | thru     | fri        |
+|----------+------------+----------+----------+------------|
+| lang     | lang       | lang     | lang     | lang       |
+| concepts | containers | editors  | concepts | containers |
+| database | vc         | database | vc       | database   |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| OS              | Debian, NixOS                                               |
+| OS              | Debian, Fedora, GuixSD                                      |
 | Lang            | Golang, JavaScript, Guile, Bash, Awk                        |
-| Concepts        | Data Structure, Algorithms, API, Rest, SOAP, OOP            |
+| Concepts        | Unit Test, Data Structure, Algorithms, API{Rest, SOAP}, OOP |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
 | Editors         | Emacs, Vim                                                  |
 | Version Control | Git                                                         |
