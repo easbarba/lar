@@ -1,7 +1,7 @@
 name,repository
 Inquirer.js,https://github.com/SBoudrias/Inquirer.js
 hexo,https://github.com/hexojs/hexo
-faker.js,https://github.com/Marak/faker.js
-yarn,https://github.com/yarnpkg/yarn
+Parsley.js,https://github.com/guillaumepotier/Parsley.js
+glide,https://github.com/glidejs/glide
 strapi,https://github.com/strapi/strapi
 axios,https://github.com/axios/axios
