@@ -180,6 +180,10 @@ dump files in octal and other formats
 * stty
 * read
 read line of input into variables
+* tty console
+** set bigger fonts
+edit FONTSIZE in /etc/default/console-setup to one of these: 6x12, 8x14, 8x16, 10x20, 11x22, 12x24, 14x28, and 16x32
+
 * cd
 * mkdir
 * shell
