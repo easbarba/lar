@@ -28,21 +28,21 @@ telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 *SOBRE*
 -----
 
-Amante da filosofia Unix, por sua simplicidade, claridade e frugalidade.
+Amante da filosofia Unix por sua simplicidade, claridade e frugalidade.
 
-A muito prefiro criar sistemas simples e usaveis com foco em usuarios
+Há muito prefiro criar sistemas simples e usáveis com foco em usuários
 experientes como WMs, extensivo uso de shell scripts e auxiliados as várias
 maravilhosas ferramentas cli como awk, sed, parallel para automação e bootstrap
-de distros GNU/Linux e FreeBSD.
+de distros GNU/Linux.
 
 Venho ativamente ajudando a diversos projetos de extensões do editor Emacs,
-pacotes Guix, alem de ter meus proprios projetos os quais sao baseados em
-tecnologias Ruby, Guile e ultimamente Golang.
+pacotes Guix, além de ter meus próprios projetos os quais são baseados em
+tecnologias Ruby, Guile e ultimamente Golang e Javascript.
 
 *HABILIDADES*
 -----
-  - Linguagens: Golang, Ruby, Emacs-Lisp.
-  - Distros: NixOS, GuixSD, Arch, Debian, .
+  - Linguagens: Golang, JavaScript, Ruby, Emacs-Lisp.
+  - Distros: Arch, Debian, GuixSD.
   - Shell Script: Awk, Sed, GNU Bash, Fish.
   - Containers: podman, dockerfile, dockerignore, criação e gerência de imagens.
   - Editores: GNU Emacs, NeoVim, Nano.
@@ -56,5 +56,5 @@ tecnologias Ruby, Guile e ultimamente Golang.
 *EDUCAÇÃO*
 -----
   - Direito - IESB (Trancado)
-  - Ciência da Computação, UniDF (Cursando)
+  - Ciência da Computação, Estacio (Cursando)
   - Inglês: Ativo(Intermediário), Passivo(Avancado).
