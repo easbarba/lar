@@ -24,11 +24,10 @@
   :END:
 * Progress
 ** Books
-| Books                                     | Cap    | @                      | late | revision |
-|-------------------------------------------+--------+------------------------+------+----------|
-| JavaScript The Definitive Guide           | 3      | 3.3.5 Pattern Matching |      |          |
-| Eloquent JS                               | Values |                        |      |          |
-| Essential TypeScript From Beginner to Pro |        | Marking Tasks Complete |      |          |
+| Books                           | Cap    | @       | late | revision |
+|---------------------------------+--------+---------+------+----------|
+| JavaScript The Definitive Guide | 3      | Symbols |      |          |
+| Eloquent JS                     | Values |         |      |          |
 
 ** SLOC
 | Project  | folder | file     | @ |
@@ -123,6 +122,7 @@ BigInt()
 - ES5 allow break string lines w/ backslash '\'
 - template literal: `meh ${foo}`
 - tagged template literals
+- pair of slashes constitutes a regular expression literal
 
 #+begin_src js
 'meh "xii"'
@@ -139,6 +139,9 @@ BigInt()
 'Hello ' + 'World' // 'Hello World'
 
 String.raw`\n`.length
+
+/^HTML/
+/[1-9][0-9]*/
 #+end_src
 *** Boolean
 |   |           |
@@ -146,17 +149,50 @@ String.raw`\n`.length
 |   | primitive |
 |   | immutable |
 
-*** null
-|   |           |
-|---+-----------|
-|   | primitive |
-|   | immutable |
+- represents truth or falsehood
+- false values: undefined, null, 0, -0, NaN, ""
 
+#+begin_src js
+a === 4 // true
+true.toString() // 'true'
+#+end_src
+
+*** null
+|   |               |
+|---+---------------|
+|   | primitive     |
+|   | immutable     |
+|   | no properties |
+|   | no methods    |
+
+- indicate the absence of a value
+- is a object
+- avoid using
+
+#+begin_src js
+typeof null // object
+
+#+end_src
 *** undefined
-|   |           |
-|---+-----------|
-|   | primitive |
-|   | immutable |
+|   |               |
+|---+---------------|
+|   | primitive     |
+|   | immutable     |
+|   | no properties |
+|   | no methods    |
+
+- predefined global constant
+- indicate the absence of a value
+- the value of variables that have not been initialized,
+- object property   or array element that does not exist,
+- the return value of functions that do not explicitly return a value
+- the value of function parameters for which no argument is passed.
+- avoid using
+
+#+begin_src js
+typeof undefined // undefined
+undefined === null // false
+#+end_src
 
 *** Symbols
 |   |           |
