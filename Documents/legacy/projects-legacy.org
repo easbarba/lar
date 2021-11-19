@@ -152,23 +152,21 @@ awesome,https://github.com/awesomeWM/awesome
 luarocks,https://github.com/luarocks/luarocks
 lua,https://github.com/lua/lua
 
-
+Golang
 name,repository
-rubocop-hq-rails-style-guide,https://github.com/rubocop-hq/rails-style-guide
-rubocop-hq-rspec-style-guide,https://github.com/rubocop-hq/rspec-style-guide
-rubocop-hq-ruby-style-guide,https://github.com/rubocop-hq/ruby-style-guide
-rubocop,https://github.com/rubocop-hq/rubocop
-solargraph,https://github.com/castwide/solargraph
-sinatra,https://github.com/sinatra/sinatra
-rails,https://github.com/rails/rails
-rspec,https://github.com/rspec/rspec
-rspec-core,https://github.com/rspec/rspec-core
-rake,https://github.com/ruby/rake
-ruby,https://github.com/ruby/ruby
-ruby-debug,https://github.com/ruby/debug
-ruby-rbs,https://github.com/ruby/rbs
-rack,https://github.com/rack/rack
-rack-test,https://github.com/rack/rack-test
+project-layout,https://github.com/golang-standards/project-layout
+micro,https://github.com/zyedidia/micro
+nomad,https://github.com/hashicorp/nomad
+consul,https://github.com/hashicorp/consul
+terraform,https://github.com/hashicorp/terraform
+packer,https://github.com/hashicorp/packer
+vault,https://github.com/hashicorp/vault
+buildah,https://github.com/containers/buildah
+podman,https://github.com/containers/podman
+awesome-go,https://github.com/avelino/awesome-go
+goplio,https://github.com/adonovan/gopl.io/
+go-tools,https://github.com/golang/tools
+go,https://go.googlesource.com/go
 
 C
 name,repository
