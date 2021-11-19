@@ -45,6 +45,7 @@
      "https://tonarinoyj.jp/rss/series/13932016480028984490"
      ;; distros
      "https://guix.gnu.org/feeds/blog.atom"
+     "https://www.phoronix.com/rss.php"
      ;; prog blogs
      "https://wingolog.org/feed/atom"
      "https://elephly.net/feed.xml"
@@ -57,13 +58,6 @@
      "https://ulisses.dev/feed.xml"
      "https://research.swtch.com/feed.atom"
      "https://feeds.feedburner.com/AyendeRahien"
-     ;; Devops
-     "https://blog.joaovrmaia.com/index.xml"
-     "https://medium.com/feed/getupcloud/tagged/kubicast"
-     "https://www.linuxtips.io/blogs/novidades.atom"
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; PunkDevops
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; LinuxTips BR
      ;; news channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; teze onze
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; tempero drag
