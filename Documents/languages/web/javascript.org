@@ -24,10 +24,10 @@
   :END:
 * Progress
 ** Books
-| Books                           | Cap    | @       | late | revision |
-|---------------------------------+--------+---------+------+----------|
-| JavaScript The Definitive Guide | 3      | Symbols |      |          |
-| Eloquent JS                     | Values |         |      |          |
+| Books                           | Cap    | @                    |
+|---------------------------------+--------+----------------------|
+| JavaScript The Definitive Guide | 3      | 3.9 Type Conversions |
+| Eloquent JS                     | Values |                      |
 
 ** SLOC
 | Project  | folder | file     | @ |
@@ -199,15 +199,58 @@ undefined === null // false
 |---+-----------|
 |   | primitive |
 
+- calling Symbol() twice with the same string produces two completely different Symbol values.
+
+#+begin_src js
+m = Symbol('meh')
+typeof m // 'symbol'
+#+end_src
+
+**** methods
+- Symbol
+- Symbol.iterator
+- toString()
+- Symbol.for()
+- Symbol.keyFor()
 ** Collection
 *** Array
+- is a object
+**** methods
+- Array.from() - ES6
+
 *** Set
 *** Map
 ** Objects
-*** global object
-*** RegExp
-*** Date
-*** Error
+|                |
+|----------------|
+| mutable        |
+| not comparable |
+| reference type |
+|                |
+
+#+begin_src js
+let o = { x: 1 }, p = { x: 1 };
+o === p // false
+
+let x = o;
+o == x // true
+
+o.x = 2; // change value
+o.y = 3; // add
+
+
+#+end_src
+
+*** Global Object
+- the properties of this object are the globally defined identifiers that are available to a JavaScript program.
+- global constants like undefined , Infinity , and NaN
+- global functions like isNaN() , parseInt(), and eval()
+- constructor functions like Date() , RegExp() , String() , Object() , and Array()
+- global objects like Math and JSON
+**** properties
+- global
+- globalThis
+
 ** Assignment
 *** Variables
 #+begin_src js
@@ -218,6 +261,13 @@ let meh = 'foo'
 const foo = 'bar'
 #+end_src
 ** Functions
+- is a object
+
+#+begin_src js
+function meh() { return 'meh' }
+meh // [Function: meh]
+meh() // 'meh'
+#+end_src
 *** Template tag functions
 
 * Concepts
@@ -243,7 +293,13 @@ Number.MIN_SAFE_INTEGER
 Number.MAX_SAFE_INTEGER
 Number.EPSILON
 #+end_src
+** RegExp
+- constructor function
+*** Date
+** Error
+- constructor function
 ** Date
+- constructor function
 * Books
 ** Eloquent JavaScript
 *** 2. Program Structure
@@ -426,6 +482,12 @@ Number.EPSILON
 
 	#+END_SRC
 * Node
+** Cli
+*** install
+|                      |   |
+|----------------------+---|
+| -—save-dev <package> |   |
+
 ** Node frameworks
 https://adonisjs.com/
 * Sites
