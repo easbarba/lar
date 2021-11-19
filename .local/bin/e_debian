@@ -45,6 +45,8 @@ packages() {
 		entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
 		jq rsync pv texinfo autoconf automake socat ripgrep)
 
+	gui=(lightdm)
+
 	network=(net-tools iproute2 telnet)
 
 	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig)
@@ -112,6 +114,7 @@ packages() {
 		"${network[@]}"
 		"${shell[@]}"
 		"${debian[@]}"
+		"${gui[@]}"
 		"${amd[@]}"
 		"${go[@]}"
 		"${ruby[@]}"
@@ -172,6 +175,10 @@ clean() {
 services() {
 	e_echo "Debian Services"
 
+	_lightdm() {
+		sudo systemctl enable lightdm
+	}
+
 	_postgres() {
 		/usr/bin/sudo /usr/bin/systemctl restart postgresql
 	}
@@ -214,6 +221,7 @@ services() {
 	#postgres
 	#kdeconnect
 	#virtualization
+	_lightdm
 	_mpd
 	_alternatives
 	_timezone
