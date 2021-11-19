@@ -33,7 +33,7 @@ export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 
 # $PATH DIRECTORIES
 
-home_bin() {
+_home_bin() {
     export PATH="$HOME/bin"${PATH:+:}${PATH}
     export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
     export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
@@ -84,7 +84,7 @@ _guix() {
     export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
     export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 
-    #    export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
+    # export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
 
     # Shared Libraries
     export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
@@ -95,10 +95,8 @@ _guix() {
 
 # * RUN
 
-home_bin
+_home_bin
 _doom
-_golang
-_npm
 _ruby
 _guix
 
