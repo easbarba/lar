@@ -11,7 +11,7 @@
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
 | OS              | Debian, Fedora, GuixSD                                      |
-| Lang            | Golang, JavaScript, Guile, Bash, Awk                        |
+| Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
 | Concepts        | Unit Test, Data Structure, Algorithms, API{Rest, SOAP}, OOP |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
 | Editors         | Emacs, Vim                                                  |
@@ -37,11 +37,11 @@ de distros GNU/Linux.
 
 Venho ativamente ajudando a diversos projetos de extensões do editor Emacs,
 pacotes Guix, além de ter meus próprios projetos os quais são baseados em
-tecnologias Ruby, Guile e ultimamente Golang e Javascript.
+tecnologias Ruby, Scheme e ultimamente Javascript.
 
 *HABILIDADES*
 -----
-  - Linguagens: Golang, JavaScript, Ruby, Emacs-Lisp.
+  - Linguagens: Ruby, JavaScript, Guile Scheme, Emacs-Lisp.
   - Distros: Arch, Debian, GuixSD.
   - Shell Script: Awk, Sed, GNU Bash, Fish.
   - Containers: podman, dockerfile, dockerignore, criação e gerência de imagens.
