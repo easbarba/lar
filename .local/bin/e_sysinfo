@@ -28,10 +28,10 @@ _volume() {
     local result
     local check
 
-    check="$(pactl list sinks | gawk '/Mute/ {print $2}')" # pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')
+    check="$(pactl list sinks | gawk '/Mute/ {print $2}')"           # pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')
+    result="$(pactl list sinks | gawk '/Volume: front/ {print $5}')" # pactl list sinks | grep 'Volume: front' | tail -1 | awk '{print $5}'
     # [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
-
-    [[ $(pgrep -x "pulseaudio") ]] && result="$(pactl list sinks | gawk '/Volume: front/ {print $5}')" # pactl list sinks | grep 'Volume: front' | tail -1 | awk '{print $5}'
+    # [[ $(pgrep -x "pulseaudio") ]]
 
     [[ $check == *\[yes\]* ]] && printf "\Uf026"
     [[ $check == *no* ]] && printf "%s" "\Uf028 $result"
@@ -121,6 +121,6 @@ _host() {
 
 SEP="  "
 SEP2=" / "
-echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_volume)$SEP$(_memory)$SEP$(_battery)$SEP$(_distro)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date) "
+echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)$SEP$(_distro)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date) "
 
 exit 0
