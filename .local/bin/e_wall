@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
-deps=(feh swaybg)
-e_checkdeps "${deps[@]}"
+# deps=(feh swaybg)
+# e_checkdeps "${deps[@]}"
 
 FOLDER="$HOME/Pictures/wallpapers"
 
-wall() {
+_wall() {
   local found
   found=$(find "$FOLDER" -type f | shuf -n 1)
 
   echo "$found"
 }
 
-echo "wallpaper: $(wall)"
+echo "wallpaper: $(_wall)"
 
-Feh() {
-  feh --bg-max "$(wall)" &
+_feh() {
+  feh --bg-max "$(_wall)" &
 }
 
-Swaybg() {
-  swaybg -m fit -i "$(wall)" &
+_swaybg() {
+  swaybg -m fit -i "$(_wall)" &
 }
 
 # * RUN
-[[ $(pgrep x) ]] && Feh || Swaybg
+[[ $(pgrep x) ]] && _feh || _swaybg
