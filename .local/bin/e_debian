@@ -51,7 +51,7 @@ packages() {
 
 	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig)
 
-	shell=(bash-completion bash-completion shellcheck zenity tcsh fish yad)
+	shell=(bash-completion shellcheck tcsh fish)
 
 	editors=(neovim)
 
@@ -85,10 +85,10 @@ packages() {
 
 	wayland=(sway swaybg swaylock foot clipman grimshot xwayland)
 
-	xorg=(xorg awesome xinit feh scrot cheese)
+	xorg=(xorg awesome feh scrot cheese)
 
 	wmapps=(udiskie ffmpeg zathura suckless-tools aria2 playerctl brightnessctl
-		bluez mpv libnotify-bin dunst w3m elinks)
+		bluez mpv libnotify-bin w3m elinks) # dunst
 
 	music=(mpd mpc ncmpcpp)
 
