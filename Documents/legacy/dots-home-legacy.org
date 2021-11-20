@@ -123,6 +123,23 @@ p_nix() {
     export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 }
 #+end_src
+* .bash_profile
+#+begin_src shell
+#!/usr/bin/env bash
+
+# * TTY1
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    mkdir -pv ~/.local/share/xinit
+    exec startx 2>>~/.local/share/xinit/errors
+fi
+
+# * TTY3
+if [ "$(tty)" = "/dev/tty3" ]; then
+    export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+    exec sway
+fi
+
+#+end_src
 * .xinitrc
 #+begin_src shell
 # ~/.config/autostart-scripts/apps
