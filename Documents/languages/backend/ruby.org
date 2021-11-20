@@ -114,17 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                    | revision        |
-|----------------------------------+------------------------------------+-----------------------------------------+-----------------|
-| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |                 |
-| Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |                 |
-| Design Patterns in Ruby          | Composite                          |                                         |                 |
-| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   |                 |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     | Fibers, Threads |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                        |                 |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite             |                 |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                         |                 |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not               |                 |
+| Books                            | Chapter                            | late                                    |
+|----------------------------------+------------------------------------+-----------------------------------------|
+| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   |                                         |
+| Agile Rails Development          | 2                                  |                                         |
+| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |
+| Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |
+| Design Patterns in Ruby          | Composite                          |                                         |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                        |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite             |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                         |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not               |
 
 ** SLOC
 | Project          | folder             | file                   | @ |
@@ -1766,7 +1767,7 @@ Callbacks and hooks methods are called when a particular event takes place durin
   replacement), and adds something to the method’s interface.
 -
 
-* Packages
+* Library
 ** Packagement
 *** gem
     |                             |   |
@@ -1812,27 +1813,26 @@ Callbacks and hooks methods are called when a particular event takes place durin
 Behaviour Driven Development for Ruby
 
 **** Cli
-     | cmd                          | desc                                             |
-     |------------------------------+--------------------------------------------------|
-     | --init                       | Initialize your project with RSpec.              |
-     | --profile                    | test time                                        |
-     | --format <type>              |                                                  |
-     | folder                       | run allfolders specs                             |
-     | spec                         | run just one spec                                |
-     | -e <name>                    | run spec(s) begins w/ name                       |
-     | <file>:N                     | run examples in lineN of file                    |
-     | --only-failures              |                                                  |
-     | --next-failure               |                                                  |
-     | --tag last_run_status:failed |                                                  |
-     | --tag focus                  |                                                  |
-     | describe                     | creates an example group (set of related tests). |
-     | expect                       | verifies an expected outcome (assertion)         |
-     | example                      | individual test                                  |
-     | -b                           | display backtrace                                |
+| cmd                          | desc                                             |
+|------------------------------+--------------------------------------------------|
+| --init                       | Initialize your project with RSpec.              |
+| --profile                    | test time                                        |
+| --format <type>              |                                                  |
+| folder                       | run allfolders specs                             |
+| spec                         | run just one spec                                |
+| -e <name>                    | run spec(s) begins w/ name                       |
+| <file>:N                     | run examples in lineN of file                    |
+| --only-failures              |                                                  |
+| --next-failure               |                                                  |
+| --tag last_run_status:failed |                                                  |
+| --tag focus                  |                                                  |
+| describe                     | creates an example group (set of related tests). |
+| expect                       | verifies an expected outcome (assertion)         |
+| example                      | individual test                                  |
+| -b                           | display backtrace                                |
 
 **** Terms
  - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
- -
  - Arrange/Act/Assert pattern
 
 **** Features
@@ -1868,24 +1868,24 @@ let(:expense) { { 'some' => 'data' } }
      | context 'foobar', focus: true |   |
      |                               |   |
 **** Commands
-     |                                   |                                      |
-     |-----------------------------------+--------------------------------------|
-     | RSpec.describe                    |                                      |
-     | describe                          |                                      |
-     | context                           |                                      |
-     | it 'foo bar'                      |                                      |
-     | expect(foo).to eq(bar)            |                                      |
-     | expect(foo).to be > :bar          |                                      |
-     | before(:xx)                       |                                      |
-     | after(:xxx)                       |                                      |
-     | before(:context)                  |                                      |
-     | after(:context)                   |                                      |
-     | let(:foo) { Bar.new }             |                                      |
-     | pending 'foo not yet implemented' |                                      |
-     | skip or xit 'foo bar'             | x prepended to it '' to skip example |
+|                                   |                                      |
+|-----------------------------------+--------------------------------------|
+| RSpec.describe                    |                                      |
+| describe                          |                                      |
+| context                           |                                      |
+| it 'foo bar'                      |                                      |
+| expect(foo).to eq(bar)            |                                      |
+| expect(foo).to be > :bar          |                                      |
+| before(:xx)                       |                                      |
+| after(:xxx)                       |                                      |
+| before(:context)                  |                                      |
+| after(:context)                   |                                      |
+| let(:foo) { Bar.new }             |                                      |
+| pending 'foo not yet implemented' |                                      |
+| skip or xit 'foo bar'             | x prepended to it '' to skip example |
 **** Config
 ***** .rspec
-      Default command-line flags
+Default command-line flags
 ***** spec/spec_helper.rb
 |                                          |   |
 |------------------------------------------+---|
@@ -1895,6 +1895,8 @@ let(:expense) { { 'some' => 'data' } }
 
 ****** Options
        - ENV['RACK_ENV'] = 'test'
+**** Terms
+- slimming the test
 
 *** Minitest
 **** setup
