@@ -37,11 +37,11 @@ de distros GNU/Linux.
 
 Venho ativamente ajudando a diversos projetos de extensões do editor Emacs,
 pacotes Guix, além de ter meus próprios projetos os quais são baseados em
-tecnologias Ruby, Scheme e ultimamente Javascript.
+tecnologias Ruby, Shell Script e Scheme.
 
 *HABILIDADES*
 -----
-  - Linguagens: Ruby, JavaScript, Guile Scheme, Emacs-Lisp.
+  - Linguagens: Ruby, Guile Scheme, Emacs-Lisp.
   - Distros: Arch, Debian, GuixSD.
   - Shell Script: Awk, Sed, GNU Bash, Fish.
   - Containers: podman, dockerfile, dockerignore, criação e gerência de imagens.
