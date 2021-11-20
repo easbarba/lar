@@ -1,14 +1,14 @@
+#!/usr/bin/env bash
+
 # * Description: System Global Variables
 
 # * DEFAULT SOFTWARE:
-
 export VISUAL="emacs"
 export EDITOR="nano"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # * DIRECTORIES ENV VARS
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -31,12 +31,14 @@ export LOCAL_INFO="$XDG_DATA_HOME/info"
 export LOCAL_DOC="$XDG_DATA_HOME/doc"
 export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 
-# $PATH DIRECTORIES
+# * WM FIXES
+export _JAVA_AWT_WM_NONREPARENTING=1
 
+# * $PATH DIRECTORIES
 _home_bin() {
     export PATH="$HOME/bin"${PATH:+:}${PATH}
     export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
-    export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
+    # export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 }
 
 # * PACKAGERS
@@ -57,12 +59,12 @@ _npm() {
 }
 
 _ruby() {
-    # irb
-    export irbrc="$XDG_CONFIG_HOME/irb"
-
     # gem
     export GEM_HOME="$HOME/.local/gem"
     export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
+
+    # irb
+    export irbrc="$XDG_CONFIG_HOME/irb"
 }
 
 _golang() {
@@ -95,10 +97,10 @@ _guix() {
 
 # * RUN
 
-_home_bin
-_doom
-_ruby
 _guix
+_doom
+_home_bin
+_ruby
 
 # * LOCALE
 
