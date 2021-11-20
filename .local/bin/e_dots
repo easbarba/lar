@@ -5,6 +5,8 @@ require "pathname"
 require "find"
 
 # TODO: Remove unused early symlinked dotfiles
+# TODO: Clone repo fixed commit
+# TODO: Read-only symlinks
 
 # Mirror Lar files in $HOME.
 class Dots
