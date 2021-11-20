@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Description: auto-start list of software toolings
-DEPS=(pgrep bash feh)
-e_checkdeps ${DEPS[@]}
+# DEPS=(pgrep bash feh)
+# e_checkdeps ${DEPS[@]}
 
 LOCAL_BIN="$HOME/.local/bin"
 
