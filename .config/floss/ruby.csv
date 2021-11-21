@@ -5,12 +5,14 @@ rubocop-hq-ruby-style-guide,https://github.com/rubocop-hq/ruby-style-guide
 rubocop,https://github.com/rubocop-hq/rubocop
 solargraph,https://github.com/castwide/solargraph
 sinatra,https://github.com/sinatra/sinatra
+rack,https://github.com/rack/rack
+rack-test,https://github.com/rack/rack-test
 rails,https://github.com/rails/rails
 rspec,https://github.com/rspec/rspec
 rspec-core,https://github.com/rspec/rspec-core
+rspec-mocks,https://github.com/rspec/rspec-mocks
+rspec-expectations,https://github.com/rspec/rspec-expectations
 rake,https://github.com/ruby/rake
 ruby,https://github.com/ruby/ruby
 ruby-debug,https://github.com/ruby/debug
 ruby-rbs,https://github.com/ruby/rbs
-rack,https://github.com/rack/rack
-rack-test,https://github.com/rack/rack-test
