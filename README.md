@@ -3,9 +3,8 @@
   burden, mine follows $HOME structure so to easily mirror late on a fresh
   installation.
   
-  For now I use my own dotfiler *e_dots* to achieve a minimal reproducibility,
-  but set to move on to Nix [home-manager](https://github.com/nix-community/home-manager) soon.
-   
+  For now I use my own dotfiler *e_dots* to achieve a minimal reproducibility.
+     
 ## Documents
   To achieve a higher fixation of study, I heavily rely on annotations, and [org-mode](https://www.orgmode.org/features.html)  literate documents are just awesome at that.
 
