@@ -12,6 +12,7 @@
 |-----------------+-------------------------------------------------------------|
 | OS              | Debian, Fedora, GuixSD                                      |
 | Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
+| Frameworks      | Rails, Sinatra                                              |
 | Concepts        | Unit Test, Data Structure, Algorithms, API{Rest, SOAP}, OOP |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
 | Editors         | Emacs, Vim                                                  |
