@@ -116,7 +116,7 @@
 ** Books
 | Books                            | Chapter                            | late                                    |
 |----------------------------------+------------------------------------+-----------------------------------------|
-| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   |                                         |
+| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   | Handling Failure                        |
 | Agile Rails Development          | 2                                  |                                         |
 | The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |
 | Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |
@@ -128,13 +128,10 @@
 | Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not               |
 
 ** SLOC
-| Project          | folder             | file                   | @ |
-|------------------+--------------------+------------------------+---|
-| ruby             | cgi                | cookie.rb              |   |
-| rake             | test               | test_private_reader.rb |   |
-| rubygems/bundler | cli                | add.rb                 |   |
-| solargraph       | solargraph/api_map | bundler_methods.rb     |   |
-| dry-container    | dry/container      | mixin.rb               |   |
+| Project | folder | file           | @ |
+|---------+--------+----------------+---|
+| ruby    | cgi    | cookie.rb      |   |
+| rake    |        | application.rb |   |
 
 * Features
 ** Classes
@@ -1767,7 +1764,7 @@ Callbacks and hooks methods are called when a particular event takes place durin
   replacement), and adds something to the method’s interface.
 -
 
-* Library
+* Packages
 ** Packagement
 *** gem
     |                             |   |
@@ -1829,7 +1826,7 @@ Behaviour Driven Development for Ruby
 | describe                     | creates an example group (set of related tests). |
 | expect                       | verifies an expected outcome (assertion)         |
 | example                      | individual test                                  |
-| -b                           | display backtrace                                |
+| --backtrace or -b            | display backtrace                                |
 
 **** Terms
  - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
@@ -1840,8 +1837,8 @@ Behaviour Driven Development for Ruby
 #+begin_src ruby
 before do
   allow(ledger).to receive(:record)
-                     .with(expense)
-                     .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
+   .with(expense)
+   .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
 end
 #+end_src
 ***** matchers
@@ -1883,6 +1880,8 @@ let(:expense) { { 'some' => 'data' } }
 | let(:foo) { Bar.new }             |                                      |
 | pending 'foo not yet implemented' |                                      |
 | skip or xit 'foo bar'             | x prepended to it '' to skip example |
+**** Methods
+- instance_double
 **** Config
 ***** .rspec
 Default command-line flags
