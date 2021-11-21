@@ -43,12 +43,12 @@ _home_bin() {
 
 # * PACKAGERS
 
-_doom() {
+# ** DOOM Emacs
     DOOM_DIR="$HOME/.config/emacs"
     PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
-}
+# ===================================================
 
-_npm() {
+# ** NPM
     export NPM_CONFIG_PREFIX="$HOME/.local/npm"
     export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
     export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
@@ -56,56 +56,37 @@ _npm() {
     export NPM_HOME="$NPM_CONFIG_PREFIX"
     export NPM_BIN="$NPM_HOME/bin"
     PATH="$NPM_BIN":$PATH
-}
+# ===================================================
 
-_ruby() {
-    # gem
-    export GEM_HOME="$HOME/.local/gem"
-    export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
+# ** RUBY
+# gem
+export GEM_HOME="$HOME/.local/gem"
+export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 
-    # irb
-    export irbrc="$XDG_CONFIG_HOME/irb"
-}
+# irb
+export irbrc="$XDG_CONFIG_HOME/irb"
+# ===================================================
 
-_golang() {
-    export GOPATH=$HOME/.local/go
-    export PATH="$GOPATH/bin"${PATH:+:}$PATH
-}
+# ** GUIX
+export GUIX_PROFILE="$HOME/.guix-profile"
 
-_guix() {
-    export GUIX_PROFILE="$HOME/.guix-profile"
+# LOCALE
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 
-    # LOCALE
-    export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+# RUBY
+local GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
+export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
 
-    # RUBY
-    local GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
-    export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
+# GUILE
+export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 
-    # GUILE
-    export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
-    export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
+# export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
 
-    # export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
+# Shared Libraries
+export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
 
-    # Shared Libraries
-    export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
+# PATH
+export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
+# ===================================================
 
-    # PATH
-    export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
-}
-
-# * RUN
-
-_guix
-_doom
-_home_bin
-_ruby
-
-# * LOCALE
-
-# export LANG="C.UTF-8"
-# export LC_ALL="C.UTF-8"
-
-# export LC_ALL="en_US.utf-8"
-# export LANG="en_US.utf-8"
