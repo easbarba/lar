@@ -21,7 +21,6 @@ _packagers() {
     e_echo "Editors and Langs packages"
 
     e_doom
-    e_golang
     e_ruby
 }
 
