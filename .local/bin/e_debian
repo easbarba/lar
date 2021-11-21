@@ -87,15 +87,15 @@ packages() {
 
 	xorg=(xorg awesome feh scrot cheese)
 
-	wmapps=(udiskie ffmpeg zathura suckless-tools aria2 playerctl brightnessctl
-		bluez mpv libnotify-bin w3m elinks) # dunst
+	wmapps=(udiskie ffmpeg zathura aria2 playerctl brightnessctl
+		bluez mpv libnotify-bin w3m elinks dunst suckless-tools)
 
 	music=(mpd mpc ncmpcpp)
 
 	books=(pandoc texlive texlive-xetex)
 
-	user=(falkon firefox libreoffice gimp obs-studio kdeconnect
-		xdg-utils imagemagick aspell aspell-pt-br telegram-desktop)
+	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
+		aspell-pt-br telegram-desktop) # falkon kdeconnect
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
