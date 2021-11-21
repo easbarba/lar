@@ -2,16 +2,28 @@
 
 * .profile
 #+begin_src shell
-e_luarocks() {
-    export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
-}
+# * LOCALE
+export LANG="C.UTF-8"
+export LC_ALL="C.UTF-8"
+export LC_ALL="en_US.utf-8"
+export LANG="en_US.utf-8"
+# ===================================================
 
-p_nix() {
-    export NIX_PROFILE=$HOME/.nix-profile
+# ** GOLANG
+export GOPATH=$HOME/.local/go
+export PATH="$GOPATH/bin"${PATH:+:}$PATH
+# ===================================================
 
-    # PATH
-    export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
-}
+# ** LUAROCKS
+export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
+# ===================================================
+
+# ** NIX
+export NIX_PROFILE=$HOME/.nix-profile
+
+# PATH
+export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
+# ===================================================
 #+end_src
 * .bash_profile
 #+begin_src shell
