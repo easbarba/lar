@@ -13,8 +13,8 @@
   Scripts bundle to aid bootstrapping services, utilities on a Linux box, 
   usually bash, ruby and awk scripts.
 
-## [Nix](https://nixos.org/)
-  An interesting approach to try on experimental branches, heavily patch local builds, use different deps and so on is done in a sophisticate way with Nix, and all that easily achieved with a single file, just amazing. :)
+## [GNU Guix](https://gnu.guix.org/)
+  An interesting approach to try on experimental branches, heavily patch local builds, use different deps and so on is done in a sophisticate way with Guix, and all that easily achieved with a single file, just amazing. :)
 
 ## license
   [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
