@@ -35,27 +35,25 @@ export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # * $PATH DIRECTORIES
-_home_bin() {
-    export PATH="$HOME/bin"${PATH:+:}${PATH}
-    export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
-    # export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
-}
+export PATH="$HOME/bin"${PATH:+:}${PATH}
+export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
+# export INFOPATH="$LOCAL_INFO${INFOPATH:+:}${INFOPATH}"
 
 # * PACKAGERS
 
 # ** DOOM Emacs
-    DOOM_DIR="$HOME/.config/emacs"
-    PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
+export DOOM_DIR="$HOME/.config/emacs"
+export PATH="$DOOM_DIR/bin"${PATH:+:}$PATH
 # ===================================================
 
 # ** NPM
-    export NPM_CONFIG_PREFIX="$HOME/.local/npm"
-    export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-    export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-    export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
-    export NPM_HOME="$NPM_CONFIG_PREFIX"
-    export NPM_BIN="$NPM_HOME/bin"
-    PATH="$NPM_BIN":$PATH
+export NPM_CONFIG_PREFIX="$HOME/.local/npm"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
+export NPM_HOME="$NPM_CONFIG_PREFIX"
+export NPM_BIN="$NPM_HOME/bin"
+export PATH="$NPM_BIN":$PATH
 # ===================================================
 
 # ** RUBY
@@ -74,17 +72,17 @@ export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 
 # RUBY
-local GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
+export GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
 export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
 
 # GUILE
 export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 
-# export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
-
 # Shared Libraries
-export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
+# export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
+
+# export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
 
 # PATH
 export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
