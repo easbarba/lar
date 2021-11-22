@@ -53,10 +53,10 @@
   :END:
 * Progress
 ** Books
-|                         |                   |                                  |
-|-------------------------+-------------------+----------------------------------+
-| Agile Development Rails | Task G            | Iteration G1: Capturing an Order |
-| Rails Guide             | Action Controller | 4.4 default_url_options          |
+|                         |                   |                                        |
+|-------------------------+-------------------+----------------------------------------|
+| Agile Development Rails | Task A            | Iteration A2: Making Prettier Listings |
+| Rails Guide             | Action Controller | 4.4 default_url_options                |
 
 * Cli
 ** Database
@@ -276,6 +276,58 @@ Rails.logger.warn "This will show in all environments"
     |--------+---+-------------|
     | Models |   | Camel-Cased |
     |        |   |             |
+* Direnv
+
+Guix + Direnv example file
+#+begin_src shell
+use guix --ad-hoc nss-certs gawk git \
+    ruby@3.0 libyaml \
+    libsass gcc-toolchain \
+    node sqlite
+# ===================================================
+
+# * GUIX
+# Direnv do not set $GUIX_ENVIRONMENT
+export GUIX_ENVIRONMENT="$(echo $LIBRARY_PATH | gawk -F '/lib' '{print $1}')"
+
+# * RUNTIME LIBRARIES
+# needed by Rails toolings.
+# gcc-toolchain complains if $LD_LIBRARY_PATH is set
+# export LD_LIBRARY_PATH="$GUIX_ENVIRONMENT/lib"
+
+# SSL AUTH
+# gems need this.
+export SSL_CERT_FILE="$GUIX_ENVIRONMENT/etc/ssl/certs/ca-certificates.crt"
+# ===================================================
+
+# * GEM
+# Install gems locally
+export GEM_HOME=$PWD/.gems
+export GEM_PATH=$GEM_HOME:$GEM_PATH
+export PATH=$GEM_HOME/bin:$PATH
+# ===================================================
+
+# * NPM
+# Install npm packages locally
+export NPM_CONFIG_PREFIX="$PWD/.npm"
+export NPM_CONFIG_USERCONFIG="$PWD/.npm/config"
+export NPM_CONFIG_CACHE="$PWD/.npm/cache"
+export NPM_CONFIG_TMP="$PWD/.npm/tmp"
+export NPM_HOME="$NPM_CONFIG_PREFIX"
+export NPM_BIN="$NPM_HOME/bin"
+export PATH="$NPM_BIN":$PATH
+# ===================================================
+
+
+# * GUIX ANNOTATIONS
+# ** FFI:
+# install ffi w/: gem install ffi -- --disable-system-libffi
+
+# ** GCC-TOOLCHAIN:
+# libsass need it to compile files
+
+# ** SQLITE
+#+end_src
 * Misc
     HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
 
