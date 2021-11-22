@@ -28,9 +28,9 @@
 - [[#utils][Utils]]
 :END:
 * Progress
-| book                   | chapter          | @             | revision |
-|------------------------+------------------+---------------+----------|
-| Learn PostgreSQL 12/13 | Basic Statements | Updating data |          |
+| book                   | chapter          | @               | revision |
+|------------------------+------------------+-----------------+----------|
+| Learn PostgreSQL 12/13 | Basic Statements | Dropping tables |          |
 
 * Features
 ** tables
