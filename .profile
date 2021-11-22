@@ -62,7 +62,7 @@ export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 
 # irb
-export irbrc="$XDG_CONFIG_HOME/irb"
+# export irbrc="$XDG_CONFIG_HOME/irb"
 # ===================================================
 
 # ** GUIX
@@ -72,8 +72,8 @@ export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 
 # RUBY
-export GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
-export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
+# export GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
+# export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
 
 # GUILE
 export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
