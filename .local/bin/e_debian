@@ -71,7 +71,8 @@ packages() {
 
 	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
-	infra=(podman qemu qemu-utils qemu-efi qemu-kvm)
+	infra=(podman vagrant qemu qemu-utils qemu-efi qemu-kvm libvirt-clients
+		   libvirt-daemon-system virtinst bridge-utils) # ebtables
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
@@ -213,14 +214,14 @@ services() {
 		/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 	}
 
-	virtualization() {
+	_infra() {
 		/usr/bin/sudo usermod -aG libvirt "$USER"
 		/usr/bin/sudo usermod -aG kvm "$USER"
 	}
 
 	#postgres
 	#kdeconnect
-	#virtualization
+	_infra
 	_lightdm
 	_mpd
 	_alternatives
@@ -231,10 +232,27 @@ services() {
 foreign() {
 	echo "Non-Debian packages"
 
-	chrome() {
+	_chrome() {
 		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		/usr/bin/sudo /usr/bin/apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
 	}
+
+	_virtualbox(){
+		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye_amd64.deb
+	}
+
+	_vagrant() {
+		/usr/bin/curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+		/usr/bin/sudo /usr/bin/apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
+
+		/usr/bin/sudo /usr/bin/apt install -y software-properties-common
+		/usr/bin/sudo /usr/bin/apt update
+		/usr/bin/sudo /usr/bin/apt install -y vagrant
+	}
+
+	_virtualbox
+	_vagrant
+	_chrome
 }
 
 # * RUN
@@ -249,3 +267,9 @@ services
 
 # dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
 # firmware-linux-nonfree, firmware-misc-nonfree, firmware-atheros, and firmware-ath9k-htc
+
+sudo apt install -y autoconf bison build-essential curl g++ gcc git libffi-dev libgconf-2-4 libgdbm-dev libncurses5-dev libreadline-dev libreadline-dev
+	libsqlite3-dev libssl-dev libxi6 libyaml-dev make sqlite3 xvfb zip zlib1g-dev
+
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
