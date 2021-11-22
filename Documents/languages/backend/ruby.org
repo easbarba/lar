@@ -117,7 +117,6 @@
 | Books                            | Chapter                            | late                                    |
 |----------------------------------+------------------------------------+-----------------------------------------|
 | Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   | Handling Failure                        |
-| Agile Rails Development          | 2                                  |                                         |
 | The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |
 | Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |
 | Design Patterns in Ruby          | Composite                          |                                         |
