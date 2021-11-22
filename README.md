@@ -3,7 +3,7 @@
   burden, mine follows $HOME structure so to easily mirror late on a fresh
   installation.
   
-  For now I use my own dotfiler *e_dots* to achieve a minimal reproducibility.
+  I use my own dotfiler *e_dots* with a minimal reproducibility feature, bout to improve it later.
      
 ## Documents
   To achieve a higher fixation of study, I heavily rely on annotations, and [org-mode](https://www.orgmode.org/features.html)  literate documents are just awesome at that.
