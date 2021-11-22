@@ -51,7 +51,7 @@ packages() {
 
 	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig)
 
-	shell=(bash-completion shellcheck zsh)
+	shell=(bash-completion shellcheck zsh fish)
 
 	editors=(neovim)
 
