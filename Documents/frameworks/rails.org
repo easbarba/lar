@@ -53,10 +53,10 @@
   :END:
 * Progress
 ** Books
-|                         |                   |                             |
-|-------------------------+-------------------+-----------------------------|
-| Agile Development Rails | 7 - Task B        | Validation and Unit Testing |
-| Rails Guide             | Action Controller | 4.4 default_url_options     |
+|                         |                   |                         |
+|-------------------------+-------------------+-------------------------|
+| Agile Development Rails | 7 - Task B        | Using Fixture Data      |
+| Rails Guide             | Action Controller | 4.4 default_url_options |
 
 * Cli
 ** Database
