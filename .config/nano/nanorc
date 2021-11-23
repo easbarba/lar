@@ -23,3 +23,7 @@ set fill 80
 
 # Save the last hundred search strings
 set historylog
+
+# use space instead
+set tabsize 4
+set tabstospaces
