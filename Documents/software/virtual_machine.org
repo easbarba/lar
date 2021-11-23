@@ -9,6 +9,13 @@
    |        | halt          |   |
    |        | package       |   |
 
+#+begin_src shell
+sudo apt update
+sudo apt install -y autoconf bison build-essential curl g++ gcc git libffi-dev libgconf-2-4 libgdbm-dev libncurses5-dev libreadline-dev libreadline-dev
+	libsqlite3-dev libssl-dev libxi6 libyaml-dev make sqlite3 xvfb zip zlib1g-dev
+
+#+end_src
+
 * libvirt
 * qemu
 * kvm
