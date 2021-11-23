@@ -32,21 +32,24 @@ telegram: @easbarbosa / easbarbosa@tutanota.com / DF
 Amante da filosofia Unix por sua simplicidade, claridade e frugalidade.
 
 Há muito prefiro criar sistemas simples e usáveis com foco em usuários
-experientes como WMs, extensivo uso de shell scripts e auxiliados as várias
-maravilhosas ferramentas cli como awk, sed, parallel para automação e bootstrap
-de distros GNU/Linux.
+experientes, extensivo uso de shell scripts, auxiliados as maravilhosas
+ferramentas CLI como awk, sed, parallel para automação e bootstrap de
+distros GNU/Linux.
 
-Venho ativamente ajudando a diversos projetos de extensões do editor Emacs,
-pacotes Guix, além de ter meus próprios projetos os quais são baseados em
-tecnologias Ruby, Shell Script e Scheme.
+Venho ativamente ajudando a alguns projetos de extensões do editor Emacs,
+toolings de linguagens novas e pacotes Guix.
+
+Tenho alguns projetos pessoais nos quais experimento as novidades
+opensource/livres, estes geralmente são baseados em tecnologias Ruby,
+Awk e Guile Scheme.
 
 *HABILIDADES*
 -----
-  - Linguagens: Ruby, Guile Scheme, Emacs-Lisp.
-  - Distros: Arch, Debian, GuixSD.
-  - Shell Script: Awk, Sed, GNU Bash, Fish.
-  - Containers: podman, dockerfile, dockerignore, criação e gerência de imagens.
-  - Editores: GNU Emacs, NeoVim, Nano.
+  - Linguagens: Ruby, Guile Scheme.
+  - Distros: Debian, Arch, GuixSD.
+  - Script: Awk, Sed, GNU Bash, Fish.
+  - Infra: dockerfile, vagrantfile, podman, qemu/kvm.
+  - Editores: GNU Emacs, Nano, NeoVim.
   - Git: merge, rebase, format-patch.
 
 *PROJETOS*
@@ -56,6 +59,6 @@ tecnologias Ruby, Shell Script e Scheme.
 
 *EDUCAÇÃO*
 -----
-  - Direito - IESB (Trancado)
-  - Ciência da Computação, Estacio (Cursando)
+  - Direito @ IESB (Trancado)
+  - Ciência da Computação @ Estacio (Cursando)
   - Inglês: Ativo(Intermediário), Passivo(Avancado).
