@@ -65,6 +65,16 @@ export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 # export irbrc="$XDG_CONFIG_HOME/irb"
 # ===================================================
 
+# ** GOLANG
+export GOPATH=$HOME/.local/go
+export PATH="$GOPATH/bin"${PATH:+:}$PATH
+# ===================================================
+
+# ** LUAROCKS
+export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
+# ===================================================
+
+
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 
@@ -82,9 +92,15 @@ export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_P
 # Shared Libraries
 # export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
 
-# export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
+# export SSL_CERT_FILE="$SSL_CERT_FILE:$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt" # yt-dlp
 
 # PATH
 export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
 
+# ** NIX
+export NIX_PROFILE=$HOME/.nix-profile
+
+# PATH
+export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
+# ===================================================
