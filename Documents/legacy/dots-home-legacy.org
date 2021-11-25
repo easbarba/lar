@@ -9,21 +9,6 @@ export LC_ALL="en_US.utf-8"
 export LANG="en_US.utf-8"
 # ===================================================
 
-# ** GOLANG
-export GOPATH=$HOME/.local/go
-export PATH="$GOPATH/bin"${PATH:+:}$PATH
-# ===================================================
-
-# ** LUAROCKS
-export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
-# ===================================================
-
-# ** NIX
-export NIX_PROFILE=$HOME/.nix-profile
-
-# PATH
-export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
-# ===================================================
 #+end_src
 * .bash_profile
 #+begin_src shell
