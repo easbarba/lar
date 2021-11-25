@@ -10,15 +10,15 @@
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
-| OS              | Debian, Fedora, GuixSD                                      |
 | Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
 | Frameworks      | Rails, Sinatra                                              |
 | Concepts        | Unit Test, Data Structure, Algorithms, API{Rest, SOAP}, OOP |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
-| Editors         | Emacs, Vim                                                  |
 | Version Control | Git                                                         |
-| Network         | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies |
+| Editors         | Emacs, Vim                                                  |
 | Containers      | Podman, Docker, Docker Compose                              |
+| OS              | Debian, Fedora, GuixSD                                      |
+| Network         | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies |
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
