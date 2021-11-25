@@ -3,10 +3,10 @@
 # Description: Extract audio of video pointed in clipboards url.
 
 # TODO: Url has url?
-DEPS=(youtube-dl ffmpeg)
+DEPS=(yt-dlp ffmpeg)
 e_checkdeps "${DEPS[@]}"
 
-FREE=(vorbis ogg)
+FREE=(mp3 ogg vorbis)
 
 EXT="${FREE[0]}"
 URL="$(e_url)"
@@ -17,7 +17,7 @@ mkdir -p "$FOLDER" && cd "$FOLDER"
 # GETTERS ATTRIBUTES
 declare -A YTDL
 YTDL=(
-    [bin]="youtube-dl"
+    [bin]="yt-dlp"
     [audio]="--extract-audio --audio-format"
     [title]="-o '%(title)s.%(ext)s'")
 
