@@ -60,7 +60,7 @@
   :group '*vars*
   :type 'string)
 
-(defcustom *media-downloader* (e/return-exec '("youtube-dl"))
+(defcustom *media-downloader* (e/return-exec '("yt-dlp"))
   "Youtube-dl - Media downloader."
   :type 'string)
 
