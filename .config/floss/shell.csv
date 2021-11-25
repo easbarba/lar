@@ -1,13 +1,11 @@
 name,repository
+neofetch,https://github.com/dylanaraps/neofetch
 pfetch,https://github.com/dylanaraps/pfetch
 bash-completion,https://github.com/scop/bash-completion
 i3blocks-contrib,https://github.com/vivien/i3blocks-contrib
 basher,https://github.com/basherpm/basher
-ytfzf,https://github.com/pystardust/ytfzf
 liquidprompt,https://github.com/nojhan/liquidprompt
 enhancd,https://github.com/b4b4r07/enhancd
-cookbook.fish,https://github.com/jorgebucaran/cookbook.fish
-asdf,https://github.com/asdf-vm/asdf
 bashcaster,https://github.com/alphapapa/bashcaster
 magit.sh,https://github.com/alphapapa/magit.sh
 makem.sh,https://github.com/alphapapa/makem.sh
