@@ -18,14 +18,14 @@
   "Download Video w/ URL - GPL-3.0."
   (interactive)
   (alert "Getting Video.")
-  (start-process "GET-VIDEO" "GET-VIDEO" "cejo" "media" "get" url))
+  (start-process "GET-VIDEO" "GET-VIDEO" "e_getvideo" url))
 (global-set-key (kbd "C-c f V") #'(lambda () (interactive) (e/get-video (current-kill 0 t))))
 
 (defun e/get-audio (url)
   "Download Audio w/ URL - GPL-3.0!"
   (interactive)
   (alert "Getting Audio.")
-  (start-process "GET-AUDIO" "GET-AUDIO" "cejo" "media" "get" url "vorbis"))
+  (start-process "GET-AUDIO" "GET-AUDIO" "e_getaudio" url))
 (global-set-key (kbd "C-c f A") #'(lambda () (interactive) (e/get-audio (current-kill 0 t))))
 
 (defun e/play-video (url)
