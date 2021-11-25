@@ -8,12 +8,13 @@ e_echo "USB Tasks"
 ARCHIVED="$HOME/Downloads/archived"
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
 USB_NAME="MACHO"
+USB=""
 
 case $DISTRO in
     "NixOS" | "Arch Linux" | "Manjaro")
         USB="/run/media"
         ;;
-    "Debian" | "Fedora")
+    "Debian GNU/Linux" | "Fedora")
         USB="/media"
         ;;
 esac
