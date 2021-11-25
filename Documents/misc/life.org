@@ -26,18 +26,21 @@
 - [[#contas][Contas]]
 - [[#music][Music]]
   - [[#classic-composers][Classic Composers]]
-  - [[#american][American]]
+  - [[#classic-guitar][Classic Guitar]]
+  - [[#disco][Disco]]
+  - [[#rb][RB]]
   - [[#japan][Japan]]
   - [[#bass][Bass]]
   - [[#cuba][Cuba]]
+  - [[#instrumental][Instrumental]]
   - [[#christian][Christian]]
+  - [[#guitar][Guitar]]
   - [[#djent][Djent]]
   - [[#death-metal][Death Metal]]
   - [[#progressive-metal][Progressive Metal]]
   - [[#rock][Rock]]
   - [[#mpb][MPB]]
   - [[#violao][Violao]]
-  - [[#classic-guitar][Classic Guitar]]
 - [[#books][Books]]
   - [[#books-videos][Books, Videos]]
   - [[#favs][Favs]]
@@ -341,9 +344,11 @@ http://steamcommunity.com/id/elxbarbosa
 - Edward Elgar
 - Gabriel Fauré
 - Arnold Schoenberg
-** American
-- Ink Spot
-*** Disco
+** Classic Guitar
+- John Williams
+- Julian Bream
+- Yepes
+** Disco
 - David Ruffin
 - The temptations
 - Chic
@@ -358,9 +363,9 @@ http://steamcommunity.com/id/elxbarbosa
 - Tavares
 - Donna Summer
 - George Mccrae
-*** RB
+** RB
 - Earth, Wind and fire
--
+- Ink Spot
 ** Japan
 - a-ha
 - hy
@@ -374,9 +379,14 @@ http://steamcommunity.com/id/elxbarbosa
 - Perez Prado
 - Compay Segundo
 - Ibrahim Ferrer
+** Instrumental
+- Covet
 
 ** Christian
 - DC talk
+
+** Guitar
+- Yvette young
 ** Djent
 - Acadence
 - Animals as leaders
@@ -385,21 +395,21 @@ http://steamcommunity.com/id/elxbarbosa
 
 ** Death Metal
 - Meshuggah
+- Suffocation
+- Nile
+
 ** Progressive Metal
 - Stratovarius
 ** Rock
 - Deepeche Mode
 ** MPB
 - Ze
+-
 ** Violao
 - Baden Powell
 - Garoto
 - Marco Pereira
 
-** Classic Guitar
-- John Williams
-- Julian Bream
-- Yepes
 * Books
 ** Books, Videos
 | Books                                                    | Capts                                         | @                               |
