@@ -76,6 +76,11 @@
 |          | db:rollback                                                            |                                                   |
 |          | db:seed                                                                |                                                   |
 |          |                                                                        |                                                   |
+** Server
+|                               |   |
+|-------------------------------+---|
+| --binding=[PORT] or -b [PORT] |   |
+
 
 ** Misc
 | what       | how         | desc |
