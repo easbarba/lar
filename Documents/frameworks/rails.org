@@ -161,6 +161,17 @@ set -e
 bin/rails server --binding=0.0.0.0
 #+end_src
 ** setup
+** ci
+run tests and quality checks.
+
+- check `bin/setup` idempodency by running that script twice to check.
+-
+
+#+begin_src shell
+bin/setup # perform the actual setup
+bin/setup # ensure setup is idempotent
+bin/ci # perform all checks
+#+end_src
 
 * Methods
 |        |                                            |
