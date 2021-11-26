@@ -150,6 +150,8 @@ Rails 6 uses rake as task runner
 |                      |                                                                          |
 
 * Bin
+Useful personal scripts
+
 ** run
 correctly forward port in a docker/wm setup
 #+begin_src shell
