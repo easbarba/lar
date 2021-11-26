@@ -88,10 +88,13 @@
 | destroy    | destroy / d |      |
 | belongs_to |             |      |
 
-** Tasks (rake)
-| what | how | desc |
-|------+-----+------|
-|      |     |      |
+** Tasks
+Rails 6 uses rake as task runner
+
+|              |                         |
+|--------------+-------------------------|
+| --task or -T | list all task available |
+|              |                         |
 
 ** Log
 |                  |   |
