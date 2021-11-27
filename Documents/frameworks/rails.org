@@ -153,6 +153,10 @@ Rails 6 uses rake as task runner
 * Bin
 Useful personal scripts
 
+- brakeman
+- bundle-audit
+- lograge
+
 ** run
 correctly forward port in a docker/wm setup
 #+begin_src shell
@@ -276,6 +280,7 @@ Rails.logger.warn "This will show in all environments"
     |-------+----------------------------------------------------------|
     | seeds | which defines some data you always need in your database |
     |       |                                                          |
+* Cache
 * Views
 * Controller
 * Models
