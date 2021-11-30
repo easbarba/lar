@@ -235,6 +235,28 @@ services() {
 foreign() {
 	echo "Non-Debian packages"
 
+	_docker() {
+		sudo apt-get remove -y docker docker-engine docker.io containerd runc
+
+		sudo apt-get update -y
+		sudo apt-get install \
+			ca-certificates \
+			curl \
+			gnupg \
+			lsb-release
+
+		# Add Docker’s official GPG key:
+		curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+		# set up the stable repository
+		echo \
+			"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+			bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
+		# Install Docker Engine
+		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+	}
+
 	_chrome() {
 		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 		/usr/bin/sudo /usr/bin/apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
