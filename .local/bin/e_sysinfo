@@ -3,7 +3,10 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
-# DEPS=(sensors ping gawk grep sed amixer pactl)
+readonly SEP="  "
+readonly SEP2=" / "
+
+DEPS=(sensors ping gawk grep sed amixer pactl notify-send)
 
 _distro() {
     local result
@@ -119,8 +122,17 @@ _host() {
     printf "%s" "${HOSTNAME^}"
 }
 
-SEP="  "
-SEP2=" / "
-echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)$SEP$(_distro)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date) "
+_de() {
+    [[ $DESKTOP_SESSION != "gnome" ]] && return
+
+    local result=$(echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)")
+    notify-send "$result"
+}
+
+_wms() {
+    echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)$SEP$(_distro)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date) "
+}
+
+_de
 
 exit 0
