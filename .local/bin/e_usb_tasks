@@ -3,6 +3,9 @@
 # DEBUG
 set -euo pipefail
 
+# TODO
+# - check if usb stick is plugged on.
+
 e_echo "USB Tasks"
 
 ARCHIVED="$HOME/Downloads/archived"
