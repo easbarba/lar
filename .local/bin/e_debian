@@ -13,23 +13,16 @@ e_echo "Debian GNU/Linux -- The Universal Operating System"
 upgrade() {
 	e_echo "Upgrading System"
 
-	/usr/bin/sudo /usr/bin/apt update
-	/usr/bin/sudo /usr/bin/apt upgrade -y
-	/usr/bin/sudo /usr/bin/apt autoremove -y
+	sudo apt update
+	sudo apt upgrade -y
+	sudo apt autoremove -y
 }
 
 pre() {
-
-	sid() {
-		[[ $(grep '^\[multilib\]' /etc/apt/sources.list) == '[multilib]' ]] && return
-
-		# /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-	}
-
 	multi() {
 		e_echo "Enable Multi-Arch"
 
-		/usr/bin/sudo /usr/bin/dpkg --add-architecture i386
+		sudo dpkg --add-architecture i386
 	}
 
 	# * RUN
@@ -44,8 +37,6 @@ packages() {
 	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf time
 		entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
 		jq rsync pv texinfo autoconf automake socat ripgrep)
-
-	gui=(lightdm)
 
 	network=(net-tools iproute2 telnet)
 
@@ -74,7 +65,7 @@ packages() {
 	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	infra=(podman vagrant qemu qemu-utils qemu-efi qemu-kvm libvirt-clients
-		   libvirt-daemon-system virtinst bridge-utils) # ebtables
+		libvirt-daemon-system virtinst bridge-utils) # ebtables
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
@@ -90,8 +81,7 @@ packages() {
 
 	xorg=(xorg awesome feh scrot cheese)
 
-	wmapps=(udiskie ffmpeg zathura aria2 playerctl brightnessctl
-		bluez mpv libnotify-bin w3m elinks dunst suckless-tools)
+	wmapps=(ffmpeg mpv) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m elinks dunst suckless-tools
 
 	music=(mpd mpc ncmpcpp)
 
@@ -108,7 +98,7 @@ packages() {
 		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
 		radeontop)
 
-	local command='/usr/bin/sudo /usr/bin/apt install -y'
+	local command='sudo apt install -y'
 
 	enabled=(
 		"${essentials[@]}"
@@ -117,7 +107,6 @@ packages() {
 		"${network[@]}"
 		"${shell[@]}"
 		"${debian[@]}"
-		"${gui[@]}"
 		"${amd[@]}"
 		"${ruby[@]}"
 		"${go[@]}"
@@ -126,8 +115,6 @@ packages() {
 		"${programming[@]}"
 		"${editors[@]}"
 		"${emacs[@]}"
-		"${wayland[@]}"
-		"${xorg[@]}"
 		"${music[@]}"
 		"${infra[@]}"
 		"${fonts[@]}"
@@ -143,7 +130,7 @@ packages() {
 	done
 
 	# builds dep
-	/usr/bin/sudo /usr/bin/apt -y build-dep emacs
+	sudo apt -y build-dep emacs
 
 	e_echo "Done"
 }
@@ -151,16 +138,14 @@ packages() {
 post() {
 	e_echo "Post install"
 
-	/usr/bin/sudo /usr/bin/apt-file update # update Debian database
-	/usr/bin/sudo /usr/bin/fc-cache -fv    # cache all system fonts
+	sudo apt-file update # update Debian database
+	sudo fc-cache -fv    # cache all system fonts
 
 	awesome() {
 		local awe=$HOME/.config/awesome
 		mkdir -pv $awe
 		cp -pvr /usr/share/awesome/themes/ $awe
 	}
-
-	awesome
 }
 
 clean() {
@@ -168,11 +153,11 @@ clean() {
 
 	unused=(firefox-esr)
 
-	local command='/usr/bin/sudo /usr/bin/apt remove -y'
+	local command='sudo apt remove -y'
 	e_dolist "$command" "${unused[@]}"
 
 	purging=(*nvidia*)
-	local command='/usr/bin/sudo /usr/bin/apt purge -y'
+	local command='sudo apt purge -y'
 	e_dolist "$command" "${purging[@]}"
 }
 
@@ -184,22 +169,22 @@ services() {
 	}
 
 	_postgres() {
-		/usr/bin/sudo /usr/bin/systemctl restart postgresql
+		sudo systemctl restart postgresql
 	}
 
 	_mpd() {
-		/usr/bin/sudo /usr/bin/systemctl disable mpd
+		sudo systemctl disable mpd
 	}
 
 	_iwd() {
-		/usr/bin/sudo /usr/bin/systemctl enable iwd
-		/usr/bin/sudo /usr/bin/systemctl start iwd
+		sudo systemctl enable iwd
+		sudo systemctl start iwd
 	}
 
 	_kdeconnect() {
-		/usr/bin/sudo /usr/bin/firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		/usr/bin/sudo /usr/bin/firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		/usr/bin/sudo /usr/bin/systemctl restart firewalld.service
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		sudo systemctl restart firewalld.service
 	}
 
 	_timezone() {
@@ -207,29 +192,25 @@ services() {
 		local desired_zone
 
 		desired_zone='America/Sao_Paulo'
-		current_zone=$(/usr/bin/timedatectl | grep 'Time zone' | awk '{print $3}')
+		current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
 
-		[[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
+		[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
 	}
 
 	_alternatives() {
 		# set python to python3
-		/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
+		sudo update-alternatives --install python python "$(which python3)" 1
 	}
 
 	_infra() {
-		/usr/bin/sudo usermod -aG libvirt "$USER"
-		/usr/bin/sudo usermod -aG kvm "$USER"
+		sudo usermod -aG libvirt "$USER"
+		sudo usermod -aG kvm "$USER"
 	}
 
-	#postgres
-	#kdeconnect
 	_infra
-	_lightdm
 	_mpd
 	_alternatives
 	_timezone
-	_iwd
 }
 
 foreign() {
@@ -259,24 +240,30 @@ foreign() {
 
 	_chrome() {
 		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-		/usr/bin/sudo /usr/bin/apt install -y "/tmp/google-chrome-stable_current_amd64.deb"
+		sudo apt install -y /tmp/google-chrome-stable_current_amd64.deb
 	}
 
-	_virtualbox(){
+	_virtualbox() {
 		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye_amd64.deb
+		sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye_amd64.deb
 	}
 
 	_vagrant() {
-		/usr/bin/curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-		/usr/bin/sudo /usr/bin/apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
+		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+		sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
 
-		/usr/bin/sudo /usr/bin/apt install -y software-properties-common
-		/usr/bin/sudo /usr/bin/apt update
-		/usr/bin/sudo /usr/bin/apt install -y vagrant
+		sudo apt install -y software-properties-common
+		sudo apt update
+		sudo apt install -y vagrant
 	}
 
-	_virtualbox
-	_vagrant
+	_vscode() {
+		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode_x64.deb'
+		sudo apt install -y /tmp/vscode_x64.deb
+	}
+
+	_vscode
+	_docker
 	_chrome
 }
 
@@ -292,9 +279,3 @@ services
 
 # dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
 # firmware-linux-nonfree, firmware-misc-nonfree, firmware-atheros, and firmware-ath9k-htc
-
-sudo apt install -y autoconf bison build-essential curl g++ gcc git libffi-dev libgconf-2-4 libgdbm-dev libncurses5-dev libreadline-dev libreadline-dev
-	libsqlite3-dev libssl-dev libxi6 libyaml-dev make sqlite3 xvfb zip zlib1g-dev
-
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
