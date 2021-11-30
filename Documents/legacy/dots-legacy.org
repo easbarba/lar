@@ -803,37 +803,6 @@ e_dolist "$COMMAND" "${BINARIES[@]}"
 	  rvm get stable
       }
 
-      e-packs-vscode()
-      {
-	  echo 'Installing vscode packages'
-
-	  local packages=(2gua.rainbow-brackets abierbaum.vscode-file-peek
-			  alefragnani.Bookmarks alefragnani.project-manager
-			  CoenraadS.bracket-pair-colorizer-2
-			  dbaeumer.vscode-eslint donjayamanne.githistory
-			  felipecaputo.git-project-manager HookyQR.beautify
-			  mads-hartmann.bash-ide-vscode
-			  MS-CEINTL.vscode-language-pack-pt-BR
-			  eamodio.gitlens njpwerner.autodocstring
-			  bmalehorn.vscode-fish
-			  davidanson.vscode-markdownlint josef.rouge-theme
-			  tuttieee.emacs-mcx esbenp.prettier-vscode
-			  visualstudioexptteam.vscodeintellicode
-			  msjsdiag.debugger-for-chrome
-			  formulahendry.dotnet-test-explorer
-			  jmrog.vscode-nuget-package-manager
-			  redhat.vscode-yaml
-			  firefox-devtools.vscode-firefox-debug
-			  ms-vscode-remote.remote-ssh
-			  ms-vscode-remote.remote-wsl ms-mssql.mssql
-			  ms-azuretools.vscode-docker ms-vscode.powershell
-			  ms-dotnettools.csharp)
-
-	  for pack in "${packages[@]}"
-	  do
-	      code --install-extension "${pack}" --force
-	  done
-      }
 
       e_path_nvm()
       {
