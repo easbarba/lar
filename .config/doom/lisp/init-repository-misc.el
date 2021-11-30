@@ -41,9 +41,9 @@
    '("https://www.fsf.org/static/fsforg/rss/news.xml"
      "https://www.fsf.org/static/fsforg/rss/blogs.xml"
      "https://guix.gnu.org/feeds/blog.atom"
-     ;; misc
+     ;; misc blogs
      "https://tonarinoyj.jp/rss/series/13932016480028984490"
-     ;; distros
+     ;; distros blogs
      "https://guix.gnu.org/feeds/blog.atom"
      "https://www.phoronix.com/rss.php"
      ;; prog blogs
@@ -54,16 +54,21 @@
      "https://drewdevault.com/blog/index.xml"
      "https://ambrevar.xyz/atom.xml"
      "https://x-team.com/blog/rss/"
-     ;; langs blog
+     ;; langs blogs
      "https://feeds.fireside.fm/smartlogic/rss"
      "https://ulisses.dev/feed.xml"
      "https://research.swtch.com/feed.atom"
      "https://feeds.feedburner.com/AyendeRahien"
-     ;; prog channels
+     ;; devops blogs
+     "https://www.linuxtips.io/blogs/novidades.atom"
+     "https://leandronsp.com/rss.xml"
+     ;; devops/langs channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UConIMoZxnroqKqCc-utZA7A" ;; Carlos seong
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; Linuxtips br
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
      ;; news channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; teze onze
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; tempero drag
@@ -71,14 +76,11 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; Boitempo
-     ;; veg
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
-     ;; corinthians
+     ;; corinthians channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqRraVICLr0asn90cAvkIZQ" ;; Corinthians TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC-I7i0YfLPHfUoH6-m2uUAw" ;; Podcastimao
      ;; misc channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca Vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSTlOTcyUmzvhQi6F8lFi5w" ;; Atila Iamarino
