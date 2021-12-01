@@ -11,3 +11,4 @@ bufler.el,https://github.com/alphapapa/bufler.el
 emacs-async,https://github.com/jwiegley/emacs-async
 use-package,https://github.com/jwiegley/use-package
 lsp-mode,https://github.com/emacs-lsp/lsp-mode
+emacs,https://git.savannah.gnu.org/git/emacs
