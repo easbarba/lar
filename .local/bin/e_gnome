@@ -9,7 +9,6 @@ _switch() {
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']"
-
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>A']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>D']"
 }
@@ -23,17 +22,17 @@ _move() {
 }
 
 _volume() {
-    gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step 6
+    gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 6
     gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['<Shift><Super>w']"
     gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Shift><Super>s']"
-    gsettings get org.gnome.settings-daemon.plugins.media-keys volume-mute "['<Shift><Super>e']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys volume-mute "['<Shift><Super>e']"
 }
 
 _media() {
-    gsettings get org.gnome.settings-daemon.plugins.media-keys next "['<Shift><Super>d']"
-    gsettings get org.gnome.settings-daemon.plugins.media-keys previous "['<Shift><Super>a']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys next "['<Shift><Super>d']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys previous "['<Shift><Super>a']"
 
-    gsettings get org.gnome.settings-daemon.plugins.media-keys mic-mute "['<Super>q']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys mic-mute "['<Super>q']"
 
     gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
     gsettings set org.gnome.desktop.wm.preferences audible-bell false
@@ -49,7 +48,7 @@ _misc() {
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
     gsettings set org.gnome.desktop.background show-desktop-icons false
 
-    gsettings get org.gnome.settings-daemon.plugins.media-keys keyboard-brightness-down
+    gsettings set org.gnome.settings-daemon.plugins.media-keys keyboard-brightness-down
 }
 
 _extensions() {
