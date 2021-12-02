@@ -38,10 +38,10 @@
   - [[#commands][Commands]]
 :END:
 * Progresso
-| books                     | chapter                             | at                                              |
-|---------------------------+-------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 5 Data Volumes and Configuration    | Removing volumes                                |
-| Docker for Devs           | Sharing Containers Using Docker Hub | Implementing a sample microservices application |
+| books                     | chapter                                  | at                                              |
+|---------------------------+------------------------------------------+-------------------------------------------------|
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images | What are images?                                |
+| Docker for Developers     | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
 
 | SLOC   | @                 | file          | line |
 |--------+-------------------+---------------+------|
@@ -50,6 +50,8 @@
 
 * cli
 ** container
+https://docs.docker.com/engine/reference/commandline/container/
+
 *** ls
 |    |                                                             |
 |----+-------------------------------------------------------------|
