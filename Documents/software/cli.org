@@ -117,13 +117,14 @@ copy files and directories
 ** rm
 remove files or directories
 
-|          |   |
-|----------+---|
-| -f       |   |
-| -i       |   |
-| -I       |   |
-| -r or -R |   |
-| -d       | remove empty dir  |
+|                       |                   |
+|-----------------------+-------------------|
+| -f                    |                   |
+| -i                    |                   |
+| -I                    |                   |
+| -r or -R              |                   |
+| -d                    | remove empty dir  |
+| --preserve-root[=all] | do not remove '/' |
 
 * wc
 print newline, word, and byte counts for each file
