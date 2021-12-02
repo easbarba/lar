@@ -49,6 +49,9 @@ _misc() {
     gsettings set org.gnome.desktop.background show-desktop-icons false
 
     gsettings set org.gnome.settings-daemon.plugins.media-keys keyboard-brightness-down
+
+    gsettings set org.gnome.desktop.wm.preferences auto-raise 'true'
+    gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
 }
 
 _extensions() {
