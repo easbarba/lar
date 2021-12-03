@@ -216,12 +216,14 @@ print records from a recfile
 ** htop
 ** killall
 ** kill
-|    |                  |
-|----+------------------|
-|  0 | kill all process |
-|  1 | SIGHUP           |
-|  9 | SIGKILL          |
-| 15 | SIGTERM          |
+send a signal to a process
+
+| signal numbers | signal name      |
+|----------------+------------------|
+|              0 | kill all process |
+|              1 | SIGHUP           |
+|              9 | SIGKILL          |
+|             15 | SIGTERM          |
 ** pgrep
 look up, signal, or wait for processes based on name and other attributes
 ** pkill
