@@ -161,8 +161,7 @@
 ** Progresso
 |                 |     |   |
 |-----------------+-----+---|
-| One Punch Man   | 149 |   |
-| Attack On Titan | 127 |   |
+| One Punch Man   |  76 |   |
 ** Favorites
 - Lone Wolf and Cub
 - One Punch Man
