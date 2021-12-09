@@ -95,6 +95,18 @@ sudo apt install -y autoconf bison build-essential curl g++ gcc git libffi-dev l
 ** search
 https://vagrantcloud.com/search.
 
+** virsh
+removing the machine and volume with
+#+begin_src shell
+sudo virsh list --all
+# get the machine name
+sudo virsh destroy <THE_MACHINE>
+sudo virsh undefined <THE_MACHINE>
+sudo virsh vol-list default
+# get the volume name
+sudo virsh vol-delete --pool default <THE_VOLUME>
+#+end_src
+
 * libvirt
 * qemu
 * kvm
