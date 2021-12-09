@@ -5,7 +5,7 @@ set -euo pipefail
 
 # Description: Get video
 
-DEPS=(youtube-dl ffmpeg)
+DEPS=(yt-dlp ffmpeg)
 e_checkdeps "${DEPS[@]}"
 
 FOLDER="$HOME/Videos"
@@ -14,9 +14,9 @@ FOLDER="$HOME/Videos"
 [[ ! -d $FOLDER ]] && mkdir "$FOLDER"
 cd "$FOLDER"
 
-# YOUTUBE-DL
+# YT-DLP
 
-GETTER='youtube-dl'
+GETTER='yt-dlp'
 EXT='mp4'
 # QUALITY='bestvideo+bestaudio'
 FORMAT="--format $EXT"
