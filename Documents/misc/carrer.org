@@ -1,18 +1,20 @@
 #+TITLE: Carrer
 
 * Schedule
-| mon      | tue        | wed      | thru     | fri        |
-|----------+------------+----------+----------+------------|
-| lang     | lang       | lang     | lang     | lang       |
-| concepts | containers | editors  | concepts | containers |
-| database | vc         | database | vc       | database   |
+| mon      | tue        | wed      | thru       | fri      |
+|----------+------------+----------+------------+----------|
+| lang     | lang       | lang     | lang       | lang     |
+| concepts | testing    | concepts | testing    | testing  |
+| database | containers | database | containers | database |
+| vc       | vc         | vc       | vc         | vc       |
 
 * Priorities
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
 | Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
 | Frameworks      | Rails, Sinatra                                              |
-| Concepts        | Unit Test, Data Structure, Algorithms, API{Rest, SOAP}, OOP |
+| Concepts        | Data Structure, Algorithms, API{Rest, SOAP}, OOP   |
+| Testing         | Minitest, Rspec                                             |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
 | Version Control | Git                                                         |
 | Editors         | Emacs, Vim                                                  |
@@ -22,9 +24,9 @@
 
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
-*EAS Barbosa*
+*Euber Alexandre Sousa Barbosa*
 
-telegram: @easbarbosa / easbarbosa@tutanota.com / DF
+@easbarbosa / euberbarbosa@pm.me / Distrito Federal
 
 *SOBRE*
 -----
