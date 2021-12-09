@@ -48,7 +48,6 @@
   - [[#nephew][Nephew]]
 - [[#paintings][Paintings]]
 - [[#donations][Donations]]
-- [[#delivery][Delivery]]
 :END:
 
 * Movies
@@ -442,6 +441,3 @@ https://apoia.se/cozinhasolidaria
 | mariaparecida5021@gmail.com |                 |
 | fabynascim77@gmail.com      |                 |
 
-* Delivery
-981103178
-tn: 76c3da5a9b44f28fd8356ac7c886159af05e28426a64397197cd60999e33e782
