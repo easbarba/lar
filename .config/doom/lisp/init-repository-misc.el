@@ -45,7 +45,6 @@
      "https://tonarinoyj.jp/rss/series/13932016480028984490"
      ;; distros blogs
      "https://guix.gnu.org/feeds/blog.atom"
-     "https://www.phoronix.com/rss.php"
      ;; prog blogs
      "https://wingolog.org/feed/atom"
      "https://elephly.net/feed.xml"
@@ -69,6 +68,9 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
+     ;; gnu/linux channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg" ;; Distro Tube
      ;; news channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; teze onze
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; tempero drag
