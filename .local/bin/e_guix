@@ -51,7 +51,7 @@ system() {
 }
 
 development() {
-	local packages=(fd alacritty)
+	local packages=(fd)
 	e_dolist "guix install" "${packages[@]}"
 }
 
