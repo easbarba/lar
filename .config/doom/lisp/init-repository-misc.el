@@ -58,6 +58,9 @@
      "https://ulisses.dev/feed.xml"
      "https://research.swtch.com/feed.atom"
      "https://feeds.feedburner.com/AyendeRahien"
+     ;; ruby blogs
+     "https://rubyweekly.com/rss/"
+     "https://feeds.transistor.fm/remote-ruby"
      ;; devops blogs
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://leandronsp.com/rss.xml"
@@ -68,6 +71,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCib793mnUOhWymCh2VJKplQ" ;; Fabio Akita
      ;; gnu/linux channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg" ;; Distro Tube
