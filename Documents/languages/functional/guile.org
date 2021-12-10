@@ -820,7 +820,7 @@ changing a variable's value
 (or (null? '()) (atom ? '(a x d))) ; #t
 
 #+end_src
-** More
+** more
 *** cons*
 *** primitive-eval
 #+begin_src scheme
@@ -834,7 +834,11 @@ changing a variable's value
 *** pair?
 *** append
 ** Anonymous Functions
+*** lambda
 *** [[https://www.gnu.org/software/guile/manual/html_node/lambda_002a-and-define_002a.html][lambda*]]
+*** case-lambda
+supports procedures with optional arguments as well as procedures with fixed or
+indefinite numbers of arguments.
 ** Functions
 *** optional and keywords arguments
 *** high-order functions
