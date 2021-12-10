@@ -53,11 +53,11 @@
   :END:
 * Progress
 ** Books
-|                         |                           |                                                 |
-|-------------------------+---------------------------+-------------------------------------------------|
-| Agile Development Rails | 10 Task E: A Smarter Cart |                                                 |
-| Sustainable Rails       | 5 Bussines logic          | 5.1.1 Business Logic is a Magnet for Complexity |
-| Rails Guide             | Action Controller         | 4.4 default_url_options                         |
+|                         |                           |                                         |
+|-------------------------+---------------------------+-----------------------------------------|
+| Agile Development Rails | 10 Task E: A Smarter Cart | Iteration E3: Finishing the Cart        |
+| Sustainable Rails       | 5 Bussines logic          | 5.3 Business Logic in Active Records... |
+| Rails Guide             | Action Controller         | 4.4 default_url_options                 |
 
 * Cli
 ** Database
