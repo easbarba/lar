@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                            | late                                     |
-|----------------------------------+------------------------------------+------------------------------------------|
-| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   | Handling Failure                         |
-| Programming Ruby                 | Part 2 - 15 Ruby and its world     | RubyGems - Reading the Gem Documentation |
-| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen?  |
-| Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions          |
-| Design Patterns in Ruby          | Composite                          |                                          |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition      |
-| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                         |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite              |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                          |
-| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not                |
+| Books                            | Chapter                                         | late                                    |
+|----------------------------------+-------------------------------------------------+-----------------------------------------|
+| Programming Ruby                 | 16 - Namespaces, Source Files, and Distribution | Small Programs                          |
+| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs                | Handling Failure                        |
+| The Well Grounded Rubyist        | Functional                                      | 16.2.1 Object#freeze and Object#frozen? |
+| Confident Ruby                   | Collecting input                                | 3.8 Define conversion functions         |
+| Design Patterns in Ruby          | Composite                                       |                                         |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                           | Two Other Forms of Class Definition     |
+| Closure in Ruby                  | The Power of Procs and Lambdas                  | Implementing Lax                        |
+| Build Awesome Cli apps           | Easy to use                                     | Documenting a Command Suite             |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules              |                                         |
+| Eloquent Ruby                    | Embrace Dynamic Typing                          | Shorter Programs, But Not               |
 
 ** SLOC
 | Project    | folder | file           | @ |
