@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                                         | late                                    |
-|----------------------------------+-------------------------------------------------+-----------------------------------------|
-| Programming Ruby                 | 16 - Namespaces, Source Files, and Distribution | Small Programs                          |
-| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs                | Handling Failure                        |
-| The Well Grounded Rubyist        | Functional                                      | 16.2.1 Object#freeze and Object#frozen? |
-| Confident Ruby                   | Collecting input                                | 3.8 Define conversion functions         |
-| Design Patterns in Ruby          | Composite                                       |                                         |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                           | Two Other Forms of Class Definition     |
-| Closure in Ruby                  | The Power of Procs and Lambdas                  | Implementing Lax                        |
-| Build Awesome Cli apps           | Easy to use                                     | Documenting a Command Suite             |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules              |                                         |
-| Eloquent Ruby                    | Embrace Dynamic Typing                          | Shorter Programs, But Not               |
+| Books                            | Chapter                                    | late                                       |
+|----------------------------------+--------------------------------------------+--------------------------------------------|
+| Programming Ruby                 | Namespaces, Source Files, and Distribution | 16.3 Distributing and Installing Your Code |
+| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs           | Handling Failure                           |
+| The Well Grounded Rubyist        | Functional                                 | 16.2.1 Object#freeze and Object#frozen?    |
+| Confident Ruby                   | Collecting input                           | 3.8 Define conversion functions            |
+| Design Patterns in Ruby          | Composite                                  |                                            |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                      | Two Other Forms of Class Definition        |
+| Closure in Ruby                  | The Power of Procs and Lambdas             | Implementing Lax                           |
+| Build Awesome Cli apps           | Easy to use                                | Documenting a Command Suite                |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules         |                                            |
+| Eloquent Ruby                    | Embrace Dynamic Typing                     | Shorter Programs, But Not                  |
 
 ** SLOC
 | Project    | folder | file           | @ |
@@ -1765,7 +1765,7 @@ Callbacks and hooks methods are called when a particular event takes place durin
   replacement), and adds something to the method’s interface.
 -
 
-* Packages
+* Standard Library
 ** Packagement
 *** gem
     |                             |   |
@@ -1782,6 +1782,193 @@ Callbacks and hooks methods are called when a particular event takes place durin
    gem install --user-install pkg/GEM
    gem list GEM -d
 #+end_src
+** Variables
+*** global variables
+- $0
+- $:
+- $PROGRAM_NAME
+- ARGV
+- ARGF.{gets,filename,file,lineno,inplace_mode}
+- RubyVM::DEFAULT_PARAMS
+
+*** environment variables
+#+begin_src ruby
+ENV['SHELL']
+ENV['HOME']
+ENV['USER']
+ENV.keys.size
+ENV.keys[0, 4]
+#+end_src
+
+** Object
+*** exit
+doesn’t terminate the program immediately — exit first raises a SystemExit exception, which you may catch, and then performs a number
+of cleanup actions, including running any registered at_exit methods and object finalizers.
+
+** Testing
+*** Minitest
+**** setup
+
+** Console
+*** irb
+**** cli
+|                                            |                               |
+|--------------------------------------------+-------------------------------|
+| -r ./<file>                                |                               |
+| irb_load                                   |                               |
+| irb_source                                 |                               |
+| --prompt <my-prompt>                       |                               |
+| -I                                         | include path                  |
+| RUBYOPT=--enable-frozen-string-literal irb | freeze all strings in section |
+|                                            |                               |
+**** inside
+     |                           |         |
+     |---------------------------+---------|
+     | context.use_tracer = true | tracker |
+     |                           |         |
+** Serialization
+*** JSON
+**** Commands
+     |                 |   |
+     |-----------------+---|
+     | generate <this> |   |
+
+*** YAML
+**** Commands
+     |                 |               |
+     |-----------------+---------------|
+     | YAML.dump <obj> |               |
+     | <obj>.to_yaml   | same as above |
+     |                 |               |
+
+** Documentation
+*** Rdoc
+    - nodoc: [all]
+
+*** console
+    |        |   |
+    |--------+---|
+    | --all  |   |
+    | --fmt  |   |
+    | --main |   |
+
+** System
+*** FFI
+- Foreign Function Interface
+- gives you access to external libraries
+
+#+begin_src ruby
+require 'ffi'
+
+module A
+  extend FFI::Library
+  ffi_lib 'c'
+end
+#+end_src
+* Modules
+** continuation
+   - require 'continuation'
+** Require
+*** require_relative
+Prior Ruby 2.0
+
+#+begin_src ruby
+$: << File.dirname(__FILE__)
+require 'other_file'
+#+end_src
+
+nowadays
+#+begin_src ruby
+require_relative 'other_file'
+#+end_src
+** Tempfile
+- `new` creates a Tempfile object (as you would expect),
+- `create` gives you a File object.
+
+#+begin_src ruby
+require 'tempfile'
+
+Tempfile.create { |f| f << "abc\n" }
+#+end_src
+** IO
+*** methods
+**** sysopen
+#+begin_src ruby
+fd = IO.sysopen('/dev/null', 'w')
+
+# 10
+#+end_src
+
+** forwardable
+The Forwardable module provides delegation of specified methods to a designated
+object, using the methods def_delegator and def_delegators.
+
+*** def_delegators
+** Errno
+
+** Kernel
+*** variables
+**** local_variables
+**** global_variables
+|            |                                                                          |
+|------------+--------------------------------------------------------------------------|
+| $:         | library load path, also available as                                     |
+| $LOAD_PATH | idem                                                                     |
+| $0         | name of the file in which execution of the current program was initiated |
+| $FILENAME  | (the name of the file currently being executed                           |
+| _          | value of the last expression evaluated by irb.                           |
+|            |                                                                          |
+**** itself
+#+begin_src ruby
+
+"Ruby".itself # "Ruby"
+[1, 1, 3, 4, 5, 5, 5, 6, 7].itself # [1, 1, 3, 4, 5, 5, 5, 6, 7]
+
+%w(joe, joe, david, matz, david, matz, joe).group_by { |name | name }
+%w(joe, joe, david, matz, david, matz, joe).group_by(&:itself) # same as above
+
+#+end_src
+
+**** yield_self / then
+- named to `then` in 3.0
+
+#+begin_src ruby
+
+"Ruby".yield_self { |str| str + " meh" }
+
+add_newline = -> (str) { str + "\n" }
+welcome = -> (str) { "Welcome, " + str.upcase + "!" }
+"joe".yield_self(&welcome).yield_self(&add_newline) + "We’re glad you’re here!" # "Welcome, JOE!\nWe’re glad you’re here!"
+
+# then
+(1..10).then { |r| r.member?(rand(15)) } # returns true or false
+(rand(10) + 1).then { |x| x.odd? ? x + 1 : x } # returns an even number between 2 and 10.
+
+#+end_src
+** ObjectSpace
+The objspace library extends the ObjectSpace module and adds several
+methods to get internal statistic information about object/memory
+management.
+* Cli
+** ruby
+
+|           |   |
+|-----------+---|
+| -l        |   |
+| -I  <lib> |   |
+** gem
+|                    |   |
+|--------------------+---|
+| search             |   |
+| list               |   |
+| query              |   |
+| install            |   |
+| environment gemdir |   |
+
+** irb
+
+* Packages
+** Packagement
 *** bundle
 **** outdated
 **** gem
@@ -1898,26 +2085,7 @@ Default command-line flags
 **** Terms
 - slimming the test
 
-*** Minitest
-**** setup
-
 ** Console
-*** irb
-**** cli
-|                                            |                               |
-|--------------------------------------------+-------------------------------|
-| -r ./<file>                                |                               |
-| irb_load                                   |                               |
-| irb_source                                 |                               |
-| --prompt <my-prompt>                       |                               |
-| -I                                         | include path                  |
-| RUBYOPT=--enable-frozen-string-literal irb | freeze all strings in section |
-|                                            |                               |
-**** inside
-     |                           |         |
-     |---------------------------+---------|
-     | context.use_tracer = true | tracker |
-     |                           |         |
 *** pry
 *** rake
    - -T: list avaiable tasks
@@ -1934,20 +2102,6 @@ Default command-line flags
     end
     #+end_src
 ** Serialization
-*** JSON
-**** Commands
-     |                 |   |
-     |-----------------+---|
-     | generate <this> |   |
-
-*** YAML
-**** Commands
-     |                 |               |
-     |-----------------+---------------|
-     | YAML.dump <obj> |               |
-     | <obj>.to_yaml   | same as above |
-     |                 |               |
-
 ** Web Applications
 *** [[http://sinatrarb.com/][Sinatra]]
     Sinatra is a DSL for quickly creating web applications
@@ -1990,77 +2144,7 @@ end
    - ruby-prof
 ** Web-server
   - rack: A modular Ruby web server interface.
-* Modules / Library
-** continuation
-   - require 'continuation'
-** Tempfile
-- `new` creates a Tempfile object (as you would expect),
-- `create` gives you a File object.
 
-#+begin_src ruby
-require 'tempfile'
-
-Tempfile.create { |f| f << "abc\n" }
-#+end_src
-** IO
-*** methods
-**** sysopen
-#+begin_src ruby
-fd = IO.sysopen('/dev/null', 'w')
-
-# 10
-#+end_src
-
-** forwardable
-The Forwardable module provides delegation of specified methods to a designated
-object, using the methods def_delegator and def_delegators.
-
-*** def_delegators
-** Errno
-
-** Kernel
-*** variables
-**** local_variables
-**** global_variables
-|            |                                                                          |
-|------------+--------------------------------------------------------------------------|
-| $:         | library load path, also available as                                     |
-| $LOAD_PATH | idem                                                                     |
-| $0         | name of the file in which execution of the current program was initiated |
-| $FILENAME  | (the name of the file currently being executed                           |
-| _          | value of the last expression evaluated by irb.                           |
-|            |                                                                          |
-**** itself
-#+begin_src ruby
-
-"Ruby".itself # "Ruby"
-[1, 1, 3, 4, 5, 5, 5, 6, 7].itself # [1, 1, 3, 4, 5, 5, 5, 6, 7]
-
-%w(joe, joe, david, matz, david, matz, joe).group_by { |name | name }
-%w(joe, joe, david, matz, david, matz, joe).group_by(&:itself) # same as above
-
-#+end_src
-
-**** yield_self / then
-- named to `then` in 3.0
-
-#+begin_src ruby
-
-"Ruby".yield_self { |str| str + " meh" }
-
-add_newline = -> (str) { str + "\n" }
-welcome = -> (str) { "Welcome, " + str.upcase + "!" }
-"joe".yield_self(&welcome).yield_self(&add_newline) + "We’re glad you’re here!" # "Welcome, JOE!\nWe’re glad you’re here!"
-
-# then
-(1..10).then { |r| r.member?(rand(15)) } # returns true or false
-(rand(10) + 1).then { |x| x.odd? ? x + 1 : x } # returns an even number between 2 and 10.
-
-#+end_src
-** ObjectSpace
-The objspace library extends the ObjectSpace module and adds several
-methods to get internal statistic information about object/memory
-management.
 * Toolings
 ** Online
    https://rubular.com
