@@ -12,7 +12,13 @@
   - [[#american][American]]
 - [[#tv-shows][TV Shows]]
   - [[#progress][Progress]]
-  - [[#favorites][Favorites]]
+  - [[#american][American]]
+  - [[#mexican][Mexican]]
+  - [[#british][British]]
+  - [[#korean][Korean]]
+  - [[#japan][Japan]]
+- [[#anime][Anime]]
+  - [[#japan][Japan]]
 - [[#lectures][Lectures]]
   - [[#teacher][Teacher]]
 - [[#manga][Manga]]
@@ -134,25 +140,33 @@
 | Star Trek: Voyager | 3.13 |
 |                    |      |
 
-** Favorites
+** American
 - Star Trek - The Next Generation
-- Sherlock Holmes (Jeremy Brett)
-- Chespirito
-- Master's Sun
-- Great Teacher Onizuka
-- Full Metal Alchemist
 - walking dead (season1 and 2)
+** Mexican
+- Chespirito
+
+** British
+- Sherlock Holmes (Jeremy Brett)
+** Korean
+- Brain
+- Master's Sun
+** Japan
+- GTO: Great Teacher Onizuka (1998)
+- Trick (2000)
+- Gokusen (2002-2008)
+- Kekkon dekinai otoko
+- Shinzanmono
 - 1 Litre of Tears
-- Trick
-- Gokusen
-- Kekkon Dekinai Otoko
 - Dragon Zakura
-- Grave of the Fireflies
+* Anime
+** Japan
+- Full Metal Alchemist
 - Spirited Away
 - Chobits
 - Bucky
+- Grave of the Fireflies
 - Dragon Ball Z
-
 * Lectures
 ** Teacher
 - Osvaldo Coggiola
