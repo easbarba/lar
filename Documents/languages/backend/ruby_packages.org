@@ -1,0 +1,178 @@
+#+TITLE: Ruby_packages
+
+* Packagement
+** bundle
+*** outdated
+*** gem
+     |                   |                                                    |
+     |-------------------+----------------------------------------------------|
+     | <name>            | Generate a project skeleton for creating a rubygem |
+     | list              |                                                    |
+     | which <name>      |                                                    |
+     | gem search <name> |                                                    |
+
+*** install
+     bundle config set --local deployment 'true'
+*** update
+     | subcommand                  | desc                                                       |
+     |-----------------------------+------------------------------------------------------------|
+     | all                         | update all gems                                            |
+     | --group=<name>, -g=[<name>] | Only update the gems in the specified group.               |
+     | --source=<name>             | The name of a :git or :path source used in the Gemfile(5). |
+     | --quiet                     |                                                            |
+     | --redownload                |                                                            |
+     | --minor                     | Prefer updating only to next minor version.                |
+     | --major                     | Prefer updating to next major version (default).           |
+     |                             |                                                            |
+
+* Testing
+** [[https://rspec.info/][RSpec]]
+Behaviour Driven Development for Ruby
+
+*** Cli
+| cmd                          | desc                                             |
+|------------------------------+--------------------------------------------------|
+| --init                       | Initialize your project with RSpec.              |
+| --profile                    | test time                                        |
+| --format <type>              |                                                  |
+| folder                       | run allfolders specs                             |
+| spec                         | run just one spec                                |
+| -e <name>                    | run spec(s) begins w/ name                       |
+| <file>:N                     | run examples in lineN of file                    |
+| --only-failures              |                                                  |
+| --next-failure               |                                                  |
+| --tag last_run_status:failed |                                                  |
+| --tag focus                  |                                                  |
+| describe                     | creates an example group (set of related tests). |
+| expect                       | verifies an expected outcome (assertion)         |
+| example                      | individual test                                  |
+| --backtrace or -b            | display backtrace                                |
+
+*** Terms
+ - Example group defines what you’re testing—in this case, a sandwich—and keeps related specs together.
+ - Arrange/Act/Assert pattern
+
+*** Features
+**** before
+#+begin_src ruby
+before do
+  allow(ledger).to receive(:record)
+   .with(expense)
+   .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
+end
+#+end_src
+**** matchers
+|                 |                              |
+|-----------------+------------------------------|
+| eq              | exact argument and order     |
+| contain_exactly | exact arguments in any order |
+| a_kind_of       |                              |
+| include         |                              |
+
+**** expect / to
+expect() and to() check a result in order to signal success or failure.
+They compare a value using a matcher.
+
+**** pending
+**** let
+#+begin_src ruby
+let(:expense) { { 'some' => 'data' } }
+#+end_src
+
+**** metadata
+     |                               |   |
+     |-------------------------------+---|
+     | context 'foobar', focus: true |   |
+     |                               |   |
+*** Commands
+|                                   |                                      |
+|-----------------------------------+--------------------------------------|
+| RSpec.describe                    |                                      |
+| describe                          |                                      |
+| context                           |                                      |
+| it 'foo bar'                      |                                      |
+| expect(foo).to eq(bar)            |                                      |
+| expect(foo).to be > :bar          |                                      |
+| before(:xx)                       |                                      |
+| after(:xxx)                       |                                      |
+| before(:context)                  |                                      |
+| after(:context)                   |                                      |
+| let(:foo) { Bar.new }             |                                      |
+| pending 'foo not yet implemented' |                                      |
+| skip or xit 'foo bar'             | x prepended to it '' to skip example |
+*** Methods
+- instance_double
+*** Config
+**** .rspec
+Default command-line flags
+**** spec/spec_helper.rb
+|                                          |   |
+|------------------------------------------+---|
+| Configuration options                    |   |
+| config.filter_gems_from_backtrace <list> |   |
+| filter_gems_from_backtrace <list>        |   |
+
+***** Options
+       - ENV['RACK_ENV'] = 'test'
+*** Terms
+- slimming the test
+
+* Console
+** pry
+** rake
+   - -T: list avaiable tasks
+   - spec: run spec tests
+
+*** usage
+    #+begin_src ruby
+    # desc:
+    # task:
+
+    desc "Remove Unix and Windows backup files"
+    task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do # depends on two other tasks
+      puts "All backups deleted"
+    end
+    #+end_src
+* Serialization
+* Web Applications
+** [[http://sinatrarb.com/][Sinatra]]
+    Sinatra is a DSL for quickly creating web applications
+** [[https://rubyonrails.org/][Ruby On Rails]]
+    A web-application framework that includes everything needed to create database-backed web applications
+
+* HTTP
+** Rack
+* Documentation
+** Rdoc
+    - nodoc: [all]
+
+
+** console
+    |        |   |
+    |--------+---|
+    | --all  |   |
+    | --fmt  |   |
+    | --main |   |
+
+* Formatter
+** Rufo
+*** [[https://github.com/ruby-formatter/rufo/blob/master/docs/settings.md][Settings]]
+* System
+** FFI
+- Foreign Function Interface
+- gives you access to external libraries
+
+#+begin_src ruby
+require 'ffi'
+
+module A
+  extend FFI::Library
+  ffi_lib 'c'
+end
+#+end_src
+* Currency
+   - Money: A Ruby Library for dealing with money and currency conversion.
+* Profiling
+   - ruby-prof
+* Web-server
+  - rack: A modular Ruby web server interface.
