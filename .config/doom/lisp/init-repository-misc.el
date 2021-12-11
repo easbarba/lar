@@ -61,6 +61,7 @@
      ;; ruby blogs
      "https://rubyweekly.com/rss/"
      "https://feeds.transistor.fm/remote-ruby"
+     "https://dev.to/feed/leandronsp"
      ;; devops blogs
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://leandronsp.com/rss.xml"
