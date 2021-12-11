@@ -114,18 +114,18 @@
   :END:
 * Progress
 ** Books
-| Books                            | Chapter                                    | late                                       |
-|----------------------------------+--------------------------------------------+--------------------------------------------|
-| Programming Ruby                 | Namespaces, Source Files, and Distribution | 16.3 Distributing and Installing Your Code |
-| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs           | Handling Failure                           |
-| The Well Grounded Rubyist        | Functional                                 | 16.2.1 Object#freeze and Object#frozen?    |
-| Confident Ruby                   | Collecting input                           | 3.8 Define conversion functions            |
-| Design Patterns in Ruby          | Composite                                  |                                            |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language                      | Two Other Forms of Class Definition        |
-| Closure in Ruby                  | The Power of Procs and Lambdas             | Implementing Lax                           |
-| Build Awesome Cli apps           | Easy to use                                | Documenting a Command Suite                |
-| Practical Object-Oriented Design | Sharing Role Behavior with Modules         |                                            |
-| Eloquent Ruby                    | Embrace Dynamic Typing                     | Shorter Programs, But Not                  |
+| Books                            | Chapter                            | late                                    |
+|----------------------------------+------------------------------------+-----------------------------------------|
+| Programming Ruby                 | CHAPTER 22 The Ruby Language       | 22.4 Names                              |
+| Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   | Handling Failure                        |
+| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |
+| Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |
+| Design Patterns in Ruby          | Composite                          |                                         |
+| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     |
+| Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                        |
+| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite             |
+| Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                         |
+| Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not               |
 
 ** SLOC
 | Project    | folder | file           | @ |
@@ -514,6 +514,8 @@ name = "Jesus"
 "Hello, my name is #{name} & I'm #{age} years old."
 #+end_src
 **** here documents
+- <<-, minus sign, which the terminator can be indented from the margin.
+
    #+begin_src ruby
    <<EOL # double quote document
       \n
@@ -691,15 +693,6 @@ que = SizedQueue.new(5)
 que.push(:bacon)
 que.push(:bacon, true) # raises ThreadError: queue full
 #+end_src
-*** commentary
-   #+begin_src ruby
-   # one line commentary
-
-   =begin
-   multiline
-   commentary
-   =end
-   #+end_src
 *** Sets
    #+begin_src ruby
    s = Set.new(array)
@@ -720,36 +713,53 @@ que.push(:bacon, true) # raises ThreadError: queue full
    s.proper_superset? x
    #+end_src
 *** Hash
-   #+begin_src ruby
-   h = Hash.new
-   h = { one: 1, :two => 2 }
-   h = Hash[1, "one", 2, "two"]
+- keys must be comparable
+- rehash force the hash to be reindexed whenever a key has changed
 
-   h.rehash # force the hash to be reindexed
+#+begin_src ruby
+# Strings keys
+h = { "one" => 1, "two" => 2 }
 
+# Symbols keys
+h = { one: 1, two: 2 }
 
-   h["1"] = 1
-   h.[]=("New York", "NY")
-   h.store("New York", "NY")
-   a.update(b)
-   a.merge(b)
-   h.select {k,vk > 1 } !
-   h.reject {  k,v  k > 1 } !
-   h.reject! {  k,v  k > 1 }
-   h = { street: "127th Street", apt: nil }.compact !
-   h = { street: "127th Street", apt: nil }.compact!
-   h.invert
-   h.clear
-   h = {...}.replace({...})
-   h.key?
-   h.empty?
-   #+end_src
+# Empty Hash
+h = Hash.new
+
+# Hash alternative(old) version
+h = Hash[1, "one", 2, "two"]
+
+h["one"] = 1
+h[:one]
+
+h.rehash # force the hash to be reindexed
+
+h.[]=("New York", "NY")
+h.store("New York", "NY")
+a.update(b)
+a.merge(b)
+h.select {k,vk > 1 } !
+h.reject {  k,v  k > 1 } !
+h.reject! {  k,v  k > 1 }
+h = { street: "127th Street", apt: nil }.compact!
+h = { street: "127th Street", apt: nil }.compact!
+h.invert
+h.clear
+h = {...}.replace({...})
+h.key?
+h.empty?
+#+end_src
 **** store
 **** acess
 **** delete
 **** find(<value>)
 
 *** Range
+|     |                                      |
+|-----+--------------------------------------|
+| ..  | inclusive                            |
+| ... | exclusive, excludes its last element |
+
    #+begin_src ruby
    # create a new range object
    r = 1..2
@@ -1216,6 +1226,17 @@ end
    %x(df -h)
 
    #+end_src
+** Symbols
+-
+#+begin_src ruby
+:Object
+:my_variable
+:"Ruby rules"
+a = "cat"
+:'catsup' # => :catsup
+:"#{a}sup" # => :catsup
+:'#{a}sup' # => :"\#{a}sup"
+#+end_src
 ** Variables
 *** class variables
 - available throughout a class or module body
@@ -1765,6 +1786,29 @@ Callbacks and hooks methods are called when a particular event takes place durin
   replacement), and adds something to the method’s interface.
 -
 
+** Comments
+   #+begin_src ruby
+   # one line comment
+
+   =begin
+   multiline
+   comments
+   =end
+   #+end_src
+
+** Delimited input
+|         |                            |
+|---------+----------------------------|
+| %q      | Single-quoted string       |
+| %Q , %  | Double-quoted string       |
+| %w , %W | Array of strings           |
+| %s      | A symbol                   |
+| %i , %I | Array of symbols           |
+| %r      | Regular expression pattern |
+| %x      | Shell command              |
+
+- %I , %Q , and %W will preform interpolation
+
 * Standard Library
 ** Packagement
 *** gem
@@ -1800,11 +1844,14 @@ ENV.keys.size
 ENV.keys[0, 4]
 #+end_src
 
-** Object
+** Objects
 *** exit
 doesn’t terminate the program immediately — exit first raises a SystemExit exception, which you may catch, and then performs a number
 of cleanup actions, including running any registered at_exit methods and object finalizers.
 
+** Numbers
+*** Fixnum
+*** Bignum
 ** Testing
 *** Minitest
 **** setup
@@ -1964,6 +2011,8 @@ management.
 | query              |   |
 | install            |   |
 | environment gemdir |   |
+| build              |   |
+| server             |   |
 
 ** irb
 
