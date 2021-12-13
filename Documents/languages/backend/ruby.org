@@ -116,16 +116,15 @@
 ** Books
 | Books                            | Chapter                            | late                                    |
 |----------------------------------+------------------------------------+-----------------------------------------|
-| Programming Ruby                 | CHAPTER 22 The Ruby Language       | 22.4 Names                              |
+| Programming Ruby                 | 2                                  | Inside the Object Model                 |
+| Metaprogramming ruby             | 2                                  | Monday: The Object Mode                 |
 | Effective Testing - RSpec3       | Testing in Isolation: Unit Specs   | Handling Failure                        |
-| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |
 | Confident Ruby                   | Collecting input                   | 3.8 Define conversion functions         |
-| Design Patterns in Ruby          | Composite                          |                                         |
-| Pragmatic Ruby (Pickaxe)         | 22. The Ruby language              | Two Other Forms of Class Definition     |
 | Closure in Ruby                  | The Power of Procs and Lambdas     | Implementing Lax                        |
-| Build Awesome Cli apps           | Easy to use                        | Documenting a Command Suite             |
+| Design Patterns in Ruby          | Composite                          |                                         |
 | Practical Object-Oriented Design | Sharing Role Behavior with Modules |                                         |
 | Eloquent Ruby                    | Embrace Dynamic Typing             | Shorter Programs, But Not               |
+| The Well Grounded Rubyist        | Functional                         | 16.2.1 Object#freeze and Object#frozen? |
 
 ** SLOC
 | Project    | folder | file           | @ |
@@ -729,9 +728,14 @@ h = { one: 1, two: 2 }
 # Empty Hash
 h = Hash.new
 
+# default value is zero
+h = Hash.new(0)
+
 # Hash alternative(old) version
 h = Hash[1, "one", 2, "two"]
 
+
+# get value
 h["one"] = 1
 h[:one]
 
@@ -801,6 +805,17 @@ h.empty?
 
    #+end_src
 
+*** Symbols
+- undeclared constant names guaranteed to be unique.
+#+begin_src ruby
+:Object
+:my_variable
+:"Ruby rules"
+a = "cat"
+:'catsup' # => :catsup
+:"#{a}sup" # => :catsup
+:'#{a}sup' # => :"\#{a}sup"
+#+end_src
 ** Functional
 *** concepts
 **** immutability
@@ -1229,17 +1244,6 @@ end
    %x(df -h)
 
    #+end_src
-** Symbols
--
-#+begin_src ruby
-:Object
-:my_variable
-:"Ruby rules"
-a = "cat"
-:'catsup' # => :catsup
-:"#{a}sup" # => :catsup
-:'#{a}sup' # => :"\#{a}sup"
-#+end_src
 ** Variables
 *** class variables
 - available throughout a class or module body
@@ -1672,7 +1676,12 @@ Callbacks and hooks methods are called when a particular event takes place durin
 *** respond_to_missingp
 
 ** Metaprogramming
+- objects and classes are first-class citizens
+
 *** instance_variable_set
+*** instance_varibles
+*** class
+**** instance_methods
 *** Object#instance_exec
 *** Module#class_exec
 *** Module#module_exec
