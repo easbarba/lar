@@ -94,7 +94,7 @@ packages() {
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
 	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
-		libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers xserver-xorg-video-all
+		libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
 		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
 		radeontop)
 
@@ -216,6 +216,24 @@ services() {
 foreign() {
 	echo "Non-Debian packages"
 
+	_openrazer() {
+		sudo gpasswd -a $USER plugdev
+
+		echo 'deb http://download.opensuse.org/repositories/hardware:/razer/Debian_Unstable/ /' | sudo tee /etc/apt/sources.list.d/hardware:razer.list
+		curl -fsSL https://download.opensuse.org/repositories/hardware:razer/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/hardware_razer.gpg >/dev/null
+		sudo apt update
+		sudo apt install openrazer-meta
+	}
+
+	_polychromatic() {
+		echo "deb http://ppa.launchpad.net/polychromatic/edge/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/polychromatic.list
+		sudo apt-key adv --recv-key --keyserver keyserver.ubuntu.com 96B9CD7C22E2C8C5
+		sudo apt-get update
+
+		# Full installation
+		sudo apt install polychromatic
+	}
+
 	_docker() {
 		sudo apt-get remove -y docker docker-engine docker.io containerd runc
 
@@ -265,6 +283,8 @@ foreign() {
 	_vscode
 	_docker
 	_chrome
+	_openrazer
+	_polychromatic
 }
 
 # * RUN
