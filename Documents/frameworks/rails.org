@@ -76,12 +76,15 @@
 |          | db:system:change                                                       | switch databases                                  |
 |          | db:rollback                                                            |                                                   |
 |          | db:seed                                                                |                                                   |
-|          |                                                                        |                                                   |
+|          | db:setup                                                               |                                                   |
+** routes
+** generate
+*** resource
+*** scaffold
 ** Server
 |                               |   |
 |-------------------------------+---|
 | --binding=[PORT] or -b [PORT] |   |
-
 
 ** Misc
 | what       | how         | desc |
