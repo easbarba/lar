@@ -66,13 +66,13 @@
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://leandronsp.com/rss.xml"
      ;; devops/langs channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCUkM9uMpWatT7gVWShgtKFw" ;; DHH
      "https://www.youtube.com/feeds/videos.xml?channel_id=UConIMoZxnroqKqCc-utZA7A" ;; Carlos seong
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; Linuxtips br
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCib793mnUOhWymCh2VJKplQ" ;; Fabio Akita
      ;; gnu/linux channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg" ;; Distro Tube
