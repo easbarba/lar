@@ -8,6 +8,7 @@
 - [[#movies][Movies]]
   - [[#korean][Korean]]
   - [[#chinese][Chinese]]
+  - [[#japanese][Japanese]]
   - [[#thailand][Thailand]]
   - [[#american][American]]
 - [[#tv-shows][TV Shows]]
@@ -73,14 +74,16 @@
 
 ** Chinese
 
+** Japanese
+- Seven Samurai
 ** Thailand
 - Shutter
 ** American
 - 12 Angry Men
-- 7 Samurai
 - Casablanca
 - Lawrence of Arabia
 - Silence of Lambs
+- Get out!
 - Jurassic Park
 - Lawman (Burt Lancaster)
 - Alien
@@ -375,6 +378,7 @@ http://steamcommunity.com/id/elxbarbosa
 - Tavares
 - Donna Summer
 - George Mccrae
+- McFadden & Whitehead
 ** RB
 - Earth, Wind and fire
 - Ink Spot
