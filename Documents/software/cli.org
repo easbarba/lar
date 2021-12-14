@@ -7,6 +7,9 @@ Send a message to another user.
 Control write access of other users to your terminal.
 
 * news
+* open
+open file in its default application
+
 * dirs
 print directory stack
 * popd
