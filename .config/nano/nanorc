@@ -1,10 +1,13 @@
+# Automatically indent a newly created line to the same number of
+# tabs and/or spaces as the preceding line -- or as the next line
+# if the preceding line is the beginning of a paragraph.
 set autoindent
 
 # Constantly display the cursor position in the status bar. T
 set constantshow
 
-# left line numbers
-set linenumbers
+# display line numbers
+#set linenumbers
 
 # mouse
 set mouse
@@ -27,3 +30,19 @@ set historylog
 # use space instead
 set tabsize 4
 set tabstospaces
+
+# blanks
+set trimblanks
+
+# magic numbers
+set constantshow
+
+# Suppress the title bar and show the filename plus a cursor-position
+# percentage in the space of the status bar.
+#unset minibar
+
+# Disable shortcut help bar, use M-X to toggle it
+set nohelp
+
+# speller
+set speller "aspell -x -c" 
