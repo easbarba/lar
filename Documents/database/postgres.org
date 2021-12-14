@@ -7,12 +7,12 @@
 :CONTENTS:
 - [[#progress][Progress]]
 - [[#features][Features]]
-  - [[#tables][tables]]
-  - [[#databases][databases]]
-  - [[#data-definition-language-ddl][Data Definition Language (DDL)]]
-  - [[#data-manipulation-language-dml][Data Manipulation Language (DML)]]
-  - [[#tablespace][tablespace]]
-  - [[#users--groups][users & groups]]
+  - [[#tables][Tables]]
+  - [[#databases][Databases]]
+  - [[#ddl---data-definition-language][DDL - Data Definition Language]]
+  - [[#dml---data-manipulation-language][DML - Data Manipulation Language]]
+  - [[#tablespace][Tablespace]]
+  - [[#users--groups][Users & Groups]]
 - [[#cli][cli]]
   - [[#pg_ctl][pg_ctl]]
   - [[#psql][psql]]
@@ -33,12 +33,12 @@
 | Learn PostgreSQL 12/13 | Basic Statements | Dropping tables |          |
 
 * Features
-** tables
-*** concept
-**** types
-- Temporary tables: Very fast tables, visible only to the user who created them
-- Unlogged tables: Very fast tables to be used as support tables common to all users
-- Logged tables: Regular tables
+** Tables
+| Types            |                                                                   |
+|------------------+-------------------------------------------------------------------|
+| Temporary tables | Very fast tables, visible only to the user who created them       |
+| Unlogged tables  | Very fast tables to be used as support tables common to all users |
+| Logged tables    | Regular tables                                                                  |
 
 *** create
 #+begin_src sql
@@ -62,6 +62,16 @@ DROP TABLE tablename;
 #+begin_src sql
 DROP TABLE IF EXISTS users;
 #+end_src
+*** insert
+#+begin_src sql
+forumdb=# INSERT INTO users (username,gecos,email) values
+('myusername','mygecos','myemail');
+
+forumdb=# INSERT INTO categories (title,description) values
+('apple', 'fruits'), ('orange','fruits'),('lettuce','vegetable');
+#+end_src
+*** update
+*** delete
 *** temporary
 table visible only in the session where it was created
 
@@ -102,18 +112,6 @@ Did not find any relation named "temp_users".
 
 #+end_src
 *** unlogged
-*** insert
-#+begin_src sql
-
-forumdb=# insert into users (username,gecos,email) values
-('myusername','mygecos','myemail');
-INSERT 0 1
-
-forumdb=# insert into categories (title,description) values
-('apple', 'fruits'), ('orange','fruits'),('lettuce','vegetable');
-INSERT 0 3
-
-#+end_src
 *** null
 display NULL values present in the tables
 
@@ -130,8 +128,7 @@ forumdb=# SELECT title,description FROM categories WHERE description IS NULL;
 forumdb=# select * from categories order by description NULLS first;
 
 #+end_src
-*** updating
-** databases
+** Databases
 *** create
 #+begin_src sql
 CREATE DATABASE dummydb;
@@ -159,16 +156,24 @@ SELECT pg_size_pretty(pg_database_size('forumdb'));
 #+begin_src sql
 select * from pg_database where datname='forumdb';
 #+end_src
-** Data Definition Language (DDL)
+** DDL - Data Definition Language
 commands are used to manage databases and tables
-** Data Manipulation Language (DML)
+** DML - Data Manipulation Language
 used to insert, delete, update, and select data inside databases
+*** where
+*** in
+*** not int
+*** and
+*** or
+*** like
+*** between
+*** order by
 
-** tablespace
+** Tablespace
 pg_tblspc
 pg_default
 pg_global
-** users & groups
+** Users & Groups
 *** role
 - A role can be a single account, a group of accounts, or even both depending on how you configure it
 - it should be either a single user or a single group, but not both.
