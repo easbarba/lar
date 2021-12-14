@@ -1,0 +1,49 @@
+#+TITLE: Tips
+
+* xxxxaa
+1. Conheça o protocolo HTTP
+2. Conheça seu framework
+3. Conheça seu ORM
+4. Conheça sua base de dados
+5. Conheça algum Pub/Sub (#ApacheKafka é mais que isso).
+6. Entenda como tudo isso se relaciona.
+
+As vezes a pessoa confia no ORM, depois reclama que o ORM é lento. Em muitos
+casos você não está usando direito. Procura aí "como otimizar (nome)", "dicas
+para (nome)".
+
+As vezes a API fica complexa, é preciso estudar mais sobre REST (não é JSON +
+HTTP).
+
+As vezes é preciso fazer umas gambiarras no framework, dá uma lida na
+documentação. Em muitos casos você não conhece uma feature que resolve seu
+problema.
+
+Depois de tudo isso tente conhecer:
+
+1. Arquitetura em camadas
+2. Domain Driven Design
+3. Arquitetura octogonal
+4. Microservices
+
+Use YouTube para ter uma introdução ao assunto, mas esteja sempre lendo bons
+livros. Mas procure diversidade, só um autor é bobeira.
+
+Viu que não tem nada de código?
+
+Código é só a linguagem. É muito importante você conhecer sua linguagem e todo
+ecossistema dela. Procure bibliotecas, veja comparativos (isso é bom em blog).
+Acompanhe as discussões.
+
+Dê uma lida sobre algoritmos. Entenda o que é complexidade. Isso é um pouco
+complicado para quem não fez cálculo 1, mas vai te dar uma boa ideia em como seu
+software vai escalar.
+
+Tudo isso é trabalho pra os 5 primeiros anos da sua carreira.
+
+Caramba esqueci algo importantíssimos. Entenda os paradigmas de programação.
+Qual a diferença de funcional e porque falam tanto dela.
+
+Sobre o ORM não é só como usar. Eu só conheço o Hibernate e acho importante
+saber como é feito o cache, como é feita a busca, diferença de eager e lazy,
+ciclo de vida do objeto. Tudo isso é importante.
