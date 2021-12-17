@@ -13,7 +13,7 @@ _distro() {
 
     distro update
     distro upgrade
-    e_guix
+    # e_guix
 }
 
 _packagers() {
