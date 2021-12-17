@@ -53,65 +53,51 @@
   :END:
 * Progress
 ** Books
-|                         |                            |                                         |
-|-------------------------+----------------------------+-----------------------------------------|
-| Agile Development Rails | Task F: Add a Dash of Ajax |                                         |
-| Sustainable Rails       | 5 Bussines logic           | 5.3 Business Logic in Active Records... |
-| Rails Guide             | Action Controller          | 4.4 default_url_options                 |
+|                         |                               |                                         |
+|-------------------------+-------------------------------+-----------------------------------------|
+| Beginning Rails 6       | 3                             | Generating a Controller                 |
+| Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                         |
+| Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records... |
+| Rails Guide             | Action Controller             | 4.4 default_url_options                 |
 
-* Cli
-** Database
-| what     | how                                                                    | desc                                              |
-|----------+------------------------------------------------------------------------+---------------------------------------------------|
-| database | –d or --database=                                                      | use the database management system of your choice |
-|          | db:create:all                                                          |                                                   |
-|          | db:create                                                              |                                                   |
-|          | dbconsole                                                              |                                                   |
-|          | db:migrate                                                             |                                                   |
-|          | new <name>                                                             |                                                   |
-| models   | generate model <Name>                                                  |                                                   |
-|          | destroy controller articles                                            |                                                   |
-|          | destroy model Artile                                                   |                                                   |
-|          | generate scaffold Article title:string body:text published_at:datetime |                                                   |
-|          | db:system:change                                                       | switch databases                                  |
-|          | db:rollback                                                            |                                                   |
-|          | db:seed                                                                |                                                   |
-|          | db:setup                                                               |                                                   |
+* cli
+** database
+| cmd                                                                    | desc                                            |
++------------------------------------------------------------------------+-------------------------------------------------|
+| dbconsole                                                              |                                                 |
+| db:create                                                              |                                                 |
+| db:create:all                                                          | create test,production and development database |
+| db:migrate                                                             | create schema                                   |
+| db:rollback                                                            | rollback recently created schema                |
+| db:system:change                                                       | switch databases                                |
+| db:seed                                                                |                                                 |
+| db:setup                                                               |                                                 |
+** new
+| how               | desc                                              |
++-------------------+---------------------------------------------------|
+| –d or --database= | use the database management system of your choice |
+| new <name>        |                                                   |
+** test
+|                  |   |
+|------------------+---|
+| test             |   |
+| test:controllers |   |
+** destroy
+| cmd                         | desc |
++-----------------------------+------|
+| destroy controller articles |      |
+| destroy model Artile        |      |
+
 ** routes
 ** generate
 *** resource
 *** scaffold
-** Server
-|                               |   |
-|-------------------------------+---|
-| --binding=[PORT] or -b [PORT] |   |
+| how                                 | desc |
++-------------------------------------+------|
+| generate scaffold Article <options> |   |
+|                                     |   |
 
-** Misc
-| what       | how         | desc |
-|------------+-------------+------|
-| destroy    | destroy / d |      |
-| belongs_to |             |      |
-
-** Tasks
-Rails 6 uses rake as task runner
-
-|              |                         |
-|--------------+-------------------------|
-| --task or -T | list all task available |
-|              |                         |
-
-** Log
-|                  |   |
-|------------------+---|
-| :clear LOGS=test |   |
-
-** Migration
-|                    |   |
-|--------------------+---|
-| AddXXXToTABLE      |   |
-| RemoveXXXFromTABLE |   |
-
-** Models
+*** models
 | what   | how                                                                    | desc |
 |--------+------------------------------------------------------------------------+------|
 | models | generate model <Name>                                                  |      |
@@ -121,7 +107,37 @@ Rails 6 uses rake as task runner
 |        | generate scaffold Article title:string body:text published_at:datetime |      |
 |        |                                                                        |      |
 
-** Console
+** server
+|                               |   |
+|-------------------------------+---|
+| --binding=[PORT] or -b [PORT] |   |
+
+** misc
+| what       | how         | desc |
+|------------+-------------+------|
+| destroy    | destroy / d |      |
+| belongs_to |             |      |
+
+** tasks
+Rails 6 uses rake as task runner
+
+|              |                         |
+|--------------+-------------------------|
+| --task or -T | list all task available |
+|              |                         |
+
+** log
+|                  |   |
+|------------------+---|
+| :clear LOGS=test |   |
+
+** migration
+|                    |   |
+|--------------------+---|
+| AddXXXToTABLE      |   |
+| RemoveXXXFromTABLE |   |
+
+** console
 | what              | how                                                                | desc                                                                                                                               |
 |-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------|
 | create            | create(title: "foo", body: "bar", published_at: '2020-01-31')      | create new and save to db                                                                                                          |
@@ -146,14 +162,7 @@ Rails 6 uses rake as task runner
 | routes --expanded |                                                                    |                                                                                                                                    |
 | byebug            |                                                                    |                                                                                                                                    |
 
-** Enviroment
-|                      |                                                                          |
-|----------------------+--------------------------------------------------------------------------|
-| RAILS_ENV=production |                                                                          |
-| dev:cache            | toggle caching on and off in the development environment(restart server) |
-|                      |                                                                          |
-
-* Bin
+* bin
 Useful personal scripts
 
 - brakeman
@@ -171,6 +180,7 @@ set -e
 bin/rails server --binding=0.0.0.0
 #+end_src
 ** setup
+** rails
 ** ci
 run tests and quality checks.
 
@@ -183,12 +193,10 @@ bin/setup # ensure setup is idempotent
 bin/ci # perform all checks
 #+end_src
 
-* Methods
-|        |                                            |
-|--------+--------------------------------------------|
-| where  | returns an array of results                |
-| findby | returns either an existing LineItem or nil |
-|        |                                            |
+* Enviroment
+|                      |                                                                          |
+|----------------------+--------------------------------------------------------------------------|
+| RAILS_ENV=production |                                                                          |
 
 * Logger
 - live log feed: tail -f log/development.log
@@ -206,9 +214,7 @@ Rails.logger.warn "This will show in all environments"
 #+end_src
 
 * Debugging
-
 ** Views
-
 
 ** <% console %>
  abre um console na página que vc coloca <% console %> aí vc pode chamar as variáveis daquela página pra entender o que tá rolando
@@ -216,9 +222,10 @@ Rails.logger.warn "This will show in all environments"
 <% console %>
 #+end_src
 
-* Active Record
+* Components
+** Active Record
 - Single-Table Inheritance
-** Associations
+*** Associations
 |                         |                                        |
 |-------------------------+----------------------------------------|
 | has_many                |                                        |
@@ -226,23 +233,23 @@ Rails.logger.warn "This will show in all environments"
 | belongs_to              | goes in the class with the foreign key |
 | many_to_many            |                                        |
 | has_and_belongs_to_many |                                        |
-** Validations
-** Migrations
-** Callbacks
+*** Validations
+*** Migrations
+*** Callbacks
      - before_create
      - after_create
      - before_save
      - after_save
      - before_destroy
      - after_destroy
-** Query Interface
-** Find
-*** SQL Syntax
+*** Query Interface
+*** Find
+**** SQL Syntax
       #+begin_src ruby
       Obj.where(title: 'AwesomeWM is really awesome')
       #+end_src
 
-*** Array Condition
+**** Array Condition
       #+begin_src ruby
       Article.where("published_at < ?", Time.now)
       Article.where("published_at < ?", Time.now).to_sql # inspect the issued SQL statement
@@ -250,12 +257,12 @@ Rails.logger.warn "This will show in all environments"
       Article.where("title LIKE :search OR body LIKE :search", {search: '%association%'})
       #+end_src
 
-*** Association Proxies
+**** Association Proxies
       - Chain together multiple calls to Active Record
       #+begin_src ruby
 
       #+end_src
-*** more
+**** more
       #+begin_src ruby
       Article.order("published_at DESC")
       Article.limit(1)
@@ -263,63 +270,72 @@ Rails.logger.warn "This will show in all environments"
       Article.includes(:comments)
       Article.order("title DESC").limit(2)
       #+end_src
-** Named Scope
+*** Named Scope
      #+begin_src ruby
      scope :published, -> { where.not(published_at: nil) }
      scope :draft, -> { where(published_at: nil) }
      #+end_src
-* Action Cable
-** concept
+** Action Cable
+*** concept
 - create a channel, broadcast some data, and receive the data.
 - support multiple streams
-** cli
+*** cli
 |                          |                 |
 |--------------------------+-----------------|
 | generate channels <name> | in /app/channel |
 |                          |                 |
 
 * Database
-    | it    | desc                                                     |
-    |-------+----------------------------------------------------------|
-    | seeds | which defines some data you always need in your database |
-    |       |                                                          |
+| it    | desc                                                     |
+|-------+----------------------------------------------------------|
+| seeds | which defines some data you always need in your database |
+|       |                                                          |
+** Methods
+|        |                                            |
+|--------+--------------------------------------------|
+| where  | returns an array of results                |
+| findby | returns either an existing LineItem or nil |
+|        |                                            |
+
 * Cache
-* Views
-* Controller
-* Models
-** Fat models
+|                      |                                                                          |
+|----------------------+--------------------------------------------------------------------------|
+| dev:cache            | toggle caching on and off in the development environment(restart server) |
+* MVC
+** Views
+** Controller
+** Models
+- Camel-Cased or snake-cased
+*** Fat models
      An intelligent model like this is often called fat. Instead of performing model-related logic in
      other places (i.e., in controllers or views), you keep it in the model, thus making it fat. This
      makes your models easier to work with and helps your code stay DRY.
+*** Concerns
 * Tests
+|                 |             |
+|-----------------+-------------|
+| assert_select   | integration |
+| assert_response |             |
+
 ** RSpec
 ** Unit
-** Rails
-*** cli
-      |                  |   |
-      |------------------+---|
-      | test             |   |
-      | test:controllers |   |
-*** files
-      |                 |             |
-      |-----------------+-------------|
-      | assert_select   | integration |
-      | assert_response |             |
 
-* REST
-* JSON
 * Traits
-    - Active Records: Ruby object-relational mapping (ORM) library
-    - root_path
-* i18n
-    - i18n.t()
-    - i18n.l()
-* Models
-    | what   | $ | ...         |
-    |--------+---+-------------|
-    | Models |   | Camel-Cased |
-    |        |   |             |
-* Direnv
+- Active Records: Ruby object-relational mapping (ORM) library
+- root_path
+** REST
+** JSON
+** Terms
+- accepts_nested_attributes_for
+- validates_presence_of
+- content_tag
+- stylesheet_tag bootstrap_url @ application_html.erb
+- HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
+* Internationalizations
+- i18n.t()
+- i18n.l()
+* External toolings
+** Direnv
 
 Guix + Direnv example file
 #+begin_src shell
@@ -371,7 +387,7 @@ export PATH="$NPM_BIN":$PATH
 
 # ** SQLITE
 #+end_src
-* Docker
+** Docker
 #+begin_src dockerfile
 FROM ruby:2.5.1-alpine
 
@@ -421,7 +437,7 @@ COPY . ./
 
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]
 #+end_src
-** docker-compose
+*** docker-compose
 #+begin_src yml
 version: '3.4'
 
@@ -475,16 +491,3 @@ volumes:
   node_modules:
 #+end_src
 
-* Misc
-    HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
-
-* Priorities
-    - TDD BDD
-    - Rails / MVC
-    - PostgreSQL
-    - Docker/Kubernetes
-    - Redis/SideKick/
-    - MicroServices
-    - AWS
-    - Circle CI
-    - REST
