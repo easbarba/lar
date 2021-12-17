@@ -26,7 +26,7 @@
 #+OPTIONS: toc:nil author:nil date:nil num:nil
 *Euber Alexandre Sousa Barbosa*
 
-@easbarbosa / euberbarbosa@pm.me / Distrito Federal
+@easbarbosa / euberbarbosa@pm.me / Distrito-Federal
 
 *SOBRE*
 -----
@@ -57,7 +57,7 @@ Awk e Guile Scheme.
 *PROJETOS*
 -----
 
-  https://codeberg.org/easbarbosa
+https://codeberg.org/easbarbosa
 
 *EDUCAÇÃO*
 -----
