@@ -53,6 +53,7 @@
      "https://drewdevault.com/blog/index.xml"
      "https://ambrevar.xyz/atom.xml"
      "https://x-team.com/blog/rss/"
+     "https://unixsheikh.com/feed.rss"
      ;; langs blogs
      "https://feeds.fireside.fm/smartlogic/rss"
      "https://ulisses.dev/feed.xml"
