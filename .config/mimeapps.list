@@ -100,4 +100,4 @@ x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/https`=firefox.desktop
 x-scheme-handler/mailto=org.kde.kmail2.desktop;
 x-scheme-handler/unknown=firefox.desktop
-application/pdf=org.pwmt.zathura.desktop
+application/pdf=evince.desktop
