@@ -1,4 +1,56 @@
 #+TITLE: Sqlite
+
+* Summary
+    :PROPERTIES:
+    :TOC:      :include all :depth 3 :ignore this
+    :END:
+  :CONTENTS:
+  - [[#progress][Progress]]
+    - [[#books][Books]]
+    - [[#sloc][SLOC]]
+  - [[#cli][Cli]]
+    - [[#database][Database]]
+    - [[#misc][Misc]]
+    - [[#tasks-rake][Tasks (rake)]]
+    - [[#log][Log]]
+    - [[#migration][Migration]]
+    - [[#models][Models]]
+    - [[#console][Console]]
+    - [[#enviroment][Enviroment]]
+  - [[#methods][Methods]]
+  - [[#logger][Logger]]
+    - [[#methods][Methods]]
+  - [[#active-record][Active Record]]
+    - [[#associations][Associations]]
+    - [[#validations][Validations]]
+    - [[#migrations][Migrations]]
+    - [[#callbacks][Callbacks]]
+    - [[#query-interface][Query Interface]]
+    - [[#find][Find]]
+      - [[#sql-syntax][SQL Syntax]]
+      - [[#array-condition][Array Condition]]
+      - [[#association-proxies][Association Proxies]]
+      - [[#more][more]]
+    - [[#named-scope][Named Scope]]
+  - [[#database][Database]]
+  - [[#views][Views]]
+  - [[#controller][Controller]]
+  - [[#models][Models]]
+    - [[#fat-models][Fat models]]
+  - [[#tests][Tests]]
+    - [[#rspec][RSpec]]
+    - [[#unit][Unit]]
+    - [[#rails][Rails]]
+      - [[#cli][cli]]
+      - [[#files][files]]
+  - [[#rest][REST]]
+  - [[#json][JSON]]
+  - [[#traits][Traits]]
+  - [[#i18n][i18n]]
+  - [[#models][Models]]
+  - [[#misc][Misc]]
+  - [[#priorities][Priorities]]
+  :END:
 * commands
 |            |   |
 |------------+---|
