@@ -62,16 +62,18 @@
 
 * cli
 ** database
-| cmd                                                                    | desc                                            |
-+------------------------------------------------------------------------+-------------------------------------------------|
-| dbconsole                                                              |                                                 |
-| db:create                                                              |                                                 |
-| db:create:all                                                          | create test,production and development database |
-| db:migrate                                                             | create schema                                   |
-| db:rollback                                                            | rollback recently created schema                |
-| db:system:change                                                       | switch databases                                |
-| db:seed                                                                |                                                 |
-| db:setup                                                               |                                                 |
+| cmd              | desc                                                                        |
+|------------------+-----------------------------------------------------------------------------|
+| dbconsole        |                                                                             |
+| console          |                                                                             |
+| db:create        |                                                                             |
+| db:create:all    | create test,production and development database                             |
+| db:migrate       | create schema                                                               |
+| db:rollback      | rollback recently created schema                                            |
+| db:system:change | switch databases                                                            |
+| db:seed          |                                                                             |
+| db:setup         |                                                                             |
+| db:reset         | drops the database, recreates it, loads the schema, and seeds your database |
 ** new
 | how               | desc                                              |
 +-------------------+---------------------------------------------------|
@@ -193,6 +195,28 @@ bin/setup # ensure setup is idempotent
 bin/ci # perform all checks
 #+end_src
 
+* Models
+|                   |                            |
+|-------------------+----------------------------|
+| naming convention | CamelCased or snake_cased  |
+
+** validations
+*** validates
+#+begin_src ruby
+class Article < ApplicationRecord
+  validates :title, :body, presence: true
+end
+#+end_src
+
+
+** concerns
+** best pratices
+*** fat models
+An intelligent model like this is often called fat. Instead of performing model-related logic in
+other places (i.e., in controllers or views), you keep it in the model, thus making it fat. This
+makes your models easier to work with and helps your code stay DRY.
+* Controller
+* Views
 * Enviroment
 |                      |                                                                          |
 |----------------------+--------------------------------------------------------------------------|
@@ -225,6 +249,22 @@ Rails.logger.warn "This will show in all environments"
 * Components
 ** Active Record
 - Single-Table Inheritance
+
+*** methods
+#+begin_src ruby
+article = Article.new(title: "Introduction to Active Record",
+body: "Active Record is Rails's default ORM..", published_at: Time.zone.now)
+article.save
+
+Article.create(title: "RubyConf 2020", body: "The annual RubyConf will
+take place in..", published_at: '2020-01-31')
+
+article.new_record?
+article.attributes
+
+Article.count
+#+end_src
+
 *** Associations
 |                         |                                        |
 |-------------------------+----------------------------------------|
@@ -235,6 +275,13 @@ Rails.logger.warn "This will show in all environments"
 | has_and_belongs_to_many |                                        |
 *** Validations
 *** Migrations
+*** Migration
+**** drop_table
+drop existing migration table
+#+begin_src
+ActiveRecord::Migration.drop_table :articles
+#+end_src
+
 *** Callbacks
      - before_create
      - after_create
@@ -301,16 +348,6 @@ Rails.logger.warn "This will show in all environments"
 |                      |                                                                          |
 |----------------------+--------------------------------------------------------------------------|
 | dev:cache            | toggle caching on and off in the development environment(restart server) |
-* MVC
-** Views
-** Controller
-** Models
-- Camel-Cased or snake-cased
-*** Fat models
-     An intelligent model like this is often called fat. Instead of performing model-related logic in
-     other places (i.e., in controllers or views), you keep it in the model, thus making it fat. This
-     makes your models easier to work with and helps your code stay DRY.
-*** Concerns
 * Tests
 |                 |             |
 |-----------------+-------------|
