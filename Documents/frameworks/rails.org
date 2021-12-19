@@ -53,12 +53,12 @@
   :END:
 * Progress
 ** Books
-|                         |                               |                                         |
-|-------------------------+-------------------------------+-----------------------------------------|
-| Beginning Rails 6       | 3                             | Reading (Finding) Records               |
-| Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                         |
-| Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records... |
-| Rails Guide             | Action Controller             | 4.4 default_url_options                 |
+|                         |                               |                                      |
+|-------------------------+-------------------------------+--------------------------------------|
+| Beginning Rails 6       | 3                             | When Good Models Go Bad              |
+| Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
+| Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
+| Rails Guide             | Action Controller             | 4.4 default_url_options              |
 
 * cli
 ** database
@@ -252,19 +252,34 @@ Rails.logger.warn "This will show in all environments"
 
 *** methods
 #+begin_src ruby
-article = Article.new(title: "Introduction to Active Record",
+# new
+Article.new(title: "Introduction to Active Record",
 body: "Active Record is Rails's default ORM..", published_at: Time.zone.now)
-article.save
 
+# create
 Article.create(title: "RubyConf 2020", body: "The annual RubyConf will
 take place in..", published_at: '2020-01-31')
 
+article.save
 article.new_record?
 article.attributes
+article.id
+article.update_attributes(title: "RailsConf2020", published_at: 1.day.ago)
+article.destroy
+
+articles.size
 
 Article.count
+Article.find(3)
+Article.first
+Article.last
+Article.all
+Article.order(:title)
+Article.where(title: 'RailsConf').first
+Article.destroy([2,3])
+Article.delete(4) # don’t instantiate or perform callbacks on the object they’re deleting
+Article.delete_by("published_at < '2011-01-01'")
 #+end_src
-
 *** Associations
 |                         |                                        |
 |-------------------------+----------------------------------------|
@@ -273,6 +288,11 @@ Article.count
 | belongs_to              | goes in the class with the foreign key |
 | many_to_many            |                                        |
 | has_and_belongs_to_many |                                        |
+*** exceptions
+|                |                                             |
+|----------------+---------------------------------------------|
+| RecordNotFound | couldn’t find any record with the id given. |
+
 *** Validations
 *** Migrations
 *** Migration
