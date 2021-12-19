@@ -55,7 +55,7 @@
 ** Books
 |                         |                               |                                      |
 |-------------------------+-------------------------------+--------------------------------------|
-| Beginning Rails 6       | 3                             | When Good Models Go Bad              |
+| Beginning Rails 6       | 6 Advanced Active Record      | Adding Methods                       |
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
@@ -266,6 +266,10 @@ article.attributes
 article.id
 article.update_attributes(title: "RailsConf2020", published_at: 1.day.ago)
 article.destroy
+article.valid?
+article.errors.size
+article.errors.messages[:title]
+article.errors.full_messages
 
 articles.size
 
