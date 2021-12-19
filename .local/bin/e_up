@@ -13,14 +13,13 @@ _distro() {
 
     distro update
     distro upgrade
-    # e_guix
+    e_guix
 }
 
 _packagers() {
     e_echo "Editors and Langs packages"
 
     e_doom
-
     e_ruby
 }
 
