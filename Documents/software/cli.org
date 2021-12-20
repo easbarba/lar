@@ -340,3 +340,9 @@ $ xinput set-int-prop 3 "Device Enabled" 8 0
 |-----------+---|
 | -q        |   |
 | --current |   |
+* media
+** ffmpeg
+*** increase volume
+#+begin_src shell
+ffmpeg -i TUNE.ogg -filter:a "volume=5dB" TUNE_increased.ogg
+#+end_src
