@@ -175,9 +175,9 @@
 - Osvaldo Coggiola
 * Manga
 ** Progresso
-|                 |     |   |
-|-----------------+-----+---|
-| One Punch Man   |  76 |   |
+|               |    |   |
+|---------------+----+---|
+| One Punch Man | 83 |   |
 ** Favorites
 - Lone Wolf and Cub
 - One Punch Man
