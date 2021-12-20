@@ -55,7 +55,7 @@
 ** Books
 |                         |                               |                                      |
 |-------------------------+-------------------------------+--------------------------------------|
-| Beginning Rails 6       | 6 Advanced Active Record      | Adding Methods                       |
+| Beginning Rails 6       | 6 Advanced Active Record      | Creating One-to-Many Associations    |
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
@@ -284,7 +284,7 @@ Article.destroy([2,3])
 Article.delete(4) # don’t instantiate or perform callbacks on the object they’re deleting
 Article.delete_by("published_at < '2011-01-01'")
 #+end_src
-*** Associations
+*** associations
 |                         |                                        |
 |-------------------------+----------------------------------------|
 | has_many                |                                        |
@@ -292,6 +292,24 @@ Article.delete_by("published_at < '2011-01-01'")
 | belongs_to              | goes in the class with the foreign key |
 | many_to_many            |                                        |
 | has_and_belongs_to_many |                                        |
+
+#+begin_src ruby
+class Message < ApplicationRecord
+  has_many :attachments
+end
+
+class Attachment < ApplicationRecord
+  belongs_to :message
+end
+
+user = User.create(email: "user@example.com", password: "secret"
+profile = Profile.create(name: "John Doe", bio: "Ruby developer trying to learn Rails")
+profile.user = user
+user.profile.destroy
+user.create_profile name: 'Jane Doe', color: 'pink'
+user.build_profile(bio: 'eats leaves')
+#+end_src
+
 *** exceptions
 |                |                                             |
 |----------------+---------------------------------------------|
