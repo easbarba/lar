@@ -55,25 +55,25 @@
 ** Books
 |                         |                               |                                      |
 |-------------------------+-------------------------------+--------------------------------------|
-| Beginning Rails 6       | 6 Advanced Active Record      | Specifying Dependencies              |
+| Beginning Rails 6       | 6 Advanced Active Record      | Advanced Finding                     |
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
 
 * cli
 ** database
-| cmd              | desc                                                                        |
-|------------------+-----------------------------------------------------------------------------|
-| dbconsole        |                                                                             |
-| console          |                                                                             |
-| db:create        |                                                                             |
-| db:create:all    | create test,production and development database                             |
-| db:migrate       | create schema                                                               |
-| db:rollback      | rollback recently created schema                                            |
-| db:system:change | switch databases                                                            |
-| db:seed          |                                                                             |
-| db:setup         |                                                                             |
-| db:reset         | drops the database, recreates it, loads the schema, and seeds your database |
+| cmd              | desc                                                                   |
+|------------------+------------------------------------------------------------------------|
+| dbconsole        |                                                                        |
+| console          |                                                                        |
+| db:create        |                                                                        |
+| db:create:all    | create test,production and development database                        |
+| db:migrate       | create schema                                                          |
+| db:rollback      | rollback recently created schema                                       |
+| db:system:change | switch databases                                                       |
+| db:seed          |                                                                        |
+| db:setup         | recreate database and adds the seed data as you may expect.            |
+| db:reset         | drop database, recreates it, loads the schema, and seeds your database |
 ** new
 | how               | desc                                              |
 +-------------------+---------------------------------------------------|
@@ -285,13 +285,15 @@ Article.delete(4) # donâ€™t instantiate or perform callbacks on the object theyâ
 Article.delete_by("published_at < '2011-01-01'")
 #+end_src
 *** associations
-|                         |                                        |
-|-------------------------+----------------------------------------|
-| has_many                |                                        |
-| has_one                 |                                        |
-| belongs_to              | goes in the class with the foreign key |
-| many_to_many            |                                        |
-| has_and_belongs_to_many |                                        |
+|                         |                                                                                    |
+|-------------------------+------------------------------------------------------------------------------------|
+| has_many                |                                                                                    |
+| has_one                 |                                                                                    |
+| belongs_to              | goes in the class with the foreign key                                             |
+| many_to_many            |                                                                                    |
+| has_and_belongs_to_many | join table that keeps a reference to the foreign keys involved in the relationship |
+|                         |                                                                                    |
+
 
 #+begin_src ruby
 class Message < ApplicationRecord
