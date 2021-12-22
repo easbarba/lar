@@ -57,7 +57,7 @@ Awk e Guile Scheme.
 *PROJETOS*
 -----
 
-https://codeberg.org/easbarbosa
+https://github.com/easbarba
 
 *EDUCAÇÃO*
 -----
