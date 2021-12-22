@@ -63,10 +63,12 @@
      "https://rubyweekly.com/rss/"
      "https://feeds.transistor.fm/remote-ruby"
      "https://dev.to/feed/leandronsp"
+     "https://videosdeti.com.br/feed/"
      ;; devops blogs
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://leandronsp.com/rss.xml"
      ;; devops/langs channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCSBsYBhO5FLvvSl_ChnwDdw" ;; Lucas Caton
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCUkM9uMpWatT7gVWShgtKFw" ;; DHH
      "https://www.youtube.com/feeds/videos.xml?channel_id=UConIMoZxnroqKqCc-utZA7A" ;; Carlos seong
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
@@ -78,16 +80,13 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg" ;; Distro Tube
      ;; news channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; teze onze
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZdJE8KpuFm6NRafHTEIC-g" ;; tempero drag
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; TV Boitempo
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCmh3nJayT-7jEM6hg2vP9Q" ;; Laura Sabino
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese onze
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCQNp5qrzckO45QFyaVPh9Lg" ;; Ju Furno
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzwfw0utuEVxc4D6ggXcqiQ" ;; Boitempo
      ;; corinthians channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqRraVICLr0asn90cAvkIZQ" ;; Corinthians TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC-I7i0YfLPHfUoH6-m2uUAw" ;; Podcastimao
      ;; misc channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca Vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
@@ -123,16 +122,6 @@
       (e/play-video (elfeed-entry-link entry))))
   (define-key elfeed-search-mode-map "m" #'e/elfeed-play-with-video-player))
 
-(use-package! define-word
-  :defer 3
-  :config
-  (global-set-key (kbd "C-c a d p") 'define-word-at-point)
-  (global-set-key (kbd "C-c a d w") 'define-word))
-
-(use-package! bufler
-  :defer t
-  :bind ("C-c b i" . 'bufler))
-
 (use-package! org-make-toc
   :defer t
   :hook (org-mode . org-make-toc-mode))
@@ -149,6 +138,18 @@
   (("C-c u" . 'undo-tree-visualize)
    ("C-c U" . 'undo-tree-visualize-redo))
   :config (global-undo-tree-mode))
+
+(use-package! define-word
+  :disabled
+  :defer 3
+  :config
+  (global-set-key (kbd "C-c a d p") 'define-word-at-point)
+  (global-set-key (kbd "C-c a d w") 'define-word))
+
+(use-package! bufler
+  :disabled
+  :defer t
+  :bind ("C-c b i" . 'bufler))
 
 ;; (use-package! company-org-block
 ;;   :custom
