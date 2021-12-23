@@ -1,4 +1,4 @@
-#+TITLE: API
+#+TITLE: Web APIs
 
 * Summary
   :PROPERTIES:
@@ -15,10 +15,9 @@
 - [[#grpc][gRPC]]
 :END:
 * Progresso
-| books                  | chapter            | at                                                          |
-|------------------------+--------------------+-------------------------------------------------------------|
-| The Design of Web APIs | 2 Designing an API | Focusing on how things work leads to complicated interfaces |
-|                        |                    |                                                             |
+| books                  | chapter | at                                                               |
+|------------------------+---------+------------------------------------------------------------------|
+| The Design of Web APIs |       2 | 2.1 The right perspective for designing everyday user interfaces |
 
 * SOAP
  - Web Service Description Language
