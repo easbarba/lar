@@ -55,7 +55,7 @@
 ** Books
 |                         |                               |                                      |
 |-------------------------+-------------------------------+--------------------------------------|
-| Beginning Rails 6       | 6 Advanced Active Record      | Using Association Proxies            |
+| Beginning Rails 6       | 6 Advanced Active Record      | Default Scope                        |
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
@@ -360,18 +360,52 @@ Article.where("created_at > '2020-02-04' AND body NOT LIKE '%model%'")
 
 **** Association Proxies
 - Chain together multiple calls to Active Record
+
+#+begin_src ruby
+User.first.articles.all
+current_user.articles.find(1)
+current_user.articles.create(title: 'Private', body: ‘Body here..’)
+#+end_src
 **** more
 #+begin_src ruby
 Article.order("published_at DESC")
-Article.limit(1)
-Article.joins(:comments)
+Article.limit(1) Article.joins(:comments)
 Article.includes(:comments)
 Article.order("title DESC").limit(2)
+
 #+end_src
 **** methods
 ***** where
+Specifies the conditions in which the records are returned as a WHERE SQL
+fragment.
+#+begin_src ruby
+Article.where("title = 'Advanced Active Record'")
+#+end_src
+
 ***** find
 ***** findby
+***** order
+Specifies the order in which the records are returned as an ORDER BY SQL
+fragment.
+
+#+begin_src ruby
+Article.order("published_at DESC")
+#+end_src
+***** limit
+Specifies the number of records to be returned as a LIMIT SQL fragment.
+#+begin_src ruby
+Article.limit(1)
+#+end_src
+***** joins
+Specifies associated tables to be joined in as a JOIN SQL fragment.
+#+begin_src ruby
+Article.joins(:comments)
+#+end_src
+***** includes
+Specifies associated tables to be joined and loaded as Active Record objects in a JOIN SQL fragment.
+#+begin_src ruby
+Article.includes(:comments)
+#+end_src
 *** Named Scope
      #+begin_src ruby
      scope :published, -> { where.not(published_at: nil) }
@@ -409,12 +443,12 @@ Article.order("title DESC").limit(2)
 - content_tag
 - stylesheet_tag bootstrap_url @ application_html.erb
 - HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
-* Internationalizations
+* Internationalization
 #+begin_src ruby
 i18n.t()
 i18n.l()
 #+end_src
-* External toolings
+* External Toolings
 ** Direnv
 
 Guix + Direnv example file

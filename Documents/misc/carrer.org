@@ -13,7 +13,7 @@
 |-----------------+-------------------------------------------------------------|
 | Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
 | Frameworks      | Rails, Sinatra                                              |
-| Concepts        | Data Structure, Algorithms, API{Rest, SOAP}, OOP   |
+| Concepts        | Data Structure, Algorithms, APIs, OOP                       |
 | Testing         | Minitest, Rspec                                             |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
 | Version Control | Git                                                         |
@@ -22,11 +22,14 @@
 | OS              | Debian, Fedora, GuixSD                                      |
 | Network         | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies |
 
+* TODO
+- websocket server
+
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
-*Euber Alexandre Sousa Barbosa*
+*EAS Barbosa*
 
-@easbarba / euberbarbosa@pm.me / Distrito-Federal
+@easbarba / easbarba@pm.me / Distrito-Federal
 
 *SOBRE*
 -----

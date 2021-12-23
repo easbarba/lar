@@ -3,7 +3,7 @@
 # Debug Options
 set -euo pipefail
 
-EMAIL="$USER@tutanota.com"
+EMAIL="$USER@protonmail.com"
 
 newdefault() {
     # new port
