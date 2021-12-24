@@ -62,6 +62,7 @@ _extensions() {
 
 _switch
 _move
+_volume
 _misc
 _media
 _extensions
