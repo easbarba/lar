@@ -1,19 +1,24 @@
 # HOME
-  On *nix distributions, using software dotfiles to configure can lessen the daily
-  burden, mine follows $HOME structure so to easily mirror late on a fresh
+  GNU/Linux distributions CLI applications are configured with the so called
+  dotfiles, version controlling those can lessen our daily burden greatly.
+  
+  This repostory follows $HOME structure so to easily mirror on a fresh
   installation.
   
-  I use my own dotfiler *e_dots* with a minimal reproducibility feature, bout to improve it later.
-     
+  I have a limited , yet still functional, dotfiler *e_dots*, aiming minimal reproducibility features.
+
 ## Documents
-  To achieve a higher fixation of study, I heavily rely on annotations, and [org-mode](https://www.orgmode.org/features.html)  literate documents are just awesome at that.
+  I heavily rely on annotations, and [org-mode](https://www.orgmode.org/features.html) literate documents are just
+  perfect at that.
 
 ## .local/bin 
-  Scripts bundle to aid bootstrapping services, utilities on a Linux box, 
-  usually bash, ruby and awk scripts.
+  Miscellaneous scripts to aid bootstrapping services, daily utilities Debian box, 
+  usually written in bash, ruby and awk scripts.
 
 ## [GNU Guix](https://gnu.guix.org/)
-  An interesting approach to try on experimental branches, heavily patch local builds, use different deps and so on is done in a sophisticate way with Guix, and all that easily achieved with a single file, just amazing. :)
+  Eager to test projects experimental branches? heavily patched local builds?
+  what about requiring specific deps? GNU Guix can help to achieve this goal in
+  a rather sophisticated fashion, and all that easily achieved with a single file, just amazing. :)
 
 ## license
   [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
