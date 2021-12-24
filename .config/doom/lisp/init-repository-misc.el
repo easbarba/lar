@@ -68,6 +68,7 @@
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://leandronsp.com/rss.xml"
      ;; devops/langs channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Conf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSBsYBhO5FLvvSl_ChnwDdw" ;; Lucas Caton
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCUkM9uMpWatT7gVWShgtKFw" ;; DHH
      "https://www.youtube.com/feeds/videos.xml?channel_id=UConIMoZxnroqKqCc-utZA7A" ;; Carlos seong
