@@ -9,8 +9,11 @@ _switch() {
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']"
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>A']"
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>D']"
+
+    gsettings set org.gnome.desktop.wm.keybindings cycle-windows "['<Super>z']"
+
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>a']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>d']"
 }
 
 _move() {
@@ -36,6 +39,8 @@ _media() {
 
     gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
     gsettings set org.gnome.desktop.wm.preferences audible-bell false
+
+    gsettings set org.gnome.settings-daemon.plugins.media-keys play "['<Super>e']"
 }
 
 _misc() {
@@ -48,6 +53,8 @@ _misc() {
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
     gsettings set org.gnome.desktop.background show-desktop-icons false
 
+    gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super><Alt>f']"
+    gsettings set org.gnome.desktop.wm.keybindings close "['<Super><Alt>c']"
     # gsettings set org.gnome.settings-daemon.plugins.media-keys keyboard-brightness-down
 
     gsettings set org.gnome.desktop.wm.preferences auto-raise 'true'
@@ -56,6 +63,12 @@ _misc() {
 
 _extensions() {
     gsettings set org.gnome.shell.extensions.auto-move-windows application-list "['emacs.desktop:1', 'org.gnome.Evince.desktop:2', 'org.gnome.Terminal.desktop:2', 'firefox.desktop:4', 'mpv.desktop:5', 'vlc.desktop:5', 'clementine.desktop:5', 'steam.desktop:5', 'transmission-gtk.desktop:5', 'org.gnome.Epiphany.desktop:4', 'telegramdesktop.desktop:5']"
+}
+
+_apps() {
+    gsettings set org.gnome.Evince.Default fullscreen 'true'
+    gsettings set org.gnome.Evince.Default show-sidebar 'false'
+    gsettings set org.gnome.Evince.Default show-toolbar 'false'
 }
 
 # * RUN
