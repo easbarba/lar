@@ -1,3 +1,4 @@
 name,repository
-distro,https://codeberg.org/easbarba/distro
-lar,https://codeberg.org/easbarba/lar
+distro,https://github.com/easbarba/distro
+floss,https://github.com/easbarba/floss
+lar,https://git.sr.ht/~easbarba/lar
