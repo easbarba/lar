@@ -58,11 +58,11 @@
   - [[#remove][Remove]]
 :END:
 * Progresso
-| books                     | chapter                                  | at                                              |
-|---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | What are images?                                |
-| Docker for Developers     | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
-| Docker 4 Rails developers | CHAPTER 7 Playing Nice with JavaScript   |                                                 |
+| books                     | chapter                                       | at                                              |
+|---------------------------+-----------------------------------------------+-------------------------------------------------|
+| Learn Docker Fundamentals | 4 Creating and Managing Container Images      | What are images?                                |
+| Docker for Developers     | Sharing Containers Using Docker Hub           | Implementing a sample microservices application |
+| Docker 4 Rails developers | CHAPTER 8 Testing in a Dockerized Environment |                                                 |
 
 
 | SLOC   | @                 | file          | line |
