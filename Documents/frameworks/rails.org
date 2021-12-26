@@ -442,12 +442,17 @@ Article.includes(:comments)
 - validates_presence_of
 - content_tag
 - stylesheet_tag bootstrap_url @ application_html.erb
-- HTTP status codes: Rack::Utils::HTTP_STATUS_CODES
+- HTTP status codes: Rack::Atolls::HTTP_STATUS_CODES
 * Internationalization
+
 #+begin_src ruby
-i18n.t()
-i18n.l()
+
 #+end_src
+** methods
+- i18n.t()
+- i18n.l()
+- i18n.locale
+- i18n.available_locales
 * External Toolings
 ** Direnv
 
