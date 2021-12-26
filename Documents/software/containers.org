@@ -6,7 +6,7 @@
   :END:
 :CONTENTS:
 - [[#progresso][Progresso]]
-- [[#cli][cli]]
+- [[#commands][Commands]]
   - [[#container][container]]
   - [[#exec][exec]]
   - [[#volume][volume]]
@@ -17,15 +17,31 @@
   - [[#rm][rm]]
   - [[#run][run]]
   - [[#start][start]]
+  - [[#system][system]]
+  - [[#network][network]]
+- [[#compose-commands][Compose Commands]]
+  - [[#build][build]]
+  - [[#up][up]]
+  - [[#stop][stop]]
+  - [[#pause][pause]]
+  - [[#unpause][unpause]]
+  - [[#restart][restart]]
+  - [[#ps][ps]]
+  - [[#logs][logs]]
+  - [[#run][run]]
+  - [[#exec][exec]]
+  - [[#rm][rm]]
+  - [[#kill][kill]]
+  - [[#docker-composeyml][docker-compose.yml]]
+  - [[#--env-file][--env-file]]
 - [[#stopquitdetach][Stop/Quit/Detach]]
-- [[#dockerfile][Dockerfile]]
-  - [[#keywords][keywords]]
-- [[#docker-entrypointsh][docker-entrypoint.sh]]
-- [[#dockerignore][.dockerignore]]
+- [[#files][Files]]
+  - [[#dockerignore][.dockerignore]]
+  - [[#docker-entrypointsh][docker-entrypoint.sh]]
+  - [[#dockerfile][Dockerfile]]
 - [[#volumes][Volumes]]
 - [[#images-registry][Images Registry]]
 - [[#terms][Terms]]
-- [[#multi-stages][Multi-stages]]
 - [[#best-practices][Best practices]]
 - [[#podman][Podman]]
   - [[#docs][docs]]
@@ -36,19 +52,25 @@
   - [[#dockerfile][Dockerfile]]
   - [[#traits][Traits]]
   - [[#commands][Commands]]
+- [[#example][Example]]
+  - [[#multi-stages][Multi-stages]]
+- [[#tips][Tips]]
+  - [[#remove][Remove]]
 :END:
 * Progresso
 | books                     | chapter                                  | at                                              |
 |---------------------------+------------------------------------------+-------------------------------------------------|
 | Learn Docker Fundamentals | 4 Creating and Managing Container Images | What are images?                                |
 | Docker for Developers     | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
+| Docker 4 Rails developers | CHAPTER 7 Playing Nice with JavaScript   |                                                 |
+
 
 | SLOC   | @                 | file          | line |
 |--------+-------------------+---------------+------|
 | go     |                   |               |      |
 | podman | cmd/podman/common | completion.go |      |
 
-* cli
+* Commands
 ** container
 https://docs.docker.com/engine/reference/commandline/container/
 
@@ -62,6 +84,7 @@ https://docs.docker.com/engine/reference/commandline/container/
 *** run
 #+begin_src shell
 podman container run --name test -it -v sample:/data alpine /bin/sh
+docker run -p 3000:3000 railsapp
 #+end_src
 **** options
 |                  |   |
@@ -143,6 +166,10 @@ podman image save -o ./backup/my-alpine.tar my-alpine
 podman image load -i ./backup/my-alpine.tar
 #+end_src
 *** tag
+#+begin_src shell
+docker tag 7146a802571b railsapp
+#+end_src
+*** prune
 ** rm
 |           |   |
 |-----------+---|
@@ -167,26 +194,72 @@ docker run -it --rm --privileged --pid=host fundamentalsofdocker/nsenter
 | --pid=<HOST> |   |
 | --privileged |   |
 ** start
+** system
+*** prune
+** network
+*** ls
+* Compose Commands
+** build
+#+begin_src
+#+end_src
+
+** up
+#+begin_src shell
+docker-compose up
+docker-compose up -d
+#+end_src
+
+*** options
+**** -d
+**** --force-recreate
+** stop
+** pause
+** unpause
+** restart
+** ps
+** logs
+#+begin_src shell
+docker-compose logs -f web
+#+end_src
+** run
+#+begin_src shell
+docker-compose run --rm web echo 'ran a different command'
+#+end_src
+** exec
+- wont start a new container, avoids clean up additional containers or use the --rm option
+
+#+begin_src shell
+docker-compose exec web echo 'ran a different command'
+#+end_src
+** rm
+** kill
+** docker-compose.yml
+** --env-file
+#+begin_src shell
+--env-file .env/development/web config
+#+end_src
 * Stop/Quit/Detach
 |         |          |
 |---------+----------|
 | C-c     | stop all |
 | C-p C-q | detach   |
 | c-d     | kill     |
-|         |          |
 
-* Dockerfile
-** keywords
-*** FROM
+* Files
+** .dockerignore
+** docker-entrypoint.sh
+** Dockerfile
+*** keywords
+**** FROM
 |                       |                   |
 |-----------------------+-------------------|
 | scratch               | tart from scratch |
 | <image-name> or <uri> |                   |
 
-*** MAINTAINER
-*** RUN
-*** COPY
-*** ADD
+**** MAINTAINER
+**** RUN
+**** COPY
+**** ADD
 ADD keyword also lets us copy and unpack TAR files, as well as providing a URL
 as a source for the files and folders to copy.
 
@@ -198,13 +271,13 @@ ADD http://example.com/sample.txt /data/
 ADD --chown=11:22 ./data/web* /app/data/
 #+end_src
 
-*** WORKDIR
-*** ENV
+**** WORKDIR
+**** ENV
 define env variables
-*** EXPOSE
+**** EXPOSE
 declare all ports that the application is listening on and that need to be
 accessible from outside of the container
-*** CMD
+**** CMD
 used to define the parameters of the program set in ENTRYPOINT
 
 - executed only at the start of image run
@@ -217,7 +290,7 @@ CMD ["-c","3","8.8.8.8"]
 podman container run -it --rm pinger -w 5 gnu.org
 
 #+end_src
-*** ENTRYPOINT
+**** ENTRYPOINT
 used to define the command of the expression
 
 - executed only at the start of image run
@@ -230,8 +303,6 @@ CMD ["-c","3","8.8.8.8"]
 
 podman container run -it --rm --entrypoint bin/sh meh
 #+end_src
-* docker-entrypoint.sh
-* .dockerignore
 * Volumes
 * Images Registry
 - https:/​/​cloud.​google.​com/​container-​registry
@@ -245,20 +316,6 @@ podman container run -it --rm --entrypoint bin/sh meh
 - common vulnerabilities and exposures (CVEs)
 - content trust
 - man-in-the-middle (MITM)
-* Multi-stages
-#+begin_src shell
-FROM alpine:3.7 AS build
-RUN apk update && \
-    apk add --update alpine-sdk
-RUN mkdir /app
-WORKDIR /app
-COPY . /app
-RUN mkdir bin
-RUN gcc hello.c -o bin/hello
-FROM alpine:3.7
-COPY --from=build /app/bin/hello /app/hello
-CMD /app/hello
-#+end_src
 * Best practices
 - should be ephemeral
 - order individuals commands so to leverage caching as much as possible
@@ -307,3 +364,68 @@ http://docs.podman.io/en/latest/index.html
    | run -p              | port                                   |
    | exec -it            | run command in container interactively |
    |                     |                                        |
+* Example
+- Rails
+
+#+begin_src ruby
+apt-get libsqlite3-dev apt-utils autoconf bison build-essential g++  libgconf-2-4 libgdbm-dev libncurses5-dev libreadline-dev libreadline-dev libssl-dev libxi6 xvfb zip zlib1g-dev \
+#+end_src
+
+#+begin_src dockerfile
+FROM ruby:2.7.5-slim-bullseye
+
+RUN apt-get update -yqq && apt-get install -yqq apt-utils autoconf bison build-essential curl g++ gcc git libffi-dev libgconf-2-4 libgdbm-dev libncurses5-dev libreadline-dev libreadline-dev libsqlite3-dev libssl-dev libxi6 libyaml-dev make sqlite3 xvfb zip zlib1g-dev fish zile
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
+
+COPY . /usr/src/app/
+WORKDIR /usr/src/app
+
+RUN npm install --global npm yarn@1.22.17
+RUN gem install bundler:2.3.3 rails:6.1.4.4 && bin/setup && bin/rails webpacker:install
+
+#+end_src
+
+#+begin_src yaml
+version: '3.8'
+
+services:
+
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+#+end_src
+RUN apt-get update -yqq && apt-get install -yqq postgresql postgresql-contrib libpq-dev
+curl make gcc g++ git libffi-dev libyaml-dev
+** Multi-stages
+#+begin_src shell
+FROM alpine:3.7 AS build
+RUN apk update && \
+    apk add --update alpine-sdk
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+RUN mkdir bin
+RUN gcc hello.c -o bin/hello
+FROM alpine:3.7
+COPY --from=build /app/bin/hello /app/hello
+CMD /app/hello
+#+end_src
+* Tips
+** Remove
+#+begin_src shell
+# Stop all containers
+docker stop `docker ps -qa`
+
+# Remove all containers
+docker rm `docker ps -qa`
+
+# Remove all images
+docker rmi -f `docker images -qa `
+
+# Remove all volumes
+docker volume rm $(docker volume ls -qf)
+
+# Remove all networks
+docker network rm `docker network ls -q`
+#+end_src
