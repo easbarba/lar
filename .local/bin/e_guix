@@ -46,7 +46,7 @@ glocale() {
 }
 
 system() {
-	local packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
+	local packages=(nss-certs font-dejavu neofetch) # icecat font-gnu-freefont-ttf
 	e_dolist "guix install" "${packages[@]}"
 }
 
