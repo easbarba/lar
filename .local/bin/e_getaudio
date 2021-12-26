@@ -2,31 +2,27 @@
 
 # Description: Extract audio of video pointed in clipboards url.
 
-# TODO: Url has url?
+# TODO: Check uri!
+
 DEPS=(yt-dlp ffmpeg)
 e_checkdeps "${DEPS[@]}"
 
-FREE=(mp3 ogg vorbis)
-
+FREE=(vorbis mp3 ogg)
 EXT="${FREE[0]}"
 URL="$(e_url)"
+__info="Format: $EXT
+URL: $URL
+Folder: $PWD"
 
-FOLDER="$HOME/Music"
-mkdir -p "$FOLDER" && cd "$FOLDER"
+(FOLDER="$HOME/Music"; mkdir -p "$FOLDER"; cd "$FOLDER")
 
 # GETTERS ATTRIBUTES
 declare -A YTDL
-YTDL=(
-    [bin]="yt-dlp"
-    [audio]="--extract-audio --audio-format"
-    [title]="-o '%(title)s.%(ext)s'")
+YTDL=([bin]='yt-dlp'
+      [audio]='--extract-audio --audio-format'
+      [title]="-o '%(title)s.%(ext)s'")
 
 # RUN
-__info="Format: $EXT
-URL: $URL
-Folder: $PWD
-
-"
 echo "$__info"
 
-"${YTDL[bin]}" ${YTDL[audio]} "$EXT" ${YTDL[title]} "$URL"
+${YTDL[bin]} ${YTDL[audio]} "$EXT" ${YTDL[title]} "$URL"
