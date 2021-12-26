@@ -283,8 +283,6 @@ foreign() {
 	_vscode
 	_docker
 	_chrome
-	_openrazer
-	_polychromatic
 }
 
 # * RUN
@@ -295,7 +293,7 @@ packages
 post
 clean
 services
-# foreign
+foreign
 
 # dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
 # firmware-linux-nonfree, firmware-misc-nonfree, firmware-atheros, and firmware-ath9k-htc
