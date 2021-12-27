@@ -1,12 +1,12 @@
 [init]
 	defaultBranch = main
 [user]
-	name = easbarbosa
-	email = easbarbosa@tutanota.me
+	name = easbarba
+	email = easbarba@protonmail.com
 [core]
 	editor = micro
 	autocrlf = input
-	excludesfile = easbarbosa/.config/git/ignore
+	excludesfile = easbarba/.config/git/ignore
 [color]
 	ui = true
 [credential]
