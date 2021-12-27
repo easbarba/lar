@@ -4,9 +4,9 @@
 set -euo pipefail
 
 DEPS=(ruby gem)
-DEV=(bundler rake solargraph)
-
 e_checkdeps "${DEPS[@]}"
+
+DEV=(bundler rake)
 
 _install() { e_dolist "gem install" "${DEV[@]}"; }
 _update() { e_dolist "gem update" "${DEV[@]}"; }
