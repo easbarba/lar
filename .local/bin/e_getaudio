@@ -10,11 +10,13 @@ e_checkdeps "${DEPS[@]}"
 FREE=(vorbis mp3 ogg)
 EXT="${FREE[0]}"
 URL="$(e_url)"
+FOLDER="$HOME/Music"
+
+cd "$FOLDER"
+
 __info="Format: $EXT
 URL: $URL
-Folder: $PWD"
-
-(FOLDER="$HOME/Music"; mkdir -p "$FOLDER"; cd "$FOLDER")
+Folder: $FOLDER"
 
 # GETTERS ATTRIBUTES
 declare -A YTDL
