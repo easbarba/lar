@@ -26,6 +26,7 @@
   - [[#local-and-non-root-database][local and non-root database]]
 - [[#errors][Errors]]
 - [[#utils][Utils]]
+- [[#container][Container]]
 :END:
 * Progress
 | book                   | chapter          | @               | revision |
@@ -293,3 +294,21 @@ nnection refused - :econnrefused
 * Utils
 - postmaster: prints out a few log lines before redirecting the logs to the appropriate log file
 - oid2name
+* Container
+#+begin_src yaml
+version: "3.9"
+
+services:
+  database:
+    image: postgres:latest
+    restart: always
+    env_file:
+      - .env/development/database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5442:5432"
+
+volumes:
+  db_data:
+#+end_src
