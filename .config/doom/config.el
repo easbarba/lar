@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq-default user-full-name "EAS Barbosa"
-              user-login-name "easbarbosa")
+(setq-default user-full-name "Barba"
+              user-login-name "easbarba")
 
 (cond ((member "Hack" (font-family-list))
        (setq doom-font (font-spec :family "Hack" :size 23 :weight 'semi-light)
