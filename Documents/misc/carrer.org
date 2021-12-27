@@ -13,10 +13,10 @@
 |-----------------+-------------------------------------------------------------|
 | Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
 | Frameworks      | Rails, Sinatra                                              |
-| Concepts        | Data Structure, Algorithms, APIs, OOP                       |
-| Testing         | Minitest, Rspec                                             |
 | Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
+| Testing         | Minitest, Rspec                                             |
 | Version Control | Git                                                         |
+| Concepts        | Data Structure, Algorithms, APIs, OOP                       |
 | Editors         | Emacs, Vim                                                  |
 | Containers      | Podman, Docker, Docker Compose                              |
 | OS              | Debian, Fedora, GuixSD                                      |
