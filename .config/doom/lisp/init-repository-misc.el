@@ -65,6 +65,7 @@
      "https://dev.to/feed/leandronsp"
      "https://videosdeti.com.br/feed/"
      "https://railsguides.net/atom.xml"
+     "https://gettalong.org/posts.rss"
      ;; devops blogs
      "https://www.linuxtips.io/blogs/novidades.atom"
      "https://leandronsp.com/rss.xml"
@@ -88,6 +89,7 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqRraVICLr0asn90cAvkIZQ" ;; Corinthians TV
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC-I7i0YfLPHfUoH6-m2uUAw" ;; Podcastimao
      ;; misc channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCmRFj7s3qBtadUujBd3Tujg" ;; Panelaco
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3nde-8K-5BaHAmQLZ7ycg" ;; Silvio Almeida
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca Vi 1 cientista
