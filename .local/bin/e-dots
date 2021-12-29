@@ -58,7 +58,7 @@ class Dots
   end
 
   # Create only the folders, if those do not exist
-  def make-folders
+  def make_folders
     all[:folders].each do |fld|
       folder = to_home fld
       next if folder.exist?
@@ -96,13 +96,13 @@ class Dots
   def symlink_files
     target_link.each do |target, link_name|
       puts "#{target} ❯ #{link_name}"
-      link_name.make-symlink target # As enumerator yielding folder to symlink
+      link_name.make_symlink target # As enumerator yielding folder to symlink
     end
   end
 
   def run
     feed_target_link
-    make-folders
+    make_folders
     backup_files
     symlink_files
   end
