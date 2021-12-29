@@ -1,0 +1,28 @@
+#+TITLE: Design Patterns
+
+* TOC
+  :PROPERTIES:
+  :TOC:      :include all :depth 2 :ignore this
+  :END:
+:CONTENTS:
+- [[#progress][Progress]]
+- [[#template-method][Template Method]]
+  - [[#hooks-methods][hooks methods]]
+- [[#strategy][Strategy]]
+- [[#observer][Observer]]
+:END:
+* Progress
+| Book                    | chapter     | @ |
+|-------------------------+-------------+---|
+| Design Patterns in Ruby | 6 Composite |   |
+
+* Template Method
+- Abstract class
+
+** hooks methods
+- exist merely to let the subclasses know what is happening but do not require
+  the subclasses to override methods that do not interest them.
+* Strategy
+* Observer
+clean interface between the source of the news that some object has changed and
+the consumers of that news
