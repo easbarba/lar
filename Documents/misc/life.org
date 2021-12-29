@@ -18,6 +18,7 @@
   - [[#british][British]]
   - [[#korean][Korean]]
   - [[#japan][Japan]]
+  - [[#wishlist][Wishlist]]
 - [[#anime][Anime]]
   - [[#japan][Japan]]
 - [[#lectures][Lectures]]
@@ -162,6 +163,13 @@
 - Shinzanmono
 - 1 Litre of Tears
 - Dragon Zakura
+** Wishlist
+- Bron broen
+- Ofjaerd
+- Valhalla murders
+- Karppi
+- Sorjonen
+
 * Anime
 ** Japan
 - Full Metal Alchemist
