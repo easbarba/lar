@@ -12,10 +12,10 @@
 | @               | desc                                                        |
 |-----------------+-------------------------------------------------------------|
 | Frameworks      | Rails, Sinatra                                              |
-| Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
 | Concepts        | APIs, OOP, Data Structure, Algorithms                       |
-| Version Control | Git                                                         |
 | Testing         | Minitest, Rspec                                             |
+| Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
+| Version Control | Git                                                         |
 | Containers      | Podman, Docker, Docker Compose                              |
 | Editors         | Emacs, Vim                                                  |
 | Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
