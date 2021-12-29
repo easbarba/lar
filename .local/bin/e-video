@@ -6,7 +6,7 @@ set -euo pipefail
 # Description: Get video
 
 DEPS=(yt-dlp ffmpeg)
-e_checkdeps "${DEPS[@]}"
+e-checkdeps "${DEPS[@]}"
 
 FOLDER="$HOME/Videos"
 
@@ -23,4 +23,4 @@ FORMAT="--format $EXT"
 OUTPUT='%(title)s.f%(format_id)s.%(ext)s'
 
 # RUN
-"$GETTER" --format "$EXT" --output "$OUTPUT" "$(e_url)"
+"$GETTER" --format "$EXT" --output "$OUTPUT" "$(e-url)"

@@ -3,7 +3,7 @@ set -euo pipefail
 
 # * STATUSBAR
 while true; do
-    xsetroot -name "$(e_sysinfo)"
+    xsetroot -name "$(e-sysinfo)"
     sleep 20s # Update time every minute
 done &
 

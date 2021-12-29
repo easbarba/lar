@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-e_echo "Podman - Rootless Containers"
+e-echo "Podman - Rootless Containers"
 
 /usr/bin/sudo touch /etc/subuid /etc/subgid
 

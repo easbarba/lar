@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(ruby gem)
+e-checkdeps "${DEPS[@]}"
+
+DEV=(bundler rake)
+
+_install() { e-dolist "gem install" "${DEV[@]}"; }
+_update() { e-dolist "gem update" "${DEV[@]}"; }
+
+# * RUN
+_install
+_update

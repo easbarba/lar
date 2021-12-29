@@ -4,12 +4,12 @@
 set -euo pipefail
 
 DEPS=(sudo pacman sed)
-e_checkdeps "${DEPS[@]}"
+e-checkdeps "${DEPS[@]}"
 
-e_echo "Arch Linux - System Packages and Services Instalation."
+e-echo "Arch Linux - System Packages and Services Instalation."
 
 upgrade() {
-    e_echo "Updating Arch Linux"
+    e-echo "Updating Arch Linux"
 
     /usr/bin/sudo /usr/bin/pacman -Syu
 }
@@ -17,13 +17,13 @@ upgrade() {
 pre() {
     [[ $(grep '^\[multilib\]' /etc/pacman.conf) == '[multilib]' ]] && return
 
-    e_echo "Enable Multi-Arch"
+    e-echo "Enable Multi-Arch"
 
     /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 }
 
 packages() {
-    e_echo "Installing system packages"
+    e-echo "Installing system packages"
 
     essentials=(git openssh curl unzip tmux lynx)
 
@@ -109,27 +109,27 @@ packages() {
         "${amd[@]}")
 
     for i in "${enabled[@]}"; do
-        e_dolist "$command" "$i"
+        e-dolist "$command" "$i"
     done
 
-    e_echo "Done"
+    e-echo "Done"
 }
 
 post() {
-    e_echo "Post install"
+    e-echo "Post install"
 
     # /usr/bin/sudo apt-file update # update Debian database
     /usr/bin/sudo /usr/bin/fc-cache -fv
 }
 
 clean() {
-    e_echo "Clean up"
+    e-echo "Clean up"
 
     /usr/bin/pacman -Rns "$(/usr/bin/pacman -Qdtq)"
 }
 
 services() {
-    e_echo "Debian Services"
+    e-echo "Debian Services"
 
     aur() { ''; }
 

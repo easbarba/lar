@@ -6,7 +6,7 @@ PAM_AUTH='/etc/pam.d/system-auth'
 only_new_passwords() {
     /usr/bin/echo auth sufficient pam_unix.so likeauth nullok >>$PAM_AUTH
 
-    /usr/bin/echo password sufficient pam_unix.so nullok use_authtok md5 shadow remember=5 $PAM_AUTH
+    /usr/bin/echo password sufficient pam_unix.so nullok use-authtok md5 shadow remember=5 $PAM_AUTH
 
 }
 
@@ -22,6 +22,6 @@ boot_readonly() {
 
 }
 
-disable_root() {
+disable-root() {
     /usr/bin/sudo /usr/bin/passwd -l root
 }

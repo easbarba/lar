@@ -157,19 +157,19 @@ class Pipewire
   def info
     {
       name: 'pw-cli',
-      args: "s #{pipe_id} Props",
+      args: "s #{pipe-id} Props",
       toggle: '{ mute: false, channelVolumes: [ 1.5, 1.5 ] }',
       updown: '{ mute: false, channelVolumes: [ 1.5, 1.5 ] }'
     }
   end
 
-  def pipe_id; end
+  def pipe-id; end
 
-  def pipe_toggle
+  def pipe-toggle
     [info[:name], info[:toggle]].join(' ')
   end
 
-  def pipe_updown
+  def pipe-updown
     [info[:name], info[:updown]].join(' ')
   end
 end

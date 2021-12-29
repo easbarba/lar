@@ -10,6 +10,6 @@ ARGUMENTS=("$@")
 
 for arg in "${ARGUMENTS[@]}"
 do
-    e_echo "$arg"
+    e-echo "$arg"
     $COMMAND "$arg" # do not quote $COMMAND
 done

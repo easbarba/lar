@@ -38,12 +38,12 @@ get_dir_path()
     echo $result
 }
 
-create_dirs()
+create-dirs()
 {
     mkdir -p $(get_dir_path)
 }
 
-create_file()
+create-file()
 {
     echo '' > "$path"
 }
@@ -61,8 +61,8 @@ run()
 {
     run_verbose
 
-    create_dirs
-    create_file
+    create-dirs
+    create-file
 }
 
 # * RUN

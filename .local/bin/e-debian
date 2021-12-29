@@ -4,14 +4,14 @@
 set -euo pipefail
 
 DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
-e_checkdeps "${DEPS[@]}"
+e-checkdeps "${DEPS[@]}"
 
 # * DEBIAN
 
-e_echo "Debian GNU/Linux -- The Universal Operating System"
+e-echo "Debian GNU/Linux -- The Universal Operating System"
 
 upgrade() {
-	e_echo "Upgrading System"
+	e-echo "Upgrading System"
 
 	sudo apt update
 	sudo apt upgrade -y
@@ -20,7 +20,7 @@ upgrade() {
 
 pre() {
 	multi() {
-		e_echo "Enable Multi-Arch"
+		e-echo "Enable Multi-Arch"
 
 		sudo dpkg --add-architecture i386
 	}
@@ -30,13 +30,13 @@ pre() {
 }
 
 packages() {
-	e_echo "Installing system packages"
+	e-echo "Installing system packages"
 
 	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
-	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf time
-		entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
-		jq rsync pv texinfo autoconf automake socat ripgrep)
+	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf
+			time entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
+			libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
 
 	network=(net-tools iproute2 telnet)
 
@@ -123,17 +123,17 @@ packages() {
 		"${books[@]}")
 
 	for i in "${enabled[@]}"; do
-		e_dolist "$command" "$i"
+		e-dolist "$command" "$i"
 	done
 
 	# builds dep
 	sudo apt -y build-dep emacs
 
-	e_echo "Done"
+	e-echo "Done"
 }
 
 post() {
-	e_echo "Post install"
+	e-echo "Post install"
 
 	sudo apt-file update # update Debian database
 	sudo fc-cache -fv    # cache all system fonts
@@ -146,20 +146,20 @@ post() {
 }
 
 clean() {
-	e_echo "Clean up"
+	e-echo "Clean up"
 
 	unused=(firefox-esr)
 
 	local command='sudo apt remove -y'
-	e_dolist "$command" "${unused[@]}"
+	e-dolist "$command" "${unused[@]}"
 
 	purging=(*nvidia*)
 	local command='sudo apt purge -y'
-	e_dolist "$command" "${purging[@]}"
+	e-dolist "$command" "${purging[@]}"
 }
 
 services() {
-	e_echo "Debian Services"
+	e-echo "Debian Services"
 
 	_lightdm() {
 		sudo systemctl enable lightdm
@@ -215,7 +215,7 @@ foreign() {
 		sudo gpasswd -a $USER plugdev
 
 		echo 'deb http://download.opensuse.org/repositories/hardware:/razer/Debian_Unstable/ /' | sudo tee /etc/apt/sources.list.d/hardware:razer.list
-		curl -fsSL https://download.opensuse.org/repositories/hardware:razer/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/hardware_razer.gpg >/dev/null
+		curl -fsSL https://download.opensuse.org/repositories/hardware:razer/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/hardware-razer.gpg >/dev/null
 		sudo apt update
 		sudo apt install openrazer-meta
 	}
@@ -247,13 +247,13 @@ foreign() {
 	}
 
 	_chrome() {
-		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-		sudo apt install -y /tmp/google-chrome-stable_current_amd64.deb
+		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
+		sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
 	}
 
 	_virtualbox() {
-		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye_amd64.deb
-		sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye_amd64.deb
+		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
+		sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
 	}
 
 	_vagrant() {
@@ -266,8 +266,8 @@ foreign() {
 	}
 
 	_vscode() {
-		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode_x64.deb'
-		sudo apt install -y /tmp/vscode_x64.deb
+		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
+		sudo apt install -y /tmp/vscode-x64.deb
 	}
 
 	_vscode

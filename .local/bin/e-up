@@ -5,33 +5,33 @@ DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
 DEPS=(sudo distro floss)
 
 # * CHECKER
-e_checkdeps "${DEPS[@]}"
+e-checkdeps "${DEPS[@]}"
 
 # * TASKS
 _distro() {
-    e_echo "Upgrading $DISTRO system and user packages."
+    e-echo "Upgrading $DISTRO system and user packages."
 
     distro update
     distro upgrade
-    e_guix
+    e-guix
 }
 
 _packagers() {
-    e_echo "Editors and Langs packages"
+    e-echo "Editors and Langs packages"
 
-    e_doom
-    e_ruby
+    e-doom
+    e-ruby
 }
 
 _user() {
-    e_echo "FLOSS projects"
+    e-echo "FLOSS projects"
     floss grab
     floss archive
 
-    e_usb_tasks
+    e-usb_tasks
 }
 
-e_nix() {
+e-nix() {
     [[ $DISTRO == "NixOS" ]] && nix-channel --update
 }
 

@@ -6,7 +6,7 @@ echo "device: $DEVICE found"
 
 _nmcli() {
     local deps=(nmcli)
-    e_checkdeps "${deps[@]}"
+    e-checkdeps "${deps[@]}"
 
     # return if not running
     [[ ! $(pgrep -x nmcli) ]] && return
@@ -25,7 +25,7 @@ _nmcli() {
 
 _iwd() {
     local deps=(iwd sudo curl)
-    e_checkdeps "${deps[@]}"
+    e-checkdeps "${deps[@]}"
 
     # return if not running
     [[ ! $(pgrep -x iwd) ]] && return

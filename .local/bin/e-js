@@ -4,31 +4,31 @@
 set -euo pipefail
 
 deps=(node npm)
-e_checkdeps "${deps[@]}"
+e-checkdeps "${deps[@]}"
 
 readonly COMMAND='npm i -g'
 
 base() {
-	e_echo "Node - Installing main Runtime"
+	e-echo "Node - Installing main Runtime"
 
 	local packs=(npm)
-	e_dolist "$COMMAND" "${packs[@]}"
+	e-dolist "$COMMAND" "${packs[@]}"
 }
 
 servers() {
-	e_echo "Node - Installing global LSP servers"
+	e-echo "Node - Installing global LSP servers"
 
 	local packs=(bash-language-server yaml-language-server
 		vscode-json-languageserver typescript-language-server
 		vscode-html-languageserver-bin vscode-css-languageserver-bin)
-	e_dolist "$COMMAND" "${packs[@]}"
+	e-dolist "$COMMAND" "${packs[@]}"
 }
 
 devel() {
-	e_echo "Node - Installing development global packs"
+	e-echo "Node - Installing development global packs"
 
 	local packs=(lua-fmt)
-	e_dolist "$COMMAND" "${packs[@]}"
+	e-dolist "$COMMAND" "${packs[@]}"
 }
 
 # * RUN

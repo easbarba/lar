@@ -3,7 +3,7 @@
 # Debug Options
 set -euo pipefail
 
-e_echo "Connect to Bluetooth Paired Devices"
+e-echo "Connect to Bluetooth Paired Devices"
 
 DEPS=(bluetoothctl sudo sed grep)
 
@@ -23,7 +23,7 @@ connect() {
 
 # * RUN
 
-e_checkdeps "${DEPS[@]}"
+e-checkdeps "${DEPS[@]}"
 
 autoenable
 poweron
