@@ -35,8 +35,8 @@ packages() {
 	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
 	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf
-			time entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
-			libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
+		time entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
+		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
 
 	network=(net-tools iproute2 telnet)
 
@@ -227,6 +227,11 @@ foreign() {
 
 		# Full installation
 		sudo apt install polychromatic
+	}
+
+	_flatpak() {
+		sudo apt install -y flatpak gnome-software-plugin-flatpak
+		sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	}
 
 	_docker() {
