@@ -3,8 +3,12 @@ set -euo pipefail
 
 e-echo "Podman - Rootless Containers"
 
-/usr/bin/sudo touch /etc/subuid /etc/subgid
+_podman() {
+    # Set subuid and subgid
+    sudo touch /etc/subuid /etc/subgid
+    sudo usermod --add-subuids 100000-165535 --add-subgids 100000-165535 "$USER"
 
-usermod --add-subuids 100000-165535 --add-subgids 100000-165535 "$USER"
+    sudo podman system migrate
+}
 
-podman system migrate
+_podman
