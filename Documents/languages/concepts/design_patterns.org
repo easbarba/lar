@@ -10,11 +10,13 @@
   - [[#hooks-methods][hooks methods]]
 - [[#strategy][Strategy]]
 - [[#observer][Observer]]
+- [[#composite][Composite]]
+- [[#iterator][Iterator]]
 :END:
 * Progress
-| Book                    | chapter     | @ |
-|-------------------------+-------------+---|
-| Design Patterns in Ruby | 6 Composite |   |
+| Book                    | chapter    | @ |
+|-------------------------+------------+---|
+| Design Patterns in Ruby | 8 Commands |   |
 
 * Template Method
 - Abstract class
@@ -26,3 +28,13 @@
 * Observer
 clean interface between the source of the news that some object has changed and
 the consumers of that news
+* Composite
+- composite
+- componentes
+- leaf
+* Iterator
+Provide a way to access the elements of an aggregate object sequentially without
+exposing its underlying representation
+
+- internal iterator
+- external iterator
