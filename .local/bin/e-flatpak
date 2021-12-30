@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+flatpak install flathub com.discordapp.Discord
+flatpak install flathub com.microsoft.Teams
+flatpak install flathub com.visualstudio.code
+flatpak install flathub com.slack.Slack
+flatpak install flathub us.zoom.Zoom
+flatpak install flathub com.skype.Client
