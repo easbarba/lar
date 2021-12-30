@@ -505,6 +505,12 @@ str.frozen? # true
 unfrozen_str = +str
 unfrozen_str.frozen? # false
 #+end_src
+***** each_byte
+***** scan
+#+begin_src ruby
+s = 'Peter Piper picked a peck of pickled peppers'
+s.scan(/[Pp]\w*/) {|word| puts("The word is #{word}")}
+#+end_src
 **** interpolation
 #+begin_src ruby
 age  = 33
@@ -660,11 +666,19 @@ Array 1 # [1]
    [[file:path]]
 **** push
 **** pop
-**** acess
+**** access
 **** find
 **** delete
 **** max_by
 **** compact
+**** array
+#+begin_src ruby
+a = Array.new
+# shallow copy
+b = Array.new [1,2,3]
+#+end_src
+**** reverse_each
+**** each_index
 *** Queue
 - thread-safe, blocking.
 - If the queue is empty, calling pop will put your current thread to sleep &
@@ -717,7 +731,14 @@ que.push(:bacon, true) # raises ThreadError: queue full
 - keys must be comparable
 - rehash force the hash to be reindexed whenever a key has changed
 - index collection
-
+**** methods
+***** store
+***** acess
+***** delete
+***** each_key
+***** each_value
+***** find(<value>)
+***** more
 #+begin_src ruby
 # Strings keys
 h = { "one" => 1, "two" => 2 }
@@ -756,12 +777,8 @@ h = {...}.replace({...})
 h.key?
 h.empty?
 #+end_src
-**** store
-**** acess
-**** delete
-**** find(<value>)
 
-*** Range
+** Range
 |     |                                      |
 |-----+--------------------------------------|
 | ..  | inclusive                            |
@@ -1389,226 +1406,6 @@ d.close
 
 open("|cat", "w+") {|p| p.puts("hi"); p.gets }
 #+end_src
-** Enumerable
-   #+begin_src ruby
-   # iterate over only those lines that end with a d
-   File.open("ordinal").grep(/d$/) do |line|
-     puts line
-   end
-   #+end_src
-*** compact
-    #+begin_src ruby
-
-   enum = [1, nil, 3, nil, 5].to_enum.compact
-   enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
-
-    #+end_src
-*** group_by
-#+begin_src ruby
-
-%w(joe, joe, david, matz, david, matz, joe).group_by { |name | name }
-# {"joe,"=>["joe,", "joe,"], "david,"=>["david,", "david,"], "matz,"=>["matz,", "matz,"], "joe"=>["joe"]}
-
-#+end_src
-*** cycle
-When called with positive Integer argument count and a block, calls the
-block with each element, then does so again, until it has done so count
-times; returns nil
-
-
-#+begin_src ruby
-[12, 18, 20, 02].cycle(3) { |el| puts el*4 } # 48 72 80 8 48 72 80 8 48 72 80                  8
-#+end_src
-*** filter_map
-combine the select & map
-
-#+begin_src ruby
-(1..8).filter_map { |n| n ** 2 if n.even? } # [4, 16, 36, 64]
-#+end_src
-
-*** grep
-#+begin_src ruby
-
-['gr', 'xr', 'cd', 'dg'].grep /r/ # ["gr", "xr"]
-['gr', 'xr', 1, 2].grep Integer # [1, 2]
-["apple", "orange", "banana"].grep(/^a/)
-["apple", "orange", "banana"].grep(/e$/)
-[9, 10, 11, 20].grep(5..10) # [9, 10]
-[9, 10, 11, 20].grep(5..10) { |n| n * 2 } # [18, 20]
-
-times_two = ->(x) { x * 2 }
-numbers.grep(5..10, &times_two) # [18, 20]
-
-#+end_src
-*** tally
-counts all the elements in an array & returns a hash with their counts.
-
-#+begin_src ruby
-%w(a a a b b c).tally
-#+end_src
-** Enumerator
-*** lazy
-#+begin_src ruby
-def Integer.all
-  Enumerator.new do |yielder, n: 0|
-	  loop { yielder.yield(n += 1) }
-  end.lazy
-end
-
-
-def find_multiples(num, mult)
-  (1..Float::INFINITY).lazy.select { |x| x % mult == 0}.first(num)
-end
-find_multiples(3, 50) # [50, 100, 150]
-
-
-first_3_multiples = self.method(:find_multiples).curry.(3) # #<Proc:0x000055c3b7d76088 (lambda)>
-first_5_multiples = self.method(:find_multiples).curry.(5) # #<Proc:0x000055c3b8243368 (lambda)>
-first_3_multiples.(256) # [256, 512, 768]
-
-
-squares = (1..Float::INFINITY).lazy.map { |x| x * x } # #<Enumerator::Lazy: #<Enumerator::Lazy: 1..Infinity>:map>
-squares.first 4 # [1, 4, 9, 16]
-
-#+end_src
-*** each_car
-*** each
-*** to_enum/enum_for
-    #+begin_src ruby
-    a = [ 1, 3, "cat" ]
-    h = { dog: "canine", fox: "vulpine" }
-
-    # Create Enumerators
-    enum_a = a.to_enum
-    enum_h = h.to_enum
-
-    enum_a.next # 1
-    enum_h.next # [:dog, "canine"]
-    enum_a.next # 3
-    enum_h.next # [:fox, "vulpine"]
-
-    enum_a = a.each # create an Enumerator using an internal iterator
-    #+end_src
-*** enum_for
-   #+begin_src ruby
-   e = names.enum_for(:inject, "Names: ")
-   #+end_src
-*** generator
-*** produce
-Produces an infinite sequence where each next element is calculated by applying
-the block to the previous element.
-
-#+begin_src ruby
-Enumerator.produce(1, &:next).take(5) # [1, 2, 3, 4, 5]
-#+end_src
-
-*** upto
-#+begin_src ruby
-0.upto(9).each(&method(:puts))
-#+end_src
-
-** Iterators
-   #+begin_src ruby
-   3.times { p 'meh' } # easy to avoid fence-post and off-by-one errors
-
-   9.downto(5) { p 'meh' }
-
-   0.upto(9) { p 'meh' }
-
-   0.step(12, 3) {|x| print x, " " }
-
-   [ 1, 1, 2, 3, 5 ].each {|val| print val, " " }
-
-
-   #+end_src
-
-*** collect
-   #+begin_src ruby
-   ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
-   #+end_src
-*** each
-*** select/inject
-   accumulate a value across the members of a collection
-*** each_cons(<value>)
-*** find
-   #+begin_src ruby
-   a.find { ¦n¦ n > 5 }
-   a.find { ¦n¦ n > 5 }
-   a.find_all
-   a.select
-   a.reject
-   a.map
-   #+end_src
-
-*** each_slice
-   #+begin_src ruby
-   animals.each_slice(2).map do |predator, prey|
-   #+end_src
-*** each_with_object
-*** with_object
-*** with_index.
-*** reject
-
-*** each_byte
-
-*** each_char
-*** tap
-*** with_index
-   #+begin_src ruby
-   ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
-   my_enum.take(5).force // actual result rather than lazy enumerator
-   #+end_src
-*** loops
-   #+begin_src ruby
-   # WHILE , UNTIL , and FOR loops are built into the language and do not introduce new scope;
-
-   while line = gets
-     # ...
-   end
-
-   until play_list.duration > 60
-     play_list.add(song_list.pop)
-   end
-
-   # when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
-   # newly local variables created in LOOP are not accessible outside the block
-   loop do
-     puts "#{short_enum.next} - #{long_enum.next}"
-   end
-
-   # not a ruby way, translated by ruby to x.each
-   for song in playlist
-     song.play
-   end
-
-
-   # NEXT skips to the end of the loop, effectively starting the next iteration
-   # BREAKn
-
-   i=0
-   loop do
-     i += 1
-     next if i < 3
-     print i
-     break if i > 4 # If a conventional loop doesn’t execute a break , its value is nil .
-   end
-
-   # REDO repeats the current iteration of the loop from the start but without reevaluating
-   # the condition or fetching the next element (in an iterator)
-   while line = gets
-     next if line =~ /^\s*#/   # skip comments
-     break if line =~ /^END/   # stop at end
-
-     # substitute stuff in backticks and try again
-     redo if line.gsub!(/`(.*?)`/) { eval($1) }
-
-     # process line ...
-   end
-
-
-
-   #+end_src
-*** times
 ** Date/Time
    #+begin_src ruby
    require 'date'
@@ -1968,6 +1765,35 @@ fd = IO.sysopen('/dev/null', 'w')
 
 # 10
 #+end_src
+**** eof?
+**** open
+**** each
+**** close
+**** each_byte
+** Pathname
+*** new
+#+begin_src ruby
+Pathname.new('/usr/local/lib/ruby/1.8')
+#+end_src
+*** each_filename
+*** each_entry
+** ObjectSpade
+*** each_object
+#+begin_src ruby
+ObjectSpace.each_object(Numeric) {|n| puts("The number is #{n}")}
+
+def subclasses_of(superclass)
+  subclasses = []
+  ObjectSpace.each_object(Class) do |k|
+    next if !k.ancestors.include?(superclass) || superclass == k ||
+            k.to_s.include?('::') || subclasses.include?(k.to_s)
+    subclasses << k.to_s
+  end
+  subclasses
+end
+
+subclasses_of Numeric # ["Complex", "Rational", "Float", "Integer"]
+#+end_src
 
 ** forwardable
 The Forwardable module provides delegation of specified methods to a designated
@@ -2019,6 +1845,265 @@ welcome = -> (str) { "Welcome, " + str.upcase + "!" }
 The objspace library extends the ObjectSpace module and adds several
 methods to get internal statistic information about object/memory
 management.
+** Enumerable
+*** examples
+#+begin_src ruby
+class Account
+  attr_accessor :name, :balance
+
+  def initialize(name, balance)
+    @name = name
+    @balance = balance
+  end
+
+  def <=>(other)
+    balance <=> other.balance
+  end
+end
+
+class Portfolio
+  include Enumerable
+
+  def initialize
+    @accounts = []
+  end
+
+  def each(&block)
+    @accounts.each(&block)
+  end
+
+  def add_account(account)
+    @accounts << account
+  end
+end
+
+my_portfolio.any? {|account| account.balance > 2000}
+my_portfolio.all? {|account| account.balance > = 10}
+#+end_src
+
+#+begin_src ruby
+# iterate over only those lines that end with a d
+File.open("ordinal").grep(/d$/) do |line|
+  puts line
+end
+#+end_src
+*** methods
+**** compact
+    #+begin_src ruby
+
+   enum = [1, nil, 3, nil, 5].to_enum.compact
+   enum = [1, nil, 3, nil, 5].to_enum.lazy.compact
+
+    #+end_src
+**** group_by
+#+begin_src ruby
+
+%w(joe, joe, david, matz, david, matz, joe).group_by { |name | name }
+# {"joe,"=>["joe,", "joe,"], "david,"=>["david,", "david,"], "matz,"=>["matz,", "matz,"], "joe"=>["joe"]}
+
+#+end_src
+**** cycle
+When called with positive Integer argument count and a block, calls the
+block with each element, then does so again, until it has done so count
+times; returns nil
+
+
+#+begin_src ruby
+[12, 18, 20, 02].cycle(3) { |el| puts el*4 } # 48 72 80 8 48 72 80 8 48 72 80                  8
+#+end_src
+**** filter_map
+combine the select & map
+
+#+begin_src ruby
+(1..8).filter_map { |n| n ** 2 if n.even? } # [4, 16, 36, 64]
+#+end_src
+
+**** grep
+#+begin_src ruby
+
+['gr', 'xr', 'cd', 'dg'].grep /r/ # ["gr", "xr"]
+['gr', 'xr', 1, 2].grep Integer # [1, 2]
+["apple", "orange", "banana"].grep(/^a/)
+["apple", "orange", "banana"].grep(/e$/)
+[9, 10, 11, 20].grep(5..10) # [9, 10]
+[9, 10, 11, 20].grep(5..10) { |n| n * 2 } # [18, 20]
+
+times_two = ->(x) { x * 2 }
+numbers.grep(5..10, &times_two) # [18, 20]
+
+#+end_src
+**** tally
+counts all the elements in an array & returns a hash with their counts.
+
+#+begin_src ruby
+%w(a a a b b c).tally
+#+end_src
+**** all?
+**** sort
+** Enumerator
+*** lazy
+#+begin_src ruby
+def Integer.all
+  Enumerator.new do |yielder, n: 0|
+	  loop { yielder.yield(n += 1) }
+  end.lazy
+end
+
+
+def find_multiples(num, mult)
+  (1..Float::INFINITY).lazy.select { |x| x % mult == 0}.first(num)
+end
+find_multiples(3, 50) # [50, 100, 150]
+
+
+first_3_multiples = self.method(:find_multiples).curry.(3) # #<Proc:0x000055c3b7d76088 (lambda)>
+first_5_multiples = self.method(:find_multiples).curry.(5) # #<Proc:0x000055c3b8243368 (lambda)>
+first_3_multiples.(256) # [256, 512, 768]
+
+
+squares = (1..Float::INFINITY).lazy.map { |x| x * x } # #<Enumerator::Lazy: #<Enumerator::Lazy: 1..Infinity>:map>
+squares.first 4 # [1, 4, 9, 16]
+
+#+end_src
+*** each_car
+*** each
+*** to_enum/enum_for
+    #+begin_src ruby
+    a = [ 1, 3, "cat" ]
+    h = { dog: "canine", fox: "vulpine" }
+
+    # Create Enumerators
+    enum_a = a.to_enum
+    enum_h = h.to_enum
+
+    enum_a.next # 1
+    enum_h.next # [:dog, "canine"]
+    enum_a.next # 3
+    enum_h.next # [:fox, "vulpine"]
+
+    enum_a = a.each # create an Enumerator using an internal iterator
+    #+end_src
+*** enum_for
+   #+begin_src ruby
+   e = names.enum_for(:inject, "Names: ")
+   #+end_src
+*** generator
+*** produce
+Produces an infinite sequence where each next element is calculated by applying
+the block to the previous element.
+
+#+begin_src ruby
+Enumerator.produce(1, &:next).take(5) # [1, 2, 3, 4, 5]
+#+end_src
+
+*** upto
+#+begin_src ruby
+0.upto(9).each(&method(:puts))
+#+end_src
+** Iterators
+- internal iterator
+- external iterator
+
+#+begin_src ruby
+3.times { p 'meh' } # easy to avoid fence-post and off-by-one errors
+
+9.downto(5) { p 'meh' }
+
+0.upto(9) { p 'meh' }
+
+0.step(12, 3) {|x| print x, " " }
+
+[ 1, 1, 2, 3, 5 ].each {|val| print val, " " }
+#+end_src
+
+*** collect
+   #+begin_src ruby
+   ["H", "A", "L"].collect {|x| x.succ } # => ["I", "B", "M"]
+   #+end_src
+*** each
+*** select/inject
+   accumulate a value across the members of a collection
+*** each_cons(<value>)
+*** find
+   #+begin_src ruby
+   a.find { ¦n¦ n > 5 }
+   a.find { ¦n¦ n > 5 }
+   a.find_all
+   a.select
+   a.reject
+   a.map
+   #+end_src
+
+*** each_slice
+   #+begin_src ruby
+   animals.each_slice(2).map do |predator, prey|
+   #+end_src
+*** each_with_object
+*** with_object
+*** with_index.
+*** reject
+
+*** each_byte
+
+*** each_char
+*** tap
+*** with_index
+   #+begin_src ruby
+   ['a'..'z').map.with_index {|letter,i| [letter, i] } // Output: [["a", 0], ["b", 1], etc.]
+   my_enum.take(5).force // actual result rather than lazy enumerator
+   #+end_src
+*** loops
+   #+begin_src ruby
+   # WHILE , UNTIL , and FOR loops are built into the language and do not introduce new scope;
+
+   while line = gets
+     # ...
+   end
+
+   until play_list.duration > 60
+     play_list.add(song_list.pop)
+   end
+
+   # when an enumerator object runs out of values inside a loop , the loop will terminate cleanly.
+   # newly local variables created in LOOP are not accessible outside the block
+   loop do
+     puts "#{short_enum.next} - #{long_enum.next}"
+   end
+
+   # not a ruby way, translated by ruby to x.each
+   for song in playlist
+     song.play
+   end
+
+
+   # NEXT skips to the end of the loop, effectively starting the next iteration
+   # BREAKn
+
+   i=0
+   loop do
+     i += 1
+     next if i < 3
+     print i
+     break if i > 4 # If a conventional loop doesn’t execute a break , its value is nil .
+   end
+
+   # REDO repeats the current iteration of the loop from the start but without reevaluating
+   # the condition or fetching the next element (in an iterator)
+   while line = gets
+     next if line =~ /^\s*#/   # skip comments
+     break if line =~ /^END/   # stop at end
+
+     # substitute stuff in backticks and try again
+     redo if line.gsub!(/`(.*?)`/) { eval($1) }
+
+     # process line ...
+   end
+
+
+
+   #+end_src
+*** times
+
 * Cli
 ** ruby
 
