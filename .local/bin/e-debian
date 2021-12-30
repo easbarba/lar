@@ -275,6 +275,7 @@ foreign() {
 		sudo apt install -y /tmp/vscode-x64.deb
 	}
 
+	_flatpak
 	_vscode
 	_docker
 	_chrome
