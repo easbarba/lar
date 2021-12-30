@@ -59,6 +59,10 @@
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
+** SLOC
+|       |                                      |                 |
+|-------+--------------------------------------+-----------------|
+| rails | actioncable/lib/action_cable/channel | broadcasting.rb |
 
 * cli
 ** database
