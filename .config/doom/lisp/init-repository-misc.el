@@ -54,11 +54,7 @@
      "https://ambrevar.xyz/atom.xml"
      "https://x-team.com/blog/rss/"
      "https://unixsheikh.com/feed.rss"
-     ;; langs blogs
-     "https://feeds.fireside.fm/smartlogic/rss"
-     "https://ulisses.dev/feed.xml"
-     "https://research.swtch.com/feed.atom"
-     "https://feeds.feedburner.com/AyendeRahien"
+     "https://sourcehut.org/blog/index.xml"
      ;; ruby blogs
      "https://rubyweekly.com/rss/"
      "https://feeds.transistor.fm/remote-ruby"
@@ -66,9 +62,9 @@
      "https://videosdeti.com.br/feed/"
      "https://railsguides.net/atom.xml"
      "https://gettalong.org/posts.rss"
+     "https://leandronsp.com/rss.xml"
      ;; devops blogs
      "https://www.linuxtips.io/blogs/novidades.atom"
-     "https://leandronsp.com/rss.xml"
      ;; devops/langs channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Conf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCSBsYBhO5FLvvSl_ChnwDdw" ;; Lucas Caton
