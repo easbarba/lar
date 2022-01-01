@@ -28,6 +28,8 @@
 	erc-spelling-dictionaries '(("#emacs" "american"))
 	erc-autojoin-channels-alist '(("libera.chat"
 				       "#ruby"
+                                       "#debian-ruby"
+                                       "#debian"
                                        "#guix"
 				       "#emacs"))
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
