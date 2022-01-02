@@ -1,4 +1,5 @@
 name,repository
+sequel,https://github.com/jeremyevans/sequel
 kramdown,https://github.com/gettalong/kramdown
 faker,https://github.com/faker-ruby/faker
 solargraph,https://github.com/castwide/solargraph
