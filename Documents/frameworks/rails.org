@@ -55,10 +55,11 @@
 ** Books
 |                         |                               |                                      |
 |-------------------------+-------------------------------+--------------------------------------|
-| Beginning Rails 6       | 6 Advanced Active Record      | Default Scope                        |
+| Beginning Rails 6       | 7 Action Pack:                |                                      |
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
+
 ** SLOC
 |       |                                      |                 |
 |-------+--------------------------------------+-----------------|
@@ -340,13 +341,13 @@ drop existing migration table
 ActiveRecord::Migration.drop_table :articles
 #+end_src
 
-*** Callbacks
-     - before_create
-     - after_create
-     - before_save
-     - after_save
-     - before_destroy
-     - after_destroy
+*** Filters
+- before_create
+- after_create
+- before_save
+- after_save
+- before_destroy
+- after_destroy
 *** Query Interface
 *** Finding
 **** SQL Syntax
