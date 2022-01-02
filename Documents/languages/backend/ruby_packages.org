@@ -188,18 +188,26 @@ before do
 end
 #+end_src
 **** matchers
-|                 |                              |
-|-----------------+------------------------------|
-| eq              | exact argument and order     |
-| contain_exactly | exact arguments in any order |
-| a_kind_of       |                              |
-| include         |                              |
+***** eq
+***** contain_exactly
+***** a_kind_of
+***** include
+***** be_success
+***** match [a_hash_including(...)]
 
 **** expect / to
 expect() and to() check a result in order to signal success or failure.
 They compare a value using a matcher.
 
 **** pending
+**** it
+***** metadata
+****** :aggregate_failures
+record the first failure, but continue to try the second expectation
+**** describe
+***** metadata
+****** :aggregate_failures
+record the first failure, but continue to try the second expectation
 **** let
 #+begin_src ruby
 let(:expense) { { 'some' => 'data' } }
@@ -210,6 +218,8 @@ let(:expense) { { 'some' => 'data' } }
      |-------------------------------+---|
      | context 'foobar', focus: true |   |
      |                               |   |
+*** hooks
+**** suit-level
 *** Commands
 |                                   |                                      |
 |-----------------------------------+--------------------------------------|
