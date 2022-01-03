@@ -1,10 +1,13 @@
-k # -*- ruby -*-
+# -*- ruby -*-
 
-require 'irb/completion'
+require "irb/completion"
+require "irb/ext/save-history"
 
-IRB.conf[:IRB_NAME] = '❯'
+IRB.conf[:IRB_NAME] = "❯"
 IRB.conf[:PROMPT_MODE] = :DEFAULT
 IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV["HOME"]}/.irb_history"
 
 # This will allow us to access our previous 3 evaluations in an IRB console
 IRB.conf[:EVAL_HISTORY] = 3
@@ -27,16 +30,16 @@ module IRBExtension
       PROMPT_I: "#{prompt}> ",
       PROMPT_N: "#{prompt}> ",
       PROMPT_S: "#{prompt}%l ",
-      RETURN: "=> %s\n"
+      RETURN: "=> %s\n",
     }
   end
 
   def irb_env
     case Rails.env
     when development
-      Rainbow('development').green
-    when 'production'
-      Rainbow('production').red
+      Rainbow("development").green
+    when "production"
+      Rainbow("production").red
     else
       Rainbow(Rails.env.to_s).yellow
     end
@@ -54,7 +57,7 @@ module IRBExtension
   end
 
   def audit_login
-    @audit_login ||= ENV.fetch('LOGGED_IN_USER', nil)
+    @audit_login ||= ENV.fetch("LOGGED_IN_USER", nil)
   end
 
   def audit_setup_instructions
