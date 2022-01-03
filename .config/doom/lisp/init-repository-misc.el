@@ -55,6 +55,7 @@
      "https://x-team.com/blog/rss/"
      "https://unixsheikh.com/feed.rss"
      "https://sourcehut.org/blog/index.xml"
+     "https://simaraconceicao.com/feed/"
      ;; ruby blogs
      "https://rubyweekly.com/rss/"
      "https://feeds.transistor.fm/remote-ruby"
