@@ -50,10 +50,11 @@ Awk e Guile Scheme.
 
 *HABILIDADES*
 -----
-  - Linguagens: Ruby, Guile Scheme.
-  - Distros: Debian, Arch, GuixSD.
-  - Script: Awk, Sed, GNU Bash, Fish.
-  - Infra: dockerfile, vagrantfile, podman, qemu/kvm.
+  - Linguagens: Ruby, Guile Scheme, Awk.
+  - Frameworks: Ruby on Rails.
+  - Distros: Debian, Arch, GNU Guix.
+  - Script: Sed, GNU Bash, find, Fish.
+  - Infra: dockerfile, docker-compose, podman, vagrantfile, qemu/kvm.
   - Editores: GNU Emacs, Nano, NeoVim.
   - Git: merge, rebase, format-patch.
 
