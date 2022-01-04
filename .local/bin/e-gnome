@@ -12,8 +12,8 @@ _switch() {
 
     gsettings set org.gnome.desktop.wm.keybindings cycle-windows "['<Super>z']"
 
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>a']"
-    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>d']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>b']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>f']"
 }
 
 _move() {
