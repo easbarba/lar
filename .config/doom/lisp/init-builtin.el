@@ -31,6 +31,8 @@
                                        "#debian-ruby"
                                        "#debian"
                                        "#guix"
+                                       "#fsf"
+                                       "#gnu"
 				       "#emacs"))
 	erc-lurker-hide-list '("JOIN" "PART" "QUIT")
 	erc-track-exclude-types
