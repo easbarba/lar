@@ -55,7 +55,7 @@
 ** Books
 |                         |                               |                                      |
 |-------------------------+-------------------------------+--------------------------------------|
-| Beginning Rails 6       | 7 Action Pack:                | Named Routes                         |
+| Beginning Rails 6       | 7 Action Pack:                | Rendering Responses                  |
 | Agile Development Rails | 11 Task F: Add a Dash of Ajax |                                      |
 | Sustainable Rails       | 5 Bussines logic              | 5.3 Business Logic in Active Records |
 | Rails Guide             | Action Controller             | 4.4 default_url_options              |
@@ -221,14 +221,19 @@ An intelligent model like this is often called fat. Instead of performing model-
 other places (i.e., in controllers or views), you keep it in the model, thus making it fat. This
 makes your models easier to work with and helps your code stay DRY.
 * Routes
+- localhost:xxxx/rails/info/routes
+
 ** eg
 #+begin_src ruby
 get '/teams/home', to: 'teams#index' # http://example.com/teams
 get '/teams/search/:query', to: 'teams#search' # http://example.com/teams/search/toronto
 #+end_src
 ** named routes
+
+
 #+begin_src ruby
-get '/teams/search/:query', to: 'teams#search', as: 'search'
+get '/teams/search/:query', to: 'teams#search', as: 'search' #search_url and search_path
+
 #+end_src
 * Controller
 * Views
