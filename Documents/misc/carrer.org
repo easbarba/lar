@@ -1,13 +1,5 @@
 #+TITLE: Carrer
 
-* Schedule
-| mon      | tue        | wed      | thru       | fri      |
-|----------+------------+----------+------------+----------|
-| lang     | lang       | lang     | lang       | lang     |
-| concepts | testing    | concepts | testing    | testing  |
-| database | containers | database | containers | database |
-| vc       | vc         | vc       | vc         | vc       |
-
 * Priorities
 | @               | desc                      |
 |-----------------+---------------------------|
@@ -19,14 +11,11 @@
 | Containers      | Podman, Docker            |
 | Version Control | Git                       |
 
-* TODO
-- websocket server
-
 * Résumé
 #+OPTIONS: toc:nil author:nil date:nil num:nil
 *EAS Barbosa*
 
-@easbarba / easbarba@pm.me / Distrito-Federal
+@easbarba / easbarba@pm.me / distrito-federal
 
 *SOBRE*
 -----
