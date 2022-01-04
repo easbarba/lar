@@ -9,18 +9,15 @@
 | vc       | vc         | vc       | vc         | vc       |
 
 * Priorities
-| @               | desc                                                        |
-|-----------------+-------------------------------------------------------------|
-| Frameworks      | Rails, Sinatra                                              |
-| Concepts        | APIs, OOP, Data Structure, Algorithms                       |
-| Testing         | Minitest, Rspec                                             |
-| Database        | PostgreSQL, MySQL, Redis, MongoDB                           |
-| Version Control | Git                                                         |
-| Containers      | Podman, Docker, Docker Compose                              |
-| Editors         | Emacs, Vim                                                  |
-| Lang            | Ruby, JavaScript, Guile, Bash, Awk                          |
-| OS              | Debian, Fedora, GuixSD                                      |
-| Network         | HTTP, HTTPS, TCP/IP, TLS, SSH, FTP, DNS, firewalls, proxies |
+| @               | desc                      |
+|-----------------+---------------------------|
+| Frameworks      | Ruby on Rails             |
+| Lang            | JavaScript                |
+| Database        | PostgreSQL                |
+| Concepts        | APIs, OOP, Patterns, DS&A |
+| Testing         | Rspec, Jest               |
+| Containers      | Podman, Docker            |
+| Version Control | Git                       |
 
 * TODO
 - websocket server
