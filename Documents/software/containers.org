@@ -6,6 +6,8 @@
   :END:
 :CONTENTS:
 - [[#progresso][Progresso]]
+  - [[#books][books]]
+  - [[#sloc][sloc]]
 - [[#commands][Commands]]
   - [[#container][container]]
   - [[#exec][exec]]
@@ -43,6 +45,8 @@
 - [[#images-registry][Images Registry]]
 - [[#terms][Terms]]
 - [[#best-practices][Best practices]]
+- [[#multi-stages][Multi-stages]]
+  - [[#eg][eg]]
 - [[#podman][Podman]]
   - [[#docs][docs]]
   - [[#tricks][tricks]]
@@ -53,19 +57,17 @@
   - [[#traits][Traits]]
   - [[#commands][Commands]]
 - [[#example][Example]]
-  - [[#multi-stages][Multi-stages]]
 - [[#tips][Tips]]
   - [[#remove][Remove]]
 :END:
 * Progresso
-| books                     | chapter                                  | at                                              |
-|---------------------------+------------------------------------------+-------------------------------------------------|
-| Learn Docker Fundamentals | 4 Creating and Managing Container Images | What are images?                                |
-| Docker for Developers     | Sharing Containers Using Docker Hub      | Implementing a sample microservices application |
-| Docker 4 Rails developers | CHAPTER 11 The Production Landscape      |                                                 |
-
-
-| SLOC   | @                 | file          | line |
+** books
+| books                 | chapter                           | at |
+|-----------------------+-----------------------------------+----|
+| Mastering Docker      | 3 Storing and Distributing Images |    |
+| Docker for Developers |                                   |    |
+** sloc
+| sloc   | @                 | file          | line |
 |--------+-------------------+---------------+------|
 | go     |                   |               |      |
 | podman | cmd/podman/common | completion.go |      |
@@ -151,15 +153,24 @@ docker image pull alpine
 docker image pull alpine:3.5
 #+end_src
 *** build
+|                     |   |
+|---------------------+---|
+| --file <dockerfile> |   |
+| --tag <local:name>  |   |
+
 #+begin_src shell
 docker image build -t pinger .
 #+end_src
+
 *** history
 Show the history of an image
 
 |        |   |
 |--------+---|
 | <NAME> |   |
+*** inspect
+inspect --options  <ID>
+**** -f
 *** save
 #+begin_src shell
 podman image save -o ./backup/my-alpine.tar my-alpine
@@ -249,17 +260,17 @@ docker-compose exec web echo 'ran a different command'
 ** .dockerignore
 ** docker-entrypoint.sh
 ** Dockerfile
-*** keywords
-**** FROM
+*** FROM
 |                       |                   |
 |-----------------------+-------------------|
 | scratch               | tart from scratch |
 | <image-name> or <uri> |                   |
-
-**** MAINTAINER
-**** RUN
-**** COPY
-**** ADD
+*** LABEL
+add extra information to the image
+*** MAINTAINER
+*** RUN
+*** COPY
+*** ADD
 ADD keyword also lets us copy and unpack TAR files, as well as providing a URL
 as a source for the files and folders to copy.
 
@@ -271,13 +282,18 @@ ADD http://example.com/sample.txt /data/
 ADD --chown=11:22 ./data/web* /app/data/
 #+end_src
 
-**** WORKDIR
-**** ENV
+*** WORKDIR
+*** ENV
 define env variables
-**** EXPOSE
+
+#+begin_src dockerfile
+ENV meh foo # only set one ENV per line
+ENV meh=foo bar=posix # multiple environmental variables on the same line
+#+end_src
+*** EXPOSE
 declare all ports that the application is listening on and that need to be
 accessible from outside of the container
-**** CMD
+*** CMD
 used to define the parameters of the program set in ENTRYPOINT
 
 - executed only at the start of image run
@@ -290,7 +306,7 @@ CMD ["-c","3","8.8.8.8"]
 podman container run -it --rm pinger -w 5 gnu.org
 
 #+end_src
-**** ENTRYPOINT
+*** ENTRYPOINT
 used to define the command of the expression
 
 - executed only at the start of image run
@@ -324,6 +340,22 @@ podman container run -it --rm --entrypoint bin/sh meh
 - avoid installing unnecessary packages
 - use multi-stages builds
 
+* Multi-stages
+** eg
+#+begin_src shell
+FROM alpine:3.7 AS build
+RUN apk update && \
+    apk add --update alpine-sdk
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+RUN mkdir bin
+RUN gcc hello.c -o bin/hello
+
+FROM alpine:3.7
+COPY --from=build /app/bin/hello /app/hello
+CMD /app/hello
+#+end_src
 * Podman
 ** docs
 http://docs.podman.io/en/latest/index.html
@@ -397,20 +429,6 @@ services:
 #+end_src
 RUN apt-get update -yqq && apt-get install -yqq postgresql postgresql-contrib libpq-dev
 curl make gcc g++ git libffi-dev libyaml-dev
-** Multi-stages
-#+begin_src shell
-FROM alpine:3.7 AS build
-RUN apk update && \
-    apk add --update alpine-sdk
-RUN mkdir /app
-WORKDIR /app
-COPY . /app
-RUN mkdir bin
-RUN gcc hello.c -o bin/hello
-FROM alpine:3.7
-COPY --from=build /app/bin/hello /app/hello
-CMD /app/hello
-#+end_src
 * Tips
 ** Remove
 #+begin_src shell
