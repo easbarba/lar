@@ -24,9 +24,9 @@
   :END:
 * Progress
 ** Books
-| Books                           | Cap                         | @ |
-|---------------------------------+-----------------------------+---|
-| JavaScript The Definitive Guide | 4 Expressions and Operators |   |
+| Books                           | Cap                         | @                                 |
+|---------------------------------+-----------------------------+-----------------------------------|
+| JavaScript The Definitive Guide | 4 Expressions and Operators | 4.2 Object and Array Initializers |
 
 ** SLOC
 | Project   | folder                  | file         | @ |
