@@ -1,3 +1,18 @@
 #!/usr/bin/env bash
 
-python3 -m pip install yt-dlp
+_devel() {
+    local command="python3 -m pip install"
+    local packages=(black pipenv pyflakes pytest isort nose)
+
+    e-dolist "$command" "${packages[@]}"
+}
+
+_tools() {
+    local command="python3 -m pip install"
+    local packages=(yt-dlp)
+
+    e-dolist "$command" "${packages[@]}"
+}
+
+_devel
+_tools
