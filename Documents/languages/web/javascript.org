@@ -24,10 +24,10 @@
   :END:
 * Progress
 ** Books
-| Books                           | Cap    | @                    |
-|---------------------------------+--------+----------------------|
-| JavaScript The Definitive Guide | 3      | 3.9 Type Conversions |
-| Eloquent JS                     | Values |                      |
+| Books                           | Cap    | @           |
+|---------------------------------+--------+-------------|
+| JavaScript The Definitive Guide | 3      | 3.2 Numbers |
+| Eloquent JS                     | Values |             |
 
 ** SLOC
 | Project  | folder | file     | @ |
@@ -35,7 +35,7 @@
 | glide    | src    | build.js |   |
 | inquirer |        |          |   |
 
-* Features
+* Base
 ** Types
 *** Numbers
 |   |           |
