@@ -24,16 +24,15 @@
   :END:
 * Progress
 ** Books
-| Books                           | Cap    | @           |
-|---------------------------------+--------+-------------|
-| JavaScript The Definitive Guide | 3      | 3.2 Numbers |
-| Eloquent JS                     | Values |             |
+| Books                           | Cap                         | @ |
+|---------------------------------+-----------------------------+---|
+| JavaScript The Definitive Guide | 4 Expressions and Operators |   |
 
 ** SLOC
-| Project  | folder | file     | @ |
-|----------+--------+----------+---|
-| glide    | src    | build.js |   |
-| inquirer |        |          |   |
+| Project   | folder                  | file         | @ |
+|-----------+-------------------------+--------------+---|
+| draggable | src/Draggable/DragEvent | DragEvent.js |   |
+| inquirer  |                         |              |   |
 
 * Base
 ** Types
@@ -252,13 +251,61 @@ o.y = 3; // add
 - globalThis
 
 ** Assignment
-*** Variables
+*** let
+- default value is undefined if not assigned
+
 #+begin_src js
 let meh = 'foo'
+let i, sum;
 #+end_src
-*** Cont
+*** Const
+- same as let
+- must initialized at declaration
+- attempt to change its value throws a TypeError
+- is a convention to declare constants with all capital letters
+
 #+begin_src js
-const foo = 'bar'
+const FOO = 'bar'
+const H0 = 74;
+const C = 299792.458;
+const AU = 1.496E8;
+#+end_src
+*** var
+- do not have block scope
+- outside of a function body, it declares a global variable.
+- legal to declare the same variable multiple times with var
+#+begin_src js
+var x;
+var data = [], count = data.length;
+for(var i = 0; i < count; i++) console.log(data[i]);
+#+end_src
+*** destructuring assignment
+- The number of variables on the left of a destructuring assignment does not have to match the number of array elements on the right.
+- Extra variables on the left are set to undefined , and extra values on the right are ignored.
+- The list of variables on the left can include extra commas to skip certain values on the right:
+- ... to collect all unused or remaining values into a single variable when destructuring an array, before the last variable name
+
+#+begin_src js
+let [x,y] = [1,2];
+[x,y] = [x+1,y+1];
+
+let [x,y] = [1]; // x == 1; y == undefined
+[x,y] = [1,2,3]; // x == 1; y == 2
+[,x,,y] = [1,2,3,4]; // x == 2; y == 4
+
+let [x, ...y] = [1,2,3,4]; // y == [2,3,4]
+let [a, [b, c]] = [1, [2,2.5], 3]; // a == 1; b == 2; c == 2.5
+
+let transparent = {r: 0.0, g: 0.0, b: 0.0, a: 1.0}; // A RGBA color
+let {r, g, b} = transparent; // r == 0.0; g == 0.0; b == 0.0
+
+let points = [{x: 1, y: 2}, {x: 3, y: 4}];// An array of two point objects
+let [{x: x1, y: y1}, {x: x2, y: y2}] = points; // destructured into 4 variables.
+(x1 === 1 && y1 === 2 && x2 === 3 && y2 === 4) // => true
+
+let points = { p1: [1,2], p2: [3,4] };// An object with 2 array props
+let { p1: [x1, y1], p2: [x2, y2] } = points;// destructured into 4 vars
+(x1 === 1 && y1 === 2 && x2 === 3 && y2 === 4) // => true
 #+end_src
 ** Functions
 - is a object
@@ -269,6 +316,10 @@ meh // [Function: meh]
 meh() // 'meh'
 #+end_src
 *** Template tag functions
+** Strict mode
+- attempt to use an undeclared variable gets a reference error
+** Non-stric
+- attempt to use an undeclared variable ends up creating a new global variable.
 
 * Concepts
     - Types: numbers, strings, boolean, null, undefined, symbols
