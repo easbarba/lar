@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+_devel() {
+    local command="npm install --global"
+    local packages=(js-beautify typescript typescript-language-server)
+
+    e-dolist "$command" "${packages[@]}"
+}
+
+_devel
