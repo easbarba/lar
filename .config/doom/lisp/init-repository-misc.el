@@ -57,14 +57,8 @@
      "https://sourcehut.org/blog/index.xml"
      "https://simaraconceicao.com/feed/"
      "https://nullprogram.com/feed/"
-     ;; ruby blogs
-     "https://rubyweekly.com/rss/"
-     "https://feeds.transistor.fm/remote-ruby"
-     "https://dev.to/feed/leandronsp"
-     "https://videosdeti.com.br/feed/"
-     "https://railsguides.net/atom.xml"
-     "https://gettalong.org/posts.rss"
-     "https://leandronsp.com/rss.xml"
+     ;; HTML/CSS
+     "https://rachelandrew.co.uk/archives/rss.php"
      ;; FLOSS channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
