@@ -1,4 +1,6 @@
 name,repository
+vue-next,https://github.com/vuejs/vue-next
+vue,https://github.com/vuejs/vue
 react,https://github.com/facebook/react
 Inquirer.js,https://github.com/SBoudrias/Inquirer.js
 hexo,https://github.com/hexojs/hexo
