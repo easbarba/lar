@@ -1,6 +1,0 @@
-#+TITLE: Nano
-
-* Oficial
-https://nano-editor.org
-
-* Tips

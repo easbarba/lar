@@ -1,7 +1,0 @@
-#+TITLE: Monitoring
-
-* Nagios
-* Grafana
-* Icinga
-* ELK
-* Prometheus
