@@ -1,4 +1,7 @@
 name,repository
+typescript,https://github.com/microsoft/TypeScript
+vite,https://github.com/vitejs/vite
+nuxt3,https://github.com/nuxt/framework
 vue-next,https://github.com/vuejs/vue-next
 vue,https://github.com/vuejs/vue
 react,https://github.com/facebook/react
