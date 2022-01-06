@@ -7,10 +7,6 @@
   
   I have a limited , yet still functional, dotfiler *e_dots*, aiming minimal reproducibility features.
 
-## Documents
-  I heavily rely on annotations, and [org-mode](https://www.orgmode.org/features.html) literate documents are just
-  perfect at that.
-
 ## .local/bin 
   Miscellaneous scripts to aid bootstrapping services, daily utilities Debian box, 
   usually written in bash, ruby and awk scripts.
