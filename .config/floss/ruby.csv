@@ -1,9 +1,0 @@
-name,repository
-sequel,https://github.com/jeremyevans/sequel
-kramdown,https://github.com/gettalong/kramdown
-faker,https://github.com/faker-ruby/faker
-solargraph,https://github.com/castwide/solargraph
-sinatra,https://github.com/sinatra/sinatra
-rails,https://github.com/rails/rails
-rake,https://github.com/ruby/rake
-ruby,https://github.com/ruby/ruby

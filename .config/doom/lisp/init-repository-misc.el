@@ -65,16 +65,7 @@
      "https://railsguides.net/atom.xml"
      "https://gettalong.org/posts.rss"
      "https://leandronsp.com/rss.xml"
-     ;; devops blogs
-     "https://www.linuxtips.io/blogs/novidades.atom"
-     ;; devops/langs channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Conf
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCSBsYBhO5FLvvSl_ChnwDdw" ;; Lucas Caton
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCUkM9uMpWatT7gVWShgtKFw" ;; DHH
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UConIMoZxnroqKqCc-utZA7A" ;; Carlos seong
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; Linuxtips br
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
+     ;; FLOSS channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
      ;; HTML/CSS channels
