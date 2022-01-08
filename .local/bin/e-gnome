@@ -62,7 +62,7 @@ _misc() {
 }
 
 _extensions() {
-    gsettings set org.gnome.shell.extensions.auto-move-windows application-list "['emacs.desktop:1', 'org.gnome.Evince.desktop:2', 'org.gnome.Terminal.desktop:3', 'firefox.desktop:4', 'mpv.desktop:5', 'vlc.desktop:5', 'transmission-gtk.desktop:5', 'rhythmbox-device.desktop:5', 'telegramdesktop.desktop:5']"
+    gsettings set org.gnome.shell.extensions.auto-move-windows application-list "['emacs.desktop:1', 'org.gnome.Evince.desktop:2', 'org.gnome.Terminal.desktop:3', 'firefox.desktop:4', 'mpv.desktop:2', 'vlc.desktop:5', 'transmission-gtk.desktop:5', 'rhythmbox-device.desktop:5', 'telegramdesktop.desktop:4', 'google-chrome.desktop:4', 'code.desktop:1', 'libreoffice-startcenter.desktop:2', 'libreoffice-writer.desktop:2', 'hyper.desktop:3']"
 }
 
 _apps() {
