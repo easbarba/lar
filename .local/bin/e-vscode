@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+echo 'Visual Studio Code - installing packages'
+
+INSTALLER='code'
+COMMAND='--install-extension'
+
+_javascript() {
+    local packages=(xabikos.JavaScriptSnippets dbaeumer.vscode-eslint WallabyJs.quokka-vscode mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_vuejs() {
+    local packages=(octref.vetur)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_ruby() {
+    local packages=(rebornix.ruby castwide.solargraph misogi.ruby-rubocop)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_web() {
+    local packages=(formulahendry.auto-rename-tag esbenp.prettier-vscode)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_css() {
+    local packages=(pranaygp.vscode-css-peek)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_tools() {
+    local packages=(esbenp.prettier-vscode
+        eamodio.gitlens donjayamanne.githistory kamikillerto.vscode-colorize msjsdiag.debugger-for-chrome ritwickdey.LiveServer)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_tools
+_javascript
+_vuejs
+_css
+_ruby
+_web
