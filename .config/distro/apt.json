@@ -1,0 +1,15 @@
+{
+  "exec": "/usr/bin/apt",
+  "super": {
+    "builddep": "build-dep",
+    "clean": "autoremove",
+    "depends": "depends",
+    "install": "install",
+    "download": "download"
+  },
+  "user": {
+    "fix": "install -f",
+    "help": "help",
+    "info": "show"
+  }
+}
