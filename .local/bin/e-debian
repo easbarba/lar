@@ -275,6 +275,12 @@ foreign() {
 		sudo apt install -y /tmp/vscode-x64.deb
 	}
 
+	_hyper() {
+		wget -c "https://releases.hyper.is/download/deb" -O '/tmp/hyper.deb'
+		sudo apt install -y /tmp/hyper.deb
+	}
+
+	_hyper
 	_flatpak
 	_vscode
 	_docker
