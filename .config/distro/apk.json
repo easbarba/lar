@@ -1,15 +1,15 @@
 {
-  "exec": "/usr/bin/apt",
+  "exec": "/sbin/apk",
   "super": {
     "update": "update",
     "upgrade": "upgrade",
-    "deps": "build-dep",
+    "deps": "",
     "clean": "autoremove",
     "depends": "depends",
-    "install": "install",
-    "remove": "remove",
+    "install": "add",
+    "remove": "del",
     "download": "download",
-    "fix": "install -f"
+    "fix": "fix"
   },
   "user": {
     "search": "search",
