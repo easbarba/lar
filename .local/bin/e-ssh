@@ -3,37 +3,39 @@
 # Debug Options
 set -euo pipefail
 
-EMAIL="$USER@protonmail.com"
-
-newdefault() {
-    # new port
-    /usr/bin/sudo /usr/bin/sed -i "s/Port 22|Port 33/g"
-
-    # Disable root
-    /usr/bin/sudo /usr/bin/sed -i "PermitRootLogin no"
-
-    # limit users acess
-    /usr/bin/sudo /usr/bin/sed -i "AllowUsers username"
-
-    # use protocol 2
-    /usr/bin/sudo /usr/bin/sed -i "Protocol 2"
-}
+EMAIL="$USER@outlook.com"
 
 newkey() {
     ssh-keygen -t ed25519 -C $EMAIL
 }
 
 startagent() {
+    # Start the ssh-agent in the background.
+
     eval "$(ssh-agent -s)"
 }
-# Start the ssh-agent in the background.
 
 addkey() {
     ssh-add "$HOME/.ssh/id_ed25519"
 }
 
 # * RUN
-# newdefault
+
 newkey
 startagent
 addkey
+
+# newdefault
+# newdefault() {
+#     # new port
+#     /usr/bin/sudo /usr/bin/sed -i "s/Port 22|Port 33/g"
+
+#     # Disable root
+#     /usr/bin/sudo /usr/bin/sed -i "PermitRootLogin no"
+
+#     # limit users acess
+#     /usr/bin/sudo /usr/bin/sed -i "AllowUsers username"
+
+#     # use protocol 2
+#     /usr/bin/sudo /usr/bin/sed -i "Protocol 2"
+# }
