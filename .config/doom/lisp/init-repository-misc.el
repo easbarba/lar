@@ -55,8 +55,10 @@
      "https://x-team.com/blog/rss/"
      "https://unixsheikh.com/feed.rss"
      "https://sourcehut.org/blog/index.xml"
-     "https://simaraconceicao.com/feed/"
      "https://nullprogram.com/feed/"
+     ;; progs blogs br
+     "https://woliveiras.com.br/feed.xml"
+     "https://simaraconceicao.com/feed/"
      ;; HTML/CSS
      "https://rachelandrew.co.uk/archives/rss.php"
      ;; FLOSS channels
