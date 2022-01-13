@@ -2,7 +2,7 @@
 
 _devel() {
     local command="python3 -m pip install"
-    local packages=(black pipenv pyflakes pytest isort nose)
+    local packages=(black pipenv pyflakes pytest isort nose poetry)
 
     e-dolist "$command" "${packages[@]}"
 }
@@ -14,5 +14,14 @@ _tools() {
     e-dolist "$command" "${packages[@]}"
 }
 
+_poetry() {
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
+    poetry self update
+
+    poetry completions zsh >~/.zfunc/_poetry
+}
+
+_poetry
 _devel
 _tools
