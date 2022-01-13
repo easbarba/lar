@@ -78,6 +78,9 @@ export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# ** POETRY
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 
