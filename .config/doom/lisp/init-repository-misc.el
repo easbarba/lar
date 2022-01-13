@@ -69,6 +69,8 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCPNrIITPNFFLmcU3VfoKuGQ" ;; Gomex
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCJnKVGmXRXrH49Tvrx5X0Sw" ;; Linuxtips br
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
+     ;; prog channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCqa6i-EYjkIqVhu1CpsBOPQ" ;;Filho da nuvem
      ;; HTML/CSS channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC6RctOO0D3eNbyZj6IFXoRA" ;; Minim
      ;; JavaScript channels
