@@ -9,7 +9,11 @@ INSTALLER='code'
 COMMAND='--install-extension'
 
 _javascript() {
-    local packages=(xabikos.JavaScriptSnippets dbaeumer.vscode-eslint WallabyJs.quokka-vscode mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster)
+
+    local packages=(xabikos.JavaScriptSnippets
+        dbaeumer.vscode-eslint WallabyJs.quokka-vscode
+        mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster
+        eg2.vscode-npm-script)
 
     e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
@@ -27,7 +31,15 @@ _ruby() {
 }
 
 _web() {
-    local packages=(formulahendry.auto-rename-tag esbenp.prettier-vscode)
+    local packages=(formulahendry.auto-rename-tag esbenp.prettier-vscode ysemeniuk.emmet-live)
+
+    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_misc() {
+
+    local packages=(jrebocho.vscode-random streetsidesoftware.code-spell-checker
+        usernamehw.errorlens wmaurer.change-case p42ai.refactor SimonSiefke.svg-preview)
 
     e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
@@ -39,8 +51,9 @@ _css() {
 }
 
 _tools() {
-    local packages=(esbenp.prettier-vscode
-        eamodio.gitlens donjayamanne.githistory kamikillerto.vscode-colorize msjsdiag.debugger-for-chrome ritwickdey.LiveServer)
+    local packages=(esbenp.prettier-vscode eamodio.gitlens
+        donjayamanne.githistory kamikillerto.vscode-colorize
+        msjsdiag.debugger-for-chrome ritwickdey.LiveServer)
 
     e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
@@ -51,3 +64,4 @@ _vuejs
 _css
 _ruby
 _web
+_misc
