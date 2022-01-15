@@ -23,4 +23,4 @@ FORMAT="--format $EXT"
 OUTPUT='%(title)s.f%(format_id)s.%(ext)s'
 
 # RUN
-"$GETTER" --format "$EXT" --output "$OUTPUT" "$(e-url)"
+"$GETTER" --format "$EXT" --output "$OUTPUT" "$(s-url)"
