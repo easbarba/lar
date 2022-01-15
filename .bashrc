@@ -47,18 +47,10 @@ alias ..='cd ..'
 alias ...='cd ../../../'
 alias mkdir='mkdir -pv'
 
-# grep
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-# colorful
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+# color me amazed!
+for app in ls dir vdir grep fgrep egrep; do
+    alias "${app}"="'${app}'  --color=auto"
+done
 
 # misc
 alias ll='ls -alF'
