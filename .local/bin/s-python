@@ -4,14 +4,14 @@ _devel() {
     local command="python3 -m pip install"
     local packages=(black pipenv pyflakes pytest isort nose poetry)
 
-    e-dolist "$command" "${packages[@]}"
+    s-dolist "$command" "${packages[@]}"
 }
 
 _tools() {
     local command="python3 -m pip install"
     local packages=(yt-dlp)
 
-    e-dolist "$command" "${packages[@]}"
+    s-dolist "$command" "${packages[@]}"
 }
 
 _poetry() {

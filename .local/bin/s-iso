@@ -4,7 +4,7 @@
 set -euo pipefail
 
 DEPS=(sudo dd)
-e-checkdeps "${DEPS[@]}"
+s-checkdeps "${DEPS[@]}"
 
 # Check if minimal arguments are given.
 [[ $# -ne 2 ]] && echo -e '\nUsage: </iso/location> </usb/location/>' && exit
@@ -16,5 +16,5 @@ TO="$2"  # TODO: check if TO exist
 echo "ISO: $ISO"
 echo "TO: $TO"
 
-e-echo "Burning"
+s-echo "Burning"
 sudo dd bs=4M if="$ISO" of="$TO" status=progress oflag=sync

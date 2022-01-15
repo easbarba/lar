@@ -5,7 +5,7 @@
 
 DEPS=("$@")
 
-e-echo "Dependencies location:"
+s-echo "Dependencies location:"
 
 for dep in "${DEPS[@]}"; do
 	dep_location="$(command -v $dep)"

@@ -5,11 +5,11 @@
 # TODO: Check uri!
 
 DEPS=(yt-dlp ffmpeg)
-e-checkdeps "${DEPS[@]}"
+s-checkdeps "${DEPS[@]}"
 
 FREE=(vorbis mp3 ogg)
 EXT="${FREE[0]}"
-URL="$(e-url)"
+URL="$(s-url)"
 FOLDER="$HOME/Music"
 
 cd "$FOLDER"

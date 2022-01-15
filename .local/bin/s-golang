@@ -4,9 +4,9 @@
 set -euo pipefail
 
 DEPS=(go)
-e-checkdeps "${DEPS[@]}"
+s-checkdeps "${DEPS[@]}"
 
-e-echo "Golang Global Toolings."
+s-echo "Golang Global Toolings."
 
 export GO111MODULE=on
 
@@ -15,21 +15,21 @@ _packages() {
 	local packages=("golang.org/x/tools/gopls@latest"
 		github.com/xxxserxxx/gotop/v4/cmd/gotop@latest)
 
-	e-dolist "$command" "${packages[@]}"
+	s-dolist "$command" "${packages[@]}"
 }
 
 _tools() {
 	local command='go get'
 	local packages=("github.com/fatih/gomodifytags@latest" "github.com/cweill/gotests/..." "github.com/x-motemen/gore/cmd/gore@latest" "github.com/mdempsky/gocode@latest" "golang.org/x/tools/cmd/guru") # "sigs.k8s.io/kind"
 
-	e-dolist "$command" "${packages[@]}"
+	s-dolist "$command" "${packages[@]}"
 }
 
 _devel() {
 	local command='go install'
 	local packages=("mvdan.cc/sh/v3/cmd/shfmt@latest")
 
-	e-dolist "$command" "${packages[@]}"
+	s-dolist "$command" "${packages[@]}"
 }
 
 # * RUN

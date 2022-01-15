@@ -8,8 +8,7 @@ shift 1
 
 ARGUMENTS=("$@")
 
-for arg in "${ARGUMENTS[@]}"
-do
-    e-echo "$arg"
+for arg in "${ARGUMENTS[@]}"; do
+    s-echo "$arg"
     $COMMAND "$arg" # do not quote $COMMAND
 done

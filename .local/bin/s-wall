@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # deps=(feh swaybg)
-# e-checkdeps "${deps[@]}"
+# s-checkdeps "${deps[@]}"
 
 FOLDER="$HOME/Pictures/wallpapers"
 

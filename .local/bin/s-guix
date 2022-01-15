@@ -7,12 +7,12 @@
 set -euo pipefail
 
 DEPS=(sudo guix wget bash)
-e-checkdeps "${DEPS[@]}"
+s-checkdeps "${DEPS[@]}"
 
 # * ENV VARS
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
-e-echo "GNU GUIX"
+s-echo "GNU GUIX"
 
 keys() {
 	[[ -x $(command -v guix) ]] && return
@@ -47,17 +47,17 @@ glocale() {
 
 system() {
 	local packages=(nss-certs font-dejavu neofetch) # icecat font-gnu-freefont-ttf
-	e-dolist "guix install" "${packages[@]}"
+	s-dolist "guix install" "${packages[@]}"
 }
 
 development() {
 	local packages=(fd)
-	e-dolist "guix install" "${packages[@]}"
+	s-dolist "guix install" "${packages[@]}"
 }
 
 languages() {
 	local packages=()
-	e-dolist "guix install" "${packages[@]}"
+	s-dolist "guix install" "${packages[@]}"
 }
 
 # * RUN

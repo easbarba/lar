@@ -6,7 +6,7 @@ set -euo pipefail
 # Description: Get video
 
 DEPS=(yt-dlp ffmpeg)
-e-checkdeps "${DEPS[@]}"
+s-checkdeps "${DEPS[@]}"
 
 FOLDER="$HOME/Videos"
 

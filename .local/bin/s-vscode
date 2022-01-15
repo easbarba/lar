@@ -15,25 +15,25 @@ _javascript() {
         mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster
         eg2.vscode-npm-script)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _vuejs() {
     local packages=(octref.vetur)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _ruby() {
     local packages=(rebornix.ruby castwide.solargraph misogi.ruby-rubocop)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _web() {
     local packages=(formulahendry.auto-rename-tag esbenp.prettier-vscode ysemeniuk.emmet-live)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _misc() {
@@ -41,13 +41,13 @@ _misc() {
     local packages=(jrebocho.vscode-random streetsidesoftware.code-spell-checker
         usernamehw.errorlens wmaurer.change-case p42ai.refactor SimonSiefke.svg-preview)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _css() {
     local packages=(pranaygp.vscode-css-peek)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _tools() {
@@ -55,7 +55,7 @@ _tools() {
         donjayamanne.githistory kamikillerto.vscode-colorize
         msjsdiag.debugger-for-chrome ritwickdey.LiveServer)
 
-    e-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _tools

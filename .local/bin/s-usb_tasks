@@ -6,7 +6,7 @@ set -euo pipefail
 # TODO
 # - check if usb stick is plugged on.
 
-e-echo "USB Tasks"
+s-echo "USB Tasks"
 
 ARCHIVED="$HOME/Downloads/archived"
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"

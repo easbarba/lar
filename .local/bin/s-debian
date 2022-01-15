@@ -4,14 +4,14 @@
 set -euo pipefail
 
 DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
-e-checkdeps "${DEPS[@]}"
+s-checkdeps "${DEPS[@]}"
 
 # * DEBIAN
 
-e-echo "Debian GNU/Linux -- The Universal Operating System"
+s-echo "Debian GNU/Linux -- The Universal Operating System"
 
 upgrade() {
-	e-echo "Upgrading System"
+	s-echo "Upgrading System"
 
 	sudo apt update
 	sudo apt upgrade -y
@@ -20,7 +20,7 @@ upgrade() {
 
 pre() {
 	multi() {
-		e-echo "Enable Multi-Arch"
+		s-echo "Enable Multi-Arch"
 
 		sudo dpkg --add-architecture i386
 	}
@@ -30,7 +30,7 @@ pre() {
 }
 
 packages() {
-	e-echo "Installing system packages"
+	s-echo "Installing system packages"
 
 	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
@@ -123,17 +123,17 @@ packages() {
 		"${books[@]}")
 
 	for i in "${enabled[@]}"; do
-		e-dolist "$command" "$i"
+		s-dolist "$command" "$i"
 	done
 
 	# builds dep
 	sudo apt -y build-dep emacs
 
-	e-echo "Done"
+	s-echo "Done"
 }
 
 post() {
-	e-echo "Post install"
+	s-echo "Post install"
 
 	sudo apt-file update # update Debian database
 	sudo fc-cache -fv    # cache all system fonts
@@ -146,20 +146,20 @@ post() {
 }
 
 clean() {
-	e-echo "Clean up"
+	s-echo "Clean up"
 
 	unused=(firefox-esr)
 
 	local command='sudo apt remove -y'
-	e-dolist "$command" "${unused[@]}"
+	s-dolist "$command" "${unused[@]}"
 
 	purging=(*nvidia*)
 	local command='sudo apt purge -y'
-	e-dolist "$command" "${purging[@]}"
+	s-dolist "$command" "${purging[@]}"
 }
 
 services() {
-	e-echo "Debian Services"
+	s-echo "Debian Services"
 
 	_lightdm() {
 		sudo systemctl enable lightdm
