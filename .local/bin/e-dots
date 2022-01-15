@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# coding: utf-8
 # frozen_string_literal: true
 
 require "pathname"
@@ -7,6 +8,7 @@ require "find"
 # TODO: Remove unused early symlinked dotfiles
 # TODO: Clone repo fixed commit
 # TODO: Read-only symlinks
+# TODO: Python
 
 # Mirror Lar files in $HOME.
 class Dots
