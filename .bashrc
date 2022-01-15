@@ -53,11 +53,8 @@ for app in ls dir vdir grep fgrep egrep; do
 done
 
 # misc
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias j="jump"
-alias c="clear"
+alias a-path='echo -e ${PATH//:/\\n}' # prettier PATH entries
+command -v mpv >/dev/null || alias a-play="mpv"
 
 # * SYSTEM SCRIPTS
 
