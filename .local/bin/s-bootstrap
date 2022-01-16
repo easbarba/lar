@@ -27,8 +27,7 @@ _system() {
 }
 
 _devel() {
-    [[ -x $(command -v /usr/bin/ssh) ]] && s-podman
-
+    # [[ -x $(command -v /usr/bin/ssh) ]] && s-podman
 }
 
 # * RUN
