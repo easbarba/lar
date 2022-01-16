@@ -57,8 +57,8 @@ packages() {
 
 	books=(pandoc texlive texlive-xetex)
 
-	user=(google-chrome gimp obs-studio xdg-utils ImageMagick aspell vlc aspell-pt_BR
-		telegram-desktop calibre gaupol)
+	user=(google-chrome gimp obs-studio xdg-utils ImageMagick aspell vlc
+		aspell-pt_BR telegram-desktop calibre gaupol clementine)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly)
 
