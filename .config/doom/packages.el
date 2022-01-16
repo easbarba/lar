@@ -12,9 +12,11 @@
 (package! zoom)
 (package! fish-mode)
 (package! undo-tree)
-;; (package! bufler)
+(package! olivetti)
 (package! nov)
+
 ;; (package! org-present)
+;; (package! bufler)
 
 ;; RECIPE
 
