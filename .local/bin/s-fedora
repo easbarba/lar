@@ -1,0 +1,189 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
+s-checkdeps "${DEPS[@]}"
+
+# * DEBIAN
+
+s-echo "Debian GNU/Linux -- The Universal Operating System"
+
+upgrade() {
+	s-echo "Upgrading System"
+
+	sudo dnf update
+	sudo dnf upgrade -y
+	sudo dnf autoremove -y
+}
+
+pre() {
+	multi() {
+		s-echo "Enable Multi-Arch"
+
+		sudo dpkg --add-architecture i386
+	}
+
+	# * RUN
+	multi
+}
+
+packages() {
+	s-echo "Installing system packages"
+
+	essentials=(git ssh curl unzip bash tmux zile lynx)
+
+	system=(zip p7zip recutils lshw at usbutils lsof atool perf
+		time entr tree xsel xclip bc htop strace ltrace cpio  lzop
+		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
+
+	network=(net-tools iproute telnet)
+
+	programming=(gawk git-email subversion mercurial direnv libpq editorconfig)
+
+	shell=(bash-completion ShellCheck zsh fish)
+
+	editors=(vim neovim micro)
+
+	gnu=(gcc make info wget parallel)
+
+	languages=(python3-pip ruby-devel golang guile30)
+
+	emacs=(emacs)
+
+	infra=(podman vagrant qemu)
+
+	laptop=( acpi lm_sensors)
+
+	wmapps=(ffmpeg mpv elinks)
+
+	books=(pandoc texlive texlive-xetex)
+
+	user=( gimp obs-studio xdg-utils ImageMagick aspell vlc aspell-pt_BR
+		telegram-desktop calibre gaupol)
+
+	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly)
+
+	local command='sudo dnf install -y'
+
+	enabled=(
+		"${essentials[@]}"
+		"${system[@]}"
+		"${gnu[@]}"
+		"${network[@]}"
+		"${shell[@]}"
+		"${fedora[@]}"
+		"${languages[@]}"
+		"${programming[@]}"
+		"${editors[@]}"
+		"${emacs[@]}"
+		"${infra[@]}"
+		"${laptop[@]}"
+		"${wmapps[@]}"
+		"${user[@]}"
+		"${media[@]}")
+
+	for i in "${enabled[@]}"; do
+		s-dolist "$command" "$i"
+	done
+
+	s-echo "Done"
+}
+
+post() {
+	s-echo "Post install"
+
+	sudo apt-file update # update Debian database
+	sudo fc-cache -fv    # cache all system fonts
+
+	awesome() {
+		local awe=$HOME/.config/awesome
+		mkdir -pv $awe
+		cp -pvr /usr/share/awesome/themes/ $awe
+	}
+}
+
+clean() {
+	s-echo "Clean up"
+
+	unused=(firefox-esr)
+
+	local command='sudo apt remove -y'
+	s-dolist "$command" "${unused[@]}"
+
+	purging=(*nvidia*)
+	local command='sudo apt purge -y'
+	s-dolist "$command" "${purging[@]}"
+}
+
+services() {
+	s-echo "System Services"
+
+	_kdeconnect() {
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		sudo systemctl restart firewalld.service
+	}
+
+	_libvirt() {
+		sudo usermod -aG libvirt "$USER"
+		sudo usermod -aG kvm "$USER"
+	}
+
+	# _libvirt
+	# _alternatives
+}
+
+foreign() {
+	echo "Non-Debian packages"
+
+	_docker() {
+		sudo dnf -y install dnf-plugins-core
+		sudo dnf install docker-ce docker-ce-cli containerd.io
+
+		sudo systemctl start docker
+		sudo systemctl enable docker.service
+
+		sudo groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
+	}
+
+	_chrome() {
+		sudo dnf install google-chrome
+	}
+
+	_virtualbox() {
+		sudo dnf install VirtualBox
+	}
+
+	_vagrant() {
+		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+		sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
+
+		sudo apt install -y software-properties-common
+		sudo apt update
+		sudo apt install -y vagrant
+	}
+
+	_vscode() {
+		sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+		sudo dnf check-update
+		sudo dnf install code
+	}
+
+	_vscode
+	_docker
+	_chrome
+}
+
+# * RUN
+
+upgrade
+pre
+packages
+post
+# clean
+services
+foreign
