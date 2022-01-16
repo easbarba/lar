@@ -3,12 +3,10 @@
 # Debug Options
 set -euo pipefail
 
-DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
+DEPS=(sudo dnf wget systemctl fc-cache)
 s-checkdeps "${DEPS[@]}"
 
-# * DEBIAN
-
-s-echo "Debian GNU/Linux -- The Universal Operating System"
+s-echo "Fedora"
 
 upgrade() {
 	s-echo "Upgrading System"
@@ -22,7 +20,6 @@ pre() {
 	multi() {
 		s-echo "Enable Multi-Arch"
 
-		sudo dpkg --add-architecture i386
 	}
 
 	# * RUN
@@ -32,11 +29,11 @@ pre() {
 packages() {
 	s-echo "Installing system packages"
 
-	essentials=(git ssh curl unzip bash tmux zile lynx)
+	essentials=(git openssh curl unzip bash tmux zile lynx)
 
 	system=(zip p7zip recutils lshw at usbutils lsof atool perf
-		time entr tree xsel xclip bc htop strace ltrace cpio  lzop
-		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
+		time entr tree xsel xclip bc htop strace ltrace cpio lzop
+		libnotify jq rsync pv texinfo autoconf automake socat ripgrep)
 
 	network=(net-tools iproute telnet)
 
@@ -52,15 +49,15 @@ packages() {
 
 	emacs=(emacs)
 
-	infra=(podman vagrant qemu)
+	infra=(podman vagrant qemu VirtualBox)
 
-	laptop=( acpi lm_sensors)
+	laptop=(acpi lm_sensors)
 
 	wmapps=(ffmpeg mpv elinks)
 
 	books=(pandoc texlive texlive-xetex)
 
-	user=( gimp obs-studio xdg-utils ImageMagick aspell vlc aspell-pt_BR
+	user=(google-chrome gimp obs-studio xdg-utils ImageMagick aspell vlc aspell-pt_BR
 		telegram-desktop calibre gaupol)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly)
@@ -94,14 +91,8 @@ packages() {
 post() {
 	s-echo "Post install"
 
-	sudo apt-file update # update Debian database
-	sudo fc-cache -fv    # cache all system fonts
+	sudo fc-cache -fv # cache all system fonts
 
-	awesome() {
-		local awe=$HOME/.config/awesome
-		mkdir -pv $awe
-		cp -pvr /usr/share/awesome/themes/ $awe
-	}
 }
 
 clean() {
@@ -109,11 +100,11 @@ clean() {
 
 	unused=(firefox-esr)
 
-	local command='sudo apt remove -y'
+	local command='sudo dnf remove -y'
 	s-dolist "$command" "${unused[@]}"
 
 	purging=(*nvidia*)
-	local command='sudo apt purge -y'
+	local command='sudo dnf purge -y'
 	s-dolist "$command" "${purging[@]}"
 }
 
@@ -136,7 +127,7 @@ services() {
 }
 
 foreign() {
-	echo "Non-Debian packages"
+	echo "Foreign packages"
 
 	_docker() {
 		sudo dnf -y install dnf-plugins-core
@@ -146,23 +137,6 @@ foreign() {
 		sudo systemctl enable docker.service
 
 		sudo groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
-	}
-
-	_chrome() {
-		sudo dnf install google-chrome
-	}
-
-	_virtualbox() {
-		sudo dnf install VirtualBox
-	}
-
-	_vagrant() {
-		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-		sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
-
-		sudo apt install -y software-properties-common
-		sudo apt update
-		sudo apt install -y vagrant
 	}
 
 	_vscode() {
@@ -181,7 +155,7 @@ foreign() {
 # * RUN
 
 upgrade
-pre
+# pre
 packages
 post
 # clean
