@@ -4,10 +4,17 @@ _repo() {
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
-_foreign() {
+_user() {
     local command="flatpak install flathub "
-    local packages=(com.discordapp.Discord com.microsoft.Teams
-        com.slack.Slack us.zoom.Zoom com.skype.Client com.wps.Office)
+    local packages=(com.wps.Office com.github.babluboy.bookworm)
+
+    s-dolist "$command" "${packages[@]}"
+}
+
+_devel() {
+    local command="flatpak install flathub "
+    local packages=(com.discordapp.Discord com.microsoft.Teams com.slack.Slack
+        us.zoom.Zoom com.skype.Client)
 
     s-dolist "$command" "${packages[@]}"
 }
@@ -15,4 +22,5 @@ _foreign() {
 # * RUN
 
 _repo
-_foreign
+_user
+_devel
