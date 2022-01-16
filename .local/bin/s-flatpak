@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+_repo() {
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+}
 
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub com.microsoft.Teams
-flatpak install flathub com.slack.Slack
-flatpak install flathub us.zoom.Zoom
-flatpak install flathub com.skype.Client
-flatpak install flathub com.wps.Office
+_foreign() {
+    local command="flatpak install flathub "
+    local packages=(com.discordapp.Discord com.microsoft.Teams
+        com.slack.Slack us.zoom.Zoom com.skype.Client com.wps.Office)
+
+    s-dolist "$command" "${packages[@]}"
+}
+
+# * RUN
+
+_repo
+_foreign
