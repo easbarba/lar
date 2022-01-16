@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+deps=(npm)
+s-checkdeps "${deps[@]}"
+
+_base() {
+	s-echo "Base - Installing fundamental packages"
+
+	local command="npm install --global"
+	local packs=(npm)
+
+	s-dolist "$command" "${packs[@]}"
+}
+
+_tools() {
+	s-echo "Javascript Toolings packages"
+
+	local command="npm install --global"
+	local packages=(js-beautify)
+
+	s-dolist "$command" "${packages[@]}"
+}
+
+_typescript() {
+	s-echo "TypeScript packages"
+
+	local command="npm install --global"
+	local packages=(typescript typescript-language-server)
+
+	s-dolist "$command" "${packages[@]}"
+}
+
+_servers() {
+	s-echo "LSP Servers packages"
+
+	local command="npm install --global"
+	local packs=(bash-language-server yaml-language-server
+		vscode-json-languageserver typescript-language-server
+		vscode-html-languageserver-bin vscode-css-languageserver-bin)
+
+	s-dolist "$command" "${packs[@]}"
+}
+
+_langs() {
+	s-echo "Programming Languages toolings"
+
+	local command="npm install --global"
+	local packs=(lua-fmt)
+
+	s-dolist "$command" "${packs[@]}"
+}
+
+# * RUN
+
+_base
+_tools
+_servers
+_typescript
+_langs
