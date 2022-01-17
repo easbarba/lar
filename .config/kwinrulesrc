@@ -21,23 +21,10 @@ types=1
 wmclass=emacs
 wmclassmatch=1
 
-[1]
-Description=Window settings for firefox
-clientmachine=localhost
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
-fullscreen=true
-title=(1) barba (@easbarba) / Twitter — Mozilla Firefox
-types=1
-wmclass=firefox
-wmclassmatch=1
-
 [10]
 Description=Window settings for firefox
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
 desktopsrule=2
-title=Online Courses - Learn Anything, On Your Schedule | Udemy — Mozilla Firefox
-titlematch=1
 types=1
 wmclass=firefox
 wmclassmatch=1
@@ -50,42 +37,6 @@ title=Recent Documents
 titlematch=1
 types=1
 wmclass=evince
-wmclassmatch=1
-
-[2]
-Description=Window settings for firefox
-clientmachine=localhost
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
-fullscreen=true
-title=Watch Trick 2 Episode 7 Online With English sub | Dramacool — Mozilla Firefox
-titlematch=1
-types=1
-wmclass=firefox
-wmclassmatch=1
-
-[3]
-Description=Window settings for firefox
-clientmachine=localhost
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
-fullscreen=true
-title=GDM - ArchWiki — Mozilla Firefox
-titlematch=1
-types=1
-wmclass=firefox
-wmclassmatch=1
-
-[4]
-Description=Window settings for firefox
-clientmachine=localhost
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
-fullscreen=true
-title=Watch Trick 2 Episode 6 Online With English sub | Dramacool — Mozilla Firefox
-titlematch=1
-types=1
-wmclass=firefox
 wmclassmatch=1
 
 [5]
@@ -113,7 +64,7 @@ wmclassmatch=1
 
 [6]
 Description=Window settings for org.clementine-player.clementine
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
 desktopsrule=2
 fullscreen=true
 title=Krisiun - Shadows of Betrayal
@@ -136,7 +87,7 @@ wmclassmatch=1
 
 [7]
 Description=Window settings for systemsettings
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
 desktopsrule=2
 fullscreen=true
 title=Autostart — System Settings
@@ -198,8 +149,8 @@ wmclass=firefox
 wmclassmatch=1
 
 [General]
-count=11
-rules=1,2,3,4,5,6,7,8,9,10,11
+count=7
+rules=5,6,7,8,9,10,11
 
 [ba87450b-ab64-49f1-95b9-1b4890fbe4a5]
 Description=Window settings for org.kde.okular
