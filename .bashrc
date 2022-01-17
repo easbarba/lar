@@ -60,22 +60,10 @@ command -v mpv >/dev/null || alias a-play="mpv"
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # make less more friendly for non-text input files, see lesspipe(1)
 
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then # set variable identifying the chroot you work in
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-if ! shopt -oq posix; then # BASH COMPLETION
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
-fi
-
 # * CLI SOFTWARE
 
 e_prompt() { eval "$(starship init bash)"; }
-
+e_direnv() { eval "$(direnv hook bash)"; }
 e_multiplexers() {
     if [[ "$DISPLAY" ]]; then
         if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
@@ -83,8 +71,6 @@ e_multiplexers() {
         fi
     fi
 }
-
-e_direnv() { eval "$(direnv hook bash)"; }
 
 # * RUN
 e_prompt
