@@ -8,5 +8,6 @@ Inquirer.js,https://github.com/SBoudrias/Inquirer.js
 babel,https://github.com/babel/babel
 express,https://github.com/expressjs/express
 axios,https://github.com/axios/axios
+deno,https://github.com/denoland/deno
 npm-cli,https://github.com/npm/cli
 node,https://github.com/nodejs/node
