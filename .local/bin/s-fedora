@@ -31,9 +31,9 @@ packages() {
 
 	essentials=(git openssh curl unzip bash tmux zile lynx)
 
-	system=(zip p7zip recutils lshw at usbutils lsof atool perf
-		time entr tree xsel xclip bc htop strace ltrace cpio lzop
-		libnotify jq rsync pv texinfo autoconf automake socat ripgrep)
+	system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
+		xsel xclip bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo
+		autoconf automake socat ripgrep starship)
 
 	network=(net-tools iproute telnet)
 
@@ -55,12 +55,13 @@ packages() {
 
 	wmapps=(ffmpeg mpv elinks)
 
-	books=(pandoc texlive texlive-xetex)
+	books=(pandoc) #  texlive texlive-xetex
 
 	user=(google-chrome gimp obs-studio xdg-utils ImageMagick aspell vlc
 		aspell-pt_BR telegram-desktop calibre gaupol clementine)
 
-	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly)
+	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
+		gstreamer1-plugins-good gstreamer1-plugins-ugly)
 
 	local command='sudo dnf install -y'
 
@@ -78,6 +79,7 @@ packages() {
 		"${infra[@]}"
 		"${laptop[@]}"
 		"${wmapps[@]}"
+		"${books[@]}"
 		"${user[@]}"
 		"${media[@]}")
 
