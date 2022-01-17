@@ -1,117 +1,255 @@
 [$Version]
-update_info=kwinrules.upd:replace-placement-string-to-enum
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[03ef8dae-9036-481d-aef6-b478f7fa43c8]
+Description=Window settings for firefox
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+title=(1) barba (@easbarba) / Twitter — Mozilla Firefox
+types=1
+wmclass=firefox
+wmclassmatch=1
+
+[0ee807f6-4fdb-400d-ae9e-3ef5f30425e9]
+Description=Window settings for emacs
+clientmachine=localhost
+fullscreen=true
+fullscreenrule=3
+title=*doom* – Doom Emacs
+titlematch=1
+types=1
+wmclass=emacs
+wmclassmatch=1
 
 [1]
-Description=Application settings for ktorrent
-desktop=5
-desktoprule=2
-wmclass=ktorrent
+Description=Window settings for firefox
+clientmachine=localhost
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+fullscreen=true
+title=(1) barba (@easbarba) / Twitter — Mozilla Firefox
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [10]
-Description=konsole
-desktop=3
-desktoprule=2
-fullscreen=true
-fullscreenrule=2
-wmclass=konsole
+Description=Window settings for firefox
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+title=Online Courses - Learn Anything, On Your Schedule | Udemy — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [11]
-Description=telegram
-desktop=5
-desktoprule=2
-wmclass=telegramdesktop
-wmclassmatch=1
-
-[12]
-Description=Steam
-desktop=5
-desktoprule=2
-wmclass="steam"
-wmclassmatch=1
-
-[13]
-Description=csgo
-desktop=5
-desktoprule=2
-wmclass="csgo_linux64"
-wmclassmatch=1
-
-[14]
-Description=Chrome
-desktop=4
-desktoprule=2
-wmclass="google-chrome"
-wmclasscomplete=true
+Description=Window settings for evince
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=2
+title=Recent Documents
+titlematch=1
+types=1
+wmclass=evince
 wmclassmatch=1
 
 [2]
-Description=Application settings for transmission-gtk
-desktop=5
-desktoprule=2
-wmclass=transmission-gtk
+Description=Window settings for firefox
+clientmachine=localhost
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+fullscreen=true
+title=Watch Trick 2 Episode 7 Online With English sub | Dramacool — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [3]
-Description=Application settings for emacs-28.0.50
-desktop=1
-desktoprule=2
-wmclass=emacs-28-0-50 emacs-28.0.50
-wmclasscomplete=true
+Description=Window settings for firefox
+clientmachine=localhost
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+fullscreen=true
+title=GDM - ArchWiki — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [4]
-Description=Application settings for google-chrome
-desktop=4
-desktoprule=2
-wmclass=google-chrome
+Description=Window settings for firefox
+clientmachine=localhost
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+fullscreen=true
+title=Watch Trick 2 Episode 6 Online With English sub | Dramacool — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [5]
-Description=clementine
-desktop=5
-desktoprule=2
-wmclass=clementine
+Description=Window settings for emacs
+clientmachine=localhost
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktopsrule=2
+fullscreen=true
+fullscreenrule=2
+title=*doom* – Doom Emacs
+titlematch=1
+types=1
+wmclass=emacs
+wmclassmatch=1
+
+[565ee781-f455-4190-8b85-25881d289357]
+Description=Window settings for firefox
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22,072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=2
+title=GDM - ArchWiki — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [6]
-Description=firefox
-desktop=4
-desktoprule=2
-fullscreenrule=1
-noborder=true
-noborderrule=2
-wmclass=navigator firefox
+Description=Window settings for org.clementine-player.clementine
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=2
+fullscreen=true
+title=Krisiun - Shadows of Betrayal
+types=1
+wmclass=clementine org.clementine-player.clementine
+wmclasscomplete=true
+wmclassmatch=1
+
+[65a6c2c6-10bf-42fa-a193-3008af2c4f6d]
+Description=Window settings for org.kde.konsole
+desktops=b11bd002-caed-4d26-861a-08a9efc95ae0
+desktopsrule=2
+fullscreen=true
+fullscreenrule=2
+title=~ : bash — Konsole
+types=1
+wmclass=konsole org.kde.konsole
 wmclasscomplete=true
 wmclassmatch=1
 
 [7]
-Description=mpv
-desktop=5
-desktoprule=2
+Description=Window settings for systemsettings
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=2
 fullscreen=true
-fullscreenrule=2
-wmclass=gl mpv
+title=Autostart — System Settings
+types=1
+wmclass=systemsettings5 systemsettings
 wmclasscomplete=true
 wmclassmatch=1
 
+[79b8f376-9e63-457d-bf7e-2e36dd9b2153]
+Description=Window settings for firefox
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+title=Online Courses - Learn Anything, On Your Schedule | Udemy — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
+wmclassmatch=1
+
 [8]
-Description=okular
-desktop=2
-desktoprule=2
+Description=Window settings for org.kde.konsole
+desktops=b11bd002-caed-4d26-861a-08a9efc95ae0
+desktopsrule=2
+fullscreen=true
 fullscreenrule=2
-wmclass=okular
+title=~ : bash — Konsole
+types=1
+wmclass=konsole org.kde.konsole
+wmclasscomplete=true
 wmclassmatch=1
 
 [9]
-Description=emacs
-desktop=1
-desktoprule=2
-fullscreen=true
-fullscreenrule=2
-wmclass=emacs
+Description=Window settings for org.kde.okular
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=2
+title=Okular
+types=1
+wmclass=okular org.kde.okular
+wmclasscomplete=true
+wmclassmatch=1
+
+[9262c8b2-6287-41e5-bf54-1a6aec7b4dbc]
+Description=Window settings for firefox
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+title=Watch Trick 2 Episode 6 Online With English sub | Dramacool — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
+wmclassmatch=1
+
+[99d434c6-353a-492f-8aea-5b3956073e97]
+Description=Window settings for firefox
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+title=Watch Trick 2 Episode 7 Online With English sub | Dramacool — Mozilla Firefox
+titlematch=1
+types=1
+wmclass=firefox
 wmclassmatch=1
 
 [General]
-count=14
+count=11
+rules=1,2,3,4,5,6,7,8,9,10,11
+
+[ba87450b-ab64-49f1-95b9-1b4890fbe4a5]
+Description=Window settings for org.kde.okular
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=2
+title=Okular
+types=1
+wmclass=okular org.kde.okular
+wmclasscomplete=true
+wmclassmatch=1
+
+[d4fa75f9-c3b0-42c3-a4ef-59cfaaaf0bba]
+Description=Window settings for systemsettings
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktopsrule=2
+title=Autostart — System Settings
+types=1
+wmclass=systemsettings5 systemsettings
+wmclasscomplete=true
+wmclassmatch=1
+
+[db2bc031-98bc-4560-b11a-c6b3b2f39d1a]
+Description=Window settings for evince
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=2
+title=Recent Documents
+titlematch=1
+types=1
+wmclass=evince
+wmclassmatch=1
+
+[e0aee924-652b-40a6-9fc8-d649a2a281ed]
+Description=Window settings for org.clementine-player.clementine
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da,072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=2
+title=Krisiun - Shadows of Betrayal
+types=1
+wmclass=clementine org.clementine-player.clementine
+wmclasscomplete=true
+wmclassmatch=1
+
+[fc2240a3-1057-4e86-ab2a-0b710c6a45e0]
+Description=Window settings for emacs
+clientmachine=localhost
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da,c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=2
+fullscreen=true
+fullscreenrule=5
+title=*doom* – Doom Emacs
+titlematch=1
+types=1
+wmclass=emacs
+wmclassmatch=1
