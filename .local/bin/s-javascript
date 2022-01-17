@@ -53,6 +53,15 @@ _langs() {
 	s-dolist "$command" "${packs[@]}"
 }
 
+_backend() {
+	s-echo "Backend Tools"
+
+	local command="npm install --global"
+	local packs=(express-generator)
+
+	s-dolist "$command" "${packs[@]}"
+}
+
 # * RUN
 
 _base
@@ -60,3 +69,4 @@ _tools
 _servers
 _typescript
 _langs
+_backend
