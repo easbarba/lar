@@ -22,16 +22,15 @@ wmclass=emacs
 wmclassmatch=1
 
 [1]
-Description=Window settings for emacs
+Description=Window settings for mpv
 clientmachine=localhost
-desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
 desktopsrule=2
 fullscreen=true
-fullscreenrule=2
+fullscreenrule=3
 title=*doom* – Doom Emacs
-titlematch=1
 types=1
-wmclass=emacs
+wmclass=mpv
 wmclassmatch=1
 
 [10]
@@ -53,6 +52,19 @@ wmclass=evince
 wmclassmatch=1
 
 [2]
+Description=Window settings for emacs
+clientmachine=localhost
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktopsrule=2
+fullscreen=true
+fullscreenrule=2
+title=*doom* – Doom Emacs
+titlematch=1
+types=1
+wmclass=emacs
+wmclassmatch=1
+
+[3]
 Description=Window settings for org.clementine-player.clementine
 desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
 desktopsrule=2
@@ -62,18 +74,20 @@ wmclass=clementine org.clementine-player.clementine
 wmclasscomplete=true
 wmclassmatch=1
 
-[3]
+[4]
 Description=Window settings for systemsettings
 desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
 desktopsrule=2
+fullscreen=true
 title=Autostart — System Settings
 types=1
 wmclass=systemsettings5 systemsettings
 wmclasscomplete=true
 wmclassmatch=1
 
-[4]
+[5]
 Description=Window settings for org.kde.konsole
+clientmachine=localhost
 desktops=b11bd002-caed-4d26-861a-08a9efc95ae0
 desktopsrule=2
 fullscreen=true
@@ -81,18 +95,6 @@ fullscreenrule=2
 title=~ : bash — Konsole
 types=1
 wmclass=konsole org.kde.konsole
-wmclasscomplete=true
-wmclassmatch=1
-
-[5]
-Description=Window settings for org.kde.okular
-clientmachine=localhost
-desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
-desktopsrule=2
-fullscreen=true
-title=Okular
-types=1
-wmclass=okular org.kde.okular
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -107,13 +109,15 @@ wmclass=firefox
 wmclassmatch=1
 
 [6]
-Description=Window settings for firefox
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+Description=Window settings for org.kde.okular
+clientmachine=localhost
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
 desktopsrule=2
 fullscreen=true
-title=Krisiun - Shadows of Betrayal
+title=Okular
 types=1
-wmclass=firefox
+wmclass=okular org.kde.okular
+wmclasscomplete=true
 wmclassmatch=1
 
 [65a6c2c6-10bf-42fa-a193-3008af2c4f6d]
@@ -129,14 +133,13 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [7]
-Description=Window settings for evince
-desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+Description=Window settings for firefox
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
 desktopsrule=2
 fullscreen=true
-title=Recent Documents
-titlematch=1
+title=Krisiun - Shadows of Betrayal
 types=1
-wmclass=evince
+wmclass=firefox
 wmclassmatch=1
 
 [79b8f376-9e63-457d-bf7e-2e36dd9b2153]
@@ -150,15 +153,14 @@ wmclass=firefox
 wmclassmatch=1
 
 [8]
-Description=Window settings for org.kde.konsole
-desktops=b11bd002-caed-4d26-861a-08a9efc95ae0
+Description=Window settings for evince
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
 desktopsrule=2
 fullscreen=true
-fullscreenrule=2
-title=~ : bash — Konsole
+title=Recent Documents
+titlematch=1
 types=1
-wmclass=konsole org.kde.konsole
-wmclasscomplete=true
+wmclass=evince
 wmclassmatch=1
 
 [8f041f97-f1d3-4457-a220-b351b19db7c3]
@@ -201,7 +203,7 @@ wmclassmatch=1
 
 [General]
 count=8
-rules=8f041f97-f1d3-4457-a220-b351b19db7c3,1,2,3,4,5,6,7
+rules=1,2,3,4,5,6,7,8
 
 [ba87450b-ab64-49f1-95b9-1b4890fbe4a5]
 Description=Window settings for org.kde.okular
