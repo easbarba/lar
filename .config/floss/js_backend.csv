@@ -1,0 +1,9 @@
+name,repository
+aleph.js,https://github.com/alephjs/aleph.js
+axios,https://github.com/axios/axios
+pug,https://github.com/pugjs/pug
+handlebars.js,https://github.com/handlebars-lang/handlebars.js
+express-generator,https://github.com/expressjs/generator
+express,https://github.com/expressjs/express
+npm-cli,https://github.com/npm/cli
+node,https://github.com/nodejs/node

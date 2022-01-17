@@ -1,12 +1,7 @@
 name,repository
-mdn-content,https://github.com/mdn/content
 yoavniran-testing,https://gist.github.com/yoavniran/1e3b0162e1545055429e
-hyper-pane,https://github.com/chabou/hyper-pane
-hyper,https://github.com/vercel/hyper
 commander.js,https://github.com/tj/commander.js
 Inquirer.js,https://github.com/SBoudrias/Inquirer.js
 babel,https://github.com/babel/babel
-express,https://github.com/expressjs/express
-axios,https://github.com/axios/axios
 npm-cli,https://github.com/npm/cli
 node,https://github.com/nodejs/node
