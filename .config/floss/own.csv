@@ -1,4 +1,5 @@
 name,repository
-distro,https://github.com/easbarba/distro
-floss,https://github.com/easbarba/floss
+distro.js,https://git.sr.ht/~easbarba/distro.js
+distro,https://git.sr.ht/~easbarba/distro
+floss,https://git.sr.ht/~easbarba/floss
 lar,https://git.sr.ht/~easbarba/lar
