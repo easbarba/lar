@@ -13,7 +13,6 @@ _distro() {
 
     distro update
     distro upgrade
-    s-guix
 }
 
 _packagers() {
@@ -29,10 +28,6 @@ _user() {
     floss archive
 
     s-usb_tasks
-}
-
-s-nix() {
-    [[ $DISTRO == "NixOS" ]] && nix-channel --update
 }
 
 # * RUN
