@@ -1,9 +1,12 @@
 name,repository
+request,https://github.com/request/request
+koa-workshop,https://github.com/koajs/workshop
+kick-off-koa,https://github.com/koajs/kick-off-koa
+koa,https://github.com/koajs/koa
+ejs,https://github.com/mde/ejs
 aleph.js,https://github.com/alephjs/aleph.js
-axios,https://github.com/axios/axios
 pug,https://github.com/pugjs/pug
+hbs,https://github.com/pillarjs/hbs
 handlebars.js,https://github.com/handlebars-lang/handlebars.js
 express-generator,https://github.com/expressjs/generator
 express,https://github.com/expressjs/express
-npm-cli,https://github.com/npm/cli
-node,https://github.com/nodejs/node

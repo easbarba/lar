@@ -1,7 +1,0 @@
-name,repository
-flask,https://github.com/pallets/flask
-httpie,https://github.com/httpie/httpie
-requests,https://github.com/psf/requests
-black,https://github.com/psf/black
-mypy,https://github.com/python/mypy
-cpython,https://github.com/python/cpython
