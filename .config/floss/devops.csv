@@ -1,0 +1,4 @@
+name,repository
+github-gitignore,https://github.com/github/gitignore
+docker-webserver,https://github.com/extremeshok/docker-webserver
+awesome-compose,https://github.com/docker/awesome-compose

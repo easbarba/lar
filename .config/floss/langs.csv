@@ -1,0 +1,4 @@
+name,repository
+sustainable-rails-docker,https://github.com/davetron5000/sustainable-rails-docker
+docker-compose-rails,https://github.com/boltops-learn/docker-compose-rails
+nodejs-postgresql-azure,https://github.com/glaucia86/nodejs-postgresql-azure
