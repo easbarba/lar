@@ -53,7 +53,7 @@ packages() {
 
 	laptop=(acpi lm_sensors)
 
-	wmapps=(ffmpeg mpv elinks)
+	wmapps=(ffmpeg mpv elinks wl-clipboard)
 
 	books=(pandoc) #  texlive texlive-xetex
 
@@ -113,6 +113,12 @@ clean() {
 services() {
 	s-echo "System Services"
 
+	_podman() {
+		sudo systemctl enable podman.socket
+		sudo systemctl start podman.socket
+		sudo systemctl status podman.socket
+	}
+
 	_kdeconnect() {
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
@@ -124,8 +130,7 @@ services() {
 		sudo usermod -aG kvm "$USER"
 	}
 
-	# _libvirt
-	# _alternatives
+	_podman
 }
 
 foreign() {
@@ -141,6 +146,11 @@ foreign() {
 		sudo groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
 	}
 
+	_podman_docker_compose() {
+		# Docker Compose will use the correct socket.
+		export DOCKER_HOST=///run/user/$UID/podman/podman.sock
+	}
+
 	_vscode() {
 		sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -150,8 +160,6 @@ foreign() {
 	}
 
 	_vscode
-	_docker
-	_chrome
 }
 
 # * RUN
