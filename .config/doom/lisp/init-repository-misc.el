@@ -26,10 +26,10 @@
 ;; (after! magit
 ;;   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
 
-(use-package! outshine
-  :defer t
-  :hook (prog-mode . outshine-mode)
-  :bind ("C-c b c" . outshine-cycle))
+;; (use-package! outshine
+;;   :defer t
+;;   :hook (prog-mode . outshine-mode)
+;;   :bind ("C-c b c" . outshine-cycle))
 
 (use-package! guix
   :defer t
