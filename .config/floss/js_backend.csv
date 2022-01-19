@@ -1,4 +1,5 @@
 name,repository
+hapi,https://github.com/hapijs/hapi
 request,https://github.com/request/request
 koa-workshop,https://github.com/koajs/workshop
 kick-off-koa,https://github.com/koajs/kick-off-koa
