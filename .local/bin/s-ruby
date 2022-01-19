@@ -6,11 +6,21 @@ set -euo pipefail
 DEPS=(ruby gem)
 s-checkdeps "${DEPS[@]}"
 
-DEV=(bundler rake)
+_base() {
+    packages=(bundler rake)
 
-_install() { s-dolist "gem install" "${DEV[@]}"; }
-_update() { s-dolist "gem update" "${DEV[@]}"; }
+    s-dolist "gem install" "${packages[@]}"
+    s-dolist "gem update" "${packages[@]}"
+}
+
+_devel() {
+    packages=(reek rubocop)
+
+    s-dolist "gem install" "${packages[@]}"
+    s-dolist "gem update" "${packages[@]}"
+}
 
 # * RUN
-_install
-_update
+
+_base
+_devel
