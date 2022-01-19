@@ -2,7 +2,9 @@
 
 # Debug Options
 set -euo pipefail
+URL=''
 
-URL=$(xclip -selection clipboard -o)
+[[ -x $(command -v xclip) ]] && URL=$(xclip -selection clipboard -o)
+[[ -x $(command -v wl-paste) ]] && URL=$(wl-paste)
 
 printf "%s" $URL
