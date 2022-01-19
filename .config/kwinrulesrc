@@ -202,8 +202,8 @@ wmclass=firefox
 wmclassmatch=1
 
 [General]
-count=8
-rules=1,2,3,4,5,6,7,8
+count=9
+rules=efbbbe63-a487-4855-b0cb-9ab1c11bdbc0,1,2,3,4,5,6,7,8
 
 [ba87450b-ab64-49f1-95b9-1b4890fbe4a5]
 Description=Window settings for org.kde.okular
@@ -242,6 +242,16 @@ desktopsrule=2
 title=Krisiun - Shadows of Betrayal
 types=1
 wmclass=clementine org.clementine-player.clementine
+wmclasscomplete=true
+wmclassmatch=1
+
+[efbbbe63-a487-4855-b0cb-9ab1c11bdbc0]
+Description=Window settings for libreoffice-startcenter
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=2
+title=euber-alexandre-resume-br.odt - LibreOffice Writer
+types=1
+wmclass=soffice.bin libreoffice-startcenter
 wmclasscomplete=true
 wmclassmatch=1
 
