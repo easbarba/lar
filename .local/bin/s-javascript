@@ -19,7 +19,7 @@ _tools() {
 	s-echo "Javascript Toolings packages"
 
 	local command="npm install --global"
-	local packages=(js-beautify)
+	local packages=(js-beautify fx)
 
 	s-dolist "$command" "${packages[@]}"
 }
