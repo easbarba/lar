@@ -159,6 +159,15 @@ foreign() {
 		sudo dnf install code
 	}
 
+	_aws() {
+		sudo dnf install -y awscli
+	}
+
+	_terraform() {
+		sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+		sudo dnf install -y terraform
+	}
+
 	_vscode
 }
 
