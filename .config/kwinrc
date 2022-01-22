@@ -9,19 +9,23 @@ OpenGLIsUnsafe=false
 [Desktops]
 Id_1=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
 Id_2=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
-Id_3=b11bd002-caed-4d26-861a-08a9efc95ae0
-Id_4=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-Id_5=072d6179-4800-42b7-86d3-21938c5f9f4e
-Name_1=mx
+Id_3=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+Id_4=072d6179-4800-42b7-86d3-21938c5f9f4e
+Name_1=www
 Name_2=read
-Name_3=term
-Name_4=media
-Name_5=www
-Number=5
+Name_3=mx
+Name_4=term
+Number=4
 Rows=1
 
 [Effect-PresentWindows]
 BorderActivateAll=9
+
+[NightColor]
+Active=true
+LatitudeAuto=-15.7792
+LongitudeAuto=-47.9341
+NightTemperature=4200
 
 [TabBox]
 BorderActivate=9

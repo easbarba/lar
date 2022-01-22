@@ -1,8 +1,12 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
-switch-to-activity-688aa110-8ebc-49ef-a4a0-649d5367180e=none,none,Switch to activity "Default"
+switch-to-activity-=none,none,
+switch-to-activity-688aa110-8ebc-49ef-a4a0-649d5367180e=none,none,Switch to activity "Work"
+switch-to-activity-d936e584-796d-48ac-9a11-b0b49424dbe4=none,none,Switch to activity "Media"
 
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
+Switch keyboard layout to Portuguese (Brazil)=none,none,Switch keyboard layout to Portuguese (Brazil)
 Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
 
@@ -23,6 +27,7 @@ _k_friendly_name=Custom Shortcuts Service
 {35e19cf6-359c-483a-a401-a779ba54efe2}=none,none,New Action
 {5232a219-a3d0-4ec6-9dd9-762debe59695}=Ctrl+Alt+T,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
+{e4590b69-afba-4bbe-88f3-ca683a06fa1d}=Meta+Alt+P,none,Play it
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -205,7 +210,7 @@ _launch=Meta+E,Meta+E,Dolphin
 [org.kde.krunner.desktop]
 RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Run command on clipboard contents
 _k_friendly_name=KRunner
-_launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
+_launch=Search\tAlt+F2,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [org.kde.plasma.emojier.desktop]
 _k_friendly_name=Emoji Selector
