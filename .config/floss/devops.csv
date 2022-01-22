@@ -1,4 +1,7 @@
 name,repository
+terraform-up-and-running-code,https://github.com/brikis98/terraform-up-and-running-code
+ampernetacle,https://github.com/jpetazzo/ampernetacle
+extremeshok-docker-webserver,https://github.com/extremeshok/docker-webserver
 github-gitignore,https://github.com/github/gitignore
 docker-webserver,https://github.com/extremeshok/docker-webserver
 awesome-compose,https://github.com/docker/awesome-compose

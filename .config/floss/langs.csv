@@ -1,4 +1,6 @@
 name,repository
+tkav-docker-lamp-stack,https://github.com/tkav/docker-lamp-stack
+mattrayner-docker-lamp,https://github.com/mattrayner/docker-lamp
 sustainable-rails-docker,https://github.com/davetron5000/sustainable-rails-docker
 docker-compose-rails,https://github.com/boltops-learn/docker-compose-rails
 nodejs-postgresql-azure,https://github.com/glaucia86/nodejs-postgresql-azure
