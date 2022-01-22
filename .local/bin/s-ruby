@@ -14,7 +14,14 @@ _base() {
 }
 
 _devel() {
-    packages=(reek rubocop)
+    packages=(reek rufo rubocop)
+
+    s-dolist "gem install" "${packages[@]}"
+    s-dolist "gem update" "${packages[@]}"
+}
+
+_vagrant() {
+    packages=()
 
     s-dolist "gem install" "${packages[@]}"
     s-dolist "gem update" "${packages[@]}"
