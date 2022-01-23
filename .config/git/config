@@ -4,7 +4,7 @@
 	name = easbarba
 	email = easbarba@outlook.com
 [core]
-	editor = micro
+	editor = nano -w~
 	autocrlf = input
 	excludesfile = easbarba/.config/git/ignore
 [color]
