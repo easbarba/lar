@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-plasma()
-{
-    export SSH_ASKPASS=/usr/bin/ksshaskpass
-    ssh-add "$HOME/.ssh/id_ed25519"  < /dev/null
-}
-
-[ "$DESKTOP_SESSION" == "plasma" ] && plasma
