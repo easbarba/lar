@@ -50,7 +50,7 @@ packages() {
 
 	gnu=(gcc make vrms info wget parallel)
 
-	langs=(nodejs golang python3-pip ruby-dev libssl-dev lua5.4 lua-check) # luarocks
+	langs=(nodejs npm golang python3-pip ruby-dev libssl-dev lua5.4 lua-check) # luarocks
 
 	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
@@ -60,7 +60,7 @@ packages() {
 
 	debian=(build-essential)
 
-	cliapps=(lm-sensors)
+	cliapps=(lm-sensors wl-clipboard)
 
 	wmapps=(ffmpeg mpv elinks) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m dunst suckless-tools
 
@@ -215,8 +215,8 @@ foreign() {
 
 upgrade
 #pre
-packages
-post
+# packages
+# post
 #clean
 services
 foreign
