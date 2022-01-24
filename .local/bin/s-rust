@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(curl)
+s-checkdeps "${DEPS[@]}"
+
+_install() {
+    [[ -f ~/.cargo/env ]] && return
+
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+_tools() {
+    packages=(starship fd-find)
+
+    s-dolist 'cargo install --locked' "${packages[@]}"
+}
+
+# RUN
+
+_tools
+_install
