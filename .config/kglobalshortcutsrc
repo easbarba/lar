@@ -2,19 +2,31 @@
 _k_friendly_name=Activity Manager
 switch-to-activity-=none,none,
 switch-to-activity-688aa110-8ebc-49ef-a4a0-649d5367180e=none,none,Switch to activity "Work"
+switch-to-activity-d0b9e882-57b4-4507-b782-6659c5b10a4c=none,none,Switch to activity "Default"
 switch-to-activity-d936e584-796d-48ac-9a11-b0b49424dbe4=none,none,Switch to activity "Media"
+
+[Clementine]
+_k_friendly_name=Clementine
+next_track=,none,Next track
+play_pause=,none,Play/Pause
+prev_track=,none,Previous track
+stop=,none,Stop
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
 Switch keyboard layout to Portuguese (Brazil)=none,none,Switch keyboard layout to Portuguese (Brazil)
 Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
-_k_friendly_name=Keyboard Layout Switcher
+_k_friendly_name=KWin
+
+[kaccess]
+Toggle Screen Reader On and Off=,Meta+Alt+S,Toggle Screen Reader On and Off
+_k_friendly_name=Accessibility
 
 [kcm_touchpad]
-Disable Touchpad=Touchpad Off,Touchpad Off,
-Enable Touchpad=Touchpad On,Touchpad On,
-Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,
-_k_friendly_name=Touchpad
+Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
+Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
+Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
+_k_friendly_name=KWin
 
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
@@ -23,11 +35,8 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{07e88b2f-74dd-4192-9c45-07e12f7d587a}=Meta+Alt+V,none,system info
-{35e19cf6-359c-483a-a401-a779ba54efe2}=none,none,New Action
-{5232a219-a3d0-4ec6-9dd9-762debe59695}=Ctrl+Alt+T,none,Launch Konsole
+{7e3ee932-61c8-4f9f-8c79-9eb080858ece}=,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
-{e4590b69-afba-4bbe-88f3-ca683a06fa1d}=Meta+Alt+P,none,Play it
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -221,6 +230,7 @@ ActiveWindowScreenShot=Meta+Print,Meta+Print,Capture Active Window
 CurrentMonitorScreenShot=,none,Capture Current Monitor
 FullScreenScreenShot=Shift+Print,Shift+Print,Capture Entire Desktop
 RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
+WindowUnderCursorScreenShot=Meta+Ctrl+Print,Meta+Ctrl+Print,Capture Window Under Cursor
 _k_friendly_name=Spectacle
 _launch=Print,Print,Launch Spectacle
 
@@ -257,13 +267,13 @@ clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
-edit_clipboard=none,none,Edit Contents…
+edit_clipboard=none,none,Edit Contents...
 manage activities=Meta+Q,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,Meta+Tab,Walk through activities
 previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
-show-barcode=none,none,Show Barcode…
+show-barcode=none,none,Show Barcode...
 show-on-mouse-pos=Meta+V,Meta+V,Open Klipper at Mouse Position
 stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,none,Switch to Next Activity
@@ -278,3 +288,14 @@ kcm-lookandfeel=,,Global Theme
 kcm-users=,,Users
 powerdevilprofilesconfig=,,Energy Saving
 screenlocker=,,Screen Locking
+
+[wacomtablet]
+Map to fullscreen=Meta+Ctrl+F,Meta+Ctrl+F,Map to fullscreen
+Map to screen 1=Meta+Ctrl+1,Meta+Ctrl+1,Map to screen 1
+Map to screen 2=Meta+Ctrl+2,Meta+Ctrl+2,Map to screen 2
+Next Profile=Meta+Ctrl+N,Meta+Ctrl+N,Next profile
+Previous Profile=Meta+Ctrl+P,Meta+Ctrl+P,Previous Profile
+Toggle screen map selection=Meta+Ctrl+M,Meta+Ctrl+M,Toggle between all screens
+Toggle stylus mode=,Meta+Ctrl+S,Toggle the Stylus Tool Relative/Absolute
+Toggle touch tool=Meta+Ctrl+T,Meta+Ctrl+T,Enable/Disable the Touch Tool
+_k_friendly_name=Wacom Tablet

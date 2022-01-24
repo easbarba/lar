@@ -18,6 +18,11 @@ Name_4=term
 Number=4
 Rows=1
 
+[DrmOutputs][18c6a5c3-e20f-5d9d-91fa-947ee9769241][18c6a5c3-e20f-5d9d-91fa-947ee9769241]
+Mode=1920x1080_60008
+Scale=1
+Transform=normal
+
 [Effect-PresentWindows]
 BorderActivateAll=9
 
