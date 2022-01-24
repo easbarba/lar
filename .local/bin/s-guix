@@ -47,16 +47,19 @@ glocale() {
 
 system() {
 	local packages=(nss-certs font-dejavu neofetch) # icecat font-gnu-freefont-ttf
+
 	s-dolist "guix install" "${packages[@]}"
 }
 
 development() {
-	local packages=(fd)
+	local packages=()
+
 	s-dolist "guix install" "${packages[@]}"
 }
 
 languages() {
 	local packages=()
+
 	s-dolist "guix install" "${packages[@]}"
 }
 
@@ -69,4 +72,3 @@ upgrade
 
 glocale
 system
-development
