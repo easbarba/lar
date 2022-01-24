@@ -4,26 +4,30 @@
 set -euo pipefail
 
 EMAIL="$USER@outlook.com"
+KEY_LOCATION="$HOME/.ssh/id_ed25519"
 
-newkey() {
+_newkey() {
     ssh-keygen -t ed25519 -C $EMAIL
 }
 
-startagent() {
-    # Start the ssh-agent in the background.
-
+_startagent() {
     eval "$(ssh-agent -s)"
 }
 
-addkey() {
-    ssh-add "$HOME/.ssh/id_ed25519"
+_addkey() {
+    ssh-add "$KEY_LOCATION"
 }
 
 # * RUN
+_protect() {
+    chmod 600 "$KEY_LOCATION"
+    chmod 600 "$KEY_LOCATION".pub
+}
 
-newkey
-startagent
-addkey
+_newkey
+_startagent
+_protect
+_addkey
 
 # newdefault
 # newdefault() {
