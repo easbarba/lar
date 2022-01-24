@@ -6,8 +6,6 @@ set -euo pipefail
 DEPS=(sudo apt wget systemctl timedatectl fc-cache)
 s-checkdeps "${DEPS[@]}"
 
-s-echo "Debian GNU/Linux -- The Universal Operating System"
-
 upgrade() {
 	s-echo "Upgrading System"
 
@@ -38,9 +36,7 @@ packages() {
 
 	network=(net-tools iproute2 telnet)
 
-	iac=(ansible)
-
-	infra=(podman vagrant qemu qemu-utils qemu-efi qemu-kvm) # ebtables
+	infra=(podman ansible vagrant qemu qemu-utils qemu-efi qemu-kvm) # ebtables
 
 	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig sqlite3 tidy)
 
@@ -66,7 +62,7 @@ packages() {
 
 	books=(pandoc)
 
-	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
+	user=(gnome-tweaks firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
 		clementine aspell-pt-br telegram-desktop calibre gaupol kdeconnect)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
@@ -206,6 +202,19 @@ foreign() {
 
 	}
 
+	_aws() {
+		[[ -x $(command -v aws) ]] && return
+		
+		cd /tmp
+		curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+		unzip awscliv2.zip
+
+		sudo /tmp/aws/install
+
+		[[ -x $(command -v aws) ]] &&  rm -rf /tmp/aws /tmp/awscliv2.zip
+	}
+
+	_aws
 	_hashicorp
 	_flatpak
 	_vscode
@@ -215,7 +224,7 @@ foreign() {
 
 upgrade
 #pre
-# packages
+packages
 # post
 #clean
 services
