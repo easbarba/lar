@@ -5,14 +5,14 @@ _repo() {
 }
 
 _user() {
-    local command="flatpak install flathub "
+    local command="flatpak install flathub -y"
     local packages=(com.wps.Office com.github.babluboy.bookworm)
 
     s-dolist "$command" "${packages[@]}"
 }
 
 _devel() {
-    local command="flatpak install flathub "
+    local command="flatpak install flathub -y"
     local packages=(com.discordapp.Discord com.microsoft.Teams com.slack.Slack
         us.zoom.Zoom com.skype.Client)
 
