@@ -35,6 +35,7 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
+{4f02e3cf-dabb-4d82-ad51-d4c897708464}=Meta+Alt+P,none,Play it
 {7e3ee932-61c8-4f9f-8c79-9eb080858ece}=,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
