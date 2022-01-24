@@ -1,0 +1,222 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(sudo apt wget systemctl timedatectl fc-cache)
+s-checkdeps "${DEPS[@]}"
+
+s-echo "Debian GNU/Linux -- The Universal Operating System"
+
+upgrade() {
+	s-echo "Upgrading System"
+
+	sudo apt update
+	sudo apt upgrade -y
+	sudo apt autoremove -y
+}
+
+pre() {
+	multi() {
+		s-echo "Enable Multi-Arch"
+
+		sudo dpkg --add-architecture i386
+	}
+
+	# * RUN
+	multi
+}
+
+packages() {
+	s-echo "Installing system packages"
+
+	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
+
+	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool
+		time entr tree bc htop strace ltrace cpio lhasa lzop unrar
+		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep) #		linux-perf
+
+	network=(net-tools iproute2 telnet)
+
+	iac=(ansible)
+
+	infra=(podman vagrant qemu qemu-utils qemu-efi qemu-kvm) # ebtables
+
+	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig sqlite3 tidy)
+
+	shell=(bash-completion shellcheck zsh fish)
+
+	editors=(neovim)
+
+	gnu=(gcc make vrms info wget parallel)
+
+	langs=(nodejs golang python3-pip ruby-dev libssl-dev lua5.4 lua-check) # luarocks
+
+	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
+
+	#	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
+
+	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
+
+	debian=(build-essential)
+
+	cliapps=(lm-sensors)
+
+	wmapps=(ffmpeg mpv elinks) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m dunst suckless-tools
+
+	books=(pandoc)
+
+	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
+		clementine aspell-pt-br telegram-desktop calibre gaupol kdeconnect)
+
+	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
+		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+
+	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
+		libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
+		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
+		radeontop)
+
+	local command='sudo apt install -y'
+
+	enabled=(
+		"${essentials[@]}"
+		"${system[@]}"
+		"${gnu[@]}"
+		"${shell[@]}"
+		"${debian[@]}"
+		"${langs[@]}"
+		"${programming[@]}"
+		"${editors[@]}"
+		"${emacs[@]}"
+		"${infra[@]}"
+		"${fonts[@]}"
+		"${security[@]}"
+		"${cliapps[@]}"
+		"${wmapps[@]}"
+		"${user[@]}"
+		"${media[@]}"
+		"${books[@]}")
+
+	for i in "${enabled[@]}"; do
+		s-dolist "$command" "$i"
+	done
+
+	# builds dep
+	sudo apt -y build-dep emacs
+
+	s-echo "Done"
+}
+
+post() {
+	s-echo "Post install"
+
+	sudo apt-file update # update Debian database
+	sudo fc-cache -fv    # cache all system fonts
+}
+
+clean() {
+	s-echo "Clean up"
+
+	unused=(firefox-esr)
+
+	local command='sudo apt remove -y'
+	s-dolist "$command" "${unused[@]}"
+
+	purging=(*nvidia*)
+	local command='sudo apt purge -y'
+	s-dolist "$command" "${purging[@]}"
+}
+
+services() {
+	s-echo "Debian Services"
+
+	_kdeconnect() {
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+		sudo systemctl restart firewalld.service
+	}
+
+	_infra() {
+		sudo usermod -aG libvirt "$USER"
+		sudo usermod -aG kvm "$USER"
+	}
+}
+
+foreign() {
+	echo "Non-Debian packages"
+
+	_flatpak() {
+		sudo apt install -y flatpak gnome-software-plugin-flatpak
+		sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+	}
+
+	_docker() {
+		sudo apt-get install ca-certificates curl gnupg lsb-release
+
+		# Add Docker’s official GPG key:
+		curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+		# set up the stable repository
+		echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
+		# Install Docker Engine
+		sudo apt-get update -y
+		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+		sudo groupadd docker
+		sudo usermod -aG docker $USER
+	}
+
+	_chrome() {
+		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
+		sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
+	}
+
+	_virtualbox() {
+		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
+		sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
+	}
+
+	_vagrant() {
+		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+		sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
+
+		sudo apt install -y software-properties-common
+		sudo apt update
+		sudo apt install -y vagrant
+	}
+
+	_vscode() {
+		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
+		sudo apt install -y /tmp/vscode-x64.deb
+	}
+
+	_hyper() {
+		wget -c "https://releases.hyper.is/download/deb" -O '/tmp/hyper.deb'
+		sudo apt install -y /tmp/hyper.deb
+	}
+
+	_hashicorp() {
+		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+
+		sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+		sudo apt update
+		sudo apt install -y terraform packer
+
+	}
+
+	_hashicorp
+	_flatpak
+	_vscode
+}
+
+# * RUN
+
+upgrade
+#pre
+packages
+post
+#clean
+services
+foreign
