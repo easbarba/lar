@@ -56,7 +56,7 @@ packages() {
 
 	books=(pandoc) #  texlive texlive-xetex
 
-	user=(gimp obs-studio xdg-utils ImageMagick aspell vlc
+	user=(exaile gimp obs-studio xdg-utils ImageMagick aspell vlc
 		aspell-pt_BR telegram-desktop calibre gaupol clementine)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
