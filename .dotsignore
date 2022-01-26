@@ -28,3 +28,9 @@ README.md
 .config/yabar
 .config/yabar
 .config/xmodmap
+.config/kglobalshortcutsrc
+.config/konsolerc
+.config/kwinrc
+.config/kwinrulesrc
+.config/Clementine
+.config/autostart-scripts
