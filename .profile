@@ -74,9 +74,6 @@ export PATH="$GOPATH/bin"${PATH:+:}$PATH
 export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 # ===================================================
 
-# ** Cargo
-. "$HOME/.cargo/env"
-
 # ** Deno
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -113,3 +110,6 @@ export NIX_PROFILE=$HOME/.nix-profile
 # PATH
 export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
+
+# ** CARGO
+export PATH="$HOME/.cargo/bin"${PATH:+:}$PATH
