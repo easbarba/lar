@@ -11,9 +11,8 @@ s-echo "Fedora"
 upgrade() {
 	s-echo "Upgrading System"
 
-	sudo dnf update
+	sudo dnf update -y
 	sudo dnf upgrade -y
-	sudo dnf autoremove -y
 }
 
 pre() {
@@ -32,8 +31,8 @@ packages() {
 	essentials=(git openssh curl unzip bash tmux zile lynx)
 
 	system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
-		xsel xclip bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo
-		autoconf automake socat ripgrep starship)
+		bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo
+		autoconf automake socat)
 
 	network=(net-tools iproute telnet)
 
@@ -41,23 +40,23 @@ packages() {
 
 	shell=(bash-completion ShellCheck zsh fish)
 
-	editors=(vim neovim micro)
+	editors=(emacs vim neovim micro)
 
 	gnu=(gcc make info wget parallel)
 
-	languages=(python3-pip ruby-devel golang guile30)
+	languages=(python3-pip ruby-devel golang guile30 npm nodejs)
 
-	emacs=(emacs)
-
-	infra=(podman vagrant qemu VirtualBox)
+	infra=(podman podman-compose vagrant qemu)
 
 	laptop=(acpi lm_sensors)
+
+	gnome=(gnome-tweaks gnome-shell-extension-auto-move-windows gnome-shell-extension-launch-new-instance)
 
 	wmapps=(ffmpeg mpv elinks wl-clipboard)
 
 	books=(pandoc) #  texlive texlive-xetex
 
-	user=(google-chrome gimp obs-studio xdg-utils ImageMagick aspell vlc
+	user=(gimp obs-studio xdg-utils ImageMagick aspell vlc
 		aspell-pt_BR telegram-desktop calibre gaupol clementine)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
@@ -75,7 +74,7 @@ packages() {
 		"${languages[@]}"
 		"${programming[@]}"
 		"${editors[@]}"
-		"${emacs[@]}"
+		"${gnome[@]}"
 		"${infra[@]}"
 		"${laptop[@]}"
 		"${wmapps[@]}"
@@ -93,8 +92,11 @@ packages() {
 post() {
 	s-echo "Post install"
 
-	sudo fc-cache -fv # cache all system fonts
+	# cache all system fonts
+	sudo fc-cache -fv
 
+	# create or update the manual page index caches
+	sudo mandb
 }
 
 clean() {
@@ -129,12 +131,17 @@ services() {
 		sudo usermod -aG libvirt "$USER"
 		sudo usermod -aG kvm "$USER"
 	}
-
-	_podman
 }
 
 foreign() {
 	echo "Foreign packages"
+
+	_rpmfusion() {
+		sudo dnf install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
+			"https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+	}
+
+	_virtualbox() { sudo dnf install -y VirtualBox; }
 
 	_docker() {
 		sudo dnf -y install dnf-plugins-core
@@ -155,8 +162,7 @@ foreign() {
 		sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
-		sudo dnf check-update
-		sudo dnf install code
+		sudo dnf install -y code
 	}
 
 	_aws() {
@@ -168,15 +174,24 @@ foreign() {
 		sudo dnf install -y terraform
 	}
 
+	_rust() {
+		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	}
+
+	_rust
+	_rpmfusion
+	_virtualbox
+	_aws
+	_terraform
 	_vscode
 }
 
 # * RUN
 
 upgrade
-# pre
 packages
 post
-# clean
-services
 foreign
+# pre
+# clean
+#services
