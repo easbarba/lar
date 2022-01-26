@@ -1,5 +1,6 @@
 name,repository
-distro.js,https://git.sr.ht/~easbarba/distro.js
-distro,https://git.sr.ht/~easbarba/distro
-floss,https://git.sr.ht/~easbarba/floss
-lar,https://git.sr.ht/~easbarba/lar
+gnu,https://gitlab.com/easbarba/gnu
+documents,https://gitlab.com/easbarba/documents
+distro,https://gitlab.com/easbarba/distro
+floss,https://gitlab.com/easbarba/floss
+lar,https://gitlab.com/easbarba/lar
