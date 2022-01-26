@@ -31,7 +31,7 @@ packages() {
 	essentials=(git openssh curl unzip bash tmux zile lynx)
 
 	system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
-		bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo
+		bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar
 		autoconf automake socat)
 
 	network=(net-tools iproute telnet)
@@ -57,7 +57,7 @@ packages() {
 	books=(pandoc) #  texlive texlive-xetex
 
 	user=(exaile gimp obs-studio xdg-utils ImageMagick aspell vlc
-		aspell-pt_BR telegram-desktop calibre gaupol clementine)
+		aspell-pt_BR telegram-desktop calibre gaupol)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
 		gstreamer1-plugins-good gstreamer1-plugins-ugly)
@@ -87,16 +87,6 @@ packages() {
 	done
 
 	s-echo "Done"
-}
-
-post() {
-	s-echo "Post install"
-
-	# cache all system fonts
-	sudo fc-cache -fv
-
-	# create or update the manual page index caches
-	sudo mandb
 }
 
 clean() {
@@ -137,13 +127,21 @@ foreign() {
 	echo "Foreign packages"
 
 	_rpmfusion() {
+		[[ $(grep -rni 'rpmfusion-free' /etc/yum.repos.d) ]] && return
+
 		sudo dnf install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
 			"https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 	}
 
-	_virtualbox() { sudo dnf install -y VirtualBox; }
+	_virtualbox() {
+		[[ -x $(command -v virtualbox) ]] && return
+
+		sudo dnf install -y VirtualBox
+	}
 
 	_docker() {
+		[[ -x $(command -v virtualbox) ]] && return
+
 		sudo dnf -y install dnf-plugins-core
 		sudo dnf install docker-ce docker-ce-cli containerd.io
 
@@ -159,6 +157,8 @@ foreign() {
 	}
 
 	_vscode() {
+		[[ -x $(command -v code) ]] && return
+
 		sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
@@ -166,18 +166,32 @@ foreign() {
 	}
 
 	_aws() {
+		[[ -x $(command -v aws) ]] && return
+
 		sudo dnf install -y awscli
 	}
 
 	_terraform() {
+		[[ -x $(command -v terraform) ]] && return
+
 		sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
 		sudo dnf install -y terraform
 	}
 
 	_rust() {
+		[[ -x $HOME/.cargo/bin/cargo ]] && return
+
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	}
 
+	_gitlab() {
+		[[ ! -f /tmp/gitlab-runner_amd64.rpm ]] &&
+			wget -c https://gitlab-runner-downloads.s3.amazonaws.com/latest/rpm/gitlab-runner_amd64.rpm -P /tmp
+
+		sudo dnf install /tmp/gitlab-runner_amd64.rpm
+	}
+
+	_gitlab
 	_rust
 	_rpmfusion
 	_virtualbox
@@ -190,7 +204,6 @@ foreign() {
 
 upgrade
 packages
-post
 foreign
 # pre
 # clean

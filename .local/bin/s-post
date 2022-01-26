@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# cache all system fonts
+sudo fc-cache -fv
+
+# create or update the manual page index caches
+sudo mandb
+
+# silent parallel, for good.
+parallel --citation

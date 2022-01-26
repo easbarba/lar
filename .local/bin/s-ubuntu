@@ -104,13 +104,6 @@ packages() {
 	s-echo "Done"
 }
 
-post() {
-	s-echo "Post install"
-
-	sudo apt-file update # update Debian database
-	sudo fc-cache -fv    # cache all system fonts
-}
-
 clean() {
 	s-echo "Clean up"
 
@@ -204,14 +197,14 @@ foreign() {
 
 	_aws() {
 		[[ -x $(command -v aws) ]] && return
-		
+
 		cd /tmp
 		curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 		unzip awscliv2.zip
 
 		sudo /tmp/aws/install
 
-		[[ -x $(command -v aws) ]] &&  rm -rf /tmp/aws /tmp/awscliv2.zip
+		[[ -x $(command -v aws) ]] && rm -rf /tmp/aws /tmp/awscliv2.zip
 	}
 
 	_aws
@@ -223,9 +216,8 @@ foreign() {
 # * RUN
 
 upgrade
-#pre
 packages
-# post
-#clean
 services
 foreign
+#pre
+#clean

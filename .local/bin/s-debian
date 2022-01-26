@@ -136,13 +136,6 @@ post() {
 	s-echo "Post install"
 
 	sudo apt-file update # update Debian database
-	sudo fc-cache -fv    # cache all system fonts
-
-	awesome() {
-		local awe=$HOME/.config/awesome
-		mkdir -pv $awe
-		cp -pvr /usr/share/awesome/themes/ $awe
-	}
 }
 
 clean() {

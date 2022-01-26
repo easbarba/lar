@@ -115,13 +115,6 @@ packages() {
     s-echo "Done"
 }
 
-post() {
-    s-echo "Post install"
-
-    # /usr/bin/sudo apt-file update # update Debian database
-    /usr/bin/sudo /usr/bin/fc-cache -fv
-}
-
 clean() {
     s-echo "Clean up"
 
@@ -177,7 +170,7 @@ services() {
 }
 
 foreign() {
-    echo "Non-Debian packages"
+    echo ""
 }
 
 # * RUN
@@ -185,7 +178,6 @@ foreign() {
 upgrade
 pre
 packages
-# post
 # clean
 # services
 # foreign
