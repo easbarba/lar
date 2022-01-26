@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Debug Options
-set -euo pipefail
-
-MX=emacs
-MX2=$HOME/.local/bin/emacs
-
-[[ ! -x $MX2 ]] && $MX || $MX2
