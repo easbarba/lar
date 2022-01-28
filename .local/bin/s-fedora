@@ -31,7 +31,7 @@ packages() {
 	essentials=(git openssh curl unzip bash tmux zile lynx)
 
 	system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
-		bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar
+		bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar nscd
 		autoconf automake socat)
 
 	network=(net-tools iproute telnet)
