@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(sudo dnf usermod command systemctl tee)
+s-checkdeps "${DEPS[@]}"
+
+_qemu() {
+    _install() {
+        sudo dnf install -y qemu
+    }
+}
+
+_virtualbox() {
+    [[ -x $(command -v virtualbox) ]] && return
+
+    _install() {
+        sudo dnf install -y VirtualBox
+    }
+}
+
+_virtualization() {
+    _install() {
+        sudo dnf install -y @virtualization
+    }
+
+    _services() {
+        sudo systemctl start libvirtd
+        sudo systemctl enable libvirtd
+
+    }
+
+    _post() {
+        sudo usermod -aG libvirt "$USER"
+        sudo usermod -aG kvm "$USER"
+    }
+}
+
+_vagrant() {
+    _install() {
+        sudo dnf install -y vagrant
+    }
+
+    _install
+}
+
+_podman() {
+    _install() {
+        sudo dnf install -y podman podman-compose
+    }
+
+    _services() {
+        sudo systemctl enable podman.socket
+        sudo systemctl start podman.socket
+        sudo systemctl status podman.socket
+    }
+
+    _post() {
+        # Add a new group called podman so its easier to manage who can run podman w/out sudo
+        echo '%podman ALL=(ALL) NOPASSWD: /usr/bin/podman' | sudo tee -a /etc/sudoers.d/podman
+    }
+}
+
+_docker() {
+    [[ -x $(command -v docker) ]] && return
+
+    _pre() {
+        # uninstall old versions
+        sudo dnf remove docker docker-client docker-client-latest \
+            docker-common docker-latest docker-latest-logrotate \
+            docker-logrotate docker-selinux docker-engine-selinux docker-engine
+    }
+
+    _install() {
+        sudo dnf install -y dnf-plugins-core docker-ce docker-ce-cli containerd.io
+    }
+
+    _services() {
+        sudo systemctl start docker
+        sudo systemctl enable docker.service
+    }
+
+    _post() {
+        sudo groupadd docker && sudo gpasswd -a $USER docker
+        sudo systemctl restart docker
+    }
+
+    # run
+    for f in {_pre,_install,_services,_post}; do
+        $f
+    done
+}
+
+_podman_docker_compose() {
+    _post() {
+        # Docker Compose will use the correct socket.
+        export DOCKER_HOST=///run/user/$UID/podman/podman.sock
+    }
+}
+
+_aws() {
+    [[ -x $(command -v aws) ]] && return
+
+    _install() {
+        sudo dnf install -y awscli
+    }
+}
+
+_terraform() {
+    [[ -x $(command -v terraform) ]] && return
+
+    _pre() {
+        sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+    }
+
+    _install() {
+        sudo dnf install -y terraform
+    }
+}
+
+_minikube() {
+    _pre() {
+        curl -o /tmp/minikube -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    }
+
+    _install() {
+        chmod +x /tmp/minikube
+        sudo mv /tmp/minikube /usr/local/bin/
+    }
+}
+
+_k8s() {
+    _pre() {
+        curl -o /tmp/kubectl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+    }
+
+    _install() {
+        chmod +x /tmp/kubectl
+        sudo mv /tmp/kubectl /usr/local/bin/
+    }
+}
+
+# * RUN
+
+# * TODO
+
+# _gitlab() {
+#     [[ ! -f /tmp/gitlab-runner_amd64.rpm ]] &&
+#         wget -c https://gitlab-runner-downloads.s3.amazonaws.com/latest/rpm/gitlab-runner_amd64.rpm -P /tmp
+
+#     sudo dnf install /tmp/gitlab-runner_amd64.rpm
+# }
