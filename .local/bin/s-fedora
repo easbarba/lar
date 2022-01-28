@@ -46,8 +46,6 @@ packages() {
 
 	languages=(python3-pip ruby-devel golang guile30 npm nodejs)
 
-	infra=(podman podman-compose vagrant qemu)
-
 	laptop=(acpi lm_sensors)
 
 	gnome=(gnome-tweaks gnome-shell-extension-auto-move-windows gnome-shell-extension-launch-new-instance)
@@ -105,43 +103,11 @@ clean() {
 services() {
 	s-echo "System Services"
 
-	_podman() {
-		sudo systemctl enable podman.socket
-		sudo systemctl start podman.socket
-		sudo systemctl status podman.socket
-	}
-
 	_kdeconnect() {
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
 		sudo systemctl restart firewalld.service
 	}
-
-}
-
-_virtualization() {
-	sudo dnf install @virtualization
-
-	_libvirt() {
-		# service
-		sudo systemctl start libvirtd
-		sudo systemctl enable libvirtd
-
-		# user
-		sudo usermod -aG libvirt "$USER"
-		sudo usermod -aG kvm "$USER"
-	}
-}
-
-_podman() {
-	_group() {
-		# add a new group called podman so its easier to manage who can run podman w/out sudo
-
-		# 		sudo cat <<eof >/etc/sudoers.d/podman
-		# %podman ALL=(ALL) NOPASSWD: /usr/bin/podman
-		# eof
-	}
-
 }
 
 foreign() {
@@ -154,29 +120,6 @@ foreign() {
 			"https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 	}
 
-	_virtualbox() {
-		[[ -x $(command -v virtualbox) ]] && return
-
-		sudo dnf install -y VirtualBox
-	}
-
-	_docker() {
-		[[ -x $(command -v virtualbox) ]] && return
-
-		sudo dnf -y install dnf-plugins-core
-		sudo dnf install docker-ce docker-ce-cli containerd.io
-
-		sudo systemctl start docker
-		sudo systemctl enable docker.service
-
-		sudo groupadd docker && sudo gpasswd -a ${USER} docker && sudo systemctl restart docker
-	}
-
-	_podman_docker_compose() {
-		# Docker Compose will use the correct socket.
-		export DOCKER_HOST=///run/user/$UID/podman/podman.sock
-	}
-
 	_vscode() {
 		[[ -x $(command -v code) ]] && return
 
@@ -186,56 +129,15 @@ foreign() {
 		sudo dnf install -y code
 	}
 
-	_aws() {
-		[[ -x $(command -v aws) ]] && return
-
-		sudo dnf install -y awscli
-	}
-
-	_terraform() {
-		[[ -x $(command -v terraform) ]] && return
-
-		sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
-		sudo dnf install -y terraform
-	}
-
 	_rust() {
 		[[ -x $HOME/.cargo/bin/cargo ]] && return
 
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	}
 
-	_gitlab() {
-		[[ ! -f /tmp/gitlab-runner_amd64.rpm ]] &&
-			wget -c https://gitlab-runner-downloads.s3.amazonaws.com/latest/rpm/gitlab-runner_amd64.rpm -P /tmp
-
-		sudo dnf install /tmp/gitlab-runner_amd64.rpm
-	}
-
-	_gitlab
 	_rust
 	_rpmfusion
-	_virtualbox
-	_aws
-	_terraform
 	_vscode
-}
-
-_k8s() {
-	_minikube() {
-		curl -Lo /tmp/minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-		chmod +x /tmp/minikube
-		sudo mv /tmp/minikube /usr/local/bin/
-	}
-
-	_kubectl() {
-		curl -o /tmp/kubectl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-
-		chmod +x /tmp/kubectl
-		sudo mv /tmp/kubectl /usr/local/bin/
-	}
-
-	_minikube
 }
 
 # * RUN
