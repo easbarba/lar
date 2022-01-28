@@ -117,10 +117,31 @@ services() {
 		sudo systemctl restart firewalld.service
 	}
 
+}
+
+_virtualization() {
+	sudo dnf install @virtualization
+
 	_libvirt() {
+		# service
+		sudo systemctl start libvirtd
+		sudo systemctl enable libvirtd
+
+		# user
 		sudo usermod -aG libvirt "$USER"
 		sudo usermod -aG kvm "$USER"
 	}
+}
+
+_podman() {
+	_group() {
+		# add a new group called podman so its easier to manage who can run podman w/out sudo
+
+		# 		sudo cat <<eof >/etc/sudoers.d/podman
+		# %podman ALL=(ALL) NOPASSWD: /usr/bin/podman
+		# eof
+	}
+
 }
 
 foreign() {
@@ -198,6 +219,23 @@ foreign() {
 	_aws
 	_terraform
 	_vscode
+}
+
+_k8s() {
+	_minikube() {
+		curl -Lo /tmp/minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+		chmod +x /tmp/minikube
+		sudo mv /tmp/minikube /usr/local/bin/
+	}
+
+	_kubectl() {
+		curl -o /tmp/kubectl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+
+		chmod +x /tmp/kubectl
+		sudo mv /tmp/kubectl /usr/local/bin/
+	}
+
+	_minikube
 }
 
 # * RUN
