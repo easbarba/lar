@@ -1,4 +1,5 @@
 name,repository
+k8s-wait-for,https://github.com/groundnuty/k8s-wait-for
 carlos-curso-k8s,https://gitlab.com/cedon/curso-k8s
 DevOps-The-Hard-Way-AWS,https://github.com/AdminTurnedDevOps/DevOps-The-Hard-Way-AWS
 terraform-up-and-running-code,https://github.com/brikis98/terraform-up-and-running-code
