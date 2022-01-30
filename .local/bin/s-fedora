@@ -55,7 +55,9 @@ packages() {
 	books=(pandoc) #  texlive texlive-xetex
 
 	user=(exaile gimp obs-studio xdg-utils ImageMagick aspell vlc
-		aspell-pt_BR telegram-desktop calibre gaupol)
+		telegram-desktop calibre gaupol)
+
+	locale=(libreoffice-langpack-pt-BR aspell-pt_BR)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
 		gstreamer1-plugins-good gstreamer1-plugins-ugly)
@@ -73,7 +75,7 @@ packages() {
 		"${programming[@]}"
 		"${editors[@]}"
 		"${gnome[@]}"
-		"${infra[@]}"
+		"${locale[@]}"
 		"${laptop[@]}"
 		"${wmapps[@]}"
 		"${books[@]}"
@@ -108,6 +110,13 @@ services() {
 		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
 		sudo systemctl restart firewalld.service
 	}
+
+	_nscd() {
+		sudo systemctl enable nscd
+		sudo systemctl start nscd
+	}
+
+	_nscd
 }
 
 foreign() {
