@@ -143,6 +143,16 @@ _virtualbox() {
     _install
 }
 
+_ansible() {
+    [[ -x $(command -v ansible) ]] && return
+
+    _install() {
+        sudo dnf install -y ansible
+    }
+
+    _install
+}
+
 _virtualization() {
     _install() {
         sudo dnf install -y @virtualization
