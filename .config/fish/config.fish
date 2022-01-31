@@ -31,6 +31,10 @@ function e-pip
     complete -fa "(__fish_complete_pip)" -c pip
 end
 
+function e-completions
+    kubectl completion fish | source
+end
+
 function e-fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
 
@@ -50,4 +54,5 @@ end
 # ** RUN
 # e-pip
 e-direnv
+e-completions
 e-prompt

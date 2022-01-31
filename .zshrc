@@ -77,6 +77,11 @@ e_zinit_plugins()
     zinit light zdharma-continuum/history-search-multi-word
 }
 
+e_completions() {
+    # kubectl
+    source <(kubectl completion zsh)
+}
+
 e_zinit()
 {
     e_zinit_prepare
@@ -100,4 +105,5 @@ e_direnv() { eval "$(direnv hook zsh)"; }
 e_settings
 e_zinit
 e_prompt
+e_completions
 e_direnv
