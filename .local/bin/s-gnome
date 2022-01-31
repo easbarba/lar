@@ -47,8 +47,8 @@ _media() {
 }
 
 _misc() {
-    gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
-    gsettings set org.gnome.desktop.wm.preferences workspace-names "['www','term','mx','read']"
+    gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
+    gsettings set org.gnome.desktop.wm.preferences workspace-names "['www','term','mx','read', 'media']"
 
     gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>m']"
 
@@ -65,7 +65,7 @@ _misc() {
 }
 
 _extensions() {
-    gsettings set org.gnome.shell.extensions.auto-move-windows application-list "['emacs.desktop:3', 'org.gnome.Evince.desktop:4', 'org.gnome.Terminal.desktop:2', 'firefox.desktop:1', 'vlc.desktop:1', 'transmission-gtk.desktop:1', 'rhythmbox-device.desktop:1', 'telegramdesktop.desktop:1', 'google-chrome.desktop:1', 'code.desktop:3', 'libreoffice-startcenter.desktop:2', 'libreoffice-writer.desktop:2']"
+    gsettings set org.gnome.shell.extensions.auto-move-windows application-list "['emacs.desktop:3', 'org.gnome.Evince.desktop:4', 'org.gnome.Terminal.desktop:2', 'firefox.desktop:1', 'vlc.desktop:1', 'transmission-gtk.desktop:1', 'rhythmbox-device.desktop:1', 'telegramdesktop.desktop:1', 'google-chrome.desktop:1', 'code.desktop:3', 'libreoffice-startcenter.desktop:2', 'libreoffice-writer.desktop:2', 'exaile.desktop:5', 'mpv.desktop:5']"
 }
 
 _apps() {
