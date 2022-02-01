@@ -46,7 +46,29 @@ _media() {
     # gsettings set org.gnome.settings-daemon.plugins.media-keys screen-brightness-down "['<Alt><Super>s']"
 }
 
+_themes() {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+    gsettings set org.gnome.desktop.background show-desktop-icons false
+}
+
+_power() {
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type hibernate
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1800
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type hibernate
+    gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspend
+    gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+
+    gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
+}
+
 _misc() {
+    gsettings set org.gnome.desktop.interface enable-hot-corners false
+
+    gsettings set org.gnome.shell.app-switcher current-workspace-only true
+    gsettings set org.gnome.desktop.calendar show-weekdate true
+
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 5
     gsettings set org.gnome.desktop.wm.preferences workspace-names "['www','term','mx','read', 'media']"
 
@@ -54,7 +76,6 @@ _misc() {
 
     gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-    gsettings set org.gnome.desktop.background show-desktop-icons false
 
     gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Super><Alt>f']"
     gsettings set org.gnome.desktop.wm.keybindings close "['<Super><Alt>c']"
@@ -81,4 +102,5 @@ _move
 _volume
 _misc
 _media
+_themes
 _extensions
