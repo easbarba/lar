@@ -40,11 +40,11 @@ packages() {
 
 	shell=(bash-completion ShellCheck zsh fish)
 
-	editors=(emacs vim neovim micro libstdc++-static)
+	editors=(emacs vim neovim libstdc++-static)
 
 	gnu=(gcc make info wget parallel)
 
-	languages=(python3-pip ruby-devel golang guile30 npm nodejs)
+	languages=(golang guile30 lua ruby-devel python3-pip nodejs npm)
 
 	laptop=(acpi lm_sensors)
 
