@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(vagrant)
+s-checkdeps "${DEPS[@]}"
+
+[[ ! -x $(command -v vagrant) ]] && echo 'Vagrant is not installed!' && return
+
+_boxes() {
+    local command='vagrant box add'
+    local boxes=(almalinux/8 ubuntu/focal64)
+
+    s-dolist "$command" "${boxes[@]}"
+}
+
+_boxes
