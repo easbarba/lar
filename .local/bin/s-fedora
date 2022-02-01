@@ -40,7 +40,7 @@ packages() {
 
 	shell=(bash-completion ShellCheck zsh fish)
 
-	editors=(emacs vim neovim micro)
+	editors=(emacs vim neovim micro libstdc++-static)
 
 	gnu=(gcc make info wget parallel)
 
