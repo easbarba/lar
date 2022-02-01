@@ -1,9 +1,11 @@
 name,repository
-DescomplicandoKubernetes,https://github.com/badtuxx/DescomplicandoKubernetes
+aprendendo-ansible,https://github.com/souzaxx/Aprendendo-ansible
+ansible-for-devops,https://github.com/geerlingguy/ansible-for-devops
+descomplicandokubernetes,https://github.com/badtuxx/DescomplicandoKubernetes
 vinycoolguy2015-awslambda,https://github.com/vinycoolguy2015/awslambda
 k8s-wait-for,https://github.com/groundnuty/k8s-wait-for
 carlos-curso-k8s,https://gitlab.com/cedon/curso-k8s
-DevOps-The-Hard-Way-AWS,https://github.com/AdminTurnedDevOps/DevOps-The-Hard-Way-AWS
+devops-the-hard-way-aws,https://github.com/AdminTurnedDevOps/DevOps-The-Hard-Way-AWS
 terraform-up-and-running-code,https://github.com/brikis98/terraform-up-and-running-code
 ampernetacle,https://github.com/jpetazzo/ampernetacle
 extremeshok-docker-webserver,https://github.com/extremeshok/docker-webserver
