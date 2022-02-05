@@ -1,27 +1,38 @@
 #!/usr/bin/env bash
 
 _devel() {
-    local command="python3 -m pip install"
-    local packages=(black pipenv pyflakes pytest isort nose poetry)
+    local packages=(black pipenv pyflakes pytest isort nose poetry python-lsp-server)
 
+    local command="python3 -m pip install --upgrade"
+    s-dolist "$command" "${packages[@]}"
+}
+
+_library() {
+
+    local packages=(pyperclip beautifulsoup4 cryptography)
+
+    local command="python3 -m pip install --upgrade"
     s-dolist "$command" "${packages[@]}"
 }
 
 _tools() {
-    local command="python3 -m pip install"
+
     local packages=(yt-dlp)
 
+    local command="python3 -m pip install --upgrade"
     s-dolist "$command" "${packages[@]}"
 }
 
 _poetry() {
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+    [[ ! -x $(command -v poetry) ]] &&
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 
     poetry self update
 
-    poetry completions zsh >~/.zfunc/_poetry
+    # poetry completions zsh >~/.zfunc/_poetry
 }
 
 _poetry
+_library
 _devel
 _tools

@@ -20,6 +20,11 @@ _packagers() {
 
     s-doom
     s-ruby
+    s-python
+    s-golang
+    s-flatpak
+    s-javascript
+    s-vscode
 }
 
 _user() {

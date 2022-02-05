@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
 
 _repo() {
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    [[ ! $(flatpak remotes | grep flathub) ]] &&
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
 _user() {
-    local command="flatpak install flathub -y"
     local packages=(com.wps.Office com.github.babluboy.bookworm)
 
+    local command="flatpak install flathub -y"
+    s-dolist "$command" "${packages[@]}"
+
+    local command="flatpak update flathub -y"
     s-dolist "$command" "${packages[@]}"
 }
 
 _devel() {
-    local command="flatpak install flathub -y"
     local packages=(com.discordapp.Discord com.microsoft.Teams com.slack.Slack
         us.zoom.Zoom com.skype.Client)
 
+    local command="flatpak install flathub -y"
+    s-dolist "$command" "${packages[@]}"
+
+    local command="flatpak update flathub -y"
     s-dolist "$command" "${packages[@]}"
 }
 

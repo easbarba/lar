@@ -9,7 +9,6 @@ INSTALLER='code'
 COMMAND='--install-extension'
 
 _javascript() {
-
     local packages=(xabikos.JavaScriptSnippets
         dbaeumer.vscode-eslint WallabyJs.quokka-vscode
         mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster

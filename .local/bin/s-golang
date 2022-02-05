@@ -11,28 +11,28 @@ s-echo "Golang Global Toolings."
 export GO111MODULE=on
 
 _packages() {
-	local command="go install"
 	local packages=("golang.org/x/tools/gopls@latest"
 		github.com/xxxserxxx/gotop/v4/cmd/gotop@latest)
 
+	local command="go install"
 	s-dolist "$command" "${packages[@]}"
 }
 
 _tools() {
-	local command='go install'
 	local packages=("github.com/fatih/gomodifytags@latest"
 		"github.com/cweill/gotests/..." "github.com/x-motemen/gore/cmd/gore@latest"
 		"github.com/mdempsky/gocode@latest" "golang.org/x/tools/cmd/guru") #
 	"sigs.k8s.io/kind"
 
+	local command='go install'
 	s-dolist "$command" "${packages[@]}"
 }
 
 _devel() {
-	local command='go install'
 	local packages=("mvdan.cc/sh/v3/cmd/shfmt@latest"
 		"github.com/erning/gorun@latest")
 
+	local command='go install'
 	s-dolist "$command" "${packages[@]}"
 }
 
