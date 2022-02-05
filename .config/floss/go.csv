@@ -1,4 +1,5 @@
 name,repository
+betrybe-playbook-go,https://github.com/betrybe/playbook-go
 goplio,https://github.com/adonovan/gopl.io
 kubectl,https://github.com/kubernetes/kubectl
 minikube,https://github.com/kubernetes/minikube
