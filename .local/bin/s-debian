@@ -6,87 +6,63 @@ set -euo pipefail
 DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
 s-checkdeps "${DEPS[@]}"
 
-# * DEBIAN
-
-s-echo "Debian GNU/Linux -- The Universal Operating System"
-
 upgrade() {
 	s-echo "Upgrading System"
 
 	sudo apt update
 	sudo apt upgrade -y
-	sudo apt autoremove -y
 }
 
 pre() {
-	multi() {
+	_multi() {
 		s-echo "Enable Multi-Arch"
 
 		sudo dpkg --add-architecture i386
 	}
 
-	# * RUN
-	multi
+	_multi
 }
 
 packages() {
 	s-echo "Installing system packages"
 
-	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
+	essentials=(git ssh curl unzip tmux)
 
 	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf
 		time entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
 		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
 
-	network=(net-tools iproute2 telnet)
+	network=(net-tools iproute2 telnet) # iwd iw wireless-tools
 
-	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig)
+	programming=(git-email subversion mercurial libpq-dev editorconfig) # direnv
 
 	shell=(bash-completion shellcheck zsh fish)
 
-	editors=(neovim)
+	editors=(zile vim neovim micro)
 
-	gnu=(gcc make vrms info wget parallel)
-
-	python=(python3-pip)
-
-	ruby=(ruby-dev libssl-dev)
-
-	go=(golang)
-
-	lua=(lua5.4 lua-check) # luarocks
-
-	database=(postgresql postgresql-contrib)
+	gnu=(bash gcc make vrms info wget parallel gawk)
 
 	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
-	lisp=(libfixposix-dev)
-
-	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
-
-	infra=(podman vagrant qemu qemu-utils qemu-efi qemu-kvm libvirt-clients
-		libvirt-daemon-system virtinst bridge-utils) # ebtables
+	langs=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev) # libfixposix-dev
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
 	security=(nftables gnutls-bin)
 
-	laptop=(iwd iw wireless-tools laptop-mode-tools libinput-tools acpi
-		lm-sensors)
+	laptop=(acpi lm-sensors) # laptop-mode-tools libinput-tools
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
 		apt-file gdebi)
 
-	wayland=(sway swaybg swaylock foot clipman grimshot xwayland)
-
-	xorg=(xorg awesome feh scrot cheese)
+	wayland=(wl-clipboard) # sway swaybg swaylock foot clipman grimshot xwayland
 
 	wmapps=(ffmpeg mpv elinks) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m dunst suckless-tools
 
-	books=(pandoc texlive texlive-xetex)
+	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
-		aspell-pt-br telegram-desktop calibre gaupol kdeconnect)
+		aspell-pt-br telegram-desktop calibre) # gaupol kdeconnect
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
@@ -100,34 +76,28 @@ packages() {
 
 	enabled=(
 		"${essentials[@]}"
-		"${system[@]}"
-		"${gnu[@]}"
-		"${network[@]}"
-		"${shell[@]}"
 		"${debian[@]}"
-		"${amd[@]}"
-		"${ruby[@]}"
-		"${go[@]}"
-		"${python[@]}"
-		"${lua[@]}"
+		"${system[@]}"
+		"${langs[@]}"
+		"${emacs[@]}"
+		"${gnu[@]}"
+		"${shell[@]}"
+		"${media[@]}"
 		"${programming[@]}"
 		"${editors[@]}"
-		"${emacs[@]}"
-		"${infra[@]}"
-		"${fonts[@]}"
-		"${security[@]}"
-		"${laptop[@]}"
-		"${wmapps[@]}"
 		"${user[@]}"
-		"${media[@]}"
-		"${books[@]}")
+		"${wmapps[@]}"
+		"${wayland[@]}"
+		"${laptop[@]}"
+		"${network[@]}"
+		"${security[@]}"
+		"${books[@]}"
+		"${fonts[@]}"
+		"${amd[@]}")
 
 	for i in "${enabled[@]}"; do
 		s-dolist "$command" "$i"
 	done
-
-	# builds dep
-	sudo apt -y build-dep emacs
 
 	s-echo "Done"
 }
@@ -135,113 +105,52 @@ packages() {
 post() {
 	s-echo "Post install"
 
-	sudo apt-file update # update Debian database
+	_emacs() {
+		# builds dep
+		sudo apt -y build-dep emacs
+	}
+
+	_debian() {
+		sudo apt-file update # update Debian database
+	}
+
+	_emacs
+	_debian
 }
 
 clean() {
 	s-echo "Clean up"
 
-	unused=(firefox-esr)
+	_unused() {
+		packages=(firefox-esr)
 
-	local command='sudo apt remove -y'
-	s-dolist "$command" "${unused[@]}"
+		local command='sudo apt remove -y'
+		s-dolist "$command" "${packages[@]}"
+	}
 
-	purging=(*nvidia*)
-	local command='sudo apt purge -y'
-	s-dolist "$command" "${purging[@]}"
+	_purge() {
+		packages=(*nvidia*)
+
+		local command='sudo apt purge -y'
+		s-dolist "$command" "${packages[@]}"
+	}
+
+	_unused
+	_purge
 }
 
 services() {
 	s-echo "Debian Services"
 
-	_lightdm() {
-		sudo systemctl enable lightdm
-	}
-
-	_postgres() {
-		sudo systemctl restart postgresql
-	}
-
-	_mpd() {
-		sudo systemctl disable mpd
-	}
-
-	_iwd() {
-		sudo systemctl enable iwd
-		sudo systemctl start iwd
-	}
-
-	_kdeconnect() {
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		sudo systemctl restart firewalld.service
-	}
-
-	_timezone() {
-		local current_zone
-		local desired_zone
-
-		desired_zone='America/Sao_Paulo'
-		current_zone=$(timedatectl | grep 'Time zone' | awk '{print $3}')
-
-		[[ "$current_zone" != "$desired_zone" ]] && sudo timedatectl set-timezone America/Sao_Paulo
-	}
-
-	_alternatives() {
-		# set python to python3
-		sudo update-alternatives --install python python "$(command -v python3)" 1
-	}
-
-	_infra() {
-		sudo usermod -aG libvirt "$USER"
-		sudo usermod -aG kvm "$USER"
-	}
-
-	_infra
 	# _alternatives
 }
 
 foreign() {
 	echo "Non-Debian packages"
 
-	_openrazer() {
-		sudo gpasswd -a $USER plugdev
-
-		echo 'deb http://download.opensuse.org/repositories/hardware:/razer/Debian_Unstable/ /' | sudo tee /etc/apt/sources.list.d/hardware:razer.list
-		curl -fsSL https://download.opensuse.org/repositories/hardware:razer/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/hardware-razer.gpg >/dev/null
-		sudo apt update
-		sudo apt install openrazer-meta
-	}
-
-	_polychromatic() {
-		echo "deb http://ppa.launchpad.net/polychromatic/edge/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/polychromatic.list
-		sudo apt-key adv --recv-key --keyserver keyserver.ubuntu.com 96B9CD7C22E2C8C5
-		sudo apt-get update
-
-		# Full installation
-		sudo apt install polychromatic
-	}
-
 	_flatpak() {
 		sudo apt install -y flatpak gnome-software-plugin-flatpak
 		sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-	}
-
-	_docker() {
-		sudo apt-get install ca-certificates curl gnupg lsb-release
-
-		# Add Docker’s official GPG key:
-		curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-		# set up the stable repository
-		echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
-
-		# Install Docker Engine
-		sudo apt-get update -y
-		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-
-		sudo groupadd docker
-		sudo usermod -aG docker $USER
 	}
 
 	_chrome() {
@@ -249,34 +158,13 @@ foreign() {
 		sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
 	}
 
-	_virtualbox() {
-		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
-		sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
-	}
-
-	_vagrant() {
-		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-		sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
-
-		sudo apt install -y software-properties-common
-		sudo apt update
-		sudo apt install -y vagrant
-	}
-
 	_vscode() {
 		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
 		sudo apt install -y /tmp/vscode-x64.deb
 	}
 
-	_hyper() {
-		wget -c "https://releases.hyper.is/download/deb" -O '/tmp/hyper.deb'
-		sudo apt install -y /tmp/hyper.deb
-	}
-
-	_hyper
 	_flatpak
 	_vscode
-	_docker
 	_chrome
 }
 
@@ -287,7 +175,7 @@ pre
 packages
 post
 clean
-services
+# services
 foreign
 
 # dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
