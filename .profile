@@ -113,3 +113,8 @@ export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 
 # ** CARGO
 export PATH="$HOME/.cargo/bin"${PATH:+:}$PATH
+
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_CONTROL
