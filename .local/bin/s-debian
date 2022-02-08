@@ -9,7 +9,7 @@ s-checkdeps "${DEPS[@]}"
 upgrade() {
 	s-echo "Upgrading System"
 
-	sudo apt update
+	sudo apt update -y
 	sudo apt upgrade -y
 }
 
@@ -55,9 +55,12 @@ packages() {
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
 		apt-file gdebi)
 
+	xorg=(awesome feh scrot xclip xsel)
+
 	wayland=(wl-clipboard) # sway swaybg swaylock foot clipman grimshot xwayland
 
-	wmapps=(ffmpeg mpv elinks) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m dunst suckless-tools
+	wmapps=(ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin
+			udiskie bluez zathura mpd mpc ncmpcpp suckless-tools)
 
 	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
@@ -86,8 +89,9 @@ packages() {
 		"${programming[@]}"
 		"${editors[@]}"
 		"${user[@]}"
-		"${wmapps[@]}"
+		"${xorg[@]}"
 		"${wayland[@]}"
+		"${wmapps[@]}"
 		"${laptop[@]}"
 		"${network[@]}"
 		"${security[@]}"
@@ -141,8 +145,11 @@ clean() {
 
 services() {
 	s-echo "Debian Services"
+	_mpd() {
+		sudo systemctl disable mpd
+	}
 
-	# _alternatives
+	_mpd
 }
 
 foreign() {
