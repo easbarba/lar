@@ -97,9 +97,19 @@ class Pactl
     output = `set -eu; pactl list sinks`
     raise('pipeline failed') unless $CHILD_STATUS.success?
 
-    output.split('Sink #').find do |sink|
-      sink if sink.include? 'State: RUNNING'
-    end.split('State').first.strip # sink id is the first letter in the string returned
+    case ENV['LANG']
+    when 'pt_BR.UTF-8'
+      dest = 'Destino'
+      state = 'Estado'
+    when 'en_US.UTF-8'
+      dest = 'Sink'
+      state = 'State'
+    end
+
+    # sink id is the first letter in the string returned
+    output.split("#{dest} #").find do |sink|
+      sink if sink.include? "#{state}: RUNNING"
+    end.split(state).first.strip
   end
 
   def toggle
@@ -153,23 +163,24 @@ class Amixer
   end
 end
 
+# hail to the new king
 class Pipewire
   def info
     {
       name: 'pw-cli',
-      args: "s #{pipe-id} Props",
+      args: "s #{pipe_id} Props",
       toggle: '{ mute: false, channelVolumes: [ 1.5, 1.5 ] }',
       updown: '{ mute: false, channelVolumes: [ 1.5, 1.5 ] }'
     }
   end
 
-  def pipe-id; end
+  def pipe_id; end
 
-  def pipe-toggle
+  def pipe_toggle
     [info[:name], info[:toggle]].join(' ')
   end
 
-  def pipe-updown
+  def pipe_updown
     [info[:name], info[:updown]].join(' ')
   end
 end
