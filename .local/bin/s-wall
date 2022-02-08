@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-# deps=(feh swaybg)
-# s-checkdeps "${deps[@]}"
-
-FOLDER="$HOME/Pictures/wallpapers"
+FOLDER="/da/misc/wallpapers"
 
 _wall() {
   local found
