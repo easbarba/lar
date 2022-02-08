@@ -12,7 +12,7 @@ _distro() {
     local result
     result=$(gawk '{print $1}' /etc/hostname)
 
-    echo -e "\uf05a  GNU / ${result^}"
+    echo -e "\uf05a  GNU / $result"
 }
 
 _kernel() {
