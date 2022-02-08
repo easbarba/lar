@@ -105,49 +105,49 @@ globalkeys =
         {modkey, "Shift"},
         "w",
         function()
-            awful.spawn("e_volume up")
+            awful.spawn("s-volume up")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "s",
         function()
-            awful.spawn("e_volume down")
+            awful.spawn("s-volume down")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "e",
         function()
-            awful.spawn("e_volume toggle")
+            awful.spawn("s-volume toggle")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "a",
         function()
-            awful.spawn("e_backlight up")
+            awful.spawn("s-backlight up")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "d",
         function()
-            awful.spawn("e_backlight down")
+            awful.spawn("s-backlight down")
         end
     ),
     awful.key(
         {modkey},
         "Print",
         function()
-            awful.spawn("e_shot full")
+            awful.spawn("s-shot full")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "Print",
         function()
-            awful.spawn("e_shot partial")
+            awful.spawn("s-shot partial")
         end
     ),
     awful.key(
@@ -196,7 +196,7 @@ globalkeys =
         {modkey, "Shift"},
         "p",
         function()
-            awful.spawn.with_shell("e_play")
+            awful.spawn.with_shell("s-play")
         end
     ),
     -- USER CUSTOM CONFIG - END
