@@ -2,8 +2,6 @@ LICENSE
 README.md
 .tcshrc
 .iex.exs
-.config/awesome
-.config/alacritty
 .config/ansible
 .config/dunst
 .config/debian
@@ -13,7 +11,6 @@ README.md
 .config/emacs-archived
 .config/i3
 .config/kitty
-.config/mpd
 .config/ncmpcpp
 .config/nix
 .config/nixos
@@ -33,4 +30,3 @@ README.md
 .config/kwinrc
 .config/kwinrulesrc
 .config/Clementine
-.config/autostart-scripts
