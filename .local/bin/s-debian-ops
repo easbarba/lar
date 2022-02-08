@@ -1,0 +1,225 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(sudo apt systemctl tee)
+s-checkdeps "${DEPS[@]}"
+
+_docker() {
+    [[ -x $(command -v docker) ]] && return
+
+    _pre() {
+        # uninstall old versions
+        sudo apt-get remove -y docker docker-engine docker.io containerd runc
+
+        # allow apt to use a repository over HTTPS
+        sudo apt-get install -y ca-certificates curl gnupg lsb-release
+
+        # Add Docker’s official GPG key:
+        curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+        # set up the stable repository
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+    }
+
+    _install() {
+        sudo apt-get update -y
+
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+    }
+
+    _services() {
+        sudo systemctl start docker
+        sudo systemctl enable docker.service
+    }
+
+    _post() {
+        sudo groupadd docker
+        sudo gpasswd -a "$USER" docker
+
+        sudo systemctl restart docker
+
+        # activate group, for now
+        newgrp docker
+    }
+
+    # run
+    for f in {_pre,_install,_services,_post}; do
+        $f
+    done
+}
+
+_gcloud() {
+    _pre() {
+        sudo apt-get install apt-transport-https ca-certificates gnupg
+        echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+        curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+    }
+
+    _install() {
+        sudo apt-get update && sudo apt-get install google-cloud-sdk
+    }
+
+    for f in {_pre,_install}; do
+        $f
+    done
+}
+
+_aws() {
+    [[ -x $(command -v aws) ]] && return
+
+    _install() {
+        sudo apt install -y awscli
+    }
+
+    _install
+}
+
+_terraform() {
+    [[ -x $(command -v terraform) ]] && return
+
+    _pre() {
+        curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+        echo "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com bullseye main" | sudo tee /etc/apt/sources.list.d/terraform.list >/dev/null
+    }
+
+    _install() {
+        sudo apt update -y
+        sudo apt install -y terraform
+    }
+
+    _pre
+    _install
+}
+
+_minikube() {
+    _pre() {
+        curl -o /tmp/minikube -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    }
+
+    _install() {
+        chmod +x /tmp/minikube
+        sudo mv /tmp/minikube /usr/local/bin/
+    }
+
+    _pre
+    _install
+}
+
+_kubectl() {
+    _pre() {
+        curl -o /tmp/kubectl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+    }
+
+    _install() {
+        chmod +x /tmp/kubectl
+        sudo mv /tmp/kubectl /usr/local/bin/
+    }
+
+    _pre
+    _install
+}
+
+_qemu() {
+    _install() {
+        sudo apt install -y qemu
+    }
+
+    _install
+}
+
+_virtualbox() {
+    [[ -x $(command -v virtualbox) ]] && return
+
+    _install() {
+        sudo apt install -y virtualbox
+    }
+
+    _install
+}
+
+_ansible() {
+    [[ -x $(command -v ansible) ]] && return
+
+    _install() {
+        sudo apt install -y ansible
+    }
+
+    _install
+}
+
+_virtualization() {
+    _install() {
+        sudo dnf install -y @virtualization
+    }
+
+    _services() {
+        sudo systemctl start libvirtd
+        sudo systemctl enable libvirtd
+
+    }
+
+    _post() {
+        sudo usermod -aG libvirt "$USER"
+        sudo usermod -aG kvm "$USER"
+    }
+
+    # run
+    for func in {_install,_services,_post}; do
+        $func
+    done
+}
+
+_vagrant() {
+    _install() {
+        sudo apt install -y vagrant
+    }
+
+    _install
+}
+
+_podman() {
+    _install() {
+        sudo dnf install -y podman podman-compose
+    }
+
+    _services() {
+        sudo systemctl enable podman.socket
+        sudo systemctl start podman.socket
+        sudo systemctl status podman.socket
+    }
+
+    _post() {
+        # Add a new group called podman so its easier to manage who can run podman w/out sudo
+        echo '%podman ALL=(ALL) NOPASSWD: /usr/bin/podman' | sudo tee -a /etc/sudoers.d/podman
+    }
+
+    # run
+    for func in {_install,_services,_post}; do
+        $func
+    done
+}
+
+_podman_docker_compose() {
+    _post() {
+        # Docker Compose will use the correct socket.
+        export DOCKER_HOST=///run/user/$UID/podman/podman.sock
+    }
+
+    _post
+}
+
+# * RUN
+_aws
+_gcloud
+_docker
+_terraform
+_vagrant
+_minikube
+_kubectl
+# _virtualization
+_virtualbox
+
+# infra=(podman vagrant qemu qemu-utils qemu-efi qemu-kvm libvirt-clients
+#     libvirt-daemon-system virtinst bridge-utils) # ebtables
