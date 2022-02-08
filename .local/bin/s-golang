@@ -21,8 +21,7 @@ _packages() {
 _tools() {
 	local packages=("github.com/fatih/gomodifytags@latest"
 		"github.com/cweill/gotests/..." "github.com/x-motemen/gore/cmd/gore@latest"
-		"github.com/mdempsky/gocode@latest" "golang.org/x/tools/cmd/guru") #
-	"sigs.k8s.io/kind"
+		"github.com/mdempsky/gocode@latest" "golang.org/x/tools/cmd/guru") # "sigs.k8s.io/kind"
 
 	local command='go install'
 	s-dolist "$command" "${packages[@]}"
