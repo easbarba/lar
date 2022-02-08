@@ -150,7 +150,7 @@ font:
   #   style: Bold Italic
 
   # Point size
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -175,35 +175,35 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Night Owlish Light)
-colors:
-  bright:
-    black: '#7a8181'
-    blue: '#5ca7e4'
-    cyan: '#00c990'
-    green: '#49d0c5'
-    magenta: '#697098'
-    red: '#f76e6e'
-    white: '#989fb1'
-    yellow: '#dac26b'
-  cursor:
-    cursor: '#403f53'
-    text: '#fbfbfb'
-  normal:
-    black: '#011627'
-    blue: '#4876d6'
-    cyan: '#08916a'
-    green: '#2aa298'
-    magenta: '#403f53'
-    red: '#d3423e'
-    white: '#7a8181'
-    yellow: '#daaa01'
-  primary:
-    background: '#ffffff'
-    foreground: '#403f53'
-  selection:
-    background: '#f2f2f2'
-    text: '#403f53'
+# # Colors (Night Owlish Light)
+# colors:
+#   bright:
+#     black: '#7a8181'
+#     blue: '#5ca7e4'
+#     cyan: '#00c990'
+#     green: '#49d0c5'
+#     magenta: '#697098'
+#     red: '#f76e6e'
+#     white: '#989fb1'
+#     yellow: '#dac26b'
+#   cursor:
+#     cursor: '#403f53'
+#     text: '#fbfbfb'
+#   normal:
+#     black: '#011627'
+#     blue: '#4876d6'
+#     cyan: '#08916a'
+#     green: '#2aa298'
+#     magenta: '#403f53'
+#     red: '#d3423e'
+#     white: '#7a8181'
+#     yellow: '#daaa01'
+#   primary:
+#     background: '#ffffff'
+#     foreground: '#403f53'
+#   selection:
+#     background: '#f2f2f2'
+#     text: '#403f53'
 
 # Bell
 #
@@ -250,7 +250,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+# background_opacity: 0.8
 
 #selection:
   # This string contains all characters that are used as separators for
