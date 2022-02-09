@@ -60,7 +60,7 @@ packages() {
 	wayland=(wl-clipboard) # sway swaybg swaylock foot clipman grimshot xwayland
 
 	wmapps=(ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin
-			udiskie bluez zathura mpd mpc ncmpcpp suckless-tools)
+		udiskie bluez zathura mpd mpc ncmpcpp suckless-tools)
 
 	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
