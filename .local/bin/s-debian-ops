@@ -146,7 +146,13 @@ _ansible() {
         sudo apt install -y ansible
     }
 
+    _addon() {
+        # faster ansible vault encryption
+        python3 -m pip install cryptography
+    }
+
     _install
+    _addon
 }
 
 _virtualization() {
