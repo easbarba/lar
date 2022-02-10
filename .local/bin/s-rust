@@ -13,7 +13,8 @@ _install() {
 }
 
 _tools() {
-    packages=(starship fd-find exa bat ripgrep alacritty)
+    packages=(starship fd-find exa bat ripgrep procs sd du-dust
+        alacritty tokei)
 
     s-dolist 'cargo install --locked' "${packages[@]}"
 }
