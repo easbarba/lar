@@ -8,31 +8,30 @@ s-checkdeps "${DEPS[@]}"
 
 s-echo "Golang Global Toolings."
 
-export GO111MODULE=on
+GO111MODULE=on
+COMMAND='go install'
 
 _packages() {
-	local packages=("golang.org/x/tools/gopls@latest"
-		github.com/xxxserxxx/gotop/v4/cmd/gotop@latest)
+	local packages=('golang.org/x/tools/gopls@latest'
+		'github.com/xxxserxxx/gotop/v4/cmd/gotop@latest')
 
-	local command="go install"
-	s-dolist "$command" "${packages[@]}"
+	s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _tools() {
-	local packages=("github.com/fatih/gomodifytags@latest"
-		"github.com/cweill/gotests/..." "github.com/x-motemen/gore/cmd/gore@latest"
-		"github.com/mdempsky/gocode@latest" "golang.org/x/tools/cmd/guru") # "sigs.k8s.io/kind"
+	local packages=('github.com/fatih/gomodifytags@latest'
+		'github.com/x-motemen/gore/cmd/gore@latest'
+		'github.com/mdempsky/gocode@latest'
+		'golang.org/x/tools/cmd/guru@latest')
 
-	local command='go install'
-	s-dolist "$command" "${packages[@]}"
+	s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _devel() {
-	local packages=("mvdan.cc/sh/v3/cmd/shfmt@latest"
-		"github.com/erning/gorun@latest")
+	local packages=('mvdan.cc/sh/v3/cmd/shfmt@latest'
+		'github.com/erning/gorun@latest')
 
-	local command='go install'
-	s-dolist "$command" "${packages[@]}"
+	s-dolist "$COMMAND" "${packages[@]}"
 }
 
 # * RUN
