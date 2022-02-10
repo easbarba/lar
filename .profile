@@ -77,9 +77,11 @@ export PATH="$HOME/.luarocks/bin"${PATH:+:}$PATH
 # ** Deno
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+# ===================================================
 
 # ** POETRY
 export PATH="$HOME/.poetry/bin:$PATH"
+# ===================================================
 
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
@@ -87,13 +89,13 @@ export GUIX_PROFILE="$HOME/.guix-profile"
 # LOCALE
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 
-# RUBY
-# export GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
-# export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
-
 # GUILE
 export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
+
+# RUBY
+# export GUIX_GEM_PATH="$GUIX_PROFILE/lib/ruby/vendor_ruby"
+# export GEM_PATH="$GUIX_GEM_PATH"${GEM_PATH:+:}$GEM_PATH
 
 # Shared Libraries
 # export LD_LIBRARY_PATH="$GUIX_PROFILE/lib"
@@ -113,8 +115,15 @@ export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 
 # ** CARGO
 export PATH="$HOME/.cargo/bin"${PATH:+:}$PATH
+# ===================================================
 
+# ** SECRETS
+export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
+# ===================================================
+
+# ** GNOME KEYRING
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 export GNOME_KEYRING_PID
 export GNOME_KEYRING_CONTROL
+# ===================================================
