@@ -7,7 +7,14 @@ s-checkdeps "${DEPS[@]}"
 
 NVIM_HOME="$HOME/.config/nvim"
 
-grab() { git clone https://github.com/luan/nvim "$NVIM_HOME"; }
+cleanup() {
+    rm -rf $NVIM_HOME
+}
+
+grab() {
+    git clone https://github.com/luan/nvim "$NVIM_HOME"
+}
 
 # * RUN
-[[ ! -f "$NVIM_HOME"/init.lua ]] && grab
+cleanup
+grab
