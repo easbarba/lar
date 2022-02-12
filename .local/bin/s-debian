@@ -32,7 +32,7 @@ packages() {
 		time entr tree bc strace ltrace cpio lhasa lzop
 		rsync pv texinfo autoconf automake socat ripgrep)
 
-	network=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools resolvconf)
+	network=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools resolvconf dhcpcd5)
 
 	programming=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv)
 
