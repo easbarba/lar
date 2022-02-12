@@ -67,6 +67,8 @@ packages() {
 	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
 		aspell-pt-br telegram-desktop calibre) # gaupol kdeconnect
 
+	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
+
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
@@ -86,6 +88,7 @@ packages() {
 		"${gnu[@]}"
 		"${shell[@]}"
 		"${media[@]}"
+		"${sound[@]}"
 		"${programming[@]}"
 		"${editors[@]}"
 		"${user[@]}"
@@ -145,10 +148,16 @@ clean() {
 
 services() {
 	s-echo "Debian Services"
+
 	_mpd() {
 		sudo systemctl disable mpd
 	}
 
+	_pipewire() {
+		systemctl --user --now enable wireplumber pipewire pipewire-pulse
+	}
+
+	_pipewire
 	_mpd
 }
 
