@@ -15,7 +15,7 @@ LOCAL_BIN="$HOME/.local/bin"
 
 tools=(udiskie mpd)
 
-apps=(emacs alacritty zathura firefox nm-applet "$LOCAL_BIN/s-wall")
+apps=(emacs alacritty okular firefox nm-applet "$LOCAL_BIN/s-wall")
 
 # * Helpers
 

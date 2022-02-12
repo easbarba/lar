@@ -170,11 +170,11 @@ awful.rules.rules = {
     {rule_any = {type = {"normal", "dialog"}}, properties = {titlebars_enabled = false}},
     -- Tags: Apps to always map on the specified tag.
     {
-        rule_any = {class = {"Emacs"}},
+        rule_any = {class = {"Emacs", "kate", "Code"}},
         properties = {tag = "mx"}
     },
     {
-        rule_any = {class = {"Zathura", "Atril", "libreoffice-writer", "libreoffice"}},
+        rule_any = {class = {"okular", "Evince", "Zathura", "Atril", "libreoffice-writer", "libreoffice"}},
         properties = {tag = "reader"}
     },
     {
@@ -191,7 +191,7 @@ awful.rules.rules = {
     },
     -- Fullscreen Windows:
     {
-        rule_any = {class = {"Emacs", "kitty", "Zathura", "mpv", "Alacritty", "st"}},
+        rule_any = {class = {"Emacs", "okular", "Evince", "Zathura", "mpv", "Alacritty", "st"}},
         properties = {fullscreen = true}
     },
     {
