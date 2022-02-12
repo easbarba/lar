@@ -8,10 +8,12 @@ export EDITOR="nano"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 
-# * DIRECTORIES ENV VARS
+# * XDG HOMES
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+
+# XDG DIRS
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
@@ -23,6 +25,7 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 [ ! -w "${XDG_RUNTIME_DIR=/run/user/${UID}}" ] && export XDG_RUNTIME_DIR=/tmp
 
+# LOCAL FOLDERS
 export LOCAL="$HOME/.local"
 export LOCAL_BIN="$LOCAL/bin"
 export LOCAL_LIB="$LOCAL/lib"
@@ -126,4 +129,9 @@ eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 export GNOME_KEYRING_PID
 export GNOME_KEYRING_CONTROL
+# ===================================================
+
+# MISC
+# readline
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 # ===================================================
