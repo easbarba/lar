@@ -34,7 +34,7 @@ packages() {
 
 	network=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools resolvconf)
 
-	programming=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring-daemon direnv)
+	programming=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv)
 
 	shell=(bash-completion shellcheck zsh fish)
 
@@ -60,7 +60,7 @@ packages() {
 	wayland=(wl-clipboard sway swaybg swaylock foot clipman grimshot xwayland)
 
 	wmapps=(htop ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin
-		udiskie bluez okular mpd mpc ncmpcpp suckless-tools zathura)
+		udiskie bluez okular mpd mpc ncmpcpp suckless-tools zathura network-manager-gnome)
 
 	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
@@ -70,7 +70,7 @@ packages() {
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
-		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly libavcodec58)
 
 	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
 		libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
@@ -157,6 +157,11 @@ services() {
 		systemctl --user --now enable wireplumber pipewire pipewire-pulse
 	}
 
+	_misc() {
+		sudo systemctl enable fstrim.timer
+	}
+
+	_misc
 	_pipewire
 	_mpd
 }
@@ -191,7 +196,7 @@ pre
 packages
 post
 clean
-# services
+services
 foreign
 
 # dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
