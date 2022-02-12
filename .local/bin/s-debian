@@ -28,17 +28,17 @@ packages() {
 
 	essentials=(git ssh curl unzip tmux)
 
-	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool linux-perf
-		time entr tree xsel xclip bc htop strace ltrace cpio lhasa lzop
-		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep)
+	system=(zip p7zip p7zip-full recutils at usbutils lsof atool linux-perf
+		time entr tree bc strace ltrace cpio lhasa lzop
+		rsync pv texinfo autoconf automake socat ripgrep)
 
-	network=(net-tools iproute2 telnet) # iwd iw wireless-tools
+	network=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools resolvconf)
 
-	programming=(git-email subversion mercurial libpq-dev editorconfig) # direnv
+	programming=(jq git-email subversion mercurial libpq-dev editorconfig) # direnv
 
 	shell=(bash-completion shellcheck zsh fish)
 
-	editors=(zile vim neovim micro)
+	editors=(zile vim neovim micro kate)
 
 	gnu=(bash gcc make vrms info wget parallel gawk)
 
@@ -50,17 +50,17 @@ packages() {
 
 	security=(nftables gnutls-bin)
 
-	laptop=(acpi lm-sensors) # laptop-mode-tools libinput-tools
+	laptop=(acpi lm-sensors lshw laptop-mode-tools) # libinput-tools
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
 		apt-file gdebi)
 
 	xorg=(awesome feh scrot xclip xsel)
 
-	wayland=(wl-clipboard) # sway swaybg swaylock foot clipman grimshot xwayland
+	wayland=(wl-clipboard sway swaybg swaylock foot clipman grimshot xwayland)
 
-	wmapps=(ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin
-		udiskie bluez zathura mpd mpc ncmpcpp suckless-tools)
+	wmapps=(htop ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin
+		udiskie bluez okular mpd mpc ncmpcpp suckless-tools zathura)
 
 	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
