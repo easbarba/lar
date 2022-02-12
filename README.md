@@ -21,15 +21,23 @@ Esse manual cobre os seguintes principais pontos:
   
   https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current-live/amd64/iso-hybrid/
 
-  Ha vários métodos para queimar imagens ISO no seu pendrive eu prefiro o mais antigos e simples, `dd`:
+  Valide o conteudo da ISO:
+  
+  sha256sum
+  `cat SHA256SUMS | grep $(sha256sum debian-live-11.2.0-amd64-gnome+nonfree.iso | cut -f 1 -d " ")`
+
+  sha512sum
+  `cat SHA512SUMS | grep $(sha512sum debian-live-11.2.0-amd64-gnome+nonfree.iso | cut -f 1 -d " ")`
+
+  Uma vez seguros da veracidade da nossa imagem, podemos então queimar a imagem no pendrive, e ha vários métodos para esse fim, eu prefiro o mais antigos e simples, `dd`:
   
   `sudo dd bs=4M if=/home/usuario/debian.iso of=/dev/sda status=progress oflag=sync`
 
-  Para achar onde seu pendrive esta, use `df -h`, o meu esta em:
+  Para achar em qual dispositivo seu pendrive esta, use `df -h`, o meu esta em `/dev/sda`:
   
   `/dev/sda1       3,3G  3,3G     0 100% /media/easbarba/d-live nf 11.2.0 gn amd64`
 
-  PS: Lembre de apontar para a `/dev/sda` e não `/dev/sda1`.
+  Lembre-se de apontar para o dispositivo principal `/dev/sda`, não seu sub `/dev/sda1`.
 
 ## Carregando Imagem Live
   Uma vez instalado a imagem reinicie o sistema, pare o carregamento e selecione o pendrive na lista de dispositivos achados pelo boot.
