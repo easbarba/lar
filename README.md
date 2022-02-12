@@ -40,13 +40,12 @@ Esse manual cobre os seguintes principais pontos:
   Lembre-se de apontar para o dispositivo principal `/dev/sda`, não seu sub `/dev/sda1`.
 
 ## Carregando Imagem Live
-  Uma vez instalado a imagem reinicie o sistema, pare o carregamento e selecione o pendrive na lista de dispositivos achados pelo boot.
+  Uma vez copiada no pendrive reinicie seu sistema, pare o carregamento e selecione o pendrive na lista de dispositivos achados pela sua placa-mãe.
   
-  Uma vez carregado selecione a primeira opção 'Debian Live *******'
+  Uma vez carregada, selecione a primeira opção da lista: `Debian Live GNOME...`
 
-  PS: em laptops Lenovo se para o carregamento com F12, mas em modelos antigos DELETE ou ENTER, ou procure qual o seu fabricante usa para parar o carregamento.
+  PS: em laptops Lenovo se para o carregamento com F12, mas em modelos antigos podem ser DELETE, ENTER ou ESC, para ter certeza consulte o manual do laptop ou placa-mãe.
 
-
-## license
+## Licença
   [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
