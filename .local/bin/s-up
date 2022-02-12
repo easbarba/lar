@@ -22,11 +22,17 @@ _packagers() {
     s-ruby
     s-python
     s-golang
-    s-flatpak
     s-javascript
     s-vscode
 }
 
+_foreign() {
+    s-echo "System Foreign installers"
+
+    s-guix
+    s-flatpak
+    s-containers
+}
 _user() {
     s-echo "FLOSS projects"
     floss grab
@@ -39,3 +45,4 @@ _user() {
 _distro
 _packagers
 _user
+_foreign
