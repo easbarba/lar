@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+s-echo "Python Toolings"
+
 _devel() {
     local packages=(black pipenv pyflakes pytest isort nose poetry python-lsp-server)
 
@@ -27,6 +29,7 @@ _poetry() {
     [[ ! -x $(command -v poetry) ]] &&
         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 
+    s-echo "Poetry"
     poetry self update
 
     # poetry completions zsh >~/.zfunc/_poetry
