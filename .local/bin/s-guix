@@ -52,7 +52,7 @@ system() {
 }
 
 development() {
-	local packages=()
+	local packages=(node)
 
 	s-dolist "guix install" "${packages[@]}"
 }
@@ -64,11 +64,13 @@ languages() {
 }
 
 # * RUN
+main() {
+	keys
+	get
+	install
+	upgrade
+	glocale
+	system
+}
 
-keys
-get
-install
-upgrade
-
-glocale
-system
+main
