@@ -76,17 +76,16 @@ _aws() {
     _install
 }
 
-_terraform() {
-    [[ -x $(command -v terraform) ]] && return
-
+_hashicorp() {
     _pre() {
         curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-        echo "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com bullseye main" | sudo tee /etc/apt/sources.list.d/terraform.list >/dev/null
+        echo "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com bullseye main" | sudo tee /etc/apt/sources.list.d/hashicorp.list >/dev/null
     }
 
     _install() {
-        sudo apt update -y
-        sudo apt install -y terraform
+        sudo apt update
+        sudo apt install -y terraform nomad vagrant -t hashicorp
+        sudo apt install -y vagrant-libvirt
     }
 
     _pre
@@ -95,12 +94,11 @@ _terraform() {
 
 _minikube() {
     _pre() {
-        curl -o /tmp/minikube -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
     }
 
     _install() {
-        chmod +x /tmp/minikube
-        sudo mv /tmp/minikube /usr/local/bin/
+        sudo dpkg -i minikube_latest_amd64.deb
     }
 
     _pre
@@ -109,12 +107,14 @@ _minikube() {
 
 _kubectl() {
     _pre() {
-        curl -o /tmp/kubectl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+        sudo apt-get update
+        sudo apt-get install -y apt-transport-https ca-certificates curl
+        sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
     }
 
     _install() {
-        chmod +x /tmp/kubectl
-        sudo mv /tmp/kubectl /usr/local/bin/
+        sudo apt-get install -y kubectl
     }
 
     _pre
@@ -175,14 +175,6 @@ _virtualization() {
     for func in {_install,_services,_post}; do
         $func
     done
-}
-
-_vagrant() {
-    _install() {
-        sudo apt install -y vagrant
-    }
-
-    _install
 }
 
 _podman() {
