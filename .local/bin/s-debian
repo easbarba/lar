@@ -34,7 +34,7 @@ packages() {
 
 	network=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools resolvconf)
 
-	programming=(jq git-email subversion mercurial libpq-dev editorconfig) # direnv
+	programming=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring-daemon direnv)
 
 	shell=(bash-completion shellcheck zsh fish)
 
