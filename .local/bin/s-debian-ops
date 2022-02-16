@@ -27,7 +27,7 @@ _docker() {
 
     _install() {
         sudo apt-get update -y
-        sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
     }
 
     _services() {
@@ -69,6 +69,14 @@ _gcloud() {
     for f in {_pre,_install}; do
         $f
     done
+}
+
+_gitlab() {
+    _install() {
+        sudo apt install -y gitlab-runner
+    }
+
+    _install
 }
 
 _aws() {
@@ -221,6 +229,14 @@ _podman() {
     # done
 }
 
+_podman_compose() {
+    _install() {
+        pip3 install podman-compose --upgrade
+    }
+
+    _install
+}
+
 _podman_docker_compose() {
     _post() {
         # Docker Compose will use the correct socket.
@@ -232,14 +248,15 @@ _podman_docker_compose() {
 
 # * RUN
 main() {
+    _podman
+    _podman_compose
+    _hashicorp
+    _virtualbox
+    _aws
     _kubectl
     _minikube
-    _hashicorp
-    _aws
     _docker
     _gcloud
-    _virtualbox
-    _podman
 }
 
 main
