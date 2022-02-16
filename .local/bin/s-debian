@@ -65,7 +65,7 @@ packages() {
 	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
-		aspell-pt-br telegram-desktop calibre) # gaupol kdeconnect
+		inkscape aspell-pt-br telegram-desktop calibre) # gaupol kdeconnect
 
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
 
