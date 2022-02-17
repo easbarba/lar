@@ -179,13 +179,12 @@ _kubectl() {
 }
 
 _qemu() {
-    [[ -x $(command -v qemu) ]] && return
+    [[ -x $(command -v qemu-img) ]] && return
 
     _install() {
         sudo apt-get install -y qemu
     }
-    # infra=( qemu qemu-utils qemu-efi qemu-kvm libvirt-clients
-    #     libvirt-daemon-system virtinst bridge-utils) # ebtables
+    # infra=( qemu qemu-utils qemu-efi qemu-kvm ) # ebtables
 
     _install
 }
@@ -217,8 +216,10 @@ _ansible() {
 }
 
 _libvirt() {
+    [[ -x $(command -v virt-manager) ]] && return
+
     _install() {
-        sudo apt-get install -y virt-manager libvirt-daemon-system
+        sudo apt-get install -y libvirt-daemon-system libvirt-clients libvirt-daemon-system virtinst bridge-utils virt-manager
     }
 
     _services() {
