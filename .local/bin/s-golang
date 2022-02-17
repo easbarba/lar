@@ -13,7 +13,8 @@ COMMAND='go install'
 
 _packages() {
 	local packages=('golang.org/x/tools/gopls@latest'
-		'github.com/xxxserxxx/gotop/v4/cmd/gotop@latest')
+		# 'github.com/xxxserxxx/gotop/v4/cmd/gotop@latest'
+	)
 
 	s-dolist "$COMMAND" "${packages[@]}"
 }
