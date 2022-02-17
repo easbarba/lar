@@ -89,6 +89,24 @@ _aws() {
     _install
 }
 
+_aws-iam-authenticator() {
+    _pre() {
+        curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P $HOME/.local/bin
+        chmod +x $HOME/.local/bin/aws-iam-authenticator
+    }
+
+    _pre
+}
+
+_eksclt() {
+    ""
+}
+
+_kind() {
+    GO111MODULE=on
+    go install sigs.k8s.io/kind@v0.11.1
+}
+
 _hashicorp() {
     [[ -x $(command -v terraform) ]] && return
 
