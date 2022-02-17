@@ -8,6 +8,7 @@ gitea,https://github.com/go-gitea/gitea
 traefik,https://github.com/traefik/traefik
 terraform,https://github.com/hashicorp/terraform
 github-cli,https://github.com/cli/cli
+kind,https://github.com/kubernetes-sigs/kind
 kubectl,https://github.com/kubernetes/kubectl
 docker-compose,https://github.com/docker/compose
 go-tools,https://github.com/golang/tools
