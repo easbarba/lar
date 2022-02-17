@@ -190,14 +190,16 @@ foreign() {
 }
 
 # * RUN
+s-echo "Debian '$(cat /etc/debian_version)' - Installing system packages on Debian"
 
-upgrade
-pre
-packages
-post
-clean
-services
-foreign
+_main() {
+	upgrade
+	pre
+	packages
+	post
+	clean
+	services
+	foreign
+}
 
-# dpkg -l | egrep -i 'firmware|wifi' | awk '{print $2}'
-# firmware-linux-nonfree, firmware-misc-nonfree, firmware-atheros, and firmware-ath9k-htc
+main
