@@ -80,6 +80,10 @@ e_zinit_plugins()
 e_completions() {
     # kubectl
     source <(kubectl completion zsh)
+
+    # eksclt
+    mkdir -p ~/.zsh/completion/
+    eksctl completion zsh > ~/.zsh/completion/_eksctl
 }
 
 e_zinit()
