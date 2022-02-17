@@ -35,8 +35,9 @@ _foreign() {
     s-flatpak
     s-containers
 }
+
 _user() {
-    s-echo "FLOSS projects"
+    s-echo "User preps"
 
     floss grab
     floss archive
@@ -45,7 +46,7 @@ _user() {
 }
 
 # * RUN
-_distro
+# _distro
 _packagers
-_user
 _foreign
+_user
