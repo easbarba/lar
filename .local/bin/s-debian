@@ -3,8 +3,14 @@
 # Debug Options
 set -euo pipefail
 
+# Information
+
 DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
 s-checkdeps "${DEPS[@]}"
+
+s-echo "Debian '$(cat /etc/debian_version)' - Installing system packages on Debian"
+
+# Begin
 
 upgrade() {
 	s-echo "Upgrading System"
@@ -190,8 +196,6 @@ foreign() {
 }
 
 # * RUN
-s-echo "Debian '$(cat /etc/debian_version)' - Installing system packages on Debian"
-
 _main() {
 	upgrade
 	pre
