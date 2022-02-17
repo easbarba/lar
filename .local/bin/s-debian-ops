@@ -3,7 +3,7 @@
 # Debug Options
 set -euo pipefail
 
-DEPS=(sudo apt systemctl tee)
+DEPS=(sudo apt curl python3 go systemctl tee groupadd gpasswd)
 s-checkdeps "${DEPS[@]}"
 
 _docker() {
@@ -72,8 +72,10 @@ _gcloud() {
 }
 
 _gitlab() {
+    [[ -x $(command -v gitlab-runner) ]] && return
+
     _install() {
-        sudo apt install -y gitlab-runner
+        sudo apt-get install -y gitlab-runner
     }
 
     _install
@@ -83,13 +85,15 @@ _aws() {
     [[ -x $(command -v aws) ]] && return
 
     _install() {
-        sudo apt install -y awscli
+        sudo apt-get install -y awscli
     }
 
     _install
 }
 
 _aws_iam_authenticator() {
+    [[ -x $(command -v aws-iam-authenticator) ]] && return
+
     _pre() {
         curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P $HOME/.local/bin
         chmod +x $HOME/.local/bin/aws-iam-authenticator
@@ -99,12 +103,24 @@ _aws_iam_authenticator() {
 }
 
 _eksclt() {
-    ""
+    [[ -x $(command -v eksctl) ]] && return
+
+    _pre() {
+        curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+        sudo mv /tmp/eksctl /usr/local/bin
+    }
+
+    _pre
 }
 
 _kind() {
-    GO111MODULE=on
-    go install sigs.k8s.io/kind@v0.11.1
+    [[ -x $(command -v kind) ]] && return
+
+    _install() {
+        GO111MODULE=on go install sigs.k8s.io/kind@v0.11.1
+    }
+
+    _install
 }
 
 _hashicorp() {
@@ -118,9 +134,9 @@ _hashicorp() {
     }
 
     _install() {
-        sudo apt update
-        sudo apt install -y terraform nomad vagrant
-        sudo apt install -y vagrant-libvirt
+        sudo apt-get update
+        sudo apt-get install -y terraform nomad vagrant
+        sudo apt-get install -y vagrant-libvirt
     }
 
     _pre
@@ -166,7 +182,7 @@ _qemu() {
     [[ -x $(command -v qemu) ]] && return
 
     _install() {
-        sudo apt install -y qemu
+        sudo apt-get install -y qemu
     }
     # infra=( qemu qemu-utils qemu-efi qemu-kvm libvirt-clients
     #     libvirt-daemon-system virtinst bridge-utils) # ebtables
@@ -178,7 +194,7 @@ _virtualbox() {
     [[ -x $(command -v virtualbox) ]] && return
 
     _install() {
-        sudo apt install -y virtualbox
+        sudo apt-get install -y virtualbox
     }
 
     _install
@@ -188,7 +204,7 @@ _ansible() {
     [[ -x $(command -v ansible) ]] && return
 
     _install() {
-        sudo apt install -y ansible
+        sudo apt-get install -y ansible
     }
 
     _addon() {
@@ -200,9 +216,9 @@ _ansible() {
     _addon
 }
 
-_virtualization() {
+_libvirt() {
     _install() {
-        sudo dnf install -y @virtualization
+        sudo apt-get install -y virt-manager libvirt-daemon-system
     }
 
     _services() {
@@ -226,7 +242,7 @@ _podman() {
     [[ -x $(command -v podman) ]] && return
 
     _install() {
-        sudo apt install -y podman
+        sudo apt-get install -y podman
     }
 
     _services() {
@@ -241,40 +257,41 @@ _podman() {
     }
 
     _install
-
-    # for func in {_install,_services,_post}; do
-    #     $func
-    # done
 }
 
 _podman_compose() {
+    [[ -x $(command -v podman-compose) ]] && return
+
     _install() {
-        pip3 install podman-compose --upgrade
+        python3 -m pip install podman-compose --upgrade
     }
 
-    _install
-}
-
-_podman_docker_compose() {
     _post() {
         # Docker Compose will use the correct socket.
         export DOCKER_HOST=///run/user/$UID/podman/podman.sock
     }
 
-    _post
+    _install
 }
 
 # * RUN
 main() {
+    _ansible
+    _aws
+    _aws_iam_authenticator
+    _docker
+    _eksclt
+    _gcloud
+    _gitlab
+    _qemu
+    _hashicorp
+    _kind
+    _kubectl
+    # _libvirt
+    _minikube
     _podman
     _podman_compose
-    _hashicorp
     _virtualbox
-    _aws
-    _kubectl
-    _minikube
-    _docker
-    _gcloud
 }
 
 main
