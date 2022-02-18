@@ -5,7 +5,7 @@
 # * DEFAULT SOFTWARE:
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="alacritty"
+export TERMINAL="gnome-terminal"
 export BROWSER="firefox"
 
 # * XDG HOMES
@@ -124,6 +124,11 @@ export PATH="$HOME/.cargo/bin"${PATH:+:}$PATH
 export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
 # ===================================================
 
+# MISC
+# readline
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+# ===================================================
+
 # ** GNOME KEYRING
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
@@ -131,7 +136,5 @@ export GNOME_KEYRING_PID
 export GNOME_KEYRING_CONTROL
 # ===================================================
 
-# MISC
-# readline
-export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
-# ===================================================
+# ** brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
