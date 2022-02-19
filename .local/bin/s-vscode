@@ -35,6 +35,12 @@ _web() {
     s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
+_go() {
+    local packages=(golang.Go)
+
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
 _misc() {
 
     local packages=(jrebocho.vscode-random streetsidesoftware.code-spell-checker
@@ -49,18 +55,29 @@ _css() {
     s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
+_ops() {
+    local packages=(ms-kubernetes-tools.vscode-kubernetes-tools ms-azuretools.vscode-docker ms-vscode-remote.remote-containers googlecloudtools.cloudco)
+
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+}
+
+_themes() {
+    local packages=(luxcium.pop-n-lock-theme-vscode)
+
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+
+}
+
 _tools() {
-    local packages=(esbenp.prettier-vscode eamodio.gitlens
+    local packages=(esbenp.prettier-vscode eamodio.gitlens vscodevim.vim
         donjayamanne.githistory kamikillerto.vscode-colorize
-        msjsdiag.debugger-for-chrome ritwickdey.LiveServer)
+        ritwickdey.LiveServer ms-azuretools.vscode-docker)
 
     s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
 _tools
-_javascript
-_vuejs
-_css
+_themes
+_go
 _ruby
-_web
 _misc
