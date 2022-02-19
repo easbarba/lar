@@ -10,7 +10,7 @@ s-checkdeps "${DEPS[@]}"
 
 _boxes() {
     local command='vagrant box add'
-    local boxes=(almalinux/8 ubuntu/focal64)
+    local boxes=(debian/bullseye64 ubuntu/focal64)
 
     s-dolist "$command" "${boxes[@]}"
 }
