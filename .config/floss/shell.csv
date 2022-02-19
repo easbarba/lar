@@ -1,4 +1,5 @@
 name,repository
+gimme,https://github.com/travis-ci/gimme
 neofetch,https://github.com/dylanaraps/neofetch
 pfetch,https://github.com/dylanaraps/pfetch
 bash-completion,https://github.com/scop/bash-completion
