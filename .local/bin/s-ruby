@@ -14,14 +14,7 @@ _base() {
 }
 
 _devel() {
-    packages=(reek rufo rubocop)
-
-    s-dolist "gem install" "${packages[@]}"
-    s-dolist "gem update" "${packages[@]}"
-}
-
-_vagrant() {
-    packages=()
+    packages=(reek rufo rubocop solargraph)
 
     s-dolist "gem install" "${packages[@]}"
     s-dolist "gem update" "${packages[@]}"
