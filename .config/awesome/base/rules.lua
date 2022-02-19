@@ -178,7 +178,7 @@ awful.rules.rules = {
         properties = {tag = "reader"}
     },
     {
-        rule_any = {class = {"kitty", "st-256color", "Alacritty"}},
+        rule_any = {class = {"gnome-terminal", "st-256color", "Alacritty"}},
         properties = {tag = "term"}
     },
     {
@@ -191,7 +191,7 @@ awful.rules.rules = {
     },
     -- Fullscreen Windows:
     {
-        rule_any = {class = {"Emacs", "okular", "Evince", "Zathura", "mpv", "Alacritty", "st"}},
+        rule_any = {class = {"Emacs", "Code", "okular", "Evince", "Zathura", "mpv", "Alacritty", "st"}},
         properties = {fullscreen = true}
     },
     {

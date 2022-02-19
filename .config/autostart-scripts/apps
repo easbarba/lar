@@ -15,7 +15,7 @@ LOCAL_BIN="$HOME/.local/bin"
 
 tools=(udiskie mpd)
 
-apps=(emacs gnome-terminal okular firefox nm-applet picom "$LOCAL_BIN/s-wall")
+apps=(emacs code gnome-terminal okular firefox nm-applet picom "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
