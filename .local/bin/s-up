@@ -46,7 +46,7 @@ _user() {
 }
 
 # * RUN
-# _distro
+_distro
 _packagers
 _foreign
 _user
