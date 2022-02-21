@@ -16,11 +16,9 @@ README.md
 .config/nixos
 .config/nixpkgs
 .config/nyxt
-.config/picom
 .config/powershell
 .config/qtile
 .config/stumpwm
-.config/sway
 .config/xmonad
 .config/yabar
 .config/yabar
