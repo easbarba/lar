@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+# Description: boostrap Nix
+# Dependencies: sudo, curl, bash
+
+_install() {
+    [[ -x $(command -v nix-env) ]] && return
+
+    curl -L https://nixos.org/nix/install | sh
+}
+
+_packages() {
+    local packs=() # mcfly direnv cpufetch
+    e_dolist 'nix-env --uninstall' "${packs[@]}"
+}
+
+_languages() {
+    local packs2=(nixpkgs.ruby_2_7 nixpkgs.nodejs nixpkgs.nodePackages.npm)
+    e_dolist 'nix-env --uninstall' "${packs2[@]}"
+}
+
+_install
+_packages
+_packages
