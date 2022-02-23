@@ -30,6 +30,10 @@ _devel() {
     # [[ -x $(command -v /usr/bin/ssh) ]] && s-podman
 }
 
+_post() {
+    s-post
+}
+
 # * RUN
 
 _distros
