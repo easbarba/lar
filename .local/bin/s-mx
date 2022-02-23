@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+CUSTOM_EMACS="$HOME/.local/bin/emacs"
+
+[[ -x $CUSTOM_EMACS ]] && $CUSTOM_EMACS || /usr/bin/emacs
