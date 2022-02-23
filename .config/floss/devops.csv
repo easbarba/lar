@@ -1,4 +1,5 @@
 name,repository
+node-red-docker,https://github.com/node-red/node-red-docker
 oreilly-docker-java-shopping,https://github.com/danielbryantuk/oreilly-docker-java-shopping
 kubernetes-and-docker-the-complete-guide,https://github.com/PacktPublishing/Kubernetes-and-Docker-The-Complete-Guide
 mastering-ansible-fourth-edition,https://github.com/PacktPublishing/Mastering-Ansible-Fourth-Edition

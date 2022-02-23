@@ -1,4 +1,6 @@
 name,repository
+linkerd2,https://github.com/linkerd/linkerd2
+flux2,https://github.com/fluxcd/flux2
 pro-go,https://github.com/Apress/pro-go
 learn-go-with-tests,https://github.com/quii/learn-go-with-tests
 goplio,https://github.com/adonovan/gopl.io
