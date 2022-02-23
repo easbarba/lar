@@ -48,7 +48,7 @@ packages() {
 
 	gnu=(bash gcc make vrms info wget parallel gawk)
 
-	emacs=(emacs libgccjit-10-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
+	emacs=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
 
 	langs=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev) # libfixposix-dev
 
