@@ -1,35 +1,25 @@
 #!/usr/bin/env bash
 
 # Description: auto-start list of software toolings
-# DEPS=(pgrep bash feh)
-# e_checkdeps ${DEPS[@]}
 
 LOCAL_BIN="$HOME/.local/bin"
 
 # * Guards
-
 [ "$DESKTOP_SESSION" == "plasma" ] && exit
 [ "$DESKTOP_SESSION" == "gnome" ] && exit
 
 # * APPS LIST
 
 tools=(udiskie mpd)
-
-apps=(emacs code gnome-terminal okular firefox nm-applet picom "$LOCAL_BIN/s-wall")
+apps=("$LOCAL_BIN/s-mx" gnome-terminal okular firefox nm-applet picom "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
-not_found() {
-  [[ ! -x $(command -v "$1") ]]
-}
+not_found() { [[ ! -x $(command -v "$1") ]]; }
 
-is_running() {
-  [[ $(pgrep -f "$1") ]]
-}
+is_running() { [[ $(pgrep -f "$1") ]]; }
 
-run() {
-  "$1" &
-}
+run() { "$1" &; }
 
 autostart() {
   local apps=("$@")
