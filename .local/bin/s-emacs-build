@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(sudo git make)
+s-checkdeps "${DEPS[@]}"
+
+# ENV VARS
+BUILDS="$HOME/Builds"
+BUILD_ROOT="$BUILDS/emacs"
+INSTALL_DIR="$HOME/.local"
+TAG=emacs-27.1
+
+s-echo "Emacs - Installing local build"
+
+# BEGIN
+
+_get() {
+    [[ -d $BUILD_ROOT/.git ]] && return
+
+    git clone --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
+}
+
+_update() {
+    [[ ! -d "$BUILD_ROOT/.git" ]] && return
+
+    git -C "$BUILD_ROOT" pull
+}
+
+_checkout() { git checkout ${TAG}; }
+
+_pre() {
+    cd "$BUILD_ROOT" || return
+
+    [[ -f Makefile ]] && make distclean
+    sh autogen.sh
+}
+
+_configure() {
+    cd "$BUILD_ROOT" || return
+
+    sh configure --prefix="$INSTALL_DIR" --with-modules --with-native-compilation --with-gif --with-jpeg --with-png --with-rsvg --with-tiff --with-xft --with-xpm --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls --with-x-toolkit=gtk3
+}
+
+_install() {
+    cd "$BUILD_ROOT" || return
+
+    make -j 4
+    make install
+}
+
+# * RUN
+_get
+# _checkout
+_update
+_pre
+_configure
+# _install
