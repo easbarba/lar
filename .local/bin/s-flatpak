@@ -11,7 +11,7 @@ _user() {
     local command="flatpak install flathub -y"
     s-dolist "$command" "${packages[@]}"
 
-    local command="flatpak update flathub -y"
+    local command="flatpak update -y"
     s-dolist "$command" "${packages[@]}"
 }
 
@@ -22,7 +22,7 @@ _devel() {
     local command="flatpak install flathub -y"
     s-dolist "$command" "${packages[@]}"
 
-    local command="flatpak update flathub -y"
+    local command="flatpak update -y"
     s-dolist "$command" "${packages[@]}"
 }
 
