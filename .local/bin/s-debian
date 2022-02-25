@@ -38,8 +38,6 @@ packages() {
 		time entr tree bc strace ltrace cpio lhasa lzop
 		rsync pv texinfo autoconf automake socat ripgrep)
 
-	network=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools resolvconf dhcpcd5)
-
 	programming=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv)
 
 	shell=(bash-completion shellcheck zsh fish)
@@ -53,8 +51,6 @@ packages() {
 	langs=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev) # libfixposix-dev
 
 	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
-
-	security=(nftables gnutls-bin)
 
 	laptop=(acpi lm-sensors lshw laptop-mode-tools) # libinput-tools
 
@@ -71,7 +67,7 @@ packages() {
 	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
 	user=(firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
-		inkscape aspell-pt-br telegram-desktop calibre) # gaupol kdeconnect
+		inkscape aspell-pt-br telegram-desktop calibre cheese) # gaupol kdeconnect
 
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
 
@@ -102,8 +98,6 @@ packages() {
 		"${wayland[@]}"
 		"${wmapps[@]}"
 		"${laptop[@]}"
-		"${network[@]}"
-		"${security[@]}"
 		"${books[@]}"
 		"${fonts[@]}"
 		"${amd[@]}")

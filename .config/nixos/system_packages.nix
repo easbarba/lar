@@ -150,7 +150,6 @@
     obs-studio
     amfora # netsurf kdeconnect falkon
     tdesktop
-    steam
     falkon
 
     # nix

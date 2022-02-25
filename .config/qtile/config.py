@@ -73,7 +73,11 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("cero operations volume toggle")),
 ]
 
-widget_defaults = dict(font="sans", fontsize=12, padding=3,)
+widget_defaults = dict(
+    font="sans",
+    fontsize=12,
+    padding=3,
+)
 extension_defaults = widget_defaults.copy()
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
@@ -127,7 +131,7 @@ groups_names = [
     ("mx", ["Emacs"]),
     ("devel", ["MonoDevelop", "kate", "jetbrains-rider", "Code"]),
     ("term", ["st", "st-256color", "lx-terminal"]),
-    ("media", ["libreoffice", "mpv", "thunderbird", "Steam"]),
+    ("media", ["libreoffice", "mpv", "thunderbird"]),
     ("www", ["Chromium", "Google-chrome", "Firefox", "next"]),
 ]
 groups = [Group(i, matches=[Match(wm_class=x)]) for i, x in groups_names]
@@ -163,7 +167,10 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.WindowName(
-                    fontsize=12, foreground=COLORS.pink, padding=10, show_state=False,
+                    fontsize=12,
+                    foreground=COLORS.pink,
+                    padding=10,
+                    show_state=False,
                 ),
                 widget.Prompt(foreground=COLORS.pink, ignore_dups_history=True),
                 widget.GroupBox(

@@ -33,7 +33,6 @@
   hardware.opengl.driSupport32Bit = true; # For 32 bit applications
 
   # unfree
-  programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "Nixos"; # Define your hostname.

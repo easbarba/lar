@@ -186,7 +186,7 @@ awful.rules.rules = {
         properties = {tag = "www"}
     },
     {
-        rule_any = {class = {"mpv", "Steam", "TelegramDesktop", "Transmission-gtk"}},
+        rule_any = {class = {"mpv", "TelegramDesktop", "Transmission-gtk"}},
         properties = {tag = "media"}
     },
     -- Fullscreen Windows:

@@ -1,4 +1,11 @@
 name,repository
+sustainable-rails-docker,https://github.com/davetron5000/sustainable-rails-docker
+docker-compose-rails,https://github.com/boltops-learn/docker-compose-rails
+tkav-docker-lamp-stack,https://github.com/tkav/docker-lamp-stack
+mattrayner-docker-lamp,https://github.com/mattrayner/docker-lamp
+nodejs-postgresql-azure,https://github.com/glaucia86/nodejs-postgresql-azure
+terraform-in-action-manning-code,https://github.com/terraform-in-action/manning-code
+ruby-app-deployment-terraform,https://github.com/shraddhapatel04/Ruby-app-deployment-Terraform
 node-red-docker,https://github.com/node-red/node-red-docker
 oreilly-docker-java-shopping,https://github.com/danielbryantuk/oreilly-docker-java-shopping
 kubernetes-and-docker-the-complete-guide,https://github.com/PacktPublishing/Kubernetes-and-Docker-The-Complete-Guide

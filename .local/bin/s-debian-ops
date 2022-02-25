@@ -143,7 +143,7 @@ _hashicorp() {
     _install
 }
 
-_heml() {
+_helm() {
     [[ -x $(command -v helm) ]] && return
 
     _pre() {
@@ -290,6 +290,29 @@ _podman_compose() {
     _install
 }
 
+_security() {
+    [[ -x $(command -v gnutls-cli) ]] && return
+
+    local packages command
+
+    command="sudo apt-get install -y"
+    packages=(nftables gnutls-bin)
+
+    s-dolist "$command" "${packages[@]}"
+}
+
+_network() {
+    [[ -x $(command -v tcpdump) ]] && return
+
+    local packages command
+
+    packages=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools
+        resolvconf dhcpcd5 netcat-traditional tcpdump)
+    command="sudo apt-get install -y"
+
+    s-dolist "$command" "${packages[@]}"
+}
+
 # * RUN
 main() {
     _ansible
@@ -306,6 +329,7 @@ main() {
     _kube
     # _libvirt
     _minikube
+    _network
     _podman
     _podman_compose
     _virtualbox

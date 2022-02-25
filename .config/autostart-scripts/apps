@@ -11,7 +11,7 @@ LOCAL_BIN="$HOME/.local/bin"
 # * APPS LIST
 
 tools=(udiskie mpd)
-apps=("$LOCAL_BIN/s-mx" gnome-terminal okular firefox nm-applet picom "$LOCAL_BIN/s-wall")
+apps=("$LOCAL_BIN/s-mx" gnome-terminal evince firefox nm-applet "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
@@ -19,7 +19,9 @@ not_found() { [[ ! -x $(command -v "$1") ]]; }
 
 is_running() { [[ $(pgrep -f "$1") ]]; }
 
-run() { "$1" &; }
+run() {
+  "$1" &
+}
 
 autostart() {
   local apps=("$@")

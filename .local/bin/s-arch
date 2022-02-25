@@ -69,7 +69,7 @@ packages() {
         aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils
         w3m elinks dunst) #seahorse
 
-    user=(netsurf falkon firefox libreoffice gimp obs-studio amfora telegram-desktop steam
+    user=(netsurf falkon firefox libreoffice gimp obs-studio amfora telegram-desktop
         kdeconnect)
 
     codec=(vorbis-tools gst-libav gst-plugins-bad

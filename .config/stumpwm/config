@@ -249,7 +249,7 @@
      (0 t t :title "mpv")
      (1 t t :title "vlc")
      (2 t t :title "libreoffice")
-     (3 t t :title "Steam")
+     (3 t t :title "firefox")
      (4 t t :title "Thunderbird")
      (5 t t :title "wine.exe")
      (6 t t :title "wineboot.exe")
