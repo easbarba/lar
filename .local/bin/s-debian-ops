@@ -313,6 +313,20 @@ _network() {
     s-dolist "$command" "${packages[@]}"
 }
 
+_firewall() {
+    _install() {
+        sudo apt-get -y install firewalld
+    }
+
+    _post() {
+        sudo systemctl enable firewalld
+        sudo systemctl start firewalld
+    }
+
+    _install
+    _post
+}
+
 # * RUN
 main() {
     _ansible
@@ -320,6 +334,7 @@ main() {
     _aws_iam_authenticator
     _docker
     _eksclt
+    _firewall
     _gcloud
     _gitlab
     _helm
