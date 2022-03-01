@@ -41,6 +41,11 @@ function e-fisher
     fisher update
 end
 
+function e-packers
+    source ~/.asdf/asdf.fish
+    # mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+end
+
 function e-direnv
     eval (direnv hook fish)
 end
