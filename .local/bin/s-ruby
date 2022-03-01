@@ -20,7 +20,17 @@ _devel() {
     s-dolist "gem update" "${packages[@]}"
 }
 
+_asdf() {
+    local rb_version
+    rb_version='3.1.1'
+
+    asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+    asdf install ruby $rb_version
+    asdf global ruby $rb_version
+}
+
 # * RUN
 
 _base
 _devel
+_asdf
