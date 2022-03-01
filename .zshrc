@@ -96,10 +96,6 @@ e_zinit()
 e_packers() {
     # asdf
     . $HOME/.asdf/asdf.sh
-    # append completions to fpath
-    fpath=(${ASDF_DIR}/completions $fpath)
-    # initialise completions with ZSH's compinit
-    autoload -Uz compinit && compinitl
 }
 
 e_prompt() {
@@ -109,6 +105,7 @@ e_prompt() {
 
     eval "$(starship init zsh)"
 }
+
 e_direnv() { eval "$(direnv hook zsh)"; }
 
 # * SOURCING
@@ -117,6 +114,7 @@ e_direnv() { eval "$(direnv hook zsh)"; }
 
 e_settings
 e_zinit
+e_packers
 e_prompt
 e_completions
 e_direnv
