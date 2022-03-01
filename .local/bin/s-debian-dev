@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(sudo apt bash)
+s-checkdeps "${DEPS[@]}"
+
+_postgres() {
+    [[ -x $(command -v psql) ]] && return
+
+    _install() {
+        sudo apt-get install postgresql postgresql-contrib
+    }
+
+    _install
+}
+
+_asdf() {
+    _ruby() {
+        apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+    }
+
+    _ruby
+}
+
+# RUN
+_main() {
+    _postgres
+    _asdf
+}
+
+main
