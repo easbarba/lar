@@ -1,8 +1,7 @@
 name,repository
-scratch,https://gitlab.com/easbarba/scratch
-ops,https://gitlab.com/easbarba/ops
-annotations,https://gitlab.com/easbarba/annotations
-gnu,https://gitlab.com/easbarba/gnu
-floss,https://gitlab.com/easbarba/floss
-pak,https://gitlab.com/easbarba/pak
-lar,https://gitlab.com/easbarba/lar
+ops,https://github.com/easbarba/ops
+annotations,https://github.com/easbarba/annotations
+gnu,https://github.com/easbarba/gnu
+floss,https://github.com/easbarba/floss
+pak,https://github.com/easbarba/pak
+lar,https://github.com/easbarba/lar
