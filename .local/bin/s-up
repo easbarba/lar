@@ -13,8 +13,8 @@ s-checkdeps "${DEPS[@]}"
 _distro() {
     s-echo "Upgrading $DISTRO system and user packages."
 
-    distro update
-    distro upgrade
+    pak update
+    pak upgrade
 }
 
 _packagers() {
