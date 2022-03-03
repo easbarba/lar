@@ -1,6 +1,11 @@
 name,repository
 sustainable-rails-docker,https://github.com/davetron5000/sustainable-rails-docker
-faker,https://github.com/faker-ruby/faker
 solargraph,https://github.com/castwide/solargraph
+faker,https://github.com/faker-ruby/faker
+sinatra,https://github.com/sinatra/sinatra
 rake,https://github.com/ruby/rake
+jekyll,https://github.com/jekyll/jekyll
+sidekiq,https://github.com/mperham/sidekiq
+fluentd,https://github.com/fluent/fluentd
+rails,https://github.com/rails/rails
 ruby,https://github.com/ruby/ruby
