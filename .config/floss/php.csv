@@ -1,7 +1,0 @@
-name,repository
-guzzle,https://github.com/guzzle/guzzle
-phpunit,https://github.com/sebastianbergmann/phpunit
-composer,https://github.com/composer/composer
-laravel-framework,https://github.com/laravel/framework
-laravel,https://github.com/laravel/laravel
-php-src,https://github.com/php/php-src
