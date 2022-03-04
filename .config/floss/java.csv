@@ -1,3 +1,4 @@
 name,repository
 spring-boot,https://github.com/spring-projects/spring-boot
 spring-framework,https://github.com/spring-projects/spring-framework
+openjdk,https://github.com/openjdk/jdk
