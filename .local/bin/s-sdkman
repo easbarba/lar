@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+DEPS=(curl bash)
+s-checkdeps "${DEPS[@]}"
+
+COMMAND='sdk install gradle'
+
+_install() {
+    [[ -f $HOME/.sdkman/bin/sdkman-init.sh ]] && return
+
+    curl -s "https://get.sdkman.io" | bash
+}
+
+# source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+_tools() {
+    local packages=(gradle maven)
+
+    s-dolist "$COMMAND" "${packages[@]}"
+}
+
+# RUN
+
+main() {
+    _install
+    _tools
+}
+
+main
