@@ -41,6 +41,13 @@ _go() {
     s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 }
 
+_java() {
+    local packages=(vscjava.vscode-java-pack Pivotal.vscode-boot-dev-pack)
+
+    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
+
+}
+
 _python() {
     local packages=(ms-python.python)
 
@@ -87,7 +94,8 @@ _tools() {
 _tools
 _themes
 _ops
+_java
+_misc
+_ruby
 _go
 _python
-_ruby
-_misc
