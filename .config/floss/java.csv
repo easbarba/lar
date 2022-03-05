@@ -1,4 +1,9 @@
 name,repository
+jbang,https://github.com/jbangdev/jbang
+picocli,https://github.com/remkop/picocli
+junit5,https://github.com/junit-team/junit5
+gradle,https://github.com/gradle/gradle
+maven,https://gitbox.apache.org/repos/asf/maven-sources
 spring-boot,https://github.com/spring-projects/spring-boot
 spring-framework,https://github.com/spring-projects/spring-framework
 openjdk,https://github.com/openjdk/jdk
