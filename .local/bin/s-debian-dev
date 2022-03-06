@@ -6,28 +6,40 @@ set -euo pipefail
 DEPS=(sudo apt bash)
 s-checkdeps "${DEPS[@]}"
 
+COMMAND='sudo apt-get install'
+
 _postgres() {
     [[ -x $(command -v psql) ]] && return
 
     _install() {
-        sudo apt-get install postgresql postgresql-contrib
+        packages=(postgresql postgresql-contrib)
+        s-dolist "$COMMAND" "${packages[@]}"
     }
 
     _install
 }
 
-_asdf() {
-    _ruby() {
-        apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-    }
+_emacs() {
+    packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
+    s-dolist "$COMMAND" "${packages[@]}"
+}
 
-    _ruby
+_langs() {
+    packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev) # libfixposix-dev
+    s-dolist "$COMMAND" "${packages[@]}"
+}
+
+_programming() {
+    packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv)
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 # RUN
 _main() {
     _postgres
-    _asdf
+    _emacs
+    _langs
+    _programming
 }
 
 main
