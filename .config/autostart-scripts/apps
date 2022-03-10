@@ -11,7 +11,7 @@ LOCAL_BIN="$HOME/.local/bin"
 # * APPS LIST
 
 tools=(udiskie mpd)
-apps=("$LOCAL_BIN/s-mx" gnome-terminal evince firefox nm-applet "$LOCAL_BIN/s-wall")
+apps=("$LOCAL_BIN/s-mx" gnome-terminal evince firefox nm-applet picom "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
