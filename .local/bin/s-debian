@@ -15,14 +15,13 @@ s-echo "Debian '$(cat /etc/debian_version)' - Installing system packages on Debi
 upgrade() {
 	s-echo "Upgrading System"
 
-	sudo apt update -y
+	sudo apt update
 	sudo apt upgrade -y
 }
 
 pre() {
 	_multi() {
 		s-echo "Enable Multi-Arch"
-
 		sudo dpkg --add-architecture i386
 	}
 
@@ -40,11 +39,11 @@ packages() {
 
 	shell=(bash-completion shellcheck zsh fish)
 
-	editors=(zile vim neovim micro kate)
+	editors=(zile vim neovim)
 
 	gnu=(bash gcc make vrms info wget parallel gawk)
 
-	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
+	fonts=(fonts-hack fonts-dejavu fonts-jetbrains-mono ttf-ancient-fonts fonts-nanum)
 
 	laptop=(acpi lm-sensors lshw laptop-mode-tools libinput-tools)
 
@@ -53,15 +52,13 @@ packages() {
 
 	xorg=(awesome feh scrot xclip xsel)
 
-	wayland=(wl-clipboard sway swaybg swaylock foot clipman grimshot xwayland)
-
 	wmapps=(htop ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin picom
-		udiskie bluez mpd mpc ncmpcpp suckless-tools zathura network-manager-gnome)
+		udiskie bluez mpd mpc ncmpcpp suckless-tools network-manager-gnome)
 
-	books=(pandoc texlive texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-latex-base)
+	books=(pandoc)
 
-	user=(firefox libreoffice okular evince gimp obs-studio xdg-utils imagemagick aspell
-		inkscape aspell-pt-br telegram-desktop calibre cheese) # gaupol kdeconnect
+	user=(firefox libreoffice evince gimp obs-studio xdg-utils imagemagick aspell
+		aspell-pt-br telegram-desktop calibre cheese)
 
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
 
@@ -104,7 +101,6 @@ post() {
 	s-echo "Post install"
 
 	_emacs() {
-		# builds dep
 		sudo apt -y build-dep emacs
 	}
 

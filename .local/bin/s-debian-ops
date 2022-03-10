@@ -96,10 +96,14 @@ _aws_iam_authenticator() {
 
     _pre() {
         curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P "$HOME/.local/bin"
+    }
+
+    post() {
         chmod +x "$HOME/.local/bin/aws-iam-authenticator"
     }
 
     _pre
+    _post
 }
 
 _eksclt() {
@@ -296,7 +300,7 @@ _security() {
     local packages command
 
     command="sudo apt-get install -y"
-    packages=(nftables gnutls-bin)
+    packages=(gnutls-bin)
 
     s-dolist "$command" "${packages[@]}"
 }
@@ -306,11 +310,19 @@ _network() {
 
     local packages command
 
+    command="sudo apt-get install -y"
     packages=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools
         resolvconf dhcpcd5 netcat-traditional tcpdump)
-    command="sudo apt-get install -y"
 
     s-dolist "$command" "${packages[@]}"
+}
+
+_nerdctl() {
+    pre() {
+        ""
+    }
+
+    pre
 }
 
 _firewall() {
@@ -329,25 +341,25 @@ _firewall() {
 
 # * RUN
 main() {
-    _ansible
+    # _ansible
     _aws
-    _aws_iam_authenticator
-    _docker
+    # _aws_iam_authenticator
+    # _docker
     _eksclt
     _firewall
     _gcloud
-    _gitlab
-    _helm
-    _qemu
-    _hashicorp
+    # _gitlab
+    # _helm
+    # _qemu
+    # _hashicorp
     _kind
     _kube
     # _libvirt
-    _minikube
+    # _minikube
     _network
     _podman
     _podman_compose
-    _virtualbox
+    # _virtualbox
 }
 
 main
