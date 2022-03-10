@@ -10,7 +10,7 @@ s-checkdeps "${DEPS[@]}"
 BUILDS="$HOME/Builds"
 BUILD_ROOT="$BUILDS/emacs"
 INSTALL_DIR="$HOME/.local"
-TAG=emacs-27.1
+TAG=emacs-28.0.91
 
 s-echo "Emacs - Installing local build"
 
@@ -19,7 +19,7 @@ s-echo "Emacs - Installing local build"
 _get() {
     [[ -d $BUILD_ROOT/.git ]] && return
 
-    git clone --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
+    git clone -b $TAG --single-branch --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
 }
 
 _update() {
