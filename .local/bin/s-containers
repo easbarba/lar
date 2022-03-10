@@ -3,27 +3,24 @@
 # Debug Options
 set -euo pipefail
 
-DEPS=(sudo docker podman)
+DEPS=(sudo podman)
 s-checkdeps "${DEPS[@]}"
 
 _latest() {
     containers=(golang ruby postgres)
 
-    s-dolist "docker pull" "${containers[@]}"
     s-dolist "podman pull" "${containers[@]}"
 }
 
 _alpine() {
     containers=(golang:alpine ruby:alpine postgres:13-alpine)
 
-    s-dolist "docker pull" "${containers[@]}"
     s-dolist "podman pull" "${containers[@]}"
 }
 
 _debian() {
     containers=(golang:bullseye ruby:bullseye postgres:13-bullseye)
 
-    s-dolist "docker pull" "${containers[@]}"
     s-dolist "podman pull" "${containers[@]}"
 }
 
