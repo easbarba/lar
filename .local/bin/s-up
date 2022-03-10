@@ -11,36 +11,31 @@ s-checkdeps "${DEPS[@]}"
 
 # * TASKS
 _distro() {
-    s-echo "Upgrading $DISTRO system and user packages."
+    s-echo "Upgrading $DISTRO system packages."
 
-    pak update
-    pak upgrade
+    [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
+    [[ -x $(command -v dnf) ]] && sudo dnf upgrade
 }
 
 _packagers() {
     s-echo "Editors and Langs packages"
 
     s-doom
-    s-ruby
-    s-python
-    s-golang
-    s-javascript
     s-vscode
 }
 
 _foreign() {
     s-echo "System Foreign installers"
 
-    s-guix
     s-flatpak
     s-containers
 }
 
 _user() {
-    s-echo "User preps"
+    s-echo "User tasks"
 
-    floss grab
-    floss archive
+    s-floss grab
+    s-floss archive
 
     s-usb_tasks
 }
