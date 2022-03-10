@@ -6,13 +6,13 @@ STATE="$1"
 _state() {
     # Translate human-friendly state to volume managers command
 
-    [[ $STATE == 'up' ]] && STATE='+'
-    [[ $STATE == 'down' ]] && STATE='-'
+    [[ $STATE = 'up' ]] && STATE='+'
+    [[ $STATE = 'down' ]] && STATE='-'
 }
 
 _pactl() {
     [[ $STATE != 'toggle' ]] && pactl set-sink-volume @DEFAULT_SINK@ "$STATE$STEP%"
-    [[ $STATE == 'toggle' ]] && pactl set-sink-mute @DEFAULT_SINK@ toggle
+    [[ $STATE = 'toggle' ]] && pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 
 # RUN
