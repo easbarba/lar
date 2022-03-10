@@ -19,7 +19,7 @@ s-echo "Emacs - Installing local build"
 _get() {
     [[ -d $BUILD_ROOT/.git ]] && return
 
-    git clone -b $TAG --single-branch --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
+    git clone -b "$TAG" --single-branch --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
 }
 
 _update() {
@@ -27,8 +27,6 @@ _update() {
 
     git -C "$BUILD_ROOT" pull
 }
-
-_checkout() { git checkout ${TAG}; }
 
 _pre() {
     cd "$BUILD_ROOT" || return
@@ -52,8 +50,7 @@ _install() {
 
 # * RUN
 _get
-# _checkout
 _update
 _pre
 _configure
-# _install
+_install
