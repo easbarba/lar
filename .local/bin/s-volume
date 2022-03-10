@@ -3,19 +3,40 @@
 STEP=3
 STATE="$1"
 
-_state() {
-    # Translate human-friendly state to volume managers command
+# TRANSLATE HUMAN-FRIENDLY STATE TO VOLUME MANAGERS COMMAND
+case $STATE in
+    up)
+        STATE='+';;
+    down)
+        STATE='-';;
+    toggle)
+        ;;
+esac
 
-    [[ $STATE = 'up' ]] && STATE='+'
-    [[ $STATE = 'down' ]] && STATE='-'
+usage() {
+    printf %s "
+Usage:
+        up:     raise volume
+      down:     decrease volume
+    toggle:     mute or power on volume
+"
+    exit 0
 }
 
+# VOLUME MANAGERS
+
 _pactl() {
-    [[ $STATE != 'toggle' ]] && pactl set-sink-volume @DEFAULT_SINK@ "$STATE$STEP%"
-    [[ $STATE = 'toggle' ]] && pactl set-sink-mute @DEFAULT_SINK@ toggle
+    case $STATE in
+        toggle)
+            pactl set-sink-mute @DEFAULT_SINK@ toggle;;
+        +|-)
+            pactl set-sink-volume @DEFAULT_SINK@ "$STATE$STEP%";;
+        *) exit 1;;
+    esac
 }
 
 # RUN
+[[ $# -eq 0 ]] && usage
 
-_state
 [[ -x $(command -v pactl) ]] && _pactl
+
