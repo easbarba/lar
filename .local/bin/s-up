@@ -21,14 +21,12 @@ _packagers() {
     s-echo "Editors and Langs packages"
 
     s-doom
-    s-vscode
 }
 
 _foreign() {
     s-echo "System Foreign installers"
 
     s-flatpak
-    s-containers
 }
 
 _user() {
