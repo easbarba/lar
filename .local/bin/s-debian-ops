@@ -344,14 +344,14 @@ main() {
     # _ansible
     _aws
     # _aws_iam_authenticator
-    # _docker
+    _docker
     _eksclt
     _firewall
     _gcloud
     # _gitlab
     # _helm
     # _qemu
-    # _hashicorp
+    _hashicorp
     _kind
     _kube
     # _libvirt
