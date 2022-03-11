@@ -15,24 +15,14 @@ upgrade() {
 	sudo dnf upgrade -y
 }
 
-pre() {
-	multi() {
-		s-echo "Enable Multi-Arch"
-
-	}
-
-	# * RUN
-	multi
-}
-
 packages() {
 	s-echo "Installing system packages"
 
 	essentials=(git openssh curl unzip bash tmux zile lynx)
 
 	system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
-		bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar nscd
-		autoconf automake socat)
+			bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar nscd
+			autoconf automake socat)
 
 	network=(net-tools iproute telnet)
 
@@ -55,12 +45,12 @@ packages() {
 	books=(pandoc) #  texlive texlive-xetex
 
 	user=(exaile gimp obs-studio xdg-utils ImageMagick aspell vlc
-		telegram-desktop calibre gaupol)
+		  telegram-desktop calibre gaupol)
 
 	locale=(libreoffice-langpack-pt-BR aspell-pt_BR)
 
 	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
-		gstreamer1-plugins-good gstreamer1-plugins-ugly)
+		   gstreamer1-plugins-good gstreamer1-plugins-ugly)
 
 	local command='sudo dnf install -y'
 
@@ -87,19 +77,6 @@ packages() {
 	done
 
 	s-echo "Done"
-}
-
-clean() {
-	s-echo "Clean up"
-
-	unused=(firefox-esr)
-
-	local command='sudo dnf remove -y'
-	s-dolist "$command" "${unused[@]}"
-
-	purging=(*nvidia*)
-	local command='sudo dnf purge -y'
-	s-dolist "$command" "${purging[@]}"
 }
 
 services() {
@@ -144,16 +121,18 @@ foreign() {
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	}
 
-	_rust
 	_rpmfusion
+	_rust
 	_vscode
 }
 
 # * RUN
 
-upgrade
-packages
-foreign
-# pre
-# clean
-#services
+main() {
+	upgrade
+	packages
+	services
+	foreign
+}
+
+main
