@@ -1,4 +1,7 @@
 name,repository
+hare-mode,https://git.sr.ht/~bbuccianti/hare-mode
+harec,https://git.sr.ht/~sircmpwn/harec
+hare,https://git.sr.ht/~sircmpwn/hare
 mknurs-dot,https://gitlab.com/mknurs/dot
 wilfred-dotfiles,https://github.com/Wilfred/dotfiles
 gerhard-setup,https://github.com/gerhard/setup
