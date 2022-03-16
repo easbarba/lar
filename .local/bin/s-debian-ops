@@ -139,8 +139,7 @@ _hashicorp() {
 
     _install() {
         sudo apt-get update
-        sudo apt-get install -y terraform nomad vagrant
-        sudo apt-get install -y vagrant-libvirt
+        sudo apt-get install -y terraform nomad vagrant vagrant-libvirt
     }
 
     _pre

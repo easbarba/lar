@@ -27,6 +27,7 @@ _foreign() {
     s-echo "System Foreign installers"
 
     s-flatpak
+    s-golang
 }
 
 _user() {
