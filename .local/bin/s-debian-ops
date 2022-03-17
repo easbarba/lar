@@ -6,6 +6,47 @@ set -euo pipefail
 DEPS=(sudo apt curl python3 go systemctl tee gpasswd)
 s-checkdeps "${DEPS[@]}"
 
+_ansible() {
+    [[ -x $(command -v ansible) ]] && return
+
+    _install() {
+        sudo apt-get install -y ansible
+    }
+
+    _addon() {
+        # faster ansible vault encryption
+        python3 -m pip install cryptography
+    }
+
+    _install
+    _addon
+}
+
+_aws() {
+    [[ -x $(command -v aws) ]] && return
+
+    _install() {
+        sudo apt-get install -y awscli
+    }
+
+    _install
+}
+
+_aws_iam_authenticator() {
+    [[ -x $(command -v aws-iam-authenticator) ]] && return
+
+    _pre() {
+        curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P "$HOME/.local/bin"
+    }
+
+    post() {
+        chmod +x "$HOME/.local/bin/aws-iam-authenticator"
+    }
+
+    _pre
+    _post
+}
+
 _docker() {
     [[ -x $(command -v docker) ]] && return
 
@@ -51,6 +92,17 @@ _docker() {
     done
 }
 
+_eksclt() {
+    [[ -x $(command -v eksctl) ]] && return
+
+    _pre() {
+        curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+        sudo mv /tmp/eksctl /usr/local/bin
+    }
+
+    _pre
+}
+
 _gcloud() {
     [[ -x $(command -v gcloud) ]] && return
 
@@ -79,42 +131,6 @@ _gitlab() {
     }
 
     _install
-}
-
-_aws() {
-    [[ -x $(command -v aws) ]] && return
-
-    _install() {
-        sudo apt-get install -y awscli
-    }
-
-    _install
-}
-
-_aws_iam_authenticator() {
-    [[ -x $(command -v aws-iam-authenticator) ]] && return
-
-    _pre() {
-        curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P "$HOME/.local/bin"
-    }
-
-    post() {
-        chmod +x "$HOME/.local/bin/aws-iam-authenticator"
-    }
-
-    _pre
-    _post
-}
-
-_eksclt() {
-    [[ -x $(command -v eksctl) ]] && return
-
-    _pre() {
-        curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-        sudo mv /tmp/eksctl /usr/local/bin
-    }
-
-    _pre
 }
 
 _kind() {
@@ -196,6 +212,26 @@ _kube() {
     _install
 }
 
+_jenkins() {
+    _pre() {
+        curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+            /usr/share/keyrings/jenkins-keyring.asc >/dev/null
+
+        echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+            https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+            /etc/apt/sources.list.d/jenkins.list >/dev/null
+
+    }
+
+    _install() {
+        sudo apt-get update
+        sudo apt-get install -y fontconfig openjdk-11-jre jenkins
+    }
+
+    _pre
+    _install
+}
+
 _qemu() {
     [[ -x $(command -v qemu-img) ]] && return
 
@@ -215,22 +251,6 @@ _virtualbox() {
     }
 
     _install
-}
-
-_ansible() {
-    [[ -x $(command -v ansible) ]] && return
-
-    _install() {
-        sudo apt-get install -y ansible
-    }
-
-    _addon() {
-        # faster ansible vault encryption
-        python3 -m pip install cryptography
-    }
-
-    _install
-    _addon
 }
 
 _libvirt() {
