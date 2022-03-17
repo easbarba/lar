@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
+# debug options
 set -euo pipefail
 
 DEPS=(emacs)
-MX_HOME="$HOME/.config/emacs"
-
 s-checkdeps "${DEPS[@]}"
+
+MX_HOME="$HOME/.config/emacs"
 
 s-echo "Doom Emacs - Install/Upgrade."
 
@@ -14,6 +15,7 @@ grab() { git clone --depth 1 https://github.com/hlissner/doom-emacs "$MX_HOME"; 
 install() { "$MX_HOME"/bin/doom install; }
 sync() { doom sync; }
 upgrade() { doom upgrade; }
+upgrade-packs() { doom upgrade --packages; }
 
 # * RUN
 wipe

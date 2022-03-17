@@ -25,7 +25,7 @@ _emacs() {
 }
 
 _langs() {
-    packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev) # libfixposix-dev
+    packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev clangd) # libfixposix-dev
     s-dolist "$COMMAND" "${packages[@]}"
 }
 

@@ -340,14 +340,14 @@ _firewall() {
 
 # * RUN
 main() {
-    # _ansible
+    _ansible
     _aws
-    # _aws_iam_authenticator
+    _aws_iam_authenticator
     _docker
     _eksclt
     _firewall
     _gcloud
-    # _gitlab
+    _gitlab
     # _helm
     # _qemu
     _hashicorp
