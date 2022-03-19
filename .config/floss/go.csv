@@ -2,9 +2,7 @@ name,repository
 pro-go,https://github.com/Apress/pro-go
 learn-go-with-tests,https://github.com/quii/learn-go-with-tests
 goplio,https://github.com/adonovan/gopl.io
-linkerd2,https://github.com/linkerd/linkerd2
 flux2,https://github.com/fluxcd/flux2
-terraform,https://github.com/hashicorp/terraform
 crossplane,https://github.com/crossplane/crossplane
-kubectl,https://github.com/kubernetes/kubectl
+kubernetes,https://github.com/kubernetes/kubernetes
 go,https://go.googlesource.com/go
