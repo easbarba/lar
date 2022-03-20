@@ -1,0 +1,9 @@
+name,repository
+bazel,https://github.com/bazelbuild/bazel
+jbang,https://github.com/jbangdev/jbang
+picocli,https://github.com/remkop/picocli
+eclipse-jdt-ls,https://github.com/eclipse/eclipse.jdt.ls
+junit5,https://github.com/junit-team/junit5
+spring-boot,https://github.com/spring-projects/spring-boot
+spring-framework,https://github.com/spring-projects/spring-framework
+openjdk,https://github.com/openjdk/jdk

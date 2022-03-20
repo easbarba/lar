@@ -137,7 +137,7 @@ _kind() {
     [[ -x $(command -v kind) ]] && return
 
     _install() {
-        GO111MODULE=on go install sigs.k8s.io/kind@v0.11.1
+        GO111MODULE=on go install sigs.k8s.io/kind@v0.12.0
     }
 
     _install
