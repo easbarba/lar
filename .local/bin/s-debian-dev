@@ -30,7 +30,7 @@ _langs() {
 }
 
 _programming() {
-    packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv)
+    packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
     s-dolist "$COMMAND" "${packages[@]}"
 }
 
