@@ -4,7 +4,7 @@
 set -euo pipefail
 
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
-DEPS=(sudo distro floss)
+DEPS=(sudo pak floss)
 
 # * CHECKER
 s-checkdeps "${DEPS[@]}"
@@ -13,8 +13,7 @@ s-checkdeps "${DEPS[@]}"
 _distro() {
     s-echo "Upgrading $DISTRO system packages."
 
-    [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
-    [[ -x $(command -v dnf) ]] && sudo dnf upgrade
+    pak update && pak upgrade
 }
 
 _packagers() {
@@ -27,16 +26,15 @@ _foreign() {
     s-echo "System Foreign installers"
 
     s-flatpak
+    s-ruby
     s-golang
 }
 
 _user() {
     s-echo "User tasks"
 
-    s-floss grab
-    s-floss archive
-
-    s-usb_tasks
+    floss grab
+    floss archive
 }
 
 # * RUN
