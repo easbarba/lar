@@ -27,7 +27,6 @@ _foreign() {
 
     s-flatpak
     s-ruby
-    s-golang
 }
 
 _user() {
