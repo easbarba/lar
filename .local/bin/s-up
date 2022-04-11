@@ -16,10 +16,11 @@ _distro() {
     pak update && pak upgrade
 }
 
-_packagers() {
+_editors() {
     s-echo "Editors and Langs packages"
 
     s-doom
+    s-vscode
 }
 
 _foreign() {
@@ -27,6 +28,8 @@ _foreign() {
 
     s-flatpak
     s-ruby
+    s-javascript
+    s-guix
 }
 
 _user() {
@@ -38,6 +41,6 @@ _user() {
 
 # * RUN
 _distro
-_packagers
+_editors
 _foreign
 _user
