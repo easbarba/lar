@@ -57,7 +57,7 @@ packages() {
 
 	books=(pandoc)
 
-	user=(firefox libreoffice evince gimp obs-studio xdg-utils imagemagick aspell
+	user=(falkon firefox libreoffice evince gimp obs-studio xdg-utils imagemagick aspell
 		aspell-pt-br telegram-desktop calibre cheese)
 
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
