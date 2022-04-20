@@ -1,6 +1,8 @@
 name,repository
 credo,https://github.com/rrrene/credo
 realtime,https://github.com/supabase/realtime
+elixir-ls,https://github.com/elixir-lsp/elixir-ls
+ecto,https://github.com/elixir-ecto/ecto
 hex,https://github.com/hexpm/hex
 phoenix,https://github.com/phoenixframework/phoenix
 elixir,https://github.com/elixir-lang/elixir
