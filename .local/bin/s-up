@@ -26,10 +26,10 @@ _editors() {
 _foreign() {
     s-echo "System Foreign installers"
 
-    s-flatpak
     s-ruby
     s-javascript
     s-guix
+    s-flatpak
 }
 
 _user() {
