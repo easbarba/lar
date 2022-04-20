@@ -287,7 +287,6 @@ _podman() {
     _services() {
         sudo systemctl enable podman.socket
         sudo systemctl start podman.socket
-        sudo systemctl status podman.socket
     }
 
     _post() {
@@ -295,7 +294,9 @@ _podman() {
         echo '%podman ALL=(ALL) NOPASSWD: /usr/bin/podman' | sudo tee -a /etc/sudoers.d/podman
     }
 
-    _install
+    for func in {_install,_services,_post}; do
+        $func
+    done
 }
 
 _podman_compose() {

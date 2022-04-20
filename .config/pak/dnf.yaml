@@ -1,15 +1,18 @@
 ---
-builddep: builddep
-clean: autoremove
-depends: repoquery --requires --resolve
-download: ''
-fix: fix
-help: help
-info: info
-install: install
-installed: list installed
-remove: remove
-search: search
-sysupgrade: sysupgrade
-update: update
-upgrade: upgrade
+exec: /usr/bin/dnf
+become:
+  builddep: builddep
+  clean: autoremove
+  download: ''
+  fix: fix
+  install: install
+  installed: list installed
+  remove: remove
+  sysupgrade: sysupgrade
+  update: update
+  upgrade: upgrade
+user:
+  search: search
+  help: help
+  info: info
+  depends: repoquery --requires --resolve

@@ -1,15 +1,19 @@
 ---
-builddep: ''
-clean: autoremove
-depends: ''
-download: fetch
-fix: fix
-help: help
-info: query
-install: install
-installed: version
-remove: remove
-search: search
-sysupgrade: ''
-update: update
-upgrade: upgrade
+exec: /usr/bin/emerge
+become:
+  builddep: ''
+  clean: autoremove
+  depends: ''
+  download: fetch
+  fix: fix
+  install: install
+  remove: remove
+  sysupgrade: ''
+  update: update
+  upgrade: upgrade
+
+user:
+  help: help
+  info: query
+  installed: version
+  search: search

@@ -1,16 +1,20 @@
 ---
-exec: '/usr/bin/pacman'
-builddep: ''
-clean: '-Sc'
-depends: '-Si'
-download: '-Sw'
-fix: ''
-help: 'help'
-info: 'Si'
-install: "-S"
-installed: '-Q'
-remove: "-R"
-search: "-Ss"
-sysupgrade: ''
-update: "-Syy"
-upgrade: "-Syu"
+exec: /usr/bin/pacman
+
+become:
+  builddep: ''
+  clean: '-Sc'
+  download: '-Sw'
+  fix: ''
+  install: "-S"
+  remove: "-R"
+  sysupgrade: ''
+  update: "-Syy"
+  upgrade: "-Syu"
+
+user:
+  search: "-Ss"
+  depends: '-Si'
+  installed: '-Q'
+  info: 'Si'
+  help: 'help'
