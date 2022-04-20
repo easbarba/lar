@@ -1,15 +1,16 @@
----
-builddep:
-clean:
-depends:
-download:
-fix:
-help:
-info: info
-install: add
-installed:
-remove: del
-search: search
-sysupgrade:
-update: update
-upgrade: upgrade
+exec: /sbin/apk
+super:
+  update: update
+  upgrade: upgrade
+  deps: ''
+  clean: autoremove
+  depends: depends
+  install: add
+  remove: del
+  download: download
+  fix: fix
+user:
+  search: search
+  help: help
+  info: show
+  version: version
