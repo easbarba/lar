@@ -173,7 +173,7 @@ _helm() {
     }
 
     _install() {
-        sudo apt-get install helm
+        sudo apt-get install -y helm
     }
 }
 
@@ -263,7 +263,6 @@ _libvirt() {
     _services() {
         sudo systemctl start libvirtd
         sudo systemctl enable libvirtd
-
     }
 
     _post() {
