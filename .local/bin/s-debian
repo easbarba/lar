@@ -53,7 +53,7 @@ packages() {
 	xorg=(awesome feh scrot xclip xsel)
 
 	wmapps=(htop ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin picom
-		udiskie bluez mpd mpc ncmpcpp suckless-tools network-manager-gnome)
+		udiskie bluez mpd mpc ncmpcpp suckless-tools network-manager-gnome ranger)
 
 	books=(pandoc)
 
