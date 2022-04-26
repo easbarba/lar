@@ -42,6 +42,4 @@ _devel() {
 }
 
 # * RUN
-_tools
-_packages
 _devel
