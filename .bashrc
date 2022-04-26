@@ -87,21 +87,13 @@ unset rc
 
 # * CLI SOFTWARE
 e_completions() {
-    . <(kubectl completion bash)
-    . <(eksctl completion bash)
+    [[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
+    [[ -x $(command -v eksctl) ]] && . <(eksctl completion bash)
 }
 
 e_prompt() { eval "$(starship init bash)"; }
 
 e_direnv() { eval "$(direnv hook bash)"; }
-
-e_packers() {
-    # asdf
-    . $HOME/.asdf/asdf.sh
-    . $HOME/.asdf/completions/asdf.bash
-
-    eval "$(rbenv init -)"
-}
 
 e_multiplexers() {
     if [[ "$DISPLAY" ]]; then
@@ -113,12 +105,6 @@ e_multiplexers() {
 
 # * RUN
 e_completions
-e_packers
 e_prompt
 e_multiplexers
 e_direnv
-. "$HOME/.cargo/env"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
