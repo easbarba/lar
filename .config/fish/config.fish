@@ -32,7 +32,9 @@ function e-pip
 end
 
 function e-completions
-    kubectl completion fish | source
+    if which kubectl
+        kubectl completion fish | source
+    end
 end
 
 function e-fisher
