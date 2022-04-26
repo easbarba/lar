@@ -205,7 +205,8 @@ _kube() {
     }
 
     _install() {
-        sudo apt-get install -y kubectl kubelet kubeadmp
+        sudo apt-get update
+        sudo apt-get install -y kubectl kubelet kubeadm
     }
 
     _pre
@@ -360,24 +361,24 @@ _firewall() {
 
 # * RUN
 main() {
-    _ansible
-    _aws
-    _aws_iam_authenticator
+    #_ansible
+    #_aws
+    #_aws_iam_authenticator
     _docker
-    _eksclt
-    _firewall
-    _gcloud
-    _gitlab
+    #_eksclt
+    #_firewall
+    #_gcloud
+    #_gitlab
     # _helm
     # _qemu
-    _hashicorp
+    #_hashicorp
     _kind
     _kube
     # _libvirt
     # _minikube
-    _network
-    _podman
-    _podman_compose
+    #_network
+    #_podman
+    #_podman_compose
     # _virtualbox
 }
 
