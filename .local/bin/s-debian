@@ -55,7 +55,7 @@ packages() {
 	books=(pandoc)
 
 	user=(firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-br
-		telegram-desktop calibre)
+		telegram-desktop calibre rhythmbox-plugin-alternative-toolbar)
 
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
 
