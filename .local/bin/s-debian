@@ -33,32 +33,29 @@ packages() {
 
 	essentials=(git ssh curl unzip tmux)
 
-	system=(zip p7zip p7zip-full recutils at usbutils lsof atool linux-perf
-		time entr tree bc strace ltrace cpio lhasa lzop
-		rsync pv texinfo autoconf automake socat)
+	system=(zip p7zip p7zip-full recutils at usbutils lsof atool time entr tree
+		bc strace ltrace cpio lhasa lzop rsync pv texinfo autoconf automake
+		socat)
 
-	shell=(bash-completion shellcheck zsh fish)
-
-	editors=(zile vim neovim)
+	shell=(bash-completion shellcheck fish)
 
 	gnu=(bash gcc make vrms info wget parallel gawk)
 
 	fonts=(fonts-hack fonts-dejavu fonts-jetbrains-mono ttf-ancient-fonts fonts-nanum)
 
-	laptop=(acpi lm-sensors lshw laptop-mode-tools libinput-tools)
+	laptop=(acpi lm-sensors lshw libinput-tools)
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
 		apt-file gdebi)
 
-	xorg=(awesome feh scrot xclip xsel)
+	xorg=(xclip xsel)
 
-	wmapps=(htop ffmpeg mpv elinks aria2 playerctl brightnessctl libnotify-bin picom
-		udiskie bluez mpd mpc ncmpcpp suckless-tools network-manager-gnome ranger)
+	wmapps=(htop ffmpeg mpv elinks libnotify-bin bluez suckless-tools ranger)
 
 	books=(pandoc)
 
-	user=(falkon firefox libreoffice evince gimp obs-studio xdg-utils imagemagick aspell
-		aspell-pt-br telegram-desktop calibre cheese)
+	user=(firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-br
+		telegram-desktop calibre)
 
 	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
 
@@ -80,7 +77,6 @@ packages() {
 		"${shell[@]}"
 		"${media[@]}"
 		"${sound[@]}"
-		"${editors[@]}"
 		"${user[@]}"
 		"${xorg[@]}"
 		"${wayland[@]}"
@@ -177,7 +173,7 @@ foreign() {
 }
 
 # * RUN
-_main() {
+main() {
 	upgrade
 	pre
 	packages

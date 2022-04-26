@@ -6,17 +6,13 @@ set -euo pipefail
 DEPS=(sudo apt bash)
 s-checkdeps "${DEPS[@]}"
 
-COMMAND='sudo apt-get install'
+COMMAND='sudo apt-get install -y'
 
 _postgres() {
     [[ -x $(command -v psql) ]] && return
 
-    _install() {
-        packages=(postgresql postgresql-contrib)
-        s-dolist "$COMMAND" "${packages[@]}"
-    }
-
-    _install
+    packages=(postgresql postgresql-contrib)
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _emacs() {
@@ -25,7 +21,12 @@ _emacs() {
 }
 
 _langs() {
-    packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev clangd glslang-tools) # libfixposix-dev
+    packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev libfixposix-dev) #  clangd glslang-tools
+    s-dolist "$COMMAND" "${packages[@]}"
+}
+
+_editors() {
+    packages=(zile vim neovim tidy ripgrep)
     s-dolist "$COMMAND" "${packages[@]}"
 }
 
@@ -35,8 +36,7 @@ _programming() {
 }
 
 # RUN
-_main() {
-    _postgres
+main() {
     _emacs
     _langs
     _programming
