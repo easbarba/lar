@@ -130,8 +130,9 @@ _de() {
 }
 
 _cli() {
-    echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date) "
+    echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)"
 }
+# $SEP$(_battery)$SEP2$(_kernel)$SEP2$(_uptime)$SEP$(_date)
 
 _cli
 
