@@ -13,14 +13,14 @@ s-checkdeps "${DEPS[@]}"
 _distro() {
     s-echo "Upgrading $DISTRO system packages."
 
-    pak update && pak upgrade
+    [[ -x $(command -v pak) ]] && pak update && pak upgrade && return
+    [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade -y
 }
 
 _editors() {
     s-echo "Editors and Langs packages"
 
     s-doom
-    s-vscode
 }
 
 _foreign() {
