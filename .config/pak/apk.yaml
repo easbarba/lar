@@ -3,7 +3,7 @@ become:
   update: update
   upgrade: upgrade
   deps: ''
-  clean: autoremove
+  autoremove: autoremove
   depends: depends
   install: add
   remove: del

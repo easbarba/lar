@@ -2,7 +2,7 @@
 exec: /usr/bin/emerge
 become:
   builddep: ''
-  clean: autoremove
+  autoremove: autoremove
   depends: ''
   download: fetch
   fix: fix

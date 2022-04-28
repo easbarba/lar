@@ -2,7 +2,7 @@
 exec: /sbin/apk
 become:
   builddep: ''
-  clean: autoremove
+  autoremove: autoremove
   depends: ''
   download: fetch
   fix: fix

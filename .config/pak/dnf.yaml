@@ -2,7 +2,7 @@
 exec: /usr/bin/dnf
 become:
   builddep: builddep
-  clean: autoremove
+  autoremove: autoremove
   download: ''
   fix: fix
   install: install

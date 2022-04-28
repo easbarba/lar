@@ -3,7 +3,7 @@ exec: /usr/bin/pacman
 
 become:
   builddep: ''
-  clean: '-Sc'
+  autoremove: '-Sc'
   download: '-Sw'
   fix: ''
   install: "-S"
