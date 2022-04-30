@@ -74,7 +74,7 @@ _misc() {
     gsettings set org.gnome.desktop.calendar show-weekdate true
 
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
-    gsettings set org.gnome.desktop.wm.preferences workspace-names "['www','term','mx','read', 'media']"
+    gsettings set org.gnome.desktop.wm.preferences workspace-names "['www','term','mx','read', 'tune', 'media']"
 
     gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>m']"
 
