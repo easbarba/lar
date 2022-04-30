@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+bin() {
+    get() {
+        local url='https://download.swift.org/swift-5.6.1-release/ubuntu2004/swift-5.6.1-RELEASE/swift-5.6.1-RELEASE-ubuntu20.04.tar.gz'
+        wget -c $url -P /tmp
+
+    }
+
+    install() {
+        tar -xvzf /tmp/swift-5.4.2-RELEASE-ubuntu20.04.tar.gz -C "$HOME/.local/"
+        mv "$HOME/.local/swift-*" "$HOME/.local/swift"
+    }
+}
+
+format() {
+    local folder="$HOME/Builds/swift-format"
+    local version=0.50600.1
+
+    get() {
+        git clone https://github.com/apple/swift-format.git -C $folder
+    }
+
+    check() {
+        cd swift-format
+        git checkout "tags/$version"
+    }
+
+    build() {
+        swift build -c release
+
+    }
+
+    install() {
+        cp "$folder/.build/release/swift-format" "$HOME/.local/bin"
+    }
+
+    get
+    check
+    build
+    install
+}
+
+# RUN
+bin
+format
