@@ -72,6 +72,10 @@ _misc() {
 
     gsettings set org.gnome.shell.app-switcher current-workspace-only true
     gsettings set org.gnome.desktop.calendar show-weekdate true
+    gsettings set org.gnome.desktop.interface show-battery-percentage true
+    gsettings set org.gnome.desktop.interface clock-show-weekday true
+    # gsettings set org.gnome.desktop.privacy report-technical-problems false
+    gsettings set org.gnome.system.locale region "pt_BR.UTF-8"
 
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
     gsettings set org.gnome.desktop.wm.preferences workspace-names "['www','term','mx','read', 'tune', 'media']"
