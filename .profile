@@ -136,5 +136,9 @@ export GNOME_KEYRING_PID
 export GNOME_KEYRING_CONTROL
 # ===================================================
 
-# ** brew
+# ** SWIFT
+export PATH=$HOME/.local/swift/usr/bin:$PATH
+
+# ** BREW
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# ===================================================
