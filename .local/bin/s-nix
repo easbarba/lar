@@ -9,17 +9,17 @@ set -euo pipefail
 _install() {
     [[ -x $(command -v nix-env) ]] && return
 
-    curl -L https://nixos.org/nix/install | sh
+    sh <(curl -L https://nixos.org/nix/install) --daemon
 }
 
 _packages() {
-    local packs=() # mcfly direnv cpufetch
-    e_dolist 'nix-env --uninstall' "${packs[@]}"
+    local packages=() # mcfly direnv cpufetch
+    e_dolist 'nix-env -iA' "${packages[@]}"
 }
 
 _languages() {
-    local packs2=(nixpkgs.ruby_2_7 nixpkgs.nodejs nixpkgs.nodePackages.npm)
-    e_dolist 'nix-env --uninstall' "${packs2[@]}"
+    local packages=(nixpkgs.swift)
+    e_dolist 'nix-env -iA' "${packages[@]}"
 }
 
 _install
