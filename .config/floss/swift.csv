@@ -1,4 +1,5 @@
 name,repository
+mastodon-ios,https://github.com/mastodon/mastodon-ios
 swiftyjson,https://github.com/SwiftyJSON/SwiftyJSON
 vapor,https://github.com/vapor/vapor
 swift,https://github.com/apple/swift
