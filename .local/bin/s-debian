@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
-# Debug Options
+# DEBUG OPTIONS
 set -euo pipefail
 
-# Information
-
-DEPS=(sudo apt wget systemctl firewalld timedatectl fc-cache)
+DEPS=(sudo apt wget systemctl timedatectl fc-cache firewalld)
 s-checkdeps "${DEPS[@]}"
 
-s-echo "Debian '$(cat /etc/debian_version)' - Installing system packages on Debian"
+s-echo "Welcome to Debian '$(cat /etc/debian_version)'"
 
 # Begin
 
@@ -20,6 +18,8 @@ upgrade() {
 }
 
 pre() {
+	s-echo "Pre Install"
+
 	_multi() {
 		s-echo "Enable Multi-Arch"
 		sudo dpkg --add-architecture i386
@@ -29,7 +29,7 @@ pre() {
 }
 
 packages() {
-	s-echo "Installing system packages"
+	s-echo "System Packages"
 
 	essentials=(git ssh curl unzip tmux)
 
@@ -67,10 +67,11 @@ packages() {
 		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
 		radeontop)
 
-	local command='sudo apt install -y'
+	# RUN
 
-	enabled=(
-		"${essentials[@]}"
+	local command='sudo apt install -yqq'
+	local guard='dpkg --get-selections'
+	local groups=("${essentials[@]}"
 		"${debian[@]}"
 		"${system[@]}"
 		"${gnu[@]}"
@@ -86,15 +87,13 @@ packages() {
 		"${fonts[@]}"
 		"${amd[@]}")
 
-	for i in "${enabled[@]}"; do
-		s-dolist "$command" "$i"
+	for group in "${groups[@]}"; do
+		s-dolist "$command" "$guard" "$group"
 	done
-
-	s-echo "Done"
 }
 
 post() {
-	s-echo "Post install"
+	s-echo "Post Install"
 
 	_emacs() {
 		sudo apt -y build-dep emacs
@@ -115,14 +114,14 @@ clean() {
 		packages=(firefox-esr)
 
 		local command='sudo apt remove -y'
-		s-dolist "$command" "${packages[@]}"
+		s-dolist "$command" '' "${packages[@]}"
 	}
 
 	_purge() {
 		packages=(*nvidia*)
 
 		local command='sudo apt purge -y'
-		s-dolist "$command" "${packages[@]}"
+		s-dolist "$command" '' "${packages[@]}"
 	}
 
 	_unused
@@ -132,37 +131,29 @@ clean() {
 services() {
 	s-echo "Debian Services"
 
-	_mpd() {
-		sudo systemctl disable mpd
-	}
-
-	_pipewire() {
-		systemctl --user --now enable wireplumber pipewire pipewire-pulse
-	}
-
-	_misc() {
-		sudo systemctl enable fstrim.timer
-	}
-
-	_misc
-	_pipewire
-	_mpd
+	sudo systemctl enable fstrim.timer
+	systemctl --user --now enable wireplumber pipewire pipewire-pulse
 }
 
 foreign() {
-	echo "Non-Debian packages"
+	s-echo "Foreign packages"
 
 	_flatpak() {
+		[[ -x $(command -v flatpak) ]] && return
+
 		sudo apt install -y flatpak gnome-software-plugin-flatpak
 		sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	}
 
 	_chrome() {
+		[[ -x $(command -v google-chrome) ]] && return
+
 		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
 		sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
 	}
 
 	_vscode() {
+		[[ -x $(command -v code) ]] && return
 		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
 		sudo apt install -y /tmp/vscode-x64.deb
 	}

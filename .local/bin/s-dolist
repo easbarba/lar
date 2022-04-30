@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-# Debug Options
+# DEBUG OPTIONS
 set -euo pipefail
 
 COMMAND="$1"
 shift 1
 
-ARGUMENTS=("$@")
+GUARD="$1"
+shift 1
 
-for arg in "${ARGUMENTS[@]}"; do
-    s-echo "$arg"
-    $COMMAND "$arg" # do not quote $COMMAND
+ACTIONS=("$@")
+
+# do not quote $GUARD and $COMMAND
+for action in "${ACTIONS[@]}"; do
+    if ! $GUARD $action; then
+        $COMMAND "$action"
+    fi
 done

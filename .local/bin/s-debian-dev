@@ -6,33 +6,32 @@ set -euo pipefail
 DEPS=(sudo apt bash)
 s-checkdeps "${DEPS[@]}"
 
-COMMAND='sudo apt-get install -y'
+COMMAND='sudo apt-get install -yqq'
+GUARD='dpkg --get-selections'
 
 _postgres() {
-    [[ -x $(command -v psql) ]] && return
-
     packages=(postgresql postgresql-contrib)
-    s-dolist "$COMMAND" "${packages[@]}"
+    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
 }
 
 _emacs() {
     packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
-    s-dolist "$COMMAND" "${packages[@]}"
+    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
 }
 
 _langs() {
     packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev libfixposix-dev) #  clangd glslang-tools
-    s-dolist "$COMMAND" "${packages[@]}"
+    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
 }
 
 _editors() {
     packages=(zile vim neovim tidy ripgrep)
-    s-dolist "$COMMAND" "${packages[@]}"
+    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
 }
 
 _programming() {
     packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
-    s-dolist "$COMMAND" "${packages[@]}"
+    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
 }
 
 # RUN

@@ -6,16 +6,19 @@ set -euo pipefail
 DEPS=(sudo apt curl python3 go systemctl tee gpasswd)
 s-checkdeps "${DEPS[@]}"
 
+INSTALL='sudo apt-get install -yqq'
+UPDATE='sudo apt-get update'
+GUARD='dpkg --get-selections'
+
 _ansible() {
     [[ -x $(command -v ansible) ]] && return
 
     _install() {
-        sudo apt-get install -y ansible
+        "$INSTALL" ansible
     }
 
     _addon() {
-        # faster ansible vault encryption
-        python3 -m pip install cryptography
+        python3 -m pip install cryptography # faster ansible vault encryption
     }
 
     _install
@@ -25,26 +28,14 @@ _ansible() {
 _aws() {
     [[ -x $(command -v aws) ]] && return
 
-    _install() {
-        sudo apt-get install -y awscli
-    }
-
-    _install
+    "$INSTALL" awscli
 }
 
 _aws_iam_authenticator() {
     [[ -x $(command -v aws-iam-authenticator) ]] && return
 
-    _pre() {
-        curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P "$HOME/.local/bin"
-    }
-
-    post() {
-        chmod +x "$HOME/.local/bin/aws-iam-authenticator"
-    }
-
-    _pre
-    _post
+    curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P "$HOME/.local/bin"
+    chmod +x "$HOME/.local/bin/aws-iam-authenticator"
 }
 
 _docker() {
@@ -57,7 +48,7 @@ _docker() {
         # sudo apt-get remove -y docker docker-engine docker.io containerd runc
 
         # allow apt to use a repository over HTTPS
-        sudo apt-get install -y ca-certificates curl gnupg lsb-release
+        "$INSTALL" ca-certificates curl gnupg lsb-release
 
         # Add Docker’s official GPG key:
         curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -67,8 +58,8 @@ _docker() {
     }
 
     _install() {
-        sudo apt-get update -y
-        sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
+        $UPDATE
+        "$INSTALL" docker-ce docker-ce-cli containerd.io docker-compose
     }
 
     _services() {
@@ -95,12 +86,8 @@ _docker() {
 _eksclt() {
     [[ -x $(command -v eksctl) ]] && return
 
-    _pre() {
-        curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-        sudo mv /tmp/eksctl /usr/local/bin
-    }
-
-    _pre
+    curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    sudo mv /tmp/eksctl /usr/local/bin
 }
 
 _gcloud() {
@@ -109,13 +96,13 @@ _gcloud() {
     _pre() {
         [[ -f /etc/apt/sources.list.d/google-cloud-sdk.list ]] && return
 
-        sudo apt-get install -y apt-transport-https ca-certificates gnupg
+        "$INSTALL" apt-transport-https ca-certificates gnupg
         echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
         curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
     }
 
     _install() {
-        sudo apt-get update && sudo apt-get install -y google-cloud-sdk
+        $UPDATE && "$INSTALL" google-cloud-sdk
     }
 
     for f in {_pre,_install}; do
@@ -126,21 +113,13 @@ _gcloud() {
 _gitlab() {
     [[ -x $(command -v gitlab-runner) ]] && return
 
-    _install() {
-        sudo apt-get install -y gitlab-runner
-    }
-
-    _install
+    "$INSTALL" gitlab-runner
 }
 
 _kind() {
     [[ -x $(command -v kind) ]] && return
 
-    _install() {
-        GO111MODULE=on go install sigs.k8s.io/kind@v0.12.0
-    }
-
-    _install
+    GO111MODULE=on go install sigs.k8s.io/kind@v0.12.0
 }
 
 _hashicorp() {
@@ -154,8 +133,7 @@ _hashicorp() {
     }
 
     _install() {
-        sudo apt-get update
-        sudo apt-get install -y terraform nomad vagrant vagrant-libvirt
+        $UPDATE && "$INSTALL" terraform nomad vagrant vagrant-libvirt
     }
 
     _pre
@@ -172,9 +150,7 @@ _helm() {
         sudo apt-get update
     }
 
-    _install() {
-        sudo apt-get install -y helm
-    }
+    "$INSTALL" helm
 }
 
 _minikube() {
@@ -185,7 +161,7 @@ _minikube() {
     }
 
     _install() {
-        sudo dpkg -i minikube_latest_amd64.deb
+        sudo apt install ./minikube_latest_amd64.deb
     }
 
     _pre
@@ -198,15 +174,14 @@ _kube() {
     _pre() {
         [[ -f /etc/apt/sources.list.d/kubernetes.list ]] && return
 
-        sudo apt-get update
-        sudo apt-get install -y apt-transport-https ca-certificates curl
+        $UPDATE
+        "$INSTALL" apt-transport-https ca-certificates curl
         sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
         echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
     }
 
     _install() {
-        sudo apt-get update
-        sudo apt-get install -y kubectl kubelet kubeadm
+        $UPDATE && "$INSTALL" kubectl kubelet kubeadm
     }
 
     _pre
@@ -225,8 +200,7 @@ _jenkins() {
     }
 
     _install() {
-        sudo apt-get update
-        sudo apt-get install -y fontconfig openjdk-11-jre jenkins
+        $UPDATE && "$INSTALL" fontconfig openjdk-11-jre jenkins
     }
 
     _pre
@@ -236,29 +210,20 @@ _jenkins() {
 _qemu() {
     [[ -x $(command -v qemu-img) ]] && return
 
-    _install() {
-        sudo apt-get install -y qemu
-    }
-    # infra=( qemu qemu-utils qemu-efi qemu-kvm ) # ebtables
-
-    _install
+    "$INSTALL" qemu # infra=( qemu qemu-utils qemu-efi qemu-kvm ) # ebtables
 }
 
 _virtualbox() {
     [[ -x $(command -v virtualbox) ]] && return
 
-    _install() {
-        sudo apt-get install -y virtualbox
-    }
-
-    _install
+    "$INSTALL" virtualbox
 }
 
 _libvirt() {
     [[ -x $(command -v virt-manager) ]] && return
 
     _install() {
-        sudo apt-get install -y libvirt-daemon-system libvirt-clients libvirt-daemon-system virtinst bridge-utils virt-manager
+        "$INSTALL" libvirt-daemon-system libvirt-clients libvirt-daemon-system virtinst bridge-utils virt-manager
     }
 
     _services() {
@@ -281,7 +246,7 @@ _podman() {
     [[ -x $(command -v podman) ]] && return
 
     _install() {
-        sudo apt-get install -y podman
+        "$INSTALL" podman
     }
 
     _services() {
@@ -317,37 +282,27 @@ _podman_compose() {
 _security() {
     [[ -x $(command -v gnutls-cli) ]] && return
 
-    local packages command
-
-    command="sudo apt-get install -y"
-    packages=(gnutls-bin)
-
-    s-dolist "$command" "${packages[@]}"
+    "$INSTALL" gnutls-bin
 }
 
 _network() {
     [[ -x $(command -v tcpdump) ]] && return
 
-    local packages command
-
-    command="sudo apt-get install -y"
     packages=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools
         resolvconf dhcpcd5 netcat-traditional tcpdump)
 
-    s-dolist "$command" "${packages[@]}"
+    s-dolist "$INSTALL" "$GUARD" "${packages[@]}"
 }
 
 _nerdctl() {
-    pre() {
-        ""
-    }
-
-    pre
+    ""
 }
 
 _firewall() {
+    [[ -x $(command -v firewalld) ]] && return
+
     _install() {
-        sudo apt-get -y install firewalld
+        "$INSTALL" firewalld
     }
 
     _post() {
