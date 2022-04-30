@@ -1,4 +1,5 @@
 name,repository
+mastodon,https://github.com/mastodon/mastodon
 superconfig,https://github.com/fnando/superconfig
 geshan-band_api,https://github.com/geshan/band_api
 beginning-rails-6,https://github.com/Apress/beginning-rails-6
