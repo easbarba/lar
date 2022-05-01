@@ -85,26 +85,19 @@ fi
 
 unset rc
 
+# ** readline
+#export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+# ===================================================
+
 # * CLI SOFTWARE
-e_completions() {
-    [[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
-    [[ -x $(command -v eksctl) ]] && . <(eksctl completion bash)
-}
+[[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
+[[ -x $(command -v eksctl) ]] && . <(eksctl completion bash)
 
-e_prompt() { eval "$(starship init bash)"; }
+[[ -x $(command -v starship) ]] && eval "$(starship init bash)"
+[[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
-e_direnv() { eval "$(direnv hook bash)"; }
-
-e_multiplexers() {
-    if [[ "$DISPLAY" ]]; then
-        if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
-            tmux attach || tmux new-session
-        fi
+if [[ "$DISPLAY" ]]; then
+    if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
+        tmux attach || tmux new-session
     fi
-}
-
-# * RUN
-e_completions
-e_prompt
-e_multiplexers
-e_direnv
+fi
