@@ -55,8 +55,8 @@ export PATH="$DOOM_DIR/bin":$PATH
 
 # * LANGUAGES PACKAGE MANAGERS
 
-# ** SWIFT
-export PATH=$HOME/.local/swift/usr/bin:$PATH
+# RUST
+. "$HOME/.cargo/env"
 # ===================================================
 
 # ** RUBY
