@@ -45,10 +45,10 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # ** GNOME KEYRING
-# eval $(gnome-keyring-daemon --start)
-# export SSH_AUTH_SOCK
-# export GNOME_KEYRING_PID
-# export GNOME_KEYRING_CONTROL
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_CONTROL
 # ===================================================
 
 # ** SECRETS
