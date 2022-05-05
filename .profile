@@ -41,8 +41,15 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
 # * MISCELLANEOUS
 
-# * WINDOW MANAGER FIXES
+# * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# ** GNOME KEYRING
+# eval $(gnome-keyring-daemon --start)
+# export SSH_AUTH_SOCK
+# export GNOME_KEYRING_PID
+# export GNOME_KEYRING_CONTROL
+# ===================================================
 
 # ** SECRETS
 export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
