@@ -2,6 +2,7 @@ name,repository
 browser,https://github.com/fnando/browser
 mastodon,https://github.com/mastodon/mastodon
 sidekiq,https://github.com/mperham/sidekiq
+rubocop,https://github.com/rubocop/rubocop
 rails,https://github.com/rails/rails
 rake,https://github.com/ruby/rake
 ruby,https://github.com/ruby/ruby
