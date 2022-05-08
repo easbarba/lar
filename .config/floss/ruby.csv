@@ -1,8 +1,8 @@
-name,repository
-browser,https://github.com/fnando/browser
-mastodon,https://github.com/mastodon/mastodon
-sidekiq,https://github.com/mperham/sidekiq
-rubocop,https://github.com/rubocop/rubocop
-rails,https://github.com/rails/rails
-rake,https://github.com/ruby/rake
-ruby,https://github.com/ruby/ruby
+name,branch,url
+browser,main,https://github.com/fnando/browser
+mastodon,main,https://github.com/mastodon/mastodon
+sidekiq,main,https://github.com/mperham/sidekiq
+devise,main,https://github.com/heartcombo/devise
+rails,main,https://github.com/rails/rails
+rake,master,https://github.com/ruby/rake
+ruby,master,https://github.com/ruby/ruby
