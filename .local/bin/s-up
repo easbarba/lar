@@ -35,8 +35,8 @@ _foreign() {
 _user() {
     s-echo "User tasks"
 
-    floss grab
-    floss archive
+    floss --grab
+    floss --archive ruby,rake
 }
 
 # * RUN
