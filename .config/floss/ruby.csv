@@ -1,8 +1,11 @@
 name,branch,url
 browser,main,https://github.com/fnando/browser
 mastodon,main,https://github.com/mastodon/mastodon
+tty,master,https://github.com/piotrmurach/tty
+bre,master,https://github.com/Homebrew/brew
 sidekiq,main,https://github.com/mperham/sidekiq
 devise,main,https://github.com/heartcombo/devise
 rails,main,https://github.com/rails/rails
+debug,master,https://github.com/ruby/debug
 rake,master,https://github.com/ruby/rake
 ruby,master,https://github.com/ruby/ruby
