@@ -6,6 +6,7 @@ bre,master,https://github.com/Homebrew/brew
 sidekiq,main,https://github.com/mperham/sidekiq
 devise,main,https://github.com/heartcombo/devise
 rails,main,https://github.com/rails/rails
+rbs,master,https://github.com/ruby/rbs
 debug,master,https://github.com/ruby/debug
 rake,master,https://github.com/ruby/rake
 ruby,master,https://github.com/ruby/ruby
