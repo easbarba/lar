@@ -98,3 +98,5 @@ export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 export NIX_PROFILE=$HOME/.nix-profile
 export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
+
+export DOCKER_HOST=///run/user/$UID/podman/podman.sock
