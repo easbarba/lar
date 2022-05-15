@@ -11,7 +11,7 @@ LOCAL_BIN="$HOME/.local/bin"
 # * APPS LIST
 
 tools=(udiskie mpd)
-apps=(emacs alacritty evince firefox nm-applet picom "$LOCAL_BIN/s-wall")
+apps=("$LOCAL_BIN/s-mx" alacritty evince firefox nm-applet picom "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
