@@ -79,8 +79,8 @@ packages() {
 		"${xorg[@]}"
 		"${cli[@]}"
 		"${laptop[@]}"
-		"${fonts[@]}"
-		"${amd[@]}")
+		# "${amd[@]}"
+		"${fonts[@]}")
 
 	for group in "${groups[@]}"; do
 		s-dolist "$command" "$guard" "$group"
