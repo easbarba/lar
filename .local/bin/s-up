@@ -27,6 +27,7 @@ _foreign() {
     s-echo "System Foreign installers"
 
     s-ruby
+    s-golang
     s-javascript
     s-guix
     s-flatpak
