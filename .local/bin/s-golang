@@ -16,7 +16,7 @@ _packages() {
 		# 'github.com/xxxserxxx/gotop/v4/cmd/gotop@latest'
 	)
 
-	s-dolist "$COMMAND" false "${packages[@]}"
+	s-dolist "$COMMAND" "${packages[@]}"
 
 }
 
@@ -32,7 +32,7 @@ _tools() {
 		'github.com/mdempsky/gocode@latest'
 		'golang.org/x/tools/cmd/guru@latest')
 
-	s-dolist "$COMMAND" false "${packages[@]}"
+	s-dolist "$COMMAND" "${packages[@]}"
 
 }
 
@@ -40,8 +40,7 @@ _devel() {
 	local packages=('mvdan.cc/sh/v3/cmd/shfmt@latest'
 		'github.com/erning/gorun@latest')
 
-	s-dolist "$COMMAND" false "${packages[@]}"
-
+	s-dolist "$COMMAND" "${packages[@]}"
 }
 
 # * RUN

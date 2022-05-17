@@ -11,34 +11,30 @@ GUARD='dpkg --get-selections'
 
 _postgres() {
     packages=(postgresql postgresql-contrib)
-    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _emacs() {
     packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
-    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _langs() {
-    packages=(golang python3-pip lua5.4 lua-check ruby-dev libssl-dev libfixposix-dev) #  clangd glslang-tools
-    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
+    packages=(ruby-full ruby-dev elixir golang python3-pip libssl-dev libfixposix-dev)
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _editors() {
     packages=(zile vim neovim tidy ripgrep)
-    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 _programming() {
     packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
-    s-dolist "$COMMAND" "$GUARD" "${packages[@]}"
+    s-dolist "$COMMAND" "${packages[@]}"
 }
 
 # RUN
-main() {
-    _emacs
-    _langs
-    _programming
-}
-
-main
+_emacs
+_langs
+_programming

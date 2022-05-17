@@ -6,14 +6,15 @@ set -euo pipefail
 COMMAND="$1"
 shift 1
 
-GUARD="$1"
-shift 1
+#GUARD="$1"
+#shift 1
 
 ACTIONS=("$@")
 
 # do not quote $GUARD and $COMMAND
 for action in "${ACTIONS[@]}"; do
-    if ! $GUARD $action; then
+#    if ! $($GUARD $action); then
+        s-echo "$COMMAND $action"
         $COMMAND "$action"
-    fi
+#    fi
 done

@@ -67,7 +67,7 @@ packages() {
 
 	# RUN
 	local command='sudo apt install -yqq'
-	local guard='dpkg --get-selections'
+	# local guard='dpkg --get-selections'
 	local groups=("${essentials[@]}"
 		"${debian[@]}"
 		"${system[@]}"
@@ -79,11 +79,11 @@ packages() {
 		"${xorg[@]}"
 		"${cli[@]}"
 		"${laptop[@]}"
-		# "${amd[@]}"
+		"${amd[@]}"
 		"${fonts[@]}")
 
 	for group in "${groups[@]}"; do
-		s-dolist "$command" "$guard" "$group"
+		s-dolist "$command" "$group"
 	done
 }
 
@@ -109,14 +109,14 @@ clean() {
 		packages=(firefox-esr)
 
 		local command='sudo apt remove -y'
-		s-dolist "$command" '' "${packages[@]}"
+		s-dolist "$command" "${packages[@]}"
 	}
 
 	_purge() {
 		packages=(*nvidia*)
 
 		local command='sudo apt purge -y'
-		s-dolist "$command" '' "${packages[@]}"
+		s-dolist "$command" "${packages[@]}"
 	}
 
 	_unused
@@ -155,7 +155,7 @@ foreign() {
 
 	_flatpak
 	_vscode
-	_chrome
+	# _chrome
 }
 
 # * RUN

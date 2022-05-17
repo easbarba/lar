@@ -325,10 +325,10 @@ main() {
     #_firewall
     #_gcloud
     #_gitlab
-    _qemu
+    #_qemu
     #_hashicorp
     # _kind
-    _kube
+    #_kube
     # _libvirt
     # _minikube
     #_network
