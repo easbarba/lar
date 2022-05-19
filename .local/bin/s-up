@@ -10,11 +10,11 @@ DEPS=(sudo pak floss)
 s-checkdeps "${DEPS[@]}"
 
 # * TASKS
-_distro() {
+_system() {
     s-echo "Upgrading $DISTRO system packages."
 
     [[ -x $(command -v pak) ]] && pak update && pak upgrade && return
-    [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade -y
+    [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
 }
 
 _editors() {
@@ -23,12 +23,17 @@ _editors() {
     s-doom
 }
 
-_foreign() {
-    s-echo "System Foreign installers"
+_langs() {
+    s-echo "Languages package installers"
 
     s-ruby
     s-golang
     s-javascript
+}
+
+_packers() {
+    s-echo "Foreign installers"
+
     s-guix
     s-flatpak
 }
@@ -37,11 +42,12 @@ _user() {
     s-echo "User tasks"
 
     floss --grab
-    floss --archive ruby,rake
+    floss --archive lar,annotations,mx,rake # TODO: save to usb-stick
 }
 
 # * RUN
-_distro
+_system
 _editors
-_foreign
+_langs
+_packers
 _user
