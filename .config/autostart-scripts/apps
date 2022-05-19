@@ -16,12 +16,8 @@ apps=("$LOCAL_BIN/s-mx" alacritty evince firefox nm-applet picom "$LOCAL_BIN/s-w
 # * Helpers
 
 not_found() { [[ ! -x $(command -v "$1") ]]; }
-
 is_running() { [[ $(pgrep -f "$1") ]]; }
-
-run() {
-  "$1" &
-}
+run() { "$1" & }
 
 autostart() {
   local apps=("$@")
