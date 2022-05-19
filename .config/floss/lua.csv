@@ -1,0 +1,17 @@
+name,branch,repository
+packer.nvim,master,https://github.com/wbthomason/packer.nvim
+which-key.nvim,main,https://github.com/folke/which-key.nvim
+willpower3309-awesome-dotfiles,master,https://github.com/WillPower3309/awesome-dotfiles
+elv13-awesome-configs,master,https://github.com/Elv13/awesome-configs
+vicious,master,https://github.com/vicious-widgets/vicious
+awesome-wm-widgets,master,https://github.com/streetturtle/awesome-wm-widgets
+luamake,master,https://github.com/actboy168/luamake
+lua-language-server,master,https://github.com/sumneko/lua-language-server
+emmylua-LanguageServer,master,https://github.com/EmmyLua/EmmyLua-LanguageServer
+turtle.lua,master,https://github.com/arthurealike/turtle.lua
+luvit,master,https://github.com/luvit/luvit
+lite,master,https://github.com/rxi/lite
+awesome-copycats,master,https://github.com/lcpz/awesome-copycats
+awesome,master,https://github.com/awesomeWM/awesome
+luarocks,master,https://github.com/luarocks/luarocks
+lua,master,https://github.com/lua/lua
