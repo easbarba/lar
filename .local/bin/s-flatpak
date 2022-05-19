@@ -6,7 +6,7 @@ _repo() {
 }
 
 _user() {
-    local packages=(com.wps.Office com.github.babluboy.bookworm)
+    local packages=(com.wps.Office)
 
     local command="flatpak install flathub -y"
     s-dolist "$command" "${packages[@]}"
