@@ -1,5 +1,5 @@
 exec: /sbin/apk
-become:
+user:
   update: update
   upgrade: upgrade
   deps: ''
@@ -9,7 +9,6 @@ become:
   remove: del
   download: download
   fix: fix
-user:
   search: search
   help: help
   info: show
