@@ -5,7 +5,7 @@
 # * DEFAULT SOFTWARE:
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="gnome-terminal"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # * XDG HOMES
@@ -44,7 +44,7 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 # * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# ** GNOME KEYRING
+# ** GNOME KEYRING TODO: run only in WMs
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 export GNOME_KEYRING_PID
@@ -52,7 +52,7 @@ export GNOME_KEYRING_CONTROL
 # ===================================================
 
 # ** SECRETS
-export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
+#export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
 # ===================================================
 
 # ** DOOM Emacs
@@ -61,10 +61,6 @@ export PATH="$DOOM_DIR/bin":$PATH
 # ===================================================
 
 # * LANGUAGES PACKAGE MANAGERS
-
-# RUST
-. "$HOME/.cargo/env"
-# ===================================================
 
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
@@ -98,5 +94,3 @@ export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 export NIX_PROFILE=$HOME/.nix-profile
 export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
-
-export DOCKER_HOST=///run/user/$UID/podman/podman.sock
