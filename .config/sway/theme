@@ -1,13 +1,32 @@
-# -------------- THEME
+set $gnome-schema org.gnome.desktop.interface
+# exec_always gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+# Set colors
+set $bg-color            #333333
+set $inactive-bg-color   #333333
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+set $focus-text-color    #87CEEB
 
-# Status Bar:
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #000000AA
+
+client.focused #5b839a #5b839a #ffffff #7c794e
+client.unfocused #333333 #222222 #888888 #292d2e #222222
+
+default_border pixel
+default_floating_border pixel
+
+# -------------- STATUS BAR
 bar {
     position bottom
     mode hide
-    status_command while e_sysinfo; do sleep 1; done
+    status_command while s-sysinfo; do sleep 1; done
+
     colors {
-        statusline #76ea02
-        background #4F2F17
-        inactive_workspace #915C2B #ea6302 #ffffff
+        statusline $text-color
+        background $bg-color
+        #inactive_workspace $inactive-text-color $urgent-bg-color $focus-text-color
     }
 }

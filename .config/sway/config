@@ -1,9 +1,9 @@
-# SWAY
+# SWAYWM
 
 include ~/.config/sway/variables
-include ~/.config/sway/bindings
-include ~/.config/sway/autostart
 include ~/.config/sway/workspace
+include ~/.config/sway/bindings
+include ~/.config/sway/bar
 include ~/.config/sway/theme
-
+include ~/.config/sway/autostart
 include @sysconfdir@/sway/config.d/*

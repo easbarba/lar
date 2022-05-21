@@ -1,6 +1,18 @@
-assign [class="emacs"] 'mx'
-assign [class="zathura"] 'read'
-assign [class="st-256color"] 'term'
-assign [class="firefox"] 'www'
-assign [class="chromium"] 'www'
-assign [class="mpv"] 'media'
+# Bind App to workspace
+# Check class by : xprop
+# swaymsg -t get_tree
+
+set $ws1 "mx"
+set $ws2 "read"
+set $ws3 "term"
+set $ws4 "www"
+set $ws5 "media"
+
+assign [class="emacs"] $ws1
+assign [class="Evince"] $ws2
+assign [class="libreoffice"] $ws2
+assign [class="Alacritty"] $ws3
+assign [class="firefox"] $ws4
+assign [class="chromium"] $ws4
+assign [class="Google-chrome"] $ws4
+assign [class="mpv"] $ws5

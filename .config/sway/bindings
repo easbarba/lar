@@ -1,7 +1,6 @@
 ### Key bindings
-#
+
 # Basics:
-#
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -47,9 +46,8 @@
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
+
 # Workspaces:
-#
     # Switch to workspace
     bindsym $mod+1 workspace 'mx'
     bindsym $mod+2 workspace 'read'
@@ -68,9 +66,8 @@
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-#
+
 # Layout stuff:
-#
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -93,9 +90,8 @@
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-#
+
 # Scratchpad:
-#
     # Sway has a "scratchpad", which is a bag of holding for windows.
     # You can send windows there and get them back later.
 
@@ -105,9 +101,8 @@
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-#
+
 # Resizing containers:
-#
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -130,17 +125,21 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym $mod+Mod1+w exec gota volume up
-bindsym $mod+Mod1+s exec gota volume down
-bindsym $mod+Mod1+e exec gota volume toggle
-bindsym $mod+Shift+e exec mpc toggle
-bindsym $mod+Shift+a exec mpc prev
-bindsym $mod+Shift+d exec mpc next
-bindsym $mod+Shift+w exec mpc volume +3
-bindsym $mod+Shift+s exec mpc volume -3
-bindsym $mod+Mod1+a exec gota back up
-bindsym $mod+Mod1+d exec gota back down
-bindsym $mod+z exec playerctl play-pause
+# External Applications
 bindsym $mod+c exec swaylock
-bindsym $mod+Mod1+p exec e_play
 
+bindsym $mod+Ctrl+w exec s-volume up
+bindsym $mod+Ctrl+s exec s-volume down
+bindsym $mod+Ctrl+e exec s-volume toggle
+bindsym $mod+Ctrl+a exec s-backlight up
+bindsym $mod+Ctrl+d exec s-backlight down
+
+bindsym $mod+Mod1+e exec mpc toggle
+bindsym $mod+Mod1+a exec mpc prev
+bindsym $mod+Mod1+d exec mpc next
+bindsym $mod+Mod1+w exec mpc volume +3
+bindsym $mod+Mod1+s exec mpc volume -3
+bindsym $mod+Mod1+z exec playerctl play-pause
+bindsym $mod+Mod1+x exec wofi --show drun
+bindsym $mod+Print exec grim
+bindsym $mod+Mod1+p exec s-play
