@@ -5,6 +5,7 @@ sidekiq,main,https://github.com/mperham/sidekiq
 devise,main,https://github.com/heartcombo/devise
 rails,main,https://github.com/rails/rails
 mastodon,main,https://github.com/mastodon/mastodon
+pry,master,https://github.com/pry/pry
 rbs,master,https://github.com/ruby/rbs
 debug,master,https://github.com/ruby/debug
 rake,master,https://github.com/ruby/rake
