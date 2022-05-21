@@ -9,18 +9,12 @@ _nmcli() {
     s-checkdeps "${deps[@]}"
 
     # return if not running
-    [[ ! $(pgrep -x nmcli) ]] && return
+    [[ ! $(pgrep -x NetworkManager) ]] && return
 
-    local state
-    local ssid
-    state=$(nmcli connection show | awk 'NR==2 {print $4}')
-    ssid=$(nmcli connection show | awk 'NR==2 {print $1}')
+    local state=$(nmcli connection show | awk 'NR==2 {print $4}')
+    local ssid=$(nmcli connection show | awk 'NR==2 {print $1}')
 
-    if [[ "$state" == '--' ]]; then
-        nmcli con up "$ssid"
-    else
-        nmcli con down "$ssid"
-    fi
+    [[ "$state" == '--' ]] && nmcli con up "$ssid" || nmcli con down "$ssid"
 }
 
 _iwd() {

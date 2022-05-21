@@ -141,6 +141,7 @@ bindsym $mod+Mod1+w exec mpc volume +3
 bindsym $mod+Mod1+s exec mpc volume -3
 bindsym $mod+Mod1+z exec playerctl play-pause
 bindsym $mod+Mod1+x exec wofi --show drun
+bindsym $mod+Mod1+b exec s-wifi
 bindsym $mod+Print exec grim
 bindsym $mod+Mod1+Print exec grim -g "$(slurp)"
 bindsym $mod+Mod1+p exec s-play
