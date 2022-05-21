@@ -51,6 +51,7 @@ _cpuf() {
     read -r _ a b c idle rest </proc/stat
     total=$((a + b + c + idle))
     result="$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))"
+
     echo -e "\Uf110 ${result}%"
 }
 
@@ -58,14 +59,14 @@ _cput() {
     local result
     result="$(sensors 2>&1 | gawk '/Tctl/ {print substr($2, 2)}')" # sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}'
 
-    echo -e "\Uf134 ${result}"
+    echo -e "\Uf06d ${result}"
 }
 
 _memory() {
     local result
     result="$(free -m | gawk 'NR==2 {printf "%dMB\n", $3,$2,$3*100/$2 }')"
 
-    printf "%s" "\Uf1c0 ${result}"
+    printf "%s" "\Uf18d ${result}"
 }
 
 _date() {
@@ -79,7 +80,7 @@ _battery() {
     local result
     result="$(acpi -b | gawk '{print $4}')"
 
-    printf "%s" "\Uf241: ${result}"
+    printf "%s" "\Uf0e7 ${result}"
 }
 
 _gput() {
@@ -112,9 +113,9 @@ _connection() {
     result=$(nmcli connection show | gawk 'NR==2 {print $4}')
 
     if [[ "$result" != '--' ]]; then
-        printf 'CON: ON'
+        printf "\Uf1eb ON"
     else
-        printf 'CON: OFF'
+        printf "\Uf1eb OFF"
     fi
 }
 
@@ -130,8 +131,8 @@ _de() {
 }
 
 _cli() {
-    echo -e "$(_cpuf)$SEP$(_volume)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)$SEP$(_date) "
-} # $SEP2$(_kernel)
+    echo -e "$(_cpuf)$SEP$(_volume)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)$SEP$(_connection)$SEP$(_date) "
+}
 
 _cli
 
