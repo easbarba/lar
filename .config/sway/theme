@@ -20,7 +20,7 @@ default_floating_border pixel
 
 # -------------- STATUS BAR
 bar {
-    position bottom
+    position top
     mode hide
     status_command while s-sysinfo; do sleep 1; done
 
