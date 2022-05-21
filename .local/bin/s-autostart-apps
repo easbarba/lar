@@ -10,8 +10,8 @@ LOCAL_BIN="$HOME/.local/bin"
 
 # * APPS LIST
 
-tools=(udiskie mpd)
-apps=("$LOCAL_BIN/s-mx" alacritty evince firefox nm-applet picom "$LOCAL_BIN/s-wall")
+TOOLS=(udiskie mpd nm-applet)
+APPS=("$LOCAL_BIN/s-mx" "$LOCAL_BIN/s-mx" alacritty evince firefox picom "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
@@ -31,5 +31,5 @@ autostart() {
 
 # * Run
 
-autostart "${tools[@]}"
-autostart "${apps[@]}"
+autostart "${TOOLS[@]}"
+autostart "${APPS[@]}"
