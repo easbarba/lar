@@ -48,7 +48,7 @@ packages() {
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
 		apt-file gdebi)
 
-	xorg=(xclip xsel network-manager-gnome awesome feh scrot)
+	wayland=(wl-clipboard sway swaybg swaylock foot clipman grimshot xwayland)
 
 	cli=(htop ffmpeg mpv elinks libnotify-bin bluez suckless-tools ranger udiskie mpd mpc ncmpcpp brightnessctl)
 
@@ -76,7 +76,7 @@ packages() {
 		"${media[@]}"
 		"${sound[@]}"
 		"${user[@]}"
-		"${xorg[@]}"
+		"${wayland[@]}"
 		"${cli[@]}"
 		"${laptop[@]}"
 		"${amd[@]}"
