@@ -13,7 +13,7 @@ s-checkdeps "${DEPS[@]}"
 _system() {
     s-echo "Upgrading $DISTRO system packages."
 
-    [[ -x $(command -v pak) ]] && pak update && pak upgrade && return
+    [[ -x $(command -v zae) ]] && zae update && zae upgrade && return
     [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
 }
 
