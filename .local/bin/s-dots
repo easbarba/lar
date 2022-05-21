@@ -2,13 +2,14 @@
 # coding: utf-8
 # frozen_string_literal: true
 
-require "pathname"
-require "find"
+require 'pathname'
+require 'find'
 
 # TODO: Remove unused early symlinked dotfiles
 # TODO: Clone repo fixed commit
 # TODO: Read-only symlinks
 # TODO: Python
+# TODO: avoid folder name repetition with .config{2,3,4,5}
 
 # Mirror Lar files in $HOME.
 class Dots
@@ -23,8 +24,8 @@ class Dots
 
   # ignore these dotfiles
   def dotignored
-    dots = root.join(".dotsignore").read.split "\n"
-    dots.append ".dotsignore" # ignore it too, ofc!
+    dots = root.join('.dotsignore').read.split "\n"
+    dots.append '.dotsignore' # ignore it too, ofc!
     dots.uniq # users may not notice.
   end
 
@@ -39,7 +40,7 @@ class Dots
     Find.find(root) do |current|
       current = Pathname.new current
 
-      next if current.to_path.include? ".git" # ignore the .git folder!
+      next if current.to_path.include? '.git' # ignore the .git folder!
       next if children? current
       next if current == root # ????
 
@@ -53,7 +54,7 @@ class Dots
   # /a/b/c.tar --> /home/b/c.tar
   def to_home(this)
     origin = this.to_path
-    homey = HOME.to_path.concat("/")
+    homey = HOME.to_path.concat('/')
     result = origin.gsub(root.to_path, homey)
 
     Pathname.new result
@@ -71,7 +72,7 @@ class Dots
   end
 
   def files_mirrored
-    raise "not implemented"
+    raise 'not implemented'
   end
 
   def feed_target_link
