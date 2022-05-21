@@ -94,3 +94,5 @@ export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 export NIX_PROFILE=$HOME/.nix-profile
 export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
+
+export SWAYSOCK=$(ls /run/user/1000/sway-ipc.* | sed -n 2p)
