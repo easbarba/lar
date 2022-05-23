@@ -2,8 +2,8 @@
 # coding: utf-8
 # frozen_string_literal: true
 
-require 'pathname'
-require 'find'
+# Features:
+# - dotsignore: placed at the repo root, prevents symlinking undesired files/folders to $HOME.
 
 # TODO: Remove unused early symlinked dotfiles
 # TODO: Clone repo fixed commit
@@ -11,7 +11,10 @@ require 'find'
 # TODO: Python
 # TODO: avoid folder name repetition with .config{2,3,4,5}
 
-# Mirror Lar files in $HOME.
+require 'pathname'
+require 'find'
+
+# Mirror, by symlinking, a dotfiles repo to $HOME.
 class Dots
   HOME = Pathname.new Dir.home
 
