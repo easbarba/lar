@@ -41,8 +41,8 @@ _packers() {
 _user() {
     s-echo "User tasks"
 
-    floss --grab
-    floss --archive lar,annotations,mx,rake # TODO: save to usb-stick
+    qas --grab
+    qas --archive lar,annotations,mx,rake # TODO: save to usb-stick
 }
 
 # * RUN
