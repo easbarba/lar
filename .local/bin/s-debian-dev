@@ -20,7 +20,7 @@ _emacs() {
 }
 
 _langs() {
-    packages=(ruby-full ruby-dev lua5.4 luarocks golang python3-pip nodejs libssl-dev libfixposix-dev)
+    packages=(ruby-full ruby-dev golang python3-pip nodejs libssl-dev libfixposix-dev)
     s-dolist "$COMMAND" "${packages[@]}"
 }
 
