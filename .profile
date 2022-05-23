@@ -44,11 +44,13 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 # * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# ** GNOME KEYRING TODO: run only in WMs
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-export GNOME_KEYRING_PID
-export GNOME_KEYRING_CONTROL
+# # ** GNOME KEYRING TODO: run only in WMs
+# eval $(gnome-keyring-daemon --start)
+# export SSH_AUTH_SOCK
+# export GNOME_KEYRING_PID
+# export GNOME_KEYRING_CONTROL
+
+SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # ===================================================
 
 # ** SECRETS
