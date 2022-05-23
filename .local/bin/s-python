@@ -35,7 +35,6 @@ _poetry() {
     # poetry completions zsh >~/.zfunc/_poetry
 }
 
-_poetry
 _library
 _devel
 _tools
