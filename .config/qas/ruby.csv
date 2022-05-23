@@ -2,6 +2,7 @@ name,branch,url
 browser,main,https://github.com/fnando/browser
 brew,master,https://github.com/Homebrew/brew
 sidekiq,main,https://github.com/mperham/sidekiq
+fluentd,master,https://github.com/fluent/fluentd
 devise,main,https://github.com/heartcombo/devise
 rails,main,https://github.com/rails/rails
 mastodon,main,https://github.com/mastodon/mastodon
