@@ -41,18 +41,6 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
 # * MISCELLANEOUS
 
-# * WINDOW MANAGER
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# # ** GNOME KEYRING TODO: run only in WMs
-# eval $(gnome-keyring-daemon --start)
-# export SSH_AUTH_SOCK
-# export GNOME_KEYRING_PID
-# export GNOME_KEYRING_CONTROL
-
-SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-# ===================================================
-
 # ** SECRETS
 #export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
 # ===================================================
@@ -78,7 +66,6 @@ export PATH="$GOPATH/bin"${PATH:+:}$PATH
 export NPM_CONFIG_PREFIX="$HOME/.local/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 export PATH="$NPM_CONFIG_PREFIX/bin"${PATH:+:}$PATH
 # ===================================================
 
@@ -97,4 +84,17 @@ export NIX_PROFILE=$HOME/.nix-profile
 export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
 
+# * WINDOW MANAGER
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# ** GNOME KEYRING
+# if [ -n "$DESKTOP_SESSION" ]; then
+# eval $(gnome-keyring-daemon --start)
+# export SSH_AUTH_SOCK
+# export GNOME_KEYRING_PID
+# export GNOME_KEYRING_CONTROL
+# fi
+
 export SWAYSOCK=$(ls /run/user/1000/sway-ipc.* | sed -n 2p)
+# SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# ===================================================
