@@ -8,10 +8,14 @@ application/x-extension-xhtml=firefox.desktop;
 audio/mp3=mpv.desktop
 inode/directory=org.kde.dolphin.desktop;
 video/webm=mpv.desktop;
+video/x-matroska=mpv.desktop;org.kde.kate.desktop;org.kde.dragonplayer.desktop;org.gnome.Totem.desktop;vlc.desktop;
 x-scheme-handler/chrome=firefox.desktop;
 x-scheme-handler/ftp=firefox.desktop;
+x-scheme-handler/geo=wheelmap-geo-handler.desktop;
+x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/mailto=org.kde.kmail2.desktop;
+x-scheme-handler/tel=com.skype.Client.desktop;
 
 [Default Applications]
 application/octet-stream=org.kde.kate.desktop;
@@ -79,7 +83,7 @@ video/x-fli=mpv.desktop
 video/x-flic=mpv.desktop
 video/x-flv=mpv.desktop
 video/x-m4v=mpv.desktop
-video/x-matroska=mpv.desktop
+video/x-matroska=mpv.desktop;
 video/x-mpeg=mpv.desktop
 video/x-ms-asf=mpv.desktop
 video/x-ms-asx=mpv.desktop
@@ -98,8 +102,13 @@ x-content/video-vcd=mpv.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/chrome=firefox.desktop
 x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/geo=wheelmap-geo-handler.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/https`=firefox.desktop
 x-scheme-handler/mailto=org.kde.kmail2.desktop;
+x-scheme-handler/tel=com.skype.Client.desktop;
 x-scheme-handler/unknown=firefox.desktop
+
+[Removed Associations]
+video/x-matroska=org.kde.haruna.desktop;
