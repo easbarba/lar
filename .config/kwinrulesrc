@@ -22,13 +22,16 @@ wmclass=emacs
 wmclassmatch=1
 
 [1]
-Description=Window settings for code
-desktop=2
-desktoprule=2
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
+Description=Window settings for alacritty
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=3
+fullscreen=true
+fullscreenrule=2
+title=Alacritty
+titlematch=1
 types=1
-wmclass=code
+windowrole=browser
+wmclass=alacritty
 wmclassmatch=1
 
 [10]
@@ -41,49 +44,73 @@ wmclass=evince
 wmclassmatch=1
 
 [2]
-Description=Window settings for libreoffice-startcenter
+Description=Window settings for org.kde.haruna
+clientmachine=localhost
 desktop=3
 desktoprule=3
-desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
-desktopsrule=2
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktopsrule=3
+title=StarTrek.TNG-s02e13.Time.Squared.mkv — Haruna Video Player
 types=1
-wmclass=soffice.bin libreoffice-startcenter
+windowrole=browser
+wmclass=haruna org.kde.haruna
+wmclasscomplete=true
+wmclassmatch=1
+
+[2134a7a6-6faf-47e7-9d19-3390f10cfbe2]
+Description=Window settings for org.kde.haruna
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktopsrule=3
+title=StarTrek.TNG-s02e13.Time.Squared.mkv — Haruna Video Player
+types=1
+wmclass=haruna org.kde.haruna
 wmclasscomplete=true
 wmclassmatch=1
 
 [3]
-Description=Window settings for emacs
+Description=org.kde.okular
+clientmachine=localhost
 desktop=3
 desktoprule=2
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=3
 fullscreen=true
-fullscreenrule=2
-title=*scratch* – Doom Emacs
-titlematch=1
+title=Okular
 types=1
-wmclass=emacs
+windowrole=browser
+wmclass=okular org.kde.okular
+wmclasscomplete=true
 wmclassmatch=1
 
 [4]
-Description=Window settings for org.clementine-player.clementine
+Description=firefox
+clientmachine=localhost
 desktop=1
 desktoprule=2
-desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
-desktopsrule=2
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktopsrule=3
+fullscreen=true
+title=Esses resultados estão enganando e passando uma imagem que não é a nossa realidade — Mozilla Firefox
 types=1
-wmclass=clementine org.clementine-player.clementine
+windowrole=browser
+windowrolematch=1
+wmclass=navigator firefox
 wmclasscomplete=true
 wmclassmatch=1
 
 [5]
-Description=Window settings for google-chrome
+Description=alacritty
+clientmachine=localhost
 desktop=1
 desktoprule=2
 desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
-desktopsrule=2
+desktopsrule=3
+fullscreen=true
+title=Alacritty
 types=1
-wmclass=google-chrome
+windowrole=browser
+wmclass=alacritty
+wmclasscomplete=true
 wmclassmatch=1
 
 [565ee781-f455-4190-8b85-25881d289357]
@@ -97,17 +124,18 @@ wmclass=firefox
 wmclassmatch=1
 
 [6]
-Description=Window settings for code
+Description=emacs
 clientmachine=localhost
-desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
 desktopsrule=2
+fullscreen=true
+fullscreenrule=2
 maximizehoriz=true
-maximizehorizrule=2
 maximizevert=true
-maximizevertrule=2
-title=Untitled-1 - Visual Studio Code
+title=*doom* – Doom Emacs
+titlematch=1
 types=1
-wmclass=code
+wmclass=emacs
 wmclassmatch=1
 
 [65a6c2c6-10bf-42fa-a193-3008af2c4f6d]
@@ -157,6 +185,16 @@ wmclass=konsole org.kde.konsole
 wmclasscomplete=true
 wmclassmatch=1
 
+[842eddab-32a6-4c80-a1f0-000bb3b3e2e9]
+Description=Window settings for org.clementine-player.clementine
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktopsrule=3
+title=Krisiun - Dogma Of Submission
+types=1
+wmclass=clementine org.clementine-player.clementine
+wmclasscomplete=true
+wmclassmatch=1
+
 [8f041f97-f1d3-4457-a220-b351b19db7c3]
 Description=Window settings for mpv
 desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
@@ -192,6 +230,16 @@ wmclass=okular org.kde.okular
 wmclasscomplete=true
 wmclassmatch=1
 
+[914117c0-180f-4a79-93b9-6d4227353304]
+Description=org.kde.okular
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=3
+title=Okular
+types=1
+wmclass=okular org.kde.okular
+wmclasscomplete=true
+wmclassmatch=1
+
 [9262c8b2-6287-41e5-bf54-1a6aec7b4dbc]
 Description=Window settings for firefox
 desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
@@ -213,8 +261,18 @@ wmclass=firefox
 wmclassmatch=1
 
 [General]
-count=10
-rules=1,2,3,4,5,6,7,8
+count=7
+rules=842eddab-32a6-4c80-a1f0-000bb3b3e2e9,1,2,3,4,5,6
+
+[b16a6a55-a1bc-4635-892b-6179705d1e94]
+Description=Window settings for gnome-terminal-server
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=3
+title=Terminal
+titlematch=1
+types=1
+wmclass=gnome-terminal-server
+wmclassmatch=1
 
 [ba87450b-ab64-49f1-95b9-1b4890fbe4a5]
 Description=Window settings for org.kde.okular
@@ -224,6 +282,18 @@ title=Okular
 types=1
 wmclass=okular org.kde.okular
 wmclasscomplete=true
+wmclassmatch=1
+
+[c6d6f87b-953d-426d-988d-44e13f585c46]
+Description=Window settings for alacritty
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=3
+fullscreen=true
+fullscreenrule=3
+title=Alacritty
+titlematch=1
+types=1
+wmclass=alacritty
 wmclassmatch=1
 
 [d4fa75f9-c3b0-42c3-a4ef-59cfaaaf0bba]
