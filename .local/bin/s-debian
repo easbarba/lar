@@ -39,23 +39,22 @@ packages() {
 
 	shell=(bash-completion shellcheck fish)
 
-	gnu=(bash gcc make vrms info wget parallel gawk)
+	gnu=(bash gcc make vrms info wget parallel gawk screen parted)
 
 	fonts=(fonts-hack fonts-dejavu fonts-jetbrains-mono ttf-ancient-fonts fonts-nanum)
 
 	laptop=(acpi lm-sensors lshw libinput-tools)
 
-	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude
-		apt-file gdebi)
+	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	wayland=(sway swaybg swaylock foot clipman grim slurp wl-clipboard xwayland)
+	kde=(plasma-workspace-wayland ktorrent clementine kamoso kdenlive kate falkon kdeconnect kdevelop krita)
 
-	cli=(htop ffmpeg mpv elinks libnotify-bin bluez suckless-tools ranger udiskie mpd mpc ncmpcpp brightnessctl)
+	cli=(htop ffmpeg mpv elinks libnotify-bin ranger)
 
 	user=(firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-br
-		telegram-desktop calibre rhythmbox-plugin-alternative-toolbar pandoc)
+		calibre pandoc obs-studio inkscape)
 
-	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils)
+	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils vlc)
 
 	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly libavcodec58)
@@ -76,7 +75,7 @@ packages() {
 		"${media[@]}"
 		"${sound[@]}"
 		"${user[@]}"
-		"${wayland[@]}"
+		"${kde[@]}"
 		"${cli[@]}"
 		"${laptop[@]}"
 		"${amd[@]}"
