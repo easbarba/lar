@@ -1,7 +1,10 @@
 LICENSE
 README.md
-.tcshrc
 .iex.exs
+.sbclrc
+.tcshrc
+.zshrc
+.xsessionrc
 .config/awesome
 .config/ansible
 .config/Clementine
@@ -28,8 +31,4 @@ README.md
 .config/yabar
 .config/youtube-dl
 .config/xmodmap
-.config/kglobalshortcutsrc
-.config/konsolerc
-.config/kwinrc
-.config/kwinrulesrc
 .config/zathura
