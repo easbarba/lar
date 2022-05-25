@@ -86,15 +86,3 @@ export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 
 # * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-# ** GNOME KEYRING
-# if [ -n "$DESKTOP_SESSION" ]; then
-# eval $(gnome-keyring-daemon --start)
-# export SSH_AUTH_SOCK
-# export GNOME_KEYRING_PID
-# export GNOME_KEYRING_CONTROL
-# fi
-
-export SWAYSOCK=$(ls /run/user/1000/sway-ipc.* | sed -n 2p)
-# SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-# ===================================================
