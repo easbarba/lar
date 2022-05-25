@@ -97,7 +97,11 @@ unset rc
 [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
 if [[ "$DISPLAY" ]]; then
-    if [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
+    if [[ -x "$(command -v screen)" ]]; then
+        if [[ -z "$STY" ]]; then
+            screen -xRR GNU
+        fi
+    elif [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
         tmux attach || tmux new-session
     fi
 fi
