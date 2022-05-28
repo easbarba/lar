@@ -38,6 +38,7 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 _k_friendly_name=Custom Shortcuts Service
 {1b141675-89ae-46dc-b267-5d408ce0e2fe}=Meta+Alt+P,none,Play video
 {43d5274a-a947-4ea8-826d-18298eb0c93e}=Ctrl+Alt+T,none,Launch Konsole
+{796f32ce-a46d-4cfc-9be8-91413c67676a}=Meta+Alt+V,none,System Info
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 
 [kmix]
