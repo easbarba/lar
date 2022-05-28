@@ -2,23 +2,29 @@
 # coding: utf-8
 # frozen_string_literal: true
 
-# Features:
-# - dotsignore: placed at the repo root, prevents symlinking undesired files/folders to $HOME.
+# Description: An opitionated dotfile deployer base on guix home and nix homemanager.
 
-# TODO: Remove unused early symlinked dotfiles
-# TODO: Clone repo fixed commit
-# TODO: Read-only symlinks
-# TODO: Python
-# TODO: avoid folder name repetition with .config{2,3,4,5}
+# Features:
+# - a dotsignore at the repository root behaves just like git's one,
+#   prevents symlinking undesired files/folders to $HOME.
+# - Folders are not symlinked but created.
+
+# TODO: Remove unused early symlinked dotfiles.
+# TODO: Accept git commit sha to symlink,
+# TODO: Read-only symlinks.
+# TODO: OptParser cli.
+# TODO: dotsignore to accept hash-like folder. eg: .config{foo,bar,meh,forevis}
 
 require 'pathname'
 require 'find'
 
-# Mirror, by symlinking, a dotfiles repo to $HOME.
+# Mirrors, by symlinking, a dotfiles repository to $HOME.
 class Dots
   HOME = Pathname.new Dir.home
 
-  attr_reader :root, :home, :target_link
+  attr_reader :root
+  attr_reader :home
+  attr_reader :target_link
 
   def initialize(root)
     @root = Pathname.new root if root
@@ -29,7 +35,7 @@ class Dots
   def dotignored
     dots = root.join('.dotsignore').read.split "\n"
     dots.append '.dotsignore' # ignore it too, ofc!
-    dots.uniq # users may not notice.
+    dots.uniq # users may not notice duplicated dotfiles.
   end
 
   def children?(current)
@@ -63,7 +69,7 @@ class Dots
     Pathname.new result
   end
 
-  # Create only the folders, if those do not exist
+  # Create folders that contains symlinked files
   def make_folders
     all[:folders].each do |fld|
       folder = to_home fld
@@ -106,7 +112,7 @@ class Dots
     end
   end
 
-  def run
+  def deploy
     feed_target_link
     make_folders
     backup_files
@@ -115,4 +121,4 @@ class Dots
 end
 
 # RUN
-Dots.new(ARGV.first).run
+Dots.new(ARGV.first).deploy
