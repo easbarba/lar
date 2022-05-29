@@ -10,8 +10,8 @@ LOCAL_BIN="$HOME/.local/bin"
 
 # * APPS LIST
 
-TOOLS=(udiskie mpd nm-applet)
-APPS=("$LOCAL_BIN/s-mx" "$LOCAL_BIN/s-mx" alacritty evince firefox picom "$LOCAL_BIN/s-wall")
+TOOLS=(udiskie mpd) # nm-applet
+APPS=("$LOCAL_BIN/s-mx" alacritty okular icecat "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
