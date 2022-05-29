@@ -1,6 +1,5 @@
 # Bind App to workspace
-# Check class by : xprop
-# swaymsg -t get_tree
+# query for apps info with: swaymsg -t get_tree
 
 set $ws1 "mx"
 set $ws2 "read"
@@ -8,11 +7,12 @@ set $ws3 "term"
 set $ws4 "www"
 set $ws5 "media"
 
-assign [class="emacs"] $ws1
-assign [class="Evince"] $ws2
+assign [class="Emacs"] $ws1
+assign [app_id="org.kde.okular"] $ws2
 assign [class="libreoffice"] $ws2
-assign [class="Alacritty"] $ws3
-assign [class="firefox"] $ws4
-assign [class="chromium"] $ws4
+assign [app_id="Alacritty"] $ws3
+assign [class="IceCat"] $ws4
+assign [class="Firefox"] $ws4
+assign [class="Chromium"] $ws4
 assign [class="Google-chrome"] $ws4
-assign [class="mpv"] $ws5
+assign [app_id="mpv"] $ws5
