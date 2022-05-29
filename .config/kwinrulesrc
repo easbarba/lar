@@ -22,16 +22,15 @@ wmclass=emacs
 wmclassmatch=1
 
 [1]
-Description=Window settings for alacritty
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+Description=Window settings for org.clementine-player.clementine
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
 desktopsrule=3
 fullscreen=true
-fullscreenrule=2
-title=Alacritty
-titlematch=1
+title=Krisiun - Dogma Of Submission
 types=1
 windowrole=browser
-wmclass=alacritty
+wmclass=clementine org.clementine-player.clementine
+wmclasscomplete=true
 wmclassmatch=1
 
 [10]
@@ -44,17 +43,19 @@ wmclass=evince
 wmclassmatch=1
 
 [2]
-Description=Window settings for org.kde.haruna
+Description=Window settings for alacritty
 clientmachine=localhost
 desktop=3
 desktoprule=3
-desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
 desktopsrule=3
-title=StarTrek.TNG-s02e13.Time.Squared.mkv — Haruna Video Player
+fullscreen=true
+fullscreenrule=2
+title=Alacritty
+titlematch=1
 types=1
 windowrole=browser
-wmclass=haruna org.kde.haruna
-wmclasscomplete=true
+wmclass=alacritty
 wmclassmatch=1
 
 [2134a7a6-6faf-47e7-9d19-3390f10cfbe2]
@@ -68,9 +69,24 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [3]
-Description=org.kde.okular
+Description=Window settings for org.kde.haruna
 clientmachine=localhost
 desktop=3
+desktoprule=2
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktopsrule=3
+fullscreen=true
+title=StarTrek.TNG-s02e13.Time.Squared.mkv — Haruna Video Player
+types=1
+windowrole=browser
+wmclass=haruna org.kde.haruna
+wmclasscomplete=true
+wmclassmatch=1
+
+[4]
+Description=org.kde.okular
+clientmachine=localhost
+desktop=1
 desktoprule=2
 desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
 desktopsrule=3
@@ -82,7 +98,7 @@ wmclass=okular org.kde.okular
 wmclasscomplete=true
 wmclassmatch=1
 
-[4]
+[5]
 Description=firefox
 clientmachine=localhost
 desktop=1
@@ -98,21 +114,6 @@ wmclass=navigator firefox
 wmclasscomplete=true
 wmclassmatch=1
 
-[5]
-Description=alacritty
-clientmachine=localhost
-desktop=1
-desktoprule=2
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
-desktopsrule=3
-fullscreen=true
-title=Alacritty
-types=1
-windowrole=browser
-wmclass=alacritty
-wmclasscomplete=true
-wmclassmatch=1
-
 [565ee781-f455-4190-8b85-25881d289357]
 Description=Window settings for firefox
 desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22,072d6179-4800-42b7-86d3-21938c5f9f4e
@@ -124,18 +125,18 @@ wmclass=firefox
 wmclassmatch=1
 
 [6]
-Description=emacs
+Description=alacritty
 clientmachine=localhost
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=3
 fullscreen=true
-fullscreenrule=2
 maximizehoriz=true
 maximizevert=true
-title=*doom* – Doom Emacs
-titlematch=1
+title=Alacritty
 types=1
-wmclass=emacs
+windowrole=browser
+wmclass=alacritty
+wmclasscomplete=true
 wmclassmatch=1
 
 [65a6c2c6-10bf-42fa-a193-3008af2c4f6d]
@@ -151,10 +152,11 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [7]
-Description=Window settings for emacs
+Description=emacs
+clientmachine=localhost
 desktop=3
 desktoprule=2
-desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
 desktopsrule=2
 fullscreen=true
 fullscreenrule=2
@@ -262,7 +264,7 @@ wmclassmatch=1
 
 [General]
 count=7
-rules=842eddab-32a6-4c80-a1f0-000bb3b3e2e9,1,2,3,4,5,6
+rules=1,2,3,4,5,6,7
 
 [b16a6a55-a1bc-4635-892b-6179705d1e94]
 Description=Window settings for gnome-terminal-server
