@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FOLDER="/da/misc/wallpapers"
+FOLDER="$HOME/Pictures/wallpapers"
 
 _wall() {
   local found
@@ -20,4 +20,4 @@ _swaybg() {
 }
 
 # * RUN
-[[ $(pgrep x) ]] && _feh || _swaybg
+[[ -n $WAYLAND_DISPLAY ]] && _swaybg || _feh
