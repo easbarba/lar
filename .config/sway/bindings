@@ -128,9 +128,9 @@ bindsym $mod+r mode "resize"
 # External Applications
 bindsym $mod+c exec swaylock
 
-bindsym $mod+Ctrl+w exec s-volume up
-bindsym $mod+Ctrl+s exec s-volume down
-bindsym $mod+Ctrl+e exec s-volume toggle
+bindsym $mod+Ctrl+w exec s-volume --up
+bindsym $mod+Ctrl+s exec s-volume --down
+bindsym $mod+Ctrl+e exec s-volume --toggle
 bindsym $mod+Ctrl+a exec s-backlight up
 bindsym $mod+Ctrl+d exec s-backlight down
 
