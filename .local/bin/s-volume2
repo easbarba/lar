@@ -1,188 +1,45 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-# Manage System Volume.
-module Volume
-  # Volume Main caller
-  class Main
-    attr_reader :state, :manager
-    attr_accessor :info
+# Debug Options
+set -euo pipefail
 
-    def initialize(state)
-      @state = state.to_sym if state
+STEP=3
+STATE="$1"
 
-      @manager = SoundManager.new(states[@state]).info
-    end
+# TRANSLATE HUMAN-FRIENDLY STATE TO VOLUME MANAGERS COMMAND
+case $STATE in
+    up)
+        STATE='+';;
+    down)
+        STATE='-';;
+    toggle)
+        ;;
+esac
 
-    def states
-      {
-        up: '+',
-        down: '-',
-        toggle: ''
-      }
-    end
+usage() {
+    printf %s "
+Usage:
+        up:     raise volume
+      down:     decrease volume
+    toggle:     mute or power on volume
+"
+    exit 0
+}
 
-    # * MODES
+# VOLUME MANAGERS
 
-    def toggle
-      manager.toggle
-    end
+_pactl() {
+    case $STATE in
+        toggle)
+            pactl set-sink-mute @DEFAULT_SINK@ toggle;;
+        +|-)
+            pactl set-sink-volume @DEFAULT_SINK@ "$STATE$STEP%";;
+        *) exit 1;;
+    esac
+}
 
-    def updown
-      manager.updown
-    end
+# RUN
+[[ $# -eq 0 ]] && usage
 
-    def mode
-      {
-        toggle: toggle,
-        up: updown,
-        down: updown
-      }
-    end
+[[ -x $(command -v pactl) ]] && _pactl
 
-    def final_command
-      "#{manager.name} #{mode[state]}"
-    end
-
-    def run
-      return unless %i[up down toggle].include? state
-
-      system final_command
-    end
-  end
-end
-
-# Find available sound manager
-class SoundManager
-  attr_reader :state
-
-  def initialize(state)
-    @state = state
-  end
-
-  def which?(executable)
-    ENV['PATH'].split(File::PATH_SEPARATOR).any? do |directory|
-      File.executable?(File.join(directory, executable.to_s))
-    end
-  end
-
-  def managers_available
-    [Pactl.new(state), Amixer.new, Mixer.new]
-  end
-
-  # Sound Manager Information
-  def info
-    managers_available.first { |manager| which?(manager.name) }
-  end
-
-  def running?
-    raise 'not implemented.'
-  end
-end
-
-# pactl - Control a running PulseAudio sound server
-class Pactl
-  STEP = 3
-
-  attr_accessor :name, :state
-
-  def initialize(state)
-    @name = 'pactl'
-    @state = state
-  end
-
-  def sink
-    require 'English'
-
-    output = `set -eu; pactl list sinks`
-    raise('pipeline failed') unless $CHILD_STATUS.success?
-
-    case ENV['LANG']
-    when 'pt_BR.UTF-8'
-      dest = 'Destino'
-      state = 'Estado'
-    when 'en_US.UTF-8'
-      dest = 'Sink'
-      state = 'State'
-    end
-
-    # sink id is the first letter in the string returned
-    output.split("#{dest} #").find do |sink|
-      sink if sink.include? "#{state}: RUNNING"
-    end.split(state).first.strip
-  end
-
-  def toggle
-    "set-sink-mute #{sink} toggle"
-  end
-
-  def updown
-    "set-sink-volume #{sink} #{state}#{STEP}%"
-  end
-
-  def to_s
-    "#{name} #{sink} #{state}"
-  end
-end
-
-# bsd mixer
-class Mixer
-  def mixer
-    {
-      name: 'mixer',
-      toggle: '',
-      updown: "mixer vol #{states[state]}#{STEP}"
-    }
-  end
-
-  def mixer_toggle
-    [mixer[:name], mixer[:toggle]].join(' ')
-  end
-
-  def mixer_updown
-    [mixer[:name], mixer[:updown]].join(' ')
-  end
-end
-
-# Command-line ALSA mixer
-class Amixer
-  def amixer
-    {
-      name: 'amixer',
-      toggle: '-q sset Master toggle',
-      updown: "set Master #{STEP}%#{states[state]}"
-    }
-  end
-
-  def amixer_toggle
-    [amixer[:name], amixer[:toggle]].join(' ')
-  end
-
-  def amixer_updown
-    [amixer[:name], amixer[:updown]].join(' ')
-  end
-end
-
-# hail to the new king
-class Pipewire
-  def info
-    {
-      name: 'pw-cli',
-      args: "s #{pipe_id} Props",
-      toggle: '{ mute: false, channelVolumes: [ 1.5, 1.5 ] }',
-      updown: '{ mute: false, channelVolumes: [ 1.5, 1.5 ] }'
-    }
-  end
-
-  def pipe_id; end
-
-  def pipe_toggle
-    [info[:name], info[:toggle]].join(' ')
-  end
-
-  def pipe_updown
-    [info[:name], info[:updown]].join(' ')
-  end
-end
-
-# * RUN
-Volume::Main.new(ARGV.first).run
