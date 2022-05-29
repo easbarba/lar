@@ -1,5 +1,13 @@
 # SWAYWM
 
+input * {
+    xkb_layout "br,us"
+}
+
+input type:touchpad {
+    tap enabled
+}
+
 include ~/.config/sway/variables
 include ~/.config/sway/workspace
 include ~/.config/sway/bindings
