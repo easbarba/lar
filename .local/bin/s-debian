@@ -47,7 +47,7 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	kde=(plasma-workspace-wayland ktorrent clementine kamoso kdenlive kate falkon kdeconnect kdevelop krita)
+	kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
 
 	cli=(htop ffmpeg mpv elinks libnotify-bin ranger)
 
