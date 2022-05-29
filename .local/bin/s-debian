@@ -47,6 +47,10 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
+	wayland=(sway swaybg swaylock foot clipman grim slurp wl-clipboard xwayland)
+
+	wm=(udiskie mpd mpc ncmpcpp brightnessctl bluez)
+
 	kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
 
 	cli=(htop ffmpeg mpv elinks libnotify-bin ranger)
@@ -75,6 +79,8 @@ packages() {
 		"${media[@]}"
 		"${sound[@]}"
 		"${user[@]}"
+		"${wayland[@]}"
+		"${wm[@]}"
 		"${kde[@]}"
 		"${cli[@]}"
 		"${laptop[@]}"

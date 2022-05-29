@@ -17,6 +17,7 @@ term screen-256color
 # 24bits - True color
 truecolor on
 
+screen -t tune ncmpcpp
 screen -t libre bash
 screen -t water fish
 
