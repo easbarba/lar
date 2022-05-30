@@ -20,27 +20,28 @@ _addkey() {
 
 # * RUN
 _protect() {
-    # only $USER can read and write
+    # chmod 700 $HOME/.ssh
+    # chmod 600 $HOME/.ssh/known_hosts
+
     chmod 600 "$KEY_LOCATION"
     chmod 600 "$KEY_LOCATION".pub
+}
+
+newdefault() {
+    # new port
+    /usr/bin/sudo /usr/bin/sed -i "s/Port 22|Port 33/g"
+
+    # Disable root
+    /usr/bin/sudo /usr/bin/sed -i "PermitRootLogin no"
+
+    # limit users acess
+    /usr/bin/sudo /usr/bin/sed -i "AllowUsers username"
+
+    # use protocol 2
+    /usr/bin/sudo /usr/bin/sed -i "Protocol 2"
 }
 
 _newkey
 _startagent
 _protect
 _addkey
-
-# newdefault
-# newdefault() {
-#     # new port
-#     /usr/bin/sudo /usr/bin/sed -i "s/Port 22|Port 33/g"
-
-#     # Disable root
-#     /usr/bin/sudo /usr/bin/sed -i "PermitRootLogin no"
-
-#     # limit users acess
-#     /usr/bin/sudo /usr/bin/sed -i "AllowUsers username"
-
-#     # use protocol 2
-#     /usr/bin/sudo /usr/bin/sed -i "Protocol 2"
-# }
