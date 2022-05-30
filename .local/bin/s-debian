@@ -47,9 +47,9 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	wayland=(sway swaybg swaylock foot clipman grim slurp wl-clipboard xwayland)
+	wayland=(sway swaybg swaylock foot clipman grim slurp wl-clipboard xwayland mako)
 
-	wm=(udiskie mpd mpc ncmpcpp brightnessctl bluez)
+	wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp)
 
 	kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
 
@@ -132,10 +132,6 @@ services() {
 	s-echo "Debian Services"
 
 	sudo systemctl enable fstrim.timer
-	systemctl --user --now enable wireplumber pipewire pipewire-pulse
-
-	# autostart ssh agent
-	systemctl --user --now enable ssh-agent.service
 }
 
 foreign() {
