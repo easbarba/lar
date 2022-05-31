@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
+# pipewire
 systemctl --user --now enable wireplumber pipewire pipewire-pulse
-
-# autostart ssh agent
-systemctl --user --now enable ssh-agent.service
