@@ -22,40 +22,73 @@ wmclass=emacs
 wmclassmatch=1
 
 [1]
-Description=Window settings for org.kde.konsole
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+Description=Window settings for org.kde.elisa
+clientmachine=localhost
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
 desktopsrule=3
 fullscreen=true
-fullscreenrule=3
-title=~ : bash — Konsole
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+title=Elisa
 types=1
 windowrole=browser
-wmclass=konsole org.kde.konsole
+wmclass=elisa org.kde.elisa
 wmclasscomplete=true
 wmclassmatch=1
 
 [10]
-Description=Window settings for evince
+Description=alacritty
 clientmachine=localhost
-title=Recent Documents
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktopsrule=3
+fullscreen=true
+title=Alacritty
+types=1
+windowrole=browser
+wmclass=alacritty
+wmclasscomplete=true
+wmclassmatch=1
+
+[11]
+Description=emacs
+clientmachine=localhost
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=2
+fullscreen=true
+fullscreenrule=2
+title=*doom* – Doom Emacs
 titlematch=1
 types=1
-wmclass=evince
+wmclass=emacs
+wmclassmatch=1
+
+[11ced259-c53a-4a58-b70d-303559f747cd]
+Description=Window settings for chromium
+clientmachine=localhost
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktopsrule=3
+title=Session Environment Variables - KDE UserBase Wiki - Chromium
+types=1
+windowrole=browser
+windowrolematch=1
+wmclass=chromium
 wmclassmatch=1
 
 [2]
-Description=Window settings for org.clementine-player.clementine
+Description=Window settings for chromium
 clientmachine=localhost
 desktop=3
 desktoprule=3
-desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
 desktopsrule=3
 fullscreen=true
-title=Krisiun - Dogma Of Submission
+title=Session Environment Variables - KDE UserBase Wiki - Chromium
 types=1
 windowrole=browser
-wmclass=clementine org.clementine-player.clementine
-wmclasscomplete=true
+windowrolematch=1
+wmclass=chromium
 wmclassmatch=1
 
 [2134a7a6-6faf-47e7-9d19-3390f10cfbe2]
@@ -69,33 +102,34 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [3]
-Description=Window settings for alacritty
+Description=Window settings for emacs
 clientmachine=localhost
 desktop=3
+desktoprule=2
+desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
+desktopsrule=3
+fullscreen=true
+fullscreenrule=3
+title=*scratch* – Doom Emacs
+titlematch=1
+types=1
+windowrole=browser
+wmclass=emacs
+wmclassmatch=1
+
+[4]
+Description=Window settings for org.kde.konsole
+clientmachine=localhost
+desktop=1
 desktoprule=2
 desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
 desktopsrule=3
 fullscreen=true
-fullscreenrule=2
-title=Alacritty
-titlematch=1
+fullscreenrule=3
+title=~ : bash — Konsole
 types=1
 windowrole=browser
-wmclass=alacritty
-wmclassmatch=1
-
-[4]
-Description=Window settings for org.kde.haruna
-clientmachine=localhost
-desktop=1
-desktoprule=2
-desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
-desktopsrule=3
-fullscreen=true
-title=StarTrek.TNG-s02e13.Time.Squared.mkv — Haruna Video Player
-types=1
-windowrole=browser
-wmclass=haruna org.kde.haruna
+wmclass=konsole org.kde.konsole
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -113,17 +147,27 @@ wmclass=emacs
 wmclassmatch=1
 
 [5]
-Description=org.kde.okular
+Description=Window settings for org.clementine-player.clementine
 clientmachine=localhost
 desktop=1
 desktoprule=2
-desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
 desktopsrule=3
 fullscreen=true
-title=Okular
+title=Krisiun - Dogma Of Submission
 types=1
 windowrole=browser
-wmclass=okular org.kde.okular
+wmclass=clementine org.clementine-player.clementine
+wmclasscomplete=true
+wmclassmatch=1
+
+[5214d1d0-517a-4eba-aa1b-160c99a0e4fa]
+Description=Window settings for org.kde.elisa
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
+desktopsrule=3
+title=Elisa
+types=1
+wmclass=elisa org.kde.elisa
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -138,19 +182,19 @@ wmclass=firefox
 wmclassmatch=1
 
 [6]
-Description=firefox
+Description=Window settings for alacritty
 clientmachine=localhost
-desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
 desktopsrule=3
 fullscreen=true
+fullscreenrule=2
 maximizehoriz=true
 maximizevert=true
-title=Esses resultados estão enganando e passando uma imagem que não é a nossa realidade — Mozilla Firefox
+title=Alacritty
+titlematch=1
 types=1
 windowrole=browser
-windowrolematch=1
-wmclass=navigator firefox
-wmclasscomplete=true
+wmclass=alacritty
 wmclassmatch=1
 
 [65a6c2c6-10bf-42fa-a193-3008af2c4f6d]
@@ -166,17 +210,17 @@ wmclasscomplete=true
 wmclassmatch=1
 
 [7]
-Description=alacritty
+Description=Window settings for org.kde.haruna
 clientmachine=localhost
 desktop=3
 desktoprule=2
-desktops=072d6179-4800-42b7-86d3-21938c5f9f4e
+desktops=4b52b978-4d3a-4a65-b974-13ba2372678c
 desktopsrule=3
 fullscreen=true
-title=Alacritty
+title=StarTrek.TNG-s02e13.Time.Squared.mkv — Haruna Video Player
 types=1
 windowrole=browser
-wmclass=alacritty
+wmclass=haruna org.kde.haruna
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -191,18 +235,18 @@ wmclass=firefox
 wmclassmatch=1
 
 [8]
-Description=emacs
+Description=org.kde.okular
 clientmachine=localhost
 desktop=4
 desktoprule=2
-desktops=41f3ef3d-72a4-4ba1-9c39-f3f992e2eb22
-desktopsrule=2
+desktops=c18abb0f-e275-48c1-bf56-cf0aa54f89eb
+desktopsrule=3
 fullscreen=true
-fullscreenrule=2
-title=*doom* – Doom Emacs
-titlematch=1
+title=Okular
 types=1
-wmclass=emacs
+windowrole=browser
+wmclass=okular org.kde.okular
+wmclasscomplete=true
 wmclassmatch=1
 
 [842eddab-32a6-4c80-a1f0-000bb3b3e2e9]
@@ -238,15 +282,20 @@ wmclass=code
 wmclassmatch=1
 
 [9]
-Description=Window settings for org.kde.okular
+Description=firefox
+clientmachine=localhost
 desktop=2
 desktoprule=2
+desktops=62e2dbb2-af55-4e1f-a123-a81c4a8e59da
+desktopsrule=3
+fullscreen=true
 maximizehoriz=true
-maximizehorizrule=2
 maximizevert=true
-maximizevertrule=2
+title=Esses resultados estão enganando e passando uma imagem que não é a nossa realidade — Mozilla Firefox
 types=1
-wmclass=okular org.kde.okular
+windowrole=browser
+windowrolematch=1
+wmclass=navigator firefox
 wmclasscomplete=true
 wmclassmatch=1
 
@@ -281,8 +330,8 @@ wmclass=firefox
 wmclassmatch=1
 
 [General]
-count=9
-rules=485eae48-8aba-4da1-9169-adcefc86091c,1,2,3,4,5,6,7,8
+count=11
+rules=1,2,3,4,5,6,7,8,9,10,11
 
 [b16a6a55-a1bc-4635-892b-6179705d1e94]
 Description=Window settings for gnome-terminal-server
