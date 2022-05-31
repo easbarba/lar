@@ -1,9 +1,16 @@
 [Unit]
 
-Description=OpenSSH private key agent
+Description=Wayland key agent
 IgnoreOnIsolate=true
 
 [Service]
-Type=forking
+Type=simple
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
-ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+ExecStartPre=/bin/bash -c "if [ -e ${SSH_AUTH_SOCK} ]; then echo \"Removing staled ${SSH_AUTH_SOCK}\" && rm ${SSH_AUTH_SOCK}; fi"
+ExecStart=/usr/bin/ssh-agent -D -a ${SSH_AUTH_SOCK}
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target
