@@ -10,7 +10,7 @@ LOCAL_BIN="$HOME/.local/bin"
 
 # * APPS LIST
 
-TOOLS=(udiskie mpd) # nm-applet
+TOOLS=(udiskie mpd nm-applet)
 APPS=(emacs alacritty okular chromium "$LOCAL_BIN/s-wall")
 
 # * Helpers
