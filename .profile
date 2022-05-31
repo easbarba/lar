@@ -86,11 +86,3 @@ export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 
 # * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-if ! pgrep -u "$USER" ssh-agent >/dev/null; then
-    ssh-agent >"$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-
-# if [ -n WAYLAND_DISPLAY ]; then
-#     export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
-# fi
