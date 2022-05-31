@@ -4,7 +4,6 @@
 set -euo pipefail
 URL=''
 
-[[ -x $(command -v xclip) ]] && URL=$(xclip -selection clipboard -o)
-# [[ -x $(command -v wl-paste) ]] && URL=$(wl-paste)
+[[ -n $WAYLAND_DISPLAY ]] && URL=$(wl-paste) || URL=$(xclip -selection clipboard -o)
 
 printf "%s" $URL
