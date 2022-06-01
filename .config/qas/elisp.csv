@@ -7,3 +7,4 @@ unpackaged.el,master,https://github.com/alphapapa/unpackaged.el
 elfeed,master,https://github.com/skeeto/elfeed
 lsp-mode,master,https://github.com/emacs-lsp/lsp-mode
 use-package,master,https://github.com/jwiegley/use-package
+emacs,master,git://git.sv.gnu.org/emacs
