@@ -136,4 +136,4 @@ _cli() {
 
 _cli
 
-exit 0
+exit
