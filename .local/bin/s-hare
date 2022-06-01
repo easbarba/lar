@@ -33,3 +33,5 @@ cd hare
 cp config.example.mk config.mk
 make
 sudo make install
+
+exit
