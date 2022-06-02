@@ -49,7 +49,7 @@ packages() {
 
 	wayland=(sway swaybg swaylock swayidle foot clipman grim slurp wl-clipboard xwayland mako-notifier)
 
-	wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp)
+	wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp zathura zathura-cb)
 
 	kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
 

@@ -19,7 +19,7 @@ x-scheme-handler/tel=com.skype.Client.desktop;
 
 [Default Applications]
 application/octet-stream=org.kde.kate.desktop;
-application/pdf=org.gnome.evince.desktop
+application/pdf=zathura
 application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
 application/vnd.rn-realmedia=mpv.desktop
 application/x-abiword=abiword.desktop
