@@ -47,7 +47,7 @@ packages() {
 
 	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
 
-	wayland=(sway swaybg swaylock foot clipman grim slurp wl-clipboard xwayland mako-notifier)
+	wayland=(sway swaybg swaylock swayidle foot clipman grim slurp wl-clipboard xwayland mako-notifier)
 
 	wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp)
 
