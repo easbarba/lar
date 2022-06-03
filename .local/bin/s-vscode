@@ -8,94 +8,46 @@ echo 'Visual Studio Code - installing packages'
 INSTALLER='code'
 COMMAND='--install-extension'
 
-_javascript() {
-    local packages=(xabikos.JavaScriptSnippets
-        dbaeumer.vscode-eslint WallabyJs.quokka-vscode
-        mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster
-        eg2.vscode-npm-script)
+packages=(xabikos.JavaScriptSnippets
+    dbaeumer.vscode-eslint WallabyJs.quokka-vscode
+    mgmcdermott.vscode-language-babel sburg.vscode-javascript-booster
+    eg2.vscode-npm-script)
+s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
 
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
+vuejs=(octref.vetur)
+s-dolist "$INSTALLER $COMMAND" "${vuejs[@]}"
 
-_vuejs() {
-    local packages=(octref.vetur)
+ruby=(rebornix.ruby castwide.solargraph misogi.ruby-rubocop)
+s-dolist "$INSTALLER $COMMAND" "${ruby[@]}"
 
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
+web=(formulahendry.auto-rename-tag esbenp.prettier-vscode ysemeniuk.emmet-live)
+s-dolist "$INSTALLER $COMMAND" "${web[@]}"
 
-_ruby() {
-    local packages=(rebornix.ruby castwide.solargraph misogi.ruby-rubocop)
+go=(golang.Go)
+s-dolist "$INSTALLER $COMMAND" "${go[@]}"
 
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
+java=(vscjava.vscode-java-pack Pivotal.vscode-boot-dev-pack)
+s-dolist "$INSTALLER $COMMAND" "${java[@]}"
 
-_web() {
-    local packages=(formulahendry.auto-rename-tag esbenp.prettier-vscode ysemeniuk.emmet-live)
+python=(ms-python.python)
+s-dolist "$INSTALLER $COMMAND" "${python[@]}"
 
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
+misc=(jrebocho.vscode-random streetsidesoftware.code-spell-checker
+    usernamehw.errorlens wmaurer.change-case p42ai.refactor SimonSiefke.svg-preview)
+s-dolist "$INSTALLER $COMMAND" "${misc[@]}"
 
-_go() {
-    local packages=(golang.Go)
+css=(pranaygp.vscode-css-peek)
+s-dolist "$INSTALLER $COMMAND" "${css[@]}"
 
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
+ops=(ms-kubernetes-tools.vscode-kubernetes-tools
+    ms-azuretools.vscode-docker ms-vscode-remote.remote-containers
+    googlecloudtools.cloudcode mindaro.mindaro)
+s-dolist "$INSTALLER $COMMAND" "${ops[@]}"
 
-_java() {
-    local packages=(vscjava.vscode-java-pack Pivotal.vscode-boot-dev-pack)
+local themes=(luxcium.pop-n-lock-theme-vscode)
+s-dolist "$INSTALLER $COMMAND" "${themes[@]}"
 
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-
-}
-
-_python() {
-    local packages=(ms-python.python)
-
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
-
-_misc() {
-
-    local packages=(jrebocho.vscode-random streetsidesoftware.code-spell-checker
-        usernamehw.errorlens wmaurer.change-case p42ai.refactor SimonSiefke.svg-preview)
-
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
-
-_css() {
-    local packages=(pranaygp.vscode-css-peek)
-
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
-
-_ops() {
-    local packages=(ms-kubernetes-tools.vscode-kubernetes-tools
-        ms-azuretools.vscode-docker ms-vscode-remote.remote-containers
-        googlecloudtools.cloudcode mindaro.mindaro)
-
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
-
-_themes() {
-    local packages=(luxcium.pop-n-lock-theme-vscode)
-
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-
-}
-
-_tools() {
-    local packages=(esbenp.prettier-vscode eamodio.gitlens vscodevim.vim
-        donjayamanne.githistory kamikillerto.vscode-colorize
-        ritwickdey.LiveServer ms-azuretools.vscode-docker)
-
-    s-dolist "$INSTALLER $COMMAND" "${packages[@]}"
-}
-
-_tools
-_themes
-_ops
-_java
-_misc
-_ruby
-_go
-_python
+tools=(esbenp.prettier-vscode eamodio.gitlens vscodevim.vim
+    donjayamanne.githistory kamikillerto.vscode-colorize
+    ritwickdey.LiveServer ms-azuretools.vscode-docker)
+s-dolist "$INSTALLER $COMMAND" "${tools[@]}"

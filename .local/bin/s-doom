@@ -3,21 +3,21 @@
 # debug options
 set -euo pipefail
 
-DEPS=(emacs)
+DEPS=(emacs git doom)
 s-checkdeps "${DEPS[@]}"
-
-MX_HOME="$HOME/.config/emacs"
 
 s-echo "Doom Emacs - Install/Upgrade."
 
-wipe() { rm -rf ~/.emacs.d; }
-grab() { git clone --depth 1 https://github.com/hlissner/doom-emacs "$MX_HOME"; }
-install() { "$MX_HOME"/bin/doom install; }
-sync() { doom sync; }
-upgrade() { doom upgrade; }
-upgrade-packs() { doom upgrade --packages; }
+EMACS_D_HOME="$HOME/.emacs.d"
+[[ -d $EMACS_D_HOME ]] && rm -rf "$EMACS_D_HOME"
 
-# * RUN
-wipe
-[[ ! -x "$MX_HOME"/bin/doom ]] && grab && install
-upgrade
+DOOM_HOME="$HOME/.config/emacs"
+[[ ! -x "$DOOM_HOME"/bin/doom ]] && {
+
+    git clone --depth 1 https://github.com/hlissner/doom-emacs "$DOOM_HOME"
+    "$DOOM_HOME"/bin/doom install
+}
+
+doom sync
+doom upgrade
+doom upgrade --packages

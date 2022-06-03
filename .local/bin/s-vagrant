@@ -8,11 +8,6 @@ s-checkdeps "${DEPS[@]}"
 
 [[ ! -x $(command -v vagrant) ]] && echo 'Vagrant is not installed!' && return
 
-_boxes() {
-    local command='vagrant box add'
-    local boxes=(debian/bullseye64 ubuntu/focal64)
-
-    s-dolist "$command" "${boxes[@]}"
-}
-
-_boxes
+command='vagrant box add'
+boxes=(debian/bullseye64 ubuntu/focal64)
+s-dolist "$command" "${boxes[@]}"

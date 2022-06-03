@@ -8,176 +8,124 @@ s-checkdeps "${DEPS[@]}"
 
 s-echo "Arch Linux - System Packages and Services Instalation."
 
-upgrade() {
-    s-echo "Updating Arch Linux"
+s-echo "Updating Arch Linux"
+/usr/bin/sudo /usr/bin/pacman -Syu
 
-    /usr/bin/sudo /usr/bin/pacman -Syu
-}
-
-pre() {
-    [[ $(grep '^\[multilib\]' /etc/pacman.conf) == '[multilib]' ]] && return
-
+[[ ! $(grep '^\[multilib\]' /etc/pacman.conf) == '[multilib]' ]] && {
     s-echo "Enable Multi-Arch"
-
     /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 }
 
-packages() {
-    s-echo "Installing system packages"
+s-echo "Installing system packages"
 
-    essentials=(git openssh curl unzip tmux lynx)
+essentials=(git openssh curl unzip tmux lynx)
 
-    editors=(neovim)
+editors=(neovim)
 
-    gnu=(emacs zile wget parallel)
+gnu=(emacs zile wget parallel)
 
-    zig=(zig)
+zig=(zig)
 
-    ruby=(ruby openssl)
+ruby=(ruby openssl)
 
-    lua=(lua luarocks)
+lua=(lua luarocks)
 
-    database=(postgresql)
+database=(postgresql)
 
-    shell=(bash bash-completion shellcheck fish ksh starship)
+shell=(bash bash-completion shellcheck fish ksh starship)
 
-    music=(mpd mpc ncmpcpp)
+music=(mpd mpc ncmpcpp)
 
-    system=(p7zip zip subversion jq lshw at usbutils lsof time entr tree xsel
-        xclip fontconfig bc htop strace ltrace cpio lhasa lzop atool perf
-        sysstat ncdu rsync rclone util-linux)
+system=(p7zip zip subversion jq lshw at usbutils lsof time entr tree xsel
+    xclip fontconfig bc htop strace ltrace cpio lhasa lzop atool perf
+    sysstat ncdu rsync rclone util-linux)
 
-    gnu=(wget parted texinfo parallel automake autoconf)
+gnu=(wget parted texinfo parallel automake autoconf)
 
-    network=(net-tools iproute2 socat iw wireless_tools)
+network=(net-tools iproute2 socat iw wireless_tools)
 
-    infra=(podman qemu virt-manager ovmf bridge-utils vagrant)
+infra=(podman qemu virt-manager ovmf bridge-utils vagrant)
 
-    fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
+fonts=(ttf-dejavu adobe-source-han-sans-kr-fonts)
 
-    security=(nftables firewalld gnutls)
+security=(nftables firewalld gnutls)
 
-    laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
+laptop=(acpi tlp) # laptop-mode-tools # libiw-dev
 
-    arch=(pacman-contrib base-devel)
+arch=(pacman-contrib base-devel)
 
-    xorg=(xorg xorg-xinit awesome scrot feh zathura slock cheese atril dmenu) # xf86-video-fbdev
+xorg=(xorg xorg-xinit awesome scrot feh zathura slock cheese atril dmenu) # xf86-video-fbdev
 
-    wayland=(sway swaybg swaylock)
+wayland=(sway swaybg swaylock)
 
-    wmapps=(youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
-        aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils
-        w3m elinks dunst) #seahorse
+wmapps=(youtube-dl ffmpeg lm_sensors mpv libnotify imagemagick pandoc aspell
+    aria2 udiskie gnome-keyring xdg-utils playerctl bluez bluez-utils
+    w3m elinks dunst) #seahorse
 
-    user=(netsurf falkon firefox libreoffice gimp obs-studio amfora telegram-desktop
-        kdeconnect)
+user=(netsurf falkon firefox libreoffice gimp obs-studio amfora telegram-desktop
+    kdeconnect)
 
-    codec=(vorbis-tools gst-libav gst-plugins-bad
-        gst-plugins-base gst-plugins-good gst-plugins-ugly)
+codec=(vorbis-tools gst-libav gst-plugins-bad
+    gst-plugins-base gst-plugins-good gst-plugins-ugly)
 
-    sound=(pulseaudio-bluetooth)
+sound=(pulseaudio-bluetooth)
 
-    amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
-        lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
-        lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
+amd=(amd-ucode mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
+    lib32-vulkan-radeon lib32-amdvlk libva-mesa-driver
+    lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau)
 
-    local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm --needed'
+local command='/usr/bin/sudo /usr/bin/pacman -S --noconfirm --needed'
 
-    enabled=("${essentials[@]}"
-        "${arch[@]}"
-        "${network[@]}"
-        "${gnu[@]}"
-        "${editors[@]}"
-        "${ruby[@]}"
-        "${lua[@]}"
-        "${zig[@]}"
-        "${shell[@]}"
-        "${system[@]}"
-        "${music[@]}"
-        "${gtk[@]}"
-        "${qt[@]}"
-        "${infra[@]}"
-        "${fonts[@]}"
-        "${security[@]}"
-        "${laptop[@]}"
-        "${wmapps[@]}"
-        "${wayland[@]}"
-        "${xorg[@]}"
-        "${sound[@]}"
-        "${user[@]}"
-        "${codec[@]}"
-        "${amd[@]}")
+enabled=("${essentials[@]}"
+    "${arch[@]}"
+    "${network[@]}"
+    "${gnu[@]}"
+    "${editors[@]}"
+    "${ruby[@]}"
+    "${lua[@]}"
+    "${zig[@]}"
+    "${shell[@]}"
+    "${system[@]}"
+    "${music[@]}"
+    "${gtk[@]}"
+    "${qt[@]}"
+    "${infra[@]}"
+    "${fonts[@]}"
+    "${security[@]}"
+    "${laptop[@]}"
+    "${wmapps[@]}"
+    "${wayland[@]}"
+    "${xorg[@]}"
+    "${sound[@]}"
+    "${user[@]}"
+    "${codec[@]}"
+    "${amd[@]}")
 
-    for i in "${enabled[@]}"; do
-        s-dolist "$command" "$i"
-    done
+for i in "${enabled[@]}"; do
+    s-dolist "$command" "$i"
+done
 
-    s-echo "Done"
-}
+s-echo "Clean up"
+/usr/bin/pacman -Rns "$(/usr/bin/pacman -Qdtq)"
 
-clean() {
-    s-echo "Clean up"
+s-echo "Arch Services"
 
-    /usr/bin/pacman -Rns "$(/usr/bin/pacman -Qdtq)"
-}
+/usr/bin/sudo /usr/bin/systemctl disable mpd
 
-services() {
-    s-echo "Debian Services"
+# kdeconnect
+/usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+/usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+/usr/bin/sudo systemctl restart firewalld.service
 
-    aur() { ''; }
+# timezone
+desired_zone='America/Sao_Paulo'
+current_zone=$(/usr/bin/timedatectl | /usr/bin/grep 'Time zone' | /usr/bin/awk '{print $3}')
 
-    postgres() {
-        /usr/bin/sudo /usr/bin/systemctl restart postgresql
-    }
+[[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
 
-    mpd() {
-        /usr/bin/sudo /usr/bin/systemctl disable mpd
-    }
+# set python to python3
+/usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
 
-    kdeconnect() {
-        /usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-        /usr/bin/sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-        /usr/bin/sudo systemctl restart firewalld.service
-    }
-
-    timezone() {
-        local current_zone
-        local desired_zone
-
-        desired_zone='America/Sao_Paulo'
-        current_zone=$(/usr/bin/timedatectl | /usr/bin/grep 'Time zone' | /usr/bin/awk '{print $3}')
-
-        [[ "$current_zone" != "$desired_zone" ]] && /usr/bin/sudo /usr/bin/timedatectl set-timezone America/Sao_Paulo
-    }
-
-    alternatives() {
-        # set python to python3
-        /usr/bin/sudo update-alternatives --install /usr/bin/python python "$(which python3)" 1
-    }
-
-    virtualization() {
-        /usr/bin/sudo /usr/bin/usermod -aG libvirt "$USER"
-        /usr/bin/sudo /usr/bin/usermod -aG kvm "$USER"
-    }
-
-    aur
-    mpd
-    postgresql
-    alternatives
-    timezone
-    kdeconnect
-    virtualization
-}
-
-foreign() {
-    echo ""
-}
-
-# * RUN
-
-upgrade
-pre
-packages
-# clean
-# services
-# foreign
+# virtualization
+/usr/bin/sudo /usr/bin/usermod -aG libvirt "$USER"
+/usr/bin/sudo /usr/bin/usermod -aG kvm "$USER"

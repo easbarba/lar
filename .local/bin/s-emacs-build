@@ -14,43 +14,17 @@ TAG=emacs-28.0.91
 
 s-echo "Emacs - Installing local build"
 
-# BEGIN
+[[ ! -d $BUILD_ROOT/.git ]] && git clone -b "$TAG" --single-branch --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
 
-_get() {
-    [[ -d $BUILD_ROOT/.git ]] && return
+[[ -d "$BUILD_ROOT/.git" ]] && git -C "$BUILD_ROOT" pull
 
-    git clone -b "$TAG" --single-branch --depth 1 "https://git.savannah.gnu.org/git/emacs" "$BUILD_ROOT"
-}
+cd "$BUILD_ROOT"
+[[ -f Makefile ]] && make distclean
+sh autogen.sh
 
-_update() {
-    [[ ! -d "$BUILD_ROOT/.git" ]] && return
+cd "$BUILD_ROOT"
+sh configure --prefix="$INSTALL_DIR" --with-modules --with-native-compilation --with-gif --with-jpeg --with-png --with-rsvg --with-tiff --with-xft --with-xpm --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls --with-x-toolkit=gtk3
 
-    git -C "$BUILD_ROOT" pull
-}
-
-_pre() {
-    cd "$BUILD_ROOT" || return
-
-    [[ -f Makefile ]] && make distclean
-    sh autogen.sh
-}
-
-_configure() {
-    cd "$BUILD_ROOT" || return
-
-    sh configure --prefix="$INSTALL_DIR" --with-modules --with-native-compilation --with-gif --with-jpeg --with-png --with-rsvg --with-tiff --with-xft --with-xpm --with-x --with-dbus --with-imagemagick --with-mailutils --with-gnutls --with-x-toolkit=gtk3
-}
-
-_install() {
-    cd "$BUILD_ROOT" || return
-
-    make -j 4
-    make install
-}
-
-# * RUN
-_get
-_update
-_pre
-_configure
-_install
+cd "$BUILD_ROOT"
+make -j 4
+make install

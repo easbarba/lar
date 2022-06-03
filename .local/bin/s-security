@@ -3,25 +3,17 @@ set -euo pipefail
 
 PAM_AUTH='/etc/pam.d/system-auth'
 
-only_new_passwords() {
-    /usr/bin/echo auth sufficient pam_unix.so likeauth nullok >>$PAM_AUTH
+# ONLY_NEW_PASSWORDS
+/usr/bin/echo auth sufficient pam_unix.so likeauth nullok >>$PAM_AUTH
+/usr/bin/echo password sufficient pam_unix.so nullok use-authtok md5 shadow remember=5 $PAM_AUTH
 
-    /usr/bin/echo password sufficient pam_unix.so nullok use-authtok md5 shadow remember=5 $PAM_AUTH
+# STRONG_PASS_ONLY
+/usr/bin/echo /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-2 dcredit=-2 ocredit=-1 $PAM_AUTH
 
-}
+# CHECK_EMPTY_PASS
+/usr/bin/cat /etc/shadow | awk -F: '($2==""){print $1}'
 
-strong_pass_only() {
-    /usr/bin/echo /lib/security/$ISA/pam_cracklib.so retry=3 minlen=8 lcredit=-1 ucredit=-2 dcredit=-2 ocredit=-1 $PAM_AUTH
-}
+# BOOT_READONLY
 
-check_empty_pass() {
-    /usr/bin/cat /etc/shadow | awk -F: '($2==""){print $1}'
-}
-
-boot_readonly() {
-
-}
-
-disable-root() {
-    /usr/bin/sudo /usr/bin/passwd -l root
-}
+# DISABLE-ROOT
+/usr/bin/sudo /usr/bin/passwd -l root

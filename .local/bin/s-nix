@@ -6,22 +6,10 @@ set -euo pipefail
 # Description: boostrap Nix
 # Dependencies: sudo, curl, bash
 
-_install() {
-    [[ -x $(command -v nix-env) ]] && return
+[[ ! -x $(command -v nix-env) ]] && sh <(curl -L https://nixos.org/nix/install) --daemon
 
-    sh <(curl -L https://nixos.org/nix/install) --daemon
-}
+packages=() # mcfly direnv cpufetch
+e_dolist 'nix-env -iA' "${packages[@]}"
 
-_packages() {
-    local packages=() # mcfly direnv cpufetch
-    e_dolist 'nix-env -iA' "${packages[@]}"
-}
-
-_languages() {
-    local packages=(nixpkgs.swift)
-    e_dolist 'nix-env -iA' "${packages[@]}"
-}
-
-_install
-_packages
-_packages
+packages=(nixpkgs.swift)
+e_dolist 'nix-env -iA' "${packages[@]}"

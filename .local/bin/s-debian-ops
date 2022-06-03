@@ -8,42 +8,21 @@ s-checkdeps "${DEPS[@]}"
 
 INSTALL='sudo apt-get install -yqq'
 UPDATE='sudo apt-get update'
-GUARD='dpkg --get-selections'
 
-_ansible() {
-    [[ -x $(command -v ansible) ]] && return
-
-    _install() {
-        $INSTALL ansible
-    }
-
-    _addon() {
-        python3 -m pip install cryptography # faster ansible vault encryption
-    }
-
-    _install
-    _addon
+[[ ! -x $(command -v ansible) ]] && {
+    $INSTALL ansible
+    python3 -m pip install cryptography # faster ansible vault encryption
 }
 
-_aws() {
-    [[ -x $(command -v aws) ]] && return
+[[ ! -x $(command -v aws) ]] && $INSTALL awscli
 
-    $INSTALL awscli
-}
-
-_aws_iam_authenticator() {
-    [[ -x $(command -v aws-iam-authenticator) ]] && return
-
+[[ ! -x $(command -v aws-iam-authenticator) ]] && {
     curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator -P "$HOME/.local/bin"
     chmod +x "$HOME/.local/bin/aws-iam-authenticator"
 }
 
-_docker() {
-    [[ -x $(command -v docker) ]] && return
-
-    _pre() {
-        [[ -f /etc/apt/sources.list.d/docker.list ]] && return
-
+[[ ! -x $(command -v docker) ]] && {
+    [[ ! -f /etc/apt/sources.list.d/docker.list ]] && {
         # uninstall old versions
         # sudo apt-get remove -y docker docker-engine docker.io containerd runc
 
@@ -57,284 +36,127 @@ _docker() {
         echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
     }
 
-    _install() {
-        $UPDATE
-        $INSTALL docker-ce docker-ce-cli containerd.io docker-compose
-    }
+    $UPDATE
+    $INSTALL docker-ce docker-ce-cli containerd.io docker-compose
 
-    _services() {
-        sudo systemctl start docker
-        sudo systemctl enable docker.service
-    }
+    sudo systemctl start docker
+    sudo systemctl enable docker.service
 
-    _post() {
-        sudo groupadd docker
-        sudo gpasswd -a "$USER" docker
+    sudo groupadd docker
+    sudo gpasswd -a "$USER" docker
 
-        sudo systemctl restart docker
+    sudo systemctl restart docker
 
-        # activate group, for now
-        newgrp docker
-    }
-
-    # run
-    for f in {_pre,_install,_services,_post}; do
-        $f
-    done
+    # activate group, for now
+    newgrp docker
 }
 
-_eksclt() {
-    [[ -x $(command -v eksctl) ]] && return
-
+[[ ! -x $(command -v eksctl) ]] && {
     curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
     sudo mv /tmp/eksctl /usr/local/bin
 }
 
-_gcloud() {
-    [[ -x $(command -v gcloud) ]] && return
+[[ ! -x $(command -v gcloud) ]] && {
 
-    _pre() {
-        [[ -f /etc/apt/sources.list.d/google-cloud-sdk.list ]] && return
+    [[ -f /etc/apt/sources.list.d/google-cloud-sdk.list ]] && return
 
-        $INSTALL apt-transport-https ca-certificates gnupg
-        echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-        curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-    }
+    $INSTALL apt-transport-https ca-certificates gnupg
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
-    _install() {
-        $UPDATE && $INSTALL google-cloud-sdk
-    }
-
-    for f in {_pre,_install}; do
-        $f
-    done
+    $UPDATE && $INSTALL google-cloud-sdk
 }
 
-_gitlab() {
-    [[ -x $(command -v gitlab-runner) ]] && return
+[[ ! -x $(command -v gitlab-runner) ]] && $INSTALL gitlab-runner
+[[ ! -x $(command -v kind) ]] && GO111MODULE=on go install sigs.k8s.io/kind@v0.12.0
 
-    $INSTALL gitlab-runner
-}
-
-_kind() {
-    [[ -x $(command -v kind) ]] && return
-
-    GO111MODULE=on go install sigs.k8s.io/kind@v0.12.0
-}
-
-_hashicorp() {
-    [[ -x $(command -v terraform) ]] && return
-
-    _pre() {
-        [[ -f /etc/apt/sources.list.d/hashicorp.list ]] && return
-
+[[ ! -x $(command -v terraform) ]] && {
+    [[ ! -f /etc/apt/sources.list.d/hashicorp.list ]] && {
         wget -qO- https://apt.releases.hashicorp.com/gpg | sudo tee /etc/apt/trusted.gpg.d/terraform.asc
         echo "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com bullseye main" | sudo tee /etc/apt/sources.list.d/hashicorp.list >/dev/null
     }
 
-    _install() {
-        $UPDATE && $INSTALL vagrant vagrant-libvirt # terraform nomad
-    }
-
-    _pre
-    _install
+    $UPDATE && $INSTALL vagrant vagrant-libvirt # terraform nomad
 }
 
-_helm() {
-    [[ -x $(command -v helm) ]] && return
-
-    _pre() {
-        wget -qO- https://baltocdn.com/helm/signing.asc | sudo tee /etc/apt/trusted.gpg.d/heml.asc
-        sudo apt-get install apt-transport-https --yes
-        echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-        sudo apt-get update
-    }
+[[ ! -x $(command -v helm) ]] && {
+    wget -qO- https://baltocdn.com/helm/signing.asc | sudo tee /etc/apt/trusted.gpg.d/heml.asc
+    sudo apt-get install apt-transport-https --yes
+    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+    sudo apt-get update
 
     $INSTALL helm
 }
 
-_minikube() {
-    [[ -x $(command -v minikube) ]] && return
-
-    _pre() {
-        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-    }
-
-    _install() {
-        sudo apt install ./minikube_latest_amd64.deb
-    }
-
-    _pre
-    _install
+[[ ! -x $(command -v minikube) ]] && {
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+    sudo apt install ./minikube_latest_amd64.deb
 }
 
-_kube() {
-    [[ -x $(command -v kubectl) ]] && return
-
-    _pre() {
-        [[ -f /etc/apt/sources.list.d/kubernetes.list ]] && return
-
+[[ ! -x $(command -v kubectl) ]] && {
+    [[ ! -f /etc/apt/sources.list.d/kubernetes.list ]] && {
         $UPDATE
         $INSTALL apt-transport-https ca-certificates curl
         sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
         echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
     }
 
-    _install() {
-        $UPDATE && $INSTALL kubectl kubelet kubeadm
-    }
-
-    _pre
-    _install
+    $UPDATE && $INSTALL kubectl kubelet kubeadm
 }
 
-_jenkins() {
-    _pre() {
-        curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
-            /usr/share/keyrings/jenkins-keyring.asc >/dev/null
+[[ ! -x $(command -v jenkins) ]] && {
+    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+        /usr/share/keyrings/jenkins-keyring.asc >/dev/null
 
-        echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-            https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-            /etc/apt/sources.list.d/jenkins.list >/dev/null
+    echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+        https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+        /etc/apt/sources.list.d/jenkins.list >/dev/null
 
-    }
-
-    _install() {
-        $UPDATE && $INSTALL fontconfig openjdk-11-jre jenkins
-    }
-
-    _pre
-    _install
+    $UPDATE && $INSTALL fontconfig openjdk-11-jre jenkins
 }
 
-_qemu() {
-    [[ -x $(command -v qemu-img) ]] && return
+[[ ! -x $(command -v qemu-img) ]] && $INSTALL qemu # infra=( qemu qemu-utils qemu-efi qemu-kvm ) # ebtables
+[[ ! -x $(command -v virtualbox) ]] && $INSTALL virtualbox
 
-    $INSTALL qemu # infra=( qemu qemu-utils qemu-efi qemu-kvm ) # ebtables
+[[ ! -x $(command -v virt-manager) ]] && {
+    $INSTALL libvirt-daemon-system libvirt-clients libvirt-daemon-system virtinst bridge-utils virt-manager
+
+    sudo systemctl start libvirtd
+    sudo systemctl enable libvirtd
+
+    sudo usermod -aG libvirt "$USER"
+    sudo usermod -aG kvm "$USER"
 }
 
-_virtualbox() {
-    [[ -x $(command -v virtualbox) ]] && return
+[[ ! -x $(command -v podman) ]] && {
+    $INSTALL podman
 
-    $INSTALL virtualbox
+    sudo systemctl enable podman.socket
+    sudo systemctl start podman.socket
+
+    # Add a new group called podman so its easier to manage who can run podman w/out sudo
+    echo '%podman ALL=(ALL) NOPASSWD: /usr/bin/podman' | sudo tee -a /etc/sudoers.d/podman
 }
 
-_libvirt() {
-    [[ -x $(command -v virt-manager) ]] && return
+[[ ! -x $(command -v podman-compose) ]] && {
+    python3 -m pip install podman-compose --upgrade
 
-    _install() {
-        $INSTALL libvirt-daemon-system libvirt-clients libvirt-daemon-system virtinst bridge-utils virt-manager
-    }
-
-    _services() {
-        sudo systemctl start libvirtd
-        sudo systemctl enable libvirtd
-    }
-
-    _post() {
-        sudo usermod -aG libvirt "$USER"
-        sudo usermod -aG kvm "$USER"
-    }
-
-    # run
-    for func in {_install,_services,_post}; do
-        $func
-    done
+    # Docker Compose will use the correct socket.
+    export DOCKER_HOST=///run/user/$UID/podman/podman.sock
 }
 
-_podman() {
-    [[ -x $(command -v podman) ]] && return
+[[ ! -x $(command -v gnutls-cli) ]] && $INSTALL gnutls-bin
 
-    _install() {
-        $INSTALL podman
-    }
-
-    _services() {
-        sudo systemctl enable podman.socket
-        sudo systemctl start podman.socket
-    }
-
-    _post() {
-        # Add a new group called podman so its easier to manage who can run podman w/out sudo
-        echo '%podman ALL=(ALL) NOPASSWD: /usr/bin/podman' | sudo tee -a /etc/sudoers.d/podman
-    }
-
-    for func in {_install,_services,_post}; do
-        $func
-    done
-}
-
-_podman_compose() {
-    [[ -x $(command -v podman-compose) ]] && return
-
-    _install() {
-        python3 -m pip install podman-compose --upgrade
-    }
-
-    _post() {
-        # Docker Compose will use the correct socket.
-        export DOCKER_HOST=///run/user/$UID/podman/podman.sock
-    }
-
-    _install
-}
-
-_security() {
-    [[ -x $(command -v gnutls-cli) ]] && return
-
-    $INSTALL gnutls-bin
-}
-
-_network() {
-    [[ -x $(command -v tcpdump) ]] && return
-
-    local packages=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools
+[[ ! -x $(command -v tcpdump) ]] && {
+    packages=(net-tools iproute2 telnet dnsutils iwd iw wireless-tools
         resolvconf dhcpcd5 netcat-traditional tcpdump)
 
     s-dolist $INSTALL "${packages[@]}"
 }
 
-_nerdctl() {
-    ""
+[[ ! -x $(command -v firewalld) ]] && {
+    $INSTALL firewalld
+
+    sudo systemctl enable firewalld
+    sudo systemctl start firewalld
 }
-
-_firewall() {
-    [[ -x $(command -v firewalld) ]] && return
-
-    _install() {
-        $INSTALL firewalld
-    }
-
-    _post() {
-        sudo systemctl enable firewalld
-        sudo systemctl start firewalld
-    }
-
-    _install
-    _post
-}
-
-# * RUN
-main() {
-    #_ansible
-    #_aws
-    #_aws_iam_authenticator
-    # _docker
-    #_eksclt
-    # _helm
-    # _firewall
-    #_gcloud
-    #_gitlab
-    _qemu
-    _hashicorp
-    # _kind
-    #_kube
-    # _libvirt
-    # _minikube
-    _network
-    _podman
-    _podman_compose
-    # _virtualbox
-}
-
-main

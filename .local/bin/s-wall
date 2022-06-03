@@ -1,23 +1,11 @@
 #!/usr/bin/env bash
 
 FOLDER="$HOME/Pictures/wallpapers"
+WALL="$(find "$FOLDER" -type f | shuf -n 1)"
 
-_wall() {
-  local found
-  found=$(find "$FOLDER" -type f | shuf -n 1)
-
-  echo "$found"
-}
-
-echo "wallpaper: $(_wall)"
-
-_feh() {
-  feh --bg-max "$(_wall)" &
-}
-
-_swaybg() {
-  swaybg -m fit -i "$(_wall)" &
-}
-
-# * RUN
-[[ -n $WAYLAND_DISPLAY ]] && _swaybg || _feh
+echo "wallpaper: $WALL"
+# if [[ -n $WAYLAND_DISPLAY ]]; then
+#     swaybg -m fit -i "$WALL" &
+# else
+#     feh --bg-max "$WALL" &
+# fi

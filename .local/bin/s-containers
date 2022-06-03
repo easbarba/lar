@@ -6,28 +6,15 @@ set -euo pipefail
 DEPS=(sudo podman)
 s-checkdeps "${DEPS[@]}"
 
-_latest() {
-    containers=(golang ruby postgres)
+# latest
+containers=(golang ruby postgres)
+s-dolist "podman pull" "${containers[@]}"
 
-    s-dolist "podman pull" "${containers[@]}"
-}
+# alpine
+containers=(golang:alpine ruby:alpine postgres:13-alpine)
 
-_alpine() {
-    containers=(golang:alpine ruby:alpine postgres:13-alpine)
+s-dolist "podman pull" "${containers[@]}"
 
-    s-dolist "podman pull" "${containers[@]}"
-}
-
-_debian() {
-    containers=(golang:bullseye ruby:bullseye postgres:13-bullseye)
-
-    s-dolist "podman pull" "${containers[@]}"
-}
-
-# * RUN
-main() {
-    _debian
-    _alpine
-}
-
-main
+# debian
+containers=(golang:bullseye ruby:bullseye postgres:13-bullseye)
+s-dolist "podman pull" "${containers[@]}"

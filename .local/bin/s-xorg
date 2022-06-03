@@ -3,9 +3,5 @@
 # Debug Options
 set -euo pipefail
 
-xwrapper() {
-    echo "allowed_users = anybody" | sudo tee /etc/X11/Xwrapper.config
-    echo "needs_root_rights=yes" | sudo tee -a /etc/X11/Xwrapper.config
-}
-
-xwrapper
+echo "allowed_users = anybody" | sudo tee /etc/X11/Xwrapper.config
+echo "needs_root_rights=yes" | sudo tee -a /etc/X11/Xwrapper.config

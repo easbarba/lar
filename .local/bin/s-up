@@ -9,45 +9,32 @@ DEPS=(sudo zae qas)
 # * CHECKER
 s-checkdeps "${DEPS[@]}"
 
-# * TASKS
-_system() {
-    s-echo "Upgrading $DISTRO system packages."
+# ==========================================
+s-echo "Upgrading $DISTRO system packages."
 
-    [[ -x $(command -v zae) ]] && zae update && zae upgrade && return
-    [[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
-}
+[[ -x $(command -v zae) ]] && zae update && zae upgrade && return
+[[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
 
-_editors() {
-    s-echo "Editors and Langs packages"
+# ==========================================
+s-echo "Editors and Langs packages"
 
-    s-doom
-}
+s-doom
 
-_langs() {
-    s-echo "Languages package installers"
+# ==========================================
+s-echo "Languages package installers"
 
-    s-ruby
-    s-golang
-    s-javascript
-}
+s-ruby
+s-golang
+s-javascript
 
-_packers() {
-    s-echo "Foreign installers"
+# ==========================================
+s-echo "Foreign installers"
 
-    s-guix
-    s-flatpak
-}
+s-guix
+s-flatpak
 
-_user() {
-    s-echo "User tasks"
+# ==========================================
+s-echo "User tasks"
 
-    qas --grab
-    qas --archive lar,annotations,mx,rake # TODO: save to usb-stick
-}
-
-# * RUN
-_system
-_editors
-_langs
-_packers
-_user
+qas --grab
+qas --archive lar,annotations,mx,rake # TODO: save to usb-stick

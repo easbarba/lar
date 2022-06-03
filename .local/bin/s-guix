@@ -14,34 +14,22 @@ export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 s-echo "GNU GUIX"
 
-_install() {
+[[ ! -x $(command -v guix) ]] && {
 	wget "https://sv.gnu.org/people/viewgpg.php?user_id=127547" -qO - | sudo -i gpg --import -
 
-	local installer='https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh'
+	installer='https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh'
 	wget -P /tmp "$installer"
 
 	sudo bash /tmp/guix-install.sh
-}
 
-_upgrade() {
 	sudo -i guix pull
 	guix pull
 	guix upgrade
 }
 
-_locale() {
-	# Fix GUIX_LOCPATH warning
-	local version=$(ls ~/.guix-profile/lib/locale/)
-	guix install glibc-locales@"$version"
-}
+# Fix GUIX_LOCPATH warning
+version=$(ls ~/.guix-profile/lib/locale/)
+guix install glibc-locales@"$version"
 
-_system() {
-	local packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
-	s-dolist "guix install" "${packages[@]}"
-}
-
-# * RUN
-[[ ! -x $(command -v guix) ]] && _install
-_upgrade
-_locale
-_system
+packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
+s-dolist "guix install" "${packages[@]}"

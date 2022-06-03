@@ -7,35 +7,23 @@ DEPS=(sudo apt bash)
 s-checkdeps "${DEPS[@]}"
 
 COMMAND='sudo apt-get install -yqq'
-GUARD='dpkg --get-selections'
 
-_postgres() {
-    packages=(postgresql postgresql-contrib)
-    s-dolist "$COMMAND" "${packages[@]}"
-}
+# postgres
+packages=(postgresql postgresql-contrib)
+s-dolist "$COMMAND" "${packages[@]}"
 
-_emacs() {
-    packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
-    s-dolist "$COMMAND" "${packages[@]}"
-}
+# emacs
+packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
+s-dolist "$COMMAND" "${packages[@]}"
 
-_langs() {
-    packages=(ruby-full ruby-dev golang python3-pip nodejs npm libssl-dev libfixposix-dev)
-    s-dolist "$COMMAND" "${packages[@]}"
-}
+# langs
+packages=(ruby-full ruby-dev golang python3-pip nodejs npm libssl-dev libfixposix-dev)
+s-dolist "$COMMAND" "${packages[@]}"
 
-_editors() {
-    packages=(zile vim neovim tidy ripgrep)
-    s-dolist "$COMMAND" "${packages[@]}"
-}
+# editors
+packages=(zile vim neovim tidy ripgrep)
+s-dolist "$COMMAND" "${packages[@]}"
 
-_programming() {
-    packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
-    s-dolist "$COMMAND" "${packages[@]}"
-}
-
-# RUN
-_emacs
-_langs
-_editors
-_programming
+# programming
+packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
+s-dolist "$COMMAND" "${packages[@]}"

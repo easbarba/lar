@@ -8,131 +8,90 @@ s-checkdeps "${DEPS[@]}"
 
 s-echo "Fedora"
 
-upgrade() {
-	s-echo "Upgrading System"
+s-echo "Upgrading System"
+sudo dnf update -y
+sudo dnf upgrade -y
 
-	sudo dnf update -y
-	sudo dnf upgrade -y
+s-echo "Installing system packages"
+
+essentials=(git openssh curl unzip bash tmux zile lynx)
+
+system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
+	bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar nscd
+	autoconf automake socat)
+
+network=(net-tools iproute telnet)
+
+programming=(gawk git-email subversion mercurial direnv libpq editorconfig)
+
+shell=(bash-completion ShellCheck zsh fish)
+
+editors=(emacs vim neovim libstdc++-static)
+
+gnu=(gcc make info wget parallel)
+
+languages=(golang guile30 lua ruby-devel python3-pip nodejs npm)
+
+laptop=(acpi lm_sensors)
+
+gnome=(gnome-tweaks gnome-shell-extension-auto-move-windows gnome-shell-extension-launch-new-instance)
+
+wmapps=(ffmpeg mpv elinks wl-clipboard)
+
+books=(pandoc) #  texlive texlive-xetex
+
+user=(exaile gimp obs-studio xdg-utils ImageMagick aspell vlc
+	telegram-desktop calibre gaupol)
+
+locale=(libreoffice-langpack-pt-BR aspell-pt_BR)
+
+media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
+	gstreamer1-plugins-good gstreamer1-plugins-ugly)
+
+local command='sudo dnf install -y'
+
+enabled=(
+	"${essentials[@]}"
+	"${system[@]}"
+	"${gnu[@]}"
+	"${network[@]}"
+	"${shell[@]}"
+	"${fedora[@]}"
+	"${languages[@]}"
+	"${programming[@]}"
+	"${editors[@]}"
+	"${gnome[@]}"
+	"${locale[@]}"
+	"${laptop[@]}"
+	"${wmapps[@]}"
+	"${books[@]}"
+	"${user[@]}"
+	"${media[@]}")
+
+for i in "${enabled[@]}"; do
+	s-dolist "$command" "$i"
+done
+
+s-echo "System Services"
+
+sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+sudo systemctl restart firewalld.service
+
+sudo systemctl enable nscd
+sudo systemctl start nscd
+
+echo "Foreign packages"
+[[ ! $(grep -rni 'rpmfusion-free' /etc/yum.repos.d) ]] && {
+	sudo dnf install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
+		"https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 }
 
-packages() {
-	s-echo "Installing system packages"
+[[ ! -x $(command -v code) ]] && {
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
-	essentials=(git openssh curl unzip bash tmux zile lynx)
-
-	system=(zip p7zip recutils lshw at usbutils lsof atool perf time entr tree
-			bc htop strace ltrace cpio lzop libnotify jq rsync pv texinfo unrar nscd
-			autoconf automake socat)
-
-	network=(net-tools iproute telnet)
-
-	programming=(gawk git-email subversion mercurial direnv libpq editorconfig)
-
-	shell=(bash-completion ShellCheck zsh fish)
-
-	editors=(emacs vim neovim libstdc++-static)
-
-	gnu=(gcc make info wget parallel)
-
-	languages=(golang guile30 lua ruby-devel python3-pip nodejs npm)
-
-	laptop=(acpi lm_sensors)
-
-	gnome=(gnome-tweaks gnome-shell-extension-auto-move-windows gnome-shell-extension-launch-new-instance)
-
-	wmapps=(ffmpeg mpv elinks wl-clipboard)
-
-	books=(pandoc) #  texlive texlive-xetex
-
-	user=(exaile gimp obs-studio xdg-utils ImageMagick aspell vlc
-		  telegram-desktop calibre gaupol)
-
-	locale=(libreoffice-langpack-pt-BR aspell-pt_BR)
-
-	media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
-		   gstreamer1-plugins-good gstreamer1-plugins-ugly)
-
-	local command='sudo dnf install -y'
-
-	enabled=(
-		"${essentials[@]}"
-		"${system[@]}"
-		"${gnu[@]}"
-		"${network[@]}"
-		"${shell[@]}"
-		"${fedora[@]}"
-		"${languages[@]}"
-		"${programming[@]}"
-		"${editors[@]}"
-		"${gnome[@]}"
-		"${locale[@]}"
-		"${laptop[@]}"
-		"${wmapps[@]}"
-		"${books[@]}"
-		"${user[@]}"
-		"${media[@]}")
-
-	for i in "${enabled[@]}"; do
-		s-dolist "$command" "$i"
-	done
-
-	s-echo "Done"
+	sudo dnf install -y code
 }
 
-services() {
-	s-echo "System Services"
-
-	_kdeconnect() {
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		sudo systemctl restart firewalld.service
-	}
-
-	_nscd() {
-		sudo systemctl enable nscd
-		sudo systemctl start nscd
-	}
-
-	_nscd
-}
-
-foreign() {
-	echo "Foreign packages"
-
-	_rpmfusion() {
-		[[ $(grep -rni 'rpmfusion-free' /etc/yum.repos.d) ]] && return
-
-		sudo dnf install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
-			"https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-	}
-
-	_vscode() {
-		[[ -x $(command -v code) ]] && return
-
-		sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-		sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-
-		sudo dnf install -y code
-	}
-
-	_rust() {
-		[[ -x $HOME/.cargo/bin/cargo ]] && return
-
-		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	}
-
-	_rpmfusion
-	_rust
-	_vscode
-}
-
-# * RUN
-
-main() {
-	upgrade
-	packages
-	services
-	foreign
-}
-
-main
+[[ ! -x $HOME/.cargo/bin/cargo ]] && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

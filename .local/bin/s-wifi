@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 DEVICE=$(ip a | awk '/wl+/ { split($0,a,": "); print a[2] }')
-
 echo "device: $DEVICE found"
 
 _nmcli() {

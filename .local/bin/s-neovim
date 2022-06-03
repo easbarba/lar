@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# debug options
 set -euo pipefail
 
 DEPS=(nvim)
@@ -7,14 +8,6 @@ s-checkdeps "${DEPS[@]}"
 
 NVIM_HOME="$HOME/.config/nvim"
 
-cleanup() {
-    rm -rf $NVIM_HOME
-}
+[[ -d $NVIM_HOME ]] && rm -rf $NVIM_HOME
 
-grab() {
-    git clone https://github.com/luan/nvim "$NVIM_HOME"
-}
-
-# * RUN
-cleanup
-grab
+git clone https://github.com/luan/nvim "$NVIM_HOME"
