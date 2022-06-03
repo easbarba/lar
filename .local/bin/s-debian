@@ -8,167 +8,111 @@ s-checkdeps "${DEPS[@]}"
 
 s-echo "Welcome to Debian '$(cat /etc/debian_version)'"
 
-# Begin
+# =================================
+s-echo "Upgrading System"
+sudo apt update
+sudo apt upgrade -y
 
-upgrade() {
-	s-echo "Upgrading System"
+# =================================
+s-echo "Pre Install"
+s-echo "Enable Multi-Arch"
+sudo dpkg --add-architecture i386
 
-	sudo apt update
-	sudo apt upgrade -y
+# =================================
+s-echo "System Packages"
+
+essentials=(git ssh curl unzip tmux)
+
+system=(zip p7zip p7zip-full recutils at usbutils lsof atool time entr tree
+	bc strace ltrace cpio lhasa lzop rsync pv texinfo autoconf automake
+	socat)
+
+shell=(bash-completion shellcheck fish)
+
+gnu=(bash gcc make vrms info wget parallel gawk screen parted)
+
+fonts=(fonts-hack fonts-dejavu fonts-jetbrains-mono ttf-ancient-fonts fonts-nanum)
+
+laptop=(acpi lm-sensors lshw libinput-tools)
+
+debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
+
+wayland=(sway swaybg swaylock swayidle foot clipman grim slurp wl-clipboard xwayland mako-notifier)
+
+wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp zathura zathura-cb)
+
+kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
+
+cli=(htop ffmpeg mpv elinks libnotify-bin ranger)
+
+user=(chromium firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-br
+	calibre pandoc obs-studio inkscape)
+
+sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils vlc)
+
+media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
+	gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly libavcodec58)
+
+amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
+	libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
+	libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
+	radeontop)
+
+command='sudo apt install -yqq'
+groups=("${essentials[@]}"
+	"${debian[@]}"
+	"${system[@]}"
+	"${gnu[@]}"
+	"${shell[@]}"
+	"${media[@]}"
+	"${sound[@]}"
+	"${user[@]}"
+	"${wayland[@]}"
+	"${wm[@]}"
+	"${kde[@]}"
+	"${cli[@]}"
+	"${laptop[@]}"
+	"${amd[@]}"
+	"${fonts[@]}")
+
+for group in "${groups[@]}"; do
+	# guard='dpkg --get-selections'
+	s-dolist "$command" "$group"
+done
+
+# =================================
+s-echo "Post Install"
+sudo apt -y build-dep emacs
+sudo apt-file update # update Debian database
+
+# =================================
+s-echo "Clean up"
+UNUSED=(firefox-esr)
+command='sudo apt remove -y'
+s-dolist "$command" "${UNUSED[@]}"
+
+PURGE=(*nvidia*)
+command='sudo apt purge -y'
+s-dolist "$command" "${PURGE[@]}"
+
+s-echo "Debian Services"
+sudo systemctl enable fstrim.timer
+
+# =================================
+s-echo "Foreign packages"
+[[ -x $(command -v flatpak) ]] && {
+	sudo apt install -y flatpak gnome-software-plugin-flatpak
+	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
-pre() {
-	s-echo "Pre Install"
-
-	_multi() {
-		s-echo "Enable Multi-Arch"
-		sudo dpkg --add-architecture i386
-	}
-
-	_multi
+[[ -x $(command -v google-chrome) ]] && {
+	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
+	sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
 }
 
-packages() {
-	s-echo "System Packages"
-
-	essentials=(git ssh curl unzip tmux)
-
-	system=(zip p7zip p7zip-full recutils at usbutils lsof atool time entr tree
-		bc strace ltrace cpio lhasa lzop rsync pv texinfo autoconf automake
-		socat)
-
-	shell=(bash-completion shellcheck fish)
-
-	gnu=(bash gcc make vrms info wget parallel gawk screen parted)
-
-	fonts=(fonts-hack fonts-dejavu fonts-jetbrains-mono ttf-ancient-fonts fonts-nanum)
-
-	laptop=(acpi lm-sensors lshw libinput-tools)
-
-	debian=(build-essential apt-listbugs apt-listchanges reportbug aptitude apt-file gdebi)
-
-	wayland=(sway swaybg swaylock swayidle foot clipman grim slurp wl-clipboard xwayland mako-notifier)
-
-	wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp zathura zathura-cb)
-
-	kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
-
-	cli=(htop ffmpeg mpv elinks libnotify-bin ranger)
-
-	user=(chromium firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-br
-		calibre pandoc obs-studio inkscape)
-
-	sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils vlc)
-
-	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
-		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly libavcodec58)
-
-	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
-		libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
-		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
-		radeontop)
-
-	# RUN
-	local command='sudo apt install -yqq'
-	# local guard='dpkg --get-selections'
-	local groups=("${essentials[@]}"
-		"${debian[@]}"
-		"${system[@]}"
-		"${gnu[@]}"
-		"${shell[@]}"
-		"${media[@]}"
-		"${sound[@]}"
-		"${user[@]}"
-		"${wayland[@]}"
-		"${wm[@]}"
-		"${kde[@]}"
-		"${cli[@]}"
-		"${laptop[@]}"
-		"${amd[@]}"
-		"${fonts[@]}")
-
-	for group in "${groups[@]}"; do
-		s-dolist "$command" "$group"
-	done
+[[ -x $(command -v code) ]] && {
+	wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
+	sudo apt install -y /tmp/vscode-x64.deb
 }
-
-post() {
-	s-echo "Post Install"
-
-	_emacs() {
-		sudo apt -y build-dep emacs
-	}
-
-	_debian() {
-		sudo apt-file update # update Debian database
-	}
-
-	_emacs
-	_debian
-}
-
-clean() {
-	s-echo "Clean up"
-
-	_unused() {
-		packages=(firefox-esr)
-
-		local command='sudo apt remove -y'
-		s-dolist "$command" "${packages[@]}"
-	}
-
-	_purge() {
-		packages=(*nvidia*)
-
-		local command='sudo apt purge -y'
-		s-dolist "$command" "${packages[@]}"
-	}
-
-	_unused
-	_purge
-}
-
-services() {
-	s-echo "Debian Services"
-
-	sudo systemctl enable fstrim.timer
-}
-
-foreign() {
-	s-echo "Foreign packages"
-
-	_flatpak() {
-		[[ -x $(command -v flatpak) ]] && return
-
-		sudo apt install -y flatpak gnome-software-plugin-flatpak
-		sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-	}
-
-	_chrome() {
-		[[ -x $(command -v google-chrome) ]] && return
-
-		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
-		sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
-	}
-
-	_vscode() {
-		[[ -x $(command -v code) ]] && return
-		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
-		sudo apt install -y /tmp/vscode-x64.deb
-	}
-
-	_flatpak
-	_vscode
-	# _chrome
-}
-
-# * RUN
-upgrade
-pre
-packages
-post
-clean
-services
-foreign
 
 exit
