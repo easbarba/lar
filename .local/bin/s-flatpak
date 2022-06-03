@@ -1,33 +1,28 @@
 #!/usr/bin/env bash
 
-_repo() {
-    [[ $(flatpak remotes | grep flathub) ]] && return
+# DEBUG OPTIONS
+set -euo pipefail
+
+DEPS=(flatpak)
+s-checkdeps "${DEPS[@]}"
+
+[[ ! "$(flatpak remotes)" == *'flathub'* ]] &&
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-}
 
-_user() {
-    local packages=(com.wps.Office)
+# COMMANDS
+INSTALL="flatpak install flathub -y"
+UPDATE="flatpak update -y"
 
-    local command="flatpak install flathub -y"
-    s-dolist "$command" "${packages[@]}"
+# PACKAGES
 
-    local command="flatpak update -y"
-    s-dolist "$command" "${packages[@]}"
-}
+USER=(com.wps.Office io.github.NhekoReborn.Nheko)
+for package in "${USER[@]}"; do
+    s-dolist "$INSTALL" "${package[@]}"
+    s-dolist "$UPDATE" "${package[@]}"
+done
 
-_devel() {
-    local packages=(com.discordapp.Discord com.microsoft.Teams com.slack.Slack
-        us.zoom.Zoom com.skype.Client)
-
-    local command="flatpak install flathub -y"
-    s-dolist "$command" "${packages[@]}"
-
-    local command="flatpak update -y"
-    s-dolist "$command" "${packages[@]}"
-}
-
-# * RUN
-
-_repo
-_user
-_devel
+DEVEL=(com.discordapp.Discord com.microsoft.Teams com.slack.Slack us.zoom.Zoom com.skype.Client)
+for package in "${USER[@]}"; do
+    s-dolist "$INSTALL" "${package[@]}"
+    s-dolist "$UPDATE" "${package[@]}"
+done
