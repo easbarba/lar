@@ -4,7 +4,7 @@
 set -euo pipefail
 
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
-DEPS=(sudo pak floss)
+DEPS=(sudo zae qas)
 
 # * CHECKER
 s-checkdeps "${DEPS[@]}"
