@@ -9,16 +9,19 @@ s-checkdeps "${DEPS[@]}"
 s-echo "Welcome to Debian '$(cat /etc/debian_version)'"
 
 # =================================
+
 s-echo "Upgrading System"
 sudo apt update
 sudo apt upgrade -y
 
 # =================================
+
 s-echo "Pre Install"
 s-echo "Enable Multi-Arch"
 sudo dpkg --add-architecture i386
 
 # =================================
+
 s-echo "System Packages"
 
 essentials=(git ssh curl unzip tmux)
@@ -100,19 +103,20 @@ sudo systemctl enable fstrim.timer
 
 # =================================
 s-echo "Foreign packages"
-[[ -x $(command -v flatpak) ]] && {
+
+if [[ -x $(command -v flatpak) ]]; then
 	sudo apt install -y flatpak gnome-software-plugin-flatpak
 	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-}
+fi
 
-[[ -x $(command -v google-chrome) ]] && {
+if [[ -x $(command -v google-chrome) ]]; then
 	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
 	sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
-}
+fi
 
-[[ -x $(command -v code) ]] && {
+if [[ -x $(command -v code) ]]; then
 	wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
 	sudo apt install -y /tmp/vscode-x64.deb
-}
+fi
 
 exit
