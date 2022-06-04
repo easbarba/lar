@@ -6,218 +6,183 @@ set -euo pipefail
 DEPS=(sudo apt wget systemctl timedatectl fc-cache)
 s-checkdeps "${DEPS[@]}"
 
-upgrade() {
-	s-echo "Upgrading System"
+# =======================================
 
-	sudo apt update
-	sudo apt upgrade -y
-	sudo apt autoremove -y
-}
+s-echo "Upgrading System"
 
-pre() {
-	multi() {
-		s-echo "Enable Multi-Arch"
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
 
-		sudo dpkg --add-architecture i386
-	}
+# =======================================
 
-	# * RUN
-	multi
-}
+s-echo "Enable Multi-Arch"
+sudo dpkg --add-architecture i386
 
-packages() {
-	s-echo "Installing system packages"
+# =======================================
 
-	essentials=(git ssh curl unzip bash tmux zile lynx stterm)
+s-echo "Installing system packages"
 
-	system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool
-		time entr tree bc htop strace ltrace cpio lhasa lzop unrar
-		libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep) #		linux-perf
+essentials=(git ssh curl unzip bash tmux zile lynx stterm)
 
-	network=(net-tools iproute2 telnet)
+system=(zip p7zip p7zip-full recutils lshw at usbutils lsof atool
+	time entr tree bc htop strace ltrace cpio lhasa lzop unrar
+	libnotify-bin jq rsync pv texinfo autoconf automake socat ripgrep) #		linux-perf
 
-	infra=(podman ansible vagrant qemu qemu-utils qemu-efi qemu-kvm) # ebtables
+network=(net-tools iproute2 telnet)
 
-	programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig sqlite3 tidy)
+infra=(podman ansible vagrant qemu qemu-utils qemu-efi qemu-kvm) # ebtables
 
-	shell=(bash-completion shellcheck zsh fish)
+programming=(gawk git-email subversion mercurial direnv libpq-dev editorconfig sqlite3 tidy)
 
-	editors=(neovim)
+shell=(bash-completion shellcheck zsh fish)
 
-	gnu=(gcc make vrms info wget parallel)
+editors=(neovim)
 
-	langs=(nodejs npm golang python3-pip ruby-dev libssl-dev lua5.4 lua-check) # luarocks
+gnu=(gcc make vrms info wget parallel)
 
-	emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
+langs=(nodejs npm golang python3-pip ruby-dev libssl-dev lua5.4 lua-check) # luarocks
 
-	#	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
+emacs=(emacs libgccjit-10-dev libwebkit2gtk-4.0-dev)
 
-	fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
+#	latex=(texlive-latex-recommended texlive-latex-extra texlive-latex-base)
 
-	debian=(build-essential)
+fonts=(fonts-hack fonts-dejavu ttf-ancient-fonts fonts-nanum)
 
-	cliapps=(lm-sensors wl-clipboard)
+debian=(build-essential)
 
-	wmapps=(ffmpeg mpv elinks) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m dunst suckless-tools
+cliapps=(lm-sensors wl-clipboard)
 
-	books=(pandoc)
+wmapps=(ffmpeg mpv elinks) # udiskie bluez zathura aria2 playerctl brightnessctl libnotify-bin w3m dunst suckless-tools
 
-	user=(gnome-tweaks firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
-		clementine aspell-pt-br telegram-desktop calibre gaupol kdeconnect)
+books=(pandoc)
 
-	media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
-		gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
+user=(gnome-tweaks firefox libreoffice gimp obs-studio xdg-utils imagemagick aspell
+	clementine aspell-pt-br telegram-desktop calibre gaupol kdeconnect)
 
-	amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
-		libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
-		libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
-		radeontop)
+media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
+	gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly)
 
-	local command='sudo apt install -y'
+amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
+	libgl1-mesa-dri libglx-mesa0 mesa-utils libgl1-mesa-glx mesa-vulkan-drivers xserver-xorg-video-all
+	libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
+	radeontop)
 
-	enabled=(
-		"${essentials[@]}"
-		"${system[@]}"
-		"${gnu[@]}"
-		"${shell[@]}"
-		"${debian[@]}"
-		"${langs[@]}"
-		"${programming[@]}"
-		"${editors[@]}"
-		"${emacs[@]}"
-		"${infra[@]}"
-		"${fonts[@]}"
-		"${security[@]}"
-		"${cliapps[@]}"
-		"${wmapps[@]}"
-		"${user[@]}"
-		"${media[@]}"
-		"${books[@]}")
+local command='sudo apt install -y'
 
-	for i in "${enabled[@]}"; do
-		s-dolist "$command" "$i"
-	done
+enabled=(
+	"${essentials[@]}"
+	"${system[@]}"
+	"${gnu[@]}"
+	"${shell[@]}"
+	"${debian[@]}"
+	"${langs[@]}"
+	"${programming[@]}"
+	"${editors[@]}"
+	"${emacs[@]}"
+	"${infra[@]}"
+	"${fonts[@]}"
+	"${security[@]}"
+	"${cliapps[@]}"
+	"${wmapps[@]}"
+	"${user[@]}"
+	"${media[@]}"
+	"${books[@]}")
 
-	# builds dep
-	sudo apt -y build-dep emacs
+for i in "${enabled[@]}"; do
+	s-dolist "$command" "$i"
+done
 
-	s-echo "Done"
-}
+# =======================================
 
-clean() {
-	s-echo "Clean up"
+# builds dep
+sudo apt -y build-dep emacs
 
-	unused=(firefox-esr)
+s-echo "Clean up"
 
-	local command='sudo apt remove -y'
-	s-dolist "$command" "${unused[@]}"
+unused=(firefox-esr)
+command='sudo apt remove -y'
+s-dolist "$command" "${unused[@]}"
 
-	purging=(*nvidia*)
-	local command='sudo apt purge -y'
-	s-dolist "$command" "${purging[@]}"
-}
+purging=(*nvidia*)
+command='sudo apt purge -y'
+s-dolist "$command" "${purging[@]}"
 
-services() {
-	s-echo "Debian Services"
+# =======================================
 
-	_kdeconnect() {
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
-		sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
-		sudo systemctl restart firewalld.service
-	}
+s-echo "Debian Services"
 
-	_infra() {
-		sudo usermod -aG libvirt "$USER"
-		sudo usermod -aG kvm "$USER"
-	}
-}
+# kdeconnect
+sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/tcp
+sudo firewall-cmd --zone=public --permanent --add-port=1714-1764/udp
+sudo systemctl restart firewalld.service
 
-foreign() {
-	echo "Non-Debian packages"
+# infra
+sudo usermod -aG libvirt "$USER"
+sudo usermod -aG kvm "$USER"
 
-	_flatpak() {
-		sudo apt install -y flatpak gnome-software-plugin-flatpak
-		sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-	}
+# =======================================
 
-	_docker() {
-		sudo apt-get install ca-certificates curl gnupg lsb-release
+echo "Non-Debian packages"
 
-		# Add Docker’s official GPG key:
-		curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# _flatpak() {
+sudo apt install -y flatpak gnome-software-plugin-flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-		# set up the stable repository
-		echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+# _docker() {
+sudo apt-get install ca-certificates curl gnupg lsb-release
 
-		# Install Docker Engine
-		sudo apt-get update -y
-		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+# Add Docker’s official GPG key:
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-		sudo groupadd docker
-		sudo usermod -aG docker $USER
-	}
+# set up the stable repository
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-	_chrome() {
-		wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
-		sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
-	}
+# Install Docker Engine
+sudo apt-get update -y
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-	_virtualbox() {
-		wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
-		sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
-	}
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
-	_vagrant() {
-		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-		sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
+# _chrome() {
+wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
+sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
 
-		sudo apt install -y software-properties-common
-		sudo apt update
-		sudo apt install -y vagrant
-	}
+# _virtualbox() {
+wget -P "/tmp" https://download.virtualbox.org/virtualbox/6.1.28/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
+sudo apt install -y /tmp/virtualbox-6.1_6.1.28-147628~Debian~bullseye-amd64.deb
 
-	_vscode() {
-		wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
-		sudo apt install -y /tmp/vscode-x64.deb
-	}
+# _vagrant() {
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com buster main"
 
-	_hyper() {
-		wget -c "https://releases.hyper.is/download/deb" -O '/tmp/hyper.deb'
-		sudo apt install -y /tmp/hyper.deb
-	}
+sudo apt install -y software-properties-common
+sudo apt update
+sudo apt install -y vagrant
 
-	_hashicorp() {
-		curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+# _vscode() {
+wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
+sudo apt install -y /tmp/vscode-x64.deb
 
-		sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-		sudo apt update
-		sudo apt install -y terraform packer
+# _hyper() {
+wget -c "https://releases.hyper.is/download/deb" -O '/tmp/hyper.deb'
+sudo apt install -y /tmp/hyper.deb
 
-	}
+# _hashicorp() {
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 
-	_aws() {
-		[[ -x $(command -v aws) ]] && return
+sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt update
+sudo apt install -y terraform packer
 
-		cd /tmp
-		curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-		unzip awscliv2.zip
+if [[ -x $(command -v aws) ]]; then
 
-		sudo /tmp/aws/install
+	cd /tmp
+	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+	unzip awscliv2.zip
 
-		[[ -x $(command -v aws) ]] && rm -rf /tmp/aws /tmp/awscliv2.zip
-	}
+	sudo /tmp/aws/install
 
-	_aws
-	_hashicorp
-	_flatpak
-	_vscode
-}
-
-# * RUN
-
-upgrade
-packages
-services
-foreign
-#pre
-#clean
+	[[ -x $(command -v aws) ]] && rm -rf /tmp/aws /tmp/awscliv2.zip
+fi

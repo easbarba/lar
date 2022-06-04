@@ -11,10 +11,10 @@ s-echo "Arch Linux - System Packages and Services Instalation."
 s-echo "Updating Arch Linux"
 /usr/bin/sudo /usr/bin/pacman -Syu
 
-[[ ! $(grep '^\[multilib\]' /etc/pacman.conf) == '[multilib]' ]] && {
+if [[ ! $(grep '^\[multilib\]' /etc/pacman.conf) == '[multilib]' ]]; then
     s-echo "Enable Multi-Arch"
     /usr/bin/sudo /usr/bin/sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-}
+fi
 
 s-echo "Installing system packages"
 

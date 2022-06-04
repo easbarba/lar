@@ -48,7 +48,7 @@ locale=(libreoffice-langpack-pt-BR aspell-pt_BR)
 media=(vorbis-tools gstreamer1-plugins-bad-free gstreamer1-plugins-base
 	gstreamer1-plugins-good gstreamer1-plugins-ugly)
 
-local command='sudo dnf install -y'
+command='sudo dnf install -y'
 
 enabled=(
 	"${essentials[@]}"
@@ -82,16 +82,16 @@ sudo systemctl enable nscd
 sudo systemctl start nscd
 
 echo "Foreign packages"
-[[ ! $(grep -rni 'rpmfusion-free' /etc/yum.repos.d) ]] && {
+if [[ ! $(grep -rni 'rpmfusion-free' /etc/yum.repos.d) ]]; then
 	sudo dnf install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
 		"https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-}
+fi
 
-[[ ! -x $(command -v code) ]] && {
+if [[ ! -x $(command -v code) ]]; then
 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
 	sudo dnf install -y code
-}
+fi
 
 [[ ! -x $HOME/.cargo/bin/cargo ]] && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

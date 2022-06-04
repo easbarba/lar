@@ -6,46 +6,31 @@ set -euo pipefail
 DEPS=(sudo dnf usermod command systemctl tee)
 s-checkdeps "${DEPS[@]}"
 
-_docker() {
-    [[ -x $(command -v docker) ]] && return
+if [[ ! -x $(command -v docker) ]]; then
+    # uninstall old versions
+    sudo dnf remove docker docker-client docker-client-latest \
+        docker-common docker-latest docker-latest-logrotate \
+        docker-logrotate docker-selinux docker-engine-selinux docker-engine
 
-    _pre() {
-        # uninstall old versions
-        sudo dnf remove docker docker-client docker-client-latest \
-            docker-common docker-latest docker-latest-logrotate \
-            docker-logrotate docker-selinux docker-engine-selinux docker-engine
+    sudo dnf -y install dnf-plugins-core
 
-        sudo dnf -y install dnf-plugins-core
+    sudo dnf config-manager \
+        --add-repo \
+        https://download.docker.com/linux/fedora/docker-ce.repo
 
-        sudo dnf config-manager \
-            --add-repo \
-            https://download.docker.com/linux/fedora/docker-ce.repo
-    }
+    sudo dnf install -y dnf-plugins-core docker-ce docker-ce-cli containerd.io
 
-    _install() {
-        sudo dnf install -y dnf-plugins-core docker-ce docker-ce-cli containerd.io
-    }
+    sudo systemctl start docker
+    sudo systemctl enable docker.service
 
-    _services() {
-        sudo systemctl start docker
-        sudo systemctl enable docker.service
-    }
+    sudo groupadd docker
+    sudo gpasswd -a $USER docker
 
-    _post() {
-        sudo groupadd docker
-        sudo gpasswd -a $USER docker
+    sudo systemctl restart docker
 
-        sudo systemctl restart docker
-
-        # activate group, for now
-        newgrp docker
-    }
-
-    # run
-    for f in {_pre,_install,_services,_post}; do
-        $f
-    done
-}
+    # activate group, for now
+    newgrp docker
+fi
 
 _gcloud() {
     _pre() {
@@ -213,14 +198,3 @@ _podman_docker_compose() {
 
     _post
 }
-
-# * RUN
-_aws
-_gcloud
-_docker
-_terraform
-_minikube
-_kubectl
-_virtualization
-_virtualbox
-_vagrant
