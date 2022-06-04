@@ -12,8 +12,7 @@ s-checkdeps "${DEPS[@]}"
 # ==========================================
 s-echo "Upgrading $DISTRO system packages."
 
-[[ -x $(command -v zae) ]] && zae update && zae upgrade && return
-[[ -x $(command -v apt) ]] && sudo apt update && sudo apt upgrade
+[[ -x $(command -v zae) ]] && zae update && zae upgrade
 
 # ==========================================
 s-echo "Editors and Langs packages"
