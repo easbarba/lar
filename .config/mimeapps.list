@@ -19,7 +19,6 @@ x-scheme-handler/tel=com.skype.Client.desktop;
 
 [Default Applications]
 application/octet-stream=org.kde.kate.desktop;
-application/pdf=zathura
 application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
 application/vnd.rn-realmedia=mpv.desktop
 application/x-abiword=abiword.desktop
@@ -112,3 +111,4 @@ x-scheme-handler/unknown=chromium.desktop
 
 [Removed Associations]
 video/x-matroska=org.kde.haruna.desktop;
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
