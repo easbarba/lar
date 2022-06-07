@@ -17,7 +17,7 @@ APPS=(emacs alacritty zathura chromium "$LOCAL_BIN/s-wall")
 
 not_found() { [[ ! -x $(command -v "$1") ]]; }
 is_running() { [[ $(pgrep -f "$1") ]]; }
-run() { "$1" & }
+run() { "$1" & } # TODO: use dbus-session-run
 
 autostart() {
   local apps=("$@")
