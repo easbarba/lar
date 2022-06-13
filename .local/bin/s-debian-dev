@@ -3,14 +3,10 @@
 # Debug Options
 set -euo pipefail
 
-DEPS=(sudo apt bash)
+DEPS=(apt-get bash)
 s-checkdeps "${DEPS[@]}"
 
-COMMAND='sudo apt-get install -yqq'
-
-# postgres
-packages=(postgresql postgresql-contrib)
-s-dolist "$COMMAND" "${packages[@]}"
+COMMAND='sudo apt-get install -y'
 
 # emacs
 packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-dev)
@@ -27,3 +23,17 @@ s-dolist "$COMMAND" "${packages[@]}"
 # programming
 packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
 s-dolist "$COMMAND" "${packages[@]}"
+
+# postgres
+packages=(postgresql postgresql-contrib postgresql-doc)
+s-dolist "$COMMAND" "${packages[@]}"
+sudo systemctl restart postgresql
+
+HBA_CONF='/etc/postgresql/*/main/pg_hba.conf' # psql --version | awk '{print substr($3, 0, 2)}'
+if ! sudo grep -i "$USER" "$HBA_CONF"; then
+    sudo -u postgres createuser -e "$USER" --pwprompt
+    echo -n "local  all  $USER  md5" | sudo tee -a "$HBA_CONF"
+    sudo systemctl restart postgresql
+fi
+
+exit
