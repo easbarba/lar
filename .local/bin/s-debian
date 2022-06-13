@@ -6,6 +6,10 @@ set -euo pipefail
 DEPS=(sudo apt wget systemctl timedatectl fc-cache firewalld)
 s-checkdeps "${DEPS[@]}"
 
+REMOVE='sudo apt remove -y'
+PURGE='sudo apt purge -y'
+INSTALL='sudo apt-get install -y'
+
 s-echo "Welcome to Debian '$(cat /etc/debian_version)'"
 
 # =================================
@@ -46,7 +50,7 @@ wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp zathura zathura-cb)
 
 kde=(plasma-workspace-wayland ktorrent kamoso kdenlive kate falkon kdeconnect kdevelop krita elisa)
 
-cli=(htop ffmpeg mpv elinks libnotify-bin ranger)
+cli=(htop ffmpeg mpv elinks libnotify-bin ranger aria2)
 
 user=(chromium firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-br
 	calibre pandoc obs-studio inkscape)
@@ -61,7 +65,6 @@ amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
 	libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
 	radeontop)
 
-command='sudo apt install -yqq'
 groups=("${essentials[@]}"
 	"${debian[@]}"
 	"${system[@]}"
@@ -79,8 +82,7 @@ groups=("${essentials[@]}"
 	"${fonts[@]}")
 
 for group in "${groups[@]}"; do
-	# guard='dpkg --get-selections'
-	s-dolist "$command" "$group"
+	s-dolist "$INSTALL" "$group"
 done
 
 # =================================
@@ -91,12 +93,10 @@ sudo apt-file update # update Debian database
 # =================================
 s-echo "Clean up"
 UNUSED=(firefox-esr)
-command='sudo apt remove -y'
-s-dolist "$command" "${UNUSED[@]}"
+s-dolist "$REMOVE" "${UNUSED[@]}"
 
 PURGE=(*nvidia*)
-command='sudo apt purge -y'
-s-dolist "$command" "${PURGE[@]}"
+s-dolist "$PURGE" "${PURGE[@]}"
 
 s-echo "Debian Services"
 sudo systemctl enable fstrim.timer
@@ -105,18 +105,18 @@ sudo systemctl enable fstrim.timer
 s-echo "Foreign packages"
 
 if [[ -x $(command -v flatpak) ]]; then
-	sudo apt install -y flatpak gnome-software-plugin-flatpak
+	"$INSTALL" flatpak gnome-software-plugin-flatpak
 	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
 if [[ -x $(command -v google-chrome) ]]; then
 	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
-	sudo apt install -y /tmp/google-chrome-stable-current_amd64.deb
+	"$INSTALL" /tmp/google-chrome-stable-current_amd64.deb
 fi
 
 if [[ -x $(command -v code) ]]; then
 	wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
-	sudo apt install -y /tmp/vscode-x64.deb
+	"$INSTALL" /tmp/vscode-x64.deb
 fi
 
 exit
