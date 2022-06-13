@@ -5,16 +5,9 @@ set -euo pipefail
 
 COMMAND="$1"
 shift 1
+ARGUMENTS=("$@")
 
-#GUARD="$1"
-#shift 1
-
-ACTIONS=("$@")
-
-# do not quote $GUARD and $COMMAND
-for action in "${ACTIONS[@]}"; do
-#    if ! $($GUARD $action); then
-        s-echo "$COMMAND $action"
-        $COMMAND "$action"
-#    fi
+for argument in "${ARGUMENTS[@]}"; do
+        s-echo "$COMMAND $argument"
+        eval "$COMMAND $argument" # do not quote COMMAND
 done
