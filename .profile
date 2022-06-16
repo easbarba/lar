@@ -52,6 +52,9 @@ export PATH="$DOOM_DIR/bin":$PATH
 
 # * LANGUAGES PACKAGE MANAGERS
 
+# COMMON LISP
+export PATH="${HOME}/.local/bin${PATH:+:}$PATH"
+
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH

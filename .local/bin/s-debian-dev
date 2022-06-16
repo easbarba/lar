@@ -13,7 +13,7 @@ packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-de
 s-dolist "$COMMAND" "${packages[@]}"
 
 # langs
-packages=(ruby-full ruby-dev golang python3-pip nodejs npm libssl-dev libfixposix-dev)
+packages=(sbcl libzstd-dev ruby-full ruby-dev golang python3-pip nodejs npm libssl-dev libfixposix-dev)
 s-dolist "$COMMAND" "${packages[@]}"
 
 # editors
@@ -23,6 +23,8 @@ s-dolist "$COMMAND" "${packages[@]}"
 # programming
 packages=(jq git-email subversion mercurial libpq-dev editorconfig gnome-keyring direnv fd-find)
 s-dolist "$COMMAND" "${packages[@]}"
+
+exit
 
 # postgres
 packages=(postgresql postgresql-contrib postgresql-doc)
@@ -35,5 +37,3 @@ if ! sudo grep -i "$USER" "$HBA_CONF"; then
     echo -n "local  all  $USER  md5" | sudo tee -a "$HBA_CONF"
     sudo systemctl restart postgresql
 fi
-
-exit
