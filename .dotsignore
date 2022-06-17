@@ -1,7 +1,6 @@
 LICENSE
 README.md
 .iex.exs
-.sbclrc
 .tcshrc
 .zshrc
 .xsessionrc
@@ -26,7 +25,6 @@ README.md
 .config/picom
 .config/powershell
 .config/qtile
-.config/stumpwm
 .config/xmonad
 .config/yabar
 .config/youtube-dl
