@@ -5,71 +5,66 @@ require 'pathname'
 
 # Take a shot of the marvelous screen
 class Screenshot
-  attr_reader :mode
-
-  def initialize(mode)
-    @mode = mode.to_sym if mode
-  end
-
-  def which?(executable)
+  def self.which?(executable)
     ENV['PATH'].split(File::PATH_SEPARATOR).any? do |directory|
       File.executable?(File.join(directory, executable.to_s))
     end
   end
 
-  def shotters
-    Shotters.new.all
+  attr_reader :shotters
+
+  def initialize(shotters = Shotters.new.all)
+    @shotters = shotters
   end
 
+  def full
+    "#{shotter.exec} #{shotter.full} #{shotter.folder}"
+  end
+
+  def partial
+    "#{shotter.exec} #{shotter.partial} #{shotter.folder}"
+  end
+
+  def info
+    "Shotters available: #{shotters.keys.join(', ')}"
+  end
+
+  private
+
+  # list of all shotters found
   def shotters_available
     shotters.find_all do |shotter|
-      shotter.bin if which? shotter.bin
+      x = shotter.last
+      x.exec if Screenshot.which? x.exec
     end
   end
 
+  # select default shotter
   def shotter
-    shotters_available.first
-  end
-
-  def final_command
-    case mode
-    when :partial
-      "#{shotter.bin} #{shotter.partial} #{shotter.folder}"
-    when :full
-      "#{shotter.bin} #{shotter.full} #{shotter.folder}"
-    end
-  end
-
-  def run
-    return if %w[full partial].include? mode
-
-    system final_command
+    shotters_available.first.last
   end
 end
 
 # All available shotters
 class Shotters
+  require 'ostruct'
+
   FOLDER = Pathname.new(Dir.home).join('Pictures')
   PREFERRED_FORMAT = 'png'
   CURRENT_TIME = Time.new.strftime '%d-%m-%y-%I-%M'
-  S = Struct.new(:bin, :full, :partial, :folder)
 
-  #  scrot - command line screen capture utility
-  def scrot
-    S.new 'scrot', '--focused --silent', '--select --silent', FOLDER.join(screenshot_name)
-  end
-
-  def maim
-    S.new 'maim', '', '--select', FOLDER.join(screenshot_name)
-  end
-
-  def flameshot
-    S.new 'flameshot', '', '--select', FOLDER.join(screenshot_name)
-  end
-
-  # list of shotters
   def all
-    [scrot, maim, flameshot]
+    {
+      scrot: OpenStruct.new(exec: 'scrot',
+                            full: '--focused --silent', partial: '--select --silent',
+                            folder: FOLDER.join(screenshot_name)),
+      main: OpenStruct.new(exec: 'maim',
+                           full: '', partial: '--select',
+                           folder: FOLDER.join(screenshot_name)),
+      flameshot: OpenStruct.new(exec: 'flameshot',
+                                full: '', partial: '--select',
+                                folder: FOLDER.join(screenshot_name))
+    }
   end
 
   private
@@ -79,5 +74,29 @@ class Shotters
   end
 end
 
-# RUN
-Screenshot.new(ARGV.first).run
+module Cli
+  require 'optparse'
+
+  def self.options
+    shotter = Screenshot.new
+
+    OptionParser.new do |opts|
+      opts.banner = 'Usage: shot [options]'
+
+      opts.on('-f', '--full', 'full screen shot') do
+        system shotter.full
+      end
+
+      opts.on('-p', '--partial', 'partial screen shot') do
+        system shotter.partial
+      end
+
+      opts.on('-i', '--info', 'shotters information') do
+        puts shotter.info
+      end
+    end
+  end
+end
+
+Cli.options.parse! ['--help'] if ARGV.empty?
+Cli.options.parse!
