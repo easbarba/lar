@@ -235,7 +235,7 @@
 
 (load-module "battery-portable")
 ;; (load-module "cpu")
-;; (load-module "mem")
+(load-module "mem")
 (load-module "wifi")
 
 (load-module "end-session")
@@ -250,106 +250,3 @@
 ;; CONTRIB MODELINE
 (setf *screen-mode-line-format* "^B%n^b:  %W ^> / %C / %B / %M / %d    ")
 
-;; (defun executables ()
-;;   (loop with path = (uiop:getenv "PATH")
-;;         for p in (uiop:split-string path :separator ":")
-;;         for dir = (probe-file p)
-;;         when (uiop:directory-exists-p dir)
-;;           append (uiop:directory-files dir)))
-
-;; (defun find-executable (name)
-;;   (find name (executables)
-;;         :test #'equalp
-;;         :key #'pathname-name))
-
-;; (defun eas/anyexec (lst)
-;;   "Return first executable that exist in lst"
-;;   (dolist (current lst)
-;;     (when (eas/commandv current)
-;;       current)))
-
-
-;; (defun eas/run-app (cmd prop &optional args) ;; FIX: fix
-;;   "Run an instance of `cmd' with property `prop' (and any optional arguments `args')"
-;;   (if (null args)
-;;       (run-or-raise cmd prop)
-;;       (run-or-raise (cat cmd " " args) prop)))
-
-;; ;; (defcommand run-editor () ()
-;;   "Run an instance of `*editor*' with property`:instance'."
-;;   (eas/run-app *editor* (list :instance *editor*)))
-
-;; (defcommand run-ide () ()
-;;   "Run an instance of `*ide*' with property`:instance'."
-;;   (eas/run-app *ide* (list :instance *ide*)))
-
-;; (defcommand run-browser () ()
-;;   "Run an instance of `*browser*' with property`:instance'."
-;;   (eas/run-app *browser* (list :instance *browser*)))
-
-;; (defcommand run-terminal () ()
-;;   "Run an instance of `*terminal*' with property`:instance'."
-;;   (eas/run-app *terminal* (list :instance *terminal*)))
-
-;; (defcommand run-locker () ()
-;;   "Run an instance of `*locker*' with property`:instance'."
-;;   (eas/run-app *locker* (list :instance *locker*)))
-
-;; (define-key *top-map* (kbd "s-RET") "run-terminal")
-;; (define-key *top-map* (kbd "s-l") "run-locker")
-;; (define-key *top-map* (kbd "s-b") "run-browser")
-;; (define-key *top-map* (kbd "s-e") "run-editor")
-
-;; -----------------
-;; EXTERNAL SOFTWARE
-;; -----------------
-
-;; GLOBAL MACROS
-;; (defmacro search-on-web (name url-prefix)
-;;   `(defcommand ,name (search)
-;;      ((:rest ,(concatenate 'string (symbol-name name) ": ")))
-;;      (run-shell-command (format nil "~A ~A"
-;; 				*browser*
-;; 				(concat ,url-prefix (substitute #\+ #\Space search))))))
-
-;; (search-on-web google "http://www.google.com/search?q=")
-;; (search-on-web wikipedia "http://en.wikipedia.org/wiki/Special:Search?fulltext=Search&search=")
-;; (search-on-web youtube "http://youtube.com/results?search_query=")
-
-;; (defun runner (program &optional args)
-;;   ".NET like Runnner."
-;;   (uiop:run-program (concatenate 'string program " " args)))
-
-
-;; (defcommand tocador () ()
-;;   (let ((link (trivial-clipboard:text))
-;; 	(player "mpv")
-;; 	(args "--no-config --no-audio-display"))
-;;     (runner "mpv" (concatenate 'string args
-;; 			       " "
-;; 			       link))))
-;; (define-key *top-map* (kbd "s-P") "tocador")
-
-;; ;; WALLPAPER
-;; (defun waller()
-;;   (let ((setter "feh")
-;; 	(setter-args "--randomize --bg-fill")
-;; 	(wallpapers (concatenate 'string *pictures* "/papelparede")))
-;;     (run-shell-command (concatenate 'string  setter " " setter-args " " wallpapers))))
-
-;; (when (eas/commandv "feh")
-;;   (waller))
-
-;; -----------------
-;; CUSTOM COMMANDS
-;; -----------------
-
-;; (defcommand safe-quit () ()
-;;   "Checks if any windows are open before quitting."
-;;   (let ((win-count 0)) ;; count the windows in each group
-;;     (dolist (group (screen-groups (current-screen)))
-;;       (setq win-count (+ (length (group-windows group)) win-count)))
-;;     (if (= win-count 0) ;; display the number of open windows or quit
-;; 	(run-commands "quit")
-;; 	(message (format nil "You have ~d ~a open" win-count
-;; 			 (if (= win-count 1) "window" "windows"))))))
