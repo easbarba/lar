@@ -7,7 +7,7 @@
 ;; ----------------
 
 (setf *default-package* :stumpwm
-      *startup-message* "O sol seja louvado!"
+      *startup-message* "Praise the Sun!"
       *suppress-abort-messages* t
       *shell-program* (getenv "SHELL")
       *window-number-map* "1234567890"
@@ -44,7 +44,7 @@
 ;; GROUPS
 ;; ------
 
-(defparameter *group-names* '("mx" "ide" "sistema" "midia" "www" "misc")
+(defparameter *group-names* '("mx" "read" "term" "www" "media")
   "List of group names to be created.")
 
 (when (consp *group-names*)
@@ -58,26 +58,26 @@
 ;; -----------
 
 ;; PREFIX KEY
-(set-prefix-key (kbd "M-s-z"))
+(set-prefix-key (kbd "s-z"))
 
 ;; MISC
-(define-key *top-map* (kbd "M-s-q") "quit")
+(define-key *top-map* (kbd "s-Q") "quit")
 (define-key *top-map* (kbd "s-:") "eval")
 (define-key *top-map* (kbd "s-;") "colon")
 (define-key *top-map* (kbd "M-s-r") "reload")
 (define-key *top-map* (kbd "s-x") "exec")
 (define-key *top-map* (kbd "M-s-b") "mode-line")
 
-(define-key *top-map* (kbd "s-w") "next-in-frame")
-(define-key *top-map* (kbd "s-s") "prev-in-frame")
-(define-key *top-map* (kbd "M-s-f") "fullscreen")
-(define-key *top-map* (kbd "M-s-c") "delete")
+(define-key *top-map* (kbd "s-j") "next-in-frame")
+(define-key *top-map* (kbd "s-p") "prev-in-frame")
+(define-key *top-map* (kbd "s-f") "fullscreen")
+(define-key *top-map* (kbd "s-c") "delete")
 (define-key *top-map* (kbd "s-r") "remove")
 (define-key *top-map* (kbd "s-i") "iresize")
 
 ;; GROUPS
-(define-key *top-map* (kbd "s-d") "gnext")
-(define-key *top-map* (kbd "s-a") "gprev")
+(define-key *top-map* (kbd "s-n") "gnext")
+(define-key *top-map* (kbd "s-p") "gprev")
 (define-key *top-map* (kbd "s-TAB") "gother")
 (define-key *top-map* (kbd "s-m") "gmove")
 
@@ -98,228 +98,144 @@
 (define-key *top-map* (kbd "s-$") "pull 4")
 (define-key *top-map* (kbd "s-%") "pull 5")
 
-;; -----------------
+;; ------------------------------------------------------------
 ;; FOLDERS LOCATIONS
-;; -----------------
+;; ------------------------------------------------------------
 
 (defparameter *lar*
   (uiop:getenv "HOME")
   "Home Folder.")
 (defparameter *musica*
-  (concatenate 'string *lar* "/Musica")
+  (concatenate 'string *lar* "/Music")
   "Musica Folder.")
 (defparameter *books*
-  (concatenate 'string *lar* "/Livros")
+  (concatenate 'string *lar* "/Books")
   "Books Folder.")
 (defparameter *pictures*
-  (concatenate 'string *lar* "/Fotografias")
+  (concatenate 'string *lar* "/Pictures")
   "Fotografias Folder.")
-(defparameter *download*
+(defparameter *downloads*
   (concatenate 'string *lar* "/Downloads")
   "Downloads Folder.")
+(defparameter *local-bin*
+  (concatenate 'string *lar* "/.local/bin")
+  "Local bin Folder.")
 
-;; -----------------
-;; EXTERNAL SOFTWARE
-;; -----------------
+;; ============================================================
+;; AUTOSTART
 
-;; GLOBAL MACROS
-(defmacro search-on-web (name url-prefix)
-  `(defcommand ,name (search)
-     ((:rest ,(concatenate 'string (symbol-name name) ": ")))
-     (run-shell-command (format nil "~A ~A"
-				*browser*
-				(concat ,url-prefix (substitute #\+ #\Space search))))))
 
-(search-on-web google "http://www.google.com/search?q=")
-(search-on-web wikipedia "http://en.wikipedia.org/wiki/Special:Search?fulltext=Search&search=")
-(search-on-web youtube "http://youtube.com/results?search_query=")
+(let ((autostart (concatenate 'string *lar* "/.local/bin" "/s-autostart-apps")))
+  (run-shell-command autostart))
 
-;; -----------------
-;; UTILIDADES
-;; -----------------
+;; ============================================================
+;; UTILITIES
 
 (ql:quickload :uiop)
 (ql:quickload :trivial-clipboard)
 
-(defun runner (program &optional args)
-  ".NET like Runnner."
-  (uiop:run-program (concatenate 'string program " " args)))
+;; ============================================================
+;; SYSTEM APPS
 
-;; ------------------
-;; Sistema Interface
-;; ------------------
-
-(defun lx/run-app (cmd prop &optional args) ;; FIX: fix
-  "Run an instance of `cmd' with property `prop' (and any optional arguments `args')"
-  (if (null args)
-      (run-or-raise cmd prop)
-      (run-or-raise (cat cmd " " args) prop)))
-
-(defun lx/which? (name)
-  "Return t, if NAME executable exists in PATH."
+(defun eas/commandv (exec)
+  "Return EXEC path if found."
   (zerop
    (nth-value 2 (uiop:run-program
-		 (concatenate 'string "command -v " name)
+		 (concatenate 'string "command -v" " " exec)
 		 :force-shell t :ignore-error-status t))))
 
-(defun lx/anyexec (lst)
-  "Return first executable that exist in lst"
-  (dolist (current lst)
-    (when (lx/which? current)
-      current)))
 
-;; (setf a (lx/anyexec '("emacs" "code")))
-
-
-(defparameter *editor* (cond ((lx/which? "emacs") "emacs"))
+(defparameter *editor* (cond ((eas/commandv "emacs") "emacs")
+                             ((eas/commandv "code") "code")
+                             ((eas/commandv "kate") "kate"))
   "Default Editor.")
 
-(defparameter *ide* (cond ((lx/which? "rider") "rider")
-			  ((lx/which? "monodevelop") "monodevelop")
-			  ((lx/which? "code") "code"))
+(defparameter *ide* (if (eas/commandv "rubymine") "rubymine")
   "Default Editor.")
 
-(defparameter *browser* (cond ((lx/which? "firefox") "firefox")
-			      ((lx/which? "nyxt") "nyxt")
-			      ((lx/which? "google-chrome") "google-chrome"))
+(defparameter *browser* (cond ((eas/commandv "chromium") "chromium")
+                              ((eas/commandv "firefox") "firefox")
+                              ((eas/commandv "nyxt") "nyxt")
+                              ((eas/commandv "google-chrome") "google-chrome"))
   "Default Browser.")
 
-(defparameter *terminal* (cond ((lx/which? "Gnome-terminal") "Gnome-terminal")
-			       ((lx/which? "st") "st"))
+(defparameter *terminal* (cond ((eas/commandv "alacritty") "alacritty")
+                               ((eas/commandv "Gnome-terminal") "Gnome-terminal")
+			                   ((eas/commandv "st") "st"))
   "Default terminal.")
 
-(defparameter *locker* (cond ((lx/which? "slock") "slock")
-			     ((lx/which? "i3lock") "i3lock"))
+(defparameter *locker* (cond ((eas/commandv "slock") "slock")
+			     ((eas/commandv "i3lock") "i3lock"))
   "Default System Locker.")
 
-;; -----------------
-;; CUSTOM COMMANDS
-;; -----------------
-
-(defcommand run-editor () ()
-  "Run an instance of `*editor*' with property`:instance'."
-  (lx/run-app *editor* (list :instance *editor*)))
-
-(defcommand run-ide () ()
-  "Run an instance of `*ide*' with property`:instance'."
-  (lx/run-app *ide* (list :instance *ide*)))
-
-(defcommand run-browser () ()
-  "Run an instance of `*browser*' with property`:instance'."
-  (lx/run-app *browser* (list :instance *browser*)))
-
-(defcommand run-terminal () ()
-  "Run an instance of `*terminal*' with property`:instance'."
-  (lx/run-app *terminal* (list :instance *terminal*)))
-
-(defcommand run-locker () ()
-  "Run an instance of `*locker*' with property`:instance'."
-  (lx/run-app *locker* (list :instance *locker*)))
-
-(define-key *top-map* (kbd "s-RET") "run-terminal")
-(define-key *top-map* (kbd "s-l") "run-locker")
-(define-key *top-map* (kbd "s-b") "run-browser")
-(define-key *top-map* (kbd "s-e") "run-editor")
-
-(defcommand safe-quit () ()
-  "Checks if any windows are open before quitting."
-  (let ((win-count 0)) ;; count the windows in each group
-    (dolist (group (screen-groups (current-screen)))
-      (setq win-count (+ (length (group-windows group)) win-count)))
-    (if (= win-count 0) ;; display the number of open windows or quit
-	(run-commands "quit")
-	(message (format nil "You have ~d ~a open" win-count
-			 (if (= win-count 1) "window" "windows"))))))
-
-;; -------------------
+;; ===================================================
 ;; SOFTWARE PER GROUPS
-;; -------------------
+
 
 (defparameter *frame-preferences*
   '(("mx"
-     (0 t t :class "Emacs"))
-    ("ide"
-     (0 t t :class "rider")
-     (1 t t :class "monodevelop")
-     (2 t t :class "Code"))
-    ("sistema"
-     (0 t t :class "st")
-     (1 t t :class "Gnome-terminal"))
-    ("midia"
+     (0 t t :class "Emacs")
+     (1 t t :class "Code"))
+    ("read"
+     (0 t t :class "okular")
+     (1 t t :class "evince")
+     (2 t t :class "libreoffice-writer"))
+    ("term"
+     (0 t t :class "Alacritty")
+     (1 t t :class "st")
+     (2 t t :class "Gnome-terminal"))
+    ("www"
+     (0 t t :class "Chromium")
+     (1 t t :class "Firefox")
+     (2 t t :class "Google-chrome")
+     (3 t t :class "nyxt"))
+    ("media"
      (0 t t :title "mpv")
      (1 t t :title "vlc")
      (2 t t :title "libreoffice")
-     (3 t t :title "firefox")
      (4 t t :title "Thunderbird")
      (5 t t :title "wine.exe")
      (6 t t :title "wineboot.exe")
      (7 t t :title "winecfg.exe")
-     (9 t t :title "deluge-gtk"))
-    ("www"
-     (0 t t :class "Firefox")
-     (1 t t :class "Google-chrome")
-     (2 t t :class "nyxt")
-     (3 t t :class "Evince")))
+     (8 t t :title "kdetorrent")))
   "List of preferences to pass to define-frame-preference.")
 
 (when (consp *frame-preferences*)
   (loop for (name . prefs) in *frame-preferences*
 	do (eval `(define-frame-preference ,name ,@prefs))))
 
-(defcommand tocador () ()
-  (let ((link (trivial-clipboard:text))
-	(player "mpv")
-	(args "--no-config --no-audio-display"))
-    (runner "mpv" (concatenate 'string args
-			       " "
-			       link))))
-
-(define-key *top-map* (kbd "s-P") "tocador")
-
-;; WALLPAPER
-(defun waller()
-  (let ((setter "feh")
-	(setter-args "--randomize --bg-fill")
-	(wallpapers (concatenate 'string *pictures* "/papelparede")))
-    (run-shell-command (concatenate 'string  setter " " setter-args " " wallpapers))))
-
-(when (lx/which? "feh")
-  (waller))
-
-;; -----------------------------
-;; TECLAS - APLICATIVOS EXTERNOS
-;; -----------------------------
+;; ===================================================
+;; KEYBINDINGS
 
 (dolist (current
-	 '(("s-A"                    "cero media getmedia 'vorbis'")
-	   ("s-V"                    "cero media getmedia")
-	   ("s-SPC"                  "tocador-alternar")
-	   ("s-n"                    "tocador-proxima")
-	   ("s-z"                    "mpv ~/Musica/oosh.ogg")
-	   ("Print"                  "screenshotter")
-	   ("M-s-w"                  "brilho-cima")
-	   ("M-s-s"                  "brilho-baixo")
-	   ("s-W"                    "volume-cima")
-	   ("s-S"                    "volume-baixo")
-	   ("s-E"                    "volume-alternar")
-	   ("XF86AudioRaiseVolume"   "volume-cima")
-	   ("XF86AudioLowerVolume"   "volume-baixo")
-	   ("XF86AudioMute"          "volume-mute")))
+	 '(("s-P"                    "s-play")
+	   ("s-V"                    "s-video")
+	   ("s-SPC"                  "mpc toggle")
+	   ("M-s-d"                  "mpc next")
+	   ("s-z"                    "mpv ~/Music/oosh.ogg")
+	   ("Print"                  "s-shot")
+	   ("s-a"                    "s-backlight up")
+	   ("s-d"                    "s-backlight down")
+	   ("s-w"                    "s-volume up")
+	   ("s-s"                    "s-volume down")
+	   ("s-e"                    "s-volume toggle")
+	   ("XF86AudioRaiseVolume"   "s-volume up")
+	   ("XF86AudioLowerVolume"   "s-volume down")
+	   ("XF86AudioMute"          "s-volume toggle")))
   (define-key *top-map*
       (kbd (first current))
-    (concatenate 'string "exec " (second current))))
+    (concatenate 'string "exec" " " (second current))))
 
 ;; -----------------
-;; CONTRIB MODULOS
+;; CONTRIB MODULES
 ;; -----------------
 
 ;; CONTRIB MODULOS LOCALIZACAO
-(set-module-dir (pathname-as-directory (concat *lar* "/Projects/lisp/stumpwm-contrib")))
+(set-module-dir (pathname-as-directory (concat *lar* "/Builds/stumpwm-contrib")))
 
-;; LOAD MODULES
 (load-module "battery-portable")
-(load-module "cpu")
-(load-module "mem")
+;; (load-module "cpu")
+;; (load-module "mem")
 (load-module "wifi")
 
 (load-module "end-session")
@@ -334,16 +250,106 @@
 ;; CONTRIB MODELINE
 (setf *screen-mode-line-format* "^B%n^b:  %W ^> / %C / %B / %M / %d    ")
 
-   ;; -----------------
-   ;; AUTO INICIA
-   ;; -----------------
-   (let ((autostart "autoinicia-aps"))
-     (when (lx/which? autostart)
-       (run-shell-command autostart)))
+;; (defun executables ()
+;;   (loop with path = (uiop:getenv "PATH")
+;;         for p in (uiop:split-string path :separator ":")
+;;         for dir = (probe-file p)
+;;         when (uiop:directory-exists-p dir)
+;;           append (uiop:directory-files dir)))
+
+;; (defun find-executable (name)
+;;   (find name (executables)
+;;         :test #'equalp
+;;         :key #'pathname-name))
+
+;; (defun eas/anyexec (lst)
+;;   "Return first executable that exist in lst"
+;;   (dolist (current lst)
+;;     (when (eas/commandv current)
+;;       current)))
+
+
+;; (defun eas/run-app (cmd prop &optional args) ;; FIX: fix
+;;   "Run an instance of `cmd' with property `prop' (and any optional arguments `args')"
+;;   (if (null args)
+;;       (run-or-raise cmd prop)
+;;       (run-or-raise (cat cmd " " args) prop)))
+
+;; ;; (defcommand run-editor () ()
+;;   "Run an instance of `*editor*' with property`:instance'."
+;;   (eas/run-app *editor* (list :instance *editor*)))
+
+;; (defcommand run-ide () ()
+;;   "Run an instance of `*ide*' with property`:instance'."
+;;   (eas/run-app *ide* (list :instance *ide*)))
+
+;; (defcommand run-browser () ()
+;;   "Run an instance of `*browser*' with property`:instance'."
+;;   (eas/run-app *browser* (list :instance *browser*)))
+
+;; (defcommand run-terminal () ()
+;;   "Run an instance of `*terminal*' with property`:instance'."
+;;   (eas/run-app *terminal* (list :instance *terminal*)))
+
+;; (defcommand run-locker () ()
+;;   "Run an instance of `*locker*' with property`:instance'."
+;;   (eas/run-app *locker* (list :instance *locker*)))
+
+;; (define-key *top-map* (kbd "s-RET") "run-terminal")
+;; (define-key *top-map* (kbd "s-l") "run-locker")
+;; (define-key *top-map* (kbd "s-b") "run-browser")
+;; (define-key *top-map* (kbd "s-e") "run-editor")
 
 ;; -----------------
-;; AUTO INICIA
+;; EXTERNAL SOFTWARE
 ;; -----------------
-(let ((autostart "autoinicia-aps"))
-  (when (lx/which? autostart)
-    (run-shell-command autostart)))
+
+;; GLOBAL MACROS
+;; (defmacro search-on-web (name url-prefix)
+;;   `(defcommand ,name (search)
+;;      ((:rest ,(concatenate 'string (symbol-name name) ": ")))
+;;      (run-shell-command (format nil "~A ~A"
+;; 				*browser*
+;; 				(concat ,url-prefix (substitute #\+ #\Space search))))))
+
+;; (search-on-web google "http://www.google.com/search?q=")
+;; (search-on-web wikipedia "http://en.wikipedia.org/wiki/Special:Search?fulltext=Search&search=")
+;; (search-on-web youtube "http://youtube.com/results?search_query=")
+
+;; (defun runner (program &optional args)
+;;   ".NET like Runnner."
+;;   (uiop:run-program (concatenate 'string program " " args)))
+
+
+;; (defcommand tocador () ()
+;;   (let ((link (trivial-clipboard:text))
+;; 	(player "mpv")
+;; 	(args "--no-config --no-audio-display"))
+;;     (runner "mpv" (concatenate 'string args
+;; 			       " "
+;; 			       link))))
+;; (define-key *top-map* (kbd "s-P") "tocador")
+
+;; ;; WALLPAPER
+;; (defun waller()
+;;   (let ((setter "feh")
+;; 	(setter-args "--randomize --bg-fill")
+;; 	(wallpapers (concatenate 'string *pictures* "/papelparede")))
+;;     (run-shell-command (concatenate 'string  setter " " setter-args " " wallpapers))))
+
+;; (when (eas/commandv "feh")
+;;   (waller))
+
+;; -----------------
+;; CUSTOM COMMANDS
+;; -----------------
+
+;; (defcommand safe-quit () ()
+;;   "Checks if any windows are open before quitting."
+;;   (let ((win-count 0)) ;; count the windows in each group
+;;     (dolist (group (screen-groups (current-screen)))
+;;       (setq win-count (+ (length (group-windows group)) win-count)))
+;;     (if (= win-count 0) ;; display the number of open windows or quit
+;; 	(run-commands "quit")
+;; 	(message (format nil "You have ~d ~a open" win-count
+;; 			 (if (= win-count 1) "window" "windows"))))))
