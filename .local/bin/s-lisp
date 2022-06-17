@@ -2,29 +2,60 @@
 
 # debug options
 set -euo pipefail
+export PREFIX=$HOME/.local
 
-# ===========================
-# VARIABLES
-QUICKLISP=quicklisp.lisp
-QUICKLISP_LOCATION="/tmp/$QUICKLISP"
-SBCL_LOCATION="$HOME/Builds/sbcl"
+BUILDS_LOCATION=$HOME/Builds
 
 # ===========================
 # SBCL INSTALL
-git clone git://git.code.sf.net/p/sbcl/sbcl "$SBCL_LOCATION"
+
+SBCL_LOCATION="$HOME/Builds/sbcl"
+[[ -d "$SBCL_LOCATION" ]] && git clone git://git.code.sf.net/p/sbcl/sbcl "$SBCL_LOCATION"
 export -n SBCL_HOME
 cd "$SBCL_LOCATION"
 sh make.sh --fancy --prefix="${HOME}/.local/bin"
 
 # ===========================
 # QUICKLISP INSTALL
+
+QUICKLISP=quicklisp.lisp
+QUICKLISP_LOCATION="/tmp/$QUICKLISP"
+
 [[ ! -f $QUICKLISP_LOCATION ]] && wget -c https://beta.quicklisp.org/quicklisp.lisp -P /tmp
 
 # ===========================
 # STUMPWM INSTALL
+if -f "$HOME/.quicklisp/lib/alexandria/misc.lisp"; then
+    sbcl --no-sysinit --no-userinit --load /tmp/quicklisp.lisp \
+        --eval '(quicklisp-quickstart:install)' \
+        --eval "(ql:quickload '(:quicklisp-slime-helper :clx :cl-ppcre :alexandria))" \
+        --eval "(ql:quickload '(:xembed :xml-emitter :dbus :prove :swank))" \
+        --eval "(quit)"
+fi
 
-sbcl --no-sysinit --no-userinit --load "$QUICK_LOCATION" \
-    --eval '(quicklisp-quickstart:install)' \
-    --eval "(ql:quickload '(:quicklisp-slime-helper :clx :cl-ppcre :alexandria))" \
-    --eval "(ql:quickload '(:xembed :xml-emitter :dbus :prove :swank))" \
-    --eval "(quit)"
+# ===========================
+# STUMPWM
+export SBCL_HOME=$PREFIX/bin
+STUMPWM_LOCATION="$BUILDS_LOCATION/stumpwm"
+STUMPWM_CONTRIB_LOCATION="$BUILDS_LOCATION/stumpwm-contrib"
+
+[[ ! -d "$STUMPWM_LOCATION/.git" ]] && git clone https://github.com/stumpwm/stumpwm "$STUMPWM_LOCATION"
+[[ ! -d "$STUMPWM_CONTRIB_LOCATION/.git" ]] && git clone https://github.com/stumpwm/stumpwm-contrib "$STUMPWM_CONTRIB_LOCATION"
+
+git -C "$STUMPWM_LOCATION" pull
+git -C "$STUMPWM_CONTRIB_LOCATION" pull
+
+cd "$STUMPWM_LOCATION"
+./autogen.sh
+./configure --prefix=$HOME/.local
+
+if ! grep 'Type=XSession' /usr/share/xsessions/stumpwm.desktop; then
+    cat <<EOF | sudo tee -a /usr/share/xsessions/stumpwm.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=StumpWM
+Comment=Login using StumpWM
+Exec=/home/easbarba/.local/bin/stumpwm
+Type=XSession
+EOF
+fi
