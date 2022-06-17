@@ -1,4 +1,5 @@
 name,branch,url
+alezost-stumpwm-config,master,https://github.com/alezost/stumpwm-config
 nyxt,master,https://github.com/atlas-engineer/nyxt
 stumpwm-contrib,master,https://github.com/stumpwm/stumpwm-contrib
 stumpwm,master,https://github.com/stumpwm/stumpwm
