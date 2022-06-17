@@ -1,5 +1,6 @@
 name,branch,url
 nyxt,master,https://github.com/atlas-engineer/nyxt
+stumpwm-contrib,master,https://github.com/stumpwm/stumpwm-contrib
 stumpwm,master,https://github.com/stumpwm/stumpwm
 cl-cookbook,master,https://github.com/LispCookbook/cl-cookbook
 quicklisp-client,master,https://github.com/quicklisp/quicklisp-client
