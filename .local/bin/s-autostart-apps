@@ -11,7 +11,7 @@ LOCAL_BIN="$HOME/.local/bin"
 # * APPS LIST
 
 TOOLS=(udiskie mpd nm-applet)
-APPS=(emacs alacritty zathura chromium "$LOCAL_BIN/s-wall")
+APPS=(s-mx alacritty chromium "$LOCAL_BIN/s-wall")
 
 # * Helpers
 
