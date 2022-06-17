@@ -35,7 +35,7 @@
 (setf *screen-mode-line-format* "^B%n^b:  %W ^> / %C / %B / %M / %d  "
       *mode-line-timeout* 2
       *mode-line-foreground-color* "#c6797e"
-      *mode-line-background-color* "#172030"
+      *mode-line-background-color* "#2a2426"
       *mode-line-position* :bottom)
 
 (enable-mode-line (current-screen) (current-head) t)
@@ -234,7 +234,7 @@
 (set-module-dir (pathname-as-directory (concat *lar* "/Builds/stumpwm-contrib")))
 
 (load-module "battery-portable")
-;; (load-module "cpu")
+(load-module "cpu")
 (load-module "mem")
 (load-module "wifi")
 
@@ -248,5 +248,4 @@
 (notify:notify-server-toggle)
 
 ;; CONTRIB MODELINE
-(setf *screen-mode-line-format* "^B%n^b:  %W ^> / %C / %B / %M / %d    ")
-
+(setf *screen-mode-line-format* "^B%n^b:  %W ^> / %c / %t / %f / %B / %M / %d   ")
