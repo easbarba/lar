@@ -18,11 +18,11 @@ class Screenshot
   end
 
   def full
-    "#{shotter.exec} #{shotter.full} #{shotter.folder}"
+    %(shotter.exec shotter.common shotter.full shotter.full).join ' '
   end
 
   def partial
-    "#{shotter.exec} #{shotter.partial} #{shotter.folder}"
+    %w(shotter.exec shotter.common shotter.partial shotter.folder)
   end
 
   def info
@@ -56,7 +56,7 @@ class Shotters
   def all
     {
       scrot: OpenStruct.new(exec: 'scrot',
-                            full: '--focused --silent', partial: '--select --silent',
+                            full: '--focused --silent', partial: '--select --silent', common: '--border --quality=100 ',
                             folder: FOLDER.join(screenshot_name)),
       main: OpenStruct.new(exec: 'maim',
                            full: '', partial: '--select',
