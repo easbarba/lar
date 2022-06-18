@@ -8,6 +8,7 @@ quicklisp-client,master,https://github.com/quicklisp/quicklisp-client
 quicklisp-bootstrap,master,https://github.com/quicklisp/quicklisp-bootstrap
 quicklisp-controller,master,https://github.com/quicklisp/quicklisp-controller
 clx,master,https://github.com/franzinc/clx
+clpm,main,https://gitlab.common-lisp.net/clpm/clpm
 alexandria,master,https://gitlab.common-lisp.net/alexandria/alexandria
 asdf,master,https://gitlab.common-lisp.net/asdf/asdf
 sbcl,master,git://git.code.sf.net/p/sbcl/sbcl
