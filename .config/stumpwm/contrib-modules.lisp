@@ -20,4 +20,4 @@
 (notify:notify-server-toggle)
 
 ;; CONTRIB MODELINE
-(setf *screen-mode-line-format* "^B%n^b:  %W ^> / %c / %t / %f / %B / %M / %d   ")
+(setf *screen-mode-line-format* "^B%n^b:  %W ^> / %c / %t / %f / %B / %M / %d      ")
