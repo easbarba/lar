@@ -12,7 +12,6 @@
 # TODO: Remove unused early symlinked dotfiles.
 # TODO: Accept git commit sha to symlink,
 # TODO: Read-only symlinks.
-# TODO: OptParser cli.
 # TODO: dotsignore to accept hash-like folder. eg: .config{foo,bar,meh,forevis}
 
 require 'pathname'
@@ -22,12 +21,10 @@ require 'find'
 class Dots
   HOME = Pathname.new Dir.home
 
-  attr_reader :root
-  attr_reader :home
-  attr_reader :target_link
+  attr_reader :root, :home, :target_link
 
   def initialize(root)
-    @root = Pathname.new root if root
+    @root = Pathname.new(root) if root
     @target_link = {}
   end
 
@@ -118,7 +115,39 @@ class Dots
     backup_files
     symlink_files
   end
+
+  def info
+    puts @root
+  end
+
+  def dryrun; end
 end
 
 # RUN
-Dots.new(ARGV.first).deploy
+
+module Cli
+  require 'optparse'
+
+  def self.options
+    main = Dots.new(ARGV[1])
+
+    OptionParser.new do |opts|
+      opts.banner = 'Usage: dots [options]'
+
+      opts.on('-s', '--symlink', 'deploy dotfiles symlinking') do
+        main.deploy
+      end
+
+      opts.on('-d', '--dry-run', 'mimic symlinking deployment') do
+        main.dryrun
+      end
+
+      opts.on('-i', '--info', 'general information of internals commands') do
+        main.info
+      end
+    end
+  end
+end
+
+Cli.options.parse! ['--help'] if ARGV.empty?
+Cli.options.parse!
