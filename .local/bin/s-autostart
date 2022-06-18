@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# Description:
+
+DEPS=(bash command nohup pgrep awk)
+
+# Description: auto-start list of software toolings
+
+LOCAL_BIN="$HOME/.local/bin"
+
+# * GUARDS
+[ "$DESKTOP_SESSION" == "plasma" ] && exit
+[ "$DESKTOP_SESSION" == "gnome" ] && exit
+
+# * LIST OF PROGRAMS
+TOOLS=('udiskie --notify --tray'
+  'mpd'
+  'nm-applet'
+  'xautolock -time 1 -locker "slock" -detectsleep')
+APPS=('s-mx'
+  'alacritty'
+  'chromium'
+  "$LOCAL_BIN/s-wall")
+
+# * HELPERS
+
+not_found() {
+  # check if program executable is found
+  local app=$(echo "$1" | awk '{ print $1}') # get first word of command string with options given
+
+  [[ ! -x $(command -v "$app") ]]
+}
+
+is_running() {
+  # type: boolean
+  # return if PROGRAM is running
+
+  [[ $(pgrep -f "$1") ]]
+}
+
+run() {
+  # run program as background process
+  # TODO: use dbus-session-run
+
+  nohup bash -c "$1" &
+}
+
+dolist() {
+  # given a list of programs, perform a few tasks before running.
+
+  local apps=("$@")
+
+  for app in "${apps[@]}"; do
+    not_found "$app" && continue
+    is_running "$app" && continue
+    run "$app"
+  done
+}
+
+# * RUN
+dolist "${TOOLS[@]}"
+dolist "${APPS[@]}"
