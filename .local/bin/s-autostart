@@ -16,7 +16,7 @@ LOCAL_BIN="$HOME/.local/bin"
 TOOLS=('udiskie --notify --tray'
   'blueman-applet'
   'nm-applet'
-  'xautolock -time 1 -locker "slock" -detectsleep'
+  'xautolock -time 3 -locker "slock" -detectsleep'
   'mpd')
 APPS=('s-mx'
   'alacritty'
