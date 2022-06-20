@@ -14,9 +14,10 @@ LOCAL_BIN="$HOME/.local/bin"
 
 # * LIST OF PROGRAMS
 TOOLS=('udiskie --notify --tray'
-  'mpd'
+  'blueman-applet'
   'nm-applet'
-  'xautolock -time 1 -locker "slock" -detectsleep')
+  'xautolock -time 1 -locker "slock" -detectsleep'
+  'mpd')
 APPS=('s-mx'
   'alacritty'
   'chromium'
