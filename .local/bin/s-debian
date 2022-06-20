@@ -48,7 +48,7 @@ wayland=(sway swaybg swaylock swayidle foot clipman grim slurp wl-clipboard xway
 
 xorg=(xorg xserver-xorg-core xclip xsel feh scrot network-manager-gnome suckless-tools)
 
-wm=(udiskie brightnessctl bluez mpd mpc ncmpcpp zathura zathura-cb)
+wm=(udiskie brightnessctl bluez blueman mpd mpc ncmpcpp zathura zathura-cb)
 
 laptop=(acpid tlp vainfo i965-va-driver libvdpau-va-gl1 libiw-dev hddtemp acpi-call dialog sysstat)
 
