@@ -1,5 +1,11 @@
 name,branch,url
-alezost-stumpwm-config,master,https://github.com/alezost/stumpwm-config
+stumpwm-goodies-joelagnel,master,https://github.com/joelagnel/stumpwm-goodies
+stumpwm-config-lepisma,master,https://github.com/lepisma/cfg
+stumpwm-config-herbertjones,master,https://github.com/herbertjones/my-stumpwm-config
+stumpwm-config-paulownia,master,https://github.com/stumpwm/paulownia
+stumpwm-config-mahogany,master,https://github.com/stumpwm/mahogany
+stumpwm-config-nicolaspetton,master,https://github.com/NicolasPetton/stumpwm.d
+stumpwm-config-alezost,master,https://github.com/alezost/stumpwm-config
 nyxt,master,https://github.com/atlas-engineer/nyxt
 stumpwm-contrib,master,https://github.com/stumpwm/stumpwm-contrib
 stumpwm,master,https://github.com/stumpwm/stumpwm
