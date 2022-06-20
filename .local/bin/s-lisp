@@ -3,7 +3,6 @@
 # debug options
 set -euo pipefail
 export PREFIX=$HOME/.local
-
 BUILDS_LOCATION=$HOME/Builds
 
 # ===========================
@@ -35,6 +34,7 @@ fi
 
 # ===========================
 # STUMPWM
+
 export SBCL_HOME=$PREFIX/bin
 STUMPWM_LOCATION="$BUILDS_LOCATION/stumpwm"
 STUMPWM_CONTRIB_LOCATION="$BUILDS_LOCATION/stumpwm-contrib"
@@ -55,7 +55,20 @@ if ! grep 'Type=XSession' /usr/share/xsessions/stumpwm.desktop; then
 Encoding=UTF-8
 Name=StumpWM
 Comment=Login using StumpWM
-Exec=/home/easbarba/.local/bin/stumpwm
+Exec=$HOME/.local/bin/stumpwm
 Type=XSession
 EOF
 fi
+
+# ===================================================
+# CLPM
+
+CLPM_LOCATION="$BUILDS_LOCATION/clpm"
+
+[[ ! -d $CLPM_LOCATION/.git ]] && git clone https://gitlab.common-lisp.net/clpm/clpm "$CLPM_LOCATION"
+
+cd "$CLPM_LOCATION"
+
+git submodule init
+git submodule update
+sbcl --script scripts/build-release.lisp

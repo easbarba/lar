@@ -16,22 +16,23 @@
    (truename (merge-pathnames *xdg-config-home-* "stumpwm")))
   "StumpWM configuration directory.")
 
+(defun dy/load (filename)
+  "Load FILENAME, without extension."
+  (let ((file (merge-pathnames (concat filename ".lisp") *config-home*)))
+    (if (probe-file file)
+        (load file)
+        (format *error-output* "File '~a' doesn't exist." file))))
+
 ;; load all settings files.
-(let ((initial-files (list
-                         "settings-variables"
-                         "settings-misc"
-                         "settings-modeline"
-                         "settings-workspaces"
-                         "settings-keybinds"
-                         "lisp-libraries"
-                         "custom-functions"
-                         "system-folders-variables"
-                         "system-variables"
-                         "system-keybinds"
-                         "stumpwm-modules-contrib"
-                         "system-autostart")))
-  (dolist (filename initial-files)
-     (let ((file (merge-pathnames (concat filename ".lisp") *config-home*)))
-       (if (probe-file file)
-           (load file)
-           (format *error-output* "File '~a' doesn't exist." file)))))
+(mapcar #'dy/load '("settings-variables"
+                    "settings-misc"
+                    "settings-modeline"
+                    "settings-workspaces"
+                    "settings-keybinds"
+                    "lisp-libraries"
+                    "custom-functions"
+                    "system-folders-variables"
+                    "system-variables"
+                    "system-keybinds"
+                    "stumpwm-modules-contrib"
+                    "system-autostart"))

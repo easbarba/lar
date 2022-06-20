@@ -14,19 +14,3 @@
     output-string))
 
 
-(defun dy/load (filename)
-  "Load FILENAME, without extension."
-  (let ((file (merge-pathnames (concat filename ".lisp")
-                               *config-home*)))
-    (if (probe-file file)
-        (load file)
-        (format *error-output* "File '~a' doesn't exist." file))))
-
-;; s-sysinfo modeline
-(setf *screen-mode-line-format*
-      (list "^B%n^b:  %W ^> "
-            " "
-            '(:eval (string-trim (string #\newline) (async-run "s-sysinfo")))
-            " "
-            "%d"
-            "     "))
