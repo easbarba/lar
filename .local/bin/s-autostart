@@ -20,7 +20,7 @@ TOOLS=('udiskie --notify --tray'
   'mpd')
 APPS=('s-mx'
   'alacritty'
-  'chromium'
+  'firefox'
   "$LOCAL_BIN/s-wall")
 
 # * HELPERS

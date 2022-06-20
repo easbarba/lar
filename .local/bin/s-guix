@@ -28,8 +28,8 @@ s-echo "GNU GUIX"
 }
 
 # Fix GUIX_LOCPATH warning
-version=$(ls ~/.guix-profile/lib/locale/)
-guix install glibc-locales@"$version"
+# version=$(ls ~/.guix-profile/lib/locale/)
+# guix install "glibc-locales@$version"
 
 packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
 s-dolist "guix install" "${packages[@]}"

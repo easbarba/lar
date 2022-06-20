@@ -21,13 +21,13 @@ screen -t tune ncmpcpp
 screen -t libre bash
 screen -t water fish
 
+# custom bindings
+bind ! s-video
+
 # Resize
 bind = resize =
 bind + resize +3
 bind - resize -3
-
-# Statusline String
-hardstatus alwayslastline "%{= kb}[ %1` ]%= %{= kw}%?%-w%?%{r}(%{g} %n %t%?(%u)%?%{r} )%{w}%?%+w%?%?%= [%{Y} %d/%m %{Y}%c %{W}]"
 
 # backticks - The output of such a command is used for substitution
 # session title
@@ -45,3 +45,6 @@ defscrollback 5000
 # hardcopydir:  The directory which contains all hardcopies.
 hardcopydir ~/.config/screen
 bufferfile ~/.config/screen/buffer
+
+# Statusline String
+hardstatus alwayslastline "%{= kb}[ %1` ]%= %{= kw}%?%-w%?%{r}(%{g} %n %t%?(%u)%?%{r} )%{w}%?%+w%?%?%= [%{Y} %d/%m %{Y}%c %{W}]"

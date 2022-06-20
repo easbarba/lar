@@ -103,8 +103,8 @@ s-echo "Clean up"
 UNUSED=(firefox-esr)
 s-dolist "$REMOVE" "${UNUSED[@]}"
 
-PURGE=(*nvidia*)
-s-dolist "$PURGE" "${PURGE[@]}"
+TOPURGE=(*nvidia*)
+s-dolist "$PURGE" "${TOPURGE[@]}"
 
 s-echo "Debian Services"
 sudo systemctl enable fstrim.timer

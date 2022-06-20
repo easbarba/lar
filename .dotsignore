@@ -3,11 +3,9 @@ README.md
 .iex.exs
 .tcshrc
 .zshrc
-.xsessionrc
 .config/awesome
 .config/ansible
 .config/Clementine
-.config/dunst
 .config/debian
 .config/devilspie2
 .config/gtk-3.0
@@ -17,7 +15,6 @@ README.md
 .config/i3
 .config/micro
 .config/kitty
-.config/ncmpcpp
 .config/nix
 .config/nixos
 .config/nixpkgs

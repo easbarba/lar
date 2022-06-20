@@ -3,7 +3,7 @@
 # Debug Options
 set -euo pipefail
 
-EMAIL="$USER@outlook.com"
+EMAIL="$USER@tutanota.com"
 SSH_HOME="$HOME/.ssh"
 SSH_KEY_LOCATION="$SSH_HOME/id_ed25519"
 
