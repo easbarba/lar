@@ -49,12 +49,12 @@ cd "$STUMPWM_LOCATION"
 ./autogen.sh
 ./configure --prefix=$HOME/.local
 
-if ! grep 'Type=XSession' /usr/share/xsessions/stumpwm.desktop; then
-    cat <<EOF | sudo tee -a /usr/share/xsessions/stumpwm.desktop
+if ! grep 'Type=XSession' /usr/share/xsessions/stumpwm-local.desktop; then
+    cat <<EOF | sudo tee -a /usr/share/xsessions/stumpwm-local.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=StumpWM
-Comment=Login using StumpWM
+Name=StumpWM-local
+Comment=Local StumpWM build
 Exec=$HOME/.local/bin/stumpwm
 Type=XSession
 EOF
