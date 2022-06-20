@@ -2,35 +2,36 @@
 
 (in-package :stumpwm)
 
+(defparameter *home*
+  (directory-namestring (user-homedir-pathname))
+  "Home Folder.")
+
 (defparameter *xdg-config-home-*
   (directory-namestring
-   (truename (merge-pathnames (user-homedir-pathname)
-                              ".config")))
+   (truename (merge-pathnames *home* ".config")))
   "XDG CONFIG HOME.")
 
 (defparameter *config-home*
   (directory-namestring
-   (truename (merge-pathnames *xdg-config-home-*
-                              "stumpwm")))
+   (truename (merge-pathnames *xdg-config-home-* "stumpwm")))
   "StumpWM configuration directory.")
 
-(defun dy/load (filename)
-  "Load FILENAME, without extension."
-  (let ((file (merge-pathnames (concat filename ".lisp")
-                               *config-home*)))
-    (if (probe-file file)
-        (load file)
-        (format *error-output* "File '~a' doesn't exist." file))))
-
-(dy/load "settings-variables")
-(dy/load "settings-misc")
-(dy/load "settings-modeline")
-(dy/load "settings-workspaces")
-(dy/load "settings-keybinds")
-(dy/load "lisp-libraries")
-(dy/load "custom-functions")
-(dy/load "system-folders-variables")
-(dy/load "system-variables")
-(dy/load "system-keybinds")
-(dy/load "stumpwm-modules-contrib")
-(dy/load "system-autostart")
+;; load all settings files.
+(let ((initial-files (list
+                         "settings-variables"
+                         "settings-misc"
+                         "settings-modeline"
+                         "settings-workspaces"
+                         "settings-keybinds"
+                         "lisp-libraries"
+                         "custom-functions"
+                         "system-folders-variables"
+                         "system-variables"
+                         "system-keybinds"
+                         "stumpwm-modules-contrib"
+                         "system-autostart")))
+  (dolist (filename initial-files)
+     (let ((file (merge-pathnames (concat filename ".lisp") *config-home*)))
+       (if (probe-file file)
+           (load file)
+           (format *error-output* "File '~a' doesn't exist." file)))))
