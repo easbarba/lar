@@ -3,7 +3,7 @@
 ;; -----------------
 
 ;; CONTRIB MODULOS LOCALIZACAO
-(set-module-dir (pathname-as-directory (concat *lar* "/Builds/stumpwm-contrib")))
+(set-module-dir (pathname-as-directory (concat *home* "/Builds/stumpwm-contrib")))
 
 ;; (load-module "battery-portable")
 ;; (load-module "cpu")
