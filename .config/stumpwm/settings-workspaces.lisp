@@ -20,25 +20,17 @@
     ("read"
      (0 t t :class "okular")
      (1 t t :class "evince")
-     (2 t t :class "libreoffice-writer"))
-    ;; ("term"
-    ;;  (0 t t :class "Alacritty")
-    ;;  (1 t t :class "Konsole")
-    ;;  (2 t t :class "Gnome-terminal"))
+     (2 t t :title "libreoffice")
+     (3 t t :class "libreoffice-writer"))
     ("www"
-     (0 t t :class "Chromium")
-     (1 t t :class "Firefox")
-     (2 t t :class "Google-chrome")
+     (0 t t :class "Icecat")
+     (1 t t :class "Chromium")
+     (2 t t :class "Firefox")
      (3 t t :class "nyxt"))
     ("media"
      (0 t t :title "mpv")
      (1 t t :title "vlc")
-     (2 t t :title "libreoffice")
-     (4 t t :title "Thunderbird")
-     (5 t t :title "wine.exe")
-     (6 t t :title "wineboot.exe")
-     (7 t t :title "winecfg.exe")
-     (8 t t :title "kdetorrent")))
+     (2 t t :title "ktorrent")))
   "List of preferences to pass to define-frame-preference.")
 
 (when (consp *frame-preferences*)
