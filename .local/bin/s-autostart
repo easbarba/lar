@@ -1,28 +1,24 @@
 #!/usr/bin/env bash
 
-# Description:
+# Description: auto-start some software executables
 
 DEPS=(bash command nohup pgrep awk)
-
-# Description: auto-start list of software toolings
-
 LOCAL_BIN="$HOME/.local/bin"
 
-# * GUARDS
-[ "$DESKTOP_SESSION" == "plasma" ] && exit
-[ "$DESKTOP_SESSION" == "gnome" ] && exit
-
+# ===================================================
 # * LIST OF PROGRAMS
 TOOLS=('udiskie --notify --tray'
   'blueman-applet'
+  'dunst'
   'nm-applet'
+  'setxkbmap -model abnt2 -layout br -variant abnt2'
   'xautolock -time 3 -locker "slock" -detectsleep'
   'mpd')
 APPS=('s-mx'
-  'alacritty'
   'firefox'
   "$LOCAL_BIN/s-wall")
 
+# ===================================================
 # * HELPERS
 
 not_found() {
@@ -58,6 +54,8 @@ dolist() {
   done
 }
 
+# ===================================================
 # * RUN
+
 dolist "${TOOLS[@]}"
 dolist "${APPS[@]}"
