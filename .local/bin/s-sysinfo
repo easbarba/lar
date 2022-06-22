@@ -126,8 +126,7 @@ _host() {
 _de() {
     [[ $DESKTOP_SESSION != "gnome" ]] && return
 
-    local result=$(echo -e "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)")
-    notify-send "$result"
+    notify-send "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)"
 }
 
 _cli() {
