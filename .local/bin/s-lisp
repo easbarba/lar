@@ -9,10 +9,14 @@ BUILDS_LOCATION=$HOME/Builds
 # SBCL INSTALL
 
 SBCL_LOCATION="$HOME/Builds/sbcl"
-[[ -d "$SBCL_LOCATION" ]] && git clone git://git.code.sf.net/p/sbcl/sbcl "$SBCL_LOCATION"
+[[ ! -d "$SBCL_LOCATION" ]] && git clone git://git.code.sf.net/p/sbcl/sbcl "$SBCL_LOCATION"
 export -n SBCL_HOME
 cd "$SBCL_LOCATION"
 sh make.sh --fancy --prefix="${HOME}/.local/bin"
+# cd ./tests && sh ./run-tests.sh # test a lil more
+# cd ./doc/manual && make #  documentation
+cd "$SBCL_LOCATION"
+sh install.sh --prefix="${HOME}/.local"
 
 # ===========================
 # QUICKLISP INSTALL
@@ -35,7 +39,7 @@ fi
 # ===========================
 # STUMPWM
 
-export SBCL_HOME=$PREFIX/bin
+export SBCL_HOME=$HOME/.local/lib/sbcl # set sbcl to local build
 STUMPWM_LOCATION="$BUILDS_LOCATION/stumpwm"
 STUMPWM_CONTRIB_LOCATION="$BUILDS_LOCATION/stumpwm-contrib"
 
@@ -47,10 +51,12 @@ git -C "$STUMPWM_CONTRIB_LOCATION" pull
 
 cd "$STUMPWM_LOCATION"
 ./autogen.sh
-./configure --prefix=$HOME/.local
+./configure --prefix="$HOME/.local"
+make -j4
+make install
 
 if ! grep 'Type=XSession' /usr/share/xsessions/stumpwm-local.desktop; then
-    cat <<EOF | sudo tee -a /usr/share/xsessions/stumpwm-local.desktop
+    cat <<EOF | sudo tee -a "/usr/share/xsessions/stumpwm-local.desktop"
 [Desktop Entry]
 Encoding=UTF-8
 Name=StumpWM-local
