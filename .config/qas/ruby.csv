@@ -1,4 +1,5 @@
 name,branch,url
+ruby-lsp,main,https://github.com/Shopify/ruby-lsp
 browser,main,https://github.com/fnando/browser
 brew,master,https://github.com/Homebrew/brew
 sidekiq,main,https://github.com/mperham/sidekiq
