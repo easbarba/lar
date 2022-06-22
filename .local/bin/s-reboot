@@ -3,6 +3,6 @@
 # Debug Options
 set -euo pipefail
 
-# TODO: kill annoying apps before reboot.
+# TODO: kill annoying apps before reboot as libvirt, containers
 
-[[ -x $(command -v systemctl) ]] && systemctl reboot
+[[ -x $(command -v systemctl) ]] && systemctl reboot -i # ignore all users loggedin
