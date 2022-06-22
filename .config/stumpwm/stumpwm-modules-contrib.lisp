@@ -2,18 +2,18 @@
 ;; CONTRIB MODULES
 ;; -----------------
 
-;; CONTRIB MODULOS LOCALIZACAO
+;; CONTRIB MODULES LOCATION
 (set-module-dir (pathname-as-directory (concat *home* "/Builds/stumpwm-contrib")))
 
 (mapcar #'load-module '("end-session"
-                        ;; "ttf-fonts"
-                        "stumptray"
-                        "notify"))
+                        "stumptray"))
 
 (define-key *top-map* (kbd "s-Q") "logout")
 (stumptray::stumptray)
-(notify:notify-server-toggle)
+;; (notify:notify-server-toggle)
 
+;; "ttf-fonts"
+;; "notify"
 ;; "cpu"
 ;; "battery-portable"
 ;; "mem"

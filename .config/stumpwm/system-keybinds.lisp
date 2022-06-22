@@ -2,13 +2,13 @@
 ;; KEYBINDINGS
 
 (dolist (current
-	 '(("s-P"                    "s-play")
+	 '(("s-z"                    "s-mx")
+       ("s-P"                    "s-play")
 	   ("s-V"                    "s-video")
 	   ("s-SPC"                  "mpc toggle")
-	   ("s-D"                  "mpc next")
-       ("s-W"                  "mpc volume +3")
-       ("s-S"                  "mpc volume -3")
-	   ("s-z"                    "mpv ~/Music/oosh.ogg")
+	   ("s-D"                    "mpc next")
+       ("s-W"                    "mpc volume +3")
+       ("s-S"                    "mpc volume -3")
 	   ("Print"                  "s-shot --full")
 	   ("s-Print"                "s-shot --partial")
 	   ("s-a"                    "s-backlight up")
