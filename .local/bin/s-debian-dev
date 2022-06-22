@@ -13,7 +13,7 @@ packages=(emacs libgccjit-11-dev libjansson-dev libjansson4 libwebkit2gtk-4.0-de
 s-dolist "$COMMAND" "${packages[@]}"
 
 # langs
-packages=(sbcl libzstd-dev ruby-full ruby-dev golang python3-pip nodejs npm libssl-dev libfixposix-dev)
+packages=(libzstd-dev ruby-full ruby-dev golang python3-pip nodejs npm libssl-dev libfixposix-dev)
 s-dolist "$COMMAND" "${packages[@]}"
 
 # editors
