@@ -3,26 +3,28 @@
 s-echo "Python Toolings"
 
 # ===========================
+# PROJECT TOOLS
+
 packages=(black pipenv pyflakes pytest isort nose poetry python-lsp-server)
 
-command="python3 -m pip install --upgrade"
+command="python3 -m pip install --user --upgrade"
 s-dolist "$command" "${packages[@]}"
 
 # ===========================
+# LIBRARIES
 
-packages=(pyperclip beautifulsoup4 cryptography)
+packages=(pyperclip beautifulsoup4 interval cryptography)
 
-command="python3 -m pip install --upgrade"
+command="python3 -m pip install --user --upgrade"
 s-dolist "$command" "${packages[@]}"
 
 # ===========================
+# APPS
 
 packages=(yt-dlp)
 
-command="python3 -m pip install --upgrade"
+command="python3 -m pip install --user --upgrade"
 s-dolist "$command" "${packages[@]}"
-
-exit
 
 # ===========================
 # POETRY
@@ -35,3 +37,5 @@ exit
 
     # poetry completions zsh >~/.zfunc/_poetry
 }
+
+exit
