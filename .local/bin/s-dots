@@ -16,6 +16,7 @@
 
 require 'pathname'
 require 'find'
+require 'optparse'
 
 # Mirrors, by symlinking, a dotfiles repository to $HOME.
 class Dots
@@ -31,12 +32,14 @@ class Dots
   # ignore these dotfiles
   def dotignored
     dots = root.join('.dotsignore').read.split "\n"
-    dots.append '.dotsignore' # ignore it too, ofc!
+    dots.append '.dotsignore' # ignore itself too, ofc!
+    dots.append '.git' if root.join('.git').exist? # ignore the .git folder.
     dots.uniq # users may not notice duplicated dotfiles.
   end
 
-  def children?(current)
-    dotignored.map { |x| current.to_path.include? root.join(x).to_path }.any?
+  # is ITEM included in root folder?
+  def children?(item)
+    dotignored.map { |x| item.to_path.include? root.join(x).to_path }.any?
   end
 
   # organize listed items in .dotsignore as pathname
@@ -55,14 +58,12 @@ class Dots
         end
       end
     end
-
-    { folders: folders, files: files } # folders will not be a symlink
   end
 
   # transform origin file absolute path with home as its root instead
   # /a/b/c.tar --> /home/b/c.tar
-  def to_home(this)
-    origin = this.to_path
+  def to_home(item)
+    origin = item.to_path
     homey = HOME.to_path.concat('/')
     result = origin.gsub(root.to_path, homey)
 
@@ -71,7 +72,7 @@ class Dots
 
   # Create folders that contains symlinked files
   def make_folders
-    all[:folders].each do |fld|
+    all_items[:folders].each do |fld|
       folder = to_home fld
       next if folder.exist?
 
@@ -85,7 +86,7 @@ class Dots
   end
 
   def feed_target_link
-    all[:files].each do |target|
+    all_items[:files].each do |target|
       symlink_name = to_home target
       target_link.store(target, symlink_name)
     end
@@ -93,15 +94,15 @@ class Dots
 
   # Move file from home to a /home/backup/{file}
   # or delete it if the file it is pointing does not exist
-  def backup_this(this)
-    warn "WARNING: #{this} found! Deleting/Moving it."
-    this.delete if this.exist? # TODO: if file exist back/delete up it
+  def backup_item(item)
+    warn "WARNING: #{item} found! Deleting/Moving it."
+    item.delete if item.exist? # TODO: if file exist back/delete up it
   end
 
   def backup_files
     target_link.each do |target, link_name|
       puts "#{target} ❯ #{link_name}"
-      backup_this link_name
+      backup_item link_name
     end
   end
 
@@ -123,7 +124,9 @@ class Dots
     puts @root
   end
 
-  def dryrun; end
+  def dryrun
+    p all_items
+  end
 end
 
 def cli
