@@ -39,18 +39,21 @@ class Dots
     dotignored.map { |x| current.to_path.include? root.join(x).to_path }.any?
   end
 
-  def all
-    files = []
-    folders = []
+  # organize listed items in .dotsignore as pathname
+  def all_items
+    { files: [], folders: [] }.tap do |x|
+      Find.find(root) do |item|
+        item = Pathname.new item
 
-    Find.find(root) do |current|
-      current = Pathname.new current
+        next if item == root # skip the root folder itself
+        next if children? item
 
-      next if current.to_path.include? '.git' # ignore the .git folder!
-      next if children? current
-      next if current == root # ????
-
-      current.file? ? files << current : folders << current
+        if item.file?
+          x[:files] << item
+        else
+          x[:folders] << item
+        end
+      end
     end
 
     { folders: folders, files: files } # folders will not be a symlink
