@@ -9,8 +9,10 @@
 # - Folders are not symlinked but created.
 # - dry-run mode
 # - remove faulty symlinks if found
+# - backup non-symlink files to $HOME/.backup
 # - fully implemented cli interface
-
+# - GNU-Linux/BSD distros only
+#
 # TODO: Accept git commit sha as source to symlink deployment.
 # TODO: Read-only symlinks.
 # TODO: dotsignore to accept hash-like folder. eg: .config{foo,bar,meh,forevis}
@@ -61,10 +63,10 @@ class Dots
   # transform  stringfied origin item's root absolute path to home
   # /a/b/c.tar --> /home/b/c.tar
   def to_home(item)
-    item_path = item.to_path
     home_path = HOME.to_path.concat('/') # / is needed to crop enterily item_path root path
+    item_homed = item.to_path.gsub(root.to_path, home_path)
 
-    Pathname.new item_path.gsub(root.to_path, home_path)
+    Pathname.new item_homed
   end
 
   # do not symlink but create top folders of files if it does not exist
