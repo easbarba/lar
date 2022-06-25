@@ -17,16 +17,17 @@
 require 'pathname'
 require 'find'
 require 'optparse'
+require 'fileutils'
 
 # Mirrors, by symlinking, a dotfiles repository to $HOME.
 class Dots
   HOME = Pathname.new Dir.home
 
-  attr_reader :root, :home, :target_link
+  attr_reader :root, :home, :farm
 
   def initialize(root)
     @root = Pathname.new(root) if root
-    @target_link = {}.tap { |f| all_items[:files].each { |t| f.store(t, to_home(t)) } }
+    @farm = {}.tap { |f| all_items[:files].each { |t| f.store(t, to_home(t)) } }
   end
 
   # ignore these dotfiles
@@ -51,11 +52,7 @@ class Dots
         next if item == root # skip the root folder itself
         next if children? item
 
-        if item.file?
-          x[:files] << item
-        else
-          x[:folders] << item
-        end
+        item.file? ? x[:files] << item : x[:folders] << item
       end
     end
   end
@@ -70,45 +67,48 @@ class Dots
   end
 
   # do not symlink but create top folders of files if it does not exist
-  def make_folders
-    all_items[:folders].each do |folder|
-      homey_folder = to_home folder
-      next if homey_folder.exist?
+  def make_folder(_target, link_name)
+    folder = link_name.dirname
+    return if folder.exist?
 
-      puts "Creating folder: #{homey_folder}"
-      homey_folder.mkdir
-    end
+    # return if link_name == HOME # do not create the $HOME folder :/
+
+    puts "Creating folder: #{folder}"
+    FileUtils.mkdir_p folder
   end
 
-  def files_mirrored
-    raise 'not implemented'
+  # move file from home to a /home/backup/{file}
+  def backup_item(_target, link_name)
+    return unless link_name.exist?
+    return if link_name.symlink?
+
+    warn "backup: #{link_name} ❯ $HOME/.backup."
+    FileUtils.mv link_name, HOME.join('.backup')
   end
 
-  # Move file from home to a /home/backup/{file}
-  # or delete it if the file it is pointing does not exist
-  def backup_item(item)
-    warn "WARNING: #{item} found! Deleting/Moving it."
-    item.delete if item.exist? # TODO: if file exist back/delete up it
+  # delete symlink if symlink's target does not exist
+  def rm_faulty_link(_target, link_name)
+    return if link_name.exist?
+    return unless link_name.symlink? # skip as link is a symlink and aint faulty
+
+    warn "removing: #{link_name} is a faulty simlink"
+    link_name.delete
   end
 
-  def backup_files
-    target_link.each do |target, link_name|
-      puts "#{target} ❯ #{link_name}"
-      backup_item link_name
-    end
-  end
+  def link_file(target, link_name)
+    return if link_name.symlink? # skip it as it exist and is a symlink.
 
-  def symlink_files
-    target_link.each do |target, link_name|
-      puts "#{target} ❯ #{link_name}"
-      link_name.make_symlink target # As enumerator yielding folder to symlink
-    end
+    puts "linking: #{target} ❯ #{link_name}"
+    link_name.make_symlink target
   end
 
   def deploy
-    make_folders
-    backup_files
-    symlink_files
+    farm.each do |target, link_name| # As enumerator yielding folder to symlink
+      make_folder(target, link_name)
+      backup_item(target, link_name)
+      rm_faulty_link(target, link_name)
+      link_file(target, link_name)
+    end
   end
 
   def info
@@ -116,7 +116,7 @@ class Dots
   end
 
   def dryrun
-    p target_link
+    deploy
   end
 end
 
