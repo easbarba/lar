@@ -15,7 +15,6 @@
 (setf *screen-mode-line-format*
       (list "^B%n^b:  %W ^> "
             " "
-            ;; '(:eval (string-trim (string #\newline) (stumpwm:run-shell-command "s-sysinfo" t)))
-            " "
             "%d"
             "     "))
+            ;; '(:eval (string-trim (string #\newline) (stumpwm:run-shell-command "s-sysinfo" t)))
