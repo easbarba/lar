@@ -26,7 +26,7 @@ class Dots
 
   def initialize(root)
     @root = Pathname.new(root) if root
-    @target_link = {}
+    @target_link = {}.tap { |f| all_items[:files].each { |t| f.store(t, to_home(t)) } }
   end
 
   # ignore these dotfiles
@@ -60,36 +60,28 @@ class Dots
     end
   end
 
-  # transform origin file absolute path with home as its root instead
+  # transform  stringfied origin item's root absolute path to home
   # /a/b/c.tar --> /home/b/c.tar
   def to_home(item)
-    origin = item.to_path
-    homey = HOME.to_path.concat('/')
-    result = origin.gsub(root.to_path, homey)
+    item_path = item.to_path
+    home_path = HOME.to_path.concat('/') # / is needed to crop enterily item_path root path
 
-    Pathname.new result
+    Pathname.new item_path.gsub(root.to_path, home_path)
   end
 
-  # Create folders that contains symlinked files
+  # do not symlink but create top folders of files if it does not exist
   def make_folders
-    all_items[:folders].each do |fld|
-      folder = to_home fld
-      next if folder.exist?
+    all_items[:folders].each do |folder|
+      homey_folder = to_home folder
+      next if homey_folder.exist?
 
-      puts folder
-      folder.mkdir
+      puts "Creating folder: #{homey_folder}"
+      homey_folder.mkdir
     end
   end
 
   def files_mirrored
     raise 'not implemented'
-  end
-
-  def feed_target_link
-    all_items[:files].each do |target|
-      symlink_name = to_home target
-      target_link.store(target, symlink_name)
-    end
   end
 
   # Move file from home to a /home/backup/{file}
@@ -114,7 +106,6 @@ class Dots
   end
 
   def deploy
-    feed_target_link
     make_folders
     backup_files
     symlink_files
@@ -125,7 +116,7 @@ class Dots
   end
 
   def dryrun
-    p all_items
+    p target_link
   end
 end
 
