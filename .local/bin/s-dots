@@ -123,31 +123,24 @@ class Dots
   def dryrun; end
 end
 
-# RUN
-
-module Cli
-  require 'optparse'
-
-  def self.options
+def cli
+  OptionParser.new do |opts|
     main = Dots.new(ARGV[1])
+    opts.banner = 'Usage: dots [options]'
 
-    OptionParser.new do |opts|
-      opts.banner = 'Usage: dots [options]'
+    opts.on('-s', '--symlink', 'deploy dotfiles symlinking') do
+      main.deploy
+    end
 
-      opts.on('-s', '--symlink', 'deploy dotfiles symlinking') do
-        main.deploy
-      end
+    opts.on('-d', '--dry-run', 'mimic symlinking deployment') do
+      main.dryrun
+    end
 
-      opts.on('-d', '--dry-run', 'mimic symlinking deployment') do
-        main.dryrun
-      end
-
-      opts.on('-i', '--info', 'general information of internals commands') do
-        main.info
-      end
+    opts.on('-i', '--info', 'general information of internals commands') do
+      main.info
     end
   end
 end
 
-Cli.options.parse! ['--help'] if ARGV.empty?
-Cli.options.parse!
+cli.parse! ['--help'] if ARGV.empty?
+cli.parse!
