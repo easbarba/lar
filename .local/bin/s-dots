@@ -23,7 +23,7 @@ require 'fileutils'
 class Dots
   HOME = Pathname.new Dir.home
 
-  attr_reader :root, :home, :farm
+  attr_reader :root, :home, :farm, :pretend
 
   def initialize(root)
     @root = Pathname.new(root) if root
@@ -116,6 +116,8 @@ class Dots
   end
 
   def dryrun
+    puts 'running on dry-run mode'
+    @pretend = true
     deploy
   end
 end
