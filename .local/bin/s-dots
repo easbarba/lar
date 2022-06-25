@@ -67,47 +67,47 @@ class Dots
   end
 
   # do not symlink but create top folders of files if it does not exist
-  def make_folder(_target, link_name)
-    folder = link_name.dirname
+  def make_folder(link)
+    folder = link.dirname
     return if folder.exist?
 
-    # return if link_name == HOME # do not create the $HOME folder :/
+    # return if link == HOME # do not create the $HOME folder :/
 
     puts "Creating folder: #{folder}"
-    FileUtils.mkdir_p folder
+    FileUtils.mkdir_p folder unless pretend
   end
 
   # move file from home to a /home/backup/{file}
-  def backup_item(_target, link_name)
-    return unless link_name.exist?
-    return if link_name.symlink?
+  def backup_item(link)
+    return unless link.exist?
+    return if link.symlink?
 
-    warn "backup: #{link_name} ❯ $HOME/.backup."
-    FileUtils.mv link_name, HOME.join('.backup')
+    warn "backup: #{link} ❯ $HOME/.backup."
+    FileUtils.mv link, HOME.join('.backup') unless pretend
   end
 
   # delete symlink if symlink's target does not exist
-  def rm_faulty_link(_target, link_name)
-    return if link_name.exist?
-    return unless link_name.symlink? # skip as link is a symlink and aint faulty
+  def rm_faulty_link(link)
+    return if link.exist?
+    return unless link.symlink? # skip as link is a symlink and aint faulty
 
-    warn "removing: #{link_name} is a faulty simlink"
-    link_name.delete
+    warn "removing: #{link} is a faulty simlink"
+    link.delete unless pretend
   end
 
-  def link_file(target, link_name)
-    return if link_name.symlink? # skip it as it exist and is a symlink.
+  def link_file(target, link)
+    return if link.symlink? # skip it as it exist and is a symlink.
 
-    puts "linking: #{target} ❯ #{link_name}"
-    link_name.make_symlink target
+    puts "linking: #{target} ❯ #{link}"
+    link.make_symlink target unless pretend
   end
 
   def deploy
-    farm.each do |target, link_name| # As enumerator yielding folder to symlink
-      make_folder(target, link_name)
-      backup_item(target, link_name)
-      rm_faulty_link(target, link_name)
-      link_file(target, link_name)
+    farm.each do |target, link| # As enumerator yielding folder to symlink
+      make_folder(link)
+      backup_item(link)
+      rm_faulty_link(link)
+      link_file(target, link)
     end
   end
 
