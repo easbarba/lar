@@ -91,10 +91,7 @@ unset rc
 
 # * CLI SOFTWARE
 [[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
-[[ -x $(command -v eksctl) ]] && . <(eksctl completion bash)
-
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
-[[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
 if [[ "$DISPLAY" ]]; then
     if [[ -x "$(command -v screen)" ]]; then
