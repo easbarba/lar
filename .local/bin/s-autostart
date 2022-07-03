@@ -15,7 +15,6 @@ TOOLS=('udiskie --notify --tray'
   'xautolock -time 3 -locker "slock" -detectsleep'
   'mpd')
 APPS=('s-mx'
-  'okular'
   'chromium'
   "$LOCAL_BIN/s-wall")
 
