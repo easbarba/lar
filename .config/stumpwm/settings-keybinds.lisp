@@ -1,7 +1,6 @@
 ;; ==================================================
 ;; KEYBINDINGS
 
-
 ;; PREFIX KEY
 (set-prefix-key (kbd "s-z"))
 
