@@ -6,11 +6,11 @@ set -euo pipefail
 DEPS=(curl bash)
 s-checkdeps "${DEPS[@]}"
 
-COMMAND='sdk install gradle'
+COMMAND='sdk install'
 
 [[ ! -f $HOME/.sdkman/bin/sdkman-init.sh ]] && curl -s "https://get.sdkman.io" | bash
 
-# source "$HOME/.sdkman/bin/sdkman-init.sh"
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 packages=(gradle maven)
 s-dolist "$COMMAND" "${packages[@]}"
