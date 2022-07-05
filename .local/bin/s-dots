@@ -23,13 +23,13 @@ require 'optparse'
 require 'fileutils'
 
 # Mirrors, by symlinking, a dotfiles repository to $HOME.
-class Dots
+class Main
   HOME = Pathname.new Dir.home
 
   attr_reader :root, :home, :farm, :pretend
 
   def initialize(root)
-    @root = Pathname.new(root) if root
+    @root = Pathname.new(root)
     @farm = {}.tap { |f| all_items[:files].each { |t| f.store(t, to_home(t)) } }
   end
 
@@ -127,8 +127,9 @@ end
 
 def cli
   OptionParser.new do |opts|
-    main = Dots.new(ARGV[1])
     opts.banner = 'Usage: dots [options]'
+
+    main = Main.new(ARGV[1]) unless ARGV.empty?
 
     opts.on('-s', '--symlink', 'deploy dotfiles symlinking') do
       main.deploy
