@@ -1,0 +1,9 @@
+name,branch,url
+bazel,master,https://github.com/bazelbuild/bazel
+jbang,main,https://github.com/jbangdev/jbang
+picocli,main,https://github.com/remkop/picocli
+eclipse-jdt-ls,master,https://github.com/eclipse/eclipse.jdt.ls
+junit5,main,https://github.com/junit-team/junit5
+spring-boot,main,https://github.com/spring-projects/spring-boot
+spring-framework,main,https://github.com/spring-projects/spring-framework
+openjdk,master,https://github.com/openjdk/jdk
