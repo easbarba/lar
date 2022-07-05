@@ -171,19 +171,19 @@ module Cli
     OptionParser.new do |opts|
       opts.banner = 'Usage: volume [options]'
 
-      opts.on('-u', '--up', 'Increase volume') do |_v|
+      opts.on('-u', '--up', 'Increase volume') do
         system main.up
       end
 
-      opts.on('-d', '--down', 'Decrease volume') do |_v|
+      opts.on('-d', '--down', 'Decrease volume') do
         system main.down
       end
 
-      opts.on('-t', '--toggle', 'Toggle volume') do |_v|
+      opts.on('-t', '--toggle', 'Toggle volume') do
         system main.toggle
       end
 
-      opts.on('-i', '--info', 'Volume manager information') do |_v|
+      opts.on('-i', '--info', 'Volume manager information') do
         puts main.info
       end
     end
