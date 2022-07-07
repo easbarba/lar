@@ -17,6 +17,7 @@
            ("s-w"                    "s-volume --up")
            ("s-s"                    "s-volume --down")
            ("s-l"                    "slock")
+           ("s-v"                    "bash -c 'notify-send \"$(s-sysinfo)\"'")
            ("s-e"                    "s-volume --toggle")
            ("XF86AudioRaiseVolume"   "s-volume --up")
            ("XF86AudioLowerVolume"   "s-volume --down")

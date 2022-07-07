@@ -23,7 +23,7 @@
      (2 t t :title "libreoffice")
      (3 t t :class "libreoffice-writer"))
     ("www"
-     (0 t t :class "GNU Icecat")
+     (0 t t :class "IceCat")
      (1 t t :class "Chromium")
      (2 t t :class "Firefox")
      (3 t t :class "nyxt"))
