@@ -102,24 +102,24 @@ globalkeys =
 
     awful.key({modkey}, "c", lockscreen),
     awful.key(
-        {modkey, "Shift"},
+        {modkey},
         "w",
         function()
-            awful.spawn("s-volume up")
+            awful.spawn("s-volume --up")
         end
     ),
     awful.key(
-        {modkey, "Shift"},
+        {modkey},
         "s",
         function()
-            awful.spawn("s-volume down")
+            awful.spawn("s-volume --down")
         end
     ),
     awful.key(
-        {modkey, "Shift"},
+        {modkey},
         "e",
         function()
-            awful.spawn("s-volume toggle")
+            awful.spawn("s-volume --toggle")
         end
     ),
     awful.key(
@@ -172,14 +172,14 @@ globalkeys =
         end
     ),
     awful.key(
-        {modkey},
+        {modkey, "Shift"},
         "w",
         function()
             awful.spawn("mpc volume +3")
         end
     ),
     awful.key(
-        {modkey},
+        {modkey, "Shift"},
         "s",
         function()
             awful.spawn("mpc volume -3")
