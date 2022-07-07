@@ -6,7 +6,7 @@ class Main
   attr_reader :manager
 
   def initialize
-    @manager = SoundManager.new.info
+    @manager = SoundManager.new.first { |exec| File.executable?(exec.to_s) }
   end
 
   def toggle
@@ -28,17 +28,12 @@ end
 
 # Find available sound manager
 class SoundManager
-  def which?(executable)
-    File.executable?(executable.to_s)
-  end
+  include Enumerable
 
-  def all
-    [Pactl.new, Amixer.new, Mixer.new]
-  end
-
-  # Sound Manager Information
-  def info
-    all.first { |manager| which?(manager::EXEC) }
+  def each
+    yield Pactl.new
+    yield Amixer.new
+    yield Mixer.new
   end
 end
 
