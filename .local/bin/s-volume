@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Main entry point
-class Main
+# Commands available
+class Commands
   attr_reader :manager
 
   def initialize
-    @manager = SoundManager.new.first { |exec| File.executable?(exec.to_s) }
+    @manager = Managers.new.first { |exec| File.executable?(exec.to_s) }
   end
 
   def toggle
@@ -26,14 +26,16 @@ class Main
   end
 end
 
-# Find available sound manager
-class SoundManager
+# List of available sound managers
+class Managers
   include Enumerable
 
-  def each
-    yield Pactl.new
-    yield Amixer.new
-    yield Mixer.new
+  def initialize
+    @known = [Pactl.new, Amixer.new, Mixer.new]
+  end
+
+  def each(&block)
+    @known.each(&block)
   end
 end
 
@@ -161,25 +163,25 @@ module Cli
   require 'optparse'
 
   def self.options
-    main = Main.new
+    cmds = Commands.new
 
     OptionParser.new do |opts|
       opts.banner = 'Usage: volume [options]'
 
       opts.on('-u', '--up', 'Increase volume') do
-        system main.up
+        system cmds.up
       end
 
       opts.on('-d', '--down', 'Decrease volume') do
-        system main.down
+        system cmds.down
       end
 
       opts.on('-t', '--toggle', 'Toggle volume') do
-        system main.toggle
+        system cmds.toggle
       end
 
       opts.on('-i', '--info', 'Volume manager information') do
-        puts main.info
+        puts cmds.info
       end
     end
   end
