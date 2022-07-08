@@ -193,6 +193,7 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
+                "Alacritty",
                 "Emacs",
                 "Code",
                 "Gnome-terminal",
