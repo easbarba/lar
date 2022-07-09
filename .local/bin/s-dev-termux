@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# DEBUG SETTINGS
+set -euo pipefail
+
+DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
+DEPS=(sudo zae qas)
+
+pkg install git ruby guile nano
+pkg update
