@@ -14,6 +14,7 @@ export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
 s-echo "GNU GUIX"
 
+# GUIX | INSTALLING
 if [[ ! -x $(command -v guix) ]]; then
 	wget "https://sv.gnu.org/people/viewgpg.php?user_id=127547" -qO - | sudo -i gpg --import -
 
@@ -26,9 +27,12 @@ if [[ ! -x $(command -v guix) ]]; then
 	guix pull
 	guix upgrade
 
-# Fix GUIX_LOCPATH warning
-# version=$(ls ~/.guix-profile/lib/locale/)
-# guix install "glibc-locales@$version"
+	# Fix GUIX_LOCPATH warning
+	guix install glibc-locales
+
+	# export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+	# version=$(ls ~/.guix-profile/lib/locale/)
+	# guix install "glibc-locales@$version"
 fi
 
 packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
