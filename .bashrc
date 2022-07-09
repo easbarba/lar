@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # * Description: GNU Bash - CONFIGURATIONS, ALIASES...
-# Namespace: e-* means public, e_* private.
 
 # * CONFIGURATION
 
@@ -42,67 +41,28 @@ HISTCONTROL=ignoredups                          #SHORTER HISTORY
 
 # * ALIASES
 
-# directories
+# ** CDing
 alias ..='cd ..'
 alias ...='cd ../../../'
-alias mkdir='mkdir -pv'
+# alias mkdir='mkdir -pv'
 
 # color me amazed!
 for app in ls dir vdir grep fgrep egrep; do
     alias "${app}"="'${app}'  --color=auto"
 done
 
-# misc
-alias a-path='echo -e ${PATH//:/\\n}' # prettier PATH entries
-command -v mpv >/dev/null || alias a-play="mpv"
+alias s-path='echo -e ${PATH//:/\\n}' # prettier PATH entries
 
-# * SYSTEM SCRIPTS
-
+# * APPS
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # make less more friendly for non-text input files, see lesspipe(1)
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
-fi
-
-unset rc
-
-# ** readline
-#export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
-# ===================================================
-
-# * CLI SOFTWARE
 [[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 
-if [[ "$DISPLAY" ]]; then
-    if [[ -x "$(command -v screen)" ]]; then
-        if [[ -z "$STY" ]]; then
-            screen -xRR GNU
-        fi
-    elif [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
-        tmux attach || tmux new-session
-    fi
+# * GNU SCREEN
+if [[ -x "$(command -v screen)" ]] && [[ "$DISPLAY" ]]; then
+    screen -xRR GNU # Attach to a not detached screen session.
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# elif [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
+# tmux attach || tmux new-session
+# fi
