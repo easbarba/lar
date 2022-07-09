@@ -15,22 +15,22 @@ s-echo "Upgrading $DISTRO system packages."
 [[ -x $(command -v zae) ]] && zae update && zae upgrade
 
 # ==========================================
+s-echo "Foreign installers"
+
+s-distro-guix
+s-distro-flatpak
+
+# ==========================================
 s-echo "Editors and Langs packages"
 
-s-doom
+s-dev-doom
 
 # ==========================================
 s-echo "Languages package installers"
 
-s-ruby
-s-golang
-s-javascript
-
-# ==========================================
-s-echo "Foreign installers"
-
-s-guix
-s-flatpak
+s-dev-ruby
+s-dev-golang
+s-dev-javascript
 
 # ==========================================
 s-echo "User tasks"
