@@ -1,6 +1,6 @@
 ---
-exec: /sbin/apk
-become:
+exec: /data/data/com.termux/files/usr/bin/pkg
+user:
   builddep: ''
   autoremove: autoremove
   depends: ''
@@ -15,4 +15,3 @@ become:
   sysupgrade: ''
   update: update
   upgrade: upgrade
-user:
