@@ -1,0 +1,22 @@
+#!/usr/bin/guile \
+-e main -s
+!#
+
+(define home (getenv "HOME"))
+(define dotsignore-filename ".dotsignore")
+
+(define (dotsignore-exist? file)
+  (file-exists? file))
+(define (dotsignore root)
+  (string-append root "/" dotsignore-filename))
+
+(define (main args)
+  (let ((root (cadr args)))
+    (info root)))
+
+(define (info root)
+  (display (string-append "root: " root))
+  (newline)
+  (display (string-append
+            "dotsignore: " (dotsignore root)
+            " - found? " (if (dotsignore-exist? root) "yep" "nope"))))
