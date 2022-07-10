@@ -4,13 +4,17 @@
 
 (import (rnrs base)
         (rnrs io ports)
-        (rnrs io simple))
+        (rnrs io simple)
+        (ice-9 getopt-long))
 
 (define home (getenv "HOME"))
+(define (version) (display "0.0.1"))
+
 (define dotsignore-filename ".dotsignore")
 
 (define (dotsignore-exist? file)
   (file-exists? file))
+
 (define (dotsignore root)
   (string-append root "/" dotsignore-filename))
 
@@ -28,6 +32,38 @@
             "dotsignore: " (dotsignore root)
             " - found? " (if (dotsignore-exist? root) "yep" "nope"))))
 
+(define (dryrun) (display 'dryrunning))
+(define (symlink) (display 'symlinking))
+
+(define (show-options)
+  (display "dots [options]
+  -v, --version    Display version
+  -s, --symlink    Deploy dotfiles symlinking
+  -d, --dryrun     Mimic symlinking deployment
+  -i, --info       Miscelleanous information
+  -h, --help       Display this help"))
+
+(define (cli-parser args root)
+  (let* ((option-spec '((version (single-char #\v) (value #f))
+                        (symlink (single-char #\s) (value #f))
+                        (info    (single-char #\i) (value #f))
+                        (dryrun  (single-char #\d) (value #f))
+                        (help    (single-char #\h) (value #f))))
+         (options (getopt-long args option-spec)))
+    (option-run options)))
+
+(define (option-run options)
+  (let ((option-wanted (lambda (option)
+                         (option-ref options option #f))))
+    (cond ((option-wanted 'version) (version))
+          ((option-wanted 'help)    (show-options))
+          ((option-wanted 'symlink) (symlink))
+          ((option-wanted 'dryrun)  (dryrun))
+          ((option-wanted 'info)    (info root))
+          (else                     (show-options)))))
+
 (define (main args)
-  (let ((root (canonicalize-path (cadr args))))
-    (display (ignored-files root))))
+  (let ((root (if (null? args)
+                  (canonicalize-path (cadr args))
+                  "")))
+    (cli-parser args root)))
