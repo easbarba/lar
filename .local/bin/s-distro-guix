@@ -38,5 +38,8 @@ fi
 packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
 s-dolist "guix install" "${packages[@]}"
 
-devel=(haunt) # font-gnu-freefont-ttf
-s-dolist "guix install" "${devel[@]}"
+guile=(guile-f-scm)
+s-dolist "guix install" "${guile[@]}"
+
+apps=(haunt) # font-gnu-freefont-ttf
+s-dolist "guix install" "${apps[@]}"
