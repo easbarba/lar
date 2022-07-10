@@ -20,3 +20,7 @@
   (display (string-append
             "dotsignore: " (dotsignore root)
             " - found? " (if (dotsignore-exist? root) "yep" "nope"))))
+
+(define (main args)
+  (let ((root (canonicalize-path (cadr args))))
+    (display (ignored-files root))))
