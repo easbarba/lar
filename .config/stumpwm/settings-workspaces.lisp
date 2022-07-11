@@ -1,7 +1,7 @@
 ;; ==================================================
 ;; WORKSPACE NAMES
 
-(defparameter *group-names* '("mx" "read" "www" "media")
+(defparameter *group-names* '("mx" "read" "term" "www" "media")
   "List of group names to be created.")
 
 (when (consp *group-names*)
@@ -22,6 +22,8 @@
      (1 t t :class "evince")
      (2 t t :title "libreoffice")
      (3 t t :class "libreoffice-writer"))
+    ("term"
+     (0 t t :class "Alacritty"))
     ("www"
      (0 t t :class "IceCat")
      (1 t t :class "Chromium")
