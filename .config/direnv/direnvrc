@@ -1,0 +1,3 @@
+use_guixs() {
+  eval "$(guix shell \"$@\" --search-paths)"
+}
