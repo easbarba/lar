@@ -16,7 +16,7 @@ TOOLS=('udiskie --notify --tray'
   'mpd')
 APPS=('s-dev-mx'
   'alacritty'
-  'icecat')
+  'chromium')
 
 # ===================================================
 # * HELPERS
