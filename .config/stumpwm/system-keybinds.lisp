@@ -16,7 +16,7 @@
            ("s-d"                    "s-wm-backlight down")
            ("s-w"                    "s-wm-volume --up")
            ("s-s"                    "s-wm-volume --down")
-           ("s-l"                    "slock")
+           ("s-l"                    "s-wm-lock")
            ("s-v"                    "bash -c 'notify-send \"$(s-wm-sysinfo)\"'")
            ("s-e"                    "s-wm-volume --toggle")
            ("XF86AudioRaiseVolume"   "s-wm-volume --up")
