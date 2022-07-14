@@ -12,7 +12,7 @@ TOOLS=('udiskie --notify --tray'
   'dunst'
   'nm-applet'
   'setxkbmap -model abnt2 -layout br -variant abnt2'
-  'xautolock -time 3 -locker "slock" -detectsleep'
+  'xautolock -time 8 -locker "slock" -detectsleep'
   'mpd')
 APPS=('s-dev-mx'
   'alacritty'
