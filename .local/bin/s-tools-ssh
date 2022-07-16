@@ -17,8 +17,9 @@ eval "$(ssh-agent -s)"
 ssh-add "$SSH_KEY_LOCATION"
 
 [[ ! -f "$SSH_HOME/config" ]] && cat <<EOF >>"$SSH_HOME/config"
-AddKeysToAgent yes
-IdentityFile $SSH_KEY_LOCATION
+Host *
+     AddKeysToAgent yes
+     IdentityFile $SSH_KEY_LOCATION
 EOF
 
 # Protect files
