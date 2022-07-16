@@ -1,3 +1,75 @@
-#!/usr/bin/env elixir
+#! /usr/bin/env elixir
 
-File.mkdir "meh"
+defmodule Dots do
+  defp ignored(path) do
+    {:ok, files} = ignored_exist?(path)
+
+    if files do
+      File.read!(files)
+      |> String.split("\n")
+      |> Enum.uniq()
+    else
+      []
+    end
+  end
+
+  defp ignored_exist?(path) do
+    ignore_these = Path.join(path, ".dotsignore")
+
+    if File.exists?(ignore_these) do
+      {:ok, ignore_these}
+    else
+      {:error, nil}
+    end
+  end
+
+  def deploy(path) do
+    IO.puts("deploying")
+    IO.inspect(ignored(path))
+  end
+
+  def pretend(path) do
+    IO.puts("pretend-mode")
+    IO.inspect(ignored(path))
+  end
+
+  def info(path) do
+    IO.puts("root: #{path}")
+  end
+
+  def help(errors) do
+    IO.puts("Heeeeeeeeeelp #{errors}")
+  end
+end
+
+defmodule Cli do
+  def parse(args) do
+    args
+    |> OptionParser.parse(
+      switches: [deploy: :string, pretend: :string, help: :boolean],
+      aliases: [D: :deploy, P: :pretend, H: :help]
+    )
+    |> run()
+  end
+
+  def run(args_parsed) do
+    args_parsed
+    |> case do
+      {options, _remaining_args, [] = errors} ->
+        case options do
+          [deploy: path] ->
+            path = Path.dirname(IO.chardata_to_string(path))
+            Dots.deploy(path)
+
+          [pretend: path] ->
+            path = Path.dirname(IO.chardata_to_string(path))
+            Dots.pretend(path)
+
+          _ ->
+            Dots.help(errors)
+        end
+    end
+  end
+end
+
+Cli.parse(System.argv())
