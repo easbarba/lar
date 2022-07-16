@@ -52,6 +52,8 @@ wm=(udiskie brightnessctl bluez blueman mpd mpc ncmpcpp zathura zathura-cb)
 
 laptop=(acpid tlp vainfo i965-va-driver libvdpau-va-gl1 libiw-dev hddtemp acpi-call dialog sysstat)
 
+gtk=(evince cheese)
+
 kde=(ktorrent kdenlive kate falkon kdeconnect krita elisa) # plasma-workspace-wayland kamoso  kdevelop
 
 cli=(htop ffmpeg mpv elinks libnotify-bin ranger aria2)
@@ -83,6 +85,7 @@ groups=("${essentials[@]}"
 	"${xorg[@]}"
 	"${wm[@]}"
 	"${kde[@]}"
+	"${gtk[@]}"
 	"${cli[@]}"
 	# "${laptop[@]}"
 	"${amd[@]}"
