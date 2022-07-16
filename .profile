@@ -90,6 +90,9 @@ export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
 # * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-if [ -n WAYLAND_DISPLAY ]; then
-    export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
-fi
+export SSH_AGENT_PID=$(pgrep ssh-agent)
+export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+
+# if [ -n WAYLAND_DISPLAY ]; then
+#     export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+# fi
