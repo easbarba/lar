@@ -2,35 +2,64 @@
 
 defmodule Dots do
   defp ignored(path) do
-    {:ok, files} = ignored_exist?(path)
+    ignored_exist?(path)
+    |> case do
+      {:ok, files} ->
+        File.stream!(files)
+        |> Enum.map(&String.trim(&1))
+        |> Enum.concat([".dotsignore"])
+        |> Enum.map(&Path.join(path, &1))
+        |> MapSet.new()
 
-    if files do
-      File.read!(files)
-      |> String.split("\n")
-      |> Enum.uniq()
-    else
-      []
+      {:error, nil} ->
+        []
     end
   end
 
   defp ignored_exist?(path) do
-    ignore_these = Path.join(path, ".dotsignore")
+    path = Path.join(path, ".dotsignore")
+    if File.exists?(path), do: {:ok, path}, else: {:error, nil}
+  end
 
-    if File.exists?(ignore_these) do
-      {:ok, ignore_these}
-    else
-      {:error, nil}
+  defp ignore_me?(path, item) do
+    ignored(path)
+    |> Enum.any?(&String.starts_with?(item, &1))
+  end
+
+  def ls_r(path) do
+    cond do
+      File.regular?(path) ->
+        [path]
+
+      File.dir?(path) ->
+        File.ls!(path)
+        |> Enum.map(&Path.join(path, &1))
+        |> Enum.map(&ls_r/1)
+        |> Enum.concat()
+
+      true ->
+        []
+    end
+  end
+
+  def walk(path) do
+    items = ls_r(path)
+
+    for item <- items do
+      unless ignore_me?(path, item) do
+        IO.puts(item)
+      end
     end
   end
 
   def deploy(path) do
     IO.puts("deploying")
-    IO.inspect(ignored(path))
+    walk(path)
   end
 
   def pretend(path) do
     IO.puts("pretend-mode")
-    IO.inspect(ignored(path))
+    IO.inspect(path)
   end
 
   def info(path) do
