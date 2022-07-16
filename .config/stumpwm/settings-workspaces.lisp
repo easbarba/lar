@@ -19,7 +19,7 @@
      (1 t t :class "Code"))
     ("read"
      (0 t t :class "okular")
-     (1 t t :class "evince")
+     (1 t t :class "Evince")
      (2 t t :title "libreoffice")
      (3 t t :class "libreoffice-writer"))
     ("term"
