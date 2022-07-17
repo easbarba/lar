@@ -1,19 +1,16 @@
 #! /usr/bin/env elixir
 
 defmodule Dots do
-  defp ignored(path) do
-    ignored_exist?(path)
-    |> case do
-      {:ok, files} ->
-        File.stream!(files)
-        |> Enum.map(&String.trim(&1))
-        |> Enum.concat([".dotsignore"])
-        |> Enum.map(&Path.join(path, &1))
-        |> MapSet.new()
+  defp ignored(path, {:ok, files}) do
+    File.stream!(files)
+    |> Enum.map(&String.trim(&1))
+    |> Enum.concat([".dotsignore"])
+    |> Enum.map(&Path.join(path, &1))
+    |> MapSet.new()
+  end
 
-      {:error, nil} ->
-        []
-    end
+  defp ignored(_path, {:error, nil}) do
+    []
   end
 
   defp ignored_exist?(path) do
@@ -22,7 +19,7 @@ defmodule Dots do
   end
 
   defp ignore_me?(path, item) do
-    ignored(path)
+    ignored(path, ignored_exist?(path))
     |> Enum.any?(&String.starts_with?(item, &1))
   end
 
@@ -52,7 +49,6 @@ defmodule Dots do
 
         make_folder(link_name)
         link_file(target, link_name)
-        # IO.puts("#{target} -> #{link_name}")
       end
     end
   end
@@ -73,13 +69,12 @@ defmodule Dots do
 
   def link_file(target, link_name) do
     unless File.exists?(link_name) do
-      IO.puts("Symlink #{link_name} not found! Linking it.")
+      IO.puts("#{target} -> #{link_name}")
       File.ln_s!(target, link_name)
     end
   end
 
   def deploy(path) do
-    IO.puts("deploying")
     walk(path)
   end
 
