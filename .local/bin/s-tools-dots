@@ -101,9 +101,11 @@ defmodule CLI do
 
   def help do
     IO.puts("Usage: dots [options]
-  -d, --deploy                    symlink all dotfiles
-  -p, --pretend                   pretend to symlink all dotfiles
-  -h, --help                      cli options information")
+  -D, --deploy                    symlink all dotfiles
+  -P, --pretend                   pretend to symlink all dotfiles
+  -H, --help                      cli options information")
+
+    System.halt(0)
   end
 
   def run(deploy: path) do
