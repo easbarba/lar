@@ -1,25 +1,42 @@
 #! /usr/bin/env elixir
 
+# Description: An opitionated dotfile deployer base on guix home and nix homemanager.
+
+# Features:
+# - the dotsignore file at the folder root behaves just like git's one ignoring undesired dotfiles.
+# - Folders are not symlinked but created.
+# - dry-run mode
+# - remove faulty symlinks if found
+# - backup non-symlink files to $HOME/.backup
+# - fully implemented cli interface
+# - GNU-Linux/BSD distros only
+
+# TODO: walk through directories and perform actions per folder
+# TODO: Accept git commit sha as source to symlink deployment.
+# TODO: Read-only symlinks.
+# TODO: dotsignore to accept hash-like folder. eg: .config{foo,bar,meh,forevis}
+# TODO: set minimal permission to 0744
+
 defmodule Dots do
-  defp ignored(path, {:ok, files}) do
+  defp ignored(root, {:ok, files}) do
     File.stream!(files)
     |> Enum.map(&String.trim(&1))
     |> Enum.concat([".dotsignore"])
-    |> Enum.map(&Path.join(path, &1))
+    |> Enum.map(&Path.join(root, &1))
     |> MapSet.new()
   end
 
-  defp ignored(_path, {:error, nil}) do
+  defp ignored(_root, {:error, nil}) do
     []
   end
 
-  defp ignored_exist?(path) do
-    path = Path.join(path, ".dotsignore")
-    if File.exists?(path), do: {:ok, path}, else: {:error, nil}
+  defp ignored_exist?(root) do
+    root = Path.join(root, ".dotsignore")
+    if File.exists?(root), do: {:ok, root}, else: {:error, nil}
   end
 
-  defp ignore_me?(path, item) do
-    ignored(path, ignored_exist?(path))
+  defp ignore_me?(root, item) do
+    ignored(root, ignored_exist?(root))
     |> Enum.any?(&String.starts_with?(item, &1))
   end
 
@@ -39,13 +56,13 @@ defmodule Dots do
     end
   end
 
-  def walk(path) do
-    items = ls_r(path)
+  def run(root) do
+    items = ls_r(root)
 
     for item <- items do
-      unless ignore_me?(path, item) do
+      unless ignore_me?(root, item) do
         target = item
-        link_name = to_home(item, path)
+        link_name = to_home(item, root)
 
         make_folder(link_name)
         link_file(target, link_name)
@@ -53,9 +70,9 @@ defmodule Dots do
     end
   end
 
-  def to_home(item, path) do
+  def to_home(item, root) do
     # /data/dots/.config/mpd/mpd.conf to $HOME/.config/mpd/mpd.conf
-    String.replace(item, path, System.user_home())
+    String.replace(item, root, System.user_home())
   end
 
   def make_folder(link_name) do
@@ -73,22 +90,22 @@ defmodule Dots do
     end
   end
 
-  def deploy(path) do
-    walk(path)
+  def deploy(root) do
+    run(root)
   end
 
-  def pretend(path) do
+  def pretend(root) do
     IO.puts("pretend-mode")
-    IO.inspect(path)
+    IO.inspect(root)
   end
 
-  def info(path) do
-    IO.puts("root: #{path}")
+  def info(root) do
+    IO.puts("root: #{root}")
   end
 end
 
 defmodule CLI do
-  def parse(args) do
+  def main(args) do
     args
     |> OptionParser.parse(
       switches: [deploy: :string, pretend: :string, help: :boolean],
@@ -107,14 +124,14 @@ defmodule CLI do
     System.halt(0)
   end
 
-  def run(deploy: path) do
-    path = Path.dirname(IO.chardata_to_string(path))
-    Dots.deploy(path)
+  def run(deploy: root) do
+    root = Path.dirname(IO.chardata_to_string(root))
+    Dots.deploy(root)
   end
 
-  def run(pretend: path) do
-    path = Path.dirname(IO.chardata_to_string(path))
-    Dots.pretend(path)
+  def run(pretend: root) do
+    root = Path.dirname(IO.chardata_to_string(root))
+    Dots.pretend(root)
   end
 
   def run(help: true) do
@@ -126,4 +143,4 @@ defmodule CLI do
   end
 end
 
-CLI.parse(System.argv())
+CLI.main(System.argv())
