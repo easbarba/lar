@@ -62,7 +62,6 @@ defmodule Dots do
     link_dir = Path.dirname(link_name)
 
     unless File.exists?(link_dir) do
-      IO.puts("Directory #{link_dir} not found! Creating it.")
       File.mkdir_p!(link_dir)
     end
   end
