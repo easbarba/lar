@@ -1,4 +1,6 @@
 .git
+.gitignore
+.elixir_ls
 LICENSE
 README.md
 .iex.exs
