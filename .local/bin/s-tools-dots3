@@ -47,8 +47,34 @@ defmodule Dots do
 
     for item <- items do
       unless ignore_me?(path, item) do
-        IO.puts(item)
+        target = item
+        link_name = to_home(item, path)
+
+        make_folder(link_name)
+        link_file(target, link_name)
+        # IO.puts("#{target} -> #{link_name}")
       end
+    end
+  end
+
+  def to_home(item, path) do
+    # /a/b/c/meh.sh to /home/mussum/meh.sh
+    String.replace(item, path, System.user_home())
+  end
+
+  def make_folder(link_name) do
+    link_dir = Path.dirname(link_name)
+
+    unless File.exists?(link_dir) do
+      IO.puts("Directory #{link_dir} not found! Creating it.")
+      File.mkdir_p!(link_dir)
+    end
+  end
+
+  def link_file(target, link_name) do
+    unless File.exists?(link_name) do
+      IO.puts("Symlink #{link_name} not found! Linking it.")
+      File.ln_s!(target, link_name)
     end
   end
 
