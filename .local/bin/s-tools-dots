@@ -93,36 +93,41 @@ defmodule Dots do
   end
 end
 
-defmodule Cli do
+defmodule CLI do
   def parse(args) do
     args
     |> OptionParser.parse(
       switches: [deploy: :string, pretend: :string, help: :boolean],
       aliases: [D: :deploy, P: :pretend, H: :help]
     )
+    |> elem(0)
     |> run()
   end
 
-  def run(args_parsed) do
-    args_parsed
-    |> case do
-      {options, _remaining_args, _errors} ->
-        case options do
-          [deploy: path] ->
-            path = Path.dirname(IO.chardata_to_string(path))
-            Dots.deploy(path)
+  def help do
+    IO.puts("Usage: dots [options]
+  -d, --deploy                    symlink all dotfiles
+  -p, --pretend                   pretend to symlink all dotfiles
+  -h, --help                      cli options information")
+  end
 
-          [pretend: path] ->
-            path = Path.dirname(IO.chardata_to_string(path))
-            Dots.pretend(path)
+  def run(deploy: path) do
+    path = Path.dirname(IO.chardata_to_string(path))
+    Dots.deploy(path)
+  end
 
-          _ ->
-            IO.puts("Usage: dots [options]
-    -d, --deploy                    deploy dotfiles symlinking
-    -p, --pretend                   mimic symlinking deployment")
-        end
-    end
+  def run(pretend: path) do
+    path = Path.dirname(IO.chardata_to_string(path))
+    Dots.pretend(path)
+  end
+
+  def run(help: true) do
+    help()
+  end
+
+  def run(_) do
+    help()
   end
 end
 
-Cli.parse(System.argv())
+CLI.parse(System.argv())
