@@ -1,150 +1,69 @@
-#!/usr/bin/env ruby
-# coding: utf-8
-# frozen_string_literal: true
+#!/usr/bin/guile \
+-e main -s
+!#
 
-# Description: An opitionated dotfile deployer base on guix home and nix homemanager.
+(import (rnrs base)
+        (rnrs io ports)
+        (rnrs io simple)
+        (ice-9 getopt-long))
 
-# Features:
-# - the dotsignore file at the folder root behaves just like git's one ignoring undesired dotfiles.
-# - Folders are not symlinked but created.
-# - dry-run mode
-# - remove faulty symlinks if found
-# - backup non-symlink files to $HOME/.backup
-# - fully implemented cli interface
-# - GNU-Linux/BSD distros only
-#
-# TODO: Accept git commit sha as source to symlink deployment.
-# TODO: Read-only symlinks.
-# TODO: dotsignore to accept hash-like folder. eg: .config{foo,bar,meh,forevis}
-# TODO: set minimal permission to 0744
+(define home (getenv "HOME"))
+(define (version) (display "0.0.1"))
 
-require 'pathname'
-require 'find'
-require 'optparse'
-require 'fileutils'
+(define dotsignore-filename ".dotsignore")
 
-# Mirrors, by symlinking, a dotfiles repository to $HOME.
-class Main
-  HOME = Pathname.new Dir.home
+(define (dotsignore-exist? file)
+  (file-exists? file))
 
-  attr_reader :root, :home, :farm, :pretend
+(define (dotsignore root)
+  (string-append root "/" dotsignore-filename))
 
-  def initialize(root)
-    @root = Pathname.new(root)
-    @farm = {}.tap { |f| all_items[:files].each { |t| f.store(t, to_home(t)) } }
-  end
+(define (ignored-files root)
+  (let* ((listed (string-split
+                  (call-with-input-file (dotsignore root) get-string-all)
+                  #\newline))
+         (all (cons ".git" (cons ".dotsignore" listed))))
+    (map (lambda (file)(string-append root "/" file)) all)))
 
-  # ignore these dotfiles
-  def dotignored
-    dots = root.join('.dotsignore').read.split "\n"
-    dots.append '.dotsignore' # ignore itself too, ofc!
-    # dots.append '.git' if root.join('.git').exist? # ignore the .git folder.
-    dots.uniq # users may not notice duplicated dotfiles.
-  end
+(define (info root)
+  (display (string-append "root: " root))
+  (newline)
+  (display (string-append
+            "dotsignore: " (dotsignore root)
+            " - found? " (if (dotsignore-exist? root) "yep" "nope"))))
 
-  # is ITEM included in root folder?
-  def ignore?(item)
-    dotignored.map { |x| item.to_path.include? root.join(x).to_path }.any?
-  end
+(define (dryrun) (display 'dryrunning))
+(define (symlink) (display 'symlinking))
 
-  # organize listed items in .dotsignore as pathname
-  def all_items
-    { files: [], folders: [] }.tap do |x|
-      Find.find(root) do |item|
-        item = Pathname.new item
+(define (show-options)
+  (display "dots [options]
+  -v, --version    Display version
+  -s, --symlink    Deploy dotfiles symlinking
+  -d, --dryrun     Mimic symlinking deployment
+  -i, --info       Miscelleanous information
+  -h, --help       Display this help"))
 
-        next if item == root # skip the root folder itself
-        next if ignore? item
+(define (cli-parser args root)
+  (let* ((option-spec '((version (single-char #\v) (value #f))
+                        (symlink (single-char #\s) (value #f))
+                        (info    (single-char #\i) (value #f))
+                        (dryrun  (single-char #\d) (value #f))
+                        (help    (single-char #\h) (value #f))))
+         (options (getopt-long args option-spec)))
+    (option-run options)))
 
-        item.file? ? x[:files] << item : x[:folders] << item
-      end
-    end
-  end
+(define (option-run options)
+  (let ((option-wanted (lambda (option)
+                         (option-ref options option #f))))
+    (cond ((option-wanted 'version) (version))
+          ((option-wanted 'help)    (show-options))
+          ((option-wanted 'symlink) (symlink))
+          ((option-wanted 'dryrun)  (dryrun))
+          ((option-wanted 'info)    (info root))
+          (else                     (show-options)))))
 
-  # transform  stringfied origin item's root absolute path to home
-  # /a/b/c.tar --> /home/b/c.tar
-  def to_home(item)
-    home_path = HOME.to_path.concat('/') # / is needed to crop enterily item_path root path
-    item_homed = item.to_path.gsub(root.to_path, home_path)
-
-    Pathname.new item_homed
-  end
-
-  # do not symlink but create top folders of files if it does not exist
-  def make_folder(link)
-    folder = link.dirname
-    return if folder.exist?
-
-    # return if link == HOME # do not create the $HOME folder :/
-
-    puts "Creating folder: #{folder}"
-    FileUtils.mkdir_p folder unless pretend
-  end
-
-  # move file from home to a /home/backup/{file}
-  def backup_item(link)
-    return unless link.exist?
-    return if link.symlink?
-
-    warn "backup: #{link} ❯ $HOME/.backup."
-    FileUtils.mv link, HOME.join('.backup') unless pretend
-  end
-
-  # delete symlink if symlink's target does not exist
-  def rm_faulty_link(link)
-    return if link.exist?
-    return unless link.symlink? # skip as link is a symlink and aint faulty
-
-    warn "removing: #{link} is a faulty simlink"
-    link.delete unless pretend
-  end
-
-  def link_file(target, link)
-    return if link.symlink? # skip it as it exist and is a symlink.
-
-    puts "linking: #{target} ❯ #{link}"
-    link.make_symlink target unless pretend
-  end
-
-  def deploy
-    farm.each do |target, link| # As enumerator yielding folder to symlink
-      make_folder(link)
-      backup_item(link)
-      rm_faulty_link(link)
-      link_file(target, link)
-    end
-  end
-
-  def info
-    puts @root
-  end
-
-  def dryrun
-    puts 'running on dry-run mode'
-    @pretend = true
-    deploy
-  end
-end
-
-def cli
-  OptionParser.new do |opts|
-    opts.banner = 'Usage: dots [options]'
-
-    main = Main.new(ARGV[1]) unless ARGV.empty?
-
-    opts.on('-s', '--symlink', 'deploy dotfiles symlinking') do
-      main.deploy
-    end
-
-    opts.on('-d', '--dry-run', 'mimic symlinking deployment') do
-      main.dryrun
-    end
-
-    opts.on('-i', '--info', 'general information of internals commands') do
-      main.info
-    end
-  end
-end
-
-cli.parse! ['--help'] if ARGV.empty?
-cli.parse!
+(define (main args)
+  (let ((root (if (null? args)
+                  (canonicalize-path (cadr args))
+                  "")))
+    (cli-parser args root)))
