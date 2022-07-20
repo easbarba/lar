@@ -48,7 +48,7 @@ wayland=(sway swaybg swaylock swayidle foot clipman grim slurp wl-clipboard xway
 
 xorg=(xorg xserver-xorg-core xclip xsel feh scrot network-manager-gnome suckless-tools awesome awesome-extra)
 
-wm=(udiskie brightnessctl bluez blueman mpd mpc ncmpcpp zathura zathura-cb)
+wm=(udiskie brightnessctl bluez blueman mpd mpc ncmpcpp)
 
 laptop=(acpid tlp vainfo i965-va-driver libvdpau-va-gl1 libiw-dev hddtemp acpi-call dialog sysstat)
 
@@ -71,8 +71,6 @@ amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
 	libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
 	radeontop)
 
-games=(steam protontricks yad winetricks)
-
 groups=("${essentials[@]}"
 	"${debian[@]}"
 	"${system[@]}"
@@ -88,8 +86,7 @@ groups=("${essentials[@]}"
 	"${gtk[@]}"
 	"${cli[@]}"
 	# "${laptop[@]}"
-	"${amd[@]}"
-	"${games[@]}"
+	#"${amd[@]}"
 	"${fonts[@]}")
 
 for group in "${groups[@]}"; do
@@ -115,17 +112,17 @@ sudo systemctl enable fstrim.timer
 # =================================
 s-echo "Foreign packages"
 
-if [[ -x $(command -v flatpak) ]]; then
+if [[ ! -x $(command -v flatpak) ]]; then
 	"$INSTALL" flatpak gnome-software-plugin-flatpak
 	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 fi
 
-if [[ -x $(command -v google-chrome) ]]; then
-	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
-	"$INSTALL" /tmp/google-chrome-stable-current_amd64.deb
-fi
+#if [[ -x $(command -v google-chrome) ]]; then
+#	wget -P "/tmp" https://dl.google.com/linux/direct/google-chrome-stable-current_amd64.deb
+#	"$INSTALL" /tmp/google-chrome-stable-current_amd64.deb
+#fi
 
-if [[ -x $(command -v code) ]]; then
+if [[ ! -x $(command -v code) ]]; then
 	wget -c "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O '/tmp/vscode-x64.deb'
 	"$INSTALL" /tmp/vscode-x64.deb
 fi
