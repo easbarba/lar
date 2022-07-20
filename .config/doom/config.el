@@ -24,15 +24,14 @@
 
 ;; BUILT-IN
 
-(load! "lisp/init-dired")
 (load! "lisp/init-utils")
 (load! "lisp/init-variables")
+(load! "lisp/init-dired")
 (load! "lisp/init-functions")
 (load! "lisp/init-misc")
 (load! "lisp/init-builtin")
-(load! "lisp/init-settings")
 
 ;; REPOSITORY
 
 (load! "lisp/init-repository-misc")
-;; (load! "lisp/init-repository-readers")
+;; (load! "lisp/init-repository-languages")
