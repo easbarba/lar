@@ -55,6 +55,9 @@ export PATH="$DOOM_DIR/bin":$PATH
 # COMMON LISP
 export SBCL_HOME=$HOME/.local/lib/sbcl
 
+# ** SWIFT
+export PATH=$HOME/.local/swift/usr/bin:$PATH
+
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
