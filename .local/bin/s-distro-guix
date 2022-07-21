@@ -39,11 +39,8 @@ guix install glibc-locales
 # version=$(ls ~/.guix-profile/lib/locale/)
 # guix install "glibc-locales@$version"
 
-packages=(nss-certs font-dejavu icecat neofetch) # font-gnu-freefont-ttf
+packages=(nss-certs font-dejavu icecat alacritty neofetch) # font-gnu-freefont-ttf
 s-dolist "guix install" "${packages[@]}"
-
-# guile=()
-# s-dolist "guix install" "${guile[@]}"
 
 apps=(haunt) # font-gnu-freefont-ttf
 s-dolist "guix install" "${apps[@]}"
