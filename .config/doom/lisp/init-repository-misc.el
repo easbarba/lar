@@ -53,6 +53,8 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UChlCFJe7gDdED1DMFUmpEJg" ;; Chris McCord
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC47eUBNO8KBH_V8AfowOWOw" ;; Code Sync
+     ;; golang channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCoOjmHXV2STS3l5yJlFGoig" ;; Aprenda Golang
      ;; prog channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC2KfmYEM4KCuA1ZurravgYw" ;; Amigos Code
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCBWbWViVqDHckknir8PIIdg" ;; O Bruno Germano
