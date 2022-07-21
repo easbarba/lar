@@ -1,6 +1,0 @@
-name,branch,url
-dart-sass,main,https://github.com/sass/dart-sass
-flutter,master,https://github.com/flutter/flutter
-dart-pad,master,https://github.com/dart-lang/dart-pad
-dart-test,master,https://github.com/dart-lang/test
-dart,main,https://github.com/dart-lang/sdk
