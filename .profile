@@ -6,7 +6,7 @@
 export VISUAL="emacs"
 export EDITOR="nano"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 # * XDG HOMES
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -41,8 +41,6 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
 # * MISCELLANEOUS
 
-# ** SECRETS
-#export $(cat "$XDG_CONFIG_HOME/secrets" | xargs)
 # ===================================================
 
 # ** DOOM Emacs
@@ -52,27 +50,14 @@ export PATH="$DOOM_DIR/bin":$PATH
 
 # * LANGUAGES PACKAGE MANAGERS
 
-# COMMON LISP
-export SBCL_HOME=$HOME/.local/lib/sbcl
-
-# ** SWIFT
-export PATH=$HOME/.local/swift/usr/bin:$PATH
-
-# ** RUBY
-export GEM_HOME="$HOME/.local/gem"
-export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
-# ===================================================
-
 # ** GOLANG
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin"${PATH:+:}$PATH
 # ===================================================
 
-# ** NPM
-export NPM_CONFIG_PREFIX="$HOME/.local/npm"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export PATH="$NPM_CONFIG_PREFIX/bin"${PATH:+:}$PATH
+# ** RUBY
+export GEM_HOME="$HOME/.local/gem"
+export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 # ===================================================
 
 # * FOREIGN SYSTEM PACKAGE MANAGER
@@ -85,14 +70,12 @@ export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_P
 export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
 
-# ** NIX
-export NIX_PROFILE=$HOME/.nix-profile
-export PATH="$NIX_PROFILE/bin"${PATH:+:}$PATH
+# * SYSTEM TOOLS
 # ===================================================
 
-# * WINDOW MANAGER
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# ** SSH
 export SSH_AGENT_PID=$(pgrep ssh-agent)
 export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
 
