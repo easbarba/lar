@@ -26,5 +26,6 @@ tools=('github.com/fatih/gomodifytags@latest'
 	'golang.org/x/tools/cmd/guru@latest')
 s-dolist "$COMMAND" "${tools[@]}"
 
-devel=('mvdan.cc/sh/v3/cmd/shfmt@latest' 'github.com/erning/gorun@latest')
+devel=('mvdan.cc/sh/v3/cmd/shfmt@latest'
+	'github.com/erning/gorun@latest')
 s-dolist "$COMMAND" "${devel[@]}"

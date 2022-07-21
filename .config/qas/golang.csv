@@ -2,4 +2,5 @@ name,branch,url
 flux2,main,https://github.com/fluxcd/flux2
 crossplane,master,https://github.com/crossplane/crossplane
 kubernetes,master,https://github.com/kubernetes/kubernetes
+shfmt,master,https://github.com/mvdan/sh
 go,master,https://go.googlesource.com/go
