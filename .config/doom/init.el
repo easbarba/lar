@@ -112,7 +112,7 @@
        (elixir +lsp)       ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp          ; drown in parentheses
-       ;; erlang           ; an elegant language for a more civilized age
+       erlang           ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
        ;;factor
        ;;faust             ; dsp, but you get to keep your soul
@@ -131,7 +131,7 @@
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
-       ;; (lua +lsp)       ; one-based indices? one-based indices
+       (lua +lsp)       ; one-based indices? one-based indices
        markdown            ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
