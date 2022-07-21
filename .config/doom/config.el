@@ -19,19 +19,18 @@
              doom-variable-pitch-font (font-spec :family "sans" :size 23))))
 
 (setq doom-theme 'doom-miramare
-      org-directory "~/Documents/"
       display-line-numbers-type t)
 
 ;; BUILT-IN
 
-(load! "lisp/init-utils")
-(load! "lisp/init-variables")
-(load! "lisp/init-dired")
-(load! "lisp/init-functions")
-(load! "lisp/init-misc")
-(load! "lisp/init-builtin")
+;; (load! "lisp/init-utils")
+;; (load! "lisp/init-variables")
+;; (load! "lisp/init-dired")
+;; (load! "lisp/init-functions")
+;; (load! "lisp/init-misc")
+;; (load! "lisp/init-builtin")
 
 ;; REPOSITORY
 
-(load! "lisp/init-repository-misc")
+;; (load! "lisp/init-repository-misc")
 ;; (load! "lisp/init-repository-languages")
