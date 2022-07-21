@@ -15,8 +15,8 @@
      "https://www.fsf.org/static/fsforg/rss/blogs.xml"
      ;; scheme blogs
      "https://wingolog.org/feed/atom"
-     "https://elephly.net/feed.xml
-"     "https://guix.gnu.org/feeds/blog.atom"
+     "https://elephly.net/feed.xml"
+     "https://guix.gnu.org/feeds/blog.atom"
      "https://dthompson.us/feed.xml"
      ;; misc blogs
      "https://tonarinoyj.jp/rss/series/13932016480028984490"
@@ -34,13 +34,6 @@
      "https://billykorando.com/feed/"
      ;; progs blogs br
      "https://leandronsp.com/rss.xml"
-     ;; ruby
-     "https://rubyweekly.com/rss/"
-     "https://feeds.transistor.fm/remote-ruby"
-     "https://dev.to/feed/leandronsp"
-     "https://videosdeti.com.br/feed/"
-     "https://railsguides.net/atom.xml"
-     "https://gettalong.org/posts.rss"
      ;; devops
      "https://blog.bobbyallen.me/feed/"
      ;; devops br
@@ -53,32 +46,16 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWsBMQY4KSuOuGODki-l7A" ;; Data interview Pro
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCiWbFL7I1PgC5OnhIVkXySQ" ;; Vanny
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCW8Ews7tdKKkBT6GdtQaXvQ" ;; StrataScratch
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCDA5Yte0itW_Bf6UHpbHug" ;; Postgres Open
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCsJkVvxwoM7R9oRbzvUhbPQ" ;; Postgres Conference
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCkIPoYyNr1OHgTo0KwE9HJw" ;; EDB
      ;; elixir channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UChlCFJe7gDdED1DMFUmpEJg" ;; Chris McCord
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC47eUBNO8KBH_V8AfowOWOw" ;; Code Sync
-     ;; ruby channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFXaEz3vKJ45XjW5m5pbow" ;; Ruby Central
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCSBsYBhO5FLvvSl_ChnwDdw" ;; Lucas Caton
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCGr4Ent9-hTshgRnEgFFJdA" ;; Code by Duda
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC8ZZtZOqA-QkJad9VwVuNjw" ;; Nando Vieira
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCUCRO4CMJQgoabub5SzJQug" ;; Jesus Castello
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCxJaNyXCQw0mghY0hA1wA9w" ;; Drifting Ruby
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCzqORs_CagOn8ah5-QysgdQ" ;; David Battersby
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCaT8uPGUYbdRsjm4cJy1D7w" ;; TechMaker Studio
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCuYwpKcupN4QCLwvcGuzGNA" ;; ProgramadorShowzim
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCnkqH-e9V0VMeYrXElEPnTA" ;; Serradura
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCq6nWQ394zHewyoC6Cn1HhQ" ;; mix & go
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCrxf9jYw4gva_9jwb-77AqQ" ;; gurusp
-     ;; sql channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCDA5Yte0itW_Bf6UHpbHug" ;; Postgres Open
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCsJkVvxwoM7R9oRbzvUhbPQ" ;; Postgres Conference
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCkIPoYyNr1OHgTo0KwE9HJw" ;; EDB
      ;; prog channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC2KfmYEM4KCuA1ZurravgYw" ;; Amigos Code
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCBWbWViVqDHckknir8PIIdg" ;; O Bruno Germano
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC44Mzz2-5TpyfklUCQ5NuxQ" ;; One Bit Code
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCi9ZhLXmrT-BFHUmx9P2xEw" ;; Codeminer42
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqa6i-EYjkIqVhu1CpsBOPQ" ;; Filho da nuvem
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" ;; Computerphile
      ;; gnu/linux channels
@@ -110,7 +87,6 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCdKJlY5eAoSumIlcOcYxIGg" ;; Nunca Vi 1 cientista
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCrSM1UV_KLAdTzgxyxl3POw" ;; Ola Ciencia
      ;; vegan channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCs1uwp7bB1J_3r5xN2ioL_w" ;; High Carb Hannah
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCtdrvQPKPB7dQG5XJsbillQ" ;; Flavio Giusti
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JHFBaDUJ9wfo41HSII_w" ;; Fabio Chaves
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCEjkioV3LO_OIUaSWRxFZ3A" ;; Cheap Lazy Vegan
