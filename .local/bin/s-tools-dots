@@ -16,9 +16,7 @@
 # TODO: Accept git commit sha as source to symlink deployment.
 # TODO: Read-only symlinks.
 # TODO: dotsignore to accept hash-like folder. eg: .config{foo,bar,meh,forevis}
-# TODO: set minimal permission to 0744
-# TODO: --force flag, to overwrite even existent link files, useful to when user change stat of files
-#
+
 require 'pathname'
 require 'find'
 require 'optparse'
@@ -100,19 +98,28 @@ class Main
     link.delete unless pretend
   end
 
-  def link_file(target, link)
-    return if link.symlink? # skip it as it exist and is a symlink.
+  def link_file(target, link, force)
+    link.delete if force && link.exist?
+
+    # unless forced to, skip linking file as it does exist and is a symbolic link.
+    return if link.symlink?
 
     puts "linking: #{target} ❯ #{link}"
     link.make_symlink target unless pretend
   end
 
-  def deploy
+  def fix_perm(link)
+    puts "updating permission of #{link}"
+    link.chmod 0o744
+  end
+
+  def deploy(force: false)
     farm.each do |target, link| # As enumerator yielding folder to symlink
-      make_folder(link)
-      backup_item(link)
-      rm_faulty_link(link)
-      link_file(target, link)
+      # make_folder link
+      # backup_item link
+      # rm_faulty_link link
+      link_file target, link, force
+      fix_perm link
     end
   end
 
@@ -120,9 +127,11 @@ class Main
     puts @root
   end
 
-  def dryrun
-    puts 'running on dry-run mode'
+  def dry_run
+    puts 'running on pretend mode'
+
     @pretend = true
+
     deploy
   end
 end
@@ -133,12 +142,16 @@ def cli
 
     main = Main.new(ARGV[1]) unless ARGV.empty?
 
-    opts.on('-s', '--symlink', 'deploy dotfiles symlinking') do
+    opts.on('-d', '--deploy', 'deploy dotfiles links') do
       main.deploy
     end
 
-    opts.on('-d', '--dry-run', 'mimic symlinking deployment') do
-      main.dryrun
+    opts.on('-f', '--force', 'force redeployment of dotfiles links') do
+      main.deploy(force: true)
+    end
+
+    opts.on('-p', '--pretend', 'mimic deployment of symbolic links') do
+      main.dry_run
     end
 
     opts.on('-i', '--info', 'general information of internals commands') do
