@@ -16,8 +16,8 @@ TOOLS=('udiskie --notify --tray'
   "eval $(ssh-agent)"
   'mpd')
 
-APPS=('s-dev-mx'
-  'evince'
+APPS=('doom run'
+  'atril'
   'alacritty'
   'chromium')
 
