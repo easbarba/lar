@@ -18,4 +18,4 @@ if [[ ! -x "$DOOM_HOME/bin/doom" ]]; then
 fi
 
 doom sync
-#doom upgrade
+doom upgrade
