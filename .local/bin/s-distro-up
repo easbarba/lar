@@ -4,7 +4,7 @@
 set -euo pipefail
 
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
-DEPS=(sudo zae qas)
+DEPS=(bash sudo zae qas)
 
 # * CHECKER
 s-checkdeps "${DEPS[@]}"
@@ -21,16 +21,15 @@ s-distro-guix
 s-distro-flatpak
 
 # ==========================================
-s-echo "Editors and Langs packages"
+s-echo "Editors"
 
 s-dev-doom
 
 # ==========================================
 s-echo "Languages package installers"
 
-s-dev-ruby
 s-dev-golang
-s-dev-javascript
+s-dev-ruby
 
 # ==========================================
 s-echo "User tasks"
