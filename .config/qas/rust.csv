@@ -1,0 +1,7 @@
+name,repository
+fd,master,https://github.com/sharkdp/fd
+starship,master,https://github.com/starship/starship
+bat,master,https://github.com/sharkdp/bat
+alacritty,master,https://github.com/alacritty/alacritty
+cargo,master,https://github.com/rust-lang/cargo
+rust,master,https://github.com/rust-lang/rust
