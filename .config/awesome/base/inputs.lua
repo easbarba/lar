@@ -140,14 +140,14 @@ globalkeys =
         {modkey},
         "Print",
         function()
-            awful.spawn("s-wm-shot full")
+            awful.spawn("s-wm-shot --full")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "Print",
         function()
-            awful.spawn("s-wm-shot partial")
+            awful.spawn("s-wm-shot --partial")
         end
     ),
     awful.key(
