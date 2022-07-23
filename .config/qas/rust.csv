@@ -1,4 +1,4 @@
-name,repository
+name,branch,url
 fd,master,https://github.com/sharkdp/fd
 starship,master,https://github.com/starship/starship
 bat,master,https://github.com/sharkdp/bat
