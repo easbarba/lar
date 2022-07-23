@@ -2,10 +2,10 @@
 ;;; $DOOMDIR/packages.el
 
 ;; (package! org-make-toc)
-;; (package! outshine)
+(package! outshine)
 (package! define-word)
 (package! guix)
-;; (package! zoom)
+(package! zoom)
 (package! olivetti)
 (package! nov)
 
