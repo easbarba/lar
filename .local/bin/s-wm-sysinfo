@@ -5,43 +5,35 @@ set -euo pipefail
 
 DEPS=(sensors ping gawk grep sed amixer pactl notify-send)
 
+BATTERY="\Uf0e7 $(acpi -b | gawk '{print $4}')"
+CONNECTION="$([[ "$(nmcli connection show | gawk 'NR==2 {print $4}')" != '--' ]] && printf "\Uf1eb" || printf "\Uf1eb")"
+CPUT="\Uf06d $(sensors 2>&1 | gawk '/Tctl/ {print substr($2, 2)}')" # sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}'
 DISTRO="\uf05a GNU $(gawk '{print $1}' /etc/hostname)"
-KERNEL=$(gawk '{ print substr($3,1,4)}' /proc/version) # uname -r | sed 's/.//5g'
-UPTIME=$(uptime -p | gawk '{ print $2 "d|" $4 "h"}')   # uptime -p | awk '{print $2 $3}' | tr -d ','
 DATE="\Uf017 $(date "+%H:%M - %a, %b %d")"
 HOOST="${HOSTNAME^}"
-BATTERY="\Uf0e7 $(acpi -b | gawk '{print $4}')"
 GPUT="\Uf11b $(sensors 2>&1 | gawk '/edge/ {print substr($2, 2)}')" # sensors 2>&1 | grep edge | awk '{print substr($2, 2)}'
 MEMORY="\Uf18d $(free -m | gawk 'NR==2 {printf "%dMB\n", $3,$2,$3*100/$2 }')"
-CPUT="\Uf06d $(sensors 2>&1 | gawk '/Tctl/ {print substr($2, 2)}')" # sensors 2>&1 | grep Tctl | awk '{print substr($2, 2)}'
-
-_volume() {
-    local result
-    local check
-
-    check="$(pactl list sinks | gawk '/Mute/ {print $2}')"           # pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')
-    result="$(pactl list sinks | gawk '/Volume: front/ {print $5}')" # pactl list sinks | grep 'Volume: front' | tail -1 | awk '{print $5}'
-    # [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
-    # [[ $(pgrep -x "pulseaudio") ]]
-
-    [[ $check == *\[yes\]* ]] && printf "\Uf026"
-    [[ $check == *no* ]] && printf "%s" "\Uf028 $result"
-}
+VOLUME="\Uf026 $(pactl list sinks | gawk '/Volume: front/ {print $5}')"
+KERNEL=$(gawk '{ print substr($3,1,4)}' /proc/version) # uname -r | sed 's/.//5g'
+UPTIME=$(uptime -p | gawk '{ print $2 "d|" $4 "h"}')   # uptime -p | awk '{print $2 $3}' | tr -d ','
 
 _cpuf() {
-    local prevtotal
-    local total
-    local result
-
     read -r _ a b c previdle rest </proc/stat
-    prevtotal=$((a + b + c + previdle))
+
+    local prevtotal=$((a + b + c + previdle))
     sleep 0.5
+
     read -r _ a b c idle rest </proc/stat
-    total=$((a + b + c + idle))
-    result="$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))"
+
+    local total=$((a + b + c + idle))
+    local result="$((100 * ((total - prevtotal) - (idle - previdle)) / (total - prevtotal)))"
 
     echo -e "\Uf110 ${result}%"
 }
+
+echo -e "$VOLUME $(_cpuf) $CPUT $GPUT $MEMORY $BATTERY $DATE"
+
+exit
 
 _arch-update() {
     local sys
@@ -60,20 +52,11 @@ _debian-update() {
     printf "%s" "Packs: $num"
 }
 
-_connection() {
-    local result
+# check="$(pactl list sinks | gawk '/Mute/ {print $2}')"           # pactl list sinks | grep 'Mute' | awk '{print $2}' | tr -d '\n')
+result= # pactl list sinks | grep 'Volume: front' | tail -1 | awk '{print $5}'
+# [[ $(pgrep -x "amixer") ]] && result="$(amixer get Master | grep % | awk '{ print substr($5,2,3) }')"
+# [[ $(pgrep -x "pulseaudio") ]]
 
-    result=$(nmcli connection show | gawk 'NR==2 {print $4}')
-
-    if [[ "$result" != '--' ]]; then
-        printf "\Uf1eb ON"
-    else
-        printf "\Uf1eb OFF"
-    fi
-}
-
-echo -e "$KERNEL $(_volume) $(_cpuf) $CPUT $GPUT $MEMORY $BATTERY $DATE "
-
-exit
-
-[[ $DESKTOP_SESSION == "gnome" ]] && notify-send "$(_cpuf)$SEP$(_cput)$SEP$(_gput)$SEP$(_memory)$SEP$(_battery)"
+# [[ $check == *\[yes\]* ]] && printf
+# [[ $check == *no* ]] && printf "%s" "\Uf028 $result"
+# }
