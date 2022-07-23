@@ -70,7 +70,7 @@
        (dired +icons)    ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
        ibuffer           ; interactive buffer management
-       (undo +tree)      ; persistent, smarter undo for your inevitable mistakes
+       undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
@@ -127,7 +127,7 @@
        (elixir +lsp)       ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp          ; drown in parentheses
-       ;; (erlang +lsp)            ; an elegant language for a more civilized
+       ;; (erlang +lsp)    ; an elegant language for a more civilized
        ;; age
        ;;ess               ; emacs speaks statistics
        ;;factor
@@ -154,7 +154,7 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       (org +pretty +present); organize your plain life in plain text
+       (org +pretty)       ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
