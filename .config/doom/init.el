@@ -28,13 +28,13 @@
        vertico           ; the search engine of the future
 
        :ui
-       ;;deft              ; notational velocity for Emacs
+       ;;deft            ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
-       doom-quit       ; DOOM quit-message prompts when you quit Emacs
+       doom-quit         ; DOOM quit-message prompts when you quit Emacs
        (emoji +unicode)  ; 🙂
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ;;hydra
+       hydra
        indent-guides     ; highlighted indent columns
        (ligatures +extra); ligatures and symbols to make your code pretty again
        ;;minimap         ; show a map of the code on the side
@@ -99,7 +99,7 @@
        magit               ; a git porcelain for Emacs
        make                ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
-       ;;pdf               ; pdf enhancements
+       pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
        ;;taskrunner        ; taskrunner for all your projects
@@ -110,7 +110,7 @@
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
-       ;;tty               ; improve the terminal Emacs experience
+       tty                 ; improve the terminal Emacs experience
 
        :lang
        ;;agda              ; types of types of types of types...
@@ -163,9 +163,9 @@
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
        ;;rest              ; Emacs as a REST client
-       ;;rst               ; ReST in peace
+       rst                 ; ReST in peace
        (ruby +lsp)         ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        (scheme +guile)     ; a fully conniving family of lisps
        (sh +fish)          ; she sells {ba,z,fi}sh shells on the C xor
@@ -191,5 +191,5 @@
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
-       ;;literate
+       literate
        (default +bindings +smartparens))
