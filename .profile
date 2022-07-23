@@ -24,7 +24,7 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
-
+export XDG_DATA_DIRS='/var/lib/flatpak/exports/share':"$HOME/.local/share/flatpak/exports/share":$XDG_DATA_DIRS
 # LOCAL FOLDERS
 export LOCAL="$HOME/.local"
 export LOCAL_BIN="$LOCAL/bin"
@@ -68,11 +68,6 @@ export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
 export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
-# ===================================================
-
-# * FLATPAK
-export PATH='/var/lib/flatpak/exports/share'${PATH:+:}$PATH
-export PATH="$HOME/.local/share/flatpak/exports/share"${PATH:+:}$PATH
 # ===================================================
 
 # * SYSTEM TOOLS
