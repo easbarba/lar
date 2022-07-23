@@ -52,7 +52,7 @@ wm=(udiskie brightnessctl bluez blueman mpd mpc ncmpcpp)
 
 laptop=(acpid tlp vainfo i965-va-driver libvdpau-va-gl1 libiw-dev hddtemp acpi-call dialog sysstat)
 
-gtk=(evince cheese)
+gtk=(atril cheese)
 
 kde=(ktorrent kdenlive kate falkon kdeconnect krita elisa) # plasma-workspace-wayland kamoso  kdevelop
 
@@ -86,7 +86,7 @@ groups=("${essentials[@]}"
 	"${gtk[@]}"
 	"${cli[@]}"
 	# "${laptop[@]}"
-	#"${amd[@]}"
+	"${amd[@]}"
 	"${fonts[@]}")
 
 for group in "${groups[@]}"; do
