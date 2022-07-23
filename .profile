@@ -70,6 +70,11 @@ export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_P
 export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
 
+# * FLATPAK
+export PATH='/var/lib/flatpak/exports/share'${PATH:+:}$PATH
+export PATH="$HOME/.local/share/flatpak/exports/share"${PATH:+:}$PATH
+# ===================================================
+
 # * SYSTEM TOOLS
 # ===================================================
 
