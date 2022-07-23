@@ -35,7 +35,7 @@
 (define (dryrun) (display 'dryrunning))
 (define (symlink) (display 'symlinking))
 
-(define (show-options)
+(define (usage-options)
   (display "dots [options]
   -v, --version    Display version
   -s, --symlink    Deploy dotfiles symlinking
@@ -56,11 +56,11 @@
   (let ((option-wanted (lambda (option)
                          (option-ref options option #f))))
     (cond ((option-wanted 'version) (version))
-          ((option-wanted 'help)    (show-options))
+          ((option-wanted 'help)    (usage-options))
           ((option-wanted 'symlink) (symlink))
           ((option-wanted 'dryrun)  (dryrun))
           ((option-wanted 'info)    (info root))
-          (else                     (show-options)))))
+          (else                     (usage-options)))))
 
 (define (main args)
   (let ((root (if (null? args)
