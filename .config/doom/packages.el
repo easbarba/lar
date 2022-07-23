@@ -1,29 +1,19 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; (package! org-make-toc)
-(package! outshine)
+;; APPS
 (package! define-word)
-(package! guix)
 (package! zoom)
-(package! olivetti)
 (package! nov)
+(package! guix)
+
+;; UTILITIES
+(package! outshine)
+(package! olivetti)
+(package! org-make-toc)
 
 ;; langs
 (package! hare-mode :recipe (:host nil :repo "https://git.sr.ht/~bbuccianti/hare-mode"))
-
-;; (package! fish-mode)
-;; (package! alert)
-;; (package! duplicate-thing)
-;; (package! mastodon)
-;; (package! exwm)
-
-;; (package! nvm)
-;; (package! vue-mode)
-
-;; DISABLE
-;; (package! irony :disable t)
-;; (package! cmake-mode :disable t)
 
 ;; RECIPE
 
