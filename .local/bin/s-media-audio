@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# DEBUG SETTINGS
+set -euo pipefail
+
 # Description: Extract audio of video pointed in clipboards url.
 
 # TODO: Check uri!
