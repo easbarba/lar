@@ -6,11 +6,11 @@ set -euo pipefail
 DEPS=(curl)
 s-checkdeps "${DEPS[@]}"
 
-# ==============================
-
 [[ ! -f ~/.cargo/env ]] && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+. "$HOME/.cargo/env"
 
-# ==============================
+TOOLS=(starship)
+s-dolist 'cargo install --locked' "${TOOLS[@]}"
 
-packages=(starship fd-find exa bat ripgrep procs sd du-dust tokei)
-s-dolist 'cargo install --locked' '' "${packages[@]}"
+APPS=(fd-find ripgrep exa bat procs sd du-dust tokei)
+s-dolist 'cargo install --locked' "${APPS[@]}"
