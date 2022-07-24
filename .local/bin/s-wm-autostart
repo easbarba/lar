@@ -19,7 +19,7 @@ TOOLS=('udiskie --notify --tray'
 APPS=('doom run'
   'atril'
   'alacritty'
-  'chromium')
+  'firefox')
 
 # ===================================================
 # * HELPERS
