@@ -3,6 +3,8 @@
 # DEBUG SETTINGS
 set -euo pipefail
 
+# TODO: cli flag to skip become tasks
+
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
 DEPS=(bash sudo zae qas)
 
