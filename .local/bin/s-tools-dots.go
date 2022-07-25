@@ -39,14 +39,7 @@ func crawler(root string, ignored []string) {
 			}
 
 			// check if it is to ignore file
-			ignore, err := ignore_these(root)
-
-			if err != nil {
-				return err
-			}
-
-			// ignore it
-			if ignore {
+			if ignore_any(root, ignored) {
 				return nil
 			}
 
@@ -59,24 +52,18 @@ func crawler(root string, ignored []string) {
 	fmt.Print("root: ", root)
 }
 
-func ignore_these(root string) (bool, error) {
-	ignored, err := ioutil.ReadFile(filepath.Join(root, ".dotsignore"))
-
-	if err != nil {
-		return false, err
-	}
-
-	// ignore file if its is in .dotsignored
-	for _, item := range strings.Split(string(ignored), "\n") {
+// ignore file if its is in .dotsignored
+func ignore_any(root string, ignored []string) bool {
+	for _, item := range ignored {
 		// empty string
 		if item == "" {
-			return true, nil
+			return true
 		}
 
 		if strings.Contains(root, filepath.Join(root, item)) {
-			return true, nil
+			return true
 		}
 	}
 
-	return false, nil
+	return false
 }
