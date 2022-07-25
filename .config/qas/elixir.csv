@@ -1,0 +1,10 @@
+name,branch,url
+nickjj-docker-phoenix-example,main,https://github.com/nickjj/docker-phoenix-example
+erlang-otp,master,https://github.com/erlang/otp
+erlang-rebar3,main,https://github.com/erlang/rebar3
+elixir-ls,master,https://github.com/elixir-lsp/elixir-ls
+credo,master,https://github.com/rrrene/credo
+ecto,master,https://github.com/elixir-ecto/ecto
+hex,main,https://github.com/hexpm/hex
+phoenix,master,https://github.com/phoenixframework/phoenix
+elixir,main,https://github.com/elixir-lang/elixir
