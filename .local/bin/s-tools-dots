@@ -5,5 +5,11 @@ set -euo pipefail
 
 HERE="$(dirname "$0")"
 
-ruby "$HERE/s-tools-dots.rb" "$@"
-# go run "$HERE/s-tools-dots.go" "$@"
+# declare -r RB=(ruby s-tools-dots.rb)
+# declare -r GO=(go s-tools-dots.go)
+
+# for runner in ${RB[@]} ${GO[@]}; do
+# echo ${runner[@]}
+# [[ -x $(command -v ${runner[0]}) ]] && ruby "$HERE/${runner[1]}" "$@"
+
+# done
