@@ -15,17 +15,18 @@ packages=('golang.org/x/tools/gopls@latest') # 'github.com/xxxserxxx/gotop/v4/cm
 s-dolist "$COMMAND" "${packages[@]}"
 
 tools=('github.com/fatih/gomodifytags@latest'
+	'github.com/x-motemen/gore/cmd/gore@latest'
 	'github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest'
 	'github.com/ramya-rao-a/go-outline@latest'
 	'github.com/go-delve/delve/cmd/dlv@latest'
 	'github.com/cweill/gotests/...@latest'
 	# 'github.com/dominikh/go-tools/cmd/staticcheck@latest'
-	'github.com/x-motemen/gore/cmd/gore@latest'
 	'github.com/ramya-rao-a/go-outline@latest'
 	'github.com/mdempsky/gocode@latest'
 	'golang.org/x/tools/cmd/guru@latest')
 s-dolist "$COMMAND" "${tools[@]}"
 
 devel=('mvdan.cc/sh/v3/cmd/shfmt@latest'
+	'github.com/x-motemen/gore/cmd/gore@latest'
 	'github.com/erning/gorun@latest')
 s-dolist "$COMMAND" "${devel[@]}"
