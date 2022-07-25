@@ -109,15 +109,17 @@ class Main
   end
 
   def fix_perm(link)
+    return if link.symlink?
+
     puts "updating permission of #{link}"
     link.chmod 0o744
   end
 
   def deploy(force: false)
     farm.each do |target, link| # As enumerator yielding folder to symlink
-      # make_folder link
-      # backup_item link
-      # rm_faulty_link link
+      make_folder link
+      backup_item link
+      rm_faulty_link link
       link_file target, link, force
       fix_perm link
     end
