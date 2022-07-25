@@ -18,11 +18,19 @@ func main() {
 		os.Exit(1)
 	}
 
+	ignored_list, err := ioutil.ReadFile(filepath.Join(*root, ".dotsignore"))
+	cleaned_ignored_list := strings.Split(string(ignored_list), "\n")
+
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
 	// pass normalized directory name absolute path
-	crawler(filepath.Clean(*root))
+	crawler(filepath.Clean(*root), cleaned_ignored_list)
 }
 
-func crawler(root string) {
+func crawler(root string, ignored []string) {
 	filepath.Walk(root,
 		func(path string, info os.FileInfo, err error) error {
 			if err != nil {
