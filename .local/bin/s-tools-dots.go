@@ -1,5 +1,3 @@
-// #!/usr/bin/env gorun
-
 package main
 
 import (
@@ -20,41 +18,57 @@ func main() {
 		os.Exit(1)
 	}
 
-	ignored, _ := ignore_these(*root)
-	crawler(root, ignored)
+	// pass normalized directory name absolute path
+	crawler(filepath.Clean(*root))
 }
 
-func crawler(root *string, ignored []string) {
-	filepath.Walk(*root, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			fmt.Println(err)
-			return err
-		}
+func crawler(root string) {
+	filepath.Walk(root,
+		func(path string, info os.FileInfo, err error) error {
+			if err != nil {
+				fmt.Println(err)
+				return err
+			}
 
-		// ignore file if its is in .dotsignored
-		for _, it := range ignored {
-			if it == "" {
+			// check if it is to ignore file
+			ignore, err := ignore_these(root)
+
+			if err != nil {
+				return err
+			}
+
+			// ignore it
+			if ignore {
 				return nil
 			}
 
-			if strings.Contains(path, it) {
-				return nil
-			}
-		}
+			// finally, print file to be linked
+			fmt.Println(path)
 
-		// print file to be linked
-		fmt.Println(path)
+			return nil
+		})
 
-		return nil
-	})
+	fmt.Print("root: ", root)
 }
 
-func ignore_these(filename string) ([]string, error) {
-	ignored, err := ioutil.ReadFile(filepath.Join(filename, ".dotsignore"))
+func ignore_these(root string) (bool, error) {
+	ignored, err := ioutil.ReadFile(filepath.Join(root, ".dotsignore"))
 
 	if err != nil {
-		return nil, err
+		return false, err
 	}
 
-	return strings.Split(string(ignored), "\n"), nil
+	// ignore file if its is in .dotsignored
+	for _, item := range strings.Split(string(ignored), "\n") {
+		// empty string
+		if item == "" {
+			return true, nil
+		}
+
+		if strings.Contains(root, filepath.Join(root, item)) {
+			return true, nil
+		}
+	}
+
+	return false, nil
 }
