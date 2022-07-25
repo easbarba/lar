@@ -1,4 +1,4 @@
-.git
+.rufo
 .gitignore
 .elixir_ls
 LICENSE
@@ -6,6 +6,7 @@ README.md
 .iex.exs
 .tcshrc
 .zshrc
+.git/
 .config/ansible
 .config/Clementine
 .config/debian
