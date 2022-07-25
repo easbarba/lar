@@ -1,4 +1,4 @@
-#!/usr/bin/env gorun
+// #!/usr/bin/env gorun
 
 package main
 
@@ -21,10 +21,10 @@ func main() {
 	}
 
 	ignored, _ := ignore_these(*root)
-	walk(root, ignored)
+	crawler(root, ignored)
 }
 
-func walk(root *string, ignored []string) {
+func crawler(root *string, ignored []string) {
 	filepath.Walk(*root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			fmt.Println(err)

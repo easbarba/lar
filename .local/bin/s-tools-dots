@@ -1,1 +1,9 @@
-./s-tools-dots.rb
+#!/usr/bin/env bash
+
+# DEBUG OPTIONS
+set -euo pipefail
+
+HERE="$(dirname "$0")"
+
+ruby "$HERE/s-tools-dots.rb" "$@"
+# go run "$HERE/s-tools-dots.go" "$@"
