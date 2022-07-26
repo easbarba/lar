@@ -55,6 +55,9 @@ export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin"${PATH:+:}$PATH
 # ===================================================
 
+# ** JAVA
+export SDKMAN_DIR="$HOME/.sdkman"
+
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH

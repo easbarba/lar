@@ -66,3 +66,6 @@ fi
 # elif [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
 # tmux attach || tmux new-session
 # fi
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
