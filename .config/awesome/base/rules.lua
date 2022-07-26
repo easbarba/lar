@@ -182,7 +182,7 @@ awful.rules.rules = {
         properties = {tag = "term"}
     },
     {
-        rule_any = {class = {"IceCat", "Firefox", "firefox", "Chromium", "Falkon"}},
+        rule_any = {class = {"IceCat", "Firefox", "firefox", "Chromium", "Falkon", "Google-chrome"}},
         properties = {tag = "www"}
     },
     {
