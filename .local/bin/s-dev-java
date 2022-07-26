@@ -6,11 +6,13 @@ set -euo pipefail
 DEPS=(curl bash)
 s-checkdeps "${DEPS[@]}"
 
+# ** SDKMAN
+
 COMMAND='sdk install'
 
 [[ ! -f $HOME/.sdkman/bin/sdkman-init.sh ]] && curl -s "https://get.sdkman.io" | bash
 
-TOOLS=(gradle maven)
+TOOLS=(gradle maven ant)
 s-dolist "$COMMAND" "${TOOLS[@]}"
 
 LANG=(kotlin)
