@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.io.IOException;
+import java.util.stream.Stream;
 
 public class Dots {
     public static void main(String[] args) {
@@ -12,41 +13,47 @@ public class Dots {
     }
 }
 
+// TODO: use run() to manage trivial tasks while actions to properly handle
+// unique task!
 class Actions {
-    public static void pretend(Path sDir) {
+    interface MyNumber {
+        void getValue(MyNumber n);
+    }
+
+    static Stream<Path> run(Path sDir, MyNumber func) {
         try {
-            Files.walk(sDir, 999)
-                .forEach((n) -> {
-                        System.out.print("PRETENDING: ");
-                        System.out.println(n.toString());});
+            Files.walk(sDir, 999).forEach(func);
         }
         catch (IOException e){
             System.out.println(e);
         }
+    }
+
+    public static void pretend(Path sDir) {
+        MyNumber m = (n) -> {
+            System.out.print("PRETENDING: ");
+            System.out.println(n.toString());
+        };
+
+        run(sDir, m.getValue(m));
     }
 
     public static void force(Path sDir) {
-        try {
-            Files.walk(sDir, 999)
-                .forEach((n) -> {
-                        System.out.print("FORCING: ");
-                        System.out.println(n.toString());});
-        }
-        catch (IOException e){
-            System.out.println(e);
-        }
+        MyNumber m = (n) -> {
+            System.out.print("FORCING: ");
+            System.out.println(n.toString());
+        };
+
+        run(sDir, m.getValue(m));
     }
 
     public static void deploy(Path sDir) {
-        try {
-            Files.walk(sDir, 999)
-                .forEach((n) -> {
-                        System.out.print("DEPLOYING: ");
-                        System.out.println(n.toString());});
-        }
-        catch (IOException e){
-            System.out.println(e);
-        }
+        MyNumber m = (n) -> {
+            System.out.print("DEPLOYING: ");
+            System.out.println(n.toString());
+        };
+
+        run(sDir, m.getValue(m));
     }
 }
 
