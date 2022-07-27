@@ -3,37 +3,54 @@
 # DEBUG SETTINGS
 set -euo pipefail
 
-# TODO: cli flag to skip become tasks
-
+BECOME=false
 DISTRO="$(awk '/^NAME=/ { split($0,a,"="); print a[2] }' /etc/os-release)"
-DEPS=(bash sudo zae qas)
 
 # * CHECKER
+DEPS=(bash sudo zae qas)
 s-checkdeps "${DEPS[@]}"
 
-# ==========================================
+# * OPTIONS
+print_usage() {
+    printf "Usage:
+    -s      skip become tasks
+"
+}
+
+while getopts ':b' flag; do
+    case "${flag}" in
+        b) BECOME=true ;;
+        *)
+            print_usage
+            exit 1
+            ;;
+    esac
+done
+
+# * MAIN
+# ** SYSTEM
 s-echo "Upgrading $DISTRO system packages."
 
-[[ -x $(command -v zae) ]] && zae update && zae upgrade
+[[ $BECOME != true && -x $(command -v zae) ]] && zae update && zae upgrade
 
-# ==========================================
+# ** FOREIGN
 s-echo "Foreign installers"
 
 s-distro-guix
 s-distro-flatpak
 
-# ==========================================
+# ** EDITORS
 s-echo "Editors"
 
 s-dev-doom
 
-# ==========================================
+# ** LANGS
 s-echo "Languages package installers"
 
 s-dev-golang
 s-dev-ruby
 
-# ==========================================
+# * USER
 s-echo "User tasks"
 
 qas --grab
