@@ -12,7 +12,7 @@ COMMAND='sdk install'
 
 [[ ! -f $HOME/.sdkman/bin/sdkman-init.sh ]] && curl -s "https://get.sdkman.io" | bash
 
-TOOLS=(gradle maven ant)
+TOOLS=(gradle maven ant springboot)
 s-dolist "$COMMAND" "${TOOLS[@]}"
 
 LANG=(kotlin)
