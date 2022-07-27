@@ -6,7 +6,7 @@
 export VISUAL="emacs"
 export EDITOR="nano"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 # * XDG HOMES
 export XDG_CONFIG_HOME="$HOME/.config"
