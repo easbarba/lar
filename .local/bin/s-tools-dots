@@ -3,6 +3,24 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
+SKIP=false
+
+print_usage() {
+    printf "Usage: ..."
+}
+
+while getopts ':vb' flag; do
+    case "${flag}" in
+        b) SKIP=true ;;
+        *)
+            print_usage
+            exit 1
+            ;;
+    esac
+done
+
+echo $SKIP
+
 HERE="$(dirname "$0")"
 
 # declare -r RB=(ruby s-tools-dots.rb)
