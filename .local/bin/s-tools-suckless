@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# DEBUG OPTIONS
+set -euo pipefail
+
+if ! grep 'Type=XSession' /usr/share/xsessions/dwm-local.desktop; then
+    cat <<EOF | sudo tee -a "/usr/share/xsessions/dwm-local.desktop"
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm-local
+Comment=Local dwm build
+Exec=$HOME/.local/bin/dwm
+Type=XSession
+EOF
+fi
+
+# $HOME_LOCAL="$HOME/.local"
+# SUCKLESS_BASE="$XDG_CONFIG_HOME/suckless"
+
+# # DWM
+# # ======================================================
+
+# DWM_BUILD="$HOME/Builds/dwm"
+# DWM_TAG=6.3
+# DWM_BASE="$SUCKLESS_BASE/dwm"
+# DWM_CUSTOM_CONFIG="$DWM_BASE/config.h"
+
+# [[ ! -d "$DWM_BUILD/.git" ]] && rm -rf "$DWM_BUILD"
+# [[ -d "$DWM_BASE/dwm-6.3.tar.gz" ]] && tar "$DWM_BASE/dwm-6.3.tar.gz"
+
+# cd "$DWM_BUILD"
+# git apply "$DWM_BASE/patches/dwm-systray-6.3.diff"
+# make PREFIX="$HOME_LOCAL" config.h clean install
+
+# [[ ! -d "$DWM_BUILD/.git" ]] && git clone --depth 1 --branch $DWM_TAG https://git.suckless.org/dwm "$DWM_BUILD"
+# wget -c https://dwm.suckless.org/patches/systray/dwm-systray-6.3.diff
+
+# * ST
+# ===================================================
+
+# if [ ! -d "$XDG_CONFIG_HOME/st/.git" ]; then
+#     echo -e " -- Cloning st to $XDG_CONFIG_HOME"
+#     git clone https://git.suckless.org/st "$XDG_CONFIG_HOME/st"
+# fi
