@@ -5,7 +5,7 @@
 # * DEFAULT SOFTWARE:
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="chromium"
 
 # * XDG HOMES
@@ -75,7 +75,6 @@ export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 
 # * SYSTEM TOOLS
 # ===================================================
-
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # ** SSH
