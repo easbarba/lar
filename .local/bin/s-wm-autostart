@@ -18,7 +18,7 @@ TOOLS=('udiskie --notify --tray'
 
 APPS=('doom run'
   'atril'
-  'alacritty'
+  'st'
   'chromium')
 
 # ===================================================
