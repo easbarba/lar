@@ -17,7 +17,7 @@ TOOLS=('udiskie --notify --tray'
   'mpd')
 
 APPS=('doom run'
-  'atril'
+  'zathura'
   'st'
   'chromium')
 
