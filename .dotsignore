@@ -15,7 +15,6 @@ README.md
 .config/hyper
 .config/gh
 .config/emacs-archived
-.config/i3
 .config/micro
 .config/kitty
 .config/nix
