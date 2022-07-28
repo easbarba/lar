@@ -59,13 +59,7 @@ alias s-path='echo -e ${PATH//:/\\n}' # prettier PATH entries
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 
 # * GNU SCREEN
-if [[ -x "$(command -v screen)" ]] && [[ "$DISPLAY" ]]; then
-    screen -xRR GNU # Attach to a not detached screen session.
-fi
-
-# elif [[ -x "$(command -v tmux)" ]] && test -z "$TMUX"; then
-# tmux attach || tmux new-session
-# fi
+[[ -x "$(command -v screen)" && -z "$STY" ]] && screen -S GNU
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
