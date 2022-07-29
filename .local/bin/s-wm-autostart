@@ -13,12 +13,12 @@ TOOLS=('udiskie --notify --tray'
   'nm-applet'
   'setxkbmap -model abnt2 -layout br -variant abnt2'
   'xautolock -time 8 -locker "slock" -detectsleep'
-  'slstatus'
+  "$LOCAL_BIN/slstatus"
   'mpd')
 
-APPS=('doom run'
+APPS=("$LOCAL_BIN/s-dev-mx"
   'zathura'
-  'st'
+  "$LOCAL_BIN/st"
   'chromium')
 
 # ===================================================
