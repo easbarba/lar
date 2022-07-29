@@ -1,5 +1,6 @@
 # * WINDOW MANAGER
 
+. "$HOME/.profile"
 "$HOME/.local/bin/s-wm-autostart"
 
 # while true; do
