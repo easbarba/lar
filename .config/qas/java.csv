@@ -3,8 +3,11 @@ lombok,master,https://github.com/projectlombok/lombok
 picocli,main,https://github.com/remkop/picocli
 eclipse-jdt-ls,master,https://github.com/eclipse/eclipse.jdt.ls
 junit5,main,https://github.com/junit-team/junit5
+gradle,master,https://github.com/gradle/gradle
+apache-ant,master,https://gitbox.apache.org/repos/asf/ant.git
 apache-commons-cli,master,https://gitbox.apache.org/repos/asf/commons-cli.git
 apache-kafka,trunk,https://github.com/apache/kafka
+apache-maven,master,https://gitbox.apache.org/repos/asf/maven-sources.git
 spring-boot,main,https://github.com/spring-projects/spring-boot
 spring-framework,main,https://github.com/spring-projects/spring-framework
 openjdk,master,https://github.com/openjdk/jdk
