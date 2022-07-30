@@ -128,8 +128,8 @@
   (global-set-key (kbd "C-c a d p") 'define-word-at-point)
   (global-set-key (kbd "C-c a d w") 'define-word))
 
-(use-package! org-make-toc
-  :hook (org-mode . org-make-toc-mode))
+;; (use-package! org-make-toc
+;;   :hook (org-mode . org-make-toc-mode))
 
 (use-package! guix
   :defer t
@@ -140,6 +140,13 @@
   :config
   (zoom-mode)
   (setq zoom-ignored-major-modes '(dired-mode ediff-mode)))
+
+(use-package! nov
+  :defer t
+  :init (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+  :config
+  (add-hook 'nov-mode-hook 'olivetti-mode)
+  (define-key nov-mode-map (kbd "w") 'define-word-at-point))
 
 (provide 'init-repository-misc)
 ;;; init-repository-misc.el ends here
