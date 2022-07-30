@@ -1,4 +1,5 @@
 name,branch,url
+emmylua-languageserver,master,https://github.com/EmmyLua/EmmyLua-LanguageServer
 picocli,main,https://github.com/remkop/picocli
 eclipse-jdt-ls,master,https://github.com/eclipse/eclipse.jdt.ls
 oracle-graal,master,https://github.com/oracle/graal
