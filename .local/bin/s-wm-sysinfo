@@ -3,6 +3,8 @@
 # DEBUG OPTIONS
 set -euo pipefail
 
+# TODO: directly feed system partes from syscalls
+
 DEPS=(sensors ping gawk grep sed amixer pactl notify-send)
 
 BATTERY="\Uf0e7 $(acpi -b | gawk '{print $4}')"
