@@ -10,10 +10,7 @@
 ;; UTILITIES
 (package! outshine)
 (package! olivetti)
-(package! org-make-toc)
-
-;; langs
-(package! hare-mode :recipe (:host nil :repo "https://git.sr.ht/~bbuccianti/hare-mode"))
+;; (package! org-make-toc)
 
 ;; RECIPE
 
