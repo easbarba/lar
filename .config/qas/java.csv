@@ -1,7 +1,8 @@
 name,branch,url
-lombok,master,https://github.com/projectlombok/lombok
 picocli,main,https://github.com/remkop/picocli
 eclipse-jdt-ls,master,https://github.com/eclipse/eclipse.jdt.ls
+oracle-graal,master,https://github.com/oracle/graal
+lombok,master,https://github.com/projectlombok/lombok
 junit5,main,https://github.com/junit-team/junit5
 gradle,master,https://github.com/gradle/gradle
 apache-ant,master,https://gitbox.apache.org/repos/asf/ant.git
