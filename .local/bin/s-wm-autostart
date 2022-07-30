@@ -16,8 +16,7 @@ TOOLS=('udiskie --notify --tray'
   "$LOCAL_BIN/slstatus"
   'mpd')
 
-APPS=("$LOCAL_BIN/s-dev-mx"
-  'zathura'
+APPS=("$HOME/.config/emacs/bin/doom run"
   "$LOCAL_BIN/st"
   'chromium')
 
