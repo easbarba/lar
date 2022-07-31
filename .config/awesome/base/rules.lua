@@ -170,7 +170,7 @@ awful.rules.rules = {
     {rule_any = {type = {"normal", "dialog"}}, properties = {titlebars_enabled = false}},
     -- Tags: Apps to always map on the specified tag.
     {
-        rule_any = {class = {"Emacs", "kate", "Code", "jetbrains-idea-ce"}},
+        rule_any = {class = {"Emacs", "Eclipse", "kate", "Code", "jetbrains-idea-ce"}},
         properties = {tag = "mx"}
     },
     {
