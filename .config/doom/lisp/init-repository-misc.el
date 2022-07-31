@@ -49,17 +49,6 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCDA5Yte0itW_Bf6UHpbHug" ;; Postgres Open
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCsJkVvxwoM7R9oRbzvUhbPQ" ;; Postgres Conference
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCkIPoYyNr1OHgTo0KwE9HJw" ;; EDB
-     ;; elixir channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UChlCFJe7gDdED1DMFUmpEJg" ;; Chris McCord
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0l2QTnO1P2iph-86HHilMQ" ;; ElixirConf
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC47eUBNO8KBH_V8AfowOWOw" ;; Code Sync
-     ;; golang channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCoOjmHXV2STS3l5yJlFGoig" ;; Aprenda Golang
-     ;; prog channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2KfmYEM4KCuA1ZurravgYw" ;; Amigos Code
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCBWbWViVqDHckknir8PIIdg" ;; O Bruno Germano
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCqa6i-EYjkIqVhu1CpsBOPQ" ;; Filho da nuvem
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" ;; Computerphile
      ;; gnu/linux channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC629vKGFPRc1rz6VDm6OZiQ" ;; Diolinux clips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
