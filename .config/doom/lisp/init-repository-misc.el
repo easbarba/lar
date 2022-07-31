@@ -22,7 +22,6 @@
      "https://tonarinoyj.jp/rss/series/13932016480028984490"
      ;; distros blogs
      "https://guix.gnu.org/feeds/blog.atom"
-     "https://pointieststick.com/feed/"
      ;; prog blogs
      "https://michael.stapelberg.ch/feed.xml"
      "https://edelpero.svbtle.com/feed"
@@ -31,6 +30,7 @@
      "https://unixsheikh.com/feed.rss"
      "https://sourcehut.org/blog/index.xml"
      "https://nullprogram.com/feed/"
+     ;; java
      "https://billykorando.com/feed/"
      ;; progs blogs br
      "https://leandronsp.com/rss.xml"
@@ -60,6 +60,9 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCCDA5Yte0itW_Bf6UHpbHug" ;; Postgres Open
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCsJkVvxwoM7R9oRbzvUhbPQ" ;; Postgres Conference
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCkIPoYyNr1OHgTo0KwE9HJw" ;; EDB
+     ;; prog channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCqa6i-EYjkIqVhu1CpsBOPQ" ;; Filho da nuvem
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" ;; Computerphile
      ;; gnu/linux channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC629vKGFPRc1rz6VDm6OZiQ" ;; Diolinux clips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
@@ -80,7 +83,6 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCyNp3i0UZeTL11CUBs9mZyA" ;; Punkdevops
      ;; entertainment channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqRraVICLr0asn90cAvkIZQ" ;; Corinthians TV
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCyEd6QBSgat5kkC6svyjudA" ;; Mark Wiens
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCmRFj7s3qBtadUujBd3Tujg" ;; Panelaco
      ;; misc channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fGGprihDIlQ3ykWvcb9hg" ;; Tese onze
