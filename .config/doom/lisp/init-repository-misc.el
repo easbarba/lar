@@ -42,6 +42,17 @@
      ;; FLOSS channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
+     ;; java channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2KfmYEM4KCuA1ZurravgYw" ;; Amigos Code
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCmRtPmgnQ04CMUpSUqPfhxQ" ;; Java
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCBVCTuk6uJrN3iFV_3vurg" ;; Devoxx
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCz_QEfF3VBqWPliHy3JiJ_g" ;; DevXplaining
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCDG4jVD88QEjB8UKLYZKiNA" ;; JFocus
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdDhYMT2USoLdh4SZIsu_1g" ;; Oracle Developers
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCxOVEOhPNXcJuyfVLhm_BfQ" ;; tom gregory
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC59K-uG2A5ogwIrHw4bmlEg" ;; telusko
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCsLo154Krjwhoz8W00N8ItA" ;; keep on coding
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC99WYKL8ggupKiE0j0YEJaA" ;; keso rupert
      ;; sql channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWsBMQY4KSuOuGODki-l7A" ;; Data interview Pro
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCiWbFL7I1PgC5OnhIVkXySQ" ;; Vanny
