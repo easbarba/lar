@@ -1,7 +1,5 @@
 name,branch,url
-picocli,main,https://github.com/remkop/picocli
 junit5,main,https://github.com/junit-team/junit5
-apache-commons-cli,master,https://gitbox.apache.org/repos/asf/commons-cli.git
 apache-maven-core,master,https://gitbox.apache.org/repos/asf/maven.git
 spring-boot,main,https://github.com/spring-projects/spring-boot
 spring-framework,main,https://github.com/spring-projects/spring-framework
