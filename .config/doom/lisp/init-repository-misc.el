@@ -32,6 +32,7 @@
      "https://nullprogram.com/feed/"
      ;; java
      "https://billykorando.com/feed/"
+     "https://www.baeldung.com/feed"
      ;; progs blogs br
      "https://leandronsp.com/rss.xml"
      ;; devops
