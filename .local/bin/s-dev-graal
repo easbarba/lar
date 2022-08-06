@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Debug Options
+set -euo pipefail
+
+URL="https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.2.0/graalvm-ce-java17-linux-amd64-22.2.0.tar.gz"
+HOME_BUILDS="$HOME/Builds"
+GRAAL_LOCATION="$HOME_BUILDS/graalvm-ce-java17-22.2.0"
+
+wget -c $URL -P /tmp
+tar xf /tmp/graalvm-ce-java17-linux-amd64-22.2.0.tar.gz -C "$HOME_BUILDS"
+
+ln -sf "$GRAAL_LOCATION/bin/gu" "$HOME/.local/bin/gu"
+
+gu install native-image
+
+ln -sf "$GRAAL_LOCATION/bin/native-image" "$HOME/.local/bin/native-image"
