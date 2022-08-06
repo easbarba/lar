@@ -8,5 +8,5 @@
 
 # * WINDOW MANAGER
 
-exec awesome
+# exec awesome
 exec "$HOME/.local/bin/dwm"
