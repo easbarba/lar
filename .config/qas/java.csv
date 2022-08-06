@@ -5,4 +5,6 @@ spring-boot,main,https://github.com/spring-projects/spring-boot
 spring-framework,main,https://github.com/spring-projects/spring-framework
 eclipse-jdt-ls,master,https://github.com/eclipse/eclipse.jdt.ls
 quarkus,main,https://github.com/quarkusio/quarkus
+graal,master,https://github.com/oracle/graal
+termux,master,https://github.com/termux/termux-app
 openjdk,master,https://github.com/openjdk/jdk
