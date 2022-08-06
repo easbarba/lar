@@ -1,0 +1,5 @@
+name,branch,url
+ring,master,https://github.com/ring-clojure/ring
+leiningen,main,https://codeberg.org/leiningen/leiningen
+clojurescript,master,https://github.com/clojure/clojurescript
+clojure,master,https://github.com/clojure/clojure
