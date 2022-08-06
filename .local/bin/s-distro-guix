@@ -33,14 +33,17 @@ guix upgrade
 # PACKAGES
 
 # Fix GUIX_LOCPATH warning
-guix install glibc-locales
+# guix install glibc-locales
 
 # export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 # version=$(ls ~/.guix-profile/lib/locale/)
 # guix install "glibc-locales@$version"
 
-packages=(nss-certs font-dejavu neofetch) # font-gnu-freefont-ttf
-s-dolist "guix install" "${packages[@]}"
+PACKAGES=(nss-certs font-dejavu neofetch) # font-gnu-freefont-ttf
+s-dolist "guix install" "${PACKAGES[@]}"
 
-apps=(haunt) # font-gnu-freefont-ttf
-s-dolist "guix install" "${apps[@]}"
+APPS=(haunt) # font-gnu-freefont-ttf
+s-dolist "guix install" "${APPS[@]}"
+
+LANGS=(clojure clojure-tools)
+s-dolist "guix install" "${LANGS[@]}"
