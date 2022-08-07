@@ -13,7 +13,7 @@ s-dolist "$COMMAND" "${mx[@]}"
 
 # langs
 packages=(guile-3.0 openjdk-17-jre openjdk-17-jdk clojure elixir
-    erlang golang python3-pip ruby-full ruby-dev
+    erlang golang python3-pip ruby-full ruby-dev nodejs npm
     libssl-dev libfixposix-dev libzstd-dev) # leiningen
 s-dolist "$COMMAND" "${packages[@]}"
 
