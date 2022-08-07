@@ -54,6 +54,8 @@
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC59K-uG2A5ogwIrHw4bmlEg" ;; telusko
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCsLo154Krjwhoz8W00N8ItA" ;; keep on coding
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC99WYKL8ggupKiE0j0YEJaA" ;; keso rupert
+     ;; lisp channels
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UCiHSfBKS99p1YBwSkaPJDKg" ;; segunda.tech
      ;; sql channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCAWsBMQY4KSuOuGODki-l7A" ;; Data interview Pro
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCiWbFL7I1PgC5OnhIVkXySQ" ;; Vanny
