@@ -9,4 +9,5 @@
 # * WINDOW MANAGER
 
 # exec awesome
-exec "$HOME/.local/bin/dwm"
+[[ -x $HOME/.local/bin/dwm ]] && exec "$HOME/.local/bin/dwm"
+[[ -x $HOME/.local/bin/sbcl && -x $HOME/.local/bin/stumpwm ]] && exec "$HOME/.local/bin/stumpwm"
