@@ -23,7 +23,8 @@
      (2 t t :title "libreoffice")
      (3 t t :class "libreoffice-writer"))
     ("term"
-     (0 t t :class "Alacritty"))
+     (0 t t :class "st-256color")
+     (1 t t :class "Alacritty"))
     ("www"
      (0 t t :class "IceCat")
      (1 t t :class "Chromium")
