@@ -50,6 +50,9 @@ export PATH="$DOOM_DIR/bin":$PATH
 
 # * LANGUAGES PACKAGE MANAGERS
 
+# COMMON LISP
+export SBCL_HOME=$HOME/.local/lib/sbcl
+
 # ** JAVA
 export SDKMAN_DIR="$HOME/.sdkman"
 
