@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm-local
+Comment=Local dwm build
+Exec=$HOME/.local/bin/dwm
+Type=XSession
