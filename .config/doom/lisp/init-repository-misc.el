@@ -33,6 +33,8 @@
      ;; java
      "https://billykorando.com/feed/"
      "https://www.baeldung.com/feed"
+     ;; clojure
+     "https://tomekw.com/feed.xml"
      ;; progs blogs br
      "https://leandronsp.com/rss.xml"
      ;; devops
