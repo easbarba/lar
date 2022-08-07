@@ -6,7 +6,7 @@ set -euo pipefail
 DEPS=(curl bash)
 s-checkdeps "${DEPS[@]}"
 
-# ** SDKMAN
+# * SDKMAN
 
 COMMAND='sdk install'
 
@@ -17,3 +17,11 @@ s-dolist "$COMMAND" "${TOOLS[@]}"
 
 LANG=(kotlin)
 s-dolist "$COMMAND" "${LANG[@]}"
+
+# * Eclipse
+
+ECLIPSE_URL='https://eclipse.c3sl.ufpr.br/oomph/epp/2022-06/R/eclipse-inst-jre-linux64.tar.gz'
+wget -c "$ECLIPSE_URL" -P "$HOME/Builds"
+tar -xf $HOME/Builds/eclipse-inst-jre-linux64.tar.gz
+
+# * Intellij Idea
