@@ -1,4 +1,5 @@
 name,branch,url
+cljfmt,master,https://github.com/weavejester/cljfmt
 luminus-template,master,https://github.com/luminus-framework/luminus-template
 luminus,master,https://github.com/luminus-framework/luminus
 ring,master,https://github.com/ring-clojure/ring
