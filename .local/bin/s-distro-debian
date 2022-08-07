@@ -85,7 +85,7 @@ groups=("${essentials[@]}"
 	"${kde[@]}"
 	"${gtk[@]}"
 	"${cli[@]}"
-	# "${laptop[@]}"
+	"${laptop[@]}"
 	"${amd[@]}"
 	"${fonts[@]}")
 
