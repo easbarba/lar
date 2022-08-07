@@ -32,10 +32,6 @@ eval "$(ssh-agent -s)"
 # add private key auth to agent
 ssh-add "$SSH_KEY_LOCATION"
 
-# ** SSH
-export SSH_AGENT_PID=$(pgrep ssh-agent)
-export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
-
 # New Global defaults
 # sudo sed -i "s/Port 22|Port 33/g" # new port
 # sudo sed -i "PermitRootLogin no"  # Disable root
