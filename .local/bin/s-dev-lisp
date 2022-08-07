@@ -2,33 +2,39 @@
 
 # debug options
 set -euo pipefail
-export PREFIX=$HOME/.local
+PREFIX=$HOME/.local
 BUILDS_LOCATION=$HOME/Builds
 
 # ===========================
 # SBCL INSTALL
-
+# if [[ ! -x "$PREFIX/bin/sbcl" ]]; then
 SBCL_LOCATION="$HOME/Builds/sbcl"
 [[ ! -d "$SBCL_LOCATION" ]] && git clone git://git.code.sf.net/p/sbcl/sbcl "$SBCL_LOCATION"
+git checkout sbcl-2.2.5
+
 export -n SBCL_HOME
 cd "$SBCL_LOCATION"
+
 sh make.sh --fancy --prefix="${HOME}/.local/bin"
+
 # cd ./tests && sh ./run-tests.sh # test a lil more
 # cd ./doc/manual && make #  documentation
+
 cd "$SBCL_LOCATION"
 sh install.sh --prefix="${HOME}/.local"
+# fi
 
 # ===========================
 # QUICKLISP INSTALL
 
 QUICKLISP=quicklisp.lisp
 QUICKLISP_LOCATION="/tmp/$QUICKLISP"
-
 [[ ! -f $QUICKLISP_LOCATION ]] && wget -c https://beta.quicklisp.org/quicklisp.lisp -P /tmp
 
 # ===========================
 # STUMPWM INSTALL
-if -f "$HOME/.quicklisp/lib/alexandria/misc.lisp"; then
+
+if [[ ! -f "$HOME/quicklisp/dists/quicklisp/installed/releases/dbus.txt" ]]; then
     sbcl --no-sysinit --no-userinit --load /tmp/quicklisp.lisp \
         --eval '(quicklisp-quickstart:install)' \
         --eval "(ql:quickload '(:quicklisp-slime-helper :clx :cl-ppcre :alexandria))" \
@@ -51,9 +57,11 @@ git -C "$STUMPWM_CONTRIB_LOCATION" pull
 
 cd "$STUMPWM_LOCATION"
 ./autogen.sh
-./configure --prefix="$HOME/.local"
+./configure --prefix="$PREFIX"
 make -j4
 make install
+
+exit
 
 if ! grep 'Type=XSession' /usr/share/xsessions/stumpwm-local.desktop; then
     cat <<EOF | sudo tee -a "/usr/share/xsessions/stumpwm-local.desktop"
