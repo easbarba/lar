@@ -1,5 +1,8 @@
 name,branch,url
+luminus-template,master,https://github.com/luminus-framework/luminus-template
+luminus,master,https://github.com/luminus-framework/luminus
 ring,master,https://github.com/ring-clojure/ring
 leiningen,main,https://codeberg.org/leiningen/leiningen
 clojurescript,master,https://github.com/clojure/clojurescript
+clojure-lsp,master,https://github.com/clojure-lsp/clojure-lsp/
 clojure,master,https://github.com/clojure/clojure
