@@ -12,8 +12,9 @@ mx=(emacs libgccjit0 libgccjit-12-dev libwebkit2gtk-4.0-dev libjansson-dev libja
 s-dolist "$COMMAND" "${mx[@]}"
 
 # langs
-packages=(guile-3.0 openjdk-17-jre openjdk-17-jdk golang python3-pip libssl-dev libfixposix-dev
-    libzstd-dev)
+packages=(guile-3.0 openjdk-17-jre openjdk-17-jdk clojure elixir
+    erlang golang python3-pip ruby-full ruby-dev
+    libssl-dev libfixposix-dev libzstd-dev) # leiningen
 s-dolist "$COMMAND" "${packages[@]}"
 
 if [[ ! -x $(command -v dart) ]]; then
