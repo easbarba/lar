@@ -13,7 +13,7 @@ s-checkdeps "${DEPS[@]}"
 FREE=(vorbis mp3 ogg)
 EXT="${FREE[0]}"
 URL="$(s-url)"
-FOLDER="$HOME/Music"
+FOLDER="$HOME/Music/temp"
 
 cd "$FOLDER"
 
