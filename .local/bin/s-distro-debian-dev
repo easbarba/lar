@@ -12,7 +12,7 @@ mx=(emacs libgccjit0 libgccjit-12-dev libwebkit2gtk-4.0-dev libjansson-dev libja
 s-dolist "$COMMAND" "${mx[@]}"
 
 # langs
-packages=(php php-common nodejs npm golang python3-pip ruby-full
+packages=(php php-common php-curl nodejs npm golang python3-pip ruby-full
     libssl-dev libfixposix-dev libzstd-dev guile-3.0 sbcl clojure) # leiningen
 s-dolist "$COMMAND" "${packages[@]}"
 

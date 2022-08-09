@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-s-echo "Python Toolings"
+# Debug Options
+set -euo pipefail
+
+DEPS=(python bash)
+s-checkdeps "${DEPS[@]}"
 
 # ===========================
 # PROJECT TOOLS
