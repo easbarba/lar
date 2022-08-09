@@ -30,9 +30,6 @@
      "https://unixsheikh.com/feed.rss"
      "https://sourcehut.org/blog/index.xml"
      "https://nullprogram.com/feed/"
-     ;; java
-     "https://billykorando.com/feed/"
-     "https://www.baeldung.com/feed"
      ;; clojure
      "https://tomekw.com/feed.xml"
      ;; progs blogs br
@@ -45,17 +42,6 @@
      ;; FLOSS channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCuj_loxODrOPxSsXDfJmpng" ;; Andrew Tropin
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9NuJImUbaSNKiwF2bdSfAw" ;; FOSDEM
-     ;; java channels
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2KfmYEM4KCuA1ZurravgYw" ;; Amigos Code
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCmRtPmgnQ04CMUpSUqPfhxQ" ;; Java
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCCBVCTuk6uJrN3iFV_3vurg" ;; Devoxx
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCz_QEfF3VBqWPliHy3JiJ_g" ;; DevXplaining
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCDG4jVD88QEjB8UKLYZKiNA" ;; JFocus
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCdDhYMT2USoLdh4SZIsu_1g" ;; Oracle Developers
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCxOVEOhPNXcJuyfVLhm_BfQ" ;; tom gregory
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC59K-uG2A5ogwIrHw4bmlEg" ;; telusko
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UCsLo154Krjwhoz8W00N8ItA" ;; keep on coding
-     "https://www.youtube.com/feeds/videos.xml?channel_id=UC99WYKL8ggupKiE0j0YEJaA" ;; keso rupert
      ;; lisp channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCiHSfBKS99p1YBwSkaPJDKg" ;; segunda.tech
      ;; sql channels

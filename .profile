@@ -53,13 +53,9 @@ export PATH="$DOOM_DIR/bin":$PATH
 # COMMON LISP
 export SBCL_HOME=$HOME/.local/lib/sbcl
 
-# ** JAVA
-export SDKMAN_DIR="$HOME/.sdkman"
-
 # ** GOLANG
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin"${PATH:+:}$PATH
-# ===================================================
 
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
