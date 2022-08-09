@@ -50,6 +50,10 @@ export PATH="$DOOM_DIR/bin":$PATH
 
 # * LANGUAGES PACKAGE MANAGERS
 
+# ** RUBY
+export GEM_HOME="$HOME/.local/gem"
+export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
+
 # COMMON LISP
 export SBCL_HOME=$HOME/.local/lib/sbcl
 
@@ -57,9 +61,6 @@ export SBCL_HOME=$HOME/.local/lib/sbcl
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin"${PATH:+:}$PATH
 
-# ** RUBY
-export GEM_HOME="$HOME/.local/gem"
-export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 # ===================================================
 
 # * FOREIGN SYSTEM PACKAGE MANAGER
