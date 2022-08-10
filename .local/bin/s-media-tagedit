@@ -3,61 +3,60 @@
 
 require 'taglib'
 require 'pathname'
+require 'optparse'
 
-TITLE = lambda do |_name, file|
+TITLE = lambda do |info, file|
+  info = Pathname.new(file).basename('.*').to_path if info.empty?
   TagLib::FileRef.open(file) do |t|
-    t.tag.title = Pathname.new(file).basename('.*').to_path
+    t.tag.title = info
     t.save
   end
 end
 
-ARTIST = lambda do |name, file|
+ARTIST = lambda do |info, file|
   TagLib::FileRef.open(file) do |t|
-    t.tag.artist = name
+    t.tag.artist = info
     t.save
   end
 end
 
-ALBUM = lambda do |name, file|
+ALBUM = lambda do |info|
   TagLib::FileRef.open(file) do |t|
-    t.tag.album = name
+    t.tag.album = info
     t.save
   end
 end
 
-def run(it, name, func)
-  # return 'No block given' unless block_given?
-  raise 'file not found' unless it.exist?
+def run(it, info, func)
+  raise 'FILE NOT FOUND' unless it.exist?
 
   if it.directory?
-    it.children.each { |file| func.call(name, file.to_path) }
+    it.children.each { |file| func.call(info, file.to_path) }
   else
-    func.call(name, it.to_path)
+    func.call(info, it.to_path)
   end
 end
 
-# Meeeeeee eeeeeeeh.
-module Cli
-  require 'optparse'
+option_parser = OptionParser.new do |opts|
+  opts.banner = 'Usage: tagedit [options]'
+  it = String.new
 
-  def self.options
-    OptionParser.new do |opts|
-      opts.banner = 'Usage: tagedit [options]'
+  opts.on('-fFILE', '--file=FILE', 'file to edit') do |file|
+    it = Pathname.new(file)
+  end
 
-      opts.on('-t', '--tittle', 'edit title tag') do
-        run(Pathname.new(ARGV.last), ARGV.first, TITLE)
-      end
+  opts.on('-tTITLE', '--tittle=TITLE', 'edit title tag') do |title|
+    run(it, title, TITLE)
+  end
 
-      opts.on('-a', '--album', 'edit album tag') do
-        run(Pathname.new(ARGV.last), _, ALBUM)
-      end
+  opts.on('-aNAME', '--album=NAME', 'edit album tag') do |info|
+    run(it, info, ALBUM)
+  end
 
-      opts.on('-s', '--artist', 'edit artist tag') do
-        run(Pathname.new(ARGV.last), ARGV.first, ARTIST)
-      end
-    end
+  opts.on('-sNAME', '--artist=NAME', 'edit artist tag') do |info|
+    run(it, info, ARTIST)
   end
 end
 
-Cli.options.parse! ['--help'] if ARGV.empty?
-Cli.options.parse!
+option_parser.parse! ['--help'] if ARGV.empty?
+option_parser.parse!
