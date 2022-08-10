@@ -63,7 +63,7 @@ user=(chromium firefox libreoffice gimp xdg-utils imagemagick aspell aspell-pt-b
 
 sound=(pipewire pipewire-pulse wireplumber pulseaudio-utils vlc)
 
-media=(vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
+media=(libtag1-dev vorbis-tools gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
 	gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly libavcodec58)
 
 amd=(firmware-linux-nonfree amd64-microcode firmware-amd-graphics
