@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'taglib'
+require 'pathname'
+
+TITLE = lambda do |_name, file|
+  TagLib::FileRef.open(file) do |t|
+    t.tag.title = Pathname.new(file).basename('.*').to_path
+    t.save
+  end
+end
+
+ARTIST = lambda do |name, file|
+  TagLib::FileRef.open(file) do |t|
+    t.tag.artist = name
+    t.save
+  end
+end
+
+ALBUM = lambda do |name, file|
+  TagLib::FileRef.open(file) do |t|
+    t.tag.album = name
+    t.save
+  end
+end
+
+def run(it, name, func)
+  # return 'No block given' unless block_given?
+  raise 'file not found' unless it.exist?
+
+  if it.directory?
+    it.children.each { |file| func.call(name, file.to_path) }
+  else
+    func.call(name, it.to_path)
+  end
+end
+
+# Meeeeeee eeeeeeeh.
+module Cli
+  require 'optparse'
+
+  def self.options
+    OptionParser.new do |opts|
+      opts.banner = 'Usage: tagedit [options]'
+
+      opts.on('-t', '--tittle', 'edit title tag') do
+        run(Pathname.new(ARGV.last), ARGV.first, TITLE)
+      end
+
+      opts.on('-a', '--album', 'edit album tag') do
+        run(Pathname.new(ARGV.last), _, ALBUM)
+      end
+
+      opts.on('-s', '--artist', 'edit artist tag') do
+        run(Pathname.new(ARGV.last), ARGV.first, ARTIST)
+      end
+    end
+  end
+end
+
+Cli.options.parse! ['--help'] if ARGV.empty?
+Cli.options.parse!
