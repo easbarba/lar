@@ -14,6 +14,6 @@ s-dolist "gem update" "${packages[@]}"
 
 # =================================
 
-packages=(reek rufo rubocop solargraph pry)
+packages=(reek rufo rubocop solargraph pry taglib-ruby)
 s-dolist "gem install" "${packages[@]}"
 s-dolist "gem update" "${packages[@]}"
