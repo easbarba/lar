@@ -115,9 +115,9 @@
        :lang
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
-       ;; (cc +lsp)        ; C > C++ == 1
-       (clojure +lsp)   ; java with a lisp
-       common-lisp         ; if you've seen one lisp, you've seen them all
+       (cc +lsp +tree-sitter)        ; C > C++ == 1
+       ;; (clojure +lsp)   ; java with a lisp
+       ;; common-lisp      ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
@@ -136,13 +136,13 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (go +lsp +tree-sitter)  ; the hipster dialect
+       go                  ; the hipster dialect
        ;;(graphql +lsp)    ; Give queries a REST
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        (json +lsp +tree-sitter)                ; At least it ain't XML
-       (java +lsp +tree-sitter)       ; the poster child for carpal tunnel syndrome
+       ;; (java)           ; the poster child for carpal tunnel syndrome
        (javascript +lsp +tree-sitter)         ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;; kotlin           ; a better, slicker Java(Script)
@@ -158,7 +158,7 @@
        ;; (php +lsp)       ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python+lsp +tree-sitter)        ; beautiful is better than ugly
+       python              ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;; racket           ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
