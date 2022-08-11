@@ -27,34 +27,34 @@ ALBUM = lambda do |info|
   end
 end
 
-def run(it, info, func)
-  raise 'FILE NOT FOUND' unless it.exist?
+def run(filepath, info, func)
+  raise 'FILE NOT FOUND' unless filepath.exist?
 
-  if it.directory?
-    it.children.each { |file| func.call(info, file.to_path) }
+  if filepath.directory?
+    filepath.children.each { |file| func.call(info, file.to_path) }
   else
-    func.call(info, it.to_path)
+    func.call(info, filepath.to_path)
   end
 end
 
 option_parser = OptionParser.new do |opts|
   opts.banner = 'Usage: tagedit [options]'
-  it = String.new
+  filepath = String.new
 
   opts.on('-fFILE', '--file=FILE', 'file to edit') do |file|
-    it = Pathname.new(file)
+    filepath = Pathname.new(file)
   end
 
   opts.on('-tTITLE', '--tittle=TITLE', 'edit title tag') do |title|
-    run(it, title, TITLE)
+    run(filepath, title, TITLE)
   end
 
   opts.on('-aNAME', '--album=NAME', 'edit album tag') do |info|
-    run(it, info, ALBUM)
+    run(filepath, info, ALBUM)
   end
 
   opts.on('-sNAME', '--artist=NAME', 'edit artist tag') do |info|
-    run(it, info, ARTIST)
+    run(filepath, info, ARTIST)
   end
 end
 
