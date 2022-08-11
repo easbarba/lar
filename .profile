@@ -43,7 +43,7 @@ export PATH="$LOCAL_BIN"${PATH:+:}${PATH}
 
 # ===================================================
 
-# ** DOOM Emacs
+# ** DOOM EMACS
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin":$PATH
 # ===================================================
@@ -53,9 +53,6 @@ export PATH="$DOOM_DIR/bin":$PATH
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
-
-# COMMON LISP
-export SBCL_HOME=$HOME/.local/lib/sbcl
 
 # ** GOLANG
 export GOPATH=$HOME/.local/go
