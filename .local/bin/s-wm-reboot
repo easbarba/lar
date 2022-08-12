@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Debug Options
-set -euo pipefail
-
-# TODO: kill annoying apps before reboot as libvirt, containers
-
-[[ -x $(command -v systemctl) ]] && systemctl reboot -i # ignore all users loggedin

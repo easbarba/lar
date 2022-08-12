@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# DEBUG SETTINGS
-set -euo pipefail

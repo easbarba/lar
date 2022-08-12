@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-[[ -x $(command -v playerctl) ]] && playerctl pause
-[[ -x $(command -v mpc) ]] && mpc volume 70
-[[ -x $(command -v slock) ]] && slock

@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Debug Options
-set -euo pipefail
-
-# Description:
-# Deps: youtube-dl, ffmpeg
-
-mpv "$(s-url)"
