@@ -54,6 +54,12 @@ export PATH="$DOOM_DIR/bin":$PATH
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
 
+# ** NPM
+export NPM_CONFIG_PREFIX="$HOME/.local/npm"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export PATH="$NPM_CONFIG_PREFIX/bin"${PATH:+:}$PATH
+
 # ** GOLANG
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin"${PATH:+:}$PATH
