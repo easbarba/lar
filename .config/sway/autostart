@@ -1,6 +1,6 @@
 # USER
 
-exec ~/.local/bin/s-autostart-apps
+exec ~/.local/bin/s-wm-autostart
 exec swayidle -w \
 	timeout 1800 'swaylock -f' \
 	timeout 1805 'swaymsg "output * dpms off"' \
