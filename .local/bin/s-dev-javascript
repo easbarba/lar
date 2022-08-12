@@ -3,64 +3,16 @@
 # Debug Options
 set -euo pipefail
 
-deps=(npm)
-s-checkdeps "${deps[@]}"
+DEPS=(npm)
+s-checkdeps "${DEPS[@]}"
 
-# =======================================
+ESSENTIAL=(npm)
+TOOLS=(js-beautify fx stylelint stylelint-config-standard)
+LANGS=(typescript)
 
-s-echo "Base - Installing fundamental packages"
+groups=("${ESSENTIAL[@]}" "${TOOLS[@]}" "${LANGS[@]}")
 
-packages=(npm)
-
-command="npm install --global"
-s-dolist "$command" "${packages[@]}"
-
-command="npm update --global"
-s-dolist "$command" "${packages[@]}"
-
-s-echo "Javascript Toolings packages"
-packages=(js-beautify fx stylelint stylelint-config-standard)
-
-command="npm install --global"
-s-dolist "$command" "${packages[@]}"
-
-command="npm update --global"
-s-dolist "$command" "${packages[@]}"
-
-# =======================================
-
-s-echo "TypeScript packages"
-
-packages=(typescript typescript-language-server)
-
-command="npm install --global"
-s-dolist "$command" "${packages[@]}"
-
-command="npm update --global"
-s-dolist "$command" "${packages[@]}"
-
-# =======================================
-
-s-echo "LSP Servers packages"
-
-packages=(bash-language-server yaml-language-server
-	vscode-json-languageserver typescript-language-server
-	vscode-html-languageserver-bin vscode-css-languageserver-bin)
-
-command="npm install --global"
-s-dolist "$command" "${packages[@]}"
-
-command="npm update --global"
-s-dolist "$command" "${packages[@]}"
-
-# =======================================
-
-s-echo "Programming Languages toolings"
-
-packages=(lua-fmt)
-
-command="npm install --global"
-s-dolist "$command" "${packages[@]}"
-
-command="npm update --global"
-s-dolist "$command" "${packages[@]}"
+for group in "${groups[@]}"; do
+	s-dolist 'npm install --global' "$group"
+	s-dolist 'npm update --global' "$group"
+done
