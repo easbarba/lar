@@ -25,7 +25,22 @@ fi
 export PATH
 
 # If running from tty1 start sway
-[ "$(tty)" = "/dev/tty2" ] && exec sway
+if [ "$(tty)" = "/dev/tty1" ]; then
+    [[ $(pgrep -x ssh-agent) ]] && killall ssh-agent
+    s-tools-ssh
+
+    exec startx
+fi
+
+# If running from tty1 start sway
+if [ "$(tty)" = "/dev/tty2" ]; then
+    [[ $(pgrep -x ssh-agent) ]] && killall ssh-agent
+    s-tools-ssh
+
+    export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+
+    exec sway
+fi
 
 # ** readline
 #export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
