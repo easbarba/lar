@@ -24,5 +24,8 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
+# If running from tty1 start sway
+[ "$(tty)" = "/dev/tty2" ] && exec sway
+
 # ** readline
 #export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
