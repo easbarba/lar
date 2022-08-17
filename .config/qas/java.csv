@@ -1,4 +1,5 @@
 name,branch,url
+languagetool,master,https://github.com/languagetool-org/languagetool
 junit5,main,https://github.com/junit-team/junit5
 apache-maven-core,master,https://gitbox.apache.org/repos/asf/maven.git
 spring-boot,main,https://github.com/spring-projects/spring-boot
