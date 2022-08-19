@@ -5,7 +5,7 @@
 # * DEFAULT SOFTWARE:
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="chromium"
 
 # * XDG HOMES
