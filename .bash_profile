@@ -24,22 +24,29 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# If running from tty1 start sway
-if [ "$(tty)" = "/dev/tty1" ]; then
+gimme_keys() {
+    # kill any ssh-agent running, re-enter new one
+    # before starting session and reset ssh env vars
+
     [[ $(pgrep -x ssh-agent) ]] && killall ssh-agent
     s-tools-ssh
 
-    exec startx
+    export SSH_AGENT_PID=$(pgrep ssh-agent)
+    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
+}
+
+# If running from tty1 start sway
+if [ "$(tty)" = "/dev/tty1" ]; then
+    gimme_keys
+
+    exec sway
 fi
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty2" ]; then
-    [[ $(pgrep -x ssh-agent) ]] && killall ssh-agent
-    s-tools-ssh
+    gimme_keys
 
-    export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
-
-    exec sway
+    exec startx
 fi
 
 # ** readline
