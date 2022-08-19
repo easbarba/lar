@@ -1,12 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets. It is optional.
-
 (setq-default user-full-name "dynamite black"
               user-login-name "dynab")
 
@@ -90,7 +83,6 @@
 ;; they are implemented.
 
 ;; BUILT-IN
-
 (load! "lisp/init-utils")
 (load! "lisp/init-variables")
 (load! "lisp/init-dired")
@@ -99,7 +91,5 @@
 (load! "lisp/init-builtin")
 
 ;; REPOSITORY
-
 (load! "lisp/init-repository-misc")
 (load! "lisp/init-repository-languages")
-;; (load! "lisp/init-repository-languages")

@@ -54,6 +54,7 @@
      ;; prog channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UCqa6i-EYjkIqVhu1CpsBOPQ" ;; Filho da nuvem
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" ;; Computerphile
+     "https://www.youtube.com/feeds/videos.xml?channel_id=UC2q9a8E7ugN_Gqxxb5Mrf4A" ;; pessonizando
      ;; gnu/linux channels
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC629vKGFPRc1rz6VDm6OZiQ" ;; Diolinux clips
      "https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw" ;; Linux Experiment
