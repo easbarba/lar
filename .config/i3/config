@@ -155,13 +155,16 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab workspace next
 # bindsym $mod+Shift+Tab workspace prev
 
-# Pulse Audio controls
-bindsym $mod+w exec s-wm-volume --up # XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym $mod+s exec s-wm-volume --down # XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym $mod+e exec s-wm-volume --toggle  # XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+# Sound controls
+bindsym $mod+Shift+w exec s-wm-volume --up
+bindsym $mod+Shift+s exec s-wm-volume --down
+bindsym $mod+e exec s-wm-volume --toggle
+
+bindsym $mod+w exec s-wm-backlight --up
+bindsym $mod+s exec s-wm-backlight --down
 
 # Binds
-bindsym Print exec s-wm-shot --full # scrot ~/Fotografias/%Y-%m-%d-%H-%M-%S.png
+bindsym Print exec s-wm-shot --full
 bindsym $mod+Print exec s-wm-shot --partial
 bindsym $mod+c exec i3lock
 
