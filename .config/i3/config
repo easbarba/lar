@@ -134,16 +134,16 @@ mode "resize" {
 
 # bindsym $mod+Shift+ mode "resize"
 
-
 # -------------------------------
 # USER
 
 # Assign
-assign [class="Code|Emacs"] $ws1
+assign [class="Emacs|Eclipse|Kate|Code"] $ws1
 assign [class="Atril|libreoffice-writer"] $ws2
-assign [class="Alacritty|sakura"] $ws3
-assign [class="feh|Wine|OpenGl|vlc|mpv"] $ws4
-assign [class="Icecat|Firefox|Chromium|Google-chrome"] $ws5
+assign [class="Alacritty|st|sakura"] $ws3
+assign [class="Icecat|Firefox|Chromium|Google-chrome"] $ws4
+assign [class="feh|Wine|OpenGl|vlc|mpv"] $ws5
+
 
 # Title bar
 new_window 1pixel
