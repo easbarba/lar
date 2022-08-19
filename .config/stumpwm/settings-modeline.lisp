@@ -6,7 +6,7 @@
       *mode-line-timeout* 10 ;; secs
       *mode-line-foreground-color* "white"
       *mode-line-background-color* "black"
-      *mode-line-position* :bottom
+      *mode-line-position* :top
       *window-format* "%m%n%s%c")
 
 (enable-mode-line (current-screen) (current-head) t)
