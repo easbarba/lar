@@ -128,20 +128,19 @@ bindsym $mod+r mode "resize"
 # External Applications
 bindsym $mod+c exec swaylock
 
-bindsym $mod+Ctrl+w exec s-volume --up
-bindsym $mod+Ctrl+s exec s-volume --down
-bindsym $mod+Ctrl+e exec s-volume --toggle
-bindsym $mod+Ctrl+a exec s-backlight up
-bindsym $mod+Ctrl+d exec s-backlight down
+bindsym $mod+Ctrl+w exec s-wm-volume --up
+bindsym $mod+Ctrl+s exec s-wm-volume --down
+bindsym $mod+Ctrl+e exec s-wm-volume --toggle
+bindsym $mod+Ctrl+a exec s-wm-backlight up
+bindsym $mod+Ctrl+d exec s-wm-backlight down
 
 bindsym $mod+Mod1+e exec mpc toggle
 bindsym $mod+Mod1+a exec mpc prev
 bindsym $mod+Mod1+d exec mpc next
 bindsym $mod+Mod1+w exec mpc volume +3
 bindsym $mod+Mod1+s exec mpc volume -3
-bindsym $mod+Mod1+z exec playerctl play-pause
+bindsym $mod+Mod1+space exec playerctl play-pause
 bindsym $mod+Mod1+x exec wofi --show drun
-bindsym $mod+Mod1+b exec s-wifi
 bindsym $mod+Print exec grim
 bindsym $mod+Mod1+Print exec grim -g "$(slurp)"
-bindsym $mod+Mod1+p exec s-play
+bindsym $mod+Mod1+p exec s-media-play
