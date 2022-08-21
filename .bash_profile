@@ -35,18 +35,16 @@ gimme_keys() {
     export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
 }
 
-# If running from tty1 start sway
+# XORG
 if [ "$(tty)" = "/dev/tty1" ]; then
     gimme_keys
-
-    exec sway
+    exec startx
 fi
 
-# If running from tty1 start sway
+# WAYLAND
 if [ "$(tty)" = "/dev/tty2" ]; then
     gimme_keys
-
-    exec startx
+    exec sway
 fi
 
 # ** readline
