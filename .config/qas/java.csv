@@ -7,5 +7,6 @@ spring-framework,main,https://github.com/spring-projects/spring-framework
 quarkus,main,https://github.com/quarkusio/quarkus
 graal,master,https://github.com/oracle/graal
 eclipse-jdt-ls,master,https://github.com/eclipse/eclipse.jdt.ls
+apache-kafka,trunk,https://github.com/apache/kafka
 apache-maven-core,master,https://gitbox.apache.org/repos/asf/maven.git
 openjdk,master,https://github.com/openjdk/jdk
