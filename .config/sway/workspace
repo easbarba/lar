@@ -10,6 +10,7 @@ set $ws5 "media"
 assign [class="Emacs"] $ws1
 assign [app_id="SpringToolSuite4"] $ws1
 assign [app_id="Eclipse"] $ws1
+assign [app_id= "atril"] $ws2
 assign [app_id="org.kde.okular"] $ws2
 assign [class="libreoffice"] $ws2
 assign [app_id="org.pwmt.zathura"] $ws2
