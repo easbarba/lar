@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-((when (string-equal system-name "barba-x220")
-   (setq straight-disable-native-compile t)))
+(when (string-equal system-name "barba-x220")
+  (setq straight-disable-native-compile t))
 
 (setq-default user-full-name "dynamite black"
               user-login-name "dynab")
