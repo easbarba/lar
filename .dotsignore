@@ -8,6 +8,7 @@ README.md
 .zshrc
 .git/
 .config/ansible
+.config/awesome
 .config/Clementine
 .config/debian
 .config/devilspie2
@@ -22,8 +23,8 @@ README.md
 .config/nixpkgs
 .config/nyxt
 .config/picom
-.config/powershell
 .config/qtile
+.config/powershell
 .config/xmonad
 .config/yabar
 .config/youtube-dl
