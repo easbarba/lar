@@ -195,6 +195,7 @@ awful.rules.rules = {
             class = {
                 "Alacritty",
                 "Emacs",
+                "Atril",
                 "Code",
                 "Gnome-terminal",
                 "okular",
