@@ -28,7 +28,7 @@ import qualified XMonad.StackSet as W
 -- Startup hook
 --
 myStartupHook = do
-  spawnOnce "autoinicia-aps"
+  spawnOnce "s-wm-autostart"
   setWMName "LG3D" -- Keep xmobar/dock visible after xmonad restart
   return () -- Integrate Java Swing/GUI apps into XMonad layouts;
 
@@ -36,29 +36,26 @@ myStartupHook = do
 -- Workspaces
 --
 --  default number/name of workspaces
-myWorkspaces = ["emeqis", "parruda", "baixaria", "lacra", "www", "cacildis"]
+myWorkspaces = ["editor", "read", "term", "www", "media"]
 
 -- Window rules:
 myManageHook =
   composeAll
-    [ className =? "Emacs" --> doShift "emeqis"
-    , className =? "Rider" --> doShift "parruda"
-    , className =? "Code" --> doShift "parruda"
-    , className =? "st" --> doShift "baixaria"
-    , className =? "mpv" --> doShift "lacra"
-    , className =? "Spotify" --> doShift "lacra"
-    , className =? "libreoffice-writer" --> doShift "lacra"
-    , className =? "thunderbird" --> doShift "lacra"
-    , className =? "evince" --> doShift "lacra"
-    , className =? "okular" --> doShift "lacra"
-    , className =? "calibre" --> doShift "lacra"
+    [ className =? "Emacs" --> doShift "editor"
+    , className =? "Code" --> doShift "editor"
+    , className =? "Atril" --> doShift "read"
+    , className =? "evince" --> doShift "read"
+    , className =? "okular" --> doShift "read"
+    , className =? "calibre" --> doShift "read"
+    , className =? "libreoffice" --> doShift "read"
+    , className =? "libreoffice-writer" --> doShift "read"
+    , className =? "Alacritty" --> doShift "term"
+    , className =? "st" --> doShift "term"
+    , className =? "Chromium" --> doShift "www"
     , className =? "Firefox" --> doShift "www"
-    , className =? "next" --> doShift "www"
-    , className =? "libreoffice" --> doShift "cacildis"
-    , className =? "vlc" --> doShift "cacildis"
-    , className =? "QEMU" --> doShift "cacildis"
-    , className =? "Wine" --> doShift "cacildis"
-    , className =? "Gimp" --> doShift "cacildis"
+    , className =? "nyxt" --> doShift "www"
+    , className =? "mpv" --> doShift "media"
+    , className =? "vlc" --> doShift "media"
     ]
 
 ------------------------------------------------------------------------
@@ -115,12 +112,9 @@ myLogHook = return ()
 
 ------------------------------------------------------------------------
 -- preferred programs
-myTerminal = "st"
-
-myBrowser = "firefox"
-
+myTerminal = "alacritty"
+myBrowser = "chromium"
 myEditor = "emacs"
-
 myLocker = "slock"
 
 ------------------------------------------------------------------------
@@ -133,22 +127,21 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
   , ((modm, xK_e), spawn myEditor)
   , ((modm, xK_b), spawn myBrowser)
   , ((modm, xK_l), spawn myLocker)
-  , ((0, xK_Print), spawn "tirador")
-    -- , ((modm,                    xK_x), spawn   "dmenu_run")
-  , ((modm .|. shiftMask, xK_w), spawn "volume-cima")
-  , ((modm .|. shiftMask, xK_s), spawn "volume-baixo")
-  , ((modm .|. shiftMask, xK_e), spawn "volume-alternar")
-  , ((modm, xK_z), spawn "cvlc ~/Musica/oosh.ogg")
-  , ((modm .|. shiftMask, xK_a), spawn "cero media getmedia 'vorbis'")
-  , ((modm, xK_v), spawn "cero media getmedia")
-  , ((modm, xK_p), spawn "cero media play")
+  , ((0, xK_Print), spawn "s-wm-shot --full")
+  , ((modm,               xK_x), spawn "dmenu_run")
+  , ((modm .|. shiftMask, xK_w), spawn "s-wm-volume --up")
+  , ((modm .|. shiftMask, xK_s), spawn "s-wm-volume --down")
+  , ((modm .|. shiftMask, xK_e), spawn "s-wm-volume --toggle")
+  , ((modm .|. shiftMask, xK_a), spawn "s-media-audio")
+  , ((modm, xK_v), spawn "s-media-getvideo")
+  , ((modm, xK_p), spawn "s-media-play")
   , ((modm, xK_space), spawn "mpc toggle")
-  , ((modm .|. altMask, xK_w), spawn "brilho-cima")
-  , ((modm .|. altMask, xK_s), spawn "brilho-baixo")
+  , ((modm .|. altMask, xK_w), spawn "s-wm-backlight --up")
+  , ((modm .|. altMask, xK_s), spawn "s-wm-backlight --down")
   , ((modm, xK_Tab), toggleWS) -- cicla are de trabalho
   , ((modm, xK_a), prevWS) -- anterior are de trabalho
   , ((modm, xK_d), nextWS) -- proximo are de trabalho
-  , ((modm, xK_x), shellPrompt def)
+  , ((modm .|. altMask, xK_x), shellPrompt def)
   , ((0, xK_Insert), pasteSelection) -- X-selection-paste buffer
     -- xmonad features
     --
