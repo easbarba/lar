@@ -8,7 +8,7 @@ README.md
 .zshrc
 .git/
 .config/ansible
-.config/awesome
+.config/bspwm
 .config/Clementine
 .config/debian
 .config/devilspie2
@@ -18,6 +18,7 @@ README.md
 .config/emacs-archived
 .config/micro
 .config/kitty
+.config/stumpwm
 .config/nix
 .config/nixos
 .config/nixpkgs
@@ -29,3 +30,4 @@ README.md
 .config/yabar
 .config/youtube-dl
 .config/xmodmap
+.config/sxhkd
