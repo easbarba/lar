@@ -16,30 +16,30 @@ from libqtile.lazy import lazy
 from libqtile import layout, bar, widget, hook
 
 
-TERMINAL = which("st") or which("kitty")
-LOCKER = which("slock") or which("i3lock")
-LAUNCHER = which("rofi") or which("dmenu")
+TERMINAL = which("alacritty")
+LOCKER = which("slock")
+LAUNCHER = which("dmenu")
 EDITOR = which("emacs")
-IDE = which("rider") or which("monodevelop") or which("code")
-BROWSER = which("google-chrome") or which("chromium") or which("firefox")
+BROWSER = which("chromium")
 HOME = Path.home()
-MUSIC = HOME / "Musica"
+MUSIC = HOME / "Music"
 
 # ----- KEYS
 mod = "mod4"
-alt = "mod1"
+alt = "mod3"
+ctrl = "mod1"
 keys = [
     # BUILTIN
     Key([mod, alt], "e", lazy.layout.shuffle_down()),
     Key([mod, alt], "q", lazy.layout.shuffle_up()),
-    Key([mod], "s", lazy.layout.down()),
-    Key([mod], "w", lazy.layout.up()),
+    Key([mod, alt], "s", lazy.layout.down()),
+    Key([mod, alt], "w", lazy.layout.up()),
     Key([mod, alt], "space", lazy.next_layout()),
     Key([mod, alt], "space", lazy.layout.rotate()),
     Key([mod, alt], "Return", lazy.layout.toggle_split()),
     Key([mod, alt], "n", lazy.layout.toggle_maximize()),
-    Key([mod], "a", lazy.screen.prev_group()),
-    Key([mod], "d", lazy.screen.next_group()),
+    Key([mod, alt], "a", lazy.screen.prev_group()),
+    Key([mod, alt], "d", lazy.screen.next_group()),
     Key([mod], "Tab", lazy.screen.togglegroup()),
     Key([mod, alt], "c", lazy.window.kill()),
     Key([mod, alt], "r", lazy.restart()),
@@ -48,29 +48,27 @@ keys = [
     Key([mod, alt], "t", lazy.group.setlayout("stack")),
     Key([mod, alt], "f", lazy.window.toggle_fullscreen()),
     # MISC
-    Key([mod], "x", lazy.spawncmd()),
     Key([mod, alt], "g", lazy.switchgroup()),
     Key([mod, alt], "b", lazy.hide_show_bar("bottom")),
     # SYSTEM APPLICATIONS
     Key([mod], "Return", lazy.spawn(TERMINAL)),
     Key([mod], "l", lazy.spawn(LOCKER)),
-    Key([mod], "e", lazy.spawn(EDITOR)),
-    Key([mod], "b", lazy.spawn(BROWSER)),
-    Key([mod, "shift"], "x", lazy.spawn("rofi -modi run,drun -show drun")),
-    Key([mod], "v", lazy.spawn(IDE)),
-    Key([mod, "shift"], "p", lazy.spawn("cero media play")),
-    Key([mod, "shift"], "v", lazy.spawn("cero media getmedia")),
-    Key([mod, "shift"], "a", lazy.spawn("cero media getmedia 'vorbis'")),
-    Key([], "Print", lazy.spawn("cero operations shot")),
-    # Key([mod], "z", lazy.spawn(f"cero media play {MUSIC}/Pregacao")),
-    Key([mod, "shift"], "n", lazy.spawn("mpc next")),
+    Key([mod], "x", lazy.spawn("dmenu_run")),
+    Key([mod, "shift"], "p", lazy.spawn("s-media-play")),
+    Key([mod, "shift"], "v", lazy.spawn("s-media-video")),
+    Key([mod, "shift"], "i", lazy.spawn("s-media-audio")),
+    Key([], "Print", lazy.spawn("s-wm-shot --full")),
+    Key(["shift"], "Print", lazy.spawn("s-wm-shot --partial")),
+    Key([mod, "shift"], "d", lazy.spawn("mpc next")),
     Key([mod], "space", lazy.spawn("mpc toggle")),
-    Key([mod, "shift"], "w", lazy.spawn("cero operations volume up")),
-    Key([mod, "shift"], "s", lazy.spawn("cero operations volume down")),
-    Key([mod, "shift"], "e", lazy.spawn("cero operations volume toggle")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("cero operations volume up")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("cero operations volume down")),
-    Key([], "XF86AudioMute", lazy.spawn("cero operations volume toggle")),
+    Key([mod], "w", lazy.spawn("s-wm-volume --up")),
+    Key([mod], "s", lazy.spawn("s-wm-volume --down")),
+    Key([mod], "e", lazy.spawn("s-wm-volume --toggle")),
+    Key([mod], "a", lazy.spawn("s-wm-backlight --up")),
+    Key([mod], "d", lazy.spawn("s-wm-backlight --down")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("s-wm-volume --up")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("s-wm-volume --down")),
+    Key([], "XF86AudioMute", lazy.spawn("s-wm-volume --toggle")),
 ]
 
 widget_defaults = dict(
@@ -127,15 +125,16 @@ floating_layout = layout.Floating(
 )
 
 # ----- GROUPS
-groups_names = [
-    ("mx", ["Emacs"]),
-    ("devel", ["MonoDevelop", "kate", "jetbrains-rider", "Code"]),
-    ("term", ["st", "st-256color", "lx-terminal"]),
-    ("media", ["libreoffice", "mpv", "thunderbird"]),
-    ("www", ["Chromium", "Google-chrome", "Firefox", "next"]),
+groups_apps = [
+    ("mx", ["Emacs", "kate", "Code"]),
+    ("read", ["Atril"]),
+    ("term", ["Alacritty", "st", "lx-terminal"]),
+    ("www", ["Chromium", "Google-chrome", "Firefox", "thunderbird"]),
+    ("media", ["mpv"]),
 ]
-groups = [Group(i, matches=[Match(wm_class=x)]) for i, x in groups_names]
-for index, (name, config) in enumerate(groups_names, 1):
+groups = [Group(i, matches=[Match(wm_class=x)]) for i, x in groups_apps]
+
+for index, (name, config) in enumerate(groups_apps, 1):
     keys.extend(
         [
             Key([mod], str(index), lazy.group[name].toscreen()),
@@ -214,9 +213,9 @@ screens = [
 ]
 
 
-@hook.subscribe.startup_once
-def autostart():
-    """Auto Start Applications at Qtile start."""
-    from subprocess import run
+# @hook.subscribe.startup_once
+# def autostart():
+#     """Auto Start Applications at Qtile start."""
+#     from subprocess import run
 
-    run(["sh", "essential-apps"], cwd=HOME.joinpath("bin"), check=False)
+# run(["sh", "s-wm-autoessential-apps"], cwd=HOME.joinpath("bin"), check=False)
