@@ -5,6 +5,7 @@
 from pathlib import Path
 from shutil import which
 from dataclasses import dataclass
+from libqtile import hook
 
 try:
     from typing import List  # noqa: F401
@@ -20,14 +21,13 @@ TERMINAL = which("alacritty")
 LOCKER = which("slock")
 LAUNCHER = which("dmenu")
 EDITOR = which("emacs")
-BROWSER = which("chromium")
 HOME = Path.home()
 MUSIC = HOME / "Music"
 
 # ----- KEYS
 mod = "mod4"
-alt = "mod3"
-ctrl = "mod1"
+alt = "mod1"
+ctrl = "mod3"
 keys = [
     # BUILTIN
     Key([mod, alt], "e", lazy.layout.shuffle_down()),
@@ -35,7 +35,7 @@ keys = [
     Key([mod, alt], "s", lazy.layout.down()),
     Key([mod, alt], "w", lazy.layout.up()),
     Key([mod, alt], "space", lazy.next_layout()),
-    Key([mod, alt], "space", lazy.layout.rotate()),
+    # Key([mod, alt], "space", lazy.layout.rotate()),
     Key([mod, alt], "Return", lazy.layout.toggle_split()),
     Key([mod, alt], "n", lazy.layout.toggle_maximize()),
     Key([mod, alt], "a", lazy.screen.prev_group()),
@@ -48,6 +48,7 @@ keys = [
     Key([mod, alt], "t", lazy.group.setlayout("stack")),
     Key([mod, alt], "f", lazy.window.toggle_fullscreen()),
     # MISC
+    Key([mod], "r", lazy.spawn()),
     Key([mod, alt], "g", lazy.switchgroup()),
     Key([mod, alt], "b", lazy.hide_show_bar("bottom")),
     # SYSTEM APPLICATIONS
@@ -124,17 +125,21 @@ floating_layout = layout.Floating(
     ]
 )
 
-# ----- GROUPS
-groups_apps = [
-    ("mx", ["Emacs", "kate", "Code"]),
-    ("read", ["Atril"]),
-    ("term", ["Alacritty", "st", "lx-terminal"]),
-    ("www", ["Chromium", "Google-chrome", "Firefox", "thunderbird"]),
-    ("media", ["mpv"]),
+# ---- GROUPS
+groups_settings = [
+    ("mx", "max", ["Emacs", "kate", "Code"]),
+    ("read", "max", ["Atril"]),
+    ("term", "max", ["Alacritty", "st", "lx-terminal"]),
+    ("www", "max", ["Chromium", "Google-chrome", "Firefox", "thunderbird"]),
+    ("media", "max", ["mpv"]),
 ]
-groups = [Group(i, matches=[Match(wm_class=x)]) for i, x in groups_apps]
 
-for index, (name, config) in enumerate(groups_apps, 1):
+groups = [
+    Group(name, layout=layname, matches=[Match(wm_class=apps)])
+    for name, layname, apps in groups_settings
+]
+
+for index, (name, layname, config) in enumerate(groups_settings, 1):
     keys.extend(
         [
             Key([mod], str(index), lazy.group[name].toscreen()),
@@ -163,15 +168,8 @@ class Colors:
 COLORS = Colors()
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.WindowName(
-                    fontsize=12,
-                    foreground=COLORS.pink,
-                    padding=10,
-                    show_state=False,
-                ),
-                widget.Prompt(foreground=COLORS.pink, ignore_dups_history=True),
                 widget.GroupBox(
                     highlight_method="block",
                     rounded=False,
@@ -184,6 +182,14 @@ screens = [
                     foreground=COLORS.white,
                     hide_unused=True,
                 ),
+                widget.WindowName(
+                    fontsize=12,
+                    foreground=COLORS.pink,
+                    padding=10,
+                    show_state=False,
+                ),
+                widget.Prompt(foreground=COLORS.pink, ignore_dups_history=True),
+                widget.Sep(padding=10),
                 widget.Volume(update_interval=5, foreground=COLORS.pink, padding=10),
                 widget.Sep(padding=10),
                 widget.Battery(
@@ -191,12 +197,6 @@ screens = [
                     update_delay=5,
                     foreground=COLORS.pink,
                     low_foreground=COLORS.red,
-                ),
-                widget.Sep(padding=10),
-                widget.Pomodoro(
-                    color_active=COLORS.orange,
-                    color_break=COLORS.white,
-                    color_inactive=COLORS.pink,
                 ),
                 widget.Sep(padding=10),
                 widget.ThermalSensor(foreground=COLORS.pink),
@@ -213,9 +213,9 @@ screens = [
 ]
 
 
-# @hook.subscribe.startup_once
-# def autostart():
-#     """Auto Start Applications at Qtile start."""
-#     from subprocess import run
+@hook.subscribe.startup_once
+def autostart():
+    """Auto Start Applications at Qtile start."""
+    from subprocess import run
 
-# run(["sh", "s-wm-autoessential-apps"], cwd=HOME.joinpath("bin"), check=False)
+    run(["sh", "s-wm-autostart"], cwd=HOME.joinpath(".local", "bin"), check=False)
