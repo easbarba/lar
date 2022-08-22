@@ -4,6 +4,10 @@
 # * START INITIAL APPS
 "$HOME/.local/bin/s-wm-autostart"
 
+if [ -x "$(command -v qtile)" ]; then
+    exec qtile start
+fi
+
 if [ -x "$(command -v bspwm)" ]; then
     exec bspwm
 fi
