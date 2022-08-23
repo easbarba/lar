@@ -1,20 +1,18 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(when (string-equal system-name "barba-x220")
+  (setq straight-disable-native-compile t))
+
 (remove-hook 'after-init-hook #'debian-ispell-set-startup-menu)
 
 (require 'iso-transl) ;; solves dbus keyboard conflict
 (setq frame-resize-pixelwise t) ;; do not resize initial window size
 
-(cond ((member "JetBrains Mono" (font-family-list))
-       (setq doom-font (font-spec :family "JetBrains Mono" :size 22)
-             doom-variable-pitch-font (font-spec :family "sans" :size 24)))
-      ((member "DejaVu Sans Mono" (font-family-list))
-       (setq doom-font (font-spec :family "DejaVu Sans Mono")
-             doom-variable-pitch-font (font-spec :family "sans" :size 23))))
+(when (member "JetBrains Mono" (font-family-list))
+  (setq doom-font (font-spec :family "JetBrains Mono" :size 22)
+        doom-variable-pitch-font (font-spec :family "sans" :size 24))
 
-(when (string-equal system-name "barba-x220")
-  (setq straight-disable-native-compile t)
-  (when (member "JetBrains Mono" (font-family-list))
+  (when (string-equal system-name "barba-x220")
     (setq doom-font (font-spec :family "JetBrains Mono" :size 18)
           doom-variable-pitch-font (font-spec :family "sans" :size 20))))
 
