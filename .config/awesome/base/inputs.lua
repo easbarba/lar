@@ -123,14 +123,14 @@ globalkeys =
         end
     ),
     awful.key(
-        {modkey, "Shift"},
+        {modkey},
         "a",
         function()
             awful.spawn("s-wm-backlight --up")
         end
     ),
     awful.key(
-        {modkey, "Shift"},
+        {modkey},
         "d",
         function()
             awful.spawn("s-wm-backlight --down")
@@ -158,14 +158,14 @@ globalkeys =
         end
     ),
     awful.key(
-        {modkey},
+        {modkey, "Shift"},
         "a",
         function()
             awful.spawn("mpc prev")
         end
     ),
     awful.key(
-        {modkey},
+        {modkey, "Shift"},
         "d",
         function()
             awful.spawn("mpc next")
