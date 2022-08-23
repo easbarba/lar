@@ -1,0 +1,6 @@
+name,branch,url
+ruby-lsp,main,https://github.com/Shopify/ruby-lsp
+sidekiq,main,https://github.com/mperham/sidekiq
+fluentd,master,https://github.com/fluent/fluentd
+rake,master,https://github.com/ruby/rake
+ruby,master,https://github.com/ruby/ruby
