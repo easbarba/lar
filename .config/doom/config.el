@@ -3,9 +3,6 @@
 (when (string-equal system-name "barba-x220")
   (setq straight-disable-native-compile t))
 
-(setq-default user-full-name "dynamite black"
-              user-login-name "dynab")
-
 (remove-hook 'after-init-hook #'debian-ispell-set-startup-menu)
 
 (require 'iso-transl) ;; solves dbus keyboard conflict
