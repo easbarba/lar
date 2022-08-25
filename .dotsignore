@@ -4,7 +4,6 @@
 LICENSE
 README.md
 .iex.exs
-.sbclrc
 .tcshrc
 .zshrc
 .git/
