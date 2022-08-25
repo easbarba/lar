@@ -1,3 +1,5 @@
+include "/usr/share/nano/*.nanorc"
+
 # Automatically indent a newly created line to the same number of
 # tabs and/or spaces as the preceding line -- or as the next line
 # if the preceding line is the beginning of a paragraph.
