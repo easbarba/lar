@@ -35,6 +35,10 @@ gimme_keys() {
     export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
 }
 
+# * SYSTEM TOOLS
+# ===================================================
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # XORG
 if [ "$(tty)" = "/dev/tty1" ]; then
     gimme_keys

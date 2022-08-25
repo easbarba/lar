@@ -71,11 +71,7 @@ export PATH="$GOPATH/bin"${PATH:+:}$PATH
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
-export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
-export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
+# export GUILE_LOAD_PATH="$GUIX_PROFILE/share/guile/site/3.0"
+# export GUILE_LOAD_COMPILED_PATH="$GUIX_PROFILE/lib/guile/3.0/site-ccache:$GUIX_PROFILE/share/guile/site/3.0"
 export PATH="$GUIX_PROFILE/bin"${PATH:+:}$PATH
 # ===================================================
-
-# * SYSTEM TOOLS
-# ===================================================
-export _JAVA_AWT_WM_NONREPARENTING=1
