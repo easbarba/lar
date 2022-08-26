@@ -34,5 +34,6 @@
                     "system-folders-variables"
                     "system-variables"
                     "system-keybinds"
-                    "stumpwm-modules-contrib"
-                    "system-autostart"))
+                    "system-autostart"
+                    ;; "stumpwm-modules-contrib"
+                    ))

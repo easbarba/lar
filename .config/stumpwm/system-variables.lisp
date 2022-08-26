@@ -13,9 +13,6 @@
                              ((eas/commandv "kate") "kate"))
   "Default Editor.")
 
-(defparameter *ide* (if (eas/commandv "rubymine") "rubymine")
-  "Default Editor.")
-
 (defparameter *browser* (cond ((eas/commandv "chromium") "chromium")
                               ((eas/commandv "firefox") "firefox")
                               ((eas/commandv "nyxt") "nyxt")
