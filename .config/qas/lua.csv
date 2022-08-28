@@ -1,7 +1,0 @@
-name,branch,url
-vicious,master,https://github.com/vicious-widgets/vicious
-awesome,master,https://github.com/awesomeWM/awesome
-lua-language-server,master,https://github.com/sumneko/lua-language-server
-neovim,master,https://github.com/neovim/neovim
-luarocks,master,https://github.com/luarocks/luarocks
-lua,master,https://github.com/lua/lua
