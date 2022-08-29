@@ -1,4 +1,5 @@
 name,branch,url
+junit-in-action-third-edition,master,https://github.com/ctudose/junit-in-action-third-edition
 fullstack-springboot2,master,https://github.com/PacktPublishing/Hands-On-Full-Stack-Development-with-Spring-Boot-2-and-React-Second-Edition
 springboot-up-and-running,master,https://github.com/mkheck/SpringBootUpAndRunning
 languagetool,master,https://github.com/languagetool-org/languagetool
