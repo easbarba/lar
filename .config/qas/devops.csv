@@ -1,4 +1,5 @@
 name,branch,url
+cedon-k8s,master,https://gitlab.com/cedon/curso-k8s
 book-of-kubernetes/examples,main,https://github.com/book-of-kubernetes/examples
 kelseyhightower/kubernetes-the-hard-way,master,https://github.com/kelseyhightower/kubernetes-the-hard-way
 ydamni-kubernetes-the-iac-way,main,https://github.com/ydamni/kubernetes-the-iac-way
