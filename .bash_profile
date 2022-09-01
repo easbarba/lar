@@ -40,13 +40,13 @@ gimme_keys() {
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # XORG
-if [ "$(tty)" = "/dev/tty1" ]; then
+if [ "$(tty)" = "/dev/tty3" ]; then
     gimme_keys
     exec startx
 fi
 
 # WAYLAND
-if [ "$(tty)" = "/dev/tty2" ]; then
+if [ "$(tty)" = "/dev/tty5" ]; then
     gimme_keys
     exec sway
 fi
