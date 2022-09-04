@@ -5,6 +5,7 @@ fullstack-springboot2,master,https://github.com/PacktPublishing/Hands-On-Full-St
 springboot-up-and-running,master,https://github.com/mkheck/SpringBootUpAndRunning
 languagetool,master,https://github.com/languagetool-org/languagetool
 termux,master,https://github.com/termux/termux-app
+jbang,main,https://github.com/jbangdev/jbang
 junit5,main,https://github.com/junit-team/junit5
 spring-boot,main,https://github.com/spring-projects/spring-boot
 spring-framework,main,https://github.com/spring-projects/spring-framework
