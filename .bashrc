@@ -255,14 +255,15 @@ alias s-path='echo -e ${PATH//:/\\n}' # prettier PATH entries
 
 # * APPS
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)" # make less more friendly for non-text input files, see lesspipe(1)
-[[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
+#[[ -x $(command -v kubectl) ]] && . <(kubectl completion bash)
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 
 # * GNU SCREEN
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]];
+    then
     tmux attach || tmux >/dev/null 2>&1
 fi
 #[[ -x "$(command -v screen)" && -z "$STY" ]] && screen -S GNU
 
-export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"

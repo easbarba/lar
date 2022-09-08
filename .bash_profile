@@ -24,32 +24,4 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-gimme_keys() {
-    # kill any ssh-agent running, re-enter new one
-    # before starting session and reset ssh env vars
-
-    [[ $(pgrep -x ssh-agent) ]] && killall ssh-agent
-    s-tools-ssh
-
-    export SSH_AGENT_PID=$(pgrep ssh-agent)
-    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
-}
-
-# * SYSTEM TOOLS
-# ===================================================
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# XORG
-if [ "$(tty)" = "/dev/tty3" ]; then
-    gimme_keys
-    exec startx
-fi
-
-# WAYLAND
-if [ "$(tty)" = "/dev/tty5" ]; then
-    gimme_keys
-    exec sway
-fi
-
-# ** readline
-#export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+. "$HOME/.cargo/env"
