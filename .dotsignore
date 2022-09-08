@@ -9,7 +9,6 @@ README.md
 .git/
 .config/Clementine
 .config/ansible
-.config/autostart
 .config/autostart-scripts
 .config/bspwm
 .config/debian
