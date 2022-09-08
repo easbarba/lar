@@ -50,6 +50,10 @@ export PATH="$DOOM_DIR/bin":$PATH
 
 # * LANGUAGES PACKAGE MANAGERS
 
+# ** JAVA
+export PATH="$HOME/.jbang/bin:$PATH"
+export SDKMAN_DIR="$HOME/.sdkman"
+
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin"${PATH:+:}$PATH
@@ -63,6 +67,10 @@ export PATH="$NPM_CONFIG_PREFIX/bin"${PATH:+:}$PATH
 # ** GOLANG
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin"${PATH:+:}$PATH
+
+# ** RUST
+export RUST_BIN="$HOME/.cargo/bin"
+export PATH="$RUST_BIN"${PATH:+:}$PATH
 
 # ===================================================
 
@@ -93,3 +101,4 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+. "$HOME/.cargo/env"
