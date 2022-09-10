@@ -1,4 +1,4 @@
 . "$HOME/.profile"
 
-[ -x "$(command -v dwm)" ] && exec dwm
+[ -x "$(command -v mate-session)" ] && exec mate-session
 [ -x "$(command -v awesome)" ] && exec awesome
