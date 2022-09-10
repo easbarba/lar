@@ -5,6 +5,7 @@ LICENSE
 README.md
 .iex.exs
 .tcshrc
+.xinitrc
 .zshrc
 .git/
 .config/Clementine
