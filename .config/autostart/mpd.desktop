@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=mpd
+Hidden=false
+Name[en_US]=mpd
+Name=mpd
+Comment[en_US]=
+Comment=
+X-MATE-Autostart-Delay=0
