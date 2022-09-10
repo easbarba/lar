@@ -1,7 +1,7 @@
 # * DEFAULT SOFTWARE:
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="st"
+export TERMINAL="mate-terminal"
 export BROWSER="google-chrome"
 
 # * XDG HOMES
@@ -32,8 +32,8 @@ export LOCAL_DOC="$XDG_DATA_HOME/doc"
 export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
 
 # * $HOME BIN DIRECTORIES
-export PATH="$HOME/bin":PATH
-export PATH="$LOCAL_BIN":PATH
+export PATH="$HOME/bin":$PATH
+export PATH="$LOCAL_BIN":$PATH
 
 # ** DOOM EMACS
 export DOOM_DIR="$HOME/.config/emacs"
