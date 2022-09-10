@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=st
+Exec=mate-terminal
 Hidden=false
-Name[en_US]=Suckless st
-Name=Suckless st
+Name[en_US]=Mate Terminal
+Name=Mate Terminal
 Comment[en_US]=
 Comment=
 X-MATE-Autostart-Delay=0
