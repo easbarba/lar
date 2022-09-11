@@ -1,5 +1,3 @@
-# SWAYWM
-
 input * {
     xkb_layout "br,us"
 }
@@ -9,9 +7,8 @@ input type:touchpad {
 }
 
 include ~/.config/sway/variables
-include ~/.config/sway/workspace
 include ~/.config/sway/bindings
-include ~/.config/sway/bar
+include ~/.config/sway/workspace
 include ~/.config/sway/theme
 include ~/.config/sway/autostart
 include @sysconfdir@/sway/config.d/*
