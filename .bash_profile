@@ -17,13 +17,7 @@ gimme_keys() {
 }
 
 # WAYLAND
-if [ "$(tty)" = "/dev/tty1" ]; then
-    gimme_keys
-    exec sway
-fi
-
-# XORG
 if [ "$(tty)" = "/dev/tty2" ]; then
     gimme_keys
-    exec startx
+    exec sway
 fi
