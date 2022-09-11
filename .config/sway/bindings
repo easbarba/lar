@@ -126,7 +126,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # External Applications
+
 bindsym $mod+c exec swaylock
+bindsym $mod+x exec bemenu-run
 
 bindsym $mod+Ctrl+w exec s-wm-volume --up
 bindsym $mod+Ctrl+s exec s-wm-volume --down
@@ -140,7 +142,7 @@ bindsym $mod+Mod1+d exec mpc next
 bindsym $mod+Mod1+w exec mpc volume +3
 bindsym $mod+Mod1+s exec mpc volume -3
 bindsym $mod+Mod1+space exec playerctl play-pause
-bindsym $mod+Mod1+x exec wofi --show drun
-bindsym $mod+Print exec grim
-bindsym $mod+Mod1+Print exec grim -g "$(slurp)"
 bindsym $mod+Mod1+p exec s-media-play
+
+bindsym Print exec s-wm-shot --full
+bindsym Mod1+Print exec s-wm-shot --partial

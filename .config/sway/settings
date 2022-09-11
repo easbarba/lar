@@ -1,0 +1,10 @@
+input * {
+    xkb_layout "br,us"
+}
+
+input type:touchpad {
+    tap enabled
+}
+
+# XWayland - unfortunately needed for Android Studio
+# xwayland enable

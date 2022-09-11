@@ -1,5 +1,6 @@
 # Bind App to workspace
 # query for apps info with: swaymsg -t get_tree
+# swaymsg -t get_workspaces
 
 set $ws1 "mx"
 set $ws2 "read"
@@ -14,10 +15,12 @@ assign [app_id= "atril"] $ws2
 assign [app_id="org.kde.okular"] $ws2
 assign [class="libreoffice"] $ws2
 assign [app_id="org.pwmt.zathura"] $ws2
+assign [app_id="foot"] $ws3
 assign [app_id="Alacritty"] $ws3
 assign [class="IceCat"] $ws4
 assign [class="Firefox"] $ws4
 assign [class="Chromium"] $ws4
+assign [class="Google-chrome"] $ws4
 assign [app_id="chromium-browser"] $ws4
 assign [class="Google-chrome"] $ws4
-assign [app_id="mpv"] $ws5
+assign [class="mpv"] $ws5
