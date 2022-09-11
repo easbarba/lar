@@ -8,19 +8,19 @@ set $ws3 "term"
 set $ws4 "www"
 set $ws5 "media"
 
-assign [class="Emacs"] $ws1
-assign [app_id="SpringToolSuite4"] $ws1
-assign [app_id="Eclipse"] $ws1
-assign [app_id= "atril"] $ws2
-assign [app_id="org.kde.okular"] $ws2
-assign [class="libreoffice"] $ws2
-assign [app_id="org.pwmt.zathura"] $ws2
-assign [app_id="foot"] $ws3
-assign [app_id="Alacritty"] $ws3
-assign [class="IceCat"] $ws4
-assign [class="Firefox"] $ws4
-assign [class="Chromium"] $ws4
-assign [class="Google-chrome"] $ws4
-assign [app_id="chromium-browser"] $ws4
-assign [class="Google-chrome"] $ws4
-assign [class="mpv"] $ws5
+assign [class="Emacs"] workspace $ws1
+assign [app_id="SpringToolSuite4"] workspace $ws1
+assign [app_id="Eclipse"] workspace $ws1
+assign [app_id= "atril"] workspace $ws2
+assign [app_id="org.kde.okular"] workspace $ws2
+assign [class="libreoffice"] workspace $ws2
+assign [app_id="org.pwmt.zathura"] workspace $ws2
+assign [app_id="foot"] workspace $ws3
+assign [app_id="Alacritty"] workspace $ws3
+assign [class="IceCat"] workspace $ws4
+assign [class="Firefox"] workspace $ws4
+assign [class="Chromium"] workspace $ws4
+assign [class="Google-chrome"] -> $ws4
+assign [app_id="chromium-browser"] workspace $ws4
+assign [class="Google-chrome"] workspace $ws4
+assign [class="mpv"] -> $ws5
