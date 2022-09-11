@@ -23,7 +23,7 @@ hide_edge_borders smart
 bar {
     position top
     mode hide
-    status_command while s-wm-sysinfo; do sleep 1; done
+    status_command while s-wm-sysinfo; do sleep 15; done
 
     colors {
         statusline $cl_fore
