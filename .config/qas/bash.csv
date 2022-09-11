@@ -1,2 +1,3 @@
 name,branch,url
+deb-get,main,https://github.com/wimpysworld/deb-get
 clipmenu,develop,https://github.com/cdown/clipmenu
