@@ -1,8 +1,8 @@
 # * DEFAULT SOFTWARE:
 export VISUAL="emacs"
 export EDITOR="nano"
-export TERMINAL="mate-terminal"
-export BROWSER="google-chrome"
+export TERMINAL="gnome-terminal"
+export BROWSER="firefox"
 
 # * XDG HOMES
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -46,16 +46,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin":$PATH
-
-# ** NPM
-export NPM_CONFIG_PREFIX="$HOME/.local/npm"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export PATH="$NPM_CONFIG_PREFIX/bin":$PATH
-
-# ** GOLANG
-export GOPATH=$HOME/.local/go
-export PATH="$GOPATH/bin":$PATH
 
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
