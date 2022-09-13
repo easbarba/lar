@@ -51,3 +51,7 @@ export PATH="$GEM_HOME/bin":$PATH
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 export PATH="$GUIX_PROFILE/bin":$PATH
+
+# ** MISC
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01' # colored GCC warnings and errors
+export _JAVA_AWT_WM_NONREPARENTING=1
