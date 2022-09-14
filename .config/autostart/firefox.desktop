@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Network;WebBrowser;
+Comment=Browse the World Wide Web
+Exec=/usr/lib/firefox/firefox %u
+GenericName=Web Browser
+Icon=firefox
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+Name=Firefox
+StartupNotify=true
+StartupWMClass=Firefox
+Terminal=false
+Type=Application
+X-GNOME-FullName=Firefox Web Browser
+X-MultipleArgs=false
