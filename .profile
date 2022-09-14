@@ -1,63 +1,50 @@
-# * DEFAULT SOFTWARE:
-export VISUAL="emacs"
-export EDITOR="nano"
-export TERMINAL="gnome-terminal"
-export BROWSER="firefox"
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
 
-# * XDG HOMES
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-[ ! -w "${XDG_RUNTIME_DIR=/run/user/${UID}}" ] && export XDG_RUNTIME_DIR=/tmp
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
 
-# XDG DIRS
-export XDG_CONFIG_DIRS="/etc/xdg"
-export XDG_DESKTOP_DIR="$HOME/Desktop"
-export XDG_DOCUMENTS_DIR="$HOME/Documents"
-export XDG_DOWNLOAD_DIR="$HOME/Downloads"
-export XDG_MUSIC_DIR="$HOME/Musica"
-export XDG_PICTURES_DIR="$HOME/Pictures"
-export XDG_PUBLICSHARE_DIR="$HOME/Public"
-export XDG_TEMPLATES_DIR="$HOME/Templates"
-export XDG_VIDEOS_DIR="$HOME/Videos"
-export XDG_DATA_DIRS='/var/lib/flatpak/exports/share':"$HOME/.local/share/flatpak/exports/share"
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
 
-# LOCAL FOLDERS
-export LOCAL="$HOME/.local"
-export LOCAL_BIN="$LOCAL/bin"
-export LOCAL_LIB="$LOCAL/lib"
-export LOCAL_MAN="$XDG_DATA_HOME/man"
-export LOCAL_INFO="$XDG_DATA_HOME/info"
-export LOCAL_DOC="$XDG_DATA_HOME/doc"
-export LOCAL_FONTS="$XDG_DATA_HOME/fonts"
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
 
-# * $HOME BIN DIRECTORIES
-export PATH="$HOME/bin":$PATH
-export PATH="$LOCAL_BIN":$PATH
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # ** DOOM EMACS
 export DOOM_DIR="$HOME/.config/emacs"
-export PATH="$DOOM_DIR/bin":$PATH
+export PATH="$DOOM_DIR/bin:$PATH"
 
 # ** JAVA
-export PATH="$HOME/.jbang/bin":$PATH
+export PATH="$HOME/.jbang/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
-export PATH="$GEM_HOME/bin":$PATH
+export PATH="$GEM_HOME/bin:$PATH"
 
 # ** NPM
 export NPM_CONFIG_PREFIX="$HOME/.local/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export PATH="$NPM_CONFIG_PREFIX/bin":$PATH
+export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
 
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
-export PATH="$GUIX_PROFILE/bin":$PATH
-
-# ** MISC
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01' # colored GCC warnings and errors
-export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH="$GUIX_PROFILE/bin:$PATH"
