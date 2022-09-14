@@ -8,17 +8,16 @@ README.md
 .xinitrc
 .zshrc
 .git
-.bashrc
 .bash_profile
 .bash_aliases
 .bash_logout
 .xsessionrc
+.logout
 .xinitrc
 .local/share/applications
 .config/alacritty
 .config/awesome
 .config/ansible
-.config/autostart-scripts
 .config/bspwm
 .config/cejo
 .config/Clementine
@@ -41,7 +40,6 @@ README.md
 .config/nixpkgs
 .config/nyxt
 .config/picom
-.config/plasma-workspace
 .config/powershell
 .config/qtile
 .config/readline
