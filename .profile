@@ -38,12 +38,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
-# ** NPM
-export NPM_CONFIG_PREFIX="$HOME/.local/npm"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
-
 # ** GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
