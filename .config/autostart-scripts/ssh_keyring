@@ -7,8 +7,8 @@ if [ "$DESKTOP_SESSION" == "gnome" ]; then
     export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 fi
 
-KEYS_FOUND=$(find "$HOME/.ssh/" -type f -name '*.pub')
+# KEYS_FOUND=$(find "$HOME/.ssh/" -type f -name '*.pub')
 
-for KEY in $KEYS_FOUND; do
-    ssh-add -q "$KEY" </dev/null
-done
+# for KEY in $KEYS_FOUND; do
+#     ssh-add -q "$KEY" </dev/null
+# done
