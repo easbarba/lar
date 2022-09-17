@@ -114,9 +114,10 @@ fi
 
 # * APPS
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
+[[ -x "$HOME/.config/broot/launcher/bash/br" ]] && source "$HOME/.config/broot/launcher/bash/br"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && . "$HOME/.sdkman/bin/sdkman-init.sh"
+#[[ -x "$(command -v screen)" && -z "$STY" ]] && screen -S GNU
+
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     tmux attach || tmux >/dev/null 2>&1
 fi
-
-#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && . "$HOME/.sdkman/bin/sdkman-init.sh"
-#[[ -x "$(command -v screen)" && -z "$STY" ]] && screen -S GNU
