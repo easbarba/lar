@@ -1,3 +1,4 @@
 name,branch,url
+pure-getopt,master,https://github.com/agriffis/pure-getopt
 deb-get,main,https://github.com/wimpysworld/deb-get
 clipmenu,develop,https://github.com/cdown/clipmenu
