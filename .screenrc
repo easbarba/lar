@@ -1,46 +1,33 @@
 # GNU SCREEN
 # https://www.gnu.org/software/screen/manual/screen.html
 
-# Turn welcome message off
-startup_message off
+startup_message off # Turn welcome message off
+vbell off # Turn off visual bell
+term screen-256color # Use 256 colors
+truecolor on # 24bits - True color
+altscreen on # Fix for residual editor text
+msgwait 3 # message display duration
+defscrollback 5000 # Increase the scrollback buffer
 
-# Turn off visual bell
-vbell off
+# Windows
+screen -t misc bash
+screen -t tools bash
+screen -t libre bash
 
 # Getting rid of the vertical and horizontal bars
 rendition so =00
 caption string "%{03} "
 
-# Use 256 colors
-term screen-256color
-
-# 24bits - True color
-truecolor on
-
-screen -t tune ncmpcpp
-screen -t libre bash
-screen -t water fish
-
 # custom bindings
-bind ! s-video
+# bind ! s-video
 
 # Resize
 bind = resize =
 bind + resize +3
 bind - resize -3
 
-# backticks - The output of such a command is used for substitution
-# session title
+# backticks - The output of such a command is used for substitution session title
 backtick 1 30 30 sh -c 'screen -ls | grep -i attached | cut -f 2 -d '.' | cut -f1'
-
-# Fix for residual editor text
-altscreen on
-
-# message display duration
-msgwait 3
-
-# Increase the scrollback buffer
-defscrollback 5000
 
 # hardcopydir:  The directory which contains all hardcopies.
 hardcopydir ~/.config/screen
