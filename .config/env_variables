@@ -1,0 +1,19 @@
+# ** DOOM EMACS
+export DOOM_DIR="$HOME/.config/emacs"
+export PATH="$DOOM_DIR/bin:$PATH"
+
+# ** JAVA
+export PATH="$HOME/.jbang/bin:$PATH"
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# ** RUBY
+export GEM_HOME="$HOME/.local/gem"
+export PATH="$GEM_HOME/bin:$PATH"
+
+# ** GUIX
+export GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+export PATH="$GUIX_PROFILE/bin:$PATH"
+
+# OPS
+export VAGRANT_DEFAULT_PROVIDER=libvirt

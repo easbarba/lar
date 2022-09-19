@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-. "$HOME/.profile"
+. "$HOME/.config/env_variables"
