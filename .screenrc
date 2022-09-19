@@ -1,4 +1,5 @@
 # GNU SCREEN
+
 # https://www.gnu.org/software/screen/manual/screen.html
 
 startup_message off # Turn welcome message off
@@ -8,30 +9,23 @@ truecolor on # 24bits - True color
 altscreen on # Fix for residual editor text
 msgwait 3 # message display duration
 defscrollback 5000 # Increase the scrollback buffer
-
-# Windows
-screen -t misc bash
-screen -t tools bash
-screen -t libre bash
+hardstatus alwayslastline "%{= kb}[ %1` ]%= %{= kw}%?%-w%?%{r}(%{g} %n %t%?(%u)%?%{r} )%{w}%?%+w%?%?%= [%{Y} %d/%m %{Y}%c %{W}]" # statusline
+backtick 1 30 30 sh -c 'screen -ls | grep -i attached | cut -f 2 -d '.' | cut -f1' # session title
 
 # Getting rid of the vertical and horizontal bars
 rendition so =00
 caption string "%{03} "
 
-# custom bindings
-# bind ! s-video
+# hardcopydir:  The directory which contains all hardcopies.
+hardcopydir ~/.config/screen
+bufferfile ~/.config/screen/buffer
+
+# Windows
+screen -t personal bash
+screen -t projects bash
+screen -t adhoc bash
 
 # Resize
 bind = resize =
 bind + resize +3
 bind - resize -3
-
-# backticks - The output of such a command is used for substitution session title
-backtick 1 30 30 sh -c 'screen -ls | grep -i attached | cut -f 2 -d '.' | cut -f1'
-
-# hardcopydir:  The directory which contains all hardcopies.
-hardcopydir ~/.config/screen
-bufferfile ~/.config/screen/buffer
-
-# Statusline String
-hardstatus alwayslastline "%{= kb}[ %1` ]%= %{= kw}%?%-w%?%{r}(%{g} %n %t%?(%u)%?%{r} )%{w}%?%+w%?%?%= [%{Y} %d/%m %{Y}%c %{W}]"
