@@ -96,7 +96,7 @@ if ! shopt -oq posix; then
 fi
 
 # * APPS
-# [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
+[[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 [[ -x "$HOME/.config/broot/launcher/bash/br" ]] && source "$HOME/.config/broot/launcher/bash/br"
 [[ -x "$(command -v screen)" ]] && [[ -z "$STY" ]] && COLORTERM=xterm-256color screen -S GNU
 # if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
