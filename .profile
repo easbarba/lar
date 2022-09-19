@@ -42,3 +42,6 @@ export PATH="$GEM_HOME/bin:$PATH"
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 export PATH="$GUIX_PROFILE/bin:$PATH"
+
+# OPS
+export VAGRANT_DEFAULT_PROVIDER=libvirt
