@@ -24,5 +24,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# GIT
+alias gips='git push'
+alias gipl='git pull'
+alias gist='git status'
+alias gilo='git log --oneline --decorate --graph'
+
+
 # ** JAVA
 alias j!=jbang
