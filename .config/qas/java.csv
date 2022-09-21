@@ -1,4 +1,5 @@
 name,branch,url
+bezkoder-docker-compose-spring-boot-mysql,master,https://github.com/bezkoder/docker-compose-spring-boot-mysql
 binkley-modern-java-practices,master,https://github.com/binkley/modern-java-practices
 sivaprasadreddy-devzone,master,https://github.com/sivaprasadreddy/devzone
 junit-in-action-third-edition,master,https://github.com/ctudose/junit-in-action-third-edition
