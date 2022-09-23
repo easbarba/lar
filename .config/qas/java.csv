@@ -8,6 +8,7 @@ springboot-up-and-running,master,https://github.com/mkheck/SpringBootUpAndRunnin
 termux,master,https://github.com/termux/termux-app
 jbang,main,https://github.com/jbangdev/jbang
 junit5,main,https://github.com/junit-team/junit5
+start.spring.io,main,https://github.com/spring-io/start.spring.io
 spring-boot,main,https://github.com/spring-projects/spring-boot
 spring-framework,main,https://github.com/spring-projects/spring-framework
 quarkus,main,https://github.com/quarkusio/quarkus
