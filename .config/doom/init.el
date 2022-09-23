@@ -32,7 +32,7 @@
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       ;; emoji             ;; +unicode)  ; 🙂
+       ;;emoji;; +unicode)  ; 🙂
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
        indent-guides     ; highlighted indent columns
@@ -88,7 +88,7 @@
        ;; ansible
        ;;biblio            ; Writes a PhD for you (citation needed)
        debugger            ; FIXME stepping through code, to help you add bugs
-       ;; direnv
+       direnv
        docker
        editorconfig        ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
