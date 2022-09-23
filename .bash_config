@@ -40,6 +40,7 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 [[ -x "$HOME/.config/broot/launcher/bash/br" ]] && source "$HOME/.config/broot/launcher/bash/br"
 [[ -x "$(command -v screen)" ]] && [[ -z "$STY" ]] && COLORTERM=xterm-256color screen -S GNU
+[[ -x "$(command -v direnv)" ]] && eval "$(direnv hook bash)"
 # if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
 # tmux attach || tmux >/dev/null 2>&1
 # fi
