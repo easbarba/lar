@@ -16,7 +16,7 @@
     (setq doom-font (font-spec :family "JetBrains Mono" :size 18)
           doom-variable-pitch-font (font-spec :family "sans" :size 20))))
 
-(setq doom-theme 'doom-miramare ;; 1337 for terminal
+(setq doom-theme 'doom-lantern ;; 1337 for terminal
       display-line-numbers-type t)
 
 (setq org-directory "~/org/")
