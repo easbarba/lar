@@ -1,7 +1,5 @@
 name,branch,url
 artanis,master,https://gitlab.com/hardenedlinux/artanis
-chickadee,master,https://git.dthompson.us/chickadee.git
-haunt,master,https://git.dthompson.us/haunt.git
 guile-json,master,https://github.com/aconchillo/guile-json
 guile-git,master,https://gitlab.com/guile-git/guile-git
 guile-filesystem,master,https://gitlab.com/leoprikler/guile-filesystem
