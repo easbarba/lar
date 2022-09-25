@@ -6,6 +6,7 @@
 (package! zoom)
 (package! nov)
 (package! guix)
+(package! adoc-mode)
 
 ;; UTILITIES
 (package! outshine)
