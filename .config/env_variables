@@ -2,9 +2,8 @@
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# ** JAVA
-export PATH="$HOME/.jbang/bin:$PATH"
-export SDKMAN_DIR="$HOME/.sdkman"
+# ** PHP
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # ** RUBY
 export GEM_HOME="$HOME/.local/gem"
