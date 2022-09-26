@@ -1,0 +1,8 @@
+name,branch,url
+guzzle,master,https://github.com/guzzle/guzzle
+phpunit,main,https://github.com/sebastianbergmann/phpunit
+composer,main,https://github.com/composer/composer
+laravel-framework,9.x,https://github.com/laravel/framework
+laravel,9.x,https://github.com/laravel/laravel
+php-doc-en,master,https://github.com/php/doc-en
+php-src,master,https://github.com/php/php-src

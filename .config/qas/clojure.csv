@@ -1,6 +1,0 @@
-name,branch,url
-cljfmt,master,https://github.com/weavejester/cljfmt
-luminus,master,https://github.com/luminus-framework/luminus
-leiningen,main,https://codeberg.org/leiningen/leiningen
-clojure-lsp,master,https://github.com/clojure-lsp/clojure-lsp/
-clojure,master,https://github.com/clojure/clojure
