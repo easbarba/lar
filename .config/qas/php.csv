@@ -1,4 +1,5 @@
 name,branch,url
+psysh,main,https://github.com/bobthecow/psysh
 guzzle,master,https://github.com/guzzle/guzzle
 phpunit,main,https://github.com/sebastianbergmann/phpunit
 composer,main,https://github.com/composer/composer
