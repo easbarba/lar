@@ -1,6 +1,7 @@
 name,branch,url
 psysh,main,https://github.com/bobthecow/psysh
 guzzle,master,https://github.com/guzzle/guzzle
+symfony-console,6.2,https://github.com/symfony/console
 phpunit,main,https://github.com/sebastianbergmann/phpunit
 composer,main,https://github.com/composer/composer
 laravel-framework,9.x,https://github.com/laravel/framework
