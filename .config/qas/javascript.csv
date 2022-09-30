@@ -1,4 +1,6 @@
 name,branch,url
+Front-End-Development-Projects-with-Vue.js,master,https://github.com/PacktPublishing/Front-End-Development-Projects-with-Vue.js
 nodejs,main,https://github.com/nodejs/node
+create-vue,main,https://github.com/vuejs/create-vue
 vuejs,main,https://github.com/vuejs/core
 axios,main,https://github.com/axios/axios
