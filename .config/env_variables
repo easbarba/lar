@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-# ** DOOM EMACS
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# DOOM EMACS
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# ** PHP
+# PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
-# ** RUBY
+# RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
-# ** GUIX
+# GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 export PATH="$GUIX_PROFILE/bin:$PATH"
