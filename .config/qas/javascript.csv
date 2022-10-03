@@ -1,5 +1,7 @@
 name,branch,url
 Front-End-Development-Projects-with-Vue.js,master,https://github.com/PacktPublishing/Front-End-Development-Projects-with-Vue.js
+aleph.js,main,https://github.com/alephjs/aleph.js
+bun-types,main,https://github.com/oven-sh/bun-types
 bun,main,https://github.com/oven-sh/bun
 nodejs,main,https://github.com/nodejs/node
 volar,master,https://github.com/johnsoncodehk/volar

@@ -31,3 +31,7 @@ export PATH="$NPM_BIN":$PATH
 # BUN
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# DENO
+export DENO_INSTALL="/home/easbarba/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
