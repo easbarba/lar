@@ -9,3 +9,4 @@ volar,master,https://github.com/johnsoncodehk/volar
 create-vue,main,https://github.com/vuejs/create-vue
 vuejs,main,https://github.com/vuejs/core
 axios,main,https://github.com/axios/axios
+npm,latest,https://github.com/npm/cli
