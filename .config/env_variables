@@ -27,3 +27,7 @@ export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 export NPM_HOME="$XDG_CONFIG_HOME/npm"
 export NPM_BIN="$NPM_HOME/bin"
 export PATH="$NPM_BIN":$PATH
+
+# BUN
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
