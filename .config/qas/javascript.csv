@@ -6,7 +6,8 @@ bun-types,master,https://github.com/oven-sh/bun-types
 bun,main,https://github.com/oven-sh/bun
 nodejs,main,https://github.com/nodejs/node
 volar,master,https://github.com/johnsoncodehk/volar
-create-vue,main,https://github.com/vuejs/create-vue
-vuejs,main,https://github.com/vuejs/core
+next.js,canary,https://github.com/vercel/next.js
+create-react-app,main,https://github.com/facebook/create-react-app
+react,main,https://github.com/facebook/react
 axios,main,https://github.com/axios/axios
 npm,latest,https://github.com/npm/cli
