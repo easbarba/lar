@@ -1,11 +1,10 @@
 name,branch,url
-Front-End-Development-Projects-with-Vue.js,master,https://github.com/PacktPublishing/Front-End-Development-Projects-with-Vue.js
-aleph.js,main,https://github.com/alephjs/aleph.js
 commander.js,master,https://github.com/tj/commander.js
 bun-types,master,https://github.com/oven-sh/bun-types
 bun,main,https://github.com/oven-sh/bun
 nodejs,main,https://github.com/nodejs/node
-volar,master,https://github.com/johnsoncodehk/volar
+hyper,canary,https://github.com/vercel/hyper
+vercel,main,https://github.com/vercel/vercel
 next.js,canary,https://github.com/vercel/next.js
 create-react-app,main,https://github.com/facebook/create-react-app
 react,main,https://github.com/facebook/react
