@@ -8,7 +8,7 @@ module.exports = {
         // or `'canary'` for less polished but more frequent updates
         updateChannel: 'stable',
         // default font size in pixels for all tabs
-        fontSize: 20,
+        fontSize: 18,
         // font family with optional fallbacks
         fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
         // default font weight: 'normal' or 'bold'
@@ -92,7 +92,7 @@ module.exports = {
         //
         // Cygwin
         // - Example: `C:\\cygwin64\\bin\\bash.exe`
-        shell: '/usr/bin/bash',
+        shell: '',
         // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
         // by default `['--login']` will be used
         shellArgs: ['--login'],
@@ -127,6 +127,8 @@ module.exports = {
         disableAutoUpdates: false,
         // set to true to enable screen reading apps (like NVDA) to read the contents of the terminal
         screenReaderMode: false,
+        // set to true to preserve working directory when creating splits or tabs
+        preserveCWD: true,
         // for advanced config flags please refer to https://hyper.is/#cfg
     },
     // a list of plugins to fetch and install from npm
@@ -135,7 +137,7 @@ module.exports = {
     //   `hyperpower`
     //   `@company/project`
     //   `project#1.0.1`
-    plugins: [`hyper-gruvbox`, `hyper-search`, `hyperpower`, `hyper-pane`],
+    plugins: ["hyper-material-theme"],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
