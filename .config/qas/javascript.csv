@@ -2,6 +2,9 @@ name,branch,url
 lucasfcosta/testing-javascript-applications,master,https://github.com/lucasfcosta/testing-javascript-applications
 chai,4.x.x,https://github.com/chaijs/chai
 commander.js,master,https://github.com/tj/commander.js
+express,master,https://github.com/expressjs/express
+nest-cli,master,https://github.com/nestjs/nest-cli
+nestjs,master,https://github.com/nestjs/nest
 typescript-language-server,master,https://github.com/typescript-language-server/typescript-language-server
 bun-types,master,https://github.com/oven-sh/bun-types
 bun,main,https://github.com/oven-sh/bun
