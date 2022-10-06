@@ -1,4 +1,5 @@
 name,branch,url
+pro-angular-5ed,main,https://github.com/Apress/pro-angular-5ed
 lucasfcosta/testing-javascript-applications,master,https://github.com/lucasfcosta/testing-javascript-applications
 chai,4.x.x,https://github.com/chaijs/chai
 commander.js,master,https://github.com/tj/commander.js
