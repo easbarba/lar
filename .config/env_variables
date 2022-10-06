@@ -6,11 +6,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-# if [ ! -w ${XDG_RUNTIME_DIR:="/run/user/$UID"} ]; then
-#     echo "\$XDG_RUNTIME_DIR ($XDG_RUNTIME_DIR) not writable. Setting to /tmp." >&2
-#     XDG_RUNTIME_DIR=/tmp
-# fi
-# export XDG_RUNTIME_DIR
 
 # DOOM EMACS
 export DOOM_DIR="$HOME/.config/emacs"
