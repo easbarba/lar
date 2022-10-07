@@ -6,7 +6,7 @@ commander.js,master,https://github.com/tj/commander.js
 typescript-language-server,master,https://github.com/typescript-language-server/typescript-language-server
 bun-types,master,https://github.com/oven-sh/bun-types
 bun,main,https://github.com/oven-sh/bun
-vue-cli,main,https://github.com/vuejs/vue-cli
+vue-cli,dev,https://github.com/vuejs/vue-cli
 vue-doc,main,https://github.com/vuejs/docs
 vue-core,main,https://github.com/vuejs/core
 vue,main,https://github.com/vuejs/vue
