@@ -1,8 +1,10 @@
 input * {
+    left_handed enabled
     xkb_layout "br,us"
 }
 
 input type:touchpad {
+    left_handed enabled
     tap enabled
 }
 
