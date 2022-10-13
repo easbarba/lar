@@ -31,8 +31,6 @@ README.md
 .config/i3
 .config/kitty
 .config/micro
-.config/mpd
-.config/ncmpcpp
 .config/nix
 .config/nixos
 .config/nixpkgs
@@ -44,8 +42,6 @@ README.md
 .config/rubocop
 .config/stumpwm
 .config/suckless
-.config/sway
-.config/swaylock
 .config/sxhkd
 .config/systemd
 .config/xmodmap

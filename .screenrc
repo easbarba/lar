@@ -21,6 +21,7 @@ hardcopydir ~/.config/screen
 bufferfile ~/.config/screen/buffer
 
 # Windows
+screen -t tune ncmpcpp
 screen -t personal bash
 screen -t projects bash
 screen -t adhoc bash
