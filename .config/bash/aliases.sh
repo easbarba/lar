@@ -27,3 +27,9 @@ fi
 # GNU
 alias nano="nano -Sxmkcig_ --speller='aspell -xc'"
 
+# RAILS
+alias ra='rails'
+alias rac='rails console'
+alias ras='rails server'
+alias radb='rails dbconsole'
+alias radm='rails db:migrate'

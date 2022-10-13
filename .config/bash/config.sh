@@ -35,17 +35,13 @@ HISTTIMEFORMAT='%F %T '                         # Use standard ISO 8601 timestam
 CDPATH="."                                      # This defines where cd looks for targets # Add the directories you want to have fast access to, separated by colon
 HISTCONTROL=ignoreboth                          # don't put duplicate lines or lines starting with space in the history.
 
-
 # * APPS
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 [[ -x "$HOME/.config/broot/launcher/bash/br" ]] && source "$HOME/.config/broot/launcher/bash/br"
 [[ -x "$(command -v direnv)" ]] && eval "$(direnv hook bash)"
 [[ -x "$(command -v screen)" ]] && [[ -z "$STY" ]] && COLORTERM=xterm-256color screen -S GNU
+[[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init bash)"
 # [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
 
 # * LANGS
 [[ -x $(command -v ng) ]] && source <(ng completion script) # Load Angular CLI autocompletion.
-
-# * MISC
-[[ -x $HOME/.config/bash/aliases ]] && . $HOME/.config/bash/aliases
-
