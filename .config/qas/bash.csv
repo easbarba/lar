@@ -1,4 +1,5 @@
 name,branch,url
+bocker,master,https://github.com/p8952/bocker
 pure-getopt,master,https://github.com/agriffis/pure-getopt
 deb-get,main,https://github.com/wimpysworld/deb-get
 myfetch,main,https://codeberg.org/blau_araujo/myfetch
