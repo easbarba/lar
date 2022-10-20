@@ -4,6 +4,7 @@ mastodon,main,https://github.com/mastodon/mastodon
 ruby-lsp,main,https://github.com/Shopify/ruby-lsp
 sidekiq,main,https://github.com/mperham/sidekiq
 fluentd,master,https://github.com/fluent/fluentd
+rails,main,https://github.com/rails/rails
 rake,master,https://github.com/ruby/rake
 debug,master,https://github.com/ruby/debug
 rbs,master,https://github.com/ruby/rbs
