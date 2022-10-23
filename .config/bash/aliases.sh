@@ -33,3 +33,21 @@ alias rac='rails console'
 alias ras='rails server'
 alias radb='rails dbconsole'
 alias radm='rails db:migrate'
+
+# Container
+# docker stop `docker ps -qa`
+
+# # Remove all containers
+# docker rm `docker ps -qa`
+
+# # Remove all images
+# docker rmi -f $(docker images -qa)
+# podman rmi -f $(podman images -qa)
+
+# # Remove all volumes
+# docker volume rm $(docker volume ls -qf)
+# podman volume rm -f $(podman volume ls -q)
+
+# # Remove all networks
+# docker network rm $(docker network ls -q)
+# podman network rm $(podman network ls -q)

@@ -21,5 +21,6 @@ gimme_keys() {
 # WAYLAND
 if [ "$(tty)" = "/dev/tty3" ]; then
     gimme_keys
+    # exec wayfire
     exec sway
 fi
