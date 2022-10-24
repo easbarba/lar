@@ -1,4 +1,6 @@
 name,branch,url
+yata-wiki,master,https://github.com/leandronsp/yata.wiki
+yata,main,https://github.com/leandronsp/yata
 sustainable-rails-docker,main,https://github.com/davetron5000/sustainable-rails-docker
 mastodon,main,https://github.com/mastodon/mastodon
 ruby-lsp,main,https://github.com/Shopify/ruby-lsp
