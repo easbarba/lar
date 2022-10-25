@@ -116,18 +116,18 @@
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;;(cc +lsp)         ; C > C++ == 1
-       (clojure +lsp)    ; java with a lisp
-       common-lisp       ; if you've seen one lisp, you've seen them all
+       ;; (clojure +lsp)    ; java with a lisp
+       ;; common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
        data                ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
        ;;dhall
-       (elixir +lsp)     ; erlang done right
+       ;; (elixir +lsp)     ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp          ; drown in parentheses
-       (erlang +lsp)     ; an elegant language for a more civilized
+       ;; (erlang +lsp)     ; an elegant language for a more civilized
        ;;age
        ;;ess               ; emacs speaks statistics
        ;;factor
@@ -136,26 +136,26 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (go +lsp  +tree-sitter)         ; the hipster dialect
+       ;; (go +lsp  +tree-sitter)         ; the hipster dialect
        ;;(graphql +lsp)    ; Give queries a REST
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        (json +lsp +tree-sitter) ; At least it ain't XML
-       (java +lsp +tree-sitter)   ; the poster child for carpal tunnel syndrome
+       ;; (java +lsp +tree-sitter)   ; the poster child for carpal tunnel syndrome
        (javascript +lsp +tree-sitter) ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
-       lua               ; one-based indices? one-based indices
+       ;; lua               ; one-based indices? one-based indices
        markdown            ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org +pretty)       ; organize your plain life in plain text
-       (php +lsp +tree-sitter)               ; perl's insecure younger brother
+       ;; (php +lsp +tree-sitter)               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python +lsp +tree-sitter) ; beautiful is better than ugly
@@ -171,11 +171,11 @@
        (sh +fish +tree-sitter)   ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
-       swift             ; who asked for emoji variables?
+       ;; swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        (web +lsp +tree-sitter) ; the tubes
        (yaml +lsp)         ; JSON, but readable
-       zig               ; C, but simpler
+       ;; zig               ; C, but simpler
 
        :email
        ;;(mu4e +org +gmail)
