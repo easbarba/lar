@@ -20,6 +20,7 @@ assign [app_id="foot"] workspace $ws3
 assign [app_id="Alacritty"] workspace $ws3
 assign [class="IceCat"] workspace $ws4
 assign [class="Firefox"] workspace $ws4
+assign [class="Insomnia"] workspace $ws4
 assign [class="Chromium"] workspace $ws4
 assign [class="Google-chrome"] workspace $ws4
 assign [app_id="chromium-browser"] workspace $ws4
