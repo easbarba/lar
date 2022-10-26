@@ -1,7 +1,15 @@
 name,branch,url
+vue.js-3-by-example,master,https://github.com/PacktPublishing/-Vue.js-3-By-Example
 lucasfcosta-testing-javascript-applications,master,https://github.com/lucasfcosta/testing-javascript-applications
+typescript-language-server,master,https://github.com/typescript-language-server/typescript-language-server
 yargs,main,https://github.com/yargs/yargs
-bun,main,https://github.com/oven-sh/bun
+vue-cli,dev,https://github.com/vuejs/vue-cli
+vue-doc,main,https://github.com/vuejs/docs
+vue-core,main,https://github.com/vuejs/core
+vue,main,https://github.com/vuejs/vue
+vite,main,https://github.com/vitejs/vite
+axios,main,https://github.com/axios/axios
 express,master,https://github.com/expressjs/express
+typescript,main,https://github.com/microsoft/TypeScript
 nodejs,main,https://github.com/nodejs/node
 npm,latest,https://github.com/npm/cli
