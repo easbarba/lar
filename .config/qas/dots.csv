@@ -16,3 +16,6 @@ sircmpwn-dotfiles,master,https://git.sr.ht/~sircmpwn/dotfiles
 ejpcmac-config,master,https://github.com/ejpcmac/config
 hlissner-dotfiles,master,https://github.com/hlissner/dotfiles
 lourkeur-config,main,https://github.com/lourkeur/config
+bin,main,https://github.com/easbarba/bin
+annotations,main,https://github.com/easbarba/annotations
+lar,main,https://github.com/easbarba/lar
