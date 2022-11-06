@@ -11,20 +11,13 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# PHP
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+# ** GOLANG
+export GOPATH=$HOME/.local/go
+export PATH="$GOPATH/bin":$PATH
 
 # RUBY
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
-
-# GUIX
-export GUIX_PROFILE="$HOME/.guix-profile"
-export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
-export PATH="$GUIX_PROFILE/bin:$PATH"
-
-# OPS
-export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # NPM
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
@@ -38,3 +31,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # DENO
 export DENO_INSTALL="/home/easbarba/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# GUIX
+export GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+export PATH="$GUIX_PROFILE/bin:$PATH"
+
+# OPS
+export VAGRANT_DEFAULT_PROVIDER=libvirt
