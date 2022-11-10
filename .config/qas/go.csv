@@ -8,4 +8,5 @@ flux2,main,https://github.com/fluxcd/flux2
 crossplane,master,https://github.com/crossplane/crossplane
 kubernetes,master,https://github.com/kubernetes/kubernetes
 consul,main,https://github.com/hashicorp/consul
+go-tools,master,https://github.com/golang/tools
 go,master,https://go.googlesource.com/go
