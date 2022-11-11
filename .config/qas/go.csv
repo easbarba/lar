@@ -1,12 +1,11 @@
 name,branch,url
+eddycjy-go-gin-example,master,https://github.com/eddycjy/go-gin-example
 Building-Distributed-Applications-in-Gin,main,https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin
-jsoniter,master,https://github.com/json-iterator/go
-gin,master,https://github.com/gin-gonic/gin
-mpb,master,https://github.com/vbauerster/mpb
 shfmt,master,https://github.com/mvdan/sh
-flux2,main,https://github.com/fluxcd/flux2
-crossplane,master,https://github.com/crossplane/crossplane
+gin,master,https://github.com/gin-gonic/gin
+containerd,main,https://github.com/containerd/containerd
 kubernetes,master,https://github.com/kubernetes/kubernetes
-consul,main,https://github.com/hashicorp/consul
+buildah,main,https://github.com/containers/buildah
+podman,main,https://github.com/containers/podman
 go-tools,master,https://github.com/golang/tools
 go,master,https://go.googlesource.com/go
