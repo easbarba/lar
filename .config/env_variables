@@ -11,10 +11,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# RUST
-export CARGO_HOME=$HOME/.cargo
-export PATH="$CARGO_HOME/bin":$PATH
-
 # ** GOLANG
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin":$PATH
@@ -27,14 +23,6 @@ export PATH="$GEM_HOME/bin:$PATH"
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export PATH="$NPM_CONFIG_PREFIX/bin":$PATH
-
-# BUN
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# DENO
-export DENO_INSTALL="/home/easbarba/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
 
 # GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
