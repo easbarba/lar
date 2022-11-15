@@ -12,7 +12,7 @@
 (package! outshine)
 (package! olivetti)
 ;; (package! org-make-toc)
-(package! hare-mode :recipe (:repo "https://git.sr.ht/~bbuccianti/hare-mode"))
+
 
 ;; RECIPE
 
