@@ -1,0 +1,8 @@
+name,branch,url
+kyclark-command-line-rust,master,https://github.com/kyclark/command-line-rust
+starship,master,https://github.com/starship/starship
+alacritty,master,https://github.com/alacritty/alacritty
+actix-web,master,https://github.com/actix/actix-web
+axum,main,https://github.com/tokio-rs/axum
+cargo,master,https://github.com/rust-lang/cargo
+rust,master,https://github.com/rust-lang/rust
