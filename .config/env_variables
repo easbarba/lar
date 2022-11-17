@@ -19,11 +19,6 @@ export PATH="$GOPATH/bin":$PATH
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
-# NPM
-export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export PATH="$NPM_CONFIG_PREFIX/bin":$PATH
-
 # GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
