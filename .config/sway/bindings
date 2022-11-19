@@ -144,5 +144,7 @@ bindsym $mod+Mod1+s exec mpc volume -3
 bindsym $mod+Mod1+space exec playerctl play-pause
 bindsym $mod+Mod1+p exec s-media-play
 
+bindsym $mod+Mod1+o exec s-media-pic
+
 bindsym Print exec s-wm-shot --full
 bindsym Mod1+Print exec s-wm-shot --partial
