@@ -1,4 +1,6 @@
 name,branch,url
+ruanbekker-cheatsheets,master,https://github.com/ruanbekker/cheatsheets
+nanuchi-youtube-tutorial-series,master,https://gitlab.com/nanuchi/youtube-tutorial-series
 vfarcic-k3d-demo,master,https://github.com/vfarcic/k3d-demo
 cedon-k8s,master,https://gitlab.com/cedon/curso-k8s
 book-of-kubernetes/examples,main,https://github.com/book-of-kubernetes/examples
