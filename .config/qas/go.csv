@@ -4,6 +4,8 @@ Building-Distributed-Applications-in-Gin,main,https://github.com/PacktPublishing
 shfmt,master,https://github.com/mvdan/sh
 gin,master,https://github.com/gin-gonic/gin
 containerd,master,https://github.com/containerd/containerd
+k3d,main,https://github.com/k3d-io/k3d
+k3s,master,https://github.com/k3s-io/k3s
 kubernetes,master,https://github.com/kubernetes/kubernetes
 buildah,main,https://github.com/containers/buildah
 podman,main,https://github.com/containers/podman
