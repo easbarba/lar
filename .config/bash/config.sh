@@ -41,10 +41,12 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x "$(command -v direnv)" ]] && eval "$(direnv hook bash)"
 [[ -x "$(command -v screen)" ]] && [[ -z "$STY" ]] && COLORTERM=xterm-256color screen -S GNU
 [[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init bash)"
-# [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
 [[ -x "$(command -v kubectl)" ]] && source <(kubectl completion bash)
 [[ -x "$(command -v minikube)" ]] && source <(minikube completion bash)
 [[ -x "$(command -v k3s)" ]] && source <(k3s completion bash)
+[[ -x "$(command -v k3d)" ]] && source <(k3d completion bash)
 
 # * LANGS
 [[ -x $(command -v ng) ]] && source <(ng completion script) # Load Angular CLI autocompletion.
+
+# [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
