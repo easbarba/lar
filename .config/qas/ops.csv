@@ -1,11 +1,11 @@
 name,branch,url
+book-of-kubernetes-examples,main,https://github.com/book-of-kubernetes/examples
 k3d-io-k3d-demo,main,https://github.com/k3d-io/k3d-demo
 ruanbekker-cheatsheets,master,https://github.com/ruanbekker/cheatsheets
 nanuchi-youtube-tutorial-series,master,https://gitlab.com/nanuchi/youtube-tutorial-series
 vfarcic-k3d-demo,master,https://github.com/vfarcic/k3d-demo
 cedon-k8s,master,https://gitlab.com/cedon/curso-k8s
-book-of-kubernetes/examples,main,https://github.com/book-of-kubernetes/examples
-kelseyhightower/kubernetes-the-hard-way,master,https://github.com/kelseyhightower/kubernetes-the-hard-way
+kelseyhightower-kubernetes-the-hard-way,master,https://github.com/kelseyhightower/kubernetes-the-hard-way
 ydamni-kubernetes-the-iac-way,main,https://github.com/ydamni/kubernetes-the-iac-way
 michaelcade-90daysofdevops,main,https://github.com/MichaelCade/90DaysOfDevOps
 terraform-up-and-running-code,3rd-edition,https://github.com/brikis98/terraform-up-and-running-code
