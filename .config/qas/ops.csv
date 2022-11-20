@@ -1,4 +1,5 @@
 name,branch,url
+k3d-io-k3d-demo,main,https://github.com/k3d-io/k3d-demo
 ruanbekker-cheatsheets,master,https://github.com/ruanbekker/cheatsheets
 nanuchi-youtube-tutorial-series,master,https://gitlab.com/nanuchi/youtube-tutorial-series
 vfarcic-k3d-demo,master,https://github.com/vfarcic/k3d-demo
