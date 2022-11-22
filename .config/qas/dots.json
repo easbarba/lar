@@ -1,97 +1,100 @@
-[
-  {
-    "name": "gvcc15-dotfiles",
-    "branch": "master",
-    "url": "https://gitlab.c3sl.ufpr.br/gvcc15/dotfiles"
-  },
-  {
-    "name": "jvanbruegge-dotfilesm",
-    "branch": "master",
-    "url": "https://github.com/jvanbruegge/dotfiles"
-  },
-  {
-    "name": "usashiki-dotfiles",
-    "branch": "main",
-    "url": "https://codeberg.org/usashiki/dotfiles"
-  },
-  {
-    "name": "gitbits-git-info",
-    "branch": "master",
-    "url": "https://github.com/gitbits/git-info"
-  },
-  {
-    "name": "ericdallo-dotfiles",
-    "branch": "master",
-    "url": "https://github.com/ericdallo/dotfiles"
-  },
-  {
-    "name": "madic-sway-de",
-    "branch": "master",
-    "url": "https://github.com/Madic-/Sway-DE"
-  },
-  {
-    "name": "wilfred-dotfiles",
-    "branch": "master",
-    "url": "https://github.com/Wilfred/dotfiles"
-  },
-  {
-    "name": "gerhard-setup",
-    "branch": "master",
-    "url": "https://github.com/gerhard/setup"
-  },
-  {
-    "name": "mathiasbynens-dotfiles",
-    "branch": "main",
-    "url": "https://github.com/mathiasbynens/dotfiles"
-  },
-  {
-    "name": "ambrevar-dotfiles",
-    "branch": "master",
-    "url": "https://gitlab.com/ambrevar/dotfiles"
-  },
-  {
-    "name": "alezost-config",
-    "branch": "master",
-    "url": "https://github.com/alezost/config"
-  },
-  {
-    "name": "alezost-shell-config",
-    "branch": "master",
-    "url": "https://github.com/alezost/shell-config"
-  },
-  {
-    "name": "sircmpwn-dotfiles",
-    "branch": "master",
-    "url": "https://git.sr.ht/~sircmpwn/dotfiles"
-  },
-  {
-    "name": "ejpcmac-config",
-    "branch": "master",
-    "url": "https://github.com/ejpcmac/config"
-  },
-  {
-    "name": "hlissner-dotfiles",
-    "branch": "master",
-    "url": "https://github.com/hlissner/dotfiles"
-  },
-  {
-    "name": "lourkeur-config",
-    "branch": "main",
-    "url": "https://github.com/lourkeur/config"
-  },
-  {
-    "name": "bin",
-    "branch": "main",
-    "url": "https://github.com/easbarba/bin"
-  },
-  {
-    "name": "annotations",
-    "branch": "main",
-    "url": "https://github.com/easbarba/annotations"
-  },
-  {
-    "name": "lar",
-    "branch": "main",
-    "url": "https://github.com/easbarba/lar"
-  }
-]
+{
+   "lang": "ops",
+   "projects": [
+      {
+         "name": "gvcc15-dotfiles",
+         "branch": "master",
+         "url": "https://gitlab.c3sl.ufpr.br/gvcc15/dotfiles"
+      },
+      {
+         "name": "jvanbruegge-dotfilesm",
+         "branch": "master",
+         "url": "https://github.com/jvanbruegge/dotfiles"
+      },
+      {
+         "name": "usashiki-dotfiles",
+         "branch": "main",
+         "url": "https://codeberg.org/usashiki/dotfiles"
+      },
+      {
+         "name": "gitbits-git-info",
+         "branch": "master",
+         "url": "https://github.com/gitbits/git-info"
+      },
+      {
+         "name": "ericdallo-dotfiles",
+         "branch": "master",
+         "url": "https://github.com/ericdallo/dotfiles"
+      },
+      {
+         "name": "madic-sway-de",
+         "branch": "master",
+         "url": "https://github.com/Madic-/Sway-DE"
+      },
+      {
+         "name": "wilfred-dotfiles",
+         "branch": "master",
+         "url": "https://github.com/Wilfred/dotfiles"
+      },
+      {
+         "name": "gerhard-setup",
+         "branch": "master",
+         "url": "https://github.com/gerhard/setup"
+      },
+      {
+         "name": "mathiasbynens-dotfiles",
+         "branch": "main",
+         "url": "https://github.com/mathiasbynens/dotfiles"
+      },
+      {
+         "name": "ambrevar-dotfiles",
+         "branch": "master",
+         "url": "https://gitlab.com/ambrevar/dotfiles"
+      },
+      {
+         "name": "alezost-config",
+         "branch": "master",
+         "url": "https://github.com/alezost/config"
+      },
+      {
+         "name": "alezost-shell-config",
+         "branch": "master",
+         "url": "https://github.com/alezost/shell-config"
+      },
+      {
+         "name": "sircmpwn-dotfiles",
+         "branch": "master",
+         "url": "https://git.sr.ht/~sircmpwn/dotfiles"
+      },
+      {
+         "name": "ejpcmac-config",
+         "branch": "master",
+         "url": "https://github.com/ejpcmac/config"
+      },
+      {
+         "name": "hlissner-dotfiles",
+         "branch": "master",
+         "url": "https://github.com/hlissner/dotfiles"
+      },
+      {
+         "name": "lourkeur-config",
+         "branch": "main",
+         "url": "https://github.com/lourkeur/config"
+      },
+      {
+         "name": "bin",
+         "branch": "main",
+         "url": "https://github.com/easbarba/bin"
+      },
+      {
+         "name": "annotations",
+         "branch": "main",
+         "url": "https://github.com/easbarba/annotations"
+      },
+      {
+         "name": "lar",
+         "branch": "main",
+         "url": "https://github.com/easbarba/lar"
+      }
+   ]
+}
