@@ -1,0 +1,47 @@
+[
+  {
+    "name": "emacs-reformatter",
+    "branch": "master",
+    "url": "https://github.com/purcell/emacs-reformatter"
+  },
+  {
+    "name": "abo-abo-oremacs",
+    "branch": "github",
+    "url": "https://github.com/abo-abo/oremacs"
+  },
+  {
+    "name": "jwiegley-dot-emacs",
+    "branch": "master",
+    "url": "https://github.com/jwiegley/dot-emacs"
+  },
+  {
+    "name": "doom-emacs",
+    "branch": "master",
+    "url": "https://github.com/hlissner/doom-emacs"
+  },
+  {
+    "name": "unpackaged.el",
+    "branch": "master",
+    "url": "https://github.com/alphapapa/unpackaged.el"
+  },
+  {
+    "name": "elfeed",
+    "branch": "master",
+    "url": "https://github.com/skeeto/elfeed"
+  },
+  {
+    "name": "lsp-mode",
+    "branch": "master",
+    "url": "https://github.com/emacs-lsp/lsp-mode"
+  },
+  {
+    "name": "use-package",
+    "branch": "master",
+    "url": "https://github.com/jwiegley/use-package"
+  },
+  {
+    "name": "emacs",
+    "branch": "master",
+    "url": "git://git.sv.gnu.org/emacs"
+  }
+]

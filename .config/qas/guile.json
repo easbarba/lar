@@ -1,0 +1,72 @@
+[
+  {
+    "name": "artanis",
+    "branch": "master",
+    "url": "https://gitlab.com/hardenedlinux/artanis"
+  },
+  {
+    "name": "guile-json",
+    "branch": "master",
+    "url": "https://github.com/aconchillo/guile-json"
+  },
+  {
+    "name": "guile-git",
+    "branch": "master",
+    "url": "https://gitlab.com/guile-git/guile-git"
+  },
+  {
+    "name": "guile-filesystem",
+    "branch": "master",
+    "url": "https://gitlab.com/leoprikler/guile-filesystem"
+  },
+  {
+    "name": "guile-libyaml",
+    "branch": "main",
+    "url": "https://github.com/mwette/guile-libyaml"
+  },
+  {
+    "name": "geiser-guile",
+    "branch": "master",
+    "url": "https://gitlab.com/emacs-geiser/guile"
+  },
+  {
+    "name": "pjotrp-guix-notesz",
+    "branch": "master",
+    "url": "https://github.com/pjotrp/guix-notes"
+  },
+  {
+    "name": "alezost-guix-config",
+    "branch": "master",
+    "url": "https://github.com/alezost/guix-config"
+  },
+  {
+    "name": "akku",
+    "branch": "master",
+    "url": "https://gitlab.com/akkuscm/akku"
+  },
+  {
+    "name": "lokke",
+    "branch": "main",
+    "url": "https://github.com/lokke-org/lokke"
+  },
+  {
+    "name": "fibers",
+    "branch": "master",
+    "url": "https://github.com/wingo/fibers"
+  },
+  {
+    "name": "nonguix",
+    "branch": "master",
+    "url": "https://gitlab.com/nonguix/nonguix"
+  },
+  {
+    "name": "guix",
+    "branch": "master",
+    "url": "https://git.savannah.gnu.org/git/guix"
+  },
+  {
+    "name": "guile",
+    "branch": "master",
+    "url": "https://git.sv.gnu.org/git/guile"
+  }
+]
