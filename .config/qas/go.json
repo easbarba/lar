@@ -28,7 +28,7 @@
       },
       {
          "name": "containerd",
-         "branch": "master",
+         "branch": "main",
          "url": "https://github.com/containerd/containerd"
       },
       {

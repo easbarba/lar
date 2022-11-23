@@ -12,11 +12,6 @@
          "url": "https://github.com/jvanbruegge/dotfiles"
       },
       {
-         "name": "usashiki-dotfiles",
-         "branch": "main",
-         "url": "https://codeberg.org/usashiki/dotfiles"
-      },
-      {
          "name": "gitbits-git-info",
          "branch": "master",
          "url": "https://github.com/gitbits/git-info"

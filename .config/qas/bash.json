@@ -36,8 +36,8 @@
          "branch": "main",
          "url": "https://codeberg.org/blau_araujo/org2term"
       },
-      {
-         "name": "clipmenu",
+      { 
+         "name ": "clipmenu",
          "branch": "develop",
          "url": "https://github.com/cdown/clipmenu"
       }
