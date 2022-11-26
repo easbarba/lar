@@ -32,6 +32,11 @@
          "url": "https://github.com/containerd/containerd"
       },
       {
+         "name": "quii-learn-go-with-tests",
+         "branch": "main",
+         "url": "https://github.com/quii/learn-go-with-tests"
+      },
+      {
          "name": "k3d",
          "branch": "main",
          "url": "https://github.com/k3d-io/k3d"
