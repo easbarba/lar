@@ -1,9 +1,0 @@
-name,branch,url
-brightnessctl,master,https://github.com/jappeace/brightnessctl
-bocker,master,https://github.com/p8952/bocker
-pure-getopt,master,https://github.com/agriffis/pure-getopt
-deb-get,main,https://github.com/wimpysworld/deb-get
-myfetch,main,https://codeberg.org/blau_araujo/myfetch
-foldish,main,https://codeberg.org/blau_araujo/foldish
-org2term,main,https://codeberg.org/blau_araujo/org2term
-clipmenu,develop,https://github.com/cdown/clipmenu
