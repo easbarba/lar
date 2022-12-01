@@ -2,6 +2,11 @@
    "lang": "golang",
    "projects": [
       {
+         "name": "martenwallewein-go-sample-microservice",
+         "branch": "master",
+         "url": "https://github.com/martenwallewein/go-sample-microservice"
+      },
+      {
          "name": "go-git",
          "branch": "master",
          "url": "https://github.com/go-git/go-git"
@@ -15,6 +20,11 @@
          "name": "Building-Distributed-Applications-in-Gin",
          "branch": "main",
          "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
+      },
+      {
+         "name": "ent",
+         "branch": "main",
+         "url": "https://github.com/ent/ent"
       },
       {
          "name": "shfmt",
