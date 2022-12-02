@@ -1,0 +1,102 @@
+[
+  {
+    "name": "springit",
+    "branch": "master",
+    "url": "https://github.com/danvega/springit"
+  },
+  {
+    "name": "OKaluzny-spring-boot-docker-postgres",
+    "branch": "master",
+    "url": "https://github.com/OKaluzny/spring-boot-docker-postgres"
+  },
+  {
+    "name": "bezkoder-docker-compose-spring-boot-mysql",
+    "branch": "master",
+    "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
+  },
+  {
+    "name": "binkley-modern-java-practices",
+    "branch": "master",
+    "url": "https://github.com/binkley/modern-java-practices"
+  },
+  {
+    "name": "sivaprasadreddy-devzone",
+    "branch": "main",
+    "url": "https://github.com/sivaprasadreddy/devzone"
+  },
+  {
+    "name": "junit-in-action-third-edition",
+    "branch": "master",
+    "url": "https://github.com/ctudose/junit-in-action-third-edition"
+  },
+  {
+    "name": "fullstack-springboot2",
+    "branch": "master",
+    "url": "https://github.com/PacktPublishing/Hands-On-Full-Stack-Development-with-Spring-Boot-2-and-React-Second-Edition"
+  },
+  {
+    "name": "springboot-up-and-running",
+    "branch": "master",
+    "url": "https://github.com/mkheck/SpringBootUpAndRunning"
+  },
+  {
+    "name": "termux",
+    "branch": "master",
+    "url": "https://github.com/termux/termux-app"
+  },
+  {
+    "name": "jbang",
+    "branch": "main",
+    "url": "https://github.com/jbangdev/jbang"
+  },
+  {
+    "name": "junit5",
+    "branch": "main",
+    "url": "https://github.com/junit-team/junit5"
+  },
+  {
+    "name": "start.spring.io",
+    "branch": "main",
+    "url": "https://github.com/spring-io/start.spring.io"
+  },
+  {
+    "name": "spring-boot",
+    "branch": "main",
+    "url": "https://github.com/spring-projects/spring-boot"
+  },
+  {
+    "name": "spring-framework",
+    "branch": "main",
+    "url": "https://github.com/spring-projects/spring-framework"
+  },
+  {
+    "name": "quarkus",
+    "branch": "main",
+    "url": "https://github.com/quarkusio/quarkus"
+  },
+  {
+    "name": "graal",
+    "branch": "master",
+    "url": "https://github.com/oracle/graal"
+  },
+  {
+    "name": "eclipse-jdt-ls",
+    "branch": "master",
+    "url": "https://github.com/eclipse/eclipse.jdt.ls"
+  },
+  {
+    "name": "apache-kafka",
+    "branch": "trunk",
+    "url": "https://github.com/apache/kafka"
+  },
+  {
+    "name": "apache-maven-core",
+    "branch": "master",
+    "url": "https://gitbox.apache.org/repos/asf/maven.git"
+  },
+  {
+    "name": "openjdk",
+    "branch": "master",
+    "url": "https://github.com/openjdk/jdk"
+  }
+]
