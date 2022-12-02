@@ -25,6 +25,9 @@ export PATH="$GOPATH/bin":$PATH
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
+# JAVA
+export PATH="$HOME/.jbang/bin:$PATH"
+
 # GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
