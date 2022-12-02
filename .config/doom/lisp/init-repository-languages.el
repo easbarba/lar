@@ -6,7 +6,6 @@
 
 (setq +format-on-save-enabled-modes
       '(not emacs-lisp-mode  ; elisp's mechanisms are good enough
-            java-mode
             nxml-mode))
 
 (set-ligatures! '(java-mode)
