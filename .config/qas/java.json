@@ -2,6 +2,11 @@
     "lang": "java",
     "projects": [
         {
+        "name": "Full-Stack-Development-with-Spring-Boot-and-React",
+        "branch": "main",
+        "url": "https://github.com/PacktPublishing/Full-Stack-Development-with-Spring-Boot-and-React"
+    },
+        {
         "name": "springit",
         "branch": "master",
         "url": "https://github.com/danvega/springit"
