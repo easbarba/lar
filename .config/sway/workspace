@@ -3,25 +3,26 @@
 # swaymsg -t get_workspaces
 
 set $ws1 "mx"
-set $ws2 "read"
-set $ws3 "term"
-set $ws4 "www"
-set $ws5 "media"
+set $ws2 "anno"
+set $ws3 "read"
+set $ws4 "term"
+set $ws5 "www"
+set $ws6 "media"
 
 assign [class="Emacs"] workspace $ws1
 assign [app_id="SpringToolSuite4"] workspace $ws1
 assign [app_id="Eclipse"] workspace $ws1
-assign [app_id= "atril"] workspace $ws2
-assign [app_id="org.kde.okular"] workspace $ws2
-assign [app_id="libreoffice"] workspace $ws2
-assign [app_id="libreoffice-writer"] workspace $ws2
-assign [app_id="org.pwmt.zathura"] workspace $ws2
-assign [app_id="foot"] workspace $ws3
-assign [app_id="Alacritty"] workspace $ws3
-assign [class="IceCat"] workspace $ws4
-assign [class="Firefox"] workspace $ws4
-assign [class="Insomnia"] workspace $ws4
-assign [class="Chromium"] workspace $ws4
-assign [class="Google-chrome"] workspace $ws4
-assign [app_id="chromium-browser"] workspace $ws4
-assign [app_id="mpv"] workspace $ws5
+assign [app_id= "atril"] workspace $ws3
+assign [app_id="org.kde.okular"] workspace $ws3
+assign [app_id="libreoffice"] workspace $ws3
+assign [app_id="libreoffice-writer"] workspace $ws3
+assign [app_id="org.pwmt.zathura"] workspace $ws3
+assign [app_id="foot"] workspace $ws4
+assign [app_id="Alacritty"] workspace $ws4
+assign [class="IceCat"] workspace $ws5
+assign [class="Firefox"] workspace $ws5
+assign [class="Insomnia"] workspace $ws5
+assign [class="Chromium"] workspace $ws5
+assign [class="Google-chrome"] workspace $ws5
+assign [app_id="chromium-browser"] workspace $ws5
+assign [app_id="mpv"] workspace $ws6
