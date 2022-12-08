@@ -60,10 +60,11 @@
 
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 'mx'
-    bindsym $mod+Shift+2 move container to workspace 'read'
-    bindsym $mod+Shift+3 move container to workspace 'term'
-    bindsym $mod+Shift+4 move container to workspace 'www'
-    bindsym $mod+Shift+5 move container to workspace 'media'
+    bindsym $mod+Shift+2 move container to workspace 'anno'
+    bindsym $mod+Shift+3 move container to workspace 'read'
+    bindsym $mod+Shift+4 move container to workspace 'term'
+    bindsym $mod+Shift+5 move container to workspace 'www'
+    bindsym $mod+Shift+6 move container to workspace 'media'
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
