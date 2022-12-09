@@ -2,6 +2,11 @@
     "lang": "java",
     "projects": [
         {
+        "name": "parking-control-api",
+        "branch": "main",
+        "url": "https://github.com/MichelliBrito/parking-control-api"
+    },
+        {
         "name": "Full-Stack-Development-with-Spring-Boot-and-React",
         "branch": "main",
         "url": "https://github.com/PacktPublishing/Full-Stack-Development-with-Spring-Boot-and-React"
