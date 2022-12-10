@@ -37,3 +37,10 @@ export PATH="$GUIX_PROFILE/bin:$PATH"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 export DOCKER_SOCK=$XDG_RUNTIME_DIR/podman/podman.sock
 export VAGRANT_DEFAULT_PROVIDER=libvirt
+
+# SWAY / WAYLAND
+export SDL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_DESKTOP=sway
