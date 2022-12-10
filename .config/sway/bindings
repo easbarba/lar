@@ -148,5 +148,5 @@ bindsym $mod+Mod1+p exec s-media-play
 
 bindsym $mod+Mod1+o exec s-media-pic
 
-bindsym Print exec s-wm-shot --full
-bindsym Mod1+Print exec s-wm-shot --partial
+bindsym Print exec s-wm-shot.go --full
+bindsym Mod1+Print exec s-wm-shot.go --partial
