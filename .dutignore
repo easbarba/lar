@@ -14,9 +14,9 @@ README.md
 .rufo
 .xsessionrc
 .xinitrc
-.config/alacritty
 .config/awesome
 .config/ansible
+.config/autostart
 .config/autostart-scripts
 .config/bspwm
 .config/cejo
@@ -26,7 +26,9 @@ README.md
 .config/dunst
 .config/environment.d
 .config/foot
+.config/fish
 .config/gh
+.config/hyper
 .config/gtk-3.0
 .config/guix
 .config/i3
@@ -44,6 +46,7 @@ README.md
 .config/stumpwm
 .config/suckless
 .config/sxhkd
+.config/wayfire
 .config/systemd
 .config/xmodmap
 .config/xmonad
