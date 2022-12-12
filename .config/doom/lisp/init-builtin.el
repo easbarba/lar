@@ -8,12 +8,12 @@
 ;; =========================
 
 (after! erc
-  (setq erc-nick user-login-name
+  (setq erc-nick "barbaneigro"
         erc-server "irc.libera.chat"
 	erc-autojoin-channels-alist '(("libera.chat"
-                                       "#ruby"
+                                       "#debian"
+                                       "#go-nuts"
                                        "#guile"
-                                       "#scheme"
 				       "#emacs"))))
 
 (add-hook 'image-mode-hook
