@@ -1,0 +1,19 @@
+{
+    "exec": "/usr/bin/dnf",
+    "become": {
+        "autoremove": "autoremove",
+        "deps": "",
+        "download": "",
+        "fix": "fix",
+        "install": "install",
+        "installed": "list installed",
+        "remove": "remove",
+        "sysupgrade": "sysupgrade",
+        "update": "update",
+        "upgrade": "upgrade",
+        "search": "search",
+        "help": "help",
+        "info": "info",
+        "depends": "repoquery --requires --resolve"
+    }
+}

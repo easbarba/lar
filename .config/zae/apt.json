@@ -1,0 +1,21 @@
+{
+    "exec": "/usr/bin/apt",
+    "commands": {
+        "clean": "clean",
+        "autoremove": "autoremove",
+        "build": "build-dep",
+        "deps": "build-dep",
+        "depends": "depends",
+        "download": "download",
+        "fix": "install -f",
+        "help": "help",
+        "info": "show",
+        "install": "install",
+        "installed": "list --installed",
+        "remove": "remove",
+        "search": "search",
+        "update": "update",
+        "upgrade": "upgrade",
+        "version": "version"
+    }
+}
