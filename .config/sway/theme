@@ -23,5 +23,4 @@ hide_edge_borders smart
 bar {
     position top
     mode hide
-    status_command while s-wm-sysinfo; do sleep 15; done
 }
