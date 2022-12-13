@@ -24,10 +24,4 @@ bar {
     position top
     mode hide
     status_command while s-wm-sysinfo; do sleep 15; done
-
-    colors {
-        statusline $cl_fore
-        background $cl_high
-        #inactive_workspace $cl_high $cl_back $cl_fore
-    }
 }
