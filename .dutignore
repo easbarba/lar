@@ -2,7 +2,6 @@ LICENSE
 README.md
 .git
 .local/share/applications
-.bash_logout
 .gitignore
 .elixir_ls
 .iex.exs
@@ -10,7 +9,6 @@ README.md
 .xinitrc
 .sbclrc
 .zshrc
-.logout
 .rufo
 .xsessionrc
 .xinitrc
