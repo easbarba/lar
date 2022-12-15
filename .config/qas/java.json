@@ -2,6 +2,11 @@
     "lang": "java",
     "projects": [
         {
+        "name": "oliveiralex-course-springboot-2",
+        "branch": "master",
+        "url": "https://github.com/oliveiralex/course-springboot-2"
+    },
+        {
         "name": "parking-control-api",
         "branch": "main",
         "url": "https://github.com/MichelliBrito/parking-control-api"
