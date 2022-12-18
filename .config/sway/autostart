@@ -1,8 +1,8 @@
-# USER
-
 exec ~/.local/bin/s-wm-autostart
 exec swayidle -w \
-	timeout 1800 'swaylock -f' \
-	timeout 1805 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
+	timeout 300 's-wm-wifi' \
+	timeout 700 'swaylock -f -c 000000' \
+    timeout 900 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+	resume 's-wm-wifi'
 # exec wl-paste -t text --watch clipman store
