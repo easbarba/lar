@@ -2,24 +2,9 @@
    "lang": "golang",
    "projects": [
       {
-         "name": "martenwallewein-go-sample-microservice",
-         "branch": "master",
-         "url": "https://github.com/martenwallewein/go-sample-microservice"
-      },
-      {
          "name": "go-git",
          "branch": "master",
          "url": "https://github.com/go-git/go-git"
-      },
-      {
-         "name": "eddycjy-go-gin-example",
-         "branch": "master",
-         "url": "https://github.com/eddycjy/go-gin-example"
-      },
-      {
-         "name": "Building-Distributed-Applications-in-Gin",
-         "branch": "main",
-         "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
       },
       {
          "name": "ent",
@@ -40,11 +25,6 @@
          "name": "containerd",
          "branch": "main",
          "url": "https://github.com/containerd/containerd"
-      },
-      {
-         "name": "quii-learn-go-with-tests",
-         "branch": "main",
-         "url": "https://github.com/quii/learn-go-with-tests"
       },
       {
          "name": "k3d",

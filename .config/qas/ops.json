@@ -12,16 +12,6 @@
          "url": "https://github.com/badtuxx/DescomplicandoKubernetes"
       },
       {
-         "name": "book-of-kubernetes-examples",
-         "branch": "main",
-         "url": "https://github.com/book-of-kubernetes/examples"
-      },
-      {
-         "name": "k3d-io-k3d-demo",
-         "branch": "main",
-         "url": "https://github.com/k3d-io/k3d-demo"
-      },
-      {
          "name": "ruanbekker-cheatsheets",
          "branch": "master",
          "url": "https://github.com/ruanbekker/cheatsheets"

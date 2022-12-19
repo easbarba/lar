@@ -1,0 +1,90 @@
+{
+    "lang": "study",
+    "projects": [
+        {
+        "name": "eddycjy-go-gin-example",
+        "branch": "master",
+        "url": "https://github.com/eddycjy/go-gin-example"
+    },
+        {
+        "name": "Building-Distributed-Applications-in-Gin",
+        "branch": "main",
+        "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
+    },
+        {
+        "name": "quii-learn-go-with-tests",
+        "branch": "main",
+        "url": "https://github.com/quii/learn-go-with-tests"
+    },
+        {
+        "name": "martenwallewein-go-sample-microservice",
+        "branch": "master",
+        "url": "https://github.com/martenwallewein/go-sample-microservice"
+    },
+        {
+        "name": "book-of-kubernetes-examples",
+        "branch": "main",
+        "url": "https://github.com/book-of-kubernetes/examples"
+    },
+        {
+        "name": "k3d-io-k3d-demo",
+        "branch": "main",
+        "url": "https://github.com/k3d-io/k3d-demo"
+    },
+        {
+        "name": "oliveiralex-course-springboot-2",
+        "branch": "master",
+        "url": "https://github.com/oliveiralex/course-springboot-2"
+    },
+        {
+        "name": "parking-control-api",
+        "branch": "main",
+        "url": "https://github.com/MichelliBrito/parking-control-api"
+    },
+        {
+        "name": "Full-Stack-Development-with-Spring-Boot-and-React",
+        "branch": "main",
+        "url": "https://github.com/PacktPublishing/Full-Stack-Development-with-Spring-Boot-and-React"
+    },
+        {
+        "name": "springit",
+        "branch": "master",
+        "url": "https://github.com/danvega/springit"
+    },
+        {
+        "name": "OKaluzny-spring-boot-docker-postgres",
+        "branch": "master",
+        "url": "https://github.com/OKaluzny/spring-boot-docker-postgres"
+    },
+        {
+        "name": "bezkoder-docker-compose-spring-boot-mysql",
+        "branch": "master",
+        "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
+    },
+        {
+        "name": "binkley-modern-java-practices",
+        "branch": "master",
+        "url": "https://github.com/binkley/modern-java-practices"
+    },
+        {
+        "name": "sivaprasadreddy-devzone",
+        "branch": "main",
+        "url": "https://github.com/sivaprasadreddy/devzone"
+    },
+        {
+        "name": "junit-in-action-third-edition",
+        "branch": "master",
+        "url": "https://github.com/ctudose/junit-in-action-third-edition"
+    },
+        {
+        "name": "fullstack-springboot2",
+        "branch": "master",
+        "url": "https://github.com/PacktPublishing/Hands-On-Full-Stack-Development-with-Spring-Boot-2-and-React-Second-Edition"
+    },
+        {
+        "name": "springboot-up-and-running",
+        "branch": "master",
+        "url": "https://github.com/mkheck/SpringBootUpAndRunning"
+    }
+    ]
+}
