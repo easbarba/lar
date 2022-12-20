@@ -2,6 +2,11 @@
     "lang": "study",
     "projects": [
         {
+        "name": "jonashackt-spring-boot-vuejs",
+        "branch": "master",
+        "url": "https://github.com/jonashackt/spring-boot-vuejs"
+    },
+        {
         "name": "eddycjy-go-gin-example",
         "branch": "master",
         "url": "https://github.com/eddycjy/go-gin-example"
