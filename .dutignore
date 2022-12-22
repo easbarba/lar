@@ -1,5 +1,6 @@
 LICENSE
 README.md
+.dutignore
 .git
 .local/share/applications
 .gitignore
@@ -7,11 +8,11 @@ README.md
 .iex.exs
 .tcshrc
 .xinitrc
-.sbclrc
 .zshrc
 .rufo
 .xsessionrc
 .xinitrc
+.sbclrc
 .config/awesome
 .config/ansible
 .config/autostart
