@@ -2,36 +2,6 @@
     "lang": "study",
     "projects": [
         {
-        "name": "jonashackt-spring-boot-vuejs",
-        "branch": "master",
-        "url": "https://github.com/jonashackt/spring-boot-vuejs"
-    },
-        {
-        "name": "eddycjy-go-gin-example",
-        "branch": "master",
-        "url": "https://github.com/eddycjy/go-gin-example"
-    },
-        {
-        "name": "Building-Distributed-Applications-in-Gin",
-        "branch": "main",
-        "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
-    },
-        {
-        "name": "quii-learn-go-with-tests",
-        "branch": "main",
-        "url": "https://github.com/quii/learn-go-with-tests"
-    },
-        {
-        "name": "martenwallewein-go-sample-microservice",
-        "branch": "master",
-        "url": "https://github.com/martenwallewein/go-sample-microservice"
-    },
-        {
-        "name": "book-of-kubernetes-examples",
-        "branch": "main",
-        "url": "https://github.com/book-of-kubernetes/examples"
-    },
-        {
         "name": "k3d-io-k3d-demo",
         "branch": "main",
         "url": "https://github.com/k3d-io/k3d-demo"
