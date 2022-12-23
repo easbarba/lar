@@ -1,0 +1,10 @@
+{
+   "lang": "scheme",
+   "projects": [
+      {
+         "name": "taglib",
+         "branch": "master",
+         "url": "https://depp.brause.cc/taglib"
+      }
+   ]
+}
