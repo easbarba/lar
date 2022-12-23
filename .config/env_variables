@@ -17,23 +17,8 @@ XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/run/user/$(id -u)}
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# ** GOLANG
-export GOPATH=$HOME/.local/go
-export PATH="$GOPATH/bin":$PATH
-
-# RUBY
-export GEM_HOME="$HOME/.local/gem"
-export PATH="$GEM_HOME/bin:$PATH"
-
 # JAVA
 export PATH="$HOME/.jbang/bin:$PATH"
-
-# PERL
-export PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
-export PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
-export PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
-export PERL_MB_OPT="--install_base \"$HOME/perl5\""
-export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
 
 # GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
@@ -53,9 +38,6 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
-export GDK_BACKEND=x11 # wayland fix for eclipse/spring/dbeaver
-
-# JAVA FIX
-export _JAVA_AWT_WM_NONREPARENTING=1
-export ECORE_EVAS_ENGINE=wayland_egl
-export ELM_ENGINE=wayland_egl
+export GDK_BACKEND=x11               # wayland fix for eclipse/spring/dbeaver
+export ECORE_EVAS_ENGINE=wayland_egl # JAVA FIX
+export ELM_ENGINE=wayland_egl        # JAVA FIX
