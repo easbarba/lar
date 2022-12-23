@@ -2,6 +2,11 @@
    "lang": "guile",
    "projects": [
       {
+         "name": "gash",
+         "branch": "master",
+         "url": "https://git.savannah.nongnu.org/git/gash.git"
+      },
+      {
          "name": "artanis",
          "branch": "master",
          "url": "https://gitlab.com/hardenedlinux/artanis"
