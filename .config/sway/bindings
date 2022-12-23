@@ -132,9 +132,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+c exec swaylock
 bindsym $mod+x exec bemenu-run
 
-bindsym $mod+Ctrl+w exec s-wm-volume.go --up
-bindsym $mod+Ctrl+s exec s-wm-volume.go --down
-bindsym $mod+Ctrl+e exec s-wm-volume.go --toggle
+bindsym $mod+Ctrl+w exec s-wm-volume.scm --up
+bindsym $mod+Ctrl+s exec s-wm-volume.scm --down
+bindsym $mod+Ctrl+e exec s-wm-volume.scm --toggle
 bindsym $mod+Ctrl+a exec s-wm-backlight.go --up
 bindsym $mod+Ctrl+d exec s-wm-backlight.go --down
 
