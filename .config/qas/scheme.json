@@ -5,6 +5,11 @@
          "name": "taglib",
          "branch": "master",
          "url": "https://depp.brause.cc/taglib"
+      },
+      {
+         "name": "chicken",
+         "branch": "master",
+         "url": "https://code.call-cc.org/git/chicken-core.git"
       }
    ]
 }
