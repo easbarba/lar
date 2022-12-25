@@ -13,7 +13,7 @@ std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
 # This is THE bar configuration
 bar:
   height: 26
-  location: top
+  location: bottom
   spacing: 5
   margin: 7
 
