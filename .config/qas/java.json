@@ -2,6 +2,12 @@
     "lang": "java",
     "projects": [
         {
+        "name": "maciejwalkowiak-java-cli-project-template",
+        "branch": "main",
+        "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+    },
+
+        {
         "name": "termux",
         "branch": "master",
         "url": "https://github.com/termux/termux-app"

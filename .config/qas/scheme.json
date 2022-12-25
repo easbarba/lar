@@ -4,7 +4,7 @@
       {
          "name": "taglib",
          "branch": "master",
-         "url": "https://depp.brause.cc/taglib"
+         "url": "https://depp.brause.cc/taglib.git"
       },
       {
          "name": "chicken",
