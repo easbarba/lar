@@ -21,6 +21,6 @@ hide_edge_borders smart
 
 # -------------- STATUS BAR
 bar {
-    position top
     swaybar_command yambar
+    position bottom
 }
