@@ -25,7 +25,7 @@ README.md
 .config/devilspie2
 .config/dunst
 .config/environment.d
-.config/foot
+.config/alacritty
 .config/fish
 .config/gh
 .config/hyper
