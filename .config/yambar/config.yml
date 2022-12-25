@@ -33,7 +33,7 @@ bar:
     - i3:
         anchors: # Not used (directly) by f00bar; used here to avoid duplication
           - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
-          - string: &default {<<: *i3_common, text: "? {name}"}
+          - string: &default {<<: *i3_common, text: "{name}"}
           - string: &main    {<<: *i3_common, text: , font: *awesome}
           - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
           - string: &misc    {<<: *i3_common, text: , font: *awesome}
