@@ -180,7 +180,7 @@ bar:
                   conditions:
                     state == up && ipv4 != "": {string: {text: , font: *awesome}}
     - network:
-        name: wlp2s0
+        name: wlan0
         poll-interval: 1000
         content:
           map:
@@ -217,7 +217,7 @@ bar:
                           - string: {text: , font: *awesome}
                           - string: {text: , font: *awesome}
     - backlight:
-        name: intel_backlight
+        name: amd_backlight
         content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
     - battery:
         name: BAT0
@@ -269,7 +269,7 @@ bar:
                       - string: {text:  , foreground: 00ff00ff, font: *awesome}
                 - string: {text: "{capacity}%"}
     - clock:
-        time-format: "%H:%M %Z"
+        time-format: "%H:%M"
         content:
           - string: {text: , font: *awesome}
           - string: {text: "{date}", right-margin: 5}
@@ -278,6 +278,6 @@ bar:
     - label:
         content:
           string:
-            on-click: systemctl poweroff
+            on-click: systemctl reboot
             text: 
             font: *awesome
