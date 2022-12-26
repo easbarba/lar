@@ -34,11 +34,11 @@ bar:
         anchors: # Not used (directly) by f00bar; used here to avoid duplication
           - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
           - string: &default {<<: *i3_common, text: "{name}"}
-          - string: &main    {<<: *i3_common, text: , font: *awesome}
-          - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
-          - string: &misc    {<<: *i3_common, text: , font: *awesome}
-          - string: &mail    {<<: *i3_common, text: , font: *awesome}
-          - string: &music   {<<: *i3_common, text: , font: *awesome}
+          - string: &main    {<<: *i3_common, text: "{name}", font: *awesome}
+          - string: &surfing {<<: *i3_common, text: "{name}", font: *awesome_brands}
+          - string: &misc    {<<: *i3_common, text: "{name}", font: *awesome}
+          - string: &mail    {<<: *i3_common, text: "{name}", font: *awesome}
+          - string: &music   {<<: *i3_common, text: "{name}", font: *awesome}
           - focused: &focused
               deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
           - invisible: &invisible {foreground: ffffff55}
@@ -107,36 +107,6 @@ bar:
               activated:
                 - string: {text: "{app-id}", foreground: ffa0a0ff}
                 - string: {text: ": {title}"}
-  center:
-    - mpd:
-        host: /run/mpd/socket
-        anchors:
-          list: &artist_album_title
-            spacing: 0
-            items:
-              - map:
-                  conditions:
-                    state == playing: {string: {text: "{artist}"}}
-                    state == paused: {string: {text: "{artist}", foreground: ffffff66}}
-              - string: {text: " | ", foreground: ffffff66}
-              - map:
-                  conditions:
-                    state == playing: {string: {text: "{album}"}}
-                    state == paused: {string: {text: "{album}", foreground: ffffff66}}
-              - string: {text: " | ", foreground: ffffff66}
-              - map:
-                  conditions:
-                    state == playing: {string: {text: "{title}", foreground: ffa0a0ff}}
-                    state == paused: {string: {text: "{title}", foreground: ffffff66}}
-
-        content:
-          map:
-            margin: 10
-            conditions:
-              state == offline: {string: {text: offline, foreground: ff0000ff}}
-              state == stopped: {string: {text: stopped}}
-              state == paused: {list: *artist_album_title}
-              state == playing: {list: *artist_album_title}
 
   right:
     - removables:
