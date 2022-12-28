@@ -39,7 +39,7 @@
       {
          "name": "geiser-guile",
          "branch": "master",
-         "url": "https://gitlab.com/emacs-geiser/guile"
+         "url": "https://gitlab.com/emacs-geiser/guile.git"
       },
       {
          "name": "pjotrp-guix-notesz",
@@ -54,7 +54,7 @@
       {
          "name": "akku",
          "branch": "master",
-         "url": "https://gitlab.com/akkuscm/akku"
+         "url": "https://gitlab.com/akkuscm/akku.git"
       },
       {
          "name": "lokke",
@@ -69,7 +69,7 @@
       {
          "name": "nonguix",
          "branch": "master",
-         "url": "https://gitlab.com/nonguix/nonguix"
+         "url": "https://gitlab.com/nonguix/nonguix.git"
       },
       {
          "name": "guix",
@@ -79,7 +79,7 @@
       {
          "name": "guile",
          "branch": "master",
-         "url": "https://git.sv.gnu.org/git/guile"
+         "url": "https://git.savannah.gnu.org/git/guile"
       }
    ]
 }
