@@ -16,7 +16,6 @@ README.md
 .sbclrc
 .config/awesome
 .config/ansible
-.config/autostart
 .config/autostart-scripts
 .config/bspwm
 .config/cejo
