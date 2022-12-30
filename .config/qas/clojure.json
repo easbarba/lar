@@ -3,6 +3,11 @@
     "projects":
     [
         {
+        "name": "ring",
+        "branch": "master",
+        "url": "https://github.com/ring-clojure/ring"
+    },
+        {
         "name": "babashka",
         "branch": "master",
         "url": "https://github.com/babashka/babashka"
@@ -25,7 +30,7 @@
         {
         "name": "clojure-lsp",
         "branch": "master",
-        "url": "https://github.com/clojure-lsp/clojure-lsp/"
+        "url": "https://github.com/clojure-lsp/clojure-lsp"
     },
         {
         "name": "clojure",
