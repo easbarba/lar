@@ -1,0 +1,36 @@
+{
+    "lang": "clojure",
+    "projects":
+    [
+        {
+        "name": "babashka",
+        "branch": "master",
+        "url": "https://github.com/babashka/babashka"
+    },
+        {
+        "name": "cljfmt",
+        "branch": "master",
+        "url": "https://github.com/weavejester/cljfmt"
+    },
+        {
+        "name": "luminus",
+        "branch": "master",
+        "url": "https://github.com/luminus-framework/luminus"
+    },
+        {
+        "name": "leiningen",
+        "branch": "main",
+        "url": "https://codeberg.org/leiningen/leiningen"
+    },
+        {
+        "name": "clojure-lsp",
+        "branch": "master",
+        "url": "https://github.com/clojure-lsp/clojure-lsp/"
+    },
+        {
+        "name": "clojure",
+        "branch": "master",
+        "url": "https://github.com/clojure/clojure"
+    }
+    ]
+}
