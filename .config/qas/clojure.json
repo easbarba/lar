@@ -3,6 +3,11 @@
     "projects":
     [
         {
+        "name": "pedestal",
+        "branch": "master",
+        "url": "https://github.com/pedestal/pedestal"
+    },
+        {
         "name": "ring",
         "branch": "master",
         "url": "https://github.com/ring-clojure/ring"
