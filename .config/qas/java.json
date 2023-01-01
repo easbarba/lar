@@ -2,6 +2,11 @@
     "lang": "java",
     "projects": [
         {
+        "name": "eugenp-tutorials",
+        "branch": "master",
+        "url": "https://github.com/eugenp/tutorials"
+    },
+        {
         "name": "maciejwalkowiak-java-cli-project-template",
         "branch": "main",
         "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
