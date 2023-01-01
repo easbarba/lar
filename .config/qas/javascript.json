@@ -1,0 +1,70 @@
+{
+    "lang": "javascript",
+    "projects":[
+        {
+        "name": "bezkoder-react-express-mysql",
+        "branch": "master",
+        "url": "https://github.com/bezkoder/react-express-mysql"
+    },
+        {
+        "name": "bezkoder-docker-compose-react-nodejs-mysql",
+        "branch": "master",
+        "url": "https://github.com/bezkoder/docker-compose-react-nodejs-mysql"
+    },
+        {
+        "name": "frontity",
+        "branch": "dev",
+        "url": "https://github.com/frontity/frontity"
+    },
+        {
+        "name": "lucasfcosta-testing-javascript-applications",
+        "branch": "master",
+        "url": "https://github.com/lucasfcosta/testing-javascript-applications"
+    },
+        {
+        "name": "typescript-language-server",
+        "branch": "master",
+        "url": "https://github.com/typescript-language-server/typescript-language-server"
+    },
+        {
+        "name": "yargs",
+        "branch": "main",
+        "url": "https://github.com/yargs/yargs"
+    },
+        {
+        "name": "vite",
+        "branch": "main",
+        "url": "https://github.com/vitejs/vite"
+    },
+        {
+        "name": "axios",
+        "branch": "main",
+        "url": "https://github.com/axios/axios"
+    },
+        {
+        "name": "koa",
+        "branch": "master",
+        "url": "https://github.com/koajs/koa"
+    },
+        {
+        "name": "express",
+        "branch": "master",
+        "url": "https://github.com/expressjs/express"
+    },
+        {
+        "name": "typescript",
+        "branch": "main",
+        "url": "https://github.com/microsoft/TypeScript"
+    },
+        {
+        "name": "nodejs",
+        "branch": "main",
+        "url": "https://github.com/nodejs/node"
+    },
+        {
+        "name": "npm",
+        "branch": "latest",
+        "url": "https://github.com/npm/cli"
+    }
+    ]
+}
