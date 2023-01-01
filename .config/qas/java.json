@@ -2,6 +2,11 @@
     "lang": "java",
     "projects": [
         {
+        "name": "jagged",
+        "branch": "main",
+        "url": "https://github.com/ethomson/jagged"
+    },
+        {
         "name": "eugenp-tutorials",
         "branch": "master",
         "url": "https://github.com/eugenp/tutorials"
