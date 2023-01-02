@@ -2,64 +2,64 @@
    "lang": "ops",
    "projects": [
       {
-         "name": "descomplicando-prometheus",
-         "branch": "main",
-         "url": "https://github.com/badtuxx/DescomplicandoPrometheus"
-      },
+      "name": "descomplicando-prometheus",
+      "branch": "main",
+      "url": "https://github.com/badtuxx/DescomplicandoPrometheus"
+   },
       {
-         "name": "descomplicando-kubernetes",
-         "branch": "main",
-         "url": "https://github.com/badtuxx/DescomplicandoKubernetes"
-      },
+      "name": "descomplicando-kubernetes",
+      "branch": "main",
+      "url": "https://github.com/badtuxx/DescomplicandoKubernetes"
+   },
       {
-         "name": "ruanbekker-cheatsheets",
-         "branch": "master",
-         "url": "https://github.com/ruanbekker/cheatsheets"
-      },
+      "name": "ruanbekker-cheatsheets",
+      "branch": "master",
+      "url": "https://github.com/ruanbekker/cheatsheets"
+   },
       {
-         "name": "nanuchi-youtube-tutorial-series",
-         "branch": "master",
-         "url": "https://gitlab.com/nanuchi/youtube-tutorial-series"
-      },
+      "name": "nanuchi-youtube-tutorial-series",
+      "branch": "master",
+      "url": "https://gitlab.com/nanuchi/youtube-tutorial-series"
+   },
       {
-         "name": "vfarcic-k3d-demo",
-         "branch": "master",
-         "url": "https://github.com/vfarcic/k3d-demo"
-      },
+      "name": "vfarcic-k3d-demo",
+      "branch": "master",
+      "url": "https://github.com/vfarcic/k3d-demo"
+   },
       {
-         "name": "cedon-k8s",
-         "branch": "master",
-         "url": "https://gitlab.com/cedon/curso-k8s"
-      },
+      "name": "cedon-k8s",
+      "branch": "master",
+      "url": "https://gitlab.com/cedon/curso-k8s"
+   },
       {
-         "name": "kelseyhightower-kubernetes-the-hard-way",
-         "branch": "master",
-         "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way"
-      },
+      "name": "kelseyhightower-kubernetes-the-hard-way",
+      "branch": "master",
+      "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way"
+   },
       {
-         "name": "ydamni-kubernetes-the-iac-way",
-         "branch": "main",
-         "url": "https://github.com/ydamni/kubernetes-the-iac-way"
-      },
+      "name": "ydamni-kubernetes-the-iac-way",
+      "branch": "main",
+      "url": "https://github.com/ydamni/kubernetes-the-iac-way"
+   },
       {
-         "name": "michaelcade-90daysofdevops",
-         "branch": "main",
-         "url": "https://github.com/MichaelCade/90DaysOfDevOps"
-      },
+      "name": "michaelcade-90daysofdevops",
+      "branch": "main",
+      "url": "https://github.com/MichaelCade/90DaysOfDevOps"
+   },
       {
-         "name": "terraform-up-and-running-code",
-         "branch": "3rd-edition",
-         "url": "https://github.com/brikis98/terraform-up-and-running-code"
-      },
+      "name": "terraform-up-and-running-code",
+      "branch": "3rd-edition",
+      "url": "https://github.com/brikis98/terraform-up-and-running-code"
+   },
       {
-         "name": "github-gitignore",
-         "branch": "main",
-         "url": "https://github.com/github/gitignore"
-      },
+      "name": "github-gitignore",
+      "branch": "main",
+      "url": "https://github.com/github/gitignore"
+   },
       {
-         "name": "makefiletutorial",
-         "branch": "gh-pages",
-         "url": "https://github.com/theicfire/makefiletutorial"
-      }
+      "name": "makefiletutorial",
+      "branch": "gh-pages",
+      "url": "https://github.com/theicfire/makefiletutorial"
+   }
    ]
 }

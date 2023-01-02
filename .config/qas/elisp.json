@@ -1,7 +1,6 @@
 {
    "lang": "emacs-lisp",
    "projects": [
-
       {
       "name": "rschmukler-doom.d",
       "branch": "master",

@@ -2,44 +2,44 @@
    "lang": "bash",
    "projects": [
       {
-         "name": "brightnessctl",
-         "branch": "master",
-         "url": "https://github.com/jappeace/brightnessctl"
-      },
+      "name": "brightnessctl",
+      "branch": "master",
+      "url": "https://github.com/jappeace/brightnessctl"
+   },
       {
-         "name": "bocker",
-         "branch": "master",
-         "url": "https://github.com/p8952/bocker"
-      },
+      "name": "bocker",
+      "branch": "master",
+      "url": "https://github.com/p8952/bocker"
+   },
       {
-         "name": "pure-getopt",
-         "branch": "master",
-         "url": "https://github.com/agriffis/pure-getopt"
-      },
+      "name": "pure-getopt",
+      "branch": "master",
+      "url": "https://github.com/agriffis/pure-getopt"
+   },
       {
-         "name": "deb-get",
-         "branch": "main",
-         "url": "https://github.com/wimpysworld/deb-get"
-      },
+      "name": "deb-get",
+      "branch": "main",
+      "url": "https://github.com/wimpysworld/deb-get"
+   },
       {
-         "name": "myfetch",
-         "branch": "main",
-         "url": "https://codeberg.org/blau_araujo/myfetch"
-      },
+      "name": "myfetch",
+      "branch": "main",
+      "url": "https://codeberg.org/blau_araujo/myfetch"
+   },
       {
-         "name": "foldish",
-         "branch": "main",
-         "url": "https://codeberg.org/blau_araujo/foldish"
-      },
+      "name": "foldish",
+      "branch": "main",
+      "url": "https://codeberg.org/blau_araujo/foldish"
+   },
       {
-         "name": "org2term",
-         "branch": "main",
-         "url": "https://codeberg.org/blau_araujo/org2term"
-      },
+      "name": "org2term",
+      "branch": "main",
+      "url": "https://codeberg.org/blau_araujo/org2term"
+   },
       { 
-         "name ": "clipmenu",
-         "branch": "develop",
-         "url": "https://github.com/cdown/clipmenu"
-      }
+      "name ": "clipmenu",
+      "branch": "develop",
+      "url": "https://github.com/cdown/clipmenu"
+   }
    ]
 }
