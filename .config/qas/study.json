@@ -5,6 +5,11 @@
         "name": "k3d-io-k3d-demo",
         "branch": "main",
         "url": "https://github.com/k3d-io/k3d-demo"
+    },
+        {
+        "name": "gopl-io",
+        "branch": "master",
+        "url": "https://github.com/adonovan/gopl.io"
     }
     ]
 }
