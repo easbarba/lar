@@ -12,9 +12,7 @@ README.md
 .rufo
 .xsessionrc
 .xinitrc
-.gemrc
 .sbclrc
-.irbrc
 .screenrc
 .config/awesome
 .config/ansible
