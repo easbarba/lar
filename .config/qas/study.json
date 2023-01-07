@@ -1,25 +1,25 @@
 {
-    "lang": "study",
-    "projects": [
-        {
-        "name": "lucasfcosta-testing-javascript-applications",
-        "branch": "master",
-        "url": "https://github.com/lucasfcosta/testing-javascript-applications"
+  "lang": "study",
+  "projects": [
+    {
+      "name": "lucasfcosta-testing-javascript-applications",
+      "branch": "master",
+      "url": "https://github.com/lucasfcosta/testing-javascript-applications"
     },
-        {
-        "name": "Building-Distributed-Applications-in-Gin",
-        "branch": "main",
-        "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
+    {
+      "name": "Building-Distributed-Applications-in-Gin",
+      "branch": "main",
+      "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
     },
-        {
-        "name": "k3d-io-k3d-demo",
-        "branch": "main",
-        "url": "https://github.com/k3d-io/k3d-demo"
+    {
+      "name": "k3d-io-k3d-demo",
+      "branch": "main",
+      "url": "https://github.com/k3d-io/k3d-demo"
     },
-        {
-        "name": "gopl-io",
-        "branch": "master",
-        "url": "https://github.com/adonovan/gopl.io"
+    {
+      "name": "gopl-io",
+      "branch": "master",
+      "url": "https://github.com/adonovan/gopl.io"
     }
-    ]
+  ]
 }
