@@ -42,9 +42,9 @@
       "url": "https://github.com/k3s-io/k3s"
     },
     {
-      "name": "kubernetes",
+      "name": "kubectl",
       "branch": "master",
-      "url": "https://github.com/kubernetes/kubernetes"
+      "url": "https://github.com/kubernetes/kubectl"
     },
     {
       "name": "buildah",
