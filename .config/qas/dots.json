@@ -77,12 +77,12 @@
     {
         "name": "bin",
         "branch": "main",
-        "url": "https://codeberg.org/barbaneigro/bin"
+        "url": "https://github.com/easbarba/bin"
     },
     {
         "name": "annotations",
         "branch": "main",
-        "url": "https://codeberg.org/barbaneigro/annotations"
+        "url": "https://github.com/easbarba/annotations"
     },
     {
         "name": "dut",
@@ -92,11 +92,11 @@
     {
         "name": "mx",
         "branch": "main",
-        "url": "https://codeberg.org/barbaneigro/mx"
+        "url": "https://github.com/easbarba/mx"
     },
     {
         "name": "lar",
         "branch": "main",
-        "url": "https://codeberg.org/barbaneigro/lar"
+        "url": "https://github.com/easbarba/lar"
     }
 ]

@@ -49,3 +49,9 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 # * LANGS
 
 # [[ -x "$(command -v screen)" ]] && [[ -z "$STY" ]] && COLORTERM=xterm-256color screen -S GNU
+# Automatically added by the Guix install script.
+if [ -n "$GUIX_ENVIRONMENT" ]; then
+    if [[ $PS1 =~ (.*)"\\$" ]]; then
+        PS1="${BASH_REMATCH[1]} [env]\\\$ "
+    fi
+fi
