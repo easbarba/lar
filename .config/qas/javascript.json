@@ -1,0 +1,27 @@
+[
+    {
+        "name": "jest",
+        "branch": "main",
+        "url": "https://github.com/facebook/jest"
+    },
+    {
+        "name": "yarn",
+        "branch": "master",
+        "url": "https://github.com/yarnpkg/yarn"
+    },
+    {
+        "name": "nestjs",
+        "branch": "master",
+        "url": "https://github.com/nestjs/nest"
+    },
+    {
+        "name": "axios",
+        "branch": "v1.x",
+        "url": "https://github.com/axios/axios"
+    },
+    {
+        "name": "react",
+        "branch": "main",
+        "url": "https://github.com/facebook/react"
+    }
+]
