@@ -37,14 +37,15 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 
 # * APPS
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
-[[ -x "$HOME/.config/broot/launcher/bash/br" ]] && source "$HOME/.config/broot/launcher/bash/br"
-[[ -x "$(command -v direnv)" ]] && eval "$(direnv hook bash)"
-[[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
-[[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init bash)"
-[[ -x "$(command -v kubectl)" ]] && source <(kubectl completion bash)
-[[ -x "$(command -v minikube)" ]] && source <(minikube completion bash)
-[[ -x "$(command -v k3s)" ]] && source <(k3s completion bash)
-[[ -x "$(command -v k3d)" ]] && source <(k3d completion bash)
+[[ -x $HOME/.config/broot/launcher/bash/br ]] && source "$HOME/.config/broot/launcher/bash/br"
+[[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
+[[ -x $(command -v tmux) ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
+[[ -x $(command -v zoxide) ]] && eval "$(zoxide init bash)"
+[[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
+[[ -x $(command -v flutter) ]] && source <(flutter bash-completion)
+# [[ -x "$(command -v minikube)" ]] && source <(minikube completion bash)
+# [[ -x "$(command -v k3s)" ]] && source <(k3s completion bash)
+# [[ -x "$(command -v k3d)" ]] && source <(k3d completion bash)
 
 # * LANGS
 
