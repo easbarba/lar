@@ -10,9 +10,9 @@
         "url": "https://github.com/yarnpkg/yarn"
     },
     {
-        "name": "nestjs",
-        "branch": "master",
-        "url": "https://github.com/nestjs/nest"
+        "name": "nextjs",
+        "branch": "canary",
+        "url": "https://github.com/vercel/next.js"
     },
     {
         "name": "axios",
