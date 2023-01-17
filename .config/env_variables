@@ -19,8 +19,8 @@ export PATH="$DOOM_DIR/bin:$PATH"
 
 # DART / FLUTTER
 export PATH="$PATH:/usr/lib/dart/bin"
-export FLUTTER_HOME="$HOME/.local/flutter"
-export PATH="$FLUTTER_HOME/bin:$PATH"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$HOME/.local/flutter/bin:$PATH"
 
 # GOLANG
 export GOPATH=$HOME/.local/go
