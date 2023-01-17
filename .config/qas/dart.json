@@ -1,27 +1,32 @@
 [
-  {
+    {
     "name": "dart-sass",
     "branch": "main",
     "url": "https://github.com/sass/dart-sass"
-  },
-  {
+},
+    {
     "name": "flutter",
     "branch": "master",
     "url": "https://github.com/flutter/flutter"
-  },
-  {
+},
+    {
+    "name": "dart-http",
+    "branch": "master",
+    "url": "https://github.com/dart-lang/http"
+},
+    {
     "name": "dart-pad",
     "branch": "master",
     "url": "https://github.com/dart-lang/dart-pad"
-  },
-  {
+},
+    {
     "name": "dart-test",
     "branch": "master",
     "url": "https://github.com/dart-lang/test"
-  },
-  {
+},
+    {
     "name": "dart",
     "branch": "main",
     "url": "https://github.com/dart-lang/sdk"
-  }
+}
 ]
