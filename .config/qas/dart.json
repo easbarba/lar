@@ -1,5 +1,10 @@
 [
     {
+    "name": "provider",
+    "branch": "master",
+    "url": "https://github.com/rrousselGit/provider"
+},
+    {
     "name": "timy-messenger",
     "branch": "master",
     "url": "https://github.com/janoodleFTW/timy-messenger"
