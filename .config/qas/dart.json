@@ -10,9 +10,9 @@
     "url": "https://github.com/flutter/flutter"
 },
     {
-    "name": "dart-http",
+    "name": "dart-shelf",
     "branch": "master",
-    "url": "https://github.com/dart-lang/http"
+    "url": "https://github.com/dart-lang/shelf"
 },
     {
     "name": "dart-pad",
