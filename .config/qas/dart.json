@@ -1,5 +1,15 @@
 [
     {
+    "name": "timy-messenger",
+    "branch": "master",
+    "url": "https://github.com/janoodleFTW/timy-messenger"
+},
+    {
+    "name": "chillify",
+    "branch": "develop",
+    "url": "https://github.com/KarimElghamry/chillify"
+},
+    {
     "name": "dart-sass",
     "branch": "main",
     "url": "https://github.com/sass/dart-sass"
