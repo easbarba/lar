@@ -15,6 +15,10 @@
     "url": "https://github.com/sass/dart-sass"
 },
     {
+    "name": "flutter-samples",
+    "branch": "main",
+    "url": "https://github.com/flutter/samples"
+},    {
     "name": "flutter",
     "branch": "master",
     "url": "https://github.com/flutter/flutter"
