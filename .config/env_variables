@@ -18,10 +18,8 @@ export XDG_DATA_DIRS='/var/lib/flatpak/exports/share':"$HOME/.local/share/flatpa
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# DART / FLUTTER
-export PATH="$PATH:/usr/lib/dart/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export PATH="$HOME/.local/flutter/bin:$PATH"
+# PHP
+export PATH="$HOME/.config/composer/vendor/bin/:$PATH"
 
 # GOLANG
 export GOPATH=$HOME/.local/go
