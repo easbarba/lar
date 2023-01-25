@@ -56,3 +56,5 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
         PS1="${BASH_REMATCH[1]} [env]\\\$ "
     fi
 fi
+
+[[ -f ./config.sh ]] && . config.sh
