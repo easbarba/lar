@@ -1,5 +1,9 @@
 [
     {
+    "name": "fig-standards",
+    "branch": "master",
+    "url": "https://github.com/php-fig/fig-standards"
+},    {
     "name": "skeleton",
     "branch": "1.x",
     "url": "https://github.com/php-pds/skeleton"
