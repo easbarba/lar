@@ -1,22 +1,7 @@
 [
     {
-        "name": "lucasfcosta-testing-javascript-applications",
-        "branch": "master",
-        "url": "https://github.com/lucasfcosta/testing-javascript-applications"
-    },
-    {
-        "name": "Building-Distributed-Applications-in-Gin",
+        "name": "php-8-objects-patterns-practice",
         "branch": "main",
-        "url": "https://github.com/PacktPublishing/Building-Distributed-Applications-in-Gin"
-    },
-    {
-        "name": "k3d-io-k3d-demo",
-        "branch": "main",
-        "url": "https://github.com/k3d-io/k3d-demo"
-    },
-    {
-        "name": "gopl-io",
-        "branch": "master",
-        "url": "https://github.com/adonovan/gopl.io"
+        "url": "https://github.com/Apress/php-8-objects-patterns-practice"
     }
 ]
