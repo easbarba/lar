@@ -1,7 +1,17 @@
 [
     {
-        "name": "php-8-objects-patterns-practice",
-        "branch": "main",
-        "url": "https://github.com/Apress/php-8-objects-patterns-practice"
-    }
+    "name": "aschmelyun-cleaver",
+    "branch": "main",
+    "url": "https://github.com/aschmelyun/cleaver"
+},
+    {
+    "name": "aschmelyun-docker-compose-laravel",
+    "branch": "main",
+    "url": "https://github.com/aschmelyun/docker-compose-laravel"
+},
+    {
+    "name": "php-8-objects-patterns-practice",
+    "branch": "main",
+    "url": "https://github.com/Apress/php-8-objects-patterns-practice"
+}
 ]
