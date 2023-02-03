@@ -19,7 +19,8 @@ export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
 # PHP
-export PATH="$HOME/.config/composer/vendor/bin/:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.symfony5/bin:$PATH"
 
 # GUIX
 export GUIX_PROFILE="$HOME/.guix-profile"
