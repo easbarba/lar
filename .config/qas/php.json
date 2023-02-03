@@ -1,14 +1,5 @@
 [
     {
-    "name": "fig-standards",
-    "branch": "master",
-    "url": "https://github.com/php-fig/fig-standards"
-},    {
-    "name": "skeleton",
-    "branch": "1.x",
-    "url": "https://github.com/php-pds/skeleton"
-},
-    {
     "name": "psysh",
     "branch": "main",
     "url": "https://github.com/bobthecow/psysh"
@@ -17,6 +8,21 @@
     "name": "phpactor",
     "branch": "master",
     "url": "https://github.com/phpactor/phpactor"
+},
+    {
+    "name": "slim-php",
+    "branch": "4.x",
+    "url": "https://github.com/slimphp/Slim"
+},
+    {
+    "name": "fig-standards",
+    "branch": "master",
+    "url": "https://github.com/php-fig/fig-standards"
+},
+    {
+    "name": "skeleton",
+    "branch": "1.x",
+    "url": "https://github.com/php-pds/skeleton"
 },
     {
     "name": "symfony",
