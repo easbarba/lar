@@ -1,5 +1,10 @@
 [
     {
+    "name": "thecodeholic-php-developer-roadmap",
+    "branch": "main",
+    "url": "https://github.com/thecodeholic/php-developer-roadmap"
+},
+    {
     "name": "aschmelyun-cleaver",
     "branch": "main",
     "url": "https://github.com/aschmelyun/cleaver"
