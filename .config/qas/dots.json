@@ -82,7 +82,7 @@
     {
         "name": "annotations",
         "branch": "main",
-        "url": "https://github.com/easbarba/annotations"
+        "url": "https://git.sr.ht/~barbaneigro/annotations"
     },
     {
         "name": "dut",
@@ -92,11 +92,11 @@
     {
         "name": "mx",
         "branch": "main",
-        "url": "https://github.com/easbarba/mx"
+        "url": "https://git.sr.ht/~barbaneigro/mx"
     },
     {
         "name": "lar",
         "branch": "main",
-        "url": "https://github.com/easbarba/lar"
+        "url": "https://git.sr.ht/~barbaneigro/lar"
     }
 ]
