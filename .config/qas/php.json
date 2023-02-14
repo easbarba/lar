@@ -1,5 +1,15 @@
 [
   {
+    "name": "phpunit",
+    "branch": "main",
+    "url": "https://github.com/sebastianbergmann/phpunit"
+  },
+  {
+    "name": "pest",
+    "branch": "2.x",
+    "url": "https://github.com/pestphp/pest"
+  },
+  {
     "name": "psysh",
     "branch": "main",
     "url": "https://github.com/bobthecow/psysh"
