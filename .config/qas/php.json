@@ -1,5 +1,10 @@
 [
   {
+    "name": "collision",
+    "branch": "v7.x",
+    "url": "https://github.com/nunomaduro/collision"
+  },
+  {
     "name": "phpunit",
     "branch": "main",
     "url": "https://github.com/sebastianbergmann/phpunit"
