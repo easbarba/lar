@@ -1,0 +1,62 @@
+[
+  {
+    "name": "yata-wiki",
+    "branch": "master",
+    "url": "https://github.com/leandronsp/yata.wiki"
+  },
+  {
+    "name": "yata",
+    "branch": "main",
+    "url": "https://github.com/leandronsp/yata"
+  },
+  {
+    "name": "sustainable-rails-docker",
+    "branch": "main",
+    "url": "https://github.com/davetron5000/sustainable-rails-docker"
+  },
+  {
+    "name": "mastodon",
+    "branch": "main",
+    "url": "https://github.com/mastodon/mastodon"
+  },
+  {
+    "name": "ruby-lsp",
+    "branch": "main",
+    "url": "https://github.com/Shopify/ruby-lsp"
+  },
+  {
+    "name": "sidekiq",
+    "branch": "main",
+    "url": "https://github.com/mperham/sidekiq"
+  },
+  {
+    "name": "fluentd",
+    "branch": "master",
+    "url": "https://github.com/fluent/fluentd"
+  },
+  {
+    "name": "rails",
+    "branch": "main",
+    "url": "https://github.com/rails/rails"
+  },
+  {
+    "name": "rake",
+    "branch": "master",
+    "url": "https://github.com/ruby/rake"
+  },
+  {
+    "name": "debug",
+    "branch": "master",
+    "url": "https://github.com/ruby/debug"
+  },
+  {
+    "name": "rbs",
+    "branch": "master",
+    "url": "https://github.com/ruby/rbs"
+  },
+  {
+    "name": "ruby",
+    "branch": "master",
+    "url": "https://github.com/ruby/ruby"
+  }
+]
