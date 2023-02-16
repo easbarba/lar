@@ -1,5 +1,10 @@
 [
   {
+    "name": "pint",
+    "branch": "main",
+    "url": "https://github.com/laravel/pint"
+  },
+  {
     "name": "collision",
     "branch": "v7.x",
     "url": "https://github.com/nunomaduro/collision"
