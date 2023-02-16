@@ -41,6 +41,7 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x $(command -v tmux) ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
 [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
 [[ -x $(command -v composer) ]] && source <(composer completion)
+[[ -x $(command -v laravel) ]] && source <(laravel completion)
 # [[ -x $HOME/.config/broot/launcher/bash/br ]] && source "$HOME/.config/broot/launcher/bash/br"
 # [[ -x $(command -v zoxide) ]] && eval "$(zoxide init bash)"
 # [[ -x "$(command -v minikube)" ]] && source <(minikube completion bash)
@@ -56,5 +57,52 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
         PS1="${BASH_REMATCH[1]} [env]\\\$ "
     fi
 fi
+
+_artisan() {
+    COMP_WORDBREAKS=${COMP_WORDBREAKS//:/}
+    local cur prev words cword split
+    local debug=0
+    _init_completion -s -n : || return
+
+    ((debug)) && {
+        echo ""
+        echo "===================="
+        echo "cur: '$cur'"
+        echo "prev: '$prev'"
+        echo "words: '${words[@]}'"
+        echo "cword: '${cword}'"
+        echo "split: '${split}'"
+        echo "--------------------"
+        declare -p | grep 'COMP'
+        echo "===================="
+        echo ""
+    }
+
+    __get_first_word() {
+        while read -r first rest; do
+            echo "$first"
+        done
+    }
+
+    case $prev in
+        art*)
+            COMMANDS=$(php artisan --raw list | __get_first_word)
+            COMPREPLY=($(compgen -W "$COMMANDS" -- "$cur"))
+            return 0
+            ;;
+    esac
+
+    case $cur in
+        -*)
+            COMMANDS=$(php artisan ${words[1]} --help | sed 's/[][]//g' | _parse_help -)
+            COMPREPLY=($(compgen -W "$COMMANDS" -- "$cur"))
+            return
+            ;;
+        *)
+            _filedir
+            return
+            ;;
+    esac
+} && complete -F _artisan -o nospace artisan
 
 [[ -f ./config.sh ]] && . config.sh
