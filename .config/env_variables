@@ -18,6 +18,14 @@ export XDG_DATA_DIRS='/var/lib/flatpak/exports/share':"$HOME/.local/share/flatpa
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
+# GUIX
+export GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+export PATH="$GUIX_PROFILE/bin:$PATH"
+#export SSL_CERT_DIR="$GUIX_PROFILE/etc/ssl/certs"
+#export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
+#export GIT_SSL_CAINFO="$SSL_CERT_FILE"
+
 # PHP
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.symfony5/bin:$PATH"
@@ -26,19 +34,15 @@ export PATH="$HOME/.symfony5/bin:$PATH"
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
+# GOLANG
+export GOPATH=$HOME/.local/go
+export PATH="$GOPATH/bin":$PATH
+
 # NODE.JS
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export PATH="$NPM_CONFIG_PREFIX/bin":$PATH
 export PATH="$HOME/.bun/bin":$PATH
-
-# GUIX
-export GUIX_PROFILE="$HOME/.guix-profile"
-export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
-export PATH="$GUIX_PROFILE/bin:$PATH"
-#export SSL_CERT_DIR="$GUIX_PROFILE/etc/ssl/certs"
-#export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
-#export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 
 # OPS
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
