@@ -3,6 +3,7 @@
   "deps": ["python"],
   "command": "python3 -m pip install --upgrade",
   "packages": {
+    "frameworks": ["flask", "fastapi", "Django"],
     "tools": [
       "black",
       "pipenv",
