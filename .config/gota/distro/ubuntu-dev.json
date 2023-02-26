@@ -1,0 +1,28 @@
+{
+  "name": "ubuntu-dev",
+  "command": "sudo apt-get install -y",
+  "packages": {
+    "postgres": [
+      "postgresql",
+      "postgresql-client",
+      "postgresql-contrib",
+      "libpq-dev"
+    ],
+    "langs": ["nodejs", "npm"],
+    "python_tools": ["python3-pip"],
+    "tools": [
+      "jq",
+      "git-email",
+      "subversion",
+      "mercurial",
+      "libpq-dev",
+      "editorconfig",
+      "direnv",
+      "fd-find",
+      "shfmt",
+      "meson",
+      "cmake"
+    ],
+    "editors": ["vim", "tidy", "ripgrep"]
+  }
+}

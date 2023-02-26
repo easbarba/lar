@@ -1,0 +1,18 @@
+{
+  "lang": "python",
+  "deps": ["python"],
+  "command": "python3 -m pip install --upgrade",
+  "packages": {
+    "tools": [
+      "black",
+      "pipenv",
+      "pyflakes",
+      "pytest",
+      "isort",
+      "nose",
+      "pyperclip"
+    ],
+    "libs": ["beautifulsoup4", "interval", "yt-dlp"],
+    "apps": ["cryptography", "conan"]
+  }
+}

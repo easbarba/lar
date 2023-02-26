@@ -1,0 +1,13 @@
+{
+  "lang": "javascript",
+  "deps": ["npm"],
+  "command": "npm install --global",
+  "post": "npm update --global",
+  "packages": {
+    "essential": ["npm"],
+    "tools": ["stylelint", "js-beautify", "prettier", "@prettier/plugin-php"],
+    "node": ["nodemon"],
+    "ts": ["typescript"],
+    "ts_tools": ["ts-node", "typescript-language-server"]
+  }
+}
