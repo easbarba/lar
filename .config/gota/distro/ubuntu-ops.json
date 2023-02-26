@@ -1,0 +1,7 @@
+{
+  "name": "ubuntu",
+  "command": "sudo apt-get install -y",
+  "refresh": "sudo apt update",
+  "packages": {},
+  "post": "sudo apt upgrade -y"
+}

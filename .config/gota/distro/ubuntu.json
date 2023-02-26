@@ -2,6 +2,7 @@
   "name": "ubuntu",
   "command": "sudo apt-get install -y",
   "refresh": "sudo apt update",
+  "upgrade": "sudo apt upgrade -y",
   "pre": "sudo dpkg --add-architecture i386",
   "packages": {
     "amd": [
@@ -115,5 +116,5 @@
     ],
     "libs": ["libtag1-dev", "libtagc0-dev"]
   },
-  "post": "sudo apt upgrade -y"
+  "post": ["sudo apt remove -y firefox-esr", "sudo dpkg-reconfigure locales"]
 }
