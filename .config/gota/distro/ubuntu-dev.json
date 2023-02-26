@@ -21,7 +21,8 @@
       "fd-find",
       "shfmt",
       "meson",
-      "cmake"
+      "cmake",
+      "grip"
     ],
     "editors": ["vim", "tidy", "ripgrep"]
   }
