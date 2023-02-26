@@ -26,18 +26,6 @@ export PATH="$GUIX_PROFILE/bin:$PATH"
 #export SSL_CERT_FILE="$GUIX_PROFILE/etc/ssl/certs/ca-certificates.crt"
 #export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 
-# PHP
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-export PATH="$HOME/.symfony5/bin:$PATH"
-
-# RUBY
-export GEM_HOME="$HOME/.local/gem"
-export PATH="$GEM_HOME/bin:$PATH"
-
-# GOLANG
-export GOPATH=$HOME/.local/go
-export PATH="$GOPATH/bin":$PATH
-
 # NODE.JS
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
