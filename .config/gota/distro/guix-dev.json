@@ -4,7 +4,7 @@
   "upgrade": "guix package -u",
   "command": "guix install",
   "packages": {
-    "langs": ["guile", "guile-readline", "php"],
+    "langs": ["guile", "guile-readline"],
     "editors": ["zile", "emacs", "neovim"],
     "misc": ["nss-certs", "font-dejavu"],
     "apps": ["haunt", "guile-hall", "akku"],
