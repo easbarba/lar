@@ -8,8 +8,14 @@
       "postgresql-contrib",
       "libpq-dev"
     ],
-    "langs": ["nodejs", "npm"],
-    "python_tools": ["python3-pip"],
+    "langs": [
+      "nodejs",
+      "npm"
+    ],
+    "python_tools": [
+      "python3-pip",
+      "python3-venv"
+    ],
     "tools": [
       "jq",
       "git-email",
@@ -24,6 +30,10 @@
       "cmake",
       "grip"
     ],
-    "editors": ["vim", "tidy", "ripgrep"]
+    "editors": [
+      "vim",
+      "tidy",
+      "ripgrep"
+    ]
   }
 }
