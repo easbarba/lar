@@ -1,0 +1,13 @@
+{
+  "name": "guix-dev",
+  "refresh": "guix pull",
+  "upgrade": "guix package -u",
+  "command": "guix install",
+  "packages": {
+    "langs": ["guile", "guile-readline", "php"],
+    "editors": ["zile", "emacs", "neovim"],
+    "misc": ["nss-certs", "font-dejavu"],
+    "apps": ["haunt", "guile-hall", "akku"],
+    "libs": ["guile-git", "guile-json"]
+  }
+}
