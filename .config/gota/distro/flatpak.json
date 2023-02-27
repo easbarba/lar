@@ -1,0 +1,17 @@
+{
+    "name": "flatpak",
+    "upgrade": "flatpak update",
+    "command": "flatpak install flathub -y",
+    "packages": {
+        "tools": [
+            "io.github.NhekoReborn.Nheko"
+        ],
+        "apps": [
+            "com.discordapp.Discord",
+            "com.microsoft.Teams",
+            "com.slack.Slack",
+            "us.zoom.Zoom",
+            "com.skype.Client"
+        ]
+    }
+}
