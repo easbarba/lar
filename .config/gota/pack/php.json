@@ -21,7 +21,8 @@
             "zircote/swagger-php"
         ],
         "apps": [
-            "psy/psysh"
+            "psy/psysh",
+            "easbarba/qas"
         ]
     }
 }
