@@ -40,13 +40,7 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -x $(command -v tmux) ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
 [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
-[[ -x $(command -v composer) ]] && source <(composer completion)
-[[ -x $(command -v laravel) ]] && source <(laravel completion)
-# [[ -x $HOME/.config/broot/launcher/bash/br ]] && source "$HOME/.config/broot/launcher/bash/br"
-# [[ -x $(command -v zoxide) ]] && eval "$(zoxide init bash)"
-# [[ -x "$(command -v minikube)" ]] && source <(minikube completion bash)
-# [[ -x "$(command -v k3s)" ]] && source <(k3s completion bash)
-# [[ -x "$(command -v k3d)" ]] && source <(k3d completion bash)
+. "$GUIX_PROFILE/etc/profile"
 
 # * LANGS
 
@@ -57,12 +51,3 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
         PS1="${BASH_REMATCH[1]} [env]\\\$ "
     fi
 fi
-
-_artisan() {
-    COMP_WORDBREAKS=${COMP_WORDBREAKS//:/}
-    COMMANDS=$(php artisan --raw --no-ansi list | sed "s/[[:space:]].*//g")
-    COMPREPLY=($(compgen -W "$COMMANDS" -- "${COMP_WORDS[COMP_CWORD]}"))
-    return 0
-} && complete -F _artisan artisan
-
-[[ -f ./config.sh ]] && . config.sh
