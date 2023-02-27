@@ -1,0 +1,27 @@
+{
+    "lang": "php",
+    "deps": [
+        "php",
+        "composer"
+    ],
+    "post": "composer global update",
+    "command": "composer global require --no-interaction --with-all-dependencies",
+    "packages": {
+        "frameworks": [
+            "laravel/installer"
+        ],
+        "tools": [
+            "guzzlehttp/guzzle",
+            "phpunit/phpunit",
+            "phing/phing",
+            "friendsofphp/php-cs-fixer",
+            "techlivezheng/phpctags",
+            "squizlabs/php_codesniffer=*",
+            "clue/phar-composer",
+            "zircote/swagger-php"
+        ],
+        "apps": [
+            "psy/psysh"
+        ]
+    }
+}

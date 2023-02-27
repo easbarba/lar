@@ -4,10 +4,29 @@
   "upgrade": "guix package -u",
   "command": "guix install",
   "packages": {
-    "langs": ["guile", "guile-readline"],
-    "editors": ["zile", "emacs", "neovim"],
-    "misc": ["nss-certs", "font-dejavu"],
-    "apps": ["haunt", "guile-hall", "akku"],
-    "libs": ["guile-git", "guile-json"]
+    "langs": [
+      "guile",
+      "guile-readline",
+      "php",
+      "python"
+    ],
+    "editors": [
+      "zile",
+      "emacs",
+      "neovim"
+    ],
+    "misc": [
+      "nss-certs",
+      "font-dejavu"
+    ],
+    "apps": [
+      "haunt",
+      "guile-hall",
+      "akku"
+    ],
+    "libs": [
+      "guile-git",
+      "guile-json"
+    ]
   }
 }

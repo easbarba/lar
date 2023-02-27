@@ -40,7 +40,24 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -x $(command -v tmux) ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
 [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
+[[ -x $(command -v composer) ]] && source <(composer completion)
+[[ -x $(command -v laravel) ]] && source <(laravel completion)
+
 . "$GUIX_PROFILE/etc/profile"
+
+_artisan() {
+    COMP_WORDBREAKS=${COMP_WORDBREAKS//:/}
+    COMMANDS=$(php artisan --raw --no-ansi list | sed "s/[[:space:]].*//g")
+    COMPREPLY=($(compgen -W "$COMMANDS" -- "${COMP_WORDS[COMP_CWORD]}"))
+    return 0
+} && complete -F _artisan artisan
+
+_symfony_con() {
+    COMP_WORDBREAKS=${COMP_WORDBREAKS//:/}
+    COMMANDS=$(bin/console --raw --no-ansi list | sed "s/[[:space:]].*//g")
+    COMPREPLY=($(compgen -W "$COMMANDS" -- "${COMP_WORDS[COMP_CWORD]}"))
+    return 0
+} && complete -F _symfony_con console
 
 # * LANGS
 

@@ -6,11 +6,6 @@
   "pre": "python3 -m pip install --upgrade pip",
   "command": "python3 -m pip install --upgrade --user",
   "packages": {
-    "frameworks": [
-      "flask",
-      "fastapi",
-      "django"
-    ],
     "tools": [
       "black",
       "pipenv",
@@ -29,8 +24,7 @@
       "yt-dlp"
     ],
     "apps": [
-      "cryptography",
-      "conan"
+      "cryptography"
     ]
   }
 }
