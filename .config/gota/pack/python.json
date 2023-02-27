@@ -1,9 +1,16 @@
 {
   "lang": "python",
-  "deps": ["python"],
-  "command": "python3 -m pip install --upgrade",
+  "deps": [
+    "python"
+  ],
+  "pre": "python3 -m pip install --upgrade pip",
+  "command": "python3 -m pip install --upgrade --user",
   "packages": {
-    "frameworks": ["flask", "fastapi", "Django"],
+    "frameworks": [
+      "flask",
+      "fastapi",
+      "django"
+    ],
     "tools": [
       "black",
       "pipenv",
@@ -11,9 +18,19 @@
       "pytest",
       "isort",
       "nose",
-      "pyperclip"
+      "pyperclip",
+      "pytaglib",
+      "twine",
+      "'python-lsp-server[all]'"
     ],
-    "libs": ["beautifulsoup4", "interval", "yt-dlp"],
-    "apps": ["cryptography", "conan"]
+    "libs": [
+      "beautifulsoup4",
+      "interval",
+      "yt-dlp"
+    ],
+    "apps": [
+      "cryptography",
+      "conan"
+    ]
   }
 }
