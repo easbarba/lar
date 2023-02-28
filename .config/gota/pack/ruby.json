@@ -1,0 +1,23 @@
+{
+    "lang": "ruby",
+    "deps": [
+        "ruby",
+        "gem"
+    ],
+    "post": "gem update",
+    "command": "gem install",
+    "packages": {
+        "essentials": [
+            "bundler",
+            "rake"
+        ],
+        "tools": [
+            "ruby-lsp",
+            "reek",
+            "rufo",
+            "rubocop",
+            "pry",
+            "taglib-ruby"
+        ]
+    }
+}
