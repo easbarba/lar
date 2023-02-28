@@ -8,6 +8,8 @@
         "langs": [
             "php:8-alpine",
             "composer:lts",
+            "ruby:3-alpine",
+            "golang:alpine",
             "python:3-alpine"
         ],
         "db": [
@@ -18,7 +20,7 @@
             "busybox:latest"
         ],
         "distro": [
-            "debian:unstable-slim"
+            "ubuntu:kinetic"
         ]
     }
 }
