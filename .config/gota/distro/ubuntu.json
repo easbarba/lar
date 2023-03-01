@@ -19,8 +19,21 @@
       "libgl1-mesa-dri:i386",
       "radeontop"
     ],
-    "cli": ["htop", "elinks", "libnotify-bin", "ranger", "aria2", "neofetch"],
-    "ubuntu": ["build-essential", "aptitude", "apt-file", "gdebi", "reportbug"],
+    "cli": [
+      "htop",
+      "elinks",
+      "libnotify-bin",
+      "ranger",
+      "aria2",
+      "neofetch"
+    ],
+    "ubuntu": [
+      "build-essential",
+      "aptitude",
+      "apt-file",
+      "gdebi",
+      "reportbug"
+    ],
     "fonts": [
       "fonts-hack",
       "fonts-dejavu",
@@ -57,8 +70,14 @@
       "sysstat",
       "hddtemp"
     ],
-    "gnome": ["gnome-shell-extensions", "gnome-music"],
-    "wayland": ["wl-clipboard"],
+    "gnome": [
+      "gnome-shell-extensions",
+      "gnome-music",
+      "gnome-tweaks"
+    ],
+    "wayland": [
+      "wl-clipboard"
+    ],
     "user": [
       "firefox",
       "libreoffice",
@@ -103,8 +122,17 @@
       "automake",
       "socat"
     ],
-    "shell": ["bash-completion", "shellcheck", "fish"],
-    "sound": ["pipewire", "pipewire-pulse", "wireplumber", "pulseaudio-utils"],
+    "shell": [
+      "bash-completion",
+      "shellcheck",
+      "fish"
+    ],
+    "sound": [
+      "pipewire",
+      "pipewire-pulse",
+      "wireplumber",
+      "pulseaudio-utils"
+    ],
     "media": [
       "ffmpeg",
       "mpv",
@@ -114,7 +142,13 @@
       "gstreamer1.0-plugins-good",
       "gstreamer1.0-plugins-ugly"
     ],
-    "libs": ["libtag1-dev", "libtagc0-dev"]
+    "libs": [
+      "libtag1-dev",
+      "libtagc0-dev"
+    ]
   },
-  "post": ["sudo apt remove -y firefox-esr", "sudo dpkg-reconfigure locales"]
+  "post": [
+    "sudo apt remove -y firefox-esr",
+    "sudo dpkg-reconfigure locales"
+  ]
 }
