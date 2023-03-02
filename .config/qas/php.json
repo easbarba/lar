@@ -70,6 +70,16 @@
         "url": "https://github.com/composer/composer"
     },
     {
+        "name": "php-the-right-way",
+        "branch": "gh-pages",
+        "url": "https://github.com/codeguy/php-the-right-way"
+    },
+    {
+        "name": "php-doc-en",
+        "branch": "master",
+        "url": "https://github.com/php/doc-en"
+    },
+    {
         "name": "php",
         "branch": "master",
         "url": "https://github.com/php/php-src"

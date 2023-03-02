@@ -77,7 +77,7 @@
     {
         "name": "bin",
         "branch": "main",
-        "url": "https://github.com/easbarba/bin"
+        "url": "https://git.sr.ht/~barbaneigro/bin"
     },
     {
         "name": "annotations",
