@@ -1,15 +1,14 @@
 [Desktop Entry]
-Categories=Utility;Development;TextEditor;
-Comment=GNU Emacs is an extensible, customizable text editor - and more
-Exec=/usr/bin/emacs %F
-GenericName=Text Editor
-Icon=emacs
-Keywords=Text;Editor;
-MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
-Name=Emacs (GUI)
-StartupNotify=true
-StartupWMClass=Emacs
-Terminal=false
-TryExec=/usr/bin/emacs
-Type=Application
 Version=1.0
+Name=Emacs (GUI)
+GenericName=Text Editor
+Comment=GNU Emacs is an extensible, customizable text editor - and more
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+TryExec=/home/easbarba/.guix-profile/bin/emacs
+Exec=/home/easbarba/.guix-profile/bin/emacs %F
+Icon=emacs
+Type=Application
+Terminal=false
+Categories=Utility;Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;
