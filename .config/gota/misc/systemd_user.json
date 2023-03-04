@@ -1,9 +1,12 @@
 {
-    "name": "systemd-user",
+    "task": "systemd-user",
     "command": "systemctl enable --now --user",
-    "packages": {
+    "jobs": {
         "music": [
-            "mpd"
+            "mpd",
+            "wireplumber",
+            "pipewire",
+            "pipewire-pulse"
         ]
     }
 }
