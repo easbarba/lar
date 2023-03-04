@@ -1,0 +1,9 @@
+{
+    "task": "systemd-user",
+    "command": "sudo systemctl enable --now",
+    "jobs": {
+        "music": [
+            "fstrim.timer"
+        ]
+    }
+}
