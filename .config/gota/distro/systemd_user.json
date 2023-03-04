@@ -1,0 +1,9 @@
+{
+    "name": "systemd-user",
+    "command": "systemctl enable --now --user",
+    "packages": {
+        "music": [
+            "mpd"
+        ]
+    }
+}
