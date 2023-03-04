@@ -25,7 +25,9 @@
       "libnotify-bin",
       "ranger",
       "aria2",
-      "neofetch"
+      "neofetch",
+      "mpd",
+      "pms"
     ],
     "ubuntu": [
       "build-essential",
