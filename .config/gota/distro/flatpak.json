@@ -1,5 +1,5 @@
 {
-    "name": "flatpak",
+    "manager": "flatpak",
     "upgrade": "flatpak update",
     "command": "flatpak install flathub -y",
     "packages": {

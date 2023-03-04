@@ -1,5 +1,5 @@
 {
-  "name": "guix-dev",
+  "manager": "guix-dev",
   "refresh": "guix pull",
   "upgrade": "guix package -u",
   "command": "guix install",

@@ -1,5 +1,5 @@
 {
-  "name": "ubuntu-dev",
+  "manager": "ubuntu-dev",
   "command": "sudo apt-get install -y",
   "packages": {
     "postgres": [

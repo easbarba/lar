@@ -1,5 +1,5 @@
 {
-  "name": "ubuntu",
+  "manager": "ubuntu",
   "command": "sudo apt-get install -y",
   "refresh": "sudo apt update",
   "packages": {},
