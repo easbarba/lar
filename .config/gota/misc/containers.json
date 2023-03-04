@@ -1,10 +1,10 @@
 {
-    "lang": "containers",
+    "task": "containers",
     "deps": [
         "podman"
     ],
     "command": "podman pull",
-    "packages": {
+    "jobs": {
         "langs": [
             "php:8-alpine",
             "composer:lts",
