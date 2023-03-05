@@ -9,7 +9,7 @@
             "php:8-alpine",
             "composer:lts",
             "ruby:3-alpine",
-            "golang:alpine",
+            "rust:alpine",
             "python:3-alpine"
         ],
         "db": [
