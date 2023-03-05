@@ -1,0 +1,14 @@
+{
+    "lang": "rustc",
+    "deps": [
+        "rustc"
+    ],
+    "command": "rustup component add",
+    "packages": {
+        "tools": [
+            "clippy",
+            "rustfmt",
+            "cargo-audit"
+        ]
+    }
+}

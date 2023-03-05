@@ -1,0 +1,26 @@
+{
+    "lang": "rust_cargo",
+    "deps": [
+        "cargo"
+    ],
+    "command": "cargo install --locked",
+    "packages": {
+        "tools": [
+            "starship"
+        ],
+        "tasks": [
+            "cargo-watch",
+            "cargo-tarpaulin"
+        ],
+        "apps": [
+            "fd-find",
+            "ripgrep",
+            "exa",
+            "bat",
+            "procs",
+            "sd",
+            "du-dust",
+            "tokei"
+        ]
+    }
+}
