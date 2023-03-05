@@ -36,6 +36,10 @@ export PATH="$HOME/.symfony5/bin:$PATH"
 export GEM_HOME="$HOME/.local/gem"
 export PATH="$GEM_HOME/bin:$PATH"
 
+# RUST
+export CARGO_HOME=$HOME/.cargo
+export PATH="$CARGO_HOME/bin":$PATH
+
 # GOLANG
 export GOPATH=$HOME/.local/go
 export PATH="$GOPATH/bin":$PATH
