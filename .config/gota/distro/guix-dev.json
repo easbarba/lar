@@ -9,8 +9,7 @@
       "guile-readline",
       "php",
       "ruby",
-      "python",
-      "go"
+      "python"
     ],
     "editors": [
       "zile",
