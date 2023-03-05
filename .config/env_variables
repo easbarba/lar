@@ -40,10 +40,6 @@ export PATH="$GEM_HOME/bin:$PATH"
 export CARGO_HOME=$HOME/.cargo
 export PATH="$CARGO_HOME/bin":$PATH
 
-# GOLANG
-export GOPATH=$HOME/.local/go
-export PATH="$GOPATH/bin":$PATH
-
 # NODE.JS
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
