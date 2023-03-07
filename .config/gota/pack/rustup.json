@@ -1,0 +1,8 @@
+{
+  "lang": "rustup",
+  "deps": ["rustup"],
+  "command": "rustup component add",
+  "packages": {
+    "tools": ["clippy", "rustfmt", "cargo-audit", "rust-analizer"]
+  }
+}
