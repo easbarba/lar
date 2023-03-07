@@ -6,13 +6,12 @@
     "command": "cargo install --locked",
     "packages": {
         "tools": [
-            "starship"
-        ],
-        "tasks": [
+            "cargo-audit",
             "cargo-watch",
             "cargo-tarpaulin"
         ],
         "apps": [
+            "starship",
             "fd-find",
             "ripgrep",
             "exa",
