@@ -45,6 +45,12 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 
 . "$GUIX_PROFILE/etc/profile"
 
+if [ -n "$GUIX_ENVIRONMENT" ]; then
+    if [[ $PS1 =~ (.*)"\\$" ]]; then
+        PS1="${BASH_REMATCH[1]} [env]\\\$ "
+    fi
+fi
+
 _artisan() {
     COMP_WORDBREAKS=${COMP_WORDBREAKS//:/}
     COMMANDS=$(php artisan --raw --no-ansi list | sed "s/[[:space:]].*//g")
@@ -63,8 +69,3 @@ _symfony_con() {
 
 # [[ -x "$(command -v screen)" ]] && [[ -z "$STY" ]] && COLORTERM=xterm-256color screen -S GNU
 # Automatically added by the Guix install script.
-if [ -n "$GUIX_ENVIRONMENT" ]; then
-    if [[ $PS1 =~ (.*)"\\$" ]]; then
-        PS1="${BASH_REMATCH[1]} [env]\\\$ "
-    fi
-fi
