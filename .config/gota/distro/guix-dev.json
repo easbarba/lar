@@ -8,7 +8,6 @@
       "guile",
       "guile-readline",
       "php",
-      "ruby",
       "python"
     ],
     "editors": [
