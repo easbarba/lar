@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Alacritty
-Comment=A fast, cross-platform, OpenGL terminal emulator
-Exec=alacritty
-Type=Application
-DesktopNames=Alacritty
