@@ -1,0 +1,22 @@
+[
+    {
+        "name": "yata-wiki",
+        "branch": "master",
+        "url": "https://github.com/leandronsp/yata.wiki"
+    },
+    {
+        "name": "yata",
+        "branch": "main",
+        "url": "https://github.com/leandronsp/yata"
+    },
+    {
+        "name": "aschmelyun-cleaver",
+        "branch": "main",
+        "url": "https://github.com/aschmelyun/cleaver"
+    },
+    {
+        "name": "juancrg90-clean-code-notes",
+        "branch": "master",
+        "url": "https://github.com/JuanCrg90/Clean-Code-Notes"
+    }
+]
