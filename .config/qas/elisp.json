@@ -1,63 +1,52 @@
 [
     {
-    "name": "lsp-dart",
-    "branch": "master",
-    "url": "https://github.com/emacs-lsp/lsp-dart"
-},
-
+        "name": "rschmukler-doom.d",
+        "branch": "master",
+        "url": "https://github.com/rschmukler/doom.d"
+    },
     {
-    "name": "rschmukler-doom.d",
-    "branch": "master",
-    "url": "https://github.com/rschmukler/doom.d"
-},
+        "name": "tecosaur-emacs-config",
+        "branch": "master",
+        "url": "https://github.com/tecosaur/emacs-config"
+    },
     {
-    "name": "tecosaur-emacs-config",
-    "branch": "master",
-    "url": "https://github.com/tecosaur/emacs-config"
-},
+        "name": "abo-abo-oremacs",
+        "branch": "github",
+        "url": "https://github.com/abo-abo/oremacs"
+    },
     {
-    "name": "emacs-reformatter",
-    "branch": "master",
-    "url": "https://github.com/purcell/emacs-reformatter"
-},
+        "name": "jwiegley-dot-emacs",
+        "branch": "master",
+        "url": "https://github.com/jwiegley/dot-emacs"
+    },
     {
-    "name": "abo-abo-oremacs",
-    "branch": "github",
-    "url": "https://github.com/abo-abo/oremacs"
-},
+        "name": "doom-emacs",
+        "branch": "master",
+        "url": "https://github.com/hlissner/doom-emacs"
+    },
     {
-    "name": "jwiegley-dot-emacs",
-    "branch": "master",
-    "url": "https://github.com/jwiegley/dot-emacs"
-},
+        "name": "unpackaged.el",
+        "branch": "master",
+        "url": "https://github.com/alphapapa/unpackaged.el"
+    },
     {
-    "name": "doom-emacs",
-    "branch": "master",
-    "url": "https://github.com/hlissner/doom-emacs"
-},
+        "name": "elfeed",
+        "branch": "master",
+        "url": "https://github.com/skeeto/elfeed"
+    },
     {
-    "name": "unpackaged.el",
-    "branch": "master",
-    "url": "https://github.com/alphapapa/unpackaged.el"
-},
+        "name": "lsp-mode",
+        "branch": "master",
+        "url": "https://github.com/emacs-lsp/lsp-mode"
+    },
     {
-    "name": "elfeed",
-    "branch": "master",
-    "url": "https://github.com/skeeto/elfeed"
-},
+        "name": "use-package",
+        "branch": "master",
+        "url": "https://github.com/jwiegley/use-package"
+    },
     {
-    "name": "lsp-mode",
-    "branch": "master",
-    "url": "https://github.com/emacs-lsp/lsp-mode"
-},
-    {
-    "name": "use-package",
-    "branch": "master",
-    "url": "https://github.com/jwiegley/use-package"
-},
-    {
-    "name": "emacs",
-    "branch": "master",
-    "url": "git://git.sv.gnu.org/emacs"
-}
+        "name": "emacs",
+        "branch": "master",
+        "url": "git://git.sv.gnu.org/emacs"
+    }
 ]
