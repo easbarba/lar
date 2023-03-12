@@ -10,6 +10,11 @@
     "url": "https://github.com/vitejs/vite"
   },
   {
+    "name": "vuejs-docs",
+    "branch": "main",
+    "url": "https://github.com/vuejs/docs"
+  },
+  {
     "name": "vuejs",
     "branch": "main",
     "url": "https://github.com/vuejs/core"
