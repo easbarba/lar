@@ -1,5 +1,15 @@
 [
   {
+    "name": "typescript-website",
+    "branch": "v2",
+    "url": "https://github.com/microsoft/TypeScript-Website"
+  },
+  {
+    "name": "typescript",
+    "branch": "main",
+    "url": "https://github.com/microsoft/TypeScript"
+  },
+  {
     "name": "vitest",
     "branch": "main",
     "url": "https://github.com/vitest-dev/vitest"
