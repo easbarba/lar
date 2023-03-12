@@ -8,8 +8,7 @@
         "langs": [
             "php:8-alpine",
             "composer:lts",
-            "ruby:3-alpine",
-            "rust:alpine",
+            "node:16-alpine",
             "python:3-alpine"
         ],
         "db": [
