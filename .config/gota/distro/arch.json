@@ -1,0 +1,91 @@
+{
+  "manager": "arch",
+  "refresh": "sudo pacman -Syy",
+  "upgrade": "pacman -Syu",
+  "command": "sudo pacman -S --noconfirm",
+  "packages": {
+    "system": [
+      "git",
+      "openssh",
+      "unzip",
+      "zip",
+      "p7zip",
+      "at",
+      "usbutils",
+      "lsof",
+      "atool",
+      "time",
+      "entr",
+      "tree",
+      "bc",
+      "curl",
+      "strace",
+      "ltrace",
+      "cpio",
+      "lhasa",
+      "lzop",
+      "rsync",
+      "pv",
+      "texinfo",
+      "autoconf",
+      "automake",
+      "socat",
+      "tmux",
+      "bottom"
+    ],
+    "shell": ["bash-completion", "shellcheck"],
+    "fonts": [
+      "ttf-hack",
+      "ttf-dejavu",
+      "ttf-jetbrains-mono",
+      "adobe-source-han-sans-otc-fonts",
+      "noto-fonts",
+      "noto-fonts-emoji",
+      "ttf-liberation",
+      "ttf-droid",
+      "adobe-source-sans-fonts"
+    ],
+    "laptop": ["acpi", "lm-sensors", "lshw", "libinput-tools", "acpid"],
+    "wayland": ["wl-clipboard"],
+    "cli": ["htop", "ffmpeg", "mpv", "elinks", "libnotify", "ranger", "aria2"],
+    "user": [
+      "chromium",
+      "firefox",
+      "libreoffice",
+      "gimp",
+      "xdg-utils",
+      "imagemagick",
+      "aspell",
+      "aspell-pt",
+      "aspell-en",
+      "calibre",
+      "pandoc",
+      "obs-studio",
+      "inkscape"
+    ],
+    "sound": [
+      "pipewire",
+      "pipewire-pulse",
+      "lib32-pipewire",
+      "pipewire-docs",
+      "wireplumber",
+      "pulseaudio-utils"
+    ],
+    "media": [
+      "gstreamer",
+      "gst-libav",
+      "gst-plugins-bad",
+      "gst-plugins-base",
+      "gst-plugins-good",
+      "gst-plugins-ugly"
+    ],
+    "amd": [
+      "amd-ucode",
+      "mesa",
+      "lib32-mesa",
+      "xf86-video-amdgpu",
+      "vulkan-radeon",
+      "lib32-vulkan-radeon"
+    ]
+  }
+}

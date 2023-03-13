@@ -1,0 +1,35 @@
+{
+    "manager": "arch_dev",
+    "refresh": "sudo pacman -Syy",
+    "upgrade": "pacman -Syu",
+    "command": "sudo pacman -S --noconfirm",
+    "packages": {
+        "network": [
+            "gnutls",
+            "net-tools",
+            "iproute2",
+            "perl-net-telnet",
+            "dnsutils",
+            "iwd",
+            "iw",
+            "wireless_tools",
+            "resolvconf",
+            "gnu-netcat",
+            "tcpdump",
+            "httpie"
+        ],
+        "kubernetes": [
+            "kubectl",
+            "kubelet",
+            "kubeadm",
+            "helm"
+        ],
+        "cloud": [
+            "awscli",
+            "google-cloud-sdk"
+        ],
+        "misc": [
+            "gitlab-runner"
+        ]
+    }
+}

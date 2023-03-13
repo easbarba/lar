@@ -1,0 +1,23 @@
+{
+    "manager": "arch_dev",
+    "refresh": "sudo pacman -Syy",
+    "upgrade": "pacman -Syu",
+    "command": "sudo pacman -S --noconfirm",
+    "packages": {
+        "editors": [
+            "vim",
+            "neovim"
+        ],
+        "tools": [
+            "jq",
+            "subversion",
+            "mercurial",
+            "editorconfig-checker",
+            "direnv",
+            "fd",
+            "tidy",
+            "ripgrep",
+            "shfmt"
+        ]
+    }
+}
