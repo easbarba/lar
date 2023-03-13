@@ -4,6 +4,7 @@
         "php",
         "composer"
     ],
+    "pre": "composer self-update",
     "post": "composer global update",
     "command": "composer global require --no-interaction --with-all-dependencies",
     "packages": {
