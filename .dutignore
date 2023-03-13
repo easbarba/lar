@@ -39,7 +39,6 @@ README.md
 .config/nixos
 .config/nixpkgs
 .config/nyxt
-.config/ncmpcpp
 .config/picom
 .config/plasma-workspace
 .config/powershell
