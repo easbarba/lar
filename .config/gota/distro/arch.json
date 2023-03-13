@@ -33,7 +33,13 @@
       "tmux",
       "bottom"
     ],
-    "shell": ["bash-completion", "shellcheck"],
+    "arch": [
+      "base-devel"
+    ],
+    "shell": [
+      "bash-completion",
+      "shellcheck"
+    ],
     "fonts": [
       "ttf-hack",
       "ttf-dejavu",
@@ -45,9 +51,25 @@
       "ttf-droid",
       "adobe-source-sans-fonts"
     ],
-    "laptop": ["acpi", "lm-sensors", "lshw", "libinput-tools", "acpid"],
-    "wayland": ["wl-clipboard"],
-    "cli": ["htop", "ffmpeg", "mpv", "elinks", "libnotify", "ranger", "aria2"],
+    "laptop": [
+      "acpi",
+      "lm-sensors",
+      "lshw",
+      "libinput-tools",
+      "acpid"
+    ],
+    "wayland": [
+      "wl-clipboard"
+    ],
+    "cli": [
+      "htop",
+      "ffmpeg",
+      "mpv",
+      "elinks",
+      "libnotify",
+      "ranger",
+      "aria2"
+    ],
     "user": [
       "chromium",
       "firefox",
