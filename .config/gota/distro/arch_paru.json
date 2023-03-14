@@ -1,0 +1,10 @@
+{
+    "manager": "arch_paru",
+    "command": "paru --install",
+    "packages": {
+        "misc": [
+            "taglib-git",
+            "google-chrome"
+        ]
+    }
+}
