@@ -25,7 +25,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # GNU
-alias nano="nano -Sxmkcig_ --speller='aspell -xc'"
+alias nano="nano -xcSxmkcig_ --speller='aspell'"
 
 # Container
 # docker stop `docker ps -qa`
