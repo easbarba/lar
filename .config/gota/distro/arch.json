@@ -68,7 +68,8 @@
       "elinks",
       "libnotify",
       "ranger",
-      "aria2"
+      "aria2",
+      "cmus"
     ],
     "user": [
       "chromium",
