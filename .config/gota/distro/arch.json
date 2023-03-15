@@ -31,7 +31,8 @@
       "automake",
       "socat",
       "tmux",
-      "bottom"
+      "bottom",
+      "unrar"
     ],
     "arch": [
       "base-devel"
