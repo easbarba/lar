@@ -12,8 +12,7 @@
     ],
     "editors": [
       "zile",
-      "emacs",
-      "neovim"
+      "emacs"
     ],
     "misc": [
       "nss-certs",
