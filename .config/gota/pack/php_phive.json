@@ -5,7 +5,7 @@
         "phive"
     ],
     "pre": "phive selfupdate",
-    "post": "phive purge",
+    "post": "phive update",
     "command": "phive install --target ~/.local/bin",
     "packages": {
         "tools": [
