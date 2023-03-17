@@ -1,5 +1,9 @@
 [
     {
+        "name": "sebastianbergmann-cli-parser",
+        "url": "https://github.com/sebastianbergmann/cli-parser"
+    },
+    {
         "name": "thecodeholic-php-developer-roadmap",
         "branch": "main",
         "url": "https://github.com/thecodeholic/php-developer-roadmap"

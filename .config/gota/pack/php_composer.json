@@ -1,5 +1,5 @@
 {
-    "lang": "php",
+    "lang": "php_composer",
     "deps": [
         "php",
         "composer"
@@ -13,16 +13,11 @@
         ],
         "tools": [
             "guzzlehttp/guzzle",
-            "phpunit/phpunit",
-            "phing/phing",
-            "friendsofphp/php-cs-fixer",
             "techlivezheng/phpctags",
-            "squizlabs/php_codesniffer=*",
             "clue/phar-composer",
             "zircote/swagger-php"
         ],
         "apps": [
-            "psy/psysh",
             "easbarba/qas"
         ]
     }
