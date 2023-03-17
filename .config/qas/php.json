@@ -89,6 +89,11 @@
         "url": "https://github.com/composer/composer"
     },
     {
+        "name": "phive",
+        "branch": "master",
+        "url": "https://github.com/phar-io/phive"
+    },
+    {
         "name": "php-the-right-way",
         "branch": "gh-pages",
         "url": "https://github.com/codeguy/php-the-right-way"
