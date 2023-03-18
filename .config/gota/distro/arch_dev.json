@@ -18,6 +18,9 @@
             "tidy",
             "ripgrep",
             "shfmt"
+        ],
+        "images": [
+            "krita"
         ]
     }
 }
