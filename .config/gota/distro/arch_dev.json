@@ -8,6 +8,11 @@
             "vim",
             "neovim"
         ],
+        "langs": [
+            "dotnet-sdk",
+            "dotnet-runtime",
+            "aspnet-runtime"
+        ],
         "tools": [
             "jq",
             "subversion",
