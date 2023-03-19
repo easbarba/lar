@@ -11,7 +11,8 @@
         "langs": [
             "dotnet-sdk",
             "dotnet-runtime",
-            "aspnet-runtime"
+            "aspnet-runtime",
+            "mono"
         ],
         "tools": [
             "jq",
