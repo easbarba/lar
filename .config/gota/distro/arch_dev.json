@@ -12,7 +12,7 @@
             "jq",
             "subversion",
             "mercurial",
-            "editorconfig-checker",
+            "editorconfig-core",
             "direnv",
             "fd",
             "tidy",
