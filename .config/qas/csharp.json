@@ -1,0 +1,27 @@
+[
+    {
+        "name": "awesome-dotnet-core",
+        "branch": "master",
+        "url": "https: //github.com/thangchung/awesome-dotnet-core"
+    },
+    {
+        "name": "aspnetcore",
+        "branch": "main",
+        "url": "https: //github.com/dotnet/aspnetcore"
+    },
+    {
+        "name": "dotnet-runtime",
+        "branch": "main",
+        "url": "https: //github.com/dotnet/runtime"
+    },
+    {
+        "name": "dotnet-roslyn",
+        "branch": "main",
+        "url": "https: //github.com/dotnet/roslyn"
+    },
+    {
+        "name": "omnisharp-roslyn",
+        "branch": "master",
+        "url": "https://github.com/OmniSharp/omnisharp-roslyn"
+    }
+]

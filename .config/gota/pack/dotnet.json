@@ -1,0 +1,12 @@
+{
+    "lang": "dotnet",
+    "deps": [
+        "dotnet"
+    ],
+    "command": "dotnet tool install --global",
+    "packages": {
+        "tools": [
+            "PowerShell"
+        ]
+    }
+}
