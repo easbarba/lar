@@ -25,6 +25,11 @@
         "url": "https: //github.com/dotnet/roslyn"
     },
     {
+        "name": "mono",
+        "branch": "main",
+        "url": "https://github.com/mono/mono"
+    },
+    {
         "name": "omnisharp-roslyn",
         "branch": "master",
         "url": "https://github.com/OmniSharp/omnisharp-roslyn"
