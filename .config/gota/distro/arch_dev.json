@@ -12,6 +12,7 @@
             "dotnet-sdk",
             "dotnet-runtime",
             "aspnet-runtime",
+            "nuget",
             "mono"
         ],
         "tools": [

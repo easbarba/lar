@@ -5,6 +5,11 @@
         "url": "https: //github.com/thangchung/awesome-dotnet-core"
     },
     {
+        "name": "GitVersion",
+        "branch": "main",
+        "url": "https://github.com/GitTools/GitVersion"
+    },
+    {
         "name": "aspnetcore",
         "branch": "main",
         "url": "https: //github.com/dotnet/aspnetcore"
