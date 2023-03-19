@@ -1,5 +1,5 @@
 {
-  "lang": "python",
+  "lang": "python_pip",
   "deps": [
     "python"
   ],
@@ -16,7 +16,9 @@
       "pyperclip",
       "pytaglib",
       "twine",
-      "'python-lsp-server[all]'"
+      "'python-lsp-server[all]'",
+      "gdtoolkit",
+      "grip"
     ],
     "libs": [
       "beautifulsoup4",
