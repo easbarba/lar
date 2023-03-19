@@ -8,7 +8,8 @@
       "guile",
       "guile-readline",
       "php",
-      "python"
+      "python",
+      "openjdk@11"
     ],
     "editors": [
       "zile",
