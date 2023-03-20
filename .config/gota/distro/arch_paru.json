@@ -4,7 +4,9 @@
     "packages": {
         "misc": [
             "taglib-git",
-            "google-chrome",
+            "google-chrome"
+        ],
+        "dev": [
             "monodevelop-bin"
         ]
     }
