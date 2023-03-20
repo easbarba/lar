@@ -6,20 +6,19 @@
     "command": "podman pull",
     "jobs": {
         "langs": [
-            "php:8-alpine",
-            "composer:lts",
-            "node:16-alpine",
-            "python:3-alpine"
+            "mcr.microsoft.com/dotnet/sdk:7.0",
+            "docker.io/library/node:16-alpine",
+            "docker.io/library/python:3-alpine"
         ],
         "db": [
-            "postgres:15-alpine"
+            "docker.io/library/postgres:15-alpine"
         ],
         "latest": [
-            "alpine:latest",
-            "busybox:latest"
+            "docker.io/library/alpine:latest",
+            "docker.io/library/busybox:latest"
         ],
         "distro": [
-            "ubuntu:kinetic"
+            "docker.io/library/ubuntu:kinetic"
         ]
     }
 }
