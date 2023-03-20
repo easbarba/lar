@@ -1,5 +1,10 @@
 [
     {
+        "name": "dotnet-command-line-api",
+        "branch": "main",
+        "url": "https://github.com/dotnet/command-line-api"
+    },
+    {
         "name": "awesome-dotnet-core",
         "branch": "master",
         "url": "https: //github.com/thangchung/awesome-dotnet-core"
@@ -8,6 +13,11 @@
         "name": "GitVersion",
         "branch": "main",
         "url": "https://github.com/GitTools/GitVersion"
+    },
+    {
+        "name": "xunit",
+        "branch": "master",
+        "url": "https: //github.com/xunit/xunit"
     },
     {
         "name": "aspnetcore",
