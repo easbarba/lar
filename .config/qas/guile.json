@@ -1,5 +1,10 @@
 [
     {
+        "name": "promyloph-guix-install-action",
+        "branch": "v1",
+        "url": "https://github.com/PromyLOPh/guix-install-action"
+    },
+    {
         "name": "hall",
         "branch": "master",
         "url": "https://gitlab.com/a-sassmannshausen/guile-hall"
