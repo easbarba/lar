@@ -2,8 +2,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # export SYSTEMD_PAGER= # Uncomment this if you don't like systemctl's auto-paging feature:
 #export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc" # readline
 
-. "$HOME/.config/env_variables"
-. "$HOME/.profile"
+[[ -f "$HOME/.config/env_variables" ]] && . "$HOME/.config/env_variables"
+# . "$HOME/.profile"
 
 gimme_keys() {
     # kill any ssh-agent running, re-enter new one

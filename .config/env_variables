@@ -28,6 +28,9 @@ export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 # <--
 
+# .NET
+export PATH="$HOME/.dotnet/tools":"$PATH"
+
 # NODE.JS
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
@@ -37,4 +40,4 @@ export PATH="$HOME/.bun/bin":$PATH
 # OPS
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 export DOCKER_SOCK=$XDG_RUNTIME_DIR/podman/podman.sock
-export VAGRANT_DEFAULT_PROVIDER=libvirt
+# export VAGRANT_DEFAULT_PROVIDER=libvirt

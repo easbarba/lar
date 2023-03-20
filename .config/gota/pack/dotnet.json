@@ -6,7 +6,10 @@
     "command": "dotnet tool install --global",
     "packages": {
         "tools": [
-            "PowerShell"
+            "PowerShell",
+        ],
+        "aspnet": [
+            "dotnet-aspnet-codegenerator"
         ]
     }
 }
