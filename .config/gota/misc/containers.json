@@ -6,8 +6,6 @@
     "command": "podman pull",
     "jobs": {
         "langs": [
-            "mcr.microsoft.com/dotnet/sdk:7.0",
-            "docker.io/library/node:16-alpine",
             "docker.io/library/python:3-alpine"
         ],
         "db": [
