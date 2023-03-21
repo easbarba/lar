@@ -41,6 +41,7 @@ README.md
 .config/ncmpcpp
 .config/nyxt
 .config/mpd
+.config/phpactor
 .config/picom
 .config/plasma-workspace
 .config/powershell
