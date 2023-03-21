@@ -4,6 +4,8 @@ README.md
 .git
 .local/share/applications
 .gitignore
+.gemrc
+.irbrc
 .elixir_ls
 .iex.exs
 .tcshrc
