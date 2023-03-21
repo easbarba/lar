@@ -1,13 +1,13 @@
 [
     {
-        "name": "yata-wiki",
-        "branch": "master",
-        "url": "https://github.com/leandronsp/yata.wiki"
+        "name": "github-gitignore",
+        "branch": "main",
+        "url": "https://github.com/github/gitignore"
     },
     {
-        "name": "yata",
-        "branch": "main",
-        "url": "https://github.com/leandronsp/yata"
+        "name": "makefiletutorial",
+        "branch": "gh-pages",
+        "url": "https://github.com/theicfire/makefiletutorial"
     },
     {
         "name": "aschmelyun-cleaver",
