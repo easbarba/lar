@@ -4,8 +4,6 @@ README.md
 .git
 .local/share/applications
 .gitignore
-.gemrc
-.irbrc
 .elixir_ls
 .iex.exs
 .tcshrc
@@ -41,7 +39,6 @@ README.md
 .config/ncmpcpp
 .config/nyxt
 .config/mpd
-.config/phpactor
 .config/picom
 .config/plasma-workspace
 .config/powershell
