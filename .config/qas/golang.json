@@ -1,5 +1,10 @@
 [
     {
+        "name": "gitql",
+        "branch": "main",
+        "url": "https://github.com/filhodanuvem/gitql"
+    },
+    {
         "name": "echo",
         "branch": "master",
         "url": "https://github.com/labstack/echo"
