@@ -7,7 +7,7 @@
     {
         "name": "awesome-dotnet-core",
         "branch": "master",
-        "url": "https: //github.com/thangchung/awesome-dotnet-core"
+        "url": "https://github.com/thangchung/awesome-dotnet-core"
     },
     {
         "name": "GitVersion",
@@ -16,23 +16,28 @@
     },
     {
         "name": "xunit",
-        "branch": "master",
-        "url": "https: //github.com/xunit/xunit"
+        "branch": "main",
+        "url": "https://github.com/xunit/xunit"
+    },
+    {
+        "name": "dotnet-scaffolding",
+        "branch": "main",
+        "url": "https://github.com/dotnet/Scaffolding"
     },
     {
         "name": "aspnetcore",
         "branch": "main",
-        "url": "https: //github.com/dotnet/aspnetcore"
+        "url": "https://github.com/dotnet/aspnetcore"
     },
     {
         "name": "dotnet-runtime",
         "branch": "main",
-        "url": "https: //github.com/dotnet/runtime"
+        "url": "https://github.com/dotnet/runtime"
     },
     {
         "name": "dotnet-roslyn",
         "branch": "main",
-        "url": "https: //github.com/dotnet/roslyn"
+        "url": "https://github.com/dotnet/roslyn"
     },
     {
         "name": "mono",
