@@ -74,4 +74,4 @@ _sf_console() {
     fi
 }
 
-complete -F _sf_console symfony
+complete -F _sf_console console
