@@ -5,9 +5,6 @@
         "misc": [
             "taglib-git",
             "google-chrome"
-        ],
-        "dev": [
-            "monodevelop-bin"
         ]
     }
 }
