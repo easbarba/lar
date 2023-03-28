@@ -2,7 +2,10 @@
     "task": "systemd-user",
     "command": "sudo systemctl enable --now",
     "jobs": {
-        "music": [
+        "servers": [
+            "nginx.service"
+        ],
+        "utils": [
             "fstrim.timer"
         ]
     }

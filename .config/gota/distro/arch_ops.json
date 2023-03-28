@@ -4,6 +4,9 @@
     "upgrade": "pacman -Syu",
     "command": "sudo pacman -S --noconfirm",
     "packages": {
+        "servers": [
+            "nginx"
+        ],
         "network": [
             "gnutls",
             "net-tools",
