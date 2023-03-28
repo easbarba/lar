@@ -3,7 +3,6 @@
     "command": "systemctl enable --now --user",
     "jobs": {
         "music": [
-            "mpd",
             "wireplumber",
             "pipewire",
             "pipewire-pulse"
