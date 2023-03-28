@@ -1,5 +1,5 @@
 {
-    "task": "systemd-user",
+    "task": "systemd",
     "command": "sudo systemctl enable --now",
     "jobs": {
         "servers": [
