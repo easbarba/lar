@@ -6,17 +6,14 @@
     },
     {
         "name": "hall",
-        "branch": "master",
         "url": "https://gitlab.com/a-sassmannshausen/guile-hall"
     },
     {
         "name": "gash",
-        "branch": "master",
         "url": "https://git.savannah.nongnu.org/git/gash.git"
     },
     {
         "name": "artanis",
-        "branch": "master",
         "url": "https://gitlab.com/hardenedlinux/artanis"
     },
     {
@@ -26,12 +23,10 @@
     },
     {
         "name": "guile-git",
-        "branch": "master",
         "url": "https://gitlab.com/guile-git/guile-git"
     },
     {
         "name": "guile-filesystem",
-        "branch": "master",
         "url": "https://gitlab.com/leoprikler/guile-filesystem"
     },
     {
@@ -41,22 +36,18 @@
     },
     {
         "name": "geiser-guile",
-        "branch": "master",
         "url": "https://gitlab.com/emacs-geiser/guile.git"
     },
     {
         "name": "pjotrp-guix-notesz",
-        "branch": "master",
         "url": "https://github.com/pjotrp/guix-notes"
     },
     {
         "name": "alezost-guix-config",
-        "branch": "master",
         "url": "https://github.com/alezost/guix-config"
     },
     {
         "name": "akku",
-        "branch": "master",
         "url": "https://gitlab.com/akkuscm/akku.git"
     },
     {
@@ -66,27 +57,22 @@
     },
     {
         "name": "nonguix",
-        "branch": "master",
         "url": "https://gitlab.com/nonguix/nonguix.git"
     },
     {
         "name": "fibers",
-        "branch": "master",
         "url": "https://github.com/wingo/fibers"
     },
     {
         "name": "zile",
-        "branch": "master",
         "url": "https://git.savannah.gnu.org/git/zile"
     },
     {
         "name": "guix",
-        "branch": "master",
         "url": "https://git.savannah.gnu.org/git/guix"
     },
     {
         "name": "guile",
-        "branch": "master",
         "url": "https://git.savannah.gnu.org/git/guile"
     }
 ]
