@@ -3,18 +3,18 @@ exec: /usr/bin/pacman
 
 become:
   builddep: ''
-  autoremove: '-Sc'
-  download: '-Sw'
+  autoremove: '--sync --clean'
+  download: '--sync --downloadonly'
   fix: ''
-  install: "-S"
-  remove: "-R"
+  install: "--sync"
+  remove: "--remove"
   sysupgrade: ''
-  update: "-Syy"
-  upgrade: "-Syu"
+  update: "--sync --refresh"
+  upgrade: "--sync --refresh --sysupgrade"
 
 user:
-  search: "-Ss"
-  depends: '-Si'
-  installed: '-Q'
-  info: 'Si'
-  help: 'help'
+  search: "--sync --search"
+  depends: '--sync --info'
+  installed: '--query'
+  info: '--sync --info'
+  help: '--help'
