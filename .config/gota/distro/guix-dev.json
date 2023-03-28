@@ -9,9 +9,7 @@
       "guile-readline",
       "php",
       "python",
-      "openjdk@11",
-      "go",
-      "ruby"
+      "node"
     ],
     "editors": [
       "zile",
