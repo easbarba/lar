@@ -1,0 +1,21 @@
+{
+    "exec": "/usr/bin/dnf",
+    "become": {
+        "autoremove": "--sync --clean",
+        "deps": "",
+        "download": "--sync --downloadonly",
+        "fix": "",
+        "install": "--sync",
+        "remove": "--remove",
+        "sysupgrade": "",
+        "update": "--sync --refresh",
+        "upgrade": "--sync --refresh --sysupgrade",
+    },
+    "commands": {
+        "depends": "--sync --info",
+        "search": "--sync --search",
+        "help": "help",
+        "info": "--sync --info",
+        "installed": "--query"
+    }
+}
