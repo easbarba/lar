@@ -2,8 +2,8 @@
 
 # MAIN
 export EDITOR=nano
-export VISUAL=nano
-export TERMINAL=foot
+export VISUAL=emacs
+export TERMINAL=gnome-terminal
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -14,11 +14,11 @@ export XDG_STATE_HOME="$HOME/.local/state"
 XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/run/user/$(id -u)}
 export XDG_DATA_DIRS='/var/lib/flatpak/exports/share':"$HOME/.local/share/flatpak/exports/share":$XDG_DATA_DIRS
 
-# DOOM EMACS
+# DOOM EMACS ===================================================
 export DOOM_DIR="$HOME/.config/emacs"
 export PATH="$DOOM_DIR/bin:$PATH"
 
-# GUIX
+# GUIX ===================================================
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 export PATH="$GUIX_PROFILE/bin:$PATH"
@@ -28,17 +28,21 @@ export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
 export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 # <--
 
-# PHP
+# RUBY ===================================================
+export GEM_HOME="$HOME/.local/gem"
+export PATH="$GEM_HOME/bin:$PATH"
+
+# PHP ===================================================
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.symfony5/bin:$PATH"
 
-# NODE.JS
+# NODE.JS ===================================================
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export PATH="$NPM_CONFIG_PREFIX/bin":$PATH
 export PATH="$HOME/.bun/bin":$PATH
 
-# OPS
+# OPS ===================================================
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 export DOCKER_SOCK=$XDG_RUNTIME_DIR/podman/podman.sock
 # export VAGRANT_DEFAULT_PROVIDER=libvirt
