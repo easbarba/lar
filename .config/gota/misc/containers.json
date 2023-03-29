@@ -6,14 +6,14 @@
     "command": "podman pull",
     "jobs": {
         "langs": [
-            "docker.io/library/python:3-alpine"
+            "docker.io/library/python:3-alpine",
+            "docker.io/library/ruby:3-alpine"
         ],
         "db": [
             "docker.io/library/postgres:15-alpine"
         ],
         "latest": [
-            "docker.io/library/alpine:latest",
-            "docker.io/library/busybox:latest"
+            "docker.io/library/alpine:latest"
         ],
         "distro": [
             "docker.io/library/ubuntu:kinetic"
