@@ -1,21 +1,21 @@
 {
-    "exec": "/sbin/apk",
-    "commands": {
-        "clean": "cache clean",
-        "autoremove": "autoremove",
-        "deps": "",
-        "download": "fetch",
-        "fix": "fix",
-        "install": "add",
-        "remove": "del",
-        "update": "update",
-        "upgrade": "upgrade",
-        "build": "",
-        "depends": "depends",
-        "info": "info",
-        "help": "help",
-        "search": "search",
-        "version": "version",
-        "installed": "info"
-    }
+        "exec": "/sbin/apk",
+        "user": {
+                "clean": "cache clean",
+                "autoremove": "autoremove",
+                "deps": "",
+                "download": "fetch",
+                "fix": "fix",
+                "install": "add",
+                "remove": "del",
+                "update": "update",
+                "upgrade": "upgrade",
+                "build": "",
+                "depends": "depends",
+                "info": "info",
+                "help": "help",
+                "search": "search",
+                "version": "version",
+                "installed": "list -I"
+        }
 }

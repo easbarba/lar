@@ -1,6 +1,6 @@
 {
         "exec": "/usr/bin/dnf",
-        "become": {
+        "super": {
                 "autoremove": "autoremove",
                 "deps": "",
                 "download": "",
@@ -12,7 +12,7 @@
                 "upgrade": "upgrade",
                 "depends": "repoquery --requires --resolve"
         },
-        "commands": {
+        "user": {
                 "search": "search",
                 "help": "help",
                 "info": "info",
