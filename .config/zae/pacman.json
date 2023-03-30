@@ -1,5 +1,5 @@
 {
-    "exec": "/usr/bin/dnf",
+    "exec": "/usr/bin/pacman",
     "super": {
         "autoremove": "--sync --clean",
         "deps": "",
