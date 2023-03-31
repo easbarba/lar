@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-. "$HOME/.config/env_variables"
+[[ -f "$HOME/.config/env_variables" ]] && . "$HOME/.config/env_variables"

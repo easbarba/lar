@@ -17,7 +17,9 @@
             "fd",
             "tidy",
             "ripgrep",
-            "shfmt"
+            "shfmt",
+            "cmake",
+            "make"
         ],
         "images": [
             "krita"

@@ -5,12 +5,12 @@
     },
     {
         "name": "solargraph",
-        "url": "https: //github.com/castwide/solargraph"
+        "url": "https://github.com/castwide/solargraph"
     },
     {
         "name": "ruby-lsp",
         "branch": "main",
-        "url": "https: //github.com/Shopify/ruby-lsp"
+        "url": "https://github.com/Shopify/ruby-lsp"
     },
     {
         "name": "sidekiq",

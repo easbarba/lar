@@ -17,15 +17,15 @@ README.md
 .sbclrc
 .screenrc
 .config/awesome
-.config/ansible
 .config/autostart-scripts
+.config/environment.d
+.config/ansible
 .config/bspwm
 .config/cejo
 .config/Clementine
 .config/debian
 .config/devilspie2
 .config/dunst
-.config/environment.d
 .config/fish
 .config/gh
 .config/hyper
@@ -42,7 +42,6 @@ README.md
 .config/nyxt
 .config/mpd
 .config/picom
-.config/plasma-workspace
 .config/powershell
 .config/qtile
 .config/readline

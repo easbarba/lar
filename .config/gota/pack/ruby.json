@@ -4,6 +4,7 @@
         "ruby",
         "gem"
     ],
+    "pre": "gem update --system",
     "post": "gem update",
     "command": "gem install",
     "packages": {
