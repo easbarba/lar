@@ -17,7 +17,6 @@ README.md
 .sbclrc
 .screenrc
 .config/awesome
-.config/autostart-scripts
 .config/environment.d
 .config/ansible
 .config/bspwm
