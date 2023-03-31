@@ -47,5 +47,7 @@ export DOCKER_SOCK=$XDG_RUNTIME_DIR/podman/podman.sock
 # export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # MISC
-export SSH_ASKPASS=/usr/bin/ksshaskpass
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+# export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS=/usr/libexec/ssh/ksshaskpass # opensuse
+SSH_ASKPASS_REQUIRE=prefer
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
