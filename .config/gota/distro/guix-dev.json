@@ -9,6 +9,7 @@
       "guile-readline",
       "ruby",
       "php",
+      "openjdk@17",
       "python",
       "node"
     ],
