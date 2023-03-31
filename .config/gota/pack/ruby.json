@@ -13,8 +13,6 @@
             "rake"
         ],
         "tools": [
-            "ruby-lsp",
-            "solargraph",
             "reek",
             "rufo",
             "rubocop",
