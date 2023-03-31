@@ -36,6 +36,9 @@ export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.symfony5/bin:$PATH"
 
+# JAVA
+export PATH="$HOME/.jbang/bin:$PATH"
+
 # NODE.JS ===================================================
 export NPM_CONFIG_PREFIX="$XDG_CONFIG_HOME/npm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
