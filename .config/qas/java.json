@@ -1,0 +1,77 @@
+[
+  {
+    "name": "jagged",
+    "branch": "main",
+    "url": "https://github.com/ethomson/jagged"
+  },
+  {
+    "name": "eugenp-tutorials",
+    "branch": "master",
+    "url": "https://github.com/eugenp/tutorials"
+  },
+  {
+    "name": "maciejwalkowiak-java-cli-project-template",
+    "branch": "main",
+    "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+  },
+  {
+    "name": "termux",
+    "branch": "master",
+    "url": "https://github.com/termux/termux-app"
+  },
+  {
+    "name": "jbang",
+    "branch": "main",
+    "url": "https://github.com/jbangdev/jbang"
+  },
+  {
+    "name": "junit5",
+    "branch": "main",
+    "url": "https://github.com/junit-team/junit5"
+  },
+  {
+    "name": "start.spring.io",
+    "branch": "main",
+    "url": "https://github.com/spring-io/start.spring.io"
+  },
+  {
+    "name": "spring-boot",
+    "branch": "main",
+    "url": "https://github.com/spring-projects/spring-boot"
+  },
+  {
+    "name": "spring-framework",
+    "branch": "main",
+    "url": "https://github.com/spring-projects/spring-framework"
+  },
+  {
+    "name": "quarkus",
+    "branch": "main",
+    "url": "https://github.com/quarkusio/quarkus"
+  },
+  {
+    "name": "graal",
+    "branch": "master",
+    "url": "https://github.com/oracle/graal"
+  },
+  {
+    "name": "eclipse-jdt-ls",
+    "branch": "master",
+    "url": "https://github.com/eclipse/eclipse.jdt.ls"
+  },
+  {
+    "name": "apache-kafka",
+    "branch": "trunk",
+    "url": "https://github.com/apache/kafka"
+  },
+  {
+    "name": "apache-maven-core",
+    "branch": "master",
+    "url": "https://gitbox.apache.org/repos/asf/maven.git"
+  },
+  {
+    "name": "openjdk",
+    "branch": "master",
+    "url": "https://github.com/openjdk/jdk"
+  }
+]
