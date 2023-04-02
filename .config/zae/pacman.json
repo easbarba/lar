@@ -4,10 +4,8 @@
         "clean": "--sync --clean",
         "deps": "",
         "download": "--sync --downloadonly",
-        "fix": "",
         "install": "--sync",
         "remove": "--remove",
-        "sysupgrade": "",
         "update": "--sync --refresh",
         "upgrade": "--sync --refresh --sysupgrade"
     },

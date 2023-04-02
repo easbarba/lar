@@ -3,11 +3,9 @@
         "super": {
                 "clean": "install-new-recommends",
                 "deps": "source-install --build-deps-only",
-                "download": "",
-                "fix": "fix",
+                "download": "download",
                 "install": "install",
                 "remove": "remove",
-                "sysupgrade": "sysupgrade",
                 "update": "refresh",
                 "upgrade": "update",
                 "depends": "repoquery --requires --resolve"

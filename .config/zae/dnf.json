@@ -4,10 +4,8 @@
                 "clean": "autoremove",
                 "deps": "",
                 "download": "",
-                "fix": "fix",
                 "install": "install",
                 "remove": "remove",
-                "sysupgrade": "sysupgrade",
                 "update": "update",
                 "upgrade": "upgrade",
                 "depends": "repoquery --requires --resolve"

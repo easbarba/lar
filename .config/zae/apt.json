@@ -3,7 +3,6 @@
         "super": {
                 "clean": "clean",
                 "autoremove": "autoremove",
-                "fix": "install -f",
                 "update": "update",
                 "upgrade": "upgrade",
                 "install": "install",
