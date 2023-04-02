@@ -3,6 +3,9 @@
     "refresh": "sudo pacman -Syy",
     "upgrade": "pacman -Syu",
     "command": "sudo pacman -S --noconfirm",
+    "deps": [
+        "pacman"
+    ],
     "packages": {
         "servers": [
             "nginx"

@@ -3,8 +3,14 @@
   "refresh": "sudo zypper refresh",
   "upgrade": "sudo zypper update",
   "command": "sudo install -y --noconfirm",
+  "deps": [
+    "zypper"
+  ],
   "packages": {
-    "editors": ["vim", "neovim"],
+    "editors": [
+      "vim",
+      "neovim"
+    ],
     "postgres": [
       "postgresql",
       "postgresql-server",
@@ -24,6 +30,8 @@
       "cmake",
       "make"
     ],
-    "images": ["krita"]
+    "images": [
+      "krita"
+    ]
   }
 }

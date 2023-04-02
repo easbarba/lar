@@ -3,13 +3,15 @@
   "refresh": "guix pull",
   "upgrade": "guix package -u",
   "command": "guix install",
+  "deps": [
+    "guix"
+  ],
   "packages": {
     "langs": [
       "guile",
       "guile-readline",
       "ruby",
       "php",
-      "openjdk@17",
       "python",
       "node"
     ],

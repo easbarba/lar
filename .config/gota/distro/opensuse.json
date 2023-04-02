@@ -3,6 +3,9 @@
   "refresh": "sudo zypper refresh",
   "upgrade": "sudo zypper up",
   "command": "sudo zypper --no-confirm",
+  "deps": [
+    "zypper"
+  ],
   "packages": {
     "system": [
       "git",

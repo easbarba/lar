@@ -4,6 +4,9 @@
   "refresh": "sudo apt update",
   "upgrade": "sudo apt upgrade -y",
   "pre": "sudo dpkg --add-architecture i386",
+  "deps": [
+    "apt"
+  ],
   "packages": {
     "amd": [
       "amd64-microcode",

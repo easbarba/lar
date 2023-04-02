@@ -1,0 +1,21 @@
+{
+        "exec": "/usr/bin/zypper",
+        "super": {
+                "autoremove": "autoremove",
+                "deps": "",
+                "download": "",
+                "fix": "fix",
+                "install": "install",
+                "remove": "remove",
+                "sysupgrade": "sysupgrade",
+                "update": "refresh",
+                "upgrade": "upgrade",
+                "depends": "repoquery --requires --resolve"
+        },
+        "user": {
+                "search": "search",
+                "help": "help",
+                "info": "info",
+                "installed": ""
+        }
+}
