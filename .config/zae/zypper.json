@@ -1,15 +1,15 @@
 {
         "exec": "/usr/bin/zypper",
         "super": {
-                "autoremove": "autoremove",
-                "deps": "",
+                "clean": "install-new-recommends",
+                "deps": "source-install --build-deps-only",
                 "download": "",
                 "fix": "fix",
                 "install": "install",
                 "remove": "remove",
                 "sysupgrade": "sysupgrade",
                 "update": "refresh",
-                "upgrade": "upgrade",
+                "upgrade": "update",
                 "depends": "repoquery --requires --resolve"
         },
         "user": {

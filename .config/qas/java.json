@@ -1,6 +1,6 @@
 [
     {
-        "name": "bezkoder/docker-compose-spring-boot-mysql",
+        "name": "bezkoder-docker-compose-spring-boot-mysql",
         "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
     },
     {

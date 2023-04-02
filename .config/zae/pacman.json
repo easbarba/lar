@@ -1,7 +1,7 @@
 {
     "exec": "/usr/bin/pacman",
     "super": {
-        "autoremove": "--sync --clean",
+        "clean": "--sync --clean",
         "deps": "",
         "download": "--sync --downloadonly",
         "fix": "",
