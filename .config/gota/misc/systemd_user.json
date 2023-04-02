@@ -1,6 +1,9 @@
 {
     "task": "systemd-user",
     "command": "systemctl enable --now --user",
+    "deps": [
+        "systemctl"
+    ],
     "jobs": {
         "music": [
             "wireplumber",

@@ -1,6 +1,9 @@
 {
     "task": "systemd",
     "command": "sudo systemctl enable --now",
+    "deps": [
+        "systemctl"
+    ],
     "jobs": {
         "servers": [
             "nginx.service"
