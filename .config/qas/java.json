@@ -35,9 +35,8 @@
         "url": "https://github.com/junit-team/junit5"
     },
     {
-        "name": "start.spring.io",
-        "branch": "main",
-        "url": "https://github.com/spring-io/start.spring.io"
+        "name": "jakartaee-persistence",
+        "url": "https://github.com/jakartaee/persistence"
     },
     {
         "name": "spring-boot",
