@@ -9,9 +9,7 @@
             "docker.io/library/python:3-slim",
             "docker.io/library/ruby:3-slim",
             "docker.io/library/composer:lts",
-            "docker.io/library/php:8",
-            "maven:3-eclipse-temurin-17",
-            "openjdk:17-jdk"
+            "docker.io/library/php:8"
         ],
         "db": [
             "docker.io/library/postgres:15"
