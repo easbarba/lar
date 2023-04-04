@@ -1,0 +1,44 @@
+{
+    "manager": "debian-dev",
+    "command": "sudo apt-get install -y",
+    "deps": [
+        "apt"
+    ],
+    "packages": {
+        "postgres": [
+            "postgresql",
+            "postgresql-client",
+            "postgresql-contrib",
+            "libpq-dev"
+        ],
+        "python_tools": [
+            "python3-pip"
+        ],
+        "tools": [
+            "jq",
+            "git-email",
+            "subversion",
+            "mercurial",
+            "libpq-dev",
+            "editorconfig",
+            "direnv",
+            "fd-find",
+            "shfmt",
+            "meson",
+            "cmake",
+            "grip"
+        ],
+        "editors": [
+            "vim",
+            "tidy",
+            "ripgrep"
+        ],
+        "alacritty": [
+            "pkg-config",
+            "libfreetype6-dev",
+            "libfontconfig1-dev",
+            "libxcb-xfixes0-dev",
+            "libxkbcommon-dev"
+        ]
+    }
+}
