@@ -11,12 +11,6 @@
       "vim",
       "neovim"
     ],
-    "postgres": [
-      "postgresql",
-      "postgresql-server",
-      "postgresql-contrib",
-      "postgresql-devel"
-    ],
     "tools": [
       "jq",
       "subversion",
