@@ -39,7 +39,6 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 [[ -x $(command -v tmux) ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && tmux attach || tmux >/dev/null 2>&1
 [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
-[[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [[ -f "$GUIX_PROFILE/etc/profile" ]] && . "$GUIX_PROFILE/etc/profile"
 [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
