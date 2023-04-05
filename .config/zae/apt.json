@@ -1,18 +1,18 @@
 {
-        "exec": "/usr/bin/apt",
-        "super": {
-                "clean": "clean",
-                "update": "update",
-                "upgrade": "upgrade",
-                "install": "install",
-                "remove": "remove",
-                "build": "build-dep"
-        },
-        "user": {
-                "depends": "depends",
-                "download": "download",
-                "info": "--help",
-                "installed": "list --installed",
-                "search": "search"
-        }
+  "exec": "/usr/bin/apt",
+  "super": {
+    "clean": "autoremove",
+    "update": "update",
+    "upgrade": "upgrade",
+    "install": "install",
+    "remove": "remove",
+    "build": "build-dep"
+  },
+  "user": {
+    "depends": "depends",
+    "download": "download",
+    "info": "--help",
+    "installed": "list --installed",
+    "search": "search"
+  }
 }
