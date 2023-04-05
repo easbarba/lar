@@ -86,6 +86,7 @@
         ],
         "user": [
             "firefox",
+            "thunderbird",
             "libreoffice",
             "gimp",
             "xdg-utils",
