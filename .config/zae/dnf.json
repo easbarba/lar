@@ -2,7 +2,7 @@
         "exec": "/usr/bin/dnf",
         "super": {
                 "clean": "autoremove",
-                "deps": "",
+                "build": "",
                 "download": "",
                 "install": "install",
                 "remove": "remove",
@@ -12,8 +12,7 @@
         },
         "user": {
                 "search": "search",
-                "help": "help",
-                "info": "info",
+                "info": "--help",
                 "installed": "list installed"
         }
 }

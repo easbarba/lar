@@ -2,19 +2,16 @@
         "exec": "/usr/bin/apt",
         "super": {
                 "clean": "clean",
-                "autoremove": "autoremove",
                 "update": "update",
                 "upgrade": "upgrade",
                 "install": "install",
                 "remove": "remove",
-                "build": "build-dep",
-                "deps": "build-dep"
+                "build": "build-dep"
         },
         "user": {
                 "depends": "depends",
                 "download": "download",
-                "help": "help",
-                "info": "show",
+                "info": "--help",
                 "installed": "list --installed",
                 "search": "search"
         }

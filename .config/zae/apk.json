@@ -1,19 +1,16 @@
 {
         "exec": "/sbin/apk",
         "user": {
-                "clean": "cache clean",
-                "autoremove": "autoremove",
-                "deps": "",
-                "download": "fetch",
+                "clean": "autoremove",
+                "build": "",
+                "download": "download",
                 "install": "add",
                 "remove": "del",
                 "update": "update",
                 "upgrade": "upgrade",
                 "depends": "depends",
-                "info": "info",
-                "help": "help",
+                "info": "--help",
                 "search": "search",
-                "version": "version",
                 "installed": "list -I"
         }
 }
