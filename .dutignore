@@ -18,6 +18,7 @@ README.md
 .screenrc
 .config/awesome
 .config/environment.d
+.config/plasma-workspace
 .config/ansible
 .config/bspwm
 .config/cejo
@@ -28,7 +29,6 @@ README.md
 .config/fish
 .config/gh
 .config/hyper
-.config/foot
 .config/gtk-3.0
 .config/guix
 .config/i3

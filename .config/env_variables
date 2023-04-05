@@ -22,10 +22,10 @@ export PATH="$DOOM_DIR/bin:$PATH"
 export GUIX_PROFILE="$HOME/.guix-profile"
 export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
 export PATH="$GUIX_PROFILE/bin:$PATH"
-# --> May issue git errors
 export SSL_CERT_DIR="$HOME/.guix-profile/etc/ssl/certs"
 export SSL_CERT_FILE="$HOME/.guix-profile/etc/ssl/certs/ca-certificates.crt"
-export GIT_SSL_CAINFO="$SSL_CERT_FILE"
+# --> May issue git errors
+#export GIT_SSL_CAINFO="$SSL_CERT_FILE"
 # <--
 
 # RUBY ===================================================
@@ -47,5 +47,5 @@ export DOCKER_SOCK=$XDG_RUNTIME_DIR/podman/podman.sock
 # export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # MISC
-export SSH_ASKPASS=/usr/libexec/ssh/ksshaskpass # opensuse
-export SSH_ASKPASS_REQUIRE=prefer
+#export SSH_ASKPASS=/usr/libexec/ssh/ksshaskpass # opensuse
+#export SSH_ASKPASS_REQUIRE=prefer

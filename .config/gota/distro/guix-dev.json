@@ -21,6 +21,7 @@
     ],
     "misc": [
       "nss-certs",
+      "openssl",
       "font-dejavu"
     ],
     "apps": [

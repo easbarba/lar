@@ -29,8 +29,7 @@
             "ranger",
             "aria2",
             "neofetch",
-            "mpd",
-            "pms"
+            "cmus"
         ],
         "ubuntu": [
             "build-essential",

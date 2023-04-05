@@ -1,7 +1,7 @@
 {
   "lang": "python_pip",
   "deps": [
-    "python"
+    "python3"
   ],
   "pre": "python3 -m pip install --upgrade pip",
   "command": "python3 -m pip install --upgrade --user",
