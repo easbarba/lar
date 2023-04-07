@@ -5,16 +5,17 @@
     ],
     "command": "podman pull",
     "jobs": {
-        "langs": [
-            "docker.io/library/python:3-slim",
-            "docker.io/library/ruby:3-slim",
+        "languages": [
             "docker.io/library/composer:lts",
-            "docker.io/library/php:8"
+            "docker.io/library/node:18-slim",
+            "docker.io/library/php:8",
+            "docker.io/library/python:3-slim",
+            "docker.io/library/ruby:3-slim"
         ],
-        "db": [
+        "database": [
             "docker.io/library/postgres:15"
         ],
-        "distro": [
+        "distributions": [
             "docker.io/library/debian:stable-slim",
             "docker.io/library/debian:unstable-slim"
         ]
