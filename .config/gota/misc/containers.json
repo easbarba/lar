@@ -15,6 +15,9 @@
         "database": [
             "docker.io/library/postgres:15"
         ],
+        "tools": [
+            "docker.io/library/nicolaka/netshoot"
+        ],
         "distributions": [
             "docker.io/library/debian:stable-slim",
             "docker.io/library/debian:unstable-slim"
