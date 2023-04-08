@@ -13,14 +13,17 @@
             "docker.io/library/ruby:3-slim"
         ],
         "database": [
-            "docker.io/library/postgres:15"
+            "docker.io/library/postgres:15",
+            "docker.io/library/mariadb:10.7"
         ],
-        "tools": [
+        "utils": [
             "docker.io/library/nicolaka/netshoot"
         ],
         "distributions": [
             "docker.io/library/debian:stable-slim",
-            "docker.io/library/debian:unstable-slim"
+            "docker.io/library/debian:unstable-slim",
+            "docker.io/library/ubuntu:lunar",
+            "docker.io/library/busybox:glibc"
         ]
     }
 }
