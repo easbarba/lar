@@ -22,30 +22,13 @@
         "url": "https://github.com/go-git/go-git"
     },
     {
-        "name": "ent",
-        "url": "https://github.com/ent/ent"
-    },
-    {
         "name": "shfmt",
         "url": "https://github.com/mvdan/sh"
-    },
-    {
-        "name": "gin",
-        "url": "https://github.com/gin-gonic/gin"
     },
     {
         "name": "containerd",
         "branch": "main",
         "url": "https://github.com/containerd/containerd"
-    },
-    {
-        "name": "k3d",
-        "branch": "main",
-        "url": "https://github.com/k3d-io/k3d"
-    },
-    {
-        "name": "k3s",
-        "url": "https://github.com/k3s-io/k3s"
     },
     {
         "name": "kubectl",
