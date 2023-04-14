@@ -3,35 +3,12 @@
   "refresh": "guix pull",
   "upgrade": "guix package -u",
   "command": "guix install",
-  "deps": [
-    "guix"
-  ],
+  "deps": ["guix"],
   "packages": {
-    "langs": [
-      "guile",
-      "guile-readline",
-      "ruby",
-      "php",
-      "python",
-      "node"
-    ],
-    "editors": [
-      "zile",
-      "emacs"
-    ],
-    "misc": [
-      "nss-certs",
-      "openssl",
-      "font-dejavu"
-    ],
-    "apps": [
-      "haunt",
-      "guile-hall",
-      "akku"
-    ],
-    "libs": [
-      "guile-git",
-      "guile-json"
-    ]
+    "langs": ["guile", "guile-readline", "ruby", "php", "python", "go"],
+    "editors": ["zile", "emacs"],
+    "misc": ["nss-certs", "openssl", "font-dejavu"],
+    "apps": ["haunt", "guile-hall", "akku"],
+    "libs": ["guile-git", "guile-json"]
   }
 }
