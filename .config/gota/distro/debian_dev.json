@@ -5,8 +5,10 @@
         "apt"
     ],
     "packages": {
-        "python_tools": [
-            "python3-pip"
+        "langs": [
+            "python3-pip",
+            "nodejs",
+            "npm"
         ],
         "tools": [
             "jq",
