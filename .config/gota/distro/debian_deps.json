@@ -1,0 +1,14 @@
+{
+    "manager": "debian dependencies",
+    "command": "sudo apt-get install -y",
+    "refresh": "sudo apt update",
+    "pre": "sudo dpkg --add-architecture i386",
+    "deps": [
+        "apt"
+    ],
+    "packages": {
+        "gomu": [
+            "libasound2-dev"
+        ]
+    }
+}
