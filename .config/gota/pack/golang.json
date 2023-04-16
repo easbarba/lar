@@ -11,7 +11,8 @@
         ],
         "apps": [
             "github.com/xxxserxxx/gotop/v4/cmd/gotop@latest",
-            "github.com/antonmedv/llama@latest"
+            "github.com/antonmedv/llama@latest",
+            "github.com/issadarkthing/gomu@latest"
         ],
         "tools": [
             "github.com/fatih/gomodifytags@latest",
