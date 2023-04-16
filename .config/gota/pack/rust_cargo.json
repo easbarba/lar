@@ -3,7 +3,7 @@
     "deps": [
         "cargo"
     ],
-    "command": "cargo install --locked",
+    "command": "cargo install",
     "packages": {
         "apps": [
             "starship",
