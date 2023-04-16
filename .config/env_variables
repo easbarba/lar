@@ -36,10 +36,6 @@ export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.symfony5/bin:$PATH"
 
-# GOLANG
-export GOPATH=$HOME/.local/go
-export PATH="$GOPATH/bin":$PATH
-
 # RUST
 export CARGO_HOME=$HOME/.cargo
 export PATH="$CARGO_HOME/bin":$PATH
