@@ -5,11 +5,6 @@
     ],
     "command": "cargo install --locked",
     "packages": {
-        "tools": [
-            "cargo-audit",
-            "cargo-watch",
-            "cargo-tarpaulin"
-        ],
         "apps": [
             "starship",
             "fd-find",
@@ -20,7 +15,8 @@
             "sd",
             "du-dust",
             "tokei",
-            "bottom"
+            "bottom",
+            "termusic"
         ]
     }
 }
