@@ -1,0 +1,22 @@
+[
+  {
+    "name": "zig",
+    "repository": "https://github.com/ziglang/zig"
+  },
+  {
+    "name": "nitter",
+    "repository": "https://github.com/zedeus/nitter"
+  },
+  {
+    "name": "river",
+    "repository": "https://github.com/ifreund/river"
+  },
+  {
+    "name": "zlsq",
+    "repository": "https://github.com/zigtools/zls"
+  },
+  {
+    "name": "zig-bootstrap",
+    "repository": "https://github.com/ziglang/zig-bootstrap"
+  }
+]
