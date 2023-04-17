@@ -1,6 +1,6 @@
 music_dir = ["/home/easbarba/Music"]
-loop_mode = "Queue"
-volume = 60
+loop_mode = "Playlist"
+volume = 10
 speed = 10
 add_playlist_front = false
 gapless = true
