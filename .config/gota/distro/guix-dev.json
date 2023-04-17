@@ -10,7 +10,6 @@
     "langs": [
       "guile",
       "guile-readline",
-      "ruby",
       "php",
       "python"
     ],
