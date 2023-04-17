@@ -1,4 +1,0 @@
-[common]
-single-branch = true
-quiet = true
-depth = "1"
