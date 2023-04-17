@@ -8,8 +8,7 @@
         "langs": [
             "python3-pip",
             "nodejs",
-            "npm",
-            "clang"
+            "npm"
         ],
         "tools": [
             "jq",
