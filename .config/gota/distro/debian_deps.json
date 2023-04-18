@@ -6,9 +6,5 @@
     "deps": [
         "apt"
     ],
-    "packages": {
-        "gomu": [
-            "libasound2-dev"
-        ]
-    }
+    "packages": {}
 }
