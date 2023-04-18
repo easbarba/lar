@@ -10,6 +10,10 @@
             "nodejs",
             "npm"
         ],
+        "cc": [
+            "clang",
+            "clang-format"
+        ],
         "tools": [
             "jq",
             "git-email",
