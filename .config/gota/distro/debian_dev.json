@@ -12,7 +12,8 @@
         ],
         "cc": [
             "clang",
-            "clang-format"
+            "clang-format",
+            "glslang-tools"
         ],
         "tools": [
             "jq",
