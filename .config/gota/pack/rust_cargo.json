@@ -7,16 +7,15 @@
     "packages": {
         "apps": [
             "starship",
-            "fd-find",
+            "bottom",
             "ripgrep",
+            "fd-find",
             "exa",
             "bat",
             "procs",
             "sd",
             "du-dust",
-            "tokei",
-            "bottom",
-            "termusic"
+            "tokei"
         ]
     }
 }

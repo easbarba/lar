@@ -10,7 +10,7 @@
             "docker.io/library/node:18-slim",
             "docker.io/library/php:8",
             "docker.io/library/python:3-slim",
-            "docker.io/library/ruby:3-slim"
+            "docker.io/library/rust:1"
         ],
         "database": [
             "docker.io/library/postgres:15",
