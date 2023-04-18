@@ -1,0 +1,36 @@
+[
+    {
+        "name": "termusic",
+        "url": "https://github.com/tramhao/termusic"
+    },
+    {
+        "name": "kyclark-command-line-rust",
+        "url": "https://github.com/kyclark/command-line-rust"
+    },
+    {
+        "name": "starship",
+        "url": "https://github.com/starship/starship"
+    },
+    {
+        "name": "alacritty",
+        "url": "https://github.com/alacritty/alacritty"
+    },
+    {
+        "name": "axum",
+        "branch": "main",
+        "url": "https://github.com/tokio-rs/axum"
+    },
+    {
+        "name": "rust-analyzer",
+        "url": "https://github.com/rust-lang/rust-analyzer"
+    },
+    {
+        "name": "cargo",
+        "url": "https://github.com/rust-lang/cargo"
+    },
+    {
+        "name": "rust",
+        "branch": "master",
+        "url": "https://github.com/rust-lang/rust"
+    }
+]
