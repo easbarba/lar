@@ -14,7 +14,8 @@
             "clang",
             "clang-format",
             "clangd",
-            "glslang-tools"
+            "glslang-tools",
+            "libcjson-dev"
         ],
         "tools": [
             "jq",
