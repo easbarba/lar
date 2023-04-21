@@ -1,5 +1,10 @@
 [
     {
+        "name": "sdras-awesome-actions",
+        "branch": "main",
+        "url": "https://github.com/sdras/awesome-actions"
+    },
+    {
         "name": "github-gitignore",
         "branch": "main",
         "url": "https://github.com/github/gitignore"
