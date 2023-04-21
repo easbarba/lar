@@ -1,7 +1,7 @@
 [
     {
-        "name": "termusic",
-        "url": "https://github.com/tramhao/termusic"
+        "name": "git2-rs",
+        "url": "https://github.com/rust-lang/git2-rs"
     },
     {
         "name": "kyclark-command-line-rust",
