@@ -8,7 +8,7 @@
         "apps": [
             "starship",
             "bottom",
-            "ripgrep",
+            "--features 'pcre2' ripgrep",
             "fd-find",
             "exa",
             "bat",
