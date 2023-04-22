@@ -1,5 +1,9 @@
 [
     {
+        "name": "tpm",
+        "url": "https://github.com/tmux-plugins/tpm"
+    },
+    {
         "name": "sdras-awesome-actions",
         "branch": "main",
         "url": "https://github.com/sdras/awesome-actions"
