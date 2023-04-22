@@ -1,0 +1,3 @@
+singlebranch = true
+quiet = true
+depth = 1
