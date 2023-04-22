@@ -11,6 +11,7 @@
       "guile",
       "guile-readline",
       "php",
+      "go",
       "python"
     ],
     "editors": [
