@@ -54,6 +54,10 @@
         "url": "https://github.com/golang/tools"
     },
     {
+        "name": "go-wiki",
+        "url": "https://github.com/golang/go.wiki"
+    },
+    {
         "name": "go",
         "url": "https://go.googlesource.com/go"
     }
