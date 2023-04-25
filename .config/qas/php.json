@@ -1,5 +1,9 @@
 [
     {
+        "name": "swagger-php",
+        "url": "https://github.com/zircote/swagger-php"
+    },
+    {
         "name": "symfony-docs",
         "branch": "6.2",
         "url": "https://github.com/symfony/symfony-docs"
