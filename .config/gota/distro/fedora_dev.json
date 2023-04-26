@@ -1,0 +1,39 @@
+{
+  "manager": "Fedora Dev Tools",
+  "refresh": "sudo dnf update",
+  "upgrade": "sudo dnf upgrade",
+  "command": "sudo dnf install -y",
+  "deps": [
+    "dnf"
+  ],
+  "packages": {
+    "langs": [
+    "php-cli",
+    "php-posix",
+    "php-dom",
+    "go",
+    "nodejs",
+    "npm"
+    ],
+    "editors": [
+      "vim",
+      "neovim"
+    ],
+    "tools": [
+      "jq",
+      "subversion",
+      "mercurial",
+      "editorconfig",
+      "direnv",
+      "fd",
+      "tidy",
+      "ripgrep",
+      "shfmt",
+      "cmake",
+      "make"
+    ],
+    "images": [
+      "krita"
+    ]
+  }
+}
