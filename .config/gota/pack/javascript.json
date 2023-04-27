@@ -20,7 +20,10 @@
       "@volar/vue-language-server"
     ],
     "node": [
-      "nodemon"
+      "nodemon",
+      "typescript-language-server",
+      "yaml-language-server",
+      "json-language-server"
     ]
   }
 }
