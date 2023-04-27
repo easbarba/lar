@@ -8,14 +8,13 @@
   ],
   "packages": {
     "langs": [
-    "python-pip",
-    "php-cli",
-    "php-posix",
-    "php-dom",
-    "php-mbstring",
-    "go",
-    "nodejs",
-    "npm"
+      "python-pip",
+      "php-cli",
+      "php-posix",
+      "php-dom",
+      "php-mbstring",
+      "nodejs",
+      "npm"
     ],
     "editors": [
       "vim",
