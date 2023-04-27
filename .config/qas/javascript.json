@@ -10,6 +10,10 @@
     "url": "https://github.com/microsoft/TypeScript"
   },
   {
+    "name": "vue-tools",
+    "url": "https://github.com/vuejs/language-tools"
+  },
+  {
     "name": "vitest",
     "branch": "main",
     "url": "https://github.com/vitest-dev/vitest"
