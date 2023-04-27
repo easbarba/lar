@@ -16,6 +16,9 @@
       "prettier",
       "@prettier/plugin-php"
     ],
+    "vue": [
+      "@volar/vue-language-server"
+    ],
     "node": [
       "nodemon"
     ]
