@@ -1,10 +1,16 @@
 {
   "manager": "Fedora",
   "refresh": "sudo dnf update",
-  "upgrade": "sudo dnf upgrade",
+  "upgrade": "sudo dnf upgrade  --assumeyes",
   "command": "sudo dnf install --assumeyes",
   "deps": [
     "dnf"
+  ],
+  "pre": [
+    "sudo dnf install -y fedora-workstation-repositories",
+    "sudo dnf config-manager -y --set-enabled google-chrome",
+    "sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm",
+    "sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
   ],
   "packages": {
     "system": [
@@ -74,6 +80,9 @@
       "aria2",
       "cmus"
     ],
+    "system": [
+      "sepolicy"
+    ],
     "user": [
       "chromium",
       "firefox",
@@ -98,6 +107,9 @@
       "gstreamer1-plugins-base",
       "gstreamer1-plugins-good",
       "gstreamer1-plugins-ugly-free"
+    ],
+    "external": [
+      "google-chrome-stable"
     ]
   },
   "post": [
