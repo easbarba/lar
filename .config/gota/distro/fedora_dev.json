@@ -33,6 +33,16 @@
       "cmake",
       "make"
     ],
+    "emacs-pdftools": [
+      "libpng-devel",
+      "poppler-devel",
+      "poppler-glib-devel",
+      "zlib-devel",
+      "pkgconf",
+      "automake",
+      "gcc",
+      "autoconf"
+    ],
     "images": [
       "krita"
     ]
