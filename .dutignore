@@ -17,7 +17,6 @@ README.md
 .sbclrc
 .screenrc
 .config/awesome
-.config/environment.d
 .config/plasma-workspace
 .config/ansible
 .config/bspwm
