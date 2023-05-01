@@ -1,15 +1,5 @@
 [
     {
-        "name": "typescript-website",
-        "branch": "v2",
-        "url": "https://github.com/microsoft/TypeScript-Website"
-    },
-    {
-        "name": "typescript",
-        "branch": "main",
-        "url": "https://github.com/microsoft/TypeScript"
-    },
-    {
         "name": "vue-tools",
         "url": "https://github.com/vuejs/language-tools"
     },
@@ -36,6 +26,11 @@
     {
         "name": "yarn",
         "url": "https://github.com/yarnpkg/yarn"
+    },
+    {
+        "name": "mdn-content",
+        "branch": "main",
+        "url": "https://github.com/mdn/content"
     },
     {
         "name": "nodejs",
