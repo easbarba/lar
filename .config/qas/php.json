@@ -72,6 +72,11 @@
         "url": "https://github.com/php-pds/skeleton"
     },
     {
+        "name": "symfony-docs",
+        "branch": "6.3",
+        "url": "https://github.com/symfony/symfony-docs"
+    },
+    {
         "name": "symfony",
         "branch": "6.3",
         "url": "https://github.com/symfony/symfony"
