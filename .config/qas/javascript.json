@@ -24,6 +24,10 @@
         "url": "https://github.com/vuejs/core"
     },
     {
+        "name": "inquirer",
+        "url": "https://github.com/SBoudrias/Inquirer.js"
+    },
+    {
         "name": "yarn",
         "url": "https://github.com/yarnpkg/yarn"
     },
@@ -33,13 +37,13 @@
         "url": "https://github.com/mdn/content"
     },
     {
-        "name": "nodejs",
-        "branch": "main",
-        "url": "https://github.com/nodejs/node"
-    },
-    {
         "name": "axios",
         "branch": "v1.x",
         "url": "https://github.com/axios/axios"
+    },
+    {
+        "name": "nodejs",
+        "branch": "main",
+        "url": "https://github.com/nodejs/node"
     }
 ]
