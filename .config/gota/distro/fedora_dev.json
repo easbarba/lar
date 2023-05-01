@@ -13,6 +13,7 @@
       "php-posix",
       "php-dom",
       "php-mbstring",
+      "php-sodium",
       "nodejs",
       "npm"
     ],
