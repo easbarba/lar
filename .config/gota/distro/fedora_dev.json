@@ -7,15 +7,23 @@
     "dnf"
   ],
   "packages": {
-    "langs": [
+    "php": [
       "python-pip",
       "php-cli",
       "php-posix",
       "php-dom",
       "php-mbstring",
       "php-sodium",
+    ],
+    "java": [
+      "java-17-openjdk.x86_64",
+      "java-17-openjdk-devel.x86_64",
+      "maven",
+      "ant"
+    ],
+    "javascript": [
       "nodejs",
-      "npm"
+      "npm",
     ],
     "editors": [
       "vim",
