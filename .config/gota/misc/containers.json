@@ -1,5 +1,5 @@
 {
-    "task": "containers",
+    "task": "Containers Images",
     "deps": [
         "podman"
     ],
