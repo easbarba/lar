@@ -10,9 +10,6 @@
       "npm",
       "typescript"
     ],
-    "apps": [
-      "gtop"
-    ],
     "tools": [
       "stylelint",
       "js-beautify",
