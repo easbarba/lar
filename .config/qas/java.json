@@ -8,17 +8,21 @@
         "url": "https://github.com/bezkoder/spring-boot-3-rest-api-example"
     },
     {
-        "name": "jagged",
-        "branch": "main",
-        "url": "https://github.com/ethomson/jagged"
-    },
-    {
         "name": "eugenp-tutorials",
         "url": "https://github.com/eugenp/tutorials"
     },
     {
         "name": "maciejwalkowiak-java-cli-project-template",
         "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+    },
+    {
+        "name": "jagged",
+        "branch": "main",
+        "url": "https://github.com/ethomson/jagged"
+    },
+    {
+        "name": "exec-maven-plugin",
+        "url": "https://github.com/mojohaus/exec-maven-plugin"
     },
     {
         "name": "termux",
@@ -33,10 +37,6 @@
         "name": "junit5",
         "branch": "main",
         "url": "https://github.com/junit-team/junit5"
-    },
-    {
-        "name": "jakartaee-persistence",
-        "url": "https://github.com/jakartaee/persistence"
     },
     {
         "name": "spring-boot",
@@ -60,11 +60,6 @@
     {
         "name": "eclipse-jdt-ls",
         "url": "https://github.com/eclipse/eclipse.jdt.ls"
-    },
-    {
-        "name": "apache-kafka",
-        "branch": "trunk",
-        "url": "https://github.com/apache/kafka"
     },
     {
         "name": "apache-maven-core",
