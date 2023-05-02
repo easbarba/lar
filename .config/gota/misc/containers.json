@@ -6,10 +6,12 @@
     "command": "podman pull",
     "jobs": {
         "languages": [
+            "docker.io/library/python:3-slim",
             "docker.io/library/composer:lts",
-            "docker.io/library/node:18-slim",
             "docker.io/library/php:8",
-            "docker.io/library/python:3-slim"
+            "docker.io/library/node:18-slim",
+            "docker.io/library/maven:eclipse-temurin",
+            "docker.io/library/opendjk:17-slim"
         ],
         "database": [
             "docker.io/library/postgres:15",
