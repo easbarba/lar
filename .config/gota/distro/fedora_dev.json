@@ -19,7 +19,8 @@
       "java-17-openjdk.x86_64",
       "java-17-openjdk-devel.x86_64",
       "maven",
-      "ant"
+      "ant",
+      "clang-tools-extra"
     ],
     "javascript": [
       "nodejs",
