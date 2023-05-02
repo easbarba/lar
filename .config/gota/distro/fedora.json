@@ -78,7 +78,7 @@
       "libnotify",
       "ranger",
       "aria2",
-      "cmus"
+      "btop"
     ],
     "system": [
       "sepolicy"
