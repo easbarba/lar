@@ -1,26 +1,21 @@
 {
-    "lang": "php_phive",
-    "deps": [
-        "php",
-        "phive"
+  "lang": "php_phive",
+  "deps": ["php", "phive"],
+  "pre": "phive selfupdate",
+  "post": ["phive update", "phive purge"],
+  "command": "phive install --target ~/.local/bin",
+  "packages": {
+    "tools": [
+      "phpunit",
+      "psalm",
+      "phing",
+      "php-cs-fixer",
+      "phpcbf",
+      "phpcs",
+      "phpstan",
+      "phpDocumentor",
+      "humbug/box"
     ],
-    "pre": "phive selfupdate",
-    "post": "phive update",
-    "command": "phive install --target ~/.local/bin",
-    "packages": {
-        "tools": [
-            "phpunit",
-            "psalm",
-            "phing",
-            "php-cs-fixer",
-            "phpcbf",
-            "phpcs",
-            "phpstan",
-            "phpDocumentor",
-            "humbug/box"
-        ],
-        "apps": [
-            "easbarba/qas"
-        ]
-    }
+    "apps": ["easbarba/qas"]
+  }
 }
