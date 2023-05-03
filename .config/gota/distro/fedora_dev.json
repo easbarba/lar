@@ -3,9 +3,7 @@
   "refresh": "sudo dnf update",
   "upgrade": "sudo dnf upgrade",
   "command": "sudo dnf install -y",
-  "deps": [
-    "dnf"
-  ],
+  "deps": ["dnf"],
   "packages": {
     "php": [
       "python-pip",
@@ -13,23 +11,10 @@
       "php-posix",
       "php-dom",
       "php-mbstring",
-      "php-sodium",
+      "php-sodium"
     ],
-    "java": [
-      "java-17-openjdk.x86_64",
-      "java-17-openjdk-devel.x86_64",
-      "maven",
-      "ant",
-      "clang-tools-extra"
-    ],
-    "javascript": [
-      "nodejs",
-      "npm",
-    ],
-    "editors": [
-      "vim",
-      "neovim"
-    ],
+    "javascript": ["nodejs", "npm"],
+    "editors": ["vim", "neovim"],
     "tools": [
       "jq",
       "subversion",
@@ -53,8 +38,6 @@
       "gcc",
       "autoconf"
     ],
-    "images": [
-      "krita"
-    ]
+    "images": ["krita"]
   }
 }
