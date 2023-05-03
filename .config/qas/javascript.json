@@ -1,5 +1,9 @@
 [
     {
+        "name": "elk",
+        "url": "https://github.com/elk-zone/elk"
+    },
+    {
         "name": "vue-tools",
         "url": "https://github.com/vuejs/language-tools"
     },
