@@ -1,0 +1,23 @@
+lang = "python_pip"
+deps = [ "python3" ]
+pre = "python3 -m pip install --upgrade pip"
+command = "python3 -m pip install --upgrade --user"
+
+[packages]
+tools = [
+  "black",
+  "pipenv",
+  "pyflakes",
+  "pytest",
+  "isort",
+  "nose",
+  "pyperclip",
+  "pytaglib",
+  "twine",
+  "'python-lsp-server[all]'",
+  "gdtoolkit",
+  "grip"
+]
+libs = [ "beautifulsoup4", "interval", "yt-dlp" ]
+apps = [ "cryptography" ]
+

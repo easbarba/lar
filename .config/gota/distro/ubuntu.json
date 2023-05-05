@@ -1,5 +1,5 @@
 {
-  "manager": "ubuntu",
+  "manager": "Ubuntu",
   "command": "sudo apt-get install -y",
   "refresh": "sudo apt update",
   "upgrade": "sudo apt upgrade -y",
@@ -19,7 +19,7 @@
       "xserver-xorg-video-all",
       "libglx-mesa0:i386",
       "mesa-vulkan-drivers:i386",
-      "libgl1-mesa-dri:i386",
+      "libgl1-mesa-drivers:i386",
       "radeontop"
     ],
     "cli": [
@@ -28,9 +28,7 @@
       "libnotify-bin",
       "ranger",
       "aria2",
-      "neofetch",
-      "mpd",
-      "pms"
+      "neofetch"
     ],
     "ubuntu": [
       "build-essential",
@@ -52,7 +50,6 @@
       "bash",
       "gcc",
       "make",
-      "vrms",
       "info",
       "wget",
       "parallel",
@@ -63,8 +60,8 @@
       "acpi",
       "lm-sensors",
       "lshw",
-      "libinput-tools],",
-      "#acpid",
+      "libinput-tools",
+      "acpid",
       "tlp",
       "vainfo",
       "i965-va-driver",
@@ -133,9 +130,6 @@
       "fish"
     ],
     "sound": [
-      "pipewire",
-      "pipewire-pulse",
-      "wireplumber",
       "pulseaudio-utils"
     ],
     "media": [
@@ -151,9 +145,5 @@
       "libtag1-dev",
       "libtagc0-dev"
     ]
-  },
-  "post": [
-    "sudo apt remove -y firefox-esr",
-    "sudo dpkg-reconfigure locales"
-  ]
+  }
 }

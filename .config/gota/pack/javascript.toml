@@ -1,0 +1,21 @@
+lang = "javascript"
+deps = [ "npm" ]
+command = "npm install --global"
+post = "npm update --global"
+
+[packages]
+essential = [ "npm", "typescript" ]
+tools = [
+  "stylelint",
+  "js-beautify",
+  "prettier",
+  "@prettier/plugin-php"
+]
+vue = [ "@volar/vue-language-server" ]
+node = [
+  "nodemon",
+  "typescript-language-server",
+  "yaml-language-server",
+  "json-language-server"
+]
+

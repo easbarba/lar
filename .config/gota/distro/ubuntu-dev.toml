@@ -1,0 +1,22 @@
+manager = "Ubuntu Development Tools"
+command = "sudo apt-get install -y"
+deps = [ "apt" ]
+post = "sudo apt -y autoremove"
+
+[packages]
+langs = [ "nodejs", "npm" ]
+python_tools = [ "python3-pip", "python3-venv" ]
+tools = [
+  "jq",
+  "git-email",
+  "subversion",
+  "mercurial",
+  "editorconfig",
+  "direnv",
+  "fd-find",
+  "shfmt",
+  "meson",
+  "grip"
+]
+editors = [ "vim", "tidy", "ripgrep" ]
+

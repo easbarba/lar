@@ -1,0 +1,41 @@
+manager = "Debian Development Tools"
+command = "sudo apt-get install -y"
+deps = ["apt"]
+
+[packages]
+langs = [
+    "python3-pip",
+]
+nodejs = [
+    "nodejs",
+    "npm",
+]
+php = [
+    "php",
+]
+tools = [
+    "jq",
+    "git-email",
+    "subversion",
+    "mercurial",
+    "libpq-dev",
+    "editorconfig",
+    "direnv",
+    "fd-find",
+    "shfmt",
+    "meson",
+    "cmake",
+    "grip",
+]
+editors = [
+    "vim",
+    "tidy",
+    "ripgrep",
+]
+alacritty = [
+    "pkg-config",
+    "libfreetype6-dev",
+    "libfontconfig1-dev",
+    "libxcb-xfixes0-dev",
+    "libxkbcommon-dev",
+]

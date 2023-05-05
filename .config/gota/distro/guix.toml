@@ -1,0 +1,9 @@
+manager = "guix-dev"
+refresh = "guix pull"
+upgrade = "guix package -u"
+command = "guix install"
+deps = [ "guix" ]
+
+[packages]
+apps = [ "neofetch" ]
+
