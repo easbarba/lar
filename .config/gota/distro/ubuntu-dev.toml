@@ -5,7 +5,8 @@ post = "sudo apt -y autoremove"
 
 [packages]
 langs = [ "nodejs", "npm" ]
-python_tools = [ "python3-pip", "python3-venv" ]
+php = [ "php", "php-cli", "php-curl", "php-mbstring", "php-dom"]
+python = [ "python3-pip", "python3-venv" ]
 tools = [
   "jq",
   "git-email",
