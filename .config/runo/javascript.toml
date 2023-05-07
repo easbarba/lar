@@ -1,0 +1,50 @@
+[[config]]
+name = "elk"
+url = "https://github.com/elk-zone/elk"
+
+[[config]]
+name = "vue-tools"
+url = "https://github.com/vuejs/language-tools"
+
+[[config]]
+name = "vitest"
+branch = "main"
+url = "https://github.com/vitest-dev/vitest"
+
+[[config]]
+name = "vitejs"
+branch = "main"
+url = "https://github.com/vitejs/vite"
+
+[[config]]
+name = "vuejs-docs"
+branch = "main"
+url = "https://github.com/vuejs/docs"
+
+[[config]]
+name = "vuejs"
+branch = "main"
+url = "https://github.com/vuejs/core"
+
+[[config]]
+name = "inquirer"
+url = "https://github.com/SBoudrias/Inquirer.js"
+
+[[config]]
+name = "yarn"
+url = "https://github.com/yarnpkg/yarn"
+
+[[config]]
+name = "mdn-content"
+branch = "main"
+url = "https://github.com/mdn/content"
+
+[[config]]
+name = "axios"
+branch = "v1.x"
+url = "https://github.com/axios/axios"
+
+[[config]]
+name = "nodejs"
+branch = "main"
+url = "https://github.com/nodejs/node"

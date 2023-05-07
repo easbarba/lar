@@ -1,0 +1,127 @@
+[[config]]
+name = "swagger-php"
+url = "https://github.com/zircote/swagger-php"
+
+[[config]]
+name = "phpunit-docs"
+branch = "main"
+url = "https://github.com/sebastianbergmann/phpunit-documentation-english"
+
+[[config]]
+name = "symfony-docs"
+branch = "6.2"
+url = "https://github.com/symfony/symfony-docs"
+
+[[config]]
+name = "thecodeholic-php-developer-roadmap"
+branch = "main"
+url = "https://github.com/thecodeholic/php-developer-roadmap"
+
+[[config]]
+name = "aschmelyun-docker-compose-laravel"
+branch = "main"
+url = "https://github.com/aschmelyun/docker-compose-laravel"
+
+[[config]]
+name = "php-8-objects-patterns-practice"
+branch = "main"
+url = "https://github.com/Apress/php-8-objects-patterns-practice"
+
+[[config]]
+name = "laravel-docs"
+branch = "10.x"
+url = "https://github.com/laravel/docs"
+
+[[config]]
+name = "pint"
+branch = "main"
+url = "https://github.com/laravel/pint"
+
+[[config]]
+name = "collision"
+branch = "v7.x"
+url = "https://github.com/nunomaduro/collision"
+
+[[config]]
+name = "phpunit"
+branch = "main"
+url = "https://github.com/sebastianbergmann/phpunit"
+
+[[config]]
+name = "pest"
+branch = "2.x"
+url = "https://github.com/pestphp/pest"
+
+[[config]]
+name = "psysh"
+branch = "main"
+url = "https://github.com/bobthecow/psysh"
+
+[[config]]
+name = "phpactor"
+url = "https://github.com/phpactor/phpactor"
+
+[[config]]
+name = "slim-php"
+branch = "4.x"
+url = "https://github.com/slimphp/Slim"
+
+[[config]]
+name = "fig-standards"
+url = "https://github.com/php-fig/fig-standards"
+
+[[config]]
+name = "skeleton"
+branch = "1.x"
+url = "https://github.com/php-pds/skeleton"
+
+[[config]]
+name = "symfony-demo"
+branch = "main"
+url = "https://github.com/symfony/demo"
+
+[[config]]
+name = "symfony-docs"
+branch = "6.3"
+url = "https://github.com/symfony/symfony-docs"
+
+[[config]]
+name = "symfony"
+branch = "6.3"
+url = "https://github.com/symfony/symfony"
+
+[[config]]
+name = "laravel-framework"
+branch = "9.x"
+url = "https://github.com/laravel/framework"
+
+[[config]]
+name = "laravel"
+branch = "10.x"
+url = "https://github.com/laravel/laravel"
+
+[[config]]
+name = "composer"
+branch = "main"
+url = "https://github.com/composer/composer"
+
+[[config]]
+name = "phive"
+url = "https://github.com/phar-io/phive"
+
+[[config]]
+name = "doctrine-orm"
+url = "https://github.com/doctrine/orm"
+
+[[config]]
+name = "php-the-right-way"
+branch = "gh-pages"
+url = "https://github.com/codeguy/php-the-right-way"
+
+[[config]]
+name = "php-doc-en"
+url = "https://github.com/php/doc-en"
+
+[[config]]
+name = "php"
+url = "https://github.com/php/php-src"
