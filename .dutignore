@@ -2,7 +2,6 @@ LICENSE
 README.md
 .dutignore
 .git
-.local/share/applications
 .gitignore
 .gemrc
 .irbrc
