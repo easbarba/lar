@@ -40,6 +40,7 @@ README.md
 .config/mpd
 .config/picom
 .config/powershell
+.config/qas
 .config/qtile
 .config/readline
 .config/rubocop
