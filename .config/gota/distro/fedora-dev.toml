@@ -1,0 +1,42 @@
+manager = "Fedora Dev Tools"
+refresh = "sudo dnf update"
+upgrade = "sudo dnf upgrade"
+command = "sudo dnf install -y"
+deps = [ "dnf" ]
+
+[packages]
+php = [
+  "python-pip",
+  "php-cli",
+  "php-posix",
+  "php-dom",
+  "php-mbstring",
+  "php-sodium"
+]
+javascript = [ "nodejs", "npm" ]
+editors = [ "emacs", "vim", "neovim" ]
+tools = [
+  "jq",
+  "subversion",
+  "mercurial",
+  "editorconfig",
+  "direnv",
+  "fd",
+  "tidy",
+  "ripgrep",
+  "shfmt",
+  "cmake",
+  "make",
+  "fd-find"  
+]
+emacs-pdftools = [
+  "libpng-devel",
+  "poppler-devel",
+  "poppler-glib-devel",
+  "zlib-devel",
+  "pkgconf",
+  "automake",
+  "gcc",
+  "autoconf"
+]
+images = [ "krita" ]

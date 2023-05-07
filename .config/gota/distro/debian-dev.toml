@@ -11,7 +11,7 @@ nodejs = [
     "npm",
 ]
 php = [
-    "php",
+    "php", "php-cli", "php-mbstring", "php-curl", "php-pdo"	
 ]
 tools = [
     "jq",
