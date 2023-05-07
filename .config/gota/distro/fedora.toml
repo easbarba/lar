@@ -50,7 +50,8 @@ user = [
   "pandoc",
   "obs-studio",
   "inkscape",
-  "steam"
+  "steam",
+  "exaile"
 ]
 media = [
   "gstreamer1",
