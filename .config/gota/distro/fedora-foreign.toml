@@ -1,0 +1,15 @@
+manager = "Fedora Dev Tools"
+refresh = "sudo dnf updaten--assumeyes"
+upgrade = "sudo dnf upgrade --assumeyes"
+command = "sudo dnf install --assumeyes"
+deps = [ "dnf" ]
+pre = [
+    "sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm",
+    "sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm",
+    "sudo dnf config-manager -y --set-enabled google-chrome"
+]
+
+[packages]
+apps = [
+     "vlc"
+]

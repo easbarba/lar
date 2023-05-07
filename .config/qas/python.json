@@ -9,7 +9,6 @@
   },
   {
     "name": "poetry",
-
     "url": "https://github.com/python-poetry/poetry"
   },
   {
@@ -19,7 +18,6 @@
   },
   {
     "name": "fastapi",
-
     "url": "https://github.com/tiangolo/fastapi"
   },
   {
