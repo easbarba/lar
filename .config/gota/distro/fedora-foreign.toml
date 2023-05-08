@@ -1,4 +1,4 @@
-manager = "Fedora Dev Tools"
+manager = "Fedora Foreign Tools"
 refresh = "sudo dnf updaten--assumeyes"
 upgrade = "sudo dnf upgrade --assumeyes"
 command = "sudo dnf install --assumeyes"

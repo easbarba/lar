@@ -1,4 +1,4 @@
-task = "systemd"
+task = "systemD"
 command = "sudo systemctl enable --now"
 deps = [ "systemctl" ]
 

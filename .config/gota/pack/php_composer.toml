@@ -1,4 +1,4 @@
-lang = "php_composer"
+lang = "PHP Composer"
 deps = [ "php", "composer" ]
 pre = "composer self-update"
 post = "composer global update"

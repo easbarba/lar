@@ -1,4 +1,4 @@
-lang = "python_pip"
+lang = "Python Pip"
 deps = [ "python3" ]
 command = "python3 -m pip install --upgrade --user"
 

@@ -1,4 +1,4 @@
-lang = "php_phive"
+lang = "PHP Phive"
 deps = [ "php", "phive" ]
 pre = "phive selfupdate"
 post = [ "phive update", "phive purge" ]

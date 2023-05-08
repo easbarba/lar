@@ -1,4 +1,4 @@
-lang = "javascript"
+lang = "Javascript"
 deps = [ "npm" ]
 command = "npm install --global"
 post = "npm update --global"

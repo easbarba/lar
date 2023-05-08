@@ -1,4 +1,4 @@
-manager = "guix-dev"
+manager = "GNU Guix Main Tools"
 refresh = "guix pull"
 upgrade = "guix package -u"
 command = "guix install"

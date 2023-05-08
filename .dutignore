@@ -1,7 +1,5 @@
 LICENSE
 README.md
-.dutignore
-.git
 .gitignore
 .gemrc
 .irbrc

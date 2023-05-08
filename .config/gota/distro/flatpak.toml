@@ -1,4 +1,4 @@
-manager = "flatpak"
+manager = "Flatpak"
 upgrade = "flatpak update"
 command = "flatpak install flathub -y"
 deps = [ "flatpak" ]

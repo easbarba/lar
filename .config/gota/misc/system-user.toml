@@ -1,0 +1,6 @@
+task = "Systemd User"
+command = "systemctl enable --now --user"
+deps = [ "systemctl" ]
+
+[jobs]
+music = [ "wireplumber", "pipewire", "pipewire-pulse" ]
