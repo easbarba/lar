@@ -13,6 +13,8 @@ README.md
 .xinitrc
 .sbclrc
 .screenrc
+.config/alacritty
+.config/foot
 .config/awesome
 .config/plasma-workspace
 .config/ansible
