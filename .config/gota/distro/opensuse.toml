@@ -1,0 +1,91 @@
+manager = "opensuse"
+refresh = "sudo zypper refresh"
+upgrade = "sudo zypper up"
+command = "sudo zypper --no-confirm"
+deps = [ "zypper" ]
+
+[packages]
+system = [
+  "git",
+  "openssh",
+  "unzip",
+  "zip",
+  "p7zip",
+  "at",
+  "usbutils",
+  "lsof",
+  "atool",
+  "time",
+  "entr",
+  "tree",
+  "bc",
+  "curl",
+  "strace",
+  "ltrace",
+  "cpio",
+  "lhasa",
+  "lzop",
+  "rsync",
+  "pv",
+  "texinfo",
+  "autoconf",
+  "automake",
+  "socat",
+  "tmux",
+  "unrar"
+]
+shell = [ "bash-completion", "ShellCheck" ]
+fonts = [
+  "hack-fonts",
+  "dejavu-fonts",
+  "noto-fonts",
+  "jetbrains-mono-fonts",
+  "liberation-fonts",
+  "google-droid-fonts"
+]
+kde = [ "ktorrent" ]
+laptop = [ "acpi", "sensors", "lshw", "acpid" ]
+wayland = [ "wl-clipboard" ]
+cli = [
+  "htop",
+  "bottom",
+  "ffmpeg",
+  "mpv",
+  "elinks",
+  "libnotify",
+  "ranger",
+  "aria2",
+  "cmus"
+]
+user = [
+  "chromium",
+  "firefox",
+  "libreoffice",
+  "gimp",
+  "thunderbird",
+  "xdg-utils",
+  "imagemagick",
+  "aspell",
+  "aspell-pt_BR",
+  "aspell-en",
+  "calibre",
+  "pandoc",
+  "obs-studio",
+  "inkscape"
+]
+media = [
+  "gstreamer",
+  "gstreamer-libav",
+  "gstremer-plugins-bad",
+  "gstreamer-plugins-base",
+  "gstreamer-plugins-good",
+  "gstreamer-plugins-ugly"
+]
+amd = [
+  "amd-ucode",
+  "Mesa",
+  "lib32-mesa",
+  "xf86-video-amdgpu",
+  "vulkan-radeon",
+  "lib32-vulkan-radeon"
+]

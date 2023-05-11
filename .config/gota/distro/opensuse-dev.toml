@@ -1,0 +1,22 @@
+manager = "opensuse_dev"
+refresh = "sudo zypper refresh"
+upgrade = "sudo zypper update"
+command = "sudo install -y --noconfirm"
+deps = [ "zypper" ]
+
+[packages]
+editors = [ "vim", "neovim" ]
+tools = [
+  "jq",
+  "subversion",
+  "mercurial",
+  "editorconfig",
+  "direnv",
+  "fd",
+  "tidy",
+  "ripgrep",
+  "shfmt",
+  "cmake",
+  "make"
+]
+images = [ "krita" ]

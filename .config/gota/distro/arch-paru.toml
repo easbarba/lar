@@ -1,0 +1,6 @@
+manager = "arch_paru"
+command = "paru --install"
+deps = [ "paru" ]
+
+[packages]
+misc = [ "taglib-git", "google-chrome" ]
