@@ -10,7 +10,8 @@ tools = [
   "guzzlehttp/guzzle",
   "techlivezheng/phpctags",
   "clue/phar-composer",
-  "zircote/swagger-php"
+  "zircote/swagger-php",
+  "easbarba/onur"
 ]
 apps = [ "psy/psysh" ]
 
