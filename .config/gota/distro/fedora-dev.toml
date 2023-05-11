@@ -13,7 +13,6 @@ php = [
   "php-mbstring",
   "php-sodium"
 ]
-javascript = [ "nodejs", "npm" ]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
   "jq",
