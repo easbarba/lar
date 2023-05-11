@@ -1,0 +1,53 @@
+[
+    {
+        "name": "elk",
+        "url": "https://github.com/elk-zone/elk"
+    },
+    {
+        "name": "vue-tools",
+        "url": "https://github.com/vuejs/language-tools"
+    },
+    {
+        "name": "vitest",
+        "branch": "main",
+        "url": "https://github.com/vitest-dev/vitest"
+    },
+    {
+        "name": "vitejs",
+        "branch": "main",
+        "url": "https://github.com/vitejs/vite"
+    },
+    {
+        "name": "vuejs-docs",
+        "branch": "main",
+        "url": "https://github.com/vuejs/docs"
+    },
+    {
+        "name": "vuejs",
+        "branch": "main",
+        "url": "https://github.com/vuejs/core"
+    },
+    {
+        "name": "inquirer",
+        "url": "https://github.com/SBoudrias/Inquirer.js"
+    },
+    {
+        "name": "yarn",
+        "url": "https://github.com/yarnpkg/yarn"
+    },
+    {
+        "name": "mdn-content",
+        "branch": "main",
+        "url": "https://github.com/mdn/content"
+    },
+    {
+        "name": "axios",
+        "branch": "v1.x",
+        "url": "https://github.com/axios/axios"
+    },
+    {
+        "name": "nodejs",
+        "branch": "main",
+        "url": "https://github.com/nodejs/node"
+    }
+]
