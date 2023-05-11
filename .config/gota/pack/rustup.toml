@@ -1,0 +1,6 @@
+lang = "rustup"
+deps = [ "rustup" ]
+command = "rustup component add"
+
+[packages]
+tools = [ "clippy", "rustfmt", "rust-analyzer" ]

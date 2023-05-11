@@ -1,0 +1,17 @@
+lang = "rust_cargo"
+deps = [ "cargo" ]
+command = "cargo install"
+
+[packages]
+apps = [
+  "starship",
+  "bottom",
+  "--features 'pcre2' ripgrep",
+  "fd-find",
+  "exa",
+  "bat",
+  "procs",
+  "sd",
+  "du-dust",
+  "tokei"
+]

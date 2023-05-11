@@ -1,0 +1,33 @@
+lang = "golang"
+deps = [ "go" ]
+command = "go install -v"
+
+[packages]
+lsp = [
+  "github.com/hashicorp/terraform-ls@latest",
+  "golang.org/x/tools/gopls@latest"
+]
+apps = [
+  "github.com/xxxserxxx/gotop/v4/cmd/gotop@latest",
+  "github.com/antonmedv/llama@latest",
+  "github.com/issadarkthing/gomu@latest",
+  "github.com/BurntSushi/toml/cmd/tomlv@latest"
+]
+tools = [
+  "github.com/fatih/gomodifytags@latest",
+  "github.com/rogpeppe/godef@latest",
+  "github.com/x-motemen/gore/cmd/gore@latest",
+  "github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest",
+  "github.com/ramya-rao-a/go-outline@latest",
+  "github.com/go-delve/delve/cmd/dlv@latest",
+  "github.com/cweill/gotests/...@latest",
+  "github.com/ramya-rao-a/go-outline@latest",
+  "github.com/mdempsky/gocode@latest",
+  "github.com/githubnemo/CompileDaemon@latest",
+  "golang.org/x/tools/cmd/guru@latest"
+]
+devel = [
+  "mvdan.cc/sh/v3/cmd/shfmt@latest",
+  "github.com/x-motemen/gore/cmd/gore@latest",
+  "github.com/erning/gorun@latest"
+]
