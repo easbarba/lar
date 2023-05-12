@@ -11,7 +11,8 @@ php = [
   "php-posix",
   "php-dom",
   "php-mbstring",
-  "php-sodium"
+  "php-sodium",
+  "php-ffi"
 ]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
