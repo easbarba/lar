@@ -5,14 +5,12 @@ command = "sudo dnf install --assumeyes"
 deps = [ "dnf" ]
 
 [packages]
-php = [
-  "python-pip",
-  "php-cli",
-  "php-posix",
-  "php-dom",
-  "php-mbstring",
-  "php-sodium",
-  "php-ffi"
+java = [
+     "java-17-openjdk.x86_64",
+     "java-17-openjdk-devel.x86_64",
+     "maven",
+     "ant",
+     "clang-tools-extra"
 ]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
