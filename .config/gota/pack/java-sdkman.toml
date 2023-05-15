@@ -5,4 +5,5 @@ post = "source $HOME/.sdkman/bin/sdkman-init.sh && sdk update"
 command = "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install"
 
 [packages]
-tools = [ "gradle", "springboot", "micronaut", "quarkus" ]
+tools = [ "gradle", "bld" ]
+frameworks = [ "springboot", "micronaut", "quarkus" ]
