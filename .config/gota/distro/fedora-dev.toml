@@ -25,7 +25,8 @@ tools = [
   "shfmt",
   "cmake",
   "make",
-  "fd-find"  
+  "fd-find",
+  "fzf"
 ]
 emacs-pdftools = [
   "libpng-devel",
