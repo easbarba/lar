@@ -5,4 +5,4 @@ post = "brew update"
 command = "brew install"
 
 [packages]
-langs = [ "clojure/tools/clojure" ]
+clojure = [ "clojure/tools/clojure", "leiningen", "clojurescript", "clojure-lsp" ]
