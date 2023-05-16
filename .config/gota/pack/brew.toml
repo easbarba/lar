@@ -1,0 +1,8 @@
+lang = "Brew"
+deps = [ "brew" ]
+pre = "brew update"
+post = "brew update"
+command = "brew install"
+
+[packages]
+langs = [ "clojure/tools/clojure" ]
