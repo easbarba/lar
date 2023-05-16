@@ -2,6 +2,7 @@ lang = "Graal Component Update"
 deps = [ "gu" ]
 post = "gu upgrade"
 command = "gu install"
+link = "Builds/graal/bin"
 
 [packages]
 apps = [ "native-image" ]
