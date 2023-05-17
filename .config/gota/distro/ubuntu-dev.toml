@@ -4,8 +4,6 @@ deps = [ "apt" ]
 post = "sudo apt -y autoremove"
 
 [packages]
-langs = [ "nodejs", "npm" ]
-php = [ "php", "php-cli", "php-curl", "php-mbstring", "php-dom"]
 python = [ "python3-pip", "python3-venv" ]
 tools = [
   "jq",
@@ -16,8 +14,7 @@ tools = [
   "direnv",
   "fd-find",
   "shfmt",
-  "meson",
-  "grip"
+  "meson"
 ]
 editors = [ "vim", "tidy", "ripgrep" ]
 
