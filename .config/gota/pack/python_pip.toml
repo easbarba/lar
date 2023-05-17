@@ -1,6 +1,6 @@
 lang = "Python Pip"
 deps = [ "python3" ]
-command = "python3 -m pip install --upgrade --user"
+command = "python3 -m pip install --upgrade --user --break-system-packages"
 
 [packages]
 tools = [
