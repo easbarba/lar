@@ -84,7 +84,8 @@ user = [
   "calibre",
   "pandoc",
   "obs-studio",
-  "inkscape"
+  "inkscape",
+  "transmission-gtk"
 ]
 system = [
   "flatpak",
@@ -118,7 +119,7 @@ system = [
   "automake",
   "socat"
 ]
-shell = [ "bash-completion", "shellcheck", "fish" ]
+shell = [ "bash-completion", "shellcheck" ]
 sound = [ "pulseaudio-utils" ]
 media = [
   "ffmpeg",
