@@ -1,4 +1,10 @@
 [
+
+    {
+    "name": "seancorfield-clj-new",
+    "branch": "develop",
+    "url": "https://github.com/seancorfield/clj-new"
+},
     {
     "name": "pedestal",
     "url": "https://github.com/pedestal/pedestal"
