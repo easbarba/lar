@@ -5,6 +5,17 @@ post = "sudo apt -y autoremove"
 
 [packages]
 python = [ "python3-pip", "python3-venv" ]
+emacs = [
+  "autoconf",
+  "automake",
+  "gcc",
+  "libpng-dev",
+  "libpoppler-dev",
+  "libpoppler-glib-dev",
+  "libz-dev",
+  "make",
+  "pkg-config"
+]
 tools = [
   "jq",
   "git-email",
