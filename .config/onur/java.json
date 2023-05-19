@@ -1,6 +1,10 @@
 [
   {
-    "name": "mechero/spring-boot-testing-strategies",
+    "name": "tericcabrel-blog-tutorials",
+    "url": "https://github.com/tericcabrel/blog-tutorials"
+  }
+ ,{
+    "name": "mechero-spring-boot-testing-strategies",
     "url": "https://github.com/mechero/spring-boot-testing-strategies"
   }
  ,{
