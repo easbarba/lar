@@ -7,8 +7,8 @@ languages = [
   "docker.io/library/python:3-slim",
   "docker.io/library/maven:3-eclipse-temurin-17",
   "docker.io/library/eclipse-temurin:17-jdk",
-  "docker.io/library/maven:3-eclipse-temurin-19",
-  "docker.io/library/eclipse-temurin:19-jdk"
+  "docker.io/library/maven:3-eclipse-temurin-20",
+  "docker.io/library/eclipse-temurin:20-jdk"
 ]
 database = [
   "docker.io/library/postgres:15",
