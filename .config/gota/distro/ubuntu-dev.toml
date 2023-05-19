@@ -25,7 +25,9 @@ tools = [
   "direnv",
   "fd-find",
   "shfmt",
-  "meson"
+  "meson",
+  "cmake",
+  "fzf"
 ]
 editors = [ "vim", "tidy", "ripgrep" ]
 
