@@ -5,15 +5,23 @@ command = "python3 -m pip install --upgrade --user --break-system-packages"
 [packages]
 tools = [
   "black",
+  "rope",
   "pipenv",
   "pyflakes",
+  "mccabe",
+  "pycodestyle",
+  "pydocstyle",
   "pytest",
+  "autopep8",
+  "flake8",
+  "pylint",
+  "yapf",
   "isort",
   "nose",
   "pyperclip",
   "pytaglib",
   "twine",
-  "'python-lsp-server[all]'",
+  "python-lsp-server[all]",
   "gdtoolkit",
   "grip"
 ]
