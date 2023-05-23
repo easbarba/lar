@@ -1,90 +1,94 @@
 [
-  {
-    "name": "tericcabrel-blog-tutorials",
-    "url": "https://github.com/tericcabrel/blog-tutorials"
-  },
-  {
-    "name": "mechero-spring-boot-testing-strategies",
-    "url": "https://github.com/mechero/spring-boot-testing-strategies"
-  },
-  {
-    "name": "rife2",
-    "url": "https://github.com/rife2/rife2",
-    "branch": "main"
-  },
-  {
-    "name": "bld",
-    "url": "https://github.com/rife2/bld",
-    "branch": "main"
-  },
-  {
-    "name": "bezkoder-docker-compose-spring-boot-mysql",
-    "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
-  },
-  {
-    "name": "bezkoder-spring-boot-3-rest-api-example",
-    "url": "https://github.com/bezkoder/spring-boot-3-rest-api-example"
-  },
-  {
-    "name": "eugenp-tutorials",
-    "url": "https://github.com/eugenp/tutorials"
-  },
-  {
-    "name": "maciejwalkowiak-java-cli-project-template",
-    "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
-  },
-  {
-    "name": "jagged",
-    "url": "https://github.com/ethomson/jagged",
-    "branch": "main"
-  },
-  {
-    "name": "exec-maven-plugin",
-    "url": "https://github.com/mojohaus/exec-maven-plugin"
-  },
-  {
-    "name": "termux",
-    "url": "https://github.com/termux/termux-app"
-  },
-  {
-    "name": "jbang",
-    "url": "https://github.com/jbangdev/jbang",
-    "branch": "main"
-  },
-  {
-    "name": "junit5",
-    "url": "https://github.com/junit-team/junit5",
-    "branch": "main"
-  },
-  {
-    "name": "spring-boot",
-    "url": "https://github.com/spring-projects/spring-boot",
-    "branch": "main"
-  },
-  {
-    "name": "spring-framework",
-    "url": "https://github.com/spring-projects/spring-framework",
-    "branch": "main"
-  },
-  {
-    "name": "quarkus",
-    "url": "https://github.com/quarkusio/quarkus",
-    "branch": "main"
-  },
-  {
-    "name": "graal",
-    "url": "https://github.com/oracle/graal"
-  },
-  {
-    "name": "eclipse-jdt-ls",
-    "url": "https://github.com/eclipse/eclipse.jdt.ls"
-  },
-  {
-    "name": "apache-maven-core",
-    "url": "https://gitbox.apache.org/repos/asf/maven.git"
-  },
-  {
-    "name": "openjdk",
-    "url": "https://github.com/openjdk/jdk"
-  }
+    {
+        "name": "jakartaee-rest",
+        "url": "https://github.com/jakartaee/rest"
+    },
+    {
+        "name": "tericcabrel-blog-tutorials",
+        "url": "https://github.com/tericcabrel/blog-tutorials"
+    },
+    {
+        "name": "mechero-spring-boot-testing-strategies",
+        "url": "https://github.com/mechero/spring-boot-testing-strategies"
+    },
+    {
+        "name": "rife2",
+        "url": "https://github.com/rife2/rife2",
+        "branch": "main"
+    },
+    {
+        "name": "bld",
+        "url": "https://github.com/rife2/bld",
+        "branch": "main"
+    },
+    {
+        "name": "bezkoder-docker-compose-spring-boot-mysql",
+        "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
+    },
+    {
+        "name": "bezkoder-spring-boot-3-rest-api-example",
+        "url": "https://github.com/bezkoder/spring-boot-3-rest-api-example"
+    },
+    {
+        "name": "eugenp-tutorials",
+        "url": "https://github.com/eugenp/tutorials"
+    },
+    {
+        "name": "maciejwalkowiak-java-cli-project-template",
+        "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+    },
+    {
+        "name": "jagged",
+        "url": "https://github.com/ethomson/jagged",
+        "branch": "main"
+    },
+    {
+        "name": "exec-maven-plugin",
+        "url": "https://github.com/mojohaus/exec-maven-plugin"
+    },
+    {
+        "name": "termux",
+        "url": "https://github.com/termux/termux-app"
+    },
+    {
+        "name": "jbang",
+        "url": "https://github.com/jbangdev/jbang",
+        "branch": "main"
+    },
+    {
+        "name": "junit5",
+        "url": "https://github.com/junit-team/junit5",
+        "branch": "main"
+    },
+    {
+        "name": "spring-boot",
+        "url": "https://github.com/spring-projects/spring-boot",
+        "branch": "main"
+    },
+    {
+        "name": "spring-framework",
+        "url": "https://github.com/spring-projects/spring-framework",
+        "branch": "main"
+    },
+    {
+        "name": "quarkus",
+        "url": "https://github.com/quarkusio/quarkus",
+        "branch": "main"
+    },
+    {
+        "name": "graal",
+        "url": "https://github.com/oracle/graal"
+    },
+    {
+        "name": "eclipse-jdt-ls",
+        "url": "https://github.com/eclipse/eclipse.jdt.ls"
+    },
+    {
+        "name": "apache-maven-core",
+        "url": "https://gitbox.apache.org/repos/asf/maven.git"
+    },
+    {
+        "name": "openjdk",
+        "url": "https://github.com/openjdk/jdk"
+    }
 ]
