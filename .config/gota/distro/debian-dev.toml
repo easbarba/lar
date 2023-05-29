@@ -3,16 +3,8 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
-langs = [
-    "python3-pip",
-]
-nodejs = [
-    "nodejs",
-    "npm",
-]
-php = [
-    "php", "php-cli", "php-mbstring", "php-curl", "php-pdo"	
-]
+default = [ "python3-pip" ]
+java = [ "openjdk-17-jdk", "openjdk-17-jre", "clang-format" ]
 tools = [
     "jq",
     "git-email",
@@ -26,16 +18,21 @@ tools = [
     "meson",
     "cmake",
     "grip",
+    "tidy",
+    "ripgrep",
+    "fzf"
 ]
 editors = [
     "vim",
-    "tidy",
-    "ripgrep",
 ]
-alacritty = [
-    "pkg-config",
-    "libfreetype6-dev",
-    "libfontconfig1-dev",
-    "libxcb-xfixes0-dev",
-    "libxkbcommon-dev",
+emacs = [
+  "autoconf",
+  "automake",
+  "gcc",
+  "libpng-dev",
+  "libpoppler-dev",
+  "libpoppler-glib-dev",
+  "libz-dev",
+  "make",
+  "pkg-config"
 ]

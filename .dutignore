@@ -38,6 +38,8 @@ README.md
 .config/ncmpcpp
 .config/nyxt
 .config/mpd
+.config/psysh
+.config/phpactor
 .config/picom
 .config/powershell
 .config/qas
@@ -49,6 +51,7 @@ README.md
 .config/sxhkd
 .config/wayfire
 .config/systemd
+.config/termusic
 .config/sway
 .config/swaylock
 .config/xmodmap

@@ -31,17 +31,13 @@ cli = [
     "libnotify-bin",
     "ranger",
     "aria2",
-    "neofetch",
-    "cmus",
+    "neofetch"
 ]
 ubuntu = [
     "build-essential",
     "aptitude",
     "apt-file",
-    "gdebi",
-    "apt-listbugs",
-    "apt-listchanges",
-    "reportbug",
+    "gdebi"
 ]
 fonts = [
     "fonts-hack",
@@ -56,7 +52,6 @@ gnu = [
     "bash",
     "gcc",
     "make",
-    "vrms",
     "info",
     "wget",
     "parallel",
@@ -79,13 +74,11 @@ laptop = [
     "sysstat",
     "hddtemp",
 ]
-php = [
-    "php",
-]
 gnome = [
     "gnome-shell-extensions",
     "gnome-music",
     "gnome-tweaks",
+    "gnome-console"
 ]
 wayland = ["wl-clipboard"]
 user = [
@@ -101,6 +94,8 @@ user = [
     "pandoc",
     "obs-studio",
     "inkscape",
+    "rhythmbox-plugin-alternative-toolbar",
+    "foot"
 ]
 system = [
     "flatpak",
