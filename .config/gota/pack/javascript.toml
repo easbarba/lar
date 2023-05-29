@@ -11,6 +11,9 @@ tools = [
   "prettier",
   "@prettier/plugin-php"
 ]
+lsp = [
+    "bash-language-server"
+]
 vue = [ "@volar/vue-language-server" ]
 node = [
   "nodemon",
