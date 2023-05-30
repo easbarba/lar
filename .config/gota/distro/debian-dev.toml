@@ -3,7 +3,7 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
-default = [ "python3-pip" ]
+default = [ "python3-pip", "python3-venv" ]
 java = [ "openjdk-17-jdk", "openjdk-17-jre", "clang-format" ]
 tools = [
     "jq",
