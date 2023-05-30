@@ -23,7 +23,8 @@ tools = [
   "twine",
   "python-lsp-server[all]",
   "gdtoolkit",
-  "grip"
+  "grip",
+  "gitpython"
 ]
 libs = [ "beautifulsoup4", "interval", "yt-dlp" ]
 apps = [ "cryptography" ]
