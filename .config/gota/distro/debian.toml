@@ -31,7 +31,8 @@ cli = [
     "libnotify-bin",
     "ranger",
     "aria2",
-    "neofetch"
+    "neofetch",
+    "unrar"
 ]
 ubuntu = [
     "build-essential",
