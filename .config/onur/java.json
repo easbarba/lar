@@ -1,5 +1,9 @@
 [
     {
+        "name": "danvega-springit-course-docs",
+        "url": "https://github.com/danvega/springit-course-docs"
+    },
+    {
         "name": "jakartaee-rest",
         "url": "https://github.com/jakartaee/rest"
     },
