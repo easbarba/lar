@@ -14,9 +14,7 @@ apps = [
 ]
 tools = [
   "com.getpostman.Postman",
-  "com.jetbrains.IntelliJ-IDEA-Community",
   "io.github.NhekoReborn.Nheko",
   "io.podman_desktop.PodmanDesktop",
-  "org.eclipse.Java",
   "com.valvesoftware.Steam"
 ]
