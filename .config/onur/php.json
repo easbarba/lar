@@ -1,98 +1,130 @@
 [
     {
-        "name": "danvega-springit-course-docs",
-        "url": "https://github.com/danvega/springit-course-docs"
+        "name": "swagger-php",
+        "url": "https://github.com/zircote/swagger-php"
     },
     {
-        "name": "jakartaee-rest",
-        "url": "https://github.com/jakartaee/rest"
+        "name": "phpunit-docs",
+        "branch": "main",
+        "url": "https://github.com/sebastianbergmann/phpunit-documentation-english"
     },
     {
-        "name": "tericcabrel-blog-tutorials",
-        "url": "https://github.com/tericcabrel/blog-tutorials"
+        "name": "symfony-docs",
+        "branch": "6.2",
+        "url": "https://github.com/symfony/symfony-docs"
     },
     {
-        "name": "mechero-spring-boot-testing-strategies",
-        "url": "https://github.com/mechero/spring-boot-testing-strategies"
+        "name": "thecodeholic-php-developer-roadmap",
+        "branch": "main",
+        "url": "https://github.com/thecodeholic/php-developer-roadmap"
     },
     {
-        "name": "rife2",
-        "url": "https://github.com/rife2/rife2",
-        "branch": "main"
+        "name": "aschmelyun-docker-compose-laravel",
+        "branch": "main",
+        "url": "https://github.com/aschmelyun/docker-compose-laravel"
     },
     {
-        "name": "bld",
-        "url": "https://github.com/rife2/bld",
-        "branch": "main"
+        "name": "php-8-objects-patterns-practice",
+        "branch": "main",
+        "url": "https://github.com/Apress/php-8-objects-patterns-practice"
     },
     {
-        "name": "bezkoder-docker-compose-spring-boot-mysql",
-        "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
+        "name": "laravel-docs",
+        "branch": "10.x",
+        "url": "https://github.com/laravel/docs"
     },
     {
-        "name": "bezkoder-spring-boot-3-rest-api-example",
-        "url": "https://github.com/bezkoder/spring-boot-3-rest-api-example"
+        "name": "pint",
+        "branch": "main",
+        "url": "https://github.com/laravel/pint"
     },
     {
-        "name": "eugenp-tutorials",
-        "url": "https://github.com/eugenp/tutorials"
+        "name": "collision",
+        "branch": "v7.x",
+        "url": "https://github.com/nunomaduro/collision"
     },
     {
-        "name": "maciejwalkowiak-java-cli-project-template",
-        "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+        "name": "phpunit",
+        "branch": "main",
+        "url": "https://github.com/sebastianbergmann/phpunit"
     },
     {
-        "name": "jagged",
-        "url": "https://github.com/ethomson/jagged",
-        "branch": "main"
+        "name": "pest",
+        "branch": "2.x",
+        "url": "https://github.com/pestphp/pest"
     },
     {
-        "name": "exec-maven-plugin",
-        "url": "https://github.com/mojohaus/exec-maven-plugin"
+        "name": "psysh",
+        "branch": "main",
+        "url": "https://github.com/bobthecow/psysh"
     },
     {
-        "name": "termux",
-        "url": "https://github.com/termux/termux-app"
+        "name": "phpactor",
+        "url": "https://github.com/phpactor/phpactor"
     },
     {
-        "name": "jbang",
-        "url": "https://github.com/jbangdev/jbang",
-        "branch": "main"
+        "name": "slim-php",
+        "branch": "4.x",
+        "url": "https://github.com/slimphp/Slim"
     },
     {
-        "name": "junit5",
-        "url": "https://github.com/junit-team/junit5",
-        "branch": "main"
+        "name": "fig-standards",
+        "url": "https://github.com/php-fig/fig-standards"
     },
     {
-        "name": "spring-boot",
-        "url": "https://github.com/spring-projects/spring-boot",
-        "branch": "main"
+        "name": "skeleton",
+        "branch": "1.x",
+        "url": "https://github.com/php-pds/skeleton"
     },
     {
-        "name": "spring-framework",
-        "url": "https://github.com/spring-projects/spring-framework",
-        "branch": "main"
+        "name": "symfony-demo",
+        "branch": "main",
+        "url": "https://github.com/symfony/demo"
     },
     {
-        "name": "quarkus",
-        "url": "https://github.com/quarkusio/quarkus",
-        "branch": "main"
+        "name": "symfony-docs",
+        "branch": "6.3",
+        "url": "https://github.com/symfony/symfony-docs"
     },
     {
-        "name": "graal",
-        "url": "https://github.com/oracle/graal"
+        "name": "symfony",
+        "branch": "6.3",
+        "url": "https://github.com/symfony/symfony"
     },
     {
-        "name": "eclipse-jdt-ls",
-        "url": "https://github.com/eclipse/eclipse.jdt.ls"
+        "name": "laravel-framework",
+        "branch": "9.x",
+        "url": "https://github.com/laravel/framework"
     },
     {
-        "name": "apache-maven-core",
-        "url": "https://gitbox.apache.org/repos/asf/maven.git"
+        "name": "laravel",
+        "branch": "10.x",
+        "url": "https://github.com/laravel/laravel"
     },
     {
-        "name": "openjdk",
-        "url": "https://github.com/openjdk/jdk"
+        "name": "composer",
+        "branch": "main",
+        "url": "https://github.com/composer/composer"
+    },
+    {
+        "name": "phive",
+        "url": "https://github.com/phar-io/phive"
+    },
+    {
+        "name": "doctrine-orm",
+        "url": "https://github.com/doctrine/orm"
+    },
+    {
+        "name": "php-the-right-way",
+        "branch": "gh-pages",
+        "url": "https://github.com/codeguy/php-the-right-way"
+    },
+    {
+        "name": "php-doc-en",
+        "url": "https://github.com/php/doc-en"
+    },
+    {
+        "name": "php",
+        "url": "https://github.com/php/php-src"
     }
 ]
