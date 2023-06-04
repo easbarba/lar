@@ -1,0 +1,32 @@
+[
+    {
+        "name": "sinatra",
+        "url": "https://github.com/sinatra/sinatra"
+    },
+    {
+        "name": "solargraph",
+        "url": "https://github.com/castwide/solargraph"
+    },
+    {
+        "name": "ruby-lsp",
+        "branch": "main",
+        "url": "https://github.com/Shopify/ruby-lsp"
+    },
+    {
+        "name": "sidekiq",
+        "branch": "main",
+        "url": "https://github.com/mperham/sidekiq"
+    },
+    {
+        "name": "fluentd",
+        "url": "https://github.com/fluent/fluentd"
+    },
+    {
+        "name": "rake",
+        "url": "https://github.com/ruby/rake"
+    },
+    {
+        "name": "ruby",
+        "url": "https://github.com/ruby/ruby"
+    }
+]
