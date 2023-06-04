@@ -5,7 +5,7 @@ command = "guix install"
 deps = [ "guix" ]
 
 [packages]
-langs = [ "guile", "guile-readline", "node" ]
+langs = [ "guile", "guile-readline", "node", "php", "ruby" ]
 editors = [ "zile", "emacs" ]
 misc = [ "nss-certs", "openssl", "font-dejavu" ]
 apps = [ "haunt", "guile-hall", "akku" ]
