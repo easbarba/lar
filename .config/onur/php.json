@@ -1,5 +1,9 @@
 [
     {
+        "name": "czproject-git-php",
+        "url": "https://github.com/czproject/git-php"
+    },
+    {
         "name": "swagger-php",
         "url": "https://github.com/zircote/swagger-php"
     },
