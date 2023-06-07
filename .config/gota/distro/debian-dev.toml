@@ -13,6 +13,7 @@ php = [
     "php-dom"
 ]
 ruby = [ "ruby-full" ]
+c = [ "clang", "clangd" ]
 tools = [
     "jq",
     "git-email",
