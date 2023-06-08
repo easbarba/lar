@@ -13,7 +13,13 @@ php = [
     "php-dom"
 ]
 ruby = [ "ruby-full" ]
-c = [ "clang", "clangd" ]
+cc = [
+  "clang",
+  "clang-format",
+  "clangd",
+  "glslang-tools",
+  "libcjson-dev"
+]
 tools = [
     "jq",
     "git-email",
