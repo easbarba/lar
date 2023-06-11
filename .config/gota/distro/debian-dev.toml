@@ -12,14 +12,6 @@ php = [
     "php-mbstring",
     "php-dom"
 ]
-ruby = [ "ruby-full" ]
-cc = [
-  "clang",
-  "clang-format",
-  "clangd",
-  "glslang-tools",
-  "libcjson-dev"
-]
 tools = [
     "jq",
     "git-email",
