@@ -16,5 +16,3 @@ tools = [
   "phpDocumentor",
   "humbug/box"
 ]
-apps = [ "easbarba/qas" ]
-
