@@ -6,7 +6,7 @@ deps = [ "guix" ]
 
 [packages]
 langs = [ "guile", "guile-readline", "node", "php", "ruby" ]
-editors = [ "zile", "emacs" ]
+editors = [ "zile", "emacs", "neovim" ]
 misc = [ "nss-certs", "openssl", "font-dejavu" ]
 apps = [ "haunt", "guile-hall", "akku" ]
 libs = [ "guile-git", "guile-json" ]
