@@ -1,5 +1,10 @@
 [
     {
+        "name": "php-strictus",
+        "branch": "main",
+        "url": "https://github.com/php-strictus/strictus"
+    },
+    {
         "name": "czproject-git-php",
         "url": "https://github.com/czproject/git-php"
     },
