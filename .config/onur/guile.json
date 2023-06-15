@@ -1,5 +1,10 @@
 [
     {
+        "name": "guile-hoot",
+        "branch": "main",
+        "url": "https://gitlab.com/spritely/guile-hoot"
+    },
+    {
         "name": "guile-toml",
         "branch": "main",
         "url": "https://github.com/hylophile/guile-toml"
