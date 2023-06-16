@@ -1,5 +1,9 @@
 [
     {
+        "name": "phpstan",
+        "url": "https://github.com/phpstan/phpstan"
+    },
+    {
         "name": "php-strictus",
         "branch": "main",
         "url": "https://github.com/php-strictus/strictus"
