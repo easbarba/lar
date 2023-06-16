@@ -1,0 +1,13 @@
+manager = "Debian Ops Tools"
+command = "sudo apt-get install -y"
+deps = ["apt"]
+post = [
+     "sudo systemctl enable podman.socket",
+     "sudo systemctl start podman.socket",
+     "echo '%podman ALL=(ALL) NOPASSWD: /usr/bin/podman' | sudo tee -a /etc/sudoers.d/podman" # Add a new group called podman so its easier to manage who can run podman w/out sudo
+]
+
+[packages]
+containers = ["podman", " podman-compose" ]
+provisioning = [ "ansible" ]
+ci = [ "gitlab-runner"]

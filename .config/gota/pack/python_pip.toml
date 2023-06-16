@@ -27,5 +27,4 @@ tools = [
   "gitpython"
 ]
 libs = [ "beautifulsoup4", "interval", "yt-dlp" ]
-apps = [ "cryptography" ]
-
+ops = [ "cryptography" ]

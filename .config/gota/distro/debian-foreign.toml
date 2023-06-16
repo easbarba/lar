@@ -1,0 +1,9 @@
+manager = "Debian Foreign Tools"
+command = "sudo apt-get install -y"
+deps = ["apt"]
+post = ["sudo systemctl enable kubelet.service"]
+
+[packages]
+cloud = [ "awscli", "google-cloud-sdk" ]
+provisioning = [ "terraform", " terraform-ls" ]  #vagrant vagrant-libvirt #  nomad
+k8s = [ "kubectl kubelet kubeadm", "helm" ]
