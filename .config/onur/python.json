@@ -1,29 +1,7 @@
 [
   {
-    "name": "pygit2",
-    "url": "https://github.com/libgit2/pygit2"
-  },
-  {
     "name": "httpie",
     "url": "https://github.com/httpie/httpie"
-  },
-  {
-    "name": "poetry",
-    "url": "https://github.com/python-poetry/poetry"
-  },
-  {
-    "name": "django",
-    "branch": "main",
-    "url": "https://github.com/django/django"
-  },
-  {
-    "name": "fastapi",
-    "url": "https://github.com/tiangolo/fastapi"
-  },
-  {
-    "name": "flask",
-    "branch": "main",
-    "url": "https://github.com/pallets/flask"
   },
   {
     "name": "requests",
