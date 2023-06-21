@@ -24,7 +24,7 @@ tools = [
 editors = [
     "vim",
 ]
-emacs = [
+emacs-deps = [
   "autoconf",
   "automake",
   "gcc",
