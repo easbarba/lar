@@ -19,6 +19,6 @@ tools = [
   "com.valvesoftware.Steam"
 ]
 ides = [
-     "org.eclipse.Java",
-     "com.jetbrains.IntelliJ-IDEA-Community"
+  "org.eclipse.Java",
+  "com.jetbrains.IntelliJ-IDEA-Community"
 ]
