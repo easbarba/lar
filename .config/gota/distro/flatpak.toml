@@ -18,3 +18,7 @@ tools = [
   "io.podman_desktop.PodmanDesktop",
   "com.valvesoftware.Steam"
 ]
+ides = [
+     "org.eclipse.Java",
+     "com.jetbrains.IntelliJ-IDEA-Community"
+]
