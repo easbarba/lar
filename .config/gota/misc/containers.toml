@@ -5,7 +5,7 @@ command = "podman pull"
 [jobs]
 languages = [
   "docker.io/library/python:3.11",
-  "docker.io/library/golang:1"
+  "docker.io/library/golang:1",
   "docker.io/library/maven:3-eclipse-temurin-20",
   "docker.io/library/eclipse-temurin:20-jdk"
 ]
