@@ -4,15 +4,18 @@ command = "npm install --global"
 post = "npm update --global"
 
 [packages]
-essential = [ "npm", "typescript" ]
+essential = [
+  "npm",
+  "typescript"
+]
 tools = [
   "stylelint",
   "js-beautify",
   "prettier",
-  "@prettier/plugin-php"
+  "prettier-plugin-toml"
 ]
 lsp = [
-    "bash-language-server"
+  "bash-language-server"
 ]
 vue = [ "@volar/vue-language-server" ]
 node = [
