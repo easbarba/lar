@@ -65,6 +65,11 @@
         "branch": "main"
     },
     {
+        "name": "spring-security",
+        "url": "https://github.com/spring-projects/spring-security",
+        "branch": "main"
+    },
+    {
         "name": "spring-boot",
         "url": "https://github.com/spring-projects/spring-boot",
         "branch": "main"
