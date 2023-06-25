@@ -9,7 +9,9 @@ java = [
      "openjdk-20-jre",
      "openjdk-20-doc",
      "openjdk-20-dbg",
-     "clang-format"
+     "clang-format",
+     "maven",
+     "ant"
 ]
 tools = [
     "jq",
