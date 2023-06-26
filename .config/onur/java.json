@@ -1,5 +1,9 @@
 [
     {
+        "name": "rest-assured",
+        "url": "https://github.com/rest-assured/rest-assured"
+    },
+    {
         "name": "danvega-springit-course-docs",
         "url": "https://github.com/danvega/springit-course-docs"
     },
