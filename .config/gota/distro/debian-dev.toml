@@ -5,10 +5,10 @@ deps = ["apt"]
 [packages]
 python = [ "python3-pip", "python3-venv" ]
 java = [
-     "openjdk-20-jdk",
-     "openjdk-20-jre",
-     "openjdk-20-doc",
-     "openjdk-20-dbg",
+     "openjdk-21-jdk",
+     "openjdk-21-jre",
+     "openjdk-21-doc",
+     "openjdk-21-dbg",
      "clang-format",
      "maven",
      "ant"
@@ -28,7 +28,9 @@ tools = [
     "grip",
     "tidy",
     "ripgrep",
-    "fzf"
+    "fzf",
+    "distrobox"
+    
 ]
 editors = [
     "vim",
