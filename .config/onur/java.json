@@ -84,6 +84,11 @@
         "branch": "main"
     },
     {
+        "name": "quarkus-quickstarts",
+        "url": "https://github.com/quarkusio/quarkus-quickstarts",
+        "branch": "main"
+    },
+    {
         "name": "quarkus",
         "url": "https://github.com/quarkusio/quarkus",
         "branch": "main"
