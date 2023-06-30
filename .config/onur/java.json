@@ -1,5 +1,13 @@
 [
     {
+        "name": "vertx",
+        "url": "https://github.com/eclipse-vertx/vert.x"
+    },
+    {
+        "name": "nebrass-reactive-quarkus-app",
+        "url": "https://github.com/nebrass/reactive-quarkus-app"
+    },
+    {
         "name": "rest-assured",
         "url": "https://github.com/rest-assured/rest-assured"
     },
