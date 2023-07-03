@@ -1,41 +1,7 @@
 [
     {
-        "name": "vertx",
-        "url": "https://github.com/eclipse-vertx/vert.x"
-    },
-    {
-        "name": "nebrass-reactive-quarkus-app",
-        "url": "https://github.com/nebrass/reactive-quarkus-app"
-    },
-    {
-        "name": "rest-assured",
-        "url": "https://github.com/rest-assured/rest-assured"
-    },
-    {
-        "name": "danvega-springit-course-docs",
-        "url": "https://github.com/danvega/springit-course-docs"
-    },
-    {
-        "name": "jakartaee-rest",
-        "url": "https://github.com/jakartaee/rest"
-    },
-    {
-        "name": "tericcabrel-blog-tutorials",
-        "url": "https://github.com/tericcabrel/blog-tutorials"
-    },
-    {
-        "name": "mechero-spring-boot-testing-strategies",
-        "url": "https://github.com/mechero/spring-boot-testing-strategies"
-    },
-    {
-        "name": "rife2",
-        "url": "https://github.com/rife2/rife2",
-        "branch": "main"
-    },
-    {
-        "name": "bld",
-        "url": "https://github.com/rife2/bld",
-        "branch": "main"
+        "name": "dvddhln-quarkus-reactive-hibernate-graphql-crud",
+        "url": "https://github.com/dvddhln/quarkus-reactive-hibernate-graphql-crud"
     },
     {
         "name": "bezkoder-docker-compose-spring-boot-mysql",
@@ -52,6 +18,44 @@
     {
         "name": "maciejwalkowiak-java-cli-project-template",
         "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+    },
+    {
+        "name": "nebrass-reactive-quarkus-app",
+        "url": "https://github.com/nebrass/reactive-quarkus-app"
+    },
+    {
+        "name": "danvega-springit-course-docs",
+        "url": "https://github.com/danvega/springit-course-docs"
+    },
+    {
+        "name": "tericcabrel-blog-tutorials",
+        "url": "https://github.com/tericcabrel/blog-tutorials"
+    },
+    {
+        "name": "mechero-spring-boot-testing-strategies",
+        "url": "https://github.com/mechero/spring-boot-testing-strategies"
+    },
+    {
+        "name": "vertx",
+        "url": "https://github.com/eclipse-vertx/vert.x"
+    },
+    {
+        "name": "rest-assured",
+        "url": "https://github.com/rest-assured/rest-assured"
+    },
+    {
+        "name": "jakartaee-rest",
+        "url": "https://github.com/jakartaee/rest"
+    },
+    {
+        "name": "rife2",
+        "url": "https://github.com/rife2/rife2",
+        "branch": "main"
+    },
+    {
+        "name": "bld",
+        "url": "https://github.com/rife2/bld",
+        "branch": "main"
     },
     {
         "name": "jagged",
