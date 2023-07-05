@@ -1,5 +1,10 @@
 [
     {
+        "name": "gscaramuzzino/quarkus-testing-restassured",
+        "url": "https://github.com/gscaramuzzino/quarkus-testing-restassured",
+        "branch": "main"
+    },
+    {
         "name": "dvddhln-quarkus-reactive-hibernate-graphql-crud",
         "url": "https://github.com/dvddhln/quarkus-reactive-hibernate-graphql-crud"
     },
