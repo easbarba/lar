@@ -1,5 +1,9 @@
 [
     {
+        "name": "asp.net-core-web-api",
+        "url": "https://github.com/Darkseal/ASP.NET-Core-Web-API"
+    },
+    {
         "name": "nexus-mod-manager",
         "url": "https://github.com/Nexus-Mods/Nexus-Mod-Manager"
     },
