@@ -4,16 +4,6 @@ deps = ["apt"]
 
 [packages]
 python = [ "python3-pip", "python3-venv" ]
-java = [
-     "openjdk-17-jdk",
-     "openjdk-17-jre",
-     "openjdk-17-doc",
-     "openjdk-17-dbg",
-     "clang-format",
-     "maven",
-     "gradle",
-     "ant"
-]
 tools = [
     "jq",
     "git-email",

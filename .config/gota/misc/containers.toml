@@ -7,16 +7,13 @@ languages = [
   "docker.io/library/python:3.11",
   "docker.io/library/mcr.microsoft.com/dotnet/sdk:7.0",
   "docker.io/library/mcr.microsoft.com/dotnet/aspnet:7.0",
-  "docker.io/library/mono:6-slim",
-  "docker.io/library/maven:3-eclipse-temurin-17",
-  "docker.io/library/eclipse-temurin:17-jdk"
+  "docker.io/library/mono:6-slim"
 ]
 database = [
   "docker.io/library/postgres:15",
   "docker.io/library/mariadb:10.7"
 ]
 distributions = [
-  "docker.io/library/debian:unstable-slim",
-  "docker.io/library/ubuntu:lunar"
+  "docker.io/library/debian:unstable-slim"
 ]
 
