@@ -4,6 +4,14 @@ deps = ["apt"]
 
 [packages]
 python = [ "python3-pip", "python3-venv" ]
+php = [
+    "php",
+    "php-common",
+    "php-cli",
+    "php-curl",
+    "php-mbstring",
+    "php-dom"
+]
 tools = [
     "jq",
     "git-email",
