@@ -5,6 +5,7 @@ command = "podman pull"
 [jobs]
 languages = [
   "docker.io/library/python:3.11",
+  "docker.io/library/php:8",
   "docker.io/library/composer:lts"
 ]
 database = [
