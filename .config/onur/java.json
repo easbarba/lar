@@ -1,5 +1,20 @@
 [
     {
+        "name": "smallrye-mutiny",
+        "url": "https://github.com/smallrye/smallrye-mutiny",
+        "branch": "main"
+    },
+    {
+        "name": "full-stack-quarkus-and-react",
+        "url": "https://github.com/PacktPublishing/Full-Stack-Quarkus-and-React",
+        "branch": "main"
+    },
+    {
+        "name": "pro-java-microservices-quarkus-kubernetes",
+        "url": "https://github.com/Apress/pro-java-microservices-quarkus-kubernetes",
+        "branch": "main"
+    },
+    {
         "name": "gscaramuzzino/quarkus-testing-restassured",
         "url": "https://github.com/gscaramuzzino/quarkus-testing-restassured",
         "branch": "main"
