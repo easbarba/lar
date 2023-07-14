@@ -37,7 +37,8 @@
     },
     {
         "name": "maciejwalkowiak-java-cli-project-template",
-        "url": "https://github.com/maciejwalkowiak/java-cli-project-template"
+        "url": "https://github.com/maciejwalkowiak/java-cli-project-template",
+        "branch": "main"
     },
     {
         "name": "nebrass-reactive-quarkus-app",
@@ -49,7 +50,8 @@
     },
     {
         "name": "tericcabrel-blog-tutorials",
-        "url": "https://github.com/tericcabrel/blog-tutorials"
+        "url": "https://github.com/tericcabrel/blog-tutorials",
+        "branch": "main"
     },
     {
         "name": "mechero-spring-boot-testing-strategies",
