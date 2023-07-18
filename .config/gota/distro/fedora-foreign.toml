@@ -8,6 +8,7 @@ pre = [
     "sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm",
     "sudo dnf config-manager -y --set-enabled google-chrome"
 ]
+post = [ "sudo dnf group upgrade --assumeyes --with-optional Multimedia --allowerasing" ]
 
 [packages]
 apps = [
@@ -19,5 +20,3 @@ media = [
       "gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel",
       "lame* --exclude=lame-devel"
 ]
-
-post = [ "sudo dnf group upgrade --with-optional Multimedia" ]
