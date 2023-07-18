@@ -5,9 +5,10 @@ command = "sudo dnf install --assumeyes"
 deps = [ "dnf" ]
 
 [packages]
+langs = [ "nodejs", "python3-pip" ]
 java = [
-     "java-17-openjdk.x86_64",
-     "java-17-openjdk-devel.x86_64",
+     "java-17-openjdk",
+     "java-17-openjdk-devel",
      "maven",
      "ant",
      "clang-tools-extra"

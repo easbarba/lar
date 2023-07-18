@@ -20,6 +20,7 @@ gnome = [
   "gnome-music",
   "gnome-tweaks",
   "gnome-extensions-app",
+  "gnome-music",
   "transmission-gtk"
 ]
 laptop = [ "acpi", "sensors", "lshw", "acpid" ]
@@ -33,7 +34,8 @@ cli = [
   "libnotify",
   "ranger",
   "aria2",
-  "btop"
+  "btop",
+  "lm_sensors"
 ]
 user = [
   "chromium",
@@ -50,7 +52,6 @@ user = [
   "pandoc",
   "obs-studio",
   "inkscape",
-  "steam",
   "exaile"
 ]
 media = [
@@ -61,5 +62,4 @@ media = [
   "gstreamer1-plugins-good",
   "gstreamer1-plugins-ugly-free"
 ]
-external = [ "google-chrome-stable" ]
 

@@ -11,5 +11,5 @@ pre = [
 
 [packages]
 apps = [
-     "vlc"
+     "vlc", "steam", "google-chrome-stable"
 ]
