@@ -1,0 +1,8 @@
+manager = "Fedora Ops Tools"
+refresh = "sudo dnf update --assumeyes"
+upgrade = "sudo dnf upgrade --assumeyes"
+command = "sudo dnf install --assumeyes"
+deps = [ "dnf" ]
+
+[packages]
+langs = [ "ansible", "terraform" ]
