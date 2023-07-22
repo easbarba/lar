@@ -6,7 +6,8 @@ deps = [ "dnf" ]
 pre = [
     "sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm",
     "sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm",
-    "sudo dnf config-manager -y --set-enabled google-chrome"
+    "sudo dnf config-manager -y --set-enabled google-chrome",
+    "sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/$release/hashicorp.repo"
 ]
 post = [ "sudo dnf group upgrade --assumeyes --with-optional Multimedia --allowerasing" ]
 
@@ -14,6 +15,7 @@ post = [ "sudo dnf group upgrade --assumeyes --with-optional Multimedia --allowe
 apps = [
      "vlc", "steam", "google-chrome-stable"
 ]
+ops = [ "terraform" ]
 media = [
       "gstreamer1-plugins-{bad-*,good-*,base}",
       "gstreamer1-plugin-openh264",

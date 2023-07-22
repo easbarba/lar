@@ -6,7 +6,7 @@ deps = [ "dnf" ]
 pre = [ "sudo dnf install -y fedora-workstation-repositories"]
 
 [packages]
-system = [ "sepolicy" ]
+system = [ "sepolicy", "dnf-plugins-core" ]
 shell = [ "bash-completion", "ShellCheck" ]
 fonts = [
   "hack-fonts",
