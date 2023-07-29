@@ -2,6 +2,7 @@ LICENSE
 README.md
 .gitignore
 .gemrc
+.guile
 .irbrc
 .elixir_ls
 .iex.exs
@@ -25,7 +26,9 @@ README.md
 .config/devilspie2
 .config/dunst
 .config/fish
+.config/fontconfig
 .config/gh
+.config/gomu
 .config/hyper
 .config/gtk-3.0
 .config/guix
