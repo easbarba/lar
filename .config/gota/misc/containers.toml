@@ -8,6 +8,9 @@ languages = [
   "docker.io/library/eclipse-temurin:17-jdk",
   "docker.io/library/eclipse-temurin:20-jdk"
 ]
+servers = [
+        "docker.io/library/jboss/wildfly:29.0.1.Final"
+]
 database = [
   "docker.io/library/postgres:15",
   "docker.io/library/mariadb:10.7"
