@@ -24,7 +24,8 @@ tools = [
   "python-lsp-server[all]",
   "gdtoolkit",
   "grip",
-  "gitpython"
+  "gitpython",
+  "semgrep"
 ]
 libs = [ "beautifulsoup4", "interval", "yt-dlp" ]
 ops = [ "cryptography" ]
