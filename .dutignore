@@ -14,6 +14,7 @@ README.md
 .xinitrc
 .sbclrc
 .screenrc
+.config/alacritty
 .config/foot
 .config/awesome
 .config/plasma-workspace
@@ -53,6 +54,7 @@ README.md
 .config/sxhkd
 .config/wayfire
 .config/systemd
+.config/termusic
 .config/sway
 .config/swaylock
 .config/xmodmap
