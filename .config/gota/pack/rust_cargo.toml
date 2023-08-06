@@ -14,7 +14,6 @@ apps = [
   "sd",
   "du-dust",
   "tokei",
-  "alacritty",
   "termusic",
   "termusic-server"
 ]
