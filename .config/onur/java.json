@@ -97,5 +97,9 @@
         "name": "jakartaee-nosql",
         "url": "https://github.com/jakartaee/nosql",
         "branch": "main"
+    },
+    {
+        "name": "openjdk",
+        "url": "https://github.com/openjdk/jdk"
     }
 ]
