@@ -1,5 +1,10 @@
 [
     {
+        "name": "alexanderder/Bookstore",
+        "url": "https://github.com/alexanderder/Bookstore",
+        "branch": "main"
+    },
+    {
         "name": "apress-pro-cloud-native-java-ee-apps",
         "url": "https://github.com/Apress/Pro-Cloud-Native-Java-EE-Apps",
         "branch": "main"
@@ -59,6 +64,16 @@
         "branch": "main"
     },
     {
+        "name": "apache-kafka",
+        "url": "https://github.com/apache/kafka",
+        "branch": "trunk"
+    },
+    {
+        "name": "apache-tomee",
+        "url": "https://github.com/apache/tomee",
+        "branch": "main"
+    },
+    {
         "name": "apache-maven-core",
         "url": "https://gitbox.apache.org/repos/asf/maven.git"
     },
@@ -71,15 +86,16 @@
         "url": "https://github.com/eclipse-vertx/vert.x"
     },
     {
+        "name": "jakartaee-persistence",
+        "url": "https://github.com/jakartaee/persistence"
+    },
+    {
         "name": "jakartaee-rest",
         "url": "https://github.com/jakartaee/rest"
     },
     {
-        "name": "loom",
-        "url": "https://github.com/openjdk/loom"
-    },
-    {
-        "name": "openjdk",
-        "url": "https://github.com/openjdk/jdk"
+        "name": "jakartaee-nosql",
+        "url": "https://github.com/jakartaee/nosql",
+        "branch": "main"
     }
 ]
