@@ -1,10 +1,5 @@
 [
     {
-        "name": "alexanderder/Bookstore",
-        "url": "https://github.com/alexanderder/Bookstore",
-        "branch": "main"
-    },
-    {
         "name": "apress-pro-cloud-native-java-ee-apps",
         "url": "https://github.com/Apress/Pro-Cloud-Native-Java-EE-Apps",
         "branch": "main"
@@ -84,6 +79,10 @@
     {
         "name": "vertx",
         "url": "https://github.com/eclipse-vertx/vert.x"
+    },
+    {
+        "name": "jakartaee-servlet",
+        "url": "https://github.com/jakartaee/servlet"
     },
     {
         "name": "jakartaee-persistence",
