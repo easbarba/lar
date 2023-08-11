@@ -1,5 +1,9 @@
 [
     {
+        "name": "ivargrimstad-jakartaee-duke",
+        "url": "https://github.com/ivargrimstad/jakartaee-duke"
+    },
+    {
         "name": "jakarta-ee-for-java-developers",
         "url": "https://github.com/bpbpublications/Jakarta-EE-for-Java-Developers",
         "branch": "main"
@@ -84,6 +88,11 @@
     {
         "name": "vertx",
         "url": "https://github.com/eclipse-vertx/vert.x"
+    },
+    {
+        "name": "eclipse-ee4j-jakartaee-examples",
+        "url": "https://github.com/eclipse-ee4j/jakartaee-examples",
+        "branch": "main"
     },
     {
         "name": "jakartaee-servlet",
