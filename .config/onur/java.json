@@ -1,5 +1,10 @@
 [
     {
+        "name": "jakarta-ee-for-java-developers",
+        "url": "https://github.com/bpbpublications/Jakarta-EE-for-Java-Developers",
+        "branch": "main"
+    },
+    {
         "name": "apress-pro-cloud-native-java-ee-apps",
         "url": "https://github.com/Apress/Pro-Cloud-Native-Java-EE-Apps",
         "branch": "main"
