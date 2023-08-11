@@ -90,6 +90,10 @@
         "url": "https://github.com/eclipse-vertx/vert.x"
     },
     {
+        "name": "glassfish",
+        "url": "https://github.com/eclipse-ee4j/glassfish"
+    },
+    {
         "name": "eclipse-ee4j-jakartaee-examples",
         "url": "https://github.com/eclipse-ee4j/jakartaee-examples",
         "branch": "main"
