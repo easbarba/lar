@@ -5,7 +5,8 @@
     },
     {
         "name": "kyclark-command-line-rust",
-        "url": "https://github.com/kyclark/command-line-rust"
+        "url": "https://github.com/kyclark/command-line-rust",
+        "branch": "main"
     },
     {
         "name": "starship",
