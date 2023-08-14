@@ -30,6 +30,11 @@
         "url": "https://github.com/rust-lang/cargo"
     },
     {
+        "name": "rust-lang-book",
+        "url": "https://github.com/rust-lang/book",
+        "branch": "main"
+    },
+    {
         "name": "rust",
         "url": "https://github.com/rust-lang/rust"
     }
