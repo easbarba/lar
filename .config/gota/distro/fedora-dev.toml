@@ -14,7 +14,8 @@ java = [
      "clang-tools-extra"
 ]
 cc = [
-   "clang"
+   "gcc-c++",
+   "clang",
    "clang-tools-extra",
    "glslang"
 ]
