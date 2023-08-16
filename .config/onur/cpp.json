@@ -17,6 +17,11 @@
         "url": "https://github.com/aria2/aria2"
     },
     {
+        "name": "cli11",
+        "branch": "main",
+        "url": "https://github.com/CLIUtils/CLI11"
+    },
+    {
         "name": "rapidjson",
         "url": "https://github.com/Tencent/rapidjson"
     },
