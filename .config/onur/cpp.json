@@ -42,5 +42,9 @@
     {
         "name": "kdeconnect",
         "url": "https://github.com/KDE/kdeconnect-kde"
+    },
+    {
+        "name": "cppreference-doc",
+        "url": "https://github.com/PeterFeicht/cppreference-doc"
     }
 ]
