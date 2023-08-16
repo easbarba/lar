@@ -51,6 +51,8 @@ onur-cpp = [
      "cli11-devel"
 ]
 qt = [
+   "qt",
+   "qt-devel",
    "qt-creator",
    "qt6-qtbase",
    "qt6-qtbase-devel"
