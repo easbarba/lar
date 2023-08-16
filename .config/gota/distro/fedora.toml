@@ -29,6 +29,12 @@ gnome = [
   "gnome-music",
   "transmission-gtk"
 ]
+kde = [
+    "elisa-player",
+    "ktorrent",
+    "kate",
+]
+
 laptop = [ "acpi", "sensors", "lshw", "acpid" ]
 wayland = [ "wl-clipboard" ]
 cli = [
