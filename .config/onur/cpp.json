@@ -17,6 +17,10 @@
         "url": "https://github.com/aria2/aria2"
     },
     {
+        "name": "rapidjson",
+        "url": "https://github.com/Tencent/rapidjson"
+    },
+    {
         "name": "catch2",
         "branch": "devel",
         "url": "https://github.com/catchorg/Catch2"
