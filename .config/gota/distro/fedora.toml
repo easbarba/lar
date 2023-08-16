@@ -32,7 +32,9 @@ gnome = [
 kde = [
     "elisa-player",
     "ktorrent",
+    "kamoso",
     "kate",
+    "kdevelop"
 ]
 
 laptop = [ "acpi", "sensors", "lshw", "acpid" ]
