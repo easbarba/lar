@@ -13,6 +13,11 @@ java = [
      "ant",
      "clang-tools-extra"
 ]
+cc = [
+   "clang"
+   "clang-tools-extra",
+   "glslang"
+]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
   "jq",

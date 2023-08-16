@@ -72,7 +72,12 @@ laptop = [
   "hddtemp",
   "btop"
 ]
-gnome = [ "gnome-shell-extensions", "gnome-music", "gnome-tweaks", "gnome-console" ]
+gnome = [
+  "gnome-shell-extensions",
+  "gnome-music",
+  "gnome-tweaks",
+  "gnome-console"
+]
 wayland = [ "wl-clipboard" ]
 user = [
   "firefox",
