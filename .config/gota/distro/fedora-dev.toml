@@ -46,3 +46,7 @@ emacs-pdftools = [
   "autoconf"
 ]
 images = [ "krita" ]
+onur-cpp = [
+     "rapidjson-devel",
+     "cli11-devel"
+]
