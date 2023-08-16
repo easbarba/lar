@@ -50,3 +50,8 @@ onur-cpp = [
      "rapidjson-devel",
      "cli11-devel"
 ]
+qt = [
+   "qt-creator",
+   "qt6-qtbase",
+   "qt6-qtbase-devel"
+]
