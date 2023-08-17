@@ -5,7 +5,13 @@ command = "sudo dnf install --assumeyes"
 deps = [ "dnf" ]
 
 [packages]
-langs = [ "nodejs", "npm", "python3-pip", "ruby" ]
+langs = [
+      "guile30",
+      "ruby",
+      "python3-pip",
+      "nodejs",
+      "npm"
+]
 java = [
      "java-17-openjdk",
      "java-17-openjdk-devel",
