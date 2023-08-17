@@ -13,12 +13,6 @@ java = [
      "ant",
      "clang-tools-extra"
 ]
-cc = [
-   "gcc-c++",
-   "clang",
-   "clang-tools-extra",
-   "glslang"
-]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
   "jq",
@@ -46,14 +40,3 @@ emacs-pdftools = [
   "autoconf"
 ]
 images = [ "krita" ]
-onur-cpp = [
-     "rapidjson-devel",
-     "cli11-devel"
-]
-qt = [
-   "qt",
-   "qt-devel",
-   "qt-creator",
-   "qt6-qtbase",
-   "qt6-qtbase-devel"
-]
