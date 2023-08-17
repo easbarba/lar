@@ -1,0 +1,41 @@
+[
+    {
+        "name": "git2-rs",
+        "url": "https://github.com/rust-lang/git2-rs"
+    },
+    {
+        "name": "kyclark-command-line-rust",
+        "url": "https://github.com/kyclark/command-line-rust",
+        "branch": "main"
+    },
+    {
+        "name": "starship",
+        "url": "https://github.com/starship/starship"
+    },
+    {
+        "name": "alacritty",
+        "url": "https://github.com/alacritty/alacritty"
+    },
+    {
+        "name": "axum",
+        "branch": "main",
+        "url": "https://github.com/tokio-rs/axum"
+    },
+    {
+        "name": "rust-analyzer",
+        "url": "https://github.com/rust-lang/rust-analyzer"
+    },
+    {
+        "name": "cargo",
+        "url": "https://github.com/rust-lang/cargo"
+    },
+    {
+        "name": "rust-lang-book",
+        "url": "https://github.com/rust-lang/book",
+        "branch": "main"
+    },
+    {
+        "name": "rust",
+        "url": "https://github.com/rust-lang/rust"
+    }
+]
