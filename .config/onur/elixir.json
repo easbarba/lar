@@ -18,7 +18,8 @@
     },
     {
         "name": "phoenix",
-        "url": "https://github.com/phoenixframework/phoenix"
+        "url": "https://github.com/phoenixframework/phoenix",
+        "branch": "main"
     },
     {
         "name": "elixir",
