@@ -30,14 +30,29 @@ gnome = [
   "transmission-gtk"
 ]
 kde = [
-    "elisa-player",
-    "ktorrent",
-    "kamoso",
-    "kate",
-    "kdevelop"
+  "elisa-player",
+  "ktorrent",
+  "kamoso",
+  "kate",
+  "kdevelop"
 ]
 laptop = [ "acpi", "sensors", "lshw", "acpid" ]
-wayland = [ "wl-clipboard", "sway", "waybar", "mpd", "mpc", "ncmpcpp" ]
+wayland = [
+  "wl-clipboard",
+  "sway",
+  "waybar",
+  "mpd",
+  "mpc",
+  "ncmpcpp",
+  "brightnessctl",
+]
+hybridbar = [
+  "atk-devel",
+  "pango-devel",
+  "cairo-gobject-devel",
+  "gtk3-devel",
+  "gtk-layer-shell-devel"
+]
 cli = [
   "htop",
   "bottom",

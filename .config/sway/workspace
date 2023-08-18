@@ -8,7 +8,6 @@ set $ws3 "term"
 set $ws4 "www"
 set $ws5 "media"
 
-assign [class="Emacs"] workspace $ws1
 assign [app_id="libreoffice"] workspace $ws1
 assign [app_id="libreoffice-writer"] workspace $ws1
 assign [app_id="org.pwmt.zathura"] workspace $ws1
