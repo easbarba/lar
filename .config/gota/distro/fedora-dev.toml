@@ -12,13 +12,6 @@ langs = [
       "nodejs",
       "npm"
 ]
-java = [
-     "java-17-openjdk",
-     "java-17-openjdk-devel",
-     "maven",
-     "ant",
-     "clang-tools-extra"
-]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
   "jq",
