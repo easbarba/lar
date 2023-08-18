@@ -26,7 +26,8 @@ tools = [
   "cmake",
   "make",
   "fd-find",
-  "fzf"
+  "fzf",
+  "neofetch"
 ]
 emacs-pdftools = [
   "libpng-devel",

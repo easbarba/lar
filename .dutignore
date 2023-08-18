@@ -48,7 +48,6 @@ README.md
 .config/suckless
 .config/sxhkd
 .config/wayfire
-.config/systemd
 .config/termusic
 .config/xmodmap
 .config/xmonad

@@ -14,5 +14,6 @@ setup_keys() {
 
 # WAYLAND
 if [ "$(tty)" = "/dev/tty3" ]; then
+    setup_keys
     exec dbus-launch --sh-syntax --exit-with-session sway
 fi
