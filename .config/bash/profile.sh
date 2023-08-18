@@ -2,10 +2,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # export SYSTEMD_PAGER= # Uncomment this if you don't like systemctl's auto-paging feature:
 #export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc" # readline
 
-[[ -f "$HOME/.config/env_variables" ]] && . "$HOME/.config/env_variables"
-# . "$HOME/.profile"
+export "$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | xargs)"
 
-gimme_keys() {
+setup_keys() {
     # kill any ssh-agent running, re-enter new one
     # before starting session and reset ssh env vars
 
@@ -19,6 +18,6 @@ gimme_keys() {
 
 # WAYLAND
 if [ "$(tty)" = "/dev/tty3" ]; then
-    gimme_keys
+    setup_keys
     exec sway
 fi

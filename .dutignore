@@ -14,7 +14,6 @@ README.md
 .xinitrc
 .sbclrc
 .screenrc
-.config/foot
 .config/awesome
 .config/ansible
 .config/bspwm
@@ -36,9 +35,7 @@ README.md
 .config/nix
 .config/nixos
 .config/nixpkgs
-.config/ncmpcpp
 .config/nyxt
-.config/mpd
 .config/psysh
 .config/phpactor
 .config/picom
@@ -53,8 +50,6 @@ README.md
 .config/wayfire
 .config/systemd
 .config/termusic
-.config/sway
-.config/swaylock
 .config/xmodmap
 .config/xmonad
 .config/yambar

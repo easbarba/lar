@@ -36,9 +36,8 @@ kde = [
     "kate",
     "kdevelop"
 ]
-
 laptop = [ "acpi", "sensors", "lshw", "acpid" ]
-wayland = [ "wl-clipboard" ]
+wayland = [ "wl-clipboard", "sway", "waybar", "mpd", "mpc", "ncmpcpp" ]
 cli = [
   "htop",
   "bottom",

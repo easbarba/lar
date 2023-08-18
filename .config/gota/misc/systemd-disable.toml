@@ -1,0 +1,6 @@
+task = "systemD - Disable"
+command = "sudo systemctl disable --now"
+deps = [ "systemctl" ]
+
+[jobs]
+utils = [ "mpd" ]

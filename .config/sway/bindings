@@ -51,10 +51,9 @@
     # Switch to workspace
     bindsym $mod+1 workspace 'mx'
     bindsym $mod+2 workspace 'anno'
-    bindsym $mod+3 workspace 'read'
-    bindsym $mod+4 workspace 'term'
-    bindsym $mod+5 workspace 'www'
-    bindsym $mod+6 workspace 'media'
+    bindsym $mod+3 workspace 'term'
+    bindsym $mod+4 workspace 'www'
+    bindsym $mod+5 workspace 'media'
 
     bindsym $mod+tab workspace back_and_forth
 
