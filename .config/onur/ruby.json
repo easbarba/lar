@@ -1,6 +1,7 @@
 [
     {
         "name": "sinatra",
+        "branch": "main",
         "url": "https://github.com/sinatra/sinatra"
     },
     {
