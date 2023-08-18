@@ -49,7 +49,7 @@
 
 # Workspaces:
     # Switch to workspace
-    bindsym $mod+1 workspppace 'study'
+    bindsym $mod+1 workspace 'study'
     bindsym $mod+2 workspace 'code'
     bindsym $mod+3 workspace 'term'
     bindsym $mod+4 workspace 'www'
