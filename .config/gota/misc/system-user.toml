@@ -3,4 +3,5 @@ command = "systemctl enable --now --user"
 deps = [ "systemctl" ]
 
 [jobs]
+misc = [ "gnome-keyring-daemon" ]
 music = [ "wireplumber", "pipewire", "pipewire-pulse" ]

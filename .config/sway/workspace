@@ -2,8 +2,8 @@
 # query for apps info with: swaymsg -t get_tree
 # swaymsg -t get_workspaces
 
-set $ws1 "anno"
-set $ws2 "mx"
+set $ws1 "study"
+set $ws2 "code"
 set $ws3 "term"
 set $ws4 "www"
 set $ws5 "media"

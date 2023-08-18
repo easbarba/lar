@@ -37,21 +37,16 @@ kde = [
   "kdevelop"
 ]
 laptop = [ "acpi", "sensors", "lshw", "acpid" ]
-wayland = [
-  "wl-clipboard",
+wayland = [ "wl-clipboard" ]
+wm = [
   "sway",
   "waybar",
   "mpd",
   "mpc",
   "ncmpcpp",
   "brightnessctl",
-]
-hybridbar = [
-  "atk-devel",
-  "pango-devel",
-  "cairo-gobject-devel",
-  "gtk3-devel",
-  "gtk-layer-shell-devel"
+  "grimshot",
+  "bemenu"
 ]
 cli = [
   "htop",
