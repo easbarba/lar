@@ -15,9 +15,12 @@ client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 font Hack:Sans 10
 
 # Window borders
-default_border pixel 1
-default_floating_border normal
-hide_edge_borders smart
+default_border none
+default_floating_border none
+font pango:monospace 0
+titlebar_padding 1
+titlebar_border_thickness 0
+#hide_edge_borders smart
 
 # -------------- STATUS BAR
 bar {
