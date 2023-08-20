@@ -1,4 +1,3 @@
-[base]
-single-branch = true
+single_branch = true
 quiet = true
 depth = 1

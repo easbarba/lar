@@ -10,7 +10,6 @@ lsp = [
 apps = [
   "github.com/xxxserxxx/gotop/v4/cmd/gotop@latest",
   "github.com/antonmedv/llama@latest",
-  "github.com/issadarkthing/gomu@latest",
   "github.com/BurntSushi/toml/cmd/tomlv@latest"
 ]
 tools = [

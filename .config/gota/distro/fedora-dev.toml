@@ -7,7 +7,7 @@ deps = [ "dnf" ]
 [packages]
 langs = [
       "guile30",
-      "ruby",
+      "golang-bin",
       "python3-pip",
       "nodejs",
       "npm"
