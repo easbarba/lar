@@ -4,6 +4,10 @@
         "url": "https://github.com/PacktPublishing/Hands-On-Network-Programming-with-C"
     },
     {
+        "name": "foot",
+        "url": "https://github.com/DanteAlighierin/foot"
+    },
+    {
         "name": "cjson",
         "url": "https://github.com/DaveGamble/cJSON"
     },

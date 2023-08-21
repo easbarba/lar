@@ -22,7 +22,6 @@ tools = [
   "subversion",
   "mercurial",
   "editorconfig",
-  "direnv",
   "fd",
   "tidy",
   "ripgrep",
