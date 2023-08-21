@@ -46,7 +46,8 @@ wm = [
   "ncmpcpp",
   "brightnessctl",
   "grimshot",
-  "bemenu"
+  "mako",
+  "udiskie"
 ]
 cli = [
   "htop",
