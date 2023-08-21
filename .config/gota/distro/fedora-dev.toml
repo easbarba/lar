@@ -12,6 +12,10 @@ langs = [
       "nodejs",
       "npm"
 ]
+c-deps = [
+       "cjson",
+       "cjson-devel"
+]
 editors = [ "emacs", "vim", "neovim" ]
 tools = [
   "jq",
