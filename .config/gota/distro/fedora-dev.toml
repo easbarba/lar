@@ -5,6 +5,14 @@ command = "sudo dnf install --assumeyes"
 deps = [ "dnf" ]
 
 [packages]
+php = [
+  "php-cli",
+  "php-posix",
+  "php-dom",
+  "php-mbstring",
+  "php-sodium",
+  "php-ffi"
+]
 langs = [
       "guile30",
       "golang-bin",
