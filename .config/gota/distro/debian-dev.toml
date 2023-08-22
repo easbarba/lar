@@ -3,17 +3,19 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
-python = [ "python3-pip", "python3-venv" ]
+langs = [
+      "python3-pip",
+      "python3-venv",
+      "nodejs"
+]
 database = [ "sqlite3" ]
-java = [
-     "openjdk-17-jdk",
-     "openjdk-17-jre",
-     "openjdk-17-doc",
-     "openjdk-17-dbg",
-     "clang-format",
-     "maven",
-     "gradle",
-     "ant"
+php = [
+    "php",
+    "php-common",
+    "php-cli",
+    "php-curl",
+    "php-mbstring",
+    "php-dom"
 ]
 tools = [
     "jq",
@@ -22,22 +24,24 @@ tools = [
     "mercurial",
     "libpq-dev",
     "editorconfig",
-    "direnv",
     "fd-find",
+    "ripgrep",
     "shfmt",
     "meson",
     "cmake",
     "grip",
     "tidy",
-    "ripgrep",
     "fzf",
-    "distrobox"
+    "distrobox",
+    "neofetch"
     
 ]
 editors = [
+    "emacs",
     "vim",
+    "neovim"
 ]
-emacs-deps = [
+emacs-pdftools = [
   "autoconf",
   "automake",
   "gcc",
@@ -48,3 +52,4 @@ emacs-deps = [
   "make",
   "pkg-config"
 ]
+images = [ "krita" ]

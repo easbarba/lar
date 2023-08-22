@@ -32,9 +32,12 @@ cli = [
     "ranger",
     "aria2",
     "neofetch",
-    "unrar"
+    "unrar",
+    "btop",
+    "bash-completion",
+    "shellcheck"
 ]
-ubuntu = [
+debian = [
     "build-essential",
     "aptitude",
     "apt-file",
@@ -79,9 +82,23 @@ gnome = [
     "gnome-shell-extensions",
     "gnome-music",
     "gnome-tweaks",
-    "gnome-console"
+    "gnome-console",
+    "rhythmbox-plugin-alternative-toolbar",
+    "exaile"
 ]
-wayland = ["wl-clipboard"]
+wayland = ["wl-clipboard"],
+wm = [
+  "sway",
+  "waybar",
+  "mpd",
+  "mpc",
+  "ncmpcpp",
+  "brightnessctl",
+  "grimshot",
+  "mako",
+  "udiskie",
+  "alacritty"
+]
 user = [
     "firefox",
     "thunderbird",
@@ -94,9 +111,7 @@ user = [
     "calibre",
     "pandoc",
     "obs-studio",
-    "inkscape",
-    "rhythmbox-plugin-alternative-toolbar",
-    "foot"
+    "inkscape"
 ]
 system = [
     "flatpak",
@@ -129,14 +144,7 @@ system = [
     "automake",
     "socat",
 ]
-shell = [
-    "bash-completion",
-    "shellcheck",
-    "btop",
-]
-sound = [
-    "pulseaudio-utils",
-]
+sound = [ "pulseaudio-utils" ]
 media = [
     "ffmpeg",
     "mpv",
@@ -144,9 +152,9 @@ media = [
     "gstreamer1.0-plugins-bad",
     "gstreamer1.0-plugins-base",
     "gstreamer1.0-plugins-good",
-    "gstreamer1.0-plugins-ugly",
+    "gstreamer1.0-plugins-ugly"
 ]
 libs = [
     "libtag1-dev",
-    "libtagc0-dev",
+    "libtagc0-dev"
 ]

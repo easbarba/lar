@@ -27,7 +27,9 @@ cli = [
   "ranger",
   "aria2",
   "neofetch",
-  "unrar"
+  "unrar",
+  "bash-completion", 
+  "shellcheck" 
 ]
 ubuntu = [
   "build-essential",
@@ -79,6 +81,18 @@ gnome = [
   "gnome-console"
 ]
 wayland = [ "wl-clipboard" ]
+wm = [
+  "sway",
+  "waybar",
+  "mpd",
+  "mpc",
+  "ncmpcpp",
+  "brightnessctl",
+  "grimshot",
+  "mako",
+  "udiskie",
+  "alacritty"
+]
 user = [
   "firefox",
   "libreoffice",
@@ -125,7 +139,7 @@ system = [
   "automake",
   "socat"
 ]
-shell = [ "bash-completion", "shellcheck" ]
+
 sound = [ "pulseaudio-utils" ]
 media = [
   "ffmpeg",
