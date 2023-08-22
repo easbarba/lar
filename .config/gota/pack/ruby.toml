@@ -5,5 +5,16 @@ post = "gem update"
 command = "gem install"
 
 [packages]
-essentials = [ "bundler", "rake" ]
-tools = [ "reek", "rufo", "rubocop", "pry", "taglib-ruby" ]
+essentials = [
+           "bundler",
+           "rake"
+]
+tools = [
+      "reek",
+      "rufo",
+      "rubocop",
+      "pry"
+]
+libs = [
+      "taglib-ruby"
+]
