@@ -3,9 +3,15 @@ deps = [ "cargo" ]
 command = "cargo install"
 
 [packages]
+tools = [
+  "rust-script",
+  "toml-cli"
+]
 apps = [
   "starship",
-  "bottom",
+  "bottom"
+]
+misc = [
   "--features 'pcre2' ripgrep",
   "fd-find",
   "exa",
@@ -13,6 +19,5 @@ apps = [
   "procs",
   "sd",
   "du-dust",
-  "tokei",
-  "rust-script"
+  "tokei"
 ]
