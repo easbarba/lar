@@ -47,7 +47,8 @@ wm = [
   "brightnessctl",
   "grimshot",
   "mako",
-  "udiskie"
+  "udiskie",
+  "alacritty"
 ]
 cli = [
   "htop",
