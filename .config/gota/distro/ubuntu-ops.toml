@@ -8,3 +8,6 @@ deps = [ "apt" ]
 iac = [
     "ansible"
 ]
+cloud = [
+      "awscli"
+]

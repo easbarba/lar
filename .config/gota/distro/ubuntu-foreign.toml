@@ -11,5 +11,6 @@ iac = [
 orchestration = [
     "kubectl",
     "kubelet",
-    "kubeadm"
+    "kubeadm",
+    "helm"
 ]
