@@ -105,7 +105,8 @@ user = [
   "pandoc",
   "obs-studio",
   "inkscape",
-  "transmission-gtk"
+  "transmission-gtk",
+  "steam"
 ]
 system = [
   "flatpak",
@@ -140,7 +141,6 @@ system = [
   "automake",
   "socat"
 ]
-
 sound = [ "pulseaudio-utils" ]
 media = [
   "ffmpeg",
