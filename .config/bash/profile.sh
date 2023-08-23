@@ -1,4 +1,7 @@
-export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | xargs)
+# import environment.d vars to GNU Bash
+export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | xargs) # do not quote this!
+
+[[ -f $HOME/.profile ]] && . "$HOME/.profile"
 
 setup_keys() {
     # kill any ssh-agent running, re-enter new one
@@ -12,8 +15,13 @@ setup_keys() {
     export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
 }
 
+wm() {
+    # Check if dbus is present
+    exec sway
+}
+
 # WAYLAND
 if [ "$(tty)" = "/dev/tty3" ]; then
     setup_keys
-    exec sway
+    wm
 fi
