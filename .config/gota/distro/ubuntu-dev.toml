@@ -4,12 +4,15 @@ deps = [ "apt" ]
 post = "sudo apt -y autoremove"
 
 [packages]
+containers = [
+           "podman"
+]
 langs = [ 
     "python3-pip", 
     "python3-venv",
     "nodejs",
     "npm",
-    "ruby-full"
+    "golang"
 ]
 emacs-pdftools = [
   "autoconf",
