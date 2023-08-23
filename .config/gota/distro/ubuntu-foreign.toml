@@ -8,3 +8,8 @@ deps = [ "apt" ]
 iac = [
     "terraform"
 ]
+orchestration = [
+    "kubectl",
+    "kubelet",
+    "kubeadm"
+]
