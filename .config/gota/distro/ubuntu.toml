@@ -109,6 +109,7 @@ user = [
 ]
 system = [
   "flatpak",
+  "gnome-software-plugin-flatpak",
   "git",
   "ssh",
   "curl",
