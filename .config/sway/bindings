@@ -145,3 +145,5 @@ bindsym $mod+Mod1+o exec s-media-pic
 
 bindsym Print exec s-wm-shot.scm --full
 bindsym $mod+Print exec s-wm-shot.scm --partial
+
+bindsym $mod+z exec s-wm-pic

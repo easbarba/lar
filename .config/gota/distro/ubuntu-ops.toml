@@ -6,8 +6,11 @@ deps = [ "apt" ]
 
 [packages]
 iac = [
-    "ansible"
+    "ansible-core"
 ]
 cloud = [
       "awscli"
+]
+network = [
+        "httpie"
 ]

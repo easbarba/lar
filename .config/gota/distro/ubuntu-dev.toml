@@ -37,7 +37,8 @@ tools = [
   "cmake",
   "fzf",
   "tidy", 
-  "ripgrep" 
+  "ripgrep",
+  "uuid"
 ]
 editors = [ 
     "vim",
