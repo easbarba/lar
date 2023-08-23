@@ -1,6 +1,7 @@
 manager = "Flatpak"
 upgrade = "flatpak update -y"
 command = "flatpak install flathub -y"
+pre = [ "sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo" ]
 deps = [ "flatpak" ]
 
 [packages]
@@ -15,10 +16,5 @@ apps = [
 tools = [
   "com.getpostman.Postman",
   "io.github.NhekoReborn.Nheko",
-  "io.podman_desktop.PodmanDesktop",
-  "com.valvesoftware.Steam"
-]
-ides = [
-  "org.eclipse.Java",
-  "com.jetbrains.IntelliJ-IDEA-Community"
+  "io.podman_desktop.PodmanDesktop"
 ]
