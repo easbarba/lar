@@ -1,0 +1,10 @@
+manager = "Ubuntu - Ops tooling"
+command = "sudo apt-get install -y"
+refresh = "sudo apt update"
+upgrade = "sudo apt upgrade -y"
+deps = [ "apt" ]
+
+[packages]
+iac = [
+    "ansible"
+]
