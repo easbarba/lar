@@ -12,5 +12,6 @@ cloud = [
       "awscli"
 ]
 network = [
-        "httpie"
+        "httpie",
+        "net-tools"
 ]
