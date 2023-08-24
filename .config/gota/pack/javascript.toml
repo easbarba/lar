@@ -12,8 +12,9 @@ tools = [
   "stylelint",
   "js-beautify",
   "prettier",
-  "prettier-plugin-toml"
+  "prettier-plugin-toml",
 ]
+php = [ "@prettier/plugin-php" ]
 lsp = [
   "bash-language-server"
 ]
