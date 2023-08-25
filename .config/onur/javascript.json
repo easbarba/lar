@@ -1,7 +1,8 @@
 [
   {
     "name": "elk",
-    "url": "https://github.com/elk-zone/elk"
+    "url": "https://github.com/elk-zone/elk",
+    "branch": "main"
   },
   {
     "name": "vue-tools",
@@ -9,23 +10,24 @@
   },
   {
     "name": "vitest",
-    "branch": "main",
-    "url": "https://github.com/vitest-dev/vitest"
+    "url": "https://github.com/vitest-dev/vitest",
+    "branch": "main"
   },
   {
     "name": "vitejs",
-    "branch": "main",
-    "url": "https://github.com/vitejs/vite"
+    "url": "https://github.com/vitejs/vite",
+    "branch": "main"
   },
   {
     "name": "vuejs-docs",
-    "branch": "main",
-    "url": "https://github.com/vuejs/docs"
+
+    "url": "https://github.com/vuejs/docs",
+    "branch": "main"
   },
   {
     "name": "vuejs",
-    "branch": "main",
-    "url": "https://github.com/vuejs/core"
+    "url": "https://github.com/vuejs/core",
+    "branch": "main"
   },
   {
     "name": "inquirer",
@@ -37,17 +39,17 @@
   },
   {
     "name": "mdn-content",
-    "branch": "main",
-    "url": "https://github.com/mdn/content"
+    "url": "https://github.com/mdn/content",
+    "branch": "main"
   },
   {
     "name": "axios",
-    "branch": "v1.x",
-    "url": "https://github.com/axios/axios"
+    "url": "https://github.com/axios/axios",
+    "branch": "v1.x"
   },
   {
     "name": "nodejs",
-    "branch": "main",
-    "url": "https://github.com/nodejs/node"
+    "url": "https://github.com/nodejs/node",
+    "branch": "main"
   }
 ]

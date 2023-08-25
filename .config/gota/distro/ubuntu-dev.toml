@@ -6,11 +6,11 @@ post = "sudo apt -y autoremove"
 [packages]
 containers = [ "podman" ]
 langs = [
+    "nodejs",
+    "npm",
     "python3-pip", 
     "python3-venv",
-    "lua5.4",
-    "nodejs",
-    "npm"
+    "lua5.4"
 ]
 emacs-pdftools = [
   "autoconf",

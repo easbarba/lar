@@ -14,15 +14,13 @@ tools = [
   "prettier",
   "prettier-plugin-toml",
 ]
-php = [ "@prettier/plugin-php" ]
 lsp = [
-  "bash-language-server"
-]
-vue = [ "@volar/vue-language-server" ]
-node = [
-  "nodemon",
-  "typescript-language-server",
+  "bash-language-server",
+    "typescript-language-server",
   "yaml-language-server",
   "json-language-server"
+]
+node = [
+  "nodemon"
 ]
 
