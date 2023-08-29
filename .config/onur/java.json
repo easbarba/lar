@@ -1,5 +1,10 @@
 [
   {
+    "name": "rhuan080-jakartaee9-guide-book",
+    "url": "https://github.com/rhuan080/jakartaee9-guide-book",
+    "branch": "main"
+  },
+  {
     "name": "ivargrimstad-jakartaee-duke",
     "url": "https://github.com/ivargrimstad/jakartaee-duke"
   },

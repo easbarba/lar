@@ -81,18 +81,6 @@ gnome = [
   "gnome-console"
 ]
 wayland = [ "wl-clipboard" ]
-wm = [
-  "sway",
-  "waybar",
-  "mpd",
-  "mpc",
-  "ncmpcpp",
-  "brightnessctl",
-  "grimshot",
-  "mako",
-  "udiskie",
-  "alacritty"
-]
 user = [
   "firefox",
   "libreoffice",
@@ -152,4 +140,34 @@ media = [
   "gstreamer1.0-plugins-ugly"
 ]
 libs = [ "libtag1-dev", "libtagc0-dev" ]
-
+wm = [
+  "sway",
+  "waybar",
+  "mpd",
+  "mpc",
+  "ncmpcpp",
+  "brightnessctl",
+  "grimshot",
+  "mako",
+  "udiskie",
+  "alacritty",
+  "bemenu",
+  "inotify-tools"
+]
+dwl = [
+  "wayland-protocols",
+  "libwlroots-dev",
+]
+somebar = [
+  "build-essential",
+  "meson",
+  "ninja-build",
+  "libwayland-client0",
+  "libwayland-cursor0",
+  "libwayland-dev",
+  "libcairo2",
+  "libcairo2-dev",
+  "libpango-1.0-0",
+  "libpango1.0-dev",
+  "libpangocairo-1.0-0"
+]
