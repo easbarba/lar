@@ -12,13 +12,6 @@ langs = [
     "python3-venv",
     "lua5.4"
 ]
-java = [
-     "openjdk-17-jdk",
-     "openjdk-17-jre",
-     "maven",
-     "ant",
-     "clang-format"
-]
 emacs-pdftools = [
   "autoconf",
   "automake",
@@ -50,4 +43,3 @@ editors = [
     "neovim",
     "emacs"
 ]
-

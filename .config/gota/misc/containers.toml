@@ -4,12 +4,8 @@ command = "podman pull"
 
 [jobs]
 languages = [
-  "docker.io/library/eclipse-temurin:8-jdk",
-  "docker.io/library/eclipse-temurin:8-jre",
-  "docker.io/library/eclipse-temurin:17-jdk",
-  "docker.io/library/eclipse-temurin:20-jdk",
   "docker.io/library/node:18",
-  "docker.io/library/rust:1",
+  "docker.io/library/golang:1",
   "docker.io/library/python:3.11"
 ]
 database = [
