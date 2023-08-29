@@ -44,7 +44,6 @@
         "name": "koa",
         "url": "https://github.com/koajs/koa"
     },
-    ,
     {
         "name": "express",
         "url": "https://github.com/expressjs/express"
