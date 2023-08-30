@@ -91,7 +91,7 @@ wm = [
   "ncmpcpp",
   "brightnessctl",
   "grimshot",
-  "mako",
+  "mako-notifier",
   "udiskie",
   "alacritty"
 ]
