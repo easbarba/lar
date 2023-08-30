@@ -4,19 +4,19 @@ deps = ["apt"]
 
 [packages]
 langs = [
+      "golang",
+      "nodejs",
       "python3-pip",
-      "python3-venv",
-      "nodejs"
+      "python3-venv"
+]
+java = [
+     "openjdk-17-jdk",
+     "openjdk-17-jre",
+     "maven",
+     "ant",
+     "clang-format"
 ]
 database = [ "sqlite3" ]
-php = [
-    "php",
-    "php-common",
-    "php-cli",
-    "php-curl",
-    "php-mbstring",
-    "php-dom"
-]
 tools = [
     "jq",
     "git-email",

@@ -1,7 +1,7 @@
 # import environment.d vars to GNU Bash
-export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | xargs) # do not quote this!
 
-[[ -f $HOME/.profile ]] && . "$HOME/.profile"
+# export #$(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | xargs) # do not quote this!
+# [[ -f $HOME/.profile ]] && . "$HOME/.profile"
 
 setup_keys() {
     # kill any ssh-agent running, re-enter new one
@@ -17,8 +17,9 @@ setup_keys() {
 
 wm() {
     # Check if dbus is present
-    [[ -x $(command -v dwl) ]] && exec dwl -s somebar #>"$HOME/.cache/dwltags"
-    # exec sway
+    #[[ -x $(command -v dwl) ]] && exec dwl # -s somebar
+    #"$HOME/.cache/dwltags"
+     exec sway
 }
 
 # WAYLAND

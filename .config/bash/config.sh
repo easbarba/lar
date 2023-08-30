@@ -40,7 +40,7 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && exec tmux attach || tmux >/dev/null 2>&1 # tmux new-session -A -s ${USER} >/dev/null 2>&1 #
 [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
 [[ -f "$GUIX_PROFILE/etc/profile" ]] && . "$GUIX_PROFILE/etc/profile"
-[[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
+# [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
 if [ -n "$GUIX_ENVIRONMENT" ]; then
     if [[ $PS1 =~ (.*)"\\$" ]]; then

@@ -11,6 +11,10 @@ post = [
 ]
 
 [packages]
+base = [
+    "make",
+    "gcc"
+]
 amd = [
     "amd64-microcode",
     "firmware-amd-graphics",
@@ -78,15 +82,7 @@ laptop = [
     "sysstat",
     "hddtemp",
 ]
-gnome = [
-    "gnome-shell-extensions",
-    "gnome-music",
-    "gnome-tweaks",
-    "gnome-console",
-    "rhythmbox-plugin-alternative-toolbar",
-    "exaile"
-]
-wayland = ["wl-clipboard"],
+wayland = ["wl-clipboard"]
 wm = [
   "sway",
   "waybar",
@@ -144,7 +140,16 @@ system = [
     "automake",
     "socat",
 ]
-sound = [ "pulseaudio-utils" ]
+sound = [
+     "pulseaudio-utils",
+     "pipewire",
+     "pipewire-audio",
+     "wireplumber",
+     "pipewire-pulse",
+     "pipewire-alsa",
+     "pipewire-jack",
+     "libspa-0.2-bluetooth"
+]
 media = [
     "ffmpeg",
     "mpv",
