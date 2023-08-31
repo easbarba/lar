@@ -15,15 +15,14 @@ setup_keys() {
     export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
 }
 
-wm() {
+#wm() {
     # Check if dbus is present
     # [[ -x $(command -v dwl) ]] && exec dwl -s somebar         #"$HOME/.cache/dwltags"
-    exec cagebreak
+    #exec cagebreak
     #exec sway
-}
+#}
 
 # WAYLAND
 if [ "$(tty)" = "/dev/tty3" ]; then
     setup_keys
-    wm
 fi
