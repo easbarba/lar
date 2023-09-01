@@ -42,6 +42,8 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 [[ -f "$GUIX_PROFILE/etc/profile" ]] && . "$GUIX_PROFILE/etc/profile"
 # [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+
 if [ -n "$GUIX_ENVIRONMENT" ]; then
     if [[ $PS1 =~ (.*)"\\$" ]]; then
         PS1="${BASH_REMATCH[1]} [env]\\\$ "
