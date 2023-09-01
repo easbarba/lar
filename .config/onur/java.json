@@ -5,15 +5,6 @@
         "branch": "main"
     },
     {
-        "name": "ivargrimstad-jakartaee-duke",
-        "url": "https://github.com/ivargrimstad/jakartaee-duke"
-    },
-    {
-        "name": "jakarta-ee-for-java-developers",
-        "url": "https://github.com/bpbpublications/Jakarta-EE-for-Java-Developers",
-        "branch": "main"
-    },
-    {
         "name": "apress-pro-cloud-native-java-ee-apps",
         "url": "https://github.com/Apress/Pro-Cloud-Native-Java-EE-Apps",
         "branch": "main"
@@ -43,6 +34,32 @@
     {
         "name": "wildfly/quickstart",
         "url": "https://github.com/wildfly/quickstart",
+        "branch": "main"
+    },
+    {
+        "name": "eclipse-ee4j-glassfish-samples",
+        "url": "https://github.com/eclipse-ee4j/glassfish-samples"
+    },
+    {
+        "name": "ivargrimstad-jakartaee-duke",
+        "url": "https://github.com/ivargrimstad/jakartaee-duke"
+    },
+    {
+        "name": "eclipse-ee4j-glassfish-samples",
+        "url": "https://github.com/eclipse-ee4j/glassfish-samples"
+    },
+    {
+        "name": "jakarta-ee-for-java-developers",
+        "url": "https://github.com/bpbpublications/Jakarta-EE-for-Java-Developers",
+        "branch": "main"
+    },
+    {
+        "name": "eclipse-ee4j-jakartaee-tutorial",
+        "url": "https://github.com/eclipse-ee4j/jakartaee-tutorial"
+    },
+    {
+        "name": "eclipse-ee4j-jakartaee-examples",
+        "url": "https://github.com/eclipse-ee4j/jakartaee-examples",
         "branch": "main"
     },
     {
@@ -91,17 +108,12 @@
         "url": "https://github.com/eclipse/eclipse.jdt.ls"
     },
     {
-        "name": "vertx",
+        "name": "eclipse-vertx",
         "url": "https://github.com/eclipse-vertx/vert.x"
     },
     {
-        "name": "glassfish",
+        "name": "eclipse-glassfish",
         "url": "https://github.com/eclipse-ee4j/glassfish"
-    },
-    {
-        "name": "eclipse-ee4j-jakartaee-examples",
-        "url": "https://github.com/eclipse-ee4j/jakartaee-examples",
-        "branch": "main"
     },
     {
         "name": "jakartaee-servlet",
