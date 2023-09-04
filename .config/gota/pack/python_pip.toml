@@ -3,8 +3,12 @@ deps = [ "python3" ]
 command = "python3 -m pip install --upgrade --user --break-system-packages"
 
 [packages]
+base = [
+     "pip",
+     "setuptools",
+     "wheel"
+]
 tools = [
-  "black",
   "rope",
   "pipenv",
   "pyflakes",
@@ -21,11 +25,18 @@ tools = [
   "pyperclip",
   "pytaglib",
   "twine",
-  "python-lsp-server[all]",
+
   "gdtoolkit",
   "grip",
   "gitpython"
   # "semgrep"
 ]
-libs = [ "beautifulsoup4", "interval", "yt-dlp" ]
+apps = [
+  "https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz",
+  "black",
+]
+langs = [
+      "python-lsp-server[all]",
+]
+libs = [ "beautifulsoup4", "interval" ]
 ops = [ "cryptography" ]

@@ -1,8 +1,11 @@
 [
     {
-        "name": "rhuan080-jakartaee9-guide-book",
-        "url": "https://github.com/rhuan080/jakartaee9-guide-book",
-        "branch": "main"
+        "name": "hantsy=ee7-sandbox-wiki",
+        "url": "https://github.com/hantsy/ee7-sandbox.wiki"
+    },
+    {
+        "name": "rhuan080-jakartaee-example-jpa",
+        "url": "https://github.com/rhuan080/jakartaee-example-jpa"
     },
     {
         "name": "apress-pro-cloud-native-java-ee-apps",
