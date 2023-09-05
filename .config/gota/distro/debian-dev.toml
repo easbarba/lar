@@ -4,9 +4,9 @@ deps = ["apt"]
 
 [packages]
 cc = [
-  "clang",
-  "clang-format",
-  "clangd",
+  "clang-16",
+  "clang-format-16",
+  "clangd-16",
   "glslang-tools",
   "libcjson-dev"
 ]
