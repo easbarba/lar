@@ -1,5 +1,10 @@
 [
   {
+    "name": "thamara-bomcurriculoparatech",
+    "url": "https://github.com/thamara/bomcurriculoparatech",
+    "branch": "main"
+  },
+  {
     "name": "tpm",
     "url": "https://github.com/tmux-plugins/tpm"
   },
