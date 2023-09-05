@@ -1,0 +1,55 @@
+[
+  {
+    "name": "fffaraz-awesome-cpp",
+    "url": "https://github.com/fffaraz/awesome-cpp"
+  },
+  {
+    "name": "beast",
+    "branch": "develop",
+    "url": "https://github.com/boostorg/beast"
+  },
+  {
+    "name": "entt",
+    "url": "https://github.com/skypjack/entt"
+  },
+  {
+    "name": "aria2",
+    "url": "https://github.com/aria2/aria2"
+  },
+  {
+    "name": "cli11",
+    "branch": "main",
+    "url": "https://github.com/CLIUtils/CLI11"
+  },
+  {
+    "name": "rapidjson",
+    "url": "https://github.com/Tencent/rapidjson"
+  },
+  {
+    "name": "catch2",
+    "branch": "devel",
+    "url": "https://github.com/catchorg/Catch2"
+  },
+  {
+    "name": "dragonflydb",
+    "branch": "main",
+    "url": "https://github.com/dragonflydb/dragonfly"
+  },
+  {
+    "name": "godot",
+    "url": "https://github.com/godotengine/godot"
+  },
+  {
+    "name": "kdeconnect",
+    "url": "https://github.com/KDE/kdeconnect-kde"
+  },
+  {
+    "name": "cppreference-doc",
+    "url": "https://github.com/PeterFeicht/cppreference-doc"
+  },
+  {
+    "name": "llvm",
+    "branch": "main",
+    "url": "https://github.com/llvm/llvm-project"
+  }
+]

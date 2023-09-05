@@ -3,6 +3,13 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
+cc = [
+  "clang",
+  "clang-format",
+  "clangd",
+  "glslang-tools",
+  "libcjson-dev"
+]
 langs = [
       "golang",
       "nodejs",
