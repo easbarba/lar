@@ -1,5 +1,10 @@
 [
     {
+        "name": "stx",
+        "url": "https://github.com/lamarrr/STX",
+        "branch": "main"
+    },
+    {
         "name": "facebook-folly",
         "url": "https://github.com/facebook/folly",
         "branch": "main"
