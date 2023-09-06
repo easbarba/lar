@@ -22,7 +22,6 @@ README.md
 .config/debian
 .config/devilspie2
 .config/dunst
-.config/fish
 .config/fontconfig
 .config/gh
 .config/gomu
@@ -32,6 +31,7 @@ README.md
 .config/i3
 .config/kitty
 .config/micro
+.config/npm
 .config/nix
 .config/nixos
 .config/nixpkgs

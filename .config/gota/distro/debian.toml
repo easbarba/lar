@@ -93,7 +93,7 @@ wm = [
   "grimshot",
   "mako-notifier",
   "udiskie",
-  "alacritty"
+  "foot"
 ]
 user = [
     "firefox",

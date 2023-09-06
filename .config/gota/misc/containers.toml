@@ -4,14 +4,7 @@ command = "podman pull"
 
 [jobs]
 languages = [
-  "docker.io/library/eclipse-temurin:8-jdk",
-  "docker.io/library/eclipse-temurin:8-jre",
-  "docker.io/library/eclipse-temurin:17-jdk",
-  "docker.io/library/eclipse-temurin:20-jdk",
   "docker.io/library/python:3.11"
-]
-servers = [
-  "quay.io/wildfly/wildfly:29.0.0.Final-jdk17"
 ]
 database = [
   "docker.io/library/postgres:15",

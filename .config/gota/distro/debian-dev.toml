@@ -11,17 +11,8 @@ cc = [
   "libcjson-dev"
 ]
 langs = [
-      "golang",
-      "nodejs",
       "python3-pip",
       "python3-venv"
-]
-java = [
-     "openjdk-17-jdk",
-     "openjdk-17-jre",
-     "maven",
-     "ant",
-     "clang-format"
 ]
 database = [ "sqlite3" ]
 tools = [
@@ -41,7 +32,6 @@ tools = [
     "fzf",
     "distrobox",
     "neofetch"
-    
 ]
 editors = [
     "emacs",
