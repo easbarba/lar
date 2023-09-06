@@ -11,6 +11,7 @@ cc = [
   "libcjson-dev"
 ]
 langs = [
+      "nodejs",
       "python3-pip",
       "python3-venv"
 ]
