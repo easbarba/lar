@@ -1,5 +1,10 @@
 [
     {
+        "name": "facebook-folly",
+        "url": "https://github.com/facebook/folly",
+        "branch": "main"
+    },
+    {
         "name": "cppbestpractices",
         "url": "https://github.com/cpp-best-practices/cppbestpractices"
     },
