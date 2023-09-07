@@ -1,5 +1,9 @@
 [
     {
+        "name": "sfml",
+        "url": "https://github.com/SFML/SFML"
+    },
+    {
         "name": "waybar",
         "url": "https://github.com/Alexays/Waybar"
     },
