@@ -12,6 +12,7 @@ cc = [
 ]
 langs = [
       "nodejs",
+      "lua5.4",
       "python3-pip",
       "python3-venv"
 ]
