@@ -1,5 +1,13 @@
 [
     {
+        "name": "waybar",
+        "url": "https://github.com/Alexays/Waybar"
+    },
+    {
+        "name": "drogon",
+        "url": "https://github.com/drogonframework/drogon"
+    },
+    {
         "name": "stx",
         "url": "https://github.com/lamarrr/STX",
         "branch": "main"
