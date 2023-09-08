@@ -20,6 +20,11 @@
         "url": "https://github.com/swaywm/sway"
     },
     {
+        "name": "gnome-glib",
+        "url": "https://gitlab.gnome.org/GNOME/glib",
+        "branch": "main"
+    },
+    {
         "name": "openssh",
         "url": "https://github.com/openssh/openssh-portable"
     },
@@ -43,5 +48,9 @@
     {
         "name": "curl",
         "url": "https://github.com/curl/curl"
+    },
+    {
+        "name": "gnu-gcc",
+        "url": "git://gcc.gnu.org/git/gcc.git"
     }
 ]
