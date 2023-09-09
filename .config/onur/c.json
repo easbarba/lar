@@ -28,6 +28,10 @@
         "url": "https://github.com/termbox/termbox2"
     },
     {
+        "name": "libgit",
+        "url": "https://github.com/libgit2/libgit2"
+    },
+    {
         "name": "sway",
         "url": "https://github.com/swaywm/sway"
     },
@@ -62,7 +66,11 @@
         "url": "https://github.com/curl/curl"
     },
     {
+        "name": "git",
+        "url": "https://github.com/git/git"
+    },
+    {
         "name": "gnu-gcc",
-        "url": "git://gcc.gnu.org/git/gcc.git"
+        "url": "git://gcc.gnu.org/git/gcc"
     }
 ]
