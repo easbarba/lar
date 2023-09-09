@@ -4,6 +4,14 @@
         "url": "https://github.com/PacktPublishing/Hands-On-Network-Programming-with-C"
     },
     {
+        "name": "skeeto-optparse",
+        "url": "https://github.com/skeeto/optparse"
+    },
+    {
+        "name": "sdl2",
+        "url": "https://github.com/libsdl-org/SDL"
+    },
+    {
         "name": "foot",
         "url": "https://github.com/DanteAlighierin/foot"
     },
