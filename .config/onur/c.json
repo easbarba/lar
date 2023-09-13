@@ -1,0 +1,76 @@
+[
+    {
+        "name": "Hands-On-Network-Programming-with-C",
+        "url": "https://github.com/PacktPublishing/Hands-On-Network-Programming-with-C"
+    },
+    {
+        "name": "skeeto-optparse",
+        "url": "https://github.com/skeeto/optparse"
+    },
+    {
+        "name": "raylib",
+        "url": "https://github.com/raysan5/raylib"
+    },
+    {
+        "name": "sdl2",
+        "url": "https://github.com/libsdl-org/SDL"
+    },
+    {
+        "name": "foot",
+        "url": "https://github.com/DanteAlighierin/foot"
+    },
+    {
+        "name": "cjson",
+        "url": "https://github.com/DaveGamble/cJSON"
+    },
+    {
+        "name": "termbox2",
+        "url": "https://github.com/termbox/termbox2"
+    },
+    {
+        "name": "libgit",
+        "url": "https://github.com/libgit2/libgit2"
+    },
+    {
+        "name": "sway",
+        "url": "https://github.com/swaywm/sway"
+    },
+    {
+        "name": "gnome-glib",
+        "url": "https://gitlab.gnome.org/GNOME/glib",
+        "branch": "main"
+    },
+    {
+        "name": "openssh",
+        "url": "https://github.com/openssh/openssh-portable"
+    },
+    {
+        "name": "openssl",
+        "url": "git://git.openssl.org/openssl"
+    },
+    {
+        "name": "dwm",
+        "url": "https://git.suckless.org/dwm"
+    },
+    {
+        "name": "tmux",
+        "url": "https://github.com/tmux/tmux"
+    },
+    {
+        "name": "redis",
+        "branch": "unstable",
+        "url": "https://github.com/redis/redis"
+    },
+    {
+        "name": "curl",
+        "url": "https://github.com/curl/curl"
+    },
+    {
+        "name": "git",
+        "url": "https://github.com/git/git"
+    },
+    {
+        "name": "gnu-gcc",
+        "url": "git://gcc.gnu.org/git/gcc"
+    }
+]

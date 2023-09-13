@@ -1,5 +1,13 @@
 [
     {
+        "name": "ncmpcpp",
+        "url": "https://github.com/ncmpcpp/ncmpcpp"
+    },
+    {
+        "name": "waybar",
+        "url": "https://github.com/Alexays/Waybar"
+    },
+    {
         "name": "abseil-cpp",
         "url": "https://github.com/abseil/abseil-cpp"
     },
@@ -10,14 +18,6 @@
     {
         "name": "cmake-project-template",
         "url": "https://github.com/kigster/cmake-project-template"
-    },
-    {
-        "name": "sfml",
-        "url": "https://github.com/SFML/SFML"
-    },
-    {
-        "name": "waybar",
-        "url": "https://github.com/Alexays/Waybar"
     },
     {
         "name": "drogon",
@@ -76,14 +76,6 @@
         "name": "dragonflydb",
         "branch": "main",
         "url": "https://github.com/dragonflydb/dragonfly"
-    },
-    {
-        "name": "godot",
-        "url": "https://github.com/godotengine/godot"
-    },
-    {
-        "name": "kdeconnect",
-        "url": "https://github.com/KDE/kdeconnect-kde"
     },
     {
         "name": "cppreference-doc",

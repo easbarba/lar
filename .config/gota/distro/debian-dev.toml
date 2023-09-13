@@ -7,11 +7,10 @@ cc = [
   "clang-16",
   "clang-format-16",
   "clangd-16",
-  "glslang-tools",
-  "libcjson-dev",
-  "catch2"
+  "glslang-tools"
 ]
 langs = [
+      "sbcl",
       "nodejs",
       "npm",
       "python3-pip",
