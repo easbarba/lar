@@ -1,5 +1,9 @@
 [
     {
+        "name": "vichargrave-tcpsockets",
+        "url": "https://github.com/vichargrave/tcpsockets"
+    },
+    {
         "name": "ncmpcpp",
         "url": "https://github.com/ncmpcpp/ncmpcpp"
     },
@@ -64,6 +68,10 @@
         "url": "https://github.com/Tencent/rapidjson"
     },
     {
+        "name": "apt",
+        "url": "https://salsa.debian.org/apt-team/apt"
+    },
+    {
         "name": "doctest",
         "url": "https://github.com/doctest/doctest"
     },
@@ -80,6 +88,10 @@
     {
         "name": "cppreference-doc",
         "url": "https://github.com/PeterFeicht/cppreference-doc"
+    },
+    {
+        "name": "CppCoreGuidelines",
+        "url": "https://github.com/isocpp/CppCoreGuidelines"
     },
     {
         "name": "llvm",
