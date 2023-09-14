@@ -46,11 +46,6 @@
         "url": "https://github.com/fffaraz/awesome-cpp"
     },
     {
-        "name": "beast",
-        "branch": "develop",
-        "url": "https://github.com/boostorg/beast"
-    },
-    {
         "name": "entt",
         "url": "https://github.com/skypjack/entt"
     },
@@ -84,6 +79,23 @@
         "name": "dragonflydb",
         "branch": "main",
         "url": "https://github.com/dragonflydb/dragonfly"
+    },
+    {
+        "name": "asio-standalone",
+        "url": "https://github.com/chriskohlhoff/asio/"
+    },
+    {
+        "name": "boost.beast",
+        "branch": "develop",
+        "url": "https://github.com/boostorg/beast"
+    },
+    {
+        "name": "boost.asio",
+        "url": "https://github.com/boostorg/asio/"
+    },
+    {
+        "name": "zeromq",
+        "url": "https://github.com/zeromq/libzmq",
     },
     {
         "name": "cppreference-doc",
