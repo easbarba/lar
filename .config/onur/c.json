@@ -8,6 +8,10 @@
         "url": "https://github.com/skeeto/optparse"
     },
     {
+        "name": "cproc",
+        "url": "https://git.sr.ht/~mcf/cproc"
+    },
+    {
         "name": "raylib",
         "url": "https://github.com/raysan5/raylib"
     },
@@ -29,8 +33,9 @@
         "url": "https://github.com/termbox/termbox2"
     },
     {
-        "name": "libgit",
-        "url": "https://github.com/libgit2/libgit2"
+        "name": "libgit2",
+        "url": "https://github.com/libgit2/libgit2",
+        "branch": "main"
     },
     {
         "name": "sway",
@@ -40,6 +45,14 @@
         "name": "gnome-glib",
         "url": "https://gitlab.gnome.org/GNOME/glib",
         "branch": "main"
+    },
+    {
+        "name": "musl",
+        "url": "https://git.musl-libc.org/cgit/musl"
+    },
+    {
+        "name": "qbe",
+        "url": "https://c9x.me/git/qbe.git"
     },
     {
         "name": "openssh",
@@ -69,6 +82,10 @@
     {
         "name": "git",
         "url": "https://github.com/git/git"
+    },
+    {
+        "name": "glibc",
+        "url": "https://sourceware.org/git/?p=glibc"
     },
     {
         "name": "gnu-gcc",
