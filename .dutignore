@@ -35,7 +35,6 @@ README.md
 .config/nix
 .config/nixos
 .config/nixpkgs
-.config/nyxt
 .config/psysh
 .config/phpactor
 .config/picom
