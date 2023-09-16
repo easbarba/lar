@@ -84,6 +84,10 @@
         "url": "https://github.com/git/git"
     },
     {
+        "name": "gnu-guile",
+        "url": "https://git.savannah.gnu.org/git/guile/guile-web"
+    },
+    {
         "name": "glibc",
         "url": "https://sourceware.org/git/?p=glibc"
     },
