@@ -1,0 +1,32 @@
+[
+    {
+        "name": "river",
+        "url": "https://github.com/ifreund/river"
+    },
+
+    {
+        "name": "arocc",
+        "url": "https://github.com/Vexu/arocc"
+    },
+    {
+        "name": "bun",
+        "url": "https://github.com/oven-sh/bun",
+        "branch": "main"
+    },
+    {
+        "name": "zls",
+        "url": "https://github.com/zigtools/zls"
+    },
+    {
+        "name": "zig-bootstrap",
+        "url": "https://github.com/ziglang/zig-bootstrap"
+    },
+    {
+        "name": "ziglang",
+        "url": "https://github.com/ziglang/www.ziglang.org"
+    },
+    {
+        "name": "zig",
+        "url": "https://github.com/ziglang/zig"
+    }
+]
