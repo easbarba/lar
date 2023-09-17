@@ -4,10 +4,6 @@ deps = ["apt"]
 
 [packages]
 langs = [
-      "golang",
-      "sbcl",
-      "nodejs",
-      "npm",
       "python3-pip",
       "python3-venv"
 ]
