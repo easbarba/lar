@@ -48,11 +48,11 @@
     },
     {
         "name": "musl",
-        "url": "https://git.musl-libc.org/cgit/musl"
+        "url": "git://git.musl-libc.org/musl"
     },
     {
         "name": "qbe",
-        "url": "https://c9x.me/git/qbe.git"
+        "url": "git://c9x.me/qbe.git"
     },
     {
         "name": "openssh",
