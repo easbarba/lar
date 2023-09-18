@@ -24,5 +24,7 @@ titlebar_border_thickness 0
 
 # -------------- STATUS BAR
 bar {
-    swaybar_command swaybar
+    mode hide
+    position top
+    status_command ~/.local/bin/s-wm-sysinfo
 }
