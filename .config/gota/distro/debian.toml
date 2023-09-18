@@ -85,10 +85,7 @@ laptop = [
 wayland = ["wl-clipboard"]
 wm = [
   "sway",
-  "waybar",
-  "mpd",
-  "mpc",
-  "ncmpcpp",
+  "playerctl",
   "brightnessctl",
   "grimshot",
   "mako-notifier",
