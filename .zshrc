@@ -75,13 +75,14 @@ fi
 
 
 # * APPS
-[ -x $(command -v direnv) ] && eval "$(direnv hook zsh)"
-[ -x $(command -v asdf) ] && . $HOME/.asdf/asdf.sh
-[ -x $(command -v kubectl) ] && source <(kubectl completion zsh)
-if [ -x $(command -v eksctl) ]; then
-    mkdir -p ~/.zsh/completion/
-    eksctl completion zsh > ~/.zsh/completion/_eksctl
-fi
+# [ -x $(command -v direnv) ] && eval "$(direnv hook zsh)"
+# [ -x $(command -v asdf) ] && . $HOME/.asdf/asdf.sh
+# [ -x $(command -v kubectl) ] && source <(kubectl completion zsh)
+# if [ -x $(command -v eksctl) ]; then
+#     mkdir -p ~/.zsh/completion/
+#     eksctl completion zsh > ~/.zsh/completion/_eksctl
+# fi
 
 
 # * SOURCING
+### End of Zinit's installer chunk
