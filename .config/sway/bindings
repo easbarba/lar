@@ -133,12 +133,11 @@ bindsym $mod+Ctrl+e exec s-wm-volume.scm --toggle
 bindsym $mod+Ctrl+a exec s-wm-bright.scm --up
 bindsym $mod+Ctrl+d exec s-wm-bright.scm --down
 
-bindsym $mod+Mod1+e exec mpc toggle
-bindsym $mod+Mod1+a exec mpc prev
-bindsym $mod+Mod1+d exec mpc next
-bindsym $mod+Mod1+w exec mpc volume +3
-bindsym $mod+Mod1+s exec mpc volume -3
-bindsym $mod+Mod1+space exec playerctl play-pause
+bindsym $mod+Mod1+e exec playerctl play-pause
+bindsym $mod+Mod1+a exec playerctl previous
+bindsym $mod+Mod1+d exec playerctl next
+bindsym $mod+Mod1+w exec playerctl volume 0.1+
+bindsym $mod+Mod1+s exec playerctl volume 0.1-
 
 bindsym $mod+Mod1+p exec s-media-play
 bindsym $mod+Mod1+o exec s-media-pic
