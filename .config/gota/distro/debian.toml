@@ -11,39 +11,6 @@ post = [
 ]
 
 [packages]
-base = [
-    "make",
-    "gcc"
-]
-amd = [
-    "amd64-microcode",
-    "firmware-amd-graphics",
-    "libgl1-mesa-dri",
-    "libglx-mesa0",
-    "mesa-utils",
-    "libgl1-mesa-glx",
-    "mesa-vulkan-drivers",
-    "xserver-xorg-video-all",
-    "libglx-mesa0:i386",
-    "mesa-vulkan-drivers:i386",
-    "libgl1-mesa-drivers:i386",
-    "radeontop",
-]
-debian = [
-    "build-essential",
-    "aptitude",
-    "apt-file",
-    "gdebi"
-]
-fonts = [
-    "fonts-hack",
-    "fonts-dejavu",
-    "fonts-jetbrains-mono",
-    "ttf-ancient-fonts",
-    "fonts-nanum",
-    "ttf-mscorefonts-installer",
-    "cmigemo",
-]
 gnu = [
     "bash",
     "gcc",
@@ -54,61 +21,11 @@ gnu = [
     "gawk",
     "parted",
 ]
-laptop = [
-    "acpi",
-    "lm-sensors",
-    "lshw",
-    "libinput-tools",
-    "acpid",
-    "tlp",
-    "vainfo",
-    "i965-va-driver",
-    "libvdpau-va-gl1",
-    "libiw-dev",
-    "acpi-call",
-    "dialog",
-    "sysstat",
-    "hddtemp",
-]
-cli = [
-    "htop",
-    "elinks",
-    "libnotify-bin",
-    "ranger",
-    "aria2",
-    "neofetch",
-    "unrar",
-    "btop",
-    "bash-completion",
-    "shellcheck"
-    "zsh"
-]
-wayland = [
-  "wl-clipboard",
-  "sway",
-  "grimshot",
-  "mako-notifier",
-  "foot"
-]
-wm = [
-  "brightnessctl",
-  "udiskie",
-  "cmus"
-  "playerctl",
-]
-user = [
-    "firefox",
-    "thunderbird",
-    "libreoffice",
-    "gimp",
-    "xdg-utils",
-    "imagemagick",
-    "aspell",
-    "aspell-pt-br",
-    "calibre",
-    "pandoc",
-    "obs-studio",
-    "inkscape"
+debian = [
+    "build-essential",
+    "aptitude",
+    "apt-file",
+    "gdebi"
 ]
 system = [
     "flatpak",
@@ -141,6 +58,64 @@ system = [
     "automake",
     "socat",
 ]
+laptop = [
+    "acpi",
+    "lm-sensors",
+    "lshw",
+    "libinput-tools",
+    "acpid",
+    "tlp",
+    "vainfo",
+    "i965-va-driver",
+    "libvdpau-va-gl1",
+    "libiw-dev",
+    "acpi-call",
+    "dialog",
+    "sysstat",
+    "hddtemp",
+]
+cli = [
+    "htop",
+    "elinks",
+    "libnotify-bin",
+    "ranger",
+    "aria2",
+    "bpytop",
+    "neofetch",
+    "unrar",
+]
+shell = [
+    "bash-completion",
+    "shellcheck"
+    "zsh"
+]
+wayland = [
+  "wl-clipboard",
+  "sway",
+  "grimshot",
+  "mako-notifier",
+  "foot"
+]
+wm = [
+  "brightnessctl",
+  "udiskie",
+  "cmus"
+  "playerctl",
+]
+user = [
+    "firefox",
+    "thunderbird",
+    "libreoffice",
+    "gimp",
+    "xdg-utils",
+    "imagemagick",
+    "aspell",
+    "aspell-pt-br",
+    "calibre",
+    "pandoc",
+    "obs-studio",
+    "inkscape"
+]
 sound = [
      "pulseaudio-utils",
      "pipewire",
@@ -163,4 +138,27 @@ media = [
 libs = [
     "libtag1-dev",
     "libtagc0-dev"
+]
+fonts = [
+    "fonts-hack",
+    "fonts-dejavu",
+    "fonts-jetbrains-mono",
+    "ttf-ancient-fonts",
+    "fonts-nanum",
+    "ttf-mscorefonts-installer",
+    "cmigemo",
+]
+amd = [
+    "amd64-microcode",
+    "firmware-amd-graphics",
+    "libgl1-mesa-dri",
+    "libglx-mesa0",
+    "mesa-utils",
+    "libgl1-mesa-glx",
+    "mesa-vulkan-drivers",
+    "xserver-xorg-video-all",
+    "libglx-mesa0:i386",
+    "mesa-vulkan-drivers:i386",
+    "libgl1-mesa-drivers:i386",
+    "radeontop",
 ]
