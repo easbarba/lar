@@ -3,37 +3,43 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
+cc = [
+   "clangd",
+   "clang-format"
+]
 langs = [
       "golang",
       "python3-pip",
       "python3-venv"
 ]
-games = [
-      "libsfml-dev"
+libs = [
+    "libpq-dev",
+    "libsfml-dev"
 ]
 database = [ "sqlite3" ]
 tools = [
     "jq",
+    "meson",
     "git-email",
     "subversion",
     "mercurial",
-    "libpq-dev",
     "editorconfig",
-    "fd-find",
-    "ripgrep",
     "shfmt",
-    "meson",
     "cmake",
     "grip",
     "tidy",
     "fzf",
     "distrobox",
-    "neofetch"
 ]
 editors = [
-    "emacs",
+
     "vim",
     "neovim"
+]
+emacs = [
+    "emacs",
+    "fd-find",
+    "ripgrep",
 ]
 emacs-pdftools = [
   "autoconf",
