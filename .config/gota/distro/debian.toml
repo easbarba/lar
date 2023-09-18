@@ -29,18 +29,6 @@ amd = [
     "libgl1-mesa-drivers:i386",
     "radeontop",
 ]
-cli = [
-    "htop",
-    "elinks",
-    "libnotify-bin",
-    "ranger",
-    "aria2",
-    "neofetch",
-    "unrar",
-    "btop",
-    "bash-completion",
-    "shellcheck"
-]
 debian = [
     "build-essential",
     "aptitude",
@@ -82,15 +70,31 @@ laptop = [
     "sysstat",
     "hddtemp",
 ]
-wayland = ["wl-clipboard"]
-wm = [
+cli = [
+    "htop",
+    "elinks",
+    "libnotify-bin",
+    "ranger",
+    "aria2",
+    "neofetch",
+    "unrar",
+    "btop",
+    "bash-completion",
+    "shellcheck"
+    "zsh"
+]
+wayland = [
+  "wl-clipboard",
   "sway",
-  "playerctl",
-  "brightnessctl",
   "grimshot",
   "mako-notifier",
-  "udiskie",
   "foot"
+]
+wm = [
+  "brightnessctl",
+  "udiskie",
+  "cmus"
+  "playerctl",
 ]
 user = [
     "firefox",
