@@ -8,7 +8,6 @@ cc = [
    "clang-format"
 ]
 langs = [
-      "golang",
       "python3-pip",
       "python3-venv"
 ]
@@ -20,6 +19,7 @@ database = [ "sqlite3" ]
 tools = [
     "jq",
     "meson",
+    "muoun-meson",
     "git-email",
     "subversion",
     "mercurial",

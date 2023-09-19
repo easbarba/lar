@@ -4,6 +4,10 @@
         "url": "https://github.com/PacktPublishing/Hands-On-Network-Programming-with-C"
     },
     {
+        "name": "yambar",
+        "url": "https://codeberg.org/dnkl/yambar"
+    },
+    {
         "name": "skeeto-optparse",
         "url": "https://github.com/skeeto/optparse"
     },
