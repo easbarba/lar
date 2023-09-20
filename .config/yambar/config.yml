@@ -18,7 +18,7 @@ bar:
   margin: 7
 
   # Default font
-  font: Adobe Helvetica:pixelsize=12
+  font: Adobe Helvetica:pixelsize=13
 
   foreground: ffffffff
   background: 111111cc
@@ -142,26 +142,6 @@ bar:
                     optical:
                       - string: { <<: *optical, deco: *std_underline }
                       - string: { text: "{label}" }
-    - sway-xkb:
-        identifiers: [1:1:AT_Translated_Set_2_keyboard]
-        content:
-          - string: { text: , font: *awesome }
-          - string: { text: "{layout}" }
-    - network:
-        name: enp1s0
-        content:
-          map:
-            conditions:
-              ~carrier: { empty: {} }
-              carrier:
-                map:
-                  default:
-                    {
-                      string: { text: , font: *awesome, foreground: ffffff66 },
-                    }
-                  conditions:
-                    state == up && ipv4 != "":
-                      { string: { text: , font: *awesome } }
     - network:
         name: wlan0
         poll-interval: 1000
@@ -279,17 +259,9 @@ bar:
                           { text:  , foreground: 00ff00ff, font: *awesome }
                 - string: { text: "{capacity}%" }
     - clock:
-        time-format: "%H:%M"
+        time-format: "%H:%M "
         content:
           - string: { text: , font: *awesome }
           - string: { text: "{date}", right-margin: 5 }
           - string: { text: , font: *awesome }
           - string: { text: "{time}" }
-    - label:
-        content:
-          string:
-            on-click: systemctl reboot
-            text: 
-            font: *awesome
-
-  
