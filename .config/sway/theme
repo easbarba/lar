@@ -24,7 +24,7 @@ titlebar_border_thickness 0
 
 # -------------- STATUS BAR
 bar {
-    #mode hide
+    mode hide
     #position bottom
     status_command yambar
 }
