@@ -4,6 +4,7 @@ deps = ["apt"]
 
 [packages]
 cc = [
+   "gdb",
    "clangd",
    "clang-format"
 ]
