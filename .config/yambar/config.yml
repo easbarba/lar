@@ -1,23 +1,15 @@
-# Typical laptop setup, with wifi, brightness, battery etc, for
-# i3/Sway.
-
-# For X11/i3, you'll want to replace calls to swaymsg with i3-msg, and
-# the sway-xkb module with the xkb module.
-
 # fonts we'll be re-using here and there
 awesome: &awesome Font Awesome 6 Free:style=solid:pixelsize=14
 awesome_brands: &awesome_brands Font Awesome 6 Brands:pixelsize=16
 
 std_underline: &std_underline { underline: { size: 2, color: ff0000ff } }
 
-# This is THE bar configuration
 bar:
   height: 26
   location: bottom
   spacing: 5
   margin: 7
 
-  # Default font
   font: Adobe Helvetica:pixelsize=13
 
   foreground: ffffffff
@@ -168,34 +160,13 @@ bar:
                             text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s",
                             foreground: ffffff66,
                           }
-    - alsa:
-        card: hw:PCH
-        mixer: Master
-        content:
-          map:
-            conditions:
-              ~online:
-                { string: { text: , font: *awesome, foreground: ff0000ff } }
-              online:
-                map:
-                  on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
-                  conditions:
-                    muted:
-                      {
-                        string:
-                          { text: , font: *awesome, foreground: ffffff66 },
-                      }
-                    ~muted:
-                      ramp:
-                        tag: percent
-                        items:
-                          - string: { text: , font: *awesome }
-                          - string: { text: , font: *awesome }
-                          - string: { text: , font: *awesome }
     - backlight:
-        name: amd_backlight
+        name: amdgpu_bl0
         content:
-          [string: { text: , font: *awesome }, string: { text: "{percent}%" }]
+          [
+            string: { text: "BL", font: *awesome },
+            string: { text: "{percent}%" },
+          ]
     - battery:
         name: BAT0
         poll-interval: 30000
@@ -261,7 +232,5 @@ bar:
     - clock:
         time-format: "%H:%M "
         content:
-          - string: { text: , font: *awesome }
           - string: { text: "{date}", right-margin: 5 }
-          - string: { text: , font: *awesome }
           - string: { text: "{time}" }
