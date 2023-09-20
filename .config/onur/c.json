@@ -12,8 +12,20 @@
         "url": "https://github.com/skeeto/optparse"
     },
     {
+        "name": "samurai",
+        "url": "https://git.sr.ht/~mcf/samurai"
+    },
+    {
         "name": "cproc",
         "url": "https://git.sr.ht/~mcf/cproc"
+    },
+    {
+        "name": "qbe",
+        "url": "git://c9x.me/qbe.git"
+    },
+    {
+        "name": "muon",
+        "url": "https://git.sr.ht/~lattis/muon"
     },
     {
         "name": "raylib",
@@ -29,8 +41,8 @@
         "url": "https://github.com/DanteAlighierin/foot"
     },
     {
-        "name": "cjson",
-        "url": "https://github.com/DaveGamble/cJSON"
+        "name": "harec",
+        "url": "https://git.sr.ht/~sircmpwn/harec"
     },
     {
         "name": "termbox2",
@@ -53,10 +65,6 @@
     {
         "name": "musl",
         "url": "git://git.musl-libc.org/musl"
-    },
-    {
-        "name": "qbe",
-        "url": "git://c9x.me/qbe.git"
     },
     {
         "name": "openssh",
