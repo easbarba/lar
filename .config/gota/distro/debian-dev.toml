@@ -6,18 +6,10 @@ deps = ["apt"]
 gnu = [
     "gdb",
 ]
-c = [
+cc = [
    "meson",
-   "muoun-meson"
-]
-cpp = [
-  "clang-16",
-  "clang-format-16",
-  "clangd-16",
-  "glslang-tools",
-  "clangd-16",
-  "clang-format-16"
-  "cmake",
+   "muoun-meson",
+   "cmake",
 ]
 langs = [
     "python3-pip",
