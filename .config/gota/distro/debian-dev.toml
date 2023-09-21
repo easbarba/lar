@@ -3,14 +3,25 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
-cc = [
-   "gdb",
-   "clangd",
-   "clang-format"
+gnu = [
+    "gdb",
+]
+c = [
+   "meson",
+   "muoun-meson"
+]
+cpp = [
+  "clang-16",
+  "clang-format-16",
+  "clangd-16",
+  "glslang-tools",
+  "clangd-16",
+  "clang-format-16"
+  "cmake",
 ]
 langs = [
-      "python3-pip",
-      "python3-venv"
+    "python3-pip",
+    "python3-venv"
 ]
 libs = [
     "libpq-dev",
@@ -19,14 +30,11 @@ libs = [
 database = [ "sqlite3" ]
 tools = [
     "jq",
-    "meson",
-    "muoun-meson",
     "git-email",
     "subversion",
     "mercurial",
     "editorconfig",
     "shfmt",
-    "cmake",
     "grip",
     "tidy",
     "fzf",
