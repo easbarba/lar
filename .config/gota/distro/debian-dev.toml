@@ -9,6 +9,8 @@ gnu = [
 cc = [
    "meson",
    "muoun-meson",
+   "splint",
+   "indent",
    "cmake",
 ]
 langs = [
@@ -18,6 +20,9 @@ langs = [
 libs = [
     "libpq-dev",
     "libsfml-dev"
+]
+gui = [
+    "libgtk-4-dev"
 ]
 database = [ "sqlite3" ]
 tools = [
