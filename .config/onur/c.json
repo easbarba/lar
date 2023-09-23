@@ -75,6 +75,10 @@
         "url": "git://git.openssl.org/openssl"
     },
     {
+        "name": "st",
+        "url": "https://git.suckless.org/st"
+    }
+   ,{
         "name": "dwm",
         "url": "https://git.suckless.org/dwm"
     },
@@ -96,6 +100,14 @@
         "url": "https://github.com/git/git"
     },
     {
+        "name": "gnome-nautilus",
+        "url": "https://gitlab.gnome.org/GNOME/nautilus"
+    },
+    {
+        "name": "gnome-gtk",
+        "url": "https://gitlab.gnome.org/GNOME/gtk/"
+    }
+    ,{
         "name": "gnu-guile",
         "url": "https://git.savannah.gnu.org/git/guile/guile-web"
     },
