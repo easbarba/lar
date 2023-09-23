@@ -6,7 +6,7 @@ pre = "sudo dpkg --add-architecture i386"
 deps = ["apt"]
 post = [
     "sudo apt-file update",
-    "sudo apt remove -y firefox-esr",
+    "sudo apt remove -y firefox-esr xdg-desktop-portal*",
     "sudo dpkg-reconfigure locales",
 ]
 
@@ -77,11 +77,10 @@ laptop = [
 ]
 cli = [
     "htop",
-    "elinks",
+    "bpytop",
     "w3m",
     "libnotify-bin",
     "nnn",
-    "bpytop",
     "neofetch",
     "aria2",
     "unrar",
@@ -89,7 +88,6 @@ cli = [
 shell = [
     "bash-completion",
     "shellcheck"
-    "zsh"
 ]
 wayland = [
   "wl-clipboard",
@@ -114,8 +112,7 @@ user = [
     "aspell-pt-br",
     "calibre",
     "pandoc",
-    "obs-studio",
-    "inkscape"
+    "obs-studio"
 ]
 sound = [
      "pulseaudio-utils",
