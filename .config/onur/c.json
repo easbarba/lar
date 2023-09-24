@@ -119,7 +119,11 @@
         "url": "https://git.savannah.gnu.org/git/guile/guile-web"
     },
     {
-        "name": "glibc",
+        "name": "gnu-indent",
+        "url": "https://git.savannah.gnu.org/git/indent.git"
+    },
+    {
+        "name": "gnu-glibc",
         "url": "git://sourceware.org/git/glibc.git"
     },
     {
