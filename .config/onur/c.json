@@ -77,10 +77,14 @@
     {
         "name": "st",
         "url": "https://git.suckless.org/st"
-    }
-   ,{
+    },
+    {
         "name": "dwm",
         "url": "https://git.suckless.org/dwm"
+    },
+    {
+        "name": "sqlite",
+        "url": "https://github.com/sqlite/sqlite"
     },
     {
         "name": "tmux",
