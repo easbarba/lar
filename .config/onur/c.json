@@ -101,11 +101,18 @@
     },
     {
         "name": "gnome-nautilus",
-        "url": "https://gitlab.gnome.org/GNOME/nautilus"
+        "url": "https://gitlab.gnome.org/GNOME/nautilus",
+        "branch": "main"
+    },
+    {
+        "name": "gnome-glib",
+        "url": "https://gitlab.gnome.org/GNOME/glib",
+        "branch": "main"
     },
     {
         "name": "gnome-gtk",
-        "url": "https://gitlab.gnome.org/GNOME/gtk/"
+        "url": "https://gitlab.gnome.org/GNOME/gtk",
+        "branch": "main"
     }
     ,{
         "name": "gnu-guile",
