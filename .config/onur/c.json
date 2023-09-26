@@ -96,6 +96,10 @@
         "url": "https://github.com/redis/redis"
     },
     {
+       "name": "php-src",
+       "url": "https://github.com/php/php-src"
+    },
+    {
         "name": "curl",
         "url": "https://github.com/curl/curl"
     },
