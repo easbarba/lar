@@ -1,5 +1,9 @@
 [
     {
+        "name": "mal",
+        "url": "https://github.com/kanaka/mal"
+    },
+    {
         "name": "build-your-own-x",
         "url": "https://github.com/codecrafters-io/build-your-own-x"
     },
