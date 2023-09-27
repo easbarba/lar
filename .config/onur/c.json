@@ -104,10 +104,6 @@
         "url": "https://github.com/curl/curl"
     },
     {
-        "name": "git",
-        "url": "https://github.com/git/git"
-    },
-    {
         "name": "gnome-nautilus",
         "url": "https://gitlab.gnome.org/GNOME/nautilus",
         "branch": "main"
@@ -121,8 +117,16 @@
         "name": "gnome-gtk",
         "url": "https://gitlab.gnome.org/GNOME/gtk",
         "branch": "main"
-    }
-    ,{
+    },
+    {
+        "name": "git",
+        "url": "git://git.kernel.org/pub/scm/git/git.git"
+    },
+    {
+        "name": "linux",
+        "url": "git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"
+    },
+    {
         "name": "gnu-guile",
         "url": "https://git.savannah.gnu.org/git/guile/guile-web"
     },
