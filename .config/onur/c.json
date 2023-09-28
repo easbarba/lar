@@ -4,10 +4,6 @@
         "url": "https://github.com/PacktPublishing/Hands-On-Network-Programming-with-C"
     },
     {
-        "name": "yambar",
-        "url": "https://codeberg.org/dnkl/yambar"
-    },
-    {
         "name": "skeeto-optparse",
         "url": "https://github.com/skeeto/optparse"
     },
@@ -37,16 +33,8 @@
         "branch": "main"
     },
     {
-        "name": "foot",
-        "url": "https://github.com/DanteAlighierin/foot"
-    },
-    {
         "name": "harec",
         "url": "https://git.sr.ht/~sircmpwn/harec"
-    },
-    {
-        "name": "termbox2",
-        "url": "https://github.com/termbox/termbox2"
     },
     {
         "name": "libgit2",
@@ -56,11 +44,6 @@
     {
         "name": "sway",
         "url": "https://github.com/swaywm/sway"
-    },
-    {
-        "name": "gnome-glib",
-        "url": "https://gitlab.gnome.org/GNOME/glib",
-        "branch": "main"
     },
     {
         "name": "musl",
@@ -96,17 +79,8 @@
         "url": "https://github.com/redis/redis"
     },
     {
-       "name": "php-src",
-       "url": "https://github.com/php/php-src"
-    },
-    {
         "name": "curl",
         "url": "https://github.com/curl/curl"
-    },
-    {
-        "name": "gnome-nautilus",
-        "url": "https://gitlab.gnome.org/GNOME/nautilus",
-        "branch": "main"
     },
     {
         "name": "gnome-glib",
@@ -114,17 +88,8 @@
         "branch": "main"
     },
     {
-        "name": "gnome-gtk",
-        "url": "https://gitlab.gnome.org/GNOME/gtk",
-        "branch": "main"
-    },
-    {
         "name": "git",
         "url": "git://git.kernel.org/pub/scm/git/git.git"
-    },
-    {
-        "name": "linux",
-        "url": "git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"
     },
     {
         "name": "gnu-guile",
@@ -133,13 +98,5 @@
     {
         "name": "gnu-indent",
         "url": "https://git.savannah.gnu.org/git/indent.git"
-    },
-    {
-        "name": "gnu-glibc",
-        "url": "git://sourceware.org/git/glibc.git"
-    },
-    {
-        "name": "gnu-gcc",
-        "url": "git://gcc.gnu.org/git/gcc"
     }
 ]
