@@ -6,15 +6,21 @@ deps = ["apt"]
 gnu = [
     "gdb",
 ]
-cc = [
+c = [
    "valgrind",
    "meson",
    "muoun-meson",
    "splint",
    "indent",
+
+]
+cpp = [
    "cmake",
+   "clang-16",
+   "clangd-16"
 ]
 langs = [
+    "golang",
     "python3-pip",
     "python3-venv"
 ]
