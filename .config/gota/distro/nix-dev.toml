@@ -5,3 +5,4 @@ command = "nix-env -iA"
 
 [packages]
 langs = [ "nixpkgs.kotlin", "nixpkgs.ktlint" ]
+tools = [ "nixpkgs.gradle" ]
