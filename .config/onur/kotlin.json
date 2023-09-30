@@ -1,9 +1,13 @@
 [
     {
+        "name": "ktor",
+        "url": "https://github.com/ktorio/ktor"
+    },
+    {
         "name": "fdroidclient",
         "url": "https://gitlab.com/fdroid/fdroidclient"
     },
-{
+    {
         "name": "tachiyomi",
         "url": "https://github.com/tachiyomiorg/tachiyomi"
     },
