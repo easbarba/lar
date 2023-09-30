@@ -1,0 +1,10 @@
+[
+    {
+    "name": "ktlint",
+    "url": "https://github.com/pinterest/ktlint"
+},
+    {
+        "name": "kotlin",
+        "url": "https://github.com/JetBrains/kotlin"
+    }
+]

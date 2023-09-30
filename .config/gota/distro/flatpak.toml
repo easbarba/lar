@@ -13,6 +13,9 @@ apps = [
   "com.google.Chrome",
   "org.telegram.desktop"
 ]
+editors = [
+  "com.google.AndroidStudio",
+]
 tools = [
   "com.getpostman.Postman",
   "io.github.NhekoReborn.Nheko",

@@ -19,8 +19,10 @@ cpp = [
    "clang-16",
    "clangd-16"
 ]
+jdk = [
+    "gradle"
+]
 langs = [
-    "golang",
     "python3-pip",
     "python3-venv"
 ]

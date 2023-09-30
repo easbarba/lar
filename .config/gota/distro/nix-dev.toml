@@ -1,0 +1,7 @@
+manager = "Nix Development Tools"
+deps = [ "nix" ]
+upgrade = "nix-env -u '*'"
+command = "nix-env -iA"
+
+[packages]
+langs = [ "nixpkgs.kotlin", "nixpkgs.ktlint" ]
