@@ -1,8 +1,28 @@
 [
     {
-    "name": "ktlint",
-    "url": "https://github.com/pinterest/ktlint"
-},
+        "name": "fdroidclient",
+        "url": "https://gitlab.com/fdroid/fdroidclient"
+    },
+{
+        "name": "tachiyomi",
+        "url": "https://github.com/tachiyomiorg/tachiyomi"
+    },
+    {
+        "name": "okhttp",
+        "url": "https://github.com/square/okhttp"
+    },
+    {
+        "name": "kotlin-language-server",
+        "url": "https://github.com/fwcd/kotlin-language-server"
+    },
+{
+        "name": "ktlint",
+        "url": "https://github.com/pinterest/ktlint"
+    },
+    {
+        "name": "ktlint",
+        "url": "https://github.com/pinterest/ktlint"
+    },
     {
         "name": "kotlin",
         "url": "https://github.com/JetBrains/kotlin"
