@@ -20,7 +20,8 @@ cpp = [
    "clangd-16"
 ]
 jdk = [
-    "gradle"
+   "openjdk-21-jdk",
+   "openjdk-21-jre"
 ]
 langs = [
     "python3-pip",
