@@ -11,17 +11,12 @@ c = [
    "meson",
    "muoun-meson",
    "splint",
-   "indent",
-
+   "indent"
 ]
 cpp = [
    "cmake",
    "clang-16",
    "clangd-16"
-]
-jdk = [
-   "openjdk-21-jdk",
-   "openjdk-21-jre"
 ]
 langs = [
     "python3-pip",
@@ -34,7 +29,7 @@ libs = [
 gui = [
     "libgtk-4-dev",
     "libgtk-4-1",
-	  "gtk-4-examples"
+	 "gtk-4-examples"
 ]
 database = [ "sqlite3" ]
 tools = [
@@ -50,7 +45,6 @@ tools = [
     "distrobox",
 ]
 editors = [
-
     "vim",
     "neovim"
 ]
