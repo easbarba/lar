@@ -1,7 +1,8 @@
 [
     {
         "name": "barco",
-        "url": "https://github.com/lucavallin/barco"
+        "url": "https://github.com/lucavallin/barco",
+        "branch": "main"
     },
     {
         "name": "Hands-On-Network-Programming-with-C",
