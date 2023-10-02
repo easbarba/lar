@@ -1,0 +1,31 @@
+[
+  {
+    "name": "vapor",
+    "url": "https://github.com/vapor/vapor",
+    "branch": "main"
+  },
+  {
+    "name": "alamofire",
+    "url": "https://github.com/Alamofire/Alamofire"
+  },
+  {
+    "name": "sourcekit-lsp",
+    "url": "https://github.com/apple/sourcekit-lsp",
+    "branch": "main"
+  },
+  {
+    "name": "swift-argument-parser",
+    "url": "https://github.com/apple/swift-argument-parser",
+    "branch": "main"
+  },
+  {
+    "name": "swift-format",
+    "url": "https://github.com/apple/swift-format",
+    "branch": "main"
+  },
+  {
+    "name": "swift",
+    "url": "https://github.com/apple/swift",
+    "branch": "main"
+  }
+]
