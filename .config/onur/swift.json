@@ -14,6 +14,11 @@
     "branch": "main"
   },
   {
+    "name": "swift-foundation",
+    "url": "https://github.com/apple/swift-foundation",
+    "branch": "main"
+  },
+  {
     "name": "swift-argument-parser",
     "url": "https://github.com/apple/swift-argument-parser",
     "branch": "main"
