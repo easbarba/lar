@@ -58,6 +58,8 @@ system = [
     "autoconf",
     "automake",
     "socat",
+    "aspell",
+    "ispell"
 ]
 laptop = [
     "acpi",
