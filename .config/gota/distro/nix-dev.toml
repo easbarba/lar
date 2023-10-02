@@ -4,3 +4,4 @@ upgrade = "nix-env -u '*'"
 command = "nix-env -iA"
 
 [packages]
+langs = [ "nixpkgs.swift", "nixpkgs.swift-format" ]
