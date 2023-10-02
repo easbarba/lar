@@ -24,6 +24,11 @@
     "branch": "main"
   },
   {
+    "name": "swift-book",
+    "url": "https://github.com/apple/swift-book",
+    "branch": "main"
+  },
+  {
     "name": "swift",
     "url": "https://github.com/apple/swift",
     "branch": "main"
