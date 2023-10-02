@@ -1,5 +1,9 @@
 [
   {
+    "name": "swiftyjson",
+    "url": "https://github.com/SwiftyJSON/SwiftyJSON"
+  },
+  {
     "name": "vapor",
     "url": "https://github.com/vapor/vapor",
     "branch": "main"
