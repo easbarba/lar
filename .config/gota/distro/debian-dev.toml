@@ -11,7 +11,9 @@ c = [
    "meson",
    "muoun-meson",
    "splint",
-   "indent"
+   "indent",
+   "check",
+   "libcunit1"
 ]
 cpp = [
    "cmake",
