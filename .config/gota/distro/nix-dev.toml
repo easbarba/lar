@@ -7,5 +7,8 @@ command = "nix-env -iA"
 langs = [
   "nixpkgs.swift",
   "nixpkgs.swiftPackages.swiftpm",
-  "nixpkgs.swift-format"
+  "nixpkgs.swift-format",
+  "nixpkgs.swiftPackages.Foundation",
+  "nixpkgs.swiftPackages.stdenv",
+  "nixpkgs.swiftPackages.XCTest"
 ]
