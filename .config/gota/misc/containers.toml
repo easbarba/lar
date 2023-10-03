@@ -4,7 +4,7 @@ command = "podman pull"
 
 [jobs]
 languages = [
-    "docker.io/library/swift:5.9",
+    "docker.io/library/golang:1",
     "docker.io/library/python:3.11"
 ]
 database = [
