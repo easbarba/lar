@@ -6,15 +6,15 @@ command = "gem install"
 
 [packages]
 essentials = [
-           "bundler",
-           "rake"
+  "bundler",
+  "rake"
 ]
 tools = [
-      "reek",
-      "rufo",
-      "rubocop",
-      "pry"
+  "reek",
+  "rufo",
+  "rubocop",
+  "pry"
 ]
 libs = [
-      "taglib-ruby"
+  "taglib-ruby"
 ]
