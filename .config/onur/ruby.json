@@ -1,8 +1,21 @@
 [
     {
-        "name": "devise",
-        "url": "https://github.com/heartcombo/devise",
+        "name": "fluenthd",
+        "url": "https://github.com/fluent/fluentd"
+    },
+    {
+        "name": "sinatra",
+        "url": "https://github.com/sinatra/sinatra",
         "branch": "main"
+    },
+    {
+        "name": "sidekiq",
+        "url": "https://github.com/sidekiq/sidekiq",
+        "branch": "main"
+    },
+    {
+        "name": "debug",
+        "url": "https://github.com/ruby/debug"
     },
     {
         "name": "devise",
@@ -16,7 +29,6 @@
     },
     {
         "name": "ruby",
-        "url": "https://github.com/ruby/ruby",
-        "branch": "main"
+        "url": "https://github.com/ruby/ruby"
     }
 ]
