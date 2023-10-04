@@ -10,6 +10,7 @@ essentials = [
   "rake"
 ]
 tools = [
+  "rails",
   "reek",
   "rufo",
   "rubocop",
