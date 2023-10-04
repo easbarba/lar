@@ -1,0 +1,22 @@
+[
+    {
+        "name": "devise",
+        "url": "https://github.com/heartcombo/devise",
+        "branch": "main"
+    },
+    {
+        "name": "devise",
+        "url": "https://github.com/heartcombo/devise",
+        "branch": "main"
+    },
+    {
+        "name": "rails",
+        "url": "https://github.com/rails/rails",
+        "branch": "main"
+    },
+    {
+        "name": "ruby",
+        "url": "https://github.com/ruby/ruby",
+        "branch": "main"
+    }
+]
