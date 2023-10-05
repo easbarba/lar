@@ -4,6 +4,9 @@ command = "podman pull"
 
 [jobs]
 languages = [
+  "docker.io/library/mcr.microsoft.com/dotnet/sdk:7.0",
+  "docker.io/library/mcr.microsoft.com/dotnet/aspnet:7.0",
+  "docker.io/library/mono:6-slim",
   "docker.io/library/golang:1",
   "docker.io/library/python:3.11"
 ]
