@@ -1,8 +1,13 @@
 [
     {
+        "name": "golang-design-clipboard",
+        "url": "https://github.com/golang-design/clipboard",
+        "branch": "main"
+    },
+    {
         "name": "avelino-awesome-go",
-        "branch": "main",
-        "url": "https://github.com/avelino/awesome-go"
+        "url": "https://github.com/avelino/awesome-go",
+        "branch": "main"
     },
     {
         "name": "fzf",
@@ -10,8 +15,8 @@
     },
     {
         "name": "gitql",
-        "branch": "main",
-        "url": "https://github.com/filhodanuvem/gitql"
+        "url": "https://github.com/filhodanuvem/gitql",
+        "branch": "main"
     },
     {
         "name": "echo",
@@ -19,8 +24,8 @@
     },
     {
         "name": "gum",
-        "branch": "main",
-        "url": "https://github.com/charmbracelet/gum"
+        "url": "https://github.com/charmbracelet/gum",
+        "branch": "main"
     },
     {
         "name": "go-git",
@@ -32,8 +37,8 @@
     },
     {
         "name": "containerd",
-        "branch": "main",
-        "url": "https://github.com/containerd/containerd"
+        "url": "https://github.com/containerd/containerd",
+        "branch": "main"
     },
     {
         "name": "kubectl",
@@ -41,13 +46,13 @@
     },
     {
         "name": "buildah",
-        "branch": "main",
-        "url": "https://github.com/containers/buildah"
+        "url": "https://github.com/containers/buildah",
+        "branch": "main"
     },
     {
         "name": "podman",
-        "branch": "main",
-        "url": "https://github.com/containers/podman"
+        "url": "https://github.com/containers/podman",
+        "branch": "main"
     },
     {
         "name": "go-tools",
