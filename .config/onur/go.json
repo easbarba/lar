@@ -1,0 +1,64 @@
+[
+    {
+        "name": "avelino-awesome-go",
+        "branch": "main",
+        "url": "https://github.com/avelino/awesome-go"
+    },
+    {
+        "name": "fzf",
+        "url": "https://github.com/junegunn/fzf"
+    },
+    {
+        "name": "gitql",
+        "branch": "main",
+        "url": "https://github.com/filhodanuvem/gitql"
+    },
+    {
+        "name": "echo",
+        "url": "https://github.com/labstack/echo"
+    },
+    {
+        "name": "gum",
+        "branch": "main",
+        "url": "https://github.com/charmbracelet/gum"
+    },
+    {
+        "name": "go-git",
+        "url": "https://github.com/go-git/go-git"
+    },
+    {
+        "name": "shfmt",
+        "url": "https://github.com/mvdan/sh"
+    },
+    {
+        "name": "containerd",
+        "branch": "main",
+        "url": "https://github.com/containerd/containerd"
+    },
+    {
+        "name": "kubectl",
+        "url": "https://github.com/kubernetes/kubectl"
+    },
+    {
+        "name": "buildah",
+        "branch": "main",
+        "url": "https://github.com/containers/buildah"
+    },
+    {
+        "name": "podman",
+        "branch": "main",
+        "url": "https://github.com/containers/podman"
+    },
+    {
+        "name": "go-tools",
+        "url": "https://github.com/golang/tools"
+    },
+    {
+        "name": "go-wiki",
+        "url": "https://github.com/golang/go.wiki"
+    },
+    {
+        "name": "go",
+        "url": "https://go.googlesource.com/go"
+    }
+]
