@@ -68,12 +68,3 @@ emacs-pdftools = [
   "pkg-config"
 ]
 images = [ "krita" ]
-network = [
-    "tcpdump",
-    "iftop",
-    "nload",
-    "nethogs",
-    "wireshark",
-    "tshark",
-    "netperf"
-]

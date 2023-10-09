@@ -8,6 +8,21 @@ post = [
 ]
 
 [packages]
-containers = ["podman", " podman-compose" ]
+containers = [ "podman", " podman-compose" ]
 provisioning = [ "ansible" ]
-ci = [ "gitlab-runner"]
+ci = [ "gitlab-runner" ]
+network = [
+    "tcpdump",
+    "iftop",
+    "nload",
+    "nethogs",
+    "wireshark",
+    "tshark",
+    "netperf",
+    "nmap",
+    "net-tools",
+    "gnutls-bin",
+    "telnet",
+    "netcat-traditional",
+    "wireless-tools"
+]
