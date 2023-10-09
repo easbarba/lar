@@ -1,5 +1,10 @@
 [
     {
+        "name": "tcpdump",
+        "url": "https://github.com/the-tcpdump-group/tcpdump",
+        "branch": "main"
+    },
+    {
         "name": "barco",
         "url": "https://github.com/lucavallin/barco",
         "branch": "main"
