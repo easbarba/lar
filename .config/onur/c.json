@@ -1,8 +1,7 @@
 [
     {
         "name": "tcpdump",
-        "url": "https://github.com/the-tcpdump-group/tcpdump",
-        "branch": "main"
+        "url": "https://github.com/the-tcpdump-group/tcpdump"
     },
     {
         "name": "barco",
