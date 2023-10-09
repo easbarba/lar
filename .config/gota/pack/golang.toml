@@ -13,6 +13,7 @@ apps = [
   "github.com/BurntSushi/toml/cmd/tomlv@latest"
 ]
 tools = [
+  "github.com/cheat/cheat/cmd/cheat@latest",
   "github.com/fatih/gomodifytags@latest",
   "github.com/rogpeppe/godef@latest",
   "github.com/x-motemen/gore/cmd/gore@latest",
