@@ -1,7 +1,8 @@
 [
     {
         "name": "crun",
-        "url": "https://github.com/containers/crun"
+        "url": "https://github.com/containers/crun",
+        "branch": "main"
     },
     {
         "name": "tcpdump",
