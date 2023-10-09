@@ -61,6 +61,14 @@ system = [
     "aspell",
     "ispell"
 ]
+network = [
+    "tcpdump",
+    "iftop",
+    "nload",
+    "nethogs",
+    "wireshark",
+    "netperf"
+]
 laptop = [
     "acpi",
     "lm-sensors",
