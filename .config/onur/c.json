@@ -1,5 +1,9 @@
 [
     {
+        "name": "berry",
+        "url": "https://github.com/berry-lang/berry"
+    },
+    {
         "name": "crun",
         "url": "https://github.com/containers/crun",
         "branch": "main"
@@ -111,7 +115,7 @@
     },
     {
         "name": "gnu-awk",
-        "url": " https://git.savannah.gnu.org/git/gawk.git"
+        "url": "https://git.savannah.gnu.org/git/gawk.git"
     },
     {
         "name": "gnu-wget",
