@@ -106,6 +106,10 @@
         "url": "git://git.kernel.org/pub/scm/git/git.git"
     },
     {
+        "name": "gnu-wget",
+        "url": "git://git.savannah.gnu.org/wget"
+    },
+    {
         "name": "gnu-guile",
         "url": "https://git.savannah.gnu.org/git/guile/guile-web"
     },
