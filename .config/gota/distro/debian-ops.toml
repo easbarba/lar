@@ -24,5 +24,7 @@ network = [
     "gnutls-bin",
     "telnet",
     "netcat-traditional",
-    "wireless-tools"
+    "wireless-tools",
+    "dsniff",
+    "netdiscover"
 ]

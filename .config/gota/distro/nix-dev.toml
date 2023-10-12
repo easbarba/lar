@@ -4,11 +4,5 @@ upgrade = "nix-env -u '*'"
 command = "nix-env -iA"
 
 [packages]
-langs = [
-  "nixpkgs.swift",
-  "nixpkgs.swiftPackages.swiftpm",
-  "nixpkgs.swift-format",
-  "nixpkgs.swiftPackages.Foundation",
-  "nixpkgs.swiftPackages.stdenv",
-  "nixpkgs.swiftPackages.XCTest"
-]
+langs = [ "nixpkgs.kotlin", "nixpkgs.ktlint" ]
+tools = [ "nixpkgs.gradle" ]

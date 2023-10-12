@@ -27,6 +27,10 @@ langs = [
     "python3-pip",
     "python3-venv"
 ]
+jdk = [
+   "openjdk-21-jdk",
+   "openjdk-21-jre"
+]
 libs = [
     "libpq-dev",
     "libsfml-dev"
