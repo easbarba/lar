@@ -1,7 +1,8 @@
 [
     {
         "name": "ktor",
-        "url": "https://github.com/ktorio/ktor"
+        "url": "https://github.com/ktorio/ktor",
+        "branch": "main"
     },
     {
         "name": "fdroidclient",
