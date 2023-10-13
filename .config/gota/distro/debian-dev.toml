@@ -18,11 +18,13 @@ c = [
 java = [
      "openjdk-17-jre",
      "openjdk-17-jdk",
+
 ]
 cpp = [
    "cmake",
    "clang-16",
-   "clangd-16"
+   "clangd-16",
+   "clang-format-16"
 ]
 langs = [
    "guile-3.0",
