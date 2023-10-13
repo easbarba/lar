@@ -1,0 +1,142 @@
+[
+    {
+        "name": "hantsy=ee7-sandbox-wiki",
+        "url": "https://github.com/hantsy/ee7-sandbox.wiki"
+    },
+    {
+        "name": "rhuan080-jakartaee-example-jpa",
+        "url": "https://github.com/rhuan080/jakartaee-example-jpa"
+    },
+    {
+        "name": "apress-pro-cloud-native-java-ee-apps",
+        "url": "https://github.com/Apress/Pro-Cloud-Native-Java-EE-Apps",
+        "branch": "main"
+    },
+    {
+        "name": "otaviojava/hello-world-docker",
+        "url": "https://github.com/otaviojava/hello-world-docker"
+    },
+    {
+        "name": "imixs/imixs-office-workflow",
+        "url": "https://github.com/imixs/imixs-office-workflow"
+    },
+    {
+        "name": "eugenp-tutorials",
+        "url": "https://github.com/eugenp/tutorials"
+    },
+    {
+        "name": "maciejwalkowiak-java-cli-project-template",
+        "url": "https://github.com/maciejwalkowiak/java-cli-project-template",
+        "branch": "main"
+    },
+    {
+        "name": "tericcabrel-blog-tutorials",
+        "url": "https://github.com/tericcabrel/blog-tutorials",
+        "branch": "main"
+    },
+    {
+        "name": "wildfly/quickstart",
+        "url": "https://github.com/wildfly/quickstart",
+        "branch": "main"
+    },
+    {
+        "name": "eclipse-ee4j-glassfish-samples",
+        "url": "https://github.com/eclipse-ee4j/glassfish-samples"
+    },
+    {
+        "name": "ivargrimstad-jakartaee-duke",
+        "url": "https://github.com/ivargrimstad/jakartaee-duke"
+    },
+    {
+        "name": "eclipse-ee4j-glassfish-samples",
+        "url": "https://github.com/eclipse-ee4j/glassfish-samples"
+    },
+    {
+        "name": "jakarta-ee-for-java-developers",
+        "url": "https://github.com/bpbpublications/Jakarta-EE-for-Java-Developers",
+        "branch": "main"
+    },
+    {
+        "name": "eclipse-ee4j-jakartaee-tutorial",
+        "url": "https://github.com/eclipse-ee4j/jakartaee-tutorial"
+    },
+    {
+        "name": "eclipse-ee4j-jakartaee-examples",
+        "url": "https://github.com/eclipse-ee4j/jakartaee-examples",
+        "branch": "main"
+    },
+    {
+        "name": "smallrye-mutiny",
+        "url": "https://github.com/smallrye/smallrye-mutiny",
+        "branch": "main"
+    },
+    {
+        "name": "rest-assured",
+        "url": "https://github.com/rest-assured/rest-assured"
+    },
+    {
+        "name": "exec-maven-plugin",
+        "url": "https://github.com/mojohaus/exec-maven-plugin"
+    },
+    {
+        "name": "termux",
+        "url": "https://github.com/termux/termux-app"
+    },
+    {
+        "name": "jbang",
+        "url": "https://github.com/jbangdev/jbang",
+        "branch": "main"
+    },
+    {
+        "name": "junit5",
+        "url": "https://github.com/junit-team/junit5",
+        "branch": "main"
+    },
+    {
+        "name": "apache-kafka",
+        "url": "https://github.com/apache/kafka",
+        "branch": "trunk"
+    },
+    {
+        "name": "apache-tomee",
+        "url": "https://github.com/apache/tomee",
+        "branch": "main"
+    },
+    {
+        "name": "apache-maven-core",
+        "url": "https://gitbox.apache.org/repos/asf/maven.git"
+    },
+    {
+        "name": "eclipse-jdt-ls",
+        "url": "https://github.com/eclipse/eclipse.jdt.ls"
+    },
+    {
+        "name": "eclipse-vertx",
+        "url": "https://github.com/eclipse-vertx/vert.x"
+    },
+    {
+        "name": "eclipse-glassfish",
+        "url": "https://github.com/eclipse-ee4j/glassfish"
+    },
+    {
+        "name": "jakartaee-servlet",
+        "url": "https://github.com/jakartaee/servlet"
+    },
+    {
+        "name": "jakartaee-persistence",
+        "url": "https://github.com/jakartaee/persistence"
+    },
+    {
+        "name": "jakartaee-rest",
+        "url": "https://github.com/jakartaee/rest"
+    },
+    {
+        "name": "jakartaee-nosql",
+        "url": "https://github.com/jakartaee/nosql",
+        "branch": "main"
+    },
+    {
+        "name": "openjdk",
+        "url": "https://github.com/openjdk/jdk"
+    }
+]

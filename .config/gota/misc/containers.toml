@@ -4,9 +4,10 @@ command = "podman pull"
 
 [jobs]
 languages = [
-  "docker.io/library/mcr.microsoft.com/dotnet/sdk:7.0",
-  "docker.io/library/mcr.microsoft.com/dotnet/aspnet:7.0",
-  "docker.io/library/mono:6-slim",
+  "docker.io/library/eclipse-temurin:8-jdk",
+  "docker.io/library/eclipse-temurin:8-jre",
+  "docker.io/library/eclipse-temurin:17-jdk",
+  "docker.io/library/eclipse-temurin:21-jdk",
   "docker.io/library/python:3.11"
 ]
 database = [
