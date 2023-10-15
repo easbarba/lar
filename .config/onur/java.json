@@ -1,5 +1,9 @@
 [
     {
+        "name": "javaee8-samples",
+        "url": "https://github.com/javaee-samples/javaee8-samples"
+    },
+    {
         "name": "hantsy=ee7-sandbox-wiki",
         "url": "https://github.com/hantsy/ee7-sandbox.wiki"
     },
