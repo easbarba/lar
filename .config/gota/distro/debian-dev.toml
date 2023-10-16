@@ -15,11 +15,6 @@ c = [
    "check",
    "libcunit1"
 ]
-java = [
-     "openjdk-17-jre",
-     "openjdk-17-jdk",
-
-]
 cpp = [
    "cmake",
    "clang-16",
@@ -27,14 +22,11 @@ cpp = [
    "clang-format-16"
 ]
 langs = [
+   "golang",
    "guile-3.0",
    "chicken-bin",
     "python3-pip",
     "python3-venv"
-]
-jdk = [
-   "openjdk-21-jdk",
-   "openjdk-21-jre"
 ]
 libs = [
     "libpq-dev",
