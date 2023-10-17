@@ -1,5 +1,10 @@
 [
     {
+        "name": "gilzoide-raylib-meson-template",
+        "url": "https://github.com/gilzoide/raylib-meson-template",
+        "branch": "main"
+    },
+    {
         "name": "kelvins-Algoritmos-e-Estruturas-de-Dados",
         "url": "https://github.com/kelvins/Algoritmos-e-Estruturas-de-Dados",
         "branch": "main"
