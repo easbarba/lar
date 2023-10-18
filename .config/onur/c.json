@@ -42,6 +42,10 @@
         "url": "https://git.sr.ht/~lattis/muon"
     },
     {
+        "name": "raylib-games",
+        "url": "https://github.com/raysan5/raylib-games"
+    },
+    {
         "name": "raylib",
         "url": "https://github.com/raysan5/raylib"
     },
