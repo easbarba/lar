@@ -23,6 +23,14 @@
         "url": "https://github.com/labstack/echo"
     },
     {
+        "name": "gin",
+        "url": "https://github.com/gin-gonic/gin"
+    },
+    {
+        "name": "chi",
+        "url": "https://github.com/go-chi/chi"
+    },
+    {
         "name": "gum",
         "url": "https://github.com/charmbracelet/gum",
         "branch": "main"
