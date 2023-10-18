@@ -21,6 +21,22 @@ cpp = [
    "clangd-16",
    "clang-format-16"
 ]
+php = [
+  "php8.2",
+  "php8.2-common",
+  "php8.2-cli",
+  "php8.2-fpm",
+  "php8.2-json",
+  "php8.2-pdo",
+  "php8.2-mysql",
+  "php8.2-zip",
+  "php8.2-gd",
+  "php8.2-mbstring",
+  "php8.2-curl",
+  "php8.2-xml",
+  "php8-pear",
+  "php8-bcmath"
+]
 langs = [
    "golang",
    "guile-3.0",
