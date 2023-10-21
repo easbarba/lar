@@ -1,17 +1,14 @@
 [
     {
         "name": "brightnessctl",
-        "branch": "master",
         "url": "https://github.com/jappeace/brightnessctl"
     },
     {
         "name": "bocker",
-        "branch": "master",
         "url": "https://github.com/p8952/bocker"
     },
     {
         "name": "pure-getopt",
-        "branch": "master",
         "url": "https://github.com/agriffis/pure-getopt"
     },
     {
