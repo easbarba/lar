@@ -23,11 +23,10 @@ cpp = [
    "clang-format-16"
 ]
 langs = [
-   "golang",
    "guile-3.0",
    "chicken-bin",
-    "python3-pip",
-    "python3-venv"
+   "python3-pip",
+   "python3-venv"
 ]
 libs = [
     "libpq-dev",
