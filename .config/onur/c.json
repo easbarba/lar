@@ -118,6 +118,11 @@
         "url": "https://github.com/lua/lua"
     },
     {
+        "name": "flatpak",
+        "url": "https://github.com/flatpak/flatpak",
+        "branch": "main"
+    },
+    {
         "name": "gnu-awk",
         "url": "https://git.savannah.gnu.org/git/gawk.git"
     },
