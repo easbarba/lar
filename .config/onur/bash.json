@@ -4,36 +4,22 @@
         "url": "https://github.com/jappeace/brightnessctl"
     },
     {
-        "name": "bocker",
-        "url": "https://github.com/p8952/bocker"
-    },
-    {
         "name": "pure-getopt",
         "url": "https://github.com/agriffis/pure-getopt"
     },
     {
-        "name": "deb-get",
-        "branch": "main",
-        "url": "https://github.com/wimpysworld/deb-get"
-    },
-    {
         "name": "myfetch",
-        "branch": "main",
-        "url": "https://codeberg.org/blau_araujo/myfetch"
+        "url": "https://codeberg.org/blau_araujo/myfetch",
+        "branch": "main"
     },
     {
         "name": "foldish",
-        "branch": "main",
-        "url": "https://codeberg.org/blau_araujo/foldish"
+        "url": "https://codeberg.org/blau_araujo/foldish",
+        "branch": "main"
     },
     {
         "name": "org2term",
-        "branch": "main",
-        "url": "https://codeberg.org/blau_araujo/org2term"
-    },
-    {
-        "name": "clipmenu",
-        "branch": "develop",
-        "url": "https://github.com/cdown/clipmenu"
+        "url": "https://codeberg.org/blau_araujo/org2term",
+        "branch": "main"
     }
 ]

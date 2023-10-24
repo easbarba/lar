@@ -1,8 +1,8 @@
 [
     {
         "name": "guile-hoot",
-        "branch": "main",
-        "url": "https://gitlab.com/spritely/guile-hoot"
+        "url": "https://gitlab.com/spritely/guile-hoot",
+        "branch": "main"
     },
     {
         "name": "guile-toml",

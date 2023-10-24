@@ -123,6 +123,10 @@
         "branch": "main"
     },
     {
+        "name": "openbsd-src",
+        "url": "https://github.com/openbsd/src"
+    }
+    ,{
         "name": "gnu-awk",
         "url": "https://git.savannah.gnu.org/git/gawk.git"
     },
@@ -137,5 +141,9 @@
     {
         "name": "gnu-indent",
         "url": "https://git.savannah.gnu.org/git/indent.git"
+    },
+    {
+        "name": "gnu-coreutils",
+        "url": "https://git.savannah.gnu.org/git/coreutils.git"
     }
 ]
