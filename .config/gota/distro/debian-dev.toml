@@ -22,10 +22,6 @@ cpp = [
    "clangd-16",
    "clang-format-16"
 ]
-jdk = [
-   "openjdk-21-jdk",
-   "openjdk-21-jre"
-]
 langs = [
    "guile-3.0",
    "chicken-bin",
