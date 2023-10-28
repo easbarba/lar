@@ -4,5 +4,5 @@ command = "dotnet tool install --global"
 command-update = "dotnet tool update --global"
 
 [packages]
-tools = [ "PowerShell" ]
+tools = [ "PowerShell", "csharp-ls" ]
 aspnet = [ "dotnet-aspnet-codegenerator", "dotnet-ef" ]
