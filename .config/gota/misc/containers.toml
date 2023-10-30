@@ -3,14 +3,6 @@ deps = [ "podman" ]
 command = "podman pull"
 
 [jobs]
-langs = [
-  "mcr.microsoft.com/dotnet/sdk:7.0",
-  "mcr.microsoft.com/dotnet/runtime:7.0",
-  "mcr.microsoft.com/dotnet/aspnet:7.0",
-  "docker.io/library/mono:6-slim",
-  "docker.io/library/php:8",
-  "docker.io/library/composer:lts",
-]
 database = [
   "docker.io/library/postgres:15",
   "docker.io/library/mariadb:11"
