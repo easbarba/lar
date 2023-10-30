@@ -23,6 +23,7 @@ cpp = [
    "clang-format-16"
 ]
 langs = [
+   "golang",
    "guile-3.0",
    "chicken-bin",
    "python3-pip",
