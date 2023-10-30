@@ -1,0 +1,31 @@
+[
+    {
+        "name": "fastapi",
+        "url": "https://github.com/tiangolo/fastapi"
+    },
+    {
+        "name": "flask",
+        "branch": "main",
+        "url": "https://github.com/pallets/flask"
+    },
+
+    {
+        "name": "httpie",
+        "url": "https://github.com/httpie/httpie"
+    },
+    {
+        "name": "requests",
+        "branch": "main",
+        "url": "https://github.com/psf/requests"
+    },
+    {
+        "name": "black",
+        "branch": "main",
+        "url": "https://github.com/psf/black"
+    },
+    {
+        "name": "cpython",
+        "branch": "main",
+        "url": "https://github.com/python/cpython"
+    }
+]
