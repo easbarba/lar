@@ -1,8 +1,8 @@
 lang = "Java SDKMAN"
 deps = [ "java" ]
-pre = "source $HOME/.sdkman/bin/sdkman-init.sh && sdk selfupdate"
-post = "source $HOME/.sdkman/bin/sdkman-init.sh && sdk update"
-command = "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install"
+pre = ". ~/.sdkman/bin/sdkman-init.sh && sdk selfupdate"
+post = ". ~/.sdkman/bin/sdkman-init.sh && sdk update"
+command = ". ~/.sdkman/bin/sdkman-init.sh && sdk install"
 
 [packages]
 tools = [ "gradle", "bld" ]

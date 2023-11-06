@@ -4,3 +4,7 @@ upgrade = "nix-env -u '*'"
 command = "nix-env -iA"
 
 [packages]
+openjdk = [
+        "nixpkgs.maven",
+        "nixpkgs.gradle"
+]
