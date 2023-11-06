@@ -4,8 +4,10 @@ command = "podman pull"
 
 [jobs]
 langs = [
-  "docker.io/library/php:8",
-  "docker.io/library/composer:lts",
+    "docker.io/library/eclipse-temurin:8-jdk",
+  "docker.io/library/eclipse-temurin:8-jre",
+  "docker.io/library/eclipse-temurin:17-jdk",
+  "docker.io/library/eclipse-temurin:21-jdk"
 ]
 database = [
   "docker.io/library/postgres:16",
