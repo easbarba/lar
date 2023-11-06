@@ -7,11 +7,6 @@ lsp = [
   "github.com/hashicorp/terraform-ls@latest",
   "golang.org/x/tools/gopls@latest"
 ]
-apps = [
-  "github.com/xxxserxxx/gotop/v4/cmd/gotop@latest",
-  "github.com/antonmedv/llama@latest",
-  "github.com/BurntSushi/toml/cmd/tomlv@latest"
-]
 tools = [
   "-tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest",
   "github.com/cheat/cheat/cmd/cheat@latest",
@@ -25,10 +20,9 @@ tools = [
   "github.com/ramya-rao-a/go-outline@latest",
   "github.com/mdempsky/gocode@latest",
   "github.com/githubnemo/CompileDaemon@latest",
-  "golang.org/x/tools/cmd/guru@latest"
+  "golang.org/x/tools/cmd/guru@latest",
 ]
 devel = [
-  "mvdan.cc/sh/v3/cmd/shfmt@latest",
-  "github.com/x-motemen/gore/cmd/gore@latest",
   "github.com/erning/gorun@latest"
+  "github.com/x-motemen/gore/cmd/gore@latest"
 ]

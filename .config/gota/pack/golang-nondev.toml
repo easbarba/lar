@@ -1,0 +1,13 @@
+lang = "golang"
+deps = [ "go" ]
+command = "go install -v"
+
+[packages]
+apps = [
+  "github.com/xxxserxxx/gotop/v4/cmd/gotop@latest",
+  "github.com/antonmedv/llama@latest",
+  "github.com/BurntSushi/toml/cmd/tomlv@latest"
+]
+devel = [
+  "mvdan.cc/sh/v3/cmd/shfmt@latest"
+]
