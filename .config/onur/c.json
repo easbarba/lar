@@ -88,10 +88,6 @@
         "url": "https://git.suckless.org/dwm"
     },
     {
-        "name": "sqlite",
-        "url": "https://github.com/sqlite/sqlite"
-    },
-    {
         "name": "tmux",
         "url": "https://github.com/tmux/tmux"
     },
@@ -123,10 +119,6 @@
         "branch": "main"
     },
     {
-        "name": "openbsd-src",
-        "url": "https://github.com/openbsd/src"
-    }
-    ,{
         "name": "gnu-awk",
         "url": "https://git.savannah.gnu.org/git/gawk.git"
     },
