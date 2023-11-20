@@ -18,11 +18,6 @@
         "branch": "main"
     },
     {
-        "name": "symfony-docs",
-        "url": "https://github.com/symfony/symfony-docs",
-        "branch": "6.2"
-    },
-    {
         "name": "thecodeholic-php-developer-roadmap",
         "url": "https://github.com/thecodeholic/php-developer-roadmap",
         "branch": "main"
@@ -122,7 +117,7 @@
     {
         "name": "doctrine-orm",
         "url": "https://github.com/doctrine/orm",
-        "branch": "2.16.x"
+        "branch": "2.17.x"
     },
     {
         "name": "php-the-right-way",

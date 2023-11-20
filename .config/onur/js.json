@@ -29,11 +29,6 @@
         "branch": "main"
     },
     {
-        "name": "react",
-        "url": "https://github.com/facebook/react",
-        "branch": "main"
-    },
-    {
         "name": "sails",
         "url": "https://github.com/balderdashy/sails"
     },
