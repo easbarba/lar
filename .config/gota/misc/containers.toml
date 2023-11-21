@@ -4,10 +4,7 @@ command = "podman pull"
 
 [jobs]
 langs = [
-  "docker.io/library/php:8",
-  "docker.io/library/composer:lts",
   "docker.io/library/node:18",
-  "docker.io/library/rust:1",
   "docker.io/library/python:3.12"
 ]
 database = [

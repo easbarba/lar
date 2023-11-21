@@ -134,6 +134,43 @@ bar:
                     optical:
                       - string: { <<: *optical, deco: *std_underline }
                       - string: { text: "{label}" }
+    - script:
+        path: /da/personal/bin/s-wm-sysinfo
+        args: []
+        content: { string: { text: "{info}" } }
+
+    - mem:
+        poll-interval: 2500
+        content:
+          string: { text: "MEM: {used:mb}MB" }
+
+    - pipewire:
+        anchors:
+          volume: &volume
+            conditions:
+              muted:
+                { string: { text: "{linear_volume}%", foreground: ff0000ff } }
+              ~muted: { string: { text: "{linear_volume}%" } }
+        content:
+          list:
+            items:
+              - map:
+                  conditions:
+                    type == "sink":
+                      map:
+                        conditions:
+                          icon == "audio-headset-bluetooth":
+                            string: { text: "🎧  " }
+                        default:
+                          - ramp:
+                              tag: linear_volume
+                              items:
+                                - string: { text: "🔈  " }
+                                - string: { text: "🔉  " }
+                                - string: { text: "🔊  " }
+              - map:
+                  <<: *volume
+
     - network:
         name: wlan0
         poll-interval: 1000
@@ -148,18 +185,13 @@ bar:
                 map:
                   default:
                     - string: { text: , font: *awesome }
-                    - string:
-                        { text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s" }
+                    - string: { text: "{ssid}" }
 
                   conditions:
                     ipv4 == "":
                       - string:
                           { text: , font: *awesome, foreground: ffffff66 }
-                      - string:
-                          {
-                            text: "{ssid} {dl-speed:mb}/{ul-speed:mb} Mb/s",
-                            foreground: ffffff66,
-                          }
+                      - string: { text: "{ssid}", foreground: ffffff66 }
     - backlight:
         name: amdgpu_bl0
         content:
