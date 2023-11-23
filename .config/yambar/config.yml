@@ -137,12 +137,12 @@ bar:
     - script:
         path: /da/personal/bin/s-wm-sysinfo
         args: []
-        content: { string: { text: "{info}" } }
+        content: { string: { text: " {info}" } }
 
     - mem:
         poll-interval: 2500
         content:
-          string: { text: "MEM: {used:mb}MB" }
+          string: { text: ": {used:mb}MB" }
 
     - pipewire:
         anchors:
@@ -196,7 +196,7 @@ bar:
         name: amdgpu_bl0
         content:
           [
-            string: { text: "BL", font: *awesome },
+            string: { text: "", font: *awesome },
             string: { text: "{percent}%" },
           ]
     - battery:
@@ -264,5 +264,5 @@ bar:
     - clock:
         time-format: "%H:%M "
         content:
-          - string: { text: "{date}", right-margin: 5 }
+          - string: { text: " {date}", right-margin: 5 }
           - string: { text: "{time}" }

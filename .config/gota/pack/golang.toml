@@ -23,6 +23,17 @@ tools = [
   "golang.org/x/tools/cmd/guru@latest",
 ]
 devel = [
-  "github.com/erning/gorun@latest"
+  "github.com/erning/gorun@latest",
+
+
+
+
+
+
+
+
+
+
+
   "github.com/x-motemen/gore/cmd/gore@latest"
 ]
