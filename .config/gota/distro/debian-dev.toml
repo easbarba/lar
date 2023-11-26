@@ -8,9 +8,8 @@ gnu = [
 ]
 c = [
    "valgrind",
-   "efence",
    "meson",
-   "muoun-meson",
+   "muon-meson",
    "splint",
    "indent",
    "check",
@@ -18,13 +17,9 @@ c = [
 ]
 cpp = [
    "cmake",
-   "clang-16",
-   "clangd-16",
-   "clang-format-16"
-]
-jdk = [
-   "openjdk-21-jdk",
-   "openjdk-21-jre"
+   "clang-17",
+   "clangd-17",
+   "clang-format-17"
 ]
 langs = [
    "golang",
