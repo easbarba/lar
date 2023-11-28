@@ -5,5 +5,5 @@ command = "guix install"
 deps = [ "guix" ]
 
 [packages]
-gnu = [ "icecat" ]
+gnu = [  "ccal", ]
 apps = [ "neofetch" ]
