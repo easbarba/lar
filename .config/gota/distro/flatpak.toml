@@ -2,6 +2,7 @@ manager = "Flatpak"
 upgrade = "flatpak update -y"
 command = "flatpak install flathub -y"
 pre = [ "sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo" ]
+post = [ 'flatpak uninstall --unused' ]
 deps = [ "flatpak" ]
 
 [packages]
@@ -10,14 +11,5 @@ apps = [
   "com.slack.Slack",
   "us.zoom.Zoom",
   "com.skype.Client",
-  "com.google.Chrome",
-  "org.telegram.desktop"
-]
-editors = [
-  "com.google.AndroidStudio",
-]
-tools = [
-  "com.getpostman.Postman",
-  "io.github.NhekoReborn.Nheko",
-  "io.podman_desktop.PodmanDesktop"
+  "com.google.Chrome"
 ]
