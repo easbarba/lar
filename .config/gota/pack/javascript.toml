@@ -16,11 +16,13 @@ tools = [
 ]
 lsp = [
   "bash-language-server",
-    "typescript-language-server",
+  "typescript-language-server",
   "yaml-language-server",
   "json-language-server"
 ]
 node = [
-  "nodemon"
+  "nodemon",
+  "ts-node",
+  "ts-node-dev"
 ]
 
