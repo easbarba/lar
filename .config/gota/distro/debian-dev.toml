@@ -3,28 +3,9 @@ command = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
-gnu = [
-   "gdb",
-]
-c = [
-   "valgrind",
-   "meson",
-   "muon-meson",
-   "splint",
-   "indent",
-   "check",
-   "libcunit1"
-]
-cpp = [
-   "cmake",
-   "clang-17",
-   "clangd-17",
-   "clang-format-17"
-]
 langs = [
    "golang",
    "guile-3.0",
-   "chicken-bin",
    "python3-pip",
    "python3-venv"
 ]
