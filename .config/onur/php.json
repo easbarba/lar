@@ -76,6 +76,10 @@
     "branch": "4.x"
   },
   {
+    "name": "hyperf",
+    "url": "https://github.com/hyperf/hyperf"
+  },
+  {
     "name": "fig-standards",
     "url": "https://github.com/php-fig/fig-standards"
   },
