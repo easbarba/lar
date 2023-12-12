@@ -1,7 +1,12 @@
 [
   {
+    "name": "nestjs",
+    "url": "https://github.com/nestjs/nest"
+  },
+  {
     "name": "prisma",
-    "url": "https://github.com/prisma/prisma"
+    "url": "https://github.com/prisma/prisma",
+    "branch": "main"
   },
   {
     "name": "sails",
