@@ -4,6 +4,7 @@ command = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/mongo:7",
   "docker.io/library/node:20",
   "docker.io/library/python:3.12"
 ]
