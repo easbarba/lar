@@ -84,8 +84,7 @@ cli = [
     "libnotify-bin",
     "nnn",
     "neofetch",
-    "aria2",
-    "unrar",
+    "aria2"
 ]
 shell = [
     "bash-completion",
