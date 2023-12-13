@@ -14,6 +14,9 @@ database = [
   "docker.io/library/postgres:16",
   "docker.io/library/mariadb:11"
 ]
+servers = [
+  "docker.io/library/nginx:1.25"
+]
 distributions = [
   "docker.io/library/debian:unstable-slim"
 ]
