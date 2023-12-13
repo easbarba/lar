@@ -1,5 +1,9 @@
 [
   {
+    "name": "hantsy/symfony-rest-sample",
+    "url": "https://github.com/hantsy/symfony-rest-sample"
+  },
+  {
     "name": "garyclarke-nginx-php7.4-mysql8-node-docker-network",
     "url": "https://github.com/GaryClarke/nginx-php7.4-mysql8-node-docker-network"
   },
