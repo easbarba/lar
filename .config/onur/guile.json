@@ -1,5 +1,9 @@
 [
   {
+    "name": "guile-skeleton",
+    "url": "https://gitlab.com/OrangeShark/guile-skeleton"
+  },
+  {
     "name": "guile-hoot",
     "url": "https://gitlab.com/spritely/guile-hoot",
     "branch": "main"
@@ -15,7 +19,7 @@
     "branch": "v1"
   },
   {
-    "name": "hall",
+    "name": "guile-hall",
     "url": "https://gitlab.com/a-sassmannshausen/guile-hall"
   },
   {
