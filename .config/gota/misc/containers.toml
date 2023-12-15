@@ -16,7 +16,8 @@ database = [
   "docker.io/library/mariadb:11",
 ]
 servers = [
-  "docker.io/library/nginx:1.25"
+  "docker.io/library/httpd:2",
+  "docker.io/library/nginx:1"
 ]
 distributions = [
   "docker.io/library/debian:unstable-slim"
