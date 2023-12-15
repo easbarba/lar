@@ -7,10 +7,10 @@ langs = [
   "docker.io/library/php:8.2-fpm",
   "docker.io/library/composer:lts",
   "docker.io/library/node:20",
-  "docker.io/library/python:3.12"
+  "docker.io/library/python:3"
 ]
 database = [
-  "docker.io/library/mysql:8.2",
+  "docker.io/library/mysql:8",
   "docker.io/library/mongo:7",
   "docker.io/library/postgres:16",
   "docker.io/library/mariadb:11",
