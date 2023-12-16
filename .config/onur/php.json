@@ -1,5 +1,24 @@
 [
   {
+    "name": "design-patterns-php",
+    "url": "https://github.com/DesignPatternsPHP/DesignPatternsPHP",
+    "branch": "main"
+  },
+  {
+    "name": "build-apis-you-wont-hate",
+    "url": "https://github.com/apisyouwonthate/build-apis-you-wont-hate"
+  },
+  {
+    "name": "daveh-php-rest-api",
+    "url": "https://github.com/daveh/php-rest-api",
+    "branch": "main"
+  },
+  {
+    "name": "daveh-php-mvc",
+    "url": "https://github.com/daveh/php-mvc",
+    "branch": "main"
+  },
+  {
     "name": "hantsy/symfony-rest-sample",
     "url": "https://github.com/hantsy/symfony-rest-sample"
   },
