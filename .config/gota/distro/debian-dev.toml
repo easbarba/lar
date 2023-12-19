@@ -14,11 +14,6 @@ libs = [
     "libpq-dev",
     "libsfml-dev"
 ]
-gui = [
-    "libgtk-4-dev",
-    "libgtk-4-1",
-	 "gtk-4-examples"
-]
 database = [ "sqlite3" ]
 tools = [
     "jq",
