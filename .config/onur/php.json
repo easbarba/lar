@@ -1,5 +1,10 @@
 [
   {
+    "name": "dunglas-frankenphp-demo",
+    "url": "https://github.com/dunglas/frankenphp-demo",
+    "branch": "main"
+  },
+  {
     "name": "design-patterns-php",
     "url": "https://github.com/DesignPatternsPHP/DesignPatternsPHP",
     "branch": "main"
@@ -19,7 +24,7 @@
     "branch": "main"
   },
   {
-    "name": "hantsy/symfony-rest-sample",
+    "name": "hantsy-symfony-rest-sample",
     "url": "https://github.com/hantsy/symfony-rest-sample"
   },
   {
