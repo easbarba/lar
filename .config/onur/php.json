@@ -122,6 +122,11 @@
     "branch": "main"
   },
   {
+    "name": "api-platform-core",
+    "url": "https://github.com/api-platform/core",
+    "branch": "main"
+  },
+  {
     "name": "symfony-demo",
     "url": "https://github.com/symfony/demo",
     "branch": "main"
