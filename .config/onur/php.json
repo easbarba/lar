@@ -1,5 +1,10 @@
 [
   {
+    "name": "packtpublishing-test-driven-development-with-php-8",
+    "url": "https://github.com/PacktPublishing/Test-Driven-Development-with-PHP-8",
+    "branch": "main"
+  },
+  {
     "name": "dunglas-frankenphp-demo",
     "url": "https://github.com/dunglas/frankenphp-demo",
     "branch": "main"
