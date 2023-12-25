@@ -14,6 +14,10 @@ libs = [
     "libpq-dev",
     "libsfml-dev"
 ]
+jdk = [
+   "openjdk-21-jdk",
+   "openjdk-21-jre"
+]
 database = [ "sqlite3" ]
 tools = [
     "jq",
