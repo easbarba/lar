@@ -165,7 +165,6 @@
     "name": "phive",
     "url": "https://github.com/phar-io/phive"
   },
-  ,
   {
     "name": "doctrine-orm",
     "url": "https://github.com/doctrine/orm",
