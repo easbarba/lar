@@ -1,0 +1,29 @@
+[
+  {
+    "name": "elixir-ls",
+    "url": "https://github.com/elixir-lsp/elixir-ls"
+  },
+  {
+    "name": "credo",
+    "url": "https://github.com/rrrene/credo"
+  },
+  {
+    "name": "ecto",
+    "url": "https://github.com/elixir-ecto/ecto"
+  },
+  {
+    "name": "hex",
+    "branch": "main",
+    "url": "https://github.com/hexpm/hex"
+  },
+  {
+    "name": "phoenix",
+    "url": "https://github.com/phoenixframework/phoenix",
+    "branch": "main"
+  },
+  {
+    "name": "elixir",
+    "branch": "main",
+    "url": "https://github.com/elixir-lang/elixir"
+  }
+]
