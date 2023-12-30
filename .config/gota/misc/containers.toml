@@ -4,14 +4,15 @@ command = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/elixir:1.15",
   "docker.io/library/php:8.2-fpm",
   "docker.io/library/composer:2",
   "docker.io/library/node:20",
   "docker.io/library/python:3"
 ]
 database = [
-  "docker.io/library/dunglas/frankenphp",
-  "docker.io/library/mysql:8",
+  "docker.io/library/dunglas/frankenphp:latest-alpine",
+    "docker.io/library/mysql:8",
   "docker.io/library/mongo:7",
   "docker.io/library/postgres:16",
   "docker.io/library/mariadb:11",
