@@ -5,11 +5,12 @@ command = "podman pull"
 [jobs]
 langs = [
   "docker.io/library/node:20"
-  "docker.io/library/php:8.2-fpm",
-  "docker.io/library/composer:2"
+  "mcr.microsoft.com/dotnet/sdk:8.0",
+  "mcr.microsoft.com/dotnet/runtime:8.0",
+  "mcr.microsoft.com/dotnet/aspnet:8.0",
+  "docker.io/library/mono:6-slim"
 ]
 database = [
-  "docker.io/library/dunglas/frankenphp:latest-alpine",
   "docker.io/library/mysql:8",
   "docker.io/library/mongo:7",
   "docker.io/library/postgres:16",

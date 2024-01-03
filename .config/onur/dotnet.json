@@ -1,0 +1,60 @@
+[
+  {
+    "name": "asp.net-core-web-api",
+    "url": "https://github.com/Darkseal/ASP.NET-Core-Web-API"
+  },
+  {
+    "name": "dotnet-command-line-api",
+    "url": "https://github.com/dotnet/command-line-api",
+    "branch": "main"
+  },
+  {
+    "name": "nexus-mod-manager",
+    "url": "https://github.com/Nexus-Mods/Nexus-Mod-Manager"
+  },
+  {
+    "name": "awesome-dotnet-core",
+    "url": "https://github.com/thangchung/awesome-dotnet-core"
+  },
+  {
+    "name": "libgit2sharp",
+    "url": "https://github.com/libgit2/libgit2sharp"
+  },
+  {
+    "name": "ilspy",
+    "url": "https://github.com/icsharpcode/ILSpy"
+  },
+  {
+    "name": "omnisharp-roslyn",
+    "url": "https://github.com/OmniSharp/omnisharp-roslyn"
+  },
+  {
+    "name": "razzmatazz/csharp-language-server",
+    "url": "https://github.com/razzmatazz/csharp-language-server"
+  },
+  {
+    "name": "xunit",
+    "url": "https://github.com/xunit/xunit",
+    "branch": "main"
+  },
+  {
+    "name": "mono",
+    "url": "https://github.com/mono/mono",
+    "branch": "main"
+  },
+  {
+    "name": "aspnetcore",
+    "url": "https://github.com/dotnet/aspnetcore",
+    "branch": "main"
+  },
+  {
+    "name": "dotnet-runtime",
+    "url": "https://github.com/dotnet/runtime",
+    "branch": "main"
+  },
+  {
+    "name": "dotnet-roslyn",
+    "url": "https://github.com/dotnet/roslyn",
+    "branch": "main"
+  }
+]
