@@ -4,7 +4,7 @@ command = "podman pull"
 
 [jobs]
 langs = [
-  "docker.io/library/node:20"
+  "docker.io/library/node:20",
   "mcr.microsoft.com/dotnet/sdk:8.0",
   "mcr.microsoft.com/dotnet/runtime:8.0",
   "mcr.microsoft.com/dotnet/aspnet:8.0",
