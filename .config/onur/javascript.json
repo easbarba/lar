@@ -1,0 +1,15 @@
+[
+  {
+    "name": "inquirer",
+    "url": "https://github.com/SBoudrias/Inquirer.js"
+  },
+  {
+    "name": "yarn",
+    "url": "https://github.com/yarnpkg/yarn"
+  },
+  {
+    "name": "axios",
+    "url": "https://github.com/axios/axios",
+    "branch": "v1.x"
+  }
+]

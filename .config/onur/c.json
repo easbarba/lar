@@ -1,0 +1,141 @@
+[
+  {
+    "name": "berry",
+    "url": "https://github.com/berry-lang/berry"
+  },
+  {
+    "name": "crun",
+    "url": "https://github.com/containers/crun",
+    "branch": "main"
+  },
+  {
+    "name": "tcpdump",
+    "url": "https://github.com/the-tcpdump-group/tcpdump"
+  },
+  {
+    "name": "barco",
+    "url": "https://github.com/lucavallin/barco",
+    "branch": "main"
+  },
+  {
+    "name": "Hands-On-Network-Programming-with-C",
+    "url": "https://github.com/PacktPublishing/Hands-On-Network-Programming-with-C"
+  },
+  {
+    "name": "skeeto-optparse",
+    "url": "https://github.com/skeeto/optparse"
+  },
+  {
+    "name": "samurai",
+    "url": "https://git.sr.ht/~mcf/samurai"
+  },
+  {
+    "name": "cproc",
+    "url": "https://git.sr.ht/~mcf/cproc"
+  },
+  {
+    "name": "qbe",
+    "url": "git://c9x.me/qbe.git"
+  },
+  {
+    "name": "muon",
+    "url": "https://git.sr.ht/~lattis/muon"
+  },
+  {
+    "name": "raylib-games",
+    "url": "https://github.com/raysan5/raylib-games"
+  },
+  {
+    "name": "raylib",
+    "url": "https://github.com/raysan5/raylib"
+  },
+  {
+    "name": "sdl2",
+    "url": "https://github.com/libsdl-org/SDL",
+    "branch": "main"
+  },
+  {
+    "name": "harec",
+    "url": "https://git.sr.ht/~sircmpwn/harec"
+  },
+  {
+    "name": "libgit2",
+    "url": "https://github.com/libgit2/libgit2",
+    "branch": "main"
+  },
+  {
+    "name": "sway",
+    "url": "https://github.com/swaywm/sway"
+  },
+  {
+    "name": "musl",
+    "url": "git://git.musl-libc.org/musl"
+  },
+  {
+    "name": "openssh",
+    "url": "https://github.com/openssh/openssh-portable"
+  },
+  {
+    "name": "openssl",
+    "url": "git://git.openssl.org/openssl"
+  },
+  {
+    "name": "st",
+    "url": "https://git.suckless.org/st"
+  },
+  {
+    "name": "dwm",
+    "url": "https://git.suckless.org/dwm"
+  },
+  {
+    "name": "tmux",
+    "url": "https://github.com/tmux/tmux"
+  },
+  {
+    "name": "redis",
+    "branch": "unstable",
+    "url": "https://github.com/redis/redis"
+  },
+  {
+    "name": "curl",
+    "url": "https://github.com/curl/curl"
+  },
+  {
+    "name": "gnome-glib",
+    "url": "https://gitlab.gnome.org/GNOME/glib",
+    "branch": "main"
+  },
+  {
+    "name": "git",
+    "url": "git://git.kernel.org/pub/scm/git/git.git"
+  },
+  {
+    "name": "lua",
+    "url": "https://github.com/lua/lua"
+  },
+  {
+    "name": "flatpak",
+    "url": "https://github.com/flatpak/flatpak",
+    "branch": "main"
+  },
+  {
+    "name": "gnu-awk",
+    "url": "https://git.savannah.gnu.org/git/gawk.git"
+  },
+  {
+    "name": "gnu-wget",
+    "url": "git://git.savannah.gnu.org/wget"
+  },
+  {
+    "name": "gnu-guile",
+    "url": "https://git.savannah.gnu.org/git/guile/guile-web"
+  },
+  {
+    "name": "gnu-indent",
+    "url": "https://git.savannah.gnu.org/git/indent.git"
+  },
+  {
+    "name": "gnu-coreutils",
+    "url": "https://git.savannah.gnu.org/git/coreutils.git"
+  }
+]
