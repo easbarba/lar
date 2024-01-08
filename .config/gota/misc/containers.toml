@@ -4,6 +4,7 @@ command = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/oven/bun:1",
   "docker.io/library/node:20"
 ]
 database = [
@@ -17,6 +18,7 @@ servers = [
   "docker.io/library/nginx:1"
 ]
 distributions = [
-  "docker.io/library/debian:unstable-slim"
+  "docker.io/library/debian:unstable",
+  "docker.io/library/alpine:latest"
 ]
 
