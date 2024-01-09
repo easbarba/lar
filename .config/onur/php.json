@@ -1,0 +1,186 @@
+[
+  {
+    "name": "packtpublishing-test-driven-development-with-php-8",
+    "url": "https://github.com/PacktPublishing/Test-Driven-Development-with-PHP-8",
+    "branch": "main"
+  },
+  {
+    "name": "dunglas-frankenphp-demo",
+    "url": "https://github.com/dunglas/frankenphp-demo",
+    "branch": "main"
+  },
+  {
+    "name": "design-patterns-php",
+    "url": "https://github.com/DesignPatternsPHP/DesignPatternsPHP",
+    "branch": "main"
+  },
+  {
+    "name": "build-apis-you-wont-hate",
+    "url": "https://github.com/apisyouwonthate/build-apis-you-wont-hate"
+  },
+  {
+    "name": "daveh-php-rest-api",
+    "url": "https://github.com/daveh/php-rest-api",
+    "branch": "main"
+  },
+  {
+    "name": "daveh-php-mvc",
+    "url": "https://github.com/daveh/php-mvc",
+    "branch": "main"
+  },
+  {
+    "name": "hantsy-symfony-rest-sample",
+    "url": "https://github.com/hantsy/symfony-rest-sample"
+  },
+  {
+    "name": "garyclarke-nginx-php7.4-mysql8-node-docker-network",
+    "url": "https://github.com/GaryClarke/nginx-php7.4-mysql8-node-docker-network"
+  },
+  {
+    "name": "php-strictus",
+    "url": "https://github.com/php-strictus/strictus",
+    "branch": "main"
+  },
+  {
+    "name": "czproject-git-php",
+    "url": "https://github.com/czproject/git-php"
+  },
+  {
+    "name": "swagger-php",
+    "url": "https://github.com/zircote/swagger-php"
+  },
+  {
+    "name": "phpunit-docs",
+    "url": "https://github.com/sebastianbergmann/phpunit-documentation-english",
+    "branch": "main"
+  },
+  {
+    "name": "thecodeholic-php-developer-roadmap",
+    "url": "https://github.com/thecodeholic/php-developer-roadmap",
+    "branch": "main"
+  },
+  {
+    "name": "aschmelyun-docker-compose-laravel",
+    "url": "https://github.com/aschmelyun/docker-compose-laravel",
+    "branch": "main"
+  },
+  {
+    "name": "php-8-objects-patterns-practice",
+    "url": "https://github.com/Apress/php-8-objects-patterns-practice",
+    "branch": "main"
+  },
+  {
+    "name": "laravel-docs",
+    "url": "https://github.com/laravel/docs",
+    "branch": "10.x"
+  },
+  {
+    "name": "pint",
+    "url": "https://github.com/laravel/pint",
+    "branch": "main"
+  },
+  {
+    "name": "collision",
+    "url": "https://github.com/nunomaduro/collision",
+    "branch": "v7.x"
+  },
+  {
+    "name": "phpunit",
+    "url": "https://github.com/sebastianbergmann/phpunit",
+    "branch": "main"
+  },
+  {
+    "name": "pest",
+    "url": "https://github.com/pestphp/pest",
+    "branch": "2.x"
+  },
+  {
+    "name": "psysh",
+    "url": "https://github.com/bobthecow/psysh",
+    "branch": "main"
+  },
+  {
+    "name": "phpactor",
+    "url": "https://github.com/phpactor/phpactor"
+  },
+  {
+    "name": "slim-php",
+    "url": "https://github.com/slimphp/Slim",
+    "branch": "4.x"
+  },
+  {
+    "name": "hyperf",
+    "url": "https://github.com/hyperf/hyperf"
+  },
+  {
+    "name": "fig-standards",
+    "url": "https://github.com/php-fig/fig-standards"
+  },
+  {
+    "name": "skeleton",
+    "url": "https://github.com/php-pds/skeleton",
+    "branch": "1.x"
+  },
+  {
+    "name": "api-platform-demo",
+    "url": "https://github.com/api-platform/demo",
+    "branch": "main"
+  },
+  {
+    "name": "api-platform-core",
+    "url": "https://github.com/api-platform/core",
+    "branch": "main"
+  },
+  {
+    "name": "symfony-demo",
+    "url": "https://github.com/symfony/demo",
+    "branch": "main"
+  },
+  {
+    "name": "symfony-docs",
+    "url": "https://github.com/symfony/symfony-docs",
+    "branch": "6.4"
+  },
+  {
+    "name": "symfony",
+    "url": "https://github.com/symfony/symfony",
+    "branch": "6.4"
+  },
+  {
+    "name": "laravel-framework",
+    "url": "https://github.com/laravel/framework",
+    "branch": "10.x"
+  },
+  {
+    "name": "laravel",
+    "url": "https://github.com/laravel/laravel",
+    "branch": "10.x"
+  },
+  {
+    "name": "composer",
+    "url": "https://github.com/composer/composer",
+    "branch": "main"
+  },
+  {
+    "name": "phive",
+    "url": "https://github.com/phar-io/phive"
+  },
+  {
+    "name": "doctrine-orm",
+    "url": "https://github.com/doctrine/orm",
+    "branch": "2.17.x"
+  },
+  {
+    "name": "php-the-right-way",
+    "url": "https://github.com/codeguy/php-the-right-way",
+    "branch": "gh-pages"
+  },
+  {
+    "name": "php-doc-en",
+    "url": "https://github.com/php/doc-en"
+  },
+  {
+    "name": "php",
+    "url": "https://github.com/php/php-src"
+  }
+]

@@ -4,6 +4,8 @@ command = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/php:8.2-fpm",
+  "docker.io/library/composer:2",
   "docker.io/library/oven/bun:1",
   "docker.io/library/node:20"
 ]
