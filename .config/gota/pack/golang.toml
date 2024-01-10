@@ -23,17 +23,12 @@ tools = [
   "golang.org/x/tools/cmd/guru@latest",
 ]
 devel = [
+  "mvdan.cc/sh/v3/cmd/shfmt@latest",
   "github.com/erning/gorun@latest",
-
-
-
-
-
-
-
-
-
-
-
   "github.com/x-motemen/gore/cmd/gore@latest"
+]
+apps = [
+  "github.com/xxxserxxx/gotop/v4/cmd/gotop@latest",
+  "github.com/antonmedv/llama@latest",
+  "github.com/BurntSushi/toml/cmd/tomlv@latest"
 ]

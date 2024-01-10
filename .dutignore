@@ -6,6 +6,7 @@
 .sbclrc
 .screenrc
 .tcshrc
+.zshrc
 .xinitrc
 LICENSE
 README.md
