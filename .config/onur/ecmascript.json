@@ -1,5 +1,10 @@
 [
   {
+    "name": "honojs",
+    "url": "https://github.com/honojs/hono",
+    "branch": "main"
+  },
+  {
     "name": "nestjs",
     "url": "https://github.com/nestjs/nest"
   },
@@ -40,6 +45,37 @@
   {
     "name": "vuejs",
     "url": "https://github.com/vuejs/core",
+    "branch": "main"
+  },
+  {
+    "name": "inquirer",
+    "url": "https://github.com/SBoudrias/Inquirer.js"
+  },
+  {
+    "name": "yarn",
+    "url": "https://github.com/yarnpkg/yarn"
+  },
+  {
+    "name": "axios",
+    "url": "https://github.com/axios/axios",
+    "branch": "v1.x"
+  },
+  {
+    "name": "mdn-content",
+    "url": "https://github.com/mdn/content",
+    "branch": "main"
+  },
+  {
+    "name": "koa",
+    "url": "https://github.com/koajs/koa"
+  },
+  {
+    "name": "express",
+    "url": "https://github.com/expressjs/express"
+  },
+  {
+    "name": "nodejs",
+    "url": "https://github.com/nodejs/node",
     "branch": "main"
   }
 ]
