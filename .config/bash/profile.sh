@@ -16,7 +16,8 @@ wm() {
     # Check if dbus is present
     # [[ -x $(command -v dwl) ]] && exec dwl -s somebar         #"$HOME/.cache/dwltags"
     #exec cagebreak
-    exec sway
+    exec river
+    # exec sway
 }
 
 # WAYLAND
