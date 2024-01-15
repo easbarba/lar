@@ -1,5 +1,10 @@
 [
   {
+    "name": "zigcc-zig-cookbook",
+    "url": "https://github.com/zigcc/zig-cookbook",
+    "branch": "main"
+  },
+  {
     "name": "river",
     "url": "https://github.com/riverwm/river"
   },
@@ -25,6 +30,10 @@
   {
     "name": "zls",
     "url": "https://github.com/zigtools/zls"
+  },
+  {
+    "name": "ziglang-org",
+    "url": "https://github.com/ziglang/www.ziglang.org"
   },
   {
     "name": "zig-bootstrap",
