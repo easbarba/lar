@@ -8,18 +8,11 @@ langs = [
   "mcr.microsoft.com/dotnet/runtime:8.0",
   "mcr.microsoft.com/dotnet/aspnet:8.0",
   "docker.io/library/mono:6-slim",
-  "docker.io/library/oven/bun:1",
   "docker.io/library/node:20"
 ]
 database = [
-  "docker.io/library/mysql:8",
   "docker.io/library/mongo:7",
-  "docker.io/library/postgres:16",
-  "docker.io/library/mariadb:11",
-]
-servers = [
-  "docker.io/library/httpd:2",
-  "docker.io/library/nginx:1"
+  "docker.io/library/postgres:16"
 ]
 distributions = [
   "docker.io/library/debian:unstable",
