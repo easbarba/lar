@@ -4,6 +4,7 @@ command = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/python:3.13",
   "docker.io/library/node:20"
 ]
 database = [
