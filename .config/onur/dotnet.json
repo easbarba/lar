@@ -44,6 +44,12 @@
     "url": "https://github.com/dotnet/EntityFramework.Docs",
     "branch": "main"
   },
+
+  {
+    "name": "aspnetcore-docs-samples",
+    "url": "https://github.com/dotnet/AspNetCore.Docs.Samples",
+    "branch": "main"
+  },
   {
     "name": "efcore",
     "url": "https://github.com/dotnet/efcore",
