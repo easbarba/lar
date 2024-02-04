@@ -1,6 +1,11 @@
 [
   {
-    "name": "asp.net-core-web-api",
+    "name": "asp-net-8-best-practices",
+    "url": "https://github.com/PacktPublishing/ASP.NET-8-Best-Practices",
+    "branch": "main"
+  },
+  {
+    "name": "asp-net-core-web-api",
     "url": "https://github.com/darkseal/asp.net-core-web-api"
   },
   {
