@@ -4,6 +4,8 @@ command = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/php:8.2-fpm",
+  "docker.io/library/composer:2",
   "mcr.microsoft.com/dotnet/sdk:8.0",
   "mcr.microsoft.com/dotnet/runtime:8.0",
   "mcr.microsoft.com/dotnet/aspnet:8.0",
