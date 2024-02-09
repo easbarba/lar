@@ -144,6 +144,11 @@
         "branch": "main"
     },
     {
+        "name": "jakartaee-tutorial",
+        "url": "https://github.com/jakartaee/jakartaee-tutorial",
+        "branch": "main"
+    },
+    {
         "name": "openjdk",
         "url": "https://github.com/openjdk/jdk"
     }
