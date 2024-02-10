@@ -8,7 +8,11 @@
         "url": "https://github.com/javaee-samples/javaee8-samples"
     },
     {
-        "name": "hantsy=ee7-sandbox-wiki",
+        "name": "hantsy/jakartaee8-starter-boilerplate",
+        "url": "https://github.com/hantsy/jakartaee8-starter-boilerplate"
+    },
+    {
+        "name": "hantsy-ee7-sandbox-wiki",
         "url": "https://github.com/hantsy/ee7-sandbox.wiki"
     },
     {
