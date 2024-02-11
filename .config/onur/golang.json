@@ -1,5 +1,10 @@
 [
     {
+        "name": "datadavd-greenlight",
+        "url": "https://github.com/DataDavD/greenlight",
+        "branch": "main"
+    },
+    {
         "name": "golang-design-clipboard",
         "url": "https://github.com/golang-design/clipboard",
         "branch": "main"
