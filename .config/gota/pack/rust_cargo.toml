@@ -6,7 +6,8 @@ command = "cargo install"
 tools = [
   "rust-script",
   "toml-cli",
-  "taplo"
+  "taplo",
+  "cargo-watch"
 ]
 apps = [
   "starship",
