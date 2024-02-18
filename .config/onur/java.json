@@ -47,6 +47,11 @@
         "branch": "main"
     },
     {
+        "name": "netty",
+        "url": "https://github.com/netty/netty",
+        "branch": "main"
+    },
+    {
         "name": "wildfly/quickstart",
         "url": "https://github.com/wildfly/quickstart",
         "branch": "main"
