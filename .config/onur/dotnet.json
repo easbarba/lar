@@ -1,0 +1,83 @@
+[
+    {
+        "name": "asp-net-8-best-practices",
+        "url": "https://github.com/PacktPublishing/ASP.NET-8-Best-Practices",
+        "branch": "main"
+    },
+    {
+        "name": "asp-net-core-web-api",
+        "url": "https://github.com/darkseal/asp.net-core-web-api"
+    },
+    {
+        "name": "awesome-dotnet-core",
+        "url": "https://github.com/thangchung/awesome-dotnet-core"
+    },
+    {
+        "name": "libgit2sharp",
+        "url": "https://github.com/libgit2/libgit2sharp"
+    },
+    {
+        "name": "omnisharp-roslyn",
+        "url": "https://github.com/OmniSharp/omnisharp-roslyn"
+    },
+    {
+        "name": "razzmatazz/csharp-language-server",
+        "url": "https://github.com/razzmatazz/csharp-language-server"
+    },
+    {
+        "name": "xunit",
+        "url": "https://github.com/xunit/xunit",
+        "branch": "main"
+    },
+    {
+        "name": "mono",
+        "url": "https://github.com/mono/mono",
+        "branch": "main"
+    },
+    {
+        "name": "dotnet-command-line-api",
+        "url": "https://github.com/dotnet/command-line-api",
+        "branch": "main"
+    },
+    {
+        "name": "dotnet-aspnetcore-docs",
+        "url": "https://github.com/dotnet/AspNetCore.Docs",
+        "branch": "main"
+    },
+    {
+        "name": "dotnet-entityframework-docs",
+        "url": "https://github.com/dotnet/EntityFramework.Docs",
+        "branch": "main"
+    },
+
+    {
+        "name": "aspnetcore-docs-samples",
+        "url": "https://github.com/dotnet/AspNetCore.Docs.Samples",
+        "branch": "main"
+    },
+    {
+        "name": "efcore",
+        "url": "https://github.com/dotnet/efcore",
+        "branch": "main"
+    },
+    {
+        "name": "aspnetcore",
+        "url": "https://github.com/dotnet/aspnetcore",
+        "branch": "main"
+    },
+    {
+        "name": "dotnet-docs",
+        "url": "https://github.com/dotnet/docs",
+        "branch": "main"
+    },
+    {
+        "name": "dotnet-runtime",
+        "url": "https://github.com/dotnet/runtime",
+        "branch": "main"
+    },
+    {
+        "name": "dotnet-roslyn",
+        "url": "https://github.com/dotnet/roslyn",
+        "branch": "main"
+    }
+]
