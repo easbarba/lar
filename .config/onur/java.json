@@ -1,5 +1,9 @@
 [
     {
+        "name": "google-java-format",
+        "url": "https://github.com/google/google-java-format"
+    },
+    {
         "name": "javalin",
         "url": "https://github.com/javalin/javalin"
     },
