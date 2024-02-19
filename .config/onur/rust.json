@@ -1,5 +1,9 @@
 [
     {
+        "name": "sdkman-cli-native",
+        "url": " https://github.com/sdkman/sdkman-cli-native"
+    },
+    {
         "name": "rust-web-development-code",
         "url": "https://github.com/Rust-Web-Development/code",
         "branch": "main"
