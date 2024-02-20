@@ -13,11 +13,10 @@ setup_keys() {
 }
 
 wm() {
-    # Check if dbus is present
-    # [[ -x $(command -v dwl) ]] && exec dwl -s somebar         #"$HOME/.cache/dwltags"
-    #exec cagebreak
-#    exec river
-     exec sway
+    [[ -x $(command -v river) ]] && exec river
+    [[ -x $(command -v sway) ]] &&   exec sway
+    [[ -x $(command -v dwl) ]] && exec dwl -s somebar         #"$HOME/.cache/dwltags"
+    [[ -x $(command -v cagebreak) ]] && exec cagebreak
 }
 
 # WAYLAND

@@ -137,7 +137,7 @@ bar:
     - script:
         path: /da/personal/bin/s-wm-sysinfo
         args: []
-        content: { string: { text: " {info}" } }
+        content: { string: { text: "{host}   {cpu}   {gpu}" } }
 
     - mem:
         poll-interval: 2500

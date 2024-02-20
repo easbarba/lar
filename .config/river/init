@@ -176,3 +176,10 @@ riverctl rule-add -app-id "bar" csd
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
+
+
+# mouse
+riverctl input pointer-1739-33364-Synaptics_TM3336-004 left-handed enabled
+riverctl input pointer-1739-33364-Synaptics_TM3336-004 natural-scroll disabled
+riverctl input pointer-1739-33364-Synaptics_TM3336-004 tap enabled
+riverctl focus-follows-cursor normal
