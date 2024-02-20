@@ -1,0 +1,81 @@
+[
+  {
+    "name": "honojs",
+    "url": "https://github.com/honojs/hono",
+    "branch": "main"
+  },
+  {
+    "name": "nestjs",
+    "url": "https://github.com/nestjs/nest"
+  },
+  {
+    "name": "prisma",
+    "url": "https://github.com/prisma/prisma",
+    "branch": "main"
+  },
+  {
+    "name": "elysia",
+    "url": "https://github.com/elysiajs/elysia",
+    "branch": "main"
+  },
+  {
+    "name": "elk",
+    "url": "https://github.com/elk-zone/elk",
+    "branch": "main"
+  },
+  {
+    "name": "vue-tools",
+    "url": "https://github.com/vuejs/language-tools"
+  },
+  {
+    "name": "vitest",
+    "url": "https://github.com/vitest-dev/vitest",
+    "branch": "main"
+  },
+  {
+    "name": "vitejs",
+    "url": "https://github.com/vitejs/vite",
+    "branch": "main"
+  },
+  {
+    "name": "vuejs-docs",
+    "url": "https://github.com/vuejs/docs",
+    "branch": "main"
+  },
+  {
+    "name": "vuejs",
+    "url": "https://github.com/vuejs/core",
+    "branch": "main"
+  },
+  {
+    "name": "inquirer",
+    "url": "https://github.com/SBoudrias/Inquirer.js"
+  },
+  {
+    "name": "yarn",
+    "url": "https://github.com/yarnpkg/yarn"
+  },
+  {
+    "name": "axios",
+    "url": "https://github.com/axios/axios",
+    "branch": "v1.x"
+  },
+  {
+    "name": "mdn-content",
+    "url": "https://github.com/mdn/content",
+    "branch": "main"
+  },
+  {
+    "name": "koa",
+    "url": "https://github.com/koajs/koa"
+  },
+  {
+    "name": "express",
+    "url": "https://github.com/expressjs/express"
+  },
+  {
+    "name": "nodejs",
+    "url": "https://github.com/nodejs/node",
+    "branch": "main"
+  }
+]
