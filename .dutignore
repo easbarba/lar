@@ -1,3 +1,4 @@
+.dutignore
 .gemrc
 .gitignore
 .iex.exs
@@ -6,15 +7,15 @@
 .sbclrc
 .screenrc
 .tcshrc
-.zshrc
 .xinitrc
+.zshrc
 LICENSE
 README.md
 .config/Clementine
 .config/HybridBar
 .config/alacritty
-.config/awesome
 .config/ansible
+.config/awesome
 .config/bspwm
 .config/cagebreak
 .config/cejo
@@ -43,7 +44,6 @@ README.md
 .config/powershell
 .config/psysh
 .config/qtile
-.config/readline
 .config/rubocop
 .config/stumpwm
 .config/suckless
@@ -54,6 +54,5 @@ README.md
 .config/yabar
 .config/youtube-dl
 .config/zathura
-.config/starship.toml
 .config/wayfire.ini
 .config/xmodmap
