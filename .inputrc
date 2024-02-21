@@ -1,0 +1,26 @@
+$include /etc/inputrc
+
+# ctrl+backspace
+"\C-H":backward-kill-word
+# ctrl+delete
+# works
+
+# tab
+"\t":menu-complete
+# shift+tab
+"\e[Z":menu-complete-backward
+
+# options
+set completion-ignore-case on
+set completion-map-case on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set colored-stats on
+set echo-control-characters off
+set bell-style none
+set colored-completion-prefix on
+set completion-prefix-display-length 5
+set history-size 5000
+set horizontal-scroll-mode on
+set mark-directories on
+set skip-completed-text on
