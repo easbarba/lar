@@ -1,5 +1,10 @@
 [
     {
+        "name": "quarkus-in-action",
+        "url": "https://github.com/xstefank/quarkus-in-action",
+        "branch": "main"
+    },
+    {
         "name": "simplemobiletools-simple-keyboard",
         "url": "https://github.com/SimpleMobileTools/Simple-Keyboard",
         "branch": "main"
@@ -161,7 +166,6 @@
         "name": "graal",
         "url": "https://github.com/oracle/graal"
     },
-
     {
         "name": "eclipse-jdt-ls",
         "url": "https://github.com/eclipse/eclipse.jdt.ls"
