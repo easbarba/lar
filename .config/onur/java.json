@@ -1,5 +1,10 @@
 [
     {
+        "name": "simplemobiletools-simple-keyboard",
+        "url": "https://github.com/SimpleMobileTools/Simple-Keyboard",
+        "branch": "main"
+    },
+    {
         "name": "google-java-format",
         "url": "https://github.com/google/google-java-format"
     },
