@@ -1,0 +1,86 @@
+[
+    {
+        "name": "datadavd-greenlight",
+        "url": "https://github.com/DataDavD/greenlight",
+        "branch": "main"
+    },
+    {
+        "name": "golang-design-clipboard",
+        "url": "https://github.com/golang-design/clipboard",
+        "branch": "main"
+    },
+    {
+        "name": "avelino-awesome-go",
+        "url": "https://github.com/avelino/awesome-go",
+        "branch": "main"
+    },
+    {
+        "name": "fzf",
+        "url": "https://github.com/junegunn/fzf"
+    },
+    {
+        "name": "gitql",
+        "url": "https://github.com/filhodanuvem/gitql",
+        "branch": "main"
+    },
+    {
+        "name": "echo",
+        "url": "https://github.com/labstack/echo"
+    },
+    {
+        "name": "gin",
+        "url": "https://github.com/gin-gonic/gin"
+    },
+    {
+        "name": "chi",
+        "url": "https://github.com/go-chi/chi"
+    },
+    {
+        "name": "gum",
+        "url": "https://github.com/charmbracelet/gum",
+        "branch": "main"
+    },
+    {
+        "name": "go-git",
+        "url": "https://github.com/go-git/go-git"
+    },
+    {
+        "name": "shfmt",
+        "url": "https://github.com/mvdan/sh"
+    },
+    {
+        "name": "containerd",
+        "url": "https://github.com/containerd/containerd",
+        "branch": "main"
+    },
+    {
+        "name": "kubernetes/examples",
+        "url": "https://github.com/kubernetes/examples"
+    },
+    {
+        "name": "kubectl",
+        "url": "https://github.com/kubernetes/kubectl"
+    },
+    {
+        "name": "buildah",
+        "url": "https://github.com/containers/buildah",
+        "branch": "main"
+    },
+    {
+        "name": "podman",
+        "url": "https://github.com/containers/podman",
+        "branch": "main"
+    },
+    {
+        "name": "go-tools",
+        "url": "https://github.com/golang/tools"
+    },
+    {
+        "name": "go-wiki",
+        "url": "https://github.com/golang/go.wiki"
+    },
+    {
+        "name": "go",
+        "url": "https://go.googlesource.com/go"
+    }
+]
