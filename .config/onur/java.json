@@ -1,5 +1,9 @@
 [
     {
+        "name": "grpc-java",
+        "url": "https://github.com/grpc/grpc-java"
+    },
+    {
         "name": "quarkus-in-action",
         "url": "https://github.com/xstefank/quarkus-in-action",
         "branch": "main"
