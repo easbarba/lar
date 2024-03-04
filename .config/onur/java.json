@@ -1,5 +1,10 @@
 [
     {
+        "name": "modern-api-development-with-spring-6-and-spring-boot-3",
+        "url": "https://github.com/PacktPublishing/Modern-API-Development-with-Spring-6-and-Spring-Boot-3",
+        "branch": "main"
+    },
+    {
         "name": "grpc-java",
         "url": "https://github.com/grpc/grpc-java"
     },
