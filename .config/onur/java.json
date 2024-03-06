@@ -1,5 +1,15 @@
 [
     {
+        "name": "learn-microservices-with-spring-boot-3",
+        "url": "https://github.com/Apress/Learn-Microservices-with-Spring-Boot-3-3rd-ed",
+        "branch": "main"
+    },
+    {
+        "name": "microservices-with-spring-boot-and-spring-cloud-third-edition",
+        "url": "https://github.com/PacktPublishing/Microservices-with-Spring-Boot-and-Spring-Cloud-Third-Edition",
+        "branch": "main"
+    },
+    {
         "name": "modern-api-development-with-spring-6-and-spring-boot-3",
         "url": "https://github.com/PacktPublishing/Modern-API-Development-with-Spring-6-and-Spring-Boot-3",
         "branch": "main"
