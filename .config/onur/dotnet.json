@@ -1,5 +1,9 @@
 [
     {
+        "name": "dotnet-outdated",
+        "url": "https://github.com/dotnet-outdated/dotnet-outdated"
+    },
+    {
         "name": "asp-net-8-best-practices",
         "url": "https://github.com/PacktPublishing/ASP.NET-8-Best-Practices",
         "branch": "main"
