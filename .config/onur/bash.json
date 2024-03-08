@@ -1,25 +1,27 @@
-[
-    {
-        "name": "brightnessctl",
-        "url": "https://github.com/jappeace/brightnessctl"
-    },
-    {
-        "name": "pure-getopt",
-        "url": "https://github.com/agriffis/pure-getopt"
-    },
-    {
-        "name": "myfetch",
-        "url": "https://codeberg.org/blau_araujo/myfetch",
-        "branch": "main"
-    },
-    {
-        "name": "foldish",
-        "url": "https://codeberg.org/blau_araujo/foldish",
-        "branch": "main"
-    },
-    {
-        "name": "org2term",
-        "url": "https://codeberg.org/blau_araujo/org2term",
-        "branch": "main"
-    }
-]
+{
+    "main": [
+        {
+            "name": "brightnessctl",
+            "url": "https://github.com/jappeace/brightnessctl"
+        },
+        {
+            "name": "pure-getopt",
+            "url": "https://github.com/agriffis/pure-getopt"
+        },
+        {
+            "name": "myfetch",
+            "url": "https://codeberg.org/blau_araujo/myfetch",
+            "branch": "main"
+        },
+        {
+            "name": "foldish",
+            "url": "https://codeberg.org/blau_araujo/foldish",
+            "branch": "main"
+        },
+        {
+            "name": "org2term",
+            "url": "https://codeberg.org/blau_araujo/org2term",
+            "branch": "main"
+        }
+    ]
+}
