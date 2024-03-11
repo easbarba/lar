@@ -11,6 +11,7 @@
 .zshrc
 LICENSE
 README.md
+.config/autostart-scripts
 .config/Clementine
 .config/HybridBar
 .config/alacritty

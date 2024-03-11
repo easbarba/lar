@@ -95,12 +95,14 @@ wayland = [
   "sway",
   "grimshot",
   "mako-notifier",
-  "foot"
+  "foot",
+  "dmenu",
+  "yambar"
 ]
 wm = [
   "brightnessctl",
   "udiskie",
-  "cmus"
+  "cmus",
   "playerctl",
 ]
 user = [
