@@ -1,6 +1,6 @@
-task = "Containers Images"
+topic = "Containers Images"
 deps = [ "podman" ]
-command = "podman pull"
+install = "podman pull"
 
 [jobs]
 langs = [

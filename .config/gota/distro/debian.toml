@@ -1,5 +1,5 @@
-manager = "Debianzao das massas"
-command = "sudo apt-get install -y"
+topic = "Debianzao das massas"
+install = "sudo apt-get install -y"
 refresh = "sudo apt update"
 upgrade = "sudo apt upgrade -y"
 pre = "sudo dpkg --add-architecture i386"

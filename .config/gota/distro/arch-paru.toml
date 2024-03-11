@@ -1,5 +1,5 @@
-manager = "arch_paru"
-command = "paru --install"
+topic = "Arch - Paru"
+install = "paru --install"
 deps = [ "paru" ]
 
 [packages]

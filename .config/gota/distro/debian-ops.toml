@@ -1,5 +1,5 @@
-manager = "Debian Ops Tools"
-command = "sudo apt-get install -y"
+topic = "Debian Ops Tools"
+install = "sudo apt-get install -y"
 deps = ["apt"]
 post = [
      "sudo systemctl enable podman.socket",

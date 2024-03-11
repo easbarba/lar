@@ -1,5 +1,5 @@
-manager = "Debian Foreign Tools"
-command = "sudo apt-get install -y"
+topic = "Debian Foreign Tools"
+install = "sudo apt-get install -y"
 deps = ["apt"]
 post = ["sudo systemctl enable kubelet.service"]
 

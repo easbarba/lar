@@ -1,8 +1,8 @@
-lang = "PHP Phive"
+topic = "PHP Phive"
 deps = [ "php", "phive" ]
-pre = "phive selfupdate"
+upgrade = "phive selfupdate"
 post = [ "phive update", "phive purge" ]
-command = "phive install --target ~/.local/bin"
+install = "phive install --target ~/.local/bin"
 
 [packages]
 tools = [

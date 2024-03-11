@@ -1,6 +1,6 @@
-lang = "Javascript"
+topic = "Javascript"
 deps = [ "npm" ]
-command = "npm install --global"
+install = "npm install --global"
 post = "npm update --global"
 
 [packages]

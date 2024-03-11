@@ -1,7 +1,7 @@
-manager = "opensuse_ops"
+topic = "opensuse_ops"
 refresh = "sudo pacman -Syy"
 upgrade = "pacman -Syu"
-command = "sudo pacman -S --noconfirm"
+install = "sudo pacman -S --noconfirm"
 deps = [ "zypper" ]
 
 [packages]

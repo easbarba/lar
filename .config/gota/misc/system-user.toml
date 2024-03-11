@@ -1,5 +1,5 @@
-task = "Systemd User"
-command = "systemctl enable --now --user"
+topic = "Systemd User"
+install = "systemctl enable --now --user"
 deps = [ "systemctl" ]
 
 [jobs]

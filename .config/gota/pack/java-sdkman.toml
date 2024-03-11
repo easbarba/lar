@@ -1,8 +1,8 @@
-lang = "Java SDKMAN"
+topic = "Java SDKMAN"
 deps = [ "java" ]
-pre = ". ~/.sdkman/bin/sdkman-init.sh && sdk selfupdate"
+upgrade = ". ~/.sdkman/bin/sdkman-init.sh && sdk selfupdate"
 post = ". ~/.sdkman/bin/sdkman-init.sh && sdk update"
-command = ". ~/.sdkman/bin/sdkman-init.sh && sdk install"
+install = ". ~/.sdkman/bin/sdkman-init.sh && sdk install"
 
 [packages]
 tools = [ "maven", "gradle", "bld", "leiningen" ]

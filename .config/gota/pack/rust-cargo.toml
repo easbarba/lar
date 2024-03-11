@@ -1,6 +1,6 @@
-lang = "rust_cargo"
+topic = "rust_cargo"
 deps = [ "cargo" ]
-command = "cargo install"
+install = "cargo install"
 
 [packages]
 tools = [

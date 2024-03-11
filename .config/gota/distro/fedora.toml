@@ -1,7 +1,7 @@
-manager = "Fedora"
+topic = "Fedora"
 refresh = "sudo dnf update --assumeyes"
 upgrade = "sudo dnf upgrade --assumeyes"
-command = "sudo dnf install --assumeyes"
+install = "sudo dnf install --assumeyes"
 deps = [ "dnf" ]
 pre = [ "sudo dnf install -y fedora-workstation-repositories"]
 

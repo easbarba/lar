@@ -1,7 +1,7 @@
-manager = "arch"
+topic = "Arch Linux"
 refresh = "sudo pacman -Syy"
 upgrade = "pacman -Syu"
-command = "sudo pacman -S --noconfirm"
+install = "sudo pacman -S --noconfirm"
 deps = [ "pacman" ]
 
 [packages]

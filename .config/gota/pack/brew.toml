@@ -1,8 +1,8 @@
-lang = "Brew"
+topic = "Brew"
 deps = [ "brew" ]
-pre = "brew update"
+upgrade = "brew update"
 post = "brew update"
-command = "brew install"
+install = "brew install"
 
 [packages]
 clojure = [ "clojure/tools/clojure", "leiningen", "clojurescript", "clojure-lsp" ]

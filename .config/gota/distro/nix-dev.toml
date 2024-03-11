@@ -1,6 +1,6 @@
-manager = "Nix Development Tools"
+topic = "Nix Development Tools"
 deps = [ "nix" ]
 upgrade = "nix-env -u '*'"
-command = "nix-env -iA"
+install = "nix-env -iA"
 
 [packages]

@@ -1,7 +1,7 @@
-lang = "dotnet"
+topic = "dotnet"
 deps = [ "dotnet" ]
-command = "dotnet tool install --global"
-command-update = "dotnet tool update --global"
+update = "dotnet tool update --global"
+install = "dotnet tool install --global"
 
 [packages]
 tools = [ "powershell", "csharp-ls", "csharpier", "dotnet-outdated-tool" ]

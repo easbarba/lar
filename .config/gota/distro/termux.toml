@@ -1,6 +1,6 @@
-distro = "termux"
+topic = "termux"
 deps = [ "pkg" ]
-command = "pkg update"
+install = "pkg update"
 
 [packages]
 tools = [ "git", "ruby", "guile", "nano" ]

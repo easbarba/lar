@@ -1,7 +1,7 @@
-manager = "GNU Guix Main Tools"
+topic = "GNU Guix Main Tools"
 refresh = "guix pull"
 upgrade = "guix package -u"
-command = "guix install"
+install = "guix install"
 deps = [ "guix" ]
 
 [packages]

@@ -1,5 +1,5 @@
-manager = "Debian Development Tools"
-command = "sudo apt-get install -y"
+topic = "Debian Development Tools"
+install = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]

@@ -1,5 +1,5 @@
-task = "systemD - Disable"
-command = "sudo systemctl disable --now"
+topic = "systemD - Disable"
+install = "sudo systemctl disable --now"
 deps = [ "systemctl" ]
 
 [jobs]

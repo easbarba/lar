@@ -1,6 +1,6 @@
-manager = "Flatpak"
+topic = "Flatpak"
 upgrade = "flatpak update -y"
-command = "flatpak install flathub -y"
+install = "flatpak install flathub -y"
 pre = [ "sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo" ]
 post = [ 'flatpak uninstall --unused' ]
 deps = [ "flatpak" ]

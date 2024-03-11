@@ -1,6 +1,6 @@
-lang = "golang"
+topic = "golang"
 deps = [ "go" ]
-command = "go install -v"
+install = "go install -v"
 
 [packages]
 lsp = [

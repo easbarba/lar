@@ -1,7 +1,7 @@
-lang = "Graal Component Update"
+topic = "Graal Component Update"
 deps = [ "gu" ]
 post = "gu upgrade"
-command = "gu install"
+install = "gu install"
 link = "Builds/graal/bin"
 
 [packages]

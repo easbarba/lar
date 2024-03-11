@@ -1,5 +1,5 @@
-task = "systemD - Enable"
-command = "sudo systemctl enable --now"
+topic = "systemD - Enable"
+install = "sudo systemctl enable --now"
 deps = [ "systemctl" ]
 
 [jobs]

@@ -1,5 +1,5 @@
-manager = "Ubuntu - Foreign tooling"
-command = "sudo apt-get install -y"
+topic = "Ubuntu - Foreign tooling"
+install = "sudo apt-get install -y"
 refresh = "sudo apt update"
 upgrade = "sudo apt upgrade -y"
 deps = [ "apt" ]

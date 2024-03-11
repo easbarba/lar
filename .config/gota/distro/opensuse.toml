@@ -1,7 +1,7 @@
-manager = "opensuse"
+topic = "opensuse"
 refresh = "sudo zypper refresh"
 upgrade = "sudo zypper up"
-command = "sudo zypper --no-confirm"
+install = "sudo zypper --no-confirm"
 deps = [ "zypper" ]
 
 [packages]

@@ -1,8 +1,8 @@
-lang = "ruby"
+topic = "ruby"
 deps = [ "ruby", "gem" ]
-pre = "gem update --system"
+upgrade = "gem update --system"
 post = "gem update"
-command = "gem install"
+install = "gem install"
 
 [packages]
 essentials = [

@@ -1,7 +1,7 @@
-manager = "Fedora Dev Tools"
+topic = "Fedora Dev Tools"
 refresh = "sudo dnf update --assumeyes"
 upgrade = "sudo dnf upgrade --assumeyes"
-command = "sudo dnf install --assumeyes"
+install = "sudo dnf install --assumeyes"
 deps = [ "dnf" ]
 
 [packages]
