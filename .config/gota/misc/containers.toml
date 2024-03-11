@@ -4,11 +4,8 @@ command = "podman pull"
 
 [jobs]
 langs = [
-  "docker.io/library/eclipse-temurin:8-jdk",
-  "docker.io/library/eclipse-temurin:8-jre",
-  "docker.io/library/eclipse-temurin:17-jdk",
-  "docker.io/library/eclipse-temurin:21-jdk",
-  "docker.io/library/node:20"
+  "docker.io/library/node:20",
+  "docker.io/library/golang:1.21"
 ]
 database = [
   "docker.io/library/mysql:8.3",
