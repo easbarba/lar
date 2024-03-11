@@ -10,7 +10,12 @@ langs = [
    "python3-pip",
    "python3-venv"
 ]
-libs = [
+c-tools = [
+  "clang-18",
+  "clangd-18",
+  "clang-format-18"
+]
+c-libs = [
     "libpq-dev",
     "libsfml-dev"
 ]
