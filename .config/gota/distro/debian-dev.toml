@@ -4,16 +4,23 @@ deps = ["apt"]
 
 [packages]
 langs = [
-   "golang",
    "guile-3.0",
    "guile-3.0-dev",
    "python3-pip",
    "python3-venv"
 ]
+cpp = [
+    "cmake"
+]
 c-tools = [
   "clang-18",
   "clangd-18",
-  "clang-format-18"
+  "clang-format-18",
+  "meson",
+  "muon-meson",
+  "gdb",
+  "gprof",
+  "valgrind"
 ]
 c-libs = [
     "libpq-dev",
