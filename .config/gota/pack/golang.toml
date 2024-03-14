@@ -21,6 +21,7 @@ tools = [
   "github.com/mdempsky/gocode@latest",
   "github.com/githubnemo/CompileDaemon@latest",
   "golang.org/x/tools/cmd/guru@latest",
+  "get github.com/jessfraz/dockfmt@latest"
 ]
 devel = [
   "mvdan.cc/sh/v3/cmd/shfmt@latest",
