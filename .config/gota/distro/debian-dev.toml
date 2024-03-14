@@ -20,7 +20,8 @@ c-tools = [
   "muon-meson",
   "gdb",
   "gprof",
-  "valgrind"
+  "valgrind",
+  "splint"
 ]
 c-libs = [
     "libpq-dev",
