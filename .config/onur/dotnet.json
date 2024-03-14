@@ -1,26 +1,5 @@
 {
-    "main": [
-        {
-            "name": "dotnet-outdated",
-            "url": "https://github.com/dotnet-outdated/dotnet-outdated"
-        },
-        {
-            "name": "libgit2sharp",
-            "url": "https://github.com/libgit2/libgit2sharp"
-        },
-        {
-            "name": "omnisharp-roslyn",
-            "url": "https://github.com/OmniSharp/omnisharp-roslyn"
-        },
-        {
-            "name": "razzmatazz/csharp-language-server",
-            "url": "https://github.com/razzmatazz/csharp-language-server"
-        },
-        {
-            "name": "xunit",
-            "url": "https://github.com/xunit/xunit",
-            "branch": "main"
-        },
+    "official": [
         {
             "name": "mono",
             "url": "https://github.com/mono/mono",
@@ -70,6 +49,39 @@
         {
             "name": "dotnet-roslyn",
             "url": "https://github.com/dotnet/roslyn",
+            "branch": "main"
+        }
+    ],
+    "tools": [
+        {
+            "name": "csharprepl",
+            "url": "https://github.com/waf/prettyprompt",
+            "branch": "main"
+        },
+        {
+            "name": "csharprepl",
+            "url": "https://github.com/waf/csharprepl",
+            "branch": "main"
+        },
+        {
+            "name": "dotnet-outdated",
+            "url": "https://github.com/dotnet-outdated/dotnet-outdated"
+        },
+        {
+            "name": "libgit2sharp",
+            "url": "https://github.com/libgit2/libgit2sharp"
+        },
+        {
+            "name": "omnisharp-roslyn",
+            "url": "https://github.com/OmniSharp/omnisharp-roslyn"
+        },
+        {
+            "name": "razzmatazz/csharp-language-server",
+            "url": "https://github.com/razzmatazz/csharp-language-server"
+        },
+        {
+            "name": "xunit",
+            "url": "https://github.com/xunit/xunit",
             "branch": "main"
         }
     ],
