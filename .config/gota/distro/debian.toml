@@ -91,6 +91,7 @@ shell = [
     "shellcheck"
 ]
 wayland = [
+  "xwayland",
   "wl-clipboard",
   "sway",
   "grimshot",

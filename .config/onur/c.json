@@ -1,5 +1,47 @@
 {
-    "main": [
+    "gnu": [
+        {
+            "name": "gnu-awk",
+            "url": "https://git.savannah.gnu.org/git/gawk.git"
+        },
+        {
+            "name": "gnu-wget",
+            "url": "git://git.savannah.gnu.org/wget"
+        },
+        {
+            "name": "gnu-guile",
+            "url": "https://git.savannah.gnu.org/git/guile/guile-web"
+        },
+        {
+            "name": "gnu-indent",
+            "url": "https://git.savannah.gnu.org/git/indent.git"
+        },
+        {
+            "name": "gnu-coreutils",
+            "url": "https://git.savannah.gnu.org/git/coreutils.git"
+        }
+    ],
+    "linux": [
+        {
+            "name": "git",
+            "url": "git://git.kernel.org/pub/scm/git/git.git"
+        },
+        {
+            "name": "linux",
+            "url": " git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux"
+        }
+    ],
+    "langs": [
+        {
+            "name": "harec",
+            "url": "https://git.sr.ht/~sircmpwn/harec"
+        },
+        {
+            "name": "lua",
+            "url": "https://github.com/lua/lua"
+        }
+    ],
+    "tools": [
         {
             "name": "berry",
             "url": "https://github.com/berry-lang/berry"
@@ -56,10 +98,6 @@
             "branch": "main"
         },
         {
-            "name": "harec",
-            "url": "https://git.sr.ht/~sircmpwn/harec"
-        },
-        {
             "name": "libgit2",
             "url": "https://github.com/libgit2/libgit2",
             "branch": "main"
@@ -107,37 +145,9 @@
             "branch": "main"
         },
         {
-            "name": "git",
-            "url": "git://git.kernel.org/pub/scm/git/git.git"
-        },
-        {
-            "name": "lua",
-            "url": "https://github.com/lua/lua"
-        },
-        {
             "name": "flatpak",
             "url": "https://github.com/flatpak/flatpak",
             "branch": "main"
-        },
-        {
-            "name": "gnu-awk",
-            "url": "https://git.savannah.gnu.org/git/gawk.git"
-        },
-        {
-            "name": "gnu-wget",
-            "url": "git://git.savannah.gnu.org/wget"
-        },
-        {
-            "name": "gnu-guile",
-            "url": "https://git.savannah.gnu.org/git/guile/guile-web"
-        },
-        {
-            "name": "gnu-indent",
-            "url": "https://git.savannah.gnu.org/git/indent.git"
-        },
-        {
-            "name": "gnu-coreutils",
-            "url": "https://git.savannah.gnu.org/git/coreutils.git"
         }
     ]
 }
