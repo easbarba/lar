@@ -4,6 +4,7 @@ install = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/eclipse-temurin:21-jdk",
   "docker.io/library/node:20"
 ]
 database = [
