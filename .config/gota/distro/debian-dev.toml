@@ -4,7 +4,6 @@ deps = ["apt"]
 
 [packages]
 langs = [
-   "golang",
    "guile-3.0",
    "guile-3.0-dev",
    "python3-pip",
@@ -17,6 +16,7 @@ c-tools = [
   "clang-18",
   "clangd-18",
   "clang-format-18",
+  "glslang-tools",
   "meson",
   "muon-meson",
   "gdb",
