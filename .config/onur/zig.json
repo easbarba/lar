@@ -36,6 +36,11 @@
     ],
     "tools": [
         {
+            "name": "jetzig",
+            "url": "https://github.com/jetzig-framework/jetzig",
+            "branch": "main"
+        },
+        {
             "name": "river",
             "url": "https://github.com/riverwm/river"
         },
