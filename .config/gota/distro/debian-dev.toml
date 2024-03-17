@@ -13,10 +13,6 @@ cpp = [
     "cmake",
     "glslang-tools",
 ]
-jdk = [
-   "openjdk-21-jdk",
-   "openjdk-21-jre"
-],
 c-tools = [
   "clang-18",
   "clangd-18",
