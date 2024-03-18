@@ -7,7 +7,9 @@ langs = [
    "guile-3.0",
    "guile-3.0-dev",
    "python3-pip",
-   "python3-venv"
+   "python3-venv",
+   "perl",
+   "perl-doc"
 ]
 cpp = [
     "cmake",
