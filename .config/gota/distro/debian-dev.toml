@@ -24,7 +24,8 @@ c-tools = [
   "gdb",
   "gprof",
   "valgrind",
-  "splint"
+  "splint",
+  "indent"
 ]
 c-libs = [
     "libpq-dev",
