@@ -1,4 +1,11 @@
-exec ~/.local/bin/s-wm-autostart
+#exec ~/.local/bin/s-wm-autostart
+exec firefox
+exec alacritty
+exec emacs
+exec emacs
+exec emacs
+exec emacs
+
 exec swayidle -w \
 	timeout 300 's-wm-wifi' \
 	timeout 700 'swaylock -f -c 000000' \
