@@ -9,8 +9,7 @@ langs = [
    "python3-pip",
    "python3-venv",
    "perl",
-   "perl-doc",
-   "golang"
+   "perl-doc"
 ]
 cpp = [
     "cmake",
