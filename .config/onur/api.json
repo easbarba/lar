@@ -1,0 +1,9 @@
+{
+    "books": [
+        {
+            "name": "masteringapi-rest-api-standards",
+            "url": "https://github.com/masteringapi/rest-api-standards",
+            "branch": "main"
+        }
+    ]
+}
