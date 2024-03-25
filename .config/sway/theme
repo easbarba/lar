@@ -23,8 +23,8 @@ titlebar_border_thickness 0
 #hide_edge_borders smart
 
 # -------------- STATUS BAR
-bar {
-    mode hide
+#bar {
+#    mode disable
     #position bottom
-    status_command yambar
-}
+    # status_command yambar
+#}
