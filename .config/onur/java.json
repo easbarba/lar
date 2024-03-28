@@ -192,6 +192,11 @@
     ],
     "related": [
         {
+            "name": "jakarta-ee-application-development",
+            "url": "https://github.com/packtpublishing/jakarta-ee-application-development",
+            "branch": "main"
+        },
+        {
             "name": "spring-boot-in-practice",
             "url": "https://github.com/spring-boot-in-practice/repo",
             "branch": "main"

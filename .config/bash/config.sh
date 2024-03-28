@@ -38,11 +38,11 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 # * APPS
 [[ -x $(command -v starship) ]] && eval "$(starship init bash)"
 [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]] && exec tmux attach || tmux >/dev/null 2>&1 # tmux new-session -A -s ${USER} >/dev/null 2>&1 #
-[[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
+# TERM=screen-256color screen -S GNU
+# [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
 
-[[ -f "$GUIX_PROFILE/etc/profile" ]] && . "$GUIX_PROFILE/etc/profile"
-# export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
-
+# [[ -f "$GUIX_PROFILE/etc/profile" ]] && . "$GUIX_PROFILE/etc/profile"
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 # [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 
 if [ -n "$GUIX_ENVIRONMENT" ]; then
