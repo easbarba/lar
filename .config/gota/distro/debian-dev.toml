@@ -47,7 +47,8 @@ tools = [
     "tidy",
     "fzf",
     "distrobox",
-    "protobuf-compiler"
+    "protobuf-compiler",
+    "inotify-tools"
 ]
 editors = [
     "vim",
