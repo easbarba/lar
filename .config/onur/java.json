@@ -84,6 +84,12 @@
             "url": "https://github.com/eclipse-ee4j/glassfish"
         }
     ],
+    "servers": [
+        {
+            "name": "payara-examples",
+            "url": "https://github.com/payara/payara-examples"
+        }
+    ],
     "mobile": [
         {
             "name": "simplemobiletools-simple-keyboard",
@@ -229,8 +235,13 @@
             "name": "javaee8-samples",
             "url": "https://github.com/javaee-samples/javaee8-samples"
         },
+
         {
-            "name": "hantsy/jakartaee8-starter-boilerplate",
+            "name": "hantsy-jakartaee9-starter-boilerplate",
+            "url": "https://github.com/hantsy/jakartaee9-starter-boilerplate"
+        },
+        {
+            "name": "hantsy-jakartaee8-starter-boilerplate",
             "url": "https://github.com/hantsy/jakartaee8-starter-boilerplate"
         },
         {
