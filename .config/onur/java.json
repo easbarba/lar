@@ -192,6 +192,10 @@
     ],
     "related": [
         {
+            "name": "full-stack-web-development-with-jakartaee-and-vue.js",
+            "url": "https://github.com/Apress/full-stack-web-development-with-jakartaee-and-vue.js"
+        },
+        {
             "name": "jakarta-ee-application-development",
             "url": "https://github.com/packtpublishing/jakarta-ee-application-development",
             "branch": "main"
