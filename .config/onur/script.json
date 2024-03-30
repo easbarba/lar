@@ -1,5 +1,11 @@
 {
-    "main": [
+    "awk": [
+        {
+            "name": "step-json.awk",
+            "url": "https://github.com/step-/JSON.awk"
+        }
+    ],
+    "bash": [
         {
             "name": "brightnessctl",
             "url": "https://github.com/jappeace/brightnessctl"
