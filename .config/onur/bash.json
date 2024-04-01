@@ -1,11 +1,9 @@
 {
-    "awk": [
+    "tools": [
         {
-            "name": "step-json.awk",
-            "url": "https://github.com/step-/JSON.awk"
-        }
-    ],
-    "bash": [
+            "name": "fff",
+            "url": "https://github.com/dylanaraps/fff"
+        },
         {
             "name": "brightnessctl",
             "url": "https://github.com/jappeace/brightnessctl"

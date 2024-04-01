@@ -17,7 +17,8 @@ lsp = [
   "bash-language-server",
   "typescript-language-server",
   "yaml-language-server",
-  "json-language-server"
+  "json-language-server",
+  "awk-language-server"
 ]
 node = [
   "nodemon",

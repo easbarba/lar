@@ -198,6 +198,11 @@
     ],
     "related": [
         {
+            "name": "pro-spring-6",
+            "url": "https://github.com/Apress/pro-spring-6",
+            "branch": "main"
+        },
+        {
             "name": "full-stack-web-development-with-jakartaee-and-vue.js",
             "url": "https://github.com/Apress/full-stack-web-development-with-jakartaee-and-vue.js"
         },
