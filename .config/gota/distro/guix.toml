@@ -5,5 +5,5 @@ install = "guix install"
 deps = [ "guix" ]
 
 [packages]
-gnu = [  "ccal", ]
-apps = [ "neofetch" ]
+gnu = [  "ccal" ]
+apps = [ "neofetch", "unrar-free" ]
