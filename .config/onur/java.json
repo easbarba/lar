@@ -86,6 +86,11 @@
     ],
     "servers": [
         {
+            "name": "openliberty-devfile-stack-samples",
+            "url": "https://github.com/openliberty/devfile-stack-samples",
+            "branch": "main"
+        },
+        {
             "name": "payara-examples",
             "url": "https://github.com/payara/payara-examples"
         }
@@ -196,7 +201,7 @@
             "branch": "main"
         }
     ],
-    "related": [
+    "examples": [
         {
             "name": "pro-spring-6",
             "url": "https://github.com/Apress/pro-spring-6",

@@ -32,7 +32,8 @@ tools = [
 ]
 editors = [
     "vim",
-    "neovim"
+    "neovim",
+    "micro"
 ]
 emacs = [
     "emacs",

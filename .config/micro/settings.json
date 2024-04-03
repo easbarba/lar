@@ -1,4 +1,10 @@
 {
     "colorscheme": "railscast",
-    "diffgutter": true
+    "diffgutter": true,
+    "lsp.autocompleteDetails": true,
+    "lsp.formatOnSave": true,
+    "lsp.ignoreMessages": "LS message1 to ignore|LS message 2 to ignore|...",
+    "lsp.ignoreTriggerCharacters": "completion,signature",
+    "lsp.server": "python=pylsp,go=gopls,java=jdtls lsp={\"importMap\": \"./import_map.json\"}",
+    "lsp.tabcompletion": true
 }
