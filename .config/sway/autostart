@@ -5,6 +5,7 @@ exec emacs ~/Documents/org
 exec emacs ~/Documents/books
 exec emacs ~/Documents/personal
 exec emacs ~/Documents/work
+exec emacs ~/.local
 exec yambar
 
 exec swayidle -w \
