@@ -95,6 +95,17 @@
             "url": "https://github.com/payara/payara-examples"
         }
     ],
+    "databases": [
+        {
+            "name": "pgjdbc",
+            "url": "https://github.com/pgjdbc/pgjdbc"
+        },
+        {
+            "name": "mysql-connector-j",
+            "url": "https://github.com/mysql/mysql-connector-j",
+            "branch": "release/8.x"
+        }
+    ],
     "mobile": [
         {
             "name": "simplemobiletools-simple-keyboard",
