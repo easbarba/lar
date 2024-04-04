@@ -8,6 +8,8 @@ langs = [
   "docker.io/library/node:20"
 ]
 database = [
+  "docker.io/library/mysql:8",
+  "docker.io/library/mongo:7",
   "docker.io/library/postgres:16"
 ]
 distributions = [
