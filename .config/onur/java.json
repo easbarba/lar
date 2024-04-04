@@ -93,6 +93,10 @@
         {
             "name": "payara-examples",
             "url": "https://github.com/payara/payara-examples"
+        },
+        {
+            "name": "glassfish",
+            "url": "https://github.com/eclipse-ee4j/glassfish"
         }
     ],
     "databases": [
