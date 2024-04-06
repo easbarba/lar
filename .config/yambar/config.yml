@@ -172,7 +172,7 @@ bar:
                   <<: *volume
 
     - network:
-        name: wlan0
+        name: wlp2s0
         poll-interval: 1000
         content:
           map:
