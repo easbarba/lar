@@ -137,6 +137,10 @@
     ],
     "apache": [
         {
+            "name": "apache-commons-io",
+            "url": "https://github.com/apache/commons-io"
+        },
+        {
             "name": "apache-kafka",
             "url": "https://github.com/apache/kafka",
             "branch": "trunk"
