@@ -23,6 +23,20 @@
     ],
     "eclipse": [
         {
+            "name": "jakartaee-examples",
+            "url": "https://github.com/javaee-samples/jakartaee-examples",
+            "branch": "main"
+        },
+        {
+            "name": "jakartaee-samples",
+            "url": "https://github.com/javaee-samples/jakartaee-samples",
+            "branch": "main"
+        },
+        {
+            "name": "eclipselink",
+            "url": "https://github.com/eclipse-ee4j/eclipselink"
+        },
+        {
             "name": "eclipse-ee4j-glassfish-samples",
             "url": "https://github.com/eclipse-ee4j/glassfish-samples"
         },
@@ -260,7 +274,6 @@
             "name": "javaee8-samples",
             "url": "https://github.com/javaee-samples/javaee8-samples"
         },
-
         {
             "name": "hantsy-jakartaee9-starter-boilerplate",
             "url": "https://github.com/hantsy/jakartaee9-starter-boilerplate"
