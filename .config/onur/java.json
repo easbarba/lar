@@ -23,6 +23,11 @@
     ],
     "eclipse": [
         {
+            "name": "eclipse-ee4j-yasson",
+            "url": "https://github.com/eclipse-ee4j/yasson",
+            "branch": "main"
+        },
+        {
             "name": "jakartaee-examples",
             "url": "https://github.com/javaee-samples/jakartaee-examples",
             "branch": "main"
