@@ -23,6 +23,11 @@
     ],
     "eclipse": [
         {
+            "name": "eclipse-ee4j-glassfish-samples",
+            "url": "https://github.com/eclipse-ee4j/glassfish-samples",
+            "branch": "main"
+        },
+        {
             "name": "eclipse-ee4j-yasson",
             "url": "https://github.com/eclipse-ee4j/yasson",
             "branch": "main"
@@ -278,6 +283,11 @@
             "name": "quarkus-in-action",
             "url": "https://github.com/xstefank/quarkus-in-action",
             "branch": "main"
+        },
+
+        {
+            "name": "hantsy-jakartaee-rest-sample",
+            "url": "https://github.com/hantsy/jakartaee-rest-sample"
         },
         {
             "name": "javaee8-samples",

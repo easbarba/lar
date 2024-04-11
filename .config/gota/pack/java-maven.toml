@@ -1,0 +1,7 @@
+topic = "Java Maven"
+deps = [ "java" ]
+upgrade = ""
+install = "mvn dependency:get -D"
+
+[packages]
+serial = [ "artifact=org.eclipse:yasson:jar:3.0.3",  ]
