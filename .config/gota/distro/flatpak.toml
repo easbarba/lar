@@ -13,8 +13,3 @@ apps = [
   "com.skype.Client",
   "com.google.Chrome"
 ]
-ides = [
-  "org.eclipse.Java",
-  "com.jetbrains.IntelliJ-IDEA-Community",
-  "org.apache.netbeans"
-]
