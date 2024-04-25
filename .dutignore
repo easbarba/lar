@@ -47,10 +47,10 @@ README.md
 .config/suckless
 .config/sxhkd
 .config/termusic
-.config/waybar
 .config/xmonad
 .config/yabar
 .config/youtube-dl
 .config/zathura
 .config/wayfire.ini
 .config/xmodmap
+.config/starship.toml
