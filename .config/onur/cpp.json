@@ -1,0 +1,118 @@
+{
+    "official": [
+        {
+            "name": "CppCoreGuidelines",
+            "url": "https://github.com/isocpp/CppCoreGuidelines"
+        },
+        {
+            "name": "llvm",
+            "url": "https://github.com/llvm/llvm-project",
+            "branch": "main"
+        },
+        {
+            "name": "cppreference-doc",
+            "url": "https://github.com/PeterFeicht/cppreference-doc"
+        }
+    ],
+    "misc": [
+        {
+            "name": "vichargrave-tcpsockets",
+            "url": "https://github.com/vichargrave/tcpsockets"
+        },
+        {
+            "name": "abseil-cpp",
+            "url": "https://github.com/abseil/abseil-cpp"
+        },
+        {
+            "name": "cmake-project-template",
+            "url": "https://github.com/kigster/cmake-project-template"
+        },
+        {
+            "name": "drogon",
+            "url": "https://github.com/drogonframework/drogon"
+        },
+        {
+            "name": "stx",
+            "url": "https://github.com/lamarrr/stx",
+            "branch": "main"
+        },
+        {
+            "name": "facebook-folly",
+            "url": "https://github.com/facebook/folly",
+            "branch": "main"
+        },
+        {
+            "name": "cppbestpractices",
+            "url": "https://github.com/cpp-best-practices/cppbestpractices"
+        },
+        {
+            "name": "fffaraz-awesome-cpp",
+            "url": "https://github.com/fffaraz/awesome-cpp"
+        },
+        {
+            "name": "entt",
+            "url": "https://github.com/skypjack/entt"
+        },
+        {
+            "name": "aria2",
+            "url": "https://github.com/aria2/aria2"
+        },
+        {
+            "name": "apt",
+            "url": "https://salsa.debian.org/apt-team/apt"
+        }
+    ],
+    "libraries": [
+        {
+            "name": "cli11",
+            "url": "https://github.com/CLIUtils/CLI11",
+            "branch": "main"
+        },
+        {
+            "name": "rapidjson",
+            "url": "https://github.com/Tencent/rapidjson"
+        },
+        {
+            "name": "doctest",
+            "url": "https://github.com/doctest/doctest"
+        },
+        {
+            "name": "zeromq",
+            "url": "https://github.com/zeromq/libzmq"
+        },
+        {
+            "name": "catch2",
+            "url": "https://github.com/catchorg/Catch2",
+            "branch": "devel"
+        },
+        {
+            "name": "dragonflydb",
+            "url": "https://github.com/dragonflydb/dragonfly",
+            "branch": "main"
+        },
+        {
+            "name": "googletest",
+            "url": "https://github.com/google/googletest"
+        },
+        {
+            "name": "asio-standalone",
+            "url": "https://github.com/chriskohlhoff/asio/"
+        },
+        {
+            "name": "boost.beast",
+            "url": "https://github.com/boostorg/beast",
+            "branch": "develop"
+        },
+        {
+            "name": "boost.asio",
+            "url": "https://github.com/boostorg/asio/"
+        }
+    ],
+    "example": [
+        {
+            "name": "modern-cmake-for-cpp",
+            "url": "https://github.com/packtpublishing/modern-cmake-for-cpp",
+            "branch": "main"
+        }
+    ]
+}
