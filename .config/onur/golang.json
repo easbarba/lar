@@ -91,6 +91,11 @@
     ],
     "books": [
         {
+            "name": "mastering-go-fourth",
+            "url": "https://github.com/mactsouk/mGo4th",
+            "branch": "main"
+        },
+        {
             "name": "datadavd-greenlight",
             "url": "https://github.com/DataDavD/greenlight",
             "branch": "main"
