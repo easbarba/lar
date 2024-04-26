@@ -3,7 +3,9 @@ deps = [ "podman" ]
 install = "podman pull"
 
 [jobs]
-langs = []
+langs = [
+  "docker.io/library/golang:1.22"
+]
 database = [
   "docker.io/library/mysql:8",
   "docker.io/library/mongo:7",
