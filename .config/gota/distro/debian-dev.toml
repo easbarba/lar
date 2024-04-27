@@ -50,3 +50,19 @@ serial = [
     "libxml2-utils"
 ]
 images = [ "krita" ]
+cpp = [
+  "cmake",
+  "glslang-tools",
+  "clang-18",
+  "clangd-18",
+  "clang-format-18",
+]
+cc-tools = [
+  "meson",
+  "muon-meson",
+  "gdb",
+  "gprof",
+  "valgrind",
+  "splint",
+  "indent"
+]
