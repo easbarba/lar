@@ -10,6 +10,7 @@
 .zshrc
 LICENSE
 README.md
+.config/alacritty
 .config/autostart-scripts
 .config/Clementine
 .config/HybridBar
@@ -49,6 +50,7 @@ README.md
 .config/termusic
 .config/xmonad
 .config/yabar
+.config/river
 .config/youtube-dl
 .config/zathura
 .config/wayfire.ini

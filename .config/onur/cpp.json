@@ -1,7 +1,23 @@
 {
+    "games": [
+        {
+            "name": "dxvk",
+            "url": "https://github.com/doitsujin/dxvk"
+        },
+        {
+            "name": "proton",
+            "url": "https://github.com/ValveSoftware/Proton",
+            "branch": "proton_9.0"
+        },
+        {
+            "name": "godot",
+            "url": "https://github.com/libsdl-org/SDL",
+            "branch": "main"
+        }
+    ],
     "official": [
         {
-            "name": "CppCoreGuidelines",
+            "name": "cppcoreguidelines",
             "url": "https://github.com/isocpp/CppCoreGuidelines"
         },
         {
@@ -16,6 +32,16 @@
     ],
     "misc": [
         {
+            "name": "microsoft-terminal",
+            "url": "https://github.com/microsoft/terminal",
+            "branch": "main"
+        },
+        {
+            "name": "apple-swift",
+            "url": "https://github.com/apple/swift",
+            "branch": "main"
+        },
+        {
             "name": "vichargrave-tcpsockets",
             "url": "https://github.com/vichargrave/tcpsockets"
         },
@@ -26,11 +52,6 @@
         {
             "name": "cmake-project-template",
             "url": "https://github.com/kigster/cmake-project-template"
-        },
-        {
-            "name": "proton",
-            "url": "https://github.com/ValveSoftware/Proton",
-            "branch": "proton_9.0"
         },
         {
             "name": "drogon",
