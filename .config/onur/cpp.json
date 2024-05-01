@@ -26,6 +26,10 @@
             "branch": "main"
         },
         {
+            "name": "gnu-gcc",
+            "url": "git://gcc.gnu.org/git/gcc.git"
+        },
+        {
             "name": "cppreference-doc",
             "url": "https://github.com/PeterFeicht/cppreference-doc"
         }
