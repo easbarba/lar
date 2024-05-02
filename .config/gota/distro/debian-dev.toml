@@ -66,3 +66,7 @@ cc-tools = [
   "splint",
   "indent"
 ]
+cpp-libraries = [
+  "libasio-dev",
+  "libasio-doc",
+]
