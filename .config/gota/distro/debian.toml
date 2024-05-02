@@ -92,19 +92,24 @@ shell = [
 ]
 wayland = [
   "xwayland",
-  "wl-clipboard",
-  "sway",
-  "grimshot",
-  "mako-notifier",
-  "foot",
-  "dmenu",
-  "yambar"
+  "wl-clipboard"
+]
+kde = [
+     "elisa",
+     "kamoso",
+     "ktorrent"
 ]
 wm = [
   "brightnessctl",
   "udiskie",
   "cmus",
   "playerctl",
+  "mako-notifier",
+  "sway",
+  "grimshot",
+  "foot",
+  "dmenu",
+  "yambar"
 ]
 user = [
     "firefox",
