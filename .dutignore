@@ -11,7 +11,6 @@
 LICENSE
 README.md
 .config/alacritty
-.config/autostart-scripts
 .config/Clementine
 .config/HybridBar
 .config/ansible
@@ -39,7 +38,6 @@ README.md
 .config/nixpkgs
 .config/phpactor
 .config/picom
-.config/plasma-workspace
 .config/powershell
 .config/psysh
 .config/qtile
