@@ -83,6 +83,11 @@
     ],
     "libraries": [
         {
+            "name": "mold",
+            "url": "https://github.com/rui314/mold",
+            "branch": "main"
+        },
+        {
             "name": "cli11",
             "url": "https://github.com/CLIUtils/CLI11",
             "branch": "main"
