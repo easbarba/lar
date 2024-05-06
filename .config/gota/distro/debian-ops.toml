@@ -26,5 +26,6 @@ network = [
     "netcat-traditional",
     "wireless-tools",
     "dsniff",
-    "netdiscover"
+    "netdiscover",
+    "traceroute"
 ]
