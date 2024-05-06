@@ -99,18 +99,6 @@ kde = [
      "kamoso",
      "ktorrent"
 ]
-wm = [
-  "brightnessctl",
-  "udiskie",
-  "cmus",
-  "playerctl",
-  "mako-notifier",
-  "sway",
-  "grimshot",
-  "foot",
-  "dmenu",
-  "yambar"
-]
 user = [
     "firefox",
     "thunderbird",
