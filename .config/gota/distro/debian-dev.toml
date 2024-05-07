@@ -50,13 +50,6 @@ serial = [
     "libxml2-utils"
 ]
 images = [ "krita" ]
-cpp = [
-  "cmake",
-  "glslang-tools",
-  "clang-18",
-  "clangd-18",
-  "clang-format-18",
-]
 cc-tools = [
   "meson",
   "muon-meson",
@@ -65,8 +58,9 @@ cc-tools = [
   "valgrind",
   "splint",
   "indent"
-]
-cpp-libraries = [
-  "libasio-dev",
-  "libasio-doc",
+  "cmake",
+  "glslang-tools",
+  "clang-18",
+  "clangd-18",
+  "clang-format-18",
 ]

@@ -94,11 +94,9 @@ wayland = [
   "xwayland",
   "wl-clipboard"
 ]
-kde = [
-     "elisa",
-     "kamoso",
-     "ktorrent"
-]
+gnome = [
+      "rhythmbox-plugin-alternative-toolbar"
+ ]
 user = [
     "firefox",
     "thunderbird",
