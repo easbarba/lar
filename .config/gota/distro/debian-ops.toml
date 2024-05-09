@@ -9,8 +9,6 @@ post = [
 
 [packages]
 containers = [ "podman", " podman-compose" ]
-# provisioning = [ "ansible" ]
-# ci = [ "gitlab-runner" ]
 network = [
     "tcpdump",
     "iftop",
@@ -29,3 +27,5 @@ network = [
     "netdiscover",
     "traceroute"
 ]
+# provisioning = [ "ansible" ]
+# ci = [ "gitlab-runner" ]

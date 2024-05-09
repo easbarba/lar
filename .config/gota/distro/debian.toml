@@ -20,11 +20,10 @@ gnu = [
     "parallel",
     "gawk",
     "parted",
-    "gimp",
+    "gimp"
 ]
 debian = [
     "build-essential",
-    "aptitude",
     "apt-file",
     "gdebi"
 ]
@@ -75,15 +74,12 @@ laptop = [
     "acpi-call",
     "dialog",
     "sysstat",
-    "hddtemp",
+    "hddtemp"
 ]
 cli = [
     "htop",
-    "bpytop",
     "w3m",
     "libnotify-bin",
-    "nnn",
-    "neofetch",
     "aria2"
 ]
 shell = [
@@ -95,19 +91,19 @@ wayland = [
   "wl-clipboard"
 ]
 gnome = [
-      "rhythmbox-plugin-alternative-toolbar"
- ]
+  "rhythmbox-plugin-alternative-toolbar"
+]
 user = [
-    "firefox",
-    "thunderbird",
-    "libreoffice",
-    "xdg-utils",
-    "imagemagick",
-    "aspell",
-    "aspell-pt-br",
-    "calibre",
-    "pandoc",
-    "obs-studio"
+  "firefox",
+  "thunderbird",
+  "libreoffice",
+  "xdg-utils",
+  "imagemagick",
+  "aspell",
+  "aspell-pt-br",
+  "calibre",
+  "pandoc",
+  "obs-studio"
 ]
 sound = [
      "pulseaudio-utils",
@@ -128,10 +124,6 @@ media = [
     "gstreamer1.0-plugins-good",
     "gstreamer1.0-plugins-ugly"
 ]
-libs = [
-    "libtag1-dev",
-    "libtagc0-dev"
-]
 fonts = [
     "fonts-hack",
     "fonts-dejavu",
@@ -139,7 +131,7 @@ fonts = [
     "ttf-ancient-fonts",
     "fonts-nanum",
     "ttf-mscorefonts-installer",
-    "cmigemo",
+    "cmigemo"
 ]
 amd = [
     "amd64-microcode",
@@ -153,5 +145,5 @@ amd = [
     "libglx-mesa0:i386",
     "mesa-vulkan-drivers:i386",
     "libgl1-mesa-drivers:i386",
-    "radeontop",
+    "radeontop"
 ]

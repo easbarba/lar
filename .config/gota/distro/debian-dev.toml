@@ -7,9 +7,12 @@ langs = [
    "python3-pip",
    "python3-venv",
    "guile-3.0",
-   "guile-3.0-dev",
-   "golang"
+   "guile-3.0-dev"
 ]
+jdk = [
+   "openjdk-21-jdk",
+   "openjdk-21-jre"
+],
 database = [ "sqlite3" ]
 tools = [
     "jq",
@@ -33,7 +36,7 @@ editors = [
 emacs = [
     "emacs",
     "fd-find",
-    "ripgrep",
+    "ripgrep"
 ]
 emacs-pdftools = [
   "autoconf",
@@ -57,10 +60,18 @@ cc-tools = [
   "gprof",
   "valgrind",
   "splint",
-  "indent"
+  "indent",
   "cmake",
   "glslang-tools",
   "clang-18",
   "clangd-18",
-  "clang-format-18",
+  "clang-format-18"
+]
+c-libraries = [
+    "libtag1-dev",
+    "libtagc0-dev"
+]
+cpp-libraries = [
+  "libasio-dev",
+  "libasio-doc"
 ]
