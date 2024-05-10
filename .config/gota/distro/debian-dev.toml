@@ -9,10 +9,6 @@ langs = [
    "guile-3.0",
    "guile-3.0-dev"
 ]
-jdk = [
-   "openjdk-21-jdk",
-   "openjdk-21-jre"
-],
 database = [ "sqlite3" ]
 tools = [
     "jq",
