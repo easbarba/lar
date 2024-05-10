@@ -7,7 +7,10 @@ langs = [
    "python3-pip",
    "python3-venv",
    "guile-3.0",
-   "guile-3.0-dev"
+   "guile-3.0-dev",
+   "golang",
+  "nodejs",
+   "npm"
 ]
 database = [ "sqlite3" ]
 tools = [
@@ -64,10 +67,11 @@ cc-tools = [
   "clang-format-18"
 ]
 c-libraries = [
+    "libpq-dev",
+    "libsfml-dev",
     "libtag1-dev",
     "libtagc0-dev"
 ]
-cpp-libraries = [
-  "libasio-dev",
-  "libasio-doc"
+gnu = [
+   "gdb",
 ]
