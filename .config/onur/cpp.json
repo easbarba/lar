@@ -54,6 +54,10 @@
     ],
     "apps": [
         {
+            "name": "ncmpcpp",
+            "url": "https://github.com/ncmpcpp/ncmpcpp"
+        }
+        ,{
             "name": "ninja",
             "url": "https://github.com/ninja-build/ninja"
         },
