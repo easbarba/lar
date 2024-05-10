@@ -90,9 +90,6 @@ wayland = [
   "xwayland",
   "wl-clipboard"
 ]
-gnome = [
-  "rhythmbox-plugin-alternative-toolbar"
-]
 user = [
   "firefox",
   "thunderbird",
@@ -146,4 +143,19 @@ amd = [
     "mesa-vulkan-drivers:i386",
     "libgl1-mesa-drivers:i386",
     "radeontop"
+]
+wm = [
+  "brightnessctl",
+  "udiskie",
+  "cmus",
+  "playerctl",
+  "mako-notifier",
+  "sway",
+  "grimshot",
+  "foot",
+  "dmenu",
+  "yambar",
+  "mpd",
+  "mpc",
+  "ncmpcpp"
 ]
