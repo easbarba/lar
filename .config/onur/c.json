@@ -25,6 +25,39 @@
             "url": "https://github.com/tmux/tmux"
         }
     ],
+    "libraries": [
+        {
+            "name": "uthash",
+            "url": "https://github.com/troydhanson/uthash"
+        },
+        {
+            "name": "raylib-games",
+            "url": "https://github.com/raysan5/raylib-games"
+        },
+        {
+            "name": "raylib",
+            "url": "https://github.com/raysan5/raylib"
+        },
+        {
+            "name": "sdl2",
+            "url": "https://github.com/libsdl-org/SDL",
+            "branch": "main"
+        },
+        {
+            "name": "libgit2",
+            "url": "https://github.com/libgit2/libgit2",
+            "branch": "main"
+        },
+        {
+            "name": "musl",
+            "url": "git://git.musl-libc.org/musl"
+        },
+        {
+            "name": "gnome-glib",
+            "url": "https://gitlab.gnome.org/GNOME/glib",
+            "branch": "main"
+        }
+    ],
     "gnu": [
         {
             "name": "gnu-awk",
@@ -87,10 +120,6 @@
             "branch": "main"
         },
         {
-            "name": "hands-on-network-programming-with-c",
-            "url": "https://github.com/packtpublishing/hands-on-network-programming-with-c"
-        },
-        {
             "name": "skeeto-optparse",
             "url": "https://github.com/skeeto/optparse"
         },
@@ -111,30 +140,8 @@
             "url": "https://git.sr.ht/~lattis/muon"
         },
         {
-            "name": "raylib-games",
-            "url": "https://github.com/raysan5/raylib-games"
-        },
-        {
-            "name": "raylib",
-            "url": "https://github.com/raysan5/raylib"
-        },
-        {
-            "name": "sdl2",
-            "url": "https://github.com/libsdl-org/SDL",
-            "branch": "main"
-        },
-        {
-            "name": "libgit2",
-            "url": "https://github.com/libgit2/libgit2",
-            "branch": "main"
-        },
-        {
             "name": "sway",
             "url": "https://github.com/swaywm/sway"
-        },
-        {
-            "name": "musl",
-            "url": "git://git.musl-libc.org/musl"
         },
         {
             "name": "redis",
@@ -145,15 +152,17 @@
             "name": "curl",
             "url": "https://github.com/curl/curl"
         },
-        {
-            "name": "gnome-glib",
-            "url": "https://gitlab.gnome.org/GNOME/glib",
-            "branch": "main"
-        },
+
         {
             "name": "flatpak",
             "url": "https://github.com/flatpak/flatpak",
             "branch": "main"
+        }
+    ],
+    "examples": [
+        {
+            "name": "hands-on-network-programming-with-c",
+            "url": "https://github.com/packtpublishing/hands-on-network-programming-with-c"
         }
     ]
 }
