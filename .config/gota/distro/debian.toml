@@ -90,6 +90,9 @@ wayland = [
   "xwayland",
   "wl-clipboard"
 ]
+misc = [
+    "cheese"
+]
 user = [
   "firefox",
   "thunderbird",
