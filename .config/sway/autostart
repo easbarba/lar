@@ -1,17 +1,21 @@
 #exec ~/.local/bin/s-wm-autostart
-exec firefox
-exec foot
+# exec wl-paste -t text --watch clipman store
+
 exec emacs ~/Documents/org
 exec emacs ~/Documents/books
 exec emacs ~/Documents/personal
 exec emacs ~/Documents/work
 exec emacs ~/.local
+
+exec foot
+exec mpd
 exec yambar
-exec mpd ~/.config/mpd
+exec firefox
+exec thunderbird
+
 exec swayidle -w \
 	timeout 300 's-wm-wifi' \
 	timeout 700 'swaylock -f -c 000000' \
     timeout 900 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
 	resume 's-wm-wifi'
-# exec wl-paste -t text --watch clipman store
