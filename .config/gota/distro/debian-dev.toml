@@ -9,7 +9,7 @@ langs = [
    "guile-3.0",
    "guile-3.0-dev",
    "golang",
-  "nodejs",
+   "nodejs",
    "npm"
 ]
 database = [ "sqlite3" ]
@@ -74,4 +74,9 @@ c-libraries = [
 ]
 gnu = [
    "gdb",
+]
+gnome = [
+  "gnome-devel",
+  "glslc",
+  "libdrm-dev"
 ]
