@@ -27,6 +27,10 @@
     ],
     "libraries": [
         {
+            "name": "xkbcommon",
+            "url": " https://github.com/xkbcommon/libxkbcommon"
+        },
+        {
             "name": "uthash",
             "url": "https://github.com/troydhanson/uthash"
         },
@@ -51,11 +55,6 @@
         {
             "name": "musl",
             "url": "git://git.musl-libc.org/musl"
-        },
-        {
-            "name": "gnome-glib",
-            "url": "https://gitlab.gnome.org/GNOME/glib",
-            "branch": "main"
         }
     ],
     "gnu": [
@@ -100,7 +99,22 @@
             "url": "https://github.com/lua/lua"
         }
     ],
+    "gnome": [
+        {
+            "name": "gnome-glib",
+            "url": "https://gitlab.gnome.org/GNOME/glib",
+            "branch": "main"
+        },
+        {
+            "name": "gtk",
+            "url": "https://gitlab.gnome.org/GNOME/gtk"
+        }
+    ],
     "tools": [
+        {
+            "name": "ffmpeg",
+            "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git"
+        },
         {
             "name": "berry",
             "url": "https://github.com/berry-lang/berry"
