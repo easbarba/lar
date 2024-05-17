@@ -1,6 +1,10 @@
 {
     "bsd": [
         {
+            "name": "libulz",
+            "url": "https://github.com/rofl0r/libulz"
+        },
+        {
             "name": "openssh",
             "url": "https://github.com/openssh/openssh-portable"
         },
@@ -28,7 +32,7 @@
     "libraries": [
         {
             "name": "xkbcommon",
-            "url": " https://github.com/xkbcommon/libxkbcommon"
+            "url": "https://github.com/xkbcommon/libxkbcommon"
         },
         {
             "name": "uthash",
@@ -86,7 +90,7 @@
         },
         {
             "name": "linux",
-            "url": " git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux"
+            "url": "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux"
         }
     ],
     "langs": [
@@ -110,10 +114,40 @@
             "url": "https://gitlab.gnome.org/GNOME/gtk"
         }
     ],
+    "freedesktop": [
+        {
+            "name": "gstreamer",
+            "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer"
+        },
+        {
+            "name": "pkg-config",
+            "url": "https://gitlab.freedesktop.org/pkg-config/pkg-config"
+        },
+        {
+            "name": "pipewirep",
+            "url": "https://gitlab.freedesktop.org/pipewire/pipewire"
+        },
+        {
+            "name": "wlroots",
+            "url": "https://gitlab.freedesktop.org/wlroots/wlroots"
+        },
+        {
+            "name": "mesa",
+            "url": "https://gitlab.freedesktop.org/mesa/mesa/"
+        },
+        {
+            "name": "wayland",
+            "url": "https://gitlab.freedesktop.org/wayland/wayland"
+        },
+        {
+            "name": "pipewire",
+            "url": "https://gitlab.freedesktop.org/pipewire/pipewire"
+        }
+    ],
     "tools": [
         {
             "name": "ffmpeg",
-            "url": "https://git.ffmpeg.org/gitweb/ffmpeg.git"
+            "url": "https://git.ffmpeg.org/ffmpeg.git"
         },
         {
             "name": "berry",
