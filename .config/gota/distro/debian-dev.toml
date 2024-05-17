@@ -79,3 +79,8 @@ gnome = [
   "glslc",
   "libdrm-dev"
 ]
+java = [
+     "openjdk-21-jre",
+     "openjdk-21-jdk",
+     "clang-format"
+]
