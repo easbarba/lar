@@ -8,7 +8,6 @@ langs = [
    "python3-venv",
    "guile-3.0",
    "guile-3.0-dev",
-   "golang",
    "nodejs",
    "npm"
 ]
