@@ -144,10 +144,16 @@
             "url": "https://gitlab.freedesktop.org/pipewire/pipewire"
         }
     ],
-    "tools": [
+    "orgs": [
         {
             "name": "ffmpeg",
             "url": "https://git.ffmpeg.org/ffmpeg.git"
+        }
+    ],
+    "tools": [
+        {
+            "name": "mako",
+            "url": "https://github.com/emersion/mako"
         },
         {
             "name": "berry",
