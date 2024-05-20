@@ -31,6 +31,18 @@
     ],
     "libraries": [
         {
+            "name": "benhoyt-ht",
+            "url": "https://github.com/benhoyt/ht"
+        },
+        {
+            "name": "benhoyt-inih",
+            "url": "https://github.com/benhoyt/inih"
+        },
+        {
+            "name": "cjson",
+            "url": "https://github.com/davegamble/cjson"
+        },
+        {
             "name": "xkbcommon",
             "url": "https://github.com/xkbcommon/libxkbcommon"
         },
