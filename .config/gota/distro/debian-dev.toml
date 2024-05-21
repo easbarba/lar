@@ -8,6 +8,7 @@ langs = [
    "python3-venv",
    "guile-3.0",
    "guile-3.0-dev",
+  "golang",
    "nodejs",
    "npm"
 ]
@@ -71,7 +72,9 @@ c-libraries = [
     "libsfml-dev",
     "libtag1-dev",
     "libtagc0-dev"
-    "libcjson-dev"
+    "libcjson-dev",
+    "libgit2-dev",
+    "libinih-dev"
 ]
 gnu = [
    "gdb",
