@@ -1,3 +1,4 @@
+[git]
 single-branch = true
 quiet = true
-depth = 1
+depth = 2
