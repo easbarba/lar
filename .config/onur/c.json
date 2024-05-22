@@ -31,6 +31,10 @@
     ],
     "libraries": [
         {
+            "name": "munit",
+            "url": "https://github.com/nemequ/munit"
+        },
+        {
             "name": "benhoyt-ht",
             "url": "https://github.com/benhoyt/ht"
         },
@@ -39,8 +43,12 @@
             "url": "https://github.com/benhoyt/inih"
         },
         {
-            "name": "cjson",
-            "url": "https://github.com/davegamble/cjson"
+            "name": "tutorial-jsonc",
+            "url": "https://github.com/rbtylee/tutorial-jsonc"
+        },
+        {
+            "name": "json-c",
+            "url": "https://github.com/json-c/json-c"
         },
         {
             "name": "xkbcommon",

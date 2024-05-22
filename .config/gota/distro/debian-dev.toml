@@ -74,7 +74,8 @@ c-libraries = [
     "libtagc0-dev"
     "libcjson-dev",
     "libgit2-dev",
-    "libinih-dev"
+    "libinih-dev",
+    "libjson-c-dev"
 ]
 gnu = [
    "gdb",
