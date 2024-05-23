@@ -7,10 +7,39 @@ langs = [
    "python3-pip",
    "python3-venv",
    "guile-3.0",
-   "guile-3.0-dev",
-  "golang",
-   "nodejs",
-   "npm"
+   "guile-3.0-dev"
+]
+cc-tools = [
+  "meson",
+  "muon-meson",
+  "gdb",
+  "gprof",
+  "valgrind",
+  "splint",
+  "indent",
+  "cmake",
+  "glslang-tools",
+  "clang-18",
+  "clangd-18",
+  "clang-format-18"
+  "clang-tidy-18"
+]
+c-libraries = [
+    "libpq-dev",
+    "libsfml-dev",
+    "libtag1-dev",
+    "libtagc0-dev"
+    "libgit2-dev",
+    "libinih-dev",
+    "libjson-c-dev"
+]
+gnu = [
+   "gdb",
+]
+gnome = [
+  "gnome-devel",
+  "glslc",
+  "libdrm-dev"
 ]
 database = [ "sqlite3" ]
 tools = [
@@ -52,36 +81,3 @@ serial = [
     "libxml2-utils"
 ]
 images = [ "krita" ]
-cc-tools = [
-  "meson",
-  "muon-meson",
-  "gdb",
-  "gprof",
-  "valgrind",
-  "splint",
-  "indent",
-  "cmake",
-  "glslang-tools",
-  "clang-18",
-  "clangd-18",
-  "clang-format-18"
-  "clang-tidy-18"
-]
-c-libraries = [
-    "libpq-dev",
-    "libsfml-dev",
-    "libtag1-dev",
-    "libtagc0-dev"
-    "libcjson-dev",
-    "libgit2-dev",
-    "libinih-dev",
-    "libjson-c-dev"
-]
-gnu = [
-   "gdb",
-]
-gnome = [
-  "gnome-devel",
-  "glslc",
-  "libdrm-dev"
-]
