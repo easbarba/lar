@@ -32,6 +32,7 @@ README.md
 .config/hyper
 .config/i3
 .config/kitty
+.config/ncmpcpp
 .config/nix
 .config/nixos
 .config/nixpkgs
@@ -52,4 +53,5 @@ README.md
 .config/zathura
 .config/wayfire.ini
 .config/xmodmap
+.config/zae
 .config/starship.toml
