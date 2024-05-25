@@ -6,8 +6,7 @@ deps = ["apt"]
 langs = [
    "python3-pip",
    "python3-venv",
-   "guile-3.0",
-   "guile-3.0-dev"
+   "golang"
 ]
 cc-tools = [
   "meson",
@@ -21,7 +20,7 @@ cc-tools = [
   "glslang-tools",
   "clang-18",
   "clangd-18",
-  "clang-format-18"
+  "clang-format-18",
   "clang-tidy-18"
 ]
 c-libraries = [
@@ -80,4 +79,7 @@ emacs-pdftools = [
 serial = [
     "libxml2-utils"
 ]
-images = [ "krita" ]
+images = [
+  "krita",
+  "blender"
+]
