@@ -83,12 +83,16 @@
     ],
     "gnu": [
         {
+            "name": "gnu-bash",
+            "url": "https://git.savannah.gnu.org/git/bash.git"
+        },
+        {
             "name": "gnu-awk",
             "url": "https://git.savannah.gnu.org/git/gawk.git"
         },
         {
             "name": "gnu-wget",
-            "url": "git://git.savannah.gnu.org/wget"
+            "url": "https://git.savannah.gnu.org/git/wget.git"
         },
         {
             "name": "gnu-guile",
@@ -97,6 +101,10 @@
         {
             "name": "gnu-indent",
             "url": "https://git.savannah.gnu.org/git/indent.git"
+        },
+        {
+            "name": "gnu-libc",
+            "url": "https://sourceware.org/git/glibc.git"
         },
         {
             "name": "gnu-coreutils",
