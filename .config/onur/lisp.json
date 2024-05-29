@@ -1,4 +1,47 @@
 {
+    "elisp": [
+        {
+            "name": "rschmukler-doom.d",
+            "url": "https://github.com/rschmukler/doom.d"
+        },
+        {
+            "name": "tecosaur-emacs-config",
+            "url": "https://github.com/tecosaur/emacs-config"
+        },
+        {
+            "name": "abo-abo-oremacs",
+            "branch": "github",
+            "url": "https://github.com/abo-abo/oremacs"
+        },
+        {
+            "name": "jwiegley-dot-emacs",
+            "url": "https://github.com/jwiegley/dot-emacs"
+        },
+        {
+            "name": "doom-emacs",
+            "url": "https://github.com/hlissner/doom-emacs"
+        },
+        {
+            "name": "unpackaged.el",
+            "url": "https://github.com/alphapapa/unpackaged.el"
+        },
+        {
+            "name": "elfeed",
+            "url": "https://github.com/skeeto/elfeed"
+        },
+        {
+            "name": "lsp-mode",
+            "url": "https://github.com/emacs-lsp/lsp-mode"
+        },
+        {
+            "name": "use-package",
+            "url": "https://github.com/jwiegley/use-package"
+        },
+        {
+            "name": "emacs",
+            "url": "git://git.sv.gnu.org/emacs"
+        }
+    ],
     "misc": [
         {
             "name": "guile-skeleton",

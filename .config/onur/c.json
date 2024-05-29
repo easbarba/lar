@@ -31,8 +31,12 @@
     ],
     "libraries": [
         {
-            "name": "munit",
-            "url": "https://github.com/nemequ/munit"
+            "name": "unity",
+            "url": "https://github.com/throwtheswitch/unity"
+        },
+        {
+            "name": "ulfius",
+            "url": "https://github.com/babelouest/ulfius"
         },
         {
             "name": "benhoyt-ht",
