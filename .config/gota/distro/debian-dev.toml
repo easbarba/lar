@@ -5,8 +5,7 @@ deps = ["apt"]
 [packages]
 langs = [
    "python3-pip",
-   "python3-venv",
-   "golang"
+   "python3-venv"
 ]
 cc-tools = [
   "meson",
@@ -27,10 +26,19 @@ c-libraries = [
     "libpq-dev",
     "libsfml-dev",
     "libtag1-dev",
-    "libtagc0-dev"
+    "libtagc0-dev",
     "libgit2-dev",
     "libinih-dev",
-    "libjson-c-dev"
+    "libjson-c-dev",
+
+    # ulfius
+    "liborcania-dev",
+    "libyder-dev",
+    "libulfius-dev",
+    "libjansson-dev",
+    "libmicrohttpd-dev",
+    "zlib1g-dev",
+    "libgcrypt20-dev"
 ]
 gnu = [
    "gdb",
