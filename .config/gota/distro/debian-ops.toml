@@ -27,5 +27,8 @@ network = [
     "netdiscover",
     "traceroute"
 ]
+tools = [
+  "expect"
+]
 # provisioning = [ "ansible" ]
 # ci = [ "gitlab-runner" ]
