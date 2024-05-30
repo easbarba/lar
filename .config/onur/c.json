@@ -184,6 +184,10 @@
     ],
     "tools": [
         {
+            "name": "coreboot",
+            "url": "https://review.coreboot.org/coreboot.git"
+        },
+        {
             "name": "yambar",
             "url": "https://codeberg.org/dnkl/yambar"
         },
