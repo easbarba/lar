@@ -154,6 +154,7 @@ wm = [
   "playerctl",
   "mako-notifier",
   "sway",
+  "swayidle",
   "grimshot",
   "foot",
   "dmenu",
