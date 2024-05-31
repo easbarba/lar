@@ -3,6 +3,45 @@ install = "sudo apt-get install -y"
 deps = ["apt"]
 
 [packages]
+tools = [
+    "jq",
+    "git-email",
+    "subversion",
+    "mercurial",
+    "editorconfig",
+    "shfmt",
+    "grip",
+    "tidy",
+    "fzf",
+    "distrobox",
+    "protobuf-compiler",
+    "inotify-tools"
+]
+editors = [
+    "vim",
+    "neovim",
+    "micro"
+]
+emacs = [
+    "emacs",
+    "fd-find",
+    "ripgrep"
+]
+emacs-pdftools = [
+  "autoconf",
+  "automake",
+  "gcc",
+  "libpng-dev",
+  "libpoppler-dev",
+  "libpoppler-glib-dev",
+  "libz-dev",
+  "make",
+  "pkg-config"
+]
+images = [
+  "krita",
+  "blender"
+]
 langs = [
    "python3-pip",
    "python3-venv"
@@ -39,55 +78,21 @@ c-libraries = [
     "libmicrohttpd-dev",
     "zlib1g-dev",
     "libgcrypt20-dev"
+
+  # GNOME
+  "gnome-devel",
+  "glslc",
+  "libdrm-dev"
+
+  # serial
+  "libxml2-utils"
 ]
 gnu = [
    "gdb",
 ]
-gnome = [
-  "gnome-devel",
-  "glslc",
-  "libdrm-dev"
-]
 database = [ "sqlite3" ]
-tools = [
-    "jq",
-    "git-email",
-    "subversion",
-    "mercurial",
-    "editorconfig",
-    "shfmt",
-    "grip",
-    "tidy",
-    "fzf",
-    "distrobox",
-    "protobuf-compiler",
-    "inotify-tools"
-]
-editors = [
-    "vim",
-    "neovim",
-    "micro"
-]
-emacs = [
-    "emacs",
-    "fd-find",
-    "ripgrep"
-]
-emacs-pdftools = [
-  "autoconf",
-  "automake",
-  "gcc",
-  "libpng-dev",
-  "libpoppler-dev",
-  "libpoppler-glib-dev",
-  "libz-dev",
-  "make",
-  "pkg-config"
-]
-serial = [
-    "libxml2-utils"
-]
-images = [
-  "krita",
-  "blender"
+java = [
+     "openjdk-21-jre",
+     "openjdk-21-jdk",
+     "clang-format"
 ]
