@@ -1,4 +1,4 @@
-#exec ~/.local/bin/s-wm-autostart
+#exec ~/.local/bin/s_wm_autostart
 # exec wl-paste -t text --watch clipman store
 
 exec emacs ~/Documents/org
@@ -17,8 +17,8 @@ exec thunderbird
 
 
 exec swayidle -w \
-	timeout 300 's-wm-wifi' \
+	timeout 300 's_wm_wifi' \
 	timeout 700 'swaylock -f -c 000000' \
     timeout 900 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-	resume 's-wm-wifi'
+	resume 's_wm_wifi'

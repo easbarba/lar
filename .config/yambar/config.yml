@@ -135,7 +135,7 @@ bar:
                       - string: { <<: *optical, deco: *std_underline }
                       - string: { text: "{label}" }
     - script:
-        path: /da/personal/bin/s-wm-sysinfo
+        path: /da/personal/bin/s_wm_sysinfo
         args: []
         content: { string: { text: "{host}   {cpu}   {gpu}" } }
 

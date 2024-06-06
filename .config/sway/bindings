@@ -127,11 +127,11 @@ bindsym $mod+r mode "resize"
 bindsym $mod+c exec swaylock
 bindsym $mod+x exec bemenu-run
 
-bindsym $mod+Ctrl+w exec s-wm-volume.scm --up
-bindsym $mod+Ctrl+s exec s-wm-volume.scm --down
-bindsym $mod+Ctrl+e exec s-wm-volume.scm --toggle
-bindsym $mod+Ctrl+a exec s-wm-bright.scm --up
-bindsym $mod+Ctrl+d exec s-wm-bright.scm --down
+bindsym $mod+Ctrl+w exec s_wm_volume.scm --up
+bindsym $mod+Ctrl+s exec s_wm_volume.scm --down
+bindsym $mod+Ctrl+e exec s_wm_volume.scm --toggle
+bindsym $mod+Ctrl+a exec s_wm_bright.scm --up
+bindsym $mod+Ctrl+d exec s_wm_bright.scm --down
 
 bindsym $mod+Mod1+e exec playerctl play-pause
 bindsym $mod+Mod1+a exec playerctl previous
@@ -142,7 +142,7 @@ bindsym $mod+Mod1+s exec playerctl volume 0.1-
 bindsym $mod+Mod1+p exec s-media-play
 bindsym $mod+Mod1+o exec s-media-pic
 
-bindsym Print exec s-wm-shot.scm --full
-bindsym $mod+Print exec s-wm-shot.scm --partial
+bindsym Print exec s_wm_shot.scm --full
+bindsym $mod+Print exec s_wm_shot.scm --partial
 
-bindsym $mod+z exec s-wm-pic
+bindsym $mod+z exec s_wm_pic

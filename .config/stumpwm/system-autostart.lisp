@@ -1,5 +1,5 @@
 ;; ============================================================
 ;; AUTOSTART
 
-(let ((autostart (concatenate 'string *local-bin* "/" "s-wm-autostart")))
+(let ((autostart (concatenate 'string *local-bin* "/" "s_wm_autostart")))
   (run-shell-command autostart))

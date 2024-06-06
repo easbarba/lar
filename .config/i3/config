@@ -156,20 +156,20 @@ assign [class="Icecat|Firefox|Chromium|Google-chrome"] $ws4
 assign [class="feh|Wine|OpenGl|vlc|mpv"] $ws5
 
 # Sound controls
-bindsym $mod+Control+w exec s-wm-volume --up
-bindsym $mod+Control+s exec s-wm-volume --down
-bindsym $mod+Control+e exec s-wm-volume --toggle
+bindsym $mod+Control+w exec s_wm_volume --up
+bindsym $mod+Control+s exec s_wm_volume --down
+bindsym $mod+Control+e exec s_wm_volume --toggle
 
-bindsym $mod+Control+a exec s-wm-backlight --up
-bindsym $mod+Control+d exec s-wm-backlight --down
+bindsym $mod+Control+a exec s_wm_backlight --up
+bindsym $mod+Control+d exec s_wm_backlight --down
 
 # Binds
-bindsym Print exec s-wm-shot --full
-bindsym $mod+Print exec s-wm-shot --partial
+bindsym Print exec s_wm_shot --full
+bindsym $mod+Print exec s_wm_shot --partial
 bindsym $mod+c exec i3lock
 
 # AutoStart
-exec --no-startup-id ~/.local/bin/s-wm-autostart
+exec --no-startup-id ~/.local/bin/s_wm_autostart
 
 # RGB
 set $cyan0   #4ec2f7
@@ -198,7 +198,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent $urgent-bg-color $urgent-bg-color $text-color $gray
 
 bar {
-    status_command while ~/.local/bin/s-wm-sysinfo; do sleep 1; done
+    status_command while ~/.local/bin/s_wm_sysinfo; do sleep 1; done
 	position top
 
 	# mode hide

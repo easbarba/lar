@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 pgrep -x bspwmbar >/dev/null || bspwmbar &
-"$HOME/.local/bin/s-wm-autostart" &
+"$HOME/.local/bin/s_wm_autostart" &
 
 bspc monitor -d I II III IV V
 

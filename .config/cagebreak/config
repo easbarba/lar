@@ -4,7 +4,7 @@
 # General settings an key bindings
 ######################
 
-#exec s-wm-autostart
+#exec s_wm_autostart
 
 workspaces 5
 background 0.25 0.21 0.2
@@ -92,21 +92,21 @@ definekey top C-5 movetoworkspace 5
 #Bind Function keys
 ######################
 # definekey top XF86AudioMute exec pactl set-sink-mute 0 toggle
-definekey top XF86AudioLowerVolume exec s-wm-volume.scm --down
-definekey top XF86AudioRaiseVolume exec s-wm-volume.scm --up
-definekey top C-XF86AudioMute exec s-wm-volume.scm --toggle
+definekey top XF86AudioLowerVolume exec s_wm_volume.scm --down
+definekey top XF86AudioRaiseVolume exec s_wm_volume.scm --up
+definekey top C-XF86AudioMute exec s_wm_volume.scm --toggle
 
 definekey top C-XF86AudioLowerVolume exec mpc volume -3
 definekey top C-XF86AudioRaiseVolume exec mpc volume +3
 definekey top C-XF86AudioPlay exec mpc toggle
 
-definekey top Print exec s-wm-shot.scm --full
-definekey top C-Print exec s-wm-shot.scm --partial
+definekey top Print exec s_wm_shot.scm --full
+definekey top C-Print exec s_wm_shot.scm --partial
 
-definekey top XF86MonBrightnessDown exec s-wm-bright.scm --down
-definekey top XF86MonBrightnessUp exec s-wm-bright.scm --up
-definekey top XF86Reload exec s-wm-bright.scm --up
-definekey top XF86Search exec s-wm-bright.scm --down
+definekey top XF86MonBrightnessDown exec s_wm_bright.scm --down
+definekey top XF86MonBrightnessUp exec s_wm_bright.scm --up
+definekey top XF86Reload exec s_wm_bright.scm --up
+definekey top XF86Search exec s_wm_bright.scm --down
 
 
 ######################

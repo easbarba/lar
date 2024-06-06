@@ -58,18 +58,18 @@ keys = [
     Key([mod, "shift"], "p", lazy.spawn("s-media-play")),
     Key([mod, "shift"], "v", lazy.spawn("s-media-video")),
     Key([mod, "shift"], "i", lazy.spawn("s-media-audio")),
-    Key([], "Print", lazy.spawn("s-wm-shot --full")),
-    Key(["shift"], "Print", lazy.spawn("s-wm-shot --partial")),
+    Key([], "Print", lazy.spawn("s_wm_shot --full")),
+    Key(["shift"], "Print", lazy.spawn("s_wm_shot --partial")),
     Key([mod, "shift"], "d", lazy.spawn("mpc next")),
     Key([mod], "space", lazy.spawn("mpc toggle")),
-    Key([mod], "w", lazy.spawn("s-wm-volume --up")),
-    Key([mod], "s", lazy.spawn("s-wm-volume --down")),
-    Key([mod], "e", lazy.spawn("s-wm-volume --toggle")),
-    Key([mod], "a", lazy.spawn("s-wm-backlight --up")),
-    Key([mod], "d", lazy.spawn("s-wm-backlight --down")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("s-wm-volume --up")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("s-wm-volume --down")),
-    Key([], "XF86AudioMute", lazy.spawn("s-wm-volume --toggle")),
+    Key([mod], "w", lazy.spawn("s_wm_volume --up")),
+    Key([mod], "s", lazy.spawn("s_wm_volume --down")),
+    Key([mod], "e", lazy.spawn("s_wm_volume --toggle")),
+    Key([mod], "a", lazy.spawn("s_wm_backlight --up")),
+    Key([mod], "d", lazy.spawn("s_wm_backlight --down")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("s_wm_volume --up")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("s_wm_volume --down")),
+    Key([], "XF86AudioMute", lazy.spawn("s_wm_volume --toggle")),
 ]
 
 widget_defaults = dict(
@@ -218,4 +218,4 @@ def autostart():
     """Auto Start Applications at Qtile start."""
     from subprocess import run
 
-    run(["sh", "s-wm-autostart"], cwd=HOME.joinpath(".local", "bin"), check=False)
+    run(["sh", "s_wm_autostart"], cwd=HOME.joinpath(".local", "bin"), check=False)

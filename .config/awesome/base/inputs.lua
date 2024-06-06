@@ -105,49 +105,49 @@ globalkeys =
         {modkey},
         "w",
         function()
-            awful.spawn("s-wm-volume --up")
+            awful.spawn("s_wm_volume --up")
         end
     ),
     awful.key(
         {modkey},
         "s",
         function()
-            awful.spawn("s-wm-volume --down")
+            awful.spawn("s_wm_volume --down")
         end
     ),
     awful.key(
         {modkey},
         "e",
         function()
-            awful.spawn("s-wm-volume --toggle")
+            awful.spawn("s_wm_volume --toggle")
         end
     ),
     awful.key(
         {modkey},
         "a",
         function()
-            awful.spawn("s-wm-backlight --up")
+            awful.spawn("s_wm_backlight --up")
         end
     ),
     awful.key(
         {modkey},
         "d",
         function()
-            awful.spawn("s-wm-backlight --down")
+            awful.spawn("s_wm_backlight --down")
         end
     ),
     awful.key(
         {modkey},
         "Print",
         function()
-            awful.spawn("s-wm-shot --full")
+            awful.spawn("s_wm_shot --full")
         end
     ),
     awful.key(
         {modkey, "Shift"},
         "Print",
         function()
-            awful.spawn("s-wm-shot --partial")
+            awful.spawn("s_wm_shot --partial")
         end
     ),
     awful.key(

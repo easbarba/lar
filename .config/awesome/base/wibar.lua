@@ -203,7 +203,7 @@ awful.screen.connect_for_each_screen(
                 -- mylauncher,
                 -- s.mylayoutbox
                 layout = wibox.layout.fixed.horizontal,
-                awful.widget.watch([[bash -c "s-wm-sysinfo"]], 2),
+                awful.widget.watch([[bash -c "s_wm_sysinfo"]], 2),
                 -- mykeyboardlayout,
                 -- mytextclock,
                 wibox.widget.systray()

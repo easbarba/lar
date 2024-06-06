@@ -3,7 +3,7 @@ local awful = require("awful")
 local naughty = require("naughty")
 
 -- Autorun programs
-local autostart = "s-wm-autostart" -- gears.filesystem.get_xdg_config_home() .. "autostart-scripts/apps"
+local autostart = "s_wm_autostart" -- gears.filesystem.get_xdg_config_home() .. "autostart-scripts/apps"
 -- if gears.filesystem.file_executable(autostart) then
 awful.spawn(autostart)
 -- else

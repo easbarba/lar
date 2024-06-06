@@ -13,11 +13,11 @@ riverctl spawn "emacs"
 riverctl map normal Super+Shift Return spawn foot
 riverctl map normal Super D spawn dmenu_run
 riverctl map normal Super C spawn swaylock
-riverctl map normal Super+Control S spawn "s-wm-volume.scm --down"
-riverctl map normal Super+Control W spawn "s-wm-volume.scm --up"
-riverctl map normal Super+Control E spawn "s-wm-volume.scm --toggle"
-riverctl map normal Super+Control A spawn "s-wm-bright.scm --up"
-riverctl map normal Super+Control D spawn "s-wm-bright.scm --down"
+riverctl map normal Super+Control S spawn "s_wm_volume.scm --down"
+riverctl map normal Super+Control W spawn "s_wm_volume.scm --up"
+riverctl map normal Super+Control E spawn "s_wm_volume.scm --toggle"
+riverctl map normal Super+Control A spawn "s_wm_bright.scm --up"
+riverctl map normal Super+Control D spawn "s_wm_bright.scm --down"
 riverctl map normal Super+Alt E spawn "playerctl play-pause"
 riverctl map normal Super+Alt A spawn "playerctl previous"
 riverctl map normal Super+Alt D spawn "playerctl next"
@@ -25,9 +25,9 @@ riverctl map normal Super+Alt W spawn "playerctl volume 0.1+"
 riverctl map normal Super+Alt S spawn "playerctl volume 0.1-"
 riverctl map normal Super+Alt P spawn s-media-play
 riverctl map normal Super+Alt O spawn s-media-pic
-# riverctl map normal Print spawn "s-wm-shot.scm --full"
-# riverctl map normal Super XF86Print spawn "s-wm-shot.scm --partial"
-riverctl map normal Super Z spawn s-wm-pic
+# riverctl map normal Print spawn "s_wm_shot.scm --full"
+# riverctl map normal Super XF86Print spawn "s_wm_shot.scm --partial"
+riverctl map normal Super Z spawn s_wm_pic
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close

@@ -28,7 +28,7 @@ import qualified XMonad.StackSet as W
 -- Startup hook
 --
 myStartupHook = do
-  spawnOnce "s-wm-autostart"
+  spawnOnce "s_wm_autostart"
   setWMName "LG3D" -- Keep xmobar/dock visible after xmonad restart
   return () -- Integrate Java Swing/GUI apps into XMonad layouts;
 
@@ -127,17 +127,17 @@ myKeys conf@XConfig {XMonad.modMask = modm} =
   , ((modm, xK_e), spawn myEditor)
   , ((modm, xK_b), spawn myBrowser)
   , ((modm, xK_l), spawn myLocker)
-  , ((0, xK_Print), spawn "s-wm-shot --full")
+  , ((0, xK_Print), spawn "s_wm_shot --full")
   , ((modm,               xK_x), spawn "dmenu_run")
-  , ((modm .|. shiftMask, xK_w), spawn "s-wm-volume --up")
-  , ((modm .|. shiftMask, xK_s), spawn "s-wm-volume --down")
-  , ((modm .|. shiftMask, xK_e), spawn "s-wm-volume --toggle")
+  , ((modm .|. shiftMask, xK_w), spawn "s_wm_volume --up")
+  , ((modm .|. shiftMask, xK_s), spawn "s_wm_volume --down")
+  , ((modm .|. shiftMask, xK_e), spawn "s_wm_volume --toggle")
   , ((modm .|. shiftMask, xK_a), spawn "s-media-audio")
   , ((modm, xK_v), spawn "s-media-getvideo")
   , ((modm, xK_p), spawn "s-media-play")
   , ((modm, xK_space), spawn "mpc toggle")
-  , ((modm .|. altMask, xK_w), spawn "s-wm-backlight --up")
-  , ((modm .|. altMask, xK_s), spawn "s-wm-backlight --down")
+  , ((modm .|. altMask, xK_w), spawn "s_wm_backlight --up")
+  , ((modm .|. altMask, xK_s), spawn "s_wm_backlight --down")
   , ((modm, xK_Tab), toggleWS) -- cicla are de trabalho
   , ((modm, xK_a), prevWS) -- anterior are de trabalho
   , ((modm, xK_d), nextWS) -- proximo are de trabalho
