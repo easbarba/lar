@@ -5,7 +5,6 @@ exec emacs ~/Documents/org
 exec emacs ~/Documents/books
 exec emacs ~/Documents/personal
 exec emacs ~/Documents/work
-exec emacs ~/.local
 
 exec udiskie --no-automount --no-notify --tray
 exec mako
@@ -14,7 +13,6 @@ exec yambar
 exec cmus
 exec firefox
 exec thunderbird
-
 
 exec swayidle -w \
 	timeout 300 's_wm_wifi' \
