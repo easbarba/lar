@@ -4,8 +4,7 @@ install = "podman pull"
 
 [jobs]
 langs = [
-  "docker.io/library/php:8.2-fpm",
-  "docker.io/library/composer:2",
+  "docker.io/library/golang:1.22",
   "docker.io/library/node:22"
 ]
 database = [
