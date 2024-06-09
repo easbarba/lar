@@ -1,0 +1,24 @@
+{
+    "hare": [
+        {
+            "name": "hare-irc",
+            "url": "https://git.sr.ht/~sircmpwn/hare-irc"
+        },
+        {
+            "name": "himitsu",
+            "url": "https://git.sr.ht/~sircmpwn/himitsu"
+        },
+        {
+            "name": "harec",
+            "url": "https://git.sr.ht/~sircmpwn/harec"
+        },
+        {
+            "name": "hautils",
+            "url": "https://git.sr.ht/~sircmpwn/hautils"
+        },
+        {
+            "name": "hare",
+            "url": "https://git.sr.ht/~sircmpwn/hare"
+        }
+    ]
+}

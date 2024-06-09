@@ -1,4 +1,18 @@
 {
+    "janet": [
+        {
+            "name": "jaylib",
+            "url": "https://github.com/janet-lang/jaylib"
+        },
+        {
+            "name": "circlet",
+            "url": "https://github.com/janet-lang/circlet"
+        }
+        {
+            "name": "janet",
+            "url": "https://github.com/janet-lang/janet"
+        }
+    ],
     "elisp": [
         {
             "name": "rschmukler-doom.d",
