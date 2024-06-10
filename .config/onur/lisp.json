@@ -1,13 +1,25 @@
 {
     "janet": [
         {
+            "name": "jpm",
+            "url": "https://github.com/janet-lang/jpm"
+        },
+        {
+            "name": "spork",
+            "url": "https://github.com/janet-lang/spork"
+        },
+        {
+            "name": "joy",
+            "url": "https://github.com/joy-framework/joy"
+        },
+        {
             "name": "jaylib",
             "url": "https://github.com/janet-lang/jaylib"
         },
         {
             "name": "circlet",
             "url": "https://github.com/janet-lang/circlet"
-        }
+        },
         {
             "name": "janet",
             "url": "https://github.com/janet-lang/janet"
@@ -56,7 +68,13 @@
             "url": "git://git.sv.gnu.org/emacs"
         }
     ],
-    "misc": [
+    "impl": [
+        {
+            "name": "ChezScheme",
+            "url": "https://github.com/cisco/ChezScheme"
+        }
+    ],
+    "guile/misc": [
         {
             "name": "guile-skeleton",
             "url": "https://gitlab.com/OrangeShark/guile-skeleton"
@@ -75,13 +93,7 @@
             "url": "https://github.com/alezost/guix-config"
         }
     ],
-    "impl": [
-        {
-            "name": "ChezScheme",
-            "url": "https://github.com/cisco/ChezScheme"
-        }
-    ],
-    "libraries": [
+    "guile/libraries": [
         {
             "name": "nonguix",
             "url": "https://gitlab.com/nonguix/nonguix.git"
@@ -113,7 +125,7 @@
             "url": "https://github.com/aconchillo/guile-json"
         }
     ],
-    "tools": [
+    "guile/tools": [
         {
             "name": "guile-hoot",
             "url": "https://gitlab.com/spritely/guile-hoot",
@@ -141,7 +153,7 @@
             "branch": "main"
         }
     ],
-    "gnu": [
+    "guile/gnu": [
         {
             "name": "fibers",
             "url": "https://github.com/wingo/fibers"
