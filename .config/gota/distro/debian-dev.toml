@@ -44,8 +44,7 @@ images = [
 ]
 langs = [
    "python3-pip",
-   "python3-venv",
-   "golang"
+   "python3-venv"
 ]
 cc-tools = [
   "meson",

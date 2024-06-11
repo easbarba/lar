@@ -1,6 +1,10 @@
 {
     "janet": [
         {
+            "name": "janet-lang.org",
+            "url": "https://github.com/janet-lang/janet-lang.org"
+        },
+        {
             "name": "jpm",
             "url": "https://github.com/janet-lang/jpm"
         },
