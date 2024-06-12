@@ -5,6 +5,9 @@ upgrade = "sudo apt upgrade -y"
 deps = [ "apt" ]
 
 [packages]
+containers = [ 
+    "podman"
+]
 iac = [
     "ansible-core"
 ]

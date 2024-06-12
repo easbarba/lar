@@ -77,17 +77,17 @@ c-libraries = [
     "libjansson-dev",
     "libmicrohttpd-dev",
     "zlib1g-dev",
-    "libgcrypt20-dev"
+    "libgcrypt20-dev",
 
   # GNOME
   "gnome-devel",
   "glslc",
-  "libdrm-dev"
+  "libdrm-dev",
 
   # serial
   "libxml2-utils"
 ]
 gnu = [
-   "gdb",
+   "gdb"
 ]
 database = [ "sqlite3" ]

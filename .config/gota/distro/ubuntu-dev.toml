@@ -4,13 +4,9 @@ deps = [ "apt" ]
 post = "sudo apt -y autoremove"
 
 [packages]
-containers = [ "podman" ]
 langs = [
-    "nodejs",
-    "npm",
     "python3-pip", 
-    "python3-venv",
-    "lua5.4"
+    "python3-venv"
 ]
 emacs-pdftools = [
   "autoconf",
@@ -41,5 +37,7 @@ tools = [
 editors = [ 
     "vim",
     "neovim",
-    "emacs"
 ]
+gnu = [ 
+     "emacs"
+]   

@@ -103,7 +103,8 @@ user = [
   "aspell-pt-br",
   "calibre",
   "pandoc",
-  "obs-studio"
+  "obs-studio",
+  "steam"
 ]
 sound = [
      "pulseaudio-utils",
