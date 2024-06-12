@@ -40,3 +40,4 @@ langs = [
 ]
 libs = [ "beautifulsoup4", "interval" ]
 ops = [ "cryptography" ]
+frameworks = [ "fastapi" ]
