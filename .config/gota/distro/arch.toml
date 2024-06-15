@@ -3,10 +3,17 @@ refresh = "sudo pacman -Syy"
 upgrade = "pacman -Syu"
 install = "sudo pacman -S --noconfirm"
 deps = [ "pacman" ]
-
+post = [ 
+    "systemctl --user enable pipewire.service",
+    "systemctl --user start pipewire.service",
+    "systemctl --user enable pipwire-pulse.service",
+    "systemctl --user start pipwire-pulse.service"
+]
 [packages]
+gnu = [
+    "wget"
+]
 system = [
-  "git",
   "openssh",
   "unzip",
   "zip",
@@ -48,8 +55,29 @@ fonts = [
   "ttf-droid",
   "adobe-source-sans-fonts"
 ]
-laptop = [ "acpi", "lm-sensors", "lshw", "libinput-tools", "acpid" ]
-wayland = [ "wl-clipboard" ]
+laptop = [ 
+    "acpi", 
+    "lm-sensors", 
+    "lshw", 
+    "libinput-tools", 
+    "acpid" 
+]
+wayland = [ 
+    "sway",
+    "swaylock",
+    "swayidle",
+    "foot",
+    "wl-clipboard",
+    "wayland-protocols",
+    "bemenu",
+    "grim",
+    "slurp",
+    "mako",
+    "udiskie",
+    "mpd",
+    "mpc",
+    "ncmpcpp"
+]
 cli = [
   "htop",
   "ffmpeg",
@@ -73,7 +101,9 @@ user = [
   "calibre",
   "pandoc",
   "obs-studio",
-  "inkscape"
+  "inkscape",
+  "vlc",
+  "thunderbird"
 ]
 sound = [
   "pipewire",
