@@ -1,6 +1,0 @@
-topic = "Arch - Paru"
-install = "paru --install"
-deps = [ "paru" ]
-
-[packages]
-misc = [ "taglib-git", "google-chrome" ]
