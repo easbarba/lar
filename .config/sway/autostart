@@ -10,7 +10,6 @@ exec udiskie --no-automount --no-notify --tray
 exec mako
 exec foot
 exec yambar
-exec cmus
 exec firefox
 exec thunderbird
 exec mpd 
