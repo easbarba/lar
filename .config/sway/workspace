@@ -16,6 +16,7 @@ assign [app_id="Alacritty"] workspace $ws3
 assign [class="Insomnia"] workspace $ws4
 assign [class="IceCat"] workspace $ws4
 assign [app_id="firefox"] workspace $ws4
+assign [app_id="thunderbird"] workspace $ws4
 assign [class="Chromium"] workspace $ws4
 assign [class="Google-chrome"] workspace $ws4
 assign [app_id="chromium-browser"] workspace $ws4
