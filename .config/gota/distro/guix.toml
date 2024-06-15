@@ -6,4 +6,4 @@ deps = [ "guix" ]
 
 [packages]
 gnu = [  "ccal" ]
-apps = [ "neofetch", "unrar-free" ]
+apps = [ "neofetch", "unrar-free", "grimshot" ]
