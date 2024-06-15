@@ -5,7 +5,9 @@ install = "sudo pacman -S --noconfirm"
 deps = [ "pacman" ]
 
 [packages]
-servers = [ "nginx" ]
+containers = [
+    "podman"
+]
 network = [
   "gnutls",
   "net-tools",
@@ -20,6 +22,6 @@ network = [
   "tcpdump",
   "httpie"
 ]
-kubernetes = [ "kubectl", "kubelet", "kubeadm", "helm" ]
-cloud = [ "awscli", "google-cloud-sdk" ]
-misc = [ "gitlab-runner" ]
+#kubernetes = [ "kubectl", "kubelet", "kubeadm", "helm" ]
+#cloud = [ "awscli", "google-cloud-sdk" ]
+#misc = [ "gitlab-runner" ]
