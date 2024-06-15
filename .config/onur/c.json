@@ -147,7 +147,8 @@
         },
         {
             "name": "gtk",
-            "url": "https://gitlab.gnome.org/GNOME/gtk"
+            "url": "https://gitlab.gnome.org/GNOME/gtk",
+            "branch": "main"
         }
     ],
     "freedesktop": [
@@ -169,7 +170,8 @@
         },
         {
             "name": "mesa",
-            "url": "https://gitlab.freedesktop.org/mesa/mesa/"
+            "url": "https://gitlab.freedesktop.org/mesa/mesa/",
+            "branch": "main"
         },
         {
             "name": "wayland",
