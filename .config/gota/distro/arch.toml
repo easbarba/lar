@@ -62,49 +62,6 @@ laptop = [
     "libinput-tools", 
     "acpid" 
 ]
-wayland = [ 
-    "sway",
-    "swaylock",
-    "swayidle",
-    "foot",
-    "wl-clipboard",
-    "wayland-protocols",
-    "bemenu",
-    "grim",
-    "slurp",
-    "mako",
-    "udiskie",
-    "mpd",
-    "mpc",
-    "ncmpcpp"
-]
-cli = [
-  "htop",
-  "ffmpeg",
-  "mpv",
-  "elinks",
-  "libnotify",
-  "ranger",
-  "aria2",
-  "cmus"
-]
-user = [
-  "chromium",
-  "firefox",
-  "libreoffice",
-  "gimp",
-  "xdg-utils",
-  "imagemagick",
-  "aspell",
-  "aspell-pt",
-  "aspell-en",
-  "calibre",
-  "pandoc",
-  "obs-studio",
-  "inkscape",
-  "vlc",
-  "thunderbird"
-]
 sound = [
   "pipewire",
   "pipewire-pulse",
@@ -128,4 +85,50 @@ amd = [
   "xf86-video-amdgpu",
   "vulkan-radeon",
   "lib32-vulkan-radeon"
+]
+cli = [
+  "htop",
+  "ffmpeg",
+  "mpv",
+  "elinks",
+  "libnotify",
+  "ranger",
+  "aria2",
+  "spell"
+]
+user = [
+  "chromium",
+  "firefox",
+  "libreoffice",
+  "gimp",
+  "xdg-utils",
+  "imagemagick",
+  "aspell",
+  "aspell-pt",
+  "aspell-en",
+  "calibre",
+  "pandoc",
+  "obs-studio",
+  "inkscape",
+  "vlc",
+  "thunderbird"
+]
+wayland = [
+    "wl-clipboard",
+    "wayland-protocols",
+    "mpd",
+    "mpc",
+    "ncmpcpp"
+]
+wayland-wm = [
+"sway",
+    "swaylock",
+    "swayidle",
+    "foot",
+    "bemenu",
+    "grim",
+    "slurp",
+    "mako",
+    "udiskie",
+    "brightnessctl"
 ]
