@@ -9,15 +9,18 @@ editors = [ "vim", "neovim" ]
 tools = [
   "scdoc",
   "git"  
-  "jq",
   "subversion",
   "mercurial",
   "editorconfig-core",
-  "direnv",
+  "jq",
   "fd",
   "tidy",
   "ripgrep",
   "shfmt"
+]
+langs = [
+  "guile",
+  "go"
 ]
 cc = [
   "meson",
