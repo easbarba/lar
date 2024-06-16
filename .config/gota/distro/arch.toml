@@ -11,7 +11,15 @@ post = [
 ]
 [packages]
 gnu = [
-    "wget"
+    "bash",
+    "gcc",
+    "make",
+    "info",
+    "wget",
+    "parallel",
+    "gawk",
+    "gparted",
+    "gimp"
 ]
 system = [
   "openssh",
@@ -45,6 +53,7 @@ system = [
 arch = [ "base-devel" ]
 shell = [ "bash-completion", "shellcheck" ]
 fonts = [
+  "terminus-font",
   "ttf-hack",
   "ttf-dejavu",
   "ttf-jetbrains-mono",
