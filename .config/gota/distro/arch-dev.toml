@@ -19,8 +19,9 @@ tools = [
   "shfmt"
 ]
 langs = [
-  "guile",
-  "go"
+  "python",
+  "go",
+  "guile"
 ]
 cc = [
   "meson",
