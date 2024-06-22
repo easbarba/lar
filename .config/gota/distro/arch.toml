@@ -11,15 +11,15 @@ post = [
 ]
 [packages]
 gnu = [
-    "bash",
-    "gcc",
-    "make",
-    "info",
-    "wget",
-    "parallel",
-    "gawk",
-    "gparted",
-    "gimp"
+  "bash",
+  "gcc",
+  "make",
+  "info",
+  "wget",
+  "parallel",
+  "gawk",
+  "gparted",
+  "gimp"
 ]
 system = [
   "openssh",
@@ -48,7 +48,8 @@ system = [
   "socat",
   "tmux",
   "bottom",
-  "unrar"
+  "unrar",
+  "flatpak"
 ]
 arch = [ "base-devel" ]
 shell = [ "bash-completion", "shellcheck" ]
@@ -106,16 +107,13 @@ cli = [
   "spell"
 ]
 user = [
-  "chromium",
   "firefox",
   "libreoffice",
-  "gimp",
   "xdg-utils",
   "imagemagick",
   "aspell",
   "aspell-pt",
   "aspell-en",
-  "calibre",
   "pandoc",
   "obs-studio",
   "inkscape",
@@ -123,21 +121,21 @@ user = [
   "thunderbird"
 ]
 wayland = [
-    "wl-clipboard",
-    "wayland-protocols",
-    "mpd",
-    "mpc",
-    "ncmpcpp"
+  "wl-clipboard",
+  "wayland-protocols",
+  "mpd",
+  "mpc",
+  "ncmpcpp"
 ]
 wayland-wm = [
-"sway",
-    "swaylock",
-    "swayidle",
-    "foot",
-    "bemenu",
-    "grim",
-    "slurp",
-    "mako",
-    "udiskie",
-    "brightnessctl"
+  "sway",
+  "swaylock",
+  "swayidle",
+  "foot",
+  "bemenu",
+  "grim",
+  "slurp",
+  "mako",
+  "udiskie",
+  "brightnessctl"
 ]
