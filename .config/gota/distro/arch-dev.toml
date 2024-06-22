@@ -11,7 +11,7 @@ tools = [
   "git"  
   "subversion",
   "mercurial",
-  "editorconfig-core",
+  "editorconfig-core-c",
   "jq",
   "fd",
   "tidy",
