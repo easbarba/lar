@@ -8,7 +8,7 @@ deps = [ "pacman" ]
 editors = [ "vim", "neovim" ]
 tools = [
   "scdoc",
-  "git"  
+  "git"
   "subversion",
   "mercurial",
   "editorconfig-core-c",
@@ -18,13 +18,17 @@ tools = [
   "ripgrep",
   "shfmt"
 ]
+images = [ "krita" ]
 langs = [
   "python",
-  "go",
   "guile"
 ]
 cc = [
   "meson",
   "clang"
 ]
-images = [ "krita" ]
+openjdk = [
+  "jdk21-openjdk",
+  "openjdk21-doc",
+  "openjdk21-src"
+]
