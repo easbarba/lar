@@ -191,7 +191,8 @@
     "tools": [
         {
             "name": "coreboot",
-            "url": "https://review.coreboot.org/coreboot.git"
+            "url": "https://review.coreboot.org/coreboot.git",
+            "branch": "main"
         },
         {
             "name": "yambar",

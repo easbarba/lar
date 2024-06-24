@@ -75,7 +75,8 @@
     "impl": [
         {
             "name": "ChezScheme",
-            "url": "https://github.com/cisco/ChezScheme"
+            "url": "https://github.com/cisco/ChezScheme",
+            "branch": "main"
         }
     ],
     "guile/misc": [

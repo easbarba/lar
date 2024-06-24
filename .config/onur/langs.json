@@ -44,15 +44,18 @@
     },
     {
       "url": "https://github.com/apache/avro",
-      "name": "avro"
+      "name": "avro",
+      "branch": "main"
     },
     {
       "url": "https://github.com/mojolicious/mojo",
-      "name": "avro"
+      "name": "mojo",
+      "branch": "main"
     },
     {
       "url": "https://github.com/i3/i3",
-      "name": "i3"
+      "name": "i3",
+      "branch": "next"
     },
     {
       "url": "https://github.com/bugzilla/bugzilla",
@@ -64,7 +67,8 @@
     },
     {
       "url": "https://github.com/Perl/perl5",
-      "name": "perl5"
+      "name": "perl5",
+      "branch": "blead"
     }
   ],
   "lua": [
