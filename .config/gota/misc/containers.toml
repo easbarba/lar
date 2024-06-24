@@ -4,7 +4,6 @@ install = "podman pull"
 
 [jobs]
 langs = [
- "docker.io/library/ruby:3.3",
 ]
 database = [
   "docker.io/library/mongo:7",
