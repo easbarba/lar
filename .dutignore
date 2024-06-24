@@ -23,6 +23,13 @@ README.md
 .config/devilspie2
 .config/direnv
 .config/dunst
+.config/environment.d/03-kde.conf
+.config/environment.d/04-haskell.conf
+.config/environment.d/05-rust.conf
+.config/environment.d/06-java.conf
+.config/environment.d/09-php.conf
+.config/environment.d/12-brew.conf
+.config/environment.d/14-dotnet.conf
 .config/fish
 .config/fontconfig
 .config/gh
