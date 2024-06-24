@@ -31,6 +31,10 @@
     ],
     "official": [
         {
+            "name": "rbs",
+            "url": "https://github.com/ruby/rbs"
+        },
+        {
             "name": "debug",
             "url": "https://github.com/ruby/debug"
         },
