@@ -4,11 +4,7 @@ install = "podman pull"
 
 [jobs]
 langs = [
-  "docker.io/library/eclipse-temurin:17-jdk",
-  "docker.io/library/eclipse-temurin:21-jdk",
-  "docker.io/library/eclipse-temurin:8-jdk",
-  "docker.io/library/eclipse-temurin:8-jre"
-
+ "docker.io/library/ruby:3.3",
 ]
 database = [
   "docker.io/library/mongo:7",
