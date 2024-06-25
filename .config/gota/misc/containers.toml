@@ -4,10 +4,6 @@ install = "podman pull"
 
 [jobs]
 langs = [
-  "mcr.microsoft.com/dotnet/sdk:8.0",
-  "mcr.microsoft.com/dotnet/runtime:8.0",
-  "mcr.microsoft.com/dotnet/aspnet:8.0",
-  "docker.io/library/mono:6"
 ]
 database = [
   "docker.io/library/mongo:7",
