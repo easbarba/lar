@@ -1,5 +1,3 @@
-#!/usr/bin/bash
-
 set -o noclobber                                                  # Prevent file overwrite on stdout redirection Use `>|` to force redirection to an existing file
 bind Space:magic-space                                            # Enable history expansion with space # E.g. typing !!<space> will replace the !! with your last command
 bind "set completion-ignore-case on"                              # SMARTER TAB-COMPLETION (Readline bindings) Perform file completion in a case insensitive fashion

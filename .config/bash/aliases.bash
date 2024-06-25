@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # * ALIASES
 
 # some more ls aliases
