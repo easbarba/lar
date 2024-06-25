@@ -7,7 +7,7 @@ install = "gem install"
 [packages]
 essentials = [
   "bundler",
-  "rake"
+  "rake",
   "rbs"
 ]
 tools = [
