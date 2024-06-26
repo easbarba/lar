@@ -28,3 +28,8 @@ cc = [
   "meson",
   "clang"
 ]
+openjdk = [
+  "jdk21-openjdk",
+  "maven",
+  "gradle"
+]
