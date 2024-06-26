@@ -20,16 +20,10 @@ tools = [
 ]
 images = [ "krita" ]
 langs = [
-  "go",
   "python",
   "guile"
 ]
 cc = [
   "meson",
   "clang"
-]
-openjdk = [
-  "jdk21-openjdk",
-  "maven",
-  "gradle"
 ]
