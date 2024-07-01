@@ -1,7 +1,7 @@
 topic = "opensuse"
 refresh = "sudo zypper refresh"
 upgrade = "sudo zypper up"
-install = "sudo zypper --no-confirm"
+install = "sudo zypper install --no-confirm"
 deps = [ "zypper" ]
 
 [packages]
@@ -34,7 +34,10 @@ system = [
   "tmux",
   "unrar"
 ]
-shell = [ "bash-completion", "ShellCheck" ]
+shell = [ 
+  "bash-completion", 
+  "ShellCheck" 
+]
 fonts = [
   "hack-fonts",
   "dejavu-fonts",
@@ -43,19 +46,34 @@ fonts = [
   "liberation-fonts",
   "google-droid-fonts"
 ]
-kde = [ "ktorrent" ]
-laptop = [ "acpi", "sensors", "lshw", "acpid" ]
-wayland = [ "wl-clipboard" ]
+kde = [ 
+  "ktorrent" 
+]
+laptop = [ 
+  "acpi", 
+  "sensors", 
+  "lshw", 
+  "acpid" 
+]
+wayland = [ 
+ "wl-clipboard",
+ "sway",
+ "bemenu",
+ "yambar",
+ "mpclient",
+ "mpd",
+ "ncmpcpp",
+ "brightnessctl"
+]
 cli = [
   "htop",
   "bottom",
   "ffmpeg",
-  "mpv",
   "elinks",
   "libnotify",
   "ranger",
   "aria2",
-  "cmus"
+  "neofetch"
 ]
 user = [
   "chromium",
@@ -71,7 +89,9 @@ user = [
   "calibre",
   "pandoc",
   "obs-studio",
-  "inkscape"
+  "inkscape",
+  "steam",
+  "mpv"
 ]
 media = [
   "gstreamer",

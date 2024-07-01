@@ -1,11 +1,14 @@
 topic = "opensuse_dev"
 refresh = "sudo zypper refresh"
 upgrade = "sudo zypper update"
-install = "sudo install -y --noconfirm"
+install = "sudo zypper install --no-confirm"
 deps = [ "zypper" ]
 
 [packages]
-editors = [ "vim", "neovim" ]
+editors = [ 
+  "vim",
+  "neovim" 
+]
 tools = [
   "jq",
   "subversion",
@@ -15,8 +18,40 @@ tools = [
   "fd",
   "tidy",
   "ripgrep",
-  "shfmt",
-  "cmake",
-  "make"
+  "shfmt"
 ]
-images = [ "krita" ]
+images = [ 
+  "krita" 
+]
+gnu = [
+    "emacs"
+    "gdb",
+    "guile",
+    "guile-tools",
+    "gcc-c++"
+]
+emacs_deps = [
+ "make",
+ "automake",
+ "autoconf",
+ "gcc",
+ "libpng16-devel",
+ "libpng16-compat-devel",
+ "zlib-devel",
+ "libpoppler-devel",
+ "libpoppler-glib-devel",
+ "glib2-devel",
+ "pkgconf"
+]
+cc = [
+  "cmake",
+  "make",
+  "meson",
+  "ninja",
+  "valgrind",
+  "clang18"
+]
+cc_libs = [
+ "libjson-c-devel",
+ "libinih-devel"
+]
