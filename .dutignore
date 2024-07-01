@@ -4,7 +4,6 @@
 .iex.exs
 .irbrc
 .rufo
-.sbclrc
 .tcshrc
 .xinitrc
 .zshrc
@@ -14,7 +13,6 @@ README.md
 .config/Clementine
 .config/HybridBar
 .config/ansible
-.config/autostart-scripts
 .config/awesome
 .config/bspwm
 .config/cagebreak
@@ -23,7 +21,6 @@ README.md
 .config/devilspie2
 .config/direnv
 .config/dunst
-.config/environment.d/03-kde.conf
 .config/environment.d/04-haskell.conf
 .config/environment.d/05-rust.conf
 .config/environment.d/09-php.conf

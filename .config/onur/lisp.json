@@ -29,6 +29,89 @@
             "url": "https://github.com/janet-lang/janet"
         }
     ],
+    "commonlisp": [
+        {
+            "name": "qlot",
+            "url": "https://github.com/fukamachi/qlot"
+        },
+        {
+            "name": "stumpwm-goodies-joelagnel",
+            "url": "https://github.com/joelagnel/stumpwm-goodies"
+        },
+        {
+            "name": "stumpwm-config-lepisma",
+            "url": "https://github.com/lepisma/cfg"
+        },
+        {
+            "name": "stumpwm-config-herbertjones",
+            "url": "https://github.com/herbertjones/my-stumpwm-config"
+        },
+        {
+            "name": "stumpwm-config-paulownia",
+            "url": "https://github.com/stumpwm/paulownia"
+        },
+        {
+            "name": "stumpwm-config-mahogany",
+            "url": "https://github.com/stumpwm/mahogany"
+        },
+        {
+            "name": "stumpwm-config-nicolaspetton",
+            "url": "https://github.com/NicolasPetton/stumpwm.d"
+        },
+        {
+            "name": "stumpwm-config-alezost",
+            "url": "https://github.com/alezost/stumpwm-config"
+        },
+        {
+            "name": "nyxt",
+            "url": "https://github.com/atlas-engineer/nyxt"
+        },
+        {
+            "name": "stumpwm-contrib",
+            "url": "https://github.com/stumpwm/stumpwm-contrib"
+        },
+        {
+            "name": "stumpwm",
+            "url": "https://github.com/stumpwm/stumpwm"
+        },
+        {
+            "name": "cl-cookbook",
+            "url": "https://github.com/LispCookbook/cl-cookbook"
+        },
+        {
+            "name": "quicklisp-client",
+            "url": "https://github.com/quicklisp/quicklisp-client"
+        },
+        {
+            "name": "quicklisp-bootstrap",
+            "url": "https://github.com/quicklisp/quicklisp-bootstrap"
+        },
+        {
+            "name": "quicklisp-controller",
+            "url": "https://github.com/quicklisp/quicklisp-controller"
+        },
+        {
+            "name": "clx",
+            "url": "https://github.com/franzinc/clx"
+        },
+        {
+            "name": "clpm",
+            "branch": "main",
+            "url": "https://gitlab.common-lisp.net/clpm/clpm"
+        },
+        {
+            "name": "alexandria",
+            "url": "https://gitlab.common-lisp.net/alexandria/alexandria"
+        },
+        {
+            "name": "asdf",
+            "url": "https://gitlab.common-lisp.net/asdf/asdf"
+        },
+        {
+            "name": "sbcl",
+            "url": "git://git.code.sf.net/p/sbcl/sbcl"
+        }
+    ],
     "elisp": [
         {
             "name": "rschmukler-doom.d",
