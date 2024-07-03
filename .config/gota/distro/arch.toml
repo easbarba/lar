@@ -3,7 +3,7 @@ refresh = "sudo pacman -Syy"
 upgrade = "pacman -Syu"
 install = "sudo pacman -S --noconfirm"
 deps = [ "pacman" ]
-post = [ 
+post = [
     "systemctl --user enable pipewire.service",
     "systemctl --user start pipewire.service",
     "systemctl --user enable pipwire-pulse.service",
@@ -50,7 +50,7 @@ system = [
   "bottom",
   "unrar",
   "flatpak",
-  "rfkill",
+  "rfkill"
 ]
 arch = [ "base-devel" ]
 shell = [ "bash-completion", "shellcheck" ]
@@ -106,9 +106,7 @@ cli = [
   "libnotify",
   "ranger",
   "aria2",
-  "spell",
-  "bluez",
-  "bluez-utils"
+  "spell"
 ]
 user = [
   "firefox",
@@ -124,12 +122,18 @@ user = [
   "vlc",
   "thunderbird"
 ]
-wayland = [
-  "wl-clipboard",
-  "wayland-protocols",
+wm = [
+  "udiskie",
+  "brightnessctl",
+  "bluez",
+  "bluez-utils",
   "mpd",
   "mpc",
   "ncmpcpp"
+]
+wayland = [
+  "wl-clipboard",
+  "wayland-protocols",
 ]
 wayland-wm = [
   "sway",
@@ -141,6 +145,6 @@ wayland-wm = [
   "grim",
   "slurp",
   "mako",
-  "udiskie",
-  "brightnessctl"
+  "xorg-xwayland",
+  "ttf-liberation"
 ]

@@ -20,6 +20,7 @@ tools = [
 ]
 images = [ "krita" ]
 langs = [
+  "go"
   "python",
   "guile"
 ]
