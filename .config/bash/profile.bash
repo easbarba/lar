@@ -1,5 +1,3 @@
-# [[ -f $HOME/.profile ]] && . "$HOME/.profile" # import environment.d vars to GNU Bash
-
 setup_keys() {
     # kill any ssh-agent running, re-enter new one
     # before starting session and reset ssh env vars
