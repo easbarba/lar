@@ -7,11 +7,8 @@ set $down j
 set $up k
 set $right l
 
-set $term /usr/bin/foot
 set $editor ~/.local/bin/emacs
 set $locker  /usr/bin/swaylock
-
-set $menu dmenu_run -fn "-xos4-terminus-medium-r-*-*-14-*"
 
 # * New Default
 

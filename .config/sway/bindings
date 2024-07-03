@@ -2,13 +2,14 @@
 
 # Basics:
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec /usr/bin/foot
 
     # Kill focused window
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec /usr/bin/bemenu-run
+    bindsym $mod+Shift+d exec wofi --show drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
