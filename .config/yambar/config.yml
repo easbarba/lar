@@ -177,7 +177,7 @@ bar:
           map:
             default: { empty: {} }
             conditions:
-              name == wlp2s0:
+              name == wlan0:
                 map:
                   default:
                     {
