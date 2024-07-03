@@ -137,6 +137,7 @@ wayland-wm = [
   "swayidle",
   "foot",
   "bemenu",
+  "wofi",
   "grim",
   "slurp",
   "mako",
