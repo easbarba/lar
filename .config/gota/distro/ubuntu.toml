@@ -59,7 +59,9 @@ system = [
     "socat",
     "aspell",
     "ispell",
-    "spell"
+    "spell",
+    "network-manager",
+    "rfkill",
 ]
 laptop = [
     "acpi",
@@ -93,9 +95,6 @@ wayland = [
 ]
 misc = [
     "cheese"
-]
-gnome [
-  "gnome-shell-extensions"
 ]
 user = [
   "firefox",
@@ -155,13 +154,17 @@ amd = [
 wm = [
   "brightnessctl",
   "udiskie",
-  "cmus",
   "playerctl",
   "mako-notifier",
   "sway",
   "swayidle",
+  "swaylock",
   "grimshot",
   "foot",
   "dmenu",
-  "yambar"
+  "bemenu",
+  "yambar",
+  "mpd",
+  "mpc",
+  "ncmpcpp"
 ]

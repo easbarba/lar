@@ -5,19 +5,9 @@ post = "sudo apt -y autoremove"
 
 [packages]
 langs = [
+    "guile-3.0",
     "python3-pip", 
     "python3-venv"
-]
-emacs-pdftools = [
-  "autoconf",
-  "automake",
-  "gcc",
-  "libpng-dev",
-  "libpoppler-dev",
-  "libpoppler-glib-dev",
-  "libz-dev",
-  "make",
-  "pkg-config"
 ]
 tools = [
   "jq",
@@ -27,8 +17,6 @@ tools = [
   "editorconfig",
   "fd-find",
   "shfmt",
-  "meson",
-  "cmake",
   "fzf",
   "tidy", 
   "ripgrep",
@@ -39,5 +27,21 @@ editors = [
     "neovim",
 ]
 gnu = [ 
-     "emacs"
+ "emacs"
+ "gcc",
+ "make"
 ]   
+emacs-pdftools = [
+  "autoconf",
+  "automake",
+  "libpng-dev",
+  "libpoppler-dev",
+  "libpoppler-glib-dev",
+  "libz-dev",
+  "pkg-config"
+]
+cc = [
+  "meson",
+  "cmake"
+]
+cc-libs = []
