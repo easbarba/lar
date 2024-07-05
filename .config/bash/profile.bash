@@ -1,9 +1,12 @@
-setup_keys() {
+sshkeys() {
     # kill any ssh-agent running, re-enter new one
     # before starting session and reset ssh env vars
-    killall ssh-agent
+    # killall ssh-agent
 
-    eval "$(ssh-agent -s)"
+    if [ -z "$SSH_AGENT_PID" ]; then
+        eval "$(ssh-agent -s)"
+    fi
+
     ssh-add -q "$HOME/.ssh/id_ed25519" </dev/null
 
     export SSH_AGENT_PID=$(pgrep ssh-agent)
@@ -11,11 +14,12 @@ setup_keys() {
 }
 
 wm() {
-    [[ -x $(command -v sway) ]] &&   exec sway
+    [[ -x $(command -v sway) ]] && exec sway
+    [[ -x $(command -v river) ]] && exec river
 }
 
 # WAYLAND
-if [ "$(tty)" = "/dev/tty3" ]; then
-    setup_keys
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 3 ]; then # [ "$(tty)" = "/dev/tty3" ]
+    sshkeys
     wm
 fi
