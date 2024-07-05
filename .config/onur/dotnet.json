@@ -53,7 +53,12 @@
         }
     ],
     "tools": [
-        {
+{
+            "name": "nexusmods_app",
+            "url": "https://github.com/Nexus-Mods/NexusMods.App",
+            "branch": "main"
+        }
+        ,{
             "name": "csharprepl",
             "url": "https://github.com/waf/prettyprompt",
             "branch": "main"
