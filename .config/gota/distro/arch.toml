@@ -50,7 +50,8 @@ system = [
   "bottom",
   "unrar",
   "flatpak",
-  "rfkill"
+  "rfkill",
+  "fuse2"
 ]
 arch = [ "base-devel" ]
 shell = [ "bash-completion", "shellcheck" ]
@@ -140,7 +141,7 @@ wayland-wm = [
   "swaylock",
   "swayidle",
   "foot",
-  "bemenu",
+  "bemenu-wayland",
   "wofi",
   "grim",
   "slurp",
