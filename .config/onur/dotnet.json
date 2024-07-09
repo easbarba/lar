@@ -1,4 +1,11 @@
 {
+    "examples": [
+        {
+            "name": "web-api-development-with-asp.net-core-8",
+            "url": "https://github.com/packtpublishing/web-api-development-with-asp.net-core-8",
+            "branch": "main"
+        }
+    ],
     "official": [
         {
             "name": "mono",
@@ -53,12 +60,12 @@
         }
     ],
     "tools": [
-{
+        {
             "name": "nexusmods_app",
             "url": "https://github.com/Nexus-Mods/NexusMods.App",
             "branch": "main"
-        }
-        ,{
+        },
+        {
             "name": "csharprepl",
             "url": "https://github.com/waf/prettyprompt",
             "branch": "main"
