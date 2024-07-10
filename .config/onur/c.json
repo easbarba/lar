@@ -9,10 +9,6 @@
             "url": "https://github.com/openssh/openssh-portable"
         },
         {
-            "name": "openssl",
-            "url": "git://git.openssl.org/openssl"
-        },
-        {
             "name": "st",
             "url": "https://git.suckless.org/st"
         },
@@ -104,7 +100,7 @@
         },
         {
             "name": "gnu-guile",
-            "url": "https://git.savannah.gnu.org/git/guile/guile-web"
+            "url": "https://git.savannah.gnu.org/cgit/guile/guile-web.git"
         },
         {
             "name": "gnu-indent",
