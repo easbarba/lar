@@ -10,10 +10,6 @@
             "url": "https://gitlab.com/fdroid/fdroidclient"
         },
         {
-            "name": "tachiyomi",
-            "url": "https://github.com/tachiyomiorg/tachiyomi"
-        },
-        {
             "name": "okhttp",
             "url": "https://github.com/square/okhttp"
         }
@@ -21,7 +17,8 @@
     "tools": [
         {
             "name": "kotlin-language-server",
-            "url": "https://github.com/fwcd/kotlin-language-server"
+            "url": "https://github.com/fwcd/kotlin-language-server",
+            "branch": "main"
         },
         {
             "name": "kscript",
