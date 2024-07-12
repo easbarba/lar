@@ -25,7 +25,3 @@ langs = [
   "python",
   "guile"
 ]
-cc = [
-  "meson",
-  "clang"
-]
