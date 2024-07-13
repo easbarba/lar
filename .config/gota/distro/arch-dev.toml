@@ -20,8 +20,11 @@ tools = [
 ]
 images = [ "krita" ]
 langs = [
-  "kotlin",
-  "ktlint",
   "python",
   "guile"
+]
+openjdk = [
+  "jdk21-openjdk",
+  "maven",
+  "gradle"
 ]
