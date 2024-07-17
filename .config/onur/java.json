@@ -36,7 +36,8 @@
         },
         {
             "name": "jakartaee-samples",
-            "url": "https://github.com/javaee-samples/jakartaee-samples"
+            "url": "https://github.com/javaee-samples/jakartaee-samples",
+            "branch": "main"
         },
         {
             "name": "eclipselink",
@@ -70,7 +71,8 @@
         },
         {
             "name": "jakartaee-cdi",
-            "url": "https://github.com/jakartaee/cdi"
+            "url": "https://github.com/jakartaee/cdi",
+            "branch": "main"
         },
         {
             "name": "jakartaee-servlet",
