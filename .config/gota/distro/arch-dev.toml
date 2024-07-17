@@ -23,8 +23,3 @@ langs = [
   "python",
   "guile"
 ]
-openjdk = [
-  "jdk21-openjdk",
-  "maven",
-  "gradle"
-]
