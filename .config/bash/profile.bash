@@ -1,11 +1,11 @@
 sshkeys() {
     # kill any ssh-agent running, re-enter new one
     # before starting session and reset ssh env vars
-    # killall ssh-agent
+    killall ssh-agent
 
-    if [ -z "$SSH_AGENT_PID" ]; then
-        eval "$(ssh-agent -s)"
-    fi
+    # if [ -z "$SSH_AGENT_PID" ]; then
+    eval "$(ssh-agent -s)"
+    # fi
 
     ssh-add -q "$HOME/.ssh/id_ed25519" </dev/null
 
