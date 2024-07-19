@@ -66,6 +66,11 @@
     ],
     "tools": [
         {
+            "name": "ilspy",
+            "url": "https://github.com/icsharpcode/ILSpy",
+            "branch": "main"
+        },
+        {
             "name": "nexusmods_app",
             "url": "https://github.com/Nexus-Mods/NexusMods.App",
             "branch": "main"
@@ -87,14 +92,6 @@
         {
             "name": "libgit2sharp",
             "url": "https://github.com/libgit2/libgit2sharp"
-        },
-        {
-            "name": "omnisharp-roslyn",
-            "url": "https://github.com/OmniSharp/omnisharp-roslyn"
-        },
-        {
-            "name": "razzmatazz/csharp-language-server",
-            "url": "https://github.com/razzmatazz/csharp-language-server"
         },
         {
             "name": "xunit",
@@ -121,6 +118,17 @@
         {
             "name": "flamenco",
             "url": "https://github.com/canonical/flamenco"
+        }
+    ],
+    "fsharp": [
+        {
+            "name": "razzmatazz-csharp-language-server",
+            "url": "https://github.com/razzmatazz/csharp-language-server"
+        },
+        {
+            "name": "dotnet-fsharp",
+            "url": "https://github.com/dotnet/fsharp",
+            "branch": "main"
         }
     ]
 }
