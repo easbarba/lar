@@ -9,8 +9,8 @@ langs = [
   "mcr.microsoft.com/dotnet/aspnet:8.0",
   "docker.io/library/mono:6",
 
+  "docker.io/library/elixir:1.17",
   "docker.io/library/python:3.11",
-
   "docker.io/library/node:22"
 ]
 database = [
