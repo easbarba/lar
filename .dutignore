@@ -27,7 +27,6 @@ README.md
 .config/environment.d/06-java.conf
 .config/environment.d/11-golang.conf
 .config/environment.d/12-brew.conf
-.config/environment.d/14-dotnet.conf
 .config/fish
 .config/fontconfig
 .config/gh
