@@ -122,6 +122,14 @@
     ],
     "fsharp": [
         {
+            "name": "fake",
+            "url": "https://github.com/fsprojects/FAKE"
+        },
+        {
+            "name": "suaveio",
+            "url": "https://github.com/SuaveIO/suave"
+        },
+        {
             "name": "razzmatazz-csharp-language-server",
             "url": "https://github.com/razzmatazz/csharp-language-server"
         },
