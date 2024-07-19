@@ -122,6 +122,14 @@
     ],
     "fsharp": [
         {
+            "name": "ionide-fsautocomplete",
+            "url": "https://github.com/ionide/fsautocomplete"
+        },
+        {
+            "name": "argu",
+            "url": "https://github.com/fsprojects/Argu"
+        },
+        {
             "name": "fake",
             "url": "https://github.com/fsprojects/FAKE"
         },

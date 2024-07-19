@@ -4,6 +4,8 @@ update = "dotnet tool update --global"
 install = "dotnet tool install --global"
 
 [packages]
-tools = [ "csharp-ls", "csharpier", "dotnet-outdated-tool", "csharprepl", "Microsoft.dotnet-httprepl --version 6.0.0" ]
+langs = [ "csharp-ls", "Microsoft.dotnet-httprepl --version 6.0.0" ]
+tools = [ "csharpier", "dotnet-outdated-tool", "csharprepl" ]
 aspnet = [ "dotnet-aspnet-codegenerator", "dotnet-ef" ]
 shell = [ "powershell" ]
+fsharp = [ "paket", "fsautocomplete" ]
