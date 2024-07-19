@@ -29,7 +29,7 @@
             "url": "https://github.com/janet-lang/janet"
         }
     ],
-    "commonlisp": [
+    "common-lisp": [
         {
             "name": "qlot",
             "url": "https://github.com/fukamachi/qlot"
@@ -112,7 +112,7 @@
             "url": "git://git.code.sf.net/p/sbcl/sbcl"
         }
     ],
-    "elisp": [
+    "emacs-lisp": [
         {
             "name": "rschmukler-doom.d",
             "url": "https://github.com/rschmukler/doom.d"
