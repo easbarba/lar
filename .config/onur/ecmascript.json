@@ -61,13 +61,18 @@
     ],
     "misc": [
         {
+            "name": "nexe",
+            "url": "https://github.com/nexe/nexe"
+        },
+        {
             "name": "elk",
             "url": "https://github.com/elk-zone/elk",
             "branch": "main"
         },
         {
             "name": "inquirer",
-            "url": "https://github.com/sboudrias/inquirer.js"
+            "url": "https://github.com/sboudrias/inquirer.js",
+            "branch": "main"
         },
         {
             "name": "yarn",
