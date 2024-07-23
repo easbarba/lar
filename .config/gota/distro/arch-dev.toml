@@ -25,12 +25,9 @@ images = [
   "krita"
 ]
 langs = [
+  "dart",
   "npm",
   "nodejs",
   "python",
   "guile"
-]
-cc = [
-  "meson",
-  "clang"
 ]

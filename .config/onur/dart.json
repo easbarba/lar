@@ -1,0 +1,50 @@
+{
+    "misc": [
+        {
+            "name": "provider",
+            "url": "https://github.com/rrousselGit/provider"
+        },
+        {
+            "name": "timy-messenger",
+            "url": "https://github.com/janoodleFTW/timy-messenger"
+        },
+        {
+            "name": "chillify",
+            "url": "https://github.com/KarimElghamry/chillify",
+            "branch": "develop"
+        },
+        {
+            "name": "dart-sass",
+            "url": "https://github.com/sass/dart-sass",
+            "branch": "main"
+        }
+    ],
+    "oficial": [
+        {
+            "name": "flutter-samples",
+            "url": "https://github.com/flutter/samples",
+            "branch": "main"
+        },
+        {
+            "name": "flutter",
+            "url": "https://github.com/flutter/flutter"
+        },
+        {
+            "name": "dart-shelf",
+            "url": "https://github.com/dart-lang/shelf"
+        },
+        {
+            "name": "dart-pad",
+            "url": "https://github.com/dart-lang/dart-pad"
+        },
+        {
+            "name": "dart-test",
+            "url": "https://github.com/dart-lang/test"
+        },
+        {
+            "name": "dart",
+            "url": "https://github.com/dart-lang/sdk",
+            "branch": "main"
+        }
+    ]
+}
