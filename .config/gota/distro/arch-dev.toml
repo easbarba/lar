@@ -5,6 +5,9 @@ install = "sudo pacman -S --noconfirm"
 deps = [ "pacman" ]
 
 [packages]
+gnu = [
+  "gcc"
+]
 editors = [ "vim", "neovim" ]
 tools = [
   "scdoc",
@@ -18,10 +21,16 @@ tools = [
   "ripgrep",
   "shfmt"
 ]
-images = [ "krita" ]
+images = [
+  "krita"
+]
 langs = [
   "npm",
   "nodejs",
   "python",
   "guile"
+]
+cc = [
+  "meson",
+  "clang"
 ]

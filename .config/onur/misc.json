@@ -1,17 +1,47 @@
 {
-    "oss": [
+    "bash": [
         {
-            "name": "awesomewm",
-            "url": "https://github.com/awesomeWM/awesome"
+            "name": "fff",
+            "url": "https://github.com/dylanaraps/fff"
         },
         {
-            "name": "nuxt",
-            "branch": "main",
-            "url": "https://github.com/nuxt/framework"
+            "name": "brightnessctl",
+            "url": "https://github.com/jappeace/brightnessctl"
         },
         {
-            "name": "swift_format",
-            "url": "https://github.com/apple/swift-format",
+            "name": "pure-getopt",
+            "url": "https://github.com/agriffis/pure-getopt"
+        },
+        {
+            "name": "myfetch",
+            "url": "https://codeberg.org/blau_araujo/myfetch",
+            "branch": "main"
+        },
+        {
+            "name": "foldish",
+            "url": "https://codeberg.org/blau_araujo/foldish",
+            "branch": "main"
+        },
+        {
+            "name": "org2term",
+            "url": "https://codeberg.org/blau_araujo/org2term",
+            "branch": "main"
+        }
+    ],
+    "awesome": [
+        {
+            "name": "codecrafters-io-build-your-own-x",
+            "url": "https://github.com/codecrafters-io/build-your-own-x"
+        },
+        {
+            "name": "rothgar-awesome-tuis",
+            "url": "https://github.com/rothgar/awesome-tuis"
+        }
+    ],
+    "api": [
+        {
+            "name": "masteringapi-rest-api-standards",
+            "url": "https://github.com/masteringapi/rest-api-standards",
             "branch": "main"
         }
     ]
