@@ -4,6 +4,7 @@ install = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/dart:3.4.4",
   "docker.io/library/oven/bun:1",
   "docker.io/library/node:22"
 ]
