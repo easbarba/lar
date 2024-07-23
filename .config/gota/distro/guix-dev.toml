@@ -7,13 +7,7 @@ deps = [ "guix" ]
 [packages]
 langs = [
    "guile",
-   "guile-readline",
-   "janet",
-   "chez-scheme",
-   "node",
-   "smalltalk",
-   "ruby",
-   "php"
+   "guile-readline"
 ]
 editors = [ "zile", "neovim" ]
 emacs = [ "emacs-pgtk", "emacs-pdf-tools" ]
