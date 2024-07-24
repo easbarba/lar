@@ -21,6 +21,11 @@
     ],
     "oficial": [
         {
+            "name": "dart-lang-site-www",
+            "url": "https://github.com/dart-lang/site-www",
+            "branch": "main"
+        },
+        {
             "name": "flutter-samples",
             "url": "https://github.com/flutter/samples",
             "branch": "main"
@@ -42,7 +47,7 @@
             "url": "https://github.com/dart-lang/test"
         },
         {
-            "name": "dart",
+            "name": "dart-sdk",
             "url": "https://github.com/dart-lang/sdk",
             "branch": "main"
         }
