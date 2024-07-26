@@ -19,15 +19,20 @@ tools = [
   "fd",
   "tidy",
   "ripgrep",
-  "shfmt"
+  "shfmt",
+  "taplo-cli"
 ]
 images = [
   "krita"
 ]
 langs = [
-  "dart",
   "npm",
   "nodejs",
   "python",
   "guile"
+]
+cc = [
+  "meson",
+  "clang",
+  "cmake"
 ]

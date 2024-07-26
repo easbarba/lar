@@ -7,6 +7,8 @@
 .tcshrc
 .xinitrc
 .zshrc
+.sbclrc
+.screenrc
 LICENSE
 README.md
 .config/alacritty
@@ -25,7 +27,7 @@ README.md
 .config/environment.d/04-haskell.conf
 .config/environment.d/05-rust.conf
 .config/environment.d/06-java.conf
-.config/environment.d/11-golang.conf
+.config/environment.d/XX-dotnet.conf
 .config/environment.d/12-brew.conf
 .config/fish
 .config/fontconfig
