@@ -54,6 +54,11 @@
     ],
     "apps": [
         {
+            "name": "mysql-server",
+            "url": "https://github.com/mysql/mysql-server",
+            "branch": "trunk"
+        },
+        {
             "name": "blender",
             "url": "https://projects.blender.org/blender/blender.git"
         },
