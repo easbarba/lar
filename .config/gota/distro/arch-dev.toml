@@ -29,6 +29,7 @@ langs = [
   "npm",
   "nodejs",
   "python",
+  "ruby",
   "guile"
 ]
 cc = [

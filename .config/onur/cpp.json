@@ -19,6 +19,10 @@
     ],
     "games": [
         {
+            "name": "supertuxkart",
+            "url": "https://github.com/supertuxkart/stk-code"
+        },
+        {
             "name": "dxvk",
             "url": "https://github.com/doitsujin/dxvk"
         },
@@ -50,6 +54,13 @@
         {
             "name": "cppreference-doc",
             "url": "https://github.com/PeterFeicht/cppreference-doc"
+        }
+    ],
+    "langs": [
+        {
+            "name": "v8",
+            "url": "https://github.com/v8/v8",
+            "branch": "main"
         }
     ],
     "apps": [
@@ -98,7 +109,21 @@
             "url": "https://salsa.debian.org/apt-team/apt"
         }
     ],
+    "games": [
+        {
+            "name": "sfml-game-development-book",
+            "url": "https://github.com/SFML/SFML-Game-Development-Book"
+        },
+        {
+            "name": "sfml",
+            "url": "https://github.com/sfml/sfml"
+        }
+    ],
     "libraries": [
+        {
+            "name": "tensorflow",
+            "url": "https://github.com/tensorflow/tensorflow"
+        },
         {
             "name": "grpc",
             "url": "https://github.com/grpc/grpc"
@@ -163,6 +188,11 @@
         }
     ],
     "example": [
+        {
+            "name": "packtpublishing-beginning-c-game-programming-third-edition",
+            "url": "https://github.com/PacktPublishing/Beginning-C-Game-Programming-Third-Edition",
+            "branch": "main"
+        },
         {
             "name": "vichargrave-tcpsockets",
             "url": "https://github.com/vichargrave/tcpsockets"

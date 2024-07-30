@@ -4,13 +4,16 @@ install = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/ruby:3.3",
+  "docker.io/library/python:3.12",
 ]
 database = [
   "docker.io/library/mongo:7",
- "docker.io/library/mysql:9",
+  "docker.io/library/mysql:9",
   "docker.io/library/postgres:16"
 ]
 distributions = [
+  "docker.io/library/ubuntu:latest",
   "docker.io/library/debian:unstable",
   "docker.io/library/alpine:latest"
 ]
