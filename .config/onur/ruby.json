@@ -8,6 +8,15 @@
     ],
     "tools": [
         {
+            "name": "solargraph",
+            "url": "https://github.com/castwide/solargraph"
+        },
+        {
+            "name": "ruby-lsp",
+            "url": "https://github.com/Shopify/ruby-lsp",
+            "branch": "main"
+        },
+        {
             "name": "sidekiq",
             "url": "https://github.com/sidekiq/sidekiq",
             "branch": "main"

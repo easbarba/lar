@@ -8,7 +8,8 @@ install = "gem install"
 essentials = [
   "bundler",
   "rake",
-  "rbs"
+  "rbs",
+  "ruby-lsp"
 ]
 tools = [
   "reek",
