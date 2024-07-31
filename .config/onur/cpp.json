@@ -101,6 +101,10 @@
             "url": "https://github.com/skypjack/entt"
         },
         {
+            "name": "canonical-mir",
+            "url": "https://github.com/canonical/mir"
+        },
+        {
             "name": "aria2",
             "url": "https://github.com/aria2/aria2"
         },
@@ -187,6 +191,7 @@
             "url": "https://github.com/boostorg/asio/"
         }
     ],
+
     "example": [
         {
             "name": "packtpublishing-beginning-c-game-programming-third-edition",
