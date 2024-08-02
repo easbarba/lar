@@ -35,5 +35,6 @@ langs = [
 cc = [
   "meson",
   "clang",
-  "cmake"
+  "cmake",
+  "doxygen"
 ]
