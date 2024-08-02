@@ -1,22 +1,21 @@
 {
-    "examples": [
-        {
-            "name": "abunuwas-microservice-apis",
-            "url": "https://github.com/abunuwas/microservice-apis"
-        }
-    ],
     "frameworks": [
+        {
+            "name": "django",
+            "url": "https://github.com/django/django",
+            "branch": "main"
+        },
         {
             "name": "fastapi",
             "url": "https://github.com/tiangolo/fastapi"
-        }
-    ],
-    "tools": [
+        },
         {
             "name": "flask",
             "url": "https://github.com/pallets/flask",
             "branch": "main"
-        },
+        }
+    ],
+    "tools": [
         {
             "name": "requests",
             "url": "https://github.com/psf/requests",
@@ -33,6 +32,12 @@
             "name": "cpython",
             "url": "https://github.com/python/cpython",
             "branch": "main"
+        }
+    ],
+    "examples": [
+        {
+            "name": "abunuwas-microservice-apis",
+            "url": "https://github.com/abunuwas/microservice-apis"
         }
     ]
 }
