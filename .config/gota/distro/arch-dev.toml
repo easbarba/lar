@@ -26,7 +26,6 @@ images = [
   "krita"
 ]
 langs = [
-  "go",
   "npm",
   "nodejs",
   "python",
