@@ -94,10 +94,15 @@ media = [
 amd = [
   "amd-ucode",
   "mesa",
+  "mesa-utils",
   "lib32-mesa",
   "xf86-video-amdgpu",
   "vulkan-radeon",
-  "lib32-vulkan-radeon"
+  "lib32-vulkan-radeon",
+  "libva-mesa-driver",
+  "lib32-libva-mesa-driver",
+  "mesa-vdpau",
+  "lib32-mesa-vdpau"
 ]
 cli = [
   "htop",
