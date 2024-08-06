@@ -17,6 +17,7 @@ tools = [
   "editorconfig-core-c",
   "jq",
   "fd",
+  "fzf",
   "tidy",
   "ripgrep",
   "shfmt",
