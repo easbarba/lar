@@ -19,6 +19,10 @@
     ],
     "games": [
         {
+            "name": "openage",
+            "url": "https://github.com/SFTtech/openage "
+        },
+        {
             "name": "supertuxkart",
             "url": "https://github.com/supertuxkart/stk-code"
         },
@@ -65,6 +69,11 @@
     ],
     "apps": [
         {
+            "name": "dragonflydb",
+            "url": "https://github.com/dragonflydb/dragonfly",
+            "branch": "main"
+        },
+        {
             "name": "mysql-server",
             "url": "https://github.com/mysql/mysql-server",
             "branch": "trunk"
@@ -84,11 +93,6 @@
         {
             "name": "microsoft-terminal",
             "url": "https://github.com/microsoft/terminal",
-            "branch": "main"
-        },
-        {
-            "name": "apple-swift",
-            "url": "https://github.com/apple/swift",
             "branch": "main"
         },
         {
@@ -124,6 +128,14 @@
         }
     ],
     "libraries": [
+        {
+            "name": "alinshans-mytinystl",
+            "url": "https://github.com/alinshans/mytinystl"
+        },
+        {
+            "name": "taglib",
+            "url": "https://github.com/taglib/taglib"
+        },
         {
             "name": "tensorflow",
             "url": "https://github.com/tensorflow/tensorflow"
@@ -191,8 +203,33 @@
             "url": "https://github.com/boostorg/asio/"
         }
     ],
-
+    "langs": [
+        {
+            "name": "apple-swift",
+            "url": "https://github.com/apple/swift",
+            "branch": "main"
+        },
+        {
+            "name": "flutter-engine",
+            "url": "https://github.com/flutter/engine",
+            "branch": "main"
+        }
+    ],
+    "misc": [
+        {
+            "name": "huihut- interview",
+            "url": "https://github.com/huihut/interview"
+        },
+        {
+            "name": "light-city-cplusplusthings",
+            "url": "https://github.com/Light-City/CPlusPlusThings"
+        }
+    ],
     "example": [
+        {
+            "name": "federico-busato-modern-cpp-programming",
+            "url": "https://github.com/federico-busato/Modern-CPP-Programming"
+        },
         {
             "name": "packtpublishing-beginning-c-game-programming-third-edition",
             "url": "https://github.com/PacktPublishing/Beginning-C-Game-Programming-Third-Edition",

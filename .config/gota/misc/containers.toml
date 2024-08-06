@@ -4,6 +4,7 @@ install = "podman pull"
 
 [jobs]
 langs = [
+  "docker.io/library/dart:3.4.4",
   "docker.io/library/python:3.12",
 ]
 database = [
@@ -12,8 +13,9 @@ database = [
   "docker.io/library/postgres:16"
 ]
 distributions = [
-  "docker.io/library/ubuntu:latest",
+  "docker.io/library/ubuntu:24.04",
   "docker.io/library/debian:unstable",
+  "docker.io/library/archlinux:latest",
   "docker.io/library/alpine:latest"
 ]
 
