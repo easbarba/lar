@@ -252,6 +252,11 @@
     ],
     "examples": [
         {
+            "name": "packt-spring-boot-3.0-cookbook",
+            "url": "https://github.com/PacktPublishing/Spring-Boot-3.0-Cookbook",
+            "branch": "main"
+        },
+        {
             "name": "pro-spring-6",
             "url": "https://github.com/Apress/pro-spring-6",
             "branch": "main"
