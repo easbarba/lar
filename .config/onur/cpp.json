@@ -129,6 +129,11 @@
     ],
     "libraries": [
         {
+            "name": "nlohmann-json",
+            "url": "https://github.com/nlohmann/json",
+            "branch": "develop"
+        },
+        {
             "name": "alinshans-mytinystl",
             "url": "https://github.com/alinshans/mytinystl"
         },
