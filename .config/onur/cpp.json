@@ -87,6 +87,10 @@
             "url": "https://github.com/ncmpcpp/ncmpcpp"
         },
         {
+            "name": "mpd",
+            "url": "https://github.com/MusicPlayerDaemon/MPD"
+        },
+        {
             "name": "ninja",
             "url": "https://github.com/ninja-build/ninja"
         },

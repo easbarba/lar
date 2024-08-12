@@ -38,8 +38,3 @@ cc = [
   "cmake",
   "doxygen"
 ]
-openjdk = [
-  "jdk21-openjdk",
-  "maven",
-  "gradle"
-]
