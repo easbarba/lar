@@ -133,6 +133,10 @@
     ],
     "libraries": [
         {
+            "name": "cpr",
+            "url": "https://github.com/libcpr/cpr"
+        },
+        {
             "name": "nlohmann-json",
             "url": "https://github.com/nlohmann/json",
             "branch": "develop"
