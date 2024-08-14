@@ -23,12 +23,12 @@ README.md
 .config/devilspie2
 .config/direnv
 .config/dunst
-.config/environment.d/03-kde.conf
 .config/environment.d/04-haskell.conf
 .config/environment.d/05-rust.conf
 .config/environment.d/06-java.conf
 .config/environment.d/09-php.conf
 .config/environment.d/08-ruby.conf
+.config/environment.d/11-golang.conf
 .config/environment.d/12-brew.conf
 .config/environment.d/14-dotnet.conf
 .config/environment.d/17-dart.conf
