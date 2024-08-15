@@ -21,7 +21,8 @@ tools = [
   "tidy",
   "ripgrep",
   "shfmt",
-  "taplo-cli"
+  "taplo-cli",
+  "inotify-tools",
 ]
 images = [
   "krita"
