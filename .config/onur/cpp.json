@@ -69,6 +69,20 @@
     ],
     "apps": [
         {
+            "name": "calamares",
+            "url": "https://github.com/calamares/calamares",
+            "branch": "calamares"
+        },
+        {
+            "name": "ladybird",
+            "url": "https://github.com/LadybirdBrowser/ladybird"
+        },
+        {
+            "name": "miracle-wm",
+            "url": "https://github.com/mattkae/miracle-wm",
+            "branch": "develop"
+        },
+        {
             "name": "dragonflydb",
             "url": "https://github.com/dragonflydb/dragonfly",
             "branch": "main"
