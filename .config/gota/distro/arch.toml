@@ -128,29 +128,8 @@ user = [
   "vlc",
   "thunderbird"
 ]
-wm = [
-  "udiskie",
-  "brightnessctl",
-  "bluez",
-  "bluez-utils",
-  "mpd",
-  "mpc",
-  "ncmpcpp"
-]
 wayland = [
   "wl-clipboard",
   "wayland-protocols",
-]
-wayland-wm = [
-  "sway",
-  "swaylock",
-  "swayidle",
-  "foot",
-  "bemenu-wayland",
-  "wofi",
-  "grim",
-  "slurp",
-  "mako",
   "xorg-xwayland",
-  "ttf-liberation"
 ]
