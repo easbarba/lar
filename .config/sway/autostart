@@ -13,6 +13,7 @@ exec yambar
 exec firefox
 exec thunderbird
 exec mpd 
+exec kdeconnectd
 
 exec swayidle -w \
 	timeout 300 's_wm_wifi' \
