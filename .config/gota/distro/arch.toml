@@ -133,3 +133,24 @@ wayland = [
   "wayland-protocols",
   "xorg-xwayland",
 ]
+wm = [
+  "udiskie",
+  "brightnessctl",
+  "bluez",
+  "bluez-utils",
+  "mpd",
+  "mpc",
+  "ncmpcpp"
+]
+wayland-wm = [
+  "sway",
+  "swaylock",
+  "swayidle",
+  "foot",
+  "bemenu-wayland",
+  "wofi",
+  "grim",
+  "slurp",
+  "mako",
+  "ttf-liberation"
+]
