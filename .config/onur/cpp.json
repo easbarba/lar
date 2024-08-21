@@ -1,291 +1,269 @@
 {
-    "kde": [
-        {
-            "name": "kde-discover",
-            "url": "https://invent.kde.org/plasma/discover"
-        },
-        {
-            "name": "kde-kate",
-            "url": "https://invent.kde.org/utilities/kate"
-        },
-        {
-            "name": "kde-konsole",
-            "url": "https://invent.kde.org/utilities/konsole"
-        },
-        {
-            "name": "kde-elisa",
-            "url": "https://invent.kde.org/multimedia/elisa"
-        }
-    ],
-    "games": [
-        {
-            "name": "openage",
-            "url": "https://github.com/SFTtech/openage "
-        },
-        {
-            "name": "supertuxkart",
-            "url": "https://github.com/supertuxkart/stk-code"
-        },
-        {
-            "name": "dxvk",
-            "url": "https://github.com/doitsujin/dxvk"
-        },
-        {
-            "name": "proton",
-            "url": "https://github.com/ValveSoftware/Proton",
-            "branch": "proton_9.0"
-        },
-        {
-            "name": "godot",
-            "url": "https://github.com/libsdl-org/SDL",
-            "branch": "main"
-        }
-    ],
-    "official": [
-        {
-            "name": "cppcoreguidelines",
-            "url": "https://github.com/isocpp/CppCoreGuidelines"
-        },
-        {
-            "name": "llvm",
-            "url": "https://github.com/llvm/llvm-project",
-            "branch": "main"
-        },
-        {
-            "name": "gnu-gcc",
-            "url": "git://gcc.gnu.org/git/gcc.git"
-        },
-        {
-            "name": "cppreference-doc",
-            "url": "https://github.com/PeterFeicht/cppreference-doc"
-        }
-    ],
-    "langs": [
-        {
-            "name": "v8",
-            "url": "https://github.com/v8/v8",
-            "branch": "main"
-        }
-    ],
-    "apps": [
-        {
-            "name": "calamares",
-            "url": "https://github.com/calamares/calamares",
-            "branch": "calamares"
-        },
-        {
-            "name": "ladybird",
-            "url": "https://github.com/LadybirdBrowser/ladybird"
-        },
-        {
-            "name": "miracle-wm",
-            "url": "https://github.com/mattkae/miracle-wm",
-            "branch": "develop"
-        },
-        {
-            "name": "dragonflydb",
-            "url": "https://github.com/dragonflydb/dragonfly",
-            "branch": "main"
-        },
-        {
-            "name": "mysql-server",
-            "url": "https://github.com/mysql/mysql-server",
-            "branch": "trunk"
-        },
-        {
-            "name": "blender",
-            "url": "https://projects.blender.org/blender/blender.git"
-        },
-        {
-            "name": "ncmpcpp",
-            "url": "https://github.com/ncmpcpp/ncmpcpp"
-        },
-        {
-            "name": "mpd",
-            "url": "https://github.com/MusicPlayerDaemon/MPD"
-        },
-        {
-            "name": "ninja",
-            "url": "https://github.com/ninja-build/ninja"
-        },
-        {
-            "name": "microsoft-terminal",
-            "url": "https://github.com/microsoft/terminal",
-            "branch": "main"
-        },
-        {
-            "name": "facebook-folly",
-            "url": "https://github.com/facebook/folly",
-            "branch": "main"
-        },
-        {
-            "name": "entt",
-            "url": "https://github.com/skypjack/entt"
-        },
-        {
-            "name": "canonical-mir",
-            "url": "https://github.com/canonical/mir"
-        },
-        {
-            "name": "aria2",
-            "url": "https://github.com/aria2/aria2"
-        },
-        {
-            "name": "apt",
-            "url": "https://salsa.debian.org/apt-team/apt"
-        }
-    ],
-    "games": [
-        {
-            "name": "sfml-game-development-book",
-            "url": "https://github.com/SFML/SFML-Game-Development-Book"
-        },
-        {
-            "name": "sfml",
-            "url": "https://github.com/sfml/sfml"
-        }
-    ],
-    "libraries": [
-        {
-            "name": "cpr",
-            "url": "https://github.com/libcpr/cpr"
-        },
-        {
-            "name": "nlohmann-json",
-            "url": "https://github.com/nlohmann/json",
-            "branch": "develop"
-        },
-        {
-            "name": "alinshans-mytinystl",
-            "url": "https://github.com/alinshans/mytinystl"
-        },
-        {
-            "name": "taglib",
-            "url": "https://github.com/taglib/taglib"
-        },
-        {
-            "name": "tensorflow",
-            "url": "https://github.com/tensorflow/tensorflow"
-        },
-        {
-            "name": "grpc",
-            "url": "https://github.com/grpc/grpc"
-        },
-        {
-            "name": "mold",
-            "url": "https://github.com/rui314/mold",
-            "branch": "main"
-        },
-        {
-            "name": "cli11",
-            "url": "https://github.com/CLIUtils/CLI11",
-            "branch": "main"
-        },
-        {
-            "name": "rapidjson",
-            "url": "https://github.com/Tencent/rapidjson"
-        },
-        {
-            "name": "doctest",
-            "url": "https://github.com/doctest/doctest"
-        },
-        {
-            "name": "zeromq",
-            "url": "https://github.com/zeromq/libzmq"
-        },
-        {
-            "name": "catch2",
-            "url": "https://github.com/catchorg/Catch2",
-            "branch": "devel"
-        },
-        {
-            "name": "dragonflydb",
-            "url": "https://github.com/dragonflydb/dragonfly",
-            "branch": "main"
-        },
-        {
-            "name": "googletest",
-            "url": "https://github.com/google/googletest"
-        },
-        {
-            "name": "stx",
-            "url": "https://github.com/lamarrr/stx",
-            "branch": "main"
-        },
-        {
-            "name": "asio-standalone",
-            "url": "https://github.com/chriskohlhoff/asio/"
-        },
-        {
-            "name": "boost.beast",
-            "url": "https://github.com/boostorg/beast",
-            "branch": "develop"
-        },
-        {
-            "name": "drogon",
-            "url": "https://github.com/drogonframework/drogon"
-        },
-        {
-            "name": "boost.asio",
-            "url": "https://github.com/boostorg/asio/"
-        }
-    ],
-    "langs": [
-        {
-            "name": "apple-swift",
-            "url": "https://github.com/apple/swift",
-            "branch": "main"
-        },
-        {
-            "name": "flutter-engine",
-            "url": "https://github.com/flutter/engine",
-            "branch": "main"
-        }
-    ],
-    "misc": [
-        {
-            "name": "huihut- interview",
-            "url": "https://github.com/huihut/interview"
-        },
-        {
-            "name": "light-city-cplusplusthings",
-            "url": "https://github.com/Light-City/CPlusPlusThings"
-        }
-    ],
-    "example": [
-        {
-            "name": "federico-busato-modern-cpp-programming",
-            "url": "https://github.com/federico-busato/Modern-CPP-Programming"
-        },
-        {
-            "name": "packtpublishing-beginning-c-game-programming-third-edition",
-            "url": "https://github.com/PacktPublishing/Beginning-C-Game-Programming-Third-Edition",
-            "branch": "main"
-        },
-        {
-            "name": "vichargrave-tcpsockets",
-            "url": "https://github.com/vichargrave/tcpsockets"
-        },
-        {
-            "name": "abseil-cpp",
-            "url": "https://github.com/abseil/abseil-cpp"
-        },
-        {
-            "name": "cmake-project-template",
-            "url": "https://github.com/kigster/cmake-project-template"
-        },
-        {
-            "name": "fffaraz-awesome-cpp",
-            "url": "https://github.com/fffaraz/awesome-cpp"
-        },
-        {
-            "name": "cppbestpractices",
-            "url": "https://github.com/cpp-best-practices/cppbestpractices"
-        },
-        {
-            "name": "modern-cmake-for-cpp",
-            "url": "https://github.com/packtpublishing/modern-cmake-for-cpp",
-            "branch": "main"
-        }
-    ]
+  "kde": [
+    {
+      "name": "kde-discover",
+      "url": "https://invent.kde.org/plasma/discover"
+    },
+    {
+      "name": "kde-kate",
+      "url": "https://invent.kde.org/utilities/kate"
+    },
+    {
+      "name": "kde-konsole",
+      "url": "https://invent.kde.org/utilities/konsole"
+    },
+    {
+      "name": "kde-elisa",
+      "url": "https://invent.kde.org/multimedia/elisa"
+    }
+  ],
+  "games": [
+    {
+      "name": "shadPS4",
+      "url": "https://github.com/shadps4-emu/shadPS4",
+      "branch": "main"
+    },
+    {
+      "name": "sfml-game-development-book",
+      "url": "https://github.com/SFML/SFML-Game-Development-Book"
+    },
+    {
+      "name": "sfml",
+      "url": "https://github.com/sfml/sfml"
+    }
+  ],
+  "official": [
+    {
+      "name": "cppcoreguidelines",
+      "url": "https://github.com/isocpp/CppCoreGuidelines"
+    },
+    {
+      "name": "llvm",
+      "url": "https://github.com/llvm/llvm-project",
+      "branch": "main"
+    },
+    {
+      "name": "gnu-gcc",
+      "url": "git://gcc.gnu.org/git/gcc.git"
+    },
+    {
+      "name": "cppreference-doc",
+      "url": "https://github.com/PeterFeicht/cppreference-doc"
+    }
+  ],
+  "langs": [
+    {
+      "name": "apple-swift",
+      "url": "https://github.com/apple/swift",
+      "branch": "main"
+    },
+    {
+      "name": "flutter-engine",
+      "url": "https://github.com/flutter/engine",
+      "branch": "main"
+    }
+  ],
+  "apps": [
+    {
+      "name": "calamares",
+      "url": "https://github.com/calamares/calamares",
+      "branch": "calamares"
+    },
+    {
+      "name": "ladybird",
+      "url": "https://github.com/LadybirdBrowser/ladybird"
+    },
+    {
+      "name": "miracle-wm",
+      "url": "https://github.com/mattkae/miracle-wm",
+      "branch": "develop"
+    },
+    {
+      "name": "dragonflydb",
+      "url": "https://github.com/dragonflydb/dragonfly",
+      "branch": "main"
+    },
+    {
+      "name": "mysql-server",
+      "url": "https://github.com/mysql/mysql-server",
+      "branch": "trunk"
+    },
+    {
+      "name": "blender",
+      "url": "https://projects.blender.org/blender/blender.git"
+    },
+    {
+      "name": "ncmpcpp",
+      "url": "https://github.com/ncmpcpp/ncmpcpp"
+    },
+    {
+      "name": "mpd",
+      "url": "https://github.com/MusicPlayerDaemon/MPD"
+    },
+    {
+      "name": "ninja",
+      "url": "https://github.com/ninja-build/ninja"
+    },
+    {
+      "name": "microsoft-terminal",
+      "url": "https://github.com/microsoft/terminal",
+      "branch": "main"
+    },
+    {
+      "name": "facebook-folly",
+      "url": "https://github.com/facebook/folly",
+      "branch": "main"
+    },
+    {
+      "name": "entt",
+      "url": "https://github.com/skypjack/entt"
+    },
+    {
+      "name": "canonical-mir",
+      "url": "https://github.com/canonical/mir"
+    },
+    {
+      "name": "aria2",
+      "url": "https://github.com/aria2/aria2"
+    },
+    {
+      "name": "apt",
+      "url": "https://salsa.debian.org/apt-team/apt"
+    }
+  ],
+  "libraries": [
+    {
+      "name": "mattpd-cpplinks",
+      "url": "https://github.com/MattPD/cpplinks"
+    },
+    {
+      "name": "cpr",
+      "url": "https://github.com/libcpr/cpr"
+    },
+    {
+      "name": "nlohmann-json",
+      "url": "https://github.com/nlohmann/json",
+      "branch": "develop"
+    },
+    {
+      "name": "alinshans-mytinystl",
+      "url": "https://github.com/alinshans/mytinystl"
+    },
+    {
+      "name": "taglib",
+      "url": "https://github.com/taglib/taglib"
+    },
+    {
+      "name": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow"
+    },
+    {
+      "name": "grpc",
+      "url": "https://github.com/grpc/grpc"
+    },
+    {
+      "name": "mold",
+      "url": "https://github.com/rui314/mold",
+      "branch": "main"
+    },
+    {
+      "name": "cli11",
+      "url": "https://github.com/CLIUtils/CLI11",
+      "branch": "main"
+    },
+    {
+      "name": "rapidjson",
+      "url": "https://github.com/Tencent/rapidjson"
+    },
+    {
+      "name": "doctest",
+      "url": "https://github.com/doctest/doctest"
+    },
+    {
+      "name": "zeromq",
+      "url": "https://github.com/zeromq/libzmq"
+    },
+    {
+      "name": "catch2",
+      "url": "https://github.com/catchorg/Catch2",
+      "branch": "devel"
+    },
+    {
+      "name": "dragonflydb",
+      "url": "https://github.com/dragonflydb/dragonfly",
+      "branch": "main"
+    },
+    {
+      "name": "googletest",
+      "url": "https://github.com/google/googletest"
+    },
+    {
+      "name": "stx",
+      "url": "https://github.com/lamarrr/stx",
+      "branch": "main"
+    },
+    {
+      "name": "asio-standalone",
+      "url": "https://github.com/chriskohlhoff/asio/"
+    },
+    {
+      "name": "boost.beast",
+      "url": "https://github.com/boostorg/beast",
+      "branch": "develop"
+    },
+    {
+      "name": "drogon",
+      "url": "https://github.com/drogonframework/drogon"
+    },
+    {
+      "name": "boost.asio",
+      "url": "https://github.com/boostorg/asio/"
+    }
+  ],
+  "misc": [
+    {
+      "name": "huihut- interview",
+      "url": "https://github.com/huihut/interview"
+    },
+    {
+      "name": "light-city-cplusplusthings",
+      "url": "https://github.com/Light-City/CPlusPlusThings"
+    }
+  ],
+  "example": [
+    {
+      "name": "federico-busato-modern-cpp-programming",
+      "url": "https://github.com/federico-busato/Modern-CPP-Programming"
+    },
+    {
+      "name": "packtpublishing-beginning-c-game-programming-third-edition",
+      "url": "https://github.com/PacktPublishing/Beginning-C-Game-Programming-Third-Edition",
+      "branch": "main"
+    },
+    {
+      "name": "vichargrave-tcpsockets",
+      "url": "https://github.com/vichargrave/tcpsockets"
+    },
+    {
+      "name": "abseil-cpp",
+      "url": "https://github.com/abseil/abseil-cpp"
+    },
+    {
+      "name": "cmake-project-template",
+      "url": "https://github.com/kigster/cmake-project-template"
+    },
+    {
+      "name": "fffaraz-awesome-cpp",
+      "url": "https://github.com/fffaraz/awesome-cpp"
+    },
+    {
+      "name": "cppbestpractices",
+      "url": "https://github.com/cpp-best-practices/cppbestpractices"
+    },
+    {
+      "name": "modern-cmake-for-cpp",
+      "url": "https://github.com/packtpublishing/modern-cmake-for-cpp",
+      "branch": "main"
+    }
+  ]
 }
