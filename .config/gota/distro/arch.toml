@@ -135,6 +135,7 @@ wayland = [
 ]
 wm = [
   "udiskie",
+  "libappindicator-gtk3",
   "brightnessctl",
   "bluez",
   "bluez-utils",

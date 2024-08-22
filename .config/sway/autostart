@@ -1,6 +1,3 @@
-#exec ~/.local/bin/s_wm_autostart
-# exec wl-paste -t text --watch clipman store
-
 exec emacs ~/Documents/org
 exec emacs ~/Documents/books
 exec emacs ~/Documents/personal
@@ -11,13 +8,10 @@ exec mako
 exec foot
 exec yambar
 exec firefox
-exec thunderbird
-exec mpd 
+exec mpd
 exec kdeconnectd
 
 exec swayidle -w \
-	timeout 300 's_wm_wifi' \
 	timeout 700 'swaylock -f -c 000000' \
     timeout 900 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-	resume 's_wm_wifi'
+    resume 'swaymsg "output * dpms on"'
