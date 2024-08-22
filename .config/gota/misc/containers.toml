@@ -7,9 +7,11 @@ langs = [
   "docker.io/library/python:3.12",
 ]
 misc = [
+  "docker.io/library/rabbitmq:3",
   "docker.io/library/hashicorp/vault:1.17",
 ]
 database = [
+  "docker.io/library/redis:7",
   "docker.io/library/mongo:7",
   "docker.io/library/mysql:9",
   "docker.io/library/postgres:16"
