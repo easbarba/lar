@@ -30,8 +30,7 @@ images = [
 langs = [
   "npm",
   "nodejs",
-  "python",
-  "guile"
+  "python"
 ]
 cc = [
   "meson",
@@ -39,8 +38,10 @@ cc = [
   "cmake",
   "doxygen"
 ]
-ocaml = [
+functional = [
+  "elixir",
   "opam",
   "ocaml",
-  "darcs"
+  "darcs",
+  "guile"
 ]
