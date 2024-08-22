@@ -57,6 +57,8 @@ README.md
 .config/onur/ecmascript.json
 .config/onur/dotnet.json
 .config/onur/zig.json
+.config/onur/python.json
+.config/micro
 .config/phpactor
 .config/picom
 .config/plasma-workspace
