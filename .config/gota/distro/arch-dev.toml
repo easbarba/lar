@@ -28,6 +28,7 @@ images = [
   "krita"
 ]
 langs = [
+  "lua",
   "npm",
   "nodejs",
   "python"
