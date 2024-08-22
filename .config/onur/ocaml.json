@@ -24,5 +24,10 @@
             "branch": "trunk"
         }
     ],
-    "app": []
+    "app": [
+        {
+            "name": "andersfugmann-amqp-client",
+            "url": "https://github.com/andersfugmann/amqp-client"
+        }
+    ]
 }
