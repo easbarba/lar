@@ -1,0 +1,54 @@
+{
+    "misc": [
+        {
+            "name": "swiftyjson",
+            "url": "https://github.com/SwiftyJSON/SwiftyJSON"
+        },
+        {
+            "name": "vapor-toolbox",
+            "url": "https://github.com/vapor/toolbox",
+            "branch": "main"
+        },
+        {
+            "name": "vapor",
+            "url": "https://github.com/vapor/vapor",
+            "branch": "main"
+        },
+        {
+            "name": "alamofire",
+            "url": "https://github.com/Alamofire/Alamofire"
+        }
+    ],
+    "oficial": [
+        {
+            "name": "sourcekit-lsp",
+            "url": "https://github.com/apple/sourcekit-lsp",
+            "branch": "main"
+        },
+        {
+            "name": "swift-foundation",
+            "url": "https://github.com/apple/swift-foundation",
+            "branch": "main"
+        },
+        {
+            "name": "swift-argument-parser",
+            "url": "https://github.com/apple/swift-argument-parser",
+            "branch": "main"
+        },
+        {
+            "name": "swift-format",
+            "url": "https://github.com/apple/swift-format",
+            "branch": "main"
+        },
+        {
+            "name": "swift-book",
+            "url": "https://github.com/apple/swift-book",
+            "branch": "main"
+        },
+        {
+            "name": "swift",
+            "url": "https://github.com/apple/swift",
+            "branch": "main"
+        }
+    ]
+}

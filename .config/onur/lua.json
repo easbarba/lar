@@ -1,0 +1,32 @@
+{
+    "lua": [
+        {
+            "name": "lua-repl",
+            "url": "https://github.com/hoelzro/lua-repl"
+        },
+        {
+            "name": "vicious",
+            "url": "https://github.com/vicious-widgets/vicious"
+        },
+        {
+            "name": "awesome",
+            "url": "https://github.com/awesomeWM/awesome"
+        },
+        {
+            "name": "lua-language-server",
+            "url": "https://github.com/sumneko/lua-language-server"
+        },
+        {
+            "name": "neovim",
+            "url": "https://github.com/neovim/neovim"
+        },
+        {
+            "name": "luarocks",
+            "url": "https://github.com/luarocks/luarocks"
+        },
+        {
+            "name": "lua",
+            "url": "https://github.com/lua/lua"
+        }
+    ]
+}

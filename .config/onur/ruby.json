@@ -1,0 +1,55 @@
+{
+    "libraries": [
+        {
+            "name": "devise",
+            "url": "https://github.com/heartcombo/devise",
+            "branch": "main"
+        }
+    ],
+    "tools": [
+        {
+            "name": "solargraph",
+            "url": "https://github.com/castwide/solargraph"
+        },
+        {
+            "name": "ruby-lsp",
+            "url": "https://github.com/Shopify/ruby-lsp",
+            "branch": "main"
+        },
+        {
+            "name": "sidekiq",
+            "url": "https://github.com/sidekiq/sidekiq",
+            "branch": "main"
+        },
+        {
+            "name": "fluenthd",
+            "url": "https://github.com/fluent/fluentd"
+        }
+    ],
+    "frameworks": [
+        {
+            "name": "sinatra",
+            "url": "https://github.com/sinatra/sinatra",
+            "branch": "main"
+        },
+        {
+            "name": "rails",
+            "url": "https://github.com/rails/rails",
+            "branch": "main"
+        }
+    ],
+    "official": [
+        {
+            "name": "rbs",
+            "url": "https://github.com/ruby/rbs"
+        },
+        {
+            "name": "debug",
+            "url": "https://github.com/ruby/debug"
+        },
+        {
+            "name": "ruby",
+            "url": "https://github.com/ruby/ruby"
+        }
+    ]
+}

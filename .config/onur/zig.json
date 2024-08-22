@@ -1,0 +1,66 @@
+{
+    "official": [
+        {
+            "name": "ziglang-org",
+            "url": "https://github.com/ziglang/www.ziglang.org"
+        },
+        {
+            "name": "zig-bootstrap",
+            "url": "https://github.com/ziglang/zig-bootstrap"
+        },
+        {
+            "name": "ziglang",
+            "url": "https://github.com/ziglang/www.ziglang.org"
+        },
+        {
+            "name": "zig",
+            "url": "https://github.com/ziglang/zig"
+        }
+    ],
+    "misc": [
+        {
+            "name": "zigcc-awesome-zig",
+            "url": "https://github.com/zigcc/awesome-zig",
+            "branch": "main"
+        },
+        {
+            "name": "zigcc-zig-cookbook",
+            "url": "https://github.com/zigcc/zig-cookbook",
+            "branch": "main"
+        },
+        {
+            "name": "ziglings-exercises",
+            "url": "https://codeberg.org/ziglings/exercises",
+            "branch": "main"
+        }
+    ],
+    "tools": [
+        {
+            "name": "jetzig",
+            "url": "https://github.com/jetzig-framework/jetzig",
+            "branch": "main"
+        },
+        {
+            "name": "river",
+            "url": "https://github.com/riverwm/river"
+        },
+        {
+            "name": "mach",
+            "url": "https://github.com/hexops/mach",
+            "branch": "main"
+        },
+        {
+            "name": "arocc",
+            "url": "https://github.com/Vexu/arocc"
+        },
+        {
+            "name": "bun",
+            "url": "https://github.com/oven-sh/bun",
+            "branch": "main"
+        },
+        {
+            "name": "zls",
+            "url": "https://github.com/zigtools/zls"
+        }
+    ]
+}
