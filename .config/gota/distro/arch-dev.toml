@@ -39,3 +39,8 @@ cc = [
   "cmake",
   "doxygen"
 ]
+ocaml = [
+  "opam",
+  "ocaml",
+  "darcs"
+]
