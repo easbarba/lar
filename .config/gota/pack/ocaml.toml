@@ -1,0 +1,16 @@
+topic = "Ocaml"
+deps = [ "opam" ]
+upgrade = "opam upgrade"
+post = "opam update"
+install = "opam install"
+
+[packages]
+platform = [
+ "ocaml-lsp-server",
+ "odoc",
+ "ocamlformat",
+ "utop",
+ "ocp-indent",
+ "dune",
+ "ocamlmerlin"
+]

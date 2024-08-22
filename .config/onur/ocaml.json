@@ -1,0 +1,28 @@
+{
+    "official": [
+        {
+            "name": "merlin",
+            "url": "https://github.com/ocaml/merlin",
+            "branch": "main"
+        },
+        {
+            "name": "ocaml-lsp",
+            "url": "https://github.com/ocaml/ocaml-lsp"
+        },
+        {
+            "name": "dune",
+            "url": "https://github.com/ocaml/dune",
+            "branch": "main"
+        },
+        {
+            "name": "opam",
+            "url": "https://github.com/ocaml/opam"
+        },
+        {
+            "name": "ocaml",
+            "url": "https://github.com/ocaml/ocaml",
+            "branch": "trunk"
+        }
+    ],
+    "app": []
+}

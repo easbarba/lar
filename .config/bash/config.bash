@@ -38,8 +38,8 @@ HISTCONTROL=ignoreboth                          # don't put duplicate lines or l
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     exec tmux attach || tmux >/dev/null 2>&1 # tmux new-session -A -s ${USER} >/dev/null 2>&1 #
 fi
-
-export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+[[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
+[[ -f "$HOME/.opam/opam-init/init.sh" ]] && . "$HOME/.opam/opam-init/init.sh" >/dev/null 2>/dev/null || true
 
 if [ -n "$GUIX_ENVIRONMENT" ]; then
     if [[ $PS1 =~ (.*)"\\$" ]]; then
@@ -47,7 +47,8 @@ if [ -n "$GUIX_ENVIRONMENT" ]; then
     fi
 fi
 
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+
 # [[ -x $(command -v direnv) ]] && eval "$(direnv hook bash)"
 # TERM=screen-256color screen -S GNU
-# [[ -x $(command -v kubectl) ]] && source <(kubectl completion bash)
 # [[ -f "$GUIX_PROFILE/etc/profile" ]] && . "$GUIX_PROFILE/etc/profile"

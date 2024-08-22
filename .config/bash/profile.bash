@@ -14,11 +14,11 @@ sshkeys() {
 }
 
 wm() {
-#    exec /usr/lib/plasma-dbus-run-session-if-needed
-#    /usr/bin/startplasma-wayland
+    #    exec /usr/lib/plasma-dbus-run-session-if-needed
+    #    /usr/bin/startplasma-wayland
 
     #    [[ -x $(command -v wayfire) ]] && exec wayfire
-#    [[ -x $(command -v miracle) ]] && exec miracle
+    #    [[ -x $(command -v miracle) ]] && exec miracle
     [[ -x $(command -v sway) ]] && exec dbus-run-session sway
     [[ -x $(command -v river) ]] && exec river
 }
