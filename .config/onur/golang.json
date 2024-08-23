@@ -62,6 +62,12 @@
             "name": "kubernetes-examples",
             "url": "https://github.com/kubernetes/examples"
         },
+
+        {
+            "name": "kubernetes-website",
+            "url": "https://github.com/kubernetes/website",
+            "branch": "main"
+        },
         {
             "name": "kubectl",
             "url": "https://github.com/kubernetes/kubectl"
