@@ -59,12 +59,16 @@
             "branch": "main"
         },
         {
-            "name": "kubernetes/examples",
+            "name": "kubernetes-examples",
             "url": "https://github.com/kubernetes/examples"
         },
         {
             "name": "kubectl",
             "url": "https://github.com/kubernetes/kubectl"
+        },
+        {
+            "name": "kubernetes",
+            "url": "https://github.com/kubernetes/kubernetes"
         },
         {
             "name": "buildah",
