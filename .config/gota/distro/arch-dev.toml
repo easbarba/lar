@@ -28,16 +28,11 @@ images = [
   "krita"
 ]
 langs = [
+  "go",
   "lua",
   "npm",
   "nodejs",
   "python"
-]
-cc = [
-  "meson",
-  "clang",
-  "cmake",
-  "doxygen"
 ]
 functional = [
   "elixir",

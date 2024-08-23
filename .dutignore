@@ -50,7 +50,6 @@ README.md
 .config/onur/java.json
 .config/onur/kotlin.json
 .config/onur/php.json
-.config/onur/golang.json
 .config/onur/dart.json
 .config/onur/swift.json
 .config/onur/ruby.json
@@ -59,6 +58,7 @@ README.md
 .config/onur/zig.json
 .config/onur/python.json
 .config/onur/rust.json
+.config/onur/cpp.json
 .config/micro
 .config/phpactor
 .config/picom
