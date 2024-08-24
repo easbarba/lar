@@ -51,7 +51,8 @@ system = [
   "unrar",
   "flatpak",
   "rfkill",
-  "fuse2"
+  "fuse2",
+  "dosfstools"
 ]
 arch = [ "base-devel" ]
 shell = [ "bash-completion", "shellcheck" ]
