@@ -28,6 +28,48 @@
             "url": "https://github.com/filhodanuvem/gitql",
             "branch": "main"
         },
+
+        {
+            "name": "charm-huh",
+            "url": "https://github.com/charmbracelet/huh",
+            "branch": "main"
+        },
+        {
+            "name": "charm-skate",
+            "url": "https://github.com/charmbracelet/skate",
+            "branch": "main"
+        },
+        {
+            "name": "charm-bubbletea",
+            "url": "https://github.com/charmbracelet/bubbletea"
+        },
+        {
+            "name": "charm-gum",
+            "url": "https://github.com/charmbracelet/gum",
+            "branch": "main"
+        },
+        {
+            "name": "go-git",
+            "url": "https://github.com/go-git/go-git"
+        },
+        {
+            "name": "shfmt",
+            "url": "https://github.com/mvdan/sh"
+        }
+    ],
+    "code": [
+        {
+            "name": "filhodanuvem-rinha-backend-2023-go",
+            "url": "https://github.com/filhodanuvem/rinha-backend-2023-go",
+            "branch": "main"
+        },
+        {
+            "name": "avelino-awesome-go",
+            "url": "https://github.com/avelino/awesome-go",
+            "branch": "main"
+        }
+    ],
+    "web": [
         {
             "name": "echo",
             "url": "https://github.com/labstack/echo"
@@ -39,20 +81,21 @@
         {
             "name": "chi",
             "url": "https://github.com/go-chi/chi"
-        },
+        }
+    ],
+    "books": [
         {
-            "name": "gum",
-            "url": "https://github.com/charmbracelet/gum",
+            "name": "mastering-go-fourth",
+            "url": "https://github.com/mactsouk/mGo4th",
             "branch": "main"
         },
         {
-            "name": "go-git",
-            "url": "https://github.com/go-git/go-git"
-        },
-        {
-            "name": "shfmt",
-            "url": "https://github.com/mvdan/sh"
-        },
+            "name": "datadavd-greenlight",
+            "url": "https://github.com/DataDavD/greenlight",
+            "branch": "main"
+        }
+    ],
+    "ops": [
         {
             "name": "containerd",
             "url": "https://github.com/containerd/containerd",
@@ -62,7 +105,6 @@
             "name": "kubernetes-examples",
             "url": "https://github.com/kubernetes/examples"
         },
-
         {
             "name": "kubernetes-website",
             "url": "https://github.com/kubernetes/website",
@@ -84,30 +126,6 @@
         {
             "name": "podman",
             "url": "https://github.com/containers/podman",
-            "branch": "main"
-        }
-    ],
-    "misc": [
-        {
-            "name": "filhodanuvem-rinha-backend-2023-go",
-            "url": "https://github.com/filhodanuvem/rinha-backend-2023-go",
-            "branch": "main"
-        },
-        {
-            "name": "avelino-awesome-go",
-            "url": "https://github.com/avelino/awesome-go",
-            "branch": "main"
-        }
-    ],
-    "books": [
-        {
-            "name": "mastering-go-fourth",
-            "url": "https://github.com/mactsouk/mGo4th",
-            "branch": "main"
-        },
-        {
-            "name": "datadavd-greenlight",
-            "url": "https://github.com/DataDavD/greenlight",
             "branch": "main"
         }
     ]
