@@ -58,7 +58,7 @@ README.md
 .config/onur/zig.json
 .config/onur/python.json
 .config/onur/cpp.json
-.config/onur/golang.json
+.config/onur/rust.json
 .config/onur/beam.json
 .config/micro
 .config/phpactor

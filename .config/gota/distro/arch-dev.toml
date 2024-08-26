@@ -28,15 +28,9 @@ images = [
   "krita"
 ]
 langs = [
-  "lua",
+  "go"
+  "guile"
   "npm",
   "nodejs",
   "python"
-]
-functional = [
-  "elixir",
-  "opam",
-  "ocaml",
-  "darcs",
-  "guile"
 ]
