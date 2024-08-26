@@ -2,6 +2,9 @@ topic = "Arch Linux - dev"
 refresh = "sudo pacman -Syy"
 upgrade = "pacman -Syu"
 install = "sudo pacman -S --noconfirm"
+post = [
+     "sudo usermod -a -G libvirt $USER"
+]
 deps = [ "pacman" ]
 
 [packages]
@@ -24,7 +27,7 @@ tools = [
   "taplo-cli",
   "inotify-tools",
 ]
-images = [
+design = [
   "krita"
 ]
 langs = [
@@ -33,4 +36,16 @@ langs = [
   "npm",
   "nodejs",
   "python"
+]
+vm = [
+  "qemu-base",
+  "libvirt",
+  "bridge-utils",
+  "virt-install"
+]
+cc = [
+  "meson",
+  "clang",
+  "cmake",
+  "doxygen"
 ]
