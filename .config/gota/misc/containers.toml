@@ -20,7 +20,6 @@ database = [
 distributions = [
   "docker.io/library/ubuntu:24.04",
   "docker.io/library/debian:unstable",
-  "docker.io/library/archlinux:latest",
   "docker.io/library/alpine:latest"
 ]
 
