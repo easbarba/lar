@@ -19,7 +19,7 @@ wm() {
 
     #    [[ -x $(command -v wayfire) ]] && exec wayfire
     #    [[ -x $(command -v miracle) ]] && exec miracle
-    [[ -x $(command -v sway) ]] && exec dbus-run-session sway
+    [[ -x $(command -v sway) ]] && exec sway # dbus-run-session sway
     [[ -x $(command -v river) ]] && exec river
 }
 

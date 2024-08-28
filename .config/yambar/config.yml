@@ -209,7 +209,7 @@ bar:
                                   foreground: ffffff66,
                                 }
     - backlight:
-        name: amdgpu_bl1 # ls /sys/class/backlight/
+        name: amdgpu_bl0 # ls /sys/class/backlight/
         content:
           [
             string: { text: "", font: *awesome },
