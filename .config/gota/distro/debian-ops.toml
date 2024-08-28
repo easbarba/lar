@@ -10,25 +10,30 @@ post = [
 [packages]
 containers = [ "podman", " podman-compose" ]
 network = [
-    "tcpdump",
-    "iftop",
-    "nload",
-    "nethogs",
-    "wireshark",
-    "tshark",
-    "netperf",
-    "nmap",
-    "net-tools",
-    "gnutls-bin",
-    "telnet",
-    "netcat-traditional",
-    "wireless-tools",
-    "dsniff",
-    "netdiscover",
-    "traceroute"
+  "tcpdump",
+  "iftop",
+  "nload",
+  "nethogs",
+  "wireshark",
+  "tshark",
+  "netperf",
+  "nmap",
+  "net-tools",
+  "gnutls-bin",
+  "telnet",
+  "netcat-traditional",
+  "wireless-tools",
+  "netdiscover",
+  "traceroute"
 ]
 tools = [
   "expect"
+]
+hacking = [
+  "arp-scan",
+  "arpwatch",
+  "arpon",
+  "dsniff"
 ]
 # provisioning = [ "ansible" ]
 # ci = [ "gitlab-runner" ]

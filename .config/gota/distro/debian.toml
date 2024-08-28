@@ -159,5 +159,10 @@ wm = [
   "grimshot",
   "foot",
   "dmenu",
-  "yambar"
+  "yambar",
+  "mpd",
+  "mpc",
+  "ncmpcpp",
+  "wofi",
+  "bemenu"
 ]
