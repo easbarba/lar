@@ -41,7 +41,8 @@ vm = [
   "qemu-base",
   "libvirt",
   "bridge-utils",
-  "virt-install"
+  "virt-install",
+  "dnsmasq"
 ]
 cc = [
   "meson",

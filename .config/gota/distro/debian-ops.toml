@@ -35,5 +35,15 @@ hacking = [
   "arpon",
   "dsniff"
 ]
+vm = [
+  "qemu-system",
+  "libvirt-daemon-system",
+  "virtinst"
+  "qemu-kvm",
+  "libvirt-clients",
+  "bridge-utils",
+  "virt-manager"
+]
+
 # provisioning = [ "ansible" ]
 # ci = [ "gitlab-runner" ]
