@@ -5,7 +5,7 @@ install = "guix install"
 deps = [ "guix" ]
 
 [packages]
-langs = [ "guile", "guile-readline" ]
+langs = [ "guile", "guile-readline", "go" ]
 editors = [ "zile", "neovim" ]
 emacs = [ "emacs-pgtk", "emacs-pdf-tools" ]
 ssl = [ "nss-certs", "openssl"  ]
