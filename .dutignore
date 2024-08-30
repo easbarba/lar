@@ -46,6 +46,7 @@
 .config/onur/python.json
 .config/onur/ruby.json
 .config/onur/rust.json
+.config/onur/ocaml.json
 .config/onur/swift.json
 .config/onur/zig.json
 .config/phpactor
