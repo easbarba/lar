@@ -1,0 +1,64 @@
+{
+    "tools": [
+        {
+            "name": "gitlab",
+            "url": "https://gitlab.com/gitlab-org/gitlab"
+        }
+    ],
+    "study": [
+        {
+            "name": "nanuchi-youtube-tutorial-series",
+            "url": "https://gitlab.com/nanuchi/youtube-tutorial-series",
+            "branch": "master"
+        },
+        {
+            "name": "kelseyhightower-kubernetes-the-hard-way",
+            "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way",
+            "branch": "master"
+        },
+        {
+            "name": "ydamni-kubernetes-the-iac-branch",
+            "url": "https://github.com/ydamni/kubernetes-the-iac-way",
+            "branch": "main"
+        },
+        {
+            "name": "michaelcade-90daysofdevops",
+            "url": "https://github.com/MichaelCade/90DaysOfDevOps",
+            "branch": "main"
+        },
+        {
+            "name": "cedon-k8s",
+            "url": "https://gitlab.com/cedon/curso-k8s",
+            "branch": "master"
+        },
+        {
+            "name": "descomplicando-prometheus",
+            "url": "https://github.com/badtuxx/DescomplicandoPrometheus",
+            "branch": "main"
+        },
+        {
+            "name": "descomplicando-kubernetes",
+            "url": "https://github.com/badtuxx/DescomplicandoKubernetes",
+            "branch": "main"
+        }
+    ],
+    "code": [
+        {
+            "name": "vfarcic-k3d-demo",
+            "url": "https://github.com/vfarcic/k3d-demo",
+            "branch": "master"
+        },
+        {
+            "name": "terraform-up-and-running-code",
+            "url": "https://github.com/brikis98/terraform-up-and-running-code",
+            "branch": "3rd-edition"
+        }
+    ],
+    "misc": [
+        {
+            "name": "ruanbekker-cheatsheets",
+            "url": "https://github.com/ruanbekker/cheatsheets",
+            "branch": "master"
+        }
+    ]
+}
