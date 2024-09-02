@@ -12,7 +12,8 @@ tools = [
   "js-beautify",
   "prettier",
   "prettier-plugin-toml",
-  "@captainsafia/legit"
+  "@captainsafia/legit",
+  "markdownlint"
 ]
 lsp = [
   "bash-language-server",
