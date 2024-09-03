@@ -13,9 +13,14 @@
     ],
     "libraries": [
         {
+            "name": "ratatui",
+            "url": "https://github.com/ratatui/ratatui",
+            "branch": "main"
+        }
+        ,{
             "name": "axum",
-            "branch": "main",
-            "url": "https://github.com/tokio-rs/axum"
+            "url": "https://github.com/tokio-rs/axum",
+            "branch": "main"
         },
         {
             "name": "git2-rs",
@@ -42,7 +47,7 @@
         },
         {
             "name": "sdkman-cli-native",
-            "url": " https://github.com/sdkman/sdkman-cli-native"
+            "url": "https://github.com/sdkman/sdkman-cli-native"
         }
     ],
     "official": [
