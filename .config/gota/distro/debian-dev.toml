@@ -17,6 +17,9 @@ tools = [
     "protobuf-compiler",
     "inotify-tools"
 ]
+libs = [
+  "libssl-dev"
+]
 editors = [
     "vim",
     "neovim",
