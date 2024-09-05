@@ -44,8 +44,8 @@
     ],
     "impl": [
         {
-            "name": "ChezScheme",
-            "url": "https://github.com/cisco/ChezScheme",
+            "name": "chezscheme",
+            "url": "https://github.com/cisco/chezscheme",
             "branch": "main"
         }
     ],

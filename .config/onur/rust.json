@@ -29,6 +29,10 @@
     ],
     "apps": [
         {
+            "name": "bat",
+            "url": "https://github.com/sharkdp/bat"
+        }
+        ,{
             "name": "uv",
             "url": "https://github.com/astral-sh/uv",
             "branch": "main"
