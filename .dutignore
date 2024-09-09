@@ -12,7 +12,6 @@
 .config/dunst
 .config/environment.d/03-kde.conf
 .config/environment.d/04-haskell.conf
-.config/environment.d/06-java.conf
 .config/environment.d/08-ruby.conf
 .config/environment.d/09-php.conf
 .config/environment.d/12-brew.conf
@@ -39,7 +38,6 @@
 .config/onur/dart.json
 .config/onur/dotnet.json
 .config/onur/ecmascript.json
-.config/onur/java.json
 .config/onur/kotlin.json
 .config/onur/php.json
 .config/onur/python.json
@@ -48,7 +46,6 @@
 .config/onur/lua.json
 .config/onur/ocaml.json
 .config/onur/swift.json
-.config/onur/zig.json
 .config/phpactor
 .config/picom
 .config/plasma-workspace
