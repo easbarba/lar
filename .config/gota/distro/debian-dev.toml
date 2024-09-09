@@ -54,3 +54,8 @@ gnu = [
  "gdb"
 ]
 database = [ "sqlite3" ]
+java = [
+     "openjdk-21-jre",
+     "openjdk-21-jdk",
+     "clang-format"
+]
