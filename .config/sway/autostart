@@ -9,7 +9,7 @@ exec foot
 exec yambar
 exec firefox
 exec mpd
-exec kdeconnectd
+exec dbus-launch kdeconnect-indicator
 
 exec swayidle -w \
 	timeout 700 'swaylock -f -c 000000' \
