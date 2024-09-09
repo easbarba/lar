@@ -1,0 +1,88 @@
+{
+    "clojure":
+    [
+        {
+            "name": "seancorfield-clj-new",
+            "url": "https://github.com/seancorfield/clj-new",
+            "branch": "develop"
+        },
+        {
+            "name": "pedestal",
+            "url": "https://github.com/pedestal/pedestal"
+        },
+        {
+            "name": "ring",
+            "url": "https://github.com/ring-clojure/ring"
+        },
+        {
+            "name": "babashka",
+            "url": "https://github.com/babashka/babashka"
+        },
+        {
+            "name": "cljfmt",
+            "url": "https://github.com/weavejester/cljfmt"
+        },
+        {
+            "name": "luminus",
+            "url": "https://github.com/luminus-framework/luminus"
+        },
+        {
+            "name": "leiningen",
+            "url": "https://codeberg.org/leiningen/leiningen",
+            "branch": "main"
+        },
+        {
+            "name": "clojure-lsp",
+            "url": "https://github.com/clojure-lsp/clojure-lsp"
+        },
+        {
+            "name": "clojure",
+            "url": "https://github.com/clojure/clojure"
+        }
+    ]
+
+    ,
+    "projects":
+    [
+        {
+            "name": "pedestal",
+            "branch": "master",
+            "url": "https://github.com/pedestal/pedestal"
+        },
+        {
+            "name": "ring",
+            "branch": "master",
+            "url": "https://github.com/ring-clojure/ring"
+        },
+        {
+            "name": "babashka",
+            "branch": "master",
+            "url": "https://github.com/babashka/babashka"
+        },
+        {
+            "name": "cljfmt",
+            "branch": "master",
+            "url": "https://github.com/weavejester/cljfmt"
+        },
+        {
+            "name": "luminus",
+            "branch": "master",
+            "url": "https://github.com/luminus-framework/luminus"
+        },
+        {
+            "name": "leiningen",
+            "branch": "main",
+            "url": "https://codeberg.org/leiningen/leiningen"
+        },
+        {
+            "name": "clojure-lsp",
+            "branch": "master",
+            "url": "https://github.com/clojure-lsp/clojure-lsp"
+        },
+        {
+            "name": "clojure",
+            "branch": "master",
+            "url": "https://github.com/clojure/clojure"
+        }
+    ]
+}

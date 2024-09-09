@@ -1,0 +1,69 @@
+{
+    "misc": [
+        {
+            "name": "rife2",
+            "url": "https://github.com/rife2/rife2",
+            "branch": "main"
+        },
+        {
+            "name": "bld",
+            "url": "https://github.com/rife2/bld",
+            "branch": "main"
+        },
+        {
+            "name": "jagged",
+            "url": "https://github.com/ethomson/jagged",
+            "branch": "main"
+        },
+        {
+            "name": "quarkus-super-heroes",
+            "url": "https://github.com/quarkusio/quarkus-super-heroes",
+            "branch": "main"
+        },
+        {
+            "name": "java-persistence-spring-data-hibernate",
+            "url": "https://github.com/ctudose/java-persistence-spring-data-hibernate",
+            "branch": "main"
+        },
+
+        {
+     "name": "full-stack-quarkus-and-react",
+     "url": "https://github.com/PacktPublishing/Full-Stack-Quarkus-and-React",
+     "branch": "main"
+ },
+        {
+            "name": "pro-java-microservices-quarkus-kubernetes",
+            "url": "https://github.com/Apress/pro-java-microservices-quarkus-kubernetes",
+            "branch": "main"
+        },
+        {
+            "name": "gscaramuzzino/quarkus-testing-restassured",
+            "url": "https://github.com/gscaramuzzino/quarkus-testing-restassured",
+            "branch": "main"
+        },
+        {
+            "name": "dvddhln-quarkus-reactive-hibernate-graphql-crud",
+            "url": "https://github.com/dvddhln/quarkus-reactive-hibernate-graphql-crud"
+        },
+        {
+            "name": "bezkoder-docker-compose-spring-boot-mysql",
+            "url": "https://github.com/bezkoder/docker-compose-spring-boot-mysql"
+        },
+        {
+            "name": "bezkoder-spring-boot-3-rest-api-example",
+            "url": "https://github.com/bezkoder/spring-boot-3-rest-api-example"
+        },
+        {
+            "name": "nebrass-reactive-quarkus-app",
+            "url": "https://github.com/nebrass/reactive-quarkus-app"
+        },
+        {
+            "name": "danvega-springit-course-docs",
+            "url": "https://github.com/danvega/springit-course-docs"
+        },
+        {
+            "name": "mechero-spring-boot-testing-strategies",
+            "url": "https://github.com/mechero/spring-boot-testing-strategies"
+        }
+    ]
+}

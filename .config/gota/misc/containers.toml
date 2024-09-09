@@ -9,6 +9,7 @@ langs = [
   "docker.io/library/eclipse-temurin:8-jdk",
   "docker.io/library/eclipse-temurin:8-jre",
 
+  "docker.io/library/golang:1.23",
   "docker.io/library/rust:1.80",
 
   "docker.io/library/python:3.12",

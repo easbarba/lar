@@ -44,5 +44,17 @@
             "url": "https://github.com/masteringapi/rest-api-standards",
             "branch": "main"
         }
+    ],
+    "study": [
+        {
+            "name": "yata-wiki",
+            "branch": "master",
+            "url": "https://github.com/leandronsp/yata.wiki"
+        },
+        {
+            "name": "yata",
+            "branch": "main",
+            "url": "https://github.com/leandronsp/yata"
+        }
     ]
 }

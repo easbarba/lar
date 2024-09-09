@@ -1,0 +1,32 @@
+{
+    "janet": [
+        {
+            "name": "janet-lang.org",
+            "url": "https://github.com/janet-lang/janet-lang.org"
+        },
+        {
+            "name": "jpm",
+            "url": "https://github.com/janet-lang/jpm"
+        },
+        {
+            "name": "spork",
+            "url": "https://github.com/janet-lang/spork"
+        },
+        {
+            "name": "joy",
+            "url": "https://github.com/joy-framework/joy"
+        },
+        {
+            "name": "jaylib",
+            "url": "https://github.com/janet-lang/jaylib"
+        },
+        {
+            "name": "circlet",
+            "url": "https://github.com/janet-lang/circlet"
+        },
+        {
+            "name": "janet",
+            "url": "https://github.com/janet-lang/janet"
+        }
+    ],
+}
