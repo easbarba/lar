@@ -29,6 +29,11 @@
     ],
     "apps": [
         {
+            "name": "mise",
+            "url": "https://github.com/jdx/mise",
+            "branch": "main"
+        }
+        ,{
             "name": "bat",
             "url": "https://github.com/sharkdp/bat"
         }
