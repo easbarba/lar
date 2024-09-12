@@ -1,4 +1,11 @@
 {
+    "libs": [
+        {
+            "name": "bluesky-social-indigo",
+            "url": "https://github.com/bluesky-social/indigo",
+            "branch": "main"
+        }
+    ],
     "official": [
         {
             "name": "go-tools",

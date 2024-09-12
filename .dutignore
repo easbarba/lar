@@ -12,6 +12,7 @@
 .config/dunst
 .config/environment.d/03-kde.conf
 .config/environment.d/04-haskell.conf
+.config/environment.d/05-rust.conf
 .config/environment.d/06-java.conf
 .config/environment.d/08-ruby.conf
 .config/environment.d/09-php.conf
@@ -50,6 +51,7 @@
 .config/onur/php.json
 .config/onur/python.json
 .config/onur/ruby.json
+.config/onur/rust.json
 .config/onur/swift.json
 .config/onur/zig.json
 .config/phpactor
