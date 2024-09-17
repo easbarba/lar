@@ -22,6 +22,19 @@
     ],
     "tools": [
         {
+            "name": "micro",
+            "url": "https://github.com/zyedidia/micro"
+        }
+        ,{
+            "name": "canonical-lxd",
+            "url": "https://github.com/canonical/lxd",
+            "branch": "main"
+        }
+        ,{
+            "name": "canonical-snapd",
+            "url": "https://github.com/canonical/snapd"
+        }
+        ,{
             "name": "golang-design-clipboard",
             "url": "https://github.com/golang-design/clipboard",
             "branch": "main"
@@ -92,6 +105,11 @@
     ],
     "books": [
         {
+            "name": "PacktPublishing-System-Programming-Essentials-with-Go",
+            "url": "https://github.com/PacktPublishing/System-Programming-Essentials-with-Go",
+            "branch": "main"
+        }
+        ,{
             "name": "mastering-go-fourth",
             "url": "https://github.com/mactsouk/mGo4th",
             "branch": "main"

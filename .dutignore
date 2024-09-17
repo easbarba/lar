@@ -37,6 +37,7 @@
 .config/onur/beam.json
 .config/onur/c.json
 .config/onur/clojure.json
+.config/onur/common-lisp.json
 .config/onur/cpp.json
 .config/onur/dart.json
 .config/onur/dotnet.json

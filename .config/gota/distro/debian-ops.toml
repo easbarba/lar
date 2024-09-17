@@ -24,7 +24,8 @@ network = [
   "netcat-traditional",
   "wireless-tools",
   "netdiscover",
-  "traceroute"
+  "traceroute",
+  "dnsutils"
 ]
 tools = [
   "expect"
